@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA PRF V2.2.2//EN" "properties.dtd">
+<properties>
+  <struct id="DCE:24acefac-62eb-4b7f-9177-cc7d78c76aca">
+  	<simple type="boolean" id="DCE:24acefac-62eb-4b7f-9177-cc7d78c76acb"></simple>
+  	<configurationkind kindtype="factoryparam"/>
+  </struct>
+  <struct id="DCE:24acefac-62eb-4b7f-9177-cc7d78c76acb">
+  	<simple type="boolean" id="DCE:24acefac-62eb-4b7f-9177-cc7d78c76acb"></simple>
+  	<configurationkind kindtype="configure"/>
+  </struct>
+</properties>

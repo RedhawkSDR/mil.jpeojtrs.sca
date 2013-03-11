@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA PRF V2.2.2//EN" "properties.dtd">
+<properties>
+  <simple id="DCE:2aaac878-1416-4199-af3f-bafdde245091" mode="readwrite" type="string">
+    <enumerations>
+    <enumeration label="enum1"/>
+    <enumeration label="enum2" value="1"/>
+    </enumerations>
+  </simple>
+</properties>

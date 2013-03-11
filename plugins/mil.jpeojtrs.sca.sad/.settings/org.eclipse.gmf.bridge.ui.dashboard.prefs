@@ -1,0 +1,8 @@
+#Tue Mar 29 21:01:29 GMT+00:00 2011
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/mil.jpeojtrs.sca.sad/model/sad.genmodel
+gmf_dashboard/domainModel=platform\:/resource/mil.jpeojtrs.sca.sad/model/sad.ecore
+gmf_dashboard/generationModel=platform\:/resource/mil.jpeojtrs.sca.sad/model/sad.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/mil.jpeojtrs.sca.sad/model/sad.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/mil.jpeojtrs.sca.sad/model/sad.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/mil.jpeojtrs.sca.sad/model/sad.gmftool

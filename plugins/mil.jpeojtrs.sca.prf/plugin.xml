@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://sca.jpeojtrs.mil/prf"
+            class="mil.jpeojtrs.sca.prf.PrfPackage"
+            genModel="model/prf.genmodel"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            class="mil.jpeojtrs.sca.prf.util.PrfResourceFactoryImpl"
+            contentTypeIdentifier="mil.jpeojtrs.sca.prf.content-type">
+      </parser>
+   </extension>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            file-extensions="xml"
+            file-names="*.prf.xml"
+            id="mil.jpeojtrs.sca.prf.content-type"
+            name="%_UI_Prf_content_type"
+            priority="normal">
+         <describer
+               class="org.eclipse.core.runtime.content.XMLRootElementContentDescriber2"
+               plugin="org.eclipse.core.runtime">
+            <parameter
+                  name="element"
+                  value="properties">
+            </parameter>
+         </describer>
+      </content-type>
+   </extension>
+</plugin>

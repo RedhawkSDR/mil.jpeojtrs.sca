@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softpkg PUBLIC "-//JTRS//DTD SCA DPD V2.2.2//EN" "softpkg.dtd">
+<devicepkg id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90cdd8" name="simpleChild" version="1,0,0,0">
+  <title>Simple Child DPD</title>
+  <author>
+    <company>TestCompany</company>
+    <name>TestCase</name>
+    <webpage>www.testweb.page</webpage>
+  </author>
+  <description>Simple Child DPD file</description>
+  <hwdeviceregistration id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90cddb" name="Simple Child Device Registration" version="1,0,0,0">
+	<description>Simple Child HW Device Registration Test Description</description>
+	<manufacturer>TestManufacturer</manufacturer>
+	<modelnumber>2</modelnumber>
+	<deviceclass>
+	  <class>Device Class 2</class>
+	</deviceclass>
+  </hwdeviceregistration>
+</devicepkg>

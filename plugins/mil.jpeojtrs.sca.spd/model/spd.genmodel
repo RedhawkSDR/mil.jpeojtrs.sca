@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/mil.jpeojtrs.sca.spd/src" modelPluginID="mil.jpeojtrs.sca.spd"
+    templateDirectory="/mil.jpeojtrs.sca.templates/templates" dynamicTemplates="true"
+    forceOverwrite="true" modelName="Spd" testSuiteClass="" importerID="org.eclipse.xsd.ecore.importer"
+    containmentProxies="true" complianceLevel="5.0" copyrightFields="false" tableProviders="true"
+    runtimeVersion="2.6" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf platform:/plugin/mil.jpeojtrs.sca.scd/model/scd.genmodel#//scd">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://sca.jpeojtrs.mil/spd" value="spd.xsd"/>
+    </genAnnotations>
+    <genAnnotations source="selectedReferencedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/prf" value="prf.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/scd" value="scd.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>spd.xsd</foreignModel>
+  <genPackages prefix="Spd" basePackage="mil.jpeojtrs.sca" resource="XML" disposableProviderFactory="true"
+      generateExampleClass="false" contentTypeIdentifier="mil.jpeojtrs.sca.spd.content-type"
+      fileExtensions="xml" ecorePackage="spd.ecore#/">
+    <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+      <genAnnotations source="spd.xsd"/>
+    </genAnnotations>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spd.ecore#//AEPComplianceType">
+      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//AEPComplianceType/aepCompliant"/>
+      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//AEPComplianceType/aepNonCompliant"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spd.ecore#//CodeFileType">
+      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//CodeFileType/Executable"/>
+      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//CodeFileType/KernelModule"/>
+      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//CodeFileType/SharedLibrary"/>
+      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//CodeFileType/Driver"/>
+      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//CodeFileType/NodeBooter"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spd.ecore#//SCAComplianceType">
+      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//SCAComplianceType/scaCompliant"/>
+      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//SCAComplianceType/scaNonCompliant"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="spd.ecore#//AEPComplianceTypeObject"/>
+    <genDataTypes ecoreDataType="spd.ecore#//CodeFileTypeObject"/>
+    <genDataTypes ecoreDataType="spd.ecore#//SCAComplianceTypeObject"/>
+    <genDataTypes ecoreDataType="spd.ecore#//URI"/>
+    <genClasses ecoreClass="spd.ecore#//Author">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Author/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Author/company"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Author/webpage"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//Code">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spd.ecore#//Code/localFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Code/entryPoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Code/stackSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Code/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Code/type"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//Compiler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Compiler/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Compiler/version"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//Dependency">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Dependency/softPkgRef"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Dependency/propertyRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Dependency/type"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//Descriptor">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Descriptor/localfile"/>
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference spd.ecore#//Descriptor/component"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Descriptor/name"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//HumanLanguage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//HumanLanguage/name"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//Implementation">
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute spd.ecore#//Implementation/description"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Implementation/propertyFile"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Implementation/code"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Implementation/compiler"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Implementation/programmingLanguage"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Implementation/humanLanguage"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Implementation/runtime"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Implementation/dependencyMap"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Implementation/os"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Implementation/processor"/>
+      <genFeatures property="None" createChild="false" propertyCategory="" ecoreFeature="ecore:EReference spd.ecore#//Implementation/dependency"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spd.ecore#//Implementation/usesDevice"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Implementation/aepCompliance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Implementation/id"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Implementation/softPkg"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//ImplRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//ImplRef/refid"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//LocalFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//LocalFile/name"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//Os">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Os/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Os/version"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//Processor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Processor/name"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//ProgrammingLanguage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//ProgrammingLanguage/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//ProgrammingLanguage/version"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//PropertyFile">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//PropertyFile/localFile"/>
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference spd.ecore#//PropertyFile/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//PropertyFile/type"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//PropertyRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//PropertyRef/refId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//PropertyRef/value"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//Runtime">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Runtime/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Runtime/version"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//SoftPkg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//SoftPkg/title"/>
+      <genFeatures property="Readonly" children="true" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//SoftPkg/author"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute spd.ecore#//SoftPkg/description"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//SoftPkg/propertyFile"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//SoftPkg/descriptor"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//SoftPkg/implementation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spd.ecore#//SoftPkg/usesDevice"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//SoftPkg/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//SoftPkg/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//SoftPkg/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//SoftPkg/version"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//SoftPkgRef">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//SoftPkgRef/localFile"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//SoftPkgRef/implRef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spd.ecore#//SoftPkgRef/implementation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spd.ecore#//SoftPkgRef/softPkg"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//SpdDocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//SpdDocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//SpdDocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//SpdDocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spd.ecore#//SpdDocumentRoot/softpkg"/>
+    </genClasses>
+    <genClasses ecoreClass="spd.ecore#//UsesDevice">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spd.ecore#//UsesDevice/propertyRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//UsesDevice/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//UsesDevice/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

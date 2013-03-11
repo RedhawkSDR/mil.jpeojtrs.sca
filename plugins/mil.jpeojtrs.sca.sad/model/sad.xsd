@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:prf="http://sca.jpeojtrs.mil/prf" xmlns:sad="http://sca.jpeojtrs.mil/sad" xmlns:scd="http://sca.jpeojtrs.mil/scd" xmlns:spd="http://sca.jpeojtrs.mil/spd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:documentRoot="SadDocumentRoot" ecore:nsPrefix="sad" ecore:package="mil.jpeojtrs.sca.sad" targetNamespace="http://sca.jpeojtrs.mil/sad">
+  <xsd:import namespace="http://sca.jpeojtrs.mil/scd" schemaLocation="../../mil.jpeojtrs.sca.scd/model/scd.xsd"/>
+  <xsd:import namespace="http://www.eclipse.org/emf/2002/Ecore" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.xsd"/>
+  <xsd:import namespace="http://sca.jpeojtrs.mil/prf" schemaLocation="../../mil.jpeojtrs.sca.prf/model/prf.xsd"/>
+  <xsd:import namespace="http://sca.jpeojtrs.mil/spd" schemaLocation="../../mil.jpeojtrs.sca.spd/model/spd.xsd"/>
+  <xsd:element name="softwareassembly" type="sad:softwareAssembly"/>
+  <xsd:complexType ecore:name="AssemblyController" name="assemblyController">
+    <xsd:sequence>
+      <xsd:element ecore:name="componentInstantiationRef" form="qualified" name="componentinstantiationref" type="sad:componentInstantiationRef"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentFile" name="componentFile">
+    <xsd:sequence>
+      <xsd:element ecore:name="localFile" form="qualified" name="localfile" type="sad:localFile"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:id="true" name="id" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="spd:softPkg" ecore:transient="true" ecore:volatile="true" name="softPkg" type="xsd:anyURI"/>
+    <xsd:attribute name="type" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentFileRef" name="componentFileRef">
+    <xsd:attribute ecore:derived="true" ecore:reference="sad:componentFile" ecore:transient="true" ecore:volatile="true" name="file" type="xsd:anyURI"/>
+    <xsd:attribute name="refid" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentFiles" name="componentFiles">
+    <xsd:sequence>
+      <xsd:element ecore:name="componentFile" form="qualified" maxOccurs="unbounded" name="componentfile" type="sad:componentFile"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentInstantiation" name="componentInstantiation">
+    <xsd:sequence>
+      <xsd:element ecore:name="usageName" form="qualified" minOccurs="0" name="usagename" type="xsd:string"/>
+      <xsd:element ecore:name="componentProperties" form="qualified" minOccurs="0" name="componentproperties" type="sad:componentProperties"/>
+      <xsd:element ecore:name="findComponent" form="qualified" minOccurs="0" name="findcomponent" type="sad:findComponent"/>
+      <xsd:element ecore:changeable="false" ecore:derived="true" ecore:resolveProxies="true" ecore:transient="true" maxOccurs="unbounded" minOccurs="0" name="provides" type="sad:ProvidesPortStub"/>
+      <xsd:element ecore:changeable="false" ecore:derived="true" ecore:resolveProxies="true" ecore:transient="true" maxOccurs="unbounded" minOccurs="0" name="uses" type="sad:UsesPortStub"/>
+      <xsd:element ecore:derived="true" ecore:name="interfaces" ecore:resolveProxies="true" ecore:transient="true" maxOccurs="unbounded" minOccurs="0" name="interfacePorts" type="sad:ComponentSupportedInterfaceStub"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:id="true" name="id" type="prf:DceUUID" use="required"/>
+    <xsd:attribute name="startorder" use="optional" type="xsd:positiveInteger"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentInstantiationRef" name="componentInstantiationRef">
+    <xsd:attribute ecore:derived="true" ecore:reference="sad:componentInstantiation" ecore:transient="true" ecore:volatile="true" name="instantiation" type="xsd:anyURI"/>
+    <xsd:attribute name="refid" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentPlacement" name="componentPlacement">
+    <xsd:sequence>
+      <xsd:element ecore:name="componentFileRef" form="qualified" name="componentfileref" type="sad:componentFileRef"/>
+      <xsd:element ecore:name="componentInstantiation" ecore:opposite="placement" form="qualified" maxOccurs="unbounded" name="componentinstantiation" type="sad:componentInstantiation"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:transient="true" ecore:volatile="true" name="name" type="ecore:EString"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentProperties" name="componentProperties">
+    <xsd:sequence>
+      <xsd:choice ecore:featureMap="properties" maxOccurs="unbounded">
+        <xsd:element ecore:name="simpleRef" ecore:upperBound="-1" form="qualified" minOccurs="0" name="simpleref" type="sad:simpleRef"/>
+        <xsd:element ecore:name="simpleSequenceRef" ecore:upperBound="-1" form="qualified" minOccurs="0" name="simplesequenceref" type="sad:simpleSequenceRef"/>
+        <xsd:element ecore:name="structRef" ecore:upperBound="-1" form="qualified" minOccurs="0" name="structref" type="sad:structRef"/>
+        <xsd:element ecore:name="structSequenceRef" ecore:upperBound="-1" form="qualified" minOccurs="0" name="structsequenceref" type="sad:structSequenceRef"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentResourceFactoryRef" name="componentResourceFactoryRef">
+    <xsd:sequence>
+      <xsd:element ecore:name="resourceFactoryProperties" form="qualified" minOccurs="0" name="resourcefactoryproperties" type="sad:resourceFactoryProperties"/>
+    </xsd:sequence>
+    <xsd:attribute name="refid" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentSupportedInterface" name="componentSupportedInterface">
+    <xsd:sequence>
+      <xsd:element ecore:name="supportedIdentifier" form="qualified" name="supportedidentifier" type="xsd:string"/>
+      <xsd:choice>
+      	<xsd:element ecore:name="componentInstantiationRef" form="qualified" minOccurs="0" name="componentinstantiationref" type="sad:componentInstantiationRef"/>
+      	<xsd:element ecore:name="findBy" form="qualified" minOccurs="0" name="findby" type="sad:findBy"/>
+      </xsd:choice>
+    </xsd:sequence>
+    <xsd:attribute ecore:derived="true" ecore:reference="scd:supportsInterface" ecore:transient="true" ecore:volatile="true" name="interface" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentSupportedInterfaceStub" name="ComponentSupportedInterfaceStub">
+   <xsd:complexContent>
+      <xsd:extension base="sad:ConnectionTarget">
+        <xsd:attribute ecore:reference="scd:supportsInterface" name="interface" type="xsd:anyURI"/>
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:transient="true" ecore:unsettable="false" ecore:volatile="true" name="name" type="ecore:EString"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ConnectInterface" name="connectInterface">
+    <xsd:sequence>
+      <xsd:element ecore:name="usesPort" form="qualified" name="usesport" type="sad:usesPort"/>
+      <xsd:choice>
+        <xsd:element ecore:name="providesPort" form="qualified" minOccurs="0" name="providesport" type="sad:providesPort"/>
+        <xsd:element ecore:name="componentSupportedInterface" form="qualified" minOccurs="0" name="componentsupportedinterface" type="sad:componentSupportedInterface"/>
+        <xsd:element ecore:name="findBy" form="qualified" minOccurs="0" name="findby" type="sad:findBy"/>
+      </xsd:choice>
+    </xsd:sequence>
+    <xsd:attribute ecore:id="true" name="id" type="xsd:string"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="sad:UsesPortStub" ecore:transient="true" ecore:volatile="true" name="source" type="xsd:anyURI"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="sad:ConnectionTarget" ecore:transient="true" ecore:volatile="true" name="target" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" ecore:interface="true" name="ConnectionTarget"/>
+  <xsd:complexType ecore:name="Connections" name="connections">
+    <xsd:sequence>
+      <xsd:element ecore:name="connectInterface" form="qualified" maxOccurs="unbounded" minOccurs="0" name="connectinterface" type="sad:connectInterface"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DeviceThatLoadedThisComponentRef" name="deviceThatLoadedThisComponentRef">
+    <xsd:attribute name="refid" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DeviceUsedByThisComponentRef" name="deviceUsedByThisComponentRef">
+    <xsd:attribute ecore:name="refId" name="refid" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:name="usesRefId" name="usesrefid" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DomainFinder" name="domainFinder">
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="type" type="sad:DomainFinderType" use="required"/>
+  </xsd:complexType>
+  <xsd:simpleType name="DomainFinderType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="filemanager"/>
+      <xsd:enumeration value="log"/>
+      <xsd:enumeration value="eventchannel"/>
+      <xsd:enumeration value="namingservice"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType ecore:name="ExternalPorts" name="externalPorts">
+    <xsd:sequence>
+      <xsd:element form="qualified" maxOccurs="unbounded" name="port" type="sad:port"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="FindBy" name="findBy">
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element ecore:name="namingService" form="qualified" minOccurs="0" name="namingservice" type="sad:namingService"/>
+        <xsd:element ecore:name="domainFinder" form="qualified" minOccurs="0" name="domainfinder" type="sad:domainFinder"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="FindByStub" name="findByStub">
+    <xsd:complexContent>
+      <xsd:extension base="sad:ConnectionTarget">
+        <xsd:sequence>
+          <xsd:choice>
+            <xsd:element ecore:name="namingService" form="qualified" minOccurs="0" name="namingservice" type="sad:namingService"/>
+            <xsd:element ecore:name="domainFinder" form="qualified" minOccurs="0" name="domainfinder" type="sad:domainFinder"/>
+          </xsd:choice>
+          <xsd:element ecore:changeable="false" ecore:derived="true" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="provides" type="sad:ProvidesPortStub"/>
+          <xsd:element ecore:changeable="false" ecore:derived="true" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="uses" type="sad:UsesPortStub"/>
+          <xsd:element ecore:derived="true" ecore:name="interfaces" ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="interfacePorts" type="sad:ComponentSupportedInterfaceStub"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="FindComponent" name="findComponent">
+    <xsd:sequence>
+      <xsd:element ecore:name="componentResourceFactoryRef" form="qualified" minOccurs="0" name="componentresourcefactoryref" type="sad:componentResourceFactoryRef"/>
+      <xsd:element ecore:name="namingService" form="qualified" minOccurs="0" name="namingservice" type="sad:namingService"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="HostCollocation" name="hostCollocation">
+    <xsd:sequence>
+      <xsd:element ecore:name="componentPlacement" form="qualified" maxOccurs="unbounded" name="componentplacement" type="sad:componentPlacement"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:id="true" name="id" type="xsd:string"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="LocalFile" name="localFile">
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="NamingService" name="namingService">
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Partitioning" name="partitioning">
+    <xsd:sequence>
+      <xsd:choice ecore:featureMap="parts" maxOccurs="unbounded">
+        <xsd:element ecore:name="componentPlacement" form="qualified" minOccurs="0" name="componentplacement" type="sad:componentPlacement"/>
+        <xsd:element ecore:name="hostCollocation" form="qualified" minOccurs="0" name="hostcollocation" type="sad:hostCollocation"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Port" name="port">
+    <xsd:sequence>
+      <xsd:element form="qualified" minOccurs="0" name="description" type="xsd:string"/>
+      <xsd:choice>
+        <xsd:element ecore:name="usesIdentifier" form="qualified" minOccurs="0" name="usesidentifier" type="xsd:string"/>
+        <xsd:element ecore:name="providesIndentifier" form="qualified" minOccurs="0" name="providesidentifier" type="xsd:string"/>
+        <xsd:element ecore:name="supportedIdentifier" form="qualified" minOccurs="0" name="supportedidentifier" type="xsd:string"/>
+      </xsd:choice>
+      <xsd:element ecore:name="componentInstantiationRef" form="qualified" name="componentinstantiationref" type="sad:componentInstantiationRef"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ProvidesPortStub" name="ProvidesPortStub">
+    <xsd:complexContent>
+      <xsd:extension base="sad:ConnectionTarget">
+        <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:transient="true" ecore:volatile="true" name="name" type="ecore:EString"/>
+        <xsd:attribute ecore:reference="scd:provides" name="provides" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ProvidesPort" name="providesPort">
+    <xsd:sequence>
+      <xsd:element ecore:name="providesIdentifier" form="qualified" name="providesidentifier" type="xsd:string"/>
+      <xsd:choice>
+        <xsd:element ecore:name="componentInstantiationRef" form="qualified" minOccurs="0" name="componentinstantiationref" type="sad:componentInstantiationRef"/>
+        <xsd:element ecore:name="deviceThatLoadedThisComponentRef" form="qualified" minOccurs="0" name="devicethatloadedthiscomponentref" type="sad:deviceThatLoadedThisComponentRef"/>
+        <xsd:element ecore:name="deviceByThisComponentRef" form="qualified" minOccurs="0" name="deviceusedbythiscomponentref" type="sad:deviceUsedByThisComponentRef"/>
+        <xsd:element ecore:name="findBy" form="qualified" minOccurs="0" name="findby" type="sad:findBy"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ResourceFactoryProperties" name="resourceFactoryProperties">
+    <xsd:sequence>
+      <xsd:choice ecore:featureMap="group" maxOccurs="unbounded">
+        <xsd:element ecore:name="simpleRef" ecore:upperBound="-1" form="qualified" minOccurs="0" name="simpleref" type="sad:simpleRef"/>
+        <xsd:element ecore:name="simpleSequenceRef" ecore:upperBound="-1" form="qualified" minOccurs="0" name="simplesequenceref" type="sad:simpleSequenceRef"/>
+        <xsd:element ecore:name="structRef" ecore:upperBound="-1" form="qualified" minOccurs="0" name="structref" type="sad:structRef"/>
+        <xsd:element ecore:name="structSequenceRef" ecore:upperBound="-1" form="qualified" minOccurs="0" name="structsequenceref" type="sad:structSequenceRef"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="SimpleRef" name="simpleRef">
+    <xsd:complexContent>
+      <xsd:extension base="sad:propertyRef">
+        <xsd:attribute ecore:derived="true" ecore:reference="prf:simple" ecore:transient="true" ecore:volatile="true" name="simple" type="xsd:anyURI"/>
+        <xsd:attribute name="value" type="xsd:string" use="required"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="PropertyRef" name="propertyRef">
+    <xsd:attribute ecore:name="refId" name="refid" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="SimpleSequenceRef" name="simpleSequenceRef">
+    <xsd:complexContent>
+      <xsd:extension base="sad:propertyRef">
+        <xsd:sequence>
+          <xsd:element form="qualified" name="values" type="sad:values"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:derived="true" ecore:reference="prf:simpleSequence" ecore:transient="true" ecore:volatile="true" name="simpleSequence" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="SoftwareAssembly" name="softwareAssembly">
+    <xsd:sequence>
+      <xsd:element form="qualified" minOccurs="0" name="description" type="xsd:string"/>
+      <xsd:element ecore:name="componentFiles" form="qualified" name="componentfiles" type="sad:componentFiles"/>
+      <xsd:element form="qualified" name="partitioning" type="sad:partitioning"/>
+      <xsd:element ecore:name="assemblyController" form="qualified" name="assemblycontroller" type="sad:assemblyController"/>
+      <xsd:element form="qualified" minOccurs="0" name="connections" type="sad:connections"/>
+      <xsd:element ecore:name="externalPorts" form="qualified" minOccurs="0" name="externalports" type="sad:externalPorts"/>
+      <xsd:element ecore:resolveProxies="true" ecore:transient="true" maxOccurs="unbounded" minOccurs="0" name="findByStubs" type="sad:findByStub"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:id="true" name="id" type="prf:DceUUID" use="required"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="version" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="StructRef" name="structRef">
+    <xsd:complexContent>
+      <xsd:extension base="sad:propertyRef">
+        <xsd:sequence>
+          <xsd:element ecore:name="simpleRef" form="qualified" maxOccurs="unbounded" name="simpleref" type="sad:simpleRef"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:derived="true" ecore:reference="prf:struct" ecore:transient="true" ecore:volatile="true" name="struct" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="StructSequenceRef" name="structSequenceRef">
+    <xsd:complexContent>
+      <xsd:extension base="sad:propertyRef">
+        <xsd:sequence>
+          <xsd:element ecore:name="structValue" form="qualified" maxOccurs="unbounded" name="structvalue" type="sad:structValue"/>
+        </xsd:sequence>
+        <xsd:attribute ecore:derived="true" ecore:reference="prf:structSequence" ecore:transient="true" ecore:volatile="true" name="structSequence" type="xsd:anyURI"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="StructValue" name="structValue">
+    <xsd:sequence>
+      <xsd:element ecore:name="simpleRef" form="qualified" maxOccurs="unbounded" name="simpleref" type="sad:simpleRef"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="UsesPortStub" name="UsesPortStub">
+    <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:transient="true" ecore:volatile="true" name="name" type="ecore:EString"/>
+    <xsd:attribute ecore:reference="scd:uses" name="uses" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="UsesPort" name="usesPort">
+    <xsd:sequence>
+      <xsd:element ecore:name="usesIndentifier" form="qualified" name="usesidentifier" type="xsd:string"/>
+      <xsd:choice>
+        <xsd:element ecore:name="componentInstantiationRef" form="qualified" minOccurs="0" name="componentinstantiationref" type="sad:componentInstantiationRef"/>
+        <xsd:element ecore:name="deviceThatLoadedThisComponentRef" form="qualified" minOccurs="0" name="devicethatloadedthiscomponentref" type="sad:deviceThatLoadedThisComponentRef"/>
+        <xsd:element ecore:name="deviceUsedByThisComponentRef" form="qualified" minOccurs="0" name="deviceusedbythiscomponentref" type="sad:deviceUsedByThisComponentRef"/>
+        <xsd:element ecore:name="findBy" form="qualified" minOccurs="0" name="findby" type="sad:findBy"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Values" name="values">
+    <xsd:sequence>
+      <xsd:element form="qualified" maxOccurs="unbounded" name="value" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:prf="http://sca.jpeojtrs.mil/prf" xmlns:scd="http://sca.jpeojtrs.mil/scd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:documentRoot="ScdDocumentRoot" ecore:nsPrefix="scd" ecore:package="mil.jpeojtrs.sca.scd" targetNamespace="http://sca.jpeojtrs.mil/scd">
+  <xsd:import namespace="http://www.eclipse.org/emf/2002/Ecore" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.xsd"/>
+  <xsd:import namespace="http://sca.jpeojtrs.mil/prf" schemaLocation="platform:/resource/mil.jpeojtrs.sca.prf/model/prf.xsd"/>
+  <xsd:element name="softwarecomponent" type="scd:softwareComponent"/>
+  <xsd:complexType ecore:name="ComponentFeatures" name="componentFeatures">
+    <xsd:sequence>
+      <xsd:element ecore:name="supportsInterface" form="qualified" maxOccurs="unbounded" minOccurs="0" name="supportsinterface" type="scd:supportsInterface"/>
+      <xsd:element form="qualified" name="ports" type="scd:ports"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentRepId" name="componentRepId">
+    <xsd:attribute name="repid" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="scd:interface" ecore:transient="true" ecore:volatile="true" name="interface" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="InheritsInterface" name="inheritsInterface">
+    <xsd:attribute name="repid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The repid attribute is the unique repository id of the interface, which has formats specified in the CORBA specification. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:derived="true" ecore:reference="scd:interface" ecore:transient="true" ecore:volatile="true" name="interface" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Interface" name="interface">
+    <xsd:annotation>
+      <xsd:documentation>The interface element describes an interface that the component, either directly or through inheritance, provides, uses, or supports.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="inheritsInterfaces" form="qualified" maxOccurs="unbounded" minOccurs="0" name="inheritsinterface" type="scd:inheritsInterface"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The name attribute is the character-based non-qualified name of the interface.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:id="true" name="repid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The repid attribute is the unique repository id of the interface, which has formats specified in the CORBA specification. The repid is also used to reference an interface element elsewhere in the SCD, for example from the inheritsinterface element.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Interfaces" name="interfaces">
+    <xsd:sequence>
+      <xsd:element form="qualified" maxOccurs="unbounded" name="interface" type="scd:interface"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="LocalFile" name="localFile">
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Ports" name="ports">
+    <xsd:sequence>
+      <xsd:choice ecore:featureMap="group" maxOccurs="unbounded">
+        <xsd:element ecore:upperBound="-1" form="qualified" minOccurs="0" name="provides" type="scd:provides"/>
+        <xsd:element ecore:upperBound="-1" form="qualified" minOccurs="0" name="uses" type="scd:uses"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType ecore:constraints="isValueConsistent" ecore:name="PortType" name="type_._type">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="data"/>
+      <xsd:enumeration value="responses"/>
+      <xsd:enumeration value="control"/>
+      <xsd:enumeration value="test"/>
+      <xsd:enumeration value="virtual"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType ecore:name="PortTypeContainer" name="portType">
+    <xsd:attribute name="type" type="scd:type_._type" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="PropertyFile" name="propertyFile">
+    <xsd:sequence>
+      <xsd:element ecore:name="localFile" form="qualified" name="localfile" type="scd:localFile"/>
+    </xsd:sequence>
+    <xsd:attribute name="type" type="xsd:string"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="prf:properties" ecore:transient="true" ecore:volatile="true" name="properties" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Provides" name="provides">
+    <xsd:sequence>
+      <xsd:element ecore:name="portType" form="qualified" maxOccurs="unbounded" minOccurs="0" name="porttype" type="scd:portType"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="providesName" name="providesname" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:name="repID" name="repid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The repid attribute is the unique repository id of the interface, which has formats specified in the CORBA specification. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:id="true" ecore:transient="true" ecore:volatile="true" name="id" type="ecore:EString"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="scd:interface" ecore:transient="true" ecore:volatile="true" name="interface" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="SoftwareComponent" name="softwareComponent">
+    <xsd:sequence>
+      <xsd:element ecore:name="corbaVersion" form="qualified" name="corbaversion" type="xsd:string"/>
+      <xsd:element ecore:name="componentRepID" form="qualified" name="componentrepid" type="scd:componentRepId"/>
+      <xsd:element ecore:name="componentType" form="qualified" name="componenttype" type="xsd:string"/>
+      <xsd:element ecore:name="componentFeatures" form="qualified" name="componentfeatures" type="scd:componentFeatures"/>
+      <xsd:element form="qualified" name="interfaces" type="scd:interfaces"/>
+      <xsd:element ecore:name="propertyFile" form="qualified" minOccurs="0" name="propertyfile" type="scd:propertyFile"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:derived="true" ecore:transient="true" ecore:volatile="true" name="repId" type="ecore:EString"/>
+    <xsd:attribute ecore:derived="true" ecore:transient="true" ecore:unsettable="false" ecore:volatile="true" name="type" type="scd:ComponentType"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="SupportsInterface" name="supportsInterface">
+    <xsd:attribute ecore:name="repId" name="repid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The repid attribute is the unique repository id of the interface, which has formats specified in the CORBA specification. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="supportsName" name="supportsname" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:id="true" ecore:transient="true" ecore:volatile="true" name="id" type="ecore:EString"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="scd:interface" ecore:transient="true" ecore:volatile="true" name="interface" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Uses" name="uses">
+    <xsd:sequence>
+      <xsd:element ecore:name="portType" form="qualified" maxOccurs="unbounded" minOccurs="0" name="porttype" type="scd:portType"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="repID" name="repid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The repid attribute is the unique repository id of the interface, which has formats specified in the CORBA specification. </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute ecore:name="usesName" name="usesname" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:id="true" ecore:transient="true" ecore:volatile="true" name="id" type="ecore:EString"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="scd:interface" ecore:transient="true" ecore:volatile="true" name="interface" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:simpleType name="ComponentType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration ecore:name="RESOURCE" value="resource"/>
+      <xsd:enumeration ecore:name="DEVICE" value="device"/>
+      <xsd:enumeration ecore:name="RESOURCE_FACTORY" value="resourcefactory"/>
+      <xsd:enumeration ecore:name="DOMAIN_MANAGER" value="domainmanager"/>
+      <xsd:enumeration ecore:name="LOG" value="log"/>
+      <xsd:enumeration ecore:name="FILE_SYSTEM" value="filesystem"/>
+      <xsd:enumeration ecore:name="FILE_MANAGER" value="filemanager"/>
+      <xsd:enumeration ecore:name="DEVICE_MANAGER" value="devicemanager"/>
+      <xsd:enumeration ecore:name="NAMING_SERVICE" value="namingservice"/>
+      <xsd:enumeration ecore:name="EVENT_SERVICE" value="eventservice"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,10 @@
+		// END GENERATED CODE
+		
+		// FIXME: implement this method to set the contained '<%=genFeature.getFormattedName()%>' <%=genFeature.getFeatureKind()%>
+		// -> this method is automatically invoked to keep the containment relationship in synch
+		// -> do not modify other features
+		// -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+		
+		// BEGIN GENERATED CODE

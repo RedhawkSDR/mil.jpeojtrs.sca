@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="mil.jpeojtrs.sca.sdk"
+      label="%featureName"
+      version="2.2.2.qualifier"
+      provider-name="%featureProvider">
+
+   <description>
+      %description
+   </description>
+
+   <includes
+         id="mil.jpeojtrs.sca.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="mil.jpeojtrs.sca.source"
+         version="0.0.0"/>
+
+</feature>

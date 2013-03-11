@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softpkg SYSTEM "../dtd/softpkg.dtd">
+<softpkg id="DCE:036cdcfe-15f7-4703-8213-0b1fd4598248" name="GPP" type="sca_compliant" version="1.0.0">
+    <title />
+    <description>General purpose processor device (in Python)</description>
+    <propertyfile type="PRF">
+        <localfile name="GPP.prf.xml"/>
+    </propertyfile>
+    <descriptor name="">
+        <localfile name="GPP.scd.xml" />
+    </descriptor>
+    <!--[Implementation GPP_linux]-->
+    <implementation id="DCE:9a51acec-6be7-49ef-bef6-80a806ce4df6" aepcompliance="aep_compliant">
+        <code type="Executable">
+            <localfile name="/devices/GPP/GPP.py" />
+        </code>
+    </implementation>
+</softpkg>

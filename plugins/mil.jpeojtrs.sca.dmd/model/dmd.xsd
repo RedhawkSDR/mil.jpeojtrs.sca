@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:dmd="http://sca.jpeojtrs.mil/dmd" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:prf="http://sca.jpeojtrs.mil/prf" xmlns:spd="http://sca.jpeojtrs.mil/spd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:documentRoot="DmdDocumentRoot" ecore:nsPrefix="dmd" ecore:package="mil.jpeojtrs.sca.dmd" targetNamespace="http://sca.jpeojtrs.mil/dmd">
+  <xsd:import namespace="http://sca.jpeojtrs.mil/spd" schemaLocation="platform:/resource/mil.jpeojtrs.sca.spd/model/spd.xsd"/>
+  <xsd:import namespace="http://sca.jpeojtrs.mil/prf" schemaLocation="platform:/resource/mil.jpeojtrs.sca.prf/model/prf.xsd"/>
+  <xsd:element name="domainmanagerconfiguration" type="dmd:domainmanagerconfiguration"/>
+  <xsd:complexType ecore:name="DomainFinder" name="domainfinder">
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="type" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DomainManagerConfiguration" name="domainmanagerconfiguration">
+    <xsd:annotation>
+      <xsd:documentation>DOMAINMANAGER CONFIGURATION DESCRIPTOR.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" minOccurs="0" name="description" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The optional description element of the DMD may be used to provide information about the
+configuration.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:name="domainManagerSoftPkg" form="qualified" name="domainmanagersoftpkg" type="dmd:domainmanagersoftpkg">
+        <xsd:annotation>
+          <xsd:documentation>The domainmanagersoftpkg element refers to the SPD for the CF DomainManager. The SPD
+file is referenced by a localfile element. This SPD can be used to describe the CF
+DomainManager implementation and to specify the usesports for the services (Log(s), etc...)
+used by the CF DomainManager. See section D.2.1.1.1 for description of the localfile element.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element form="qualified" minOccurs="0" name="services" type="dmd:services">
+        <xsd:annotation>
+          <xsd:documentation>The services element in the DMD is used by the CF DomainManager to determine which service
+(Log, etc.) instances to use; it makes use of the service element (see Figure D-39). See section
+D.6.5.1.1.3 for a description of the findby element.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute ecore:id="true" name="id" type="prf:DceUUID" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The
+domainmanagerconfiguration element id attribute is a DCE UUID that uniquely identifies the
+DomainManager.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DomainManagerSoftPkg" name="domainmanagersoftpkg">
+    <xsd:sequence>
+      <xsd:element ecore:name="localFile" form="qualified" name="localfile" type="dmd:localfile"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:derived="true" ecore:reference="spd:softPkg" ecore:transient="true" ecore:volatile="true" name="softPkg" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="FindBy" name="findby">
+    <xsd:sequence>
+      <xsd:element ecore:name="nameService" form="qualified" minOccurs="0" name="namingservice" type="dmd:namingservice"/>
+      <xsd:element ecore:name="stringifiedObjectRef" form="qualified" minOccurs="0" name="stringifiedobjectref" type="xsd:string"/>
+      <xsd:element ecore:name="domainFinder" form="qualified" minOccurs="0" name="domainfinder" type="dmd:domainfinder"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="LocalFile" name="localfile">
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="NamingService" name="namingservice">
+    <xsd:attribute name="name" type="xsd:anySimpleType" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Service" name="service">
+    <xsd:sequence>
+      <xsd:element ecore:name="usesIdentifier" form="qualified" name="usesidentifier" type="xsd:string"/>
+      <xsd:element ecore:name="findBy" form="qualified" name="findby" type="dmd:findby"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Services" name="services">
+    <xsd:sequence>
+      <xsd:element form="qualified" maxOccurs="unbounded" name="service" type="dmd:service"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

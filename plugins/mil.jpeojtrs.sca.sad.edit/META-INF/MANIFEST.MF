@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: mil.jpeojtrs.sca.sad.edit;singleton:=true
+Bundle-Version: 2.2.2.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: mil.jpeojtrs.sca.sad.provider.SadEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: mil.jpeojtrs.sca.sad.provider
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
+ mil.jpeojtrs.sca.sad;bundle-version="2.2.2";visibility:=reexport,
+ org.eclipse.emf.edit;bundle-version="2.6.0";visibility:=reexport,
+ mil.jpeojtrs.sca.spd.edit;bundle-version="1.0.0";visibility:=reexport,
+ mil.jpeojtrs.sca.partitioning.edit;bundle-version="1.0.0";visibility:=reexport
+Bundle-ActivationPolicy: lazy

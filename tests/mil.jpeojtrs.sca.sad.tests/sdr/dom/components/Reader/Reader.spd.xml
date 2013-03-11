@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softpkg PUBLIC "-//JTRS//DTD SCA SPD V2.2.2//EN" "softpkg.dtd">
+<softpkg id="DCE:10319f5d-d9b9-4e24-a882-a3c83deba326" name="Reader" type="sca_compliant">
+  <title></title>
+  <author>
+    <name></name>
+  </author>
+  <propertyfile type="PRF">
+    <localfile name="Reader.prf.xml"/>
+  </propertyfile>
+  <descriptor>
+    <localfile name="Reader.scd.xml"/>
+  </descriptor>
+  <implementation id="DCE:a761326c-97be-4eba-8a5c-500ce6d0023f">
+    <description>The implementation contains descriptive information about the template for a software component.</description>
+    <code type="Executable">
+      <localfile name="Reader_python_impl1"/>
+      <entrypoint>Reader_python_impl1/Reader_python_impl1.py</entrypoint>
+    </code>
+    <programminglanguage name="Python"/>
+    <humanlanguage name="EN"/>
+    <runtime name="python" version="2.4.4"/>
+    <os name="Linux"/>
+    <processor name="x86"/>
+  </implementation>
+</softpkg>

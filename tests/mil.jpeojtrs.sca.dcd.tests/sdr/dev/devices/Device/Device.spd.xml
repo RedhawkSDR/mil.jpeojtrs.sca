@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softpkg PUBLIC "-//JTRS//DTD SCA SPD V2.2.2//EN" "softpkg.dtd">
+<softpkg id="DCE:6ea73b3b-3d9e-4dae-a86e-5d8a079e5db2" name="Device" type="sca_compliant">
+  <title></title>
+  <author>
+    <name>Test</name>
+  </author>
+  <propertyfile type="PRF">
+    <localfile name="Device.prf.xml"/>
+  </propertyfile>
+  <descriptor>
+    <localfile name="Device.scd.xml"/>
+  </descriptor>
+  <implementation id="DCE:c1b3bfc4-dd17-4a26-97d8-926d98bdc84b">
+    <description>The implementation contains descriptive information about the template for a software component.</description>
+    <code type="Executable">
+      <localfile name="Device/Device"/>
+      <entrypoint>Device/Device</entrypoint>
+    </code>
+    <compiler name="/usr/bin/gcc" version="4.1.2"/>
+    <programminglanguage name="C++"/>
+    <humanlanguage name="EN"/>
+    <os name="Linux"/>
+    <processor name="x86"/>
+  </implementation>
+</softpkg>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/mil.jpeojtrs.sca.dcd/src" modelPluginID="mil.jpeojtrs.sca.dcd"
+    templateDirectory="/mil.jpeojtrs.sca.templates/templates" dynamicTemplates="true"
+    forceOverwrite="true" modelName="Dcd" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="5.0" runtimeVersion="2.6" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.dpd/model/dpd.genmodel#//dpd platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf platform:/plugin/mil.jpeojtrs.sca.scd/model/scd.genmodel#//scd platform:/plugin/mil.jpeojtrs.sca.spd/model/spd.genmodel#//spd platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.genmodel#//partitioning">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://sca.jpeojtrs.mil/dcd" value="dcd.xsd"/>
+    </genAnnotations>
+    <genAnnotations source="selectedReferencedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/prf" value="prf.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/scd" value="scd.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/spd" value="spd.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>dcd.xsd</foreignModel>
+  <testsPluginVariables>partitioning=mil.jpeojtrs.sca.partitioning.tests</testsPluginVariables>
+  <genPackages prefix="Dcd" basePackage="mil.jpeojtrs.sca" resource="XML" disposableProviderFactory="true"
+      generateExampleClass="false" contentTypeIdentifier="mil.jpeojtrs.sca.dcd.content-type"
+      fileExtensions="xml" ecorePackage="dcd.ecore#/">
+    <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+      <genAnnotations source="dcd.xsd"/>
+    </genAnnotations>
+    <genClasses image="false" ecoreClass="dcd.ecore#//DcdComponentPlacement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DcdComponentPlacement/deployDevice"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DcdComponentPlacement/compositePartOfDevice"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DcdComponentPlacement/devicePkgFile"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dcd.ecore#//DcdComponentPlacement/parentDevice"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dcd.ecore#//DcdComponentInstantiation"/>
+    <genClasses image="false" ecoreClass="dcd.ecore#//DcdPartitioning"/>
+    <genClasses image="false" ecoreClass="dcd.ecore#//DcdComponentInstantiationRef"/>
+    <genClasses image="false" ecoreClass="dcd.ecore#//DcdConnectInterface"/>
+    <genClasses image="false" ecoreClass="dcd.ecore#//DcdUsesPort"/>
+    <genClasses image="false" ecoreClass="dcd.ecore#//DcdProvidesPort"/>
+    <genClasses image="false" ecoreClass="dcd.ecore#//DcdConnections"/>
+    <genClasses ecoreClass="dcd.ecore#//CompositePartOfDevice">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dcd.ecore#//CompositePartOfDevice/component"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dcd.ecore#//CompositePartOfDevice/refID"/>
+    </genClasses>
+    <genClasses ecoreClass="dcd.ecore#//DcdDocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute dcd.ecore#//DcdDocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dcd.ecore#//DcdDocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dcd.ecore#//DcdDocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DcdDocumentRoot/deviceconfiguration"/>
+    </genClasses>
+    <genClasses ecoreClass="dcd.ecore#//DeployOnDevice">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dcd.ecore#//DeployOnDevice/component"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dcd.ecore#//DeployOnDevice/refID"/>
+    </genClasses>
+    <genClasses ecoreClass="dcd.ecore#//DeviceConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dcd.ecore#//DeviceConfiguration/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DeviceConfiguration/deviceManagerSoftPkg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DeviceConfiguration/componentFiles"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference dcd.ecore#//DeviceConfiguration/partitioning"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DeviceConfiguration/connections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DeviceConfiguration/domainManager"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DeviceConfiguration/fileSystemNames"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dcd.ecore#//DeviceConfiguration/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dcd.ecore#//DeviceConfiguration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dcd.ecore#//DeviceManagerSoftPkg">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DeviceManagerSoftPkg/localFile"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dcd.ecore#//DeviceManagerSoftPkg/softPkg"/>
+    </genClasses>
+    <genClasses ecoreClass="dcd.ecore#//DevicePkgFile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DevicePkgFile/localFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dcd.ecore#//DevicePkgFile/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dcd.ecore#//DevicePkgFile/devicePkg"/>
+    </genClasses>
+    <genClasses ecoreClass="dcd.ecore#//DomainManager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DomainManager/namingService"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dcd.ecore#//DomainManager/stringifiedObjectRef"/>
+    </genClasses>
+    <genClasses ecoreClass="dcd.ecore#//FileSystemName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dcd.ecore#//FileSystemName/deviceID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dcd.ecore#//FileSystemName/mountName"/>
+    </genClasses>
+    <genClasses ecoreClass="dcd.ecore#//FileSystemNames">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//FileSystemNames/fileSystemName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,7 @@
+#Wed May 11 10:36:51 EDT 2011
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/mil.jpeojtrs.sca.dcd/model/dcd.genmodel
+gmf_dashboard/domainModel=platform\:/resource/mil.jpeojtrs.sca.dcd/model/dcd.ecore
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/mil.jpeojtrs.sca.dcd/model/dcd.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/mil.jpeojtrs.sca.dcd/model/dcd.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/mil.jpeojtrs.sca.dcd/model/dcd.gmftool

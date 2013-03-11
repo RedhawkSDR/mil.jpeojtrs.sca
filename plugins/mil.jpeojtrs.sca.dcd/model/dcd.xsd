@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:dcd="http://sca.jpeojtrs.mil/dcd" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:prf="http://sca.jpeojtrs.mil/prf" xmlns:scd="http://sca.jpeojtrs.mil/scd" xmlns:spd="http://sca.jpeojtrs.mil/spd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:documentRoot="DcdDocumentRoot" ecore:nsPrefix="dcd" ecore:package="mil.jpeojtrs.sca.dcd" targetNamespace="http://sca.jpeojtrs.mil/dcd">
+  <xsd:import namespace="http://sca.jpeojtrs.mil/scd" schemaLocation="platform:/resource/mil.jpeojtrs.sca.scd/model/scd.xsd"/>
+  <xsd:import namespace="http://www.eclipse.org/emf/2002/Ecore" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.xsd"/>
+  <xsd:import namespace="http://sca.jpeojtrs.mil/prf" schemaLocation="platform:/resource/mil.jpeojtrs.sca.prf/model/prf.xsd"/>
+  <xsd:import namespace="http://sca.jpeojtrs.mil/spd" schemaLocation="platform:/resource/mil.jpeojtrs.sca.spd/model/spd.xsd"/>
+  <xsd:element name="deviceconfiguration" type="dcd:deviceconfiguration"/>
+  <xsd:complexType ecore:name="ComponentFile" name="componentfile">
+    <xsd:annotation>
+      <xsd:appinfo ecore:key="operations" source="http://www.eclipse.org/emf/2002/Ecore">
+        <operation name="getSpdURI" type="spd:URI"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="localFile" name="localfile" type="dcd:localfile"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:id="true" name="id" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:reference="spd:softPkg" ecore:transient="true" ecore:volatile="true" name="softPkg" type="xsd:anyURI"/>
+    <xsd:attribute name="type" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentFileRef" name="componentfileref">
+    <xsd:annotation>
+      <xsd:documentation>The componentfileref element is used to reference a componentfile element within the
+componentfiles element.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:derived="true" ecore:reference="dcd:componentfile" ecore:transient="true" ecore:volatile="true" name="file" type="xsd:anyURI"/>
+    <xsd:attribute name="refid" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The componentfileref element’s refid attribute corresponds to a
+componentfile element’s id attribute.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentFiles" name="componentfiles">
+    <xsd:sequence>
+      <xsd:element ecore:name="componentFile" maxOccurs="unbounded" name="componentfile" type="dcd:componentfile"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentInstantiation" name="componentinstantiation">
+    <xsd:annotation>
+      <xsd:documentation>The componentinstantiation element (see Figure D-35) is intended to describe a particular
+instantiation of a component relative to a componentplacement element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="usageName" minOccurs="0" name="usagename" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The componentinstantiation contains
+a usagename element that is intended for an applicable name for the component.
+
+For a component service type (e.g,, Log), the
+usagename element needs to be unique for each service type.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:name="componentProperties" minOccurs="0" name="componentproperties" type="dcd:componentproperties">
+        <xsd:annotation>
+          <xsd:documentation>The optional componentproperties element (see Figure D-36) is a list of property values that are used in
+configuring the component.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:opposite="instantiation" ecore:resolveProxies="true" ecore:transient="true" maxOccurs="unbounded" minOccurs="0" name="provides" type="dcd:ProvidesInstantiation"/>
+      <xsd:element ecore:opposite="instantiation" ecore:resolveProxies="true" ecore:transient="true" maxOccurs="unbounded" minOccurs="0" name="uses" type="dcd:UsesInstantiation"/>
+      <xsd:element ecore:opposite="instantiation" ecore:resolveProxies="true" ecore:transient="true" maxOccurs="unbounded" minOccurs="0" name="interfacePorts" type="dcd:ComponentSupportedInterfacePort"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:opposite="componentInstantiation" ecore:reference="dcd:componentplacement" name="componentPlacement" type="xsd:anyURI"/>
+    <xsd:attribute ecore:id="true" name="id" type="prf:DceUUID" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The componentinstantiation‘s id attribute is a DCE UUID that uniquely identifier the component.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentInstantiationRef" name="componentinstantiationref">
+    <xsd:attribute ecore:derived="true" ecore:reference="dcd:componentinstantiation" ecore:transient="true" ecore:volatile="true" name="instantiation" type="xsd:anyURI"/>
+    <xsd:attribute ecore:name="refID" name="refid" type="prf:DceUUID" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentPlacement" name="componentplacement">
+    <xsd:sequence>
+      <xsd:element ecore:name="componentFileRef" name="componentfileref" type="dcd:componentfileref">
+        <xsd:annotation>
+          <xsd:documentation>The componentfileref element identifies the component to be deployed.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:name="deployDevice" minOccurs="0" name="deployondevice" type="dcd:deployondevice">
+        <xsd:annotation>
+          <xsd:documentation>The optional deployondevice element indicates the device on which the componentinstantiation
+element is deployed.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:name="compositePartOfDevice" minOccurs="0" name="compositepartofdevice" type="dcd:compositepartofdevice">
+        <xsd:annotation>
+          <xsd:documentation>The optional compositepartofdevice element indicates the device that the
+componentinstantiation element is aggregated with to form an aggregate relationship.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:name="devicePkgFile" minOccurs="0" name="devicepkgfile" type="dcd:devicepkgfile">
+        <xsd:annotation>
+          <xsd:documentation>When the
+component is a logical Device, the devicepkgfile element indicates the hardware device
+information for the logical Device.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:name="componentInstantiation" ecore:opposite="componentPlacement" maxOccurs="unbounded" name="componentinstantiation" type="dcd:componentinstantiation">
+        <xsd:annotation>
+          <xsd:documentation>The componentinstantiation element identifies the actual component created and its id attribute is a
+DCE UUID value with the format as specified in section D.2.1.
+
+Multiple components of the same kind can be created within the same componentplacement element.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:derived="true" ecore:resolveProxies="true" ecore:transient="true" ecore:volatile="true" maxOccurs="unbounded" minOccurs="0" name="provides" type="dcd:ProvidesInstantiation"/>
+      <xsd:element ecore:derived="true" ecore:resolveProxies="true" ecore:transient="true" ecore:volatile="true" maxOccurs="unbounded" minOccurs="0" name="uses" type="dcd:UsesInstantiation"/>
+      <xsd:element ecore:derived="true" ecore:resolveProxies="true" ecore:transient="true" ecore:volatile="true" maxOccurs="unbounded" minOccurs="0" name="interfacePorts" type="dcd:ComponentSupportedInterfacePort"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:derived="true" ecore:transient="true" ecore:volatile="true" name="name" type="ecore:EString"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="dcd:componentplacement" ecore:transient="true" ecore:volatile="true" name="parentDevice" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentProperties" name="componentproperties">
+    <xsd:sequence>
+      <xsd:choice ecore:featureMap="group" maxOccurs="unbounded">
+        <xsd:element ecore:name="simpleRef" ecore:upperBound="-1" minOccurs="0" name="simpleref" type="dcd:simpleref"/>
+        <xsd:element ecore:name="simpleSequenceRef" ecore:upperBound="-1" minOccurs="0" name="simplesequenceref" type="dcd:simplesequenceref"/>
+        <xsd:element ecore:name="structRef" ecore:upperBound="-1" minOccurs="0" name="structref" type="dcd:structref"/>
+        <xsd:element ecore:name="structSequenceRef" ecore:upperBound="-1" minOccurs="0" name="structsequenceref" type="dcd:structsequenceref"/>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ComponentSupportedInterface" name="componentsupportedinterface">
+    <xsd:sequence>
+      <xsd:element ecore:name="supportedIdentifier" name="supportedidentifier" type="xsd:string"/>
+      <xsd:element ecore:name="componentInstantiationRef" minOccurs="0" name="componentinstantiationref" type="dcd:componentinstantiationref"/>
+      <xsd:element ecore:name="findBy" minOccurs="0" name="findby" type="dcd:findby"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:derived="true" ecore:reference="scd:supportsInterface" ecore:transient="true" ecore:volatile="true" name="interface" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType name="ComponentSupportedInterfacePort">
+    <xsd:attribute ecore:derived="true" ecore:reference="scd:supportsInterface" ecore:transient="true" ecore:volatile="true" name="interface" type="xsd:anyURI"/>
+    <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:transient="true" ecore:volatile="true" name="name" type="ecore:EString"/>
+    <xsd:attribute name="supportedIdentifier" type="ecore:EString" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="CompositePartOfDevice" name="compositepartofdevice">
+    <xsd:annotation>
+      <xsd:documentation>The compositepartofdevice element is used when an aggregate relationship exists to reference the
+componentinstantiation element that describes the whole Device for which this Device’s
+componentinstantiation element describes a part of the aggregate Device.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:derived="true" ecore:reference="dcd:componentinstantiation" ecore:transient="true" ecore:volatile="true" name="component" type="xsd:anyURI"/>
+    <xsd:attribute ecore:name="refID" name="refid" type="prf:DceUUID" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ConnectInterface" name="connectinterface">
+    <xsd:sequence>
+      <xsd:element ecore:name="usesPort" name="usesport" type="dcd:usesport"/>
+      <xsd:element ecore:name="providesPort" minOccurs="0" name="providesport" type="dcd:providesport"/>
+      <xsd:element ecore:name="componentSupportedInterface" minOccurs="0" name="componentsupportedinterface" type="dcd:componentsupportedinterface"/>
+      <xsd:element ecore:name="findBy" minOccurs="0" name="findby" type="dcd:findby"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:id="true" name="id" type="xsd:string"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="dcd:UsesInstantiation" ecore:transient="true" ecore:volatile="true" name="source" type="xsd:anyURI"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="xsd:anyType" ecore:transient="true" ecore:volatile="true" name="target" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Connections" name="connections">
+    <xsd:annotation>
+      <xsd:documentation>The connections element in the DCD is the same as the connections element in the SAD in
+section D.6.5. The connections element in the DCD is used to indicate the services (Log, etc…)
+instances that are used by the CF DeviceManager and CF Device components in the DCD. The
+CF DomainManager will parse the connections element and make the connections when the CF
+DeviceManager registers with the CF DomainManager. To establish connections to a CF
+DeviceManager, the DCD’s deviceconfiguration element’s id attribute value is used for the
+SAD’s usesport element’s componentinstantiationref element’s refid attribute value.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="connectInterface" maxOccurs="unbounded" minOccurs="0" name="connectinterface" type="dcd:connectinterface"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DeployOnDevice" name="deployondevice">
+    <xsd:annotation>
+      <xsd:documentation>The deployondevice element is used to reference a componentinstantiation element on which this
+componentinstantiation is deployed.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute ecore:derived="true" ecore:reference="dcd:componentinstantiation" ecore:transient="true" ecore:volatile="true" name="component" type="xsd:anyURI"/>
+    <xsd:attribute ecore:name="refID" name="refid" type="prf:DceUUID" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DeviceConfiguration" name="deviceconfiguration">
+    <xsd:annotation>
+      <xsd:documentation>The DCD is based on the SAD (e.g., componentfiles, partitioning, etc.) DTD. The intent of the DCD is to provide the means of describing the components that are initially started on the CF DeviceManager node, how to obtain the CF DomainManager object reference, connections of services to components (CF Devices, CF DeviceManager), and the characteristics (file system names, etc.) for a CF DeviceManager. 
+
+The componentfiles and partitioning elements are optional; if not provided,
+that means no components are started up on the node, except for a CF DeviceManager.
+
+If the partitioning element is specified then a componentfiles element has to be specified also.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="description" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The optional description element, of the deviceconfiguration element, may be used to provide
+information about the device configuration.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:name="deviceManagerSoftPkg" name="devicemanagersoftpkg" type="dcd:devicemanagersoftpkg">
+        <xsd:annotation>
+          <xsd:documentation>The devicemanagersoftpkg element refers to the SPD for the CF DeviceManager that
+corresponds to this DCD. The SPD file is referenced by a localfile element. The referenced file
+can be used to describe the CF DeviceManager implementation and to specify the usesports for
+the services (Log(s), etc.) used by the CF DeviceManager.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:name="componentFiles" minOccurs="0" name="componentfiles" type="dcd:componentfiles">
+        <xsd:annotation>
+          <xsd:documentation>The optional componentfiles element is used to reference deployment information for
+components that are started up on the device. The componentfile element references a Software
+Package Descriptor (SPD). The SPD, for example, can be used to describe logical Devices, a CF
+DeviceManager, a CF DomainManager, a Naming Service, and CF FileSystems.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element ecore:opposite="deviceConfiguration" minOccurs="0" name="partitioning" type="dcd:partitioning">
+        <xsd:annotation>
+          <xsd:documentation>The optional partitioning element consists of a set of componentplacement elements. A
+component instantiation is captured inside a componentplacement element.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="connections" type="dcd:connections"/>
+      <xsd:element ecore:name="domainManager" name="domainmanager" type="dcd:domainmanager"/>
+      <xsd:element ecore:name="fileSystemNames" minOccurs="0" name="filesystemnames" type="dcd:filesystemnames"/>
+      <xsd:element ecore:derived="true" ecore:resolveProxies="true" ecore:transient="true" ecore:volatile="true" maxOccurs="unbounded" minOccurs="0" name="devices" type="dcd:componentplacement"/>
+      <xsd:element ecore:derived="true" ecore:resolveProxies="true" ecore:transient="true" ecore:volatile="true" maxOccurs="unbounded" minOccurs="0" name="connectInterfaces" type="dcd:connectinterface"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:id="true" name="id" type="prf:DceUUID" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The deviceconfiguration element’s id attribute is a unique identifier within the domain for the
+device configuration. This id attribute is a UUID value as specified in section D.2.1.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="name" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>The name attribute is the user-friendly name for the CF DeviceManager’s label attribute.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DeviceManagerSoftPkg" name="devicemanagersoftpkg">
+    <xsd:sequence>
+      <xsd:element ecore:name="localFile" name="localfile" type="dcd:localfile"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:derived="true" ecore:reference="spd:softPkg" ecore:transient="true" ecore:volatile="true" name="softPkg" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DevicePkgFile" name="devicepkgfile">
+    <xsd:annotation>
+      <xsd:documentation>The devicepkgfile element is used to refer to a device package file that contains the hardware
+device definition.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="localFile" name="localfile" type="dcd:localfile"/>
+    </xsd:sequence>
+    <xsd:attribute name="type" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DeviceThatLoadedThisComponentRef" name="devicethatloadedthiscomponentref">
+    <xsd:attribute name="refid" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DeviceUsedByThisComponentRef" name="deviceusedbythiscomponentref">
+    <xsd:attribute name="refid" type="xsd:string" use="required"/>
+    <xsd:attribute name="usesrefid" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DomainFinder" name="domainfinder">
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="type" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="DomainManager" name="domainmanager">
+    <xsd:annotation>
+      <xsd:documentation>The domainmanager element (see Figure D-37) indicates how to obtain the CF DomainManager
+object reference.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="namingService" minOccurs="0" name="namingservice" type="dcd:namingservice"/>
+      <xsd:element ecore:name="stringifiedObjectRef" minOccurs="0" name="stringifiedobjectref" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="FileSystemName" name="filesystemname">
+    <xsd:attribute ecore:name="deviceID" name="deviceid" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:name="mountName" name="mountname" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="FileSystemNames" name="filesystemnames">
+    <xsd:annotation>
+      <xsd:documentation>The optional filesystemnames element indicates the mounted file system names for CF
+DeviceManager’s FileManager.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ecore:name="fileSystemName" maxOccurs="unbounded" name="filesystemname" type="dcd:filesystemname"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="FindBy" name="findby">
+    <xsd:sequence>
+      <xsd:element ecore:name="namingService" minOccurs="0" name="namingservice" type="dcd:namingservice"/>
+      <xsd:element ecore:name="stringifiedObejctRef" minOccurs="0" name="stringifiedobjectref" type="xsd:string"/>
+      <xsd:element ecore:name="domainFinder" minOccurs="0" name="domainfinder" type="dcd:domainfinder"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="LocalFile" name="localfile">
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="NamingService" name="namingservice">
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Partitioning" name="partitioning">
+    <xsd:sequence>
+      <xsd:element ecore:name="componentPlacement" maxOccurs="unbounded" minOccurs="0" name="componentplacement" type="dcd:componentplacement">
+        <xsd:annotation>
+          <xsd:documentation>The componentplacement element (see Figure D-34) is used to define a particular deployment of
+a component.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute ecore:opposite="partitioning" ecore:reference="dcd:deviceconfiguration" name="deviceConfiguration" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType name="ProvidesInstantiation">
+    <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:transient="true" ecore:volatile="true" name="name" type="ecore:EString"/>
+    <xsd:attribute ecore:reference="scd:provides" name="provides" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="ProvidesPort" name="providesport">
+    <xsd:sequence>
+      <xsd:element ecore:name="providesIdentifier" name="providesidentifier" type="xsd:string"/>
+      <xsd:element ecore:name="componentInstantiationRef" minOccurs="0" name="componentinstantiationref" type="dcd:componentinstantiationref"/>
+      <xsd:element ecore:name="deviceThatLoadedThisComponentRef" minOccurs="0" name="devicethatloadedthiscomponentref" type="dcd:devicethatloadedthiscomponentref"/>
+      <xsd:element ecore:name="deviceUsedByThisComponentRef" minOccurs="0" name="deviceusedbythiscomponentref" type="dcd:deviceusedbythiscomponentref"/>
+      <xsd:element ecore:name="findBy" minOccurs="0" name="findby" type="dcd:findby"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="SimpleRef" name="simpleref">
+    <xsd:attribute ecore:name="refID" name="refid" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="prf:simple" ecore:transient="true" ecore:volatile="true" name="simple" type="xsd:anyURI"/>
+    <xsd:attribute name="value" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="SimpleSequenceRef" name="simplesequenceref">
+    <xsd:sequence>
+      <xsd:element name="values" type="dcd:values"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="refID" name="refid" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="prf:simpleSequence" ecore:transient="true" ecore:volatile="true" name="simpleSequence" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="StructRef" name="structref">
+    <xsd:sequence>
+      <xsd:element ecore:name="simpleRef" maxOccurs="unbounded" name="simpleref" type="dcd:simpleref"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="refID" name="refid" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="prf:struct" ecore:transient="true" ecore:volatile="true" name="struct" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="StructSequenceRef" name="structsequenceref">
+    <xsd:sequence>
+      <xsd:element ecore:name="structValue" maxOccurs="unbounded" name="structvalue" type="dcd:structvalue"/>
+    </xsd:sequence>
+    <xsd:attribute ecore:name="refID" name="refid" type="xsd:string" use="required"/>
+    <xsd:attribute ecore:derived="true" ecore:reference="prf:structSequence" ecore:transient="true" ecore:volatile="true" name="structSequence" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="StructValue" name="structvalue">
+    <xsd:sequence>
+      <xsd:element ecore:name="simpleRef" maxOccurs="unbounded" name="simpleref" type="dcd:simpleref"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="UsesInstantiation">
+    <xsd:attribute ecore:changeable="false" ecore:derived="true" ecore:transient="true" ecore:volatile="true" name="name" type="ecore:EString"/>
+    <xsd:attribute ecore:reference="scd:uses" name="uses" type="xsd:anyURI"/>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="UsesPort" name="usesport">
+    <xsd:sequence>
+      <xsd:element ecore:name="usesIdentifier" name="usesidentifier" type="xsd:string"/>
+      <xsd:element ecore:name="componentInstantiationRef" minOccurs="0" name="componentinstantiationref" type="dcd:componentinstantiationref"/>
+      <xsd:element ecore:name="deviceThatLoadedThisComponentRef" minOccurs="0" name="devicethatloadedthiscomponentref" type="dcd:devicethatloadedthiscomponentref"/>
+      <xsd:element ecore:name="deviceUsedByThisComponentRef" minOccurs="0" name="deviceusedbythiscomponentref" type="dcd:deviceusedbythiscomponentref"/>
+      <xsd:element ecore:name="findBy" minOccurs="0" name="findby" type="dcd:findby"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType ecore:name="Values" name="values">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="value" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

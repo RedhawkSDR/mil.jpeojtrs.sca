@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA SAD V2.2.2//EN" "softwareassembly.dtd">
+<softwareassembly id="DCE:df4f0e1c-a242-4b76-ae1d-bef1b63cedfe"
+	name="GenericSadFile" version="Alpha">
+	<description>A simple waveform, at least it started as one</description>
+	<componentfiles>
+		<componentfile id="Reader_d05f7b78-a149-424e-a771-a8e183405b9e"
+			type="SPD">
+			<localfile name="/components/Reader/Reader.spd.xml" />
+		</componentfile>
+		<componentfile id="FrequencyShift_5dca8882-ea70-4e15-9e86-727250f5cd1b"
+			type="SPD">
+			<localfile name="/components/FrequencyShift/FrequencyShift.spd.xml" />
+		</componentfile>
+	</componentfiles>
+	<partitioning>
+		<componentplacement>
+			<componentfileref refid="Reader_d05f7b78-a149-424e-a771-a8e183405b9e" />
+			<componentinstantiation id="DCE:75fb00d8-48c7-4e74-a98b-2e2465a29f6c">
+				<usagename>Reader_1</usagename>
+				<componentproperties>
+					<simpleref refid="DCE:3b5527f4-8488-4b09-bfff-2ec49a90ddd2"
+						value="zxc" />
+					<simplesequenceref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90dddd">
+						<values>
+							<value>1</value>
+							<value>2</value>
+						</values>
+					</simplesequenceref>
+					<structref refid="DCE:9c3b2f8f-c0fa-4200-a8f9-e03418e46033">
+						<simpleref refid="DCE:a4d7a36d-a9b2-4040-86ec-ba5054070c03"
+							value="Struct Overriden Value" />
+					</structref>
+					<structsequenceref refid="DCE:c6e48edd-a02f-4e49-932f-64ded6bf019f">
+						<structvalue>
+							<simpleref refid="DCE:a4d7a36d-a9b2-4040-86ec-ba5054070c03"
+								value="Struct Sequence Overridden Value" />
+						</structvalue>
+					</structsequenceref>
+				</componentproperties>
+				<findcomponent>
+					<componentresourcefactoryref
+						refid="Reader_d05f7b78-a149-424e-a771-a8e183405b9e">
+						<resourcefactoryproperties>
+							<simpleref refid="DCE:3b5527f4-8488-4b09-bfff-2ec49a90ddb2"
+								value="asdf" />
+							<simplesequenceref refid="DCE:83ff46f7-965e-4eb0-bd35-c22741978583">
+								<values>
+									<value>1</value>
+									<value>2</value>
+								</values>
+							</simplesequenceref>
+							<structref refid="DCE:cd67a2f7-7c41-426a-8d9a-fc4dbd0423d1">
+								<simpleref refid="DCE:d90253da-d9ce-447e-84ff-a55c3ab70c4b"
+									value="Struct Overriden Value" />
+							</structref>
+							<structsequenceref refid="DCE:dfff8371-15a0-4e5e-9c90-d09425ba3125">
+								<structvalue>
+									<simpleref refid="DCE:d90253da-d9ce-447e-84ff-a55c3ab70c4b"
+										value="Struct Sequence Overridden Value" />
+								</structvalue>
+							</structsequenceref>
+						</resourcefactoryproperties>
+					</componentresourcefactoryref>
+				</findcomponent>
+			</componentinstantiation>
+		</componentplacement>
+		<hostcollocation id="DCE:46da4d56-44ac-48a8-bae8-56632da98a87"
+			name="Host Collocation">
+			<componentplacement>
+				<componentfileref
+					refid="FrequencyShift_5dca8882-ea70-4e15-9e86-727250f5cd1b" />
+				<componentinstantiation id="DCE:38e9057f-d5cb-43c3-9d02-51574e2b7bdf">
+					<usagename>FrequencyShift_1</usagename>
+					<componentproperties>
+						<simpleref refid="DCE:79eb710d-42e2-4a56-8a49-344bc6ceb54d"
+							value="zxc" />
+						<simplesequenceref refid="DCE:83ff46f7-965e-4eb0-bd35-c22741978583">
+							<values>
+								<value>1</value>
+								<value>2</value>
+							</values>
+						</simplesequenceref>
+						<structref refid="DCE:cd67a2f7-7c41-426a-8d9a-fc4dbd0423d1">
+							<simpleref refid="DCE:d90253da-d9ce-447e-84ff-a55c3ab70c4b"
+								value="Struct Overriden Value" />
+						</structref>
+						<structsequenceref refid="DCE:dfff8371-15a0-4e5e-9c90-d09425ba3125">
+							<structvalue>
+								<simpleref refid="DCE:d90253da-d9ce-447e-84ff-a55c3ab70c4b"
+									value="Struct Sequence Overridden Value" />
+							</structvalue>
+						</structsequenceref>
+					</componentproperties>
+					<findcomponent>
+						<namingservice name="FrequencyShift_1" />
+					</findcomponent>
+				</componentinstantiation>
+			</componentplacement>
+		</hostcollocation>
+	</partitioning>
+	<assemblycontroller>
+		<componentinstantiationref refid="DCE:75fb00d8-48c7-4e74-a98b-2e2465a29f6c" />
+	</assemblycontroller>
+	<connections>
+		<!-- 0 -->
+		<connectinterface id="DCE:a89a195d-5dcc-43f6-8e9d-aefb5686c927">
+			<usesport>
+				<usesidentifier>dataFloatOut_port</usesidentifier>
+				<componentinstantiationref
+					refid="DCE:75fb00d8-48c7-4e74-a98b-2e2465a29f6c" />
+			</usesport>
+			<providesport>
+				<providesidentifier>dataFloatIn_port</providesidentifier>
+				<findby>
+					<domainfinder name="REDHAWKDomain" type="namingservice" />
+				</findby>
+			</providesport>
+		</connectinterface>
+		<!-- 1 -->
+		<connectinterface id="DCE:a89a195d-5dcc-43f6-8e9d-aefb5686c928">
+			<usesport>
+				<usesidentifier>dataFloatOut_port</usesidentifier>
+				<componentinstantiationref
+					refid="DCE:75fb00d8-48c7-4e74-a98b-2e2465a29f6c" />
+			</usesport>
+			<componentsupportedinterface>
+				<supportedidentifier>IDL:CF/Resource:1.0</supportedidentifier>
+				<componentinstantiationref
+					refid="DCE:38e9057f-d5cb-43c3-9d02-51574e2b7bdf" />
+			</componentsupportedinterface>
+		</connectinterface>
+		<!-- 2 -->
+		<connectinterface id="DCE:39d7ea37-edac-4c11-8a15-10e25e0dacba">
+			<usesport>
+				<usesidentifier>dataFloatOut_port</usesidentifier>
+				<deviceusedbythiscomponentref
+					refid="DCE:036cdcfe-15f7-4703-8213-0b1fd4598248" usesrefid="DCE:6fd1d499-e442-4eb4-8acc-416deda4b1aa" />
+			</usesport>
+			<findby>
+				<namingservice name="Naming Service" />
+			</findby>
+		</connectinterface>
+		<!-- 3 -->
+		<connectinterface id="DCE:39d7ea37-edac-4c11-8a15-10e25e0dacbb">
+			<usesport>
+				<usesidentifier>dataFloatOut_port</usesidentifier>
+				<devicethatloadedthiscomponentref
+					refid="DCE:036cdcfe-15f7-4703-8213-0b1fd4598248" />
+			</usesport>
+			<componentsupportedinterface>
+				<supportedidentifier>IDL:BULKIO/dataFloat:1.0</supportedidentifier>
+				<componentinstantiationref
+					refid="DCE:75fb00d8-48c7-4e74-a98b-2e2465a29f6c" />
+			</componentsupportedinterface>
+		</connectinterface>
+		<!-- 4 -->
+		<connectinterface id="DCE:49d7ea37-edac-4c11-8a15-10e25e0dacbb">
+			<usesport>
+				<usesidentifier>dataFloatOut_port</usesidentifier>
+				<findby>
+					<namingservice name="Naming Service" />
+				</findby>
+			</usesport>
+			<componentsupportedinterface>
+				<supportedidentifier>IDL:BULKIO/dataFloat:1.0</supportedidentifier>
+				<componentinstantiationref
+					refid="DCE:75fb00d8-48c7-4e74-a98b-2e2465a29f6c" />
+			</componentsupportedinterface>
+		</connectinterface>
+		<!-- 5 -->
+		<connectinterface id="DCE:a79a195d-5dcc-43f6-8e9d-aefb5686c927">
+			<usesport>
+				<usesidentifier>dataFloatOut_port</usesidentifier>
+				<componentinstantiationref
+					refid="DCE:75fb00d8-48c7-4e74-a98b-2e2465a29f6c" />
+			</usesport>
+			<providesport>
+				<providesidentifier>dataFloatIn_port</providesidentifier>
+				<componentinstantiationref
+					refid="DCE:38e9057f-d5cb-43c3-9d02-51574e2b7bdf" />
+			</providesport>
+		</connectinterface>
+		<!-- 6 -->
+		<connectinterface id="DCE:a69a195d-5dcc-43f6-8e9d-aefb5686c927">
+			<usesport>
+				<usesidentifier>dataFloatOut_port</usesidentifier>
+				<componentinstantiationref
+					refid="DCE:75fb00d8-48c7-4e74-a98b-2e2465a29f6c" />
+			</usesport>
+			<providesport>
+				<providesidentifier>dataFloatIn_port</providesidentifier>
+				<deviceusedbythiscomponentref
+					refid="DCE:036cdcfe-15f7-4703-8213-0b1fd4598248" usesrefid="DCE:6fd1d499-e442-4eb4-8acc-416deda4b1aa" />
+			</providesport>
+		</connectinterface>
+		<!-- 7 -->
+		<connectinterface id="DCE:a59a195d-5dcc-43f6-8e9d-aefb5686c927">
+			<usesport>
+				<usesidentifier>dataFloatOut_port</usesidentifier>
+				<componentinstantiationref
+					refid="DCE:75fb00d8-48c7-4e74-a98b-2e2465a29f6c" />
+			</usesport>
+			<providesport>
+				<providesidentifier>dataFloatIn_port</providesidentifier>
+				<devicethatloadedthiscomponentref
+					refid="DCE:036cdcfe-15f7-4703-8213-0b1fd4598248" />
+			</providesport>
+		</connectinterface>
+		<!-- 8 -->
+		<connectinterface id="DCE:49d11137-edac-4c11-8a15-10e25e0dacbb">
+			<usesport>
+				<usesidentifier>dataFloatOut_port</usesidentifier>
+				<findby>
+					<stringifiedobjectref>Stringified Ref</stringifiedobjectref>
+				</findby>
+			</usesport>
+			<componentsupportedinterface>
+				<supportedidentifier>IDL:BULKIO/dataFloat:1.0</supportedidentifier>
+				<findby>
+					<stringifiedobjectref>Stringified Ref</stringifiedobjectref>
+				</findby>
+			</componentsupportedinterface>
+		</connectinterface>
+	</connections>
+	<externalports>
+		<port>
+			<description>Sample description</description>
+			<usesidentifier>externalPort</usesidentifier>
+			<componentinstantiationref refid="DCE:6fd1d425-e772-4eb4-8acc-416deda4b1aa" />
+		</port>
+		<port>
+			<providesidentifier>anotherExternalPort</providesidentifier>
+			<componentinstantiationref refid="DCE:5fd1d425-e772-4eb4-8acc-416deda4b1aa" />
+		</port>
+		<port>
+			<description>Yet another port</description>
+			<supportedidentifier>IDL:BULKIO/dataFloat:1.0</supportedidentifier>
+			<componentinstantiationref refid="DCE:4fd1d425-e772-4eb4-8acc-416deda4b1aa" />
+		</port>
+	</externalports>
+</softwareassembly>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://sca.jpeojtrs.mil/scd"
+            class="mil.jpeojtrs.sca.scd.ScdPackage"
+            genModel="model/scd.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            contentTypeIdentifier="mil.jpeojtrs.sca.scd.content-type"
+            class="mil.jpeojtrs.sca.scd.util.ScdResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            file-extensions="xml"
+            id="mil.jpeojtrs.sca.scd.content-type"
+            name="%_UI_Scd_content_type"
+            priority="normal">
+         <describer
+               class="org.eclipse.core.runtime.content.XMLRootElementContentDescriber2"
+               plugin="org.eclipse.core.runtime">
+            <parameter
+                  name="element"
+                  value="softwarecomponent">
+            </parameter>
+         </describer>
+      </content-type>
+   </extension>
+</plugin>

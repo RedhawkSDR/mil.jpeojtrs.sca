@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softpkg PUBLIC "-//JTRS//DTD SCA SPD V2.2.2//EN" "softpkg.dtd">
+<softpkg id="DCE:db23668b-a010-465d-a7b5-be35eb9dc5b4" name="FrequencyShift" type="sca_compliant">
+  <title></title>
+  <author>
+    <name></name>
+  </author>
+  <propertyfile type="PRF">
+    <localfile name="FrequencyShift.prf.xml"/>
+  </propertyfile>
+  <descriptor>
+    <localfile name="FrequencyShift.scd.xml"/>
+  </descriptor>
+  <implementation id="DCE:ffbf12e5-5bf3-47f1-ade2-a664d0a19cf0">
+    <description>The implementation contains descriptive information about the template for a software component.</description>
+    <code type="Executable">
+      <localfile name="FrequencyShift_python_impl1"/>
+      <entrypoint>FrequencyShift_python_impl1/FrequencyShift_python_impl1.py</entrypoint>
+    </code>
+    <programminglanguage name="Python"/>
+    <humanlanguage name="EN"/>
+    <runtime name="python" version="2.4.4"/>
+    <os name="Linux"/>
+    <processor name="x86"/>
+  </implementation>
+</softpkg>

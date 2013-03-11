@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA PRF V2.2.2//EN" "properties.dtd">
+<properties>
+  <simple id="DCE:3b5527f4-8488-4b09-bfff-2ec49a90ddd2" mode="readwrite" name="simple_property" type="string">
+    <value>test value</value>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+  <simplesequence id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90dddd" mode="readwrite" name="simple_sequence" type="string">
+    <values>
+      <value>Value1</value>
+      <value>Value2</value>
+    </values>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simplesequence>
+  <struct id="DCE:9c3b2f8f-c0fa-4200-a8f9-e03418e46033" mode="readwrite" name="struct_property">
+    <simple id="DCE:a4d7a36d-a9b2-4040-86ec-ba5054070c03" mode="readwrite" name="struct_simple_property" type="string">
+      <value>test value</value>
+      <kind kindtype="configure"/>
+      <action type="external"/>
+    </simple>
+  </struct>
+</properties>

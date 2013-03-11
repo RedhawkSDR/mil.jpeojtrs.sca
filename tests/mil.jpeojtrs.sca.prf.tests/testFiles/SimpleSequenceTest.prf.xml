@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA PRF V2.2.2//EN" "properties.dtd">
+<properties>
+  <simplesequence id="DCE:24acefac-62eb-4b7f-9177-cc7d78c76aca" name="Name" mode="readonly" type="string">
+  <description>Sample Description</description>
+  <values><value>Value 1</value></values>
+  <units>Unit</units>
+  <range max="rangeMin" min="rangeMax"/><!-- On purpose -->
+  <kind kindtype="test"/>
+  <action type="eq"/>
+  </simplesequence>
+</properties>

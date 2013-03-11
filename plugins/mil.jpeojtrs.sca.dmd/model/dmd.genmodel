@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/mil.jpeojtrs.sca.dmd/src" modelPluginID="mil.jpeojtrs.sca.dmd"
+    templateDirectory="/mil.jpeojtrs.sca.templates/templates" dynamicTemplates="true"
+    forceOverwrite="true" modelName="Dmd" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" runtimeVersion="2.6" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf platform:/plugin/mil.jpeojtrs.sca.scd/model/scd.genmodel#//scd platform:/plugin/mil.jpeojtrs.sca.spd/model/spd.genmodel#//spd">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://sca.jpeojtrs.mil/dmd" value="dmd.xsd"/>
+    </genAnnotations>
+    <genAnnotations source="selectedReferencedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/prf" value="prf.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/scd" value="scd.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/spd" value="spd.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>dmd.xsd</foreignModel>
+  <genPackages prefix="Dmd" basePackage="mil.jpeojtrs.sca" resource="XML" disposableProviderFactory="true"
+      generateExampleClass="false" contentTypeIdentifier="mil.jpeojtrs.sca.dmd.content-type"
+      fileExtensions="xml" ecorePackage="dmd.ecore#/">
+    <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+      <genAnnotations source="dmd.xsd"/>
+    </genAnnotations>
+    <genClasses ecoreClass="dmd.ecore#//DmdDocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute dmd.ecore#//DmdDocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dmd.ecore#//DmdDocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dmd.ecore#//DmdDocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dmd.ecore#//DmdDocumentRoot/domainmanagerconfiguration"/>
+    </genClasses>
+    <genClasses ecoreClass="dmd.ecore#//DomainFinder">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dmd.ecore#//DomainFinder/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dmd.ecore#//DomainFinder/type"/>
+    </genClasses>
+    <genClasses ecoreClass="dmd.ecore#//DomainManagerConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dmd.ecore#//DomainManagerConfiguration/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dmd.ecore#//DomainManagerConfiguration/domainManagerSoftPkg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dmd.ecore#//DomainManagerConfiguration/services"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dmd.ecore#//DomainManagerConfiguration/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dmd.ecore#//DomainManagerConfiguration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dmd.ecore#//DomainManagerSoftPkg">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dmd.ecore#//DomainManagerSoftPkg/localFile"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dmd.ecore#//DomainManagerSoftPkg/softPkg"/>
+    </genClasses>
+    <genClasses ecoreClass="dmd.ecore#//FindBy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dmd.ecore#//FindBy/nameService"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dmd.ecore#//FindBy/stringifiedObjectRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dmd.ecore#//FindBy/domainFinder"/>
+    </genClasses>
+    <genClasses ecoreClass="dmd.ecore#//LocalFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dmd.ecore#//LocalFile/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dmd.ecore#//NamingService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dmd.ecore#//NamingService/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dmd.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dmd.ecore#//Service/usesIdentifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dmd.ecore#//Service/findBy"/>
+    </genClasses>
+    <genClasses ecoreClass="dmd.ecore#//Services">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dmd.ecore#//Services/service"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

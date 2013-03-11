@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softpkg PUBLIC "-//JTRS//DTD SCA SPD V2.2.2//EN" "softpkg.dtd">
+<devicepkg id="DCE:6ea73b3b-3d9e-4dae-a86e-5d8a079e5db2" name="Device">
+  <title></title>
+  <author>
+    <name>Test</name>
+  </author>
+  <description>Test Device Package File</description>
+  <hwdeviceregistration id="DCE:ddb3bfc4-dd17-4a26-97d8-926d98bdc84b" name="HWDR" version="1.0">
+    <description>HWDR Description</description>
+    <deviceclass>DevClass</deviceclass>
+    <manufacturer>Intel</manufacturer>
+    <modelnumber>1</modelnumber>
+  </hwdeviceregistration>
+</devicepkg>

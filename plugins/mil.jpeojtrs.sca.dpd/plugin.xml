@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://sca.jpeojtrs.mil/dpd"
+            class="mil.jpeojtrs.sca.dpd.DpdPackage"
+            genModel="model/dpd.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            contentTypeIdentifier="mil.jpeojtrs.sca.dpd.content-type"
+            class="mil.jpeojtrs.sca.dpd.util.DpdResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            file-extensions="xml"
+            file-names="*.dpd.xml"
+            id="mil.jpeojtrs.sca.dpd.content-type"
+            name="%_UI_Dpd_content_type"
+            priority="normal">
+         <describer
+               class="org.eclipse.core.runtime.content.XMLRootElementContentDescriber2"
+               plugin="org.eclipse.core.runtime">
+            <parameter
+                  name="element"
+                  value="devicepkg">
+            </parameter>
+         </describer>
+      </content-type>
+   </extension>
+</plugin>

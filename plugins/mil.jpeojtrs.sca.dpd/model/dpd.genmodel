@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/mil.jpeojtrs.sca.dpd/src" modelPluginID="mil.jpeojtrs.sca.dpd"
+    templateDirectory="/mil.jpeojtrs.sca.templates/templates" dynamicTemplates="true"
+    redirection="" forceOverwrite="true" modelName="Dpd" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" runtimeVersion="2.6">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://sca.jpeojtrs.mil/dpd" value="dpd.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>dpd.xsd</foreignModel>
+  <genPackages prefix="Dpd" basePackage="mil.jpeojtrs.sca" resource="XML" disposableProviderFactory="true"
+      generateExampleClass="false" contentTypeIdentifier="mil.jpeojtrs.sca.dpd.content-type"
+      fileExtensions="xml" ecorePackage="dpd.ecore#/">
+    <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+      <genAnnotations source="dpd.xsd"/>
+    </genAnnotations>
+    <genClasses ecoreClass="dpd.ecore#//Author">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//Author/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//Author/company"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//Author/webpage"/>
+    </genClasses>
+    <genClasses ecoreClass="dpd.ecore#//ChildHwDevice">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//ChildHwDevice/hwDeviceRegistration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//ChildHwDevice/devicePkgRef"/>
+    </genClasses>
+    <genClasses ecoreClass="dpd.ecore#//DeviceClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DeviceClass/class"/>
+    </genClasses>
+    <genClasses ecoreClass="dpd.ecore#//DevicePkg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DevicePkg/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DevicePkg/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DevicePkg/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DevicePkg/hwDeviceRegistration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DevicePkg/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DevicePkg/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DevicePkg/version"/>
+    </genClasses>
+    <genClasses ecoreClass="dpd.ecore#//DevicePkgRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DevicePkgRef/localFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DevicePkgRef/type"/>
+    </genClasses>
+    <genClasses ecoreClass="dpd.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dpd.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dpd.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DocumentRoot/author"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DocumentRoot/childhwdevice"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DocumentRoot/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DocumentRoot/company"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DocumentRoot/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DocumentRoot/deviceclass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DocumentRoot/devicepkg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DocumentRoot/devicepkgref"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DocumentRoot/hwdeviceregistration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DocumentRoot/localfile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DocumentRoot/manufacturer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DocumentRoot/modelnumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DocumentRoot/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//DocumentRoot/propertyfile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DocumentRoot/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//DocumentRoot/webpage"/>
+    </genClasses>
+    <genClasses ecoreClass="dpd.ecore#//HwDeviceRegistration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//HwDeviceRegistration/propertyFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//HwDeviceRegistration/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//HwDeviceRegistration/manufacturer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//HwDeviceRegistration/modelNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//HwDeviceRegistration/deviceClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//HwDeviceRegistration/childHwDevice"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//HwDeviceRegistration/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//HwDeviceRegistration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//HwDeviceRegistration/version"/>
+    </genClasses>
+    <genClasses ecoreClass="dpd.ecore#//LocalFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//LocalFile/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dpd.ecore#//PropertyFile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dpd.ecore#//PropertyFile/localFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dpd.ecore#//PropertyFile/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

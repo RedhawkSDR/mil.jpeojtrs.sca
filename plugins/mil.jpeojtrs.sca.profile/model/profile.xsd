@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://sca.jpeojtrs.mil/profile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:nsPrefix="" ecore:package="mil.jpeojtrs.sca.profile" targetNamespace="http://sca.jpeojtrs.mil/profile">
+  <xsd:element name="profile" type="profile"/>
+  <xsd:complexType ecore:name="Profile" name="profile">
+    <xsd:annotation>
+      <xsd:documentation>The profile element can be used to specify the absolute profile file pathname relative to a mounted CF FileSystem.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="filename" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The filename attribute is the absolute pathname relative to a mounted FileSystem. This filename can also be used to access any other local file elements in the profile.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="type" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>The type attribute indicates the type of profile being referenced. The valid type attribute values are “SAD”, “SPD”, “DCD”, and “DMD”.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+</xsd:schema>

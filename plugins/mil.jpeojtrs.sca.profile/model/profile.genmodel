@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/mil.jpeojtrs.sca.profile/src" modelPluginID="mil.jpeojtrs.sca.profile"
+    templateDirectory="/mil.jpeojtrs.sca.templates/templates" dynamicTemplates="true"
+    forceOverwrite="true" modelName="Profile" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" runtimeVersion="2.6">
+  <foreignModel>profile.xsd</foreignModel>
+  <genPackages prefix="Profile" basePackage="mil.jpeojtrs.sca" resource="XML" disposableProviderFactory="true"
+      generateExampleClass="false" contentTypeIdentifier="mil.jpeojtrs.sca.profile.content-type"
+      fileExtensions="xml" ecorePackage="profile.ecore#/">
+    <genClasses ecoreClass="profile.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference profile.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference profile.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference profile.ecore#//DocumentRoot/profile"/>
+    </genClasses>
+    <genClasses ecoreClass="profile.ecore#//Profile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//Profile/filename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//Profile/type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

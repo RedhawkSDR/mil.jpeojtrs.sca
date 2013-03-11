@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA PRF V2.2.2//EN" "properties.dtd">
+<properties>
+	<simple id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa3" mode="readwrite" name="test" type="string">
+		<value>val</value>
+		<kind kindtype="configure" />
+		<action type="external" />
+	</simple>
+	<simple id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa5" mode="readwrite" name="test2" type="string">
+		<value>val2</value>
+		<kind kindtype="configure" />
+		<action type="external" />
+	</simple>
+	<simplesequence id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa2" mode="readwrite" name="seq" type="string">
+		<values>
+			<value>1</value>
+			<value>2</value>
+		</values>
+		<kind kindtype="configure" />
+		<action type="external" />
+	</simplesequence>
+	<simplesequence id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa6" mode="readwrite" name="seq2" type="string">
+		<values>
+			<value>21</value>
+			<value>22</value>
+		</values>
+		<kind kindtype="configure" />
+		<action type="external" />
+	</simplesequence>
+	<struct id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa1" mode="readwrite" name="struct">
+		<simple id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa4" type="string" name="val1"><value>val1</value></simple>
+		<kind kindtype="configure" />
+	</struct>
+	<struct id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa7" mode="readwrite" name="struct2">
+		<simple id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa8" type="string" name="val1"><value>val1</value></simple>
+		<kind kindtype="configure" />
+	</struct>
+</properties>

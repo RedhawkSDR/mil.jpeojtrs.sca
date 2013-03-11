@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: mil.jpeojtrs.sca.profile.tests;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: mil.jpeojtrs.sca.profile.tests
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
+ mil.jpeojtrs.sca.profile;bundle-version="2.2.2";visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.5.0";visibility:=reexport,
+ org.junit;bundle-version="4.8.1"

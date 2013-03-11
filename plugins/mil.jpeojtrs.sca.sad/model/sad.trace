@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:TraceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
+  <nodeTraces visualID="2001" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/sad' and _eClass_.name = 'SadPartitioning') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/sad' and _eClass_.name = 'SoftwareAssembly') and _containmentMF_.name = 'partitioning')">
+    <nodeLabelTraces visualID="5010" queryText="true"/>
+    <compartmentTraces visualID="7001" queryText="true"/>
+  </nodeTraces>
+  <childNodeTraces visualID="3001" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/sad' and _eClass_.name = 'SadComponentPlacement') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/partitioning' and _eClass_.name = 'Partitioning') and _containmentMF_.name = 'componentPlacement')">
+    <nodeLabelTraces visualID="5006" queryText="true"/>
+    <compartmentTraces visualID="7002" queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces visualID="3002" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/sad' and _eClass_.name = 'SadComponentInstantiation') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/partitioning' and _eClass_.name = 'ComponentPlacement') and _containmentMF_.name = 'componentInstantiation')">
+    <nodeLabelTraces visualID="5004" queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces visualID="3003" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/partitioning' and _eClass_.name = 'UsesPortStub') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/partitioning' and _eClass_.name = 'ComponentInstantiation') and _containmentMF_.name = 'uses')">
+    <nodeLabelTraces visualID="5001" queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces visualID="3004" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/partitioning' and _eClass_.name = 'ProvidesPortStub') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/partitioning' and _eClass_.name = 'ComponentInstantiation') and _containmentMF_.name = 'provides')">
+    <nodeLabelTraces visualID="5002" queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces visualID="3005" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/partitioning' and _eClass_.name = 'ComponentSupportedInterfaceStub') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/partitioning' and _eClass_.name = 'ComponentInstantiation') and _containmentMF_.name = 'interfaceStub')"/>
+  <childNodeTraces visualID="3006" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/sad' and _eClass_.name = 'HostCollocation') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/sad' and _eClass_.name = 'SadPartitioning') and _containmentMF_.name = 'hostCollocation')">
+    <nodeLabelTraces visualID="5008" queryText="true"/>
+    <nodeLabelTraces visualID="5009" queryText="true"/>
+    <compartmentTraces visualID="7003" queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces visualID="3007" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/sad' and _eClass_.name = 'SadComponentPlacement') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/sad' and _eClass_.name = 'HostCollocation') and _containmentMF_.name = 'componentPlacement')">
+    <nodeLabelTraces visualID="5007" queryText="true"/>
+    <compartmentTraces visualID="7004" queryText="true"/>
+  </childNodeTraces>
+  <linkTraces visualID="4001" queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://sca.jpeojtrs.mil/sad' and _eClass_.name = 'SadConnectInterface')"/>
+</trace:TraceModel>

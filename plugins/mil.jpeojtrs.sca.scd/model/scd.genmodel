@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/mil.jpeojtrs.sca.scd/src" modelPluginID="mil.jpeojtrs.sca.scd"
+    templateDirectory="/mil.jpeojtrs.sca.templates/templates" dynamicTemplates="true"
+    redirection="" forceOverwrite="true" modelName="Scd" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" tableProviders="true" runtimeVersion="2.6"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://sca.jpeojtrs.mil/scd" value="scd.xsd"/>
+    </genAnnotations>
+    <genAnnotations source="selectedReferencedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/prf" value="prf.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>scd.ecore</foreignModel>
+  <foreignModel>platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.ecore</foreignModel>
+  <foreignModel>platform:/plugin/plugin/org.eclipse.emf.ecore/model/Ecore.ecore</foreignModel>
+  <genPackages prefix="Scd" basePackage="mil.jpeojtrs.sca" resource="XML" disposableProviderFactory="true"
+      generateExampleClass="false" contentTypeIdentifier="mil.jpeojtrs.sca.scd.content-type"
+      fileExtensions="xml" ecorePackage="scd.ecore#/">
+    <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+      <genAnnotations source="scd.xsd"/>
+    </genAnnotations>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scd.ecore#//PortType">
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//PortType/data"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//PortType/responses"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//PortType/control"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//PortType/test"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scd.ecore#//ComponentType">
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/RESOURCE"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/DEVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/RESOURCE_FACTORY"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/DOMAIN_MANAGER"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/LOG"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/FILE_SYSTEM"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/FILE_MANAGER"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/DEVICE_MANAGER"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/NAMING_SERVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/EVENT_SERVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/SERVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/OTHER"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="scd.ecore#//PortTypeObject"/>
+    <genClasses ecoreClass="scd.ecore#//ComponentFeatures">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//ComponentFeatures/supportsInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//ComponentFeatures/ports"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//ComponentRepId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//ComponentRepId/repid"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scd.ecore#//ComponentRepId/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//InheritsInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//InheritsInterface/repid"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scd.ecore#//InheritsInterface/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//Interface">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//Interface/inheritsInterfaces"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//Interface/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//Interface/repid"/>
+      <genOperations ecoreOperation="scd.ecore#//Interface/isInstance">
+        <genParameters ecoreParameter="scd.ecore#//Interface/isInstance/obj"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//Interfaces">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//Interfaces/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//LocalFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//LocalFile/name"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//Ports">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute scd.ecore#//Ports/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference scd.ecore#//Ports/provides"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference scd.ecore#//Ports/uses"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//PortTypeContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//PortTypeContainer/type"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//PropertyFile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//PropertyFile/localFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//PropertyFile/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scd.ecore#//PropertyFile/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//Provides">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//Provides/providesName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="scd.ecore#//AbstractPort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//AbstractPort/portType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//AbstractPort/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//AbstractPort/repID"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference scd.ecore#//AbstractPort/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//ScdDocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//ScdDocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference scd.ecore#//ScdDocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference scd.ecore#//ScdDocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//ScdDocumentRoot/softwarecomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//SoftwareComponent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute scd.ecore#//SoftwareComponent/corbaVersion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//SoftwareComponent/componentRepID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//SoftwareComponent/componentType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//SoftwareComponent/componentFeatures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//SoftwareComponent/interfaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//SoftwareComponent/propertyFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//SoftwareComponent/repId"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//SupportsInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//SupportsInterface/repId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//SupportsInterface/supportsName"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//SupportsInterface/id"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference scd.ecore#//SupportsInterface/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="scd.ecore#//Uses">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//Uses/usesName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

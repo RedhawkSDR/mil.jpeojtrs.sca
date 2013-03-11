@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE deviceconfiguration PUBLIC "-//JTRS//DTD SCA DCD V2.2.2//EN" "softpkg.dtd">
+<deviceconfiguration id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90ddd6" name="DefaultNode">
+  <description>Test Node Description</description>
+  <devicemanagersoftpkg>
+    <localfile name="/mgr/DeviceManager.spd.xml"/>
+  </devicemanagersoftpkg>
+  <componentfiles>
+    <componentfile id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90ddd7" type="SPD">
+      <localfile name="/devices/Device/Device.spd.xml"/>
+    </componentfile>
+    <componentfile id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90ddd8" type="SPD">
+      <localfile name="/devices/DCDTestDevice1/DCDTestDevice1.spd.xml"/>
+    </componentfile>
+    <componentfile id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90ddd9" type="SPD">
+      <localfile name="/devices/GPP/GPP.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+  	<componentplacement>
+      <componentfileref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90ddd7"/>
+      <componentinstantiation id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eee7">
+        <usagename>Component Usage Name</usagename>
+        <componentproperties>
+          <simpleref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa3" value="RFC"/>
+          <simplesequenceref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa2">
+            <values>
+              <value>1</value>
+              <value>2</value>
+            </values>
+          </simplesequenceref>
+          <structref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa1">
+            <simpleref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa4" value="ov"/>
+          </structref>
+          <structsequenceref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa0">
+            <structvalue>
+              <simpleref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90aaa4" value="ov"/>
+            </structvalue>
+          </structsequenceref>
+        </componentproperties>  
+      </componentinstantiation>
+  	</componentplacement>
+  	<componentplacement>
+      <componentfileref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90ddd7"/>
+      <componentinstantiation id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eee5">
+        <usagename>Device Test</usagename>
+      </componentinstantiation>
+  	</componentplacement>
+  	<componentplacement>
+      <componentfileref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90ddd7"/>
+      <compositepartofdevice refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eee5"/>
+      <devicepkgfile type="device">
+        <localfile name="devPkg.dpd.xml"/>
+      </devicepkgfile>
+      <componentinstantiation id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eeea">
+        <usagename>Deploy On Device Test</usagename>
+      </componentinstantiation>
+  	</componentplacement>
+  	<componentplacement>
+      <componentfileref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90ddd9"/>
+      <deployondevice refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eeea"/>
+      <devicepkgfile>
+        <localfile name="devPkg.dpd.xml"/>
+      </devicepkgfile>
+      <componentinstantiation id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eeeb">
+        <usagename>Parent Device Test</usagename>
+      </componentinstantiation>
+  	</componentplacement>
+  	<componentplacement>
+      <componentfileref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90ddd8"/>
+      <componentinstantiation id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eee8">
+        <usagename>Component Usage Name</usagename>
+      </componentinstantiation>
+  	</componentplacement>
+  </partitioning>
+  <connections>
+    <connectinterface id="DCE:7efd070e-3e4f-4ccf-acf8-190eb502ccc1">
+      <usesport>
+        <usesidentifier>dataFloatOut_port</usesidentifier>
+        <componentinstantiationref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eee7"/>
+      </usesport>
+      <providesport>
+        <providesidentifier>dataFloatIn_port</providesidentifier>
+        <componentinstantiationref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eee7"/>
+      </providesport>
+    </connectinterface>
+    <connectinterface id="DCE:7efd070e-3e4f-4ccf-acf8-190eb502ccc2">
+      <usesport>
+        <!-- Change to IDL:CF/Device:1.0 -->
+        <usesidentifier>dataFloatOut_port</usesidentifier>
+        <componentinstantiationref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eee7"/>
+      </usesport>
+      <componentsupportedinterface>
+        <supportedidentifier>IDL:CF/Device:1.0</supportedidentifier>
+        <componentinstantiationref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eee7"/>
+      </componentsupportedinterface>
+    </connectinterface>
+    <connectinterface id="DCE:7efd070e-3e4f-4ccf-acf8-190eb502ccc3">
+      <usesport>
+        <usesidentifier>dataFloatOut_port</usesidentifier>
+        <deviceusedbythiscomponentref refid="DCE:6fd1d499-e772-4eb4-8acc-416deda4b1b5" usesrefid="DCE:6fd1d499-e442-4eb4-8acc-416deda4b1aa"/>
+      </usesport>
+      <providesport>
+        <providesidentifier>dataFloatIn_port</providesidentifier>
+        <deviceusedbythiscomponentref refid="DCE:6fd1d499-e772-4eb4-8acc-416deda4b1b5" usesrefid="DCE:6fd1d499-e442-4eb4-8acc-416deda4b1aa"/>
+      </providesport>
+    </connectinterface>
+    <connectinterface id="DCE:7efd070e-3e4f-4ccf-acf8-190eb502ccc4">
+      <usesport>
+        <usesidentifier>dataFloatOut_port</usesidentifier>
+        <devicethatloadedthiscomponentref refid="DCE:4bd1d499-e772-4eb4-8acc-416deda4b1b5"/>
+      </usesport>
+      <providesport>
+        <providesidentifier>dataFloatIn_port</providesidentifier>
+        <devicethatloadedthiscomponentref refid="DCE:4bd1d499-e772-4eb4-8acc-416deda4b1b5"/>
+      </providesport>
+    </connectinterface>
+    <connectinterface id="DCE:7efd070e-3e4f-4ccf-acf8-190eb502ccc5">
+      <usesport>
+        <usesidentifier>dataFloatOut_port</usesidentifier>
+        <componentinstantiationref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eee7"/>
+      </usesport>
+      <providesport>
+        <providesidentifier>dataFloatIn_port</providesidentifier>
+          <findby>
+            <namingservice name="Component Usage Name"></namingservice>
+          </findby>
+      </providesport>
+    </connectinterface>
+    <connectinterface id="DCE:7efd070e-3e4f-4ccf-acf8-190eb502ccc6">
+      <usesport>
+        <!-- Change to IDL:CF/Device:1.0 -->
+        <usesidentifier>dataFloatOut_port</usesidentifier>
+        <findby>
+          <namingservice name="Component Usage Name"></namingservice>
+        </findby>
+      </usesport>
+      <componentsupportedinterface>
+        <supportedidentifier>IDL:CF/Device:1.0</supportedidentifier>
+        <findby>
+          <domainfinder name="testDomain" type="namingservice"/>
+        </findby>
+      </componentsupportedinterface>
+    </connectinterface>
+    <connectinterface id="DCE:7efd070e-3e4f-4ccf-acf8-190eb502ccc7">
+      <usesport>
+        <usesidentifier>dataFloatOut_port</usesidentifier>
+          <findby>
+            <domainfinder name="testDomain" type="namingservice"/>
+          </findby>
+      </usesport>
+      <findby>
+        <domainfinder name="testDomain" type="log"/>
+      </findby>
+    </connectinterface>
+    <connectinterface id="DCE:7efd070e-3e4f-4ccf-acf8-190eb502ccc8">
+      <usesport>
+        <usesidentifier>dataFloatOut_port</usesidentifier>
+        <componentinstantiationref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90eee7"/>
+      </usesport>
+      <providesport>
+        <providesidentifier>dataFloatIn_port</providesidentifier>
+        <findby>
+          <domainfinder name="testDomain" type="log"/>
+        </findby>
+      </providesport>
+    </connectinterface>
+  </connections>
+  <domainmanager>
+    <namingservice name="test/test"/>
+  </domainmanager>
+  <filesystemnames>
+    <filesystemname deviceid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90ffff" mountname="/mount"/>
+  </filesystemnames>
+</deviceconfiguration>

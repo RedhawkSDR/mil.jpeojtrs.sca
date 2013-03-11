@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+   <extension-point id="processors" name="processors" schema="schema/processors.exsd"/>
+   <extension-point id="os" name="os" schema="schema/os.exsd"/>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://sca.jpeojtrs.mil/spd"
+            class="mil.jpeojtrs.sca.spd.SpdPackage"
+            genModel="model/spd.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            contentTypeIdentifier="mil.jpeojtrs.sca.spd.content-type"
+            class="mil.jpeojtrs.sca.spd.util.SpdResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            file-extensions="xml"
+            file-names="*.spd.xml"
+            id="mil.jpeojtrs.sca.spd.content-type"
+            name="%_UI_Spd_content_type"
+            priority="normal">
+         <describer
+               class="org.eclipse.core.runtime.content.XMLRootElementContentDescriber2"
+               plugin="org.eclipse.core.runtime">
+            <parameter
+                  name="element"
+                  value="softpkg">
+            </parameter>
+         </describer>
+      </content-type>
+   </extension>
+<extension
+        point="mil.jpeojtrs.sca.spd.os">
+     <os
+           name="AIX">
+     </os>
+     <os
+           name="BSDi">
+     </os>
+     <os
+           name="VMS">
+     </os>
+     <os
+           name="DigitalUnix">
+     </os>
+     <os
+           name="DOS">
+     </os>
+     <os
+           name="HPBLS">
+     </os>
+     <os
+           name="HPUX">
+     </os>
+     <os
+           name="IRIX">
+     </os>
+     <os
+           name="Linux">
+     </os>
+     <os
+           name="LynxOS">
+     </os>
+     <os
+           name="MacOS">
+     </os>
+     <os
+           name="OS/2">
+     </os>
+     <os
+           name="AS/400">
+     </os>
+     <os
+           name="MVS">
+     </os>
+     <os
+           name="SCO CMW">
+     </os>
+     <os
+           name="SCO ODT">
+     </os>
+     <os
+           name="Solaris">
+     </os>
+     <os
+           name="SunOS">
+     </os>
+     <os
+           name="UnixxWare">
+     </os>
+     <os
+           name="VxWorks">
+     </os>
+     <os
+           name="Win95">
+     </os>
+     <os
+           name="WinNT">
+     </os>
+     <os
+           name="pSOS">
+     </os>
+     <os
+           name="RTXC">
+     </os>
+  </extension>
+  <extension
+        point="mil.jpeojtrs.sca.spd.processors">
+     <processor
+           name="x86">
+     </processor>
+     <processor
+           name="x86_64">
+     </processor>
+     <processor
+           name="mips">
+     </processor>
+     <processor
+           name="alpha">
+     </processor>
+     <processor
+           name="ppc">
+     </processor>
+     <processor
+           name="sparc">
+     </processor>
+     <processor
+           name="680x0">
+     </processor>
+     <processor
+           name="vax">
+     </processor>
+     <processor
+           name="AS/400">
+     </processor>
+     <processor
+           name="ppcG3">
+     </processor>
+     <processor
+           name="ppcG4">
+     </processor>
+     <processor
+           name="ppcG5">
+     </processor>
+     <processor
+           name="C5x">
+     </processor>
+     <processor
+           name="C6X">
+     </processor>
+     <processor
+           name="ADSP21xx">
+     </processor>
+  </extension>
+</plugin>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mil.jpeojtrs.sca.partitioning/src"
+    editorDirectory="" modelPluginID="mil.jpeojtrs.sca.partitioning" templateDirectory="/mil.jpeojtrs.sca.templates/templates"
+    dynamicTemplates="true" forceOverwrite="true" modelName="Partitioning" modelPluginClass="ScaPartitioningActivator"
+    testsDirectory="/mil.jpeojtrs.sca.partitioning.tests/src" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" editorPluginID="mil.jpeojtrs.sca.partitioning.editor"
+    runtimeVersion="2.6" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf platform:/plugin/mil.jpeojtrs.sca.scd/model/scd.genmodel#//scd platform:/plugin/mil.jpeojtrs.sca.spd/model/spd.genmodel#//spd">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://sca.jpeojtrs.mil/partitioning" value="partitioning.xsd"/>
+    </genAnnotations>
+    <genAnnotations source="selectedReferencedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/prf" value="prf.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/scd" value="scd.xsd"/>
+      <details key="http://sca.jpeojtrs.mil/spd" value="spd.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>partitioning.ecore</foreignModel>
+  <modelPluginVariables>mil.jpeojtrs.sca.util</modelPluginVariables>
+  <genPackages prefix="Partitioning" basePackage="mil.jpeojtrs.sca" resource="XML"
+      disposableProviderFactory="true" generateExampleClass="false" extensibleProviderFactory="true"
+      childCreationExtenders="true" contentTypeIdentifier="" fileExtensions="partitioning"
+      ecorePackage="partitioning.ecore#/">
+    <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+      <genAnnotations source="partitioning.xsd"/>
+    </genAnnotations>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="partitioning.ecore#//DomainFinderType">
+      <genEnumLiterals ecoreEnumLiteral="partitioning.ecore#//DomainFinderType/filemanager"/>
+      <genEnumLiterals ecoreEnumLiteral="partitioning.ecore#//DomainFinderType/log"/>
+      <genEnumLiterals ecoreEnumLiteral="partitioning.ecore#//DomainFinderType/eventchannel"/>
+      <genEnumLiterals ecoreEnumLiteral="partitioning.ecore#//DomainFinderType/namingservice"/>
+      <genEnumLiterals ecoreEnumLiteral="partitioning.ecore#//DomainFinderType/domainmanager"/>
+      <genEnumLiterals ecoreEnumLiteral="partitioning.ecore#//DomainFinderType/servicename"/>
+      <genEnumLiterals ecoreEnumLiteral="partitioning.ecore#//DomainFinderType/servicetype"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="partitioning.ecore#//DomainFinderTypeObject"/>
+    <genClasses ecoreClass="partitioning.ecore#//ComponentFile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentFile/localFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentFile/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentFile/softPkg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentFile/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="partitioning.ecore#//DomComponentFile"/>
+    <genClasses image="false" ecoreClass="partitioning.ecore#//DevComponentFile"/>
+    <genClasses ecoreClass="partitioning.ecore#//ComponentFileRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentFileRef/file"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentFileRef/refid"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//ComponentFiles">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentFiles/componentFile"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//ComponentInstantiation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentInstantiation/usageName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/componentProperties"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/provides"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/uses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/interfaceStub"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentInstantiation/id"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/placement"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//ComponentInstantiationRef">
+      <genTypeParameters ecoreTypeParameter="partitioning.ecore#//ComponentInstantiationRef/R"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiationRef/instantiation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentInstantiationRef/refid"/>
+    </genClasses>
+    <genClasses provider="Stateful" ecoreClass="partitioning.ecore#//ComponentPlacement">
+      <genTypeParameters ecoreTypeParameter="partitioning.ecore#//ComponentPlacement/I"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentPlacement/componentFileRef"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentPlacement/componentInstantiation"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentPlacement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//ComponentProperties">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentProperties/properties"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentProperties/simpleRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentProperties/simpleSequenceRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentProperties/structRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentProperties/structSequenceRef"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//ComponentSupportedInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentSupportedInterface/supportedIdentifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentSupportedInterface/componentInstantiationRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentSupportedInterface/findBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentSupportedInterface/interface"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="partitioning.ecore#//ComponentSupportedInterfaceStub"/>
+    <genClasses ecoreClass="partitioning.ecore#//ConnectInterface">
+      <genTypeParameters ecoreTypeParameter="partitioning.ecore#//ConnectInterface/CIR"/>
+      <genTypeParameters ecoreTypeParameter="partitioning.ecore#//ConnectInterface/UP"/>
+      <genTypeParameters ecoreTypeParameter="partitioning.ecore#//ConnectInterface/PP"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/usesPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/providesPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/componentSupportedInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/findBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ConnectInterface/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/target"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//Connections">
+      <genTypeParameters ecoreTypeParameter="partitioning.ecore#//Connections/CI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//Connections/connectInterface"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="partitioning.ecore#//ConnectionTarget"/>
+    <genClasses ecoreClass="partitioning.ecore#//DeviceThatLoadedThisComponentRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DeviceThatLoadedThisComponentRef/refid"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//DeviceUsedByThisComponentRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DeviceUsedByThisComponentRef/refId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DeviceUsedByThisComponentRef/usesRefId"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//DomainFinder">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DomainFinder/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DomainFinder/type"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//FindBy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//FindBy/namingService"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//FindBy/domainFinder"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="partitioning.ecore#//FindByStub">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//FindByStub/namingService"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//FindByStub/domainFinder"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//FindByStub/provides"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//FindByStub/uses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//FindByStub/interface"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="partitioning.ecore#//FindByStubContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//FindByStubContainer/stubs"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//LocalFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//LocalFile/name"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//NamingService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//NamingService/name"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//Partitioning">
+      <genTypeParameters ecoreTypeParameter="partitioning.ecore#//Partitioning/C"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute partitioning.ecore#//Partitioning/parts"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//Partitioning/componentPlacement"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//PropertyRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//PropertyRef/refId"/>
+      <genOperations ecoreOperation="partitioning.ecore#//PropertyRef/toAny"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//ProvidesPort">
+      <genTypeParameters ecoreTypeParameter="partitioning.ecore#//ProvidesPort/P"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ProvidesPort/providesIdentifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPort/componentInstantiationRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPort/deviceThatLoadedThisComponentRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPort/deviceUsedByThisComponentRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPort/findBy"/>
+    </genClasses>
+    <genClasses provider="Stateful" image="false" ecoreClass="partitioning.ecore#//ProvidesPortStub">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ProvidesPortStub/name"/>
+      <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPortStub/provides"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//SimpleRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//SimpleRef/simple"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//SimpleRef/value"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//SimpleSequenceRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//SimpleSequenceRef/values"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//SimpleSequenceRef/simpleSequence"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//StructRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//StructRef/simpleRef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//StructRef/struct"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//StructSequenceRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//StructSequenceRef/structValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//StructSequenceRef/structSequence"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//StructValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//StructValue/simpleRef"/>
+      <genOperations ecoreOperation="partitioning.ecore#//StructValue/toAny"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//UsesPort">
+      <genTypeParameters ecoreTypeParameter="partitioning.ecore#//UsesPort/U"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//UsesPort/usesIndentifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/componentInstantiationRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/deviceThatLoadedThisComponentRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/deviceUsedByThisComponentRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/findBy"/>
+    </genClasses>
+    <genClasses provider="Stateful" image="false" ecoreClass="partitioning.ecore#//UsesPortStub">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//UsesPortStub/name"/>
+      <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference partitioning.ecore#//UsesPortStub/uses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//UsesPortStub/supportedIdentifier"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//Values">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//Values/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

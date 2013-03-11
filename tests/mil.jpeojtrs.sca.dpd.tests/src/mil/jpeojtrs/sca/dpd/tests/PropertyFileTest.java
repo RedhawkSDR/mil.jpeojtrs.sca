@@ -1,0 +1,131 @@
+/*******************************************************************************
+ * This file is protected by Copyright. 
+ * Please refer to the COPYRIGHT file distributed with this source distribution.
+ *
+ * This file is part of REDHAWK IDE.
+ *
+ * All rights reserved.  This program and the accompanying materials are made available under 
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
+package mil.jpeojtrs.sca.dpd.tests;
+
+import junit.framework.Assert;
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
+import mil.jpeojtrs.sca.dpd.DevicePkg;
+import mil.jpeojtrs.sca.dpd.DpdFactory;
+import mil.jpeojtrs.sca.dpd.HwDeviceRegistration;
+import mil.jpeojtrs.sca.dpd.LocalFile;
+import mil.jpeojtrs.sca.dpd.PropertyFile;
+
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * A test case for the model object '<em><b>Property File</b></em>'.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class PropertyFileTest extends TestCase {
+
+	/**
+	 * The fixture for this Property File test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PropertyFile fixture = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static void main(String[] args) {
+		TestRunner.run(PropertyFileTest.class);
+	}
+
+	/**
+	 * Constructs a new Property File test case with the given name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PropertyFileTest(String name) {
+		super(name);
+	}
+
+	/**
+	 * Sets the fixture for this Property File test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(PropertyFile fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
+	 * Returns the fixture for this Property File test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PropertyFile getFixture() {
+		return fixture;
+	}
+
+	private HwDeviceRegistration hdReg;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated NOT
+	 */
+	@Override
+	protected void setUp() throws Exception {
+		setFixture(DpdFactory.eINSTANCE.createPropertyFile());
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final DevicePkg devPkg = DevicePkg.Util.getDevicePkg(resourceSet.getResource(DpdTests.getURI("testFiles/defaultDevice.dpd.xml"), true));
+		this.hdReg = devPkg.getHwDeviceRegistration();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated NOT
+	 */
+	@Override
+	protected void tearDown() throws Exception {
+		setFixture(null);
+		this.hdReg = null;
+	}
+
+	/**
+	 * 
+	 */
+	public void testParse() {
+		final PropertyFile file = this.hdReg.getPropertyFile();
+		Assert.assertNotNull(file);
+		Assert.assertEquals("PRF", file.getType());
+	}
+	
+	public void testLocalFile() {
+		final PropertyFile file = this.hdReg.getPropertyFile();
+		Assert.assertNotNull(file);
+		Assert.assertEquals("PRF", file.getType());
+		
+		LocalFile lf = DpdFactory.eINSTANCE.createLocalFile();
+		lf.setName("testFile.prf.xml");
+		
+		file.setLocalFile(lf);
+		
+		Assert.assertNotNull(file.getLocalFile());
+		Assert.assertEquals("testFile.prf.xml", file.getLocalFile().getName());
+	}
+
+} //PropertyFileTest

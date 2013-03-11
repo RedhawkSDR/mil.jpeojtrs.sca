@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA PRF V2.2.2//EN" "properties.dtd">
+<properties>
+  <test id="1">
+  <description>Test description</description>
+  <inputvalue>
+  	<simple id="DCE:949af1fc-87ec-49a9-92fc-488fce348a0e" mode="readwrite" type="string">
+    	<kind kindtype="test"/>
+  	</simple>
+  </inputvalue>
+  <resultvalue>
+  	<simple id="DCE:753b3ef5-fa23-4c51-9711-c1183ab23cbd" mode="readwrite" type="string">
+    	<kind kindtype="test"/>
+  	</simple>
+  </resultvalue>
+  </test>
+</properties>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mil.jpeojtrs.sca.cf/src-ecore"
+    editorDirectory="" modelPluginID="mil.jpeojtrs.sca.cf" templateDirectory="/mil.jpeojtrs.sca.templates/templates"
+    dynamicTemplates="true" forceOverwrite="true" modelName="Cf" testsDirectory=""
+    importerID="org.eclipse.emf.importer.java" complianceLevel="5.0" copyrightFields="false"
+    runtimeVersion="2.6">
+  <foreignModel>@model</foreignModel>
+  <genPackages prefix="Cf" basePackage="mil.jpeojtrs.sca" disposableProviderFactory="true"
+      literalsInterface="false" contentTypeIdentifier="" ecorePackage="cf.ecore#/">
+    <genDataTypes ecoreDataType="cf.ecore#//DataType"/>
+    <genDataTypes ecoreDataType="cf.ecore#//DataTypeArray"/>
+    <genDataTypes ecoreDataType="cf.ecore#//NamingContextExt"/>
+    <genDataTypes ecoreDataType="cf.ecore#//ORB"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidObjectReference"/>
+    <genDataTypes ecoreDataType="cf.ecore#//CreateApplicationInsufficientCapacityError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//DeviceAssignmentTypeArray"/>
+    <genDataTypes ecoreDataType="cf.ecore#//CreateApplicationError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//CreateApplicationRequestError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidInitConfiguration"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidCapacity"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidState"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidProfile"/>
+    <genDataTypes ecoreDataType="cf.ecore#//DeviceManagerNotRegistered"/>
+    <genDataTypes ecoreDataType="cf.ecore#//RegisterError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//UnregisterError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidFileName"/>
+    <genDataTypes ecoreDataType="cf.ecore#//ApplicationInstallationError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//ApplicationAlreadyInstalled"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidIdentifier"/>
+    <genDataTypes ecoreDataType="cf.ecore#//ApplicationUninstallationError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InsufficientCapacity"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidEventChannelName"/>
+    <genDataTypes ecoreDataType="cf.ecore#//AlreadyConnected"/>
+    <genDataTypes ecoreDataType="cf.ecore#//NotConnected"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidProcess"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidFunction"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidParameters"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidOptions"/>
+    <genDataTypes ecoreDataType="cf.ecore#//ExecuteFail"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidFileSystem"/>
+    <genDataTypes ecoreDataType="cf.ecore#//MountPointAlreadyExists"/>
+    <genDataTypes ecoreDataType="cf.ecore#//NonExistentMount"/>
+    <genDataTypes ecoreDataType="cf.ecore#//MountTypeArray"/>
+    <genDataTypes ecoreDataType="cf.ecore#//OctetSequenceHolder"/>
+    <genDataTypes ecoreDataType="cf.ecore#//IOException"/>
+    <genDataTypes ecoreDataType="cf.ecore#//FileException"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidFilePointer"/>
+    <genDataTypes ecoreDataType="cf.ecore#//FileInformationTypeArray"/>
+    <genDataTypes ecoreDataType="cf.ecore#//PropertiesHolder"/>
+    <genDataTypes ecoreDataType="cf.ecore#//UnknownFileSystemProperties"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InitializeError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//ReleaseError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//LoadType"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidLoadKind"/>
+    <genDataTypes ecoreDataType="cf.ecore#//LoadFail"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidPort"/>
+    <genDataTypes ecoreDataType="cf.ecore#//OccupiedPort"/>
+    <genDataTypes ecoreDataType="cf.ecore#//UnknownPort"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidConfiguration"/>
+    <genDataTypes ecoreDataType="cf.ecore#//PartialConfiguration"/>
+    <genDataTypes ecoreDataType="cf.ecore#//UnknownProperties"/>
+    <genDataTypes ecoreDataType="cf.ecore#//CreateResourceFailure"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidResourceId"/>
+    <genDataTypes ecoreDataType="cf.ecore#//ShutdownFailure"/>
+    <genDataTypes ecoreDataType="cf.ecore#//StartError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//StopError"/>
+    <genDataTypes ecoreDataType="cf.ecore#//UnknownTest"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//Object"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//IDLEntity"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//AggregateDevice"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//AggregateDeviceOperations">
+      <genOperations ecoreOperation="cf.ecore#//AggregateDeviceOperations/addDevice">
+        <genParameters ecoreParameter="cf.ecore#//AggregateDeviceOperations/addDevice/associatedDevice"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//AggregateDeviceOperations/removeDevice">
+        <genParameters ecoreParameter="cf.ecore#//AggregateDeviceOperations/removeDevice/associatedDevice"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//AggregateExecutableDevice"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//AggregateExecutableDeviceOperations"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//AggregateLoadableDevice"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//AggregateLoadableDeviceOperations"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//AggregatePlainDevice"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//AggregatePlainDeviceOperations"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//Application"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//ApplicationFactory"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//ApplicationFactoryOperations">
+      <genOperations ecoreOperation="cf.ecore#//ApplicationFactoryOperations/create">
+        <genParameters ecoreParameter="cf.ecore#//ApplicationFactoryOperations/create/name"/>
+        <genParameters ecoreParameter="cf.ecore#//ApplicationFactoryOperations/create/initConfiguration"/>
+        <genParameters ecoreParameter="cf.ecore#//ApplicationFactoryOperations/create/deviceAssignments"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//ApplicationOperations"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//Device"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//DeviceManager"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//DeviceManagerOperations">
+      <genOperations ecoreOperation="cf.ecore#//DeviceManagerOperations/registerDevice">
+        <genParameters ecoreParameter="cf.ecore#//DeviceManagerOperations/registerDevice/registeringDevice"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DeviceManagerOperations/unregisterDevice">
+        <genParameters ecoreParameter="cf.ecore#//DeviceManagerOperations/unregisterDevice/registeredDevice"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DeviceManagerOperations/shutdown"/>
+      <genOperations ecoreOperation="cf.ecore#//DeviceManagerOperations/registerService">
+        <genParameters ecoreParameter="cf.ecore#//DeviceManagerOperations/registerService/registeringService"/>
+        <genParameters ecoreParameter="cf.ecore#//DeviceManagerOperations/registerService/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DeviceManagerOperations/unregisterService">
+        <genParameters ecoreParameter="cf.ecore#//DeviceManagerOperations/unregisterService/unregisteringService"/>
+        <genParameters ecoreParameter="cf.ecore#//DeviceManagerOperations/unregisterService/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DeviceManagerOperations/getComponentImplementationId">
+        <genParameters ecoreParameter="cf.ecore#//DeviceManagerOperations/getComponentImplementationId/componentInstantiationId"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//DeviceOperations">
+      <genOperations ecoreOperation="cf.ecore#//DeviceOperations/allocateCapacity">
+        <genParameters ecoreParameter="cf.ecore#//DeviceOperations/allocateCapacity/capacities"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DeviceOperations/deallocateCapacity">
+        <genParameters ecoreParameter="cf.ecore#//DeviceOperations/deallocateCapacity/capacities"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//DomainManager"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//DomainManagerOperations">
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/registerDevice">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/registerDevice/registeringDevice"/>
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/registerDevice/registeredDeviceMgr"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/registerDeviceManager">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/registerDeviceManager/deviceMgr"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/unregisterDeviceManager">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterDeviceManager/deviceMgr"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/unregisterDevice">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterDevice/unregisteringDevice"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/installApplication">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/installApplication/profileFileName"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/uninstallApplication">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/uninstallApplication/applicationId"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/registerService">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/registerService/registeringService"/>
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/registerService/registeredDeviceMgr"/>
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/registerService/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/unregisterService">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterService/unregisteringService"/>
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterService/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/registerWithEventChannel">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/registerWithEventChannel/registeringObject"/>
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/registerWithEventChannel/registeringId"/>
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/registerWithEventChannel/eventChannelName"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/unregisterFromEventChannel">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterFromEventChannel/unregisteringId"/>
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterFromEventChannel/eventChannelName"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//ExecutableDevice"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//ExecutableDeviceOperations">
+      <genOperations ecoreOperation="cf.ecore#//ExecutableDeviceOperations/terminate">
+        <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/terminate/processId"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//ExecutableDeviceOperations/execute">
+        <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/execute/name"/>
+        <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/execute/options"/>
+        <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/execute/parameters"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//File"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//FileManager"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//FileManagerOperations">
+      <genOperations ecoreOperation="cf.ecore#//FileManagerOperations/mount">
+        <genParameters ecoreParameter="cf.ecore#//FileManagerOperations/mount/mountPoint"/>
+        <genParameters ecoreParameter="cf.ecore#//FileManagerOperations/mount/file_System"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileManagerOperations/unmount">
+        <genParameters ecoreParameter="cf.ecore#//FileManagerOperations/unmount/mountPoint"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileManagerOperations/getMounts"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//FileOperations">
+      <genOperations ecoreOperation="cf.ecore#//FileOperations/read">
+        <genParameters ecoreParameter="cf.ecore#//FileOperations/read/data"/>
+        <genParameters ecoreParameter="cf.ecore#//FileOperations/read/length"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileOperations/write">
+        <genParameters ecoreParameter="cf.ecore#//FileOperations/write/data"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileOperations/sizeOf"/>
+      <genOperations ecoreOperation="cf.ecore#//FileOperations/close"/>
+      <genOperations ecoreOperation="cf.ecore#//FileOperations/setFilePointer">
+        <genParameters ecoreParameter="cf.ecore#//FileOperations/setFilePointer/filePointer"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//FileSystem"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//FileSystemOperations">
+      <genOperations ecoreOperation="cf.ecore#//FileSystemOperations/remove">
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/remove/fileName"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileSystemOperations/copy">
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/copy/sourceFileName"/>
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/copy/destinationFileName"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileSystemOperations/exists">
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/exists/fileName"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileSystemOperations/list">
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/list/pattern"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileSystemOperations/create">
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/create/fileName"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileSystemOperations/open">
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/open/fileName"/>
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/open/read_Only"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileSystemOperations/mkdir">
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/mkdir/directoryName"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileSystemOperations/rmdir">
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/rmdir/directoryName"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//FileSystemOperations/query">
+        <genParameters ecoreParameter="cf.ecore#//FileSystemOperations/query/fileSystemProperties"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//LifeCycle"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//LifeCycleOperations">
+      <genOperations ecoreOperation="cf.ecore#//LifeCycleOperations/initialize"/>
+      <genOperations ecoreOperation="cf.ecore#//LifeCycleOperations/releaseObject"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//LoadableDevice"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//LoadableDeviceOperations">
+      <genOperations ecoreOperation="cf.ecore#//LoadableDeviceOperations/load">
+        <genParameters ecoreParameter="cf.ecore#//LoadableDeviceOperations/load/fs"/>
+        <genParameters ecoreParameter="cf.ecore#//LoadableDeviceOperations/load/fileName"/>
+        <genParameters ecoreParameter="cf.ecore#//LoadableDeviceOperations/load/loadKind"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//LoadableDeviceOperations/unload">
+        <genParameters ecoreParameter="cf.ecore#//LoadableDeviceOperations/unload/fileName"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//Port"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//PortOperations">
+      <genOperations ecoreOperation="cf.ecore#//PortOperations/connectPort">
+        <genParameters ecoreParameter="cf.ecore#//PortOperations/connectPort/connection"/>
+        <genParameters ecoreParameter="cf.ecore#//PortOperations/connectPort/connectionId"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//PortOperations/disconnectPort">
+        <genParameters ecoreParameter="cf.ecore#//PortOperations/disconnectPort/connectionId"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//PortSupplier"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//PortSupplierOperations">
+      <genOperations ecoreOperation="cf.ecore#//PortSupplierOperations/getPort">
+        <genParameters ecoreParameter="cf.ecore#//PortSupplierOperations/getPort/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//PropertySet"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//PropertySetOperations">
+      <genOperations ecoreOperation="cf.ecore#//PropertySetOperations/configure">
+        <genParameters ecoreParameter="cf.ecore#//PropertySetOperations/configure/configProperties"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//PropertySetOperations/query">
+        <genParameters ecoreParameter="cf.ecore#//PropertySetOperations/query/configProperties"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//Resource"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//ResourceFactory"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//ResourceFactoryOperations">
+      <genOperations ecoreOperation="cf.ecore#//ResourceFactoryOperations/createResource">
+        <genParameters ecoreParameter="cf.ecore#//ResourceFactoryOperations/createResource/resourceId"/>
+        <genParameters ecoreParameter="cf.ecore#//ResourceFactoryOperations/createResource/qualifiers"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//ResourceFactoryOperations/releaseResource">
+        <genParameters ecoreParameter="cf.ecore#//ResourceFactoryOperations/releaseResource/resourceId"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//ResourceFactoryOperations/shutdown"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//ResourceOperations">
+      <genOperations ecoreOperation="cf.ecore#//ResourceOperations/start"/>
+      <genOperations ecoreOperation="cf.ecore#//ResourceOperations/stop"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//TestableObject"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//TestableObjectOperations">
+      <genOperations ecoreOperation="cf.ecore#//TestableObjectOperations/runTest">
+        <genParameters ecoreParameter="cf.ecore#//TestableObjectOperations/runTest/testid"/>
+        <genParameters ecoreParameter="cf.ecore#//TestableObjectOperations/runTest/testValues"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Extended" basePackage="mil.jpeojtrs.sca.cf" disposableProviderFactory="true"
+      ecorePackage="extended.ecore#/">
+    <genDataTypes ecoreDataType="extended.ecore#//UsesConnection"/>
+    <genDataTypes ecoreDataType="extended.ecore#//UsesConnectionArray"/>
+    <genClasses image="false" ecoreClass="extended.ecore#//QueryablePort"/>
+    <genClasses image="false" ecoreClass="extended.ecore#//QueryablePortOperations">
+      <genOperations ecoreOperation="extended.ecore#//QueryablePortOperations/connections"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
+    modelDirectory="/mil.jpeojtrs.sca.prf/src" modelPluginID="mil.jpeojtrs.sca.prf"
+    templateDirectory="/mil.jpeojtrs.sca.templates/templates" dynamicTemplates="true"
+    forceOverwrite="true" modelName="Prf" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="5.0" copyrightFields="false" tableProviders="true" colorProviders="true"
+    runtimeVersion="2.6" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://sca.jpeojtrs.mil/prf" value="prf.xsd"/>
+    </genAnnotations>
+    <genAnnotations source="selectedReferencedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>prf.xsd</foreignModel>
+  <genPackages prefix="Prf" basePackage="mil.jpeojtrs.sca" resource="XML" disposableProviderFactory="true"
+      generateExampleClass="false" contentTypeIdentifier="mil.jpeojtrs.sca.prf.content-type"
+      fileExtensions="xml" ecorePackage="prf.ecore#/">
+    <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+      <genAnnotations source="prf.xsd"/>
+    </genAnnotations>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="prf.ecore#//AccessType">
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//AccessType/writeonly"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//AccessType/readonly"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//AccessType/readwrite"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="prf.ecore#//ActionType">
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//ActionType/ge"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//ActionType/gt"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//ActionType/external"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//ActionType/le"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//ActionType/lt"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//ActionType/ne"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//ActionType/eq"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="prf.ecore#//PropertyConfigurationType">
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/configure"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/execparam"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/allocation"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/factoryparam"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/test"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/event"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/message"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="prf.ecore#//PropertyValueType">
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/ulong"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/objref"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/short"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/float"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/octet"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/char"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/ushort"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/double"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/long"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/longlong"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/ulonglong"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="prf.ecore#//StructPropertyConfigurationType">
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/configure"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/allocation"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/factoryparam"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/test"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/event"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/message"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="prf.ecore#//AccessTypeObject"/>
+    <genDataTypes ecoreDataType="prf.ecore#//ActionTypeObject"/>
+    <genDataTypes ecoreDataType="prf.ecore#//CharacterObject"/>
+    <genDataTypes ecoreDataType="prf.ecore#//DceUUID"/>
+    <genDataTypes ecoreDataType="prf.ecore#//PropertyConfigurationTypeObject"/>
+    <genDataTypes ecoreDataType="prf.ecore#//PropertyValueTypeObject"/>
+    <genDataTypes ecoreDataType="prf.ecore#//StructPropertyConfigurationTypeObject"/>
+    <genDataTypes ecoreDataType="prf.ecore#//Unit"/>
+    <genDataTypes ecoreDataType="prf.ecore#//Any"/>
+    <genClasses image="false" ecoreClass="prf.ecore#//AbstractProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//AbstractProperty/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//AbstractProperty/id"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//AbstractProperty/localMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//AbstractProperty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//AbstractProperty/mode"/>
+      <genOperations ecoreOperation="prf.ecore#//AbstractProperty/toAny"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Action/type"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//ConfigurationKind">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//ConfigurationKind/type"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//Enumeration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Enumeration/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Enumeration/value"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//Enumerations">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Enumerations/enumeration"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//InputValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//InputValue/simple"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//Kind">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Kind/type"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//PrfDocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//PrfDocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//PrfDocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//PrfDocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//PrfDocumentRoot/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//Properties">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Properties/description"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Properties/properties"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/simple"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/simpleSequence"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/test"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/struct"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/structSequence"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//Range">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Range/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Range/min"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//ResultValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//ResultValue/simple"/>
+    </genClasses>
+    <genClasses provider="Stateful" ecoreClass="prf.ecore#//Simple">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/units"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Simple/range"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Simple/enumerations"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Simple/kind"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Simple/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/type"/>
+    </genClasses>
+    <genClasses provider="Stateful" ecoreClass="prf.ecore#//SimpleSequence">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequence/values"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//SimpleSequence/units"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequence/range"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequence/kind"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequence/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//SimpleSequence/type"/>
+    </genClasses>
+    <genClasses provider="Stateful" ecoreClass="prf.ecore#//Struct">
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Struct/simple"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Struct/configurationKind"/>
+    </genClasses>
+    <genClasses provider="Stateful" ecoreClass="prf.ecore#//StructSequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructSequence/struct"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructSequence/structValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructSequence/configurationKind"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prf.ecore#//StructValue">
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructValue/simpleRef"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference prf.ecore#//StructValue/struct"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//StructValue/index"/>
+      <genOperations ecoreOperation="prf.ecore#//StructValue/toAny"/>
+      <genOperations ecoreOperation="prf.ecore#//StructValue/getRef">
+        <genParameters ecoreParameter="prf.ecore#//StructValue/getRef/id"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//Test">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Test/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Test/inputValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Test/resultValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Test/id"/>
+    </genClasses>
+    <genClasses ecoreClass="prf.ecore#//Values">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//Values/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prf.ecore#//PropertyContainer">
+      <genOperations ecoreOperation="prf.ecore#//PropertyContainer/getProperty">
+        <genParameters ecoreParameter="prf.ecore#//PropertyContainer/getProperty/repID"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prf.ecore#//AbstractPropertyRef">
+      <genTypeParameters ecoreTypeParameter="prf.ecore#//AbstractPropertyRef/P"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//AbstractPropertyRef/refID"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference prf.ecore#//AbstractPropertyRef/property"/>
+      <genOperations ecoreOperation="prf.ecore#//AbstractPropertyRef/toAny"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prf.ecore#//PropertyRefContainer">
+      <genOperations ecoreOperation="prf.ecore#//PropertyRefContainer/getPropertyContainer"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prf.ecore#//PropertyRefGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//PropertyRefGroup/properties"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//PropertyRefGroup/simpleRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//PropertyRefGroup/simpleSequenceRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//PropertyRefGroup/structRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//PropertyRefGroup/structSequenceRef"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prf.ecore#//PropertyRefSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//PropertyRefSet/properties"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//PropertyRefSet/simpleRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//PropertyRefSet/simpleSequenceRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//PropertyRefSet/structRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//PropertyRefSet/structSequenceRef"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prf.ecore#//SimpleRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//SimpleRef/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prf.ecore#//SimpleSequenceRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequenceRef/values"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prf.ecore#//StructRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructRef/simpleRef"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="prf.ecore#//StructSequenceRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructSequenceRef/structValue"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

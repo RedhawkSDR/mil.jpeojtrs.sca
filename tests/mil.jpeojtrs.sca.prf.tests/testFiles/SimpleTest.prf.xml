@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA PRF V2.2.2//EN" "properties.dtd">
+<properties>
+  <simple id="DCE:949af1fc-87ec-49a9-92fc-488fce348a0e" mode="readwrite" type="string" name="Name">
+  	<description>Sample description</description>
+  	<value>My Value</value>
+  	<units>The units</units>
+  	<range min="my min" max="my max"></range>
+  	<enumerations><enumeration label="enuLabel" value="enumValue"></enumeration></enumerations>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+  <simple id="DCE:753b3ef5-fa23-4c51-9711-c1183ab23cbd" mode="readwrite" type="string"  name="Name">
+    <kind kindtype="configure"/>
+    <action type="eq"/>
+  </simple>
+  <simple id="DCE:a0dae7c6-1f49-4cc0-9219-2b669ca392c8" mode="readwrite" type="string">
+    <kind kindtype="configure"/>
+    <action type="ge"/>
+  </simple>
+  <simple id="DCE:193f45bf-bed8-4eed-acc3-144d6ab848a7" mode="readwrite" type="string">
+    <kind kindtype="configure"/>
+    <action type="gt"/>
+  </simple>
+  <simple id="DCE:72f5dfb1-cc06-4901-9f8e-a86bb7955381" mode="readwrite" type="string">
+    <kind kindtype="configure"/>
+    <action type="le"/>
+  </simple>
+  <simple id="DCE:c86bcbee-7940-4218-8eca-29e3dcd830fa" mode="readwrite" type="string">
+    <kind kindtype="configure"/>
+    <action type="lt"/>
+  </simple>
+  <simple id="DCE:2aaac878-1416-4199-af3f-bafdde245091" mode="readwrite" type="string">
+    <kind kindtype="configure"/>
+    <action type="ne"/>
+  </simple>
+</properties>

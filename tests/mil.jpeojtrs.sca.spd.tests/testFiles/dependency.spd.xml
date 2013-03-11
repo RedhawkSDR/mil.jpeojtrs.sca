@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softpkg PUBLIC "-//JTRS//DTD SCA SPD V2.2.2//EN" "softpkg.dtd">
+<softpkg id="DCE:3b5527f5-8488-4b09-bfff-2ec49a90cdd8" name="defaultCpp" type="sca_compliant">
+  <title></title>
+  <author>
+    <name></name>
+  </author>
+  <propertyfile type="PRF">
+    <localfile name="defaultCpp.prf.xml"/>
+  </propertyfile>
+  <descriptor>
+    <localfile name="defaultCpp.scd.xml"/>
+  </descriptor>
+  <implementation id="DCE:9c4257a0-4281-45c7-85f6-a66adc018c7e" aepcompliance="aep_compliant">
+    <description>The implementation contains descriptive information about the template for a software component.</description>
+    <code type="Executable">
+      <localfile name="defaultCpp_cpp_impl1/defaultCpp_cpp_impl1"/>
+      <entrypoint>defaultCpp_cpp_impl1/defaultCpp_cpp_impl1</entrypoint>
+    </code>
+    <compiler name="/usr/bin/gcc" version="4.1.2"/>
+    <programminglanguage name="C++"/>
+    <humanlanguage name="EN"/>
+    <os name="Linux"/>
+    <processor name="x86"/>
+    <dependency type="allocation">
+      <propertyref refid="DCE:56b2eda0-1dea-47c3-8392-93e496a8a9b5" value="400000"/>
+    </dependency>
+    <dependency type="matching">
+      <softpkgref>
+        <localfile name="usesdevice.spd.xml"/>
+      </softpkgref>
+    </dependency>
+    <dependency type="matching">
+      <softpkgref>
+        <localfile name="usesdevice.spd.xml"/>
+        <implref refid="DCE:8a018a00-ddbc-4525-99f2-06c923c2a777"/>
+      </softpkgref>
+    </dependency>
+    <dependency type="allocation">
+      <simpleref refid="DCE:3b5527f4-8488-4b09-bfff-2ec49a90ddd2" value="zxc" />
+    </dependency>
+    <dependency type="allocation">
+      <simplesequenceref refid="DCE:3b5527f5-8488-4b09-bfff-2ec49a90dddd">
+			<values>
+				<value>1</value>
+				<value>2</value>
+			</values>
+		</simplesequenceref>
+    </dependency>
+    <dependency type="allocation">
+      <structref refid="DCE:9c3b2f8f-c0fa-4200-a8f9-e03418e46033">
+			<simpleref refid="DCE:a4d7a36d-a9b2-4040-86ec-ba5054070c03" value="Struct Overriden Value" />
+		</structref>
+    </dependency>
+    <dependency type="allocation">
+      <structsequenceref refid="DCE:c6e48edd-a02f-4e49-932f-64ded6bf019f">
+			<structvalue>
+				<simpleref refid="DCE:a4d7a36d-a9b2-4040-86ec-ba5054070c03" value="Struct Sequence Overridden Value" />
+			</structvalue>
+		</structsequenceref>
+    </dependency>
+  </implementation>
+</softpkg>

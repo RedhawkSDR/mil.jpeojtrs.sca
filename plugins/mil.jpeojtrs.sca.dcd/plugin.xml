@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://sca.jpeojtrs.mil/dcd"
+            class="mil.jpeojtrs.sca.dcd.DcdPackage"
+            genModel="model/dcd.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.content_parser">
+      <parser
+            contentTypeIdentifier="mil.jpeojtrs.sca.dcd.content-type"
+            class="mil.jpeojtrs.sca.dcd.util.DcdResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            file-extensions="xml"
+            file-names="*.dcd.xml"
+            id="mil.jpeojtrs.sca.dcd.content-type"
+            name="%_UI_Dcd_content_type"
+            priority="normal">
+         <describer
+               class="org.eclipse.core.runtime.content.XMLRootElementContentDescriber2"
+               plugin="org.eclipse.core.runtime">
+            <parameter
+                  name="element"
+                  value="deviceconfiguration">
+            </parameter>
+         </describer>
+      </content-type>
+   </extension>
+
+</plugin>

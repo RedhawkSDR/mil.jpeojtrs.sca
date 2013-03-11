@@ -1,0 +1,7 @@
+		// END GENERATED CODE
+		
+		// FIXME: implement this method to unset the '<%=genFeature.getFormattedName()%>' <%=genFeature.getFeatureKind()%>
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+		
+		// BEGIN GENERATED CODE
