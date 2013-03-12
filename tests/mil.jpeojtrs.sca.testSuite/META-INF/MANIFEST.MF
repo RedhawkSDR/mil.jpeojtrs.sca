@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: SCA Test Suite
 Bundle-SymbolicName: mil.jpeojtrs.sca.testSuite
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: United States Government
+Bundle-Vendor: REDHAWK
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: mil.jpeojtrs.sca.dcd.tests;bundle-version="1.0.0",
  mil.jpeojtrs.sca.dmd.tests;bundle-version="1.0.0",

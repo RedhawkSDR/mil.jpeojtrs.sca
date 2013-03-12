@@ -12,4 +12,4 @@ Require-Bundle: mil.jpeojtrs.sca.util;bundle-version="2.2.2",
  org.junit;bundle-version="4.8.1",
  org.eclipse.core.runtime;bundle-version="3.6.0"
 Export-Package: mil.jpeojtrs.sca.util.tests
-Bundle-Vendor: United States Government
+Bundle-Vendor: REDHAWK

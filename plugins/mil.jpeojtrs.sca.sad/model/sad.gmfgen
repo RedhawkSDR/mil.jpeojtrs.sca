@@ -622,7 +622,7 @@
     </preferencePages>
   </diagram>
   <plugin
-      provider="United States Government"
+      provider="REDHAWK"
       printingEnabled="true">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>mil.jpeojtrs.sca.diagram</requiredPlugins>
