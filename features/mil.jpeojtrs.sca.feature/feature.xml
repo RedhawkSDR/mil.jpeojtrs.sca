@@ -14,19 +14,17 @@
       label="%featureName"
       version="2.2.2.qualifier"
       provider-name="%providerName"
-      plugin="mil.jpeojtrs.sca.util"
-      image="rh_logo_128x128.gif">
+      plugin="mil.jpeojtrs.sca.util">
 
    <description url="http://redhawksdr.org">
       %description
    </description>
 
-   <copyright url="http://redhawksdr.org">
+   <copyright url="%copyrightURL">
       %copyright
    </copyright>
 
    <license url="%licenseURL">
-      :
    %license
    </license>
 
