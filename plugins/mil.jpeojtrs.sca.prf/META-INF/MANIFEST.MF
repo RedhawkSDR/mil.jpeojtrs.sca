@@ -14,6 +14,5 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  org.eclipse.emf.ecore;bundle-version="2.6.1";visibility:=reexport,
  org.eclipse.emf.ecore.xmi;bundle-version="2.5.0";visibility:=reexport,
  mil.jpeojtrs.sca.validator;bundle-version="1.0.0",
- org.eclipse.wst.xml.core;bundle-version="1.1.308";resolution:=optional,
  mil.jpeojtrs.sca.util;bundle-version="3.0.0",
  idl.cf;bundle-version="2.2.2"

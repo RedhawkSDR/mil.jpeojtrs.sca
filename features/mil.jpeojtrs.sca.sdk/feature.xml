@@ -19,7 +19,7 @@
    </license>
 
    <includes
-         id="mil.jpeojtrs.sca.feature"
+         id="mil.jpeojtrs.sca"
          version="0.0.0"/>
 
    <includes

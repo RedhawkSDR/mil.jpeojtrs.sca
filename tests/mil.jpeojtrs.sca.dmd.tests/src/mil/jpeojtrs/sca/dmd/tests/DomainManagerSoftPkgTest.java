@@ -15,6 +15,7 @@ import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.dmd.DomainManagerConfiguration;
 import mil.jpeojtrs.sca.dmd.DomainManagerSoftPkg;
+import mil.jpeojtrs.sca.spd.SoftPkg;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
@@ -118,15 +119,20 @@ public class DomainManagerSoftPkgTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.dmd.DomainManagerSoftPkg#setSoftPkg(mil.jpeojtrs.sca.spd.SoftPkg)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testSetSoftPkg() {
 		// END GENERATED CODE
-		
-		// FIXME: implement this feature setter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-		
+		SoftPkg spd = getFixture().getSoftPkg();
+		Assert.assertNotNull(this.getFixture().getSoftPkg());
+		Assert.assertEquals("DCE:82f6515a-de05-47f0-8e7a-1c9f621c00ee", this.getFixture().getSoftPkg().getId());
+		getFixture().setSoftPkg(null);
+		Assert.assertNull(getFixture().getSoftPkg());
+		Assert.assertNull(getFixture().getLocalFile());
+		getFixture().setSoftPkg(spd);
+		Assert.assertNotNull(this.getFixture().getSoftPkg());
+		Assert.assertNotNull(getFixture().getLocalFile());
+		Assert.assertEquals("DCE:82f6515a-de05-47f0-8e7a-1c9f621c00ee", this.getFixture().getSoftPkg().getId());
 		// END GENERATED CODE
 	}
 

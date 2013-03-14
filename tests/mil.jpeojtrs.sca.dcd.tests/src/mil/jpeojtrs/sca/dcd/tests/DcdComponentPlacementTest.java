@@ -14,7 +14,6 @@ import junit.framework.Assert;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.dcd.DcdComponentInstantiation;
 import mil.jpeojtrs.sca.dcd.DcdComponentPlacement;
-import mil.jpeojtrs.sca.dcd.DcdPartitioning;
 import mil.jpeojtrs.sca.dcd.DeviceConfiguration;
 import mil.jpeojtrs.sca.partitioning.tests.ComponentPlacementTest;
 
@@ -96,22 +95,6 @@ public class DcdComponentPlacementTest extends ComponentPlacementTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link mil.jpeojtrs.sca.dcd.DcdComponentPlacement#getParentDevice() <em>Parent Device</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mil.jpeojtrs.sca.dcd.DcdComponentPlacement#getParentDevice()
-	 * @generated NOT
-	 */
-	public void testUtil() {
-		// END GENERATED CODE
-		Assert.assertNotNull(getFixture());
-		Assert.assertFalse(DcdComponentPlacement.Util.isAggregateDevice(getFixture()));
-		Assert.assertTrue(DcdComponentPlacement.Util.isAggregateDevice(((DcdPartitioning) getFixture().eContainer()).getComponentPlacement().get(4)));
-		Assert.assertFalse(DcdComponentPlacement.Util.isAggregateDevice(null));
-		// BEGIN GENERATED CODE
 	}
 
 	/**

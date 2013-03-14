@@ -114,13 +114,17 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 * @generated NOT
 	 */
 	public P basicGetProperty() {
+		if (getRefID() == null) {
+			return null;
+		}
 		if (eContainer instanceof PropertyRefContainer) {
 			PropertyContainer propertyContainer = ((PropertyRefContainer) eContainer).getPropertyContainer();
 			if (propertyContainer != null) {
 				return (P) propertyContainer.getProperty(getRefID());
 			}
 		}
-		return null;
+		// Revert to looking for it by ID
+		return (P) eResource().getEObject(getRefID());
 	}
 
 	/**

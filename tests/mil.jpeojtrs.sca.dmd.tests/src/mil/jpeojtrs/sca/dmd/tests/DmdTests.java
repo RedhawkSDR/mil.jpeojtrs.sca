@@ -10,13 +10,14 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.dmd.tests;
 
-import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.dmd.DomainManagerConfiguration;
+import mil.jpeojtrs.sca.util.SdrURIHandler;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
@@ -25,7 +26,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.junit.Assert;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,25 +74,27 @@ public class DmdTests extends TestSuite {
 		super(name);
 	}
 	
-	public static DomainManagerConfiguration getDomainManagerConfiguration()  throws Exception {
-		URI uri = getURI("sdr/dom/domain/DomainManager.dmd.xml");
+	private static ResourceSet createResourceSet() throws URISyntaxException {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		Resource resource = resourceSet.getResource(uri, true);
-		return DomainManagerConfiguration.Util.getDomainManagerConfiguration(resource);
+		URL url = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.dmd.tests"), new Path("sdr"), null);
+		SdrURIHandler handler = new SdrURIHandler(URI.createURI(url.toURI().toString()));
+		resourceSet.getURIConverter().getURIHandlers().add(0, handler);
+		return resourceSet;
 	}
 	
-	public static DomainManagerConfiguration getTestFileDomainManagerConfiguration()  throws Exception {
-		URI uri = getURI("testFiles/DomainManager.dmd.xml");
-		ResourceSet resourceSet = new ResourceSetImpl();
+	public static DomainManagerConfiguration getDomainManagerConfiguration()  throws Exception {
+		URI uri = URI.createURI("sdrDom:///domain/DomainManager.dmd.xml");
+		ResourceSet resourceSet = createResourceSet();
 		Resource resource = resourceSet.getResource(uri, true);
 		return DomainManagerConfiguration.Util.getDomainManagerConfiguration(resource);
 	}
 
-	private static URI getURI(final String filePath) throws IOException {
-		URL url = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.dmd.tests"), new Path(filePath), null);
-		Assert.assertNotNull("No such file: mil.jpeojtrs.sca.dcd.tests/" + filePath, url);
-		URL fileUrl = FileLocator.toFileURL(url);
-		return URI.createURI(fileUrl.toString());
+	public static DomainManagerConfiguration getTestFileDomainManagerConfiguration() throws URISyntaxException {
+		URI uri = URI.createURI("sdrDom:///domain/DomainManager2.dmd.xml");
+		ResourceSet resourceSet = createResourceSet();
+		Resource resource = resourceSet.getResource(uri, true);
+		return DomainManagerConfiguration.Util.getDomainManagerConfiguration(resource);
 	}
+
 
 } //DmdTests
