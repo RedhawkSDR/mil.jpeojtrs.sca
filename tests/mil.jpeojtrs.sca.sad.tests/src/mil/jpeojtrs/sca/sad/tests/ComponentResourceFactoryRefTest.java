@@ -16,6 +16,7 @@ import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.SimpleRef;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ResourceFactoryProperties;
+import mil.jpeojtrs.sca.sad.SadComponentInstantiation;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 
 import org.junit.Test;
@@ -112,15 +113,11 @@ public class ComponentResourceFactoryRefTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef#getComponent()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetComponent() {
 		// END GENERATED CODE
-		
-		// FIXME: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-		
+//		Assert.assertNotNull(getFixture().getComponent());
 		// BEGIN GENERATED CODE
 	}
 
@@ -129,15 +126,19 @@ public class ComponentResourceFactoryRefTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef#setComponent(mil.jpeojtrs.sca.sad.SadComponentInstantiation)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testSetComponent() {
 		// END GENERATED CODE
-		
-		// FIXME: implement this feature setter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-		
+		SadComponentInstantiation comp = getFixture().getComponent();
+		getFixture().setComponent(null);
+		Assert.assertNull(getFixture().getComponent());
+		getFixture().setComponent(comp);
+		if (comp == null) {
+			Assert.assertNull(getFixture().getComponent());
+		} else {
+			Assert.assertNotNull(getFixture().getComponent());
+		}
 		// END GENERATED CODE
 	}
 

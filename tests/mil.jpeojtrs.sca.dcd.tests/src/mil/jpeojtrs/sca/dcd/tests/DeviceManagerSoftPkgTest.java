@@ -145,7 +145,7 @@ public class DeviceManagerSoftPkgTest extends TestCase {
 	public void testSetSoftPkg() throws IOException {
 		// END GENERATED CODE
 		ResourceSet resourceSet = fixture.eResource().getResourceSet();
-		URI uri = DcdTests.getURI("mgr/DeviceManager2.spd.xml");
+		URI uri = URI.createURI("sdrDev:///mgr/DeviceManager2.spd.xml");
 		final Resource resource = resourceSet.getResource(uri, true); 
 
 		final SoftPkg spd = SoftPkg.Util.getSoftPkg(resource);

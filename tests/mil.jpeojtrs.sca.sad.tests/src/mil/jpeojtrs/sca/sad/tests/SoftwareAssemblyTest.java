@@ -18,11 +18,14 @@ import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
 import mil.jpeojtrs.sca.sad.HostCollocation;
 import mil.jpeojtrs.sca.sad.Port;
+import mil.jpeojtrs.sca.sad.SadComponentInstantiation;
 import mil.jpeojtrs.sca.sad.SadComponentPlacement;
 import mil.jpeojtrs.sca.sad.SadConnectInterface;
 import mil.jpeojtrs.sca.sad.SadConnections;
 import mil.jpeojtrs.sca.sad.SadPartitioning;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,15 +120,13 @@ public class SoftwareAssemblyTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.SoftwareAssembly#getComponentInstantiation(java.lang.String)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetComponentInstantiation__String() {
 		// END GENERATED CODE
-		
-		// FIXME: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-		
+		Assert.assertNull(getFixture().getComponentInstantiation(null));
+		Assert.assertNull(getFixture().getComponentInstantiation(""));
+		Assert.assertNotNull(getFixture().getAllComponentInstantiations().get(0).getId());
 		// BEGIN GENERATED CODE
 	}
 
@@ -134,15 +135,18 @@ public class SoftwareAssemblyTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.SoftwareAssembly#getComponentInstantiationsInStartOrder()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetComponentInstantiationsInStartOrder() {
 		// END GENERATED CODE
+		EList<SadComponentInstantiation> list = getFixture().getComponentInstantiationsInStartOrder();
+		SadComponentInstantiation prev = null;
 		
-		// FIXME: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-		
+		for (SadComponentInstantiation inst : list) {
+			if (prev != null) {
+				Assert.assertTrue(prev.getStartOrder().compareTo(inst.getStartOrder()) < 0);
+			}
+		}
 		// BEGIN GENERATED CODE
 	}
 
@@ -151,15 +155,16 @@ public class SoftwareAssemblyTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.SoftwareAssembly#getAllComponentInstantiations()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetAllComponentInstantiations() {
 		// END GENERATED CODE
-		
-		// FIXME: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-		
+		int size = 0;
+		size += getFixture().getPartitioning().getComponentPlacement().size();
+		for (HostCollocation h : getFixture().getPartitioning().getHostCollocation()) {
+			size += h.getComponentPlacement().size();
+		}
+		Assert.assertEquals(size, getFixture().getAllComponentInstantiations().size());
 		// BEGIN GENERATED CODE
 	}
 

@@ -121,9 +121,10 @@ public abstract class AbstractPropertyTest extends TestCase {
 	 */
 	public void testUnsetMode() {
 		// END GENERATED CODE
+		getFixture().setMode(AccessType.WRITEONLY);
 		getFixture().getMode();
 		getFixture().unsetMode();
-		Assert.assertNull(getFixture().getMode());
+		Assert.assertEquals(AccessType.READWRITE, getFixture().getMode());
 		// BEGIN GENERATED CODE
 	}
 

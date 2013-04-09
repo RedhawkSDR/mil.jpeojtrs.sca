@@ -10,13 +10,13 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.dcd.tests;
 
-import java.io.IOException;
 import java.net.URL;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.dcd.DeviceConfiguration;
+import mil.jpeojtrs.sca.util.SdrURIHandler;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
@@ -25,7 +25,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.junit.Assert;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,18 +73,14 @@ public class DcdTests extends TestSuite {
 	}
 	
 	public static DeviceConfiguration getDeviceConfiguration()  throws Exception {
-		URI uri = getURI("nodes/defaultNode/defaultNode.dcd.xml");
+		URI uri = URI.createURI("sdrDev:///nodes/defaultNode/defaultNode.dcd.xml");
 		ResourceSet resourceSet = new ResourceSetImpl();
+		URL url = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.dcd.tests"), new Path("sdr"), null);
+		SdrURIHandler handler = new SdrURIHandler(URI.createURI(url.toURI().toString()));
+		resourceSet.getURIConverter().getURIHandlers().add(0, handler);
 		Resource resource = resourceSet.getResource(uri, true);
 		return DeviceConfiguration.Util.getDeviceConfiguration(resource);
 	}
 
-	public static URI getURI(final String filePath) throws IOException {
-		String fullPath = "sdr/dev/" + filePath;
-		URL url = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.dcd.tests"), new Path(fullPath), null);
-		Assert.assertNotNull("No such file: mil.jpeojtrs.sca.dcd.tests/" + fullPath, url);
-		URL fileUrl = FileLocator.toFileURL(url);
-		return URI.createURI(fileUrl.toString());
-	}
 
 } //DcdTests

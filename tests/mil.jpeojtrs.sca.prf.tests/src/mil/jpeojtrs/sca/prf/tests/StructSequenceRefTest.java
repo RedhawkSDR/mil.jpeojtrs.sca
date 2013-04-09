@@ -12,7 +12,10 @@ package mil.jpeojtrs.sca.prf.tests;
 
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.PrfFactory;
+import mil.jpeojtrs.sca.prf.Properties;
 import mil.jpeojtrs.sca.prf.StructSequenceRef;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,11 +65,15 @@ public class StructSequenceRefTest extends AbstractPropertyRefTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(PrfFactory.eINSTANCE.createStructSequenceRef());
+		final Properties props = Properties.Util.getProperties(new ResourceSetImpl().getResource(PrfTests.getURI("testFiles/StructSequenceTest.prf.xml"), true));
+		StructSequenceRef ssRef = PrfFactory.eINSTANCE.createStructSequenceRef();
+		props.eResource().getContents().add(ssRef);
+		ssRef.setProperty(props.getStructSequence().get(0));
+		setFixture(ssRef);
 	}
 
 	/**
@@ -85,15 +92,11 @@ public class StructSequenceRefTest extends AbstractPropertyRefTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.prf.PropertyRefContainer#getPropertyContainer()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetPropertyContainer() {
 		// END GENERATED CODE
-		
-		// FIXME: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-		
+		getFixture().getPropertyContainer();
 		// BEGIN GENERATED CODE
 	}
 

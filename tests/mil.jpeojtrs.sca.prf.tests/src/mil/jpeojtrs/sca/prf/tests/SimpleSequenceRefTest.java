@@ -12,7 +12,10 @@ package mil.jpeojtrs.sca.prf.tests;
 
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.PrfFactory;
+import mil.jpeojtrs.sca.prf.Properties;
 import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,11 +59,15 @@ public class SimpleSequenceRefTest extends AbstractPropertyRefTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(PrfFactory.eINSTANCE.createSimpleSequenceRef());
+		final Properties props = Properties.Util.getProperties(new ResourceSetImpl().getResource(PrfTests.getURI("testFiles/SimpleSequenceTest.prf.xml"), true));
+		SimpleSequenceRef ssRef = PrfFactory.eINSTANCE.createSimpleSequenceRef();
+		props.eResource().getContents().add(ssRef);
+		ssRef.setProperty(props.getSimpleSequence().get(0));
+		setFixture(ssRef);
 	}
 
 	/**

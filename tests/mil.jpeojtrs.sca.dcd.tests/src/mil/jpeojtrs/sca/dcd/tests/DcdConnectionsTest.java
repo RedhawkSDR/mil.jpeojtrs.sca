@@ -85,5 +85,9 @@ public class DcdConnectionsTest extends ConnectionsTest {
 	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
+	
+	public void testStub() {
+		
+	}
 
 } //DcdConnectionsTest
