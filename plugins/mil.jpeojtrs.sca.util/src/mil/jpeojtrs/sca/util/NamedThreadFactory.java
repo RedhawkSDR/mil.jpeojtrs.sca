@@ -3,6 +3,8 @@ package mil.jpeojtrs.sca.util;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.eclipse.core.runtime.Assert;
+
 /**
  * @since 3.3
  */
@@ -13,8 +15,8 @@ public class NamedThreadFactory implements ThreadFactory {
 	private final String namePrefix;
 
 	public NamedThreadFactory(String poolName) {
-		SecurityManager s = System.getSecurityManager();
-		group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
+		Assert.isNotNull(poolName, "Must provide a pool name.");
+		group = new ThreadGroup(poolName);
 		namePrefix = poolName + "-thread-";
 	}
 
