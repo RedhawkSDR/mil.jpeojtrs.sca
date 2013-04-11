@@ -24,7 +24,7 @@ import java.util.concurrent.TimeoutException;
  */
 public final class ProtectedThreadExecutor {
 
-	private static final ExecutorService EXECUTOR = Executors.newCachedThreadPool();
+	private static final ExecutorService EXECUTOR = Executors.newCachedThreadPool(new NamedThreadFactory(ProtectedThreadExecutor.class.getName()));
 
 	private ProtectedThreadExecutor() {
 
