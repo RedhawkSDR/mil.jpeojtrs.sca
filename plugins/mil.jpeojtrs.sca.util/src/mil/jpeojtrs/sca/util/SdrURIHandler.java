@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.impl.URIHandlerImpl;
 
 /**
- * @since 3.2
+ * @since 3.3
  *
  */
 public class SdrURIHandler extends URIHandlerImpl {
