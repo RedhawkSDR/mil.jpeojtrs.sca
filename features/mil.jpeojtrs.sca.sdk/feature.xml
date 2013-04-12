@@ -23,7 +23,7 @@
          version="0.0.0"/>
 
    <includes
-         id="mil.jpeojtrs.sca.feature.source"
+         id="mil.jpeojtrs.sca.source"
          version="0.0.0"/>
 
 </feature>
