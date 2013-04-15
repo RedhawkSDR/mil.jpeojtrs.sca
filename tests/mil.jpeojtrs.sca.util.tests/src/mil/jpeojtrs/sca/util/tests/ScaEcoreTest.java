@@ -11,7 +11,6 @@
 package mil.jpeojtrs.sca.util.tests;
 
 import junit.framework.Assert;
-import junit.framework.AssertionFailedError;
 import mil.jpeojtrs.sca.spd.Code;
 import mil.jpeojtrs.sca.spd.Implementation;
 import mil.jpeojtrs.sca.spd.LocalFile;
@@ -19,7 +18,6 @@ import mil.jpeojtrs.sca.spd.SpdFactory;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
-import org.eclipse.core.runtime.AssertionFailedException;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.junit.Test;
 
