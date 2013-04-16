@@ -1,0 +1,14 @@
+#ifndef _DATAXML_IDL_
+#define _DATAXML_IDL_
+
+#include "ossie/BULKIO/bio_runtimeStats.idl"
+#include "ossie/BULKIO/bio_updateSRI.idl"
+
+module BULKIO {
+
+    interface dataXML : ProvidesPortStatisticsProvider, updateSRI {
+        void pushPacket(in string xml_string, in boolean EOS, in string streamID);
+    };
+};
+
+#endif

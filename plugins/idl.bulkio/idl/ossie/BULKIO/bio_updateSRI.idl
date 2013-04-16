@@ -1,0 +1,16 @@
+#ifndef _UPDATE_SRI_IDL_
+#define _UPDATE_SRI_IDL_
+
+#include "ossie/BULKIO/bio_runtimeStats.idl"
+
+module BULKIO {
+
+    interface updateSRI {
+        // List of all active streamSRIs (that have not been ended)
+        readonly attribute StreamSRISequence activeSRIs;
+
+        void pushSRI(in StreamSRI H);
+    };
+};
+
+#endif

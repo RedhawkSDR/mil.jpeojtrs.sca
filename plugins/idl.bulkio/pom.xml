@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+        <parent>
+                <relativePath>../../releng/pom.xml</relativePath>
+                <groupId>mil.jpeojtrs.sca</groupId>
+                <artifactId>releng</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+        </parent>
+
+
+	<artifactId>idl.bulkio</artifactId>
+	<packaging>eclipse-plugin</packaging>
+	<version>1.8.0-SNAPSHOT</version>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${basedir}/src</directory>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>idlj-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<debug>true</debug>
+					<sourceDirectory>${basedir}/idl/ossie/BULKIO</sourceDirectory>
+					<outputDirectory>${basedir}/src/</outputDirectory>
+					<compiler>idlj</compiler>
+					<sources>
+						<source>
+							<compatible>false</compatible>
+							<emitStubs>true</emitStubs>
+							<emitSkeletons>true</emitSkeletons>
+							<packagePrefixes>
+								<packagePrefix>
+									<type>CosNaming</type>
+									<prefix>org.omg</prefix>
+								</packagePrefix>
+								<packagePrefix>
+									<type>CosEventChannelAdmin</type>
+									<prefix>org.omg</prefix>
+								</packagePrefix>
+								<packagePrefix>
+									<type>CosEventComm</type>
+									<prefix>org.omg</prefix>
+								</packagePrefix>
+							</packagePrefixes>
+							<additionalArguments>
+								<additionalArgument>-nowarn</additionalArgument>
+							</additionalArguments>
+						</source>
+					</sources>
+					<includeDirs>
+						<includeDir>/usr/share/idl/omniORB</includeDir>
+						<includeDir>/usr/share/idl/omniORB/COS</includeDir>
+                                                <includeDir>${basedir}/../idl.cf/idl</includeDir>
+                                                <includeDir>${basedir}/../idl.cf/idl/ossie</includeDir>
+                                                <includeDir>${basedir}/../idl.cf/idl/ossie/CF</includeDir>
+						<includeDir>${basedir}/idl</includeDir>
+						<includeDir>${basedir}/idl/ossie</includeDir>
+						<includeDir>${basedir}/idl/ossie/BULKIO</includeDir>
+					</includeDirs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

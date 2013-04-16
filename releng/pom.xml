@@ -15,7 +15,7 @@
 
     <properties>
         <eclipse>http://download.eclipse.org/releases/juno</eclipse>
-        <redhawk-core-framework>http://download.redhawksdr.org/redhawk-core-framework/releases/1.9</redhawk-core-framework>
+        <jacorb>http://download.redhawksdr.org/jacorb/releases/3.1</jacorb>
     </properties>
 
     <repositories>
@@ -26,15 +26,17 @@
         </repository>
 
         <repository>
-            <id>redhawk-core-framework</id>
+            <id>jacorb</id>
             <layout>p2</layout>
-            <url>${redhawk-core-framework}</url>
+            <url>${jacorb}</url>
         </repository>
     </repositories>
 
     <modules>
         <module>../features/mil.jpeojtrs.sca.feature</module>
         <module>../features/mil.jpeojtrs.sca.sdk</module>
+        <module>../plugins/idl.cf</module>
+        <module>../plugins/idl.bulkio</module>
         <module>../plugins/mil.jpeojtrs.sca.cf</module>
         <module>../plugins/mil.jpeojtrs.sca.cf.edit</module>
         <module>../plugins/mil.jpeojtrs.sca.dcd</module>

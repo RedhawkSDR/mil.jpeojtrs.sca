@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Export-Package: CF,
+ CF.ApplicationFactoryPackage,
+ CF.ApplicationPackage,
+ CF.DeviceManagerPackage,
+ CF.DevicePackage,
+ CF.DomainManagerPackage,
+ CF.ExecutableDevicePackage,
+ CF.FileManagerPackage,
+ CF.FilePackage,
+ CF.FileSystemPackage,
+ CF.LifeCyclePackage,
+ CF.LoadableDevicePackage,
+ CF.PortPackage,
+ CF.PortSupplierPackage,
+ CF.PropertySetPackage,
+ CF.ResourceFactoryPackage,
+ CF.ResourcePackage,
+ CF.TestableObjectPackage,
+ ExtendedCF,
+ ExtendedCF.SandboxPackage,
+ ExtendedCF.WKP,
+ ExtendedEvent,
+ PortTypes,
+ StandardEvent
+Bundle-Name: Core Framework IDL
+Bundle-Vendor: REDHAWK
+Bundle-Version: 2.2.2.qualifier
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: idl.cf
+Import-Package: org.omg.CosEventChannelAdmin,
+ org.omg.CosEventComm
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+

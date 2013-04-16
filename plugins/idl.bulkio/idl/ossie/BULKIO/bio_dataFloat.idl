@@ -1,0 +1,14 @@
+#ifndef _DATAFLOAT_IDL_
+#define _DATAFLOAT_IDL_
+
+#include "ossie/BULKIO/bio_runtimeStats.idl"
+#include "ossie/BULKIO/bio_updateSRI.idl"
+
+module BULKIO {
+
+    interface dataFloat : ProvidesPortStatisticsProvider, updateSRI {
+        void pushPacket(in PortTypes::FloatSequence data, in PrecisionUTCTime T, in boolean EOS, in string streamID);
+    };
+};
+
+#endif

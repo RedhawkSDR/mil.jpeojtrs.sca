@@ -148,6 +148,19 @@
          unpack="false"/>
 
    <plugin
+         id="idl.cf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="idl.bulkio"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   <plugin
          id="mil.jpeojtrs.sca.cf.edit"
          download-size="0"
          install-size="0"

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-Name: BulkIO IDL
+Bundle-Vendor: REDHAWK
+Bundle-Version: 1.8.0.qualifier
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: idl.bulkio
+Import-Package: org.omg.CosEventChannelAdmin,
+ org.omg.CosEventComm
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: idl.cf;bundle-version="2.2.2"
+Export-Package: BULKIO,
+ BULKIO.dataSDDSPackage
+

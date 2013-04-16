@@ -1,0 +1,14 @@
+#ifndef _DATACHAR_IDL_
+#define _DATACHAR_IDL_
+
+#include "ossie/BULKIO/bio_runtimeStats.idl"
+#include "ossie/BULKIO/bio_updateSRI.idl"
+
+module BULKIO {
+
+    interface dataChar : ProvidesPortStatisticsProvider, updateSRI {
+        void pushPacket(in PortTypes::CharSequence data, in PrecisionUTCTime T, in boolean EOS, in string streamID);
+    };
+};
+
+#endif

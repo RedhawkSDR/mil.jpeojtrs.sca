@@ -1,0 +1,14 @@
+#ifndef _DATASHORT_IDL_
+#define _DATASHORT_IDL_
+
+#include "ossie/BULKIO/bio_runtimeStats.idl"
+#include "ossie/BULKIO/bio_updateSRI.idl"
+
+module BULKIO {
+
+    interface dataLong : ProvidesPortStatisticsProvider, updateSRI {
+        void pushPacket(in PortTypes::LongSequence data, in PrecisionUTCTime T, in boolean EOS, in string streamID);
+    };
+};
+
+#endif
