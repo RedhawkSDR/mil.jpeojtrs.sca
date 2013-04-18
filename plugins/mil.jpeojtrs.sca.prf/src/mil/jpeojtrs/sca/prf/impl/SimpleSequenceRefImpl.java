@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.omg.CORBA.Any;
+import org.omg.CORBA.ORB;
 
 /**
  * <!-- begin-user-doc -->
@@ -183,7 +184,11 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 
 	@Override
     public Any toAny() {
-	    return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral());
+		 if (getValues() != null) {
+             return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral());
+	     } else {
+	             return ORB.init().create_any();
+	     }
     }
 
 } //SimpleSequenceRefImpl
