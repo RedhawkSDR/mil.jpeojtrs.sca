@@ -60,6 +60,7 @@ public class ScdResourceFactoryImpl extends ResourceFactoryImpl {
 
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
+		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
 		
 		result.setDoctypeInfo(null, ScdResourceImpl.DOC_TYPE_SYSTEM);
 		

@@ -66,6 +66,7 @@ public class SadResourceFactoryImpl extends ResourceFactoryImpl {
 		
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
+		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
 		
 		List<EPackage> packageList = new ArrayList<EPackage>();
 		packageList.add(SadPackage.eINSTANCE);
