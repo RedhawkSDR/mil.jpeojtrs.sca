@@ -57,6 +57,7 @@ public class PartitioningResourceFactoryImpl extends ResourceFactoryImpl {
 		
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
+		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
 		
 		return result;
 	}
