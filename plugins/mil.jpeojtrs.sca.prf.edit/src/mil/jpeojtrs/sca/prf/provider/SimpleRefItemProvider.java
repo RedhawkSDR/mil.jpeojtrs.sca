@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Collection;
@@ -40,7 +41,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -74,19 +76,9 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider imple
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SimpleRef_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SimpleRef_value_feature", "_UI_SimpleRef_type"),
-				 PrfPackage.Literals.SIMPLE_REF__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_SimpleRef_value_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SimpleRef_value_feature", "_UI_SimpleRef_type"),
+		        PrfPackage.Literals.SIMPLE_REF__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -123,9 +115,9 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider imple
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SimpleRef.class)) {
-			case PrfPackage.SIMPLE_REF__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case PrfPackage.SIMPLE_REF__VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -147,7 +139,7 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider imple
 		SimpleRef ref = (SimpleRef) object;
 		return SimpleRefItemProvider.getValueText(ref, ref.getValue());
 	}
-	
+
 	public static String getValueText(SimpleRef ref, String value) {
 		String retVal = null;
 		if (value == null || value.toString().length() == 0) {
@@ -157,7 +149,7 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider imple
 		if (property == null) {
 			return value;
 		}
-		
+
 		if (property.getEnumerations() != null) {
 			for (Enumeration e : property.getEnumerations().getEnumeration()) {
 				if (e.getValue().equals(value.toString())) {
@@ -166,11 +158,11 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider imple
 				}
 			}
 		}
-		
+
 		if (retVal == null) {
 			retVal = value.toString();
 		}
-		
+
 		final String units = property.getUnits();
 		if (units != null) {
 			return retVal + " " + units;

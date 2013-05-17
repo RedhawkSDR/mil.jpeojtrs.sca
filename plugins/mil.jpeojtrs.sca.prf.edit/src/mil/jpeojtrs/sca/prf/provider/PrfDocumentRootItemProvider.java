@@ -8,8 +8,8 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -40,10 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PrfDocumentRootItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class PrfDocumentRootItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -79,7 +77,7 @@ public class PrfDocumentRootItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES);
@@ -134,9 +132,9 @@ public class PrfDocumentRootItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PrfDocumentRoot.class)) {
-			case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -152,10 +150,7 @@ public class PrfDocumentRootItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES,
-				 PrfFactory.eINSTANCE.createProperties()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, PrfFactory.eINSTANCE.createProperties()));
 	}
 
 	/**

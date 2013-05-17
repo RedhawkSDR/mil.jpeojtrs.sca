@@ -8,8 +8,8 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -42,11 +42,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractPropertyItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
-	
+public class AbstractPropertyItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -83,19 +81,10 @@ public class AbstractPropertyItemProvider
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractProperty_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_description_feature", "_UI_AbstractProperty_type"),
-				 PrfPackage.Literals.ABSTRACT_PROPERTY__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_AbstractProperty_description_feature"),
+		        getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_description_feature", "_UI_AbstractProperty_type"),
+		        PrfPackage.Literals.ABSTRACT_PROPERTY__DESCRIPTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -105,19 +94,9 @@ public class AbstractPropertyItemProvider
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractProperty_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_id_feature", "_UI_AbstractProperty_type"),
-				 PrfPackage.Literals.ABSTRACT_PROPERTY__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_AbstractProperty_id_feature"), getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_id_feature", "_UI_AbstractProperty_type"),
+		        PrfPackage.Literals.ABSTRACT_PROPERTY__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -127,24 +106,14 @@ public class AbstractPropertyItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractProperty_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_name_feature", "_UI_AbstractProperty_type"),
-				 PrfPackage.Literals.ABSTRACT_PROPERTY__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_AbstractProperty_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_name_feature", "_UI_AbstractProperty_type"),
+		        PrfPackage.Literals.ABSTRACT_PROPERTY__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	public static final int PROP_NAME_COLUMN = 0;
 	public static final int PROP_VALUE_COLUMN = 1;
-	
+
 	/**
 	 * This adds a property descriptor for the Mode feature.
 	 * <!-- begin-user-doc -->
@@ -154,22 +123,13 @@ public class AbstractPropertyItemProvider
 	protected void addModePropertyDescriptor(Object object) {
 		boolean showMode = false;
 		if (object instanceof EObject) {
-			showMode = ((EObject)object).eContainer() instanceof Properties;
+			showMode = ((EObject) object).eContainer() instanceof Properties;
 		}
 		if (showMode) {
-			itemPropertyDescriptors.add
-				(createItemPropertyDescriptor
-					(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-					 getResourceLocator(),
-					 getString("_UI_AbstractProperty_mode_feature"),
-					 getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_mode_feature", "_UI_AbstractProperty_type"),
-					 PrfPackage.Literals.ABSTRACT_PROPERTY__MODE,
-					 true,
-					 false,
-					 false,
-					 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-					 null,
-					 null));
+			itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			        getString("_UI_AbstractProperty_mode_feature"),
+			        getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_mode_feature", "_UI_AbstractProperty_type"), PrfPackage.Literals.ABSTRACT_PROPERTY__MODE,
+			        true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 		}
 	}
 
@@ -181,10 +141,8 @@ public class AbstractPropertyItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AbstractProperty)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AbstractProperty_type") :
-			getString("_UI_AbstractProperty_type") + " " + label;
+		String label = ((AbstractProperty) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_AbstractProperty_type") : getString("_UI_AbstractProperty_type") + " " + label;
 	}
 
 	/**
@@ -199,12 +157,12 @@ public class AbstractPropertyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AbstractProperty.class)) {
-			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
-			case PrfPackage.ABSTRACT_PROPERTY__ID:
-			case PrfPackage.ABSTRACT_PROPERTY__NAME:
-			case PrfPackage.ABSTRACT_PROPERTY__MODE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
+		case PrfPackage.ABSTRACT_PROPERTY__ID:
+		case PrfPackage.ABSTRACT_PROPERTY__NAME:
+		case PrfPackage.ABSTRACT_PROPERTY__MODE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -238,21 +196,21 @@ public class AbstractPropertyItemProvider
 	 */
 	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case AbstractPropertyItemProvider.PROP_NAME_COLUMN:
-			return getImage(object); 
+			return getImage(object);
 		case AbstractPropertyItemProvider.PROP_VALUE_COLUMN:
 			return null;
 		default:
 			return super.getColumnImage(object, columnIndex);
 		}
 	}
-	
+
 	@Override
 	public String getColumnText(Object object, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case AbstractPropertyItemProvider.PROP_NAME_COLUMN:
-			return getText(object); 
+			return getText(object);
 		case AbstractPropertyItemProvider.PROP_VALUE_COLUMN:
 			return getValueText((AbstractProperty) object);
 		default:

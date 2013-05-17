@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Collection;
@@ -39,7 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RangeItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class RangeItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
+        IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -75,19 +77,9 @@ public class RangeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addMaxPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Range_max_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Range_max_feature", "_UI_Range_type"),
-				 PrfPackage.Literals.RANGE__MAX,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_Range_max_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Range_max_feature", "_UI_Range_type"), PrfPackage.Literals.RANGE__MAX,
+		        true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -97,19 +89,9 @@ public class RangeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addMinPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Range_min_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Range_min_feature", "_UI_Range_type"),
-				 PrfPackage.Literals.RANGE__MIN,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_Range_min_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Range_min_feature", "_UI_Range_type"), PrfPackage.Literals.RANGE__MIN,
+		        true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -131,10 +113,8 @@ public class RangeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Range)object).getMax();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Range_type") :
-			getString("_UI_Range_type") + " " + label;
+		String label = ((Range) object).getMax();
+		return label == null || label.length() == 0 ? getString("_UI_Range_type") : getString("_UI_Range_type") + " " + label;
 	}
 
 	/**
@@ -149,10 +129,10 @@ public class RangeItemProvider extends ItemProviderAdapter implements IEditingDo
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Range.class)) {
-			case PrfPackage.RANGE__MAX:
-			case PrfPackage.RANGE__MIN:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case PrfPackage.RANGE__MAX:
+		case PrfPackage.RANGE__MIN:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

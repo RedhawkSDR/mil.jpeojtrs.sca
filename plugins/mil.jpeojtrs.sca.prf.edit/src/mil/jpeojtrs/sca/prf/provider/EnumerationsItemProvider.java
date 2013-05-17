@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Collection;
@@ -39,7 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EnumerationsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class EnumerationsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -75,7 +77,7 @@ public class EnumerationsItemProvider extends ItemProviderAdapter implements IEd
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.ENUMERATIONS__ENUMERATION);
@@ -130,9 +132,9 @@ public class EnumerationsItemProvider extends ItemProviderAdapter implements IEd
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Enumerations.class)) {
-			case PrfPackage.ENUMERATIONS__ENUMERATION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case PrfPackage.ENUMERATIONS__ENUMERATION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -148,10 +150,7 @@ public class EnumerationsItemProvider extends ItemProviderAdapter implements IEd
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.ENUMERATIONS__ENUMERATION,
-				 PrfFactory.eINSTANCE.createEnumeration()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.ENUMERATIONS__ENUMERATION, PrfFactory.eINSTANCE.createEnumeration()));
 	}
 
 	/**

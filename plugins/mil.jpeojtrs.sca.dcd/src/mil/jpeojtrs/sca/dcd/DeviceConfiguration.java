@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd;
 
 import java.util.ArrayList;
@@ -310,7 +311,9 @@ public interface DeviceConfiguration extends EObject {
 
 			if (dcd.getPartitioning() != null) {
 				for (final DcdComponentPlacement impl : dcd.getPartitioning().getComponentPlacement()) {
-					if (impl.getComponentInstantiation().size() == 0) continue;
+					if (impl.getComponentInstantiation().isEmpty()) {
+						continue;
+					}
 					
 					final String name = impl.getComponentInstantiation().get(0).getUsageName();
 					if (name != null) {

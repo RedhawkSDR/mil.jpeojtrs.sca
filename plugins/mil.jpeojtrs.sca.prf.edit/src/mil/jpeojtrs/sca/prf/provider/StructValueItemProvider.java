@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Collection;
@@ -41,7 +42,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StructValueItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class StructValueItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -75,19 +77,9 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 	 * @generated
 	 */
 	protected void addSimpleRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StructValue_simpleRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StructValue_simpleRef_feature", "_UI_StructValue_type"),
-				 PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_StructValue_simpleRef_feature"), getString("_UI_PropertyDescriptor_description", "_UI_StructValue_simpleRef_feature", "_UI_StructValue_type"),
+		        PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF, false, false, false, null, null, null));
 	}
 
 	/**
@@ -99,7 +91,7 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF);
@@ -154,7 +146,7 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 				name = "Struct";
 			}
 			return name + "[" + value.getIndex() + "]";
-		} 
+		}
 		return "<StructValue>";
 	}
 
@@ -170,9 +162,9 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructValue.class)) {
-			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -188,10 +180,7 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF,
-				 PrfFactory.eINSTANCE.createSimpleRef()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF, PrfFactory.eINSTANCE.createSimpleRef()));
 	}
 
 	/**

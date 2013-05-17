@@ -8,8 +8,8 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
-
 
 import java.util.Collection;
 import java.util.Collections;
@@ -41,10 +41,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SimpleSequenceRefItemProvider
-	extends AbstractPropertyRefItemProvider
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -79,7 +77,7 @@ public class SimpleSequenceRefItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES);
@@ -134,9 +132,9 @@ public class SimpleSequenceRefItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SimpleSequenceRef.class)) {
-			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -152,18 +150,15 @@ public class SimpleSequenceRefItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES,
-				 PrfFactory.eINSTANCE.createValues()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, PrfFactory.eINSTANCE.createValues()));
 	}
 
 	@Override
 	protected String getValueText(AbstractPropertyRef< ? > object) {
-	    SimpleSequenceRef ref = (SimpleSequenceRef) object;
-	    return getValueText(ref, ref.getValues() == null ? null: ref.getValues().getValue());
+		SimpleSequenceRef ref = (SimpleSequenceRef) object;
+		return getValueText(ref, (ref.getValues() == null) ? null : ref.getValues().getValue());
 	}
-	
+
 	public static String getValueText(SimpleSequenceRef ref, List<String> value) {
 		String retVal = null;
 		if (value == null || value.isEmpty()) {
@@ -171,12 +166,12 @@ public class SimpleSequenceRefItemProvider
 		} else {
 			retVal = value.toString();
 		}
-		
+
 		SimpleSequence property = ref.getProperty();
 		if (property == null) {
-			return value.toString();
+			return (value == null) ? "" : value.toString();
 		}
-		
+
 		final String units = property.getUnits();
 		if (units != null) {
 			return retVal + " " + units;

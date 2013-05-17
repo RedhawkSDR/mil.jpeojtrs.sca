@@ -8,8 +8,8 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -40,10 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractPropertyRefItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class AbstractPropertyRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -78,19 +76,10 @@ public class AbstractPropertyRefItemProvider
 	 * @generated
 	 */
 	protected void addRefIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractPropertyRef_refID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractPropertyRef_refID_feature", "_UI_AbstractPropertyRef_type"),
-				 PrfPackage.Literals.ABSTRACT_PROPERTY_REF__REF_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_AbstractPropertyRef_refID_feature"),
+		        getString("_UI_PropertyDescriptor_description", "_UI_AbstractPropertyRef_refID_feature", "_UI_AbstractPropertyRef_type"),
+		        PrfPackage.Literals.ABSTRACT_PROPERTY_REF__REF_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -100,19 +89,10 @@ public class AbstractPropertyRefItemProvider
 	 * @generated
 	 */
 	protected void addPropertyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractPropertyRef_property_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractPropertyRef_property_feature", "_UI_AbstractPropertyRef_type"),
-				 PrfPackage.Literals.ABSTRACT_PROPERTY_REF__PROPERTY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_AbstractPropertyRef_property_feature"),
+		        getString("_UI_PropertyDescriptor_description", "_UI_AbstractPropertyRef_property_feature", "_UI_AbstractPropertyRef_type"),
+		        PrfPackage.Literals.ABSTRACT_PROPERTY_REF__PROPERTY, true, false, true, null, null, null));
 	}
 
 	/**
@@ -123,14 +103,14 @@ public class AbstractPropertyRefItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Object property = ((AbstractPropertyRef<?>)object).getProperty();
+		Object property = ((AbstractPropertyRef< ? >) object).getProperty();
 		if (property != null) {
 			IItemLabelProvider lp = (IItemLabelProvider) getRootAdapterFactory().adapt(property, IItemLabelProvider.class);
 			return lp.getText(property);
 		}
 		return "";
 	}
-	
+
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
@@ -143,9 +123,9 @@ public class AbstractPropertyRefItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AbstractPropertyRef.class)) {
-			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -181,7 +161,7 @@ public class AbstractPropertyRefItemProvider
 	 */
 	@Override
 	public Object getImage(Object object) {
-		Object property = ((AbstractPropertyRef<?>)object).getProperty();
+		Object property = ((AbstractPropertyRef< ? >) object).getProperty();
 		if (property != null) {
 			IItemLabelProvider lp = (IItemLabelProvider) getRootAdapterFactory().adapt(property, IItemLabelProvider.class);
 			return lp.getImage(property);
@@ -195,29 +175,29 @@ public class AbstractPropertyRefItemProvider
 	 */
 	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case AbstractPropertyItemProvider.PROP_NAME_COLUMN:
-			return getImage(object); 
+			return getImage(object);
 		case AbstractPropertyItemProvider.PROP_VALUE_COLUMN:
 			return null;
 		default:
 			return super.getColumnImage(object, columnIndex);
 		}
 	}
-	
+
 	@Override
 	public String getColumnText(Object object, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case AbstractPropertyItemProvider.PROP_NAME_COLUMN:
-			return getText(object); 
+			return getText(object);
 		case AbstractPropertyItemProvider.PROP_VALUE_COLUMN:
-			return getValueText((AbstractPropertyRef<?>) object);
+			return getValueText((AbstractPropertyRef< ? >) object);
 		default:
 			return super.getColumnText(object, columnIndex);
 		}
 	}
 
-	protected String getValueText(AbstractPropertyRef<?> object) {
+	protected String getValueText(AbstractPropertyRef< ? > object) {
 		return "";
 	}
 

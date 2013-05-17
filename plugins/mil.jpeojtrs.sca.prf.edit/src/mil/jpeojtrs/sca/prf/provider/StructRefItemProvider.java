@@ -8,8 +8,8 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -38,10 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StructRefItemProvider
-	extends AbstractPropertyRefItemProvider
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class StructRefItemProvider extends AbstractPropertyRefItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -77,7 +75,7 @@ public class StructRefItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF);
@@ -106,10 +104,8 @@ public class StructRefItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StructRef)object).getRefID();
-		return label == null || label.length() == 0 ?
-			getString("_UI_StructRef_type") :
-			getString("_UI_StructRef_type") + " " + label;
+		String label = ((StructRef) object).getRefID();
+		return label == null || label.length() == 0 ? getString("_UI_StructRef_type") : getString("_UI_StructRef_type") + " " + label;
 	}
 
 	/**
@@ -124,9 +120,9 @@ public class StructRefItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructRef.class)) {
-			case PrfPackage.STRUCT_REF__SIMPLE_REF:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case PrfPackage.STRUCT_REF__SIMPLE_REF:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -142,10 +138,7 @@ public class StructRefItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF,
-				 PrfFactory.eINSTANCE.createSimpleRef()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF, PrfFactory.eINSTANCE.createSimpleRef()));
 	}
 
 }
