@@ -10,7 +10,6 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.cf.impl;
 
-import static mil.jpeojtrs.sca.cf.CfPackage.RESOURCE;
 import mil.jpeojtrs.sca.cf.CfFactory;
 import mil.jpeojtrs.sca.cf.CfPackage;
 import mil.jpeojtrs.sca.cf.extended.ExtendedPackage;

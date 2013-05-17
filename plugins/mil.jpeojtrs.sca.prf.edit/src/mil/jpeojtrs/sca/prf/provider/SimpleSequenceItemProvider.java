@@ -83,7 +83,8 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 			final IItemLabelProvider lp = super.getLabelProvider(thisObject);
 			return new IItemLabelProvider() {
 
-				public String getText(Object object) {
+				@SuppressWarnings("unchecked")
+                public String getText(Object object) {
 					List<String> value = null;
 					if (object instanceof Values) {
 						value = ((Values)object).getValue();

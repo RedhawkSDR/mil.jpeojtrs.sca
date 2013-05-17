@@ -113,7 +113,8 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public P basicGetProperty() {
+	@SuppressWarnings("unchecked")
+    public P basicGetProperty() {
 		if (getRefID() == null) {
 			return null;
 		}

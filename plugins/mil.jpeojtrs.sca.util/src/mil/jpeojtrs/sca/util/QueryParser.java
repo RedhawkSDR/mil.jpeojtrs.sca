@@ -29,7 +29,8 @@ public final class QueryParser {
 
 	}
 
-	public static Map<String, String> parseQuery(final String query) {
+	@SuppressWarnings("deprecation")
+    public static Map<String, String> parseQuery(final String query) {
 		if (query == null) {
 			return Collections.emptyMap();
 		}
@@ -52,6 +53,7 @@ public final class QueryParser {
 		return Collections.unmodifiableMap(retVal);
 	}
 
+	@SuppressWarnings("deprecation")
 	public static String createQuery(final Map<String, String> params) {
 		if (params == null) {
 			return "";
