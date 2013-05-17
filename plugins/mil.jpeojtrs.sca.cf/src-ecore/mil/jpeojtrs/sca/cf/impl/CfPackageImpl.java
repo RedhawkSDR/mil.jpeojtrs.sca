@@ -8,9 +8,9 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.cf.impl;
 
-import static mil.jpeojtrs.sca.cf.CfPackage.RESOURCE;
 import mil.jpeojtrs.sca.cf.CfFactory;
 import mil.jpeojtrs.sca.cf.CfPackage;
 import mil.jpeojtrs.sca.cf.extended.ExtendedPackage;

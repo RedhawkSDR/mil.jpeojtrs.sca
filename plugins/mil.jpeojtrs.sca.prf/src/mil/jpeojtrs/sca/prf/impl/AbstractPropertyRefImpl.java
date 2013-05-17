@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
 import mil.jpeojtrs.sca.prf.AbstractProperty;
@@ -113,7 +114,8 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public P basicGetProperty() {
+	@SuppressWarnings("unchecked")
+    public P basicGetProperty() {
 		if (getRefID() == null) {
 			return null;
 		}

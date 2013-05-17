@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Collection;
@@ -39,7 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResultValueItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class ResultValueItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -75,7 +77,7 @@ public class ResultValueItemProvider extends ItemProviderAdapter implements IEdi
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.RESULT_VALUE__SIMPLE);
@@ -130,9 +132,9 @@ public class ResultValueItemProvider extends ItemProviderAdapter implements IEdi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResultValue.class)) {
-			case PrfPackage.RESULT_VALUE__SIMPLE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case PrfPackage.RESULT_VALUE__SIMPLE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -148,10 +150,7 @@ public class ResultValueItemProvider extends ItemProviderAdapter implements IEdi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.RESULT_VALUE__SIMPLE,
-				 PrfFactory.eINSTANCE.createSimple()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.RESULT_VALUE__SIMPLE, PrfFactory.eINSTANCE.createSimple()));
 	}
 
 	/**

@@ -70,9 +70,9 @@ public final class ScaEcoreUtils {
 	 * @return The object matching the type, may return null.
 	 * @since 3.2
 	 */
-	public static < T > T getEContainerOfType(EObject eObj, Class < T > type ) {
+	public static < T > T getEContainerOfType(EObject eObj, Class < T > type) {
 		Assert.isNotNull(type, "Type must not be null");
-		for (;eObj != null; eObj = eObj.eContainer()) {
+		for (; eObj != null; eObj = eObj.eContainer()) {
 			if (type.isInstance(eObj)) {
 				return type.cast(eObj);
 			}

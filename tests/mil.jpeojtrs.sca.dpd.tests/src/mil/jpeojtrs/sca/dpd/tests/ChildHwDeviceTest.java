@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dpd.tests;
 
 import junit.framework.Assert;
@@ -115,6 +116,9 @@ public class ChildHwDeviceTest extends TestCase {
 		HwDeviceRegistration hwDev = childDev.getHwDeviceRegistration();
 
 		Assert.assertTrue((devPkgRef != null && hwDev == null));
+		if (devPkgRef == null) {
+			throw new NullPointerException();
+		}
 		Assert.assertEquals("simpleChildDevice.dpd.xml", devPkgRef.getLocalFile().getName());
 
 		// Test Child 2
@@ -125,6 +129,9 @@ public class ChildHwDeviceTest extends TestCase {
 		hwDev = childDev.getHwDeviceRegistration();
 
 		Assert.assertTrue((devPkgRef == null && hwDev != null));
+		if (hwDev == null) {
+			throw new NullPointerException();
+		}
 		Assert.assertEquals("DCE:3b5527f5-8488-4b09-bfff-2ec49a90cdda", hwDev.getId());
 
 		// Test Child 3
@@ -135,6 +142,9 @@ public class ChildHwDeviceTest extends TestCase {
 		hwDev = childDev.getHwDeviceRegistration();
 
 		Assert.assertTrue((devPkgRef != null && hwDev == null));
+		if (devPkgRef == null) {
+			throw new NullPointerException();
+		}
 		Assert.assertEquals("complexChildDevice.dpd.xml", devPkgRef.getLocalFile().getName());
 	}
 

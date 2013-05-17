@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.ArrayList;
@@ -42,8 +43,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SimpleItemProvider extends AbstractPropertyItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
-	
+public class SimpleItemProvider extends AbstractPropertyItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -73,21 +75,21 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 	}
 
 	private class ValueItemPropertyDescriptor extends ItemPropertyDescriptorDecorator {
-		
+
 		public ValueItemPropertyDescriptor(Object object, IItemPropertyDescriptor itemPropertyDescriptor) {
-	        super(object, itemPropertyDescriptor);
-        }
+			super(object, itemPropertyDescriptor);
+		}
 
 		@Override
 		public IItemLabelProvider getLabelProvider(final Object thisObject) {
 			final Simple property = (Simple) thisObject;
 			final IItemLabelProvider lp = super.getLabelProvider(thisObject);
 			return new IItemLabelProvider() {
-				
+
 				public String getText(Object object) {
 					return getValueText(property, (String) object);
 				}
-				
+
 				public Object getImage(Object object) {
 					return lp.getImage(property);
 				}
@@ -116,19 +118,9 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptorGen(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Simple_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Simple_value_feature", "_UI_Simple_type"),
-				 PrfPackage.Literals.SIMPLE__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_Simple_value_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Simple_value_feature", "_UI_Simple_type"),
+		        PrfPackage.Literals.SIMPLE__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -139,17 +131,9 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
 		// END GENERATED CODE
-		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-		        getResourceLocator(),
-		        getString("_UI_Simple_value_feature"),
-		        getString("_UI_PropertyDescriptor_description", "_UI_Simple_value_feature", "_UI_Simple_type"),
-		        PrfPackage.Literals.SIMPLE__VALUE,
-		        true,
-		        false,
-		        false,
-		        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-		        null,
-		        null);
+		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_Simple_value_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Simple_value_feature", "_UI_Simple_type"),
+		        PrfPackage.Literals.SIMPLE__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null);
 
 		this.itemPropertyDescriptors.add(new ValueItemPropertyDescriptor(object, defaultDescriptor));
 		// BEGIN GENERATED CODE

@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
@@ -43,10 +44,7 @@ public final class PrfEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public PrfEditPlugin() {
-		super
-		  (new ResourceLocator [] {
-		     EcoreEditPlugin.INSTANCE,
-		   });
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, });
 	}
 
 	/**

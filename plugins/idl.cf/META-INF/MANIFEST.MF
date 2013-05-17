@@ -23,8 +23,8 @@ Export-Package: CF,
  ExtendedEvent,
  PortTypes,
  StandardEvent
-Bundle-Name: Core Framework IDL
-Bundle-Vendor: REDHAWK
+Bundle-Name: %Bundle-Name
+Bundle-Vendor: %Bundle-Vendor
 Bundle-Version: 2.2.2.qualifier
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: idl.cf

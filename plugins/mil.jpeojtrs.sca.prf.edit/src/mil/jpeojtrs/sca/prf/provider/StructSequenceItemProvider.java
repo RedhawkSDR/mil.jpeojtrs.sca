@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Collection;
@@ -39,7 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StructSequenceItemProvider extends AbstractPropertyItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class StructSequenceItemProvider extends AbstractPropertyItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -73,19 +75,10 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 * @generated
 	 */
 	protected void addStructValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StructSequence_structValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StructSequence_structValue_feature", "_UI_StructSequence_type"),
-				 PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT_VALUE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_StructSequence_structValue_feature"),
+		        getString("_UI_PropertyDescriptor_description", "_UI_StructSequence_structValue_feature", "_UI_StructSequence_type"),
+		        PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT_VALUE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -97,7 +90,7 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT);

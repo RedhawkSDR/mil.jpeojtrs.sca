@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Arrays;
@@ -42,7 +43,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -79,18 +81,19 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 		@Override
 		public IItemLabelProvider getLabelProvider(final Object thisObject) {
 			final SimpleSequence property = (SimpleSequence) thisObject;
-			
+
 			final IItemLabelProvider lp = super.getLabelProvider(thisObject);
 			return new IItemLabelProvider() {
 
+				@SuppressWarnings("unchecked")
 				public String getText(Object object) {
 					List<String> value = null;
 					if (object instanceof Values) {
-						value = ((Values)object).getValue();
+						value = ((Values) object).getValue();
 					} else if (object != null && object.getClass().isArray()) {
-						value = Arrays.asList((String[])object);
-					} else if (object instanceof List<?>) {
-						value = (List< String >) object;
+						value = Arrays.asList((String[]) object);
+					} else if (object instanceof List< ? >) {
+						value = (List<String>) object;
 					}
 					return getValueText(property, value);
 				}
@@ -100,9 +103,9 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 				}
 			};
 		}
-		
+
 	}
-	
+
 	/**
 	 * This adds a property descriptor for the Values feature.
 	 * <!-- begin-user-doc -->
@@ -110,19 +113,9 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 * @generated
 	 */
 	protected void addValuesPropertyDescriptorGen(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SimpleSequence_values_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_values_feature", "_UI_SimpleSequence_type"),
-				 PrfPackage.Literals.SIMPLE_SEQUENCE__VALUES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_SimpleSequence_values_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_values_feature", "_UI_SimpleSequence_type"),
+		        PrfPackage.Literals.SIMPLE_SEQUENCE__VALUES, false, false, false, null, null, null));
 	}
 
 	/**
@@ -133,17 +126,9 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 */
 	protected void addValuesPropertyDescriptor(Object object) {
 		// END GENERATED CODE
-		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-		        getResourceLocator(),
-		        getString("_UI_SimpleSequence_values_feature"),
-		        getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_values_feature", "_UI_SimpleSequence_type"),
-		        PrfPackage.Literals.SIMPLE_SEQUENCE__VALUES,
-		        false,
-		        false,
-		        false,
-		        null,
-		        null,
-		        null);
+		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_SimpleSequence_values_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_values_feature", "_UI_SimpleSequence_type"),
+		        PrfPackage.Literals.SIMPLE_SEQUENCE__VALUES, false, false, false, null, null, null);
 
 		this.itemPropertyDescriptors.add(new ValuesDecorator(object, defaultDescriptor));
 		// BEGIN GENERATED CODE

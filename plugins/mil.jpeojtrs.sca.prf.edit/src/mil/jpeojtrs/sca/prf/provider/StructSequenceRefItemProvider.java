@@ -8,8 +8,8 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -38,10 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StructSequenceRefItemProvider
-	extends AbstractPropertyRefItemProvider
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class StructSequenceRefItemProvider extends AbstractPropertyRefItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -76,7 +74,7 @@ public class StructSequenceRefItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_SEQUENCE_REF__STRUCT_VALUE);
@@ -131,9 +129,9 @@ public class StructSequenceRefItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructSequenceRef.class)) {
-			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -149,10 +147,7 @@ public class StructSequenceRefItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT_SEQUENCE_REF__STRUCT_VALUE,
-				 PrfFactory.eINSTANCE.createStructValue()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_SEQUENCE_REF__STRUCT_VALUE, PrfFactory.eINSTANCE.createStructValue()));
 	}
 
 }

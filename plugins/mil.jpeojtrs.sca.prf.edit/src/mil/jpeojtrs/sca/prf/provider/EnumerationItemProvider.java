@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+ // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Collection;
@@ -37,7 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated NOT
  */
-public class EnumerationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class EnumerationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -72,19 +74,9 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 	 * @generated
 	 */
 	protected void addLabelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Enumeration_label_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Enumeration_label_feature", "_UI_Enumeration_type"),
-				 PrfPackage.Literals.ENUMERATION__LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_Enumeration_label_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Enumeration_label_feature", "_UI_Enumeration_type"),
+		        PrfPackage.Literals.ENUMERATION__LABEL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -94,19 +86,9 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Enumeration_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Enumeration_value_feature", "_UI_Enumeration_type"),
-				 PrfPackage.Literals.ENUMERATION__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+		        getString("_UI_Enumeration_value_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Enumeration_value_feature", "_UI_Enumeration_type"),
+		        PrfPackage.Literals.ENUMERATION__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -128,7 +110,7 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Enumeration)object).getLabel();
+		String label = ((Enumeration) object).getLabel();
 		return label;
 	}
 
@@ -144,10 +126,10 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Enumeration.class)) {
-			case PrfPackage.ENUMERATION__LABEL:
-			case PrfPackage.ENUMERATION__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case PrfPackage.ENUMERATION__LABEL:
+		case PrfPackage.ENUMERATION__VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -174,7 +156,7 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 	public ResourceLocator getResourceLocator() {
 		return PrfEditPlugin.INSTANCE;
 	}
-	
+
 	public String getColumnText(Object object, int columnIndex) {
 		switch (columnIndex) {
 		case 0:
@@ -184,6 +166,5 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 		}
 		return super.getColumnText(object, columnIndex);
 	}
-
 
 }
