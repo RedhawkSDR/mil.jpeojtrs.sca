@@ -14,5 +14,11 @@
 
   <packaging>eclipse-test-plugin</packaging>
   <version>1.0.0-SNAPSHOT</version>
+  
+  	<properties>
+		<pmd.skip>true</pmd.skip>
+		<cpd.skip>true</cpd.skip>
+	</properties>
+  
  
 </project>
