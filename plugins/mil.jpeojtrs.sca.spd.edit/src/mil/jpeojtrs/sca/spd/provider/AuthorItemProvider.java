@@ -195,12 +195,7 @@ public class AuthorItemProvider extends ItemProviderAdapter implements IEditingD
 		if (webpage != null && !webpage.equals("")) {
 			label.append("; Webpage: " + webpage);
 		}
-		if (label == null || label.length() == 0) {
-			return getString("_UI_Author_type");
-		} else {
-			return label.toString();
-		}
-		
+		return label.toString();	
 		// BEGIN GENERATED CODE
 	}
 

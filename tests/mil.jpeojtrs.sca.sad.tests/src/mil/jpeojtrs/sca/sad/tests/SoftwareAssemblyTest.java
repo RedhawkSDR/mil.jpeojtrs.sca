@@ -146,6 +146,7 @@ public class SoftwareAssemblyTest extends TestCase {
 			if (prev != null) {
 				Assert.assertTrue(prev.getStartOrder().compareTo(inst.getStartOrder()) < 0);
 			}
+			prev = inst;
 		}
 		// BEGIN GENERATED CODE
 	}
