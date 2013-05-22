@@ -143,7 +143,7 @@ public class SoftwareAssemblyTest extends TestCase {
 		SadComponentInstantiation prev = null;
 		
 		for (SadComponentInstantiation inst : list) {
-			if (prev != null) {
+			if (prev != null && inst.getStartOrder() != null) {
 				Assert.assertTrue(prev.getStartOrder().compareTo(inst.getStartOrder()) < 0);
 			}
 			prev = inst;
