@@ -74,7 +74,7 @@ public class StructSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 * @generated
 	 */
 	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_SEQUENCE_REF__STRUCT_VALUE);
@@ -129,9 +129,9 @@ public class StructSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructSequenceRef.class)) {
-		case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -147,7 +147,10 @@ public class StructSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_SEQUENCE_REF__STRUCT_VALUE, PrfFactory.eINSTANCE.createStructValue()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PrfPackage.Literals.STRUCT_SEQUENCE_REF__STRUCT_VALUE,
+				 PrfFactory.eINSTANCE.createStructValue()));
 	}
 
 }

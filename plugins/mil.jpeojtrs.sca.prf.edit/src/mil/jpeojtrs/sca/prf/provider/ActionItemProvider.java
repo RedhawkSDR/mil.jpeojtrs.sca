@@ -77,9 +77,19 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_Action_type_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Action_type_feature", "_UI_Action_type"),
-		        PrfPackage.Literals.ACTION__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_type_feature", "_UI_Action_type"),
+				 PrfPackage.Literals.ACTION__TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -101,9 +111,11 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public String getText(Object object) {
-		ActionType labelValue = ((Action) object).getType();
+		ActionType labelValue = ((Action)object).getType();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_Action_type") : getString("_UI_Action_type") + " " + label;
+		return label == null || label.length() == 0 ?
+			getString("_UI_Action_type") :
+			getString("_UI_Action_type") + " " + label;
 	}
 
 	/**
@@ -118,9 +130,9 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Action.class)) {
-		case PrfPackage.ACTION__TYPE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
+			case PrfPackage.ACTION__TYPE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

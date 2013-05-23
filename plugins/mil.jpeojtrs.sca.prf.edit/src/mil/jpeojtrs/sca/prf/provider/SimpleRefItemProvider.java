@@ -76,9 +76,19 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider imple
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_SimpleRef_value_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SimpleRef_value_feature", "_UI_SimpleRef_type"),
-		        PrfPackage.Literals.SIMPLE_REF__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SimpleRef_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SimpleRef_value_feature", "_UI_SimpleRef_type"),
+				 PrfPackage.Literals.SIMPLE_REF__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -115,9 +125,9 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider imple
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SimpleRef.class)) {
-		case PrfPackage.SIMPLE_REF__VALUE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
+			case PrfPackage.SIMPLE_REF__VALUE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

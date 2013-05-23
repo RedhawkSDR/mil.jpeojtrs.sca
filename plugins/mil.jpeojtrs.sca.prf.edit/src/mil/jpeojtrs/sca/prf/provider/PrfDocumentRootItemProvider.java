@@ -77,7 +77,7 @@ public class PrfDocumentRootItemProvider extends ItemProviderAdapter implements 
 	 * @generated
 	 */
 	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES);
@@ -132,9 +132,9 @@ public class PrfDocumentRootItemProvider extends ItemProviderAdapter implements 
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PrfDocumentRoot.class)) {
-		case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -150,7 +150,10 @@ public class PrfDocumentRootItemProvider extends ItemProviderAdapter implements 
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, PrfFactory.eINSTANCE.createProperties()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES,
+				 PrfFactory.eINSTANCE.createProperties()));
 	}
 
 	/**

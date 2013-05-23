@@ -77,7 +77,7 @@ public class EnumerationsItemProvider extends ItemProviderAdapter implements IEd
 	 * @generated
 	 */
 	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.ENUMERATIONS__ENUMERATION);
@@ -132,9 +132,9 @@ public class EnumerationsItemProvider extends ItemProviderAdapter implements IEd
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Enumerations.class)) {
-		case PrfPackage.ENUMERATIONS__ENUMERATION:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case PrfPackage.ENUMERATIONS__ENUMERATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -150,7 +150,10 @@ public class EnumerationsItemProvider extends ItemProviderAdapter implements IEd
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.ENUMERATIONS__ENUMERATION, PrfFactory.eINSTANCE.createEnumeration()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PrfPackage.Literals.ENUMERATIONS__ENUMERATION,
+				 PrfFactory.eINSTANCE.createEnumeration()));
 	}
 
 	/**

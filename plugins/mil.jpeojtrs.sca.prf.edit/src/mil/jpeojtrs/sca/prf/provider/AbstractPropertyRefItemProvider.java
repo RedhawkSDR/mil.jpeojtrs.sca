@@ -76,10 +76,19 @@ public class AbstractPropertyRefItemProvider extends ItemProviderAdapter impleme
 	 * @generated
 	 */
 	protected void addRefIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_AbstractPropertyRef_refID_feature"),
-		        getString("_UI_PropertyDescriptor_description", "_UI_AbstractPropertyRef_refID_feature", "_UI_AbstractPropertyRef_type"),
-		        PrfPackage.Literals.ABSTRACT_PROPERTY_REF__REF_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractPropertyRef_refID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractPropertyRef_refID_feature", "_UI_AbstractPropertyRef_type"),
+				 PrfPackage.Literals.ABSTRACT_PROPERTY_REF__REF_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -89,10 +98,19 @@ public class AbstractPropertyRefItemProvider extends ItemProviderAdapter impleme
 	 * @generated
 	 */
 	protected void addPropertyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_AbstractPropertyRef_property_feature"),
-		        getString("_UI_PropertyDescriptor_description", "_UI_AbstractPropertyRef_property_feature", "_UI_AbstractPropertyRef_type"),
-		        PrfPackage.Literals.ABSTRACT_PROPERTY_REF__PROPERTY, true, false, true, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractPropertyRef_property_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractPropertyRef_property_feature", "_UI_AbstractPropertyRef_type"),
+				 PrfPackage.Literals.ABSTRACT_PROPERTY_REF__PROPERTY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -123,9 +141,9 @@ public class AbstractPropertyRefItemProvider extends ItemProviderAdapter impleme
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AbstractPropertyRef.class)) {
-		case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
+			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

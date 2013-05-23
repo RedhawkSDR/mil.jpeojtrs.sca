@@ -79,9 +79,19 @@ public class TestItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_Test_description_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Test_description_feature", "_UI_Test_type"),
-		        PrfPackage.Literals.TEST__DESCRIPTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Test_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Test_description_feature", "_UI_Test_type"),
+				 PrfPackage.Literals.TEST__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -91,9 +101,19 @@ public class TestItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_Test_id_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Test_id_feature", "_UI_Test_type"), PrfPackage.Literals.TEST__ID, true,
-		        false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Test_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Test_id_feature", "_UI_Test_type"),
+				 PrfPackage.Literals.TEST__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -105,7 +125,7 @@ public class TestItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * @generated
 	 */
 	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.TEST__INPUT_VALUE);
@@ -146,8 +166,10 @@ public class TestItemProvider extends ItemProviderAdapter implements IEditingDom
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Test) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_Test_type") : getString("_UI_Test_type") + " " + label;
+		String label = ((Test)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Test_type") :
+			getString("_UI_Test_type") + " " + label;
 	}
 
 	/**
@@ -162,14 +184,14 @@ public class TestItemProvider extends ItemProviderAdapter implements IEditingDom
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Test.class)) {
-		case PrfPackage.TEST__DESCRIPTION:
-		case PrfPackage.TEST__ID:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case PrfPackage.TEST__INPUT_VALUE:
-		case PrfPackage.TEST__RESULT_VALUE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case PrfPackage.TEST__DESCRIPTION:
+			case PrfPackage.TEST__ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case PrfPackage.TEST__INPUT_VALUE:
+			case PrfPackage.TEST__RESULT_VALUE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -185,9 +207,15 @@ public class TestItemProvider extends ItemProviderAdapter implements IEditingDom
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.TEST__INPUT_VALUE, PrfFactory.eINSTANCE.createInputValue()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PrfPackage.Literals.TEST__INPUT_VALUE,
+				 PrfFactory.eINSTANCE.createInputValue()));
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.TEST__RESULT_VALUE, PrfFactory.eINSTANCE.createResultValue()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PrfPackage.Literals.TEST__RESULT_VALUE,
+				 PrfFactory.eINSTANCE.createResultValue()));
 	}
 
 	/**

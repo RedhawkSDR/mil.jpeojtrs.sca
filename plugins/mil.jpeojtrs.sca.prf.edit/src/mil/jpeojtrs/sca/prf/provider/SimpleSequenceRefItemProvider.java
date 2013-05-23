@@ -77,7 +77,7 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 * @generated
 	 */
 	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES);
@@ -132,9 +132,9 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SimpleSequenceRef.class)) {
-		case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -150,7 +150,10 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, PrfFactory.eINSTANCE.createValues()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES,
+				 PrfFactory.eINSTANCE.createValues()));
 	}
 
 	@Override

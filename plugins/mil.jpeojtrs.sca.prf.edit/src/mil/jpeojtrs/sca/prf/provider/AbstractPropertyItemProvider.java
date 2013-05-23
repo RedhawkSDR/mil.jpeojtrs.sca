@@ -81,10 +81,19 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_AbstractProperty_description_feature"),
-		        getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_description_feature", "_UI_AbstractProperty_type"),
-		        PrfPackage.Literals.ABSTRACT_PROPERTY__DESCRIPTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractProperty_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_description_feature", "_UI_AbstractProperty_type"),
+				 PrfPackage.Literals.ABSTRACT_PROPERTY__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -94,9 +103,19 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_AbstractProperty_id_feature"), getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_id_feature", "_UI_AbstractProperty_type"),
-		        PrfPackage.Literals.ABSTRACT_PROPERTY__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractProperty_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_id_feature", "_UI_AbstractProperty_type"),
+				 PrfPackage.Literals.ABSTRACT_PROPERTY__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -106,9 +125,19 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_AbstractProperty_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_name_feature", "_UI_AbstractProperty_type"),
-		        PrfPackage.Literals.ABSTRACT_PROPERTY__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractProperty_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_name_feature", "_UI_AbstractProperty_type"),
+				 PrfPackage.Literals.ABSTRACT_PROPERTY__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	public static final int PROP_NAME_COLUMN = 0;
@@ -141,8 +170,10 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AbstractProperty) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_AbstractProperty_type") : getString("_UI_AbstractProperty_type") + " " + label;
+		String label = ((AbstractProperty)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_AbstractProperty_type") :
+			getString("_UI_AbstractProperty_type") + " " + label;
 	}
 
 	/**
@@ -157,12 +188,12 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AbstractProperty.class)) {
-		case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
-		case PrfPackage.ABSTRACT_PROPERTY__ID:
-		case PrfPackage.ABSTRACT_PROPERTY__NAME:
-		case PrfPackage.ABSTRACT_PROPERTY__MODE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
+			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
+			case PrfPackage.ABSTRACT_PROPERTY__ID:
+			case PrfPackage.ABSTRACT_PROPERTY__NAME:
+			case PrfPackage.ABSTRACT_PROPERTY__MODE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

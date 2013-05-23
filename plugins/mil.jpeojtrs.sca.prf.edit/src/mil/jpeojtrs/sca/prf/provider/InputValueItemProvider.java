@@ -77,7 +77,7 @@ public class InputValueItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.INPUT_VALUE__SIMPLE);
@@ -132,9 +132,9 @@ public class InputValueItemProvider extends ItemProviderAdapter implements IEdit
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(InputValue.class)) {
-		case PrfPackage.INPUT_VALUE__SIMPLE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case PrfPackage.INPUT_VALUE__SIMPLE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -150,7 +150,10 @@ public class InputValueItemProvider extends ItemProviderAdapter implements IEdit
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.INPUT_VALUE__SIMPLE, PrfFactory.eINSTANCE.createSimple()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PrfPackage.Literals.INPUT_VALUE__SIMPLE,
+				 PrfFactory.eINSTANCE.createSimple()));
 	}
 
 	/**

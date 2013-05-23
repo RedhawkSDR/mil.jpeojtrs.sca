@@ -77,7 +77,7 @@ public class ResultValueItemProvider extends ItemProviderAdapter implements IEdi
 	 * @generated
 	 */
 	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.RESULT_VALUE__SIMPLE);
@@ -132,9 +132,9 @@ public class ResultValueItemProvider extends ItemProviderAdapter implements IEdi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResultValue.class)) {
-		case PrfPackage.RESULT_VALUE__SIMPLE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case PrfPackage.RESULT_VALUE__SIMPLE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -150,7 +150,10 @@ public class ResultValueItemProvider extends ItemProviderAdapter implements IEdi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.RESULT_VALUE__SIMPLE, PrfFactory.eINSTANCE.createSimple()));
+		newChildDescriptors.add
+			(createChildParameter
+				(PrfPackage.Literals.RESULT_VALUE__SIMPLE,
+				 PrfFactory.eINSTANCE.createSimple()));
 	}
 
 	/**

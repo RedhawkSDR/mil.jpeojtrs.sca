@@ -77,10 +77,19 @@ public class ConfigurationKindItemProvider extends ItemProviderAdapter implement
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_ConfigurationKind_type_feature"),
-		        getString("_UI_PropertyDescriptor_description", "_UI_ConfigurationKind_type_feature", "_UI_ConfigurationKind_type"), PrfPackage.Literals.CONFIGURATION_KIND__TYPE,
-		        true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConfigurationKind_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConfigurationKind_type_feature", "_UI_ConfigurationKind_type"),
+				 PrfPackage.Literals.CONFIGURATION_KIND__TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -102,9 +111,11 @@ public class ConfigurationKindItemProvider extends ItemProviderAdapter implement
 	 */
 	@Override
 	public String getText(Object object) {
-		StructPropertyConfigurationType labelValue = ((ConfigurationKind) object).getType();
+		StructPropertyConfigurationType labelValue = ((ConfigurationKind)object).getType();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_ConfigurationKind_type") : getString("_UI_ConfigurationKind_type") + " " + label;
+		return label == null || label.length() == 0 ?
+			getString("_UI_ConfigurationKind_type") :
+			getString("_UI_ConfigurationKind_type") + " " + label;
 	}
 
 	/**
@@ -119,9 +130,9 @@ public class ConfigurationKindItemProvider extends ItemProviderAdapter implement
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ConfigurationKind.class)) {
-		case PrfPackage.CONFIGURATION_KIND__TYPE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
+			case PrfPackage.CONFIGURATION_KIND__TYPE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

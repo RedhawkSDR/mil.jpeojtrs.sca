@@ -74,9 +74,19 @@ public class StructItemProvider extends AbstractPropertyItemProvider implements 
 	 * @generated
 	 */
 	protected void addSimplePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_Struct_simple_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Struct_simple_feature", "_UI_Struct_type"),
-		        PrfPackage.Literals.STRUCT__SIMPLE, false, false, false, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Struct_simple_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Struct_simple_feature", "_UI_Struct_type"),
+				 PrfPackage.Literals.STRUCT__SIMPLE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

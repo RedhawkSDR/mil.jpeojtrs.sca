@@ -77,9 +77,19 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_Properties_description_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Properties_description_feature", "_UI_Properties_type"),
-		        PrfPackage.Literals.PROPERTIES__DESCRIPTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Properties_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Properties_description_feature", "_UI_Properties_type"),
+				 PrfPackage.Literals.PROPERTIES__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -91,7 +101,7 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.PROPERTIES__SIMPLE);
@@ -135,8 +145,10 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Properties) object).getDescription();
-		return label == null || label.length() == 0 ? getString("_UI_Properties_type") : getString("_UI_Properties_type") + " " + label;
+		String label = ((Properties)object).getDescription();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Properties_type") :
+			getString("_UI_Properties_type") + " " + label;
 	}
 
 	/**
@@ -151,17 +163,17 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Properties.class)) {
-		case PrfPackage.PROPERTIES__DESCRIPTION:
-		case PrfPackage.PROPERTIES__PROPERTIES:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case PrfPackage.PROPERTIES__SIMPLE:
-		case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-		case PrfPackage.PROPERTIES__TEST:
-		case PrfPackage.PROPERTIES__STRUCT:
-		case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
+			case PrfPackage.PROPERTIES__DESCRIPTION:
+			case PrfPackage.PROPERTIES__PROPERTIES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case PrfPackage.PROPERTIES__SIMPLE:
+			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+			case PrfPackage.PROPERTIES__TEST:
+			case PrfPackage.PROPERTIES__STRUCT:
+			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

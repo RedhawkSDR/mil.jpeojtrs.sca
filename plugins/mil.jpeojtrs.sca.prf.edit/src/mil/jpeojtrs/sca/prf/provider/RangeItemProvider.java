@@ -77,9 +77,19 @@ public class RangeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addMaxPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_Range_max_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Range_max_feature", "_UI_Range_type"), PrfPackage.Literals.RANGE__MAX,
-		        true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Range_max_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Range_max_feature", "_UI_Range_type"),
+				 PrfPackage.Literals.RANGE__MAX,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -89,9 +99,19 @@ public class RangeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 * @generated
 	 */
 	protected void addMinPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_Range_min_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Range_min_feature", "_UI_Range_type"), PrfPackage.Literals.RANGE__MIN,
-		        true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Range_min_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Range_min_feature", "_UI_Range_type"),
+				 PrfPackage.Literals.RANGE__MIN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -113,8 +133,10 @@ public class RangeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Range) object).getMax();
-		return label == null || label.length() == 0 ? getString("_UI_Range_type") : getString("_UI_Range_type") + " " + label;
+		String label = ((Range)object).getMax();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Range_type") :
+			getString("_UI_Range_type") + " " + label;
 	}
 
 	/**
@@ -129,10 +151,10 @@ public class RangeItemProvider extends ItemProviderAdapter implements IEditingDo
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Range.class)) {
-		case PrfPackage.RANGE__MAX:
-		case PrfPackage.RANGE__MIN:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
+			case PrfPackage.RANGE__MAX:
+			case PrfPackage.RANGE__MIN:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
