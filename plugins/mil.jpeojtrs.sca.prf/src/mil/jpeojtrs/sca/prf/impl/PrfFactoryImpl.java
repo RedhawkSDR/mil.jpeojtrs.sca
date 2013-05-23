@@ -11,6 +11,7 @@
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
+import mil.jpeojtrs.sca.prf.*;
 import mil.jpeojtrs.sca.prf.AccessType;
 import mil.jpeojtrs.sca.prf.Action;
 import mil.jpeojtrs.sca.prf.ActionType;

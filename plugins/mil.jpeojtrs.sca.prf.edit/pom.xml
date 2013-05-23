@@ -12,6 +12,6 @@
 
   <artifactId>mil.jpeojtrs.sca.prf.edit</artifactId>
   <packaging>eclipse-plugin</packaging>
-  <version>2.2.2-SNAPSHOT</version></project>
+  <version>2.3.0-SNAPSHOT</version></project>
 
 </project>

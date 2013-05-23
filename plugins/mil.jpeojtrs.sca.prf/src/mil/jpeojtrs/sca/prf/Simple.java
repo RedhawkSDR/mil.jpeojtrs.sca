@@ -45,6 +45,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getKind <em>Kind</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getAction <em>Action</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getType <em>Type</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.Simple#isComplex <em>Complex</em>}</li>
  * </ul>
  * </p>
  *
@@ -262,5 +263,32 @@ public interface Simple extends AbstractProperty {
 	 * @generated
 	 */
 	boolean isSetType();
+
+	/**
+	 * Returns the value of the '<em><b>Complex</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Complex</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Complex</em>' attribute.
+	 * @see #setComplex(boolean)
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimple_Complex()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isComplex();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Simple#isComplex <em>Complex</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Complex</em>' attribute.
+	 * @see #isComplex()
+	 * @generated
+	 */
+	void setComplex(boolean value);
 
 } // Simple

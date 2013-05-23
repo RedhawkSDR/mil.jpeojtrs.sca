@@ -69,6 +69,7 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 			addValuesPropertyDescriptor(object);
 			addUnitsPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addComplexPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -113,9 +114,19 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 * @generated
 	 */
 	protected void addValuesPropertyDescriptorGen(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_SimpleSequence_values_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_values_feature", "_UI_SimpleSequence_type"),
-		        PrfPackage.Literals.SIMPLE_SEQUENCE__VALUES, false, false, false, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SimpleSequence_values_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_values_feature", "_UI_SimpleSequence_type"),
+				 PrfPackage.Literals.SIMPLE_SEQUENCE__VALUES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -179,6 +190,28 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 	}
 
 	/**
+	 * This adds a property descriptor for the Complex feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComplexPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SimpleSequence_complex_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_complex_feature", "_UI_SimpleSequence_type"),
+				 PrfPackage.Literals.SIMPLE_SEQUENCE__COMPLEX,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns SimpleSequence.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -228,6 +261,7 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 			case PrfPackage.SIMPLE_SEQUENCE__KIND:
 			case PrfPackage.SIMPLE_SEQUENCE__ACTION:
 			case PrfPackage.SIMPLE_SEQUENCE__TYPE:
+			case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

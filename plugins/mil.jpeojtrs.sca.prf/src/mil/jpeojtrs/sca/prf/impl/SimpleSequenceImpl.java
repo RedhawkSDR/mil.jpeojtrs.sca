@@ -50,6 +50,7 @@ import org.omg.CORBA.Any;
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getAction <em>Action</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getType <em>Type</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#isComplex <em>Complex</em>}</li>
  * </ul>
  * </p>
  *
@@ -136,6 +137,25 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * @ordered
 	 */
 	protected boolean typeESet;
+
+	/**
+	 * The default value of the '{@link #isComplex() <em>Complex</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isComplex()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean COMPLEX_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isComplex() <em>Complex</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isComplex()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean complex = COMPLEX_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -369,6 +389,27 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isComplex() {
+		return complex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComplex(boolean newComplex) {
+		boolean oldComplex = complex;
+		complex = newComplex;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE__COMPLEX, oldComplex, complex));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -404,6 +445,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 				return getAction();
 			case PrfPackage.SIMPLE_SEQUENCE__TYPE:
 				return getType();
+			case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
+				return isComplex();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -436,6 +479,9 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 			case PrfPackage.SIMPLE_SEQUENCE__TYPE:
 				setType((PropertyValueType)newValue);
 				return;
+			case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
+				setComplex((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -466,6 +512,9 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 			case PrfPackage.SIMPLE_SEQUENCE__TYPE:
 				unsetType();
 				return;
+			case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
+				setComplex(COMPLEX_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -490,6 +539,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 				return action != null;
 			case PrfPackage.SIMPLE_SEQUENCE__TYPE:
 				return isSetType();
+			case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
+				return complex != COMPLEX_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -508,6 +559,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 		result.append(units);
 		result.append(", type: ");
 		if (typeESet) result.append(type); else result.append("<unset>");
+		result.append(", complex: ");
+		result.append(complex);
 		result.append(')');
 		return result.toString();
 	}

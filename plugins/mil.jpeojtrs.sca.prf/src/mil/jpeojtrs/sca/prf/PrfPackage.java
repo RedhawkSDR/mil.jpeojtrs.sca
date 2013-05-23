@@ -598,13 +598,21 @@ public interface PrfPackage extends EPackage {
 	 */
 	int SIMPLE__TYPE = ABSTRACT_PROPERTY_FEATURE_COUNT + 6;
 	/**
+	 * The feature id for the '<em><b>Complex</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE__COMPLEX = ABSTRACT_PROPERTY_FEATURE_COUNT + 7;
+	/**
 	 * The number of structural features of the '<em>Simple</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 7;
+	int SIMPLE_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 8;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl <em>Simple Sequence</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -703,13 +711,21 @@ public interface PrfPackage extends EPackage {
 	 */
 	int SIMPLE_SEQUENCE__TYPE = ABSTRACT_PROPERTY_FEATURE_COUNT + 5;
 	/**
+	 * The feature id for the '<em><b>Complex</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_SEQUENCE__COMPLEX = ABSTRACT_PROPERTY_FEATURE_COUNT + 6;
+	/**
 	 * The number of structural features of the '<em>Simple Sequence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_SEQUENCE_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 6;
+	int SIMPLE_SEQUENCE_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 7;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.StructImpl <em>Struct</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1918,6 +1934,17 @@ public interface PrfPackage extends EPackage {
 	EAttribute getSimple_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.Simple#isComplex <em>Complex</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Complex</em>'.
+	 * @see mil.jpeojtrs.sca.prf.Simple#isComplex()
+	 * @see #getSimple()
+	 * @generated
+	 */
+	EAttribute getSimple_Complex();
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.prf.SimpleSequence <em>Simple Sequence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1992,6 +2019,17 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSimpleSequence_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.SimpleSequence#isComplex <em>Complex</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Complex</em>'.
+	 * @see mil.jpeojtrs.sca.prf.SimpleSequence#isComplex()
+	 * @see #getSimpleSequence()
+	 * @generated
+	 */
+	EAttribute getSimpleSequence_Complex();
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.prf.Struct <em>Struct</em>}'.
@@ -3038,6 +3076,14 @@ public interface PrfPackage extends EPackage {
 		EAttribute SIMPLE__TYPE = eINSTANCE.getSimple_Type();
 
 		/**
+		 * The meta object literal for the '<em><b>Complex</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIMPLE__COMPLEX = eINSTANCE.getSimple_Complex();
+
+		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl <em>Simple Sequence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3094,6 +3140,14 @@ public interface PrfPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SIMPLE_SEQUENCE__TYPE = eINSTANCE.getSimpleSequence_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Complex</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIMPLE_SEQUENCE__COMPLEX = eINSTANCE.getSimpleSequence_Complex();
 
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.prf.impl.StructImpl <em>Struct</em>}' class.
