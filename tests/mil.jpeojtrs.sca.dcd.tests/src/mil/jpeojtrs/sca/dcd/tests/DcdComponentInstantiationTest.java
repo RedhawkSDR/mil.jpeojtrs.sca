@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.tests;
 
 import junit.textui.TestRunner;
@@ -71,7 +72,7 @@ public class DcdComponentInstantiationTest extends ComponentInstantiationTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		final DeviceConfiguration deviceConfiguration = DcdTests.getDeviceConfiguration();;
+		final DeviceConfiguration deviceConfiguration = DcdTests.getDeviceConfiguration();
 		final DcdComponentInstantiation ci = deviceConfiguration.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0);
 		this.setFixture(ci);
 	}

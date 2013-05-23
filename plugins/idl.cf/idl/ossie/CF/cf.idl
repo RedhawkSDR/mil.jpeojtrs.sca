@@ -867,5 +867,73 @@ module CF {
             in string componentInstantiationId
             );
     };
+
+    struct complexDouble
+    {
+        double real;
+        double imag;
+    };
+    typedef sequence <complexDouble> complexDoubleSeq;
+    struct complexFloat
+    {
+        float real;
+        float imag;
+    };
+    typedef sequence <complexFloat> complexFloatSeq;
+    struct complexBoolean
+    {
+        boolean real;
+        boolean imag;
+    };
+    typedef sequence <complexBoolean> complexBooleanSeq;
+    struct complexULong
+    {
+        unsigned long real;
+        unsigned long imag;
+    };
+    typedef sequence <complexULong> complexULongSeq;
+    struct complexShort
+    {
+        short real;
+        short imag;
+    };
+    typedef sequence <complexShort> complexShortSeq;
+    struct complexOctet
+    {
+        octet real;
+        octet imag;
+    };
+    typedef sequence <complexOctet> complexOctetSeq;
+    struct complexChar
+    {
+        char real;
+        char imag;
+    };
+    typedef sequence <complexChar> complexCharSeq;
+    struct complexUShort
+    {
+        unsigned short real;
+        unsigned short imag;
+    };
+    typedef sequence <complexUShort> complexUShortSeq;
+    struct complexLong
+    {
+        long real;
+        long imag;
+    };
+    typedef sequence <complexLong> complexLongSeq;
+    struct complexLongLong
+    {
+        long long real;
+        long long imag;
+    };
+    typedef sequence <complexLongLong> complexLongLongSeq;
+    struct complexULongLong
+    {
+        unsigned long long real;
+        unsigned long long imag;
+    };
+    typedef sequence <complexULongLong> complexULongLongSeq;
+
 };
 #endif
