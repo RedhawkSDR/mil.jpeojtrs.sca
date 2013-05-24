@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mil.jpeojtrs.sca.sad.Port#getProvidesIndentifier <em>Provides Indentifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.Port#getSupportedIdentifier <em>Supported Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.Port#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.Port#getExternalName <em>External Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -171,5 +172,31 @@ public interface Port extends EObject {
 	 * @generated
 	 */
 	void setComponentInstantiationRef(SadComponentInstantiationRef value);
+
+	/**
+	 * Returns the value of the '<em><b>External Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>External Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>External Name</em>' attribute.
+	 * @see #setExternalName(String)
+	 * @see mil.jpeojtrs.sca.sad.SadPackage#getPort_ExternalName()
+	 * @model extendedMetaData="kind='attribute' name='externalname'"
+	 * @generated
+	 */
+	String getExternalName();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.Port#getExternalName <em>External Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>External Name</em>' attribute.
+	 * @see #getExternalName()
+	 * @generated
+	 */
+	void setExternalName(String value);
 
 } // Port

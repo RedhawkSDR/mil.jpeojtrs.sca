@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getProvidesIndentifier <em>Provides Indentifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getSupportedIdentifier <em>Supported Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getExternalName <em>External Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -123,6 +124,24 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	protected SadComponentInstantiationRef componentInstantiationRef;
 
+	/**
+	 * The default value of the '{@link #getExternalName() <em>External Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExternalName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EXTERNAL_NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getExternalName() <em>External Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExternalName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String externalName = EXTERNAL_NAME_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -274,6 +293,27 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getExternalName() {
+		return externalName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExternalName(String newExternalName) {
+		String oldExternalName = externalName;
+		externalName = newExternalName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.PORT__EXTERNAL_NAME, oldExternalName, externalName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -301,6 +341,8 @@ public class PortImpl extends EObjectImpl implements Port {
 				return getSupportedIdentifier();
 			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
 				return getComponentInstantiationRef();
+			case SadPackage.PORT__EXTERNAL_NAME:
+				return getExternalName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -327,6 +369,9 @@ public class PortImpl extends EObjectImpl implements Port {
 				return;
 			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
 				setComponentInstantiationRef((SadComponentInstantiationRef)newValue);
+				return;
+			case SadPackage.PORT__EXTERNAL_NAME:
+				setExternalName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -355,6 +400,9 @@ public class PortImpl extends EObjectImpl implements Port {
 			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
 				setComponentInstantiationRef((SadComponentInstantiationRef)null);
 				return;
+			case SadPackage.PORT__EXTERNAL_NAME:
+				setExternalName(EXTERNAL_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -377,6 +425,8 @@ public class PortImpl extends EObjectImpl implements Port {
 				return SUPPORTED_IDENTIFIER_EDEFAULT == null ? supportedIdentifier != null : !SUPPORTED_IDENTIFIER_EDEFAULT.equals(supportedIdentifier);
 			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
 				return componentInstantiationRef != null;
+			case SadPackage.PORT__EXTERNAL_NAME:
+				return EXTERNAL_NAME_EDEFAULT == null ? externalName != null : !EXTERNAL_NAME_EDEFAULT.equals(externalName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -399,6 +449,8 @@ public class PortImpl extends EObjectImpl implements Port {
 		result.append(providesIndentifier);
 		result.append(", supportedIdentifier: ");
 		result.append(supportedIdentifier);
+		result.append(", externalName: ");
+		result.append(externalName);
 		result.append(')');
 		return result.toString();
 	}

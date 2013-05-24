@@ -513,6 +513,15 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPort_ExternalName() {
+		return (EAttribute)portEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSadPartitioning() {
 		return sadPartitioningEClass;
 	}
@@ -801,6 +810,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		createEAttribute(portEClass, PORT__PROVIDES_INDENTIFIER);
 		createEAttribute(portEClass, PORT__SUPPORTED_IDENTIFIER);
 		createEReference(portEClass, PORT__COMPONENT_INSTANTIATION_REF);
+		createEAttribute(portEClass, PORT__EXTERNAL_NAME);
 
 		sadPartitioningEClass = createEClass(SAD_PARTITIONING);
 		createEReference(sadPartitioningEClass, SAD_PARTITIONING__HOST_COLLOCATION);
@@ -859,8 +869,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		// Obtain other dependent packages
 		PartitioningPackage thePartitioningPackage = (PartitioningPackage)EPackage.Registry.INSTANCE.getEPackage(PartitioningPackage.eNS_URI);
 		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
-		PrfPackage thePrfPackage = (PrfPackage)EPackage.Registry.INSTANCE.getEPackage(PrfPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		PrfPackage thePrfPackage = (PrfPackage)EPackage.Registry.INSTANCE.getEPackage(PrfPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -943,6 +953,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		initEAttribute(getPort_ProvidesIndentifier(), theXMLTypePackage.getString(), "providesIndentifier", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_SupportedIdentifier(), theXMLTypePackage.getString(), "supportedIdentifier", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_ComponentInstantiationRef(), this.getSadComponentInstantiationRef(), null, "componentInstantiationRef", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_ExternalName(), theEcorePackage.getEString(), "externalName", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sadPartitioningEClass, SadPartitioning.class, "SadPartitioning", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSadPartitioning_HostCollocation(), this.getHostCollocation(), null, "hostCollocation", null, 0, -1, SadPartitioning.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1221,6 +1232,13 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
+		  (getPort_ExternalName(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "externalname"
+		   });		
+		addAnnotation
 		  (sadPartitioningEClass, 
 		   source, 
 		   new String[] {
@@ -1423,7 +1441,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "NonEmptyPort"
-		   });																													
+		   });																														
 	}
 
 } //SadPackageImpl

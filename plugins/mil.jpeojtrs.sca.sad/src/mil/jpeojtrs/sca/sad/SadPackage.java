@@ -619,13 +619,21 @@ public interface SadPackage extends EPackage {
 	 */
 	int PORT__COMPONENT_INSTANTIATION_REF = 4;
 	/**
+	 * The feature id for the '<em><b>External Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__EXTERNAL_NAME = 5;
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 5;
+	int PORT_FEATURE_COUNT = 6;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.SadPartitioningImpl <em>Partitioning</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1190,6 +1198,16 @@ public interface SadPackage extends EPackage {
 	 */
 	EReference getPort_ComponentInstantiationRef();
 	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Port#getExternalName <em>External Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>External Name</em>'.
+	 * @see mil.jpeojtrs.sca.sad.Port#getExternalName()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EAttribute getPort_ExternalName();
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadPartitioning <em>Partitioning</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1684,6 +1702,13 @@ public interface SadPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT__COMPONENT_INSTANTIATION_REF = eINSTANCE.getPort_ComponentInstantiationRef();
+		/**
+		 * The meta object literal for the '<em><b>External Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT__EXTERNAL_NAME = eINSTANCE.getPort_ExternalName();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.SadPartitioningImpl <em>Partitioning</em>}' class.
 		 * <!-- begin-user-doc -->
