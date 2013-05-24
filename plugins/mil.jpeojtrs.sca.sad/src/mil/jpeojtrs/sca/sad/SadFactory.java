@@ -115,6 +115,24 @@ public interface SadFactory extends EFactory {
 	ExternalPorts createExternalPorts();
 
 	/**
+	 * Returns a new object of class '<em>External Properties</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>External Properties</em>'.
+	 * @generated
+	 */
+	ExternalProperties createExternalProperties();
+
+	/**
+	 * Returns a new object of class '<em>External Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>External Property</em>'.
+	 * @generated
+	 */
+	ExternalProperty createExternalProperty();
+
+	/**
 	 * Returns a new object of class '<em>Find Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

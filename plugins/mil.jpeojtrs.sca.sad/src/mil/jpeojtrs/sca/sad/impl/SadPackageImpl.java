@@ -16,6 +16,8 @@ import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
+import mil.jpeojtrs.sca.sad.ExternalProperties;
+import mil.jpeojtrs.sca.sad.ExternalProperty;
 import mil.jpeojtrs.sca.sad.FindComponent;
 import mil.jpeojtrs.sca.sad.HostCollocation;
 import mil.jpeojtrs.sca.sad.Port;
@@ -107,6 +109,18 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * @generated
 	 */
 	private EClass externalPortsEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass externalPropertiesEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass externalPropertyEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,6 +403,60 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 */
 	public EReference getExternalPorts_Port() {
 		return (EReference)externalPortsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExternalProperties() {
+		return externalPropertiesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExternalProperties_Properties() {
+		return (EReference)externalPropertiesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExternalProperty() {
+		return externalPropertyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getExternalProperty_CompRefID() {
+		return (EAttribute)externalPropertyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getExternalProperty_PropID() {
+		return (EAttribute)externalPropertyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getExternalProperty_ExternalPropID() {
+		return (EAttribute)externalPropertyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -795,6 +863,14 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		externalPortsEClass = createEClass(EXTERNAL_PORTS);
 		createEReference(externalPortsEClass, EXTERNAL_PORTS__PORT);
 
+		externalPropertiesEClass = createEClass(EXTERNAL_PROPERTIES);
+		createEReference(externalPropertiesEClass, EXTERNAL_PROPERTIES__PROPERTIES);
+
+		externalPropertyEClass = createEClass(EXTERNAL_PROPERTY);
+		createEAttribute(externalPropertyEClass, EXTERNAL_PROPERTY__COMP_REF_ID);
+		createEAttribute(externalPropertyEClass, EXTERNAL_PROPERTY__PROP_ID);
+		createEAttribute(externalPropertyEClass, EXTERNAL_PROPERTY__EXTERNAL_PROP_ID);
+
 		findComponentEClass = createEClass(FIND_COMPONENT);
 		createEReference(findComponentEClass, FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF);
 		createEReference(findComponentEClass, FIND_COMPONENT__NAMING_SERVICE);
@@ -937,6 +1013,14 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 		initEClass(externalPortsEClass, ExternalPorts.class, "ExternalPorts", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExternalPorts_Port(), this.getPort(), null, "port", null, 1, -1, ExternalPorts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(externalPropertiesEClass, ExternalProperties.class, "ExternalProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExternalProperties_Properties(), this.getExternalProperty(), null, "properties", null, 0, 1, ExternalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(externalPropertyEClass, ExternalProperty.class, "ExternalProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getExternalProperty_CompRefID(), theEcorePackage.getEString(), "compRefID", null, 1, 1, ExternalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExternalProperty_PropID(), theEcorePackage.getEString(), "propID", null, 1, 1, ExternalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExternalProperty_ExternalPropID(), theEcorePackage.getEString(), "externalPropID", null, 0, 1, ExternalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(findComponentEClass, FindComponent.class, "FindComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFindComponent_ComponentResourceFactoryRef(), this.getComponentResourceFactoryRef(), null, "componentResourceFactoryRef", null, 0, 1, FindComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1128,6 +1212,51 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			 "kind", "element",
 			 "name", "port",
 			 "namespace", "##targetNamespace"
+		   });		
+		addAnnotation
+		  (externalPropertiesEClass, 
+		   source, 
+		   new String[] {
+			 "name", "externalproperties",
+			 "kind", "elementOnly",
+			 "qualified", "false"
+		   });		
+		addAnnotation
+		  (getExternalProperties_Properties(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "properties",
+			 "namespace", "##targetNamespace"
+		   });		
+		addAnnotation
+		  (externalPropertyEClass, 
+		   source, 
+		   new String[] {
+			 "name", "externalproperty",
+			 "kind", "elementOnly",
+			 "qualified", "false"
+		   });		
+		addAnnotation
+		  (getExternalProperty_CompRefID(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "comprefid"
+		   });		
+		addAnnotation
+		  (getExternalProperty_PropID(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "propid"
+		   });		
+		addAnnotation
+		  (getExternalProperty_ExternalPropID(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "externalpropid"
 		   });		
 		addAnnotation
 		  (findComponentEClass, 
@@ -1435,7 +1564,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";																									
+		String source = "http://www.eclipse.org/emf/2002/Ecore";																															
 		addAnnotation
 		  (portEClass, 
 		   source, 

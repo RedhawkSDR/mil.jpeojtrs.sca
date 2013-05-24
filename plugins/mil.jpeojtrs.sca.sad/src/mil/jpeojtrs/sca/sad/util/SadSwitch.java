@@ -25,6 +25,8 @@ import mil.jpeojtrs.sca.prf.PropertyRefContainer;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
+import mil.jpeojtrs.sca.sad.ExternalProperties;
+import mil.jpeojtrs.sca.sad.ExternalProperty;
 import mil.jpeojtrs.sca.sad.FindComponent;
 import mil.jpeojtrs.sca.sad.HostCollocation;
 import mil.jpeojtrs.sca.sad.Port;
@@ -176,6 +178,18 @@ public class SadSwitch<T> {
 			case SadPackage.EXTERNAL_PORTS: {
 				ExternalPorts externalPorts = (ExternalPorts)theEObject;
 				T result = caseExternalPorts(externalPorts);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SadPackage.EXTERNAL_PROPERTIES: {
+				ExternalProperties externalProperties = (ExternalProperties)theEObject;
+				T result = caseExternalProperties(externalProperties);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SadPackage.EXTERNAL_PROPERTY: {
+				ExternalProperty externalProperty = (ExternalProperty)theEObject;
+				T result = caseExternalProperty(externalProperty);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -366,6 +380,36 @@ public class SadSwitch<T> {
 	 * @generated
 	 */
 	public T caseExternalPorts(ExternalPorts object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>External Properties</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>External Properties</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExternalProperties(ExternalProperties object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>External Property</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>External Property</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExternalProperty(ExternalProperty object) {
 		return null;
 	}
 

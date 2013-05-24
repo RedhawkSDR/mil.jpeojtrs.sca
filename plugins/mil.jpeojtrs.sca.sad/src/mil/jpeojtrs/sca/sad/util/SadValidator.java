@@ -17,6 +17,8 @@ import mil.jpeojtrs.sca.partitioning.util.PartitioningValidator;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
+import mil.jpeojtrs.sca.sad.ExternalProperties;
+import mil.jpeojtrs.sca.sad.ExternalProperty;
 import mil.jpeojtrs.sca.sad.FindComponent;
 import mil.jpeojtrs.sca.sad.HostCollocation;
 import mil.jpeojtrs.sca.sad.Port;
@@ -135,6 +137,10 @@ public class SadValidator extends EObjectValidator {
 				return validateComponentResourceFactoryRef((ComponentResourceFactoryRef)value, diagnostics, context);
 			case SadPackage.EXTERNAL_PORTS:
 				return validateExternalPorts((ExternalPorts)value, diagnostics, context);
+			case SadPackage.EXTERNAL_PROPERTIES:
+				return validateExternalProperties((ExternalProperties)value, diagnostics, context);
+			case SadPackage.EXTERNAL_PROPERTY:
+				return validateExternalProperty((ExternalProperty)value, diagnostics, context);
 			case SadPackage.FIND_COMPONENT:
 				return validateFindComponent((FindComponent)value, diagnostics, context);
 			case SadPackage.HOST_COLLOCATION:
@@ -246,6 +252,24 @@ public class SadValidator extends EObjectValidator {
 	 */
 	public boolean validateExternalPorts(ExternalPorts externalPorts, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(externalPorts, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExternalProperties(ExternalProperties externalProperties, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(externalProperties, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExternalProperty(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(externalProperty, diagnostics, context);
 	}
 
 	/**

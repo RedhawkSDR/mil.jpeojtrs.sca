@@ -23,6 +23,8 @@ import mil.jpeojtrs.sca.prf.PropertyRefContainer;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
+import mil.jpeojtrs.sca.sad.ExternalProperties;
+import mil.jpeojtrs.sca.sad.ExternalProperty;
 import mil.jpeojtrs.sca.sad.FindComponent;
 import mil.jpeojtrs.sca.sad.HostCollocation;
 import mil.jpeojtrs.sca.sad.Port;
@@ -136,6 +138,14 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExternalPorts(ExternalPorts object) {
 				return createExternalPortsAdapter();
+			}
+			@Override
+			public Adapter caseExternalProperties(ExternalProperties object) {
+				return createExternalPropertiesAdapter();
+			}
+			@Override
+			public Adapter caseExternalProperty(ExternalProperty object) {
+				return createExternalPropertyAdapter();
 			}
 			@Override
 			public Adapter caseFindComponent(FindComponent object) {
@@ -347,6 +357,34 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExternalPortsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.sad.ExternalProperties <em>External Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.sad.ExternalProperties
+	 * @generated
+	 */
+	public Adapter createExternalPropertiesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.sad.ExternalProperty <em>External Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.sad.ExternalProperty
+	 * @generated
+	 */
+	public Adapter createExternalPropertyAdapter() {
 		return null;
 	}
 

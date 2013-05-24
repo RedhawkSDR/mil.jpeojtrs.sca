@@ -16,6 +16,8 @@ import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
+import mil.jpeojtrs.sca.sad.ExternalProperties;
+import mil.jpeojtrs.sca.sad.ExternalProperty;
 import mil.jpeojtrs.sca.sad.FindComponent;
 import mil.jpeojtrs.sca.sad.HostCollocation;
 import mil.jpeojtrs.sca.sad.Port;
@@ -92,6 +94,8 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 			case SadPackage.SAD_CONNECTIONS: return createSadConnections();
 			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF: return createComponentResourceFactoryRef();
 			case SadPackage.EXTERNAL_PORTS: return createExternalPorts();
+			case SadPackage.EXTERNAL_PROPERTIES: return createExternalProperties();
+			case SadPackage.EXTERNAL_PROPERTY: return createExternalProperty();
 			case SadPackage.FIND_COMPONENT: return createFindComponent();
 			case SadPackage.HOST_COLLOCATION: return createHostCollocation();
 			case SadPackage.PORT: return createPort();
@@ -193,6 +197,26 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	public ExternalPorts createExternalPorts() {
 		ExternalPortsImpl externalPorts = new ExternalPortsImpl();
 		return externalPorts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExternalProperties createExternalProperties() {
+		ExternalPropertiesImpl externalProperties = new ExternalPropertiesImpl();
+		return externalProperties;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExternalProperty createExternalProperty() {
+		ExternalPropertyImpl externalProperty = new ExternalPropertyImpl();
+		return externalProperty;
 	}
 
 	/**

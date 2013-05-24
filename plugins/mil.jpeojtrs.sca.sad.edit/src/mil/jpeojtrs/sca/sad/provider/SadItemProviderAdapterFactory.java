@@ -288,6 +288,52 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.sad.ExternalProperties} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExternalPropertiesItemProvider externalPropertiesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.sad.ExternalProperties}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExternalPropertiesAdapter() {
+		if (externalPropertiesItemProvider == null) {
+			externalPropertiesItemProvider = new ExternalPropertiesItemProvider(this);
+		}
+
+		return externalPropertiesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.sad.ExternalProperty} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExternalPropertyItemProvider externalPropertyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.sad.ExternalProperty}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExternalPropertyAdapter() {
+		if (externalPropertyItemProvider == null) {
+			externalPropertyItemProvider = new ExternalPropertyItemProvider(this);
+		}
+
+		return externalPropertyItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.sad.FindComponent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -579,6 +625,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 		if (sadConnectionsItemProvider != null) sadConnectionsItemProvider.dispose();
 		if (componentResourceFactoryRefItemProvider != null) componentResourceFactoryRefItemProvider.dispose();
 		if (externalPortsItemProvider != null) externalPortsItemProvider.dispose();
+		if (externalPropertiesItemProvider != null) externalPropertiesItemProvider.dispose();
+		if (externalPropertyItemProvider != null) externalPropertyItemProvider.dispose();
 		if (findComponentItemProvider != null) findComponentItemProvider.dispose();
 		if (hostCollocationItemProvider != null) hostCollocationItemProvider.dispose();
 		if (portItemProvider != null) portItemProvider.dispose();
