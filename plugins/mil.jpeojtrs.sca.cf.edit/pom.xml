@@ -14,4 +14,8 @@
   <packaging>eclipse-plugin</packaging>
   <version>2.2.2-SNAPSHOT</version></project>
 
+  <properties>
+    <pmd.skip>true</pmd.skip>
+    <cpd.skip>true</cpd.skip>
+  </properties>
 </project>
