@@ -13,4 +13,21 @@
   <artifactId>mil.jpeojtrs.sca.cf</artifactId>
   <version>2.2.2-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  
+  <properties>
+    <pmd.skip>true</pmd.skip>
+    <cpd.skip>true</cpd.skip>
+  </properties>
+  
+  <build>
+    <plugins>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>findbugs-maven-plugin</artifactId>
+            <configuration>
+                <skip>true</skip>
+            </configuration>
+        </plugin>
+    </plugins>
+  </build>
 </project>
