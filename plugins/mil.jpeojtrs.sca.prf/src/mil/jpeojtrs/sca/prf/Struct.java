@@ -33,60 +33,60 @@ import org.eclipse.emf.common.util.EList;
 public interface Struct extends AbstractProperty, PropertyContainer {
 
 	/**
-	 * Returns the value of the '<em><b>Simple</b></em>' containment reference list.
-	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.Simple}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Simple</b></em>' containment reference list.
+     * The list contents are of type {@link mil.jpeojtrs.sca.prf.Simple}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Simple</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Simple</em>' containment reference list.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_Simple()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='simple'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Simple</em>' containment reference list.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_Simple()
+     * @model containment="true" required="true"
+     *        extendedMetaData="kind='element' name='simple'"
+     * @generated
+     */
 	EList<Simple> getSimple();
 
 	/**
-	 * Returns the value of the '<em><b>Configuration Kind</b></em>' containment reference list.
-	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.ConfigurationKind}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Configuration Kind</b></em>' containment reference list.
+     * The list contents are of type {@link mil.jpeojtrs.sca.prf.ConfigurationKind}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Configuration Kind</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Configuration Kind</em>' containment reference list.
-	 * @see #isSetConfigurationKind()
-	 * @see #unsetConfigurationKind()
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_ConfigurationKind()
-	 * @model containment="true" unsettable="true"
-	 *        extendedMetaData="kind='element' name='configurationkind'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Configuration Kind</em>' containment reference list.
+     * @see #isSetConfigurationKind()
+     * @see #unsetConfigurationKind()
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_ConfigurationKind()
+     * @model containment="true" unsettable="true"
+     *        extendedMetaData="kind='element' name='configurationkind'"
+     * @generated
+     */
 	EList<ConfigurationKind> getConfigurationKind();
 
 	/**
-	 * Unsets the value of the '{@link mil.jpeojtrs.sca.prf.Struct#getConfigurationKind <em>Configuration Kind</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * Unsets the value of the '{@link mil.jpeojtrs.sca.prf.Struct#getConfigurationKind <em>Configuration Kind</em>}' containment reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSetConfigurationKind()
-	 * @see #getConfigurationKind()
-	 * @generated
-	 */
+     * @see #isSetConfigurationKind()
+     * @see #getConfigurationKind()
+     * @generated
+     */
 	void unsetConfigurationKind();
 
 	/**
-	 * Returns whether the value of the '{@link mil.jpeojtrs.sca.prf.Struct#getConfigurationKind <em>Configuration Kind</em>}' containment reference list is set.
-	 * <!-- begin-user-doc -->
+     * Returns whether the value of the '{@link mil.jpeojtrs.sca.prf.Struct#getConfigurationKind <em>Configuration Kind</em>}' containment reference list is set.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Configuration Kind</em>' containment reference list is set.
-	 * @see #unsetConfigurationKind()
-	 * @see #getConfigurationKind()
-	 * @generated
-	 */
+     * @return whether the value of the '<em>Configuration Kind</em>' containment reference list is set.
+     * @see #unsetConfigurationKind()
+     * @see #getConfigurationKind()
+     * @generated
+     */
 	boolean isSetConfigurationKind();
 
 } // Struct

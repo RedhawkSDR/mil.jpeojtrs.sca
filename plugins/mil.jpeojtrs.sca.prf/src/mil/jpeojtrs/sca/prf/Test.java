@@ -34,111 +34,111 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Test extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Description</b></em>' attribute.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(String)
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getTest_Description()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
-	 *        extendedMetaData="kind='element' name='description'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Description</em>' attribute.
+     * @see #setDescription(String)
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getTest_Description()
+     * @model dataType="org.eclipse.emf.ecore.xml.type.String"
+     *        extendedMetaData="kind='element' name='description'"
+     * @generated
+     */
 	String getDescription();
 
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Test#getDescription <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Test#getDescription <em>Description</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Description</em>' attribute.
+     * @see #getDescription()
+     * @generated
+     */
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Input Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Input Value</b></em>' containment reference.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Input Value</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Input Value</em>' containment reference.
-	 * @see #setInputValue(InputValue)
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getTest_InputValue()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='inputvalue'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Input Value</em>' containment reference.
+     * @see #setInputValue(InputValue)
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getTest_InputValue()
+     * @model containment="true"
+     *        extendedMetaData="kind='element' name='inputvalue'"
+     * @generated
+     */
 	InputValue getInputValue();
 
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Test#getInputValue <em>Input Value</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Test#getInputValue <em>Input Value</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Input Value</em>' containment reference.
-	 * @see #getInputValue()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Input Value</em>' containment reference.
+     * @see #getInputValue()
+     * @generated
+     */
 	void setInputValue(InputValue value);
 
 	/**
-	 * Returns the value of the '<em><b>Result Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Result Value</b></em>' containment reference.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Result Value</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Result Value</em>' containment reference.
-	 * @see #setResultValue(ResultValue)
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getTest_ResultValue()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='resultvalue'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Result Value</em>' containment reference.
+     * @see #setResultValue(ResultValue)
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getTest_ResultValue()
+     * @model containment="true" required="true"
+     *        extendedMetaData="kind='element' name='resultvalue'"
+     * @generated
+     */
 	ResultValue getResultValue();
 
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Test#getResultValue <em>Result Value</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Test#getResultValue <em>Result Value</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Result Value</em>' containment reference.
-	 * @see #getResultValue()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Result Value</em>' containment reference.
+     * @see #getResultValue()
+     * @generated
+     */
 	void setResultValue(ResultValue value);
 
 	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getTest_Id()
-	 * @model id="true" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
-	 *        extendedMetaData="kind='attribute' name='id'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Id</em>' attribute.
+     * @see #setId(String)
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getTest_Id()
+     * @model id="true" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
+     *        extendedMetaData="kind='attribute' name='id'"
+     * @generated
+     */
 	String getId();
 
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Test#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Test#getId <em>Id</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Id</em>' attribute.
+     * @see #getId()
+     * @generated
+     */
 	void setId(String value);
 
 	/**

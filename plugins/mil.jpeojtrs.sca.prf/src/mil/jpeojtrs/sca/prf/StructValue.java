@@ -35,66 +35,66 @@ import org.omg.CORBA.Any;
 public interface StructValue extends PropertyRefContainer {
 
 	/**
-	 * Returns the value of the '<em><b>Simple Ref</b></em>' containment reference list.
-	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleRef}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Simple Ref</b></em>' containment reference list.
+     * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleRef}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Simple Ref</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Simple Ref</em>' containment reference list.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructValue_SimpleRef()
-	 * @model containment="true" required="true"
-	 *        extendedMetaData="kind='element' name='simpleref'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Simple Ref</em>' containment reference list.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructValue_SimpleRef()
+     * @model containment="true" required="true"
+     *        extendedMetaData="kind='element' name='simpleref'"
+     * @generated
+     */
 	EList<SimpleRef> getSimpleRef();
 
 	/**
-	 * Returns the value of the '<em><b>Struct</b></em>' reference.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Struct</b></em>' reference.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Struct</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Struct</em>' reference.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructValue_Struct()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Struct</em>' reference.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructValue_Struct()
+     * @model transient="true" changeable="false" volatile="true" derived="true"
+     * @generated
+     */
 	Struct getStruct();
 
 	/**
-	 * Returns the value of the '<em><b>Index</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Index</b></em>' attribute.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Index</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Index</em>' attribute.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructValue_Index()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Index</em>' attribute.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructValue_Index()
+     * @model transient="true" changeable="false" volatile="true" derived="true"
+     * @generated
+     */
 	int getIndex();
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="mil.jpeojtrs.sca.prf.Any"
-	 * @generated
-	 */
+     * @model dataType="mil.jpeojtrs.sca.prf.Any"
+     * @generated
+     */
 	Any toAny();
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+     * @model
+     * @generated
+     */
 	SimpleRef getRef(String id);
 
 } // StructValue

@@ -26,11 +26,11 @@ import org.eclipse.emf.ecore.EObject;
 public interface PropertyContainer extends EObject {
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
+     * @model
+     * @generated
+     */
 	AbstractProperty getProperty(String repID);
 
 } // PropertyContainer

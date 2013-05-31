@@ -47,125 +47,125 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  */
 public interface Properties extends PropertyContainer {
 	/**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Description</b></em>' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The description element is used to provide a description of the properties element that is being
-	 * defined.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(String)
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_Description()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
-	 *        extendedMetaData="kind='element' name='description'"
-	 * @generated
-	 */
+     * <!-- begin-model-doc -->
+     * The description element is used to provide a description of the properties element that is being
+     * defined.
+     * <!-- end-model-doc -->
+     * @return the value of the '<em>Description</em>' attribute.
+     * @see #setDescription(String)
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_Description()
+     * @model dataType="org.eclipse.emf.ecore.xml.type.String"
+     *        extendedMetaData="kind='element' name='description'"
+     * @generated
+     */
 	String getDescription();
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Properties#getDescription <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Properties#getDescription <em>Description</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Description</em>' attribute.
+     * @see #getDescription()
+     * @generated
+     */
 	void setDescription(String value);
 	/**
-	 * Returns the value of the '<em><b>Properties</b></em>' attribute list.
-	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Properties</b></em>' attribute list.
+     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Properties</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Properties</em>' attribute list.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_Properties()
-	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
-	 *        extendedMetaData="kind='group' name='properties:1'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Properties</em>' attribute list.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_Properties()
+     * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+     *        extendedMetaData="kind='group' name='properties:1'"
+     * @generated
+     */
 	FeatureMap getProperties();
 	/**
-	 * Returns the value of the '<em><b>Simple</b></em>' containment reference list.
-	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.Simple}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Simple</b></em>' containment reference list.
+     * The list contents are of type {@link mil.jpeojtrs.sca.prf.Simple}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Simple</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Simple</em>' containment reference list.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_Simple()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='simple' group='#properties:1'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Simple</em>' containment reference list.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_Simple()
+     * @model containment="true" transient="true" volatile="true" derived="true"
+     *        extendedMetaData="kind='element' name='simple' group='#properties:1'"
+     * @generated
+     */
 	EList<Simple> getSimple();
 	/**
-	 * Returns the value of the '<em><b>Simple Sequence</b></em>' containment reference list.
-	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleSequence}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Simple Sequence</b></em>' containment reference list.
+     * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleSequence}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Simple Sequence</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Simple Sequence</em>' containment reference list.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_SimpleSequence()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='simplesequence' group='#properties:1'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Simple Sequence</em>' containment reference list.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_SimpleSequence()
+     * @model containment="true" transient="true" volatile="true" derived="true"
+     *        extendedMetaData="kind='element' name='simplesequence' group='#properties:1'"
+     * @generated
+     */
 	EList<SimpleSequence> getSimpleSequence();
 	/**
-	 * Returns the value of the '<em><b>Test</b></em>' containment reference list.
-	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.Test}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Test</b></em>' containment reference list.
+     * The list contents are of type {@link mil.jpeojtrs.sca.prf.Test}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Test</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Test</em>' containment reference list.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_Test()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='test' group='#properties:1'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Test</em>' containment reference list.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_Test()
+     * @model containment="true" transient="true" volatile="true" derived="true"
+     *        extendedMetaData="kind='element' name='test' group='#properties:1'"
+     * @generated
+     */
 	EList<Test> getTest();
 	/**
-	 * Returns the value of the '<em><b>Struct</b></em>' containment reference list.
-	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.Struct}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Struct</b></em>' containment reference list.
+     * The list contents are of type {@link mil.jpeojtrs.sca.prf.Struct}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Struct</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Struct</em>' containment reference list.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_Struct()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='struct' group='#properties:1'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Struct</em>' containment reference list.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_Struct()
+     * @model containment="true" transient="true" volatile="true" derived="true"
+     *        extendedMetaData="kind='element' name='struct' group='#properties:1'"
+     * @generated
+     */
 	EList<Struct> getStruct();
 	/**
-	 * Returns the value of the '<em><b>Struct Sequence</b></em>' containment reference list.
-	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.StructSequence}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Struct Sequence</b></em>' containment reference list.
+     * The list contents are of type {@link mil.jpeojtrs.sca.prf.StructSequence}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Struct Sequence</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Struct Sequence</em>' containment reference list.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_StructSequence()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='structsequence' group='#properties:1'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Struct Sequence</em>' containment reference list.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties_StructSequence()
+     * @model containment="true" transient="true" volatile="true" derived="true"
+     *        extendedMetaData="kind='element' name='structsequence' group='#properties:1'"
+     * @generated
+     */
 	EList<StructSequence> getStructSequence();
 	public static final String EOBJECT_PATH = "/";
 	public static class Util {

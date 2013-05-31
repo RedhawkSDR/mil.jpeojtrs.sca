@@ -33,20 +33,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface Values extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Value</b></em>' attribute list.
+     * The list contents are of type {@link java.lang.String}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute list.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getValues_Value()
-	 * @model unique="false" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
-	 *        extendedMetaData="kind='element' name='value'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Value</em>' attribute list.
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getValues_Value()
+     * @model unique="false" dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
+     *        extendedMetaData="kind='element' name='value'"
+     * @generated
+     */
 	EList<String> getValue();
 
 } // Values

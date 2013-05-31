@@ -55,129 +55,129 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class PropertiesImpl extends EObjectImpl implements Properties {
 	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getDescription()
+     * @generated
+     * @ordered
+     */
 	protected static final String DESCRIPTION_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getDescription()
+     * @generated
+     * @ordered
+     */
 	protected String description = DESCRIPTION_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' attribute list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getProperties() <em>Properties</em>}' attribute list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProperties()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getProperties()
+     * @generated
+     * @ordered
+     */
 	protected FeatureMap properties;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected PropertiesImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return PrfPackage.Literals.PROPERTIES;
-	}
+        return PrfPackage.Literals.PROPERTIES;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public String getDescription() {
-		return description;
-	}
+        return description;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.PROPERTIES__DESCRIPTION, oldDescription, description));
-	}
+        String oldDescription = description;
+        description = newDescription;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.PROPERTIES__DESCRIPTION, oldDescription, description));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public FeatureMap getProperties() {
-		if (properties == null) {
-			properties = new BasicFeatureMap(this, PrfPackage.PROPERTIES__PROPERTIES);
-		}
-		return properties;
-	}
+        if (properties == null) {
+            properties = new BasicFeatureMap(this, PrfPackage.PROPERTIES__PROPERTIES);
+        }
+        return properties;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Simple> getSimple() {
-		return getProperties().list(PrfPackage.Literals.PROPERTIES__SIMPLE);
-	}
+        return getProperties().list(PrfPackage.Literals.PROPERTIES__SIMPLE);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<SimpleSequence> getSimpleSequence() {
-		return getProperties().list(PrfPackage.Literals.PROPERTIES__SIMPLE_SEQUENCE);
-	}
+        return getProperties().list(PrfPackage.Literals.PROPERTIES__SIMPLE_SEQUENCE);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Test> getTest() {
-		return getProperties().list(PrfPackage.Literals.PROPERTIES__TEST);
-	}
+        return getProperties().list(PrfPackage.Literals.PROPERTIES__TEST);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Struct> getStruct() {
-		return getProperties().list(PrfPackage.Literals.PROPERTIES__STRUCT);
-	}
+        return getProperties().list(PrfPackage.Literals.PROPERTIES__STRUCT);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<StructSequence> getStructSequence() {
-		return getProperties().list(PrfPackage.Literals.PROPERTIES__STRUCT_SEQUENCE);
-	}
+        return getProperties().list(PrfPackage.Literals.PROPERTIES__STRUCT_SEQUENCE);
+    }
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,170 +199,170 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTIES__SIMPLE:
-				return ((InternalEList<?>)getSimple()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-				return ((InternalEList<?>)getSimpleSequence()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTIES__TEST:
-				return ((InternalEList<?>)getTest()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTIES__STRUCT:
-				return ((InternalEList<?>)getStruct()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				return ((InternalEList<?>)getStructSequence()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case PrfPackage.PROPERTIES__PROPERTIES:
+                return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+            case PrfPackage.PROPERTIES__SIMPLE:
+                return ((InternalEList<?>)getSimple()).basicRemove(otherEnd, msgs);
+            case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+                return ((InternalEList<?>)getSimpleSequence()).basicRemove(otherEnd, msgs);
+            case PrfPackage.PROPERTIES__TEST:
+                return ((InternalEList<?>)getTest()).basicRemove(otherEnd, msgs);
+            case PrfPackage.PROPERTIES__STRUCT:
+                return ((InternalEList<?>)getStruct()).basicRemove(otherEnd, msgs);
+            case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+                return ((InternalEList<?>)getStructSequence()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PrfPackage.PROPERTIES__DESCRIPTION:
-				return getDescription();
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				if (coreType) return getProperties();
-				return ((FeatureMap.Internal)getProperties()).getWrapper();
-			case PrfPackage.PROPERTIES__SIMPLE:
-				return getSimple();
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-				return getSimpleSequence();
-			case PrfPackage.PROPERTIES__TEST:
-				return getTest();
-			case PrfPackage.PROPERTIES__STRUCT:
-				return getStruct();
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				return getStructSequence();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case PrfPackage.PROPERTIES__DESCRIPTION:
+                return getDescription();
+            case PrfPackage.PROPERTIES__PROPERTIES:
+                if (coreType) return getProperties();
+                return ((FeatureMap.Internal)getProperties()).getWrapper();
+            case PrfPackage.PROPERTIES__SIMPLE:
+                return getSimple();
+            case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+                return getSimpleSequence();
+            case PrfPackage.PROPERTIES__TEST:
+                return getTest();
+            case PrfPackage.PROPERTIES__STRUCT:
+                return getStruct();
+            case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+                return getStructSequence();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PrfPackage.PROPERTIES__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				((FeatureMap.Internal)getProperties()).set(newValue);
-				return;
-			case PrfPackage.PROPERTIES__SIMPLE:
-				getSimple().clear();
-				getSimple().addAll((Collection<? extends Simple>)newValue);
-				return;
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-				getSimpleSequence().clear();
-				getSimpleSequence().addAll((Collection<? extends SimpleSequence>)newValue);
-				return;
-			case PrfPackage.PROPERTIES__TEST:
-				getTest().clear();
-				getTest().addAll((Collection<? extends Test>)newValue);
-				return;
-			case PrfPackage.PROPERTIES__STRUCT:
-				getStruct().clear();
-				getStruct().addAll((Collection<? extends Struct>)newValue);
-				return;
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				getStructSequence().clear();
-				getStructSequence().addAll((Collection<? extends StructSequence>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case PrfPackage.PROPERTIES__DESCRIPTION:
+                setDescription((String)newValue);
+                return;
+            case PrfPackage.PROPERTIES__PROPERTIES:
+                ((FeatureMap.Internal)getProperties()).set(newValue);
+                return;
+            case PrfPackage.PROPERTIES__SIMPLE:
+                getSimple().clear();
+                getSimple().addAll((Collection<? extends Simple>)newValue);
+                return;
+            case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+                getSimpleSequence().clear();
+                getSimpleSequence().addAll((Collection<? extends SimpleSequence>)newValue);
+                return;
+            case PrfPackage.PROPERTIES__TEST:
+                getTest().clear();
+                getTest().addAll((Collection<? extends Test>)newValue);
+                return;
+            case PrfPackage.PROPERTIES__STRUCT:
+                getStruct().clear();
+                getStruct().addAll((Collection<? extends Struct>)newValue);
+                return;
+            case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+                getStructSequence().clear();
+                getStructSequence().addAll((Collection<? extends StructSequence>)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PrfPackage.PROPERTIES__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				getProperties().clear();
-				return;
-			case PrfPackage.PROPERTIES__SIMPLE:
-				getSimple().clear();
-				return;
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-				getSimpleSequence().clear();
-				return;
-			case PrfPackage.PROPERTIES__TEST:
-				getTest().clear();
-				return;
-			case PrfPackage.PROPERTIES__STRUCT:
-				getStruct().clear();
-				return;
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				getStructSequence().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case PrfPackage.PROPERTIES__DESCRIPTION:
+                setDescription(DESCRIPTION_EDEFAULT);
+                return;
+            case PrfPackage.PROPERTIES__PROPERTIES:
+                getProperties().clear();
+                return;
+            case PrfPackage.PROPERTIES__SIMPLE:
+                getSimple().clear();
+                return;
+            case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+                getSimpleSequence().clear();
+                return;
+            case PrfPackage.PROPERTIES__TEST:
+                getTest().clear();
+                return;
+            case PrfPackage.PROPERTIES__STRUCT:
+                getStruct().clear();
+                return;
+            case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+                getStructSequence().clear();
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PrfPackage.PROPERTIES__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				return properties != null && !properties.isEmpty();
-			case PrfPackage.PROPERTIES__SIMPLE:
-				return !getSimple().isEmpty();
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-				return !getSimpleSequence().isEmpty();
-			case PrfPackage.PROPERTIES__TEST:
-				return !getTest().isEmpty();
-			case PrfPackage.PROPERTIES__STRUCT:
-				return !getStruct().isEmpty();
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				return !getStructSequence().isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case PrfPackage.PROPERTIES__DESCRIPTION:
+                return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+            case PrfPackage.PROPERTIES__PROPERTIES:
+                return properties != null && !properties.isEmpty();
+            case PrfPackage.PROPERTIES__SIMPLE:
+                return !getSimple().isEmpty();
+            case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+                return !getSimpleSequence().isEmpty();
+            case PrfPackage.PROPERTIES__TEST:
+                return !getTest().isEmpty();
+            case PrfPackage.PROPERTIES__STRUCT:
+                return !getStruct().isEmpty();
+            case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+                return !getStructSequence().isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+        if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (description: ");
-		result.append(description);
-		result.append(", properties: ");
-		result.append(properties);
-		result.append(')');
-		return result.toString();
-	}
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (description: ");
+        result.append(description);
+        result.append(", properties: ");
+        result.append(properties);
+        result.append(')');
+        return result.toString();
+    }
 
 } //PropertiesImpl

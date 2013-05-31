@@ -35,64 +35,64 @@ import org.omg.CORBA.Any;
 public interface AbstractPropertyRef<P extends AbstractProperty> extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Ref ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Ref ID</b></em>' attribute.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ref ID</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ref ID</em>' attribute.
-	 * @see #setRefID(String)
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getAbstractPropertyRef_RefID()
-	 * @model required="true"
-	 *        extendedMetaData="kind='attribute' name='refid'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Ref ID</em>' attribute.
+     * @see #setRefID(String)
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getAbstractPropertyRef_RefID()
+     * @model required="true"
+     *        extendedMetaData="kind='attribute' name='refid'"
+     * @generated
+     */
 	String getRefID();
 
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.AbstractPropertyRef#getRefID <em>Ref ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.AbstractPropertyRef#getRefID <em>Ref ID</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ref ID</em>' attribute.
-	 * @see #getRefID()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Ref ID</em>' attribute.
+     * @see #getRefID()
+     * @generated
+     */
 	void setRefID(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Property</b></em>' reference.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Property</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Property</em>' reference.
-	 * @see #setProperty(AbstractProperty)
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getAbstractPropertyRef_Property()
-	 * @model transient="true" volatile="true" derived="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Property</em>' reference.
+     * @see #setProperty(AbstractProperty)
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getAbstractPropertyRef_Property()
+     * @model transient="true" volatile="true" derived="true"
+     * @generated
+     */
 	P getProperty();
 
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.AbstractPropertyRef#getProperty <em>Property</em>}' reference.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.AbstractPropertyRef#getProperty <em>Property</em>}' reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Property</em>' reference.
-	 * @see #getProperty()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Property</em>' reference.
+     * @see #getProperty()
+     * @generated
+     */
 	void setProperty(P value);
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="mil.jpeojtrs.sca.prf.Any"
-	 * @generated
-	 */
+     * @model dataType="mil.jpeojtrs.sca.prf.Any"
+     * @generated
+     */
 	Any toAny();
 
 } // PropertyRef

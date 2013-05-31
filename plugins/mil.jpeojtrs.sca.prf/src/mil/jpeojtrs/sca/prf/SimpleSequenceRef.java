@@ -31,29 +31,29 @@ package mil.jpeojtrs.sca.prf;
 public interface SimpleSequenceRef extends AbstractPropertyRef<SimpleSequence> {
 
 	/**
-	 * Returns the value of the '<em><b>Values</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Values</b></em>' containment reference.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Values</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Values</em>' containment reference.
-	 * @see #setValues(Values)
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimpleSequenceRef_Values()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Values</em>' containment reference.
+     * @see #setValues(Values)
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimpleSequenceRef_Values()
+     * @model containment="true" required="true"
+     * @generated
+     */
 	Values getValues();
 
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.SimpleSequenceRef#getValues <em>Values</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.SimpleSequenceRef#getValues <em>Values</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Values</em>' containment reference.
-	 * @see #getValues()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Values</em>' containment reference.
+     * @see #getValues()
+     * @generated
+     */
 	void setValues(Values value);
 
 } // SimpleSequenceRef

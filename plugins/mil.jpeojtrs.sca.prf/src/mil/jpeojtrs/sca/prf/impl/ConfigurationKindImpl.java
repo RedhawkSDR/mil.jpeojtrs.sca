@@ -36,169 +36,169 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationKind {
 
 	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getType()
+     * @generated
+     * @ordered
+     */
 	protected static final StructPropertyConfigurationType TYPE_EDEFAULT = StructPropertyConfigurationType.CONFIGURE;
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getType()
+     * @generated
+     * @ordered
+     */
 	protected StructPropertyConfigurationType type = TYPE_EDEFAULT;
 	/**
-	 * This is true if the Type attribute has been set.
-	 * <!-- begin-user-doc -->
+     * This is true if the Type attribute has been set.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+     * @generated
+     * @ordered
+     */
 	protected boolean typeESet;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected ConfigurationKindImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return PrfPackage.Literals.CONFIGURATION_KIND;
-	}
+        return PrfPackage.Literals.CONFIGURATION_KIND;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public StructPropertyConfigurationType getType() {
-		return type;
-	}
+        return type;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setType(StructPropertyConfigurationType newType) {
-		StructPropertyConfigurationType oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
-		boolean oldTypeESet = typeESet;
-		typeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.CONFIGURATION_KIND__TYPE, oldType, type, !oldTypeESet));
-	}
+        StructPropertyConfigurationType oldType = type;
+        type = newType == null ? TYPE_EDEFAULT : newType;
+        boolean oldTypeESet = typeESet;
+        typeESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.CONFIGURATION_KIND__TYPE, oldType, type, !oldTypeESet));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void unsetType() {
-		StructPropertyConfigurationType oldType = type;
-		boolean oldTypeESet = typeESet;
-		type = TYPE_EDEFAULT;
-		typeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, PrfPackage.CONFIGURATION_KIND__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
-	}
+        StructPropertyConfigurationType oldType = type;
+        boolean oldTypeESet = typeESet;
+        type = TYPE_EDEFAULT;
+        typeESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, PrfPackage.CONFIGURATION_KIND__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public boolean isSetType() {
-		return typeESet;
-	}
+        return typeESet;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PrfPackage.CONFIGURATION_KIND__TYPE:
-				return getType();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case PrfPackage.CONFIGURATION_KIND__TYPE:
+                return getType();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PrfPackage.CONFIGURATION_KIND__TYPE:
-				setType((StructPropertyConfigurationType)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case PrfPackage.CONFIGURATION_KIND__TYPE:
+                setType((StructPropertyConfigurationType)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PrfPackage.CONFIGURATION_KIND__TYPE:
-				unsetType();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case PrfPackage.CONFIGURATION_KIND__TYPE:
+                unsetType();
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PrfPackage.CONFIGURATION_KIND__TYPE:
-				return isSetType();
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case PrfPackage.CONFIGURATION_KIND__TYPE:
+                return isSetType();
+        }
+        return super.eIsSet(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+        if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (type: ");
-		if (typeESet) result.append(type); else result.append("<unset>");
-		result.append(')');
-		return result.toString();
-	}
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (type: ");
+        if (typeESet) result.append(type); else result.append("<unset>");
+        result.append(')');
+        return result.toString();
+    }
 
 } //ConfigurationKindImpl

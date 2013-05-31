@@ -32,61 +32,61 @@ import org.eclipse.emf.ecore.EObject;
 public interface Action extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The default value is <code>"external"</code>.
-	 * The literals are from the enumeration {@link mil.jpeojtrs.sca.prf.ActionType}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Type</b></em>' attribute.
+     * The default value is <code>"external"</code>.
+     * The literals are from the enumeration {@link mil.jpeojtrs.sca.prf.ActionType}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see mil.jpeojtrs.sca.prf.ActionType
-	 * @see #isSetType()
-	 * @see #unsetType()
-	 * @see #setType(ActionType)
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getAction_Type()
-	 * @model default="external" unsettable="true"
-	 *        extendedMetaData="kind='attribute' name='type'"
-	 * @generated
-	 */
+     * @return the value of the '<em>Type</em>' attribute.
+     * @see mil.jpeojtrs.sca.prf.ActionType
+     * @see #isSetType()
+     * @see #unsetType()
+     * @see #setType(ActionType)
+     * @see mil.jpeojtrs.sca.prf.PrfPackage#getAction_Type()
+     * @model default="external" unsettable="true"
+     *        extendedMetaData="kind='attribute' name='type'"
+     * @generated
+     */
 	ActionType getType();
 
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Action#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Action#getType <em>Type</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see mil.jpeojtrs.sca.prf.ActionType
-	 * @see #isSetType()
-	 * @see #unsetType()
-	 * @see #getType()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Type</em>' attribute.
+     * @see mil.jpeojtrs.sca.prf.ActionType
+     * @see #isSetType()
+     * @see #unsetType()
+     * @see #getType()
+     * @generated
+     */
 	void setType(ActionType value);
 
 	/**
-	 * Unsets the value of the '{@link mil.jpeojtrs.sca.prf.Action#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Unsets the value of the '{@link mil.jpeojtrs.sca.prf.Action#getType <em>Type</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSetType()
-	 * @see #getType()
-	 * @see #setType(ActionType)
-	 * @generated
-	 */
+     * @see #isSetType()
+     * @see #getType()
+     * @see #setType(ActionType)
+     * @generated
+     */
 	void unsetType();
 
 	/**
-	 * Returns whether the value of the '{@link mil.jpeojtrs.sca.prf.Action#getType <em>Type</em>}' attribute is set.
-	 * <!-- begin-user-doc -->
+     * Returns whether the value of the '{@link mil.jpeojtrs.sca.prf.Action#getType <em>Type</em>}' attribute is set.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Type</em>' attribute is set.
-	 * @see #unsetType()
-	 * @see #getType()
-	 * @see #setType(ActionType)
-	 * @generated
-	 */
+     * @return whether the value of the '<em>Type</em>' attribute is set.
+     * @see #unsetType()
+     * @see #getType()
+     * @see #setType(ActionType)
+     * @generated
+     */
 	boolean isSetType();
 
 } // Action

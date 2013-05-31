@@ -26,11 +26,11 @@ import org.eclipse.emf.ecore.EObject;
 public interface PropertyRefContainer extends EObject {
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 * @generated
-	 */
+     * @model kind="operation"
+     * @generated
+     */
 	PropertyContainer getPropertyContainer();
 
 } // PropertyRefContainer

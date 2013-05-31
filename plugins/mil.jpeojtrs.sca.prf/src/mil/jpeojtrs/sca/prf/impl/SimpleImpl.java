@@ -51,7 +51,7 @@ import org.omg.CORBA.Any;
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getAction <em>Action</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getType <em>Type</em>}</li>
- *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#isComplex <em>Complex</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getComplex <em>Complex</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,563 +59,563 @@ import org.omg.CORBA.Any;
  */
 public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getValue()
+     * @generated
+     * @ordered
+     */
 	protected static final String VALUE_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getValue()
+     * @generated
+     * @ordered
+     */
 	protected String value = VALUE_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getUnits() <em>Units</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getUnits() <em>Units</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUnits()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getUnits()
+     * @generated
+     * @ordered
+     */
 	protected static final String UNITS_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getUnits() <em>Units</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getUnits() <em>Units</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUnits()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getUnits()
+     * @generated
+     * @ordered
+     */
 	protected String units = UNITS_EDEFAULT;
 	/**
-	 * The cached value of the '{@link #getRange() <em>Range</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getRange() <em>Range</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRange()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getRange()
+     * @generated
+     * @ordered
+     */
 	protected Range range;
 	/**
-	 * The cached value of the '{@link #getEnumerations() <em>Enumerations</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getEnumerations() <em>Enumerations</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEnumerations()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getEnumerations()
+     * @generated
+     * @ordered
+     */
 	protected Enumerations enumerations;
 	/**
-	 * The cached value of the '{@link #getKind() <em>Kind</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getKind() <em>Kind</em>}' containment reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getKind()
+     * @generated
+     * @ordered
+     */
 	protected EList<Kind> kind;
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAction()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getAction()
+     * @generated
+     * @ordered
+     */
 	protected Action action;
 	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getType()
+     * @generated
+     * @ordered
+     */
 	protected static final PropertyValueType TYPE_EDEFAULT = PropertyValueType.STRING;
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getType()
+     * @generated
+     * @ordered
+     */
 	protected PropertyValueType type = TYPE_EDEFAULT;
 	/**
-	 * This is true if the Type attribute has been set.
-	 * <!-- begin-user-doc -->
+     * This is true if the Type attribute has been set.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
+     * @generated
+     * @ordered
+     */
 	protected boolean typeESet;
 
 	/**
-	 * The default value of the '{@link #isComplex() <em>Complex</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getComplex() <em>Complex</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isComplex()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean COMPLEX_EDEFAULT = false;
+     * @see #getComplex()
+     * @generated
+     * @ordered
+     */
+	protected static final Boolean COMPLEX_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #isComplex() <em>Complex</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getComplex() <em>Complex</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isComplex()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean complex = COMPLEX_EDEFAULT;
+     * @see #getComplex()
+     * @generated
+     * @ordered
+     */
+	protected Boolean complex = COMPLEX_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected SimpleImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return PrfPackage.Literals.SIMPLE;
-	}
+        return PrfPackage.Literals.SIMPLE;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public String getValue() {
-		return value;
-	}
+        return value;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setValue(String newValue) {
-		String oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__VALUE, oldValue, value));
-	}
+        String oldValue = value;
+        value = newValue;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__VALUE, oldValue, value));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public String getUnits() {
-		return units;
-	}
+        return units;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setUnits(String newUnits) {
-		String oldUnits = units;
-		units = newUnits;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__UNITS, oldUnits, units));
-	}
+        String oldUnits = units;
+        units = newUnits;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__UNITS, oldUnits, units));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Range getRange() {
-		return range;
-	}
+        return range;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public NotificationChain basicSetRange(Range newRange, NotificationChain msgs) {
-		Range oldRange = range;
-		range = newRange;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__RANGE, oldRange, newRange);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+        Range oldRange = range;
+        range = newRange;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__RANGE, oldRange, newRange);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setRange(Range newRange) {
-		if (newRange != range) {
-			NotificationChain msgs = null;
-			if (range != null)
-				msgs = ((InternalEObject)range).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__RANGE, null, msgs);
-			if (newRange != null)
-				msgs = ((InternalEObject)newRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__RANGE, null, msgs);
-			msgs = basicSetRange(newRange, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__RANGE, newRange, newRange));
-	}
+        if (newRange != range) {
+            NotificationChain msgs = null;
+            if (range != null)
+                msgs = ((InternalEObject)range).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__RANGE, null, msgs);
+            if (newRange != null)
+                msgs = ((InternalEObject)newRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__RANGE, null, msgs);
+            msgs = basicSetRange(newRange, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__RANGE, newRange, newRange));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Enumerations getEnumerations() {
-		return enumerations;
-	}
+        return enumerations;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public NotificationChain basicSetEnumerations(Enumerations newEnumerations, NotificationChain msgs) {
-		Enumerations oldEnumerations = enumerations;
-		enumerations = newEnumerations;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ENUMERATIONS, oldEnumerations, newEnumerations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+        Enumerations oldEnumerations = enumerations;
+        enumerations = newEnumerations;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ENUMERATIONS, oldEnumerations, newEnumerations);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setEnumerations(Enumerations newEnumerations) {
-		if (newEnumerations != enumerations) {
-			NotificationChain msgs = null;
-			if (enumerations != null)
-				msgs = ((InternalEObject)enumerations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ENUMERATIONS, null, msgs);
-			if (newEnumerations != null)
-				msgs = ((InternalEObject)newEnumerations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ENUMERATIONS, null, msgs);
-			msgs = basicSetEnumerations(newEnumerations, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ENUMERATIONS, newEnumerations, newEnumerations));
-	}
+        if (newEnumerations != enumerations) {
+            NotificationChain msgs = null;
+            if (enumerations != null)
+                msgs = ((InternalEObject)enumerations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ENUMERATIONS, null, msgs);
+            if (newEnumerations != null)
+                msgs = ((InternalEObject)newEnumerations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ENUMERATIONS, null, msgs);
+            msgs = basicSetEnumerations(newEnumerations, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ENUMERATIONS, newEnumerations, newEnumerations));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Kind> getKind() {
-		if (kind == null) {
-			kind = new EObjectContainmentEList<Kind>(Kind.class, this, PrfPackage.SIMPLE__KIND);
-		}
-		return kind;
-	}
+        if (kind == null) {
+            kind = new EObjectContainmentEList<Kind>(Kind.class, this, PrfPackage.SIMPLE__KIND);
+        }
+        return kind;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Action getAction() {
-		return action;
-	}
+        return action;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public NotificationChain basicSetAction(Action newAction, NotificationChain msgs) {
-		Action oldAction = action;
-		action = newAction;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ACTION, oldAction, newAction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+        Action oldAction = action;
+        action = newAction;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ACTION, oldAction, newAction);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setAction(Action newAction) {
-		if (newAction != action) {
-			NotificationChain msgs = null;
-			if (action != null)
-				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ACTION, null, msgs);
-			if (newAction != null)
-				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ACTION, null, msgs);
-			msgs = basicSetAction(newAction, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ACTION, newAction, newAction));
-	}
+        if (newAction != action) {
+            NotificationChain msgs = null;
+            if (action != null)
+                msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ACTION, null, msgs);
+            if (newAction != null)
+                msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ACTION, null, msgs);
+            msgs = basicSetAction(newAction, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ACTION, newAction, newAction));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public PropertyValueType getType() {
-		return type;
-	}
+        return type;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setType(PropertyValueType newType) {
-		PropertyValueType oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
-		boolean oldTypeESet = typeESet;
-		typeESet = true;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__TYPE, oldType, type, !oldTypeESet));
-	}
+        PropertyValueType oldType = type;
+        type = newType == null ? TYPE_EDEFAULT : newType;
+        boolean oldTypeESet = typeESet;
+        typeESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__TYPE, oldType, type, !oldTypeESet));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void unsetType() {
-		PropertyValueType oldType = type;
-		boolean oldTypeESet = typeESet;
-		type = TYPE_EDEFAULT;
-		typeESet = false;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, PrfPackage.SIMPLE__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
-	}
+        PropertyValueType oldType = type;
+        boolean oldTypeESet = typeESet;
+        type = TYPE_EDEFAULT;
+        typeESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, PrfPackage.SIMPLE__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public boolean isSetType() {
-		return typeESet;
-	}
+        return typeESet;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isComplex() {
-		return complex;
-	}
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Boolean getComplex() {
+        return complex;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComplex(boolean newComplex) {
-		boolean oldComplex = complex;
-		complex = newComplex;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__COMPLEX, oldComplex, complex));
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setComplex(Boolean newComplex) {
+        Boolean oldComplex = complex;
+        complex = newComplex;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__COMPLEX, oldComplex, complex));
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PrfPackage.SIMPLE__RANGE:
-				return basicSetRange(null, msgs);
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-				return basicSetEnumerations(null, msgs);
-			case PrfPackage.SIMPLE__KIND:
-				return ((InternalEList<?>)getKind()).basicRemove(otherEnd, msgs);
-			case PrfPackage.SIMPLE__ACTION:
-				return basicSetAction(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case PrfPackage.SIMPLE__RANGE:
+                return basicSetRange(null, msgs);
+            case PrfPackage.SIMPLE__ENUMERATIONS:
+                return basicSetEnumerations(null, msgs);
+            case PrfPackage.SIMPLE__KIND:
+                return ((InternalEList<?>)getKind()).basicRemove(otherEnd, msgs);
+            case PrfPackage.SIMPLE__ACTION:
+                return basicSetAction(null, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PrfPackage.SIMPLE__VALUE:
-				return getValue();
-			case PrfPackage.SIMPLE__UNITS:
-				return getUnits();
-			case PrfPackage.SIMPLE__RANGE:
-				return getRange();
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-				return getEnumerations();
-			case PrfPackage.SIMPLE__KIND:
-				return getKind();
-			case PrfPackage.SIMPLE__ACTION:
-				return getAction();
-			case PrfPackage.SIMPLE__TYPE:
-				return getType();
-			case PrfPackage.SIMPLE__COMPLEX:
-				return isComplex();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case PrfPackage.SIMPLE__VALUE:
+                return getValue();
+            case PrfPackage.SIMPLE__UNITS:
+                return getUnits();
+            case PrfPackage.SIMPLE__RANGE:
+                return getRange();
+            case PrfPackage.SIMPLE__ENUMERATIONS:
+                return getEnumerations();
+            case PrfPackage.SIMPLE__KIND:
+                return getKind();
+            case PrfPackage.SIMPLE__ACTION:
+                return getAction();
+            case PrfPackage.SIMPLE__TYPE:
+                return getType();
+            case PrfPackage.SIMPLE__COMPLEX:
+                return getComplex();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PrfPackage.SIMPLE__VALUE:
-				setValue((String)newValue);
-				return;
-			case PrfPackage.SIMPLE__UNITS:
-				setUnits((String)newValue);
-				return;
-			case PrfPackage.SIMPLE__RANGE:
-				setRange((Range)newValue);
-				return;
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-				setEnumerations((Enumerations)newValue);
-				return;
-			case PrfPackage.SIMPLE__KIND:
-				getKind().clear();
-				getKind().addAll((Collection<? extends Kind>)newValue);
-				return;
-			case PrfPackage.SIMPLE__ACTION:
-				setAction((Action)newValue);
-				return;
-			case PrfPackage.SIMPLE__TYPE:
-				setType((PropertyValueType)newValue);
-				return;
-			case PrfPackage.SIMPLE__COMPLEX:
-				setComplex((Boolean)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case PrfPackage.SIMPLE__VALUE:
+                setValue((String)newValue);
+                return;
+            case PrfPackage.SIMPLE__UNITS:
+                setUnits((String)newValue);
+                return;
+            case PrfPackage.SIMPLE__RANGE:
+                setRange((Range)newValue);
+                return;
+            case PrfPackage.SIMPLE__ENUMERATIONS:
+                setEnumerations((Enumerations)newValue);
+                return;
+            case PrfPackage.SIMPLE__KIND:
+                getKind().clear();
+                getKind().addAll((Collection<? extends Kind>)newValue);
+                return;
+            case PrfPackage.SIMPLE__ACTION:
+                setAction((Action)newValue);
+                return;
+            case PrfPackage.SIMPLE__TYPE:
+                setType((PropertyValueType)newValue);
+                return;
+            case PrfPackage.SIMPLE__COMPLEX:
+                setComplex((Boolean)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PrfPackage.SIMPLE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
-			case PrfPackage.SIMPLE__UNITS:
-				setUnits(UNITS_EDEFAULT);
-				return;
-			case PrfPackage.SIMPLE__RANGE:
-				setRange((Range)null);
-				return;
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-				setEnumerations((Enumerations)null);
-				return;
-			case PrfPackage.SIMPLE__KIND:
-				getKind().clear();
-				return;
-			case PrfPackage.SIMPLE__ACTION:
-				setAction((Action)null);
-				return;
-			case PrfPackage.SIMPLE__TYPE:
-				unsetType();
-				return;
-			case PrfPackage.SIMPLE__COMPLEX:
-				setComplex(COMPLEX_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case PrfPackage.SIMPLE__VALUE:
+                setValue(VALUE_EDEFAULT);
+                return;
+            case PrfPackage.SIMPLE__UNITS:
+                setUnits(UNITS_EDEFAULT);
+                return;
+            case PrfPackage.SIMPLE__RANGE:
+                setRange((Range)null);
+                return;
+            case PrfPackage.SIMPLE__ENUMERATIONS:
+                setEnumerations((Enumerations)null);
+                return;
+            case PrfPackage.SIMPLE__KIND:
+                getKind().clear();
+                return;
+            case PrfPackage.SIMPLE__ACTION:
+                setAction((Action)null);
+                return;
+            case PrfPackage.SIMPLE__TYPE:
+                unsetType();
+                return;
+            case PrfPackage.SIMPLE__COMPLEX:
+                setComplex(COMPLEX_EDEFAULT);
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PrfPackage.SIMPLE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-			case PrfPackage.SIMPLE__UNITS:
-				return UNITS_EDEFAULT == null ? units != null : !UNITS_EDEFAULT.equals(units);
-			case PrfPackage.SIMPLE__RANGE:
-				return range != null;
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-				return enumerations != null;
-			case PrfPackage.SIMPLE__KIND:
-				return kind != null && !kind.isEmpty();
-			case PrfPackage.SIMPLE__ACTION:
-				return action != null;
-			case PrfPackage.SIMPLE__TYPE:
-				return isSetType();
-			case PrfPackage.SIMPLE__COMPLEX:
-				return complex != COMPLEX_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case PrfPackage.SIMPLE__VALUE:
+                return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+            case PrfPackage.SIMPLE__UNITS:
+                return UNITS_EDEFAULT == null ? units != null : !UNITS_EDEFAULT.equals(units);
+            case PrfPackage.SIMPLE__RANGE:
+                return range != null;
+            case PrfPackage.SIMPLE__ENUMERATIONS:
+                return enumerations != null;
+            case PrfPackage.SIMPLE__KIND:
+                return kind != null && !kind.isEmpty();
+            case PrfPackage.SIMPLE__ACTION:
+                return action != null;
+            case PrfPackage.SIMPLE__TYPE:
+                return isSetType();
+            case PrfPackage.SIMPLE__COMPLEX:
+                return COMPLEX_EDEFAULT == null ? complex != null : !COMPLEX_EDEFAULT.equals(complex);
+        }
+        return super.eIsSet(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+        if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(", units: ");
-		result.append(units);
-		result.append(", type: ");
-		if (typeESet) result.append(type); else result.append("<unset>");
-		result.append(", complex: ");
-		result.append(complex);
-		result.append(')');
-		return result.toString();
-	}
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (value: ");
+        result.append(value);
+        result.append(", units: ");
+        result.append(units);
+        result.append(", type: ");
+        if (typeESet) result.append(type); else result.append("<unset>");
+        result.append(", complex: ");
+        result.append(complex);
+        result.append(')');
+        return result.toString();
+    }
 
 	public boolean isKind(PropertyConfigurationType ... type) {
 		// END GENERATED CODE

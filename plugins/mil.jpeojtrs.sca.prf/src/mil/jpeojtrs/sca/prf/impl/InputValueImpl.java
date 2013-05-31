@@ -41,118 +41,118 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class InputValueImpl extends EObjectImpl implements InputValue {
 
 	/**
-	 * The cached value of the '{@link #getSimple() <em>Simple</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getSimple() <em>Simple</em>}' containment reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSimple()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getSimple()
+     * @generated
+     * @ordered
+     */
 	protected EList<Simple> simple;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected InputValueImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return PrfPackage.Literals.INPUT_VALUE;
-	}
+        return PrfPackage.Literals.INPUT_VALUE;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Simple> getSimple() {
-		if (simple == null) {
-			simple = new EObjectContainmentEList<Simple>(Simple.class, this, PrfPackage.INPUT_VALUE__SIMPLE);
-		}
-		return simple;
-	}
+        if (simple == null) {
+            simple = new EObjectContainmentEList<Simple>(Simple.class, this, PrfPackage.INPUT_VALUE__SIMPLE);
+        }
+        return simple;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PrfPackage.INPUT_VALUE__SIMPLE:
-				return ((InternalEList<?>)getSimple()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case PrfPackage.INPUT_VALUE__SIMPLE:
+                return ((InternalEList<?>)getSimple()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case PrfPackage.INPUT_VALUE__SIMPLE:
-				return getSimple();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case PrfPackage.INPUT_VALUE__SIMPLE:
+                return getSimple();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case PrfPackage.INPUT_VALUE__SIMPLE:
-				getSimple().clear();
-				getSimple().addAll((Collection<? extends Simple>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case PrfPackage.INPUT_VALUE__SIMPLE:
+                getSimple().clear();
+                getSimple().addAll((Collection<? extends Simple>)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case PrfPackage.INPUT_VALUE__SIMPLE:
-				getSimple().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case PrfPackage.INPUT_VALUE__SIMPLE:
+                getSimple().clear();
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case PrfPackage.INPUT_VALUE__SIMPLE:
-				return simple != null && !simple.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case PrfPackage.INPUT_VALUE__SIMPLE:
+                return simple != null && !simple.isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
 } //InputValueImpl
