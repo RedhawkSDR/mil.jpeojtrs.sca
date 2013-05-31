@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
 
@@ -337,9 +337,15 @@ public class PortItemProvider
 			return getComponentName((Port) object);
 		case 1:
 			return getPortName((Port)object);
+		case 2:
+			return getExternalPortName((Port)object);
 		}
 	    return super.getColumnText(object, columnIndex);
 	}
+
+	private String getExternalPortName(Port port) {
+		return (port.getExternalName() == null) ? "" : port.getExternalName();
+    }
 
 	private String getPortName(Port port) {
 		String portLabel = "<Port>";
