@@ -170,6 +170,6 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 
 	@Override
     public Any toAny() {
-	    return AnyUtils.toAny(getValue(), getProperty().getType().getLiteral());
+	    return AnyUtils.toAny(getValue(), getProperty().getType().getLiteral(), getProperty().getComplex());
     }
 } //SimpleRefImpl

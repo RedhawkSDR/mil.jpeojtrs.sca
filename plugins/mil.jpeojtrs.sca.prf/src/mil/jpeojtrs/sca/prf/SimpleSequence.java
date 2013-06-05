@@ -245,4 +245,12 @@ public interface SimpleSequence extends AbstractProperty {
      */
     void setComplex(Boolean value);
 
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @model kind="operation"
+     * @generated
+     */
+    boolean isComplex();
+
 } // SimpleSequence

@@ -16,6 +16,19 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
+import mil.jpeojtrs.sca.util.math.ComplexBoolean;
+import mil.jpeojtrs.sca.util.math.ComplexByte;
+import mil.jpeojtrs.sca.util.math.ComplexDouble;
+import mil.jpeojtrs.sca.util.math.ComplexFloat;
+import mil.jpeojtrs.sca.util.math.ComplexLong;
+import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexNumber;
+import mil.jpeojtrs.sca.util.math.ComplexShort;
+import mil.jpeojtrs.sca.util.math.ComplexUByte;
+import mil.jpeojtrs.sca.util.math.ComplexULong;
+import mil.jpeojtrs.sca.util.math.ComplexULongLong;
+import mil.jpeojtrs.sca.util.math.ComplexUShort;
+
 import org.apache.commons.lang.ArrayUtils;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
@@ -41,12 +54,42 @@ import org.omg.CORBA.TypeCodePackage.BadKind;
 
 import CF.DataTypeHelper;
 import CF.PropertiesHelper;
+import CF.complexBooleanHelper;
+import CF.complexCharHelper;
+import CF.complexDoubleHelper;
+import CF.complexFloatHelper;
+import CF.complexLongHelper;
+import CF.complexLongLongHelper;
+import CF.complexOctetHelper;
+import CF.complexShortHelper;
+import CF.complexULongHelper;
+import CF.complexULongLongHelper;
+import CF.complexUShortHelper;
 
 public final class AnyUtils {
 
 	private AnyUtils() {
 	}
-
+	
+	/**
+	 * Attempts to convert the string value to the appropriate Java type.
+	 * 
+	 * @param stringValue the string form of the value
+	 * @param type the string form of the TypeCode
+	 * @param complex If the value should be interrupted as a complex number, pass null if it is not a number
+	 * @return A Java object of theString corresponding to the typecode
+	 */
+	public static Object convertString(final String stringValue, final String type, Boolean complex) {
+		if (complex == null || !complex) {
+			return primitiveConvertString(stringValue, type);
+		}
+		return ComplexNumber.valueOf(type, stringValue);
+	}
+	
+	public static Object convertString(final String stringValue, final String type) {
+		return convertString(stringValue, type, null);
+		
+	}
 	/**
 	 * Attempts to convert the string value to the appropriate Java type.
 	 * 
@@ -54,7 +97,7 @@ public final class AnyUtils {
 	 * @param type the string form of the TypeCode
 	 * @return A Java object of theString corresponding to the typecode
 	 */
-	public static Object convertString(final String stringValue, final String type) {
+	private static Object primitiveConvertString(final String stringValue, final String type) {
 		if (stringValue == null) {
 			return null;
 		}
@@ -213,8 +256,34 @@ public final class AnyUtils {
 		if (theAny == null) {
 			return null;
 		}
+		
 		// Do this check because extract doesn't throw correctly
 		try {
+			// Extract Complex Types
+			if (complexBooleanHelper.type().equivalent(typeCode)) {
+				return ComplexBoolean.valueOf(theAny);
+			} else if (complexDoubleHelper.type().equivalent(typeCode)) {
+				return ComplexDouble.valueOf(theAny);
+			} else if (complexFloatHelper.type().equivalent(typeCode)) {
+				return ComplexFloat.valueOf(theAny);
+			} else if (complexLongHelper.type().equivalent(typeCode)) {
+				return ComplexLong.valueOf(theAny);
+			} else if (complexLongLongHelper.type().equivalent(typeCode)) {
+				return ComplexLongLong.valueOf(theAny);
+			} else if (complexShortHelper.type().equivalent(typeCode)) {
+				return ComplexShort.valueOf(theAny);
+			} else if (complexULongHelper.type().equivalent(typeCode)) {
+				return ComplexULong.valueOf(theAny);
+			} else if (complexULongLongHelper.type().equivalent(typeCode)) {
+				return ComplexULongLong.valueOf(theAny);
+			} else if (complexUShortHelper.type().equivalent(typeCode)) {
+				return ComplexUShort.valueOf(theAny);
+			} else if (complexOctetHelper.type().equivalent(typeCode)) {
+				return ComplexByte.valueOf(theAny);
+			} else if (complexCharHelper.type().equivalent(typeCode)) {
+				return ComplexUByte.valueOf(theAny);
+			}
+			
 			final TCKind kind = typeCode.kind();
 			switch (kind.value()) {
 			case TCKind._tk_any:
@@ -422,17 +491,49 @@ public final class AnyUtils {
 			throw new IllegalArgumentException("Unknown type: " + type);
 		}
 	}
+	
 
 	public static Any toAny(final Object value, final TCKind type) {
-		final Any retVal = ORB.init().create_any();
-		AnyUtils.insertInto(retVal, value, type);
-		return retVal;
+		return toAny(value, type, null);
+	}
+	
+	public static Any toAny(final Object value, final TCKind type, Boolean complex) {
+		if (value != null && value.getClass().isArray()) {
+			return toAnySequence(value, type);
+		}
+		if (value instanceof ComplexNumber) {
+			complex = true;
+		}
+		if (complex == null || !complex) {
+			return primitiveToAny(value, type);
+		}
+		if (complex) {
+			if (value instanceof ComplexNumber) {
+				return ((ComplexNumber) value).toAny();
+			} else {
+				throw new IllegalArgumentException("Complex numbers must be of type: " + ComplexNumber.class.getName());
+			}
+		}
+		return primitiveToAny(value, type);
+	}
+	
+	/**
+	 * @deprecated Use {@link #toAny(Object, TCKind, Boolean)} instead, pass null if not a number
+	 * @since 3.0
+	 */
+	@Deprecated
+	public static Any insertInto(final Any retVal, final Object value, final TCKind type) {
+		if (retVal == null) {
+			return null;
+		}
+		return toAny(value, type, null);
 	}
 
 	/**
 	 * @since 3.0
 	 */
-	public static Any insertInto(final Any retVal, final Object value, final TCKind type) {
+	private static Any primitiveToAny(final Object value, final TCKind type) {
+		final Any retVal = ORB.init().create_any();
 		if (value == null) {
 			return retVal;
 		}
@@ -501,33 +602,47 @@ public final class AnyUtils {
 		}
 		return retVal;
 	}
+	
+	/**
+	 * Assumes is not a complex type.
+	 * @param value
+	 * @param type
+	 * @return
+	 */
+	public static Any toAny(final Object value, final String type) {
+		return toAny(value, type, null);
+	}
 
 	/**
 	 */
-	public static Any toAny(final Object value, final String type) {
+	public static Any toAny(final Object value, final String type, Boolean complex) {
 		final TCKind kind = AnyUtils.convertToTCKind(type);
-
-		if ((value instanceof String) && (kind != TCKind.tk_string)) {
-			return AnyUtils.stringToAny((String) value, type);
+		if (value instanceof ComplexNumber) {
+			complex = true;
 		}
 
-		return AnyUtils.toAny(value, kind);
+		if ((value instanceof String) && (kind != TCKind.tk_string)) {
+			
+			return AnyUtils.stringToAny((String) value, type, complex);
+		}
+
+		return AnyUtils.toAny(value, kind, complex);
 	}
 
-	public static Any toAny(final Object[] value, final String type) {
+	public static Any toAny(final Object[] value, final String type, Boolean complex) {
 		final TCKind kind = AnyUtils.convertToTCKind(type);
-		final Object[] convArray = AnyUtils.convertStringArray(value, type);
+		final Object[] convArray = AnyUtils.convertStringArray(value, type, complex);
 
-		return AnyUtils.toAny(convArray, kind);
+		return AnyUtils.toAny(convArray, kind, complex);
 	}
 
-	private static Object[] convertStringArray(final Object[] value, final String type) {
+	private static Object[] convertStringArray(final Object[] value, final String type, Boolean complex) {
 		Object[] retVal = value;
 		if (value instanceof String[] && !"string".equals(type)) {
 			retVal = new Object[value.length];
 			for (int i = 0; i < value.length; ++i) {
 				final String val = (String) value[i];
-				retVal[i] = AnyUtils.convertString(val, type);
+				retVal[i] = AnyUtils.convertString(val, type, complex);
 			}
 		}
 
@@ -553,20 +668,15 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * Creates an Any from the given object array
-	 * @param value array of objects to put in the Any
-	 * @param type the TCKind of the elements in the array
-	 * @since 3.0
-	 */
-	public static Any toAny(final Object[] value, final TCKind type) {
-		return AnyUtils.toAnySequence(value, type);
-	}
-
-	/**
 	 * @since 3.0
 	 */
 	public static Any toAnySequence(final Object value, TCKind type) {
 		final Any retVal = ORB.init().create_any();
+		
+		if (value instanceof ComplexNumber[]) {
+			throw new IllegalArgumentException("Complex types are not supported in any sequences.");
+		}
+		
 		if (type == null) {
 			type = AnyUtils.deriveArrayType(value);
 		}
@@ -762,12 +872,17 @@ public final class AnyUtils {
 			BooleanSeqHelper.insert(retVal, primValue);
 		}
 	}
+	
+
+	public static Any stringToAny(final String value, final String type) {
+		return stringToAny(value, type, null);
+	}
 
 	/**
 	 */
-	public static Any stringToAny(final String value, final String type) {
-		final Object newValue = AnyUtils.convertString(value, type);
-		return AnyUtils.toAny(newValue, AnyUtils.convertToTCKind(type));
+	public static Any stringToAny(final String value, final String type, Boolean complex) {
+		final Object newValue = AnyUtils.convertString(value, type, complex);
+		return AnyUtils.toAny(newValue, AnyUtils.convertToTCKind(type), complex);
 	}
 
 	/**

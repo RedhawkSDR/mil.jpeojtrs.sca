@@ -407,6 +407,15 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public boolean isComplex() {
+    	return (complex != null && complex);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -588,7 +597,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 
 	@Override
     public Any toAny() {
-		return AnyUtils.toAny(getValues().getValue().toArray(), getType().getLiteral());
+		return AnyUtils.toAny(getValues().getValue().toArray(), getType().getLiteral(), getComplex());
     }
 
 } //SimpleSequenceImpl

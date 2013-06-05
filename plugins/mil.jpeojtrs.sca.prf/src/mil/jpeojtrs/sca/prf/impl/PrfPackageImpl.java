@@ -1702,6 +1702,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
         initEAttribute(getSimple_Type(), this.getPropertyValueType(), "type", null, 1, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getSimple_Complex(), theEcorePackage.getEBooleanObject(), "complex", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+        addEOperation(simpleEClass, theEcorePackage.getEBoolean(), "isComplex", 0, 1, IS_UNIQUE, IS_ORDERED);
+
         initEClass(simpleSequenceEClass, SimpleSequence.class, "SimpleSequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getSimpleSequence_Values(), this.getValues(), null, "values", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getSimpleSequence_Units(), this.getUnit(), "units", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1710,6 +1712,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
         initEReference(getSimpleSequence_Action(), this.getAction(), null, "action", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getSimpleSequence_Type(), this.getPropertyValueType(), "type", null, 1, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getSimpleSequence_Complex(), theEcorePackage.getEBooleanObject(), "complex", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        addEOperation(simpleSequenceEClass, theEcorePackage.getEBoolean(), "isComplex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
         initEClass(structEClass, Struct.class, "Struct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getStruct_Simple(), this.getSimple(), null, "simple", null, 1, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

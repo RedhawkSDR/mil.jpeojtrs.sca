@@ -474,20 +474,30 @@ public enum PropertyValueType implements Enumerator {
 	public String toString() {
         return literal;
     }
+	
+	/**
+	 * With introduction of complex type use the {@link #isValueOfType(String, Boolean)} instead
+	 * @param value the String value to check
+	 * @return <code> true </code> if the value is valid for this PropertyValueType; <code> false </code> otherwise
+	 */
+	public boolean isValueOfType(String value) {
+		return isValueOfType(value, null);
+	}
 
 	/**
 	 * Checks the given value against the current PropertyValueType.
 	 * 
 	 * @param value the String value to check
+	 * @param complex if the string is a complex number, pass null if it is not a number
 	 * @return <code> true </code> if the value is valid for this PropertyValueType; <code> false </code> otherwise
 	 */
-	public boolean isValueOfType(String value) {
+	public boolean isValueOfType(String value, Boolean complex) {
 		//END GENERATED CODE
 		if (value == null) {
 			return false;
 		}
 		try {
-			AnyUtils.convertString(value, getLiteral());
+			AnyUtils.convertString(value, getLiteral(), complex);
 			return true;
 		} catch (Exception e) {
 			return false;

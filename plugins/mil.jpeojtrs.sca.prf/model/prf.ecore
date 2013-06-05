@@ -355,6 +355,7 @@
       <details key="name" value="simple"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
+    <eOperations name="isComplex" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -409,6 +410,7 @@
       <details key="name" value="simplesequence"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
+    <eOperations name="isComplex" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" eType="#//Values"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

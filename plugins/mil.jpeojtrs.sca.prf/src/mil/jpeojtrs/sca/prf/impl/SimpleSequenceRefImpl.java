@@ -186,7 +186,7 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	@Override
     public Any toAny() {
 		if (getValues() != null) {
-			return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral());
+			return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral(), getProperty().getComplex());
 		} else {
 			return ORB.init().create_any();
 		}

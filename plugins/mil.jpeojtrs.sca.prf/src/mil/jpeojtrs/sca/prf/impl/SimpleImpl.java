@@ -447,6 +447,15 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public boolean isComplex() {
+        return (complex != null && complex);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -640,7 +649,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
 	@Override
     public Any toAny() {
-	    return AnyUtils.toAny(getValue(), getType().getLiteral());
+	    return AnyUtils.toAny(getValue(), getType().getLiteral(), getComplex());
     }
 
 } //SimpleImpl

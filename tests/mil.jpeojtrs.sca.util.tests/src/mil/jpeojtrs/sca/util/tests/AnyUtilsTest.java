@@ -108,6 +108,7 @@ public class AnyUtilsTest {
 	}
 
 	@Test
+	@Deprecated
 	public void test_insertInto() {
 		Assert.assertNull(AnyUtils.insertInto(null, null, TCKind.tk_boolean));
 		Assert.assertNotNull(AnyUtils.insertInto(ORB.init().create_any(), null, TCKind.tk_boolean));
