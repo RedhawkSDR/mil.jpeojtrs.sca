@@ -46,6 +46,17 @@ import mil.jpeojtrs.sca.prf.StructValue;
 import mil.jpeojtrs.sca.prf.Test;
 import mil.jpeojtrs.sca.prf.Values;
 import mil.jpeojtrs.sca.prf.util.PrfValidator;
+import mil.jpeojtrs.sca.util.math.ComplexBoolean;
+import mil.jpeojtrs.sca.util.math.ComplexByte;
+import mil.jpeojtrs.sca.util.math.ComplexDouble;
+import mil.jpeojtrs.sca.util.math.ComplexFloat;
+import mil.jpeojtrs.sca.util.math.ComplexLong;
+import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexShort;
+import mil.jpeojtrs.sca.util.math.ComplexUByte;
+import mil.jpeojtrs.sca.util.math.ComplexULong;
+import mil.jpeojtrs.sca.util.math.ComplexULongLong;
+import mil.jpeojtrs.sca.util.math.ComplexUShort;
 import mil.jpeojtrs.sca.validator.AdvancedEObjectValidator;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -318,6 +329,73 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	private EDataType anyEDataType = null;
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexBooleanEDataType = null;
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexByteEDataType = null;
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexDoubleEDataType = null;
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexFloatEDataType = null;
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexLongEDataType = null;
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexLongLongEDataType = null;
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexShortEDataType = null;
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexUByteEDataType = null;
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexULongEDataType = null;
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexULongLongEDataType = null;
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EDataType complexUShortEDataType = null;
+
+    /**
      * Creates an instance of the model <b>Package</b>, registered with
      * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
      * package URI value.
@@ -1406,6 +1484,105 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 	/**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexBoolean() {
+        return complexBooleanEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexByte() {
+        return complexByteEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexDouble() {
+        return complexDoubleEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexFloat() {
+        return complexFloatEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexLong() {
+        return complexLongEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexLongLong() {
+        return complexLongLongEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexShort() {
+        return complexShortEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexUByte() {
+        return complexUByteEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexULong() {
+        return complexULongEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexULongLong() {
+        return complexULongLongEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EDataType getComplexUShort() {
+        return complexUShortEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -1573,6 +1750,17 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
         structPropertyConfigurationTypeObjectEDataType = createEDataType(STRUCT_PROPERTY_CONFIGURATION_TYPE_OBJECT);
         unitEDataType = createEDataType(UNIT);
         anyEDataType = createEDataType(ANY);
+        complexBooleanEDataType = createEDataType(COMPLEX_BOOLEAN);
+        complexByteEDataType = createEDataType(COMPLEX_BYTE);
+        complexDoubleEDataType = createEDataType(COMPLEX_DOUBLE);
+        complexFloatEDataType = createEDataType(COMPLEX_FLOAT);
+        complexLongEDataType = createEDataType(COMPLEX_LONG);
+        complexLongLongEDataType = createEDataType(COMPLEX_LONG_LONG);
+        complexShortEDataType = createEDataType(COMPLEX_SHORT);
+        complexUByteEDataType = createEDataType(COMPLEX_UBYTE);
+        complexULongEDataType = createEDataType(COMPLEX_ULONG);
+        complexULongLongEDataType = createEDataType(COMPLEX_ULONG_LONG);
+        complexUShortEDataType = createEDataType(COMPLEX_USHORT);
     }
 
 	/**
@@ -1842,6 +2030,17 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
         initEDataType(structPropertyConfigurationTypeObjectEDataType, StructPropertyConfigurationType.class, "StructPropertyConfigurationTypeObject", IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);
         initEDataType(unitEDataType, String.class, "Unit", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
         initEDataType(anyEDataType, Any.class, "Any", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexBooleanEDataType, ComplexBoolean.class, "ComplexBoolean", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexByteEDataType, ComplexByte.class, "ComplexByte", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexDoubleEDataType, ComplexDouble.class, "ComplexDouble", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexFloatEDataType, ComplexFloat.class, "ComplexFloat", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexLongEDataType, ComplexLong.class, "ComplexLong", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexLongLongEDataType, ComplexLongLong.class, "ComplexLongLong", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexShortEDataType, ComplexShort.class, "ComplexShort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexUByteEDataType, ComplexUByte.class, "ComplexUByte", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexULongEDataType, ComplexULong.class, "ComplexULong", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexULongLongEDataType, ComplexULongLong.class, "ComplexULongLong", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(complexUShortEDataType, ComplexUShort.class, "ComplexUShort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
         // Create resource
         createResource(eNS_URI);

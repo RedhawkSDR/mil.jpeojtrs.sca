@@ -21,21 +21,21 @@ public abstract class ComplexNumber {
 	public abstract int getSize();
 
 	public static ComplexNumber valueOf(String type, String value) {
-		if (type.equals("double")) {
+		if (type.equalsIgnoreCase("double")) {
 			return ComplexDouble.valueOf(value);
-		} else if (type.equals("float")) {
+		} else if (type.equalsIgnoreCase("float")) {
 			return ComplexFloat.valueOf(value);
-		} else if (type.equals("short")) {
+		} else if (type.equalsIgnoreCase("short")) {
 			return ComplexShort.valueOf(value);
-		} else if (type.equals("long")) {
+		} else if (type.equalsIgnoreCase("long")) {
 			return ComplexLong.valueOf(value);
-		} else if (type.equals("longlong")) {
+		} else if (type.equalsIgnoreCase("longlong")) {
 			return ComplexLongLong.valueOf(value);
-		} else if (type.equals("ulong")) {
+		} else if (type.equalsIgnoreCase("ulong")) {
 			return ComplexULong.valueOf(value);
-		} else if (type.equals("ushort")) {
+		} else if (type.equalsIgnoreCase("ushort")) {
 			return ComplexUShort.valueOf(value);
-		} else if (type.equals("ulonglong")) {
+		} else if (type.equalsIgnoreCase("ulonglong")) {
 			return ComplexULongLong.valueOf(value);
 		} else {
 			throw new IllegalArgumentException("Unknown CORBA Type: " + type);

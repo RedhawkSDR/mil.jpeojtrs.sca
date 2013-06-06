@@ -11,11 +11,13 @@
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import mil.jpeojtrs.sca.util.AnyUtils;
+import mil.jpeojtrs.sca.util.math.ComplexNumber;
 
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EDataType;
@@ -504,36 +506,67 @@ public enum PropertyValueType implements Enumerator {
 		}
 	}
 
-	public EDataType toDataType() {
-		switch (this) {
-		case BOOLEAN:
-			return EcorePackage.Literals.EBOOLEAN_OBJECT;
-		case CHAR:
-			return PrfPackage.Literals.CHARACTER_OBJECT;
-		case DOUBLE:
-			return EcorePackage.Literals.EDOUBLE_OBJECT;
-		case FLOAT:
-			return EcorePackage.Literals.EFLOAT_OBJECT;
-		case LONG:
-			return EcorePackage.Literals.EINTEGER_OBJECT;
-		case LONGLONG:
-			return EcorePackage.Literals.ELONG_OBJECT;
-		case OBJREF:
-			return EcorePackage.Literals.ESTRING;
-		case OCTET:
-			return EcorePackage.Literals.ESHORT_OBJECT;
-		case SHORT:
-			return EcorePackage.Literals.ESHORT_OBJECT;
-		case STRING:
-			return EcorePackage.Literals.ESTRING;
-		case ULONG:
-			return EcorePackage.Literals.ELONG_OBJECT;
-		case USHORT:
-			return EcorePackage.Literals.EINTEGER_OBJECT;
-		case ULONGLONG:
-			return EcorePackage.Literals.EBIG_INTEGER;
-		default:
-			return null;
+	public EDataType toEDataType(boolean complex) {
+		if (complex) {
+    		switch (this) {
+    		case BOOLEAN:
+    			return PrfPackage.Literals.COMPLEX_BOOLEAN;
+    		case CHAR:
+    			return PrfPackage.Literals.COMPLEX_UBYTE;
+    		case DOUBLE:
+    			return PrfPackage.Literals.COMPLEX_DOUBLE;
+    		case FLOAT:
+    			return PrfPackage.Literals.COMPLEX_FLOAT;
+    		case LONG:
+    			return PrfPackage.Literals.COMPLEX_LONG;
+    		case LONGLONG:
+    			return PrfPackage.Literals.COMPLEX_LONG_LONG;
+    		case OCTET:
+    			return PrfPackage.Literals.COMPLEX_BYTE;
+    		case SHORT:
+    			return PrfPackage.Literals.COMPLEX_USHORT;
+    		case ULONG:
+    			return PrfPackage.Literals.COMPLEX_ULONG;
+    		case USHORT:
+    			return PrfPackage.Literals.COMPLEX_USHORT;
+    		case ULONGLONG:
+    			return PrfPackage.Literals.COMPLEX_ULONG_LONG;
+    		case OBJREF:
+    		case STRING:
+    		default:
+    			return null;
+    		}
+		} else {
+    		switch (this) {
+    		case BOOLEAN:
+    			return EcorePackage.Literals.EBOOLEAN_OBJECT;
+    		case CHAR:
+    			return PrfPackage.Literals.CHARACTER_OBJECT;
+    		case DOUBLE:
+    			return EcorePackage.Literals.EDOUBLE_OBJECT;
+    		case FLOAT:
+    			return EcorePackage.Literals.EFLOAT_OBJECT;
+    		case LONG:
+    			return EcorePackage.Literals.EINTEGER_OBJECT;
+    		case LONGLONG:
+    			return EcorePackage.Literals.ELONG_OBJECT;
+    		case OBJREF:
+    			return EcorePackage.Literals.ESTRING;
+    		case OCTET:
+    			return EcorePackage.Literals.ESHORT_OBJECT;
+    		case SHORT:
+    			return EcorePackage.Literals.ESHORT_OBJECT;
+    		case STRING:
+    			return EcorePackage.Literals.ESTRING;
+    		case ULONG:
+    			return EcorePackage.Literals.ELONG_OBJECT;
+    		case USHORT:
+    			return EcorePackage.Literals.EINTEGER_OBJECT;
+    		case ULONGLONG:
+    			return EcorePackage.Literals.EBIG_INTEGER;
+    		default:
+    			return null;
+    		}
 		}
 	}
 

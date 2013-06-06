@@ -35,7 +35,10 @@ public final class RadixLabelProviderUtil {
 
 	}
 
-	public static boolean supports(final PropertyValueType type) {
+	public static boolean supports(final PropertyValueType type, boolean complex) {
+		if (complex) {
+			return false;
+		}
 		switch (type) {
 		case OCTET:
 		case SHORT:

@@ -12,6 +12,18 @@
 package mil.jpeojtrs.sca.prf.impl;
 
 import mil.jpeojtrs.sca.prf.*;
+import mil.jpeojtrs.sca.util.math.ComplexBoolean;
+import mil.jpeojtrs.sca.util.math.ComplexByte;
+import mil.jpeojtrs.sca.util.math.ComplexDouble;
+import mil.jpeojtrs.sca.util.math.ComplexFloat;
+import mil.jpeojtrs.sca.util.math.ComplexLong;
+import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexNumber;
+import mil.jpeojtrs.sca.util.math.ComplexShort;
+import mil.jpeojtrs.sca.util.math.ComplexUByte;
+import mil.jpeojtrs.sca.util.math.ComplexULong;
+import mil.jpeojtrs.sca.util.math.ComplexULongLong;
+import mil.jpeojtrs.sca.util.math.ComplexUShort;
 import mil.jpeojtrs.sca.prf.AccessType;
 import mil.jpeojtrs.sca.prf.Action;
 import mil.jpeojtrs.sca.prf.ActionType;
@@ -153,6 +165,28 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
                 return createStructPropertyConfigurationTypeObjectFromString(eDataType, initialValue);
             case PrfPackage.UNIT:
                 return createUnitFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_BOOLEAN:
+                return createComplexBooleanFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_BYTE:
+                return createComplexByteFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_DOUBLE:
+                return createComplexDoubleFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_FLOAT:
+                return createComplexFloatFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_LONG:
+                return createComplexLongFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_LONG_LONG:
+                return createComplexLongLongFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_SHORT:
+                return createComplexShortFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_UBYTE:
+                return createComplexUByteFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_ULONG:
+                return createComplexULongFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_ULONG_LONG:
+                return createComplexULongLongFromString(eDataType, initialValue);
+            case PrfPackage.COMPLEX_USHORT:
+                return createComplexUShortFromString(eDataType, initialValue);
             default:
                 throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -192,6 +226,28 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
                 return convertStructPropertyConfigurationTypeObjectToString(eDataType, instanceValue);
             case PrfPackage.UNIT:
                 return convertUnitToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_BOOLEAN:
+                return convertComplexBooleanToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_BYTE:
+                return convertComplexByteToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_DOUBLE:
+                return convertComplexDoubleToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_FLOAT:
+                return convertComplexFloatToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_LONG:
+                return convertComplexLongToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_LONG_LONG:
+                return convertComplexLongLongToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_SHORT:
+                return convertComplexShortToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_UBYTE:
+                return convertComplexUByteToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_ULONG:
+                return convertComplexULongToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_ULONG_LONG:
+                return convertComplexULongLongToString(eDataType, instanceValue);
+            case PrfPackage.COMPLEX_USHORT:
+                return convertComplexUShortToString(eDataType, instanceValue);
             default:
                 throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -652,6 +708,204 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
     }
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexBoolean createComplexBooleanFromString(EDataType eDataType, String initialValue) {
+    	return ComplexBoolean.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexBooleanToString(EDataType eDataType, Object instanceValue) {
+    	return ((ComplexNumber) instanceValue).toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexByte createComplexByteFromString(EDataType eDataType, String initialValue) {
+        return ComplexByte.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexByteToString(EDataType eDataType, Object instanceValue) {
+        return ((ComplexByte) instanceValue).toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexDouble createComplexDoubleFromString(EDataType eDataType, String initialValue) {
+        return ComplexDouble.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexDoubleToString(EDataType eDataType, Object instanceValue) {
+        return ((ComplexDouble) instanceValue).toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexFloat createComplexFloatFromString(EDataType eDataType, String initialValue) {
+        return ComplexFloat.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexFloatToString(EDataType eDataType, Object instanceValue) {
+        return ((ComplexFloat) instanceValue).toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexLong createComplexLongFromString(EDataType eDataType, String initialValue) {
+        return ComplexLong.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexLongToString(EDataType eDataType, Object instanceValue) {
+        return ((ComplexLong) instanceValue).toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexLongLong createComplexLongLongFromString(EDataType eDataType, String initialValue) {
+        return ComplexLongLong.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexLongLongToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue.toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexShort createComplexShortFromString(EDataType eDataType, String initialValue) {
+        return ComplexShort.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexShortToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue.toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexUByte createComplexUByteFromString(EDataType eDataType, String initialValue) {
+        return ComplexUByte.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexUByteToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue.toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexULong createComplexULongFromString(EDataType eDataType, String initialValue) {
+        return ComplexULong.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexULongToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue.toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexULongLong createComplexULongLongFromString(EDataType eDataType, String initialValue) {
+        return ComplexULongLong.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexULongLongToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue.toString();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public ComplexUShort createComplexUShortFromString(EDataType eDataType, String initialValue) {
+        return ComplexUShort.valueOf(initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertComplexUShortToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue.toString();
+    }
+
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated

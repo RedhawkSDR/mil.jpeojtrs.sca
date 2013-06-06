@@ -14,6 +14,17 @@ package mil.jpeojtrs.sca.prf.util;
 import java.util.Map;
 
 import mil.jpeojtrs.sca.prf.*;
+import mil.jpeojtrs.sca.util.math.ComplexBoolean;
+import mil.jpeojtrs.sca.util.math.ComplexByte;
+import mil.jpeojtrs.sca.util.math.ComplexDouble;
+import mil.jpeojtrs.sca.util.math.ComplexFloat;
+import mil.jpeojtrs.sca.util.math.ComplexLong;
+import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexShort;
+import mil.jpeojtrs.sca.util.math.ComplexUByte;
+import mil.jpeojtrs.sca.util.math.ComplexULong;
+import mil.jpeojtrs.sca.util.math.ComplexULongLong;
+import mil.jpeojtrs.sca.util.math.ComplexUShort;
 import mil.jpeojtrs.sca.prf.AbstractProperty;
 import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
 import mil.jpeojtrs.sca.prf.AccessType;
@@ -215,6 +226,28 @@ public class PrfValidator extends EObjectValidator {
                 return validateUnit((String)value, diagnostics, context);
             case PrfPackage.ANY:
                 return validateAny((Any)value, diagnostics, context);
+            case PrfPackage.COMPLEX_BOOLEAN:
+                return validateComplexBoolean((ComplexBoolean)value, diagnostics, context);
+            case PrfPackage.COMPLEX_BYTE:
+                return validateComplexByte((ComplexByte)value, diagnostics, context);
+            case PrfPackage.COMPLEX_DOUBLE:
+                return validateComplexDouble((ComplexDouble)value, diagnostics, context);
+            case PrfPackage.COMPLEX_FLOAT:
+                return validateComplexFloat((ComplexFloat)value, diagnostics, context);
+            case PrfPackage.COMPLEX_LONG:
+                return validateComplexLong((ComplexLong)value, diagnostics, context);
+            case PrfPackage.COMPLEX_LONG_LONG:
+                return validateComplexLongLong((ComplexLongLong)value, diagnostics, context);
+            case PrfPackage.COMPLEX_SHORT:
+                return validateComplexShort((ComplexShort)value, diagnostics, context);
+            case PrfPackage.COMPLEX_UBYTE:
+                return validateComplexUByte((ComplexUByte)value, diagnostics, context);
+            case PrfPackage.COMPLEX_ULONG:
+                return validateComplexULong((ComplexULong)value, diagnostics, context);
+            case PrfPackage.COMPLEX_ULONG_LONG:
+                return validateComplexULongLong((ComplexULongLong)value, diagnostics, context);
+            case PrfPackage.COMPLEX_USHORT:
+                return validateComplexUShort((ComplexUShort)value, diagnostics, context);
             default:
                 return true;
         }
@@ -614,6 +647,105 @@ public class PrfValidator extends EObjectValidator {
     }
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexBoolean(ComplexBoolean complexBoolean, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexByte(ComplexByte complexByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexDouble(ComplexDouble complexDouble, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexFloat(ComplexFloat complexFloat, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexLong(ComplexLong complexLong, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexLongLong(ComplexLongLong complexLongLong, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexShort(ComplexShort complexShort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexUByte(ComplexUByte complexUByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexULong(ComplexULong complexULong, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexULongLong(ComplexULongLong complexULongLong, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validateComplexUShort(ComplexUShort complexUShort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+        return true;
+    }
+
+    /**
      * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
