@@ -111,12 +111,22 @@
 					<alias>${alias}</alias>
 					<storepass>${storepass}</storepass>
 					<keypass>${keypass}</keypass>
+					<verbose>true</verbose>
+					<certs>true</certs>
 				</configuration>
 				<executions>
 					<execution>
+                        <id>sign</id>
 						<goals>
 							<goal>sign</goal>
 						</goals>
+					</execution>
+					<execution>
+                        <id>verify</id>
+						<goals>
+							<goal>verify</goal>
+						</goals>
+						<phase>verify</phase>
 					</execution>
 				</executions>
 			</plugin>
