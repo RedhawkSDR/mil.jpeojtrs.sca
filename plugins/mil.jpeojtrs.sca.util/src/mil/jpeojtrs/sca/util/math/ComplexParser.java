@@ -14,6 +14,9 @@ import mil.jpeojtrs.sca.util.math.parser.internal.ComplexParserCC;
 import mil.jpeojtrs.sca.util.math.parser.internal.ParseException;
 import mil.jpeojtrs.sca.util.math.parser.internal.TokenMgrError;
 
+/**
+ * @since 3.4
+ */
 public final class ComplexParser {
 
 	private ComplexParser() {

@@ -21,6 +21,9 @@ import org.omg.CORBA.ORB;
 import CF.complexULongLong;
 import CF.complexULongLongHelper;
 
+/**
+ * @since 3.4
+ */
 public class ComplexULongLong extends ComplexNumber {
 	private final BigInteger [] numbers;
 

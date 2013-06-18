@@ -17,6 +17,9 @@ import org.omg.CORBA.ORB;
 import CF.complexDouble;
 import CF.complexDoubleHelper;
 
+/**
+ * @since 3.4
+ */
 public class ComplexDouble extends ComplexNumber {
 	private final double[] numbers;
 

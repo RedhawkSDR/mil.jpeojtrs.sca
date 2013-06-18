@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
+ * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-user-doc -->
  * @see mil.jpeojtrs.sca.sad.SadFactory
  * @model kind="package"
@@ -498,6 +499,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.ExternalPropertiesImpl <em>External Properties</em>}' class.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.impl.ExternalPropertiesImpl
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getExternalProperties()
@@ -507,6 +509,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -515,6 +518,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>External Properties</em>' class.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -523,6 +527,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.ExternalPropertyImpl <em>External Property</em>}' class.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.impl.ExternalPropertyImpl
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getExternalProperty()
@@ -532,6 +537,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Comp Ref ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -540,6 +546,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Prop ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -548,6 +555,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>External Prop ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -556,6 +564,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>External Property</em>' class.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -564,6 +573,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.FindComponentImpl <em>Find Component</em>}' class.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.impl.FindComponentImpl
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getFindComponent()
@@ -597,6 +607,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.HostCollocationImpl <em>Host Collocation</em>}' class.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.impl.HostCollocationImpl
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getHostCollocation()
@@ -638,6 +649,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.PortImpl <em>Port</em>}' class.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.impl.PortImpl
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getPort()
@@ -687,6 +699,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>External Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1139,6 +1152,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.ExternalProperties <em>External Properties</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>External Properties</em>'.
 	 * @see mil.jpeojtrs.sca.sad.ExternalProperties
@@ -1148,6 +1162,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link mil.jpeojtrs.sca.sad.ExternalProperties#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Properties</em>'.
 	 * @see mil.jpeojtrs.sca.sad.ExternalProperties#getProperties()
@@ -1158,6 +1173,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.ExternalProperty <em>External Property</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>External Property</em>'.
 	 * @see mil.jpeojtrs.sca.sad.ExternalProperty
@@ -1167,6 +1183,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.ExternalProperty#getCompRefID <em>Comp Ref ID</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Comp Ref ID</em>'.
 	 * @see mil.jpeojtrs.sca.sad.ExternalProperty#getCompRefID()
@@ -1177,6 +1194,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.ExternalProperty#getPropID <em>Prop ID</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Prop ID</em>'.
 	 * @see mil.jpeojtrs.sca.sad.ExternalProperty#getPropID()
@@ -1187,6 +1205,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.ExternalProperty#getExternalPropID <em>External Prop ID</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>External Prop ID</em>'.
 	 * @see mil.jpeojtrs.sca.sad.ExternalProperty#getExternalPropID()
@@ -1324,6 +1343,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Port#getExternalName <em>External Name</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>External Name</em>'.
 	 * @see mil.jpeojtrs.sca.sad.Port#getExternalName()
@@ -1732,6 +1752,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.ExternalPropertiesImpl <em>External Properties</em>}' class.
 		 * <!-- begin-user-doc -->
+		 * @since 2.3
 		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.sad.impl.ExternalPropertiesImpl
 		 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getExternalProperties()
@@ -1741,6 +1762,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.3
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -1748,6 +1770,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.ExternalPropertyImpl <em>External Property</em>}' class.
 		 * <!-- begin-user-doc -->
+		 * @since 2.3
 		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.sad.impl.ExternalPropertyImpl
 		 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getExternalProperty()
@@ -1757,6 +1780,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Comp Ref ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.3
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -1764,6 +1788,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Prop ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.3
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -1771,6 +1796,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>External Prop ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.3
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -1875,6 +1901,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>External Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.3
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */

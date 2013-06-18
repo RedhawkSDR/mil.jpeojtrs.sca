@@ -489,6 +489,7 @@ public enum PropertyValueType implements Enumerator {
 	/**
 	 * Checks the given value against the current PropertyValueType.
 	 * 
+	 * @since 2.3
 	 * @param value the String value to check
 	 * @param complex if the string is a complex number, pass null if it is not a number
 	 * @return <code> true </code> if the value is valid for this PropertyValueType; <code> false </code> otherwise
@@ -505,7 +506,23 @@ public enum PropertyValueType implements Enumerator {
 			return false;
 		}
 	}
+	
+	/**
+	 * NOTE Assumes not Complex Type
+	 * @deprecated Use {@link #toEDataType(boolean)}
+	 * @return
+	 */
+	@Deprecated
+	public EDataType toDataType() {
+		return toEDataType(false);
+	}
 
+	/**
+	 * Converts PropertyValueType to associated EDataType
+	 * @param complex True if complex number type
+	 * @return
+	 * @since 2.3
+	 */
 	public EDataType toEDataType(boolean complex) {
 		if (complex) {
     		switch (this) {

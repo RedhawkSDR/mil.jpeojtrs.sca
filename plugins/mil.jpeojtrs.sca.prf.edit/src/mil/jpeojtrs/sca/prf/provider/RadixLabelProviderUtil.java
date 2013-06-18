@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.math.BigInteger;
@@ -34,7 +34,20 @@ public final class RadixLabelProviderUtil {
 	private RadixLabelProviderUtil() {
 
 	}
+	
+	/**
+	 * @deprecated Use {@link #supports(PropertyValueType, boolean)} instead
+	 * @param type
+	 * @return
+	 */
+	@Deprecated
+	public static boolean supports(final PropertyValueType type) {
+		return supports(type, false);
+	}
 
+	/**
+     * @since 2.3
+     */
 	public static boolean supports(final PropertyValueType type, boolean complex) {
 		if (complex) {
 			return false;

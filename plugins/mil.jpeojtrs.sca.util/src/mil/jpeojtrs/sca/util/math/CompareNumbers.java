@@ -13,6 +13,9 @@ package mil.jpeojtrs.sca.util.math;
 
 import java.math.BigInteger;
 
+/**
+ * @since 3.4
+ */
 public class CompareNumbers {
 
     private CompareNumbers() {

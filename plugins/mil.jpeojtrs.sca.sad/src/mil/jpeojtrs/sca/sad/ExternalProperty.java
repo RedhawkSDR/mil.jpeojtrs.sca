@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>External Property</b></em>'.
+ * @since 2.3
  * <!-- end-user-doc -->
  *
  * <p>

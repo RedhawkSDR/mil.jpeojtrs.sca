@@ -166,6 +166,7 @@ public class PortItemProvider
 	/**
 	 * This adds a property descriptor for the External Name feature.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

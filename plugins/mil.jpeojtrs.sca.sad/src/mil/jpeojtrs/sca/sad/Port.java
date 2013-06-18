@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Port</b></em>'.
+ * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -180,6 +181,7 @@ public interface Port extends EObject {
 	 * If the meaning of the '<em>External Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>External Name</em>' attribute.
 	 * @see #setExternalName(String)
@@ -192,6 +194,7 @@ public interface Port extends EObject {
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.Port#getExternalName <em>External Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>External Name</em>' attribute.
 	 * @see #getExternalName()

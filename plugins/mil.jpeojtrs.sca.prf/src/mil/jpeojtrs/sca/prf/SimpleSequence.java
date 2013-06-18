@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Simple Sequence</b></em>'.
+ * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -222,10 +223,8 @@ public interface SimpleSequence extends AbstractProperty {
 	/**
      * Returns the value of the '<em><b>Complex</b></em>' attribute.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Complex</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
+     * True if the value should be treated as a complex value.  Null or false otherwise.  Default null.
+     * @since 2.3
      * <!-- end-user-doc -->
      * @return the value of the '<em>Complex</em>' attribute.
      * @see #setComplex(Boolean)
@@ -238,6 +237,7 @@ public interface SimpleSequence extends AbstractProperty {
     /**
      * Sets the value of the '{@link mil.jpeojtrs.sca.prf.SimpleSequence#getComplex <em>Complex</em>}' attribute.
      * <!-- begin-user-doc -->
+     * @since 2.3
      * <!-- end-user-doc -->
      * @param value the new value of the '<em>Complex</em>' attribute.
      * @see #getComplex()
@@ -247,6 +247,8 @@ public interface SimpleSequence extends AbstractProperty {
 
     /**
      * <!-- begin-user-doc -->
+     * Helper method to check if is complex.
+     * @since 2.3
      * <!-- end-user-doc -->
      * @model kind="operation"
      * @generated

@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>External Property</b></em>'.
+ * @since 2.3
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:

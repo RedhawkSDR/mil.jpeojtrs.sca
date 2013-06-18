@@ -78,6 +78,7 @@ public final class AnyUtils {
 	 * @param type the string form of the TypeCode
 	 * @param complex If the value should be interrupted as a complex number, pass null if it is not a number
 	 * @return A Java object of theString corresponding to the typecode
+	 * @since 3.4
 	 */
 	public static Object convertString(final String stringValue, final String type, Boolean complex) {
 		if (complex == null || !complex) {
@@ -492,11 +493,26 @@ public final class AnyUtils {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param value
+	 * @param type
+	 * @return
+	 * @deprecated Use {@link #toAny(Object, TCKind, Boolean)}
+	 */
+	@Deprecated
+	public static Any toAny(final Object[] value, final TCKind type) {
+		return toAny(value, type, null);
+	}
+	
 
 	public static Any toAny(final Object value, final TCKind type) {
 		return toAny(value, type, null);
 	}
 	
+	/**
+     * @since 3.4
+     */
 	public static Any toAny(final Object value, final TCKind type, Boolean complex) {
 		if (value != null && value.getClass().isArray()) {
 			return toAnySequence(value, type);
@@ -614,6 +630,7 @@ public final class AnyUtils {
 	}
 
 	/**
+	 * @since 3.4
 	 */
 	public static Any toAny(final Object value, final String type, Boolean complex) {
 		final TCKind kind = AnyUtils.convertToTCKind(type);
@@ -628,7 +645,21 @@ public final class AnyUtils {
 
 		return AnyUtils.toAny(value, kind, complex);
 	}
+	
+	/**
+	 * @param value
+	 * @param type
+	 * @return
+	 * @deprecated use {@link #toAny(Object[], String, Boolean)}
+	 */
+	@Deprecated
+	public static Any toAny(final Object[] value, final String type) {
+		return toAny(value, type, false);
+	}
 
+	/**
+     * @since 3.4
+     */
 	public static Any toAny(final Object[] value, final String type, Boolean complex) {
 		final TCKind kind = AnyUtils.convertToTCKind(type);
 		final Object[] convArray = AnyUtils.convertStringArray(value, type, complex);
@@ -874,11 +905,15 @@ public final class AnyUtils {
 	}
 	
 
+	/**
+     * @since 3.3
+     */
 	public static Any stringToAny(final String value, final String type) {
 		return stringToAny(value, type, null);
 	}
 
 	/**
+	 * @since 3.4
 	 */
 	public static Any stringToAny(final String value, final String type, Boolean complex) {
 		final Object newValue = AnyUtils.convertString(value, type, complex);

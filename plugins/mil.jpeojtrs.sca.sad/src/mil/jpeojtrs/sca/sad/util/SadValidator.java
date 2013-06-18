@@ -256,6 +256,7 @@ public class SadValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -265,6 +266,7 @@ public class SadValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

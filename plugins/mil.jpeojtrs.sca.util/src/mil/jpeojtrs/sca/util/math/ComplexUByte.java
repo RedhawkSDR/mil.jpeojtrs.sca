@@ -19,6 +19,9 @@ import CF.complexCharHelper;
 import CF.complexOctet;
 import CF.complexOctetHelper;
 
+/**
+ * @since 3.4
+ */
 public class ComplexUByte extends ComplexNumber {
 	private final short [] numbers;
 

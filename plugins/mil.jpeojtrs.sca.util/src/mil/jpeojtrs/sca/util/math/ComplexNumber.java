@@ -12,6 +12,9 @@ package mil.jpeojtrs.sca.util.math;
 
 import org.omg.CORBA.Any;
 
+/**
+ * @since 3.4
+ */
 public abstract class ComplexNumber {
 
 	public abstract Any toAny();

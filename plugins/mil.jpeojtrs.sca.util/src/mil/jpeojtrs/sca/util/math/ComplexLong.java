@@ -17,6 +17,9 @@ import org.omg.CORBA.ORB;
 import CF.complexLong;
 import CF.complexLongHelper;
 
+/**
+ * @since 3.4
+ */
 public class ComplexLong extends ComplexNumber {
 	private final int [] numbers;
 

@@ -192,6 +192,7 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 	/**
 	 * This adds a property descriptor for the Complex feature.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

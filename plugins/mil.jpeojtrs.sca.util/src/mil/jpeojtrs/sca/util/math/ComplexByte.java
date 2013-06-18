@@ -17,6 +17,9 @@ import org.omg.CORBA.ORB;
 import CF.complexOctet;
 import CF.complexOctetHelper;
 
+/**
+ * @since 3.4
+ */
 public class ComplexByte extends ComplexNumber {
 
 	private final byte[] bytes;

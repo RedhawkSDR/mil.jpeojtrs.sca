@@ -17,6 +17,9 @@ import org.omg.CORBA.ORB;
 import CF.complexFloat;
 import CF.complexFloatHelper;
 
+/**
+ * @since 3.4
+ */
 public class ComplexFloat extends ComplexNumber {
 	private final float [] numbers;
 

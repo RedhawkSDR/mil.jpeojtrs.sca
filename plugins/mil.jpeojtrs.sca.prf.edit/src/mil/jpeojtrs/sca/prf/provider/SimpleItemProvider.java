@@ -197,8 +197,10 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 	/**
 	 * This adds a property descriptor for the Complex feature.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * 
 	 */
 	protected void addComplexPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add

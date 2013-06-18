@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EFactory;
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
+ * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-user-doc -->
  * @see mil.jpeojtrs.sca.sad.SadPackage
  * @generated
@@ -117,15 +118,18 @@ public interface SadFactory extends EFactory {
 	/**
 	 * Returns a new object of class '<em>External Properties</em>'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>External Properties</em>'.
 	 * @generated
+	 * 
 	 */
 	ExternalProperties createExternalProperties();
 
 	/**
 	 * Returns a new object of class '<em>External Property</em>'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>External Property</em>'.
 	 * @generated

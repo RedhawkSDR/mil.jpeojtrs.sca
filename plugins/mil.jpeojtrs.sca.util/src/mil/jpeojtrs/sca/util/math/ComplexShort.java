@@ -17,6 +17,9 @@ import org.omg.CORBA.ORB;
 import CF.complexShort;
 import CF.complexShortHelper;
 
+/**
+ * @since 3.4
+ */
 public class ComplexShort extends ComplexNumber {
 	private final short [] numbers;
 

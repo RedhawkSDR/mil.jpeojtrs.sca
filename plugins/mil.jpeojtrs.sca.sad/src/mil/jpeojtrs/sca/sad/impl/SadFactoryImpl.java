@@ -201,6 +201,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -211,6 +212,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

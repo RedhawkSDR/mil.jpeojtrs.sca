@@ -17,6 +17,9 @@ import org.omg.CORBA.ORB;
 import CF.complexBoolean;
 import CF.complexBooleanHelper;
 
+/**
+ * @since 3.4
+ */
 public class ComplexBoolean extends ComplexNumber {
 	private final boolean[] numbers;
 

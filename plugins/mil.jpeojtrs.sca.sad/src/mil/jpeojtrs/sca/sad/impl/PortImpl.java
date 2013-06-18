@@ -127,6 +127,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	/**
 	 * The default value of the '{@link #getExternalName() <em>External Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @see #getExternalName()
 	 * @generated
@@ -136,6 +137,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	/**
 	 * The cached value of the '{@link #getExternalName() <em>External Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @see #getExternalName()
 	 * @generated
@@ -290,6 +292,7 @@ public class PortImpl extends EObjectImpl implements Port {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -299,6 +302,7 @@ public class PortImpl extends EObjectImpl implements Port {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
