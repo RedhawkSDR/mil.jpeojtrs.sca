@@ -13,7 +13,6 @@ package mil.jpeojtrs.sca.prf.util;
 
 import java.util.Map;
 
-import mil.jpeojtrs.sca.prf.*;
 import mil.jpeojtrs.sca.util.math.ComplexBoolean;
 import mil.jpeojtrs.sca.util.math.ComplexByte;
 import mil.jpeojtrs.sca.util.math.ComplexDouble;

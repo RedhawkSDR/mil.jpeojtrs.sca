@@ -11,7 +11,6 @@
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
-import mil.jpeojtrs.sca.prf.*;
 import mil.jpeojtrs.sca.util.math.ComplexBoolean;
 import mil.jpeojtrs.sca.util.math.ComplexByte;
 import mil.jpeojtrs.sca.util.math.ComplexDouble;

@@ -11,14 +11,11 @@
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf;
 
-import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import mil.jpeojtrs.sca.util.AnyUtils;
-import mil.jpeojtrs.sca.util.math.ComplexNumber;
-
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EcorePackage;

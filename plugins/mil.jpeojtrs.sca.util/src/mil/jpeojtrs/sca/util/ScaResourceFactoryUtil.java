@@ -13,6 +13,8 @@ package mil.jpeojtrs.sca.util;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.ElementHandlerImpl;
 
@@ -23,6 +25,15 @@ import org.eclipse.emf.ecore.xmi.impl.ElementHandlerImpl;
 public final class ScaResourceFactoryUtil {
 	private ScaResourceFactoryUtil() {
 
+	}
+	
+	/**
+     * @since 3.4
+     */
+	public static ResourceSet createResourceSet() {
+		ResourceSet retVal = new ResourceSetImpl();
+		setDefaultLoadOptions(retVal.getLoadOptions());
+		return retVal;
 	}
 
 	/**

@@ -13,7 +13,6 @@ package mil.jpeojtrs.sca.prf.util;
 
 import java.util.List;
 
-import mil.jpeojtrs.sca.prf.*;
 import mil.jpeojtrs.sca.prf.AbstractProperty;
 import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
 import mil.jpeojtrs.sca.prf.Action;
