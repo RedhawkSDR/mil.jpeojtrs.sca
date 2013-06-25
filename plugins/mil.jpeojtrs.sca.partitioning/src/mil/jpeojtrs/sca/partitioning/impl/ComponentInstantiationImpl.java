@@ -139,6 +139,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	/**
 	 * The default value of the '{@link #getImplID() <em>Impl ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 1.1
 	 * <!-- end-user-doc -->
 	 * @see #getImplID()
 	 * @generated
@@ -148,6 +149,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	/**
 	 * The cached value of the '{@link #getImplID() <em>Impl ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 1.1
 	 * <!-- end-user-doc -->
 	 * @see #getImplID()
 	 * @generated
@@ -369,6 +371,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 1.1
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -378,6 +381,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 1.1
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
