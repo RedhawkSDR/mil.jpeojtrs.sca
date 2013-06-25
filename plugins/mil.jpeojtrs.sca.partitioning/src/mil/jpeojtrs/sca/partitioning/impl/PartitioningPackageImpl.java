@@ -501,6 +501,15 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponentInstantiation_ImplID() {
+		return (EAttribute)componentInstantiationEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComponentInstantiationRef() {
 		return componentInstantiationRefEClass;
 	}
@@ -1242,6 +1251,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		createEReference(componentInstantiationEClass, COMPONENT_INSTANTIATION__INTERFACE_STUB);
 		createEAttribute(componentInstantiationEClass, COMPONENT_INSTANTIATION__ID);
 		createEReference(componentInstantiationEClass, COMPONENT_INSTANTIATION__PLACEMENT);
+		createEAttribute(componentInstantiationEClass, COMPONENT_INSTANTIATION__IMPL_ID);
 
 		componentInstantiationRefEClass = createEClass(COMPONENT_INSTANTIATION_REF);
 		createEReference(componentInstantiationRefEClass, COMPONENT_INSTANTIATION_REF__INSTANTIATION);
@@ -1462,6 +1472,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEReference(getComponentInstantiation_Placement(), g1, this.getComponentPlacement_ComponentInstantiation(), "placement", null, 0, 1, ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentInstantiation_ImplID(), theEcorePackage.getEString(), "implID", null, 0, 1, ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentInstantiationRefEClass, ComponentInstantiationRef.class, "ComponentInstantiationRef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		g1 = createEGenericType(componentInstantiationRefEClass_R);

@@ -56,6 +56,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getInterfaceStub <em>Interface Stub</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getPlacement <em>Placement</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getImplID <em>Impl ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -134,6 +135,25 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getImplID() <em>Impl ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IMPL_ID_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getImplID() <em>Impl ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String implID = IMPL_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -352,6 +372,27 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getImplID() {
+		return implID;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImplID(String newImplID) {
+		String oldImplID = implID;
+		implID = newImplID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID, oldImplID, implID));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -421,6 +462,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 				return getId();
 			case PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT:
 				return getPlacement();
+			case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
+				return getImplID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -447,6 +490,9 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 				return;
 			case PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT:
 				setPlacement((ComponentPlacement<?>)newValue);
+				return;
+			case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
+				setImplID((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -475,6 +521,9 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 			case PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT:
 				setPlacement((ComponentPlacement<?>)null);
 				return;
+			case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
+				setImplID(IMPL_ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -501,6 +550,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT:
 				return getPlacement() != null;
+			case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
+				return IMPL_ID_EDEFAULT == null ? implID != null : !IMPL_ID_EDEFAULT.equals(implID);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -519,6 +570,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 		result.append(usageName);
 		result.append(", id: ");
 		result.append(id);
+		result.append(", implID: ");
+		result.append(implID);
 		result.append(')');
 		return result.toString();
 	}

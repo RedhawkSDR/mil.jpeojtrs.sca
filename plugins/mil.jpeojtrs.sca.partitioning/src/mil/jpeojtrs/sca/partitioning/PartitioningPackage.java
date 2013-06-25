@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
+ * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-user-doc -->
  * @see mil.jpeojtrs.sca.partitioning.PartitioningFactory
  * @model kind="package"
@@ -335,13 +336,22 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int COMPONENT_INSTANTIATION__PLACEMENT = 6;
 	/**
+	 * The feature id for the '<em><b>Impl ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 1.1
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANTIATION__IMPL_ID = 7;
+	/**
 	 * The number of structural features of the '<em>Component Instantiation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANTIATION_FEATURE_COUNT = 7;
+	int COMPONENT_INSTANTIATION_FEATURE_COUNT = 8;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationRefImpl <em>Component Instantiation Ref</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1365,6 +1375,18 @@ public interface PartitioningPackage extends EPackage {
 	EReference getComponentInstantiation_Placement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getImplID <em>Impl ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 1.1
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Impl ID</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getImplID()
+	 * @see #getComponentInstantiation()
+	 * @generated
+	 */
+	EAttribute getComponentInstantiation_ImplID();
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiationRef <em>Component Instantiation Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2208,6 +2230,7 @@ public interface PartitioningPackage extends EPackage {
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
+	 * @noimplement This interface is not intended to be implemented by clients.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -2365,6 +2388,14 @@ public interface PartitioningPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INSTANTIATION__PLACEMENT = eINSTANCE.getComponentInstantiation_Placement();
+		/**
+		 * The meta object literal for the '<em><b>Impl ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 1.1
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_INSTANTIATION__IMPL_ID = eINSTANCE.getComponentInstantiation_ImplID();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationRefImpl <em>Component Instantiation Ref</em>}' class.
 		 * <!-- begin-user-doc -->

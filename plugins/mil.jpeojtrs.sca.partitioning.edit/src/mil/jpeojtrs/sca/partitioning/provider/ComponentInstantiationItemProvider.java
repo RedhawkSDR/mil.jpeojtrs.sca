@@ -183,6 +183,7 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 		switch (notification.getFeatureID(ComponentInstantiation.class)) {
 			case PartitioningPackage.COMPONENT_INSTANTIATION__USAGE_NAME:
 			case PartitioningPackage.COMPONENT_INSTANTIATION__ID:
+			case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:

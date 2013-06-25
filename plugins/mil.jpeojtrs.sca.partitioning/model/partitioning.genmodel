@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mil.jpeojtrs.sca.partitioning/src"
-    editorDirectory="" modelPluginID="mil.jpeojtrs.sca.partitioning" templateDirectory="/mil.jpeojtrs.sca.templates/templates"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mil.jpeojtrs.sca.partitioning/src" editorDirectory=""
+    modelPluginID="mil.jpeojtrs.sca.partitioning" templateDirectory="/mil.jpeojtrs.sca.templates/templates"
     dynamicTemplates="true" forceOverwrite="true" modelName="Partitioning" modelPluginClass="ScaPartitioningActivator"
     testsDirectory="/mil.jpeojtrs.sca.partitioning.tests/src" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="5.0" copyrightFields="false" editorPluginID="mil.jpeojtrs.sca.partitioning.editor"
@@ -61,6 +60,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/interfaceStub"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentInstantiation/id"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/placement"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentInstantiation/implID"/>
     </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//ComponentInstantiationRef">
       <genTypeParameters ecoreTypeParameter="partitioning.ecore#//ComponentInstantiationRef/R"/>
@@ -140,10 +140,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute partitioning.ecore#//Partitioning/parts"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//Partitioning/componentPlacement"/>
     </genClasses>
-    <genClasses ecoreClass="partitioning.ecore#//PropertyRef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//PropertyRef/refId"/>
-      <genOperations ecoreOperation="partitioning.ecore#//PropertyRef/toAny"/>
-    </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//ProvidesPort">
       <genTypeParameters ecoreTypeParameter="partitioning.ecore#//ProvidesPort/P"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ProvidesPort/providesIdentifier"/>
@@ -156,26 +152,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ProvidesPortStub/name"/>
       <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPortStub/provides"/>
-    </genClasses>
-    <genClasses ecoreClass="partitioning.ecore#//SimpleRef">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//SimpleRef/simple"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//SimpleRef/value"/>
-    </genClasses>
-    <genClasses ecoreClass="partitioning.ecore#//SimpleSequenceRef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//SimpleSequenceRef/values"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//SimpleSequenceRef/simpleSequence"/>
-    </genClasses>
-    <genClasses ecoreClass="partitioning.ecore#//StructRef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//StructRef/simpleRef"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//StructRef/struct"/>
-    </genClasses>
-    <genClasses ecoreClass="partitioning.ecore#//StructSequenceRef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//StructSequenceRef/structValue"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//StructSequenceRef/structSequence"/>
-    </genClasses>
-    <genClasses ecoreClass="partitioning.ecore#//StructValue">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//StructValue/simpleRef"/>
-      <genOperations ecoreOperation="partitioning.ecore#//StructValue/toAny"/>
     </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//UsesPort">
       <genTypeParameters ecoreTypeParameter="partitioning.ecore#//UsesPort/U"/>
@@ -190,9 +166,6 @@
       <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference partitioning.ecore#//UsesPortStub/uses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//UsesPortStub/supportedIdentifier"/>
-    </genClasses>
-    <genClasses ecoreClass="partitioning.ecore#//Values">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//Values/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

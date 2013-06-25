@@ -616,6 +616,14 @@
             </message_arguments>
         </filter>
     </resource>
+    <resource path="src/ExtendedCF/Sandbox.java" type="ExtendedCF.Sandbox">
+        <filter id="403767336">
+            <message_arguments>
+                <message_argument value="ExtendedCF.Sandbox"/>
+                <message_argument value="LAUNCH_IMPLEMENTATION_ID"/>
+            </message_arguments>
+        </filter>
+    </resource>
     <resource path="src/ExtendedCF/SandboxOperations.java" type="ExtendedCF.SandboxOperations">
         <filter id="403804204">
             <message_arguments>

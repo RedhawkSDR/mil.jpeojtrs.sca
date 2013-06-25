@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-model-doc -->
  * The componentinstantiation element (see Figure D-35) is intended to describe a particular
  * instantiation of a component relative to a componentplacement element
+ * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getInterfaceStub <em>Interface Stub</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getPlacement <em>Placement</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getImplID <em>Impl ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -214,5 +216,33 @@ public interface ComponentInstantiation extends EObject {
 	 * @generated
 	 */
 	void setPlacement(ComponentPlacement<?> value);
+
+	/**
+	 * Returns the value of the '<em><b>Impl ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Impl ID</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 1.1
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Impl ID</em>' attribute.
+	 * @see #setImplID(String)
+	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation_ImplID()
+	 * @model transient="true"
+	 * @generated
+	 */
+	String getImplID();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getImplID <em>Impl ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 1.1
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Impl ID</em>' attribute.
+	 * @see #getImplID()
+	 * @generated
+	 */
+	void setImplID(String value);
 
 } // ComponentInstantiation

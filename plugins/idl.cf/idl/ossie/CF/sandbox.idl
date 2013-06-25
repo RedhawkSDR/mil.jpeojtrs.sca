@@ -59,7 +59,11 @@ module ExtendedCF {
 				 */
 				SELF
 			};
-        		
+		/**
+        	 * ID of the Implementation to be launched
+        	 */
+    		const string LAUNCH_IMPLEMENTATION_ID = "__implementationID";        	
+	
         	/**
         	 * ID for DataType that signifies the launch mode to create a resource in
         	 */
