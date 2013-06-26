@@ -52,6 +52,9 @@ public final class RadixLabelProviderUtil {
 		if (complex) {
 			return false;
 		}
+		if (type == null) {
+			return false;
+		}
 		switch (type) {
 		case OCTET:
 		case SHORT:
