@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: mil.jpeojtrs.sca.util
 Bundle-Version: 3.4.0.qualifier
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: mil.jpeojtrs.sca.util,
  mil.jpeojtrs.sca.util.math
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",

@@ -3,6 +3,7 @@
 package mil.jpeojtrs.sca.util.math.parser.internal;
 
 /** Token Manager Error. */
+@SuppressWarnings("all")
 public class TokenMgrError extends Error
 {
 
@@ -144,4 +145,4 @@ public class TokenMgrError extends Error
     this(LexicalError(EOFSeen, lexState, errorLine, errorColumn, errorAfter, curChar), reason);
   }
 }
-/* JavaCC - OriginalChecksum=af6759007226888dcb1e223257d57353 (do not edit this line) */
+/* JavaCC - OriginalChecksum=6f963584597ac98e24bf4dbcd37c6511 (do not edit this line) */

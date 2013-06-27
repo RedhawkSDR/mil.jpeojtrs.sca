@@ -11,6 +11,7 @@ package mil.jpeojtrs.sca.util.math.parser.internal;
  * You can modify this class to customize your error reporting
  * mechanisms so long as you retain the public fields.
  */
+@SuppressWarnings("all")
 public class ParseException extends Exception {
 
   /**
@@ -184,4 +185,4 @@ public class ParseException extends Exception {
    }
 
 }
-/* JavaCC - OriginalChecksum=71d74729353d5c6cbdc463052bd72b70 (do not edit this line) */
+/* JavaCC - OriginalChecksum=57e537d67bc4b4c08520fcf3226a9e56 (do not edit this line) */
