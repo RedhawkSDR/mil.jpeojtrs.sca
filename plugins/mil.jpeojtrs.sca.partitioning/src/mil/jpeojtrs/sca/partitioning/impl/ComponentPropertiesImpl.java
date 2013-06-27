@@ -315,7 +315,7 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	private void checkProperties() {
 		final FeatureMap props = getProperties();
 
-		if (this != null && props.isEmpty()) {
+		if (props.isEmpty()) {
 			EcoreUtil.delete(this);
 		}
 	}
