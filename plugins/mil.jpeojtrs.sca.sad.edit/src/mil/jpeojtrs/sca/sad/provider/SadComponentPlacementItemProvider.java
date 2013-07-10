@@ -17,6 +17,7 @@ import java.util.List;
 
 import mil.jpeojtrs.sca.partitioning.provider.ComponentPlacementItemProvider;
 
+import mil.jpeojtrs.sca.sad.SadComponentPlacement;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;

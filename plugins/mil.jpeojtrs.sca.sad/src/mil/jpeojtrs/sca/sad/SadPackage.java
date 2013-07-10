@@ -162,6 +162,15 @@ public interface SadPackage extends EPackage {
 	 */
 	int SAD_COMPONENT_INSTANTIATION__PLACEMENT = PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT;
 	/**
+	 * The feature id for the '<em><b>Impl ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAD_COMPONENT_INSTANTIATION__IMPL_ID = PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID;
+	/**
 	 * The feature id for the '<em><b>Find Component</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -507,7 +516,7 @@ public interface SadPackage extends EPackage {
 	 */
 	int EXTERNAL_PROPERTIES = 9;
 	/**
-	 * The feature id for the '<em><b>Properties</b></em>' reference.
+	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * @since 2.3
 	 * <!-- end-user-doc -->
@@ -967,13 +976,22 @@ public interface SadPackage extends EPackage {
 	 */
 	int SOFTWARE_ASSEMBLY__EXTERNAL_PORTS = 5;
 	/**
+	 * The feature id for the '<em><b>External Properties</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES = 6;
+	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_ASSEMBLY__ID = 6;
+	int SOFTWARE_ASSEMBLY__ID = 7;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -981,7 +999,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_ASSEMBLY__NAME = 7;
+	int SOFTWARE_ASSEMBLY__NAME = 8;
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -989,7 +1007,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_ASSEMBLY__VERSION = 8;
+	int SOFTWARE_ASSEMBLY__VERSION = 9;
 	/**
 	 * The number of structural features of the '<em>Software Assembly</em>' class.
 	 * <!-- begin-user-doc -->
@@ -997,7 +1015,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_ASSEMBLY_FEATURE_COUNT = 9;
+	int SOFTWARE_ASSEMBLY_FEATURE_COUNT = 10;
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.AssemblyController <em>Assembly Controller</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1160,11 +1178,11 @@ public interface SadPackage extends EPackage {
 	 */
 	EClass getExternalProperties();
 	/**
-	 * Returns the meta object for the reference '{@link mil.jpeojtrs.sca.sad.ExternalProperties#getProperties <em>Properties</em>}'.
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.ExternalProperties#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * @since 2.3
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Properties</em>'.
+	 * @return the meta object for the containment reference list '<em>Properties</em>'.
 	 * @see mil.jpeojtrs.sca.sad.ExternalProperties#getProperties()
 	 * @see #getExternalProperties()
 	 * @generated
@@ -1567,6 +1585,17 @@ public interface SadPackage extends EPackage {
 	 */
 	EReference getSoftwareAssembly_ExternalPorts();
 	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalProperties <em>External Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>External Properties</em>'.
+	 * @see mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalProperties()
+	 * @see #getSoftwareAssembly()
+	 * @generated
+	 */
+	EReference getSoftwareAssembly_ExternalProperties();
+	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1760,7 +1789,7 @@ public interface SadPackage extends EPackage {
 		 */
 		EClass EXTERNAL_PROPERTIES = eINSTANCE.getExternalProperties();
 		/**
-		 * The meta object literal for the '<em><b>Properties</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * @since 2.3
 		 * <!-- end-user-doc -->
@@ -2070,6 +2099,14 @@ public interface SadPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SOFTWARE_ASSEMBLY__EXTERNAL_PORTS = eINSTANCE.getSoftwareAssembly_ExternalPorts();
+		/**
+		 * The meta object literal for the '<em><b>External Properties</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * @since 2.3
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES = eINSTANCE.getSoftwareAssembly_ExternalProperties();
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->

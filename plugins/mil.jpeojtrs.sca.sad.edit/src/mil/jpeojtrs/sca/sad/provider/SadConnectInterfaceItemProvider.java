@@ -17,6 +17,7 @@ import java.util.List;
 
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.provider.ConnectInterfaceItemProvider;
+import mil.jpeojtrs.sca.sad.SadConnectInterface;
 import mil.jpeojtrs.sca.sad.SadFactory;
 
 import org.eclipse.emf.common.notify.AdapterFactory;

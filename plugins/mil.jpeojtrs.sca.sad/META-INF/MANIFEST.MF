@@ -11,11 +11,13 @@ Export-Package: mil.jpeojtrs.sca.sad,
  mil.jpeojtrs.sca.sad.impl,
  mil.jpeojtrs.sca.sad.util
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
- org.eclipse.emf.ecore;bundle-version="2.6.1";visibility:=reexport,
- org.eclipse.emf.ecore.xmi;bundle-version="2.5.0";visibility:=reexport,
- mil.jpeojtrs.sca.spd;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport;bundle-version="2.6.1",
+ org.eclipse.emf.ecore.xmi;visibility:=reexport;bundle-version="2.5.0",
+ mil.jpeojtrs.sca.scd;visibility:=reexport,
+ mil.jpeojtrs.sca.spd;visibility:=reexport;bundle-version="1.0.0",
+ mil.jpeojtrs.sca.prf;visibility:=reexport,
  mil.jpeojtrs.sca.validator;bundle-version="1.0.0",
  mil.jpeojtrs.sca.util;bundle-version="1.0.0",
- mil.jpeojtrs.sca.partitioning;bundle-version="1.0.0";visibility:=reexport
+ mil.jpeojtrs.sca.partitioning;visibility:=reexport;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: mil.jpeojtrs.sca.sad.SadPluginActivator$Implementation

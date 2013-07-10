@@ -19,6 +19,7 @@ import java.util.Map;
 import mil.jpeojtrs.sca.partitioning.ComponentFiles;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
+import mil.jpeojtrs.sca.sad.ExternalProperties;
 import mil.jpeojtrs.sca.sad.HostCollocation;
 import mil.jpeojtrs.sca.sad.SadComponentInstantiation;
 import mil.jpeojtrs.sca.sad.SadComponentPlacement;
@@ -49,6 +50,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getAssemblyController <em>Assembly Controller</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getConnections <em>Connections</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getExternalPorts <em>External Ports</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getExternalProperties <em>External Properties</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getVersion <em>Version</em>}</li>
@@ -121,6 +123,15 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * @ordered
 	 */
 	protected ExternalPorts externalPorts;
+	/**
+	 * The cached value of the '{@link #getExternalProperties() <em>External Properties</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExternalProperties()
+	 * @generated
+	 * @ordered
+	 */
+	protected ExternalProperties externalProperties;
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -436,6 +447,49 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ExternalProperties getExternalProperties() {
+		return externalProperties;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetExternalProperties(ExternalProperties newExternalProperties, NotificationChain msgs) {
+		ExternalProperties oldExternalProperties = externalProperties;
+		externalProperties = newExternalProperties;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, oldExternalProperties, newExternalProperties);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExternalProperties(ExternalProperties newExternalProperties) {
+		if (newExternalProperties != externalProperties) {
+			NotificationChain msgs = null;
+			if (externalProperties != null)
+				msgs = ((InternalEObject)externalProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, null, msgs);
+			if (newExternalProperties != null)
+				msgs = ((InternalEObject)newExternalProperties).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, null, msgs);
+			msgs = basicSetExternalProperties(newExternalProperties, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, newExternalProperties, newExternalProperties));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getId() {
 		return id;
 	}
@@ -621,6 +675,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 				return basicSetConnections(null, msgs);
 			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
 				return basicSetExternalPorts(null, msgs);
+			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+				return basicSetExternalProperties(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -645,6 +701,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 				return getConnections();
 			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
 				return getExternalPorts();
+			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+				return getExternalProperties();
 			case SadPackage.SOFTWARE_ASSEMBLY__ID:
 				return getId();
 			case SadPackage.SOFTWARE_ASSEMBLY__NAME:
@@ -680,6 +738,9 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 				return;
 			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
 				setExternalPorts((ExternalPorts)newValue);
+				return;
+			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+				setExternalProperties((ExternalProperties)newValue);
 				return;
 			case SadPackage.SOFTWARE_ASSEMBLY__ID:
 				setId((String)newValue);
@@ -720,6 +781,9 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
 				setExternalPorts((ExternalPorts)null);
 				return;
+			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+				setExternalProperties((ExternalProperties)null);
+				return;
 			case SadPackage.SOFTWARE_ASSEMBLY__ID:
 				setId(ID_EDEFAULT);
 				return;
@@ -753,6 +817,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 				return connections != null;
 			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
 				return externalPorts != null;
+			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+				return externalProperties != null;
 			case SadPackage.SOFTWARE_ASSEMBLY__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case SadPackage.SOFTWARE_ASSEMBLY__NAME:

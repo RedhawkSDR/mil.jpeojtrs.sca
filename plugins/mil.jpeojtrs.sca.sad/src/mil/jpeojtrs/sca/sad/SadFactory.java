@@ -122,7 +122,6 @@ public interface SadFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>External Properties</em>'.
 	 * @generated
-	 * 
 	 */
 	ExternalProperties createExternalProperties();
 

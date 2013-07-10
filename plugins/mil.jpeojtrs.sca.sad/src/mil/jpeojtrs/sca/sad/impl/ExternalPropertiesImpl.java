@@ -11,15 +11,20 @@
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
+import java.util.Collection;
 import mil.jpeojtrs.sca.sad.ExternalProperties;
 import mil.jpeojtrs.sca.sad.ExternalProperty;
 import mil.jpeojtrs.sca.sad.SadPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,14 +42,14 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  */
 public class ExternalPropertiesImpl extends EObjectImpl implements ExternalProperties {
 	/**
-	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' reference.
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
 	 */
-	protected ExternalProperty properties;
+	protected EList<ExternalProperty> properties;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,14 +75,9 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExternalProperty getProperties() {
-		if (properties != null && properties.eIsProxy()) {
-			InternalEObject oldProperties = (InternalEObject)properties;
-			properties = (ExternalProperty)eResolveProxy(oldProperties);
-			if (properties != oldProperties) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SadPackage.EXTERNAL_PROPERTIES__PROPERTIES, oldProperties, properties));
-			}
+	public EList<ExternalProperty> getProperties() {
+		if (properties == null) {
+			properties = new EObjectContainmentEList<ExternalProperty>(ExternalProperty.class, this, SadPackage.EXTERNAL_PROPERTIES__PROPERTIES);
 		}
 		return properties;
 	}
@@ -87,20 +87,13 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExternalProperty basicGetProperties() {
-		return properties;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setProperties(ExternalProperty newProperties) {
-		ExternalProperty oldProperties = properties;
-		properties = newProperties;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.EXTERNAL_PROPERTIES__PROPERTIES, oldProperties, properties));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
+				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -112,8 +105,7 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
-				if (resolve) return getProperties();
-				return basicGetProperties();
+				return getProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,11 +115,13 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
-				setProperties((ExternalProperty)newValue);
+				getProperties().clear();
+				getProperties().addAll((Collection<? extends ExternalProperty>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,7 +136,7 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
-				setProperties((ExternalProperty)null);
+				getProperties().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -157,7 +151,7 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
-				return properties != null;
+				return properties != null && !properties.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

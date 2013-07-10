@@ -792,11 +792,12 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSoftwareAssembly_Id() {
-		return (EAttribute)softwareAssemblyEClass.getEStructuralFeatures().get(6);
+	public EReference getSoftwareAssembly_ExternalProperties() {
+		return (EReference)softwareAssemblyEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -804,7 +805,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSoftwareAssembly_Name() {
+	public EAttribute getSoftwareAssembly_Id() {
 		return (EAttribute)softwareAssemblyEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -813,8 +814,17 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSoftwareAssembly_Version() {
+	public EAttribute getSoftwareAssembly_Name() {
 		return (EAttribute)softwareAssemblyEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSoftwareAssembly_Version() {
+		return (EAttribute)softwareAssemblyEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -921,6 +931,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		createEReference(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER);
 		createEReference(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__CONNECTIONS);
 		createEReference(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__EXTERNAL_PORTS);
+		createEReference(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES);
 		createEAttribute(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__ID);
 		createEAttribute(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__NAME);
 		createEAttribute(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__VERSION);
@@ -1022,7 +1033,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		initEReference(getExternalPorts_Port(), this.getPort(), null, "port", null, 1, -1, ExternalPorts.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalPropertiesEClass, ExternalProperties.class, "ExternalProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExternalProperties_Properties(), this.getExternalProperty(), null, "properties", null, 0, 1, ExternalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExternalProperties_Properties(), this.getExternalProperty(), null, "properties", null, 0, -1, ExternalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalPropertyEClass, ExternalProperty.class, "ExternalProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExternalProperty_CompRefID(), theEcorePackage.getEString(), "compRefID", null, 1, 1, ExternalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1072,6 +1083,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		initEReference(getSoftwareAssembly_AssemblyController(), this.getAssemblyController(), null, "assemblyController", null, 1, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSoftwareAssembly_Connections(), this.getSadConnections(), null, "connections", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSoftwareAssembly_ExternalPorts(), this.getExternalPorts(), null, "externalPorts", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSoftwareAssembly_ExternalProperties(), this.getExternalProperties(), null, "externalProperties", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftwareAssembly_Id(), thePrfPackage.getDceUUID(), "id", null, 1, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftwareAssembly_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftwareAssembly_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1542,6 +1554,14 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation
+		  (getSoftwareAssembly_ExternalProperties(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "externalproperties",
+			 "namespace", "##targetNamespace"
+		   });		
+		addAnnotation
 		  (getSoftwareAssembly_Id(), 
 		   source, 
 		   new String[] {
@@ -1577,7 +1597,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "NonEmptyPort"
-		   });																														
+		   });																															
 	}
 
 } //SadPackageImpl

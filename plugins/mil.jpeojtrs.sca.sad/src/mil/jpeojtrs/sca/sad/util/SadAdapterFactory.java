@@ -20,6 +20,7 @@ import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
+import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;

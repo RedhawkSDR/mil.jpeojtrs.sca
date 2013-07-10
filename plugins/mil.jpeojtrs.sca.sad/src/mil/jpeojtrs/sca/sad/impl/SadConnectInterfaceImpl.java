@@ -21,6 +21,7 @@ import mil.jpeojtrs.sca.sad.SadPackage;
 import mil.jpeojtrs.sca.sad.SadProvidesPort;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -51,6 +52,32 @@ public class SadConnectInterfaceImpl extends ConnectInterfaceImpl<SadComponentIn
 	@Override
 	protected EClass eStaticClass() {
 		return SadPackage.Literals.SAD_CONNECT_INTERFACE;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public NotificationChain basicSetUsesPort(SadUsesPort newUsesPort, NotificationChain msgs) {
+		return super.basicSetUsesPort(newUsesPort, msgs);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public NotificationChain basicSetProvidesPort(SadProvidesPort newProvidesPort, NotificationChain msgs) {
+		return super.basicSetProvidesPort(newProvidesPort, msgs);
 	}
 
 

@@ -13,6 +13,7 @@ package mil.jpeojtrs.sca.sad.impl;
 
 import mil.jpeojtrs.sca.partitioning.DomComponentFile;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
+import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
@@ -56,7 +57,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 */
 	public static SadFactory init() {
 		try {
-			SadFactory theSadFactory = (SadFactory)EPackage.Registry.INSTANCE.getEFactory("http://sca.jpeojtrs.mil/sad"); 
+			SadFactory theSadFactory = (SadFactory)EPackage.Registry.INSTANCE.getEFactory(SadPackage.eNS_URI);
 			if (theSadFactory != null) {
 				return theSadFactory;
 			}

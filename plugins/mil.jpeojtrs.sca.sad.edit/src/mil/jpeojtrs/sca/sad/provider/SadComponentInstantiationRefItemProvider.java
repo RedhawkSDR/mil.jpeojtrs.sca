@@ -17,6 +17,7 @@ import java.util.List;
 
 import mil.jpeojtrs.sca.partitioning.provider.ComponentInstantiationRefItemProvider;
 
+import mil.jpeojtrs.sca.sad.SadComponentInstantiationRef;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;

@@ -16,6 +16,7 @@ import mil.jpeojtrs.sca.sad.SadComponentInstantiationRef;
 import mil.jpeojtrs.sca.sad.SadPackage;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -46,6 +47,18 @@ public class SadUsesPortImpl extends UsesPortImpl<SadComponentInstantiationRef> 
 	@Override
 	protected EClass eStaticClass() {
 		return SadPackage.Literals.SAD_USES_PORT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public NotificationChain basicSetComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef, NotificationChain msgs) {
+		return super.basicSetComponentInstantiationRef(newComponentInstantiationRef, msgs);
 	}
 
 } //SadUsesPortImpl

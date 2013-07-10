@@ -142,7 +142,7 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 */
 	public ComponentResourceFactoryRef getFactoryRef() {
 		if (eContainerFeatureID() != SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF) return null;
-		return (ComponentResourceFactoryRef)eContainer();
+		return (ComponentResourceFactoryRef)eInternalContainer();
 	}
 
 	/**

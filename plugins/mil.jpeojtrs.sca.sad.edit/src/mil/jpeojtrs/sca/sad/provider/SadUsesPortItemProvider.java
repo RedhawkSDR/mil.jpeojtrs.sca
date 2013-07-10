@@ -19,6 +19,7 @@ import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.provider.UsesPortItemProvider;
 import mil.jpeojtrs.sca.sad.SadFactory;
 
+import mil.jpeojtrs.sca.sad.SadUsesPort;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;

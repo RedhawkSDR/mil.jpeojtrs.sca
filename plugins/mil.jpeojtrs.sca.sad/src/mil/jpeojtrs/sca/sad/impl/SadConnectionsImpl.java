@@ -16,7 +16,9 @@ import mil.jpeojtrs.sca.sad.SadConnectInterface;
 import mil.jpeojtrs.sca.sad.SadConnections;
 import mil.jpeojtrs.sca.sad.SadPackage;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,6 +48,20 @@ public class SadConnectionsImpl extends ConnectionsImpl<SadConnectInterface> imp
 	@Override
 	protected EClass eStaticClass() {
 		return SadPackage.Literals.SAD_CONNECTIONS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific element type known in this context.
+	 * @generated
+	 */
+	@Override
+	public EList<SadConnectInterface> getConnectInterface() {
+		if (connectInterface == null) {
+			connectInterface = new EObjectContainmentEList<SadConnectInterface>(SadConnectInterface.class, this, SadPackage.SAD_CONNECTIONS__CONNECT_INTERFACE);
+		}
+		return connectInterface;
 	}
 
 } //SadConnectionsImpl

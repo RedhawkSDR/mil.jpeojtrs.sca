@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Software Assembly</b></em>'.
+ * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -37,6 +38,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getAssemblyController <em>Assembly Controller</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getConnections <em>Connections</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalPorts <em>External Ports</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalProperties <em>External Properties</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getVersion <em>Version</em>}</li>
@@ -199,6 +201,33 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setExternalPorts(ExternalPorts value);
+	/**
+	 * Returns the value of the '<em><b>External Properties</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>External Properties</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>External Properties</em>' containment reference.
+	 * @see #setExternalProperties(ExternalProperties)
+	 * @see mil.jpeojtrs.sca.sad.SadPackage#getSoftwareAssembly_ExternalProperties()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='externalproperties' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	ExternalProperties getExternalProperties();
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalProperties <em>External Properties</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>External Properties</em>' containment reference.
+	 * @see #getExternalProperties()
+	 * @generated
+	 */
+	void setExternalProperties(ExternalProperties value);
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->

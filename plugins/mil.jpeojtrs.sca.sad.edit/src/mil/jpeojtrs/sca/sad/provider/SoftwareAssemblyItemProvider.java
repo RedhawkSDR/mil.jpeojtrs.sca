@@ -180,6 +180,7 @@ public class SoftwareAssemblyItemProvider
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__CONNECTIONS);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS);
+			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES);
 		}
 		return childrenFeatures;
 	}
@@ -250,6 +251,7 @@ public class SoftwareAssemblyItemProvider
 			case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
 			case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
 			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
+			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -286,6 +288,11 @@ public class SoftwareAssemblyItemProvider
 			(createChildParameter
 				(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS,
 				 SadFactory.eINSTANCE.createExternalPorts()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES,
+				 SadFactory.eINSTANCE.createExternalProperties()));
 	}
 
 	/**

@@ -48,4 +48,16 @@ public class SadComponentInstantiationRefImpl extends ComponentInstantiationRefI
 		return SadPackage.Literals.SAD_COMPONENT_INSTANTIATION_REF;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setInstantiation(SadComponentInstantiation newInstantiation) {
+		super.setInstantiation(newInstantiation);
+	}
+
 } //SadComponentInstantiationRefImpl
