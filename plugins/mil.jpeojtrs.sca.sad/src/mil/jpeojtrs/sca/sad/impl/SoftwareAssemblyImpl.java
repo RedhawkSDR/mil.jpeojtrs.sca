@@ -126,6 +126,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	/**
 	 * The cached value of the '{@link #getExternalProperties() <em>External Properties</em>}' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @see #getExternalProperties()
 	 * @generated
@@ -444,6 +445,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -453,8 +455,10 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * 
 	 */
 	public NotificationChain basicSetExternalProperties(ExternalProperties newExternalProperties, NotificationChain msgs) {
 		ExternalProperties oldExternalProperties = externalProperties;
@@ -468,6 +472,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
