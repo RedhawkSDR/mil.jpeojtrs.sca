@@ -14,7 +14,6 @@ package mil.jpeojtrs.sca.sad.util;
 import java.util.Map;
 
 import mil.jpeojtrs.sca.partitioning.util.PartitioningValidator;
-import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;

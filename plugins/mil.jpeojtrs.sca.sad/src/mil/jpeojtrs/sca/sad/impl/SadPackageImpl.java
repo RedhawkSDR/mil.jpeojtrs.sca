@@ -1245,7 +1245,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		   source, 
 		   new String[] {
 			 "kind", "element",
-			 "name", "properties",
+			 "name", "property",
 			 "namespace", "##targetNamespace"
 		   });		
 		addAnnotation

@@ -44,7 +44,7 @@ public interface ExternalProperties extends EObject {
 	 * @return the value of the '<em>Properties</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.sad.SadPackage#getExternalProperties_Properties()
 	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='properties' namespace='##targetNamespace'"
+	 *        extendedMetaData="kind='element' name='property' namespace='##targetNamespace'"
 	 * @generated
 	 */
 	EList<ExternalProperty> getProperties();

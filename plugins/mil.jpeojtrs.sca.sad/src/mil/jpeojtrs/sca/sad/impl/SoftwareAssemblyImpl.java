@@ -458,7 +458,6 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * 
 	 */
 	public NotificationChain basicSetExternalProperties(ExternalProperties newExternalProperties, NotificationChain msgs) {
 		ExternalProperties oldExternalProperties = externalProperties;
