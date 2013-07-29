@@ -8,8 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-  // BEGIN GENERATED CODE
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.tests;
 
 import junit.framework.Assert;
@@ -32,6 +31,12 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 /**
  * <!-- begin-user-doc --> A test case for the model object '
  * <em><b>Simple</b></em>'. <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.prf.Simple#isComplex() <em>Is Complex</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class SimpleTest extends AbstractPropertyTest {
@@ -89,6 +94,18 @@ public class SimpleTest extends AbstractPropertyTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.Simple#isComplex() <em>Is Complex</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.Simple#isComplex()
+	 * @generated NOT
+	 */
+	public void testIsComplex()
+	{
+		Assert.assertFalse(getFixture().isComplex());
 	}
 
 	public void test_parse() throws Exception {

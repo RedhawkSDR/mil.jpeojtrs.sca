@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf;
 
 import org.eclipse.emf.ecore.EObject;
@@ -33,56 +33,56 @@ import org.eclipse.emf.ecore.EObject;
 public interface Enumeration extends EObject {
 
 	/**
-     * Returns the value of the '<em><b>Label</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Label</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Label</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Label</em>' attribute.
-     * @see #setLabel(String)
-     * @see mil.jpeojtrs.sca.prf.PrfPackage#getEnumeration_Label()
-     * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
-     *        extendedMetaData="kind='attribute' name='label'"
-     * @generated
-     */
+	 * @return the value of the '<em>Label</em>' attribute.
+	 * @see #setLabel(String)
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getEnumeration_Label()
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
+	 *        extendedMetaData="kind='attribute' name='label'"
+	 * @generated
+	 */
 	String getLabel();
 
 	/**
-     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Enumeration#getLabel <em>Label</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Enumeration#getLabel <em>Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Label</em>' attribute.
-     * @see #getLabel()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Label</em>' attribute.
+	 * @see #getLabel()
+	 * @generated
+	 */
 	void setLabel(String value);
 
 	/**
-     * Returns the value of the '<em><b>Value</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Value</em>' attribute.
-     * @see #setValue(String)
-     * @see mil.jpeojtrs.sca.prf.PrfPackage#getEnumeration_Value()
-     * @model extendedMetaData="kind='attribute' name='value'"
-     * @generated
-     */
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getEnumeration_Value()
+	 * @model extendedMetaData="kind='attribute' name='value'"
+	 * @generated
+	 */
 	String getValue();
 
 	/**
-     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Enumeration#getValue <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Enumeration#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Value</em>' attribute.
-     * @see #getValue()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
 	void setValue(String value);
 
 } // Enumeration

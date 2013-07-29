@@ -8,8 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-  // BEGIN GENERATED CODE
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.tests;
 
 import junit.framework.Assert;
@@ -17,7 +16,6 @@ import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.Properties;
 import mil.jpeojtrs.sca.prf.StructValue;
-
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 

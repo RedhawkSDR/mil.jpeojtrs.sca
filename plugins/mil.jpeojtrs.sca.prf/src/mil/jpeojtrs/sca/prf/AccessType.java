@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf;
 
 import java.util.Arrays;
@@ -28,207 +28,207 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum AccessType implements Enumerator {
 	/**
-     * The '<em><b>Writeonly</b></em>' literal object.
-     * <!-- begin-user-doc -->
+	 * The '<em><b>Writeonly</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #WRITEONLY_VALUE
-     * @generated
-     * @ordered
-     */
+	 * @see #WRITEONLY_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	WRITEONLY(0, "writeonly", "writeonly"), /**
-     * The '<em><b>Readonly</b></em>' literal object.
-     * <!-- begin-user-doc -->
+	 * The '<em><b>Readonly</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #READONLY_VALUE
-     * @generated
-     * @ordered
-     */
+	 * @see #READONLY_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	READONLY(1, "readonly", "readonly"), /**
-     * The '<em><b>Readwrite</b></em>' literal object.
-     * <!-- begin-user-doc -->
+	 * The '<em><b>Readwrite</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #READWRITE_VALUE
-     * @generated
-     * @ordered
-     */
+	 * @see #READWRITE_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	READWRITE(2, "readwrite", "readwrite");
 
 /**
-     * The '<em><b>Writeonly</b></em>' literal value.
-     * <!-- begin-user-doc -->
+	 * The '<em><b>Writeonly</b></em>' literal value.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Writeonly</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @see #WRITEONLY
-     * @model name="writeonly"
-     * @generated
-     * @ordered
-     */
+	 * @see #WRITEONLY
+	 * @model name="writeonly"
+	 * @generated
+	 * @ordered
+	 */
 	public static final int WRITEONLY_VALUE = 0;
 /**
-     * The '<em><b>Readonly</b></em>' literal value.
-     * <!-- begin-user-doc -->
+	 * The '<em><b>Readonly</b></em>' literal value.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Readonly</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @see #READONLY
-     * @model name="readonly"
-     * @generated
-     * @ordered
-     */
+	 * @see #READONLY
+	 * @model name="readonly"
+	 * @generated
+	 * @ordered
+	 */
 	public static final int READONLY_VALUE = 1;
 /**
-     * The '<em><b>Readwrite</b></em>' literal value.
-     * <!-- begin-user-doc -->
+	 * The '<em><b>Readwrite</b></em>' literal value.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Readwrite</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @see #READWRITE
-     * @model name="readwrite"
-     * @generated
-     * @ordered
-     */
+	 * @see #READWRITE
+	 * @model name="readwrite"
+	 * @generated
+	 * @ordered
+	 */
 	public static final int READWRITE_VALUE = 2;
 /**
-     * An array of all the '<em><b>Access Type</b></em>' enumerators.
-     * <!-- begin-user-doc -->
+	 * An array of all the '<em><b>Access Type</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	private static final AccessType[] VALUES_ARRAY =
 		new AccessType[] {
-            WRITEONLY,
-            READONLY,
-            READWRITE,
-        };
+			WRITEONLY,
+			READONLY,
+			READWRITE,
+		};
 /**
-     * A public read-only list of all the '<em><b>Access Type</b></em>' enumerators.
-     * <!-- begin-user-doc -->
+	 * A public read-only list of all the '<em><b>Access Type</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public static final List<AccessType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 /**
-     * Returns the '<em><b>Access Type</b></em>' literal with the specified literal value.
-     * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Access Type</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public static AccessType get(String literal) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-            AccessType result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
-                return result;
-            }
-        }
-        return null;
-    }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			AccessType result = VALUES_ARRAY[i];
+			if (result.toString().equals(literal)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
 /**
-     * Returns the '<em><b>Access Type</b></em>' literal with the specified name.
-     * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Access Type</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public static AccessType getByName(String name) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-            AccessType result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
-                return result;
-            }
-        }
-        return null;
-    }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			AccessType result = VALUES_ARRAY[i];
+			if (result.getName().equals(name)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
 /**
-     * Returns the '<em><b>Access Type</b></em>' literal with the specified integer value.
-     * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Access Type</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public static AccessType get(int value) {
-        switch (value) {
-            case WRITEONLY_VALUE: return WRITEONLY;
-            case READONLY_VALUE: return READONLY;
-            case READWRITE_VALUE: return READWRITE;
-        }
-        return null;
-    }
+		switch (value) {
+			case WRITEONLY_VALUE: return WRITEONLY;
+			case READONLY_VALUE: return READONLY;
+			case READWRITE_VALUE: return READWRITE;
+		}
+		return null;
+	}
 
 /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	private final int value;
 /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	private final String name;
 /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	private final String literal;
 
 /**
-     * Only this class can construct instances.
-     * <!-- begin-user-doc -->
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	private AccessType(int value, String name, String literal) {
-        this.value = value;
-        this.name = name;
-        this.literal = literal;
-    }
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
+	}
 
 /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public int getValue() {
-      return value;
-    }
+	  return value;
+	}
 
 /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public String getName() {
-      return name;
-    }
+	  return name;
+	}
 
 /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public String getLiteral() {
-      return literal;
-    }
+	  return literal;
+	}
 
 /**
-     * Returns the literal value of the enumerator, which is its string representation.
-     * <!-- begin-user-doc -->
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public String toString() {
-        return literal;
-    }
+		return literal;
+	}
 
 } //AccessType

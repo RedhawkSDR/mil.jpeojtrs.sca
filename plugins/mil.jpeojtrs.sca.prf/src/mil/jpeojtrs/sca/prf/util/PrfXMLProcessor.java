@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.util;
 
 import java.util.Map;
@@ -28,30 +28,30 @@ import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
 public class PrfXMLProcessor extends XMLProcessor {
 
 	/**
-     * Public constructor to instantiate the helper.
-     * <!-- begin-user-doc -->
+	 * Public constructor to instantiate the helper.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public PrfXMLProcessor() {
-        super((EPackage.Registry.INSTANCE));
-        PrfPackage.eINSTANCE.eClass();
-    }
+		super((EPackage.Registry.INSTANCE));
+		PrfPackage.eINSTANCE.eClass();
+	}
 
 	/**
-     * Register for "*" and "xml" file extensions the PrfResourceFactoryImpl factory.
-     * <!-- begin-user-doc -->
+	 * Register for "*" and "xml" file extensions the PrfResourceFactoryImpl factory.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected Map<String, Resource.Factory> getRegistrations() {
-        if (registrations == null) {
-            super.getRegistrations();
-            registrations.put(XML_EXTENSION, new PrfResourceFactoryImpl());
-            registrations.put(STAR_EXTENSION, new PrfResourceFactoryImpl());
-        }
-        return registrations;
-    }
+		if (registrations == null) {
+			super.getRegistrations();
+			registrations.put(XML_EXTENSION, new PrfResourceFactoryImpl());
+			registrations.put(STAR_EXTENSION, new PrfResourceFactoryImpl());
+		}
+		return registrations;
+	}
 
 } //PrfXMLProcessor

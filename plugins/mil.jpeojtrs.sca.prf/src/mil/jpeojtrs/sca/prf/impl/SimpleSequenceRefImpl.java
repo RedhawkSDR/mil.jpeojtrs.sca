@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
 import mil.jpeojtrs.sca.prf.PrfPackage;
@@ -40,148 +40,160 @@ import org.omg.CORBA.ORB;
  */
 public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequence> implements SimpleSequenceRef {
 	/**
-     * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getValues()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValues()
+	 * @generated
+	 * @ordered
+	 */
 	protected Values values;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected SimpleSequenceRefImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return PrfPackage.Literals.SIMPLE_SEQUENCE_REF;
-    }
+		return PrfPackage.Literals.SIMPLE_SEQUENCE_REF;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 *  @since 2.3
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setProperty(SimpleSequence newProperty) {
+		super.setProperty(newProperty);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Values getValues() {
-        return values;
-    }
+		return values;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public NotificationChain basicSetValues(Values newValues, NotificationChain msgs) {
-        Values oldValues = values;
-        values = newValues;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, oldValues, newValues);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Values oldValues = values;
+		values = newValues;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, oldValues, newValues);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setValues(Values newValues) {
-        if (newValues != values) {
-            NotificationChain msgs = null;
-            if (values != null)
-                msgs = ((InternalEObject)values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
-            if (newValues != null)
-                msgs = ((InternalEObject)newValues).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
-            msgs = basicSetValues(newValues, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, newValues, newValues));
-    }
+		if (newValues != values) {
+			NotificationChain msgs = null;
+			if (values != null)
+				msgs = ((InternalEObject)values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
+			if (newValues != null)
+				msgs = ((InternalEObject)newValues).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
+			msgs = basicSetValues(newValues, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, newValues, newValues));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-                return basicSetValues(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+				return basicSetValues(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-                return getValues();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+				return getValues();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-                setValues((Values)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+				setValues((Values)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-                setValues((Values)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+				setValues((Values)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-                return values != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+				return values != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 	@Override
     public Any toAny() {

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf;
 
 import org.eclipse.emf.ecore.EObject;
@@ -26,11 +26,11 @@ import org.eclipse.emf.ecore.EObject;
 public interface PropertyRefContainer extends EObject {
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @model kind="operation"
-     * @generated
-     */
+	 * @model kind="operation"
+	 * @generated
+	 */
 	PropertyContainer getPropertyContainer();
 
 } // PropertyRefContainer

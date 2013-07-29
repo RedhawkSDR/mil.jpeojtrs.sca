@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
 import java.util.ArrayList;
@@ -54,64 +54,64 @@ import CF.PropertiesHelper;
  */
 public class StructValueImpl extends EObjectImpl implements StructValue {
 	/**
-     * The cached value of the '{@link #getSimpleRef() <em>Simple Ref</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSimpleRef() <em>Simple Ref</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getSimpleRef()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSimpleRef()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<SimpleRef> simpleRef;
 	/**
-     * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getIndex()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIndex()
+	 * @generated
+	 * @ordered
+	 */
 	protected static final int INDEX_EDEFAULT = 0;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected StructValueImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return PrfPackage.Literals.STRUCT_VALUE;
-    }
+		return PrfPackage.Literals.STRUCT_VALUE;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<SimpleRef> getSimpleRef() {
-        if (simpleRef == null) {
-            simpleRef = new EObjectContainmentEList<SimpleRef>(SimpleRef.class, this, PrfPackage.STRUCT_VALUE__SIMPLE_REF);
-        }
-        return simpleRef;
-    }
+		if (simpleRef == null) {
+			simpleRef = new EObjectContainmentEList<SimpleRef>(SimpleRef.class, this, PrfPackage.STRUCT_VALUE__SIMPLE_REF);
+		}
+		return simpleRef;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public Struct getStruct() {
-        Struct struct = basicGetStruct();
-        return struct != null && struct.eIsProxy() ? (Struct)eResolveProxy((InternalEObject)struct) : struct;
-    }
+		Struct struct = basicGetStruct();
+		return struct != null && struct.eIsProxy() ? (Struct)eResolveProxy((InternalEObject)struct) : struct;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,86 +199,86 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-                return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+				return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-                return getSimpleRef();
-            case PrfPackage.STRUCT_VALUE__STRUCT:
-                if (resolve) return getStruct();
-                return basicGetStruct();
-            case PrfPackage.STRUCT_VALUE__INDEX:
-                return getIndex();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+				return getSimpleRef();
+			case PrfPackage.STRUCT_VALUE__STRUCT:
+				if (resolve) return getStruct();
+				return basicGetStruct();
+			case PrfPackage.STRUCT_VALUE__INDEX:
+				return getIndex();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-                getSimpleRef().clear();
-                getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+				getSimpleRef().clear();
+				getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-                getSimpleRef().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+				getSimpleRef().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-                return simpleRef != null && !simpleRef.isEmpty();
-            case PrfPackage.STRUCT_VALUE__STRUCT:
-                return basicGetStruct() != null;
-            case PrfPackage.STRUCT_VALUE__INDEX:
-                return getIndex() != INDEX_EDEFAULT;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+				return simpleRef != null && !simpleRef.isEmpty();
+			case PrfPackage.STRUCT_VALUE__STRUCT:
+				return basicGetStruct() != null;
+			case PrfPackage.STRUCT_VALUE__INDEX:
+				return getIndex() != INDEX_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //StructValueImpl

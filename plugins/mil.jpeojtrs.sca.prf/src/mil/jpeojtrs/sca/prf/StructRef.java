@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf;
 
 import org.eclipse.emf.common.util.EList;
@@ -32,20 +32,20 @@ import org.eclipse.emf.common.util.EList;
 public interface StructRef extends AbstractPropertyRef<Struct>, PropertyRefContainer {
 
 	/**
-     * Returns the value of the '<em><b>Simple Ref</b></em>' containment reference list.
-     * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleRef}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Simple Ref</b></em>' containment reference list.
+	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleRef}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Simple Ref</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Simple Ref</em>' containment reference list.
-     * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructRef_SimpleRef()
-     * @model containment="true" required="true"
-     *        extendedMetaData="kind='element' name='simpleref'"
-     * @generated
-     */
+	 * @return the value of the '<em>Simple Ref</em>' containment reference list.
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructRef_SimpleRef()
+	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='simpleref'"
+	 * @generated
+	 */
 	EList<SimpleRef> getSimpleRef();
 
 } // StructRef

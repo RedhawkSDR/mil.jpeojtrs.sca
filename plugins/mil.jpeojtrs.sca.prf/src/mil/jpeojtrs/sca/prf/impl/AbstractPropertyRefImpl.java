@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
 import mil.jpeojtrs.sca.prf.AbstractProperty;
@@ -40,74 +40,74 @@ import org.omg.CORBA.Any;
  */
 public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extends EObjectImpl implements AbstractPropertyRef<P> {
 	/**
-     * The default value of the '{@link #getRefID() <em>Ref ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getRefID() <em>Ref ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getRefID()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefID()
+	 * @generated
+	 * @ordered
+	 */
 	protected static final String REF_ID_EDEFAULT = null;
 	/**
-     * The cached value of the '{@link #getRefID() <em>Ref ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefID() <em>Ref ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getRefID()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefID()
+	 * @generated
+	 * @ordered
+	 */
 	protected String refID = REF_ID_EDEFAULT;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected AbstractPropertyRefImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return PrfPackage.Literals.ABSTRACT_PROPERTY_REF;
-    }
+		return PrfPackage.Literals.ABSTRACT_PROPERTY_REF;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public String getRefID() {
-        return refID;
-    }
+		return refID;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setRefID(String newRefID) {
-        String oldRefID = refID;
-        refID = newRefID;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID, oldRefID, refID));
-    }
+		String oldRefID = refID;
+		refID = newRefID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID, oldRefID, refID));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	public P getProperty() {
-        P property = basicGetProperty();
-        return property != null && property.eIsProxy() ? (P)eResolveProxy((InternalEObject)property) : property;
-    }
+		P property = basicGetProperty();
+		return property != null && property.eIsProxy() ? (P)eResolveProxy((InternalEObject)property) : property;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -150,89 +150,89 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	public abstract Any toAny();
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
-                return getRefID();
-            case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
-                if (resolve) return getProperty();
-                return basicGetProperty();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
+				return getRefID();
+			case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
+				if (resolve) return getProperty();
+				return basicGetProperty();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
-                setRefID((String)newValue);
-                return;
-            case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
-                setProperty((P)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
+				setRefID((String)newValue);
+				return;
+			case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
+				setProperty((P)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
-                setRefID(REF_ID_EDEFAULT);
-                return;
-            case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
-                setProperty((P)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
+				setRefID(REF_ID_EDEFAULT);
+				return;
+			case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
+				setProperty((P)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
-                return REF_ID_EDEFAULT == null ? refID != null : !REF_ID_EDEFAULT.equals(refID);
-            case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
-                return basicGetProperty() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
+				return REF_ID_EDEFAULT == null ? refID != null : !REF_ID_EDEFAULT.equals(refID);
+			case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
+				return basicGetProperty() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (refID: ");
-        result.append(refID);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (refID: ");
+		result.append(refID);
+		result.append(')');
+		return result.toString();
+	}
 
 } //PropertyRefImpl

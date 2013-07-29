@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
 import java.util.ArrayList;
@@ -53,84 +53,84 @@ import CF.PropertiesHelper;
  */
 public class StructImpl extends AbstractPropertyImpl implements Struct {
 	/**
-     * The cached value of the '{@link #getSimple() <em>Simple</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSimple() <em>Simple</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getSimple()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSimple()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<Simple> simple;
 	/**
-     * The cached value of the '{@link #getConfigurationKind() <em>Configuration Kind</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConfigurationKind() <em>Configuration Kind</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getConfigurationKind()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConfigurationKind()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<ConfigurationKind> configurationKind;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected StructImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return PrfPackage.Literals.STRUCT;
-    }
+		return PrfPackage.Literals.STRUCT;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<Simple> getSimple() {
-        if (simple == null) {
-            simple = new EObjectContainmentEList<Simple>(Simple.class, this, PrfPackage.STRUCT__SIMPLE);
-        }
-        return simple;
-    }
+		if (simple == null) {
+			simple = new EObjectContainmentEList<Simple>(Simple.class, this, PrfPackage.STRUCT__SIMPLE);
+		}
+		return simple;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<ConfigurationKind> getConfigurationKind() {
-        if (configurationKind == null) {
-            configurationKind = new EObjectContainmentEList.Unsettable<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT__CONFIGURATION_KIND);
-        }
-        return configurationKind;
-    }
+		if (configurationKind == null) {
+			configurationKind = new EObjectContainmentEList.Unsettable<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT__CONFIGURATION_KIND);
+		}
+		return configurationKind;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void unsetConfigurationKind() {
-        if (configurationKind != null) ((InternalEList.Unsettable<?>)configurationKind).unset();
-    }
+		if (configurationKind != null) ((InternalEList.Unsettable<?>)configurationKind).unset();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public boolean isSetConfigurationKind() {
-        return configurationKind != null && ((InternalEList.Unsettable<?>)configurationKind).isSet();
-    }
+		return configurationKind != null && ((InternalEList.Unsettable<?>)configurationKind).isSet();
+	}
 
 	@Override
 	public boolean isKind(PropertyConfigurationType ... type) {
@@ -178,91 +178,91 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case PrfPackage.STRUCT__SIMPLE:
-                return ((InternalEList<?>)getSimple()).basicRemove(otherEnd, msgs);
-            case PrfPackage.STRUCT__CONFIGURATION_KIND:
-                return ((InternalEList<?>)getConfigurationKind()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT__SIMPLE:
+				return ((InternalEList<?>)getSimple()).basicRemove(otherEnd, msgs);
+			case PrfPackage.STRUCT__CONFIGURATION_KIND:
+				return ((InternalEList<?>)getConfigurationKind()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case PrfPackage.STRUCT__SIMPLE:
-                return getSimple();
-            case PrfPackage.STRUCT__CONFIGURATION_KIND:
-                return getConfigurationKind();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT__SIMPLE:
+				return getSimple();
+			case PrfPackage.STRUCT__CONFIGURATION_KIND:
+				return getConfigurationKind();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case PrfPackage.STRUCT__SIMPLE:
-                getSimple().clear();
-                getSimple().addAll((Collection<? extends Simple>)newValue);
-                return;
-            case PrfPackage.STRUCT__CONFIGURATION_KIND:
-                getConfigurationKind().clear();
-                getConfigurationKind().addAll((Collection<? extends ConfigurationKind>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT__SIMPLE:
+				getSimple().clear();
+				getSimple().addAll((Collection<? extends Simple>)newValue);
+				return;
+			case PrfPackage.STRUCT__CONFIGURATION_KIND:
+				getConfigurationKind().clear();
+				getConfigurationKind().addAll((Collection<? extends ConfigurationKind>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case PrfPackage.STRUCT__SIMPLE:
-                getSimple().clear();
-                return;
-            case PrfPackage.STRUCT__CONFIGURATION_KIND:
-                unsetConfigurationKind();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT__SIMPLE:
+				getSimple().clear();
+				return;
+			case PrfPackage.STRUCT__CONFIGURATION_KIND:
+				unsetConfigurationKind();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case PrfPackage.STRUCT__SIMPLE:
-                return simple != null && !simple.isEmpty();
-            case PrfPackage.STRUCT__CONFIGURATION_KIND:
-                return isSetConfigurationKind();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT__SIMPLE:
+				return simple != null && !simple.isEmpty();
+			case PrfPackage.STRUCT__CONFIGURATION_KIND:
+				return isSetConfigurationKind();
+		}
+		return super.eIsSet(featureID);
+	}
 
 	@Override
     public Any toAny() {

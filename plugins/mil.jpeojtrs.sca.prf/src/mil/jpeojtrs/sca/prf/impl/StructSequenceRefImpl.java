@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
 import java.util.ArrayList;
@@ -46,45 +46,57 @@ import org.omg.CORBA.ORB;
  */
 public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequence> implements StructSequenceRef {
 	/**
-     * The cached value of the '{@link #getStructValue() <em>Struct Value</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getStructValue() <em>Struct Value</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getStructValue()
-     * @generated
-     * @ordered
-     */
+	 * @see #getStructValue()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<StructValue> structValue;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected StructSequenceRefImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return PrfPackage.Literals.STRUCT_SEQUENCE_REF;
-    }
+		return PrfPackage.Literals.STRUCT_SEQUENCE_REF;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 *  @since 2.3
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setProperty(StructSequence newProperty) {
+		super.setProperty(newProperty);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<StructValue> getStructValue() {
-        if (structValue == null) {
-            structValue = new EObjectContainmentEList<StructValue>(StructValue.class, this, PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE);
-        }
-        return structValue;
-    }
+		if (structValue == null) {
+			structValue = new EObjectContainmentEList<StructValue>(StructValue.class, this, PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE);
+		}
+		return structValue;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,78 +110,78 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-                return ((InternalEList<?>)getStructValue()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+				return ((InternalEList<?>)getStructValue()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-                return getStructValue();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+				return getStructValue();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-                getStructValue().clear();
-                getStructValue().addAll((Collection<? extends StructValue>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+				getStructValue().clear();
+				getStructValue().addAll((Collection<? extends StructValue>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-                getStructValue().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+				getStructValue().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-                return structValue != null && !structValue.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+				return structValue != null && !structValue.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 	@Override
     public Any toAny() {

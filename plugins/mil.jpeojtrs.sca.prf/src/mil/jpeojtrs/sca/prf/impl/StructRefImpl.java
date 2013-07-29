@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
 import java.util.ArrayList;
@@ -48,45 +48,57 @@ import CF.PropertiesHelper;
  */
 public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements StructRef {
 	/**
-     * The cached value of the '{@link #getSimpleRef() <em>Simple Ref</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSimpleRef() <em>Simple Ref</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getSimpleRef()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSimpleRef()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<SimpleRef> simpleRef;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected StructRefImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return PrfPackage.Literals.STRUCT_REF;
-    }
+		return PrfPackage.Literals.STRUCT_REF;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 *  @since 2.3
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setProperty(Struct newProperty) {
+		super.setProperty(newProperty);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<SimpleRef> getSimpleRef() {
-        if (simpleRef == null) {
-            simpleRef = new EObjectContainmentEList<SimpleRef>(SimpleRef.class, this, PrfPackage.STRUCT_REF__SIMPLE_REF);
-        }
-        return simpleRef;
-    }
+		if (simpleRef == null) {
+			simpleRef = new EObjectContainmentEList<SimpleRef>(SimpleRef.class, this, PrfPackage.STRUCT_REF__SIMPLE_REF);
+		}
+		return simpleRef;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,78 +112,78 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_REF__SIMPLE_REF:
-                return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_REF__SIMPLE_REF:
+				return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_REF__SIMPLE_REF:
-                return getSimpleRef();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_REF__SIMPLE_REF:
+				return getSimpleRef();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_REF__SIMPLE_REF:
-                getSimpleRef().clear();
-                getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_REF__SIMPLE_REF:
+				getSimpleRef().clear();
+				getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_REF__SIMPLE_REF:
-                getSimpleRef().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_REF__SIMPLE_REF:
+				getSimpleRef().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_REF__SIMPLE_REF:
-                return simpleRef != null && !simpleRef.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_REF__SIMPLE_REF:
+				return simpleRef != null && !simpleRef.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 	@Override
     public Any toAny() {

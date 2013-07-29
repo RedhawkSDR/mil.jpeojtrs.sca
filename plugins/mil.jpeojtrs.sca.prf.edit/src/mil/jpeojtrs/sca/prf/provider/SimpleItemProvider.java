@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.ArrayList;
@@ -200,7 +200,6 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 	 * @since 2.3
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * 
 	 */
 	protected void addComplexPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
@@ -213,7 +212,7 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
 import java.util.Collection;
@@ -49,81 +49,81 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public abstract class PropertyRefGroupImpl extends EObjectImpl implements PropertyRefGroup {
 	/**
-     * The cached value of the '{@link #getProperties() <em>Properties</em>}' attribute list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' attribute list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getProperties()
-     * @generated
-     * @ordered
-     */
+	 * @see #getProperties()
+	 * @generated
+	 * @ordered
+	 */
 	protected FeatureMap properties;
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	protected PropertyRefGroupImpl() {
-        super();
-    }
+		super();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return PrfPackage.Literals.PROPERTY_REF_GROUP;
-    }
+		return PrfPackage.Literals.PROPERTY_REF_GROUP;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public FeatureMap getProperties() {
-        if (properties == null) {
-            properties = new BasicFeatureMap(this, PrfPackage.PROPERTY_REF_GROUP__PROPERTIES);
-        }
-        return properties;
-    }
+		if (properties == null) {
+			properties = new BasicFeatureMap(this, PrfPackage.PROPERTY_REF_GROUP__PROPERTIES);
+		}
+		return properties;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<SimpleRef> getSimpleRef() {
-        return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__SIMPLE_REF);
-    }
+		return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__SIMPLE_REF);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<SimpleSequenceRef> getSimpleSequenceRef() {
-        return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF);
-    }
+		return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<StructRef> getStructRef() {
-        return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__STRUCT_REF);
-    }
+		return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__STRUCT_REF);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<StructSequenceRef> getStructSequenceRef() {
-        return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF);
-    }
+		return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF);
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,145 +133,145 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	public abstract PropertyContainer getPropertyContainer();
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
-                return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-            case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
-                return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
-            case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
-                return ((InternalEList<?>)getSimpleSequenceRef()).basicRemove(otherEnd, msgs);
-            case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
-                return ((InternalEList<?>)getStructRef()).basicRemove(otherEnd, msgs);
-            case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
-                return ((InternalEList<?>)getStructSequenceRef()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
+				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
+				return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
+			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
+				return ((InternalEList<?>)getSimpleSequenceRef()).basicRemove(otherEnd, msgs);
+			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
+				return ((InternalEList<?>)getStructRef()).basicRemove(otherEnd, msgs);
+			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
+				return ((InternalEList<?>)getStructSequenceRef()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
-                if (coreType) return getProperties();
-                return ((FeatureMap.Internal)getProperties()).getWrapper();
-            case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
-                return getSimpleRef();
-            case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
-                return getSimpleSequenceRef();
-            case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
-                return getStructRef();
-            case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
-                return getStructSequenceRef();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
+				if (coreType) return getProperties();
+				return ((FeatureMap.Internal)getProperties()).getWrapper();
+			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
+				return getSimpleRef();
+			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
+				return getSimpleSequenceRef();
+			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
+				return getStructRef();
+			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
+				return getStructSequenceRef();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
-                ((FeatureMap.Internal)getProperties()).set(newValue);
-                return;
-            case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
-                getSimpleRef().clear();
-                getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
-                return;
-            case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
-                getSimpleSequenceRef().clear();
-                getSimpleSequenceRef().addAll((Collection<? extends SimpleSequenceRef>)newValue);
-                return;
-            case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
-                getStructRef().clear();
-                getStructRef().addAll((Collection<? extends StructRef>)newValue);
-                return;
-            case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
-                getStructSequenceRef().clear();
-                getStructSequenceRef().addAll((Collection<? extends StructSequenceRef>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
+				((FeatureMap.Internal)getProperties()).set(newValue);
+				return;
+			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
+				getSimpleRef().clear();
+				getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
+				return;
+			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
+				getSimpleSequenceRef().clear();
+				getSimpleSequenceRef().addAll((Collection<? extends SimpleSequenceRef>)newValue);
+				return;
+			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
+				getStructRef().clear();
+				getStructRef().addAll((Collection<? extends StructRef>)newValue);
+				return;
+			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
+				getStructSequenceRef().clear();
+				getStructSequenceRef().addAll((Collection<? extends StructSequenceRef>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
-                getProperties().clear();
-                return;
-            case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
-                getSimpleRef().clear();
-                return;
-            case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
-                getSimpleSequenceRef().clear();
-                return;
-            case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
-                getStructRef().clear();
-                return;
-            case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
-                getStructSequenceRef().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
+				getProperties().clear();
+				return;
+			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
+				getSimpleRef().clear();
+				return;
+			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
+				getSimpleSequenceRef().clear();
+				return;
+			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
+				getStructRef().clear();
+				return;
+			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
+				getStructSequenceRef().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
-                return properties != null && !properties.isEmpty();
-            case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
-                return !getSimpleRef().isEmpty();
-            case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
-                return !getSimpleSequenceRef().isEmpty();
-            case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
-                return !getStructRef().isEmpty();
-            case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
-                return !getStructSequenceRef().isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
+				return properties != null && !properties.isEmpty();
+			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
+				return !getSimpleRef().isEmpty();
+			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
+				return !getSimpleSequenceRef().isEmpty();
+			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
+				return !getStructRef().isEmpty();
+			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
+				return !getStructSequenceRef().isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (properties: ");
-        result.append(properties);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (properties: ");
+		result.append(properties);
+		result.append(')');
+		return result.toString();
+	}
 
 } //PropertyRefGroupImpl

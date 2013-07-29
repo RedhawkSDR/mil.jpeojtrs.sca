@@ -8,8 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-  // BEGIN GENERATED CODE
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.tests;
 
 import junit.framework.TestCase;
@@ -84,13 +83,9 @@ public abstract class PropertyRefSetTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetSimpleRef() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this feature getter test method
+		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -101,13 +96,9 @@ public abstract class PropertyRefSetTest extends TestCase {
 	 * @generated
 	 */
 	public void testSetSimpleRef() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this feature setter test method
+		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// END GENERATED CODE
 	}
 
 	/**
@@ -118,13 +109,9 @@ public abstract class PropertyRefSetTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetSimpleSequenceRef() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this feature getter test method
+		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -135,13 +122,9 @@ public abstract class PropertyRefSetTest extends TestCase {
 	 * @generated
 	 */
 	public void testSetSimpleSequenceRef() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this feature setter test method
+		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// END GENERATED CODE
 	}
 
 	/**
@@ -152,13 +135,9 @@ public abstract class PropertyRefSetTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetStructRef() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this feature getter test method
+		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -169,13 +148,9 @@ public abstract class PropertyRefSetTest extends TestCase {
 	 * @generated
 	 */
 	public void testSetStructRef() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this feature setter test method
+		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// END GENERATED CODE
 	}
 
 	/**
@@ -186,13 +161,9 @@ public abstract class PropertyRefSetTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetStructSequenceRef() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this feature getter test method
+		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -203,13 +174,9 @@ public abstract class PropertyRefSetTest extends TestCase {
 	 * @generated
 	 */
 	public void testSetStructSequenceRef() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this feature setter test method
+		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// END GENERATED CODE
 	}
 
 	/**
@@ -220,13 +187,9 @@ public abstract class PropertyRefSetTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetPropertyContainer() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this operation test method
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// BEGIN GENERATED CODE
 	}
 
 } //PropertyRefSetTest

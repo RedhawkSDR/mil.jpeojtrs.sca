@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf;
 
 import org.eclipse.emf.ecore.EObject;
@@ -33,57 +33,57 @@ import org.eclipse.emf.ecore.EObject;
 public interface Range extends EObject {
 
 	/**
-     * Returns the value of the '<em><b>Max</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Max</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Max</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Max</em>' attribute.
-     * @see #setMax(String)
-     * @see mil.jpeojtrs.sca.prf.PrfPackage#getRange_Max()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='max'"
-     * @generated
-     */
+	 * @return the value of the '<em>Max</em>' attribute.
+	 * @see #setMax(String)
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getRange_Max()
+	 * @model required="true"
+	 *        extendedMetaData="kind='attribute' name='max'"
+	 * @generated
+	 */
 	String getMax();
 
 	/**
-     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Range#getMax <em>Max</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Range#getMax <em>Max</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Max</em>' attribute.
-     * @see #getMax()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Max</em>' attribute.
+	 * @see #getMax()
+	 * @generated
+	 */
 	void setMax(String value);
 
 	/**
-     * Returns the value of the '<em><b>Min</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Min</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Min</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Min</em>' attribute.
-     * @see #setMin(String)
-     * @see mil.jpeojtrs.sca.prf.PrfPackage#getRange_Min()
-     * @model required="true"
-     *        extendedMetaData="kind='attribute' name='min'"
-     * @generated
-     */
+	 * @return the value of the '<em>Min</em>' attribute.
+	 * @see #setMin(String)
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getRange_Min()
+	 * @model required="true"
+	 *        extendedMetaData="kind='attribute' name='min'"
+	 * @generated
+	 */
 	String getMin();
 
 	/**
-     * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Range#getMin <em>Min</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Range#getMin <em>Min</em>}' attribute.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Min</em>' attribute.
-     * @see #getMin()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Min</em>' attribute.
+	 * @see #getMin()
+	 * @generated
+	 */
 	void setMin(String value);
 
 } // Range

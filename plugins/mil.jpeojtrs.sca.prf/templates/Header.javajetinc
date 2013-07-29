@@ -9,28 +9,3 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
 // BEGIN GENERATED CODE
-package mil.jpeojtrs.sca.prf;
-
-import org.eclipse.emf.ecore.EObject;
-
-/**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Property Container</b></em>'.
- * <!-- end-user-doc -->
- *
- *
- * @see mil.jpeojtrs.sca.prf.PrfPackage#getPropertyContainer()
- * @model interface="true" abstract="true"
- * @generated
- */
-public interface PropertyContainer extends EObject {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	AbstractProperty getProperty(String repID);
-
-} // PropertyContainer

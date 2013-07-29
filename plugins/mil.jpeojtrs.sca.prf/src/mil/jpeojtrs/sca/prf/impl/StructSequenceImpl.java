@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
 import java.util.ArrayList;
@@ -62,31 +62,31 @@ import org.omg.CORBA.ORB;
  */
 public class StructSequenceImpl extends AbstractPropertyImpl implements StructSequence {
 	/**
-     * The cached value of the '{@link #getStruct() <em>Struct</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getStruct() <em>Struct</em>}' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getStruct()
-     * @generated
-     * @ordered
-     */
+	 * @see #getStruct()
+	 * @generated
+	 * @ordered
+	 */
 	protected Struct struct;
 	/**
-     * The cached value of the '{@link #getStructValue() <em>Struct Value</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getStructValue() <em>Struct Value</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getStructValue()
-     * @generated
-     * @ordered
-     */
+	 * @see #getStructValue()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<StructValue> structValue;
 	/**
-     * The cached value of the '{@link #getConfigurationKind() <em>Configuration Kind</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConfigurationKind() <em>Configuration Kind</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @see #getConfigurationKind()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConfigurationKind()
+	 * @generated
+	 * @ordered
+	 */
 	protected EList<ConfigurationKind> configurationKind;
 	private Adapter simpleListener = new EContentAdapter() {
 		public void notifyChanged(Notification notification) {
@@ -127,99 +127,99 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	}
 		
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	protected EClass eStaticClass() {
-        return PrfPackage.Literals.STRUCT_SEQUENCE;
-    }
+		return PrfPackage.Literals.STRUCT_SEQUENCE;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public Struct getStruct() {
-        return struct;
-    }
+		return struct;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public NotificationChain basicSetStruct(Struct newStruct, NotificationChain msgs) {
-        Struct oldStruct = struct;
-        struct = newStruct;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.STRUCT_SEQUENCE__STRUCT, oldStruct, newStruct);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Struct oldStruct = struct;
+		struct = newStruct;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.STRUCT_SEQUENCE__STRUCT, oldStruct, newStruct);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void setStruct(Struct newStruct) {
-        if (newStruct != struct) {
-            NotificationChain msgs = null;
-            if (struct != null)
-                msgs = ((InternalEObject)struct).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.STRUCT_SEQUENCE__STRUCT, null, msgs);
-            if (newStruct != null)
-                msgs = ((InternalEObject)newStruct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.STRUCT_SEQUENCE__STRUCT, null, msgs);
-            msgs = basicSetStruct(newStruct, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.STRUCT_SEQUENCE__STRUCT, newStruct, newStruct));
-    }
+		if (newStruct != struct) {
+			NotificationChain msgs = null;
+			if (struct != null)
+				msgs = ((InternalEObject)struct).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.STRUCT_SEQUENCE__STRUCT, null, msgs);
+			if (newStruct != null)
+				msgs = ((InternalEObject)newStruct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.STRUCT_SEQUENCE__STRUCT, null, msgs);
+			msgs = basicSetStruct(newStruct, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.STRUCT_SEQUENCE__STRUCT, newStruct, newStruct));
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<StructValue> getStructValue() {
-        if (structValue == null) {
-            structValue = new EObjectContainmentEList<StructValue>(StructValue.class, this, PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE);
-        }
-        return structValue;
-    }
+		if (structValue == null) {
+			structValue = new EObjectContainmentEList<StructValue>(StructValue.class, this, PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE);
+		}
+		return structValue;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public EList<ConfigurationKind> getConfigurationKind() {
-        if (configurationKind == null) {
-            configurationKind = new EObjectContainmentEList.Unsettable<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND);
-        }
-        return configurationKind;
-    }
+		if (configurationKind == null) {
+			configurationKind = new EObjectContainmentEList.Unsettable<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND);
+		}
+		return configurationKind;
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public void unsetConfigurationKind() {
-        if (configurationKind != null) ((InternalEList.Unsettable<?>)configurationKind).unset();
-    }
+		if (configurationKind != null) ((InternalEList.Unsettable<?>)configurationKind).unset();
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	public boolean isSetConfigurationKind() {
-        return configurationKind != null && ((InternalEList.Unsettable<?>)configurationKind).isSet();
-    }
+		return configurationKind != null && ((InternalEList.Unsettable<?>)configurationKind).isSet();
+	}
 
 	protected void updateSimpleRefID(Notification notification) {
 		for (StructValue structValue : getStructValue()) {
@@ -310,103 +310,103 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-                return basicSetStruct(null, msgs);
-            case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-                return ((InternalEList<?>)getStructValue()).basicRemove(otherEnd, msgs);
-            case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-                return ((InternalEList<?>)getConfigurationKind()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+				return basicSetStruct(null, msgs);
+			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+				return ((InternalEList<?>)getStructValue()).basicRemove(otherEnd, msgs);
+			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+				return ((InternalEList<?>)getConfigurationKind()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-                return getStruct();
-            case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-                return getStructValue();
-            case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-                return getConfigurationKind();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+				return getStruct();
+			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+				return getStructValue();
+			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+				return getConfigurationKind();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-                setStruct((Struct)newValue);
-                return;
-            case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-                getStructValue().clear();
-                getStructValue().addAll((Collection<? extends StructValue>)newValue);
-                return;
-            case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-                getConfigurationKind().clear();
-                getConfigurationKind().addAll((Collection<? extends ConfigurationKind>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+				setStruct((Struct)newValue);
+				return;
+			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+				getStructValue().clear();
+				getStructValue().addAll((Collection<? extends StructValue>)newValue);
+				return;
+			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+				getConfigurationKind().clear();
+				getConfigurationKind().addAll((Collection<? extends ConfigurationKind>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public void eUnset(int featureID) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-                setStruct((Struct)null);
-                return;
-            case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-                getStructValue().clear();
-                return;
-            case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-                unsetConfigurationKind();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+				setStruct((Struct)null);
+				return;
+			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+				getStructValue().clear();
+				return;
+			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+				unsetConfigurationKind();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
 	/**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-                return struct != null;
-            case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-                return structValue != null && !structValue.isEmpty();
-            case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-                return isSetConfigurationKind();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+				return struct != null;
+			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+				return structValue != null && !structValue.isEmpty();
+			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+				return isSetConfigurationKind();
+		}
+		return super.eIsSet(featureID);
+	}
 
 	public EList<StructValue> getStructvalue() {
 	    return getStructValue();
