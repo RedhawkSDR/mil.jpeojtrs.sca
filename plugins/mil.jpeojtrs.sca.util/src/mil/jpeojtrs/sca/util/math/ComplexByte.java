@@ -10,6 +10,8 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math;
 
+import java.util.Arrays;
+
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
@@ -83,6 +85,19 @@ public class ComplexByte extends ComplexNumber {
 			bytes[i] = Byte.valueOf(numbers[i]);
 		}
 		return new ComplexByte(bytes);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Arrays.hashCode(bytes);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof ComplexByte) {
+			return Arrays.equals(bytes, ((ComplexByte) obj).bytes);
+		}
+		return super.equals(obj);
 	}
 
 }

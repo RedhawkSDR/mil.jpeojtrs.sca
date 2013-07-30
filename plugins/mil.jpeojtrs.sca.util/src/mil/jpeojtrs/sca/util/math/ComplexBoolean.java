@@ -10,6 +10,8 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math;
 
+import java.util.Arrays;
+
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
@@ -22,13 +24,13 @@ import CF.complexBooleanHelper;
  */
 public class ComplexBoolean extends ComplexNumber {
 	private final boolean[] numbers;
-	
+
 	public ComplexBoolean() {
 		this(false, false);
 	}
-	
+
 	public ComplexBoolean(boolean real, boolean imaginary) {
-		this(new boolean[]{real, imaginary});
+		this(new boolean[] { real, imaginary });
 	}
 
 	protected ComplexBoolean(boolean... numbers) {
@@ -55,6 +57,19 @@ public class ComplexBoolean extends ComplexNumber {
 		}
 	}
 
+	@Override
+	public int hashCode() {
+		return Arrays.hashCode(numbers);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof ComplexBoolean) {
+			return Arrays.equals(numbers, ((ComplexBoolean) obj).numbers);
+		}
+		return super.equals(obj);
+	}
+
 	public boolean getBooleanValue(int index) throws ArrayIndexOutOfBoundsException {
 		return numbers[index];
 	}
@@ -76,7 +91,7 @@ public class ComplexBoolean extends ComplexNumber {
 
 	public static ComplexBoolean valueOf(String value) {
 		String[] strNum = ComplexParser.parse(value);
-		boolean [] numbers = new boolean [strNum.length];
+		boolean[] numbers = new boolean[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Boolean.valueOf(strNum[i]);
 		}

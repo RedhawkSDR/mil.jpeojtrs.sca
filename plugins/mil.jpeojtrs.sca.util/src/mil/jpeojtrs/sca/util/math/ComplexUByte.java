@@ -10,14 +10,14 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math;
 
+import java.util.Arrays;
+
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
 
 import CF.complexChar;
 import CF.complexCharHelper;
-import CF.complexOctet;
-import CF.complexOctetHelper;
 
 /**
  * @since 3.4
@@ -41,9 +41,9 @@ public class ComplexUByte extends ComplexNumber {
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (numbers.length == 2) {
-			complexOctet value = new complexOctet((byte) numbers[0], (byte) numbers[1]);
+			complexChar value = new complexChar((char) numbers[0], (char) numbers[1]);
 			Any any = orb.create_any();
-			complexOctetHelper.insert(any, value);
+			complexCharHelper.insert(any, value);
 			return any;
 		} else {
 			Any retVal = orb.create_any();
@@ -87,5 +87,18 @@ public class ComplexUByte extends ComplexNumber {
 			}
 		}
 		return new ComplexUByte(numbers);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Arrays.hashCode(numbers);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof ComplexUByte) {
+			return Arrays.equals(numbers, ((ComplexUByte) obj).numbers);
+		}
+		return super.equals(obj);
 	}
 }

@@ -16,6 +16,18 @@ import java.util.Arrays;
 
 import junit.framework.Assert;
 import mil.jpeojtrs.sca.util.AnyUtils;
+import mil.jpeojtrs.sca.util.math.ComplexBoolean;
+import mil.jpeojtrs.sca.util.math.ComplexByte;
+import mil.jpeojtrs.sca.util.math.ComplexDouble;
+import mil.jpeojtrs.sca.util.math.ComplexFloat;
+import mil.jpeojtrs.sca.util.math.ComplexLong;
+import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexNumber;
+import mil.jpeojtrs.sca.util.math.ComplexShort;
+import mil.jpeojtrs.sca.util.math.ComplexUByte;
+import mil.jpeojtrs.sca.util.math.ComplexULong;
+import mil.jpeojtrs.sca.util.math.ComplexULongLong;
+import mil.jpeojtrs.sca.util.math.ComplexUShort;
 
 import org.apache.commons.lang.ArrayUtils;
 import org.junit.After;
@@ -218,9 +230,7 @@ public class AnyUtilsTest {
 	public void test_toAnyArray() throws Exception {
 		final TCKind tcKind = TCKind.tk_string;
 
-		this.any = AnyUtils.toAny(new String[] {
-		        "Typecode Value", "Not Typecode Value"
-		}, tcKind);
+		this.any = AnyUtils.toAny(new String[] { "Typecode Value", "Not Typecode Value" }, tcKind);
 
 		Assert.assertNotNull(this.any);
 		Assert.assertTrue(this.any instanceof Any);
@@ -296,14 +306,128 @@ public class AnyUtilsTest {
 	}
 
 	@Test
+	public void test_complexArray() throws Exception {
+		ComplexNumber[] cValue = new ComplexBoolean[] { new ComplexBoolean(), new ComplexBoolean() };
+		Any tmpAny = AnyUtils.toAny(cValue, (String) null);
+		Object newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+
+		cValue = new ComplexByte[] { new ComplexByte(), new ComplexByte() };
+		tmpAny = AnyUtils.toAny(cValue, (String) null);
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+
+		cValue = new ComplexDouble[] { new ComplexDouble(), new ComplexDouble() };
+		tmpAny = AnyUtils.toAny(cValue, (String) null);
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+
+		cValue = new ComplexFloat[] { new ComplexFloat(), new ComplexFloat() };
+		tmpAny = AnyUtils.toAny(cValue, (String) null);
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+
+		cValue = new ComplexLong[] { new ComplexLong(), new ComplexLong() };
+		tmpAny = AnyUtils.toAny(cValue, (String) null);
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+
+		cValue = new ComplexLongLong[] { new ComplexLongLong(), new ComplexLongLong() };
+		tmpAny = AnyUtils.toAny(cValue, (String) null);
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+
+		cValue = new ComplexShort[] { new ComplexShort(), new ComplexShort() };
+		tmpAny = AnyUtils.toAny(cValue, (String) null);
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+
+		cValue = new ComplexUByte[] { new ComplexUByte(), new ComplexUByte() };
+		tmpAny = AnyUtils.toAny(cValue, (String) null);
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+
+		cValue = new ComplexULong[] { new ComplexULong(), new ComplexULong() };
+		tmpAny = AnyUtils.toAny(cValue, (String) null);
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+
+		cValue = new ComplexULongLong[] { new ComplexULongLong(), new ComplexULongLong() };
+		tmpAny = AnyUtils.toAny(cValue, (String) null);
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+
+		cValue = new ComplexUShort[] { new ComplexUShort(), new ComplexUShort() };
+		tmpAny = AnyUtils.toAny(cValue, (String) null);
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
+	}
+
+	@Test
+	public void test_complex() throws Exception {
+		ComplexNumber cValue = new ComplexBoolean();
+		Any tmpAny = cValue.toAny();
+		Object newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+
+		cValue = new ComplexByte();
+		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+
+		cValue = new ComplexDouble();
+		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+
+		cValue = new ComplexFloat();
+		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+
+		cValue = new ComplexLong();
+		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+
+		cValue = new ComplexLongLong();
+		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+
+		cValue = new ComplexShort();
+		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+
+		cValue = new ComplexUByte();
+		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+
+		cValue = new ComplexULong();
+		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+
+		cValue = new ComplexULongLong();
+		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+
+		cValue = new ComplexUShort();
+		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+	}
+
+	@Test
 	public void test_convertAnySequences() throws Exception {
 		// Test Strings
 		Object obj = null;
 		Any theAny = ORB.init().create_any();
 
-		final String[] stringInitialValue = new String[] {
-		        "a", "b", "c"
-		};
+		final String[] stringInitialValue = new String[] { "a", "b", "c" };
 		StringSeqHelper.insert(theAny, stringInitialValue);
 		final String[] stringExtractedValue = StringSeqHelper.extract(theAny);
 		// Sanity Check
@@ -318,9 +442,7 @@ public class AnyUtilsTest {
 		obj = null;
 		theAny = ORB.init().create_any();
 
-		final double[] doubleInitialValue = new double[] {
-		        0.1, 0.2, 0.3
-		};
+		final double[] doubleInitialValue = new double[] { 0.1, 0.2, 0.3 };
 		DoubleSeqHelper.insert(theAny, doubleInitialValue);
 		final double[] doubleExtractedValue = DoubleSeqHelper.extract(theAny);
 		// Sanity Check
@@ -335,9 +457,7 @@ public class AnyUtilsTest {
 		obj = null;
 		theAny = ORB.init().create_any();
 
-		final int[] intInitialValue = new int[] {
-		        1, 2, 3
-		};
+		final int[] intInitialValue = new int[] { 1, 2, 3 };
 		LongSeqHelper.insert(theAny, intInitialValue);
 		final int[] intExtractedValue = LongSeqHelper.extract(theAny);
 		// Sanity Check
@@ -360,75 +480,41 @@ public class AnyUtilsTest {
 
 		// The real test
 		obj = AnyUtils.convertAny(theAny);
-		Assert.assertTrue(obj instanceof Any[]);
-		int[] extractedIntArray = LongSeqHelper.extract(((Any[]) obj)[0]);
+		Assert.assertTrue(obj instanceof Object[]);
+		int[] extractedIntArray = ArrayUtils.toPrimitive((Integer[]) ((Object[]) obj)[0]);
 		Assert.assertTrue(Arrays.equals(intInitialValue, extractedIntArray));
-		extractedIntArray = LongSeqHelper.extract(((Any[]) obj)[1]);
+		extractedIntArray = ArrayUtils.toPrimitive((Integer[]) ((Object[]) obj)[1]);
 		Assert.assertTrue(Arrays.equals(intInitialValue, extractedIntArray));
 
-		String[] str = (String[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new String[] {
-		        "2", "3"
-		}, TCKind.tk_string));
+		String[] str = (String[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new String[] { "2", "3" }, TCKind.tk_string));
 		Assert.assertEquals("2", str[0]);
-		str = (String[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new String[] {
-		        "3", "4"
-		}, TCKind.tk_wstring));
+		str = (String[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new String[] { "3", "4" }, TCKind.tk_wstring));
 		Assert.assertEquals("3", str[0]);
-		final Boolean[] bool = (Boolean[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new boolean[] {
-		        false, true
-		}, TCKind.tk_boolean));
+		final Boolean[] bool = (Boolean[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new boolean[] { false, true }, TCKind.tk_boolean));
 		Assert.assertTrue(bool[1].booleanValue());
-		final Short[] b = (Short[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new byte[] {
-		        Byte.MIN_VALUE, Byte.MAX_VALUE
-		}, TCKind.tk_octet));
+		final Short[] b = (Short[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new byte[] { Byte.MIN_VALUE, Byte.MAX_VALUE }, TCKind.tk_octet));
 		Assert.assertEquals(Byte.MAX_VALUE, b[1].byteValue());
-		Character[] c = (Character[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new char[] {
-		        'r', 'h'
-		}, TCKind.tk_char));
+		Character[] c = (Character[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new char[] { 'r', 'h' }, TCKind.tk_char));
 		Assert.assertEquals('h', c[1].charValue());
-		c = (Character[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new Character[] {
-		        '2', '3'
-		}, TCKind.tk_wchar));
+		c = (Character[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new Character[] { '2', '3' }, TCKind.tk_wchar));
 		Assert.assertEquals('2', c[0].charValue());
-		final Short[] s = (Short[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new short[] {
-		        Short.MIN_VALUE, Short.MAX_VALUE
-		}, TCKind.tk_short));
+		final Short[] s = (Short[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new short[] { Short.MIN_VALUE, Short.MAX_VALUE }, TCKind.tk_short));
 		Assert.assertEquals(Short.MAX_VALUE, s[1].shortValue());
-		final Integer[] i = (Integer[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new int[] {
-		        Integer.MIN_VALUE, Integer.MAX_VALUE
-		}, TCKind.tk_long));
+		final Integer[] i = (Integer[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new int[] { Integer.MIN_VALUE, Integer.MAX_VALUE }, TCKind.tk_long));
 		Assert.assertEquals(Integer.MAX_VALUE, i[1].intValue());
-		final Long[] l = (Long[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new long[] {
-		        Long.MIN_VALUE, Long.MAX_VALUE
-		}, TCKind.tk_longlong));
+		final Long[] l = (Long[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new long[] { Long.MIN_VALUE, Long.MAX_VALUE }, TCKind.tk_longlong));
 		Assert.assertEquals(Long.MAX_VALUE, l[1].longValue());
-		final Float[] f = (Float[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new float[] {
-		        Float.MIN_VALUE, Float.MAX_VALUE
-		}, TCKind.tk_float));
+		final Float[] f = (Float[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new float[] { Float.MIN_VALUE, Float.MAX_VALUE }, TCKind.tk_float));
 		Assert.assertEquals(Float.MAX_VALUE, f[1].floatValue());
-		final Double[] d = (Double[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new double[] {
-		        Double.MIN_VALUE, Double.MAX_VALUE
-		}, TCKind.tk_double));
+		final Double[] d = (Double[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new double[] { Double.MIN_VALUE, Double.MAX_VALUE }, TCKind.tk_double));
 		Assert.assertEquals(Double.MAX_VALUE, d[1].doubleValue());
-		final Integer[] us = (Integer[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new short[] {
-		        Short.MIN_VALUE, Short.MAX_VALUE
-		}, TCKind.tk_ushort));
+		final Integer[] us = (Integer[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new short[] { Short.MIN_VALUE, Short.MAX_VALUE }, TCKind.tk_ushort));
 		Assert.assertEquals(Short.MAX_VALUE, us[1].intValue());
-		final Long[] ui = (Long[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new int[] {
-		        Integer.MIN_VALUE, Integer.MAX_VALUE
-		}, TCKind.tk_ulong));
+		final Long[] ui = (Long[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new int[] { Integer.MIN_VALUE, Integer.MAX_VALUE }, TCKind.tk_ulong));
 		Assert.assertEquals(Integer.MAX_VALUE, ui[1].longValue());
-		final BigInteger[] ul = (BigInteger[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new BigInteger[] {
-		        new BigInteger("2"), new BigInteger("3")
-		}, TCKind.tk_ulonglong));
+		final BigInteger[] ul = (BigInteger[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new BigInteger[] { new BigInteger("2"), new BigInteger("3") },
+			TCKind.tk_ulonglong));
 		Assert.assertEquals(3L, ul[1].longValue());
-		final Any[] tmpAny = (Any[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new Any[] {
-		        AnyUtils.toAny(1, TCKind.tk_long), AnyUtils.toAny(2, TCKind.tk_long)
-		}, TCKind.tk_any));
-		Assert.assertNotNull(tmpAny);
-		Assert.assertEquals(1, tmpAny[0].extract_long());
-		//		Object obj = AnyUtils.convertAny(null, type);
-		//		Assert.assertNull(obj);
 
 	}
 

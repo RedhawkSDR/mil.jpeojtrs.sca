@@ -10,6 +10,8 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math;
 
+import java.util.Arrays;
+
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
@@ -81,6 +83,19 @@ public class ComplexDouble extends ComplexNumber {
 			numbers[i] = Double.valueOf(strNum[i]);
 		}
 		return new ComplexDouble(numbers);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Arrays.hashCode(numbers);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof ComplexDouble) {
+			return Arrays.equals(numbers, ((ComplexDouble) obj).numbers);
+		}
+		return super.equals(obj);
 	}
 
 }

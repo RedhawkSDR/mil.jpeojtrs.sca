@@ -10,6 +10,8 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math;
 
+import java.util.Arrays;
+
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
@@ -81,6 +83,19 @@ public class ComplexLongLong extends ComplexNumber {
 			numbers[i] = Long.valueOf(strNum[i]);
 		}
 		return new ComplexLongLong(numbers);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Arrays.hashCode(numbers);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof ComplexLongLong) {
+			return Arrays.equals(numbers, ((ComplexLongLong) obj).numbers);
+		}
+		return super.equals(obj);
 	}
 
 }

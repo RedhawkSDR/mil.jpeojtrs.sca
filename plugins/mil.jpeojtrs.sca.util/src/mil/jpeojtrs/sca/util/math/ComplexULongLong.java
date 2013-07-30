@@ -11,6 +11,7 @@
 package mil.jpeojtrs.sca.util.math;
 
 import java.math.BigInteger;
+import java.util.Arrays;
 
 import mil.jpeojtrs.sca.util.UnsignedUtils;
 
@@ -85,5 +86,18 @@ public class ComplexULongLong extends ComplexNumber {
 			numbers[i] = new BigInteger(strNum[i]);
 		}
 		return new ComplexULongLong(numbers);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Arrays.hashCode(numbers);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof ComplexULongLong) {
+			return Arrays.equals(numbers, ((ComplexULongLong) obj).numbers);
+		}
+		return super.equals(obj);
 	}
 }

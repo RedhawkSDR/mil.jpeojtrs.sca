@@ -10,6 +10,8 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math;
 
+import java.util.Arrays;
+
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
@@ -81,6 +83,19 @@ public class ComplexFloat extends ComplexNumber {
 			numbers[i] = Float.valueOf(strNum[i]);
 		}
 		return new ComplexFloat(numbers);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Arrays.hashCode(numbers);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof ComplexFloat) {
+			return Arrays.equals(numbers, ((ComplexFloat) obj).numbers);
+		}
+		return super.equals(obj);
 	}
 
 }
