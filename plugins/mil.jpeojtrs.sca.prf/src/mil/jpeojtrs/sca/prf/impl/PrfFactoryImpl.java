@@ -722,6 +722,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexBooleanToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
     	return ((ComplexNumber) instanceValue).toString();
     }
 
@@ -742,6 +745,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexByteToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
         return ((ComplexByte) instanceValue).toString();
     }
 
@@ -762,6 +768,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexDoubleToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
         return ((ComplexDouble) instanceValue).toString();
     }
 
@@ -782,6 +791,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexFloatToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
         return ((ComplexFloat) instanceValue).toString();
     }
 
@@ -802,6 +814,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexLongToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
         return ((ComplexLong) instanceValue).toString();
     }
 
@@ -822,6 +837,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexLongLongToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
         return instanceValue.toString();
     }
 
@@ -842,6 +860,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexShortToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
         return instanceValue.toString();
     }
 
@@ -862,6 +883,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexUByteToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
         return instanceValue.toString();
     }
 
@@ -882,6 +906,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexULongToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
         return instanceValue.toString();
     }
 
@@ -902,6 +929,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexULongLongToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
         return instanceValue.toString();
     }
 
@@ -922,6 +952,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
      * @generated NOT
      */
     public String convertComplexUShortToString(EDataType eDataType, Object instanceValue) {
+    	if (instanceValue == null) {
+    		return null;
+    	}
         return instanceValue.toString();
     }
 

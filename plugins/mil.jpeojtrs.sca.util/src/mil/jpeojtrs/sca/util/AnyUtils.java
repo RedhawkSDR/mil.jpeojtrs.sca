@@ -502,35 +502,36 @@ public final class AnyUtils {
 	 */
 	@Deprecated
 	public static Any toAny(final Object[] value, final TCKind type) {
-		return toAny(value, type, null);
+		return toAny(value, type, false);
 	}
 	
 
 	public static Any toAny(final Object value, final TCKind type) {
-		return toAny(value, type, null);
+		return toAny(value, type, false);
 	}
 	
 	/**
      * @since 3.4
      */
-	public static Any toAny(final Object value, final TCKind type, Boolean complex) {
-		if (value != null && value.getClass().isArray()) {
+	public static Any toAny(final Object value, final TCKind type, boolean complex) {
+		if (value == null) {
+			return ORB.init().create_any();
+		}
+		if (value.getClass().isArray()) {
 			return toAnySequence(value, type);
 		}
 		if (value instanceof ComplexNumber) {
 			complex = true;
 		}
-		if (complex == null || !complex) {
+		if (!complex) {
 			return primitiveToAny(value, type);
-		}
-		if (complex) {
+		} else {
 			if (value instanceof ComplexNumber) {
 				return ((ComplexNumber) value).toAny();
 			} else {
 				throw new IllegalArgumentException("Complex numbers must be of type: " + ComplexNumber.class.getName());
 			}
 		}
-		return primitiveToAny(value, type);
 	}
 	
 	/**
@@ -542,7 +543,7 @@ public final class AnyUtils {
 		if (retVal == null) {
 			return null;
 		}
-		return toAny(value, type, null);
+		return toAny(value, type, false);
 	}
 
 	/**

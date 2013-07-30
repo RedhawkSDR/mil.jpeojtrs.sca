@@ -24,6 +24,9 @@ public abstract class ComplexNumber {
 	public abstract int getSize();
 
 	public static ComplexNumber valueOf(String type, String value) {
+		if (value == null) {
+			return null;
+		}
 		if (type.equalsIgnoreCase("double")) {
 			return ComplexDouble.valueOf(value);
 		} else if (type.equalsIgnoreCase("float")) {

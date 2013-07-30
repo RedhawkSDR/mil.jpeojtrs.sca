@@ -25,6 +25,9 @@ public final class ComplexParser {
 
 	public static String[] parse(String value) throws NumberFormatException {
 		try {
+			if (value == null) {
+				return null;
+			}
 			return ComplexParserCC.fromString(value);
 		} catch (ParseException e) {
 			throw new NumberFormatException(e.getMessage());
