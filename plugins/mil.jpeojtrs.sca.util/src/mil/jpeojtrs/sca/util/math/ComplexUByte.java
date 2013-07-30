@@ -23,9 +23,17 @@ import CF.complexOctetHelper;
  * @since 3.4
  */
 public class ComplexUByte extends ComplexNumber {
-	private final short [] numbers;
+	private final short[] numbers;
 
-	public ComplexUByte(short ... numbers) {
+	public ComplexUByte() {
+		this((short) 0, (short) 0);
+	}
+
+	public ComplexUByte(short real, short imaginary) {
+		this(new short[] { real, imaginary });
+	}
+
+	protected ComplexUByte(short... numbers) {
 		this.numbers = numbers;
 	}
 
@@ -71,7 +79,7 @@ public class ComplexUByte extends ComplexNumber {
 
 	public static ComplexUByte valueOf(String value) {
 		String[] strNum = ComplexParser.parse(value);
-		short [] numbers = new short [strNum.length];
+		short[] numbers = new short[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Short.valueOf(strNum[i]);
 			if (numbers[i] > 255) {

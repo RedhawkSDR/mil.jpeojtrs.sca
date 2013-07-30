@@ -21,9 +21,17 @@ import CF.complexShortHelper;
  * @since 3.4
  */
 public class ComplexShort extends ComplexNumber {
-	private final short [] numbers;
+	private final short[] numbers;
 
-	public ComplexShort(short ... numbers) {
+	public ComplexShort() {
+		this((short) 0, (short) 0);
+	}
+
+	public ComplexShort(short real, short imaginary) {
+		this(new short[] { real, imaginary });
+	}
+
+	protected ComplexShort(short... numbers) {
 		this.numbers = numbers;
 	}
 
@@ -63,12 +71,12 @@ public class ComplexShort extends ComplexNumber {
 
 	public static ComplexShort valueOf(Any any) {
 		complexShort complex = complexShortHelper.extract(any);
-		return new ComplexShort(new short [] { complex.real, complex.imag });
+		return new ComplexShort(new short[] { complex.real, complex.imag });
 	}
 
 	public static ComplexShort valueOf(String value) {
 		String[] strNum = ComplexParser.parse(value);
-		short [] numbers = new short [strNum.length];
+		short[] numbers = new short[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Short.valueOf(strNum[i]);
 		}

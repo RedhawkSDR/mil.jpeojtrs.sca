@@ -16,6 +16,7 @@ import java.util.Collections;
 import java.util.List;
 
 import mil.jpeojtrs.sca.util.AnyUtils;
+
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EcorePackage;

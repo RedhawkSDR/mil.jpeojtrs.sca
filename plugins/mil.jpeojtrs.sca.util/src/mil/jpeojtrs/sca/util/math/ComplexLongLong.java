@@ -21,9 +21,17 @@ import CF.complexLongLongHelper;
  * @since 3.4
  */
 public class ComplexLongLong extends ComplexNumber {
-	private final long [] numbers;
+	private final long[] numbers;
 
-	public ComplexLongLong(long ... numbers) {
+	public ComplexLongLong() {
+		this(0, 0);
+	}
+
+	public ComplexLongLong(long real, long imaginary) {
+		this(new long[] { real, imaginary });
+	}
+
+	protected ComplexLongLong(long... numbers) {
 		this.numbers = numbers;
 	}
 
@@ -63,12 +71,12 @@ public class ComplexLongLong extends ComplexNumber {
 
 	public static ComplexLongLong valueOf(Any any) {
 		complexLongLong complex = complexLongLongHelper.extract(any);
-		return new ComplexLongLong(new long [] { complex.real, complex.imag });
+		return new ComplexLongLong(new long[] { complex.real, complex.imag });
 	}
 
 	public static ComplexLongLong valueOf(String value) {
 		String[] strNum = ComplexParser.parse(value);
-		long [] numbers = new long [strNum.length];
+		long[] numbers = new long[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Long.valueOf(strNum[i]);
 		}

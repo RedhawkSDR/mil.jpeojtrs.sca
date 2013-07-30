@@ -23,7 +23,15 @@ import CF.complexDoubleHelper;
 public class ComplexDouble extends ComplexNumber {
 	private final double[] numbers;
 
-	public ComplexDouble(double... numbers) {
+	public ComplexDouble() {
+		this(0, 0);
+	}
+
+	public ComplexDouble(double real, double imaginary) {
+		this(new double[] { real, imaginary });
+	}
+
+	protected ComplexDouble(double... numbers) {
 		this.numbers = numbers;
 	}
 
@@ -68,7 +76,7 @@ public class ComplexDouble extends ComplexNumber {
 
 	public static ComplexDouble valueOf(String value) {
 		String[] strNum = ComplexParser.parse(value);
-		double [] numbers = new double [strNum.length];
+		double[] numbers = new double[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Double.valueOf(strNum[i]);
 		}

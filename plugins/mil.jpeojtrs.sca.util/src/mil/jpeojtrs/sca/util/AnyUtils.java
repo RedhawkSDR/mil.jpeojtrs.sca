@@ -70,7 +70,7 @@ public final class AnyUtils {
 
 	private AnyUtils() {
 	}
-	
+
 	/**
 	 * Attempts to convert the string value to the appropriate Java type.
 	 * 
@@ -86,11 +86,12 @@ public final class AnyUtils {
 		}
 		return ComplexNumber.valueOf(type, stringValue);
 	}
-	
+
 	public static Object convertString(final String stringValue, final String type) {
 		return convertString(stringValue, type, false);
-		
+
 	}
+
 	/**
 	 * Attempts to convert the string value to the appropriate Java type.
 	 * 
@@ -257,7 +258,7 @@ public final class AnyUtils {
 		if (theAny == null) {
 			return null;
 		}
-		
+
 		// Do this check because extract doesn't throw correctly
 		try {
 			// Extract Complex Types
@@ -284,7 +285,7 @@ public final class AnyUtils {
 			} else if (complexCharHelper.type().equivalent(typeCode)) {
 				return ComplexUByte.valueOf(theAny);
 			}
-			
+
 			final TCKind kind = typeCode.kind();
 			switch (kind.value()) {
 			case TCKind._tk_any:
@@ -377,7 +378,12 @@ public final class AnyUtils {
 			final TCKind kind = contentType.kind();
 			switch (kind.value()) {
 			case TCKind._tk_any:
-				return AnySeqHelper.extract(theAny);
+				Any[] anyArray = AnySeqHelper.extract(theAny);
+				Object[] objArray = new Object[anyArray.length];
+				for (int i = 0; i < objArray.length; i++) {
+					objArray[i] = convertAny(anyArray[i]);
+				}
+				return objArray;
 			case TCKind._tk_boolean:
 				return ArrayUtils.toObject(BooleanSeqHelper.extract(theAny));
 			case TCKind._tk_char:
@@ -492,7 +498,7 @@ public final class AnyUtils {
 			throw new IllegalArgumentException("Unknown type: " + type);
 		}
 	}
-	
+
 	/**
 	 * 
 	 * @param value
@@ -502,15 +508,14 @@ public final class AnyUtils {
 	public static Any toAny(final Object[] value, final TCKind type) {
 		return toAny(value, type, false);
 	}
-	
 
 	public static Any toAny(final Object value, final TCKind type) {
 		return toAny(value, type, false);
 	}
-	
+
 	/**
-     * @since 3.4
-     */
+	 * @since 3.4
+	 */
 	public static Any toAny(final Object value, final TCKind type, boolean complex) {
 		if (value == null) {
 			return ORB.init().create_any();
@@ -531,7 +536,7 @@ public final class AnyUtils {
 			}
 		}
 	}
-	
+
 	/**
 	 * @since 3.0
 	 */
@@ -615,7 +620,7 @@ public final class AnyUtils {
 		}
 		return retVal;
 	}
-	
+
 	/**
 	 * Assumes is not a complex type.
 	 * @param value
@@ -636,13 +641,13 @@ public final class AnyUtils {
 		}
 
 		if ((value instanceof String) && (kind != TCKind.tk_string)) {
-			
+
 			return AnyUtils.stringToAny((String) value, type, complex);
 		}
 
 		return AnyUtils.toAny(value, kind, complex);
 	}
-	
+
 	/**
 	 * @param value
 	 * @param type
@@ -653,8 +658,8 @@ public final class AnyUtils {
 	}
 
 	/**
-     * @since 3.4
-     */
+	 * @since 3.4
+	 */
 	public static Any toAny(final Object[] value, final String type, boolean complex) {
 		final TCKind kind = AnyUtils.convertToTCKind(type);
 		final Object[] convArray = AnyUtils.convertStringArray(value, type, complex);
@@ -698,11 +703,19 @@ public final class AnyUtils {
 	 */
 	public static Any toAnySequence(final Object value, TCKind type) {
 		final Any retVal = ORB.init().create_any();
-		
-		if (value instanceof ComplexNumber[]) {
-			throw new IllegalArgumentException("Complex types are not supported in any sequences.");
+
+		if (value instanceof Object[]) {
+			Object[] cArray = (Object[]) value;
+			if (cArray.length > 0 && cArray[0] instanceof ComplexNumber) {
+				Any[] anys = new Any[cArray.length];
+				for (int i = 0; i < cArray.length; i++) {
+					anys[i] = ((ComplexNumber) cArray[i]).toAny();
+				}
+				AnySeqHelper.insert(retVal, anys);
+				return retVal;
+			}
 		}
-		
+
 		if (type == null) {
 			type = AnyUtils.deriveArrayType(value);
 		}
@@ -796,9 +809,7 @@ public final class AnyUtils {
 		if (value instanceof Object[]) {
 			objArray = (Object[]) value;
 		} else {
-			objArray = new Object[] {
-				value
-			};
+			objArray = new Object[] { value };
 		}
 		try {
 			return Arrays.asList(objArray).toArray(new String[objArray.length]);
@@ -898,11 +909,10 @@ public final class AnyUtils {
 			BooleanSeqHelper.insert(retVal, primValue);
 		}
 	}
-	
 
 	/**
-     * @since 3.3
-     */
+	 * @since 3.3
+	 */
 	public static Any stringToAny(final String value, final String type) {
 		return stringToAny(value, type, false);
 	}

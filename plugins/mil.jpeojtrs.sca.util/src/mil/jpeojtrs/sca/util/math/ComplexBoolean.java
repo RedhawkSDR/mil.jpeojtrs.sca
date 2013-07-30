@@ -22,8 +22,16 @@ import CF.complexBooleanHelper;
  */
 public class ComplexBoolean extends ComplexNumber {
 	private final boolean[] numbers;
+	
+	public ComplexBoolean() {
+		this(false, false);
+	}
+	
+	public ComplexBoolean(boolean real, boolean imaginary) {
+		this(new boolean[]{real, imaginary});
+	}
 
-	public ComplexBoolean(boolean... numbers) {
+	protected ComplexBoolean(boolean... numbers) {
 		this.numbers = numbers;
 	}
 

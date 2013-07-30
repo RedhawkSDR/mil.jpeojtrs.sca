@@ -24,7 +24,15 @@ public class ComplexByte extends ComplexNumber {
 
 	private final byte[] bytes;
 
-	public ComplexByte(byte... bytes) {
+	public ComplexByte() {
+		this((byte) 0, (byte) 0);
+	}
+
+	public ComplexByte(byte real, byte imaginary) {
+		this(new byte[] { real, imaginary });
+	}
+
+	protected ComplexByte(byte... bytes) {
 		this.bytes = bytes;
 	}
 

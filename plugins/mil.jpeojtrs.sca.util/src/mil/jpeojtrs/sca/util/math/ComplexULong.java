@@ -23,9 +23,17 @@ import CF.complexULongHelper;
  * @since 3.4
  */
 public class ComplexULong extends ComplexNumber {
-	private final long [] numbers;
+	private final long[] numbers;
 
-	public ComplexULong(long ... numbers) {
+	public ComplexULong() {
+		this(0, 0);
+	}
+
+	public ComplexULong(long real, long imag) {
+		this(new long[] { real, imag });
+	}
+
+	protected ComplexULong(long... numbers) {
 		this.numbers = numbers;
 	}
 
@@ -70,7 +78,7 @@ public class ComplexULong extends ComplexNumber {
 
 	public static ComplexULong valueOf(String value) {
 		String[] strNum = ComplexParser.parse(value);
-		long [] numbers = new long [strNum.length];
+		long[] numbers = new long[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Long.valueOf(strNum[i]);
 		}

@@ -21,9 +21,17 @@ import CF.complexFloatHelper;
  * @since 3.4
  */
 public class ComplexFloat extends ComplexNumber {
-	private final float [] numbers;
+	private final float[] numbers;
 
-	public ComplexFloat(float ... numbers) {
+	public ComplexFloat() {
+		this(0, 0);
+	}
+
+	public ComplexFloat(float real, float imaginary) {
+		this(new float[] { real, imaginary });
+	}
+
+	protected ComplexFloat(float... numbers) {
 		this.numbers = numbers;
 	}
 
@@ -63,12 +71,12 @@ public class ComplexFloat extends ComplexNumber {
 
 	public static ComplexFloat valueOf(Any any) {
 		complexFloat complex = complexFloatHelper.extract(any);
-		return new ComplexFloat(new float [] { complex.real, complex.imag });
+		return new ComplexFloat(new float[] { complex.real, complex.imag });
 	}
 
 	public static ComplexFloat valueOf(String value) {
 		String[] strNum = ComplexParser.parse(value);
-		float [] numbers = new float [strNum.length];
+		float[] numbers = new float[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Float.valueOf(strNum[i]);
 		}
