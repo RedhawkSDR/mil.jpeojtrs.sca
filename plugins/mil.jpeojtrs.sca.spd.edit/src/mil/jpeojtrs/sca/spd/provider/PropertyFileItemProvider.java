@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.provider;
 
 import java.util.Collection;
@@ -60,7 +60,8 @@ public class PropertyFileItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addLocalFilePropertyDescriptor(object);
@@ -146,7 +147,8 @@ public class PropertyFileItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SpdPackage.Literals.PROPERTY_FILE__PROPERTIES);
 		}
@@ -202,7 +204,8 @@ public class PropertyFileItemProvider extends ItemProviderAdapter implements IEd
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PropertyFile.class)) {
+		switch (notification.getFeatureID(PropertyFile.class))
+		{
 			case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
 			case SpdPackage.PROPERTY_FILE__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

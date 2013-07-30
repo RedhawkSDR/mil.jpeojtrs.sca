@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.impl;
 
 import mil.jpeojtrs.sca.dmd.DmdPackage;
@@ -123,7 +123,8 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	public NotificationChain basicSetFindBy(FindBy newFindBy, NotificationChain msgs) {
 		FindBy oldFindBy = findBy;
 		findBy = newFindBy;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DmdPackage.SERVICE__FIND_BY, oldFindBy, newFindBy);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -136,7 +137,8 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 * @generated
 	 */
 	public void setFindBy(FindBy newFindBy) {
-		if (newFindBy != findBy) {
+		if (newFindBy != findBy)
+		{
 			NotificationChain msgs = null;
 			if (findBy != null)
 				msgs = ((InternalEObject)findBy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DmdPackage.SERVICE__FIND_BY, null, msgs);
@@ -156,7 +158,8 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.SERVICE__FIND_BY:
 				return basicSetFindBy(null, msgs);
 		}
@@ -170,7 +173,8 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.SERVICE__USES_IDENTIFIER:
 				return getUsesIdentifier();
 			case DmdPackage.SERVICE__FIND_BY:
@@ -186,7 +190,8 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.SERVICE__USES_IDENTIFIER:
 				setUsesIdentifier((String)newValue);
 				return;
@@ -204,7 +209,8 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.SERVICE__USES_IDENTIFIER:
 				setUsesIdentifier(USES_IDENTIFIER_EDEFAULT);
 				return;
@@ -222,7 +228,8 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.SERVICE__USES_IDENTIFIER:
 				return USES_IDENTIFIER_EDEFAULT == null ? usesIdentifier != null : !USES_IDENTIFIER_EDEFAULT.equals(usesIdentifier);
 			case DmdPackage.SERVICE__FIND_BY:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import java.util.Collection;
@@ -118,7 +118,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * @generated
 	 */
 	public EList<PortTypeContainer> getPortType() {
-		if (portType == null) {
+		if (portType == null)
+		{
 			portType = new EObjectContainmentEList<PortTypeContainer>(PortTypeContainer.class, this, ScdPackage.ABSTRACT_PORT__PORT_TYPE);
 		}
 		return portType;
@@ -246,7 +247,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
 				return ((InternalEList<?>)getPortType()).basicRemove(otherEnd, msgs);
 		}
@@ -260,7 +262,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
 				return getPortType();
 			case ScdPackage.ABSTRACT_PORT__NAME:
@@ -282,7 +285,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
 				getPortType().clear();
 				getPortType().addAll((Collection<? extends PortTypeContainer>)newValue);
@@ -307,7 +311,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
 				getPortType().clear();
 				return;
@@ -331,7 +336,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
 				return portType != null && !portType.isEmpty();
 			case ScdPackage.ABSTRACT_PORT__NAME:

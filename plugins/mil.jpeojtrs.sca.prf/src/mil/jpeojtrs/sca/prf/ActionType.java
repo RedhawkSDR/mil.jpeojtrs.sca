@@ -190,7 +190,8 @@ public enum ActionType implements Enumerator {
 	 * @generated
 	 */
 	private static final ActionType[] VALUES_ARRAY =
-		new ActionType[] {
+		new ActionType[]
+		{
 			GE,
 			GT,
 			EXTERNAL,
@@ -214,9 +215,11 @@ public enum ActionType implements Enumerator {
 	 * @generated
 	 */
 	public static ActionType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			ActionType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -230,9 +233,11 @@ public enum ActionType implements Enumerator {
 	 * @generated
 	 */
 	public static ActionType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			ActionType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -246,7 +251,8 @@ public enum ActionType implements Enumerator {
 	 * @generated
 	 */
 	public static ActionType get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case GE_VALUE: return GE;
 			case GT_VALUE: return GT;
 			case EXTERNAL_VALUE: return EXTERNAL;

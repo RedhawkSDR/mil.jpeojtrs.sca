@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import mil.jpeojtrs.sca.spd.AEPComplianceType;
@@ -56,13 +56,16 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 * @generated
 	 */
 	public static SpdFactory init() {
-		try {
-			SpdFactory theSpdFactory = (SpdFactory)EPackage.Registry.INSTANCE.getEFactory("http://sca.jpeojtrs.mil/spd"); 
-			if (theSpdFactory != null) {
+		try
+		{
+			SpdFactory theSpdFactory = (SpdFactory)EPackage.Registry.INSTANCE.getEFactory(SpdPackage.eNS_URI);
+			if (theSpdFactory != null)
+			{
 				return theSpdFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new SpdFactoryImpl();
@@ -85,7 +88,8 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case SpdPackage.AUTHOR: return createAuthor();
 			case SpdPackage.CODE: return createCode();
 			case SpdPackage.COMPILER: return createCompiler();
@@ -117,7 +121,8 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case SpdPackage.AEP_COMPLIANCE_TYPE:
 				return createAEPComplianceTypeFromString(eDataType, initialValue);
 			case SpdPackage.CODE_FILE_TYPE:
@@ -144,7 +149,8 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case SpdPackage.AEP_COMPLIANCE_TYPE:
 				return convertAEPComplianceTypeToString(eDataType, instanceValue);
 			case SpdPackage.CODE_FILE_TYPE:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
@@ -149,7 +149,8 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILE_REF__FILE:
 				if (resolve) return getFile();
 				return basicGetFile();
@@ -166,7 +167,8 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILE_REF__FILE:
 				setFile((ComponentFile)newValue);
 				return;
@@ -184,7 +186,8 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILE_REF__FILE:
 				setFile((ComponentFile)null);
 				return;
@@ -202,7 +205,8 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILE_REF__FILE:
 				return basicGetFile() != null;
 			case PartitioningPackage.COMPONENT_FILE_REF__REFID:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import java.util.Collection;
@@ -111,7 +111,8 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 * @generated
 	 */
 	public EList<String> getName() {
-		if (name == null) {
+		if (name == null)
+		{
 			name = new EDataTypeEList<String>(String.class, this, SpdPackage.AUTHOR__NAME);
 		}
 		return name;
@@ -166,7 +167,8 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.AUTHOR__NAME:
 				return getName();
 			case SpdPackage.AUTHOR__COMPANY:
@@ -185,7 +187,8 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.AUTHOR__NAME:
 				getName().clear();
 				getName().addAll((Collection<? extends String>)newValue);
@@ -207,7 +210,8 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.AUTHOR__NAME:
 				getName().clear();
 				return;
@@ -228,7 +232,8 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.AUTHOR__NAME:
 				return name != null && !name.isEmpty();
 			case SpdPackage.AUTHOR__COMPANY:

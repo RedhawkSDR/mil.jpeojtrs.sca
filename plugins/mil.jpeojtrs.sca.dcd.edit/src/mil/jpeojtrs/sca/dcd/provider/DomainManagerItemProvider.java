@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.provider;
 
 
@@ -67,7 +67,8 @@ public class DomainManagerItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addStringifiedObjectRefPropertyDescriptor(object);
@@ -107,7 +108,8 @@ public class DomainManagerItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DcdPackage.Literals.DOMAIN_MANAGER__NAMING_SERVICE);
 		}
@@ -163,7 +165,8 @@ public class DomainManagerItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DomainManager.class)) {
+		switch (notification.getFeatureID(DomainManager.class))
+		{
 			case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

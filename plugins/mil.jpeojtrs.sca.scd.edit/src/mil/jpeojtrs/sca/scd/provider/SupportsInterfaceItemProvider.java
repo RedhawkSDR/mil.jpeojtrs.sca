@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
 
@@ -62,7 +62,8 @@ public class SupportsInterfaceItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addRepIdPropertyDescriptor(object);
@@ -151,7 +152,8 @@ public class SupportsInterfaceItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SupportsInterface.class)) {
+		switch (notification.getFeatureID(SupportsInterface.class))
+		{
 			case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
 			case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
 			case ScdPackage.SUPPORTS_INTERFACE__ID:

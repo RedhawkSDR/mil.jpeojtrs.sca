@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.impl;
 
 import mil.jpeojtrs.sca.dmd.DmdPackage;
@@ -113,7 +113,8 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	public NotificationChain basicSetNameService(NamingService newNameService, NotificationChain msgs) {
 		NamingService oldNameService = nameService;
 		nameService = newNameService;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DmdPackage.FIND_BY__NAME_SERVICE, oldNameService, newNameService);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -126,7 +127,8 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 * @generated
 	 */
 	public void setNameService(NamingService newNameService) {
-		if (newNameService != nameService) {
+		if (newNameService != nameService)
+		{
 			NotificationChain msgs = null;
 			if (nameService != null)
 				msgs = ((InternalEObject)nameService).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DmdPackage.FIND_BY__NAME_SERVICE, null, msgs);
@@ -177,7 +179,8 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	public NotificationChain basicSetDomainFinder(DomainFinder newDomainFinder, NotificationChain msgs) {
 		DomainFinder oldDomainFinder = domainFinder;
 		domainFinder = newDomainFinder;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DmdPackage.FIND_BY__DOMAIN_FINDER, oldDomainFinder, newDomainFinder);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -190,7 +193,8 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 * @generated
 	 */
 	public void setDomainFinder(DomainFinder newDomainFinder) {
-		if (newDomainFinder != domainFinder) {
+		if (newDomainFinder != domainFinder)
+		{
 			NotificationChain msgs = null;
 			if (domainFinder != null)
 				msgs = ((InternalEObject)domainFinder).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DmdPackage.FIND_BY__DOMAIN_FINDER, null, msgs);
@@ -210,7 +214,8 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.FIND_BY__NAME_SERVICE:
 				return basicSetNameService(null, msgs);
 			case DmdPackage.FIND_BY__DOMAIN_FINDER:
@@ -226,7 +231,8 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.FIND_BY__NAME_SERVICE:
 				return getNameService();
 			case DmdPackage.FIND_BY__STRINGIFIED_OBJECT_REF:
@@ -244,7 +250,8 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.FIND_BY__NAME_SERVICE:
 				setNameService((NamingService)newValue);
 				return;
@@ -265,7 +272,8 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.FIND_BY__NAME_SERVICE:
 				setNameService((NamingService)null);
 				return;
@@ -286,7 +294,8 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.FIND_BY__NAME_SERVICE:
 				return nameService != null;
 			case DmdPackage.FIND_BY__STRINGIFIED_OBJECT_REF:

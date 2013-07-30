@@ -102,7 +102,8 @@ public enum AccessType implements Enumerator {
 	 * @generated
 	 */
 	private static final AccessType[] VALUES_ARRAY =
-		new AccessType[] {
+		new AccessType[]
+		{
 			WRITEONLY,
 			READONLY,
 			READWRITE,
@@ -122,9 +123,11 @@ public enum AccessType implements Enumerator {
 	 * @generated
 	 */
 	public static AccessType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			AccessType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -138,9 +141,11 @@ public enum AccessType implements Enumerator {
 	 * @generated
 	 */
 	public static AccessType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			AccessType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -154,7 +159,8 @@ public enum AccessType implements Enumerator {
 	 * @generated
 	 */
 	public static AccessType get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case WRITEONLY_VALUE: return WRITEONLY;
 			case READONLY_VALUE: return READONLY;
 			case READWRITE_VALUE: return READWRITE;

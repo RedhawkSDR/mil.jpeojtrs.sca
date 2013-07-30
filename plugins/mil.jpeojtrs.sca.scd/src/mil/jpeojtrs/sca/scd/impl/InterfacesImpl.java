@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import java.util.Collection;
@@ -75,7 +75,8 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 * @generated
 	 */
 	public EList<Interface> getInterface() {
-		if (interface_ == null) {
+		if (interface_ == null)
+		{
 			interface_ = new EObjectContainmentEList<Interface>(Interface.class, this, ScdPackage.INTERFACES__INTERFACE);
 		}
 		return interface_;
@@ -88,7 +89,8 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.INTERFACES__INTERFACE:
 				return ((InternalEList<?>)getInterface()).basicRemove(otherEnd, msgs);
 		}
@@ -102,7 +104,8 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.INTERFACES__INTERFACE:
 				return getInterface();
 		}
@@ -117,7 +120,8 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.INTERFACES__INTERFACE:
 				getInterface().clear();
 				getInterface().addAll((Collection<? extends Interface>)newValue);
@@ -133,7 +137,8 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.INTERFACES__INTERFACE:
 				getInterface().clear();
 				return;
@@ -148,7 +153,8 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.INTERFACES__INTERFACE:
 				return interface_ != null && !interface_.isEmpty();
 		}

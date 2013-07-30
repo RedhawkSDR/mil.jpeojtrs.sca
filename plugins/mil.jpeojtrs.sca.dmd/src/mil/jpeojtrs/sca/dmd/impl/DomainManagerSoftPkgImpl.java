@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.impl;
 
 import mil.jpeojtrs.sca.dmd.DmdFactory;
@@ -87,7 +87,8 @@ public class DomainManagerSoftPkgImpl extends EObjectImpl implements DomainManag
 	public NotificationChain basicSetLocalFileGen(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DmdPackage.DOMAIN_MANAGER_SOFT_PKG__LOCAL_FILE, oldLocalFile, newLocalFile);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -115,7 +116,8 @@ public class DomainManagerSoftPkgImpl extends EObjectImpl implements DomainManag
 	 * @generated
 	 */
 	public void setLocalFile(LocalFile newLocalFile) {
-		if (newLocalFile != localFile) {
+		if (newLocalFile != localFile)
+		{
 			NotificationChain msgs = null;
 			if (localFile != null)
 				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DmdPackage.DOMAIN_MANAGER_SOFT_PKG__LOCAL_FILE, null, msgs);
@@ -174,7 +176,8 @@ public class DomainManagerSoftPkgImpl extends EObjectImpl implements DomainManag
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_MANAGER_SOFT_PKG__LOCAL_FILE:
 				return basicSetLocalFile(null, msgs);
 		}
@@ -188,7 +191,8 @@ public class DomainManagerSoftPkgImpl extends EObjectImpl implements DomainManag
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_MANAGER_SOFT_PKG__LOCAL_FILE:
 				return getLocalFile();
 			case DmdPackage.DOMAIN_MANAGER_SOFT_PKG__SOFT_PKG:
@@ -205,7 +209,8 @@ public class DomainManagerSoftPkgImpl extends EObjectImpl implements DomainManag
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_MANAGER_SOFT_PKG__LOCAL_FILE:
 				setLocalFile((LocalFile)newValue);
 				return;
@@ -223,7 +228,8 @@ public class DomainManagerSoftPkgImpl extends EObjectImpl implements DomainManag
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_MANAGER_SOFT_PKG__LOCAL_FILE:
 				setLocalFile((LocalFile)null);
 				return;
@@ -241,7 +247,8 @@ public class DomainManagerSoftPkgImpl extends EObjectImpl implements DomainManag
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_MANAGER_SOFT_PKG__LOCAL_FILE:
 				return localFile != null;
 			case DmdPackage.DOMAIN_MANAGER_SOFT_PKG__SOFT_PKG:

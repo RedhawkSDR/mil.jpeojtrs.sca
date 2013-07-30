@@ -73,13 +73,16 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated
 	 */
 	public static PrfFactory init() {
-		try {
+		try
+		{
 			PrfFactory thePrfFactory = (PrfFactory)EPackage.Registry.INSTANCE.getEFactory(PrfPackage.eNS_URI);
-			if (thePrfFactory != null) {
+			if (thePrfFactory != null)
+			{
 				return thePrfFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new PrfFactoryImpl();
@@ -102,7 +105,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case PrfPackage.ACTION: return createAction();
 			case PrfPackage.CONFIGURATION_KIND: return createConfigurationKind();
 			case PrfPackage.ENUMERATION: return createEnumeration();
@@ -136,7 +140,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case PrfPackage.ACCESS_TYPE:
 				return createAccessTypeFromString(eDataType, initialValue);
 			case PrfPackage.ACTION_TYPE:
@@ -197,7 +202,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case PrfPackage.ACCESS_TYPE:
 				return convertAccessTypeToString(eDataType, instanceValue);
 			case PrfPackage.ACTION_TYPE:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.util.Collection;
@@ -75,7 +75,8 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 * @generated
 	 */
 	public EList<FindByStub> getStubs() {
-		if (stubs == null) {
+		if (stubs == null)
+		{
 			stubs = new EObjectContainmentEList<FindByStub>(FindByStub.class, this, PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS);
 		}
 		return stubs;
@@ -88,7 +89,8 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
 				return ((InternalEList<?>)getStubs()).basicRemove(otherEnd, msgs);
 		}
@@ -102,7 +104,8 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
 				return getStubs();
 		}
@@ -117,7 +120,8 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
 				getStubs().clear();
 				getStubs().addAll((Collection<? extends FindByStub>)newValue);
@@ -133,7 +137,8 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
 				getStubs().clear();
 				return;
@@ -148,7 +153,8 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
 				return stubs != null && !stubs.isEmpty();
 		}

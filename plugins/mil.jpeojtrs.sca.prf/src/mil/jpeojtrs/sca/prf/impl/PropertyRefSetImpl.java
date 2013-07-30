@@ -80,7 +80,8 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * @generated
 	 */
 	public FeatureMap getProperties() {
-		if (properties == null) {
+		if (properties == null)
+		{
 			properties = new BasicFeatureMap(this, PrfPackage.PROPERTY_REF_SET__PROPERTIES);
 		}
 		return properties;
@@ -208,7 +209,8 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTY_REF_SET__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 			case PrfPackage.PROPERTY_REF_SET__SIMPLE_REF:
@@ -230,7 +232,8 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTY_REF_SET__PROPERTIES:
 				if (coreType) return getProperties();
 				return ((FeatureMap.Internal)getProperties()).getWrapper();
@@ -253,7 +256,8 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTY_REF_SET__PROPERTIES:
 				((FeatureMap.Internal)getProperties()).set(newValue);
 				return;
@@ -280,7 +284,8 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTY_REF_SET__PROPERTIES:
 				getProperties().clear();
 				return;
@@ -307,7 +312,8 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTY_REF_SET__PROPERTIES:
 				return properties != null && !properties.isEmpty();
 			case PrfPackage.PROPERTY_REF_SET__SIMPLE_REF:

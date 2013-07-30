@@ -45,7 +45,8 @@ public final class PrfEditPlugin extends EMFPlugin {
 	 */
 	public PrfEditPlugin() {
 		super
-		  (new ResourceLocator [] {
+		  (new ResourceLocator [] 
+		   {
 		     EcoreEditPlugin.INSTANCE,
 		   });
 	}

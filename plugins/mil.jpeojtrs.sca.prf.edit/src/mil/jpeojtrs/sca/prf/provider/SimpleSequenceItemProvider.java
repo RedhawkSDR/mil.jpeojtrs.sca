@@ -63,7 +63,8 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addValuesPropertyDescriptor(object);
@@ -255,7 +256,8 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SimpleSequence.class)) {
+		switch (notification.getFeatureID(SimpleSequence.class))
+		{
 			case PrfPackage.SIMPLE_SEQUENCE__VALUES:
 			case PrfPackage.SIMPLE_SEQUENCE__UNITS:
 			case PrfPackage.SIMPLE_SEQUENCE__RANGE:

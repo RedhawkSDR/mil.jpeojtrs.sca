@@ -63,7 +63,8 @@ public class PortItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -196,7 +197,8 @@ public class PortItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF);
 		}
@@ -260,7 +262,8 @@ public class PortItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Port.class)) {
+		switch (notification.getFeatureID(Port.class))
+		{
 			case SadPackage.PORT__DESCRIPTION:
 			case SadPackage.PORT__USES_IDENTIFIER:
 			case SadPackage.PORT__PROVIDES_INDENTIFIER:

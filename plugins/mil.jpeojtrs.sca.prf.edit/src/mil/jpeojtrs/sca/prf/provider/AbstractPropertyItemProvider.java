@@ -63,7 +63,8 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -187,7 +188,8 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AbstractProperty.class)) {
+		switch (notification.getFeatureID(AbstractProperty.class))
+		{
 			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
 			case PrfPackage.ABSTRACT_PROPERTY__ID:
 			case PrfPackage.ABSTRACT_PROPERTY__NAME:

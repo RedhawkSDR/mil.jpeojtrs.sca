@@ -99,7 +99,8 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 * @generated
 	 */
 	public FeatureMap getMixed() {
-		if (mixed == null) {
+		if (mixed == null)
+		{
 			mixed = new BasicFeatureMap(this, PrfPackage.PRF_DOCUMENT_ROOT__MIXED);
 		}
 		return mixed;
@@ -111,7 +112,8 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 * @generated
 	 */
 	public EMap<String, String> getXMLNSPrefixMap() {
-		if (xMLNSPrefixMap == null) {
+		if (xMLNSPrefixMap == null)
+		{
 			xMLNSPrefixMap = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
 		}
 		return xMLNSPrefixMap;
@@ -123,7 +125,8 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 * @generated
 	 */
 	public EMap<String, String> getXSISchemaLocation() {
-		if (xSISchemaLocation == null) {
+		if (xSISchemaLocation == null)
+		{
 			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
@@ -163,7 +166,8 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
 				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
 			case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
@@ -183,7 +187,8 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
 				if (coreType) return getMixed();
 				return ((FeatureMap.Internal)getMixed()).getWrapper();
@@ -206,7 +211,8 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
 				((FeatureMap.Internal)getMixed()).set(newValue);
 				return;
@@ -230,7 +236,8 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
 				getMixed().clear();
 				return;
@@ -254,7 +261,8 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
 				return mixed != null && !mixed.isEmpty();
 			case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:

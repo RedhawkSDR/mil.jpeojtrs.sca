@@ -8,17 +8,15 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.cf.extended.util;
 
 import mil.jpeojtrs.sca.cf.extended.ExtendedPackage;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.omg.CORBA.portable.IDLEntity;
-
 import CF.Port;
 import CF.PortOperations;
 import ExtendedCF.QueryablePort;

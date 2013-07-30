@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning;
 
 import java.util.Arrays;
@@ -190,7 +190,8 @@ public enum DomainFinderType implements Enumerator {
 	 * @generated
 	 */
 	private static final DomainFinderType[] VALUES_ARRAY =
-		new DomainFinderType[] {
+		new DomainFinderType[]
+		{
 			FILEMANAGER,
 			LOG,
 			EVENTCHANNEL,
@@ -214,9 +215,11 @@ public enum DomainFinderType implements Enumerator {
 	 * @generated
 	 */
 	public static DomainFinderType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			DomainFinderType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -230,9 +233,11 @@ public enum DomainFinderType implements Enumerator {
 	 * @generated
 	 */
 	public static DomainFinderType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			DomainFinderType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -246,7 +251,8 @@ public enum DomainFinderType implements Enumerator {
 	 * @generated
 	 */
 	public static DomainFinderType get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case FILEMANAGER_VALUE: return FILEMANAGER;
 			case LOG_VALUE: return LOG;
 			case EVENTCHANNEL_VALUE: return EVENTCHANNEL;

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.util.Collection;
@@ -100,7 +100,8 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 * @generated
 	 */
 	public FeatureMap getProperties() {
-		if (properties == null) {
+		if (properties == null)
+		{
 			properties = new BasicFeatureMap(this, PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES);
 		}
 		return properties;
@@ -160,7 +161,8 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
@@ -182,7 +184,8 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
 				if (coreType) return getProperties();
 				return ((FeatureMap.Internal)getProperties()).getWrapper();
@@ -206,7 +209,8 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
 				((FeatureMap.Internal)getProperties()).set(newValue);
 				return;
@@ -237,7 +241,8 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
 				getProperties().clear();
 				return;
@@ -264,7 +269,8 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
 				return properties != null && !properties.isEmpty();
 			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:

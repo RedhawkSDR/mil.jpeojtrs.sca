@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd;
 
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>each enum,</li>
  * <li>and each data type</li>
  * </ul>
+ * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-user-doc -->
  * @see mil.jpeojtrs.sca.dcd.DcdFactory
  * @model kind="package"
@@ -207,6 +208,15 @@ public interface DcdPackage extends EPackage {
 	 * @ordered
 	 */
 	int DCD_COMPONENT_INSTANTIATION__PLACEMENT = PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT;
+	/**
+	 * The feature id for the '<em><b>Impl ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DCD_COMPONENT_INSTANTIATION__IMPL_ID = PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID;
 	/**
 	 * The number of structural features of the '<em>Component Instantiation</em>' class.
 	 * <!-- begin-user-doc -->
@@ -1392,6 +1402,7 @@ public interface DcdPackage extends EPackage {
 	 * <li>each enum,</li>
 	 * <li>and each data type</li>
 	 * </ul>
+	 * @noimplement This interface is not intended to be implemented by clients.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

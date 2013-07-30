@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.provider;
 
 
@@ -67,7 +67,8 @@ public class DomainManagerConfigurationItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -153,7 +154,8 @@ public class DomainManagerConfigurationItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DmdPackage.Literals.DOMAIN_MANAGER_CONFIGURATION__DOMAIN_MANAGER_SOFT_PKG);
 			childrenFeatures.add(DmdPackage.Literals.DOMAIN_MANAGER_CONFIGURATION__SERVICES);
@@ -210,7 +212,8 @@ public class DomainManagerConfigurationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DomainManagerConfiguration.class)) {
+		switch (notification.getFeatureID(DomainManagerConfiguration.class))
+		{
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__DESCRIPTION:
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__ID:
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__NAME:

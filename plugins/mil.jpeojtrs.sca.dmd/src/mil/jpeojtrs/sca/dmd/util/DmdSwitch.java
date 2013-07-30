@@ -8,10 +8,8 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.util;
-
-import java.util.List;
 
 import mil.jpeojtrs.sca.dmd.DmdDocumentRoot;
 import mil.jpeojtrs.sca.dmd.DmdPackage;
@@ -23,9 +21,9 @@ import mil.jpeojtrs.sca.dmd.LocalFile;
 import mil.jpeojtrs.sca.dmd.NamingService;
 import mil.jpeojtrs.sca.dmd.Service;
 import mil.jpeojtrs.sca.dmd.Services;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +38,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see mil.jpeojtrs.sca.dmd.DmdPackage
  * @generated
  */
-public class DmdSwitch<T> {
+public class DmdSwitch<T> extends Switch<T> {
 
 	/**
 	 * The cached model package
@@ -57,20 +55,24 @@ public class DmdSwitch<T> {
 	 * @generated
 	 */
 	public DmdSwitch() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = DmdPackage.eINSTANCE;
 		}
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @parameter ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage)
+	{
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -80,77 +82,68 @@ public class DmdSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-			case DmdPackage.DMD_DOCUMENT_ROOT: {
+		switch (classifierID)
+		{
+			case DmdPackage.DMD_DOCUMENT_ROOT:
+			{
 				DmdDocumentRoot dmdDocumentRoot = (DmdDocumentRoot)theEObject;
 				T result = caseDmdDocumentRoot(dmdDocumentRoot);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DmdPackage.DOMAIN_FINDER: {
+			case DmdPackage.DOMAIN_FINDER:
+			{
 				DomainFinder domainFinder = (DomainFinder)theEObject;
 				T result = caseDomainFinder(domainFinder);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION: {
+			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION:
+			{
 				DomainManagerConfiguration domainManagerConfiguration = (DomainManagerConfiguration)theEObject;
 				T result = caseDomainManagerConfiguration(domainManagerConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DmdPackage.DOMAIN_MANAGER_SOFT_PKG: {
+			case DmdPackage.DOMAIN_MANAGER_SOFT_PKG:
+			{
 				DomainManagerSoftPkg domainManagerSoftPkg = (DomainManagerSoftPkg)theEObject;
 				T result = caseDomainManagerSoftPkg(domainManagerSoftPkg);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DmdPackage.FIND_BY: {
+			case DmdPackage.FIND_BY:
+			{
 				FindBy findBy = (FindBy)theEObject;
 				T result = caseFindBy(findBy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DmdPackage.LOCAL_FILE: {
+			case DmdPackage.LOCAL_FILE:
+			{
 				LocalFile localFile = (LocalFile)theEObject;
 				T result = caseLocalFile(localFile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DmdPackage.NAMING_SERVICE: {
+			case DmdPackage.NAMING_SERVICE:
+			{
 				NamingService namingService = (NamingService)theEObject;
 				T result = caseNamingService(namingService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DmdPackage.SERVICE: {
+			case DmdPackage.SERVICE:
+			{
 				Service service = (Service)theEObject;
 				T result = caseService(service);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DmdPackage.SERVICES: {
+			case DmdPackage.SERVICES:
+			{
 				Services services = (Services)theEObject;
 				T result = caseServices(services);
 				if (result == null) result = defaultCase(theEObject);
@@ -306,6 +299,7 @@ public class DmdSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
+	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

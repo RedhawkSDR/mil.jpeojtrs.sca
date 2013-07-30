@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.util;
 
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
@@ -63,7 +63,8 @@ public class SpdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public SpdAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = SpdPackage.eINSTANCE;
 		}
 	}
@@ -78,10 +79,12 @@ public class SpdAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -94,97 +97,121 @@ public class SpdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected SpdSwitch<Adapter> modelSwitch =
-		new SpdSwitch<Adapter>() {
+		new SpdSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseAuthor(Author object) {
+			public Adapter caseAuthor(Author object)
+			{
 				return createAuthorAdapter();
 			}
 			@Override
-			public Adapter caseCode(Code object) {
+			public Adapter caseCode(Code object)
+			{
 				return createCodeAdapter();
 			}
 			@Override
-			public Adapter caseCompiler(mil.jpeojtrs.sca.spd.Compiler object) {
+			public Adapter caseCompiler(mil.jpeojtrs.sca.spd.Compiler object)
+			{
 				return createCompilerAdapter();
 			}
 			@Override
-			public Adapter caseDependency(Dependency object) {
+			public Adapter caseDependency(Dependency object)
+			{
 				return createDependencyAdapter();
 			}
 			@Override
-			public Adapter caseDescriptor(Descriptor object) {
+			public Adapter caseDescriptor(Descriptor object)
+			{
 				return createDescriptorAdapter();
 			}
 			@Override
-			public Adapter caseHumanLanguage(HumanLanguage object) {
+			public Adapter caseHumanLanguage(HumanLanguage object)
+			{
 				return createHumanLanguageAdapter();
 			}
 			@Override
-			public Adapter caseImplementation(Implementation object) {
+			public Adapter caseImplementation(Implementation object)
+			{
 				return createImplementationAdapter();
 			}
 			@Override
-			public Adapter caseImplRef(ImplRef object) {
+			public Adapter caseImplRef(ImplRef object)
+			{
 				return createImplRefAdapter();
 			}
 			@Override
-			public Adapter caseLocalFile(LocalFile object) {
+			public Adapter caseLocalFile(LocalFile object)
+			{
 				return createLocalFileAdapter();
 			}
 			@Override
-			public Adapter caseOs(Os object) {
+			public Adapter caseOs(Os object)
+			{
 				return createOsAdapter();
 			}
 			@Override
-			public Adapter caseProcessor(Processor object) {
+			public Adapter caseProcessor(Processor object)
+			{
 				return createProcessorAdapter();
 			}
 			@Override
-			public Adapter caseProgrammingLanguage(ProgrammingLanguage object) {
+			public Adapter caseProgrammingLanguage(ProgrammingLanguage object)
+			{
 				return createProgrammingLanguageAdapter();
 			}
 			@Override
-			public Adapter casePropertyFile(PropertyFile object) {
+			public Adapter casePropertyFile(PropertyFile object)
+			{
 				return createPropertyFileAdapter();
 			}
 			@Override
-			public Adapter casePropertyRef(PropertyRef object) {
+			public Adapter casePropertyRef(PropertyRef object)
+			{
 				return createPropertyRefAdapter();
 			}
 			@Override
-			public Adapter caseRuntime(mil.jpeojtrs.sca.spd.Runtime object) {
+			public Adapter caseRuntime(mil.jpeojtrs.sca.spd.Runtime object)
+			{
 				return createRuntimeAdapter();
 			}
 			@Override
-			public Adapter caseSoftPkg(SoftPkg object) {
+			public Adapter caseSoftPkg(SoftPkg object)
+			{
 				return createSoftPkgAdapter();
 			}
 			@Override
-			public Adapter caseSoftPkgRef(SoftPkgRef object) {
+			public Adapter caseSoftPkgRef(SoftPkgRef object)
+			{
 				return createSoftPkgRefAdapter();
 			}
 			@Override
-			public Adapter caseSpdDocumentRoot(SpdDocumentRoot object) {
+			public Adapter caseSpdDocumentRoot(SpdDocumentRoot object)
+			{
 				return createSpdDocumentRootAdapter();
 			}
 			@Override
-			public Adapter caseUsesDevice(UsesDevice object) {
+			public Adapter caseUsesDevice(UsesDevice object)
+			{
 				return createUsesDeviceAdapter();
 			}
 			@Override
-			public Adapter casePropertyRefContainer(PropertyRefContainer object) {
+			public Adapter casePropertyRefContainer(PropertyRefContainer object)
+			{
 				return createPropertyRefContainerAdapter();
 			}
 			@Override
-			public Adapter casePropertyRefSet(PropertyRefSet object) {
+			public Adapter casePropertyRefSet(PropertyRefSet object)
+			{
 				return createPropertyRefSetAdapter();
 			}
 			@Override
-			public Adapter casePropertyRefGroup(PropertyRefGroup object) {
+			public Adapter casePropertyRefGroup(PropertyRefGroup object)
+			{
 				return createPropertyRefGroupAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};

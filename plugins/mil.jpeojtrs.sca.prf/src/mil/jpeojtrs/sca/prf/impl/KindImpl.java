@@ -134,7 +134,8 @@ public class KindImpl extends EObjectImpl implements Kind {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.KIND__TYPE:
 				return getType();
 		}
@@ -148,7 +149,8 @@ public class KindImpl extends EObjectImpl implements Kind {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.KIND__TYPE:
 				setType((PropertyConfigurationType)newValue);
 				return;
@@ -163,7 +165,8 @@ public class KindImpl extends EObjectImpl implements Kind {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.KIND__TYPE:
 				unsetType();
 				return;
@@ -178,7 +181,8 @@ public class KindImpl extends EObjectImpl implements Kind {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.KIND__TYPE:
 				return isSetType();
 		}

@@ -61,7 +61,8 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider imple
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addValuePropertyDescriptor(object);
@@ -124,7 +125,8 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider imple
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SimpleRef.class)) {
+		switch (notification.getFeatureID(SimpleRef.class))
+		{
 			case PrfPackage.SIMPLE_REF__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

@@ -8,11 +8,10 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-  // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.tests;
 
 import java.io.IOException;
-
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
@@ -21,7 +20,6 @@ import mil.jpeojtrs.sca.dcd.DeviceManagerSoftPkg;
 import mil.jpeojtrs.sca.partitioning.LocalFile;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.spd.SoftPkg;
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;

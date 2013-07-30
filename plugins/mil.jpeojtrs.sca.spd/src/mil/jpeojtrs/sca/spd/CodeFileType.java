@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd;
 
 import java.util.Arrays;
@@ -146,7 +146,8 @@ public enum CodeFileType implements Enumerator {
 	 * @generated
 	 */
 	private static final CodeFileType[] VALUES_ARRAY =
-		new CodeFileType[] {
+		new CodeFileType[]
+		{
 			EXECUTABLE,
 			KERNEL_MODULE,
 			SHARED_LIBRARY,
@@ -168,9 +169,11 @@ public enum CodeFileType implements Enumerator {
 	 * @generated
 	 */
 	public static CodeFileType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			CodeFileType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -184,9 +187,11 @@ public enum CodeFileType implements Enumerator {
 	 * @generated
 	 */
 	public static CodeFileType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			CodeFileType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -200,7 +205,8 @@ public enum CodeFileType implements Enumerator {
 	 * @generated
 	 */
 	public static CodeFileType get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case EXECUTABLE_VALUE: return EXECUTABLE;
 			case KERNEL_MODULE_VALUE: return KERNEL_MODULE;
 			case SHARED_LIBRARY_VALUE: return SHARED_LIBRARY;

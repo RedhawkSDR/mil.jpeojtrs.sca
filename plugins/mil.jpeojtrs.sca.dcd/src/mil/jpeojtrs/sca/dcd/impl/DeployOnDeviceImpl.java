@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.DcdComponentInstantiation;
@@ -152,7 +152,8 @@ public class DeployOnDeviceImpl extends EObjectImpl implements DeployOnDevice {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEPLOY_ON_DEVICE__COMPONENT:
 				if (resolve) return getComponent();
 				return basicGetComponent();
@@ -169,7 +170,8 @@ public class DeployOnDeviceImpl extends EObjectImpl implements DeployOnDevice {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEPLOY_ON_DEVICE__COMPONENT:
 				setComponent((DcdComponentInstantiation)newValue);
 				return;
@@ -187,7 +189,8 @@ public class DeployOnDeviceImpl extends EObjectImpl implements DeployOnDevice {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEPLOY_ON_DEVICE__COMPONENT:
 				setComponent((DcdComponentInstantiation)null);
 				return;
@@ -205,7 +208,8 @@ public class DeployOnDeviceImpl extends EObjectImpl implements DeployOnDevice {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEPLOY_ON_DEVICE__COMPONENT:
 				return basicGetComponent() != null;
 			case DcdPackage.DEPLOY_ON_DEVICE__REF_ID:

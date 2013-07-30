@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.DeviceThatLoadedThisComponentRef;
@@ -100,7 +100,8 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
 				return getRefid();
 		}
@@ -114,7 +115,8 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
 				setRefid((String)newValue);
 				return;
@@ -129,7 +131,8 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
 				setRefid(REFID_EDEFAULT);
 				return;
@@ -144,7 +147,8 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
 				return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
 		}

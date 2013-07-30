@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.util.UUID;
@@ -128,7 +128,8 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	public NotificationChain basicSetLocalFile(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_FILE__LOCAL_FILE, oldLocalFile, newLocalFile);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -158,7 +159,8 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 * @generated
 	 */
 	public void setLocalFileGen(LocalFile newLocalFile) {
-		if (newLocalFile != localFile) {
+		if (newLocalFile != localFile)
+		{
 			NotificationChain msgs = null;
 			if (localFile != null)
 				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_FILE__LOCAL_FILE, null, msgs);
@@ -286,7 +288,8 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
 				return basicSetLocalFile(null, msgs);
 		}
@@ -300,7 +303,8 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
 				return getLocalFile();
 			case PartitioningPackage.COMPONENT_FILE__ID:
@@ -321,7 +325,8 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
 				setLocalFile((LocalFile)newValue);
 				return;
@@ -345,7 +350,8 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
 				setLocalFile((LocalFile)null);
 				return;
@@ -369,7 +375,8 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
 				return localFile != null;
 			case PartitioningPackage.COMPONENT_FILE__ID:

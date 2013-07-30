@@ -8,10 +8,8 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.util;
-
-import java.util.List;
 
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
 import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
@@ -42,9 +40,9 @@ import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +57,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage
  * @generated
  */
-public class PartitioningSwitch<T> {
+public class PartitioningSwitch<T> extends Switch<T> {
 
 	/**
 	 * The cached model package
@@ -76,20 +74,24 @@ public class PartitioningSwitch<T> {
 	 * @generated
 	 */
 	public PartitioningSwitch() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = PartitioningPackage.eINSTANCE;
 		}
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @parameter ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage)
+	{
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -99,191 +101,200 @@ public class PartitioningSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-			case PartitioningPackage.COMPONENT_FILE: {
+		switch (classifierID)
+		{
+			case PartitioningPackage.COMPONENT_FILE:
+			{
 				ComponentFile componentFile = (ComponentFile)theEObject;
 				T result = caseComponentFile(componentFile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.DOM_COMPONENT_FILE: {
+			case PartitioningPackage.DOM_COMPONENT_FILE:
+			{
 				DomComponentFile domComponentFile = (DomComponentFile)theEObject;
 				T result = caseDomComponentFile(domComponentFile);
 				if (result == null) result = caseComponentFile(domComponentFile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.DEV_COMPONENT_FILE: {
+			case PartitioningPackage.DEV_COMPONENT_FILE:
+			{
 				DevComponentFile devComponentFile = (DevComponentFile)theEObject;
 				T result = caseDevComponentFile(devComponentFile);
 				if (result == null) result = caseComponentFile(devComponentFile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.COMPONENT_FILE_REF: {
+			case PartitioningPackage.COMPONENT_FILE_REF:
+			{
 				ComponentFileRef componentFileRef = (ComponentFileRef)theEObject;
 				T result = caseComponentFileRef(componentFileRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.COMPONENT_FILES: {
+			case PartitioningPackage.COMPONENT_FILES:
+			{
 				ComponentFiles componentFiles = (ComponentFiles)theEObject;
 				T result = caseComponentFiles(componentFiles);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.COMPONENT_INSTANTIATION: {
+			case PartitioningPackage.COMPONENT_INSTANTIATION:
+			{
 				ComponentInstantiation componentInstantiation = (ComponentInstantiation)theEObject;
 				T result = caseComponentInstantiation(componentInstantiation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.COMPONENT_INSTANTIATION_REF: {
+			case PartitioningPackage.COMPONENT_INSTANTIATION_REF:
+			{
 				ComponentInstantiationRef<?> componentInstantiationRef = (ComponentInstantiationRef<?>)theEObject;
 				T result = caseComponentInstantiationRef(componentInstantiationRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.COMPONENT_PLACEMENT: {
+			case PartitioningPackage.COMPONENT_PLACEMENT:
+			{
 				ComponentPlacement<?> componentPlacement = (ComponentPlacement<?>)theEObject;
 				T result = caseComponentPlacement(componentPlacement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.COMPONENT_PROPERTIES: {
+			case PartitioningPackage.COMPONENT_PROPERTIES:
+			{
 				ComponentProperties componentProperties = (ComponentProperties)theEObject;
 				T result = caseComponentProperties(componentProperties);
 				if (result == null) result = casePropertyRefContainer(componentProperties);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE: {
+			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE:
+			{
 				ComponentSupportedInterface componentSupportedInterface = (ComponentSupportedInterface)theEObject;
 				T result = caseComponentSupportedInterface(componentSupportedInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE_STUB: {
+			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE_STUB:
+			{
 				ComponentSupportedInterfaceStub componentSupportedInterfaceStub = (ComponentSupportedInterfaceStub)theEObject;
 				T result = caseComponentSupportedInterfaceStub(componentSupportedInterfaceStub);
 				if (result == null) result = caseConnectionTarget(componentSupportedInterfaceStub);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.CONNECT_INTERFACE: {
+			case PartitioningPackage.CONNECT_INTERFACE:
+			{
 				ConnectInterface<?, ?, ?> connectInterface = (ConnectInterface<?, ?, ?>)theEObject;
 				T result = caseConnectInterface(connectInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.CONNECTIONS: {
+			case PartitioningPackage.CONNECTIONS:
+			{
 				Connections<?> connections = (Connections<?>)theEObject;
 				T result = caseConnections(connections);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.CONNECTION_TARGET: {
+			case PartitioningPackage.CONNECTION_TARGET:
+			{
 				ConnectionTarget connectionTarget = (ConnectionTarget)theEObject;
 				T result = caseConnectionTarget(connectionTarget);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF: {
+			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			{
 				DeviceThatLoadedThisComponentRef deviceThatLoadedThisComponentRef = (DeviceThatLoadedThisComponentRef)theEObject;
 				T result = caseDeviceThatLoadedThisComponentRef(deviceThatLoadedThisComponentRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF: {
+			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF:
+			{
 				DeviceUsedByThisComponentRef deviceUsedByThisComponentRef = (DeviceUsedByThisComponentRef)theEObject;
 				T result = caseDeviceUsedByThisComponentRef(deviceUsedByThisComponentRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.DOMAIN_FINDER: {
+			case PartitioningPackage.DOMAIN_FINDER:
+			{
 				DomainFinder domainFinder = (DomainFinder)theEObject;
 				T result = caseDomainFinder(domainFinder);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.FIND_BY: {
+			case PartitioningPackage.FIND_BY:
+			{
 				FindBy findBy = (FindBy)theEObject;
 				T result = caseFindBy(findBy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.FIND_BY_STUB: {
+			case PartitioningPackage.FIND_BY_STUB:
+			{
 				FindByStub findByStub = (FindByStub)theEObject;
 				T result = caseFindByStub(findByStub);
 				if (result == null) result = caseConnectionTarget(findByStub);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.FIND_BY_STUB_CONTAINER: {
+			case PartitioningPackage.FIND_BY_STUB_CONTAINER:
+			{
 				FindByStubContainer findByStubContainer = (FindByStubContainer)theEObject;
 				T result = caseFindByStubContainer(findByStubContainer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.LOCAL_FILE: {
+			case PartitioningPackage.LOCAL_FILE:
+			{
 				LocalFile localFile = (LocalFile)theEObject;
 				T result = caseLocalFile(localFile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.NAMING_SERVICE: {
+			case PartitioningPackage.NAMING_SERVICE:
+			{
 				NamingService namingService = (NamingService)theEObject;
 				T result = caseNamingService(namingService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.PARTITIONING: {
+			case PartitioningPackage.PARTITIONING:
+			{
 				Partitioning<?> partitioning = (Partitioning<?>)theEObject;
 				T result = casePartitioning(partitioning);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.PROVIDES_PORT: {
+			case PartitioningPackage.PROVIDES_PORT:
+			{
 				ProvidesPort<?> providesPort = (ProvidesPort<?>)theEObject;
 				T result = caseProvidesPort(providesPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.PROVIDES_PORT_STUB: {
+			case PartitioningPackage.PROVIDES_PORT_STUB:
+			{
 				ProvidesPortStub providesPortStub = (ProvidesPortStub)theEObject;
 				T result = caseProvidesPortStub(providesPortStub);
 				if (result == null) result = caseConnectionTarget(providesPortStub);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.USES_PORT: {
+			case PartitioningPackage.USES_PORT:
+			{
 				UsesPort<?> usesPort = (UsesPort<?>)theEObject;
 				T result = caseUsesPort(usesPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PartitioningPackage.USES_PORT_STUB: {
+			case PartitioningPackage.USES_PORT_STUB:
+			{
 				UsesPortStub usesPortStub = (UsesPortStub)theEObject;
 				T result = caseUsesPortStub(usesPortStub);
 				if (result == null) result = defaultCase(theEObject);
@@ -724,6 +735,7 @@ public class PartitioningSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
+	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

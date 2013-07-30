@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import mil.jpeojtrs.sca.scd.ScdPackage;
@@ -101,7 +101,8 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.USES__USES_NAME:
 				return getUsesName();
 		}
@@ -115,7 +116,8 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.USES__USES_NAME:
 				setUsesName((String)newValue);
 				return;
@@ -130,7 +132,8 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.USES__USES_NAME:
 				setUsesName(USES_NAME_EDEFAULT);
 				return;
@@ -145,7 +148,8 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.USES__USES_NAME:
 				return USES_NAME_EDEFAULT == null ? getUsesName() != null : !USES_NAME_EDEFAULT.equals(getUsesName());
 		}

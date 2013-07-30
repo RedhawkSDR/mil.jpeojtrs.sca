@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd;
 
 import java.util.Arrays;
@@ -80,7 +80,8 @@ public enum AEPComplianceType implements Enumerator {
 	 * @generated
 	 */
 	private static final AEPComplianceType[] VALUES_ARRAY =
-		new AEPComplianceType[] {
+		new AEPComplianceType[]
+		{
 			AEP_COMPLIANT,
 			AEP_NON_COMPLIANT,
 		};
@@ -99,9 +100,11 @@ public enum AEPComplianceType implements Enumerator {
 	 * @generated
 	 */
 	public static AEPComplianceType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			AEPComplianceType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -115,9 +118,11 @@ public enum AEPComplianceType implements Enumerator {
 	 * @generated
 	 */
 	public static AEPComplianceType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			AEPComplianceType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -131,7 +136,8 @@ public enum AEPComplianceType implements Enumerator {
 	 * @generated
 	 */
 	public static AEPComplianceType get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case AEP_COMPLIANT_VALUE: return AEP_COMPLIANT;
 			case AEP_NON_COMPLIANT_VALUE: return AEP_NON_COMPLIANT;
 		}

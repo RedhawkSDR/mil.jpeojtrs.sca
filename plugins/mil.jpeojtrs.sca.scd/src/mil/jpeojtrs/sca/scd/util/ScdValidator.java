@@ -8,11 +8,10 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.util;
 
 import java.util.Map;
-
 import mil.jpeojtrs.sca.scd.AbstractPort;
 import mil.jpeojtrs.sca.scd.ComponentFeatures;
 import mil.jpeojtrs.sca.scd.ComponentRepId;
@@ -31,7 +30,6 @@ import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.scd.SoftwareComponent;
 import mil.jpeojtrs.sca.scd.SupportsInterface;
 import mil.jpeojtrs.sca.scd.Uses;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
@@ -105,7 +103,8 @@ public class ScdValidator extends EObjectValidator {
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID) {
+		switch (classifierID)
+		{
 			case ScdPackage.COMPONENT_FEATURES:
 				return validateComponentFeatures((ComponentFeatures)value, diagnostics, context);
 			case ScdPackage.COMPONENT_REP_ID:

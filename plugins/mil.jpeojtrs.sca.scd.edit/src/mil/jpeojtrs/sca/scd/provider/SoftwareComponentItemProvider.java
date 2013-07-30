@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
 
@@ -64,7 +64,8 @@ public class SoftwareComponentItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addComponentTypePropertyDescriptor(object);
@@ -127,7 +128,8 @@ public class SoftwareComponentItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ScdPackage.Literals.SOFTWARE_COMPONENT__CORBA_VERSION);
 			childrenFeatures.add(ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_REP_ID);
@@ -187,7 +189,8 @@ public class SoftwareComponentItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SoftwareComponent.class)) {
+		switch (notification.getFeatureID(SoftwareComponent.class))
+		{
 			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
 			case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

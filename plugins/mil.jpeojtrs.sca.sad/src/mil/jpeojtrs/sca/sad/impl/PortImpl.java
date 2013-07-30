@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import mil.jpeojtrs.sca.sad.Port;
@@ -264,7 +264,8 @@ public class PortImpl extends EObjectImpl implements Port {
 	public NotificationChain basicSetComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef, NotificationChain msgs) {
 		SadComponentInstantiationRef oldComponentInstantiationRef = componentInstantiationRef;
 		componentInstantiationRef = newComponentInstantiationRef;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.PORT__COMPONENT_INSTANTIATION_REF, oldComponentInstantiationRef, newComponentInstantiationRef);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -277,7 +278,8 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * @generated
 	 */
 	public void setComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef) {
-		if (newComponentInstantiationRef != componentInstantiationRef) {
+		if (newComponentInstantiationRef != componentInstantiationRef)
+		{
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
 				msgs = ((InternalEObject)componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
@@ -320,7 +322,8 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
 				return basicSetComponentInstantiationRef(null, msgs);
 		}
@@ -334,7 +337,8 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.PORT__DESCRIPTION:
 				return getDescription();
 			case SadPackage.PORT__USES_IDENTIFIER:
@@ -358,7 +362,8 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.PORT__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -388,7 +393,8 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.PORT__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -418,7 +424,8 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.PORT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SadPackage.PORT__USES_IDENTIFIER:

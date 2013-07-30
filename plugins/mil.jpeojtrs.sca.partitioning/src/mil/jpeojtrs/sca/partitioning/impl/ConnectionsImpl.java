@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.util.Collection;
@@ -75,7 +75,8 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 * @generated
 	 */
 	public EList<CI> getConnectInterface() {
-		if (connectInterface == null) {
+		if (connectInterface == null)
+		{
 			connectInterface = new EObjectContainmentEList<CI>(ConnectInterface.class, this, PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE);
 		}
 		return connectInterface;
@@ -88,7 +89,8 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
 				return ((InternalEList<?>)getConnectInterface()).basicRemove(otherEnd, msgs);
 		}
@@ -102,7 +104,8 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
 				return getConnectInterface();
 		}
@@ -117,7 +120,8 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
 				getConnectInterface().clear();
 				getConnectInterface().addAll((Collection<? extends CI>)newValue);
@@ -133,7 +137,8 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
 				getConnectInterface().clear();
 				return;
@@ -148,7 +153,8 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
 				return connectInterface != null && !connectInterface.isEmpty();
 		}

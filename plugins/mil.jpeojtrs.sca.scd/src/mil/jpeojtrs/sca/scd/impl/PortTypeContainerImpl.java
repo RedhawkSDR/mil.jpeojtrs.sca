@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import mil.jpeojtrs.sca.scd.PortType;
@@ -134,7 +134,8 @@ public class PortTypeContainerImpl extends EObjectImpl implements PortTypeContai
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
 				return getType();
 		}
@@ -148,7 +149,8 @@ public class PortTypeContainerImpl extends EObjectImpl implements PortTypeContai
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
 				setType((PortType)newValue);
 				return;
@@ -163,7 +165,8 @@ public class PortTypeContainerImpl extends EObjectImpl implements PortTypeContai
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
 				unsetType();
 				return;
@@ -178,7 +181,8 @@ public class PortTypeContainerImpl extends EObjectImpl implements PortTypeContai
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
 				return isSetType();
 		}

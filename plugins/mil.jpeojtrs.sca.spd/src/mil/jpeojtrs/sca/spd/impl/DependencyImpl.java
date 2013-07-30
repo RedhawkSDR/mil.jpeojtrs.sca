@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import mil.jpeojtrs.sca.prf.PropertyContainer;
@@ -105,7 +105,8 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	public NotificationChain basicSetSoftPkgRef(SoftPkgRef newSoftPkgRef, NotificationChain msgs) {
 		SoftPkgRef oldSoftPkgRef = softPkgRef;
 		softPkgRef = newSoftPkgRef;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.DEPENDENCY__SOFT_PKG_REF, oldSoftPkgRef, newSoftPkgRef);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -118,7 +119,8 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 * @generated
 	 */
 	public void setSoftPkgRef(SoftPkgRef newSoftPkgRef) {
-		if (newSoftPkgRef != softPkgRef) {
+		if (newSoftPkgRef != softPkgRef)
+		{
 			NotificationChain msgs = null;
 			if (softPkgRef != null)
 				msgs = ((InternalEObject)softPkgRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.DEPENDENCY__SOFT_PKG_REF, null, msgs);
@@ -186,7 +188,8 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
 				return basicSetSoftPkgRef(null, msgs);
 			case SpdPackage.DEPENDENCY__PROPERTY_REF:
@@ -202,7 +205,8 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
 				return getSoftPkgRef();
 			case SpdPackage.DEPENDENCY__PROPERTY_REF:
@@ -220,7 +224,8 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
 				setSoftPkgRef((SoftPkgRef)newValue);
 				return;
@@ -241,7 +246,8 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
 				setSoftPkgRef((SoftPkgRef)null);
 				return;
@@ -262,7 +268,8 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
 				return softPkgRef != null;
 			case SpdPackage.DEPENDENCY__PROPERTY_REF:

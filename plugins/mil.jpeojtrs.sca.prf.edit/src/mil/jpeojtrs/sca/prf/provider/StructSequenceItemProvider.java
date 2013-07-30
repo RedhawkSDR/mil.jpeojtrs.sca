@@ -60,7 +60,8 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addStructValuePropertyDescriptor(object);
@@ -100,7 +101,8 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT_VALUE);
@@ -165,7 +167,8 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider imp
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StructSequence.class)) {
+		switch (notification.getFeatureID(StructSequence.class))
+		{
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
 			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:

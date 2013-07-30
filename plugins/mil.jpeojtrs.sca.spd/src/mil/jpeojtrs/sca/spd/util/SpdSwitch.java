@@ -8,10 +8,8 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.util;
-
-import java.util.List;
 
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
 import mil.jpeojtrs.sca.prf.PropertyRefGroup;
@@ -34,9 +32,9 @@ import mil.jpeojtrs.sca.spd.SoftPkgRef;
 import mil.jpeojtrs.sca.spd.SpdDocumentRoot;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.spd.UsesDevice;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +49,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see mil.jpeojtrs.sca.spd.SpdPackage
  * @generated
  */
-public class SpdSwitch<T> {
+public class SpdSwitch<T> extends Switch<T> {
 
 	/**
 	 * The cached model package
@@ -68,20 +66,24 @@ public class SpdSwitch<T> {
 	 * @generated
 	 */
 	public SpdSwitch() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = SpdPackage.eINSTANCE;
 		}
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @parameter ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage)
+	{
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -91,47 +93,33 @@ public class SpdSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-			case SpdPackage.AUTHOR: {
+		switch (classifierID)
+		{
+			case SpdPackage.AUTHOR:
+			{
 				Author author = (Author)theEObject;
 				T result = caseAuthor(author);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.CODE: {
+			case SpdPackage.CODE:
+			{
 				Code code = (Code)theEObject;
 				T result = caseCode(code);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.COMPILER: {
+			case SpdPackage.COMPILER:
+			{
 				mil.jpeojtrs.sca.spd.Compiler compiler = (mil.jpeojtrs.sca.spd.Compiler)theEObject;
 				T result = caseCompiler(compiler);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.DEPENDENCY: {
+			case SpdPackage.DEPENDENCY:
+			{
 				Dependency dependency = (Dependency)theEObject;
 				T result = caseDependency(dependency);
 				if (result == null) result = casePropertyRefSet(dependency);
@@ -139,91 +127,106 @@ public class SpdSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.DESCRIPTOR: {
+			case SpdPackage.DESCRIPTOR:
+			{
 				Descriptor descriptor = (Descriptor)theEObject;
 				T result = caseDescriptor(descriptor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.HUMAN_LANGUAGE: {
+			case SpdPackage.HUMAN_LANGUAGE:
+			{
 				HumanLanguage humanLanguage = (HumanLanguage)theEObject;
 				T result = caseHumanLanguage(humanLanguage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.IMPLEMENTATION: {
+			case SpdPackage.IMPLEMENTATION:
+			{
 				Implementation implementation = (Implementation)theEObject;
 				T result = caseImplementation(implementation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.IMPL_REF: {
+			case SpdPackage.IMPL_REF:
+			{
 				ImplRef implRef = (ImplRef)theEObject;
 				T result = caseImplRef(implRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.LOCAL_FILE: {
+			case SpdPackage.LOCAL_FILE:
+			{
 				LocalFile localFile = (LocalFile)theEObject;
 				T result = caseLocalFile(localFile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.OS: {
+			case SpdPackage.OS:
+			{
 				Os os = (Os)theEObject;
 				T result = caseOs(os);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.PROCESSOR: {
+			case SpdPackage.PROCESSOR:
+			{
 				Processor processor = (Processor)theEObject;
 				T result = caseProcessor(processor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.PROGRAMMING_LANGUAGE: {
+			case SpdPackage.PROGRAMMING_LANGUAGE:
+			{
 				ProgrammingLanguage programmingLanguage = (ProgrammingLanguage)theEObject;
 				T result = caseProgrammingLanguage(programmingLanguage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.PROPERTY_FILE: {
+			case SpdPackage.PROPERTY_FILE:
+			{
 				PropertyFile propertyFile = (PropertyFile)theEObject;
 				T result = casePropertyFile(propertyFile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.PROPERTY_REF: {
+			case SpdPackage.PROPERTY_REF:
+			{
 				PropertyRef propertyRef = (PropertyRef)theEObject;
 				T result = casePropertyRef(propertyRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.RUNTIME: {
+			case SpdPackage.RUNTIME:
+			{
 				mil.jpeojtrs.sca.spd.Runtime runtime = (mil.jpeojtrs.sca.spd.Runtime)theEObject;
 				T result = caseRuntime(runtime);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.SOFT_PKG: {
+			case SpdPackage.SOFT_PKG:
+			{
 				SoftPkg softPkg = (SoftPkg)theEObject;
 				T result = caseSoftPkg(softPkg);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.SOFT_PKG_REF: {
+			case SpdPackage.SOFT_PKG_REF:
+			{
 				SoftPkgRef softPkgRef = (SoftPkgRef)theEObject;
 				T result = caseSoftPkgRef(softPkgRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.SPD_DOCUMENT_ROOT: {
+			case SpdPackage.SPD_DOCUMENT_ROOT:
+			{
 				SpdDocumentRoot spdDocumentRoot = (SpdDocumentRoot)theEObject;
 				T result = caseSpdDocumentRoot(spdDocumentRoot);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SpdPackage.USES_DEVICE: {
+			case SpdPackage.USES_DEVICE:
+			{
 				UsesDevice usesDevice = (UsesDevice)theEObject;
 				T result = caseUsesDevice(usesDevice);
 				if (result == null) result = casePropertyRefGroup(usesDevice);
@@ -576,6 +579,7 @@ public class SpdSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
+	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

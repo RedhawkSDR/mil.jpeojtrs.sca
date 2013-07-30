@@ -61,7 +61,8 @@ public class EnumerationsItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 		}
@@ -78,7 +79,8 @@ public class EnumerationsItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.ENUMERATIONS__ENUMERATION);
 		}
@@ -131,7 +133,8 @@ public class EnumerationsItemProvider extends ItemProviderAdapter implements IEd
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Enumerations.class)) {
+		switch (notification.getFeatureID(Enumerations.class))
+		{
 			case PrfPackage.ENUMERATIONS__ENUMERATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

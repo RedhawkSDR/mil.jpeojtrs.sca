@@ -9,4 +9,12 @@
             genModel="model/cf.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cf -->
+      <package
+            uri="http:///mil/jpeojtrs/sca/cf/extended.ecore"
+            class="mil.jpeojtrs.sca.cf.extended.ExtendedPackage"
+            genModel="model/cf.genmodel"/>
+   </extension>
+
 </plugin>

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.util.Collection;
@@ -75,7 +75,8 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 * @generated
 	 */
 	public EList<ComponentFile> getComponentFile() {
-		if (componentFile == null) {
+		if (componentFile == null)
+		{
 			componentFile = new EObjectContainmentEList<ComponentFile>(ComponentFile.class, this, PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE);
 		}
 		return componentFile;
@@ -88,7 +89,8 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
 				return ((InternalEList<?>)getComponentFile()).basicRemove(otherEnd, msgs);
 		}
@@ -102,7 +104,8 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
 				return getComponentFile();
 		}
@@ -117,7 +120,8 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
 				getComponentFile().clear();
 				getComponentFile().addAll((Collection<? extends ComponentFile>)newValue);
@@ -133,7 +137,8 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
 				getComponentFile().clear();
 				return;
@@ -148,7 +153,8 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
 				return componentFile != null && !componentFile.isEmpty();
 		}

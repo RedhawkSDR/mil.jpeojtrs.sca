@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import java.util.Collection;
@@ -75,7 +75,8 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 * @generated
 	 */
 	public EList<Port> getPort() {
-		if (port == null) {
+		if (port == null)
+		{
 			port = new EObjectContainmentEList<Port>(Port.class, this, SadPackage.EXTERNAL_PORTS__PORT);
 		}
 		return port;
@@ -88,7 +89,8 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PORTS__PORT:
 				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
 		}
@@ -102,7 +104,8 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PORTS__PORT:
 				return getPort();
 		}
@@ -117,7 +120,8 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PORTS__PORT:
 				getPort().clear();
 				getPort().addAll((Collection<? extends Port>)newValue);
@@ -133,7 +137,8 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PORTS__PORT:
 				getPort().clear();
 				return;
@@ -148,7 +153,8 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PORTS__PORT:
 				return port != null && !port.isEmpty();
 		}

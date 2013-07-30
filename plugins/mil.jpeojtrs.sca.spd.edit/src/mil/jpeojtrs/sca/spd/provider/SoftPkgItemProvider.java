@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.provider;
 
 import java.util.Collection;
@@ -60,7 +60,8 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addTitlePropertyDescriptor(object);
@@ -238,7 +239,8 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SpdPackage.Literals.SOFT_PKG__AUTHOR);
 			childrenFeatures.add(SpdPackage.Literals.SOFT_PKG__IMPLEMENTATION);
@@ -323,7 +325,8 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SoftPkg.class)) {
+		switch (notification.getFeatureID(SoftPkg.class))
+		{
 			case SpdPackage.SOFT_PKG__TITLE:
 			case SpdPackage.SOFT_PKG__DESCRIPTION:
 			case SpdPackage.SOFT_PKG__PROPERTY_FILE:

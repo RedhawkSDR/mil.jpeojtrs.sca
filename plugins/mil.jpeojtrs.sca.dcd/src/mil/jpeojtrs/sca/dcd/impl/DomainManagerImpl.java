@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.DcdPackage;
@@ -102,7 +102,8 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	public NotificationChain basicSetNamingService(NamingService newNamingService, NotificationChain msgs) {
 		NamingService oldNamingService = namingService;
 		namingService = newNamingService;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE, oldNamingService, newNamingService);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -115,7 +116,8 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 * @generated
 	 */
 	public void setNamingService(NamingService newNamingService) {
-		if (newNamingService != namingService) {
+		if (newNamingService != namingService)
+		{
 			NotificationChain msgs = null;
 			if (namingService != null)
 				msgs = ((InternalEObject)namingService).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE, null, msgs);
@@ -156,7 +158,8 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
 				return basicSetNamingService(null, msgs);
 		}
@@ -170,7 +173,8 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
 				return getNamingService();
 			case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
@@ -186,7 +190,8 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
 				setNamingService((NamingService)newValue);
 				return;
@@ -204,7 +209,8 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
 				setNamingService((NamingService)null);
 				return;
@@ -222,7 +228,8 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
 				return namingService != null;
 			case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:

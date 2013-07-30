@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import java.math.BigInteger;
@@ -170,7 +170,8 @@ public class CodeImpl extends EObjectImpl implements Code {
 	public NotificationChain basicSetLocalFile(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.CODE__LOCAL_FILE, oldLocalFile, newLocalFile);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -183,7 +184,8 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 * @generated
 	 */
 	public void setLocalFile(LocalFile newLocalFile) {
-		if (newLocalFile != localFile) {
+		if (newLocalFile != localFile)
+		{
 			NotificationChain msgs = null;
 			if (localFile != null)
 				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.CODE__LOCAL_FILE, null, msgs);
@@ -312,7 +314,8 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.CODE__LOCAL_FILE:
 				return basicSetLocalFile(null, msgs);
 		}
@@ -326,7 +329,8 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.CODE__LOCAL_FILE:
 				return getLocalFile();
 			case SpdPackage.CODE__ENTRY_POINT:
@@ -348,7 +352,8 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.CODE__LOCAL_FILE:
 				setLocalFile((LocalFile)newValue);
 				return;
@@ -375,7 +380,8 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.CODE__LOCAL_FILE:
 				setLocalFile((LocalFile)null);
 				return;
@@ -402,7 +408,8 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.CODE__LOCAL_FILE:
 				return localFile != null;
 			case SpdPackage.CODE__ENTRY_POINT:

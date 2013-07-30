@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import java.util.Collection;
@@ -258,7 +258,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetPropertyFile(PropertyFile newPropertyFile, NotificationChain msgs) {
 		PropertyFile oldPropertyFile = propertyFile;
 		propertyFile = newPropertyFile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__PROPERTY_FILE, oldPropertyFile, newPropertyFile);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -271,7 +272,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setPropertyFile(PropertyFile newPropertyFile) {
-		if (newPropertyFile != propertyFile) {
+		if (newPropertyFile != propertyFile)
+		{
 			NotificationChain msgs = null;
 			if (propertyFile != null)
 				msgs = ((InternalEObject)propertyFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__PROPERTY_FILE, null, msgs);
@@ -301,7 +303,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetCode(Code newCode, NotificationChain msgs) {
 		Code oldCode = code;
 		code = newCode;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__CODE, oldCode, newCode);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -314,7 +317,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setCode(Code newCode) {
-		if (newCode != code) {
+		if (newCode != code)
+		{
 			NotificationChain msgs = null;
 			if (code != null)
 				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__CODE, null, msgs);
@@ -344,7 +348,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetCompiler(mil.jpeojtrs.sca.spd.Compiler newCompiler, NotificationChain msgs) {
 		mil.jpeojtrs.sca.spd.Compiler oldCompiler = compiler;
 		compiler = newCompiler;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__COMPILER, oldCompiler, newCompiler);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -357,7 +362,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setCompiler(mil.jpeojtrs.sca.spd.Compiler newCompiler) {
-		if (newCompiler != compiler) {
+		if (newCompiler != compiler)
+		{
 			NotificationChain msgs = null;
 			if (compiler != null)
 				msgs = ((InternalEObject)compiler).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__COMPILER, null, msgs);
@@ -387,7 +393,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetProgrammingLanguage(ProgrammingLanguage newProgrammingLanguage, NotificationChain msgs) {
 		ProgrammingLanguage oldProgrammingLanguage = programmingLanguage;
 		programmingLanguage = newProgrammingLanguage;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE, oldProgrammingLanguage, newProgrammingLanguage);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -400,7 +407,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setProgrammingLanguage(ProgrammingLanguage newProgrammingLanguage) {
-		if (newProgrammingLanguage != programmingLanguage) {
+		if (newProgrammingLanguage != programmingLanguage)
+		{
 			NotificationChain msgs = null;
 			if (programmingLanguage != null)
 				msgs = ((InternalEObject)programmingLanguage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE, null, msgs);
@@ -430,7 +438,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetHumanLanguage(HumanLanguage newHumanLanguage, NotificationChain msgs) {
 		HumanLanguage oldHumanLanguage = humanLanguage;
 		humanLanguage = newHumanLanguage;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE, oldHumanLanguage, newHumanLanguage);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -443,7 +452,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setHumanLanguage(HumanLanguage newHumanLanguage) {
-		if (newHumanLanguage != humanLanguage) {
+		if (newHumanLanguage != humanLanguage)
+		{
 			NotificationChain msgs = null;
 			if (humanLanguage != null)
 				msgs = ((InternalEObject)humanLanguage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE, null, msgs);
@@ -473,7 +483,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetRuntime(mil.jpeojtrs.sca.spd.Runtime newRuntime, NotificationChain msgs) {
 		mil.jpeojtrs.sca.spd.Runtime oldRuntime = runtime;
 		runtime = newRuntime;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__RUNTIME, oldRuntime, newRuntime);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -486,7 +497,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setRuntime(mil.jpeojtrs.sca.spd.Runtime newRuntime) {
-		if (newRuntime != runtime) {
+		if (newRuntime != runtime)
+		{
 			NotificationChain msgs = null;
 			if (runtime != null)
 				msgs = ((InternalEObject)runtime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__RUNTIME, null, msgs);
@@ -505,7 +517,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public FeatureMap getDependencyMap() {
-		if (dependencyMap == null) {
+		if (dependencyMap == null)
+		{
 			dependencyMap = new BasicFeatureMap(this, SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP);
 		}
 		return dependencyMap;
@@ -544,7 +557,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public EList<UsesDevice> getUsesDevice() {
-		if (usesDevice == null) {
+		if (usesDevice == null)
+		{
 			usesDevice = new EObjectContainmentEList<UsesDevice>(UsesDevice.class, this, SpdPackage.IMPLEMENTATION__USES_DEVICE);
 		}
 		return usesDevice;
@@ -653,7 +667,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setSoftPkg(SoftPkg newSoftPkg) {
-		if (newSoftPkg != eInternalContainer() || (eContainerFeatureID() != SpdPackage.IMPLEMENTATION__SOFT_PKG && newSoftPkg != null)) {
+		if (newSoftPkg != eInternalContainer() || (eContainerFeatureID() != SpdPackage.IMPLEMENTATION__SOFT_PKG && newSoftPkg != null))
+		{
 			if (EcoreUtil.isAncestor(this, newSoftPkg))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -675,7 +690,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.IMPLEMENTATION__SOFT_PKG:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -691,7 +707,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
 				return basicSetPropertyFile(null, msgs);
 			case SpdPackage.IMPLEMENTATION__CODE:
@@ -727,7 +744,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case SpdPackage.IMPLEMENTATION__SOFT_PKG:
 				return eInternalContainer().eInverseRemove(this, SpdPackage.SOFT_PKG__IMPLEMENTATION, SoftPkg.class, msgs);
 		}
@@ -741,7 +759,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.IMPLEMENTATION__DESCRIPTION:
 				return getDescription();
 			case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
@@ -786,7 +805,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.IMPLEMENTATION__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -847,7 +867,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.IMPLEMENTATION__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -904,7 +925,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.IMPLEMENTATION__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:

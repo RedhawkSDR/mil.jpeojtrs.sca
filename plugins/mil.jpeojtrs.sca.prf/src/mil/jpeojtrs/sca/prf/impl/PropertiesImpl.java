@@ -128,7 +128,8 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 * @generated
 	 */
 	public FeatureMap getProperties() {
-		if (properties == null) {
+		if (properties == null)
+		{
 			properties = new BasicFeatureMap(this, PrfPackage.PROPERTIES__PROPERTIES);
 		}
 		return properties;
@@ -205,7 +206,8 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTIES__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 			case PrfPackage.PROPERTIES__SIMPLE:
@@ -229,7 +231,8 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTIES__DESCRIPTION:
 				return getDescription();
 			case PrfPackage.PROPERTIES__PROPERTIES:
@@ -257,7 +260,8 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTIES__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -295,7 +299,8 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTIES__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -328,7 +333,8 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTIES__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case PrfPackage.PROPERTIES__PROPERTIES:

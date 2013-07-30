@@ -8,13 +8,12 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.profile.util;
 
 import mil.jpeojtrs.sca.profile.DocumentRoot;
 import mil.jpeojtrs.sca.profile.Profile;
 import mil.jpeojtrs.sca.profile.ProfilePackage;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -45,7 +44,8 @@ public class ProfileAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public ProfileAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = ProfilePackage.eINSTANCE;
 		}
 	}
@@ -60,10 +60,12 @@ public class ProfileAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -76,17 +78,21 @@ public class ProfileAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected ProfileSwitch<Adapter> modelSwitch =
-		new ProfileSwitch<Adapter>() {
+		new ProfileSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseDocumentRoot(DocumentRoot object) {
+			public Adapter caseDocumentRoot(DocumentRoot object)
+			{
 				return createDocumentRootAdapter();
 			}
 			@Override
-			public Adapter caseProfile(Profile object) {
+			public Adapter caseProfile(Profile object)
+			{
 				return createProfileAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};

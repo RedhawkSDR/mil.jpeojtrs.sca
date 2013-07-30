@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.provider;
 
 
@@ -65,7 +65,8 @@ public class DcdComponentPlacementItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addParentDevicePropertyDescriptor(object);
@@ -105,7 +106,8 @@ public class DcdComponentPlacementItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE);
 			childrenFeatures.add(DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE);
@@ -149,7 +151,8 @@ public class DcdComponentPlacementItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DcdComponentPlacement.class)) {
+		switch (notification.getFeatureID(DcdComponentPlacement.class))
+		{
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE:
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE:
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__DEVICE_PKG_FILE:

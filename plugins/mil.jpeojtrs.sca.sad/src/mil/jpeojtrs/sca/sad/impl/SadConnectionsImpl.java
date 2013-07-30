@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import mil.jpeojtrs.sca.partitioning.impl.ConnectionsImpl;
@@ -58,7 +58,8 @@ public class SadConnectionsImpl extends ConnectionsImpl<SadConnectInterface> imp
 	 */
 	@Override
 	public EList<SadConnectInterface> getConnectInterface() {
-		if (connectInterface == null) {
+		if (connectInterface == null)
+		{
 			connectInterface = new EObjectContainmentEList<SadConnectInterface>(SadConnectInterface.class, this, SadPackage.SAD_CONNECTIONS__CONNECT_INTERFACE);
 		}
 		return connectInterface;

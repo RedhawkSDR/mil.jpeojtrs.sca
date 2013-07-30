@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
@@ -214,7 +214,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	public NotificationChain basicSetComponentProperties(ComponentProperties newComponentProperties, NotificationChain msgs) {
 		ComponentProperties oldComponentProperties = componentProperties;
 		componentProperties = newComponentProperties;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES, oldComponentProperties, newComponentProperties);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -227,7 +228,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * @generated
 	 */
 	public void setComponentProperties(ComponentProperties newComponentProperties) {
-		if (newComponentProperties != componentProperties) {
+		if (newComponentProperties != componentProperties)
+		{
 			NotificationChain msgs = null;
 			if (componentProperties != null)
 				msgs = ((InternalEObject)componentProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES, null, msgs);
@@ -246,7 +248,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * @generated
 	 */
 	public EList<ProvidesPortStub> getProvides() {
-		if (provides == null) {
+		if (provides == null)
+		{
 			provides = new EObjectContainmentEList<ProvidesPortStub>(ProvidesPortStub.class, this, PartitioningPackage.COMPONENT_INSTANTIATION__PROVIDES);
 		}
 		return provides;
@@ -258,7 +261,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * @generated
 	 */
 	public EList<UsesPortStub> getUses() {
-		if (uses == null) {
+		if (uses == null)
+		{
 			uses = new EObjectContainmentEList<UsesPortStub>(UsesPortStub.class, this, PartitioningPackage.COMPONENT_INSTANTIATION__USES);
 		}
 		return uses;
@@ -281,7 +285,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	public NotificationChain basicSetInterfaceStub(ComponentSupportedInterfaceStub newInterfaceStub, NotificationChain msgs) {
 		ComponentSupportedInterfaceStub oldInterfaceStub = interfaceStub;
 		interfaceStub = newInterfaceStub;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB, oldInterfaceStub, newInterfaceStub);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -294,7 +299,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * @generated
 	 */
 	public void setInterfaceStub(ComponentSupportedInterfaceStub newInterfaceStub) {
-		if (newInterfaceStub != interfaceStub) {
+		if (newInterfaceStub != interfaceStub)
+		{
 			NotificationChain msgs = null;
 			if (interfaceStub != null)
 				msgs = ((InternalEObject)interfaceStub).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB, null, msgs);
@@ -335,7 +341,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 */
 	public ComponentPlacement<?> getPlacement() {
 		if (eContainerFeatureID() != PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT) return null;
-		return (ComponentPlacement<?>)eContainer();
+		return (ComponentPlacement<?>)eInternalContainer();
 	}
 
 	/**
@@ -354,7 +360,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * @generated
 	 */
 	public void setPlacement(ComponentPlacement<?> newPlacement) {
-		if (newPlacement != eInternalContainer() || (eContainerFeatureID() != PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT && newPlacement != null)) {
+		if (newPlacement != eInternalContainer() || (eContainerFeatureID() != PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT && newPlacement != null))
+		{
 			if (EcoreUtil.isAncestor(this, newPlacement))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -399,7 +406,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -415,7 +423,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
 				return basicSetComponentProperties(null, msgs);
 			case PartitioningPackage.COMPONENT_INSTANTIATION__PROVIDES:
@@ -437,7 +446,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT:
 				return eInternalContainer().eInverseRemove(this, PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION, ComponentPlacement.class, msgs);
 		}
@@ -451,7 +461,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION__USAGE_NAME:
 				return getUsageName();
 			case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
@@ -479,7 +490,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION__USAGE_NAME:
 				setUsageName((String)newValue);
 				return;
@@ -509,7 +521,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION__USAGE_NAME:
 				setUsageName(USAGE_NAME_EDEFAULT);
 				return;
@@ -539,7 +552,8 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION__USAGE_NAME:
 				return USAGE_NAME_EDEFAULT == null ? usageName != null : !USAGE_NAME_EDEFAULT.equals(usageName);
 			case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:

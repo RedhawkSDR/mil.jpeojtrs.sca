@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.provider;
 
 import java.util.Collection;
@@ -58,7 +58,8 @@ public class AuthorItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -210,7 +211,8 @@ public class AuthorItemProvider extends ItemProviderAdapter implements IEditingD
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Author.class)) {
+		switch (notification.getFeatureID(Author.class))
+		{
 			case SpdPackage.AUTHOR__NAME:
 			case SpdPackage.AUTHOR__COMPANY:
 			case SpdPackage.AUTHOR__WEBPAGE:

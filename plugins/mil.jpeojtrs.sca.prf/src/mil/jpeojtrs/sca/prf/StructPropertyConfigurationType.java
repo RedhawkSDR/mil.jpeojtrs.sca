@@ -168,7 +168,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @generated
 	 */
 	private static final StructPropertyConfigurationType[] VALUES_ARRAY =
-		new StructPropertyConfigurationType[] {
+		new StructPropertyConfigurationType[]
+		{
 			CONFIGURE,
 			ALLOCATION,
 			FACTORYPARAM,
@@ -192,9 +193,11 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @generated
 	 */
 	public static StructPropertyConfigurationType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			StructPropertyConfigurationType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -209,9 +212,11 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @generated
 	 */
 	public static StructPropertyConfigurationType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			StructPropertyConfigurationType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -226,7 +231,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @generated
 	 */
 	public static StructPropertyConfigurationType get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case CONFIGURE_VALUE: return CONFIGURE;
 			case ALLOCATION_VALUE: return ALLOCATION;
 			case FACTORYPARAM_VALUE: return FACTORYPARAM;

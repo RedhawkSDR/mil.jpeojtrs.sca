@@ -61,7 +61,8 @@ public class PrfDocumentRootItemProvider extends ItemProviderAdapter implements 
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 		}
@@ -78,7 +79,8 @@ public class PrfDocumentRootItemProvider extends ItemProviderAdapter implements 
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES);
 		}
@@ -131,7 +133,8 @@ public class PrfDocumentRootItemProvider extends ItemProviderAdapter implements 
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PrfDocumentRoot.class)) {
+		switch (notification.getFeatureID(PrfDocumentRoot.class))
+		{
 			case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

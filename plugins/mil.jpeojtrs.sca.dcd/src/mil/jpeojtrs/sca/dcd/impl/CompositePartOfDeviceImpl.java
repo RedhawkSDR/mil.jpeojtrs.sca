@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.CompositePartOfDevice;
@@ -158,7 +158,8 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
 				if (resolve) return getComponent();
 				return basicGetComponent();
@@ -175,7 +176,8 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
 				setComponent((DcdComponentInstantiation)newValue);
 				return;
@@ -193,7 +195,8 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
 				setComponent((DcdComponentInstantiation)null);
 				return;
@@ -211,7 +214,8 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
 				return basicGetComponent() != null;
 			case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:

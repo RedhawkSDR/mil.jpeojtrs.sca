@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import java.util.Collections;
@@ -245,7 +245,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetComponentFiles(ComponentFiles newComponentFiles, NotificationChain msgs) {
 		ComponentFiles oldComponentFiles = componentFiles;
 		componentFiles = newComponentFiles;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES, oldComponentFiles, newComponentFiles);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -258,7 +259,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * @generated
 	 */
 	public void setComponentFiles(ComponentFiles newComponentFiles) {
-		if (newComponentFiles != componentFiles) {
+		if (newComponentFiles != componentFiles)
+		{
 			NotificationChain msgs = null;
 			if (componentFiles != null)
 				msgs = ((InternalEObject)componentFiles).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES, null, msgs);
@@ -288,7 +290,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetPartitioning(SadPartitioning newPartitioning, NotificationChain msgs) {
 		SadPartitioning oldPartitioning = partitioning;
 		partitioning = newPartitioning;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING, oldPartitioning, newPartitioning);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -301,7 +304,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * @generated
 	 */
 	public void setPartitioning(SadPartitioning newPartitioning) {
-		if (newPartitioning != partitioning) {
+		if (newPartitioning != partitioning)
+		{
 			NotificationChain msgs = null;
 			if (partitioning != null)
 				msgs = ((InternalEObject)partitioning).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING, null, msgs);
@@ -331,7 +335,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetAssemblyController(AssemblyController newAssemblyController, NotificationChain msgs) {
 		AssemblyController oldAssemblyController = assemblyController;
 		assemblyController = newAssemblyController;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER, oldAssemblyController, newAssemblyController);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -344,7 +349,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * @generated
 	 */
 	public void setAssemblyController(AssemblyController newAssemblyController) {
-		if (newAssemblyController != assemblyController) {
+		if (newAssemblyController != assemblyController)
+		{
 			NotificationChain msgs = null;
 			if (assemblyController != null)
 				msgs = ((InternalEObject)assemblyController).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER, null, msgs);
@@ -374,7 +380,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetConnections(SadConnections newConnections, NotificationChain msgs) {
 		SadConnections oldConnections = connections;
 		connections = newConnections;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS, oldConnections, newConnections);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -387,7 +394,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * @generated
 	 */
 	public void setConnections(SadConnections newConnections) {
-		if (newConnections != connections) {
+		if (newConnections != connections)
+		{
 			NotificationChain msgs = null;
 			if (connections != null)
 				msgs = ((InternalEObject)connections).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS, null, msgs);
@@ -417,7 +425,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetExternalPorts(ExternalPorts newExternalPorts, NotificationChain msgs) {
 		ExternalPorts oldExternalPorts = externalPorts;
 		externalPorts = newExternalPorts;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, oldExternalPorts, newExternalPorts);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -430,7 +439,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * @generated
 	 */
 	public void setExternalPorts(ExternalPorts newExternalPorts) {
-		if (newExternalPorts != externalPorts) {
+		if (newExternalPorts != externalPorts)
+		{
 			NotificationChain msgs = null;
 			if (externalPorts != null)
 				msgs = ((InternalEObject)externalPorts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, null, msgs);
@@ -462,7 +472,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetExternalProperties(ExternalProperties newExternalProperties, NotificationChain msgs) {
 		ExternalProperties oldExternalProperties = externalProperties;
 		externalProperties = newExternalProperties;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, oldExternalProperties, newExternalProperties);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -476,7 +487,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * @generated
 	 */
 	public void setExternalProperties(ExternalProperties newExternalProperties) {
-		if (newExternalProperties != externalProperties) {
+		if (newExternalProperties != externalProperties)
+		{
 			NotificationChain msgs = null;
 			if (externalProperties != null)
 				msgs = ((InternalEObject)externalProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, null, msgs);
@@ -668,7 +680,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
 				return basicSetComponentFiles(null, msgs);
 			case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
@@ -692,7 +705,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
 				return getDescription();
 			case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
@@ -724,7 +738,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -766,7 +781,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -808,7 +824,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:

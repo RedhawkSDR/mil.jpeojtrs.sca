@@ -8,10 +8,8 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.util;
-
-import java.util.List;
 
 import mil.jpeojtrs.sca.dcd.CompositePartOfDevice;
 import mil.jpeojtrs.sca.dcd.DcdComponentInstantiation;
@@ -39,9 +37,9 @@ import mil.jpeojtrs.sca.partitioning.Connections;
 import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,7 +54,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see mil.jpeojtrs.sca.dcd.DcdPackage
  * @generated
  */
-public class DcdSwitch<T> {
+public class DcdSwitch<T> extends Switch<T> {
 
 	/**
 	 * The cached model package
@@ -73,20 +71,24 @@ public class DcdSwitch<T> {
 	 * @generated
 	 */
 	public DcdSwitch() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = DcdPackage.eINSTANCE;
 		}
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @parameter ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage)
+	{
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -96,133 +98,132 @@ public class DcdSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-			case DcdPackage.DCD_COMPONENT_PLACEMENT: {
+		switch (classifierID)
+		{
+			case DcdPackage.DCD_COMPONENT_PLACEMENT:
+			{
 				DcdComponentPlacement dcdComponentPlacement = (DcdComponentPlacement)theEObject;
 				T result = caseDcdComponentPlacement(dcdComponentPlacement);
 				if (result == null) result = caseComponentPlacement(dcdComponentPlacement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DCD_COMPONENT_INSTANTIATION: {
+			case DcdPackage.DCD_COMPONENT_INSTANTIATION:
+			{
 				DcdComponentInstantiation dcdComponentInstantiation = (DcdComponentInstantiation)theEObject;
 				T result = caseDcdComponentInstantiation(dcdComponentInstantiation);
 				if (result == null) result = caseComponentInstantiation(dcdComponentInstantiation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DCD_PARTITIONING: {
+			case DcdPackage.DCD_PARTITIONING:
+			{
 				DcdPartitioning dcdPartitioning = (DcdPartitioning)theEObject;
 				T result = caseDcdPartitioning(dcdPartitioning);
 				if (result == null) result = casePartitioning(dcdPartitioning);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DCD_COMPONENT_INSTANTIATION_REF: {
+			case DcdPackage.DCD_COMPONENT_INSTANTIATION_REF:
+			{
 				DcdComponentInstantiationRef dcdComponentInstantiationRef = (DcdComponentInstantiationRef)theEObject;
 				T result = caseDcdComponentInstantiationRef(dcdComponentInstantiationRef);
 				if (result == null) result = caseComponentInstantiationRef(dcdComponentInstantiationRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DCD_CONNECT_INTERFACE: {
+			case DcdPackage.DCD_CONNECT_INTERFACE:
+			{
 				DcdConnectInterface dcdConnectInterface = (DcdConnectInterface)theEObject;
 				T result = caseDcdConnectInterface(dcdConnectInterface);
 				if (result == null) result = caseConnectInterface(dcdConnectInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DCD_USES_PORT: {
+			case DcdPackage.DCD_USES_PORT:
+			{
 				DcdUsesPort dcdUsesPort = (DcdUsesPort)theEObject;
 				T result = caseDcdUsesPort(dcdUsesPort);
 				if (result == null) result = caseUsesPort(dcdUsesPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DCD_PROVIDES_PORT: {
+			case DcdPackage.DCD_PROVIDES_PORT:
+			{
 				DcdProvidesPort dcdProvidesPort = (DcdProvidesPort)theEObject;
 				T result = caseDcdProvidesPort(dcdProvidesPort);
 				if (result == null) result = caseProvidesPort(dcdProvidesPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DCD_CONNECTIONS: {
+			case DcdPackage.DCD_CONNECTIONS:
+			{
 				DcdConnections dcdConnections = (DcdConnections)theEObject;
 				T result = caseDcdConnections(dcdConnections);
 				if (result == null) result = caseConnections(dcdConnections);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE: {
+			case DcdPackage.COMPOSITE_PART_OF_DEVICE:
+			{
 				CompositePartOfDevice compositePartOfDevice = (CompositePartOfDevice)theEObject;
 				T result = caseCompositePartOfDevice(compositePartOfDevice);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DCD_DOCUMENT_ROOT: {
+			case DcdPackage.DCD_DOCUMENT_ROOT:
+			{
 				DcdDocumentRoot dcdDocumentRoot = (DcdDocumentRoot)theEObject;
 				T result = caseDcdDocumentRoot(dcdDocumentRoot);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DEPLOY_ON_DEVICE: {
+			case DcdPackage.DEPLOY_ON_DEVICE:
+			{
 				DeployOnDevice deployOnDevice = (DeployOnDevice)theEObject;
 				T result = caseDeployOnDevice(deployOnDevice);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DEVICE_CONFIGURATION: {
+			case DcdPackage.DEVICE_CONFIGURATION:
+			{
 				DeviceConfiguration deviceConfiguration = (DeviceConfiguration)theEObject;
 				T result = caseDeviceConfiguration(deviceConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG: {
+			case DcdPackage.DEVICE_MANAGER_SOFT_PKG:
+			{
 				DeviceManagerSoftPkg deviceManagerSoftPkg = (DeviceManagerSoftPkg)theEObject;
 				T result = caseDeviceManagerSoftPkg(deviceManagerSoftPkg);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DEVICE_PKG_FILE: {
+			case DcdPackage.DEVICE_PKG_FILE:
+			{
 				DevicePkgFile devicePkgFile = (DevicePkgFile)theEObject;
 				T result = caseDevicePkgFile(devicePkgFile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.DOMAIN_MANAGER: {
+			case DcdPackage.DOMAIN_MANAGER:
+			{
 				DomainManager domainManager = (DomainManager)theEObject;
 				T result = caseDomainManager(domainManager);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.FILE_SYSTEM_NAME: {
+			case DcdPackage.FILE_SYSTEM_NAME:
+			{
 				FileSystemName fileSystemName = (FileSystemName)theEObject;
 				T result = caseFileSystemName(fileSystemName);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DcdPackage.FILE_SYSTEM_NAMES: {
+			case DcdPackage.FILE_SYSTEM_NAMES:
+			{
 				FileSystemNames fileSystemNames = (FileSystemNames)theEObject;
 				T result = caseFileSystemNames(fileSystemNames);
 				if (result == null) result = defaultCase(theEObject);
@@ -618,6 +619,7 @@ public class DcdSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
+	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

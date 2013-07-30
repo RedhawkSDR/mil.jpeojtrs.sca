@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
-    modelDirectory="/mil.jpeojtrs.sca.sad/src" modelPluginID="mil.jpeojtrs.sca.sad"
-    templateDirectory="/mil.jpeojtrs.sca.templates/templates" dynamicTemplates="true"
-    forceOverwrite="true" modelName="Sad" modelPluginClass="SadPluginActivator" importerID="org.eclipse.xsd.ecore.importer"
-    complianceLevel="5.0" copyrightFields="false" tableProviders="true" runtimeVersion="2.6"
-    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.scd/model/scd.genmodel#//scd platform:/plugin/mil.jpeojtrs.sca.spd/model/spd.genmodel#//spd platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.genmodel#//partitioning">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/mil.jpeojtrs.sca.sad/src" editorDirectory=""
+    modelPluginID="mil.jpeojtrs.sca.sad" templateDirectory="/mil.jpeojtrs.sca.sad/templates"
+    dynamicTemplates="true" forceOverwrite="true" modelName="Sad" modelPluginClass="SadPluginActivator"
+    codeFormatting="true" importerID="org.eclipse.xsd.ecore.importer" complianceLevel="6.0"
+    copyrightFields="false" tableProviders="true" runtimeVersion="2.8" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.scd/model/scd.genmodel#//scd platform:/plugin/mil.jpeojtrs.sca.spd/model/spd.genmodel#//spd platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.genmodel#//partitioning"
+    importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
     <genAnnotations source="selectedPackages">
       <details key="http://sca.jpeojtrs.mil/sad" value="sad.xsd"/>
@@ -31,6 +30,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="sad.ecore#//SadComponentInstantiation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//SadComponentInstantiation/findComponent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//SadComponentInstantiation/startOrder"/>
     </genClasses>
     <genClasses image="false" ecoreClass="sad.ecore#//SadComponentInstantiationRef"/>
     <genClasses image="false" ecoreClass="sad.ecore#//SadUsesPort"/>
@@ -40,9 +40,18 @@
     <genClasses ecoreClass="sad.ecore#//ComponentResourceFactoryRef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//ComponentResourceFactoryRef/resourceFactoryProperties"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//ComponentResourceFactoryRef/refid"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sad.ecore#//ComponentResourceFactoryRef/component"/>
     </genClasses>
     <genClasses ecoreClass="sad.ecore#//ExternalPorts">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//ExternalPorts/port"/>
+    </genClasses>
+    <genClasses ecoreClass="sad.ecore#//ExternalProperties">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//ExternalProperties/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="sad.ecore#//ExternalProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//ExternalProperty/compRefID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//ExternalProperty/propID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//ExternalProperty/externalPropID"/>
     </genClasses>
     <genClasses ecoreClass="sad.ecore#//FindComponent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//FindComponent/componentResourceFactoryRef"/>
@@ -59,19 +68,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//Port/providesIndentifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//Port/supportedIdentifier"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//Port/componentInstantiationRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//Port/externalName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="sad.ecore#//SadPartitioning">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sad.ecore#//SadPartitioning/hostCollocation"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="sad.ecore#//SadComponentPlacement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//SadComponentPlacement/startOrder"/>
-    </genClasses>
+    <genClasses image="false" ecoreClass="sad.ecore#//SadComponentPlacement"/>
     <genClasses ecoreClass="sad.ecore#//ResourceFactoryProperties">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute sad.ecore#//ResourceFactoryProperties/group"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sad.ecore#//ResourceFactoryProperties/simpleRef"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sad.ecore#//ResourceFactoryProperties/simpleSequenceRef"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sad.ecore#//ResourceFactoryProperties/structRef"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sad.ecore#//ResourceFactoryProperties/structSequenceRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference sad.ecore#//ResourceFactoryProperties/factoryRef"/>
     </genClasses>
     <genClasses ecoreClass="sad.ecore#//SadDocumentRoot">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//SadDocumentRoot/mixed"/>
@@ -86,12 +95,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//SoftwareAssembly/assemblyController"/>
       <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference sad.ecore#//SoftwareAssembly/connections"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//SoftwareAssembly/externalPorts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//SoftwareAssembly/externalProperties"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//SoftwareAssembly/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//SoftwareAssembly/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//SoftwareAssembly/version"/>
       <genOperations ecoreOperation="sad.ecore#//SoftwareAssembly/getComponentInstantiation">
         <genParameters ecoreParameter="sad.ecore#//SoftwareAssembly/getComponentInstantiation/instantiationId"/>
       </genOperations>
+      <genOperations ecoreOperation="sad.ecore#//SoftwareAssembly/getComponentInstantiationsInStartOrder"/>
+      <genOperations ecoreOperation="sad.ecore#//SoftwareAssembly/getAllComponentInstantiations"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

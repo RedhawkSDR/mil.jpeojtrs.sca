@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import mil.jpeojtrs.sca.scd.ComponentFeatures;
@@ -29,7 +29,6 @@ import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.scd.SoftwareComponent;
 import mil.jpeojtrs.sca.scd.SupportsInterface;
 import mil.jpeojtrs.sca.scd.Uses;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -50,13 +49,16 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * @generated
 	 */
 	public static ScdFactory init() {
-		try {
-			ScdFactory theScdFactory = (ScdFactory)EPackage.Registry.INSTANCE.getEFactory("http://sca.jpeojtrs.mil/scd"); 
-			if (theScdFactory != null) {
+		try
+		{
+			ScdFactory theScdFactory = (ScdFactory)EPackage.Registry.INSTANCE.getEFactory(ScdPackage.eNS_URI);
+			if (theScdFactory != null)
+			{
 				return theScdFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ScdFactoryImpl();
@@ -79,7 +81,8 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case ScdPackage.COMPONENT_FEATURES: return createComponentFeatures();
 			case ScdPackage.COMPONENT_REP_ID: return createComponentRepId();
 			case ScdPackage.INHERITS_INTERFACE: return createInheritsInterface();
@@ -106,7 +109,8 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case ScdPackage.PORT_TYPE:
 				return createPortTypeFromString(eDataType, initialValue);
 			case ScdPackage.COMPONENT_TYPE:
@@ -125,7 +129,8 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case ScdPackage.PORT_TYPE:
 				return convertPortTypeToString(eDataType, instanceValue);
 			case ScdPackage.COMPONENT_TYPE:

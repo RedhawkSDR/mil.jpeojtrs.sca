@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.provider;
 
 
@@ -67,7 +67,8 @@ public class DeviceConfigurationItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -153,7 +154,8 @@ public class DeviceConfigurationItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DcdPackage.Literals.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG);
 			childrenFeatures.add(DcdPackage.Literals.DEVICE_CONFIGURATION__COMPONENT_FILES);
@@ -219,7 +221,8 @@ public class DeviceConfigurationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DeviceConfiguration.class)) {
+		switch (notification.getFeatureID(DeviceConfiguration.class))
+		{
 			case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
 			case DcdPackage.DEVICE_CONFIGURATION__ID:
 			case DcdPackage.DEVICE_CONFIGURATION__NAME:

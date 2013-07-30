@@ -59,7 +59,8 @@ public class StructItemProvider extends AbstractPropertyItemProvider implements 
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addSimplePropertyDescriptor(object);
@@ -162,7 +163,8 @@ public class StructItemProvider extends AbstractPropertyItemProvider implements 
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Struct.class)) {
+		switch (notification.getFeatureID(Struct.class))
+		{
 			case PrfPackage.STRUCT__SIMPLE:
 			case PrfPackage.STRUCT__CONFIGURATION_KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: mil.jpeojtrs.sca.util.tests
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: mil.jpeojtrs.sca.util;bundle-version="2.2.2",
  org.eclipse.emf.common;bundle-version="2.6.0",
  org.apache.commons.lang;bundle-version="2.4.0",

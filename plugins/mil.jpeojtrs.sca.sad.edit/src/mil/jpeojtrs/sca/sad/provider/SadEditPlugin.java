@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
 import mil.jpeojtrs.sca.partitioning.provider.PartitioningEditPlugin;
@@ -50,7 +50,8 @@ public final class SadEditPlugin extends EMFPlugin {
 	 */
 	public SadEditPlugin() {
 		super
-		  (new ResourceLocator [] {
+		  (new ResourceLocator [] 
+		   {
 		     EcoreEditPlugin.INSTANCE,
 		     ScdEditPlugin.INSTANCE,
 		     SpdEditPlugin.INSTANCE,

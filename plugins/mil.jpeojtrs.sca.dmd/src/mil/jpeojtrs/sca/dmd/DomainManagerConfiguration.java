@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd;
 
 import org.eclipse.emf.ecore.EObject;
@@ -72,7 +72,7 @@ public interface DomainManagerConfiguration extends EObject {
 	 * <!-- begin-model-doc -->
 	 * The domainmanagersoftpkg element refers to the SPD for the CF DomainManager. The SPD
 	 * file is referenced by a localfile element. This SPD can be used to describe the CF
-	 * DomainManager implementation and to specify the usesports for the services (Log(s), etc...)
+	 * DomainManager implementation and to specify the usesports for the services (Log(s), etc)
 	 * used by the CF DomainManager. See section D.2.1.1.1 for description of the localfile element.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Domain Manager Soft Pkg</em>' containment reference.

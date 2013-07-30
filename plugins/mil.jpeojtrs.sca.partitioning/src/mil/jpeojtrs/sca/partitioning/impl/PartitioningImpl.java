@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.util.Collection;
@@ -77,7 +77,8 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 * @generated
 	 */
 	public FeatureMap getParts() {
-		if (parts == null) {
+		if (parts == null)
+		{
 			parts = new BasicFeatureMap(this, PartitioningPackage.PARTITIONING__PARTS);
 		}
 		return parts;
@@ -99,7 +100,8 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.PARTITIONING__PARTS:
 				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
 			case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
@@ -115,7 +117,8 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.PARTITIONING__PARTS:
 				if (coreType) return getParts();
 				return ((FeatureMap.Internal)getParts()).getWrapper();
@@ -133,7 +136,8 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.PARTITIONING__PARTS:
 				((FeatureMap.Internal)getParts()).set(newValue);
 				return;
@@ -152,7 +156,8 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.PARTITIONING__PARTS:
 				getParts().clear();
 				return;
@@ -170,7 +175,8 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.PARTITIONING__PARTS:
 				return parts != null && !parts.isEmpty();
 			case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:

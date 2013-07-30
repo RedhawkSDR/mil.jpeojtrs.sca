@@ -8,11 +8,10 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dpd.util;
 
 import java.util.List;
-
 import mil.jpeojtrs.sca.dpd.Author;
 import mil.jpeojtrs.sca.dpd.ChildHwDevice;
 import mil.jpeojtrs.sca.dpd.DeviceClass;
@@ -23,7 +22,6 @@ import mil.jpeojtrs.sca.dpd.DpdPackage;
 import mil.jpeojtrs.sca.dpd.HwDeviceRegistration;
 import mil.jpeojtrs.sca.dpd.LocalFile;
 import mil.jpeojtrs.sca.dpd.PropertyFile;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 

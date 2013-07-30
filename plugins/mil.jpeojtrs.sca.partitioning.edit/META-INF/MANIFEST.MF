@@ -2,18 +2,18 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: mil.jpeojtrs.sca.partitioning.edit;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: mil.jpeojtrs.sca.partitioning.provider.PartitioningEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: mil.jpeojtrs.sca.partitioning.provider
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  mil.jpeojtrs.sca.partitioning;bundle-version="1.0.0";visibility:=reexport,
- org.eclipse.emf.edit;bundle-version="2.6.0";visibility:=reexport,
- org.eclipse.emf.ecore;bundle-version="2.6.1";visibility:=reexport,
- org.eclipse.emf.ecore.edit;bundle-version="2.6.0";visibility:=reexport,
+ org.eclipse.emf.edit;bundle-version="2.8.0";visibility:=reexport,
+ org.eclipse.emf.ecore;bundle-version="2.8.3";visibility:=reexport,
+ org.eclipse.emf.ecore.edit;bundle-version="2.8.0";visibility:=reexport,
  mil.jpeojtrs.sca.prf;bundle-version="2.2.2";visibility:=reexport,
  mil.jpeojtrs.sca.prf.edit;bundle-version="2.2.2";visibility:=reexport,
  mil.jpeojtrs.sca.scd;bundle-version="2.2.2";visibility:=reexport,

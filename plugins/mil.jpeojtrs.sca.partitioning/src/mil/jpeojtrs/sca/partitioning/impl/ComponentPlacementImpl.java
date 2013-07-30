@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.util.Collection;
@@ -110,7 +110,8 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	public NotificationChain basicSetComponentFileRef(ComponentFileRef newComponentFileRef, NotificationChain msgs) {
 		ComponentFileRef oldComponentFileRef = componentFileRef;
 		componentFileRef = newComponentFileRef;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, oldComponentFileRef, newComponentFileRef);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -123,7 +124,8 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 * @generated
 	 */
 	public void setComponentFileRef(ComponentFileRef newComponentFileRef) {
-		if (newComponentFileRef != componentFileRef) {
+		if (newComponentFileRef != componentFileRef)
+		{
 			NotificationChain msgs = null;
 			if (componentFileRef != null)
 				msgs = ((InternalEObject)componentFileRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, null, msgs);
@@ -142,7 +144,8 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 * @generated
 	 */
 	public EList<I> getComponentInstantiation() {
-		if (componentInstantiation == null) {
+		if (componentInstantiation == null)
+		{
 			componentInstantiation = new EObjectContainmentWithInverseEList<I>(ComponentInstantiation.class, this, PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION, PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT);
 		}
 		return componentInstantiation;
@@ -179,7 +182,8 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getComponentInstantiation()).basicAdd(otherEnd, msgs);
 		}
@@ -193,7 +197,8 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
 				return basicSetComponentFileRef(null, msgs);
 			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
@@ -209,7 +214,8 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
 				return getComponentFileRef();
 			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
@@ -228,7 +234,8 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
 				setComponentFileRef((ComponentFileRef)newValue);
 				return;
@@ -247,7 +254,8 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
 				setComponentFileRef((ComponentFileRef)null);
 				return;
@@ -265,7 +273,8 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
 				return componentFileRef != null;
 			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:

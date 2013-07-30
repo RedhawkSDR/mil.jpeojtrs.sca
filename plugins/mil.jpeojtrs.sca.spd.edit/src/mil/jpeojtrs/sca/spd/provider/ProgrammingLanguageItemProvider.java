@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.provider;
 
 import java.util.Collection;
@@ -59,7 +59,8 @@ public class ProgrammingLanguageItemProvider extends ItemProviderAdapter impleme
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -148,7 +149,8 @@ public class ProgrammingLanguageItemProvider extends ItemProviderAdapter impleme
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ProgrammingLanguage.class)) {
+		switch (notification.getFeatureID(ProgrammingLanguage.class))
+		{
 			case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
 			case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

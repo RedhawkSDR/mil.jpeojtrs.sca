@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
 
@@ -62,7 +62,8 @@ public class SadDocumentRootItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 		}
@@ -79,7 +80,8 @@ public class SadDocumentRootItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SadPackage.Literals.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY);
 		}
@@ -132,7 +134,8 @@ public class SadDocumentRootItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SadDocumentRoot.class)) {
+		switch (notification.getFeatureID(SadDocumentRoot.class))
+		{
 			case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

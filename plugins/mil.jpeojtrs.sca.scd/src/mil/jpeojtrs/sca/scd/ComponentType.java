@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd;
 
 import java.util.Arrays;
@@ -300,7 +300,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 */
 	private static final ComponentType[] VALUES_ARRAY =
-		new ComponentType[] {
+		new ComponentType[]
+		{
 			RESOURCE,
 			DEVICE,
 			RESOURCE_FACTORY,
@@ -329,9 +330,11 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 */
 	public static ComponentType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			ComponentType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -345,9 +348,11 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 */
 	public static ComponentType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			ComponentType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -361,7 +366,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 */
 	public static ComponentType get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case RESOURCE_VALUE: return RESOURCE;
 			case DEVICE_VALUE: return DEVICE;
 			case RESOURCE_FACTORY_VALUE: return RESOURCE_FACTORY;

@@ -94,7 +94,8 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 * @generated
 	 */
 	public EList<SimpleRef> getSimpleRef() {
-		if (simpleRef == null) {
+		if (simpleRef == null)
+		{
 			simpleRef = new EObjectContainmentEList<SimpleRef>(SimpleRef.class, this, PrfPackage.STRUCT_REF__SIMPLE_REF);
 		}
 		return simpleRef;
@@ -118,7 +119,8 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_REF__SIMPLE_REF:
 				return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
 		}
@@ -132,7 +134,8 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_REF__SIMPLE_REF:
 				return getSimpleRef();
 		}
@@ -147,7 +150,8 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_REF__SIMPLE_REF:
 				getSimpleRef().clear();
 				getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
@@ -163,7 +167,8 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_REF__SIMPLE_REF:
 				getSimpleRef().clear();
 				return;
@@ -178,7 +183,8 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_REF__SIMPLE_REF:
 				return simpleRef != null && !simpleRef.isEmpty();
 		}

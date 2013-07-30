@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import mil.jpeojtrs.sca.spd.PropertyRef;
@@ -140,7 +140,8 @@ public class PropertyRefImpl extends EObjectImpl implements PropertyRef {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.PROPERTY_REF__REF_ID:
 				return getRefId();
 			case SpdPackage.PROPERTY_REF__VALUE:
@@ -156,7 +157,8 @@ public class PropertyRefImpl extends EObjectImpl implements PropertyRef {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.PROPERTY_REF__REF_ID:
 				setRefId((String)newValue);
 				return;
@@ -174,7 +176,8 @@ public class PropertyRefImpl extends EObjectImpl implements PropertyRef {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.PROPERTY_REF__REF_ID:
 				setRefId(REF_ID_EDEFAULT);
 				return;
@@ -192,7 +195,8 @@ public class PropertyRefImpl extends EObjectImpl implements PropertyRef {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.PROPERTY_REF__REF_ID:
 				return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
 			case SpdPackage.PROPERTY_REF__VALUE:

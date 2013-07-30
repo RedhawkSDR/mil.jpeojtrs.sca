@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.DcdComponentInstantiation;
@@ -46,6 +46,18 @@ public class DcdComponentInstantiationRefImpl extends ComponentInstantiationRefI
 	@Override
 	protected EClass eStaticClass() {
 		return DcdPackage.Literals.DCD_COMPONENT_INSTANTIATION_REF;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setInstantiation(DcdComponentInstantiation newInstantiation) {
+		super.setInstantiation(newInstantiation);
 	}
 
 } //DcdComponentInstantiationRefImpl

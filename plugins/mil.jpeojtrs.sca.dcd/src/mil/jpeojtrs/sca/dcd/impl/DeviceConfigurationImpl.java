@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.DcdConnections;
@@ -216,7 +216,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetDeviceManagerSoftPkg(DeviceManagerSoftPkg newDeviceManagerSoftPkg, NotificationChain msgs) {
 		DeviceManagerSoftPkg oldDeviceManagerSoftPkg = deviceManagerSoftPkg;
 		deviceManagerSoftPkg = newDeviceManagerSoftPkg;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG, oldDeviceManagerSoftPkg, newDeviceManagerSoftPkg);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -229,7 +230,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * @generated
 	 */
 	public void setDeviceManagerSoftPkg(DeviceManagerSoftPkg newDeviceManagerSoftPkg) {
-		if (newDeviceManagerSoftPkg != deviceManagerSoftPkg) {
+		if (newDeviceManagerSoftPkg != deviceManagerSoftPkg)
+		{
 			NotificationChain msgs = null;
 			if (deviceManagerSoftPkg != null)
 				msgs = ((InternalEObject)deviceManagerSoftPkg).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG, null, msgs);
@@ -259,7 +261,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetComponentFiles(ComponentFiles newComponentFiles, NotificationChain msgs) {
 		ComponentFiles oldComponentFiles = componentFiles;
 		componentFiles = newComponentFiles;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES, oldComponentFiles, newComponentFiles);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -272,7 +275,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * @generated
 	 */
 	public void setComponentFiles(ComponentFiles newComponentFiles) {
-		if (newComponentFiles != componentFiles) {
+		if (newComponentFiles != componentFiles)
+		{
 			NotificationChain msgs = null;
 			if (componentFiles != null)
 				msgs = ((InternalEObject)componentFiles).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES, null, msgs);
@@ -302,7 +306,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetPartitioning(DcdPartitioning newPartitioning, NotificationChain msgs) {
 		DcdPartitioning oldPartitioning = partitioning;
 		partitioning = newPartitioning;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__PARTITIONING, oldPartitioning, newPartitioning);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -315,7 +320,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * @generated
 	 */
 	public void setPartitioning(DcdPartitioning newPartitioning) {
-		if (newPartitioning != partitioning) {
+		if (newPartitioning != partitioning)
+		{
 			NotificationChain msgs = null;
 			if (partitioning != null)
 				msgs = ((InternalEObject)partitioning).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__PARTITIONING, null, msgs);
@@ -345,7 +351,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetConnections(DcdConnections newConnections, NotificationChain msgs) {
 		DcdConnections oldConnections = connections;
 		connections = newConnections;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS, oldConnections, newConnections);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -358,7 +365,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * @generated
 	 */
 	public void setConnections(DcdConnections newConnections) {
-		if (newConnections != connections) {
+		if (newConnections != connections)
+		{
 			NotificationChain msgs = null;
 			if (connections != null)
 				msgs = ((InternalEObject)connections).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS, null, msgs);
@@ -388,7 +396,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetDomainManager(DomainManager newDomainManager, NotificationChain msgs) {
 		DomainManager oldDomainManager = domainManager;
 		domainManager = newDomainManager;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER, oldDomainManager, newDomainManager);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -401,7 +410,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * @generated
 	 */
 	public void setDomainManager(DomainManager newDomainManager) {
-		if (newDomainManager != domainManager) {
+		if (newDomainManager != domainManager)
+		{
 			NotificationChain msgs = null;
 			if (domainManager != null)
 				msgs = ((InternalEObject)domainManager).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER, null, msgs);
@@ -431,7 +441,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetFileSystemNames(FileSystemNames newFileSystemNames, NotificationChain msgs) {
 		FileSystemNames oldFileSystemNames = fileSystemNames;
 		fileSystemNames = newFileSystemNames;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES, oldFileSystemNames, newFileSystemNames);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -444,7 +455,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * @generated
 	 */
 	public void setFileSystemNames(FileSystemNames newFileSystemNames) {
-		if (newFileSystemNames != fileSystemNames) {
+		if (newFileSystemNames != fileSystemNames)
+		{
 			NotificationChain msgs = null;
 			if (fileSystemNames != null)
 				msgs = ((InternalEObject)fileSystemNames).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES, null, msgs);
@@ -506,7 +518,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
 				return basicSetDeviceManagerSoftPkg(null, msgs);
 			case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
@@ -530,7 +543,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
 				return getDescription();
 			case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
@@ -560,7 +574,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -599,7 +614,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -638,7 +654,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:

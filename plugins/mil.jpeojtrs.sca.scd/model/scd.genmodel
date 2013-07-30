@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
-    modelDirectory="/mil.jpeojtrs.sca.scd/src" modelPluginID="mil.jpeojtrs.sca.scd"
-    templateDirectory="/mil.jpeojtrs.sca.templates/templates" dynamicTemplates="true"
-    redirection="" forceOverwrite="true" modelName="Scd" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="5.0" copyrightFields="false" tableProviders="true" runtimeVersion="2.6"
-    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/mil.jpeojtrs.sca.scd/src" editorDirectory=""
+    modelPluginID="mil.jpeojtrs.sca.scd" templateDirectory="/mil.jpeojtrs.sca.scd/templates"
+    dynamicTemplates="true" redirection="" forceOverwrite="true" modelName="Scd" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    tableProviders="true" runtimeVersion="2.8" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf"
+    importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
     <genAnnotations source="selectedPackages">
       <details key="http://sca.jpeojtrs.mil/scd" value="scd.xsd"/>
@@ -95,6 +94,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//AbstractPort/repID"/>
       <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference scd.ecore#//AbstractPort/interface"/>
+      <genOperations ecoreOperation="scd.ecore#//AbstractPort/isBiDirectional"/>
+      <genOperations ecoreOperation="scd.ecore#//AbstractPort/getSibling"/>
     </genClasses>
     <genClasses ecoreClass="scd.ecore#//ScdDocumentRoot">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//ScdDocumentRoot/mixed"/>

@@ -2,14 +2,14 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: mil.jpeojtrs.sca.profile.edit;singleton:=true
-Bundle-Version: 2.2.2.qualifier
+Bundle-Version: 2.3.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: mil.jpeojtrs.sca.profile.provider.ProfileEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: mil.jpeojtrs.sca.profile.provider
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  mil.jpeojtrs.sca.profile;bundle-version="2.2.2";visibility:=reexport,
- org.eclipse.emf.edit;bundle-version="2.6.0";visibility:=reexport
+ org.eclipse.emf.edit;bundle-version="2.8.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

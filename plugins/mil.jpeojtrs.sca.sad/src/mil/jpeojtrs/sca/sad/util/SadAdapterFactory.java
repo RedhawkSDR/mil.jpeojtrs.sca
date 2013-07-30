@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.util;
 
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
@@ -40,7 +40,6 @@ import mil.jpeojtrs.sca.sad.SadPartitioning;
 import mil.jpeojtrs.sca.sad.SadProvidesPort;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -71,7 +70,8 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public SadAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = SadPackage.eINSTANCE;
 		}
 	}
@@ -86,10 +86,12 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -102,121 +104,151 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected SadSwitch<Adapter> modelSwitch =
-		new SadSwitch<Adapter>() {
+		new SadSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseAssemblyController(AssemblyController object) {
+			public Adapter caseAssemblyController(AssemblyController object)
+			{
 				return createAssemblyControllerAdapter();
 			}
 			@Override
-			public Adapter caseSadComponentInstantiation(SadComponentInstantiation object) {
+			public Adapter caseSadComponentInstantiation(SadComponentInstantiation object)
+			{
 				return createSadComponentInstantiationAdapter();
 			}
 			@Override
-			public Adapter caseSadComponentInstantiationRef(SadComponentInstantiationRef object) {
+			public Adapter caseSadComponentInstantiationRef(SadComponentInstantiationRef object)
+			{
 				return createSadComponentInstantiationRefAdapter();
 			}
 			@Override
-			public Adapter caseSadUsesPort(SadUsesPort object) {
+			public Adapter caseSadUsesPort(SadUsesPort object)
+			{
 				return createSadUsesPortAdapter();
 			}
 			@Override
-			public Adapter caseSadProvidesPort(SadProvidesPort object) {
+			public Adapter caseSadProvidesPort(SadProvidesPort object)
+			{
 				return createSadProvidesPortAdapter();
 			}
 			@Override
-			public Adapter caseSadConnectInterface(SadConnectInterface object) {
+			public Adapter caseSadConnectInterface(SadConnectInterface object)
+			{
 				return createSadConnectInterfaceAdapter();
 			}
 			@Override
-			public Adapter caseSadConnections(SadConnections object) {
+			public Adapter caseSadConnections(SadConnections object)
+			{
 				return createSadConnectionsAdapter();
 			}
 			@Override
-			public Adapter caseComponentResourceFactoryRef(ComponentResourceFactoryRef object) {
+			public Adapter caseComponentResourceFactoryRef(ComponentResourceFactoryRef object)
+			{
 				return createComponentResourceFactoryRefAdapter();
 			}
 			@Override
-			public Adapter caseExternalPorts(ExternalPorts object) {
+			public Adapter caseExternalPorts(ExternalPorts object)
+			{
 				return createExternalPortsAdapter();
 			}
 			@Override
-			public Adapter caseExternalProperties(ExternalProperties object) {
+			public Adapter caseExternalProperties(ExternalProperties object)
+			{
 				return createExternalPropertiesAdapter();
 			}
 			@Override
-			public Adapter caseExternalProperty(ExternalProperty object) {
+			public Adapter caseExternalProperty(ExternalProperty object)
+			{
 				return createExternalPropertyAdapter();
 			}
 			@Override
-			public Adapter caseFindComponent(FindComponent object) {
+			public Adapter caseFindComponent(FindComponent object)
+			{
 				return createFindComponentAdapter();
 			}
 			@Override
-			public Adapter caseHostCollocation(HostCollocation object) {
+			public Adapter caseHostCollocation(HostCollocation object)
+			{
 				return createHostCollocationAdapter();
 			}
 			@Override
-			public Adapter casePort(Port object) {
+			public Adapter casePort(Port object)
+			{
 				return createPortAdapter();
 			}
 			@Override
-			public Adapter caseSadPartitioning(SadPartitioning object) {
+			public Adapter caseSadPartitioning(SadPartitioning object)
+			{
 				return createSadPartitioningAdapter();
 			}
 			@Override
-			public Adapter caseSadComponentPlacement(SadComponentPlacement object) {
+			public Adapter caseSadComponentPlacement(SadComponentPlacement object)
+			{
 				return createSadComponentPlacementAdapter();
 			}
 			@Override
-			public Adapter caseResourceFactoryProperties(ResourceFactoryProperties object) {
+			public Adapter caseResourceFactoryProperties(ResourceFactoryProperties object)
+			{
 				return createResourceFactoryPropertiesAdapter();
 			}
 			@Override
-			public Adapter caseSadDocumentRoot(SadDocumentRoot object) {
+			public Adapter caseSadDocumentRoot(SadDocumentRoot object)
+			{
 				return createSadDocumentRootAdapter();
 			}
 			@Override
-			public Adapter caseSoftwareAssembly(SoftwareAssembly object) {
+			public Adapter caseSoftwareAssembly(SoftwareAssembly object)
+			{
 				return createSoftwareAssemblyAdapter();
 			}
 			@Override
-			public Adapter caseComponentInstantiation(ComponentInstantiation object) {
+			public Adapter caseComponentInstantiation(ComponentInstantiation object)
+			{
 				return createComponentInstantiationAdapter();
 			}
 			@Override
-			public <R extends ComponentInstantiation> Adapter caseComponentInstantiationRef(ComponentInstantiationRef<R> object) {
+			public <R extends ComponentInstantiation> Adapter caseComponentInstantiationRef(ComponentInstantiationRef<R> object)
+			{
 				return createComponentInstantiationRefAdapter();
 			}
 			@Override
-			public <U extends ComponentInstantiationRef<?>> Adapter caseUsesPort(UsesPort<U> object) {
+			public <U extends ComponentInstantiationRef<?>> Adapter caseUsesPort(UsesPort<U> object)
+			{
 				return createUsesPortAdapter();
 			}
 			@Override
-			public <P extends ComponentInstantiationRef<?>> Adapter caseProvidesPort(ProvidesPort<P> object) {
+			public <P extends ComponentInstantiationRef<?>> Adapter caseProvidesPort(ProvidesPort<P> object)
+			{
 				return createProvidesPortAdapter();
 			}
 			@Override
-			public <CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(ConnectInterface<CIR, UP, PP> object) {
+			public <CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(ConnectInterface<CIR, UP, PP> object)
+			{
 				return createConnectInterfaceAdapter();
 			}
 			@Override
-			public <CI extends ConnectInterface<?, ?, ?>> Adapter caseConnections(Connections<CI> object) {
+			public <CI extends ConnectInterface<?, ?, ?>> Adapter caseConnections(Connections<CI> object)
+			{
 				return createConnectionsAdapter();
 			}
 			@Override
-			public <C extends ComponentPlacement<?>> Adapter casePartitioning(Partitioning<C> object) {
+			public <C extends ComponentPlacement<?>> Adapter casePartitioning(Partitioning<C> object)
+			{
 				return createPartitioningAdapter();
 			}
 			@Override
-			public <I extends ComponentInstantiation> Adapter caseComponentPlacement(ComponentPlacement<I> object) {
+			public <I extends ComponentInstantiation> Adapter caseComponentPlacement(ComponentPlacement<I> object)
+			{
 				return createComponentPlacementAdapter();
 			}
 			@Override
-			public Adapter casePropertyRefContainer(PropertyRefContainer object) {
+			public Adapter casePropertyRefContainer(PropertyRefContainer object)
+			{
 				return createPropertyRefContainerAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};

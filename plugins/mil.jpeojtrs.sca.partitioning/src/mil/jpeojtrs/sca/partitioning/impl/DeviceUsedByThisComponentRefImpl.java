@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.DeviceUsedByThisComponentRef;
@@ -140,7 +140,8 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
 				return getRefId();
 			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID:
@@ -156,7 +157,8 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
 				setRefId((String)newValue);
 				return;
@@ -174,7 +176,8 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
 				setRefId(REF_ID_EDEFAULT);
 				return;
@@ -192,7 +195,8 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
 				return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
 			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID:

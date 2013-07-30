@@ -454,8 +454,10 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
 			(thePrfPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
+			 new EValidator.Descriptor()
+			 {
+				 public EValidator getEValidator()
+				 {
 					 return PrfValidator.INSTANCE;
 				 }
 			 });
@@ -2074,102 +2076,117 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (abstractPropertyEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "abstractproperty",
 			 "kind", "elementOnly"
 		   });			
 		addAnnotation
 		  (getAbstractProperty_Description(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "description"
 		   });		
 		addAnnotation
 		  (getAbstractProperty_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (getAbstractProperty_LocalMode(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "mode"
 		   });		
 		addAnnotation
 		  (getAbstractProperty_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (accessTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "AccessType"
 		   });		
 		addAnnotation
 		  (accessTypeObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "AccessType:Object",
 			 "baseType", "AccessType"
 		   });		
 		addAnnotation
 		  (actionEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "action",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getAction_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (actionTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "ActionType"
 		   });		
 		addAnnotation
 		  (actionTypeObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "ActionType:Object",
 			 "baseType", "ActionType"
 		   });		
 		addAnnotation
 		  (characterObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "CharacterObject"
 		   });		
 		addAnnotation
 		  (configurationKindEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "configurationkind",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getConfigurationKind_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "kindtype"
 		   });		
 		addAnnotation
 		  (dceUUIDEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "DceUUID",
 			 "baseType", "http://www.eclipse.org/emf/2003/XMLType#string",
 			 "pattern", "DCE:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}(:\\d+(.\\d+)?)?"
@@ -2177,98 +2194,112 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (enumerationEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "enumeration",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getEnumeration_Label(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "label"
 		   });		
 		addAnnotation
 		  (getEnumeration_Value(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "value"
 		   });		
 		addAnnotation
 		  (enumerationsEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "enumerations",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getEnumerations_Enumeration(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "enumeration"
 		   });		
 		addAnnotation
 		  (inputValueEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "inputvalue",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getInputValue_Simple(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simple"
 		   });		
 		addAnnotation
 		  (kindEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "kind",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getKind_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "kindtype"
 		   });		
 		addAnnotation
 		  (prfDocumentRootEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "",
 			 "kind", "mixed"
 		   });		
 		addAnnotation
 		  (getPrfDocumentRoot_Mixed(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementWildcard",
 			 "name", ":mixed"
 		   });		
 		addAnnotation
 		  (getPrfDocumentRoot_XMLNSPrefixMap(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xmlns:prefix"
 		   });		
 		addAnnotation
 		  (getPrfDocumentRoot_XSISchemaLocation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xsi:schemaLocation"
 		   });		
 		addAnnotation
 		  (getPrfDocumentRoot_Properties(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "properties",
 			 "namespace", "##targetNamespace"
@@ -2276,28 +2307,32 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (propertiesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "properties",
 			 "kind", "elementOnly"
 		   });			
 		addAnnotation
 		  (getProperties_Description(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "description"
 		   });		
 		addAnnotation
 		  (getProperties_Properties(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "group",
 			 "name", "properties:1"
 		   });		
 		addAnnotation
 		  (getProperties_Simple(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simple",
 			 "group", "#properties:1"
@@ -2305,7 +2340,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getProperties_SimpleSequence(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simplesequence",
 			 "group", "#properties:1"
@@ -2313,7 +2349,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getProperties_Test(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "test",
 			 "group", "#properties:1"
@@ -2321,7 +2358,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getProperties_Struct(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "struct",
 			 "group", "#properties:1"
@@ -2329,7 +2367,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getProperties_StructSequence(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structsequence",
 			 "group", "#properties:1"
@@ -2337,312 +2376,357 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (propertyConfigurationTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "PropertyConfigurationType"
 		   });		
 		addAnnotation
 		  (propertyConfigurationTypeObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "PropertyConfigurationType:Object",
 			 "baseType", "PropertyConfigurationType"
 		   });		
 		addAnnotation
 		  (propertyValueTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "PropertyValueType"
 		   });		
 		addAnnotation
 		  (propertyValueTypeObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "PropertyValueType:Object",
 			 "baseType", "PropertyValueType"
 		   });		
 		addAnnotation
 		  (rangeEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "range",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getRange_Max(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "max"
 		   });		
 		addAnnotation
 		  (getRange_Min(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "min"
 		   });		
 		addAnnotation
 		  (resultValueEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "resultvalue",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getResultValue_Simple(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simple"
 		   });			
 		addAnnotation
 		  (simpleEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "simple",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getSimple_Value(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "value"
 		   });		
 		addAnnotation
 		  (getSimple_Units(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "units"
 		   });		
 		addAnnotation
 		  (getSimple_Range(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "range"
 		   });		
 		addAnnotation
 		  (getSimple_Enumerations(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "enumerations"
 		   });		
 		addAnnotation
 		  (getSimple_Kind(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "kind"
 		   });		
 		addAnnotation
 		  (getSimple_Action(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "action"
 		   });		
 		addAnnotation
 		  (getSimple_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (simpleSequenceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "simplesequence",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getSimpleSequence_Values(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "values"
 		   });		
 		addAnnotation
 		  (getSimpleSequence_Units(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "units"
 		   });		
 		addAnnotation
 		  (getSimpleSequence_Range(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "range"
 		   });		
 		addAnnotation
 		  (getSimpleSequence_Kind(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "kind"
 		   });		
 		addAnnotation
 		  (getSimpleSequence_Action(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "action"
 		   });		
 		addAnnotation
 		  (getSimpleSequence_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (getSimpleSequence_Complex(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "complex"
 		   });		
 		addAnnotation
 		  (structEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "struct",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getStruct_Simple(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simple"
 		   });		
 		addAnnotation
 		  (getStruct_ConfigurationKind(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "configurationkind"
 		   });		
 		addAnnotation
 		  (structPropertyConfigurationTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "StructPropertyConfigurationType"
 		   });		
 		addAnnotation
 		  (structPropertyConfigurationTypeObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "StructPropertyConfigurationType:Object",
 			 "baseType", "StructPropertyConfigurationType"
 		   });		
 		addAnnotation
 		  (structSequenceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "structsequence",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getStructSequence_Struct(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "struct"
 		   });		
 		addAnnotation
 		  (getStructSequence_StructValue(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structvalue"
 		   });		
 		addAnnotation
 		  (getStructSequence_ConfigurationKind(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "configurationkind"
 		   });		
 		addAnnotation
 		  (structValueEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "structvalue",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getStructValue_SimpleRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simpleref"
 		   });		
 		addAnnotation
 		  (testEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "test",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getTest_Description(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "description"
 		   });		
 		addAnnotation
 		  (getTest_InputValue(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "inputvalue"
 		   });		
 		addAnnotation
 		  (getTest_ResultValue(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "resultvalue"
 		   });		
 		addAnnotation
 		  (getTest_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (unitEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "Unit",
 			 "baseType", "http://www.eclipse.org/emf/2003/XMLType#string"
 		   });		
 		addAnnotation
 		  (valuesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "values",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getValues_Value(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "value"
 		   });		
 		addAnnotation
 		  (abstractPropertyRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "propertyref",
 			 "qualified", "false"
@@ -2650,14 +2734,16 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getAbstractPropertyRef_RefID(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "refid"
 		   });		
 		addAnnotation
 		  (propertyRefGroupEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "propertyrefgroup",
 			 "qualified", "false"
@@ -2665,14 +2751,16 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getPropertyRefGroup_Properties(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "group",
 			 "name", "properties:0"
 		   });		
 		addAnnotation
 		  (getPropertyRefGroup_SimpleRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simpleref",
 			 "group", "#properties:0"
@@ -2680,7 +2768,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getPropertyRefGroup_SimpleSequenceRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simplesequenceref",
 			 "group", "#properties:0"
@@ -2688,7 +2777,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getPropertyRefGroup_StructRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structref",
 			 "group", "#properties:0"
@@ -2696,7 +2786,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getPropertyRefGroup_StructSequenceRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structsequenceref",
 			 "group", "#properties:0"
@@ -2704,7 +2795,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (propertyRefSetEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "propertyrefset",
 			 "qualified", "false"
@@ -2712,14 +2804,16 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getPropertyRefSet_Properties(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "group",
 			 "name", "properties:0"
 		   });		
 		addAnnotation
 		  (getPropertyRefSet_SimpleRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simpleref",
 			 "group", "#properties:0"
@@ -2727,7 +2821,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getPropertyRefSet_SimpleSequenceRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simplesequenceref",
 			 "group", "#properties:0"
@@ -2735,7 +2830,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getPropertyRefSet_StructRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structref",
 			 "group", "#properties:0"
@@ -2743,7 +2839,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getPropertyRefSet_StructSequenceRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structsequenceref",
 			 "group", "#properties:0"
@@ -2751,7 +2848,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (simpleRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "simpleref",
 			 "kind", "empty",
 			 "qualified", "false"
@@ -2759,14 +2857,16 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getSimpleRef_Value(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "value"
 		   });		
 		addAnnotation
 		  (simpleSequenceRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "simplesequenceref",
 			 "qualified", "false"
@@ -2774,7 +2874,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (structRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "structref",
 			 "qualified", "false"
@@ -2782,14 +2883,16 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getStructRef_SimpleRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simpleref"
 		   });		
 		addAnnotation
 		  (structSequenceRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "structsequenceref",
 			 "qualified", "false"
@@ -2797,7 +2900,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation
 		  (getStructSequenceRef_StructValue(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structvalue"
 		   });

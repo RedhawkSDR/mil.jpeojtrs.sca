@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
@@ -143,7 +143,8 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
 				if (resolve) return getInstantiation();
 				return basicGetInstantiation();
@@ -161,7 +162,8 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
 				setInstantiation((R)newValue);
 				return;
@@ -179,7 +181,8 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
 				setInstantiation((R)null);
 				return;
@@ -197,7 +200,8 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
 				return basicGetInstantiation() != null;
 			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:

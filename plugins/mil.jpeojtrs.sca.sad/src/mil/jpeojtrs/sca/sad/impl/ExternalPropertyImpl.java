@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import mil.jpeojtrs.sca.sad.ExternalProperty;
@@ -185,7 +185,8 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
 				return getCompRefID();
 			case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
@@ -203,7 +204,8 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
 				setCompRefID((String)newValue);
 				return;
@@ -224,7 +226,8 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
 				setCompRefID(COMP_REF_ID_EDEFAULT);
 				return;
@@ -245,7 +248,8 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
 				return COMP_REF_ID_EDEFAULT == null ? compRefID != null : !COMP_REF_ID_EDEFAULT.equals(compRefID);
 			case SadPackage.EXTERNAL_PROPERTY__PROP_ID:

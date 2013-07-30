@@ -71,7 +71,8 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	 * @generated
 	 */
 	public EList<String> getValue() {
-		if (value == null) {
+		if (value == null)
+		{
 			value = new EDataTypeEList<String>(String.class, this, PrfPackage.VALUES__VALUE);
 		}
 		return value;
@@ -84,7 +85,8 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.VALUES__VALUE:
 				return getValue();
 		}
@@ -99,7 +101,8 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.VALUES__VALUE:
 				getValue().clear();
 				getValue().addAll((Collection<? extends String>)newValue);
@@ -115,7 +118,8 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.VALUES__VALUE:
 				getValue().clear();
 				return;
@@ -130,7 +134,8 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.VALUES__VALUE:
 				return value != null && !value.isEmpty();
 		}

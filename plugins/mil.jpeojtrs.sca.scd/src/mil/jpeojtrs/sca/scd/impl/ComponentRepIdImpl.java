@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import mil.jpeojtrs.sca.scd.ComponentRepId;
@@ -143,7 +143,8 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.COMPONENT_REP_ID__REPID:
 				return getRepid();
 			case ScdPackage.COMPONENT_REP_ID__INTERFACE:
@@ -160,7 +161,8 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.COMPONENT_REP_ID__REPID:
 				setRepid((String)newValue);
 				return;
@@ -178,7 +180,8 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.COMPONENT_REP_ID__REPID:
 				setRepid(REPID_EDEFAULT);
 				return;
@@ -196,7 +199,8 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.COMPONENT_REP_ID__REPID:
 				return REPID_EDEFAULT == null ? repid != null : !REPID_EDEFAULT.equals(repid);
 			case ScdPackage.COMPONENT_REP_ID__INTERFACE:

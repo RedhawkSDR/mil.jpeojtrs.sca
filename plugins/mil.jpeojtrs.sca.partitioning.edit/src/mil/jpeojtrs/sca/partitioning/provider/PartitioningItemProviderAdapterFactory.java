@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
 import java.util.ArrayList;
@@ -115,7 +115,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createDomComponentFileAdapter() {
-		if (domComponentFileItemProvider == null) {
+		if (domComponentFileItemProvider == null)
+		{
 			domComponentFileItemProvider = new DomComponentFileItemProvider(this);
 		}
 
@@ -138,7 +139,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createDevComponentFileAdapter() {
-		if (devComponentFileItemProvider == null) {
+		if (devComponentFileItemProvider == null)
+		{
 			devComponentFileItemProvider = new DevComponentFileItemProvider(this);
 		}
 
@@ -161,7 +163,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentFileRefAdapter() {
-		if (componentFileRefItemProvider == null) {
+		if (componentFileRefItemProvider == null)
+		{
 			componentFileRefItemProvider = new ComponentFileRefItemProvider(this);
 		}
 
@@ -184,7 +187,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentFilesAdapter() {
-		if (componentFilesItemProvider == null) {
+		if (componentFilesItemProvider == null)
+		{
 			componentFilesItemProvider = new ComponentFilesItemProvider(this);
 		}
 
@@ -207,7 +211,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentInstantiationAdapter() {
-		if (componentInstantiationItemProvider == null) {
+		if (componentInstantiationItemProvider == null)
+		{
 			componentInstantiationItemProvider = new ComponentInstantiationItemProvider(this);
 		}
 
@@ -230,7 +235,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentPropertiesAdapter() {
-		if (componentPropertiesItemProvider == null) {
+		if (componentPropertiesItemProvider == null)
+		{
 			componentPropertiesItemProvider = new ComponentPropertiesItemProvider(this);
 		}
 
@@ -253,7 +259,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentSupportedInterfaceAdapter() {
-		if (componentSupportedInterfaceItemProvider == null) {
+		if (componentSupportedInterfaceItemProvider == null)
+		{
 			componentSupportedInterfaceItemProvider = new ComponentSupportedInterfaceItemProvider(this);
 		}
 
@@ -276,7 +283,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentSupportedInterfaceStubAdapter() {
-		if (componentSupportedInterfaceStubItemProvider == null) {
+		if (componentSupportedInterfaceStubItemProvider == null)
+		{
 			componentSupportedInterfaceStubItemProvider = new ComponentSupportedInterfaceStubItemProvider(this);
 		}
 
@@ -299,7 +307,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createDeviceThatLoadedThisComponentRefAdapter() {
-		if (deviceThatLoadedThisComponentRefItemProvider == null) {
+		if (deviceThatLoadedThisComponentRefItemProvider == null)
+		{
 			deviceThatLoadedThisComponentRefItemProvider = new DeviceThatLoadedThisComponentRefItemProvider(this);
 		}
 
@@ -322,7 +331,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createDeviceUsedByThisComponentRefAdapter() {
-		if (deviceUsedByThisComponentRefItemProvider == null) {
+		if (deviceUsedByThisComponentRefItemProvider == null)
+		{
 			deviceUsedByThisComponentRefItemProvider = new DeviceUsedByThisComponentRefItemProvider(this);
 		}
 
@@ -345,7 +355,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createDomainFinderAdapter() {
-		if (domainFinderItemProvider == null) {
+		if (domainFinderItemProvider == null)
+		{
 			domainFinderItemProvider = new DomainFinderItemProvider(this);
 		}
 
@@ -368,7 +379,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createFindByAdapter() {
-		if (findByItemProvider == null) {
+		if (findByItemProvider == null)
+		{
 			findByItemProvider = new FindByItemProvider(this);
 		}
 
@@ -391,7 +403,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createFindByStubAdapter() {
-		if (findByStubItemProvider == null) {
+		if (findByStubItemProvider == null)
+		{
 			findByStubItemProvider = new FindByStubItemProvider(this);
 		}
 
@@ -414,7 +427,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createFindByStubContainerAdapter() {
-		if (findByStubContainerItemProvider == null) {
+		if (findByStubContainerItemProvider == null)
+		{
 			findByStubContainerItemProvider = new FindByStubContainerItemProvider(this);
 		}
 
@@ -437,7 +451,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createLocalFileAdapter() {
-		if (localFileItemProvider == null) {
+		if (localFileItemProvider == null)
+		{
 			localFileItemProvider = new LocalFileItemProvider(this);
 		}
 
@@ -460,7 +475,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createNamingServiceAdapter() {
-		if (namingServiceItemProvider == null) {
+		if (namingServiceItemProvider == null)
+		{
 			namingServiceItemProvider = new NamingServiceItemProvider(this);
 		}
 
@@ -537,9 +553,11 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -556,7 +574,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	@Override
 	protected void associate(Adapter adapter, Notifier target) {
 		super.associate(adapter, target);
-		if (adapter != null) {
+		if (adapter != null)
+		{
 			disposable.add(adapter);
 		}
 	}
@@ -617,7 +636,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

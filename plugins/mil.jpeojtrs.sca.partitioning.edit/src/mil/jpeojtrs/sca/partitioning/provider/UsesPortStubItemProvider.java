@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
 
@@ -67,7 +67,8 @@ public class UsesPortStubItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -197,7 +198,8 @@ public class UsesPortStubItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(UsesPortStub.class)) {
+		switch (notification.getFeatureID(UsesPortStub.class))
+		{
 			case PartitioningPackage.USES_PORT_STUB__NAME:
 			case PartitioningPackage.USES_PORT_STUB__USES:
 			case PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER:

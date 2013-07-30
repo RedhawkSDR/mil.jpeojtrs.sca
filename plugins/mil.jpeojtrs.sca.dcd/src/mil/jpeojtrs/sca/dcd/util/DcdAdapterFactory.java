@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.util;
 
 import mil.jpeojtrs.sca.dcd.CompositePartOfDevice;
@@ -37,7 +37,6 @@ import mil.jpeojtrs.sca.partitioning.Connections;
 import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -68,7 +67,8 @@ public class DcdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public DcdAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = DcdPackage.eINSTANCE;
 		}
 	}
@@ -83,10 +83,12 @@ public class DcdAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -99,109 +101,136 @@ public class DcdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected DcdSwitch<Adapter> modelSwitch =
-		new DcdSwitch<Adapter>() {
+		new DcdSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseDcdComponentPlacement(DcdComponentPlacement object) {
+			public Adapter caseDcdComponentPlacement(DcdComponentPlacement object)
+			{
 				return createDcdComponentPlacementAdapter();
 			}
 			@Override
-			public Adapter caseDcdComponentInstantiation(DcdComponentInstantiation object) {
+			public Adapter caseDcdComponentInstantiation(DcdComponentInstantiation object)
+			{
 				return createDcdComponentInstantiationAdapter();
 			}
 			@Override
-			public Adapter caseDcdPartitioning(DcdPartitioning object) {
+			public Adapter caseDcdPartitioning(DcdPartitioning object)
+			{
 				return createDcdPartitioningAdapter();
 			}
 			@Override
-			public Adapter caseDcdComponentInstantiationRef(DcdComponentInstantiationRef object) {
+			public Adapter caseDcdComponentInstantiationRef(DcdComponentInstantiationRef object)
+			{
 				return createDcdComponentInstantiationRefAdapter();
 			}
 			@Override
-			public Adapter caseDcdConnectInterface(DcdConnectInterface object) {
+			public Adapter caseDcdConnectInterface(DcdConnectInterface object)
+			{
 				return createDcdConnectInterfaceAdapter();
 			}
 			@Override
-			public Adapter caseDcdUsesPort(DcdUsesPort object) {
+			public Adapter caseDcdUsesPort(DcdUsesPort object)
+			{
 				return createDcdUsesPortAdapter();
 			}
 			@Override
-			public Adapter caseDcdProvidesPort(DcdProvidesPort object) {
+			public Adapter caseDcdProvidesPort(DcdProvidesPort object)
+			{
 				return createDcdProvidesPortAdapter();
 			}
 			@Override
-			public Adapter caseDcdConnections(DcdConnections object) {
+			public Adapter caseDcdConnections(DcdConnections object)
+			{
 				return createDcdConnectionsAdapter();
 			}
 			@Override
-			public Adapter caseCompositePartOfDevice(CompositePartOfDevice object) {
+			public Adapter caseCompositePartOfDevice(CompositePartOfDevice object)
+			{
 				return createCompositePartOfDeviceAdapter();
 			}
 			@Override
-			public Adapter caseDcdDocumentRoot(DcdDocumentRoot object) {
+			public Adapter caseDcdDocumentRoot(DcdDocumentRoot object)
+			{
 				return createDcdDocumentRootAdapter();
 			}
 			@Override
-			public Adapter caseDeployOnDevice(DeployOnDevice object) {
+			public Adapter caseDeployOnDevice(DeployOnDevice object)
+			{
 				return createDeployOnDeviceAdapter();
 			}
 			@Override
-			public Adapter caseDeviceConfiguration(DeviceConfiguration object) {
+			public Adapter caseDeviceConfiguration(DeviceConfiguration object)
+			{
 				return createDeviceConfigurationAdapter();
 			}
 			@Override
-			public Adapter caseDeviceManagerSoftPkg(DeviceManagerSoftPkg object) {
+			public Adapter caseDeviceManagerSoftPkg(DeviceManagerSoftPkg object)
+			{
 				return createDeviceManagerSoftPkgAdapter();
 			}
 			@Override
-			public Adapter caseDevicePkgFile(DevicePkgFile object) {
+			public Adapter caseDevicePkgFile(DevicePkgFile object)
+			{
 				return createDevicePkgFileAdapter();
 			}
 			@Override
-			public Adapter caseDomainManager(DomainManager object) {
+			public Adapter caseDomainManager(DomainManager object)
+			{
 				return createDomainManagerAdapter();
 			}
 			@Override
-			public Adapter caseFileSystemName(FileSystemName object) {
+			public Adapter caseFileSystemName(FileSystemName object)
+			{
 				return createFileSystemNameAdapter();
 			}
 			@Override
-			public Adapter caseFileSystemNames(FileSystemNames object) {
+			public Adapter caseFileSystemNames(FileSystemNames object)
+			{
 				return createFileSystemNamesAdapter();
 			}
 			@Override
-			public <I extends ComponentInstantiation> Adapter caseComponentPlacement(ComponentPlacement<I> object) {
+			public <I extends ComponentInstantiation> Adapter caseComponentPlacement(ComponentPlacement<I> object)
+			{
 				return createComponentPlacementAdapter();
 			}
 			@Override
-			public Adapter caseComponentInstantiation(ComponentInstantiation object) {
+			public Adapter caseComponentInstantiation(ComponentInstantiation object)
+			{
 				return createComponentInstantiationAdapter();
 			}
 			@Override
-			public <C extends ComponentPlacement<?>> Adapter casePartitioning(Partitioning<C> object) {
+			public <C extends ComponentPlacement<?>> Adapter casePartitioning(Partitioning<C> object)
+			{
 				return createPartitioningAdapter();
 			}
 			@Override
-			public <R extends ComponentInstantiation> Adapter caseComponentInstantiationRef(ComponentInstantiationRef<R> object) {
+			public <R extends ComponentInstantiation> Adapter caseComponentInstantiationRef(ComponentInstantiationRef<R> object)
+			{
 				return createComponentInstantiationRefAdapter();
 			}
 			@Override
-			public <CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(ConnectInterface<CIR, UP, PP> object) {
+			public <CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(ConnectInterface<CIR, UP, PP> object)
+			{
 				return createConnectInterfaceAdapter();
 			}
 			@Override
-			public <U extends ComponentInstantiationRef<?>> Adapter caseUsesPort(UsesPort<U> object) {
+			public <U extends ComponentInstantiationRef<?>> Adapter caseUsesPort(UsesPort<U> object)
+			{
 				return createUsesPortAdapter();
 			}
 			@Override
-			public <P extends ComponentInstantiationRef<?>> Adapter caseProvidesPort(ProvidesPort<P> object) {
+			public <P extends ComponentInstantiationRef<?>> Adapter caseProvidesPort(ProvidesPort<P> object)
+			{
 				return createProvidesPortAdapter();
 			}
 			@Override
-			public <CI extends ConnectInterface<?, ?, ?>> Adapter caseConnections(Connections<CI> object) {
+			public <CI extends ConnectInterface<?, ?, ?>> Adapter caseConnections(Connections<CI> object)
+			{
 				return createConnectionsAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};

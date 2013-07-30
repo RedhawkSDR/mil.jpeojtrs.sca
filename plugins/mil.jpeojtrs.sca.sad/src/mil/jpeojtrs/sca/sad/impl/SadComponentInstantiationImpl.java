@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import java.math.BigInteger;
@@ -104,7 +104,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	public NotificationChain basicSetFindComponent(FindComponent newFindComponent, NotificationChain msgs) {
 		FindComponent oldFindComponent = findComponent;
 		findComponent = newFindComponent;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT, oldFindComponent, newFindComponent);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -117,7 +118,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 * @generated
 	 */
 	public void setFindComponent(FindComponent newFindComponent) {
-		if (newFindComponent != findComponent) {
+		if (newFindComponent != findComponent)
+		{
 			NotificationChain msgs = null;
 			if (findComponent != null)
 				msgs = ((InternalEObject)findComponent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT, null, msgs);
@@ -158,7 +160,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 				return basicSetFindComponent(null, msgs);
 		}
@@ -172,7 +175,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 				return getFindComponent();
 			case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
@@ -188,7 +192,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 				setFindComponent((FindComponent)newValue);
 				return;
@@ -206,7 +211,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 				setFindComponent((FindComponent)null);
 				return;
@@ -224,7 +230,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 				return findComponent != null;
 			case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:

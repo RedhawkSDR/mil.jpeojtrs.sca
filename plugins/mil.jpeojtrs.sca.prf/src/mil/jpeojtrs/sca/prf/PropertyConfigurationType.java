@@ -190,7 +190,8 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 */
 	private static final PropertyConfigurationType[] VALUES_ARRAY =
-		new PropertyConfigurationType[] {
+		new PropertyConfigurationType[]
+		{
 			CONFIGURE,
 			EXECPARAM,
 			ALLOCATION,
@@ -214,9 +215,11 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 */
 	public static PropertyConfigurationType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			PropertyConfigurationType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -230,9 +233,11 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 */
 	public static PropertyConfigurationType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			PropertyConfigurationType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -246,7 +251,8 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 */
 	public static PropertyConfigurationType get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case CONFIGURE_VALUE: return CONFIGURE;
 			case EXECPARAM_VALUE: return EXECPARAM;
 			case ALLOCATION_VALUE: return ALLOCATION;

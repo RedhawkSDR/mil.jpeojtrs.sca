@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import java.util.Collection;
@@ -75,7 +75,8 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 * @generated
 	 */
 	public EList<ExternalProperty> getProperties() {
-		if (properties == null) {
+		if (properties == null)
+		{
 			properties = new EObjectContainmentEList<ExternalProperty>(ExternalProperty.class, this, SadPackage.EXTERNAL_PROPERTIES__PROPERTIES);
 		}
 		return properties;
@@ -88,7 +89,8 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 		}
@@ -102,7 +104,8 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
 				return getProperties();
 		}
@@ -117,7 +120,8 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
 				getProperties().clear();
 				getProperties().addAll((Collection<? extends ExternalProperty>)newValue);
@@ -133,7 +137,8 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
 				getProperties().clear();
 				return;
@@ -148,7 +153,8 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
 				return properties != null && !properties.isEmpty();
 		}

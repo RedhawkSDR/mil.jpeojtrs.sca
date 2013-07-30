@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import java.util.Collection;
@@ -115,7 +115,8 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 * @generated
 	 */
 	public EList<SadComponentPlacement> getComponentPlacement() {
-		if (componentPlacement == null) {
+		if (componentPlacement == null)
+		{
 			componentPlacement = new EObjectContainmentEList<SadComponentPlacement>(SadComponentPlacement.class, this, SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT);
 		}
 		return componentPlacement;
@@ -170,7 +171,8 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
 				return ((InternalEList<?>)getComponentPlacement()).basicRemove(otherEnd, msgs);
 		}
@@ -184,7 +186,8 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
 				return getComponentPlacement();
 			case SadPackage.HOST_COLLOCATION__ID:
@@ -203,7 +206,8 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
 				getComponentPlacement().clear();
 				getComponentPlacement().addAll((Collection<? extends SadComponentPlacement>)newValue);
@@ -225,7 +229,8 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
 				getComponentPlacement().clear();
 				return;
@@ -246,7 +251,8 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
 				return componentPlacement != null && !componentPlacement.isEmpty();
 			case SadPackage.HOST_COLLOCATION__ID:

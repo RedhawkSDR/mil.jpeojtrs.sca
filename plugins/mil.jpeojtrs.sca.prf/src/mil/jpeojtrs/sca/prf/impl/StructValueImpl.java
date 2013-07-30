@@ -97,7 +97,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * @generated
 	 */
 	public EList<SimpleRef> getSimpleRef() {
-		if (simpleRef == null) {
+		if (simpleRef == null)
+		{
 			simpleRef = new EObjectContainmentEList<SimpleRef>(SimpleRef.class, this, PrfPackage.STRUCT_VALUE__SIMPLE_REF);
 		}
 		return simpleRef;
@@ -205,7 +206,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 				return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
 		}
@@ -219,7 +221,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 				return getSimpleRef();
 			case PrfPackage.STRUCT_VALUE__STRUCT:
@@ -239,7 +242,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 				getSimpleRef().clear();
 				getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
@@ -255,7 +259,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 				getSimpleRef().clear();
 				return;
@@ -270,7 +275,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 				return simpleRef != null && !simpleRef.isEmpty();
 			case PrfPackage.STRUCT_VALUE__STRUCT:

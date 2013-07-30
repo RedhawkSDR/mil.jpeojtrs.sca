@@ -134,7 +134,8 @@ public class ActionImpl extends EObjectImpl implements Action {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ACTION__TYPE:
 				return getType();
 		}
@@ -148,7 +149,8 @@ public class ActionImpl extends EObjectImpl implements Action {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ACTION__TYPE:
 				setType((ActionType)newValue);
 				return;
@@ -163,7 +165,8 @@ public class ActionImpl extends EObjectImpl implements Action {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ACTION__TYPE:
 				unsetType();
 				return;
@@ -178,7 +181,8 @@ public class ActionImpl extends EObjectImpl implements Action {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ACTION__TYPE:
 				return isSetType();
 		}

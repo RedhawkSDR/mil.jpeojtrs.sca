@@ -140,7 +140,8 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID) {
+		switch (classifierID)
+		{
 			case PrfPackage.ABSTRACT_PROPERTY:
 				return validateAbstractProperty((AbstractProperty)value, diagnostics, context);
 			case PrfPackage.ACTION:
@@ -582,8 +583,10 @@ public class PrfValidator extends EObjectValidator {
 	 * @see #validateDceUUID_Pattern
 	 */
 	public static final  PatternMatcher [][] DCE_UUID__PATTERN__VALUES =
-		new PatternMatcher [][] {
-			new PatternMatcher [] {
+		new PatternMatcher [][]
+		{
+			new PatternMatcher []
+			{
 				XMLTypeUtil.createPatternMatcher("DCE:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}(:\\d+(.\\d+)?)?")
 			}
 		};

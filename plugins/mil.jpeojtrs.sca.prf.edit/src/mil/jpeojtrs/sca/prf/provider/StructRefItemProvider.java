@@ -59,7 +59,8 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider imple
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 		}
@@ -76,7 +77,8 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider imple
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF);
 		}
@@ -121,7 +123,8 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider imple
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StructRef.class)) {
+		switch (notification.getFeatureID(StructRef.class))
+		{
 			case PrfPackage.STRUCT_REF__SIMPLE_REF:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

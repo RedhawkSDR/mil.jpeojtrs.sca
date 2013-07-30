@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.profile.impl;
 
 import mil.jpeojtrs.sca.profile.Profile;
@@ -140,7 +140,8 @@ public class ProfileImpl extends EObjectImpl implements Profile {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ProfilePackage.PROFILE__FILENAME:
 				return getFilename();
 			case ProfilePackage.PROFILE__TYPE:
@@ -156,7 +157,8 @@ public class ProfileImpl extends EObjectImpl implements Profile {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ProfilePackage.PROFILE__FILENAME:
 				setFilename((String)newValue);
 				return;
@@ -174,7 +176,8 @@ public class ProfileImpl extends EObjectImpl implements Profile {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ProfilePackage.PROFILE__FILENAME:
 				setFilename(FILENAME_EDEFAULT);
 				return;
@@ -192,7 +195,8 @@ public class ProfileImpl extends EObjectImpl implements Profile {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ProfilePackage.PROFILE__FILENAME:
 				return FILENAME_EDEFAULT == null ? filename != null : !FILENAME_EDEFAULT.equals(filename);
 			case ProfilePackage.PROFILE__TYPE:

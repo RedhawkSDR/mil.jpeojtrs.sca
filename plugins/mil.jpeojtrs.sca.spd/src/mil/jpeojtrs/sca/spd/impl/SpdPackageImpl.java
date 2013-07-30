@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import mil.jpeojtrs.sca.prf.PrfPackage;
@@ -272,8 +272,10 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
 			(theSpdPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
+			 new EValidator.Descriptor()
+			 {
+				 public EValidator getEValidator()
+				 {
 					 return SpdValidator.INSTANCE;
 				 }
 			 });
@@ -1490,27 +1492,31 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (aepComplianceTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "aepcompliance_._type"
 		   });		
 		addAnnotation
 		  (aepComplianceTypeObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "aepcompliance_._type:Object",
 			 "baseType", "aepcompliance_._type"
 		   });		
 		addAnnotation
 		  (authorEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "author",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getAuthor_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "name",
 			 "namespace", "##targetNamespace"
@@ -1518,7 +1524,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getAuthor_Company(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "company",
 			 "namespace", "##targetNamespace"
@@ -1526,7 +1533,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getAuthor_Webpage(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "webpage",
 			 "namespace", "##targetNamespace"
@@ -1534,14 +1542,16 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (codeEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "code",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getCode_LocalFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "localfile",
 			 "namespace", "##targetNamespace"
@@ -1549,7 +1559,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getCode_EntryPoint(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "entrypoint",
 			 "namespace", "##targetNamespace"
@@ -1557,7 +1568,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getCode_StackSize(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "stacksize",
 			 "namespace", "##targetNamespace"
@@ -1565,7 +1577,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getCode_Priority(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "priority",
 			 "namespace", "##targetNamespace"
@@ -1573,55 +1586,63 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getCode_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (codeFileTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "type_._type"
 		   });		
 		addAnnotation
 		  (codeFileTypeObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "type_._type:Object",
 			 "baseType", "type_._type"
 		   });		
 		addAnnotation
 		  (compilerEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "compiler",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getCompiler_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (getCompiler_Version(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "version"
 		   });		
 		addAnnotation
 		  (dependencyEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "dependency",
 			 "kind", "elementOnly"
 		   });			
 		addAnnotation
 		  (getDependency_SoftPkgRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "softpkgref",
 			 "namespace", "##targetNamespace"
@@ -1629,7 +1650,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getDependency_PropertyRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "propertyref",
 			 "group", "#properties:0"
@@ -1637,21 +1659,24 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getDependency_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (descriptorEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "descriptor",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getDescriptor_Localfile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "localfile",
 			 "namespace", "##targetNamespace"
@@ -1659,42 +1684,48 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getDescriptor_Component(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "component"
 		   });		
 		addAnnotation
 		  (getDescriptor_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (humanLanguageEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "humanLanguage",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getHumanLanguage_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (implementationEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "implementation",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getImplementation_Description(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "description",
 			 "namespace", "##targetNamespace"
@@ -1702,7 +1733,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_PropertyFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "propertyfile",
 			 "namespace", "##targetNamespace"
@@ -1710,7 +1742,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_Code(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "code",
 			 "namespace", "##targetNamespace"
@@ -1718,7 +1751,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_Compiler(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "compiler",
 			 "namespace", "##targetNamespace"
@@ -1726,7 +1760,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_ProgrammingLanguage(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "programminglanguage",
 			 "namespace", "##targetNamespace"
@@ -1734,7 +1769,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_HumanLanguage(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "humanlanguage",
 			 "namespace", "##targetNamespace"
@@ -1742,7 +1778,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_Runtime(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "runtime",
 			 "namespace", "##targetNamespace"
@@ -1750,14 +1787,16 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_DependencyMap(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "group",
 			 "name", "dependencyMap:7"
 		   });		
 		addAnnotation
 		  (getImplementation_Os(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "os",
 			 "namespace", "##targetNamespace",
@@ -1766,7 +1805,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_Processor(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "processor",
 			 "namespace", "##targetNamespace",
@@ -1775,7 +1815,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_Dependency(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "dependency",
 			 "namespace", "##targetNamespace",
@@ -1784,7 +1825,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_UsesDevice(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "usesdevice",
 			 "namespace", "##targetNamespace"
@@ -1792,119 +1834,136 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getImplementation_AepCompliance(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "aepcompliance"
 		   });		
 		addAnnotation
 		  (getImplementation_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (getImplementation_SoftPkg(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "softPkg"
 		   });		
 		addAnnotation
 		  (implRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "implRef",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getImplRef_Refid(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "refid"
 		   });		
 		addAnnotation
 		  (localFileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "localFile",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getLocalFile_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (osEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "os",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getOs_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (getOs_Version(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "version"
 		   });		
 		addAnnotation
 		  (processorEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "processor",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getProcessor_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (programmingLanguageEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "programmingLanguage",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getProgrammingLanguage_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (getProgrammingLanguage_Version(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "version"
 		   });		
 		addAnnotation
 		  (propertyFileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "propertyFile",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getPropertyFile_LocalFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "localfile",
 			 "namespace", "##targetNamespace"
@@ -1912,83 +1971,95 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getPropertyFile_Properties(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "properties"
 		   });			
 		addAnnotation
 		  (getPropertyFile_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (propertyRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "propertyRef",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getPropertyRef_RefId(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "refid"
 		   });		
 		addAnnotation
 		  (getPropertyRef_Value(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "value"
 		   });		
 		addAnnotation
 		  (runtimeEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "runtime",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getRuntime_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (getRuntime_Version(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "version"
 		   });		
 		addAnnotation
 		  (scaComplianceTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "type_._1_._type"
 		   });		
 		addAnnotation
 		  (scaComplianceTypeObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "type_._1_._type:Object",
 			 "baseType", "type_._1_._type"
 		   });		
 		addAnnotation
 		  (softPkgEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "softPkg",
 			 "kind", "elementOnly"
 		   });			
 		addAnnotation
 		  (getSoftPkg_Title(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "title",
 			 "namespace", "##targetNamespace"
@@ -1996,7 +2067,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getSoftPkg_Author(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "author",
 			 "namespace", "##targetNamespace"
@@ -2004,7 +2076,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getSoftPkg_Description(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "description",
 			 "namespace", "##targetNamespace"
@@ -2012,7 +2085,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getSoftPkg_PropertyFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "propertyfile",
 			 "namespace", "##targetNamespace"
@@ -2020,7 +2094,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getSoftPkg_Descriptor(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "descriptor",
 			 "namespace", "##targetNamespace"
@@ -2028,7 +2103,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getSoftPkg_Implementation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "implementation",
 			 "namespace", "##targetNamespace"
@@ -2036,7 +2112,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getSoftPkg_UsesDevice(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "usesdevice",
 			 "namespace", "##targetNamespace"
@@ -2044,42 +2121,48 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getSoftPkg_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (getSoftPkg_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (getSoftPkg_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (getSoftPkg_Version(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "version"
 		   });		
 		addAnnotation
 		  (softPkgRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "softPkgRef",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getSoftPkgRef_LocalFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "localfile",
 			 "namespace", "##targetNamespace"
@@ -2087,7 +2170,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getSoftPkgRef_ImplRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "implref",
 			 "namespace", "##targetNamespace"
@@ -2095,49 +2179,56 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getSoftPkgRef_Implementation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "implementation"
 		   });		
 		addAnnotation
 		  (getSoftPkgRef_SoftPkg(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "softPkg"
 		   });		
 		addAnnotation
 		  (spdDocumentRootEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "",
 			 "kind", "mixed"
 		   });		
 		addAnnotation
 		  (getSpdDocumentRoot_Mixed(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementWildcard",
 			 "name", ":mixed"
 		   });		
 		addAnnotation
 		  (getSpdDocumentRoot_XMLNSPrefixMap(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xmlns:prefix"
 		   });		
 		addAnnotation
 		  (getSpdDocumentRoot_XSISchemaLocation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xsi:schemaLocation"
 		   });		
 		addAnnotation
 		  (getSpdDocumentRoot_Softpkg(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "softpkg",
 			 "namespace", "##targetNamespace"
@@ -2145,20 +2236,23 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (uriEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "URI"
 		   });		
 		addAnnotation
 		  (usesDeviceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "usesDevice",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getUsesDevice_PropertyRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "propertyref",
 			 "group", "#properties:0"
@@ -2166,14 +2260,16 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (getUsesDevice_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (getUsesDevice_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });
@@ -2190,13 +2286,15 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation
 		  (dependencyEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "constraints", "NonEmptyDependency"
 		   });																																																					
 		addAnnotation
 		  (softPkgEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "constraints", "isValueConsistent"
 		   });																										
 	}

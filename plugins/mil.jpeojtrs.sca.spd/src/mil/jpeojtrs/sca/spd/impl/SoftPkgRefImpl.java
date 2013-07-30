@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import mil.jpeojtrs.sca.spd.ImplRef;
@@ -97,7 +97,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	public NotificationChain basicSetLocalFileGen(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG_REF__LOCAL_FILE, oldLocalFile, newLocalFile);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -131,7 +132,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 * @generated
 	 */
 	public void setLocalFile(LocalFile newLocalFile) {
-		if (newLocalFile != localFile) {
+		if (newLocalFile != localFile)
+		{
 			NotificationChain msgs = null;
 			if (localFile != null)
 				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG_REF__LOCAL_FILE, null, msgs);
@@ -160,7 +162,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	public NotificationChain basicSetImplRefGen(ImplRef newImplRef, NotificationChain msgs) {
 		ImplRef oldImplRef = implRef;
 		implRef = newImplRef;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG_REF__IMPL_REF, oldImplRef, newImplRef);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -191,7 +194,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 * @generated
 	 */
 	public void setImplRef(ImplRef newImplRef) {
-		if (newImplRef != implRef) {
+		if (newImplRef != implRef)
+		{
 			NotificationChain msgs = null;
 			if (implRef != null)
 				msgs = ((InternalEObject)implRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG_REF__IMPL_REF, null, msgs);
@@ -246,7 +250,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
 				return basicSetLocalFile(null, msgs);
 			case SpdPackage.SOFT_PKG_REF__IMPL_REF:
@@ -262,7 +267,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
 				return getLocalFile();
 			case SpdPackage.SOFT_PKG_REF__IMPL_REF:
@@ -284,7 +290,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
 				setLocalFile((LocalFile)newValue);
 				return;
@@ -308,7 +315,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
 				setLocalFile((LocalFile)null);
 				return;
@@ -332,7 +340,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
 				return localFile != null;
 			case SpdPackage.SOFT_PKG_REF__IMPL_REF:

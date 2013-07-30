@@ -140,7 +140,8 @@ public class EnumerationImpl extends EObjectImpl implements Enumeration {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ENUMERATION__LABEL:
 				return getLabel();
 			case PrfPackage.ENUMERATION__VALUE:
@@ -156,7 +157,8 @@ public class EnumerationImpl extends EObjectImpl implements Enumeration {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ENUMERATION__LABEL:
 				setLabel((String)newValue);
 				return;
@@ -174,7 +176,8 @@ public class EnumerationImpl extends EObjectImpl implements Enumeration {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ENUMERATION__LABEL:
 				setLabel(LABEL_EDEFAULT);
 				return;
@@ -192,7 +195,8 @@ public class EnumerationImpl extends EObjectImpl implements Enumeration {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ENUMERATION__LABEL:
 				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
 			case PrfPackage.ENUMERATION__VALUE:

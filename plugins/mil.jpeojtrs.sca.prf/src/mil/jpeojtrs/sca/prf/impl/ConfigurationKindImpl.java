@@ -134,7 +134,8 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.CONFIGURATION_KIND__TYPE:
 				return getType();
 		}
@@ -148,7 +149,8 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.CONFIGURATION_KIND__TYPE:
 				setType((StructPropertyConfigurationType)newValue);
 				return;
@@ -163,7 +165,8 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.CONFIGURATION_KIND__TYPE:
 				unsetType();
 				return;
@@ -178,7 +181,8 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.CONFIGURATION_KIND__TYPE:
 				return isSetType();
 		}

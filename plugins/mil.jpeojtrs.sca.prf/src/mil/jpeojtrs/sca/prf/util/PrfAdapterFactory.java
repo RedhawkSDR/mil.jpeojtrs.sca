@@ -69,7 +69,8 @@ public class PrfAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public PrfAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = PrfPackage.eINSTANCE;
 		}
 	}
@@ -84,10 +85,12 @@ public class PrfAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -100,117 +103,146 @@ public class PrfAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected PrfSwitch<Adapter> modelSwitch =
-		new PrfSwitch<Adapter>() {
+		new PrfSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseAbstractProperty(AbstractProperty object) {
+			public Adapter caseAbstractProperty(AbstractProperty object)
+			{
 				return createAbstractPropertyAdapter();
 			}
 			@Override
-			public Adapter caseAction(Action object) {
+			public Adapter caseAction(Action object)
+			{
 				return createActionAdapter();
 			}
 			@Override
-			public Adapter caseConfigurationKind(ConfigurationKind object) {
+			public Adapter caseConfigurationKind(ConfigurationKind object)
+			{
 				return createConfigurationKindAdapter();
 			}
 			@Override
-			public Adapter caseEnumeration(Enumeration object) {
+			public Adapter caseEnumeration(Enumeration object)
+			{
 				return createEnumerationAdapter();
 			}
 			@Override
-			public Adapter caseEnumerations(Enumerations object) {
+			public Adapter caseEnumerations(Enumerations object)
+			{
 				return createEnumerationsAdapter();
 			}
 			@Override
-			public Adapter caseInputValue(InputValue object) {
+			public Adapter caseInputValue(InputValue object)
+			{
 				return createInputValueAdapter();
 			}
 			@Override
-			public Adapter caseKind(Kind object) {
+			public Adapter caseKind(Kind object)
+			{
 				return createKindAdapter();
 			}
 			@Override
-			public Adapter casePrfDocumentRoot(PrfDocumentRoot object) {
+			public Adapter casePrfDocumentRoot(PrfDocumentRoot object)
+			{
 				return createPrfDocumentRootAdapter();
 			}
 			@Override
-			public Adapter caseProperties(Properties object) {
+			public Adapter caseProperties(Properties object)
+			{
 				return createPropertiesAdapter();
 			}
 			@Override
-			public Adapter caseRange(Range object) {
+			public Adapter caseRange(Range object)
+			{
 				return createRangeAdapter();
 			}
 			@Override
-			public Adapter caseResultValue(ResultValue object) {
+			public Adapter caseResultValue(ResultValue object)
+			{
 				return createResultValueAdapter();
 			}
 			@Override
-			public Adapter caseSimple(Simple object) {
+			public Adapter caseSimple(Simple object)
+			{
 				return createSimpleAdapter();
 			}
 			@Override
-			public Adapter caseSimpleSequence(SimpleSequence object) {
+			public Adapter caseSimpleSequence(SimpleSequence object)
+			{
 				return createSimpleSequenceAdapter();
 			}
 			@Override
-			public Adapter caseStruct(Struct object) {
+			public Adapter caseStruct(Struct object)
+			{
 				return createStructAdapter();
 			}
 			@Override
-			public Adapter caseStructSequence(StructSequence object) {
+			public Adapter caseStructSequence(StructSequence object)
+			{
 				return createStructSequenceAdapter();
 			}
 			@Override
-			public Adapter caseStructValue(StructValue object) {
+			public Adapter caseStructValue(StructValue object)
+			{
 				return createStructValueAdapter();
 			}
 			@Override
-			public Adapter caseTest(Test object) {
+			public Adapter caseTest(Test object)
+			{
 				return createTestAdapter();
 			}
 			@Override
-			public Adapter caseValues(Values object) {
+			public Adapter caseValues(Values object)
+			{
 				return createValuesAdapter();
 			}
 			@Override
-			public Adapter casePropertyContainer(PropertyContainer object) {
+			public Adapter casePropertyContainer(PropertyContainer object)
+			{
 				return createPropertyContainerAdapter();
 			}
 			@Override
-			public <P extends AbstractProperty> Adapter caseAbstractPropertyRef(AbstractPropertyRef<P> object) {
+			public <P extends AbstractProperty> Adapter caseAbstractPropertyRef(AbstractPropertyRef<P> object)
+			{
 				return createAbstractPropertyRefAdapter();
 			}
 			@Override
-			public Adapter casePropertyRefContainer(PropertyRefContainer object) {
+			public Adapter casePropertyRefContainer(PropertyRefContainer object)
+			{
 				return createPropertyRefContainerAdapter();
 			}
 			@Override
-			public Adapter casePropertyRefGroup(PropertyRefGroup object) {
+			public Adapter casePropertyRefGroup(PropertyRefGroup object)
+			{
 				return createPropertyRefGroupAdapter();
 			}
 			@Override
-			public Adapter casePropertyRefSet(PropertyRefSet object) {
+			public Adapter casePropertyRefSet(PropertyRefSet object)
+			{
 				return createPropertyRefSetAdapter();
 			}
 			@Override
-			public Adapter caseSimpleRef(SimpleRef object) {
+			public Adapter caseSimpleRef(SimpleRef object)
+			{
 				return createSimpleRefAdapter();
 			}
 			@Override
-			public Adapter caseSimpleSequenceRef(SimpleSequenceRef object) {
+			public Adapter caseSimpleSequenceRef(SimpleSequenceRef object)
+			{
 				return createSimpleSequenceRefAdapter();
 			}
 			@Override
-			public Adapter caseStructRef(StructRef object) {
+			public Adapter caseStructRef(StructRef object)
+			{
 				return createStructRefAdapter();
 			}
 			@Override
-			public Adapter caseStructSequenceRef(StructSequenceRef object) {
+			public Adapter caseStructSequenceRef(StructSequenceRef object)
+			{
 				return createStructSequenceRefAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};

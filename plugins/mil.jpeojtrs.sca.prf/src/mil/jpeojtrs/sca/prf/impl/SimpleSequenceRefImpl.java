@@ -97,7 +97,8 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	public NotificationChain basicSetValues(Values newValues, NotificationChain msgs) {
 		Values oldValues = values;
 		values = newValues;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, oldValues, newValues);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -110,7 +111,8 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 * @generated
 	 */
 	public void setValues(Values newValues) {
-		if (newValues != values) {
+		if (newValues != values)
+		{
 			NotificationChain msgs = null;
 			if (values != null)
 				msgs = ((InternalEObject)values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
@@ -130,7 +132,8 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
 				return basicSetValues(null, msgs);
 		}
@@ -144,7 +147,8 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
 				return getValues();
 		}
@@ -158,7 +162,8 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
 				setValues((Values)newValue);
 				return;
@@ -173,7 +178,8 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
 				setValues((Values)null);
 				return;
@@ -188,7 +194,8 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
 				return values != null;
 		}
@@ -198,7 +205,7 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	@Override
     public Any toAny() {
 		if (getValues() != null) {
-			return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral(), getProperty().getComplex());
+			return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral(), getProperty().isComplex());
 		} else {
 			return ORB.init().create_any();
 		}

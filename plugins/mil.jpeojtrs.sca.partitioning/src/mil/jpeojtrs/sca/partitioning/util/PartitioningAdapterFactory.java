@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.util;
 
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
@@ -40,7 +40,6 @@ import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -71,7 +70,8 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public PartitioningAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = PartitioningPackage.eINSTANCE;
 		}
 	}
@@ -86,10 +86,12 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -102,121 +104,151 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected PartitioningSwitch<Adapter> modelSwitch =
-		new PartitioningSwitch<Adapter>() {
+		new PartitioningSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseComponentFile(ComponentFile object) {
+			public Adapter caseComponentFile(ComponentFile object)
+			{
 				return createComponentFileAdapter();
 			}
 			@Override
-			public Adapter caseDomComponentFile(DomComponentFile object) {
+			public Adapter caseDomComponentFile(DomComponentFile object)
+			{
 				return createDomComponentFileAdapter();
 			}
 			@Override
-			public Adapter caseDevComponentFile(DevComponentFile object) {
+			public Adapter caseDevComponentFile(DevComponentFile object)
+			{
 				return createDevComponentFileAdapter();
 			}
 			@Override
-			public Adapter caseComponentFileRef(ComponentFileRef object) {
+			public Adapter caseComponentFileRef(ComponentFileRef object)
+			{
 				return createComponentFileRefAdapter();
 			}
 			@Override
-			public Adapter caseComponentFiles(ComponentFiles object) {
+			public Adapter caseComponentFiles(ComponentFiles object)
+			{
 				return createComponentFilesAdapter();
 			}
 			@Override
-			public Adapter caseComponentInstantiation(ComponentInstantiation object) {
+			public Adapter caseComponentInstantiation(ComponentInstantiation object)
+			{
 				return createComponentInstantiationAdapter();
 			}
 			@Override
-			public <R extends ComponentInstantiation> Adapter caseComponentInstantiationRef(ComponentInstantiationRef<R> object) {
+			public <R extends ComponentInstantiation> Adapter caseComponentInstantiationRef(ComponentInstantiationRef<R> object)
+			{
 				return createComponentInstantiationRefAdapter();
 			}
 			@Override
-			public <I extends ComponentInstantiation> Adapter caseComponentPlacement(ComponentPlacement<I> object) {
+			public <I extends ComponentInstantiation> Adapter caseComponentPlacement(ComponentPlacement<I> object)
+			{
 				return createComponentPlacementAdapter();
 			}
 			@Override
-			public Adapter caseComponentProperties(ComponentProperties object) {
+			public Adapter caseComponentProperties(ComponentProperties object)
+			{
 				return createComponentPropertiesAdapter();
 			}
 			@Override
-			public Adapter caseComponentSupportedInterface(ComponentSupportedInterface object) {
+			public Adapter caseComponentSupportedInterface(ComponentSupportedInterface object)
+			{
 				return createComponentSupportedInterfaceAdapter();
 			}
 			@Override
-			public Adapter caseComponentSupportedInterfaceStub(ComponentSupportedInterfaceStub object) {
+			public Adapter caseComponentSupportedInterfaceStub(ComponentSupportedInterfaceStub object)
+			{
 				return createComponentSupportedInterfaceStubAdapter();
 			}
 			@Override
-			public <CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(ConnectInterface<CIR, UP, PP> object) {
+			public <CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(ConnectInterface<CIR, UP, PP> object)
+			{
 				return createConnectInterfaceAdapter();
 			}
 			@Override
-			public <CI extends ConnectInterface<?, ?, ?>> Adapter caseConnections(Connections<CI> object) {
+			public <CI extends ConnectInterface<?, ?, ?>> Adapter caseConnections(Connections<CI> object)
+			{
 				return createConnectionsAdapter();
 			}
 			@Override
-			public Adapter caseConnectionTarget(ConnectionTarget object) {
+			public Adapter caseConnectionTarget(ConnectionTarget object)
+			{
 				return createConnectionTargetAdapter();
 			}
 			@Override
-			public Adapter caseDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef object) {
+			public Adapter caseDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef object)
+			{
 				return createDeviceThatLoadedThisComponentRefAdapter();
 			}
 			@Override
-			public Adapter caseDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef object) {
+			public Adapter caseDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef object)
+			{
 				return createDeviceUsedByThisComponentRefAdapter();
 			}
 			@Override
-			public Adapter caseDomainFinder(DomainFinder object) {
+			public Adapter caseDomainFinder(DomainFinder object)
+			{
 				return createDomainFinderAdapter();
 			}
 			@Override
-			public Adapter caseFindBy(FindBy object) {
+			public Adapter caseFindBy(FindBy object)
+			{
 				return createFindByAdapter();
 			}
 			@Override
-			public Adapter caseFindByStub(FindByStub object) {
+			public Adapter caseFindByStub(FindByStub object)
+			{
 				return createFindByStubAdapter();
 			}
 			@Override
-			public Adapter caseFindByStubContainer(FindByStubContainer object) {
+			public Adapter caseFindByStubContainer(FindByStubContainer object)
+			{
 				return createFindByStubContainerAdapter();
 			}
 			@Override
-			public Adapter caseLocalFile(LocalFile object) {
+			public Adapter caseLocalFile(LocalFile object)
+			{
 				return createLocalFileAdapter();
 			}
 			@Override
-			public Adapter caseNamingService(NamingService object) {
+			public Adapter caseNamingService(NamingService object)
+			{
 				return createNamingServiceAdapter();
 			}
 			@Override
-			public <C extends ComponentPlacement<?>> Adapter casePartitioning(Partitioning<C> object) {
+			public <C extends ComponentPlacement<?>> Adapter casePartitioning(Partitioning<C> object)
+			{
 				return createPartitioningAdapter();
 			}
 			@Override
-			public <P extends ComponentInstantiationRef<?>> Adapter caseProvidesPort(ProvidesPort<P> object) {
+			public <P extends ComponentInstantiationRef<?>> Adapter caseProvidesPort(ProvidesPort<P> object)
+			{
 				return createProvidesPortAdapter();
 			}
 			@Override
-			public Adapter caseProvidesPortStub(ProvidesPortStub object) {
+			public Adapter caseProvidesPortStub(ProvidesPortStub object)
+			{
 				return createProvidesPortStubAdapter();
 			}
 			@Override
-			public <U extends ComponentInstantiationRef<?>> Adapter caseUsesPort(UsesPort<U> object) {
+			public <U extends ComponentInstantiationRef<?>> Adapter caseUsesPort(UsesPort<U> object)
+			{
 				return createUsesPortAdapter();
 			}
 			@Override
-			public Adapter caseUsesPortStub(UsesPortStub object) {
+			public Adapter caseUsesPortStub(UsesPortStub object)
+			{
 				return createUsesPortStubAdapter();
 			}
 			@Override
-			public Adapter casePropertyRefContainer(PropertyRefContainer object) {
+			public Adapter casePropertyRefContainer(PropertyRefContainer object)
+			{
 				return createPropertyRefContainerAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};

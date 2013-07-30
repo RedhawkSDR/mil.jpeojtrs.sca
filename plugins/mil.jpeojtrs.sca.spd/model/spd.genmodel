@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText=""
-    modelDirectory="/mil.jpeojtrs.sca.spd/src" modelPluginID="mil.jpeojtrs.sca.spd"
-    templateDirectory="/mil.jpeojtrs.sca.templates/templates" dynamicTemplates="true"
-    forceOverwrite="true" modelName="Spd" testSuiteClass="" importerID="org.eclipse.xsd.ecore.importer"
-    containmentProxies="true" complianceLevel="5.0" copyrightFields="false" tableProviders="true"
-    runtimeVersion="2.6" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf platform:/plugin/mil.jpeojtrs.sca.scd/model/scd.genmodel#//scd">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/mil.jpeojtrs.sca.spd/src" editorDirectory=""
+    modelPluginID="mil.jpeojtrs.sca.spd" templateDirectory="mil.jpeojtrs.sca.spd/templates"
+    dynamicTemplates="true" forceOverwrite="true" modelName="Spd" codeFormatting="true"
+    testSuiteClass="" importerID="org.eclipse.xsd.ecore.importer" containmentProxies="true"
+    complianceLevel="6.0" copyrightFields="false" tableProviders="true" runtimeVersion="2.8"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf platform:/plugin/mil.jpeojtrs.sca.scd/model/scd.genmodel#//scd"
+    importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
     <genAnnotations source="selectedPackages">
       <details key="http://sca.jpeojtrs.mil/spd" value="spd.xsd"/>
@@ -134,6 +134,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//SoftPkg/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//SoftPkg/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//SoftPkg/version"/>
+      <genOperations ecoreOperation="spd.ecore#//SoftPkg/getImplementation">
+        <genParameters ecoreParameter="spd.ecore#//SoftPkg/getImplementation/implID"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="spd.ecore#//SoftPkgRef">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//SoftPkgRef/localFile"/>

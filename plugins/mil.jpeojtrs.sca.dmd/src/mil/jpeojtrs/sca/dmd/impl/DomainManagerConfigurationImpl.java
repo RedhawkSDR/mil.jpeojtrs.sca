@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.impl;
 
 import mil.jpeojtrs.sca.dmd.DmdPackage;
@@ -172,7 +172,8 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	public NotificationChain basicSetDomainManagerSoftPkg(DomainManagerSoftPkg newDomainManagerSoftPkg, NotificationChain msgs) {
 		DomainManagerSoftPkg oldDomainManagerSoftPkg = domainManagerSoftPkg;
 		domainManagerSoftPkg = newDomainManagerSoftPkg;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DmdPackage.DOMAIN_MANAGER_CONFIGURATION__DOMAIN_MANAGER_SOFT_PKG, oldDomainManagerSoftPkg, newDomainManagerSoftPkg);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -185,7 +186,8 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * @generated
 	 */
 	public void setDomainManagerSoftPkg(DomainManagerSoftPkg newDomainManagerSoftPkg) {
-		if (newDomainManagerSoftPkg != domainManagerSoftPkg) {
+		if (newDomainManagerSoftPkg != domainManagerSoftPkg)
+		{
 			NotificationChain msgs = null;
 			if (domainManagerSoftPkg != null)
 				msgs = ((InternalEObject)domainManagerSoftPkg).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DmdPackage.DOMAIN_MANAGER_CONFIGURATION__DOMAIN_MANAGER_SOFT_PKG, null, msgs);
@@ -215,7 +217,8 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	public NotificationChain basicSetServices(Services newServices, NotificationChain msgs) {
 		Services oldServices = services;
 		services = newServices;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DmdPackage.DOMAIN_MANAGER_CONFIGURATION__SERVICES, oldServices, newServices);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -228,7 +231,8 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * @generated
 	 */
 	public void setServices(Services newServices) {
-		if (newServices != services) {
+		if (newServices != services)
+		{
 			NotificationChain msgs = null;
 			if (services != null)
 				msgs = ((InternalEObject)services).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DmdPackage.DOMAIN_MANAGER_CONFIGURATION__SERVICES, null, msgs);
@@ -290,7 +294,8 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__DOMAIN_MANAGER_SOFT_PKG:
 				return basicSetDomainManagerSoftPkg(null, msgs);
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__SERVICES:
@@ -306,7 +311,8 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__DESCRIPTION:
 				return getDescription();
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__DOMAIN_MANAGER_SOFT_PKG:
@@ -328,7 +334,8 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -355,7 +362,8 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -382,7 +390,8 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION__DOMAIN_MANAGER_SOFT_PKG:

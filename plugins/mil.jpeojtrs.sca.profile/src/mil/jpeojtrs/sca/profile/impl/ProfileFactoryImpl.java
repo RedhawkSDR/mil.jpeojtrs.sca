@@ -8,14 +8,13 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.profile.impl;
 
 import mil.jpeojtrs.sca.profile.DocumentRoot;
 import mil.jpeojtrs.sca.profile.Profile;
 import mil.jpeojtrs.sca.profile.ProfileFactory;
 import mil.jpeojtrs.sca.profile.ProfilePackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -37,13 +36,16 @@ public class ProfileFactoryImpl extends EFactoryImpl implements ProfileFactory {
 	 * @generated
 	 */
 	public static ProfileFactory init() {
-		try {
-			ProfileFactory theProfileFactory = (ProfileFactory)EPackage.Registry.INSTANCE.getEFactory("http://sca.jpeojtrs.mil/profile"); 
-			if (theProfileFactory != null) {
+		try
+		{
+			ProfileFactory theProfileFactory = (ProfileFactory)EPackage.Registry.INSTANCE.getEFactory(ProfilePackage.eNS_URI);
+			if (theProfileFactory != null)
+			{
 				return theProfileFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ProfileFactoryImpl();
@@ -66,7 +68,8 @@ public class ProfileFactoryImpl extends EFactoryImpl implements ProfileFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case ProfilePackage.DOCUMENT_ROOT: return createDocumentRoot();
 			case ProfilePackage.PROFILE: return createProfile();
 			default:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import mil.jpeojtrs.sca.scd.Interface;
@@ -196,7 +196,8 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
 				return getRepId();
 			case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
@@ -217,7 +218,8 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
 				setRepId((String)newValue);
 				return;
@@ -238,7 +240,8 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
 				setRepId(REP_ID_EDEFAULT);
 				return;
@@ -259,7 +262,8 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
 				return REP_ID_EDEFAULT == null ? repId != null : !REP_ID_EDEFAULT.equals(repId);
 			case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:

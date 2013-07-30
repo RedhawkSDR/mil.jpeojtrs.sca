@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
 
@@ -67,7 +67,8 @@ public class ExternalPropertyItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addCompRefIDPropertyDescriptor(object);
@@ -179,7 +180,8 @@ public class ExternalPropertyItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ExternalProperty.class)) {
+		switch (notification.getFeatureID(ExternalProperty.class))
+		{
 			case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
 			case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
 			case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:

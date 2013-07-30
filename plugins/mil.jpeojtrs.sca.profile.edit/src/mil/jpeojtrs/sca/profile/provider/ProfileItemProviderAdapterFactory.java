@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.profile.provider;
 
 import java.util.ArrayList;
@@ -94,7 +94,8 @@ public class ProfileItemProviderAdapterFactory extends ProfileAdapterFactory imp
 	 */
 	@Override
 	public Adapter createDocumentRootAdapter() {
-		if (documentRootItemProvider == null) {
+		if (documentRootItemProvider == null)
+		{
 			documentRootItemProvider = new DocumentRootItemProvider(this);
 		}
 
@@ -117,7 +118,8 @@ public class ProfileItemProviderAdapterFactory extends ProfileAdapterFactory imp
 	 */
 	@Override
 	public Adapter createProfileAdapter() {
-		if (profileItemProvider == null) {
+		if (profileItemProvider == null)
+		{
 			profileItemProvider = new ProfileItemProvider(this);
 		}
 
@@ -172,9 +174,11 @@ public class ProfileItemProviderAdapterFactory extends ProfileAdapterFactory imp
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -211,7 +215,8 @@ public class ProfileItemProviderAdapterFactory extends ProfileAdapterFactory imp
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

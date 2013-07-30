@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
@@ -32,7 +32,6 @@ import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -55,13 +54,16 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * @generated
 	 */
 	public static PartitioningFactory init() {
-		try {
-			PartitioningFactory thePartitioningFactory = (PartitioningFactory)EPackage.Registry.INSTANCE.getEFactory("http://sca.jpeojtrs.mil/partitioning"); 
-			if (thePartitioningFactory != null) {
+		try
+		{
+			PartitioningFactory thePartitioningFactory = (PartitioningFactory)EPackage.Registry.INSTANCE.getEFactory(PartitioningPackage.eNS_URI);
+			if (thePartitioningFactory != null)
+			{
 				return thePartitioningFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new PartitioningFactoryImpl();
@@ -84,7 +86,8 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case PartitioningPackage.DOM_COMPONENT_FILE: return createDomComponentFile();
 			case PartitioningPackage.DEV_COMPONENT_FILE: return createDevComponentFile();
 			case PartitioningPackage.COMPONENT_FILE_REF: return createComponentFileRef();
@@ -115,7 +118,8 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case PartitioningPackage.DOMAIN_FINDER_TYPE:
 				return createDomainFinderTypeFromString(eDataType, initialValue);
 			case PartitioningPackage.DOMAIN_FINDER_TYPE_OBJECT:
@@ -132,7 +136,8 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case PartitioningPackage.DOMAIN_FINDER_TYPE:
 				return convertDomainFinderTypeToString(eDataType, instanceValue);
 			case PartitioningPackage.DOMAIN_FINDER_TYPE_OBJECT:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.profile.impl;
 
 import mil.jpeojtrs.sca.profile.DocumentRoot;
@@ -296,35 +296,40 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 		addAnnotation
 		  (documentRootEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "",
 			 "kind", "mixed"
 		   });		
 		addAnnotation
 		  (getDocumentRoot_Mixed(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementWildcard",
 			 "name", ":mixed"
 		   });		
 		addAnnotation
 		  (getDocumentRoot_XMLNSPrefixMap(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xmlns:prefix"
 		   });		
 		addAnnotation
 		  (getDocumentRoot_XSISchemaLocation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xsi:schemaLocation"
 		   });		
 		addAnnotation
 		  (getDocumentRoot_Profile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "profile",
 			 "namespace", "##targetNamespace"
@@ -332,21 +337,24 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 		addAnnotation
 		  (profileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "profile",
 			 "kind", "empty"
 		   });			
 		addAnnotation
 		  (getProfile_Filename(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "filename"
 		   });			
 		addAnnotation
 		  (getProfile_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
 
@@ -66,7 +66,8 @@ public class DeviceThatLoadedThisComponentRefItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addRefidPropertyDescriptor(object);
@@ -132,7 +133,8 @@ public class DeviceThatLoadedThisComponentRefItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DeviceThatLoadedThisComponentRef.class)) {
+		switch (notification.getFeatureID(DeviceThatLoadedThisComponentRef.class))
+		{
 			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

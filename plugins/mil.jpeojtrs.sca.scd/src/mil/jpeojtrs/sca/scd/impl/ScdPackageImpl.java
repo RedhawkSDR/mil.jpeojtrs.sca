@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import mil.jpeojtrs.sca.prf.PrfPackage;
@@ -219,8 +219,10 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
 			(theScdPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
+			 new EValidator.Descriptor()
+			 {
+				 public EValidator getEValidator()
+				 {
 					 return ScdValidator.INSTANCE;
 				 }
 			 });
@@ -1024,14 +1026,16 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (componentFeaturesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "componentFeatures",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getComponentFeatures_SupportsInterface(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "supportsinterface",
 			 "namespace", "##targetNamespace"
@@ -1039,7 +1043,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (getComponentFeatures_Ports(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "ports",
 			 "namespace", "##targetNamespace"
@@ -1047,42 +1052,48 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (componentRepIdEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "componentRepId",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getComponentRepId_Repid(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "repid"
 		   });		
 		addAnnotation
 		  (inheritsInterfaceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "inheritsInterface",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getInheritsInterface_Repid(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "repid"
 		   });			
 		addAnnotation
 		  (interfaceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "interface",
 			 "kind", "elementOnly"
 		   });			
 		addAnnotation
 		  (getInterface_InheritsInterfaces(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "inheritsinterface",
 			 "namespace", "##targetNamespace"
@@ -1090,28 +1101,32 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (getInterface_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });			
 		addAnnotation
 		  (getInterface_Repid(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "repid"
 		   });			
 		addAnnotation
 		  (interfacesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "interfaces",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getInterfaces_Interface(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "interface",
 			 "namespace", "##targetNamespace"
@@ -1119,35 +1134,40 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (localFileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "localFile",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getLocalFile_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (portsEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "ports",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getPorts_Group(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "group",
 			 "name", "group:0"
 		   });		
 		addAnnotation
 		  (getPorts_Provides(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "provides",
 			 "namespace", "##targetNamespace",
@@ -1156,7 +1176,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (getPorts_Uses(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "uses",
 			 "namespace", "##targetNamespace",
@@ -1165,41 +1186,47 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (portTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "type_._type"
 		   });			
 		addAnnotation
 		  (portTypeContainerEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "portType",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getPortTypeContainer_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (portTypeObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "type_._type:Object",
 			 "baseType", "type_._type"
 		   });		
 		addAnnotation
 		  (propertyFileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "propertyFile",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getPropertyFile_LocalFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "localfile",
 			 "namespace", "##targetNamespace"
@@ -1207,28 +1234,32 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (getPropertyFile_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (providesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "provides",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getProvides_ProvidesName(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "providesname"
 		   });		
 		addAnnotation
 		  (getAbstractPort_PortType(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "porttype",
 			 "namespace", "##targetNamespace"
@@ -1236,42 +1267,48 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (getAbstractPort_RepID(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "repid"
 		   });			
 		addAnnotation
 		  (scdDocumentRootEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "",
 			 "kind", "mixed"
 		   });		
 		addAnnotation
 		  (getScdDocumentRoot_Mixed(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementWildcard",
 			 "name", ":mixed"
 		   });		
 		addAnnotation
 		  (getScdDocumentRoot_XMLNSPrefixMap(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xmlns:prefix"
 		   });		
 		addAnnotation
 		  (getScdDocumentRoot_XSISchemaLocation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xsi:schemaLocation"
 		   });		
 		addAnnotation
 		  (getScdDocumentRoot_Softwarecomponent(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "softwarecomponent",
 			 "namespace", "##targetNamespace"
@@ -1279,14 +1316,16 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (softwareComponentEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "softwareComponent",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getSoftwareComponent_CorbaVersion(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "corbaversion",
 			 "namespace", "##targetNamespace"
@@ -1294,7 +1333,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (getSoftwareComponent_ComponentRepID(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentrepid",
 			 "namespace", "##targetNamespace"
@@ -1302,7 +1342,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (getSoftwareComponent_ComponentType(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componenttype",
 			 "namespace", "##targetNamespace"
@@ -1310,7 +1351,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (getSoftwareComponent_ComponentFeatures(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentfeatures",
 			 "namespace", "##targetNamespace"
@@ -1318,7 +1360,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (getSoftwareComponent_Interfaces(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "interfaces",
 			 "namespace", "##targetNamespace"
@@ -1326,7 +1369,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (getSoftwareComponent_PropertyFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "propertyfile",
 			 "namespace", "##targetNamespace"
@@ -1334,35 +1378,40 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (supportsInterfaceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "supportsInterface",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getSupportsInterface_RepId(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "repid"
 		   });			
 		addAnnotation
 		  (getSupportsInterface_SupportsName(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "supportsname"
 		   });		
 		addAnnotation
 		  (usesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "uses",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getUses_UsesName(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "usesname"
 		   });
@@ -1379,7 +1428,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation
 		  (portTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "constraints", "isValueConsistent"
 		   });																													
 	}

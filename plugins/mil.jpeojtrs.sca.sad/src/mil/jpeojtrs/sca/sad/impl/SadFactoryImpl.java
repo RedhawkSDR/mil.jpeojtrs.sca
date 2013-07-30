@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import mil.jpeojtrs.sca.partitioning.DomComponentFile;
@@ -34,7 +34,6 @@ import mil.jpeojtrs.sca.sad.SadPartitioning;
 import mil.jpeojtrs.sca.sad.SadProvidesPort;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -55,13 +54,16 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * @generated
 	 */
 	public static SadFactory init() {
-		try {
+		try
+		{
 			SadFactory theSadFactory = (SadFactory)EPackage.Registry.INSTANCE.getEFactory(SadPackage.eNS_URI);
-			if (theSadFactory != null) {
+			if (theSadFactory != null)
+			{
 				return theSadFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new SadFactoryImpl();
@@ -84,7 +86,8 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case SadPackage.ASSEMBLY_CONTROLLER: return createAssemblyController();
 			case SadPackage.SAD_COMPONENT_INSTANTIATION: return createSadComponentInstantiation();
 			case SadPackage.SAD_COMPONENT_INSTANTIATION_REF: return createSadComponentInstantiationRef();

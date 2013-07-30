@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
@@ -60,7 +60,8 @@ public class SadComponentPlacementImpl extends ComponentPlacementImpl<SadCompone
 	 */
 	@Override
 	public EList<SadComponentInstantiation> getComponentInstantiation() {
-		if (componentInstantiation == null) {
+		if (componentInstantiation == null)
+		{
 			componentInstantiation = new EObjectContainmentWithInverseEList<SadComponentInstantiation>(SadComponentInstantiation.class, this, SadPackage.SAD_COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION, PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT) { private static final long serialVersionUID = 1L; @Override public Class<?> getInverseFeatureClass() { return ComponentInstantiation.class; } };
 		}
 		return componentInstantiation;

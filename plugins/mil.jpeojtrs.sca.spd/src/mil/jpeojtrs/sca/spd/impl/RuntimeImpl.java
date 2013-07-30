@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import mil.jpeojtrs.sca.spd.SpdPackage;
@@ -139,7 +139,8 @@ public class RuntimeImpl extends EObjectImpl implements mil.jpeojtrs.sca.spd.Run
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.RUNTIME__NAME:
 				return getName();
 			case SpdPackage.RUNTIME__VERSION:
@@ -155,7 +156,8 @@ public class RuntimeImpl extends EObjectImpl implements mil.jpeojtrs.sca.spd.Run
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.RUNTIME__NAME:
 				setName((String)newValue);
 				return;
@@ -173,7 +175,8 @@ public class RuntimeImpl extends EObjectImpl implements mil.jpeojtrs.sca.spd.Run
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.RUNTIME__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -191,7 +194,8 @@ public class RuntimeImpl extends EObjectImpl implements mil.jpeojtrs.sca.spd.Run
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.RUNTIME__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SpdPackage.RUNTIME__VERSION:

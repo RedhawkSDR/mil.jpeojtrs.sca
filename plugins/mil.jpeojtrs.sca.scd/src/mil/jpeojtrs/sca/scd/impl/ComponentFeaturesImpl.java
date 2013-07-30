@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import java.util.Collection;
@@ -88,7 +88,8 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 * @generated
 	 */
 	public EList<SupportsInterface> getSupportsInterface() {
-		if (supportsInterface == null) {
+		if (supportsInterface == null)
+		{
 			supportsInterface = new EObjectContainmentEList<SupportsInterface>(SupportsInterface.class, this, ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE);
 		}
 		return supportsInterface;
@@ -111,7 +112,8 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	public NotificationChain basicSetPorts(Ports newPorts, NotificationChain msgs) {
 		Ports oldPorts = ports;
 		ports = newPorts;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.COMPONENT_FEATURES__PORTS, oldPorts, newPorts);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -124,7 +126,8 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 * @generated
 	 */
 	public void setPorts(Ports newPorts) {
-		if (newPorts != ports) {
+		if (newPorts != ports)
+		{
 			NotificationChain msgs = null;
 			if (ports != null)
 				msgs = ((InternalEObject)ports).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.COMPONENT_FEATURES__PORTS, null, msgs);
@@ -144,7 +147,8 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
 				return ((InternalEList<?>)getSupportsInterface()).basicRemove(otherEnd, msgs);
 			case ScdPackage.COMPONENT_FEATURES__PORTS:
@@ -160,7 +164,8 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
 				return getSupportsInterface();
 			case ScdPackage.COMPONENT_FEATURES__PORTS:
@@ -177,7 +182,8 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
 				getSupportsInterface().clear();
 				getSupportsInterface().addAll((Collection<? extends SupportsInterface>)newValue);
@@ -196,7 +202,8 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
 				getSupportsInterface().clear();
 				return;
@@ -214,7 +221,8 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
 				return supportsInterface != null && !supportsInterface.isEmpty();
 			case ScdPackage.COMPONENT_FEATURES__PORTS:

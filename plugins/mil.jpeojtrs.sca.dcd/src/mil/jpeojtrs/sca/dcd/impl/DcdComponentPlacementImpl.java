@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.CompositePartOfDevice;
@@ -18,13 +18,17 @@ import mil.jpeojtrs.sca.dcd.DcdFactory;
 import mil.jpeojtrs.sca.dcd.DcdPackage;
 import mil.jpeojtrs.sca.dcd.DeployOnDevice;
 import mil.jpeojtrs.sca.dcd.DevicePkgFile;
+import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
+import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.impl.ComponentPlacementImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,6 +97,21 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific element type known in this context.
+	 * @generated
+	 */
+	@Override
+	public EList<DcdComponentInstantiation> getComponentInstantiation() {
+		if (componentInstantiation == null)
+		{
+			componentInstantiation = new EObjectContainmentWithInverseEList<DcdComponentInstantiation>(DcdComponentInstantiation.class, this, DcdPackage.DCD_COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION, PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT) { private static final long serialVersionUID = 1L; @Override public Class<?> getInverseFeatureClass() { return ComponentInstantiation.class; } };
+		}
+		return componentInstantiation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DeployOnDevice getDeployDevice() {
@@ -107,7 +126,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	public NotificationChain basicSetDeployDevice(DeployOnDevice newDeployDevice, NotificationChain msgs) {
 		DeployOnDevice oldDeployDevice = deployDevice;
 		deployDevice = newDeployDevice;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE, oldDeployDevice, newDeployDevice);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -120,7 +140,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * @generated
 	 */
 	public void setDeployDevice(DeployOnDevice newDeployDevice) {
-		if (newDeployDevice != deployDevice) {
+		if (newDeployDevice != deployDevice)
+		{
 			NotificationChain msgs = null;
 			if (deployDevice != null)
 				msgs = ((InternalEObject)deployDevice).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE, null, msgs);
@@ -150,7 +171,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	public NotificationChain basicSetCompositePartOfDevice(CompositePartOfDevice newCompositePartOfDevice, NotificationChain msgs) {
 		CompositePartOfDevice oldCompositePartOfDevice = compositePartOfDevice;
 		compositePartOfDevice = newCompositePartOfDevice;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE, oldCompositePartOfDevice, newCompositePartOfDevice);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -163,7 +185,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * @generated
 	 */
 	public void setCompositePartOfDeviceGen(CompositePartOfDevice newCompositePartOfDevice) {
-		if (newCompositePartOfDevice != compositePartOfDevice) {
+		if (newCompositePartOfDevice != compositePartOfDevice)
+		{
 			NotificationChain msgs = null;
 			if (compositePartOfDevice != null)
 				msgs = ((InternalEObject)compositePartOfDevice).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE, null, msgs);
@@ -182,7 +205,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * @generated
 	 */
 	public void setCompositePartOfDevice(CompositePartOfDevice newCompositePartOfDevice) {
-		if (newCompositePartOfDevice != compositePartOfDevice) {
+		if (newCompositePartOfDevice != compositePartOfDevice)
+		{
 			NotificationChain msgs = null;
 			if (compositePartOfDevice != null)
 				msgs = ((InternalEObject)compositePartOfDevice).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE, null, msgs);
@@ -212,7 +236,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	public NotificationChain basicSetDevicePkgFile(DevicePkgFile newDevicePkgFile, NotificationChain msgs) {
 		DevicePkgFile oldDevicePkgFile = devicePkgFile;
 		devicePkgFile = newDevicePkgFile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DCD_COMPONENT_PLACEMENT__DEVICE_PKG_FILE, oldDevicePkgFile, newDevicePkgFile);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -225,7 +250,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * @generated
 	 */
 	public void setDevicePkgFile(DevicePkgFile newDevicePkgFile) {
-		if (newDevicePkgFile != devicePkgFile) {
+		if (newDevicePkgFile != devicePkgFile)
+		{
 			NotificationChain msgs = null;
 			if (devicePkgFile != null)
 				msgs = ((InternalEObject)devicePkgFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DCD_COMPONENT_PLACEMENT__DEVICE_PKG_FILE, null, msgs);
@@ -287,7 +313,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE:
 				return basicSetDeployDevice(null, msgs);
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE:
@@ -305,7 +332,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE:
 				return getDeployDevice();
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE:
@@ -326,7 +354,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE:
 				setDeployDevice((DeployOnDevice)newValue);
 				return;
@@ -350,7 +379,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE:
 				setDeployDevice((DeployOnDevice)null);
 				return;
@@ -374,7 +404,8 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE:
 				return deployDevice != null;
 			case DcdPackage.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
 
@@ -64,7 +64,8 @@ public class SoftwareAssemblyItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -173,7 +174,8 @@ public class SoftwareAssemblyItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__COMPONENT_FILES);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__PARTITIONING);
@@ -239,7 +241,8 @@ public class SoftwareAssemblyItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SoftwareAssembly.class)) {
+		switch (notification.getFeatureID(SoftwareAssembly.class))
+		{
 			case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
 			case SadPackage.SOFTWARE_ASSEMBLY__ID:
 			case SadPackage.SOFTWARE_ASSEMBLY__NAME:

@@ -156,7 +156,8 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
 				return getRefID();
 			case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
@@ -174,7 +175,8 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
 				setRefID((String)newValue);
 				return;
@@ -192,7 +194,8 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
 				setRefID(REF_ID_EDEFAULT);
 				return;
@@ -210,7 +213,8 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
 				return REF_ID_EDEFAULT == null ? refID != null : !REF_ID_EDEFAULT.equals(refID);
 			case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:

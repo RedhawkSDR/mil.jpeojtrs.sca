@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import java.util.Collection;
@@ -93,7 +93,8 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 * @generated
 	 */
 	public FeatureMap getGroup() {
-		if (group == null) {
+		if (group == null)
+		{
 			group = new BasicFeatureMap(this, SadPackage.RESOURCE_FACTORY_PROPERTIES__GROUP);
 		}
 		return group;
@@ -161,7 +162,8 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 * @generated
 	 */
 	public void setFactoryRef(ComponentResourceFactoryRef newFactoryRef) {
-		if (newFactoryRef != eInternalContainer() || (eContainerFeatureID() != SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF && newFactoryRef != null)) {
+		if (newFactoryRef != eInternalContainer() || (eContainerFeatureID() != SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF && newFactoryRef != null))
+		{
 			if (EcoreUtil.isAncestor(this, newFactoryRef))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -205,7 +207,8 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -221,7 +224,8 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.RESOURCE_FACTORY_PROPERTIES__GROUP:
 				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
 			case SadPackage.RESOURCE_FACTORY_PROPERTIES__SIMPLE_REF:
@@ -245,7 +249,8 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF:
 				return eInternalContainer().eInverseRemove(this, SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES, ComponentResourceFactoryRef.class, msgs);
 		}
@@ -259,7 +264,8 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.RESOURCE_FACTORY_PROPERTIES__GROUP:
 				if (coreType) return getGroup();
 				return ((FeatureMap.Internal)getGroup()).getWrapper();
@@ -285,7 +291,8 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.RESOURCE_FACTORY_PROPERTIES__GROUP:
 				((FeatureMap.Internal)getGroup()).set(newValue);
 				return;
@@ -319,7 +326,8 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.RESOURCE_FACTORY_PROPERTIES__GROUP:
 				getGroup().clear();
 				return;
@@ -349,7 +357,8 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.RESOURCE_FACTORY_PROPERTIES__GROUP:
 				return group != null && !group.isEmpty();
 			case SadPackage.RESOURCE_FACTORY_PROPERTIES__SIMPLE_REF:

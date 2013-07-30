@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.DcdPackage;
@@ -87,7 +87,8 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	public NotificationChain basicSetLocalFileGen(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE, oldLocalFile, newLocalFile);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -115,7 +116,8 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 * @generated
 	 */
 	public void setLocalFile(LocalFile newLocalFile) {
-		if (newLocalFile != localFile) {
+		if (newLocalFile != localFile)
+		{
 			NotificationChain msgs = null;
 			if (localFile != null)
 				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE, null, msgs);
@@ -176,7 +178,8 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
 				return basicSetLocalFile(null, msgs);
 		}
@@ -190,7 +193,8 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
 				return getLocalFile();
 			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG:
@@ -207,7 +211,8 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
 				setLocalFile((LocalFile)newValue);
 				return;
@@ -225,7 +230,8 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
 				setLocalFile((LocalFile)null);
 				return;
@@ -243,7 +249,8 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
 				return localFile != null;
 			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG:

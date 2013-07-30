@@ -60,7 +60,8 @@ public class AbstractPropertyRefItemProvider extends ItemProviderAdapter impleme
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addRefIDPropertyDescriptor(object);
@@ -140,7 +141,8 @@ public class AbstractPropertyRefItemProvider extends ItemProviderAdapter impleme
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AbstractPropertyRef.class)) {
+		switch (notification.getFeatureID(AbstractPropertyRef.class))
+		{
 			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

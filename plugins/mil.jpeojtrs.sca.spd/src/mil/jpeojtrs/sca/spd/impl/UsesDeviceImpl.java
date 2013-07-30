@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import java.util.Collection;
@@ -157,7 +157,8 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.USES_DEVICE__PROPERTY_REF:
 				return ((InternalEList<?>)getPropertyRef()).basicRemove(otherEnd, msgs);
 		}
@@ -171,7 +172,8 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.USES_DEVICE__PROPERTY_REF:
 				return getPropertyRef();
 			case SpdPackage.USES_DEVICE__ID:
@@ -190,7 +192,8 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.USES_DEVICE__PROPERTY_REF:
 				getPropertyRef().clear();
 				getPropertyRef().addAll((Collection<? extends PropertyRef>)newValue);
@@ -212,7 +215,8 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.USES_DEVICE__PROPERTY_REF:
 				getPropertyRef().clear();
 				return;
@@ -233,7 +237,8 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.USES_DEVICE__PROPERTY_REF:
 				return !getPropertyRef().isEmpty();
 			case SpdPackage.USES_DEVICE__ID:

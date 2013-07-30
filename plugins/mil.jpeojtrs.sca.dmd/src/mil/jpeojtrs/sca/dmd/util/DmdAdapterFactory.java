@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.util;
 
 import mil.jpeojtrs.sca.dmd.DmdDocumentRoot;
@@ -21,7 +21,6 @@ import mil.jpeojtrs.sca.dmd.LocalFile;
 import mil.jpeojtrs.sca.dmd.NamingService;
 import mil.jpeojtrs.sca.dmd.Service;
 import mil.jpeojtrs.sca.dmd.Services;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -52,7 +51,8 @@ public class DmdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public DmdAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = DmdPackage.eINSTANCE;
 		}
 	}
@@ -67,10 +67,12 @@ public class DmdAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -83,45 +85,56 @@ public class DmdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected DmdSwitch<Adapter> modelSwitch =
-		new DmdSwitch<Adapter>() {
+		new DmdSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseDmdDocumentRoot(DmdDocumentRoot object) {
+			public Adapter caseDmdDocumentRoot(DmdDocumentRoot object)
+			{
 				return createDmdDocumentRootAdapter();
 			}
 			@Override
-			public Adapter caseDomainFinder(DomainFinder object) {
+			public Adapter caseDomainFinder(DomainFinder object)
+			{
 				return createDomainFinderAdapter();
 			}
 			@Override
-			public Adapter caseDomainManagerConfiguration(DomainManagerConfiguration object) {
+			public Adapter caseDomainManagerConfiguration(DomainManagerConfiguration object)
+			{
 				return createDomainManagerConfigurationAdapter();
 			}
 			@Override
-			public Adapter caseDomainManagerSoftPkg(DomainManagerSoftPkg object) {
+			public Adapter caseDomainManagerSoftPkg(DomainManagerSoftPkg object)
+			{
 				return createDomainManagerSoftPkgAdapter();
 			}
 			@Override
-			public Adapter caseFindBy(FindBy object) {
+			public Adapter caseFindBy(FindBy object)
+			{
 				return createFindByAdapter();
 			}
 			@Override
-			public Adapter caseLocalFile(LocalFile object) {
+			public Adapter caseLocalFile(LocalFile object)
+			{
 				return createLocalFileAdapter();
 			}
 			@Override
-			public Adapter caseNamingService(NamingService object) {
+			public Adapter caseNamingService(NamingService object)
+			{
 				return createNamingServiceAdapter();
 			}
 			@Override
-			public Adapter caseService(Service object) {
+			public Adapter caseService(Service object)
+			{
 				return createServiceAdapter();
 			}
 			@Override
-			public Adapter caseServices(Services object) {
+			public Adapter caseServices(Services object)
+			{
 				return createServicesAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};

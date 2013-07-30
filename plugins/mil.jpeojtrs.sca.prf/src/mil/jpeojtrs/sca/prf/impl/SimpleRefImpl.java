@@ -113,7 +113,8 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_REF__VALUE:
 				return getValue();
 		}
@@ -127,7 +128,8 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_REF__VALUE:
 				setValue((String)newValue);
 				return;
@@ -142,7 +144,8 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_REF__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
@@ -157,7 +160,8 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_REF__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
@@ -182,6 +186,6 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 
 	@Override
     public Any toAny() {
-	    return AnyUtils.toAny(getValue(), getProperty().getType().getLiteral(), getProperty().getComplex());
+	    return AnyUtils.toAny(getValue(), getProperty().getType().getLiteral(), getProperty().isComplex());
     }
 } //SimpleRefImpl

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.cf.extended.provider;
 
 import java.util.ArrayList;
@@ -37,6 +37,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * The adapters also support Eclipse property sheets.
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
+ * @since 2.3
  * <!-- end-user-doc -->
  * @generated
  */

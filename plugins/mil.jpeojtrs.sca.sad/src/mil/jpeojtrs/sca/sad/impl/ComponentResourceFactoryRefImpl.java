@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
@@ -108,7 +108,8 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	public NotificationChain basicSetResourceFactoryProperties(ResourceFactoryProperties newResourceFactoryProperties, NotificationChain msgs) {
 		ResourceFactoryProperties oldResourceFactoryProperties = resourceFactoryProperties;
 		resourceFactoryProperties = newResourceFactoryProperties;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES, oldResourceFactoryProperties, newResourceFactoryProperties);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -121,7 +122,8 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 * @generated
 	 */
 	public void setResourceFactoryProperties(ResourceFactoryProperties newResourceFactoryProperties) {
-		if (newResourceFactoryProperties != resourceFactoryProperties) {
+		if (newResourceFactoryProperties != resourceFactoryProperties)
+		{
 			NotificationChain msgs = null;
 			if (resourceFactoryProperties != null)
 				msgs = ((InternalEObject)resourceFactoryProperties).eInverseRemove(this, SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF, ResourceFactoryProperties.class, msgs);
@@ -221,7 +223,8 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
 				if (resourceFactoryProperties != null)
 					msgs = ((InternalEObject)resourceFactoryProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES, null, msgs);
@@ -237,7 +240,8 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
 				return basicSetResourceFactoryProperties(null, msgs);
 		}
@@ -251,7 +255,8 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
 				return getResourceFactoryProperties();
 			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__REFID:
@@ -270,7 +275,8 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
 				setResourceFactoryProperties((ResourceFactoryProperties)newValue);
 				return;
@@ -291,7 +297,8 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
 				setResourceFactoryProperties((ResourceFactoryProperties)null);
 				return;
@@ -312,7 +319,8 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
 				return resourceFactoryProperties != null;
 			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__REFID:

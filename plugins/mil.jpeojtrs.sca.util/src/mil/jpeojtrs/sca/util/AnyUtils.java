@@ -80,15 +80,15 @@ public final class AnyUtils {
 	 * @return A Java object of theString corresponding to the typecode
 	 * @since 3.4
 	 */
-	public static Object convertString(final String stringValue, final String type, Boolean complex) {
-		if (complex == null || !complex) {
+	public static Object convertString(final String stringValue, final String type, boolean complex) {
+		if (!complex) {
 			return primitiveConvertString(stringValue, type);
 		}
 		return ComplexNumber.valueOf(type, stringValue);
 	}
 	
 	public static Object convertString(final String stringValue, final String type) {
-		return convertString(stringValue, type, null);
+		return convertString(stringValue, type, false);
 		
 	}
 	/**
@@ -498,9 +498,7 @@ public final class AnyUtils {
 	 * @param value
 	 * @param type
 	 * @return
-	 * @deprecated Use {@link #toAny(Object, TCKind, Boolean)}
 	 */
-	@Deprecated
 	public static Any toAny(final Object[] value, final TCKind type) {
 		return toAny(value, type, false);
 	}
@@ -535,10 +533,8 @@ public final class AnyUtils {
 	}
 	
 	/**
-	 * @deprecated Use {@link #toAny(Object, TCKind, Boolean)} instead, pass null if not a number
 	 * @since 3.0
 	 */
-	@Deprecated
 	public static Any insertInto(final Any retVal, final Object value, final TCKind type) {
 		if (retVal == null) {
 			return null;
@@ -627,13 +623,13 @@ public final class AnyUtils {
 	 * @return
 	 */
 	public static Any toAny(final Object value, final String type) {
-		return toAny(value, type, null);
+		return toAny(value, type, false);
 	}
 
 	/**
 	 * @since 3.4
 	 */
-	public static Any toAny(final Object value, final String type, Boolean complex) {
+	public static Any toAny(final Object value, final String type, boolean complex) {
 		final TCKind kind = AnyUtils.convertToTCKind(type);
 		if (value instanceof ComplexNumber) {
 			complex = true;
@@ -651,9 +647,7 @@ public final class AnyUtils {
 	 * @param value
 	 * @param type
 	 * @return
-	 * @deprecated use {@link #toAny(Object[], String, Boolean)}
 	 */
-	@Deprecated
 	public static Any toAny(final Object[] value, final String type) {
 		return toAny(value, type, false);
 	}
@@ -661,14 +655,14 @@ public final class AnyUtils {
 	/**
      * @since 3.4
      */
-	public static Any toAny(final Object[] value, final String type, Boolean complex) {
+	public static Any toAny(final Object[] value, final String type, boolean complex) {
 		final TCKind kind = AnyUtils.convertToTCKind(type);
 		final Object[] convArray = AnyUtils.convertStringArray(value, type, complex);
 
 		return AnyUtils.toAny(convArray, kind, complex);
 	}
 
-	private static Object[] convertStringArray(final Object[] value, final String type, Boolean complex) {
+	private static Object[] convertStringArray(final Object[] value, final String type, boolean complex) {
 		Object[] retVal = value;
 		if (value instanceof String[] && !"string".equals(type)) {
 			retVal = new Object[value.length];
@@ -910,13 +904,13 @@ public final class AnyUtils {
      * @since 3.3
      */
 	public static Any stringToAny(final String value, final String type) {
-		return stringToAny(value, type, null);
+		return stringToAny(value, type, false);
 	}
 
 	/**
 	 * @since 3.4
 	 */
-	public static Any stringToAny(final String value, final String type, Boolean complex) {
+	public static Any stringToAny(final String value, final String type, boolean complex) {
 		final Object newValue = AnyUtils.convertString(value, type, complex);
 		return AnyUtils.toAny(newValue, AnyUtils.convertToTCKind(type), complex);
 	}

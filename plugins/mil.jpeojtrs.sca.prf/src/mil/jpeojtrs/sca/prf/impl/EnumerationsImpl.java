@@ -75,7 +75,8 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 * @generated
 	 */
 	public EList<Enumeration> getEnumeration() {
-		if (enumeration == null) {
+		if (enumeration == null)
+		{
 			enumeration = new EObjectContainmentEList<Enumeration>(Enumeration.class, this, PrfPackage.ENUMERATIONS__ENUMERATION);
 		}
 		return enumeration;
@@ -88,7 +89,8 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ENUMERATIONS__ENUMERATION:
 				return ((InternalEList<?>)getEnumeration()).basicRemove(otherEnd, msgs);
 		}
@@ -102,7 +104,8 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ENUMERATIONS__ENUMERATION:
 				return getEnumeration();
 		}
@@ -117,7 +120,8 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ENUMERATIONS__ENUMERATION:
 				getEnumeration().clear();
 				getEnumeration().addAll((Collection<? extends Enumeration>)newValue);
@@ -133,7 +137,8 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ENUMERATIONS__ENUMERATION:
 				getEnumeration().clear();
 				return;
@@ -148,7 +153,8 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ENUMERATIONS__ENUMERATION:
 				return enumeration != null && !enumeration.isEmpty();
 		}

@@ -340,7 +340,8 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
 				return getDescription();
 			case PrfPackage.ABSTRACT_PROPERTY__ID:
@@ -362,7 +363,8 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -389,7 +391,8 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -416,7 +419,8 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case PrfPackage.ABSTRACT_PROPERTY__ID:

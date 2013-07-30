@@ -152,7 +152,8 @@ public class TestImpl extends EObjectImpl implements Test {
 	public NotificationChain basicSetInputValue(InputValue newInputValue, NotificationChain msgs) {
 		InputValue oldInputValue = inputValue;
 		inputValue = newInputValue;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.TEST__INPUT_VALUE, oldInputValue, newInputValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -165,7 +166,8 @@ public class TestImpl extends EObjectImpl implements Test {
 	 * @generated
 	 */
 	public void setInputValue(InputValue newInputValue) {
-		if (newInputValue != inputValue) {
+		if (newInputValue != inputValue)
+		{
 			NotificationChain msgs = null;
 			if (inputValue != null)
 				msgs = ((InternalEObject)inputValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.TEST__INPUT_VALUE, null, msgs);
@@ -195,7 +197,8 @@ public class TestImpl extends EObjectImpl implements Test {
 	public NotificationChain basicSetResultValue(ResultValue newResultValue, NotificationChain msgs) {
 		ResultValue oldResultValue = resultValue;
 		resultValue = newResultValue;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.TEST__RESULT_VALUE, oldResultValue, newResultValue);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -208,7 +211,8 @@ public class TestImpl extends EObjectImpl implements Test {
 	 * @generated
 	 */
 	public void setResultValue(ResultValue newResultValue) {
-		if (newResultValue != resultValue) {
+		if (newResultValue != resultValue)
+		{
 			NotificationChain msgs = null;
 			if (resultValue != null)
 				msgs = ((InternalEObject)resultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.TEST__RESULT_VALUE, null, msgs);
@@ -249,7 +253,8 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.TEST__INPUT_VALUE:
 				return basicSetInputValue(null, msgs);
 			case PrfPackage.TEST__RESULT_VALUE:
@@ -265,7 +270,8 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.TEST__DESCRIPTION:
 				return getDescription();
 			case PrfPackage.TEST__INPUT_VALUE:
@@ -285,7 +291,8 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.TEST__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -309,7 +316,8 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.TEST__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -333,7 +341,8 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.TEST__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case PrfPackage.TEST__INPUT_VALUE:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import java.util.Collection;
@@ -264,7 +264,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public EList<Author> getAuthor() {
-		if (author == null) {
+		if (author == null)
+		{
 			author = new EObjectContainmentEList<Author>(Author.class, this, SpdPackage.SOFT_PKG__AUTHOR);
 		}
 		return author;
@@ -308,7 +309,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	public NotificationChain basicSetPropertyFile(PropertyFile newPropertyFile, NotificationChain msgs) {
 		PropertyFile oldPropertyFile = propertyFile;
 		propertyFile = newPropertyFile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG__PROPERTY_FILE, oldPropertyFile, newPropertyFile);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -321,7 +323,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public void setPropertyFile(PropertyFile newPropertyFile) {
-		if (newPropertyFile != propertyFile) {
+		if (newPropertyFile != propertyFile)
+		{
 			NotificationChain msgs = null;
 			if (propertyFile != null)
 				msgs = ((InternalEObject)propertyFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG__PROPERTY_FILE, null, msgs);
@@ -351,7 +354,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	public NotificationChain basicSetDescriptor(Descriptor newDescriptor, NotificationChain msgs) {
 		Descriptor oldDescriptor = descriptor;
 		descriptor = newDescriptor;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG__DESCRIPTOR, oldDescriptor, newDescriptor);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -364,7 +368,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public void setDescriptor(Descriptor newDescriptor) {
-		if (newDescriptor != descriptor) {
+		if (newDescriptor != descriptor)
+		{
 			NotificationChain msgs = null;
 			if (descriptor != null)
 				msgs = ((InternalEObject)descriptor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG__DESCRIPTOR, null, msgs);
@@ -383,7 +388,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public EList<Implementation> getImplementation() {
-		if (implementation == null) {
+		if (implementation == null)
+		{
 			implementation = new EObjectContainmentWithInverseEList<Implementation>(Implementation.class, this, SpdPackage.SOFT_PKG__IMPLEMENTATION, SpdPackage.IMPLEMENTATION__SOFT_PKG);
 		}
 		return implementation;
@@ -395,7 +401,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public EList<UsesDevice> getUsesDevice() {
-		if (usesDevice == null) {
+		if (usesDevice == null)
+		{
 			usesDevice = new EObjectContainmentEList<UsesDevice>(UsesDevice.class, this, SpdPackage.SOFT_PKG__USES_DEVICE);
 		}
 		return usesDevice;
@@ -537,7 +544,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG__IMPLEMENTATION:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getImplementation()).basicAdd(otherEnd, msgs);
 		}
@@ -551,7 +559,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG__AUTHOR:
 				return ((InternalEList<?>)getAuthor()).basicRemove(otherEnd, msgs);
 			case SpdPackage.SOFT_PKG__PROPERTY_FILE:
@@ -573,7 +582,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG__TITLE:
 				return getTitle();
 			case SpdPackage.SOFT_PKG__AUTHOR:
@@ -608,7 +618,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG__TITLE:
 				setTitle((String)newValue);
 				return;
@@ -656,7 +667,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -701,7 +713,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.SOFT_PKG__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case SpdPackage.SOFT_PKG__AUTHOR:

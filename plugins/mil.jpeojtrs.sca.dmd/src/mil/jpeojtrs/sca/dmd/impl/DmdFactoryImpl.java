@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.impl;
 
 import mil.jpeojtrs.sca.dmd.DmdDocumentRoot;
@@ -22,7 +22,6 @@ import mil.jpeojtrs.sca.dmd.LocalFile;
 import mil.jpeojtrs.sca.dmd.NamingService;
 import mil.jpeojtrs.sca.dmd.Service;
 import mil.jpeojtrs.sca.dmd.Services;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -44,13 +43,16 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * @generated
 	 */
 	public static DmdFactory init() {
-		try {
-			DmdFactory theDmdFactory = (DmdFactory)EPackage.Registry.INSTANCE.getEFactory("http://sca.jpeojtrs.mil/dmd"); 
-			if (theDmdFactory != null) {
+		try
+		{
+			DmdFactory theDmdFactory = (DmdFactory)EPackage.Registry.INSTANCE.getEFactory(DmdPackage.eNS_URI);
+			if (theDmdFactory != null)
+			{
 				return theDmdFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DmdFactoryImpl();
@@ -73,7 +75,8 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case DmdPackage.DMD_DOCUMENT_ROOT: return createDmdDocumentRoot();
 			case DmdPackage.DOMAIN_FINDER: return createDomainFinder();
 			case DmdPackage.DOMAIN_MANAGER_CONFIGURATION: return createDomainManagerConfiguration();

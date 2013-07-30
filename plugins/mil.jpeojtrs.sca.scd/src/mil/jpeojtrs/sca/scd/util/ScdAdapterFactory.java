@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.util;
 
 import mil.jpeojtrs.sca.scd.AbstractPort;
@@ -27,7 +27,6 @@ import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.scd.SoftwareComponent;
 import mil.jpeojtrs.sca.scd.SupportsInterface;
 import mil.jpeojtrs.sca.scd.Uses;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -58,7 +57,8 @@ public class ScdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public ScdAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = ScdPackage.eINSTANCE;
 		}
 	}
@@ -73,10 +73,12 @@ public class ScdAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -89,69 +91,86 @@ public class ScdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected ScdSwitch<Adapter> modelSwitch =
-		new ScdSwitch<Adapter>() {
+		new ScdSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseComponentFeatures(ComponentFeatures object) {
+			public Adapter caseComponentFeatures(ComponentFeatures object)
+			{
 				return createComponentFeaturesAdapter();
 			}
 			@Override
-			public Adapter caseComponentRepId(ComponentRepId object) {
+			public Adapter caseComponentRepId(ComponentRepId object)
+			{
 				return createComponentRepIdAdapter();
 			}
 			@Override
-			public Adapter caseInheritsInterface(InheritsInterface object) {
+			public Adapter caseInheritsInterface(InheritsInterface object)
+			{
 				return createInheritsInterfaceAdapter();
 			}
 			@Override
-			public Adapter caseInterface(Interface object) {
+			public Adapter caseInterface(Interface object)
+			{
 				return createInterfaceAdapter();
 			}
 			@Override
-			public Adapter caseInterfaces(Interfaces object) {
+			public Adapter caseInterfaces(Interfaces object)
+			{
 				return createInterfacesAdapter();
 			}
 			@Override
-			public Adapter caseLocalFile(LocalFile object) {
+			public Adapter caseLocalFile(LocalFile object)
+			{
 				return createLocalFileAdapter();
 			}
 			@Override
-			public Adapter casePorts(Ports object) {
+			public Adapter casePorts(Ports object)
+			{
 				return createPortsAdapter();
 			}
 			@Override
-			public Adapter casePortTypeContainer(PortTypeContainer object) {
+			public Adapter casePortTypeContainer(PortTypeContainer object)
+			{
 				return createPortTypeContainerAdapter();
 			}
 			@Override
-			public Adapter casePropertyFile(PropertyFile object) {
+			public Adapter casePropertyFile(PropertyFile object)
+			{
 				return createPropertyFileAdapter();
 			}
 			@Override
-			public Adapter caseProvides(Provides object) {
+			public Adapter caseProvides(Provides object)
+			{
 				return createProvidesAdapter();
 			}
 			@Override
-			public Adapter caseAbstractPort(AbstractPort object) {
+			public Adapter caseAbstractPort(AbstractPort object)
+			{
 				return createAbstractPortAdapter();
 			}
 			@Override
-			public Adapter caseScdDocumentRoot(ScdDocumentRoot object) {
+			public Adapter caseScdDocumentRoot(ScdDocumentRoot object)
+			{
 				return createScdDocumentRootAdapter();
 			}
 			@Override
-			public Adapter caseSoftwareComponent(SoftwareComponent object) {
+			public Adapter caseSoftwareComponent(SoftwareComponent object)
+			{
 				return createSoftwareComponentAdapter();
 			}
 			@Override
-			public Adapter caseSupportsInterface(SupportsInterface object) {
+			public Adapter caseSupportsInterface(SupportsInterface object)
+			{
 				return createSupportsInterfaceAdapter();
 			}
 			@Override
-			public Adapter caseUses(Uses object) {
+			public Adapter caseUses(Uses object)
+			{
 				return createUsesAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};

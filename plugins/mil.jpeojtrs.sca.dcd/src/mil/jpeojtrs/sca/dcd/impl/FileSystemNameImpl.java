@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.DcdPackage;
@@ -140,7 +140,8 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
 				return getDeviceID();
 			case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
@@ -156,7 +157,8 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
 				setDeviceID((String)newValue);
 				return;
@@ -174,7 +176,8 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
 				setDeviceID(DEVICE_ID_EDEFAULT);
 				return;
@@ -192,7 +195,8 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
 				return DEVICE_ID_EDEFAULT == null ? deviceID != null : !DEVICE_ID_EDEFAULT.equals(deviceID);
 			case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:

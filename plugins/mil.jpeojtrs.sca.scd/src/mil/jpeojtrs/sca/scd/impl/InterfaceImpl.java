@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import java.util.Collection;
@@ -114,7 +114,8 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 * @generated
 	 */
 	public EList<InheritsInterface> getInheritsInterfaces() {
-		if (inheritsInterfaces == null) {
+		if (inheritsInterfaces == null)
+		{
 			inheritsInterfaces = new EObjectContainmentEList<InheritsInterface>(InheritsInterface.class, this, ScdPackage.INTERFACE__INHERITS_INTERFACES);
 		}
 		return inheritsInterfaces;
@@ -193,7 +194,8 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
 				return ((InternalEList<?>)getInheritsInterfaces()).basicRemove(otherEnd, msgs);
 		}
@@ -207,7 +209,8 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
 				return getInheritsInterfaces();
 			case ScdPackage.INTERFACE__NAME:
@@ -226,7 +229,8 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
 				getInheritsInterfaces().clear();
 				getInheritsInterfaces().addAll((Collection<? extends InheritsInterface>)newValue);
@@ -248,7 +252,8 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
 				getInheritsInterfaces().clear();
 				return;
@@ -269,7 +274,8 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
 				return inheritsInterfaces != null && !inheritsInterfaces.isEmpty();
 			case ScdPackage.INTERFACE__NAME:

@@ -8,12 +8,11 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.cf.extended.impl;
 
 import mil.jpeojtrs.sca.cf.extended.ExtendedFactory;
 import mil.jpeojtrs.sca.cf.extended.ExtendedPackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -37,7 +36,7 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
 	 */
 	public static ExtendedFactory init() {
 		try {
-			ExtendedFactory theExtendedFactory = (ExtendedFactory)EPackage.Registry.INSTANCE.getEFactory("http:///mil/jpeojtrs/sca/cf/extended.ecore"); 
+			ExtendedFactory theExtendedFactory = (ExtendedFactory)EPackage.Registry.INSTANCE.getEFactory(ExtendedPackage.eNS_URI);
 			if (theExtendedFactory != null) {
 				return theExtendedFactory;
 			}

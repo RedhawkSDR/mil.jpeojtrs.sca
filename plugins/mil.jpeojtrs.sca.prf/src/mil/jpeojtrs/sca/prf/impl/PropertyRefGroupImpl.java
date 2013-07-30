@@ -83,7 +83,8 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 * @generated
 	 */
 	public FeatureMap getProperties() {
-		if (properties == null) {
+		if (properties == null)
+		{
 			properties = new BasicFeatureMap(this, PrfPackage.PROPERTY_REF_GROUP__PROPERTIES);
 		}
 		return properties;
@@ -139,7 +140,8 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
@@ -161,7 +163,8 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
 				if (coreType) return getProperties();
 				return ((FeatureMap.Internal)getProperties()).getWrapper();
@@ -185,7 +188,8 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
 				((FeatureMap.Internal)getProperties()).set(newValue);
 				return;
@@ -216,7 +220,8 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
 				getProperties().clear();
 				return;
@@ -243,7 +248,8 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
 				return properties != null && !properties.isEmpty();
 			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:

@@ -92,7 +92,8 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 * @generated
 	 */
 	public EList<StructValue> getStructValue() {
-		if (structValue == null) {
+		if (structValue == null)
+		{
 			structValue = new EObjectContainmentEList<StructValue>(StructValue.class, this, PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE);
 		}
 		return structValue;
@@ -116,7 +117,8 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
 				return ((InternalEList<?>)getStructValue()).basicRemove(otherEnd, msgs);
 		}
@@ -130,7 +132,8 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
 				return getStructValue();
 		}
@@ -145,7 +148,8 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
 				getStructValue().clear();
 				getStructValue().addAll((Collection<? extends StructValue>)newValue);
@@ -161,7 +165,8 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
 				getStructValue().clear();
 				return;
@@ -176,7 +181,8 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
 				return structValue != null && !structValue.isEmpty();
 		}

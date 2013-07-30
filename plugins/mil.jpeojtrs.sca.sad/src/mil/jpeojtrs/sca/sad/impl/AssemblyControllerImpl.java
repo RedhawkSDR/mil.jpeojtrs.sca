@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import mil.jpeojtrs.sca.sad.AssemblyController;
@@ -83,7 +83,8 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	public NotificationChain basicSetComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef, NotificationChain msgs) {
 		SadComponentInstantiationRef oldComponentInstantiationRef = componentInstantiationRef;
 		componentInstantiationRef = newComponentInstantiationRef;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, oldComponentInstantiationRef, newComponentInstantiationRef);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -96,7 +97,8 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 * @generated
 	 */
 	public void setComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef) {
-		if (newComponentInstantiationRef != componentInstantiationRef) {
+		if (newComponentInstantiationRef != componentInstantiationRef)
+		{
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
 				msgs = ((InternalEObject)componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, null, msgs);
@@ -116,7 +118,8 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
 				return basicSetComponentInstantiationRef(null, msgs);
 		}
@@ -130,7 +133,8 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
 				return getComponentInstantiationRef();
 		}
@@ -144,7 +148,8 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
 				setComponentInstantiationRef((SadComponentInstantiationRef)newValue);
 				return;
@@ -159,7 +164,8 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
 				setComponentInstantiationRef((SadComponentInstantiationRef)null);
 				return;
@@ -174,7 +180,8 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
 				return componentInstantiationRef != null;
 		}

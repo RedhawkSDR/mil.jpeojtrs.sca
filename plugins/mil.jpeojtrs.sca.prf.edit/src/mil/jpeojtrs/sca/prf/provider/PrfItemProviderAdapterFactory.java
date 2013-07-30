@@ -101,7 +101,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createActionAdapter() {
-		if (actionItemProvider == null) {
+		if (actionItemProvider == null)
+		{
 			actionItemProvider = new ActionItemProvider(this);
 		}
 
@@ -124,7 +125,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createConfigurationKindAdapter() {
-		if (configurationKindItemProvider == null) {
+		if (configurationKindItemProvider == null)
+		{
 			configurationKindItemProvider = new ConfigurationKindItemProvider(this);
 		}
 
@@ -147,7 +149,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createEnumerationAdapter() {
-		if (enumerationItemProvider == null) {
+		if (enumerationItemProvider == null)
+		{
 			enumerationItemProvider = new EnumerationItemProvider(this);
 		}
 
@@ -170,7 +173,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createEnumerationsAdapter() {
-		if (enumerationsItemProvider == null) {
+		if (enumerationsItemProvider == null)
+		{
 			enumerationsItemProvider = new EnumerationsItemProvider(this);
 		}
 
@@ -193,7 +197,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createInputValueAdapter() {
-		if (inputValueItemProvider == null) {
+		if (inputValueItemProvider == null)
+		{
 			inputValueItemProvider = new InputValueItemProvider(this);
 		}
 
@@ -216,7 +221,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createKindAdapter() {
-		if (kindItemProvider == null) {
+		if (kindItemProvider == null)
+		{
 			kindItemProvider = new KindItemProvider(this);
 		}
 
@@ -239,7 +245,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createPrfDocumentRootAdapter() {
-		if (prfDocumentRootItemProvider == null) {
+		if (prfDocumentRootItemProvider == null)
+		{
 			prfDocumentRootItemProvider = new PrfDocumentRootItemProvider(this);
 		}
 
@@ -262,7 +269,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createPropertiesAdapter() {
-		if (propertiesItemProvider == null) {
+		if (propertiesItemProvider == null)
+		{
 			propertiesItemProvider = new PropertiesItemProvider(this);
 		}
 
@@ -285,7 +293,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createRangeAdapter() {
-		if (rangeItemProvider == null) {
+		if (rangeItemProvider == null)
+		{
 			rangeItemProvider = new RangeItemProvider(this);
 		}
 
@@ -308,7 +317,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createResultValueAdapter() {
-		if (resultValueItemProvider == null) {
+		if (resultValueItemProvider == null)
+		{
 			resultValueItemProvider = new ResultValueItemProvider(this);
 		}
 
@@ -375,7 +385,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createStructValueAdapter() {
-		if (structValueItemProvider == null) {
+		if (structValueItemProvider == null)
+		{
 			structValueItemProvider = new StructValueItemProvider(this);
 		}
 
@@ -398,7 +409,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createTestAdapter() {
-		if (testItemProvider == null) {
+		if (testItemProvider == null)
+		{
 			testItemProvider = new TestItemProvider(this);
 		}
 
@@ -421,7 +433,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createValuesAdapter() {
-		if (valuesItemProvider == null) {
+		if (valuesItemProvider == null)
+		{
 			valuesItemProvider = new ValuesItemProvider(this);
 		}
 
@@ -444,7 +457,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSimpleRefAdapter() {
-		if (simpleRefItemProvider == null) {
+		if (simpleRefItemProvider == null)
+		{
 			simpleRefItemProvider = new SimpleRefItemProvider(this);
 		}
 
@@ -467,7 +481,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSimpleSequenceRefAdapter() {
-		if (simpleSequenceRefItemProvider == null) {
+		if (simpleSequenceRefItemProvider == null)
+		{
 			simpleSequenceRefItemProvider = new SimpleSequenceRefItemProvider(this);
 		}
 
@@ -490,7 +505,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createStructRefAdapter() {
-		if (structRefItemProvider == null) {
+		if (structRefItemProvider == null)
+		{
 			structRefItemProvider = new StructRefItemProvider(this);
 		}
 
@@ -513,7 +529,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createStructSequenceRefAdapter() {
-		if (structSequenceRefItemProvider == null) {
+		if (structSequenceRefItemProvider == null)
+		{
 			structSequenceRefItemProvider = new StructSequenceRefItemProvider(this);
 		}
 
@@ -568,9 +585,11 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -587,7 +606,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	@Override
 	protected void associate(Adapter adapter, Notifier target) {
 		super.associate(adapter, target);
-		if (adapter != null) {
+		if (adapter != null)
+		{
 			disposable.add(adapter);
 		}
 	}
@@ -621,7 +641,8 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

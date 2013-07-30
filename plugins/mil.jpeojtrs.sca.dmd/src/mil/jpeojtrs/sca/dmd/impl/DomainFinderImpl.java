@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.impl;
 
 import mil.jpeojtrs.sca.dmd.DmdPackage;
@@ -140,7 +140,8 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_FINDER__NAME:
 				return getName();
 			case DmdPackage.DOMAIN_FINDER__TYPE:
@@ -156,7 +157,8 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_FINDER__NAME:
 				setName((String)newValue);
 				return;
@@ -174,7 +176,8 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_FINDER__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -192,7 +195,8 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.DOMAIN_FINDER__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DmdPackage.DOMAIN_FINDER__TYPE:

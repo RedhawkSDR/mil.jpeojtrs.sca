@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.impl;
 
 import java.util.Collection;
@@ -75,7 +75,8 @@ public class ServicesImpl extends EObjectImpl implements Services {
 	 * @generated
 	 */
 	public EList<Service> getService() {
-		if (service == null) {
+		if (service == null)
+		{
 			service = new EObjectContainmentEList<Service>(Service.class, this, DmdPackage.SERVICES__SERVICE);
 		}
 		return service;
@@ -88,7 +89,8 @@ public class ServicesImpl extends EObjectImpl implements Services {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.SERVICES__SERVICE:
 				return ((InternalEList<?>)getService()).basicRemove(otherEnd, msgs);
 		}
@@ -102,7 +104,8 @@ public class ServicesImpl extends EObjectImpl implements Services {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.SERVICES__SERVICE:
 				return getService();
 		}
@@ -117,7 +120,8 @@ public class ServicesImpl extends EObjectImpl implements Services {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.SERVICES__SERVICE:
 				getService().clear();
 				getService().addAll((Collection<? extends Service>)newValue);
@@ -133,7 +137,8 @@ public class ServicesImpl extends EObjectImpl implements Services {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.SERVICES__SERVICE:
 				getService().clear();
 				return;
@@ -148,7 +153,8 @@ public class ServicesImpl extends EObjectImpl implements Services {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DmdPackage.SERVICES__SERVICE:
 				return service != null && !service.isEmpty();
 		}

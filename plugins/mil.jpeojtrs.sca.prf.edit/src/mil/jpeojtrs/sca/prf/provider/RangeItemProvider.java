@@ -61,7 +61,8 @@ public class RangeItemProvider extends ItemProviderAdapter implements IEditingDo
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addMaxPropertyDescriptor(object);
@@ -150,7 +151,8 @@ public class RangeItemProvider extends ItemProviderAdapter implements IEditingDo
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Range.class)) {
+		switch (notification.getFeatureID(Range.class))
+		{
 			case PrfPackage.RANGE__MAX:
 			case PrfPackage.RANGE__MIN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dpd.impl;
 
 import mil.jpeojtrs.sca.dpd.Author;
@@ -22,7 +22,6 @@ import mil.jpeojtrs.sca.dpd.DpdPackage;
 import mil.jpeojtrs.sca.dpd.HwDeviceRegistration;
 import mil.jpeojtrs.sca.dpd.LocalFile;
 import mil.jpeojtrs.sca.dpd.PropertyFile;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -45,7 +44,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 */
 	public static DpdFactory init() {
 		try {
-			DpdFactory theDpdFactory = (DpdFactory)EPackage.Registry.INSTANCE.getEFactory("http://sca.jpeojtrs.mil/dpd"); 
+			DpdFactory theDpdFactory = (DpdFactory)EPackage.Registry.INSTANCE.getEFactory(DpdPackage.eNS_URI);
 			if (theDpdFactory != null) {
 				return theDpdFactory;
 			}

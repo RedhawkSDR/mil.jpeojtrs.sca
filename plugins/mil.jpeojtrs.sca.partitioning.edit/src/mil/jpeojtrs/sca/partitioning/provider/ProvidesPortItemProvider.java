@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
 
@@ -68,7 +68,8 @@ public class ProvidesPortItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addProvidesIdentifierPropertyDescriptor(object);
@@ -108,7 +109,8 @@ public class ProvidesPortItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PartitioningPackage.Literals.PROVIDES_PORT__COMPONENT_INSTANTIATION_REF);
 			childrenFeatures.add(PartitioningPackage.Literals.PROVIDES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF);
@@ -167,7 +169,8 @@ public class ProvidesPortItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ProvidesPort.class)) {
+		switch (notification.getFeatureID(ProvidesPort.class))
+		{
 			case PartitioningPackage.PROVIDES_PORT__PROVIDES_IDENTIFIER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

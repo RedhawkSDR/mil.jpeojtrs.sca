@@ -63,7 +63,8 @@ public class TestItemProvider extends ItemProviderAdapter implements IEditingDom
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -126,7 +127,8 @@ public class TestItemProvider extends ItemProviderAdapter implements IEditingDom
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.TEST__INPUT_VALUE);
 			childrenFeatures.add(PrfPackage.Literals.TEST__RESULT_VALUE);
@@ -183,7 +185,8 @@ public class TestItemProvider extends ItemProviderAdapter implements IEditingDom
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Test.class)) {
+		switch (notification.getFeatureID(Test.class))
+		{
 			case PrfPackage.TEST__DESCRIPTION:
 			case PrfPackage.TEST__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

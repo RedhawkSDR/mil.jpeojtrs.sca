@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.impl;
 
 import mil.jpeojtrs.sca.dmd.DmdDocumentRoot;
@@ -606,35 +606,40 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (dmdDocumentRootEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "",
 			 "kind", "mixed"
 		   });		
 		addAnnotation
 		  (getDmdDocumentRoot_Mixed(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementWildcard",
 			 "name", ":mixed"
 		   });		
 		addAnnotation
 		  (getDmdDocumentRoot_XMLNSPrefixMap(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xmlns:prefix"
 		   });		
 		addAnnotation
 		  (getDmdDocumentRoot_XSISchemaLocation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xsi:schemaLocation"
 		   });		
 		addAnnotation
 		  (getDmdDocumentRoot_Domainmanagerconfiguration(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "domainmanagerconfiguration",
 			 "namespace", "##targetNamespace"
@@ -642,35 +647,40 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (domainFinderEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "domainfinder",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getDomainFinder_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (getDomainFinder_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });			
 		addAnnotation
 		  (domainManagerConfigurationEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "domainmanagerconfiguration",
 			 "kind", "elementOnly"
 		   });			
 		addAnnotation
 		  (getDomainManagerConfiguration_Description(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "description",
 			 "namespace", "##targetNamespace"
@@ -678,7 +688,8 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (getDomainManagerConfiguration_DomainManagerSoftPkg(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "domainmanagersoftpkg",
 			 "namespace", "##targetNamespace"
@@ -686,7 +697,8 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (getDomainManagerConfiguration_Services(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "services",
 			 "namespace", "##targetNamespace"
@@ -694,28 +706,32 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (getDomainManagerConfiguration_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (getDomainManagerConfiguration_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (domainManagerSoftPkgEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "domainmanagersoftpkg",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getDomainManagerSoftPkg_LocalFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "localfile",
 			 "namespace", "##targetNamespace"
@@ -723,21 +739,24 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (getDomainManagerSoftPkg_SoftPkg(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "softPkg"
 		   });		
 		addAnnotation
 		  (findByEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "findby",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getFindBy_NameService(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "namingservice",
 			 "namespace", "##targetNamespace"
@@ -745,7 +764,8 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (getFindBy_StringifiedObjectRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "stringifiedobjectref",
 			 "namespace", "##targetNamespace"
@@ -753,7 +773,8 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (getFindBy_DomainFinder(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "domainfinder",
 			 "namespace", "##targetNamespace"
@@ -761,42 +782,48 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (localFileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "localfile",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getLocalFile_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (namingServiceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "namingservice",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getNamingService_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (serviceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "service",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getService_UsesIdentifier(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "usesidentifier",
 			 "namespace", "##targetNamespace"
@@ -804,7 +831,8 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (getService_FindBy(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "findby",
 			 "namespace", "##targetNamespace"
@@ -812,14 +840,16 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		addAnnotation
 		  (servicesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "services",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getServices_Service(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "service",
 			 "namespace", "##targetNamespace"

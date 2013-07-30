@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.CompositePartOfDevice;
@@ -32,7 +32,6 @@ import mil.jpeojtrs.sca.dcd.FileSystemName;
 import mil.jpeojtrs.sca.dcd.FileSystemNames;
 import mil.jpeojtrs.sca.partitioning.DevComponentFile;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -53,13 +52,16 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * @generated
 	 */
 	public static DcdFactory init() {
-		try {
-			DcdFactory theDcdFactory = (DcdFactory)EPackage.Registry.INSTANCE.getEFactory("http://sca.jpeojtrs.mil/dcd"); 
-			if (theDcdFactory != null) {
+		try
+		{
+			DcdFactory theDcdFactory = (DcdFactory)EPackage.Registry.INSTANCE.getEFactory(DcdPackage.eNS_URI);
+			if (theDcdFactory != null)
+			{
 				return theDcdFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DcdFactoryImpl();
@@ -82,7 +84,8 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case DcdPackage.DCD_COMPONENT_PLACEMENT: return createDcdComponentPlacement();
 			case DcdPackage.DCD_COMPONENT_INSTANTIATION: return createDcdComponentInstantiation();
 			case DcdPackage.DCD_PARTITIONING: return createDcdPartitioning();

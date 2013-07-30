@@ -153,7 +153,8 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	public NotificationChain basicSetStruct(Struct newStruct, NotificationChain msgs) {
 		Struct oldStruct = struct;
 		struct = newStruct;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.STRUCT_SEQUENCE__STRUCT, oldStruct, newStruct);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -166,7 +167,8 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * @generated
 	 */
 	public void setStruct(Struct newStruct) {
-		if (newStruct != struct) {
+		if (newStruct != struct)
+		{
 			NotificationChain msgs = null;
 			if (struct != null)
 				msgs = ((InternalEObject)struct).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.STRUCT_SEQUENCE__STRUCT, null, msgs);
@@ -185,7 +187,8 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * @generated
 	 */
 	public EList<StructValue> getStructValue() {
-		if (structValue == null) {
+		if (structValue == null)
+		{
 			structValue = new EObjectContainmentEList<StructValue>(StructValue.class, this, PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE);
 		}
 		return structValue;
@@ -197,7 +200,8 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * @generated
 	 */
 	public EList<ConfigurationKind> getConfigurationKind() {
-		if (configurationKind == null) {
+		if (configurationKind == null)
+		{
 			configurationKind = new EObjectContainmentEList.Unsettable<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND);
 		}
 		return configurationKind;
@@ -316,7 +320,8 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
 				return basicSetStruct(null, msgs);
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
@@ -334,7 +339,8 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
 				return getStruct();
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
@@ -353,7 +359,8 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
 				setStruct((Struct)newValue);
 				return;
@@ -376,7 +383,8 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
 				setStruct((Struct)null);
 				return;
@@ -397,7 +405,8 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
 				return struct != null;
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:

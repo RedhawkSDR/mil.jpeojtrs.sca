@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.tests;
 
 import junit.framework.TestCase;
@@ -83,13 +83,9 @@ public abstract class AbstractPortTest extends TestCase {
 	 * @generated
 	 */
 	public void testGetInterface() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this feature getter test method
+		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -100,13 +96,9 @@ public abstract class AbstractPortTest extends TestCase {
 	 * @generated
 	 */
 	public void testSetInterface() {
-		// END GENERATED CODE
-		
-		// FIXME: implement this feature setter test method
+		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
-		
-		// END GENERATED CODE
 	}
 
 	/**

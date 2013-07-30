@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.DcdComponentInstantiation;
@@ -21,6 +21,7 @@ import mil.jpeojtrs.sca.dcd.DcdUsesPort;
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
 import mil.jpeojtrs.sca.partitioning.impl.ConnectInterfaceImpl;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -50,6 +51,30 @@ public class DcdConnectInterfaceImpl extends ConnectInterfaceImpl<DcdComponentIn
 	@Override
 	protected EClass eStaticClass() {
 		return DcdPackage.Literals.DCD_CONNECT_INTERFACE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public NotificationChain basicSetUsesPort(DcdUsesPort newUsesPort, NotificationChain msgs) {
+		return super.basicSetUsesPort(newUsesPort, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.3
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public NotificationChain basicSetProvidesPort(DcdProvidesPort newProvidesPort, NotificationChain msgs) {
+		return super.basicSetProvidesPort(newProvidesPort, msgs);
 	}
 
 	@Override

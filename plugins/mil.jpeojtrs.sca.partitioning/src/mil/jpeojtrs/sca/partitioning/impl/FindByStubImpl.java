@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.util.Collection;
@@ -132,7 +132,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	public NotificationChain basicSetNamingService(NamingService newNamingService, NotificationChain msgs) {
 		NamingService oldNamingService = namingService;
 		namingService = newNamingService;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.FIND_BY_STUB__NAMING_SERVICE, oldNamingService, newNamingService);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -145,7 +146,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * @generated
 	 */
 	public void setNamingService(NamingService newNamingService) {
-		if (newNamingService != namingService) {
+		if (newNamingService != namingService)
+		{
 			NotificationChain msgs = null;
 			if (namingService != null)
 				msgs = ((InternalEObject)namingService).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY_STUB__NAMING_SERVICE, null, msgs);
@@ -175,7 +177,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	public NotificationChain basicSetDomainFinder(DomainFinder newDomainFinder, NotificationChain msgs) {
 		DomainFinder oldDomainFinder = domainFinder;
 		domainFinder = newDomainFinder;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.FIND_BY_STUB__DOMAIN_FINDER, oldDomainFinder, newDomainFinder);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -188,7 +191,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * @generated
 	 */
 	public void setDomainFinder(DomainFinder newDomainFinder) {
-		if (newDomainFinder != domainFinder) {
+		if (newDomainFinder != domainFinder)
+		{
 			NotificationChain msgs = null;
 			if (domainFinder != null)
 				msgs = ((InternalEObject)domainFinder).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY_STUB__DOMAIN_FINDER, null, msgs);
@@ -207,7 +211,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * @generated
 	 */
 	public EList<ProvidesPortStub> getProvides() {
-		if (provides == null) {
+		if (provides == null)
+		{
 			provides = new EObjectContainmentEList<ProvidesPortStub>(ProvidesPortStub.class, this, PartitioningPackage.FIND_BY_STUB__PROVIDES);
 		}
 		return provides;
@@ -219,7 +224,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * @generated
 	 */
 	public EList<UsesPortStub> getUses() {
-		if (uses == null) {
+		if (uses == null)
+		{
 			uses = new EObjectContainmentEList<UsesPortStub>(UsesPortStub.class, this, PartitioningPackage.FIND_BY_STUB__USES);
 		}
 		return uses;
@@ -242,7 +248,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	public NotificationChain basicSetInterface(ComponentSupportedInterfaceStub newInterface, NotificationChain msgs) {
 		ComponentSupportedInterfaceStub oldInterface = interface_;
 		interface_ = newInterface;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.FIND_BY_STUB__INTERFACE, oldInterface, newInterface);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -255,7 +262,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * @generated
 	 */
 	public void setInterface(ComponentSupportedInterfaceStub newInterface) {
-		if (newInterface != interface_) {
+		if (newInterface != interface_)
+		{
 			NotificationChain msgs = null;
 			if (interface_ != null)
 				msgs = ((InternalEObject)interface_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY_STUB__INTERFACE, null, msgs);
@@ -275,7 +283,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.FIND_BY_STUB__NAMING_SERVICE:
 				return basicSetNamingService(null, msgs);
 			case PartitioningPackage.FIND_BY_STUB__DOMAIN_FINDER:
@@ -297,7 +306,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.FIND_BY_STUB__NAMING_SERVICE:
 				return getNamingService();
 			case PartitioningPackage.FIND_BY_STUB__DOMAIN_FINDER:
@@ -320,7 +330,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.FIND_BY_STUB__NAMING_SERVICE:
 				setNamingService((NamingService)newValue);
 				return;
@@ -349,7 +360,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.FIND_BY_STUB__NAMING_SERVICE:
 				setNamingService((NamingService)null);
 				return;
@@ -376,7 +388,8 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.FIND_BY_STUB__NAMING_SERVICE:
 				return namingService != null;
 			case PartitioningPackage.FIND_BY_STUB__DOMAIN_FINDER:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import java.util.Collection;
@@ -75,7 +75,8 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
 				return ((InternalEList<?>)getHostCollocation()).basicRemove(otherEnd, msgs);
 		}
@@ -89,7 +90,8 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
 				return getHostCollocation();
 		}
@@ -104,7 +106,8 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
 				getHostCollocation().clear();
 				getHostCollocation().addAll((Collection<? extends HostCollocation>)newValue);
@@ -120,7 +123,8 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
 				getHostCollocation().clear();
 				return;
@@ -135,7 +139,8 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
 				return !getHostCollocation().isEmpty();
 		}

@@ -8,11 +8,10 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.util;
 
 import java.util.Map;
-
 import mil.jpeojtrs.sca.partitioning.util.PartitioningValidator;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
@@ -35,7 +34,6 @@ import mil.jpeojtrs.sca.sad.SadPluginActivator;
 import mil.jpeojtrs.sca.sad.SadProvidesPort;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
-
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -118,7 +116,8 @@ public class SadValidator extends EObjectValidator {
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID) {
+		switch (classifierID)
+		{
 			case SadPackage.ASSEMBLY_CONTROLLER:
 				return validateAssemblyController((AssemblyController)value, diagnostics, context);
 			case SadPackage.SAD_COMPONENT_INSTANTIATION:

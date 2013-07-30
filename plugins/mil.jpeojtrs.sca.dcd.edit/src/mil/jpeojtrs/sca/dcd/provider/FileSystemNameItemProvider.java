@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.provider;
 
 
@@ -65,7 +65,8 @@ public class FileSystemNameItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addDeviceIDPropertyDescriptor(object);
@@ -154,7 +155,8 @@ public class FileSystemNameItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(FileSystemName.class)) {
+		switch (notification.getFeatureID(FileSystemName.class))
+		{
 			case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
 			case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

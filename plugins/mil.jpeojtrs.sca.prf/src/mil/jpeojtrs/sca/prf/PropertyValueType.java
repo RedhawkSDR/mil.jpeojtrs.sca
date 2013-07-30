@@ -54,7 +54,7 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ULONG(2, "ulong", "ulong (32-bit)"), /**
+	ULONG(2, "ulong", "ulong"), /**
 	 * The '<em><b>Objref</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,7 +70,7 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SHORT(4, "short", "short (16-bit)"), /**
+	SHORT(4, "short", "short"), /**
 	 * The '<em><b>Float</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,7 +78,7 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FLOAT(5, "float", "float (32-bit)"), /**
+	FLOAT(5, "float", "float"), /**
 	 * The '<em><b>Octet</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,7 +102,7 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USHORT(8, "ushort", "ushort (16-bit)"), /**
+	USHORT(8, "ushort", "ushort"), /**
 	 * The '<em><b>Double</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,7 +110,7 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DOUBLE(9, "double", "double (64-bit)"), /**
+	DOUBLE(9, "double", "double"), /**
 	 * The '<em><b>Long</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,7 +118,7 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LONG(10, "long", "long (32-bit)"), /**
+	LONG(10, "long", "long"), /**
 	 * The '<em><b>Longlong</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,7 +126,7 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LONGLONG(11, "longlong", "longlong (64-bit)"), /**
+	LONGLONG(11, "longlong", "longlong"), /**
 	 * The '<em><b>Ulonglong</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -134,7 +134,7 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ULONGLONG(12, "ulonglong", "ulonglong (64-bit)");
+	ULONGLONG(12, "ulonglong", "ulonglong");
 
 	/**
 	 * The '<em><b>String</b></em>' literal value.
@@ -173,7 +173,7 @@ public enum PropertyValueType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ULONG
-	 * @model name="ulong" literal="ulong (32-bit)"
+	 * @model name="ulong"
 	 * @generated
 	 * @ordered
 	 */
@@ -201,7 +201,7 @@ public enum PropertyValueType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SHORT
-	 * @model name="short" literal="short (16-bit)"
+	 * @model name="short"
 	 * @generated
 	 * @ordered
 	 */
@@ -215,7 +215,7 @@ public enum PropertyValueType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FLOAT
-	 * @model name="float" literal="float (32-bit)"
+	 * @model name="float"
 	 * @generated
 	 * @ordered
 	 */
@@ -257,7 +257,7 @@ public enum PropertyValueType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #USHORT
-	 * @model name="ushort" literal="ushort (16-bit)"
+	 * @model name="ushort"
 	 * @generated
 	 * @ordered
 	 */
@@ -271,7 +271,7 @@ public enum PropertyValueType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DOUBLE
-	 * @model name="double" literal="double (64-bit)"
+	 * @model name="double"
 	 * @generated
 	 * @ordered
 	 */
@@ -285,7 +285,7 @@ public enum PropertyValueType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LONG
-	 * @model name="long" literal="long (32-bit)"
+	 * @model name="long"
 	 * @generated
 	 * @ordered
 	 */
@@ -299,7 +299,7 @@ public enum PropertyValueType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LONGLONG
-	 * @model name="longlong" literal="longlong (64-bit)"
+	 * @model name="longlong"
 	 * @generated
 	 * @ordered
 	 */
@@ -313,7 +313,7 @@ public enum PropertyValueType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ULONGLONG
-	 * @model name="ulonglong" literal="ulonglong (64-bit)"
+	 * @model name="ulonglong"
 	 * @generated
 	 * @ordered
 	 */
@@ -325,7 +325,8 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 */
 	private static final PropertyValueType[] VALUES_ARRAY =
-		new PropertyValueType[] {
+		new PropertyValueType[]
+		{
 			STRING,
 			BOOLEAN,
 			ULONG,
@@ -355,9 +356,11 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 */
 	public static PropertyValueType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			PropertyValueType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -371,9 +374,11 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 */
 	public static PropertyValueType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			PropertyValueType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -387,7 +392,8 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 */
 	public static PropertyValueType get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case STRING_VALUE: return STRING;
 			case BOOLEAN_VALUE: return BOOLEAN;
 			case ULONG_VALUE: return ULONG;
@@ -480,7 +486,7 @@ public enum PropertyValueType implements Enumerator {
 	 * @return <code> true </code> if the value is valid for this PropertyValueType; <code> false </code> otherwise
 	 */
 	public boolean isValueOfType(String value) {
-		return isValueOfType(value, null);
+		return isValueOfType(value, false);
 	}
 
 	/**
@@ -488,16 +494,16 @@ public enum PropertyValueType implements Enumerator {
 	 * 
 	 * @since 2.3
 	 * @param value the String value to check
-	 * @param complex if the string is a complex number, pass null if it is not a number
+	 * @param complex if the string is a complex number
 	 * @return <code> true </code> if the value is valid for this PropertyValueType; <code> false </code> otherwise
 	 */
-	public boolean isValueOfType(String value, Boolean complex) {
+	public boolean isValueOfType(String value, boolean complex) {
 		//END GENERATED CODE
 		if (value == null) {
 			return false;
 		}
 		try {
-			AnyUtils.convertString(value, getName(), complex);
+			AnyUtils.convertString(value, getLiteral(), complex);
 			return true;
 		} catch (Exception e) {
 			return false;

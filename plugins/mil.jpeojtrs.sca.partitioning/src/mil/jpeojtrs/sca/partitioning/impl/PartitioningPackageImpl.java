@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
@@ -301,8 +301,10 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
 			(thePartitioningPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
+			 new EValidator.Descriptor()
+			 {
+				 public EValidator getEValidator()
+				 {
 					 return PartitioningValidator.INSTANCE;
 				 }
 			 });
@@ -1616,7 +1618,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (componentFileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "componentfile",
 			 "qualified", "false"
@@ -1624,35 +1627,40 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getComponentFile_LocalFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "localfile"
 		   });		
 		addAnnotation
 		  (getComponentFile_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (getComponentFile_SoftPkg(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "softPkg"
 		   });		
 		addAnnotation
 		  (getComponentFile_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (domComponentFileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "componentfile",
 			 "qualified", "false"
@@ -1660,7 +1668,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (devComponentFileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "componentfile",
 			 "qualified", "false"
@@ -1668,7 +1677,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (componentFileRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "componentfileref",
 			 "qualified", "false"
@@ -1676,21 +1686,24 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getComponentFileRef_File(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "file"
 		   });		
 		addAnnotation
 		  (getComponentFileRef_Refid(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "refid"
 		   });		
 		addAnnotation
 		  (componentFilesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "componentfiles",
 			 "qualified", "false"
@@ -1698,56 +1711,64 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getComponentFiles_ComponentFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentfile"
 		   });				
 		addAnnotation
 		  (getComponentInstantiation_UsageName(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "usagename"
 		   });			
 		addAnnotation
 		  (getComponentInstantiation_ComponentProperties(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentproperties"
 		   });		
 		addAnnotation
 		  (getComponentInstantiation_Provides(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "provides"
 		   });		
 		addAnnotation
 		  (getComponentInstantiation_Uses(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "uses"
 		   });		
 		addAnnotation
 		  (getComponentInstantiation_InterfaceStub(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "interfaceports"
 		   });			
 		addAnnotation
 		  (getComponentInstantiation_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (componentInstantiationRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "componentinstantiationref",
 			 "qualified", "false"
@@ -1755,21 +1776,24 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getComponentInstantiationRef_Instantiation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "instantiation"
 		   });		
 		addAnnotation
 		  (getComponentInstantiationRef_Refid(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "refid"
 		   });		
 		addAnnotation
 		  (componentPlacementEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "componentplacement",
 			 "qualified", "false"
@@ -1777,28 +1801,32 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getComponentPlacement_ComponentFileRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentfileref"
 		   });		
 		addAnnotation
 		  (getComponentPlacement_ComponentInstantiation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentinstantiation"
 		   });		
 		addAnnotation
 		  (getComponentPlacement_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (componentPropertiesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "componentproperties",
 			 "qualified", "false"
@@ -1806,14 +1834,16 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getComponentProperties_Properties(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "group",
 			 "name", "properties:0"
 		   });		
 		addAnnotation
 		  (getComponentProperties_SimpleRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simpleref",
 			 "group", "#properties:0"
@@ -1821,7 +1851,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getComponentProperties_SimpleSequenceRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simplesequenceref",
 			 "group", "#properties:0"
@@ -1829,7 +1860,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getComponentProperties_StructRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structref",
 			 "group", "#properties:0"
@@ -1837,7 +1869,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getComponentProperties_StructSequenceRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structsequenceref",
 			 "group", "#properties:0"
@@ -1845,7 +1878,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (componentSupportedInterfaceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "componentsupportedinterface",
 			 "qualified", "false"
@@ -1853,35 +1887,40 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getComponentSupportedInterface_SupportedIdentifier(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "supportedidentifier"
 		   });		
 		addAnnotation
 		  (getComponentSupportedInterface_ComponentInstantiationRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentinstantiationref"
 		   });		
 		addAnnotation
 		  (getComponentSupportedInterface_FindBy(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "findby"
 		   });		
 		addAnnotation
 		  (getComponentSupportedInterface_Interface(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "interface"
 		   });			
 		addAnnotation
 		  (connectInterfaceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "connectinterface",
 			 "qualified", "false"
@@ -1889,56 +1928,64 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getConnectInterface_UsesPort(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "usesport"
 		   });		
 		addAnnotation
 		  (getConnectInterface_ProvidesPort(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "providesport"
 		   });		
 		addAnnotation
 		  (getConnectInterface_ComponentSupportedInterface(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentsupportedinterface"
 		   });		
 		addAnnotation
 		  (getConnectInterface_FindBy(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "findby"
 		   });		
 		addAnnotation
 		  (getConnectInterface_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (getConnectInterface_Source(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "source"
 		   });		
 		addAnnotation
 		  (getConnectInterface_Target(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "target"
 		   });		
 		addAnnotation
 		  (connectionsEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "connections",
 			 "qualified", "false"
@@ -1946,14 +1993,16 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getConnections_ConnectInterface(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "connectinterface"
 		   });		
 		addAnnotation
 		  (deviceThatLoadedThisComponentRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "devicethatloadedthiscomponentref",
 			 "qualified", "false"
@@ -1961,14 +2010,16 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getDeviceThatLoadedThisComponentRef_Refid(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "refid"
 		   });		
 		addAnnotation
 		  (deviceUsedByThisComponentRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "deviceusedbythiscomponentref",
 			 "qualified", "false"
@@ -1976,21 +2027,24 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getDeviceUsedByThisComponentRef_RefId(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "refid"
 		   });		
 		addAnnotation
 		  (getDeviceUsedByThisComponentRef_UsesRefId(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "usesrefid"
 		   });		
 		addAnnotation
 		  (domainFinderEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "domainfinder",
 			 "qualified", "false"
@@ -1998,28 +2052,32 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getDomainFinder_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (getDomainFinder_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });		
 		addAnnotation
 		  (domainFinderTypeEEnum, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "domainfindertype",
 			 "qualified", "false"
 		   });		
 		addAnnotation
 		  (domainFinderTypeObjectEDataType, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "domainfindertype:object",
 			 "baseType", "domainfindertype",
 			 "qualified", "false"
@@ -2027,7 +2085,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (findByEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "findby",
 			 "qualified", "false"
@@ -2035,63 +2094,72 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getFindBy_NamingService(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "namingservice"
 		   });		
 		addAnnotation
 		  (getFindBy_DomainFinder(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "domainfinder"
 		   });			
 		addAnnotation
 		  (getFindByStub_NamingService(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "namingservice"
 		   });		
 		addAnnotation
 		  (getFindByStub_DomainFinder(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "domainfinder"
 		   });		
 		addAnnotation
 		  (getFindByStub_Provides(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "provides"
 		   });		
 		addAnnotation
 		  (getFindByStub_Uses(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "uses"
 		   });		
 		addAnnotation
 		  (getFindByStub_Interface(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "interfaceports"
 		   });		
 		addAnnotation
 		  (getFindByStubContainer_Stubs(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "stubs"
 		   });		
 		addAnnotation
 		  (localFileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "localfile",
 			 "qualified", "false"
@@ -2099,14 +2167,16 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getLocalFile_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (namingServiceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "namingservice",
 			 "qualified", "false"
@@ -2114,14 +2184,16 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getNamingService_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (partitioningEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "partitioning",
 			 "qualified", "false"
@@ -2129,14 +2201,16 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getPartitioning_Parts(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "group",
 			 "name", "parts:0"
 		   });		
 		addAnnotation
 		  (getPartitioning_ComponentPlacement(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentplacement",
 			 "group", "#parts:0"
@@ -2144,7 +2218,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (providesPortEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "providesport",
 			 "qualified", "false"
@@ -2152,42 +2227,48 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getProvidesPort_ProvidesIdentifier(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "providesidentifier"
 		   });		
 		addAnnotation
 		  (getProvidesPort_ComponentInstantiationRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentinstantiationref"
 		   });		
 		addAnnotation
 		  (getProvidesPort_DeviceThatLoadedThisComponentRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "devicethatloadedthiscomponentref"
 		   });		
 		addAnnotation
 		  (getProvidesPort_DeviceUsedByThisComponentRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "deviceusedbythiscomponentref"
 		   });		
 		addAnnotation
 		  (getProvidesPort_FindBy(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "findby"
 		   });		
 		addAnnotation
 		  (providesPortStubEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "providesportstub",
 			 "qualified", "false"
@@ -2195,21 +2276,24 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getProvidesPortStub_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (getProvidesPortStub_Provides(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "provides"
 		   });		
 		addAnnotation
 		  (usesPortEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementOnly",
 			 "name", "usesport",
 			 "qualified", "false"
@@ -2217,56 +2301,64 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (getUsesPort_UsesIndentifier(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "usesidentifier"
 		   });		
 		addAnnotation
 		  (getUsesPort_ComponentInstantiationRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentinstantiationref"
 		   });		
 		addAnnotation
 		  (getUsesPort_DeviceThatLoadedThisComponentRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "devicethatloadedthiscomponentref"
 		   });		
 		addAnnotation
 		  (getUsesPort_DeviceUsedByThisComponentRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "deviceusedbythiscomponentref"
 		   });		
 		addAnnotation
 		  (getUsesPort_FindBy(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "findby"
 		   });		
 		addAnnotation
 		  (getUsesPortStub_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (getUsesPortStub_Uses(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "uses"
 		   });		
 		addAnnotation
 		  (getUsesPortStub_SupportedIdentifier(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "supportedIdentifier"
 		   });
@@ -2283,13 +2375,15 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation
 		  (connectInterfaceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "constraints", "ValidSourceReference ValidTargetReference"
 		   });																									
 		addAnnotation
 		  (findByStubEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "constraints", "ValidFindByStub"
 		   });																															
 	}

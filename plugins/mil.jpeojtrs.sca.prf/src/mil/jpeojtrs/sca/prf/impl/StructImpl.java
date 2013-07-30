@@ -96,7 +96,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * @generated
 	 */
 	public EList<Simple> getSimple() {
-		if (simple == null) {
+		if (simple == null)
+		{
 			simple = new EObjectContainmentEList<Simple>(Simple.class, this, PrfPackage.STRUCT__SIMPLE);
 		}
 		return simple;
@@ -108,7 +109,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * @generated
 	 */
 	public EList<ConfigurationKind> getConfigurationKind() {
-		if (configurationKind == null) {
+		if (configurationKind == null)
+		{
 			configurationKind = new EObjectContainmentEList.Unsettable<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT__CONFIGURATION_KIND);
 		}
 		return configurationKind;
@@ -184,7 +186,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT__SIMPLE:
 				return ((InternalEList<?>)getSimple()).basicRemove(otherEnd, msgs);
 			case PrfPackage.STRUCT__CONFIGURATION_KIND:
@@ -200,7 +203,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT__SIMPLE:
 				return getSimple();
 			case PrfPackage.STRUCT__CONFIGURATION_KIND:
@@ -217,7 +221,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT__SIMPLE:
 				getSimple().clear();
 				getSimple().addAll((Collection<? extends Simple>)newValue);
@@ -237,7 +242,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT__SIMPLE:
 				getSimple().clear();
 				return;
@@ -255,7 +261,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.STRUCT__SIMPLE:
 				return simple != null && !simple.isEmpty();
 			case PrfPackage.STRUCT__CONFIGURATION_KIND:

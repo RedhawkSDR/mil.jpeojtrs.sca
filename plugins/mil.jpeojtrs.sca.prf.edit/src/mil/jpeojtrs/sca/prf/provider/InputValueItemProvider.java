@@ -61,7 +61,8 @@ public class InputValueItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 		}
@@ -78,7 +79,8 @@ public class InputValueItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.INPUT_VALUE__SIMPLE);
 		}
@@ -131,7 +133,8 @@ public class InputValueItemProvider extends ItemProviderAdapter implements IEdit
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(InputValue.class)) {
+		switch (notification.getFeatureID(InputValue.class))
+		{
 			case PrfPackage.INPUT_VALUE__SIMPLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

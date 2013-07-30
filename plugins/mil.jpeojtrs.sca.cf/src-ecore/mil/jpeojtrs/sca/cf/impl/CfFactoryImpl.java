@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.cf.impl;
 
 import mil.jpeojtrs.sca.cf.CfFactory;
@@ -94,7 +94,7 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	 */
 	public static CfFactory init() {
 		try {
-			CfFactory theCfFactory = (CfFactory)EPackage.Registry.INSTANCE.getEFactory("http:///mil/jpeojtrs/sca/cf.ecore"); 
+			CfFactory theCfFactory = (CfFactory)EPackage.Registry.INSTANCE.getEFactory(CfPackage.eNS_URI);
 			if (theCfFactory != null) {
 				return theCfFactory;
 			}

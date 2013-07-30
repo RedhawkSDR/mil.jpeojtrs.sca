@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import mil.jpeojtrs.sca.scd.SoftwareComponent;
@@ -103,7 +103,8 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	public NotificationChain basicSetLocalfileGen(LocalFile newLocalfile, NotificationChain msgs) {
 		LocalFile oldLocalfile = localfile;
 		localfile = newLocalfile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.DESCRIPTOR__LOCALFILE, oldLocalfile, newLocalfile);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -133,7 +134,8 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 * @generated
 	 */
 	public void setLocalfile(LocalFile newLocalfile) {
-		if (newLocalfile != localfile) {
+		if (newLocalfile != localfile)
+		{
 			NotificationChain msgs = null;
 			if (localfile != null)
 				msgs = ((InternalEObject)localfile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.DESCRIPTOR__LOCALFILE, null, msgs);
@@ -215,7 +217,8 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.DESCRIPTOR__LOCALFILE:
 				return basicSetLocalfile(null, msgs);
 		}
@@ -229,7 +232,8 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.DESCRIPTOR__LOCALFILE:
 				return getLocalfile();
 			case SpdPackage.DESCRIPTOR__COMPONENT:
@@ -248,7 +252,8 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.DESCRIPTOR__LOCALFILE:
 				setLocalfile((LocalFile)newValue);
 				return;
@@ -269,7 +274,8 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.DESCRIPTOR__LOCALFILE:
 				setLocalfile((LocalFile)null);
 				return;
@@ -290,7 +296,8 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.DESCRIPTOR__LOCALFILE:
 				return localfile != null;
 			case SpdPackage.DESCRIPTOR__COMPONENT:

@@ -61,7 +61,8 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 		}
@@ -78,7 +79,8 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES);
 		}
@@ -131,7 +133,8 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SimpleSequenceRef.class)) {
+		switch (notification.getFeatureID(SimpleSequenceRef.class))
+		{
 			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

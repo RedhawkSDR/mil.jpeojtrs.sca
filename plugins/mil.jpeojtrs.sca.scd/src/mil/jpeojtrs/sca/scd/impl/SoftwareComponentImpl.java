@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import mil.jpeojtrs.sca.scd.ComponentFeatures;
@@ -184,7 +184,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	public NotificationChain basicSetComponentRepID(ComponentRepId newComponentRepID, NotificationChain msgs) {
 		ComponentRepId oldComponentRepID = componentRepID;
 		componentRepID = newComponentRepID;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID, oldComponentRepID, newComponentRepID);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -197,7 +198,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * @generated
 	 */
 	public void setComponentRepID(ComponentRepId newComponentRepID) {
-		if (newComponentRepID != componentRepID) {
+		if (newComponentRepID != componentRepID)
+		{
 			NotificationChain msgs = null;
 			if (componentRepID != null)
 				msgs = ((InternalEObject)componentRepID).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID, null, msgs);
@@ -248,7 +250,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	public NotificationChain basicSetComponentFeatures(ComponentFeatures newComponentFeatures, NotificationChain msgs) {
 		ComponentFeatures oldComponentFeatures = componentFeatures;
 		componentFeatures = newComponentFeatures;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES, oldComponentFeatures, newComponentFeatures);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -261,7 +264,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * @generated
 	 */
 	public void setComponentFeatures(ComponentFeatures newComponentFeatures) {
-		if (newComponentFeatures != componentFeatures) {
+		if (newComponentFeatures != componentFeatures)
+		{
 			NotificationChain msgs = null;
 			if (componentFeatures != null)
 				msgs = ((InternalEObject)componentFeatures).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES, null, msgs);
@@ -291,7 +295,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	public NotificationChain basicSetInterfaces(Interfaces newInterfaces, NotificationChain msgs) {
 		Interfaces oldInterfaces = interfaces;
 		interfaces = newInterfaces;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__INTERFACES, oldInterfaces, newInterfaces);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -304,7 +309,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * @generated
 	 */
 	public void setInterfaces(Interfaces newInterfaces) {
-		if (newInterfaces != interfaces) {
+		if (newInterfaces != interfaces)
+		{
 			NotificationChain msgs = null;
 			if (interfaces != null)
 				msgs = ((InternalEObject)interfaces).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__INTERFACES, null, msgs);
@@ -334,7 +340,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	public NotificationChain basicSetPropertyFile(PropertyFile newPropertyFile, NotificationChain msgs) {
 		PropertyFile oldPropertyFile = propertyFile;
 		propertyFile = newPropertyFile;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE, oldPropertyFile, newPropertyFile);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -347,7 +354,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * @generated
 	 */
 	public void setPropertyFile(PropertyFile newPropertyFile) {
-		if (newPropertyFile != propertyFile) {
+		if (newPropertyFile != propertyFile)
+		{
 			NotificationChain msgs = null;
 			if (propertyFile != null)
 				msgs = ((InternalEObject)propertyFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE, null, msgs);
@@ -395,7 +403,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
 				return basicSetComponentRepID(null, msgs);
 			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
@@ -415,7 +424,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
 				return getCorbaVersion();
 			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
@@ -441,7 +451,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
 				setCorbaVersion((String)newValue);
 				return;
@@ -474,7 +485,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
 				setCorbaVersion(CORBA_VERSION_EDEFAULT);
 				return;
@@ -507,7 +519,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
 				return CORBA_VERSION_EDEFAULT == null ? corbaVersion != null : !CORBA_VERSION_EDEFAULT.equals(corbaVersion);
 			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.provider;
 
 import java.util.ArrayList;
@@ -94,7 +94,8 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDmdDocumentRootAdapter() {
-		if (dmdDocumentRootItemProvider == null) {
+		if (dmdDocumentRootItemProvider == null)
+		{
 			dmdDocumentRootItemProvider = new DmdDocumentRootItemProvider(this);
 		}
 
@@ -117,7 +118,8 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDomainFinderAdapter() {
-		if (domainFinderItemProvider == null) {
+		if (domainFinderItemProvider == null)
+		{
 			domainFinderItemProvider = new DomainFinderItemProvider(this);
 		}
 
@@ -140,7 +142,8 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDomainManagerConfigurationAdapter() {
-		if (domainManagerConfigurationItemProvider == null) {
+		if (domainManagerConfigurationItemProvider == null)
+		{
 			domainManagerConfigurationItemProvider = new DomainManagerConfigurationItemProvider(this);
 		}
 
@@ -163,7 +166,8 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDomainManagerSoftPkgAdapter() {
-		if (domainManagerSoftPkgItemProvider == null) {
+		if (domainManagerSoftPkgItemProvider == null)
+		{
 			domainManagerSoftPkgItemProvider = new DomainManagerSoftPkgItemProvider(this);
 		}
 
@@ -186,7 +190,8 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createFindByAdapter() {
-		if (findByItemProvider == null) {
+		if (findByItemProvider == null)
+		{
 			findByItemProvider = new FindByItemProvider(this);
 		}
 
@@ -209,7 +214,8 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createLocalFileAdapter() {
-		if (localFileItemProvider == null) {
+		if (localFileItemProvider == null)
+		{
 			localFileItemProvider = new LocalFileItemProvider(this);
 		}
 
@@ -232,7 +238,8 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createNamingServiceAdapter() {
-		if (namingServiceItemProvider == null) {
+		if (namingServiceItemProvider == null)
+		{
 			namingServiceItemProvider = new NamingServiceItemProvider(this);
 		}
 
@@ -255,7 +262,8 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createServiceAdapter() {
-		if (serviceItemProvider == null) {
+		if (serviceItemProvider == null)
+		{
 			serviceItemProvider = new ServiceItemProvider(this);
 		}
 
@@ -278,7 +286,8 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createServicesAdapter() {
-		if (servicesItemProvider == null) {
+		if (servicesItemProvider == null)
+		{
 			servicesItemProvider = new ServicesItemProvider(this);
 		}
 
@@ -333,9 +342,11 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -372,7 +383,8 @@ public class DmdItemProviderAdapterFactory extends DmdAdapterFactory implements 
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

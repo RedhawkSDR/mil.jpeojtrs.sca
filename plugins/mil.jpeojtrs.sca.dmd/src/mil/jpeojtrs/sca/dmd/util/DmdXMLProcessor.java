@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.util;
 
 import java.util.Map;
@@ -46,7 +46,8 @@ public class DmdXMLProcessor extends XMLProcessor {
 	 */
 	@Override
 	protected Map<String, Resource.Factory> getRegistrations() {
-		if (registrations == null) {
+		if (registrations == null)
+		{
 			super.getRegistrations();
 			registrations.put(XML_EXTENSION, new DmdResourceFactoryImpl());
 			registrations.put(STAR_EXTENSION, new DmdResourceFactoryImpl());

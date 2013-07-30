@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.impl;
 
 import mil.jpeojtrs.sca.spd.ImplRef;
@@ -100,7 +100,8 @@ public class ImplRefImpl extends EObjectImpl implements ImplRef {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.IMPL_REF__REFID:
 				return getRefid();
 		}
@@ -114,7 +115,8 @@ public class ImplRefImpl extends EObjectImpl implements ImplRef {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.IMPL_REF__REFID:
 				setRefid((String)newValue);
 				return;
@@ -129,7 +131,8 @@ public class ImplRefImpl extends EObjectImpl implements ImplRef {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.IMPL_REF__REFID:
 				setRefid(REFID_EDEFAULT);
 				return;
@@ -144,7 +147,8 @@ public class ImplRefImpl extends EObjectImpl implements ImplRef {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case SpdPackage.IMPL_REF__REFID:
 				return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
 		}

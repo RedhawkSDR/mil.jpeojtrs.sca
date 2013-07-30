@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
@@ -229,8 +229,10 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
 			(theSadPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
+			 new EValidator.Descriptor()
+			 {
+				 public EValidator getEValidator()
+				 {
 					 return SadValidator.INSTANCE;
 				 }
 			 });
@@ -1116,7 +1118,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (assemblyControllerEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "assemblycontroller",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1124,7 +1127,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getAssemblyController_ComponentInstantiationRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentinstantiationref",
 			 "namespace", "##targetNamespace"
@@ -1132,7 +1136,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (sadComponentInstantiationEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "componentinstantiation",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1140,7 +1145,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSadComponentInstantiation_FindComponent(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "findcomponent",
 			 "namespace", "##targetNamespace"
@@ -1148,7 +1154,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSadComponentInstantiation_StartOrder(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "startorder",
 			 "namespace", "##targetNamespace"
@@ -1156,7 +1163,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (sadComponentInstantiationRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "componentinstantiationref",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1164,7 +1172,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (sadUsesPortEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "usesport",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1172,7 +1181,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (sadProvidesPortEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "providesport",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1180,7 +1190,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (sadConnectInterfaceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "connectinterface",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1188,7 +1199,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (sadConnectionsEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "connections",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1196,7 +1208,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (componentResourceFactoryRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "componentresourcefactoryref",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1204,7 +1217,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getComponentResourceFactoryRef_ResourceFactoryProperties(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "resourcefactoryproperties",
 			 "namespace", "##targetNamespace"
@@ -1212,14 +1226,16 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getComponentResourceFactoryRef_Refid(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "refid"
 		   });		
 		addAnnotation
 		  (externalPortsEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "externalports",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1227,7 +1243,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getExternalPorts_Port(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "port",
 			 "namespace", "##targetNamespace"
@@ -1235,7 +1252,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (externalPropertiesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "externalproperties",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1243,7 +1261,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getExternalProperties_Properties(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "property",
 			 "namespace", "##targetNamespace"
@@ -1251,7 +1270,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (externalPropertyEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "externalproperty",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1259,28 +1279,32 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getExternalProperty_CompRefID(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "comprefid"
 		   });		
 		addAnnotation
 		  (getExternalProperty_PropID(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "propid"
 		   });		
 		addAnnotation
 		  (getExternalProperty_ExternalPropID(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "externalpropid"
 		   });		
 		addAnnotation
 		  (findComponentEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "findcomponent",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1288,7 +1312,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getFindComponent_ComponentResourceFactoryRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentresourcefactoryref",
 			 "namespace", "##targetNamespace"
@@ -1296,7 +1321,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getFindComponent_NamingService(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "namingservice",
 			 "namespace", "##targetNamespace"
@@ -1304,7 +1330,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (hostCollocationEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "hostcollocation",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1312,7 +1339,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getHostCollocation_ComponentPlacement(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentplacement",
 			 "namespace", "##targetNamespace"
@@ -1320,21 +1348,24 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getHostCollocation_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (getHostCollocation_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (portEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "port",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1342,7 +1373,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getPort_Description(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "description",
 			 "namespace", "##targetNamespace"
@@ -1350,7 +1382,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getPort_UsesIdentifier(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "usesidentifier",
 			 "namespace", "##targetNamespace"
@@ -1358,7 +1391,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getPort_ProvidesIndentifier(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "providesidentifier",
 			 "namespace", "##targetNamespace"
@@ -1366,7 +1400,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getPort_SupportedIdentifier(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "supportedidentifier",
 			 "namespace", "##targetNamespace"
@@ -1374,7 +1409,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getPort_ComponentInstantiationRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentinstantiationref",
 			 "namespace", "##targetNamespace"
@@ -1382,14 +1418,16 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getPort_ExternalName(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "externalname"
 		   });		
 		addAnnotation
 		  (sadPartitioningEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "partitioning",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1397,7 +1435,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSadPartitioning_HostCollocation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "hostcollocation",
 			 "group", "#parts:0"
@@ -1405,7 +1444,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (sadComponentPlacementEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "componentplacement",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1413,7 +1453,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (resourceFactoryPropertiesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "resourcefactoryproperties",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1421,14 +1462,16 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getResourceFactoryProperties_Group(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "group",
 			 "name", "group:0"
 		   });		
 		addAnnotation
 		  (getResourceFactoryProperties_SimpleRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simpleref",
 			 "namespace", "##targetNamespace",
@@ -1437,7 +1480,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getResourceFactoryProperties_SimpleSequenceRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "simplesequenceref",
 			 "namespace", "##targetNamespace",
@@ -1446,7 +1490,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getResourceFactoryProperties_StructRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structref",
 			 "namespace", "##targetNamespace",
@@ -1455,7 +1500,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getResourceFactoryProperties_StructSequenceRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "structsequenceref",
 			 "namespace", "##targetNamespace",
@@ -1464,35 +1510,40 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (sadDocumentRootEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "",
 			 "kind", "mixed"
 		   });		
 		addAnnotation
 		  (getSadDocumentRoot_Mixed(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementWildcard",
 			 "name", ":mixed"
 		   });		
 		addAnnotation
 		  (getSadDocumentRoot_XMLNSPrefixMap(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xmlns:prefix"
 		   });		
 		addAnnotation
 		  (getSadDocumentRoot_XSISchemaLocation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xsi:schemaLocation"
 		   });		
 		addAnnotation
 		  (getSadDocumentRoot_Softwareassembly(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "softwareassembly",
 			 "namespace", "##targetNamespace"
@@ -1500,7 +1551,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (softwareAssemblyEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "softwareassembly",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -1508,7 +1560,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSoftwareAssembly_Description(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "description",
 			 "namespace", "##targetNamespace"
@@ -1516,7 +1569,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSoftwareAssembly_ComponentFiles(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentfiles",
 			 "namespace", "##targetNamespace"
@@ -1524,7 +1578,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSoftwareAssembly_Partitioning(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "partitioning",
 			 "namespace", "##targetNamespace"
@@ -1532,7 +1587,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSoftwareAssembly_AssemblyController(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "assemblycontroller",
 			 "namespace", "##targetNamespace"
@@ -1540,7 +1596,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSoftwareAssembly_Connections(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "connections",
 			 "namespace", "##targetNamespace"
@@ -1548,7 +1605,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSoftwareAssembly_ExternalPorts(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "externalports",
 			 "namespace", "##targetNamespace"
@@ -1556,7 +1614,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSoftwareAssembly_ExternalProperties(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "externalproperties",
 			 "namespace", "##targetNamespace"
@@ -1564,21 +1623,24 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (getSoftwareAssembly_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });		
 		addAnnotation
 		  (getSoftwareAssembly_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (getSoftwareAssembly_Version(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "version"
 		   });
@@ -1595,7 +1657,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation
 		  (portEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "constraints", "NonEmptyPort"
 		   });																															
 	}

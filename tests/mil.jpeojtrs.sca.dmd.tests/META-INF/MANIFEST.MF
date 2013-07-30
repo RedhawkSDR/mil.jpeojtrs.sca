@@ -6,11 +6,16 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Eclipse-BundleShape: dir
 Export-Package: mil.jpeojtrs.sca.dmd.tests
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
- mil.jpeojtrs.sca.dmd;bundle-version="2.2.2";visibility:=reexport,
- org.eclipse.emf.ecore.xmi;bundle-version="2.5.0";visibility:=reexport,
+ mil.jpeojtrs.sca.dmd;visibility:=reexport;bundle-version="2.2.2",
+ org.eclipse.emf.ecore;visibility:=reexport,
+ mil.jpeojtrs.sca.prf;visibility:=reexport,
+ mil.jpeojtrs.sca.scd;visibility:=reexport,
+ mil.jpeojtrs.sca.spd;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport;bundle-version="2.8.1",
  org.junit;bundle-version="4.8.1",
  mil.jpeojtrs.sca.util;bundle-version="3.1.0"
+Bundle-ActivationPolicy: lazy

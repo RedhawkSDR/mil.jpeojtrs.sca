@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
@@ -129,10 +129,12 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 * @generated
 	 */
 	public Uses getUses() {
-		if (uses != null && uses.eIsProxy()) {
+		if (uses != null && uses.eIsProxy())
+		{
 			InternalEObject oldUses = (InternalEObject)uses;
 			uses = (Uses)eResolveProxy(oldUses);
-			if (uses != oldUses) {
+			if (uses != oldUses)
+			{
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartitioningPackage.USES_PORT_STUB__USES, oldUses, uses));
 			}
@@ -200,7 +202,8 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.USES_PORT_STUB__NAME:
 				return getName();
 			case PartitioningPackage.USES_PORT_STUB__USES:
@@ -219,7 +222,8 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.USES_PORT_STUB__NAME:
 				setName((String)newValue);
 				return;
@@ -240,7 +244,8 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.USES_PORT_STUB__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -261,7 +266,8 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.USES_PORT_STUB__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case PartitioningPackage.USES_PORT_STUB__USES:

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import mil.jpeojtrs.sca.dcd.CompositePartOfDevice;
@@ -919,42 +919,48 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		addAnnotation
 		  (dcdComponentPlacementEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "componentplacement",
 			 "kind", "elementOnly"
 		   });			
 		addAnnotation
 		  (getDcdComponentPlacement_DeployDevice(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "deployondevice"
 		   });			
 		addAnnotation
 		  (getDcdComponentPlacement_CompositePartOfDevice(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "compositepartofdevice"
 		   });			
 		addAnnotation
 		  (getDcdComponentPlacement_DevicePkgFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "devicepkgfile"
 		   });		
 		addAnnotation
 		  (getDcdComponentPlacement_ParentDevice(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "parentDevice"
 		   });		
 		addAnnotation
 		  (dcdComponentInstantiationEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "componentinstantiation",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -962,7 +968,8 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		addAnnotation
 		  (dcdPartitioningEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "partitioning",
 			 "kind", "elementOnly",
 			 "qualified", "false"
@@ -970,91 +977,104 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		addAnnotation
 		  (dcdComponentInstantiationRefEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "componentinstantiationref",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (dcdConnectInterfaceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "connectinterface",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (dcdUsesPortEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "usesport",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (dcdProvidesPortEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "providesport",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (dcdConnectionsEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "connections",
 			 "kind", "elementOnly"
 		   });			
 		addAnnotation
 		  (compositePartOfDeviceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "compositepartofdevice",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getCompositePartOfDevice_Component(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "component"
 		   });		
 		addAnnotation
 		  (getCompositePartOfDevice_RefID(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "refid"
 		   });		
 		addAnnotation
 		  (dcdDocumentRootEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "",
 			 "kind", "mixed"
 		   });		
 		addAnnotation
 		  (getDcdDocumentRoot_Mixed(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "elementWildcard",
 			 "name", ":mixed"
 		   });		
 		addAnnotation
 		  (getDcdDocumentRoot_XMLNSPrefixMap(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xmlns:prefix"
 		   });		
 		addAnnotation
 		  (getDcdDocumentRoot_XSISchemaLocation(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "xsi:schemaLocation"
 		   });		
 		addAnnotation
 		  (getDcdDocumentRoot_Deviceconfiguration(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "deviceconfiguration",
 			 "namespace", "##targetNamespace"
@@ -1062,189 +1082,216 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		addAnnotation
 		  (deployOnDeviceEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "deployondevice",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getDeployOnDevice_Component(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "component"
 		   });		
 		addAnnotation
 		  (getDeployOnDevice_RefID(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "refid"
 		   });			
 		addAnnotation
 		  (deviceConfigurationEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "deviceconfiguration",
 			 "kind", "elementOnly"
 		   });			
 		addAnnotation
 		  (getDeviceConfiguration_Description(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "description"
 		   });			
 		addAnnotation
 		  (getDeviceConfiguration_DeviceManagerSoftPkg(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "devicemanagersoftpkg"
 		   });			
 		addAnnotation
 		  (getDeviceConfiguration_ComponentFiles(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "componentfiles"
 		   });			
 		addAnnotation
 		  (getDeviceConfiguration_Partitioning(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "partitioning"
 		   });		
 		addAnnotation
 		  (getDeviceConfiguration_Connections(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "connections"
 		   });		
 		addAnnotation
 		  (getDeviceConfiguration_DomainManager(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "domainmanager"
 		   });		
 		addAnnotation
 		  (getDeviceConfiguration_FileSystemNames(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "filesystemnames"
 		   });			
 		addAnnotation
 		  (getDeviceConfiguration_Id(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "id"
 		   });			
 		addAnnotation
 		  (getDeviceConfiguration_Name(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "name"
 		   });		
 		addAnnotation
 		  (deviceManagerSoftPkgEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "devicemanagersoftpkg",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getDeviceManagerSoftPkg_LocalFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "localfile"
 		   });		
 		addAnnotation
 		  (getDeviceManagerSoftPkg_SoftPkg(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "softPkg"
 		   });			
 		addAnnotation
 		  (devicePkgFileEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "devicepkgfile",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getDevicePkgFile_LocalFile(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "localfile"
 		   });		
 		addAnnotation
 		  (getDevicePkgFile_Type(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "type"
 		   });			
 		addAnnotation
 		  (domainManagerEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "domainmanager",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getDomainManager_NamingService(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "namingservice"
 		   });		
 		addAnnotation
 		  (getDomainManager_StringifiedObjectRef(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "stringifiedobjectref"
 		   });		
 		addAnnotation
 		  (fileSystemNameEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "filesystemname",
 			 "kind", "empty"
 		   });		
 		addAnnotation
 		  (getFileSystemName_DeviceID(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "deviceid"
 		   });		
 		addAnnotation
 		  (getFileSystemName_MountName(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "attribute",
 			 "name", "mountname"
 		   });			
 		addAnnotation
 		  (fileSystemNamesEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "name", "filesystemnames",
 			 "kind", "elementOnly"
 		   });		
 		addAnnotation
 		  (getFileSystemNames_FileSystemName(), 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "kind", "element",
 			 "name", "filesystemname"
 		   });

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd;
 
 import java.util.Arrays;
@@ -125,7 +125,8 @@ public enum PortType implements Enumerator
 	 * @generated
 	 */
 	private static final PortType[] VALUES_ARRAY =
-		new PortType[] {
+		new PortType[]
+		{
 			DATA,
 			RESPONSES,
 			CONTROL,
@@ -146,9 +147,11 @@ public enum PortType implements Enumerator
 	 * @generated
 	 */
 	public static PortType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			PortType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -162,9 +165,11 @@ public enum PortType implements Enumerator
 	 * @generated
 	 */
 	public static PortType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			PortType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -178,7 +183,8 @@ public enum PortType implements Enumerator
 	 * @generated
 	 */
 	public static PortType get(int value) {
-		switch (value) {
+		switch (value)
+		{
 			case DATA_VALUE: return DATA;
 			case RESPONSES_VALUE: return RESPONSES;
 			case CONTROL_VALUE: return CONTROL;

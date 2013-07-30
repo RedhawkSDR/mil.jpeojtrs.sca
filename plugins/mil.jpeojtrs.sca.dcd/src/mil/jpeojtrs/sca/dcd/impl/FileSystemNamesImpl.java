@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
 import java.util.Collection;
@@ -75,7 +75,8 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	 * @generated
 	 */
 	public EList<FileSystemName> getFileSystemName() {
-		if (fileSystemName == null) {
+		if (fileSystemName == null)
+		{
 			fileSystemName = new EObjectContainmentEList<FileSystemName>(FileSystemName.class, this, DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME);
 		}
 		return fileSystemName;
@@ -88,7 +89,8 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
 				return ((InternalEList<?>)getFileSystemName()).basicRemove(otherEnd, msgs);
 		}
@@ -102,7 +104,8 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
 				return getFileSystemName();
 		}
@@ -117,7 +120,8 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
 				getFileSystemName().clear();
 				getFileSystemName().addAll((Collection<? extends FileSystemName>)newValue);
@@ -133,7 +137,8 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
 				getFileSystemName().clear();
 				return;
@@ -148,7 +153,8 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
 				return fileSystemName != null && !fileSystemName.isEmpty();
 		}

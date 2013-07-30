@@ -140,7 +140,8 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.RANGE__MAX:
 				return getMax();
 			case PrfPackage.RANGE__MIN:
@@ -156,7 +157,8 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.RANGE__MAX:
 				setMax((String)newValue);
 				return;
@@ -174,7 +176,8 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.RANGE__MAX:
 				setMax(MAX_EDEFAULT);
 				return;
@@ -192,7 +195,8 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.RANGE__MAX:
 				return MAX_EDEFAULT == null ? max != null : !MAX_EDEFAULT.equals(max);
 			case PrfPackage.RANGE__MIN:

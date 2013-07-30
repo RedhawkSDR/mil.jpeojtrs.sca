@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
@@ -157,7 +157,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	public NotificationChain basicSetComponentInstantiationRef(ComponentInstantiationRef<?> newComponentInstantiationRef, NotificationChain msgs) {
 		ComponentInstantiationRef<?> oldComponentInstantiationRef = componentInstantiationRef;
 		componentInstantiationRef = newComponentInstantiationRef;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, oldComponentInstantiationRef, newComponentInstantiationRef);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -170,7 +171,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * @generated
 	 */
 	public void setComponentInstantiationRef(ComponentInstantiationRef<?> newComponentInstantiationRef) {
-		if (newComponentInstantiationRef != componentInstantiationRef) {
+		if (newComponentInstantiationRef != componentInstantiationRef)
+		{
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
 				msgs = ((InternalEObject)componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, null, msgs);
@@ -200,7 +202,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	public NotificationChain basicSetFindBy(FindBy newFindBy, NotificationChain msgs) {
 		FindBy oldFindBy = findBy;
 		findBy = newFindBy;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY, oldFindBy, newFindBy);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -213,7 +216,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * @generated
 	 */
 	public void setFindBy(FindBy newFindBy) {
-		if (newFindBy != findBy) {
+		if (newFindBy != findBy)
+		{
 			NotificationChain msgs = null;
 			if (findBy != null)
 				msgs = ((InternalEObject)findBy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY, null, msgs);
@@ -313,7 +317,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
 				return basicSetComponentInstantiationRef(null, msgs);
 			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
@@ -329,7 +334,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
 				return getSupportedIdentifier();
 			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
@@ -350,7 +356,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
 				setSupportedIdentifier((String)newValue);
 				return;
@@ -374,7 +381,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
 				setSupportedIdentifier(SUPPORTED_IDENTIFIER_EDEFAULT);
 				return;
@@ -398,7 +406,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
 				return SUPPORTED_IDENTIFIER_EDEFAULT == null ? supportedIdentifier != null : !SUPPORTED_IDENTIFIER_EDEFAULT.equals(supportedIdentifier);
 			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:

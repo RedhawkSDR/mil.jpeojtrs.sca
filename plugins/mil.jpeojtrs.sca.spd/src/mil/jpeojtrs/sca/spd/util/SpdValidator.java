@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.util;
 
 import java.util.Map;
@@ -109,7 +109,8 @@ public class SpdValidator extends EObjectValidator {
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID) {
+		switch (classifierID)
+		{
 			case SpdPackage.AUTHOR:
 				return validateAuthor((Author)value, diagnostics, context);
 			case SpdPackage.CODE:

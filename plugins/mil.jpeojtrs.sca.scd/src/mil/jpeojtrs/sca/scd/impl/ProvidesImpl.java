@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import mil.jpeojtrs.sca.scd.Provides;
@@ -101,7 +101,8 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PROVIDES__PROVIDES_NAME:
 				return getProvidesName();
 		}
@@ -115,7 +116,8 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PROVIDES__PROVIDES_NAME:
 				setProvidesName((String)newValue);
 				return;
@@ -130,7 +132,8 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PROVIDES__PROVIDES_NAME:
 				setProvidesName(PROVIDES_NAME_EDEFAULT);
 				return;
@@ -145,7 +148,8 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PROVIDES__PROVIDES_NAME:
 				return PROVIDES_NAME_EDEFAULT == null ? getProvidesName() != null : !PROVIDES_NAME_EDEFAULT.equals(getProvidesName());
 		}

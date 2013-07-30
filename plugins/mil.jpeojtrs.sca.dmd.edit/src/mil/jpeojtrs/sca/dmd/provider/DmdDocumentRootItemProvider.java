@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dmd.provider;
 
 
@@ -65,7 +65,8 @@ public class DmdDocumentRootItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 		}
@@ -82,7 +83,8 @@ public class DmdDocumentRootItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DmdPackage.Literals.DMD_DOCUMENT_ROOT__DOMAINMANAGERCONFIGURATION);
 		}
@@ -135,7 +137,8 @@ public class DmdDocumentRootItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DmdDocumentRoot.class)) {
+		switch (notification.getFeatureID(DmdDocumentRoot.class))
+		{
 			case DmdPackage.DMD_DOCUMENT_ROOT__DOMAINMANAGERCONFIGURATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

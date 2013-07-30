@@ -195,7 +195,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	public NotificationChain basicSetValues(Values newValues, NotificationChain msgs) {
 		Values oldValues = values;
 		values = newValues;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE__VALUES, oldValues, newValues);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -208,7 +209,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * @generated
 	 */
 	public void setValues(Values newValues) {
-		if (newValues != values) {
+		if (newValues != values)
+		{
 			NotificationChain msgs = null;
 			if (values != null)
 				msgs = ((InternalEObject)values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE__VALUES, null, msgs);
@@ -259,7 +261,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	public NotificationChain basicSetRange(Range newRange, NotificationChain msgs) {
 		Range oldRange = range;
 		range = newRange;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE__RANGE, oldRange, newRange);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -272,7 +275,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * @generated
 	 */
 	public void setRange(Range newRange) {
-		if (newRange != range) {
+		if (newRange != range)
+		{
 			NotificationChain msgs = null;
 			if (range != null)
 				msgs = ((InternalEObject)range).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE__RANGE, null, msgs);
@@ -291,7 +295,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * @generated
 	 */
 	public EList<Kind> getKind() {
-		if (kind == null) {
+		if (kind == null)
+		{
 			kind = new EObjectContainmentEList<Kind>(Kind.class, this, PrfPackage.SIMPLE_SEQUENCE__KIND);
 		}
 		return kind;
@@ -314,7 +319,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	public NotificationChain basicSetAction(Action newAction, NotificationChain msgs) {
 		Action oldAction = action;
 		action = newAction;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE__ACTION, oldAction, newAction);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -327,7 +333,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * @generated
 	 */
 	public void setAction(Action newAction) {
-		if (newAction != action) {
+		if (newAction != action)
+		{
 			NotificationChain msgs = null;
 			if (action != null)
 				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE__ACTION, null, msgs);
@@ -426,7 +433,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_SEQUENCE__VALUES:
 				return basicSetValues(null, msgs);
 			case PrfPackage.SIMPLE_SEQUENCE__RANGE:
@@ -446,7 +454,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_SEQUENCE__VALUES:
 				return getValues();
 			case PrfPackage.SIMPLE_SEQUENCE__UNITS:
@@ -473,7 +482,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_SEQUENCE__VALUES:
 				setValues((Values)newValue);
 				return;
@@ -507,7 +517,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_SEQUENCE__VALUES:
 				setValues((Values)null);
 				return;
@@ -540,7 +551,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case PrfPackage.SIMPLE_SEQUENCE__VALUES:
 				return values != null;
 			case PrfPackage.SIMPLE_SEQUENCE__UNITS:
@@ -602,7 +614,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 
 	@Override
     public Any toAny() {
-		return AnyUtils.toAny(getValues().getValue().toArray(), getType().getLiteral(), getComplex());
+		return AnyUtils.toAny(getValues().getValue().toArray(), getType().getLiteral(), isComplex());
     }
 
 } //SimpleSequenceImpl

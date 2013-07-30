@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
 import java.util.Collection;
@@ -60,7 +60,8 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addUsageNamePropertyDescriptor(object);
@@ -123,7 +124,8 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__PROVIDES);
@@ -180,7 +182,8 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentInstantiation.class)) {
+		switch (notification.getFeatureID(ComponentInstantiation.class))
+		{
 			case PartitioningPackage.COMPONENT_INSTANTIATION__USAGE_NAME:
 			case PartitioningPackage.COMPONENT_INSTANTIATION__ID:
 			case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:

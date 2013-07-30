@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
 import java.util.ArrayList;
@@ -96,7 +96,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createAssemblyControllerAdapter() {
-		if (assemblyControllerItemProvider == null) {
+		if (assemblyControllerItemProvider == null)
+		{
 			assemblyControllerItemProvider = new AssemblyControllerItemProvider(this);
 		}
 
@@ -119,7 +120,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSadComponentInstantiationAdapter() {
-		if (sadComponentInstantiationItemProvider == null) {
+		if (sadComponentInstantiationItemProvider == null)
+		{
 			sadComponentInstantiationItemProvider = new SadComponentInstantiationItemProvider(this);
 		}
 
@@ -142,7 +144,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSadComponentInstantiationRefAdapter() {
-		if (sadComponentInstantiationRefItemProvider == null) {
+		if (sadComponentInstantiationRefItemProvider == null)
+		{
 			sadComponentInstantiationRefItemProvider = new SadComponentInstantiationRefItemProvider(this);
 		}
 
@@ -165,7 +168,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSadUsesPortAdapter() {
-		if (sadUsesPortItemProvider == null) {
+		if (sadUsesPortItemProvider == null)
+		{
 			sadUsesPortItemProvider = new SadUsesPortItemProvider(this);
 		}
 
@@ -188,7 +192,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSadProvidesPortAdapter() {
-		if (sadProvidesPortItemProvider == null) {
+		if (sadProvidesPortItemProvider == null)
+		{
 			sadProvidesPortItemProvider = new SadProvidesPortItemProvider(this);
 		}
 
@@ -211,7 +216,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSadConnectInterfaceAdapter() {
-		if (sadConnectInterfaceItemProvider == null) {
+		if (sadConnectInterfaceItemProvider == null)
+		{
 			sadConnectInterfaceItemProvider = new SadConnectInterfaceItemProvider(this);
 		}
 
@@ -234,7 +240,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSadConnectionsAdapter() {
-		if (sadConnectionsItemProvider == null) {
+		if (sadConnectionsItemProvider == null)
+		{
 			sadConnectionsItemProvider = new SadConnectionsItemProvider(this);
 		}
 
@@ -257,7 +264,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createComponentResourceFactoryRefAdapter() {
-		if (componentResourceFactoryRefItemProvider == null) {
+		if (componentResourceFactoryRefItemProvider == null)
+		{
 			componentResourceFactoryRefItemProvider = new ComponentResourceFactoryRefItemProvider(this);
 		}
 
@@ -280,7 +288,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createExternalPortsAdapter() {
-		if (externalPortsItemProvider == null) {
+		if (externalPortsItemProvider == null)
+		{
 			externalPortsItemProvider = new ExternalPortsItemProvider(this);
 		}
 
@@ -304,7 +313,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createExternalPropertiesAdapter() {
-		if (externalPropertiesItemProvider == null) {
+		if (externalPropertiesItemProvider == null)
+		{
 			externalPropertiesItemProvider = new ExternalPropertiesItemProvider(this);
 		}
 
@@ -328,7 +338,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createExternalPropertyAdapter() {
-		if (externalPropertyItemProvider == null) {
+		if (externalPropertyItemProvider == null)
+		{
 			externalPropertyItemProvider = new ExternalPropertyItemProvider(this);
 		}
 
@@ -351,7 +362,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createFindComponentAdapter() {
-		if (findComponentItemProvider == null) {
+		if (findComponentItemProvider == null)
+		{
 			findComponentItemProvider = new FindComponentItemProvider(this);
 		}
 
@@ -374,7 +386,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createHostCollocationAdapter() {
-		if (hostCollocationItemProvider == null) {
+		if (hostCollocationItemProvider == null)
+		{
 			hostCollocationItemProvider = new HostCollocationItemProvider(this);
 		}
 
@@ -397,7 +410,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createPortAdapter() {
-		if (portItemProvider == null) {
+		if (portItemProvider == null)
+		{
 			portItemProvider = new PortItemProvider(this);
 		}
 
@@ -420,7 +434,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSadPartitioningAdapter() {
-		if (sadPartitioningItemProvider == null) {
+		if (sadPartitioningItemProvider == null)
+		{
 			sadPartitioningItemProvider = new SadPartitioningItemProvider(this);
 		}
 
@@ -443,7 +458,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSadComponentPlacementAdapter() {
-		if (sadComponentPlacementItemProvider == null) {
+		if (sadComponentPlacementItemProvider == null)
+		{
 			sadComponentPlacementItemProvider = new SadComponentPlacementItemProvider(this);
 		}
 
@@ -466,7 +482,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createResourceFactoryPropertiesAdapter() {
-		if (resourceFactoryPropertiesItemProvider == null) {
+		if (resourceFactoryPropertiesItemProvider == null)
+		{
 			resourceFactoryPropertiesItemProvider = new ResourceFactoryPropertiesItemProvider(this);
 		}
 
@@ -489,7 +506,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSadDocumentRootAdapter() {
-		if (sadDocumentRootItemProvider == null) {
+		if (sadDocumentRootItemProvider == null)
+		{
 			sadDocumentRootItemProvider = new SadDocumentRootItemProvider(this);
 		}
 
@@ -512,7 +530,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSoftwareAssemblyAdapter() {
-		if (softwareAssemblyItemProvider == null) {
+		if (softwareAssemblyItemProvider == null)
+		{
 			softwareAssemblyItemProvider = new SoftwareAssemblyItemProvider(this);
 		}
 
@@ -567,9 +586,11 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -606,7 +627,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
 import java.util.Collection;
@@ -79,7 +79,8 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 * @generated
 	 */
 	public FeatureMap getGroup() {
-		if (group == null) {
+		if (group == null)
+		{
 			group = new BasicFeatureMap(this, ScdPackage.PORTS__GROUP);
 		}
 		return group;
@@ -110,7 +111,8 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PORTS__GROUP:
 				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
 			case ScdPackage.PORTS__PROVIDES:
@@ -128,7 +130,8 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PORTS__GROUP:
 				if (coreType) return getGroup();
 				return ((FeatureMap.Internal)getGroup()).getWrapper();
@@ -148,7 +151,8 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PORTS__GROUP:
 				((FeatureMap.Internal)getGroup()).set(newValue);
 				return;
@@ -171,7 +175,8 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PORTS__GROUP:
 				getGroup().clear();
 				return;
@@ -192,7 +197,8 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
+		switch (featureID)
+		{
 			case ScdPackage.PORTS__GROUP:
 				return group != null && !group.isEmpty();
 			case ScdPackage.PORTS__PROVIDES:
