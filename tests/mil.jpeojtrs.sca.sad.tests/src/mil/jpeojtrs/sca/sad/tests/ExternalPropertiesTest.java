@@ -11,10 +11,10 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.tests;
 
+import org.junit.Test;
+
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
-
 import mil.jpeojtrs.sca.sad.ExternalProperties;
 import mil.jpeojtrs.sca.sad.SadFactory;
 
@@ -93,6 +93,11 @@ public class ExternalPropertiesTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+	
+	@Test
+	public void test_stub() throws Exception{
+		// PASS
 	}
 
 } //ExternalPropertiesTest
