@@ -44,7 +44,7 @@ public interface ExternalProperty extends EObject {
 	 * @return the value of the '<em>Comp Ref ID</em>' attribute.
 	 * @see #setCompRefID(String)
 	 * @see mil.jpeojtrs.sca.sad.SadPackage#getExternalProperty_CompRefID()
-	 * @model required="true"
+	 * @model unique="false" required="true"
 	 *        extendedMetaData="kind='attribute' name='comprefid'"
 	 * @generated
 	 */
@@ -71,7 +71,7 @@ public interface ExternalProperty extends EObject {
 	 * @return the value of the '<em>Prop ID</em>' attribute.
 	 * @see #setPropID(String)
 	 * @see mil.jpeojtrs.sca.sad.SadPackage#getExternalProperty_PropID()
-	 * @model required="true"
+	 * @model unique="false" required="true"
 	 *        extendedMetaData="kind='attribute' name='propid'"
 	 * @generated
 	 */
@@ -98,7 +98,8 @@ public interface ExternalProperty extends EObject {
 	 * @return the value of the '<em>External Prop ID</em>' attribute.
 	 * @see #setExternalPropID(String)
 	 * @see mil.jpeojtrs.sca.sad.SadPackage#getExternalProperty_ExternalPropID()
-	 * @model extendedMetaData="kind='attribute' name='externalpropid'"
+	 * @model unique="false"
+	 *        extendedMetaData="kind='attribute' name='externalpropid'"
 	 * @generated
 	 */
 	String getExternalPropID();
@@ -112,5 +113,13 @@ public interface ExternalProperty extends EObject {
 	 * @generated
 	 */
 	void setExternalPropID(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String resolveExternalID();
 
 } // ExternalProperty

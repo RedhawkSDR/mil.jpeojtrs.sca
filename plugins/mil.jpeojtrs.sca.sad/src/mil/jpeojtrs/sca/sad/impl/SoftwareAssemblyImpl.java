@@ -534,7 +534,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 			if (queryParams.containsKey("name")) {
 				return queryParams.get("name");
 			}
-		} 
+		}
 		return name;
 		// BEGIN GENERATED CODE
 	}
@@ -589,7 +589,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 		if (retVal == null) {
 			for (HostCollocation hc : getPartitioning().getHostCollocation()) {
 				for (SadComponentPlacement cp : hc.getComponentPlacement()) {
-					retVal = getComponentInstantiation(instantiationId, cp.getComponentInstantiation());	
+					retVal = getComponentInstantiation(instantiationId, cp.getComponentInstantiation());
 					if (retVal != null) {
 						break;
 					}
@@ -612,9 +612,9 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	public EList<SadComponentInstantiation> getComponentInstantiationsInStartOrder() {
 		// END GENERATED CODE
-		
+
 		final EList<SadComponentInstantiation> result = getAllComponentInstantiations();
-		
+
 		// sort the component instantations
 		Collections.sort(result, new Comparator<SadComponentInstantiation>() {
 
@@ -635,7 +635,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 				return 0;
 			}
 		});
-		
+
 		return result;
 		// BEGIN GENERATED CODE
 	}
@@ -647,19 +647,19 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	public EList<SadComponentInstantiation> getAllComponentInstantiations() {
 		// END GENERATED CODE
-		
+
 		final EList<SadComponentInstantiation> result = new BasicEList<SadComponentInstantiation>();
 		if (getPartitioning() == null) {
 			return result;
 		}
-		
+
 		// get all the component instantiations
 		for (SadComponentPlacement cp : getPartitioning().getComponentPlacement()) {
 			for (SadComponentInstantiation ci : cp.getComponentInstantiation()) {
 				result.add(ci);
 			}
 		}
-		
+
 		for (HostCollocation hc : getPartitioning().getHostCollocation()) {
 			for (SadComponentPlacement cp : hc.getComponentPlacement()) {
 				for (SadComponentInstantiation ci : cp.getComponentInstantiation()) {
@@ -667,9 +667,9 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 				}
 			}
 		}
-		
+
 		return result;
-		
+
 		// BEGIN GENERATED CODE
 	}
 

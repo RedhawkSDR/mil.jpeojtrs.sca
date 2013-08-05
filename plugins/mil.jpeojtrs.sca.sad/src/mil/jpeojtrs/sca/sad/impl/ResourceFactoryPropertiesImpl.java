@@ -196,7 +196,7 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 */
 	public PropertyContainer getPropertyContainer() {
 		// END GENERATED CODE
-		return ScaEcoreUtils.getFeature(this, PROP_PATH);		
+		return ScaEcoreUtils.getFeature(this, PROP_PATH);
 		// BEGIN GENERATED CODE
 	}
 

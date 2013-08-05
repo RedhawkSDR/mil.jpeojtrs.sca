@@ -253,13 +253,14 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			private final AdvancedEObjectValidator validator = new AdvancedEObjectValidator(SadValidator.INSTANCE);
+
 			public EValidator getEValidator() {
 				return validator;
 			}
 		});
 
 		return retVal;
-		
+
 		// BEGIN GENERATED CODE
 	}
 
@@ -1038,9 +1039,11 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		initEReference(getExternalProperties_Properties(), this.getExternalProperty(), null, "properties", null, 0, -1, ExternalProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalPropertyEClass, ExternalProperty.class, "ExternalProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getExternalProperty_CompRefID(), theEcorePackage.getEString(), "compRefID", null, 1, 1, ExternalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getExternalProperty_PropID(), theEcorePackage.getEString(), "propID", null, 1, 1, ExternalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getExternalProperty_ExternalPropID(), theEcorePackage.getEString(), "externalPropID", null, 0, 1, ExternalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExternalProperty_CompRefID(), theEcorePackage.getEString(), "compRefID", null, 1, 1, ExternalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExternalProperty_PropID(), theEcorePackage.getEString(), "propID", null, 1, 1, ExternalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExternalProperty_ExternalPropID(), theEcorePackage.getEString(), "externalPropID", null, 0, 1, ExternalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(externalPropertyEClass, theEcorePackage.getEString(), "resolveExternalID", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(findComponentEClass, FindComponent.class, "FindComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFindComponent_ComponentResourceFactoryRef(), this.getComponentResourceFactoryRef(), null, "componentResourceFactoryRef", null, 0, 1, FindComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

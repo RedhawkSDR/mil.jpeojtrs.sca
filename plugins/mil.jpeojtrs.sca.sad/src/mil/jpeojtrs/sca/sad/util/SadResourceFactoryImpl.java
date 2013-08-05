@@ -61,22 +61,22 @@ public class SadResourceFactoryImpl extends ResourceFactoryImpl {
 	public Resource createResource(final URI uri) {
 		// END GENERATED CODE
 		final XMLResource result = new SadResourceImpl(uri);
-		
+
 		ScaResourceFactoryUtil.setDefaultLoadOptions(result.getDefaultLoadOptions());
 		ScaResourceFactoryUtil.setDefaultSaveOptions(result.getDefaultSaveOptions());
-		
+
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
-		
+
 		List<EPackage> packageList = new ArrayList<EPackage>();
 		packageList.add(SadPackage.eINSTANCE);
 		packageList.add(PartitioningPackage.eINSTANCE);
 		// Since we include a super project need to add a custom element handler here
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_ELEMENT_HANDLER, new ElementHandlerImpl(false, packageList));
-		
+
 		result.setDoctypeInfo(null, SadResourceImpl.DOC_TYPE_SYSTEM);
-		
+
 		return result;
 		// BEGIN GENERATED CODE
 	}

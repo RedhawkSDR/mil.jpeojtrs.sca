@@ -181,6 +181,20 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String resolveExternalID()
+	{
+		if (this.getExternalPropID() != null) {
+			return getExternalPropID();
+		} else {
+			return getPropID();
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

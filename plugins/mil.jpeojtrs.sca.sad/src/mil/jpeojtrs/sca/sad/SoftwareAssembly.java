@@ -328,8 +328,9 @@ public interface SoftwareAssembly extends EObject {
 	public static class Util {
 		// END GENERATED CODE
 		private Util() {
-			
+
 		}
+
 		public static SoftwareAssembly getSoftwareAssembly(Resource resource) {
 			if (resource == null) {
 				return null;
@@ -346,10 +347,9 @@ public interface SoftwareAssembly extends EObject {
 				throw new IllegalArgumentException(resource + " is not a valid sad resource.");
 			}
 		}
-		
+
 		public static SadComponentInstantiation getAssemblyControllerInstantiation(SoftwareAssembly sa) {
-			if ((sa.getAssemblyController() != null) 
-				&& (sa.getAssemblyController().getComponentInstantiationRef() != null) 
+			if ((sa.getAssemblyController() != null) && (sa.getAssemblyController().getComponentInstantiationRef() != null)
 				&& (sa.getAssemblyController().getComponentInstantiationRef().getRefid() != null)) {
 				final String acrefId = sa.getAssemblyController().getComponentInstantiationRef().getRefid();
 				for (final SadComponentInstantiation ci : sa.getAllComponentInstantiations()) {
@@ -360,7 +360,7 @@ public interface SoftwareAssembly extends EObject {
 			}
 			return null;
 		}
-		
+
 		public static int getLastStartOrder(SoftwareAssembly sa) {
 			int lastStartOrder = 0;
 			for (final SadComponentInstantiation ci : sa.getAllComponentInstantiations()) {
@@ -370,18 +370,18 @@ public interface SoftwareAssembly extends EObject {
 			}
 			return lastStartOrder;
 		}
-		
+
 		public static boolean isAssemblyController(SadComponentInstantiation ci) {
 			final SoftwareAssembly sa = getSoftwareAssembly(ci.eResource());
 			if (sa != null) {
 				final SadComponentInstantiation asmCi = getAssemblyControllerInstantiation(sa);
 				if (asmCi != null) {
-				    return (asmCi.getId().equals(ci.getId()));
+					return (asmCi.getId().equals(ci.getId()));
 				}
 			}
 			return false;
 		}
-		
+
 		public static String createComponentUsageName(SoftwareAssembly sa, String componentName) {
 			// Make up a unique new name here.
 			final StringBuilder usageName = new StringBuilder();
@@ -412,7 +412,7 @@ public interface SoftwareAssembly extends EObject {
 					index++;
 				}
 			}
-			
+
 			return usageName.append("_").append(index).toString();
 		}
 
