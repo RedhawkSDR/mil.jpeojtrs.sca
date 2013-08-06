@@ -30,5 +30,5 @@ Bundle-ManifestVersion: 2
 Bundle-SymbolicName: idl.cf
 Import-Package: org.omg.CosEventChannelAdmin,
  org.omg.CosEventComm
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 
