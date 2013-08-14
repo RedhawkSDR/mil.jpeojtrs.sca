@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-Name: %Bundle-Name
 Bundle-Vendor: %Bundle-Vendor
-Bundle-Version: 1.8.0.qualifier
+Bundle-Version: 1.9.0.qualifier
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: idl.bulkio
 Import-Package: org.omg.CosEventChannelAdmin,
@@ -10,4 +10,3 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: idl.cf;bundle-version="2.2.2"
 Export-Package: BULKIO,
  BULKIO.dataSDDSPackage
-
