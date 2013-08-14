@@ -26,7 +26,7 @@
             <configuration>
               <target>
                 <replace file="about.properties">
-                  <replacefilter value="${unqualifiedVersion}"
+                  <replacefilter value="2.2.2"
                     token="@buildLabel@" />
                   <replacefilter value="${buildQualifier}"
                     token="@buildId@" />
