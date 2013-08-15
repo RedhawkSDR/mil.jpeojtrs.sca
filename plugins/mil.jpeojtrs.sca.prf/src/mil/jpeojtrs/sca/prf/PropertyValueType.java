@@ -493,7 +493,7 @@ public enum PropertyValueType implements Enumerator {
 	/**
 	 * Checks the given value against the current PropertyValueType.
 	 * 
-	 * @since 2.3
+	 * @since 3.0
 	 * @param value the String value to check
 	 * @param complex if the string is a complex number
 	 * @return <code> true </code> if the value is valid for this PropertyValueType; <code> false </code> otherwise
@@ -525,7 +525,7 @@ public enum PropertyValueType implements Enumerator {
 	 * Converts PropertyValueType to associated EDataType
 	 * @param complex True if complex number type
 	 * @return
-	 * @since 2.3
+	 * @since 3.0
 	 */
 	public EDataType toEDataType(boolean complex) {
 		if (complex) {

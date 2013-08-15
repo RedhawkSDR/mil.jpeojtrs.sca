@@ -143,9 +143,10 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
 		// END GENERATED CODE
-		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_Simple_value_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Simple_value_feature", "_UI_Simple_type"),
-		        PrfPackage.Literals.SIMPLE__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null);
+		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(), getString("_UI_Simple_value_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Simple_value_feature", "_UI_Simple_type"), PrfPackage.Literals.SIMPLE__VALUE, true, false,
+			false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null);
 
 		this.itemPropertyDescriptors.add(new ValueItemPropertyDescriptor(object, defaultDescriptor));
 		// BEGIN GENERATED CODE

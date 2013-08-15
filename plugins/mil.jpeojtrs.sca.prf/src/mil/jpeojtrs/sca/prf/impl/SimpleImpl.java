@@ -160,7 +160,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	/**
 	 * The default value of the '{@link #getComplex() <em>Complex</em>}' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see #getComplex()
 	 * @generated
@@ -170,7 +170,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	/**
 	 * The cached value of the '{@link #getComplex() <em>Complex</em>}' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see #getComplex()
 	 * @generated
@@ -435,7 +435,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
 	/**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -445,7 +445,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -458,7 +458,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */

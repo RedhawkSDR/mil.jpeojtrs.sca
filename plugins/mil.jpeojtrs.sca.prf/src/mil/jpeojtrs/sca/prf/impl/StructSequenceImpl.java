@@ -285,7 +285,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 		if (eContainer() instanceof AbstractProperty) {
 			return ((AbstractProperty) eContainer()).isKind(type);
 		}
-		
+
 		Set<StructPropertyConfigurationType> types = new HashSet<StructPropertyConfigurationType>(type.length);
 		for (PropertyConfigurationType t : type) {
 			types.add(StructPropertyConfigurationType.getStructPropertyConfigurationType(t));

@@ -138,9 +138,10 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 */
 	protected void addValuesPropertyDescriptor(Object object) {
 		// END GENERATED CODE
-		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_SimpleSequence_values_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_values_feature", "_UI_SimpleSequence_type"),
-		        PrfPackage.Literals.SIMPLE_SEQUENCE__VALUES, false, false, false, null, null, null);
+		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(), getString("_UI_SimpleSequence_values_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_values_feature", "_UI_SimpleSequence_type"),
+			PrfPackage.Literals.SIMPLE_SEQUENCE__VALUES, false, false, false, null, null, null);
 
 		this.itemPropertyDescriptors.add(new ValuesDecorator(object, defaultDescriptor));
 		// BEGIN GENERATED CODE

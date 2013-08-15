@@ -892,7 +892,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -965,7 +965,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1488,7 +1488,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1498,7 +1498,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1508,7 +1508,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1518,7 +1518,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1528,7 +1528,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1538,7 +1538,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1548,7 +1548,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1558,7 +1558,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1568,7 +1568,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1578,7 +1578,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1588,7 +1588,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1920,7 +1920,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 		initEClass(structEClass, Struct.class, "Struct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStruct_Simple(), this.getSimple(), null, "simple", null, 1, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStruct_ConfigurationKind(), this.getConfigurationKind(), null, "configurationKind", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStruct_ConfigurationKind(), this.getConfigurationKind(), null, "configurationKind", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structSequenceEClass, StructSequence.class, "StructSequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructSequence_Struct(), this.getStruct(), null, "struct", null, 1, 1, StructSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

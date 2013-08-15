@@ -141,7 +141,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	/**
 	 * The default value of the '{@link #getComplex() <em>Complex</em>}' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see #getComplex()
 	 * @generated
@@ -151,7 +151,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	/**
 	 * The cached value of the '{@link #getComplex() <em>Complex</em>}' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see #getComplex()
 	 * @generated
@@ -395,7 +395,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 
 	/**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -405,7 +405,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -418,7 +418,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */

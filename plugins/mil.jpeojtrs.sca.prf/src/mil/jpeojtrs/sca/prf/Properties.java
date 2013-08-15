@@ -171,8 +171,9 @@ public interface Properties extends PropertyContainer {
 	public static class Util {
 		// END GENERATED CODE
 		private Util() {
-			
+
 		}
+
 		public static Properties getProperties(Resource resource) {
 			if (resource == null) {
 				return null;

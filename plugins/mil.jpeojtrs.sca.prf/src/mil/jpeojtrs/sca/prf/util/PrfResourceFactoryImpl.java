@@ -61,14 +61,14 @@ public class PrfResourceFactoryImpl extends ResourceFactoryImpl {
 	public Resource createResource(final URI uri) {
 		// END GENERATED CODE
 		final XMLResource result = new PrfResourceImpl(uri);
-		
+
 		ScaResourceFactoryUtil.setDefaultLoadOptions(result.getDefaultLoadOptions());
 		ScaResourceFactoryUtil.setDefaultSaveOptions(result.getDefaultSaveOptions());
 
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
-		
+
 		result.setDoctypeInfo(null, PrfResourceImpl.DOC_TYPE_SYSTEM);
 
 		return result;

@@ -269,7 +269,7 @@ public interface Simple extends AbstractProperty {
 	 * Returns the value of the '<em><b>Complex</b></em>' attribute.
 	 * <!-- begin-user-doc -->
      * True if the value should be treated as a complex number.  False or null otherwise.
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @return the value of the '<em>Complex</em>' attribute.
 	 * @see #setComplex(Boolean)
@@ -282,7 +282,7 @@ public interface Simple extends AbstractProperty {
     /**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Simple#getComplex <em>Complex</em>}' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Complex</em>' attribute.
 	 * @see #getComplex()
@@ -292,7 +292,7 @@ public interface Simple extends AbstractProperty {
 
     /**
 	 * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated

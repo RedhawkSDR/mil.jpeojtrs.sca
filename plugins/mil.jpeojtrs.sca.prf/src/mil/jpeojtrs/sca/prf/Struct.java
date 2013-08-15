@@ -59,34 +59,11 @@ public interface Struct extends AbstractProperty, PropertyContainer {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Configuration Kind</em>' containment reference list.
-	 * @see #isSetConfigurationKind()
-	 * @see #unsetConfigurationKind()
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_ConfigurationKind()
-	 * @model containment="true" unsettable="true"
+	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='configurationkind'"
 	 * @generated
 	 */
 	EList<ConfigurationKind> getConfigurationKind();
-
-	/**
-	 * Unsets the value of the '{@link mil.jpeojtrs.sca.prf.Struct#getConfigurationKind <em>Configuration Kind</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSetConfigurationKind()
-	 * @see #getConfigurationKind()
-	 * @generated
-	 */
-	void unsetConfigurationKind();
-
-	/**
-	 * Returns whether the value of the '{@link mil.jpeojtrs.sca.prf.Struct#getConfigurationKind <em>Configuration Kind</em>}' containment reference list is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Configuration Kind</em>' containment reference list is set.
-	 * @see #unsetConfigurationKind()
-	 * @see #getConfigurationKind()
-	 * @generated
-	 */
-	boolean isSetConfigurationKind();
 
 } // Struct

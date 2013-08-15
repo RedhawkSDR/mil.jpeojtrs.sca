@@ -122,10 +122,10 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	public Struct basicGetStruct() {
 		// END GENERATED CODE
 		if (eContainer instanceof StructSequenceRef) {
-			 StructSequence prop = ((StructSequenceRef) eContainer).getProperty();
-			 if (prop != null) {
-				 return prop.getStruct();
-			 }
+			StructSequence prop = ((StructSequenceRef) eContainer).getProperty();
+			if (prop != null) {
+				return prop.getStruct();
+			}
 		} else if (eContainer instanceof StructSequence) {
 			return ((StructSequence) eContainer).getStruct();
 		}
@@ -140,8 +140,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	public int getIndex() {
 		// END GENERATED CODE
-		if (eContainer() != null && eContainer().eGet(eContainingFeature()) instanceof List<?>) {
-			return ((List<?>) eContainer().eGet(eContainingFeature())).indexOf(this);
+		if (eContainer() != null && eContainer().eGet(eContainingFeature()) instanceof List< ? >) {
+			return ((List< ? >) eContainer().eGet(eContainingFeature())).indexOf(this);
 		}
 		return -1;
 		// BEGIN GENERATED CODE

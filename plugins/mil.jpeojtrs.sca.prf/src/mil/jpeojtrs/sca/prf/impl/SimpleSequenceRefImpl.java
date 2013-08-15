@@ -70,7 +70,7 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 
 	/**
 	 * <!-- begin-user-doc -->
-	 *  @since 2.3
+	 *  @since 3.0
 	 * <!-- end-user-doc -->
 	 * This is specialized for the more specific type known in this context.
 	 * @generated

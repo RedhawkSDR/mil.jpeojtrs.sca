@@ -713,7 +713,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
 	/**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -723,7 +723,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -736,7 +736,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -746,7 +746,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -759,7 +759,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -769,7 +769,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -782,7 +782,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -792,7 +792,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -805,7 +805,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -815,7 +815,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -828,7 +828,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -838,7 +838,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -851,7 +851,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -861,7 +861,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -874,7 +874,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -884,7 +884,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -897,7 +897,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -907,7 +907,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -920,7 +920,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -930,7 +930,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -943,7 +943,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -953,7 +953,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
     /**
      * <!-- begin-user-doc -->
-     * @since 2.3
+     * @since 3.0
      * <!-- end-user-doc -->
      * @generated NOT
      */

@@ -144,10 +144,6 @@ public class StructTest extends AbstractPropertyTest {
 		struct.setMode(AccessType.READWRITE);
 		Assert.assertEquals(AccessType.READWRITE, struct.getMode());
 		
-		// test unsetType
-		struct.unsetConfigurationKind();
-		Assert.assertFalse(struct.isSetConfigurationKind());
-		Assert.assertTrue(struct.getConfigurationKind().isEmpty());
 		
 		// test set null and non null type
 		final ConfigurationKind ck = PrfFactory.eINSTANCE.createConfigurationKind();
@@ -159,8 +155,6 @@ public class StructTest extends AbstractPropertyTest {
 
 		struct.getConfigurationKind().clear();
 		Assert.assertTrue(struct.getConfigurationKind().isEmpty());
-		struct.unsetConfigurationKind();
-		Assert.assertFalse(struct.isSetConfigurationKind());
 	}
 
 } //StructTest

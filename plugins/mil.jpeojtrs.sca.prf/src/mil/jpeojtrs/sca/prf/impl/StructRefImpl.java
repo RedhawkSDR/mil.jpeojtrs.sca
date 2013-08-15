@@ -78,7 +78,7 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 
 	/**
 	 * <!-- begin-user-doc -->
-	 *  @since 2.3
+	 *  @since 3.0
 	 * <!-- end-user-doc -->
 	 * This is specialized for the more specific type known in this context.
 	 * @generated
