@@ -148,6 +148,7 @@ public class StructTest extends AbstractPropertyTest {
 		// test set null and non null type
 		final ConfigurationKind ck = PrfFactory.eINSTANCE.createConfigurationKind();
 		ck.setType(StructPropertyConfigurationType.ALLOCATION);
+		struct.getConfigurationKind().clear();
 		struct.getConfigurationKind().add(ck);
 		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, struct.getConfigurationKind().get(0).getType());
 		struct.getConfigurationKind().set(0, ck);
