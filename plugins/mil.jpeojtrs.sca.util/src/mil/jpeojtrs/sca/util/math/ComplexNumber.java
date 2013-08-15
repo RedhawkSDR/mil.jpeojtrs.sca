@@ -51,7 +51,28 @@ public abstract class ComplexNumber {
 	@Override
 	public String toString() {
 		if (getSize() == 2) {
-			return getValue(0) + " + j" + getValue(1);
+			Object complexValue = getValue(1);
+			if (complexValue == null) {
+				return String.valueOf(getValue(0));
+			} else {
+				String complexStr = String.valueOf(complexValue);
+				char modifier = '+';
+				if (complexValue instanceof Number) {
+					Number complexNumber = (Number) complexValue;
+					if (1.0 == complexNumber.doubleValue()) {
+						complexStr = "";
+					} else if (-1.0 == complexNumber.doubleValue()) {
+						complexStr = "";
+						modifier = '-';
+					}
+				}
+
+				if (complexStr.length() > 0 && complexStr.charAt(0) == '-') {
+					complexStr = complexStr.substring(1, complexStr.length());
+					modifier = '-';
+				}
+				return getValue(0) + " " + modifier + " j" + complexStr;
+			}
 		}
 		StringBuilder builder = new StringBuilder();
 		builder.append("(");
