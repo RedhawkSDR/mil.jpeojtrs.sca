@@ -92,6 +92,19 @@ public class ComplexParserTest {
 		retVal = ComplexParser.parse(" 7.6 + i8.5 ");
 		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "8.5"}, retVal);
 		
+		retVal = ComplexParser.parse("i8.5");
+		Assert.assertArrayEquals("Invalid Parse", new String []{"0", "8.5"}, retVal);
+		retVal = ComplexParser.parse("8.5j");
+		Assert.assertArrayEquals("Invalid Parse", new String []{"0", "8.5"}, retVal);
+		retVal = ComplexParser.parse("8.5");
+		Assert.assertArrayEquals("Invalid Parse", new String []{"8.5", "0"}, retVal);
+		retVal = ComplexParser.parse("-i8.5");
+		Assert.assertArrayEquals("Invalid Parse", new String []{"0", "-8.5"}, retVal);
+		retVal = ComplexParser.parse("-8.5j");
+		Assert.assertArrayEquals("Invalid Parse", new String []{"0", "-8.5"}, retVal);
+		retVal = ComplexParser.parse("-8.5");
+		Assert.assertArrayEquals("Invalid Parse", new String []{"-8.5", "0"}, retVal);
+		
 		retVal = ComplexParser.parse("7+j8");
 		Assert.assertArrayEquals("Invalid Parse", new String []{"7", "8"}, retVal);
 		retVal = ComplexParser.parse("7.6+j8.5");

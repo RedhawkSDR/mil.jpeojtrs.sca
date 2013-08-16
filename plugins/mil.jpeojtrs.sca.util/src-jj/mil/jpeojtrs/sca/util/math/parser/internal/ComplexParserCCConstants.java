@@ -35,10 +35,10 @@ public interface ComplexParserCCConstants {
   String[] tokenImage = {
     "<EOF>",
     "\" \"",
+    "\"-\"",
     "\"(\"",
     "\",\"",
     "\")\"",
-    "\"-\"",
     "\"+\"",
     "<COMPLEX_MARKER>",
     "<OCTALINT>",

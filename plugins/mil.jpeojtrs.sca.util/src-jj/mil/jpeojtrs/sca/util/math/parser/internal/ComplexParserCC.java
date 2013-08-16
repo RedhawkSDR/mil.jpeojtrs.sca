@@ -7,7 +7,7 @@ import java.util.*;
 public class ComplexParserCC implements ComplexParserCCConstants {
   public static String [] fromString(String stringToParse) throws ParseException
   {
-    StringReader stringReader = new StringReader(stringToParse.toLowerCase() + "\u005cn");
+    StringReader stringReader = new StringReader(stringToParse.toLowerCase().trim());
     ComplexParserCC parser = new ComplexParserCC(stringReader);
     return parser.parse();
   }
@@ -29,17 +29,19 @@ public class ComplexParserCC implements ComplexParserCCConstants {
   }
 
   final public String [ ] parse() throws ParseException {
-  String [ ] retVal = null;
+  String [ ] retVal;
+  boolean negative = false;
     switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-    case 5:
+    case 2:
+    case COMPLEX_MARKER:
     case OCTALINT:
     case DECIMALINT:
     case HEXADECIMALINT:
     case FLOATONE:
     case FLOATTWO:
-      retVal = complexEquation();
+      retVal = number();
       break;
-    case 2:
+    case 3:
       retVal = vector();
       break;
     default:
@@ -51,81 +53,176 @@ public class ComplexParserCC implements ComplexParserCCConstants {
     throw new Error("Missing return statement in function");
   }
 
-  final public String [ ] vector() throws ParseException {
-  List < String > retVal = new ArrayList < String > ();
-  String number;
-    jj_consume_token(2);
-    number = real_number();
-    retVal.add(number);
-    label_1:
-    while (true) {
-      jj_consume_token(3);
-      number = real_number();
-      retVal.add(number);
-      switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-      case 3:
-        ;
-        break;
-      default:
-        jj_la1[1] = jj_gen;
-        break label_1;
-      }
-    }
-    jj_consume_token(4);
-    {if (true) return retVal.toArray(new String [ retVal.size() ]);}
-    throw new Error("Missing return statement in function");
+  final public String [ ] number() throws ParseException {
+  String [ ] retVal = new String [ ]
+  {
+    "0", "0"
   }
-
-  final public String [ ] complexEquation() throws ParseException {
-  String [ ] retVal = new String [ 2 ];
-  boolean negative;
-    retVal [ 0 ] = real_number();
-    negative = sign();
-    retVal [ 1 ] = complexNumber(negative);
-    {if (true) return retVal;}
-    throw new Error("Missing return statement in function");
-  }
-
-  final public String complexNumber(boolean negative) throws ParseException {
-  String retVal = "1";
+  ;
+  String tmp;
+  boolean negative = false;
     switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-    case 5:
-      jj_consume_token(5);
-      {if (true) return complexNumber(!negative);}
+    case 2:
+      negative = negativeModifier(negative);
       break;
-    case OCTALINT:
-    case DECIMALINT:
-    case HEXADECIMALINT:
-    case FLOATONE:
-    case FLOATTWO:
-      retVal = number();
-      jj_consume_token(COMPLEX_MARKER);
-      break;
+    default:
+      jj_la1[1] = jj_gen;
+      ;
+    }
+    switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
     case COMPLEX_MARKER:
       jj_consume_token(COMPLEX_MARKER);
+      if (negative)
+      {
+        retVal [ 1 ] = "-1";
+      }
+      else
+      {
+        retVal [ 1 ] = "1";
+      }
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
       case OCTALINT:
       case DECIMALINT:
       case HEXADECIMALINT:
       case FLOATONE:
       case FLOATTWO:
-        retVal = number();
+        retVal [ 1 ] = signed_number_literal(negative);
         break;
       default:
         jj_la1[2] = jj_gen;
         ;
       }
       break;
+    case OCTALINT:
+    case DECIMALINT:
+    case HEXADECIMALINT:
+    case FLOATONE:
+    case FLOATTWO:
+      retVal [ 0 ] = signed_number_literal(negative);
+      switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+      case 2:
+      case 6:
+      case COMPLEX_MARKER:
+        switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+        case COMPLEX_MARKER:
+          jj_consume_token(COMPLEX_MARKER);
+        retVal [ 1 ] = retVal [ 0 ];
+        retVal [ 0 ] = "0";
+          break;
+        case 2:
+        case 6:
+          negative = sign();
+          switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+          case 2:
+            negative = negativeModifier(negative);
+            break;
+          default:
+            jj_la1[3] = jj_gen;
+            ;
+          }
+          switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+          case COMPLEX_MARKER:
+            jj_consume_token(COMPLEX_MARKER);
+          if (negative)
+          {
+            retVal [ 1 ] = "-1";
+          }
+          else
+          {
+            retVal [ 1 ] = "1";
+          }
+            switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+            case OCTALINT:
+            case DECIMALINT:
+            case HEXADECIMALINT:
+            case FLOATONE:
+            case FLOATTWO:
+              retVal [ 1 ] = signed_number_literal(negative);
+              break;
+            default:
+              jj_la1[4] = jj_gen;
+              ;
+            }
+            break;
+          case OCTALINT:
+          case DECIMALINT:
+          case HEXADECIMALINT:
+          case FLOATONE:
+          case FLOATTWO:
+            retVal [ 1 ] = signed_number_literal(negative);
+            jj_consume_token(COMPLEX_MARKER);
+            break;
+          default:
+            jj_la1[5] = jj_gen;
+            jj_consume_token(-1);
+            throw new ParseException();
+          }
+          break;
+        default:
+          jj_la1[6] = jj_gen;
+          jj_consume_token(-1);
+          throw new ParseException();
+        }
+        break;
+      default:
+        jj_la1[7] = jj_gen;
+        ;
+      }
+      break;
     default:
-      jj_la1[3] = jj_gen;
+      jj_la1[8] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
-    if (negative)
-    {
-      {if (true) return "-" + retVal;}
-    }
     {if (true) return retVal;}
+    throw new Error("Missing return statement in function");
+  }
+
+  final public boolean negativeModifier(boolean negative) throws ParseException {
+    jj_consume_token(2);
+    {if (true) return !negative;}
+    throw new Error("Missing return statement in function");
+  }
+
+  final public String [ ] vector() throws ParseException {
+  List < String > retVal = new ArrayList < String > ();
+  String number;
+  boolean negative = false;
+    jj_consume_token(3);
+    switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+    case 2:
+      negative = negativeModifier(false);
+      break;
+    default:
+      jj_la1[9] = jj_gen;
+      ;
+    }
+    number = real_number(negative);
+    retVal.add(number);
+    label_1:
+    while (true) {
+      jj_consume_token(4);
+      switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+      case 2:
+        negative = negativeModifier(false);
+        break;
+      default:
+        jj_la1[10] = jj_gen;
+        ;
+      }
+      number = real_number(negative);
+      retVal.add(number);
+      switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+      case 4:
+        ;
+        break;
+      default:
+        jj_la1[11] = jj_gen;
+        break label_1;
+      }
+    }
+    jj_consume_token(5);
+    {if (true) return retVal.toArray(new String [ retVal.size() ]);}
     throw new Error("Missing return statement in function");
   }
 
@@ -135,39 +232,21 @@ public class ComplexParserCC implements ComplexParserCCConstants {
       jj_consume_token(6);
     {if (true) return false;}
       break;
-    case 5:
-      jj_consume_token(5);
+    case 2:
+      jj_consume_token(2);
     {if (true) return true;}
       break;
     default:
-      jj_la1[4] = jj_gen;
+      jj_la1[12] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
     throw new Error("Missing return statement in function");
   }
 
-  final public String real_number() throws ParseException {
-  boolean negative = false;
+  final public String real_number(boolean negative) throws ParseException {
   String retVal;
-    switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-    case 5:
-      jj_consume_token(5);
-      negative = true;
-      retVal = number();
-      break;
-    case OCTALINT:
-    case DECIMALINT:
-    case HEXADECIMALINT:
-    case FLOATONE:
-    case FLOATTWO:
-      retVal = number();
-      break;
-    default:
-      jj_la1[5] = jj_gen;
-      jj_consume_token(-1);
-      throw new ParseException();
-    }
+    retVal = number_literal();
     if (negative)
     {
       {if (true) return "-" + retVal;}
@@ -179,7 +258,21 @@ public class ComplexParserCC implements ComplexParserCCConstants {
     throw new Error("Missing return statement in function");
   }
 
-  final public String number() throws ParseException {
+  final public String signed_number_literal(boolean negative) throws ParseException {
+  String retVal = "0";
+    retVal = number_literal();
+    if (negative)
+    {
+      {if (true) return "-" + retVal;}
+    }
+    else
+    {
+      {if (true) return retVal;}
+    }
+    throw new Error("Missing return statement in function");
+  }
+
+  final public String number_literal() throws ParseException {
     switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
     case OCTALINT:
       jj_consume_token(OCTALINT);
@@ -202,7 +295,7 @@ public class ComplexParserCC implements ComplexParserCCConstants {
     {if (true) return token.image;}
       break;
     default:
-      jj_la1[6] = jj_gen;
+      jj_la1[13] = jj_gen;
       jj_consume_token(-1);
       throw new ParseException();
     }
@@ -218,13 +311,13 @@ public class ComplexParserCC implements ComplexParserCCConstants {
   public Token jj_nt;
   private int jj_ntk;
   private int jj_gen;
-  final private int[] jj_la1 = new int[7];
+  final private int[] jj_la1 = new int[14];
   static private int[] jj_la1_0;
   static {
       jj_la1_init_0();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x1f24,0x8,0x1f00,0x1fa0,0x60,0x1f20,0x1f00,};
+      jj_la1_0 = new int[] {0x1f8c,0x4,0x1f00,0x4,0x1f00,0x1f80,0xc4,0xc4,0x1f80,0x4,0x4,0x10,0x44,0x1f00,};
    }
 
   /** Constructor with InputStream. */
@@ -238,7 +331,7 @@ public class ComplexParserCC implements ComplexParserCCConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 7; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 14; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -252,7 +345,7 @@ public class ComplexParserCC implements ComplexParserCCConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 7; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 14; i++) jj_la1[i] = -1;
   }
 
   /** Constructor. */
@@ -262,7 +355,7 @@ public class ComplexParserCC implements ComplexParserCCConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 7; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 14; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -272,7 +365,7 @@ public class ComplexParserCC implements ComplexParserCCConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 7; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 14; i++) jj_la1[i] = -1;
   }
 
   /** Constructor with generated Token Manager. */
@@ -281,7 +374,7 @@ public class ComplexParserCC implements ComplexParserCCConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 7; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 14; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -290,7 +383,7 @@ public class ComplexParserCC implements ComplexParserCCConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 7; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 14; i++) jj_la1[i] = -1;
   }
 
   private Token jj_consume_token(int kind) throws ParseException {
@@ -346,7 +439,7 @@ public class ComplexParserCC implements ComplexParserCCConstants {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
     }
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 14; i++) {
       if (jj_la1[i] == jj_gen) {
         for (int j = 0; j < 32; j++) {
           if ((jj_la1_0[i] & (1<<j)) != 0) {
