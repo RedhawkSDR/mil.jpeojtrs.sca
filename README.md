@@ -6,7 +6,7 @@ Contains the SCA XML EMF model used by the REDHAWK IDE and Explorer Applications
  
 ## REDHAWK Documentation
 
-REDHAWK Website: [www.redhawkSDR.org](http://www.redhawksdr.org)
+REDHAWK Website: [www.redhawksdr.org](http://www.redhawksdr.org)
 
 Overview and Getting Started Guide: [PDF](http://sourceforge.net/projects/redhawksdr/files/redhawk-doc/1.9.0/REDHAWK_Overview_v1.9.0.pdf/download "PDF") [HTML](http://redhawksdr.github.com/Documentation/gettingstarted/main.html "HTML")
 
