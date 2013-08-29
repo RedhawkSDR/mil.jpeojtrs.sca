@@ -18,16 +18,22 @@
     <pmd.skip>true</pmd.skip>
     <cpd.skip>true</cpd.skip>
   </properties>
-  
-  <build>
-    <plugins>
-        <plugin>
+
+  <profiles>
+    <profile>
+      <id>code-analysis</id>
+      <build>
+        <plugins>
+          <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>findbugs-maven-plugin</artifactId>
             <configuration>
-                <skip>true</skip>
+              <skip>true</skip>
             </configuration>
-        </plugin>
-    </plugins>
-  </build>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
 </project>
