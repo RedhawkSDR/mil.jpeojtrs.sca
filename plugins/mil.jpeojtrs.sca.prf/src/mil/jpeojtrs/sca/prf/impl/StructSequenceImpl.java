@@ -248,7 +248,18 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	        	SimpleRef ref = PrfFactory.eINSTANCE.createSimpleRef();
 	        	ref.setRefID(simple.getId());
 	        	ref.setValue(PropertiesUtil.getDefaultValue(simple));
-	        	structValue.getSimpleRef().add(ref);
+	        	SimpleRef oldRef = null;
+	        	for (SimpleRef sr: structValue.getSimpleRef()) {
+	        		if (sr.getRefID().equals(simple.getId())) {
+	        			oldRef = sr;
+	        			break;
+	        		}
+	        	}
+	        	if (oldRef != null) {
+	        		structValue.getSimpleRef().remove(oldRef);
+	        	}
+	        	int index = this.getStruct().getSimple().indexOf(simple);
+	        	structValue.getSimpleRef().add(index, ref);
 	        }
 		} else { //Remove SimpleRefs associated with the oldValue
 			simple = (Simple)notification.getOldValue();
