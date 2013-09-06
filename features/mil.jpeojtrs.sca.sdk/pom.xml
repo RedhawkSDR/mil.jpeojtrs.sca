@@ -6,12 +6,12 @@
   <parent>
     <relativePath>../../releng/pom.xml</relativePath>
     <groupId>mil.jpeojtrs.sca</groupId>
-    <artifactId>releng</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>parent</artifactId>
+    <version>1.8.5-SNAPSHOT</version>
   </parent>
 
   <artifactId>mil.jpeojtrs.sca.sdk</artifactId>
 
   <packaging>eclipse-feature</packaging>
-  <version>2.2.2-SNAPSHOT</version></project>
+  <version>2.2.2-SNAPSHOT</version>
 </project>
