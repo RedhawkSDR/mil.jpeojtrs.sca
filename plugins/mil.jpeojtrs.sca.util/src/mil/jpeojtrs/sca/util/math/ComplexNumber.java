@@ -43,6 +43,8 @@ public abstract class ComplexNumber {
 			return ComplexUShort.valueOf(value);
 		} else if (type.equalsIgnoreCase("ulonglong")) {
 			return ComplexULongLong.valueOf(value);
+		} else if (type.equalsIgnoreCase("octet")) {
+			return ComplexByte.valueOf(value);
 		} else {
 			throw new IllegalArgumentException("Unknown CORBA Type: " + type);
 		}
