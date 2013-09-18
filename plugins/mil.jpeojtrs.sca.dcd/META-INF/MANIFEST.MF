@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  mil.jpeojtrs.sca.spd;bundle-version="2.2.2",
  mil.jpeojtrs.sca.util;bundle-version="1.0.0",
  mil.jpeojtrs.sca.dpd;bundle-version="2.2.2";visibility:=reexport,
- mil.jpeojtrs.sca.prf;visibility:=reexport,
- mil.jpeojtrs.sca.scd;visibility:=reexport,
+ mil.jpeojtrs.sca.prf;bundle-version="3.0.0";visibility:=reexport,
+ mil.jpeojtrs.sca.scd;bundle-version="2.3.0";visibility:=reexport,
  mil.jpeojtrs.sca.partitioning;bundle-version="1.0.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
