@@ -74,6 +74,7 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Port> getPort() {
 		if (port == null)
 		{

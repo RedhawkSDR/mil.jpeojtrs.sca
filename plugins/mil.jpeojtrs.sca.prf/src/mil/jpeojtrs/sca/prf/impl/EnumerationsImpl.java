@@ -74,6 +74,7 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Enumeration> getEnumeration() {
 		if (enumeration == null)
 		{

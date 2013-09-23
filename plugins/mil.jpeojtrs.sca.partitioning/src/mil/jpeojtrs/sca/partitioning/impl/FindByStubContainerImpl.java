@@ -74,6 +74,7 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<FindByStub> getStubs() {
 		if (stubs == null)
 		{

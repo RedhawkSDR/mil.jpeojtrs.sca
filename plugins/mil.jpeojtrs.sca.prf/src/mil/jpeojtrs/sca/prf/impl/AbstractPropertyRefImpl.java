@@ -82,6 +82,7 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRefID() {
 		return refID;
 	}
@@ -91,6 +92,7 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRefID(String newRefID) {
 		String oldRefID = refID;
 		refID = newRefID;
@@ -103,6 +105,7 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public P getProperty() {
 		P property = basicGetProperty();
@@ -134,6 +137,7 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setProperty(P newProperty) {
 		if (newProperty != null) {
 			setRefID(newProperty.getId());
@@ -147,6 +151,7 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public abstract Any toAny();
 
 	/**

@@ -132,6 +132,7 @@ public class ProfileItemProviderAdapterFactory extends ProfileAdapterFactory imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -142,6 +143,7 @@ public class ProfileItemProviderAdapterFactory extends ProfileAdapterFactory imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -192,6 +194,7 @@ public class ProfileItemProviderAdapterFactory extends ProfileAdapterFactory imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -202,6 +205,7 @@ public class ProfileItemProviderAdapterFactory extends ProfileAdapterFactory imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -212,6 +216,7 @@ public class ProfileItemProviderAdapterFactory extends ProfileAdapterFactory imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -227,6 +232,7 @@ public class ProfileItemProviderAdapterFactory extends ProfileAdapterFactory imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (documentRootItemProvider != null) documentRootItemProvider.dispose();
 		if (profileItemProvider != null) profileItemProvider.dispose();

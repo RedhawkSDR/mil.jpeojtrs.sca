@@ -66,6 +66,7 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public String getUsesName() {
 		// END GENERATED CODE
 		return getName();
@@ -88,6 +89,7 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setUsesName(String newUsesName) {
 		// END GENERATED CODE
 		setName(newUsesName);

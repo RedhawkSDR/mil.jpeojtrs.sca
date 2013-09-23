@@ -262,6 +262,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Action createAction() {
 		ActionImpl action = new ActionImpl();
 		return action;
@@ -272,6 +273,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ConfigurationKind createConfigurationKind() {
 		ConfigurationKindImpl configurationKind = new ConfigurationKindImpl();
 		return configurationKind;
@@ -282,6 +284,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Enumeration createEnumeration() {
 		EnumerationImpl enumeration = new EnumerationImpl();
 		return enumeration;
@@ -292,6 +295,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Enumerations createEnumerations() {
 		EnumerationsImpl enumerations = new EnumerationsImpl();
 		return enumerations;
@@ -302,6 +306,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputValue createInputValue() {
 		InputValueImpl inputValue = new InputValueImpl();
 		return inputValue;
@@ -312,6 +317,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Kind createKind() {
 		KindImpl kind = new KindImpl();
 		return kind;
@@ -322,6 +328,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PrfDocumentRoot createPrfDocumentRoot() {
 		PrfDocumentRootImpl prfDocumentRoot = new PrfDocumentRootImpl();
 		return prfDocumentRoot;
@@ -332,6 +339,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Properties createProperties() {
 		PropertiesImpl properties = new PropertiesImpl();
 		return properties;
@@ -342,6 +350,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Range createRange() {
 		RangeImpl range = new RangeImpl();
 		return range;
@@ -352,6 +361,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ResultValue createResultValue() {
 		ResultValueImpl resultValue = new ResultValueImpl();
 		return resultValue;
@@ -362,6 +372,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Simple createSimple() {
 		SimpleImpl simple = new SimpleImpl();
 		return simple;
@@ -372,6 +383,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SimpleSequence createSimpleSequence() {
 		SimpleSequenceImpl simpleSequence = new SimpleSequenceImpl();
 		return simpleSequence;
@@ -382,6 +394,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Struct createStruct() {
 		StructImpl struct = new StructImpl();
 		return struct;
@@ -392,6 +405,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StructSequence createStructSequence() {
 		StructSequenceImpl structSequence = new StructSequenceImpl();
 		return structSequence;
@@ -402,6 +416,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StructValue createStructValue() {
 		StructValueImpl structValue = new StructValueImpl();
 		return structValue;
@@ -412,6 +427,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Test createTest() {
 		TestImpl test = new TestImpl();
 		return test;
@@ -422,6 +438,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Values createValues() {
 		ValuesImpl values = new ValuesImpl();
 		return values;
@@ -432,6 +449,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SimpleRef createSimpleRef() {
 		SimpleRefImpl simpleRef = new SimpleRefImpl();
 		return simpleRef;
@@ -442,6 +460,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SimpleSequenceRef createSimpleSequenceRef() {
 		SimpleSequenceRefImpl simpleSequenceRef = new SimpleSequenceRefImpl();
 		return simpleSequenceRef;
@@ -452,6 +471,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StructRef createStructRef() {
 		StructRefImpl structRef = new StructRefImpl();
 		return structRef;
@@ -462,6 +482,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StructSequenceRef createStructSequenceRef() {
 		StructSequenceRefImpl structSequenceRef = new StructSequenceRefImpl();
 		return structSequenceRef;
@@ -969,6 +990,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PrfPackage getPrfPackage() {
 		return (PrfPackage)getEPackage();
 	}

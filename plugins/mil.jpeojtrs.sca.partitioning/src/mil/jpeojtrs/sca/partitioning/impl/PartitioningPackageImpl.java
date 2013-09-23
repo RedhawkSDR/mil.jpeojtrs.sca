@@ -303,7 +303,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 			(thePartitioningPackage, 
 			 new EValidator.Descriptor()
 			 {
-				 public EValidator getEValidator()
+				 @Override
+				public EValidator getEValidator()
 				 {
 					 return PartitioningValidator.INSTANCE;
 				 }
@@ -323,6 +324,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentFile() {
 		return componentFileEClass;
 	}
@@ -332,6 +334,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentFile_LocalFile() {
 		return (EReference)componentFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -341,6 +344,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentFile_Id() {
 		return (EAttribute)componentFileEClass.getEStructuralFeatures().get(1);
 	}
@@ -350,6 +354,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentFile_SoftPkg() {
 		return (EReference)componentFileEClass.getEStructuralFeatures().get(2);
 	}
@@ -359,6 +364,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentFile_Type() {
 		return (EAttribute)componentFileEClass.getEStructuralFeatures().get(3);
 	}
@@ -368,6 +374,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDomComponentFile() {
 		return domComponentFileEClass;
 	}
@@ -377,6 +384,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDevComponentFile() {
 		return devComponentFileEClass;
 	}
@@ -386,6 +394,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentFileRef() {
 		return componentFileRefEClass;
 	}
@@ -395,6 +404,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentFileRef_File() {
 		return (EReference)componentFileRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -404,6 +414,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentFileRef_Refid() {
 		return (EAttribute)componentFileRefEClass.getEStructuralFeatures().get(1);
 	}
@@ -413,6 +424,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentFiles() {
 		return componentFilesEClass;
 	}
@@ -422,6 +434,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentFiles_ComponentFile() {
 		return (EReference)componentFilesEClass.getEStructuralFeatures().get(0);
 	}
@@ -431,6 +444,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentInstantiation() {
 		return componentInstantiationEClass;
 	}
@@ -440,6 +454,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentInstantiation_UsageName() {
 		return (EAttribute)componentInstantiationEClass.getEStructuralFeatures().get(0);
 	}
@@ -449,6 +464,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInstantiation_ComponentProperties() {
 		return (EReference)componentInstantiationEClass.getEStructuralFeatures().get(1);
 	}
@@ -458,6 +474,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInstantiation_Provides() {
 		return (EReference)componentInstantiationEClass.getEStructuralFeatures().get(2);
 	}
@@ -467,6 +484,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInstantiation_Uses() {
 		return (EReference)componentInstantiationEClass.getEStructuralFeatures().get(3);
 	}
@@ -476,6 +494,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInstantiation_InterfaceStub() {
 		return (EReference)componentInstantiationEClass.getEStructuralFeatures().get(4);
 	}
@@ -485,6 +504,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentInstantiation_Id() {
 		return (EAttribute)componentInstantiationEClass.getEStructuralFeatures().get(5);
 	}
@@ -494,6 +514,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInstantiation_Placement() {
 		return (EReference)componentInstantiationEClass.getEStructuralFeatures().get(6);
 	}
@@ -504,6 +525,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentInstantiation_ImplID() {
 		return (EAttribute)componentInstantiationEClass.getEStructuralFeatures().get(7);
 	}
@@ -513,6 +535,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentInstantiationRef() {
 		return componentInstantiationRefEClass;
 	}
@@ -522,6 +545,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentInstantiationRef_Instantiation() {
 		return (EReference)componentInstantiationRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -531,6 +555,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentInstantiationRef_Refid() {
 		return (EAttribute)componentInstantiationRefEClass.getEStructuralFeatures().get(1);
 	}
@@ -540,6 +565,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentPlacement() {
 		return componentPlacementEClass;
 	}
@@ -549,6 +575,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentPlacement_ComponentFileRef() {
 		return (EReference)componentPlacementEClass.getEStructuralFeatures().get(0);
 	}
@@ -558,6 +585,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentPlacement_ComponentInstantiation() {
 		return (EReference)componentPlacementEClass.getEStructuralFeatures().get(1);
 	}
@@ -567,6 +595,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentPlacement_Name() {
 		return (EAttribute)componentPlacementEClass.getEStructuralFeatures().get(2);
 	}
@@ -576,6 +605,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentProperties() {
 		return componentPropertiesEClass;
 	}
@@ -585,6 +615,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentProperties_Properties() {
 		return (EAttribute)componentPropertiesEClass.getEStructuralFeatures().get(0);
 	}
@@ -594,6 +625,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentProperties_SimpleRef() {
 		return (EReference)componentPropertiesEClass.getEStructuralFeatures().get(1);
 	}
@@ -603,6 +635,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentProperties_SimpleSequenceRef() {
 		return (EReference)componentPropertiesEClass.getEStructuralFeatures().get(2);
 	}
@@ -612,6 +645,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentProperties_StructRef() {
 		return (EReference)componentPropertiesEClass.getEStructuralFeatures().get(3);
 	}
@@ -621,6 +655,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentProperties_StructSequenceRef() {
 		return (EReference)componentPropertiesEClass.getEStructuralFeatures().get(4);
 	}
@@ -630,6 +665,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentSupportedInterface() {
 		return componentSupportedInterfaceEClass;
 	}
@@ -639,6 +675,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentSupportedInterface_SupportedIdentifier() {
 		return (EAttribute)componentSupportedInterfaceEClass.getEStructuralFeatures().get(0);
 	}
@@ -648,6 +685,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentSupportedInterface_ComponentInstantiationRef() {
 		return (EReference)componentSupportedInterfaceEClass.getEStructuralFeatures().get(1);
 	}
@@ -657,6 +695,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentSupportedInterface_FindBy() {
 		return (EReference)componentSupportedInterfaceEClass.getEStructuralFeatures().get(2);
 	}
@@ -666,6 +705,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentSupportedInterface_Interface() {
 		return (EReference)componentSupportedInterfaceEClass.getEStructuralFeatures().get(3);
 	}
@@ -675,6 +715,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentSupportedInterfaceStub() {
 		return componentSupportedInterfaceStubEClass;
 	}
@@ -684,6 +725,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnectInterface() {
 		return connectInterfaceEClass;
 	}
@@ -693,6 +735,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnectInterface_UsesPort() {
 		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(0);
 	}
@@ -702,6 +745,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnectInterface_ProvidesPort() {
 		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(1);
 	}
@@ -711,6 +755,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnectInterface_ComponentSupportedInterface() {
 		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(2);
 	}
@@ -720,6 +765,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnectInterface_FindBy() {
 		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(3);
 	}
@@ -729,6 +775,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConnectInterface_Id() {
 		return (EAttribute)connectInterfaceEClass.getEStructuralFeatures().get(4);
 	}
@@ -738,6 +785,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnectInterface_Source() {
 		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(5);
 	}
@@ -747,6 +795,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnectInterface_Target() {
 		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(6);
 	}
@@ -756,6 +805,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnections() {
 		return connectionsEClass;
 	}
@@ -765,6 +815,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnections_ConnectInterface() {
 		return (EReference)connectionsEClass.getEStructuralFeatures().get(0);
 	}
@@ -774,6 +825,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnectionTarget() {
 		return connectionTargetEClass;
 	}
@@ -783,6 +835,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDeviceThatLoadedThisComponentRef() {
 		return deviceThatLoadedThisComponentRefEClass;
 	}
@@ -792,6 +845,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeviceThatLoadedThisComponentRef_Refid() {
 		return (EAttribute)deviceThatLoadedThisComponentRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -801,6 +855,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDeviceUsedByThisComponentRef() {
 		return deviceUsedByThisComponentRefEClass;
 	}
@@ -810,6 +865,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeviceUsedByThisComponentRef_RefId() {
 		return (EAttribute)deviceUsedByThisComponentRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -819,6 +875,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeviceUsedByThisComponentRef_UsesRefId() {
 		return (EAttribute)deviceUsedByThisComponentRefEClass.getEStructuralFeatures().get(1);
 	}
@@ -828,6 +885,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDomainFinder() {
 		return domainFinderEClass;
 	}
@@ -837,6 +895,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDomainFinder_Name() {
 		return (EAttribute)domainFinderEClass.getEStructuralFeatures().get(0);
 	}
@@ -846,6 +905,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDomainFinder_Type() {
 		return (EAttribute)domainFinderEClass.getEStructuralFeatures().get(1);
 	}
@@ -855,6 +915,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFindBy() {
 		return findByEClass;
 	}
@@ -864,6 +925,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindBy_NamingService() {
 		return (EReference)findByEClass.getEStructuralFeatures().get(0);
 	}
@@ -873,6 +935,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindBy_DomainFinder() {
 		return (EReference)findByEClass.getEStructuralFeatures().get(1);
 	}
@@ -882,6 +945,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFindByStub() {
 		return findByStubEClass;
 	}
@@ -891,6 +955,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindByStub_NamingService() {
 		return (EReference)findByStubEClass.getEStructuralFeatures().get(0);
 	}
@@ -900,6 +965,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindByStub_DomainFinder() {
 		return (EReference)findByStubEClass.getEStructuralFeatures().get(1);
 	}
@@ -909,6 +975,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindByStub_Provides() {
 		return (EReference)findByStubEClass.getEStructuralFeatures().get(2);
 	}
@@ -918,6 +985,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindByStub_Uses() {
 		return (EReference)findByStubEClass.getEStructuralFeatures().get(3);
 	}
@@ -927,6 +995,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindByStub_Interface() {
 		return (EReference)findByStubEClass.getEStructuralFeatures().get(4);
 	}
@@ -936,6 +1005,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFindByStubContainer() {
 		return findByStubContainerEClass;
 	}
@@ -945,6 +1015,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindByStubContainer_Stubs() {
 		return (EReference)findByStubContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -954,6 +1025,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLocalFile() {
 		return localFileEClass;
 	}
@@ -963,6 +1035,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalFile_Name() {
 		return (EAttribute)localFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -972,6 +1045,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNamingService() {
 		return namingServiceEClass;
 	}
@@ -981,6 +1055,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNamingService_Name() {
 		return (EAttribute)namingServiceEClass.getEStructuralFeatures().get(0);
 	}
@@ -990,6 +1065,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPartitioning() {
 		return partitioningEClass;
 	}
@@ -999,6 +1075,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPartitioning_Parts() {
 		return (EAttribute)partitioningEClass.getEStructuralFeatures().get(0);
 	}
@@ -1008,6 +1085,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPartitioning_ComponentPlacement() {
 		return (EReference)partitioningEClass.getEStructuralFeatures().get(1);
 	}
@@ -1017,6 +1095,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProvidesPort() {
 		return providesPortEClass;
 	}
@@ -1026,6 +1105,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProvidesPort_ProvidesIdentifier() {
 		return (EAttribute)providesPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -1035,6 +1115,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProvidesPort_ComponentInstantiationRef() {
 		return (EReference)providesPortEClass.getEStructuralFeatures().get(1);
 	}
@@ -1044,6 +1125,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProvidesPort_DeviceThatLoadedThisComponentRef() {
 		return (EReference)providesPortEClass.getEStructuralFeatures().get(2);
 	}
@@ -1053,6 +1135,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProvidesPort_DeviceUsedByThisComponentRef() {
 		return (EReference)providesPortEClass.getEStructuralFeatures().get(3);
 	}
@@ -1062,6 +1145,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProvidesPort_FindBy() {
 		return (EReference)providesPortEClass.getEStructuralFeatures().get(4);
 	}
@@ -1071,6 +1155,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProvidesPortStub() {
 		return providesPortStubEClass;
 	}
@@ -1080,6 +1165,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProvidesPortStub_Name() {
 		return (EAttribute)providesPortStubEClass.getEStructuralFeatures().get(0);
 	}
@@ -1089,6 +1175,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProvidesPortStub_Provides() {
 		return (EReference)providesPortStubEClass.getEStructuralFeatures().get(1);
 	}
@@ -1098,6 +1185,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getUsesPort() {
 		return usesPortEClass;
 	}
@@ -1107,6 +1195,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUsesPort_UsesIndentifier() {
 		return (EAttribute)usesPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -1116,6 +1205,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getUsesPort_ComponentInstantiationRef() {
 		return (EReference)usesPortEClass.getEStructuralFeatures().get(1);
 	}
@@ -1125,6 +1215,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getUsesPort_DeviceThatLoadedThisComponentRef() {
 		return (EReference)usesPortEClass.getEStructuralFeatures().get(2);
 	}
@@ -1134,6 +1225,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getUsesPort_DeviceUsedByThisComponentRef() {
 		return (EReference)usesPortEClass.getEStructuralFeatures().get(3);
 	}
@@ -1143,6 +1235,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getUsesPort_FindBy() {
 		return (EReference)usesPortEClass.getEStructuralFeatures().get(4);
 	}
@@ -1152,6 +1245,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getUsesPortStub() {
 		return usesPortStubEClass;
 	}
@@ -1161,6 +1255,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUsesPortStub_Name() {
 		return (EAttribute)usesPortStubEClass.getEStructuralFeatures().get(0);
 	}
@@ -1170,6 +1265,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getUsesPortStub_Uses() {
 		return (EReference)usesPortStubEClass.getEStructuralFeatures().get(1);
 	}
@@ -1179,6 +1275,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUsesPortStub_SupportedIdentifier() {
 		return (EAttribute)usesPortStubEClass.getEStructuralFeatures().get(2);
 	}
@@ -1188,6 +1285,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getDomainFinderType() {
 		return domainFinderTypeEEnum;
 	}
@@ -1197,6 +1295,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getDomainFinderTypeObject() {
 		return domainFinderTypeObjectEDataType;
 	}
@@ -1206,6 +1305,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PartitioningFactory getPartitioningFactory() {
 		return (PartitioningFactory)getEFactoryInstance();
 	}

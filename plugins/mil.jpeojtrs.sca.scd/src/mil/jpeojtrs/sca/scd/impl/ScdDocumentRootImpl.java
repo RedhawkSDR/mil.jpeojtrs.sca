@@ -98,6 +98,7 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getMixed() {
 		if (mixed == null)
 		{
@@ -111,6 +112,7 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
 		if (xMLNSPrefixMap == null)
 		{
@@ -124,6 +126,7 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXSISchemaLocation() {
 		if (xSISchemaLocation == null)
 		{
@@ -137,6 +140,7 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SoftwareComponent getSoftwarecomponent() {
 		return (SoftwareComponent)getMixed().get(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT, true);
 	}
@@ -155,6 +159,7 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSoftwarecomponent(SoftwareComponent newSoftwarecomponent) {
 		((FeatureMap.Internal)getMixed()).set(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT, newSoftwarecomponent);
 	}

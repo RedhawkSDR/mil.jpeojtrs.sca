@@ -82,6 +82,7 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getProperties() {
 		if (properties == null)
 		{
@@ -95,6 +96,7 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleRef> getSimpleRef() {
 		return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__SIMPLE_REF);
 	}
@@ -104,6 +106,7 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleSequenceRef> getSimpleSequenceRef() {
 		return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF);
 	}
@@ -113,6 +116,7 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<StructRef> getStructRef() {
 		return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__STRUCT_REF);
 	}
@@ -122,6 +126,7 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<StructSequenceRef> getStructSequenceRef() {
 		return getProperties().list(PrfPackage.Literals.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF);
 	}
@@ -131,6 +136,7 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public abstract PropertyContainer getPropertyContainer();
 
 	/**

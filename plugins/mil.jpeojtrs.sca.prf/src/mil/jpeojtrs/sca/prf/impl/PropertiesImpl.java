@@ -106,6 +106,7 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -115,6 +116,7 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -127,6 +129,7 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getProperties() {
 		if (properties == null)
 		{
@@ -140,6 +143,7 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Simple> getSimple() {
 		return getProperties().list(PrfPackage.Literals.PROPERTIES__SIMPLE);
 	}
@@ -149,6 +153,7 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleSequence> getSimpleSequence() {
 		return getProperties().list(PrfPackage.Literals.PROPERTIES__SIMPLE_SEQUENCE);
 	}
@@ -158,6 +163,7 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Test> getTest() {
 		return getProperties().list(PrfPackage.Literals.PROPERTIES__TEST);
 	}
@@ -167,6 +173,7 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Struct> getStruct() {
 		return getProperties().list(PrfPackage.Literals.PROPERTIES__STRUCT);
 	}
@@ -176,6 +183,7 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<StructSequence> getStructSequence() {
 		return getProperties().list(PrfPackage.Literals.PROPERTIES__STRUCT_SEQUENCE);
 	}
@@ -185,6 +193,7 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public AbstractProperty getProperty(String repID) {
 		// END GENERATED CODE
 		if (repID == null) {

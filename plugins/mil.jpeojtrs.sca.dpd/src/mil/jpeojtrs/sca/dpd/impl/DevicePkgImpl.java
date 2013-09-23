@@ -182,6 +182,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTitle() {
 		return title;
 	}
@@ -191,6 +192,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
@@ -203,6 +205,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Author> getAuthor() {
 		if (author == null) {
 			author = new EObjectContainmentEList<Author>(Author.class, this, DpdPackage.DEVICE_PKG__AUTHOR);
@@ -215,6 +218,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -224,6 +228,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -236,6 +241,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HwDeviceRegistration getHwDeviceRegistration() {
 		return hwDeviceRegistration;
 	}
@@ -260,6 +266,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHwDeviceRegistration(HwDeviceRegistration newHwDeviceRegistration) {
 		if (newHwDeviceRegistration != hwDeviceRegistration) {
 			NotificationChain msgs = null;
@@ -279,6 +286,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -288,6 +296,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -300,6 +309,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -309,6 +319,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -321,6 +332,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getVersion() {
 		return version;
 	}
@@ -330,6 +342,7 @@ public class DevicePkgImpl extends EObjectImpl implements DevicePkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;

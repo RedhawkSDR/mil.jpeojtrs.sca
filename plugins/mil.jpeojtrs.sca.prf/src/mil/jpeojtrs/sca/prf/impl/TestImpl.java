@@ -119,6 +119,7 @@ public class TestImpl extends EObjectImpl implements Test {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -128,6 +129,7 @@ public class TestImpl extends EObjectImpl implements Test {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -140,6 +142,7 @@ public class TestImpl extends EObjectImpl implements Test {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InputValue getInputValue() {
 		return inputValue;
 	}
@@ -165,6 +168,7 @@ public class TestImpl extends EObjectImpl implements Test {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInputValue(InputValue newInputValue) {
 		if (newInputValue != inputValue)
 		{
@@ -185,6 +189,7 @@ public class TestImpl extends EObjectImpl implements Test {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ResultValue getResultValue() {
 		return resultValue;
 	}
@@ -210,6 +215,7 @@ public class TestImpl extends EObjectImpl implements Test {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResultValue(ResultValue newResultValue) {
 		if (newResultValue != resultValue)
 		{
@@ -230,6 +236,7 @@ public class TestImpl extends EObjectImpl implements Test {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -239,6 +246,7 @@ public class TestImpl extends EObjectImpl implements Test {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -373,6 +381,7 @@ public class TestImpl extends EObjectImpl implements Test {
 		return result.toString();
 	}
 
+	@Override
 	public InputValue getInputvalue() {
 	    return getInputValue();
     }

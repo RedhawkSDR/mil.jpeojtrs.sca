@@ -94,6 +94,7 @@ public class DeployOnDeviceImpl extends EObjectImpl implements DeployOnDevice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdComponentInstantiation getComponent() {
 		DcdComponentInstantiation component = basicGetComponent();
 		return component != null && component.eIsProxy() ? (DcdComponentInstantiation)eResolveProxy((InternalEObject)component) : component;
@@ -118,6 +119,7 @@ public class DeployOnDeviceImpl extends EObjectImpl implements DeployOnDevice {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setComponent(DcdComponentInstantiation newComponent) {
 		// END GENERATED CODE
 		this.setRefID(newComponent.getId());
@@ -129,6 +131,7 @@ public class DeployOnDeviceImpl extends EObjectImpl implements DeployOnDevice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRefID() {
 		return refID;
 	}
@@ -138,6 +141,7 @@ public class DeployOnDeviceImpl extends EObjectImpl implements DeployOnDevice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRefID(String newRefID) {
 		String oldRefID = refID;
 		refID = newRefID;

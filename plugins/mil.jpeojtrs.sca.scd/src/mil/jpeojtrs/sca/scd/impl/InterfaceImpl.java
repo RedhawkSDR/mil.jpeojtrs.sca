@@ -113,6 +113,7 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<InheritsInterface> getInheritsInterfaces() {
 		if (inheritsInterfaces == null)
 		{
@@ -126,6 +127,7 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -135,6 +137,7 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -147,6 +150,7 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRepid() {
 		return repid;
 	}
@@ -156,6 +160,7 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRepid(String newRepid) {
 		String oldRepid = repid;
 		repid = newRepid;
@@ -168,6 +173,7 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isInstance(Interface obj) {
 		// END GENERATED CODE
 		if (obj == null) {

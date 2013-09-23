@@ -212,6 +212,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -221,6 +222,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -233,6 +235,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentFiles getComponentFiles() {
 		return componentFiles;
 	}
@@ -258,6 +261,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentFiles(ComponentFiles newComponentFiles) {
 		if (newComponentFiles != componentFiles)
 		{
@@ -278,6 +282,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadPartitioning getPartitioning() {
 		return partitioning;
 	}
@@ -303,6 +308,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPartitioning(SadPartitioning newPartitioning) {
 		if (newPartitioning != partitioning)
 		{
@@ -323,6 +329,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AssemblyController getAssemblyController() {
 		return assemblyController;
 	}
@@ -348,6 +355,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAssemblyController(AssemblyController newAssemblyController) {
 		if (newAssemblyController != assemblyController)
 		{
@@ -368,6 +376,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadConnections getConnections() {
 		return connections;
 	}
@@ -393,6 +402,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConnections(SadConnections newConnections) {
 		if (newConnections != connections)
 		{
@@ -413,6 +423,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExternalPorts getExternalPorts() {
 		return externalPorts;
 	}
@@ -438,6 +449,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExternalPorts(ExternalPorts newExternalPorts) {
 		if (newExternalPorts != externalPorts)
 		{
@@ -459,6 +471,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExternalProperties getExternalProperties() {
 		return externalProperties;
 	}
@@ -486,6 +499,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExternalProperties(ExternalProperties newExternalProperties) {
 		if (newExternalProperties != externalProperties)
 		{
@@ -506,6 +520,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -515,6 +530,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -526,6 +542,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public String getName() {
 		// END GENERATED CODE
 		// If the URI has a name query attribute use it instead
@@ -544,6 +561,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -556,6 +574,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getVersion() {
 		return version;
 	}
@@ -565,6 +584,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;
@@ -577,6 +597,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public SadComponentInstantiation getComponentInstantiation(String instantiationId) {
 		// END GENERATED CODE
 		SadComponentInstantiation retVal = null;
@@ -610,6 +631,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public EList<SadComponentInstantiation> getComponentInstantiationsInStartOrder() {
 		// END GENERATED CODE
 
@@ -618,6 +640,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 		// sort the component instantations
 		Collections.sort(result, new Comparator<SadComponentInstantiation>() {
 
+			@Override
 			public int compare(SadComponentInstantiation ci1, SadComponentInstantiation ci2) {
 				if ((ci1 != null) && (ci2 != null)) {
 					if ((ci1.getStartOrder() != null) && (ci2.getStartOrder() != null)) {
@@ -645,6 +668,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public EList<SadComponentInstantiation> getAllComponentInstantiations() {
 		// END GENERATED CODE
 

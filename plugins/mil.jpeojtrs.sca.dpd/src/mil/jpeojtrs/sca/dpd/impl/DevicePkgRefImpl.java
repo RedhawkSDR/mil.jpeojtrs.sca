@@ -90,6 +90,7 @@ public class DevicePkgRefImpl extends EObjectImpl implements DevicePkgRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalFile getLocalFile() {
 		return localFile;
 	}
@@ -114,6 +115,7 @@ public class DevicePkgRefImpl extends EObjectImpl implements DevicePkgRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLocalFile(LocalFile newLocalFile) {
 		if (newLocalFile != localFile) {
 			NotificationChain msgs = null;
@@ -133,6 +135,7 @@ public class DevicePkgRefImpl extends EObjectImpl implements DevicePkgRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -142,6 +145,7 @@ public class DevicePkgRefImpl extends EObjectImpl implements DevicePkgRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;

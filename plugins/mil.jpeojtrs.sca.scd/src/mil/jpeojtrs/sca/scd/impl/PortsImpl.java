@@ -78,6 +78,7 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getGroup() {
 		if (group == null)
 		{
@@ -91,6 +92,7 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Provides> getProvides() {
 		return getGroup().list(ScdPackage.Literals.PORTS__PROVIDES);
 	}
@@ -100,6 +102,7 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Uses> getUses() {
 		return getGroup().list(ScdPackage.Literals.PORTS__USES);
 	}

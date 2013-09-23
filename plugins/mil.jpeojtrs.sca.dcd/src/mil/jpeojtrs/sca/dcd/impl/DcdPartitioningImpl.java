@@ -82,6 +82,7 @@ public class DcdPartitioningImpl extends PartitioningImpl<DcdComponentPlacement>
 	private void sortComponents() {
 		ECollections.sort(getComponentPlacement(), new Comparator<DcdComponentPlacement>() {
 
+			@Override
 			public int compare(final DcdComponentPlacement o1, final DcdComponentPlacement o2) {
 
 				if (o1.getParentDevice() != null) {

@@ -108,6 +108,7 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRepId() {
 		return repId;
 	}
@@ -117,6 +118,7 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRepId(String newRepId) {
 		String oldRepId = repId;
 		repId = newRepId;
@@ -129,6 +131,7 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSupportsName() {
 		return supportsName;
 	}
@@ -138,6 +141,7 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSupportsName(String newSupportsName) {
 		String oldSupportsName = supportsName;
 		supportsName = newSupportsName;
@@ -150,6 +154,7 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public String getId() {
 		// END GENERATED CODE
 		return Util.buildId(getRepId());
@@ -161,6 +166,7 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Interface getInterface() {
 		Interface interface_ = basicGetInterface();
 		return interface_ != null && interface_.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)interface_) : interface_;
@@ -183,6 +189,7 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setInterface(Interface newInterface) {
 		// END GENERATED CODE
 		this.setRepId(newInterface.getRepid());

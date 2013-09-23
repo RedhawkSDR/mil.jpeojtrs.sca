@@ -82,6 +82,7 @@ public class ProfileFactoryImpl extends EFactoryImpl implements ProfileFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DocumentRoot createDocumentRoot() {
 		DocumentRootImpl documentRoot = new DocumentRootImpl();
 		return documentRoot;
@@ -92,6 +93,7 @@ public class ProfileFactoryImpl extends EFactoryImpl implements ProfileFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Profile createProfile() {
 		ProfileImpl profile = new ProfileImpl();
 		return profile;
@@ -102,6 +104,7 @@ public class ProfileFactoryImpl extends EFactoryImpl implements ProfileFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProfilePackage getProfilePackage() {
 		return (ProfilePackage)getEPackage();
 	}

@@ -98,6 +98,7 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentFileRef getComponentFileRef() {
 		return componentFileRef;
 	}
@@ -123,6 +124,7 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentFileRef(ComponentFileRef newComponentFileRef) {
 		if (newComponentFileRef != componentFileRef)
 		{
@@ -143,6 +145,7 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<I> getComponentInstantiation() {
 		if (componentInstantiation == null)
 		{
@@ -156,6 +159,7 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public String getName() {
 		// END GENERATED CODE
 		final ComponentFileRef ref = getComponentFileRef();

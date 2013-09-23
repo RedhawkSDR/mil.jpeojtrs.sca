@@ -25,6 +25,7 @@ IEnhancedConstraintStatus {
 		this.resultStructuralFeature = resultStructuralFeature;
 	}
 
+	@Override
 	public EStructuralFeature getResultStructuralFeature() {
 		return this.resultStructuralFeature;
 	}

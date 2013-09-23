@@ -95,6 +95,7 @@ public class DevicePkgFileImpl extends EObjectImpl implements DevicePkgFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalFile getLocalFile() {
 		return localFile;
 	}
@@ -135,6 +136,7 @@ public class DevicePkgFileImpl extends EObjectImpl implements DevicePkgFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLocalFile(LocalFile newLocalFile) {
 		if (newLocalFile != localFile)
 		{
@@ -155,6 +157,7 @@ public class DevicePkgFileImpl extends EObjectImpl implements DevicePkgFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -164,6 +167,7 @@ public class DevicePkgFileImpl extends EObjectImpl implements DevicePkgFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -176,6 +180,7 @@ public class DevicePkgFileImpl extends EObjectImpl implements DevicePkgFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DevicePkg getDevicePkg() {
 		DevicePkg devicePkg = basicGetDevicePkg();
 		return devicePkg != null && devicePkg.eIsProxy() ? (DevicePkg)eResolveProxy((InternalEObject)devicePkg) : devicePkg;
@@ -201,6 +206,7 @@ public class DevicePkgFileImpl extends EObjectImpl implements DevicePkgFile {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setDevicePkg(DevicePkg newDevicePkg) {
 		// END GENERATED CODE
 		LocalFile newFile = null;

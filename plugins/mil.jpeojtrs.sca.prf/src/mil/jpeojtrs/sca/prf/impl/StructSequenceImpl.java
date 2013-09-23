@@ -89,6 +89,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	protected EList<ConfigurationKind> configurationKind;
 	private Adapter simpleListener = new EContentAdapter() {
+		@Override
 		public void notifyChanged(Notification notification) {
 			super.notifyChanged(notification);
 			if (notification.getNotifier() instanceof Simple) {
@@ -109,6 +110,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 			}
 		}
 		}
+		@Override
 		protected void addAdapter(org.eclipse.emf.common.notify.Notifier notifier) {
 			if (notifier instanceof StructSequence || notifier instanceof Struct || notifier instanceof Simple) {
 				super.addAdapter(notifier);
@@ -141,6 +143,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Struct getStruct() {
 		return struct;
 	}
@@ -166,6 +169,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStruct(Struct newStruct) {
 		if (newStruct != struct)
 		{
@@ -186,6 +190,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<StructValue> getStructValue() {
 		if (structValue == null)
 		{
@@ -199,6 +204,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ConfigurationKind> getConfigurationKind() {
 		if (configurationKind == null)
 		{
@@ -212,6 +218,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void unsetConfigurationKind() {
 		if (configurationKind != null) ((InternalEList.Unsettable<?>)configurationKind).unset();
 	}
@@ -221,6 +228,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSetConfigurationKind() {
 		return configurationKind != null && ((InternalEList.Unsettable<?>)configurationKind).isSet();
 	}
@@ -318,6 +326,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public AbstractProperty getProperty(String repID) {
 		// END GENERATED CODE
 		return getStruct().getProperty(repID);
@@ -428,6 +437,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 		return super.eIsSet(featureID);
 	}
 
+	@Override
 	public EList<StructValue> getStructvalue() {
 	    return getStructValue();
     }

@@ -90,6 +90,7 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUsesIdentifier() {
 		return usesIdentifier;
 	}
@@ -99,6 +100,7 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUsesIdentifier(String newUsesIdentifier) {
 		String oldUsesIdentifier = usesIdentifier;
 		usesIdentifier = newUsesIdentifier;
@@ -111,6 +113,7 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FindBy getFindBy() {
 		return findBy;
 	}
@@ -136,6 +139,7 @@ public class ServiceImpl extends EObjectImpl implements Service {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFindBy(FindBy newFindBy) {
 		if (newFindBy != findBy)
 		{

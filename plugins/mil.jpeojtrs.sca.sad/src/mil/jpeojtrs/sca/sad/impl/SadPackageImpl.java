@@ -231,7 +231,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			(theSadPackage, 
 			 new EValidator.Descriptor()
 			 {
-				 public EValidator getEValidator()
+				 @Override
+				public EValidator getEValidator()
 				 {
 					 return SadValidator.INSTANCE;
 				 }
@@ -254,6 +255,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			private final AdvancedEObjectValidator validator = new AdvancedEObjectValidator(SadValidator.INSTANCE);
 
+			@Override
 			public EValidator getEValidator() {
 				return validator;
 			}
@@ -269,6 +271,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAssemblyController() {
 		return assemblyControllerEClass;
 	}
@@ -278,6 +281,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAssemblyController_ComponentInstantiationRef() {
 		return (EReference)assemblyControllerEClass.getEStructuralFeatures().get(0);
 	}
@@ -287,6 +291,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSadComponentInstantiation() {
 		return sadComponentInstantiationEClass;
 	}
@@ -296,6 +301,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSadComponentInstantiation_FindComponent() {
 		return (EReference)sadComponentInstantiationEClass.getEStructuralFeatures().get(0);
 	}
@@ -305,6 +311,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSadComponentInstantiation_StartOrder() {
 		return (EAttribute)sadComponentInstantiationEClass.getEStructuralFeatures().get(1);
 	}
@@ -314,6 +321,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSadComponentInstantiationRef() {
 		return sadComponentInstantiationRefEClass;
 	}
@@ -323,6 +331,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSadUsesPort() {
 		return sadUsesPortEClass;
 	}
@@ -332,6 +341,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSadProvidesPort() {
 		return sadProvidesPortEClass;
 	}
@@ -341,6 +351,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSadConnectInterface() {
 		return sadConnectInterfaceEClass;
 	}
@@ -350,6 +361,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSadConnections() {
 		return sadConnectionsEClass;
 	}
@@ -359,6 +371,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentResourceFactoryRef() {
 		return componentResourceFactoryRefEClass;
 	}
@@ -368,6 +381,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentResourceFactoryRef_ResourceFactoryProperties() {
 		return (EReference)componentResourceFactoryRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -377,6 +391,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentResourceFactoryRef_Refid() {
 		return (EAttribute)componentResourceFactoryRefEClass.getEStructuralFeatures().get(1);
 	}
@@ -386,6 +401,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentResourceFactoryRef_Component() {
 		return (EReference)componentResourceFactoryRefEClass.getEStructuralFeatures().get(2);
 	}
@@ -395,6 +411,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getExternalPorts() {
 		return externalPortsEClass;
 	}
@@ -404,6 +421,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getExternalPorts_Port() {
 		return (EReference)externalPortsEClass.getEStructuralFeatures().get(0);
 	}
@@ -414,6 +432,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getExternalProperties() {
 		return externalPropertiesEClass;
 	}
@@ -424,6 +443,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getExternalProperties_Properties() {
 		return (EReference)externalPropertiesEClass.getEStructuralFeatures().get(0);
 	}
@@ -434,6 +454,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getExternalProperty() {
 		return externalPropertyEClass;
 	}
@@ -444,6 +465,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExternalProperty_CompRefID() {
 		return (EAttribute)externalPropertyEClass.getEStructuralFeatures().get(0);
 	}
@@ -454,6 +476,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExternalProperty_PropID() {
 		return (EAttribute)externalPropertyEClass.getEStructuralFeatures().get(1);
 	}
@@ -464,6 +487,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getExternalProperty_ExternalPropID() {
 		return (EAttribute)externalPropertyEClass.getEStructuralFeatures().get(2);
 	}
@@ -473,6 +497,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFindComponent() {
 		return findComponentEClass;
 	}
@@ -482,6 +507,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindComponent_ComponentResourceFactoryRef() {
 		return (EReference)findComponentEClass.getEStructuralFeatures().get(0);
 	}
@@ -491,6 +517,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindComponent_NamingService() {
 		return (EReference)findComponentEClass.getEStructuralFeatures().get(1);
 	}
@@ -500,6 +527,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getHostCollocation() {
 		return hostCollocationEClass;
 	}
@@ -509,6 +537,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getHostCollocation_ComponentPlacement() {
 		return (EReference)hostCollocationEClass.getEStructuralFeatures().get(0);
 	}
@@ -518,6 +547,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHostCollocation_Id() {
 		return (EAttribute)hostCollocationEClass.getEStructuralFeatures().get(1);
 	}
@@ -527,6 +557,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHostCollocation_Name() {
 		return (EAttribute)hostCollocationEClass.getEStructuralFeatures().get(2);
 	}
@@ -536,6 +567,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPort() {
 		return portEClass;
 	}
@@ -545,6 +577,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPort_Description() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(0);
 	}
@@ -554,6 +587,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPort_UsesIdentifier() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(1);
 	}
@@ -563,6 +597,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPort_ProvidesIndentifier() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(2);
 	}
@@ -572,6 +607,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPort_SupportedIdentifier() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(3);
 	}
@@ -581,6 +617,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPort_ComponentInstantiationRef() {
 		return (EReference)portEClass.getEStructuralFeatures().get(4);
 	}
@@ -591,6 +628,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPort_ExternalName() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(5);
 	}
@@ -600,6 +638,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSadPartitioning() {
 		return sadPartitioningEClass;
 	}
@@ -609,6 +648,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSadPartitioning_HostCollocation() {
 		return (EReference)sadPartitioningEClass.getEStructuralFeatures().get(0);
 	}
@@ -618,6 +658,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSadComponentPlacement() {
 		return sadComponentPlacementEClass;
 	}
@@ -627,6 +668,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getResourceFactoryProperties() {
 		return resourceFactoryPropertiesEClass;
 	}
@@ -636,6 +678,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getResourceFactoryProperties_Group() {
 		return (EAttribute)resourceFactoryPropertiesEClass.getEStructuralFeatures().get(0);
 	}
@@ -645,6 +688,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getResourceFactoryProperties_SimpleRef() {
 		return (EReference)resourceFactoryPropertiesEClass.getEStructuralFeatures().get(1);
 	}
@@ -654,6 +698,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getResourceFactoryProperties_SimpleSequenceRef() {
 		return (EReference)resourceFactoryPropertiesEClass.getEStructuralFeatures().get(2);
 	}
@@ -663,6 +708,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getResourceFactoryProperties_StructRef() {
 		return (EReference)resourceFactoryPropertiesEClass.getEStructuralFeatures().get(3);
 	}
@@ -672,6 +718,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getResourceFactoryProperties_StructSequenceRef() {
 		return (EReference)resourceFactoryPropertiesEClass.getEStructuralFeatures().get(4);
 	}
@@ -681,6 +728,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getResourceFactoryProperties_FactoryRef() {
 		return (EReference)resourceFactoryPropertiesEClass.getEStructuralFeatures().get(5);
 	}
@@ -690,6 +738,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSadDocumentRoot() {
 		return sadDocumentRootEClass;
 	}
@@ -699,6 +748,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSadDocumentRoot_Mixed() {
 		return (EAttribute)sadDocumentRootEClass.getEStructuralFeatures().get(0);
 	}
@@ -708,6 +758,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSadDocumentRoot_XMLNSPrefixMap() {
 		return (EReference)sadDocumentRootEClass.getEStructuralFeatures().get(1);
 	}
@@ -717,6 +768,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSadDocumentRoot_XSISchemaLocation() {
 		return (EReference)sadDocumentRootEClass.getEStructuralFeatures().get(2);
 	}
@@ -726,6 +778,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSadDocumentRoot_Softwareassembly() {
 		return (EReference)sadDocumentRootEClass.getEStructuralFeatures().get(3);
 	}
@@ -735,6 +788,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSoftwareAssembly() {
 		return softwareAssemblyEClass;
 	}
@@ -744,6 +798,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSoftwareAssembly_Description() {
 		return (EAttribute)softwareAssemblyEClass.getEStructuralFeatures().get(0);
 	}
@@ -753,6 +808,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSoftwareAssembly_ComponentFiles() {
 		return (EReference)softwareAssemblyEClass.getEStructuralFeatures().get(1);
 	}
@@ -762,6 +818,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSoftwareAssembly_Partitioning() {
 		return (EReference)softwareAssemblyEClass.getEStructuralFeatures().get(2);
 	}
@@ -771,6 +828,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSoftwareAssembly_AssemblyController() {
 		return (EReference)softwareAssemblyEClass.getEStructuralFeatures().get(3);
 	}
@@ -780,6 +838,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSoftwareAssembly_Connections() {
 		return (EReference)softwareAssemblyEClass.getEStructuralFeatures().get(4);
 	}
@@ -789,6 +848,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSoftwareAssembly_ExternalPorts() {
 		return (EReference)softwareAssemblyEClass.getEStructuralFeatures().get(5);
 	}
@@ -799,6 +859,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSoftwareAssembly_ExternalProperties() {
 		return (EReference)softwareAssemblyEClass.getEStructuralFeatures().get(6);
 	}
@@ -808,6 +869,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSoftwareAssembly_Id() {
 		return (EAttribute)softwareAssemblyEClass.getEStructuralFeatures().get(7);
 	}
@@ -817,6 +879,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSoftwareAssembly_Name() {
 		return (EAttribute)softwareAssemblyEClass.getEStructuralFeatures().get(8);
 	}
@@ -826,6 +889,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSoftwareAssembly_Version() {
 		return (EAttribute)softwareAssemblyEClass.getEStructuralFeatures().get(9);
 	}
@@ -835,6 +899,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadFactory getSadFactory() {
 		return (SadFactory)getEFactoryInstance();
 	}

@@ -74,6 +74,7 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Interface> getInterface() {
 		if (interface_ == null)
 		{

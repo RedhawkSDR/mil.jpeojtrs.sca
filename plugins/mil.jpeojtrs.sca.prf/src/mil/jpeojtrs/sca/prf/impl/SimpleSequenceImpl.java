@@ -141,7 +141,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	/**
 	 * The default value of the '{@link #getComplex() <em>Complex</em>}' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see #getComplex()
 	 * @generated
@@ -151,7 +151,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	/**
 	 * The cached value of the '{@link #getComplex() <em>Complex</em>}' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see #getComplex()
 	 * @generated
@@ -183,6 +183,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Values getValues() {
 		return values;
 	}
@@ -208,6 +209,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValues(Values newValues) {
 		if (newValues != values)
 		{
@@ -228,6 +230,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUnits() {
 		return units;
 	}
@@ -237,6 +240,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUnits(String newUnits) {
 		String oldUnits = units;
 		units = newUnits;
@@ -249,6 +253,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Range getRange() {
 		return range;
 	}
@@ -274,6 +279,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRange(Range newRange) {
 		if (newRange != range)
 		{
@@ -294,6 +300,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Kind> getKind() {
 		if (kind == null)
 		{
@@ -307,6 +314,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Action getAction() {
 		return action;
 	}
@@ -332,6 +340,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAction(Action newAction) {
 		if (newAction != action)
 		{
@@ -352,6 +361,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PropertyValueType getType() {
 		return type;
 	}
@@ -361,6 +371,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(PropertyValueType newType) {
 		PropertyValueType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -375,6 +386,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void unsetType() {
 		PropertyValueType oldType = type;
 		boolean oldTypeESet = typeESet;
@@ -389,44 +401,48 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSetType() {
 		return typeESet;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public Boolean getComplex() {
+	@Override
+	public Boolean getComplex() {
 		return complex;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public void setComplex(Boolean newComplex) {
+	@Override
+	public void setComplex(Boolean newComplex) {
 		Boolean oldComplex = complex;
 		complex = newComplex;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE__COMPLEX, oldComplex, complex));
 	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public boolean isComplex() {
-    	return (complex != null && complex);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public boolean isComplex() {
+		return (complex != null && complex);
+	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -591,6 +607,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 		return result.toString();
 	}
 
+	@Override
 	public boolean isKind(PropertyConfigurationType ... type) {
 		// END GENERATED CODE
 		if (type == null) {
@@ -613,8 +630,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	}
 
 	@Override
-    public Any toAny() {
+	public Any toAny() {
 		return AnyUtils.toAny(getValues().getValue().toArray(), getType().getLiteral(), isComplex());
-    }
+	}
 
 } //SimpleSequenceImpl

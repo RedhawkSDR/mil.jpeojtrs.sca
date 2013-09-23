@@ -192,6 +192,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getMixed() {
 		if (mixed == null) {
 			mixed = new BasicFeatureMap(this, DpdPackage.DOCUMENT_ROOT__MIXED);
@@ -204,6 +205,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
 		if (xMLNSPrefixMap == null) {
 			xMLNSPrefixMap = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, DpdPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
@@ -216,6 +218,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXSISchemaLocation() {
 		if (xSISchemaLocation == null) {
 			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, DpdPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
@@ -228,6 +231,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Author getAuthor() {
 		return (Author)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__AUTHOR, true);
 	}
@@ -246,6 +250,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAuthor(Author newAuthor) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__AUTHOR, newAuthor);
 	}
@@ -255,6 +260,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ChildHwDevice getChildhwdevice() {
 		return (ChildHwDevice)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__CHILDHWDEVICE, true);
 	}
@@ -273,6 +279,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setChildhwdevice(ChildHwDevice newChildhwdevice) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__CHILDHWDEVICE, newChildhwdevice);
 	}
@@ -282,6 +289,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getClass_() {
 		return (String)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__CLASS, true);
 	}
@@ -291,6 +299,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setClass(String newClass) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__CLASS, newClass);
 	}
@@ -300,6 +309,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCompany() {
 		return (String)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__COMPANY, true);
 	}
@@ -309,6 +319,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCompany(String newCompany) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__COMPANY, newCompany);
 	}
@@ -318,6 +329,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return (String)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__DESCRIPTION, true);
 	}
@@ -327,6 +339,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__DESCRIPTION, newDescription);
 	}
@@ -336,6 +349,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceClass getDeviceclass() {
 		return (DeviceClass)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__DEVICECLASS, true);
 	}
@@ -354,6 +368,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeviceclass(DeviceClass newDeviceclass) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__DEVICECLASS, newDeviceclass);
 	}
@@ -363,6 +378,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DevicePkg getDevicepkg() {
 		return (DevicePkg)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__DEVICEPKG, true);
 	}
@@ -381,6 +397,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDevicepkg(DevicePkg newDevicepkg) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__DEVICEPKG, newDevicepkg);
 	}
@@ -390,6 +407,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DevicePkgRef getDevicepkgref() {
 		return (DevicePkgRef)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__DEVICEPKGREF, true);
 	}
@@ -408,6 +426,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDevicepkgref(DevicePkgRef newDevicepkgref) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__DEVICEPKGREF, newDevicepkgref);
 	}
@@ -417,6 +436,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HwDeviceRegistration getHwdeviceregistration() {
 		return (HwDeviceRegistration)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__HWDEVICEREGISTRATION, true);
 	}
@@ -435,6 +455,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHwdeviceregistration(HwDeviceRegistration newHwdeviceregistration) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__HWDEVICEREGISTRATION, newHwdeviceregistration);
 	}
@@ -444,6 +465,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalFile getLocalfile() {
 		return (LocalFile)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__LOCALFILE, true);
 	}
@@ -462,6 +484,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLocalfile(LocalFile newLocalfile) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__LOCALFILE, newLocalfile);
 	}
@@ -471,6 +494,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getManufacturer() {
 		return (String)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__MANUFACTURER, true);
 	}
@@ -480,6 +504,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setManufacturer(String newManufacturer) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__MANUFACTURER, newManufacturer);
 	}
@@ -489,6 +514,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getModelnumber() {
 		return (String)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__MODELNUMBER, true);
 	}
@@ -498,6 +524,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModelnumber(String newModelnumber) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__MODELNUMBER, newModelnumber);
 	}
@@ -507,6 +534,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__NAME, true);
 	}
@@ -516,6 +544,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__NAME, newName);
 	}
@@ -525,6 +554,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PropertyFile getPropertyfile() {
 		return (PropertyFile)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__PROPERTYFILE, true);
 	}
@@ -543,6 +573,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPropertyfile(PropertyFile newPropertyfile) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__PROPERTYFILE, newPropertyfile);
 	}
@@ -552,6 +583,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTitle() {
 		return (String)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__TITLE, true);
 	}
@@ -561,6 +593,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTitle(String newTitle) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__TITLE, newTitle);
 	}
@@ -570,6 +603,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getWebpage() {
 		return (String)getMixed().get(DpdPackage.Literals.DOCUMENT_ROOT__WEBPAGE, true);
 	}
@@ -579,6 +613,7 @@ public class DocumentRootImpl extends EObjectImpl implements DocumentRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setWebpage(String newWebpage) {
 		((FeatureMap.Internal)getMixed()).set(DpdPackage.Literals.DOCUMENT_ROOT__WEBPAGE, newWebpage);
 	}

@@ -114,6 +114,7 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SadComponentPlacement> getComponentPlacement() {
 		if (componentPlacement == null)
 		{
@@ -127,6 +128,7 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -136,6 +138,7 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -148,6 +151,7 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -157,6 +161,7 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

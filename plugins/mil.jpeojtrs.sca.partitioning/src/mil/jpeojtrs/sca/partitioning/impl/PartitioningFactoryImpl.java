@@ -152,6 +152,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomComponentFile createDomComponentFile() {
 		DomComponentFileImpl domComponentFile = new DomComponentFileImpl();
 		return domComponentFile;
@@ -162,6 +163,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DevComponentFile createDevComponentFile() {
 		DevComponentFileImpl devComponentFile = new DevComponentFileImpl();
 		return devComponentFile;
@@ -172,6 +174,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentFileRef createComponentFileRef() {
 		ComponentFileRefImpl componentFileRef = new ComponentFileRefImpl();
 		return componentFileRef;
@@ -182,6 +185,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentFiles createComponentFiles() {
 		ComponentFilesImpl componentFiles = new ComponentFilesImpl();
 		return componentFiles;
@@ -192,6 +196,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentInstantiation createComponentInstantiation() {
 		ComponentInstantiationImpl componentInstantiation = new ComponentInstantiationImpl();
 		return componentInstantiation;
@@ -202,6 +207,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentProperties createComponentProperties() {
 		ComponentPropertiesImpl componentProperties = new ComponentPropertiesImpl();
 		return componentProperties;
@@ -212,6 +218,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentSupportedInterface createComponentSupportedInterface() {
 		ComponentSupportedInterfaceImpl componentSupportedInterface = new ComponentSupportedInterfaceImpl();
 		return componentSupportedInterface;
@@ -222,6 +229,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentSupportedInterfaceStub createComponentSupportedInterfaceStub() {
 		ComponentSupportedInterfaceStubImpl componentSupportedInterfaceStub = new ComponentSupportedInterfaceStubImpl();
 		return componentSupportedInterfaceStub;
@@ -232,6 +240,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceThatLoadedThisComponentRef createDeviceThatLoadedThisComponentRef() {
 		DeviceThatLoadedThisComponentRefImpl deviceThatLoadedThisComponentRef = new DeviceThatLoadedThisComponentRefImpl();
 		return deviceThatLoadedThisComponentRef;
@@ -242,6 +251,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceUsedByThisComponentRef createDeviceUsedByThisComponentRef() {
 		DeviceUsedByThisComponentRefImpl deviceUsedByThisComponentRef = new DeviceUsedByThisComponentRefImpl();
 		return deviceUsedByThisComponentRef;
@@ -252,6 +262,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainFinder createDomainFinder() {
 		DomainFinderImpl domainFinder = new DomainFinderImpl();
 		return domainFinder;
@@ -262,6 +273,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FindBy createFindBy() {
 		FindByImpl findBy = new FindByImpl();
 		return findBy;
@@ -272,6 +284,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FindByStub createFindByStub() {
 		FindByStubImpl findByStub = new FindByStubImpl();
 		return findByStub;
@@ -282,6 +295,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FindByStubContainer createFindByStubContainer() {
 		FindByStubContainerImpl findByStubContainer = new FindByStubContainerImpl();
 		return findByStubContainer;
@@ -292,6 +306,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalFile createLocalFile() {
 		LocalFileImpl localFile = new LocalFileImpl();
 		return localFile;
@@ -302,6 +317,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NamingService createNamingService() {
 		NamingServiceImpl namingService = new NamingServiceImpl();
 		return namingService;
@@ -312,6 +328,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProvidesPortStub createProvidesPortStub() {
 		ProvidesPortStubImpl providesPortStub = new ProvidesPortStubImpl();
 		return providesPortStub;
@@ -322,6 +339,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UsesPortStub createUsesPortStub() {
 		UsesPortStubImpl usesPortStub = new UsesPortStubImpl();
 		return usesPortStub;
@@ -370,6 +388,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PartitioningPackage getPartitioningPackage() {
 		return (PartitioningPackage)getEPackage();
 	}

@@ -111,6 +111,7 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSupportedIdentifier() {
 		return supportedIdentifier;
 	}
@@ -132,6 +133,7 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setSupportedIdentifier(final String newSupportedIdentifier) {
 		Interface oldValue = getInterface();
 		setSupportedIdentifierGen(newSupportedIdentifier);
@@ -145,6 +147,7 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentInstantiationRef<?> getComponentInstantiationRef() {
 		return componentInstantiationRef;
 	}
@@ -170,6 +173,7 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentInstantiationRef(ComponentInstantiationRef<?> newComponentInstantiationRef) {
 		if (newComponentInstantiationRef != componentInstantiationRef)
 		{
@@ -190,6 +194,7 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FindBy getFindBy() {
 		return findBy;
 	}
@@ -215,6 +220,7 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFindBy(FindBy newFindBy) {
 		if (newFindBy != findBy)
 		{
@@ -235,6 +241,7 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Interface getInterface() {
 		Interface interface_ = basicGetInterface();
 		return interface_ != null && interface_.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)interface_) : interface_;
@@ -300,6 +307,7 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setInterface(Interface newInterface) {
 		// END GENERATED CODE
 		String repId = null;

@@ -79,6 +79,7 @@ public class InheritsInterfaceImpl extends EObjectImpl implements InheritsInterf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRepid() {
 		return repid;
 	}
@@ -88,6 +89,7 @@ public class InheritsInterfaceImpl extends EObjectImpl implements InheritsInterf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRepid(String newRepid) {
 		String oldRepid = repid;
 		repid = newRepid;
@@ -100,6 +102,7 @@ public class InheritsInterfaceImpl extends EObjectImpl implements InheritsInterf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Interface getInterface() {
 		Interface interface_ = basicGetInterface();
 		return interface_ != null && interface_.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)interface_) : interface_;
@@ -122,6 +125,7 @@ public class InheritsInterfaceImpl extends EObjectImpl implements InheritsInterf
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setInterface(Interface newInterface) {
 		// END GENERATED CODE
 		this.setRepid(newInterface.getRepid());

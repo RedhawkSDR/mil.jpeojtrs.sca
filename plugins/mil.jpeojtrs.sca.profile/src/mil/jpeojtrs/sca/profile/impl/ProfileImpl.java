@@ -96,6 +96,7 @@ public class ProfileImpl extends EObjectImpl implements Profile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFilename() {
 		return filename;
 	}
@@ -105,6 +106,7 @@ public class ProfileImpl extends EObjectImpl implements Profile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFilename(String newFilename) {
 		String oldFilename = filename;
 		filename = newFilename;
@@ -117,6 +119,7 @@ public class ProfileImpl extends EObjectImpl implements Profile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -126,6 +129,7 @@ public class ProfileImpl extends EObjectImpl implements Profile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;

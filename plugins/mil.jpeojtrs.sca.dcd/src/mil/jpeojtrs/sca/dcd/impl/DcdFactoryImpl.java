@@ -113,6 +113,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdComponentPlacement createDcdComponentPlacement() {
 		DcdComponentPlacementImpl dcdComponentPlacement = new DcdComponentPlacementImpl();
 		return dcdComponentPlacement;
@@ -123,6 +124,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdComponentInstantiation createDcdComponentInstantiation() {
 		DcdComponentInstantiationImpl dcdComponentInstantiation = new DcdComponentInstantiationImpl();
 		return dcdComponentInstantiation;
@@ -133,6 +135,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdPartitioning createDcdPartitioning() {
 		DcdPartitioningImpl dcdPartitioning = new DcdPartitioningImpl();
 		return dcdPartitioning;
@@ -143,6 +146,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdComponentInstantiationRef createDcdComponentInstantiationRef() {
 		DcdComponentInstantiationRefImpl dcdComponentInstantiationRef = new DcdComponentInstantiationRefImpl();
 		return dcdComponentInstantiationRef;
@@ -153,6 +157,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdConnectInterface createDcdConnectInterface() {
 		DcdConnectInterfaceImpl dcdConnectInterface = new DcdConnectInterfaceImpl();
 		return dcdConnectInterface;
@@ -163,6 +168,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdUsesPort createDcdUsesPort() {
 		DcdUsesPortImpl dcdUsesPort = new DcdUsesPortImpl();
 		return dcdUsesPort;
@@ -173,6 +179,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdProvidesPort createDcdProvidesPort() {
 		DcdProvidesPortImpl dcdProvidesPort = new DcdProvidesPortImpl();
 		return dcdProvidesPort;
@@ -183,6 +190,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdConnections createDcdConnections() {
 		DcdConnectionsImpl dcdConnections = new DcdConnectionsImpl();
 		return dcdConnections;
@@ -193,6 +201,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CompositePartOfDevice createCompositePartOfDevice() {
 		CompositePartOfDeviceImpl compositePartOfDevice = new CompositePartOfDeviceImpl();
 		return compositePartOfDevice;
@@ -203,6 +212,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdDocumentRoot createDcdDocumentRoot() {
 		DcdDocumentRootImpl dcdDocumentRoot = new DcdDocumentRootImpl();
 		return dcdDocumentRoot;
@@ -213,6 +223,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeployOnDevice createDeployOnDevice() {
 		DeployOnDeviceImpl deployOnDevice = new DeployOnDeviceImpl();
 		return deployOnDevice;
@@ -223,6 +234,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceConfiguration createDeviceConfiguration() {
 		DeviceConfigurationImpl deviceConfiguration = new DeviceConfigurationImpl();
 		return deviceConfiguration;
@@ -233,6 +245,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceManagerSoftPkg createDeviceManagerSoftPkg() {
 		DeviceManagerSoftPkgImpl deviceManagerSoftPkg = new DeviceManagerSoftPkgImpl();
 		return deviceManagerSoftPkg;
@@ -243,6 +256,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DevicePkgFile createDevicePkgFile() {
 		DevicePkgFileImpl devicePkgFile = new DevicePkgFileImpl();
 		return devicePkgFile;
@@ -253,6 +267,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainManager createDomainManager() {
 		DomainManagerImpl domainManager = new DomainManagerImpl();
 		return domainManager;
@@ -263,6 +278,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FileSystemName createFileSystemName() {
 		FileSystemNameImpl fileSystemName = new FileSystemNameImpl();
 		return fileSystemName;
@@ -273,6 +289,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FileSystemNames createFileSystemNames() {
 		FileSystemNamesImpl fileSystemNames = new FileSystemNamesImpl();
 		return fileSystemNames;
@@ -283,6 +300,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdPackage getDcdPackage() {
 		return (DcdPackage)getEPackage();
 	}
@@ -298,6 +316,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 		return DcdPackage.eINSTANCE;
 	}
 
+	@Override
 	public DevComponentFile createComponentFile() {
 	    return PartitioningFactory.eINSTANCE.createDevComponentFile();
     }

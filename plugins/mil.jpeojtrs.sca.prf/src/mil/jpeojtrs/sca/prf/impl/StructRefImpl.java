@@ -93,6 +93,7 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleRef> getSimpleRef() {
 		if (simpleRef == null)
 		{
@@ -106,6 +107,7 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public PropertyContainer getPropertyContainer() {
 		// END GENERATED CODE
 		return getProperty();

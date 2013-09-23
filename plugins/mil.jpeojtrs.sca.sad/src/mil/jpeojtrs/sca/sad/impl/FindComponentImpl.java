@@ -82,6 +82,7 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentResourceFactoryRef getComponentResourceFactoryRef() {
 		return componentResourceFactoryRef;
 	}
@@ -107,6 +108,7 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentResourceFactoryRef(ComponentResourceFactoryRef newComponentResourceFactoryRef) {
 		if (newComponentResourceFactoryRef != componentResourceFactoryRef)
 		{
@@ -127,6 +129,7 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NamingService getNamingService() {
 		return namingService;
 	}
@@ -152,6 +155,7 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNamingService(NamingService newNamingService) {
 		if (newNamingService != namingService)
 		{

@@ -77,6 +77,7 @@ public class NamingServiceImpl extends EObjectImpl implements NamingService {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object getName() {
 		return name;
 	}
@@ -86,6 +87,7 @@ public class NamingServiceImpl extends EObjectImpl implements NamingService {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(Object newName) {
 		Object oldName = name;
 		name = newName;

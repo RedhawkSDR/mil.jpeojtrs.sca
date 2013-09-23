@@ -87,6 +87,7 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 			final IItemLabelProvider lp = super.getLabelProvider(thisObject);
 			return new IItemLabelProvider() {
 
+				@Override
 				@SuppressWarnings("unchecked")
 				public String getText(Object object) {
 					List<String> value = null;
@@ -100,6 +101,7 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 					return getValueText(property, value);
 				}
 
+				@Override
 				public Object getImage(Object object) {
 					return lp.getImage(object);
 				}

@@ -181,6 +181,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUsageName() {
 		return usageName;
 	}
@@ -190,6 +191,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUsageName(String newUsageName) {
 		String oldUsageName = usageName;
 		usageName = newUsageName;
@@ -202,6 +204,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentProperties getComponentProperties() {
 		return componentProperties;
 	}
@@ -227,6 +230,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentProperties(ComponentProperties newComponentProperties) {
 		if (newComponentProperties != componentProperties)
 		{
@@ -247,6 +251,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ProvidesPortStub> getProvides() {
 		if (provides == null)
 		{
@@ -260,6 +265,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<UsesPortStub> getUses() {
 		if (uses == null)
 		{
@@ -273,6 +279,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentSupportedInterfaceStub getInterfaceStub() {
 		return interfaceStub;
 	}
@@ -298,6 +305,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInterfaceStub(ComponentSupportedInterfaceStub newInterfaceStub) {
 		if (newInterfaceStub != interfaceStub)
 		{
@@ -318,6 +326,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -327,6 +336,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -339,6 +349,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentPlacement<?> getPlacement() {
 		if (eContainerFeatureID() != PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT) return null;
 		return (ComponentPlacement<?>)eInternalContainer();
@@ -359,6 +370,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPlacement(ComponentPlacement<?> newPlacement) {
 		if (newPlacement != eInternalContainer() || (eContainerFeatureID() != PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT && newPlacement != null))
 		{
@@ -382,6 +394,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getImplID() {
 		return implID;
 	}
@@ -392,6 +405,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImplID(String newImplID) {
 		String oldImplID = implID;
 		implID = newImplID;
@@ -595,6 +609,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	}
 
 	private class PlacementAdapter extends AdapterImpl {
+		@Override
 		public void notifyChanged(Notification msg) {
 			switch (msg.getFeatureID(ComponentPlacement.class)) {
 			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:

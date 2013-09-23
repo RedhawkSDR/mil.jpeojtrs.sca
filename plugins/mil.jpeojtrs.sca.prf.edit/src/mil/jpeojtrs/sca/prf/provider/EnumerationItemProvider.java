@@ -157,6 +157,7 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 		return PrfEditPlugin.INSTANCE;
 	}
 
+	@Override
 	public String getColumnText(Object object, int columnIndex) {
 		switch (columnIndex) {
 		case 0:

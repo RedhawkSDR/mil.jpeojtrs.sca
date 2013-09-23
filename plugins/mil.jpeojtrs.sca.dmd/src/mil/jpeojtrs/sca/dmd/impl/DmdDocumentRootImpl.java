@@ -98,6 +98,7 @@ public class DmdDocumentRootImpl extends EObjectImpl implements DmdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getMixed() {
 		if (mixed == null)
 		{
@@ -111,6 +112,7 @@ public class DmdDocumentRootImpl extends EObjectImpl implements DmdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
 		if (xMLNSPrefixMap == null)
 		{
@@ -124,6 +126,7 @@ public class DmdDocumentRootImpl extends EObjectImpl implements DmdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXSISchemaLocation() {
 		if (xSISchemaLocation == null)
 		{
@@ -137,6 +140,7 @@ public class DmdDocumentRootImpl extends EObjectImpl implements DmdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainManagerConfiguration getDomainmanagerconfiguration() {
 		return (DomainManagerConfiguration)getMixed().get(DmdPackage.Literals.DMD_DOCUMENT_ROOT__DOMAINMANAGERCONFIGURATION, true);
 	}
@@ -155,6 +159,7 @@ public class DmdDocumentRootImpl extends EObjectImpl implements DmdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDomainmanagerconfiguration(DomainManagerConfiguration newDomainmanagerconfiguration) {
 		((FeatureMap.Internal)getMixed()).set(DmdPackage.Literals.DMD_DOCUMENT_ROOT__DOMAINMANAGERCONFIGURATION, newDomainmanagerconfiguration);
 	}

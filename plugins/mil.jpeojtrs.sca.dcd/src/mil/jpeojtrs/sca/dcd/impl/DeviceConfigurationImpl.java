@@ -183,6 +183,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -192,6 +193,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -204,6 +206,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceManagerSoftPkg getDeviceManagerSoftPkg() {
 		return deviceManagerSoftPkg;
 	}
@@ -229,6 +232,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeviceManagerSoftPkg(DeviceManagerSoftPkg newDeviceManagerSoftPkg) {
 		if (newDeviceManagerSoftPkg != deviceManagerSoftPkg)
 		{
@@ -249,6 +253,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentFiles getComponentFiles() {
 		return componentFiles;
 	}
@@ -274,6 +279,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentFiles(ComponentFiles newComponentFiles) {
 		if (newComponentFiles != componentFiles)
 		{
@@ -294,6 +300,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdPartitioning getPartitioning() {
 		return partitioning;
 	}
@@ -319,6 +326,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPartitioning(DcdPartitioning newPartitioning) {
 		if (newPartitioning != partitioning)
 		{
@@ -339,6 +347,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdConnections getConnections() {
 		return connections;
 	}
@@ -364,6 +373,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConnections(DcdConnections newConnections) {
 		if (newConnections != connections)
 		{
@@ -384,6 +394,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainManager getDomainManager() {
 		return domainManager;
 	}
@@ -409,6 +420,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDomainManager(DomainManager newDomainManager) {
 		if (newDomainManager != domainManager)
 		{
@@ -429,6 +441,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FileSystemNames getFileSystemNames() {
 		return fileSystemNames;
 	}
@@ -454,6 +467,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFileSystemNames(FileSystemNames newFileSystemNames) {
 		if (newFileSystemNames != fileSystemNames)
 		{
@@ -474,6 +488,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -483,6 +498,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -495,6 +511,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -504,6 +521,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

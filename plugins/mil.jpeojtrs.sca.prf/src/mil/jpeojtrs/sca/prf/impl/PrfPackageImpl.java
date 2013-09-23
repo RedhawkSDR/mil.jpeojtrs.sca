@@ -330,72 +330,72 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexBooleanEDataType = null;
-    /**
+	private EDataType complexBooleanEDataType = null;
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexByteEDataType = null;
-    /**
+	private EDataType complexByteEDataType = null;
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexDoubleEDataType = null;
-    /**
+	private EDataType complexDoubleEDataType = null;
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexFloatEDataType = null;
-    /**
+	private EDataType complexFloatEDataType = null;
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexLongEDataType = null;
-    /**
+	private EDataType complexLongEDataType = null;
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexLongLongEDataType = null;
-    /**
+	private EDataType complexLongLongEDataType = null;
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexShortEDataType = null;
-    /**
+	private EDataType complexShortEDataType = null;
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexUByteEDataType = null;
-    /**
+	private EDataType complexUByteEDataType = null;
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexULongEDataType = null;
-    /**
+	private EDataType complexULongEDataType = null;
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexULongLongEDataType = null;
-    /**
+	private EDataType complexULongLongEDataType = null;
+	/**
 	 * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    private EDataType complexUShortEDataType = null;
+	private EDataType complexUShortEDataType = null;
 
-    /**
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -456,7 +456,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			(thePrfPackage, 
 			 new EValidator.Descriptor()
 			 {
-				 public EValidator getEValidator()
+				 @Override
+				public EValidator getEValidator()
 				 {
 					 return PrfValidator.INSTANCE;
 				 }
@@ -477,6 +478,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			AdvancedEObjectValidator validator = new AdvancedEObjectValidator(PrfValidator.INSTANCE);
+			@Override
 			public EValidator getEValidator() {
 				return this.validator;
 			}
@@ -490,6 +492,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractProperty() {
 		return abstractPropertyEClass;
 	}
@@ -499,6 +502,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractProperty_Description() {
 		return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(0);
 	}
@@ -508,6 +512,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractProperty_Id() {
 		return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(1);
 	}
@@ -517,6 +522,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractProperty_LocalMode() {
 		return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(2);
 	}
@@ -526,6 +532,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractProperty_Name() {
 		return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(3);
 	}
@@ -535,6 +542,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractProperty_Mode() {
 		return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(4);
 	}
@@ -544,6 +552,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAction() {
 		return actionEClass;
 	}
@@ -553,6 +562,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAction_Type() {
 		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
 	}
@@ -562,6 +572,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConfigurationKind() {
 		return configurationKindEClass;
 	}
@@ -571,6 +582,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConfigurationKind_Type() {
 		return (EAttribute)configurationKindEClass.getEStructuralFeatures().get(0);
 	}
@@ -580,6 +592,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEnumeration() {
 		return enumerationEClass;
 	}
@@ -589,6 +602,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnumeration_Label() {
 		return (EAttribute)enumerationEClass.getEStructuralFeatures().get(0);
 	}
@@ -598,6 +612,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnumeration_Value() {
 		return (EAttribute)enumerationEClass.getEStructuralFeatures().get(1);
 	}
@@ -607,6 +622,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEnumerations() {
 		return enumerationsEClass;
 	}
@@ -616,6 +632,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEnumerations_Enumeration() {
 		return (EReference)enumerationsEClass.getEStructuralFeatures().get(0);
 	}
@@ -625,6 +642,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInputValue() {
 		return inputValueEClass;
 	}
@@ -634,6 +652,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInputValue_Simple() {
 		return (EReference)inputValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -643,6 +662,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getKind() {
 		return kindEClass;
 	}
@@ -652,6 +672,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKind_Type() {
 		return (EAttribute)kindEClass.getEStructuralFeatures().get(0);
 	}
@@ -661,6 +682,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPrfDocumentRoot() {
 		return prfDocumentRootEClass;
 	}
@@ -670,6 +692,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPrfDocumentRoot_Mixed() {
 		return (EAttribute)prfDocumentRootEClass.getEStructuralFeatures().get(0);
 	}
@@ -679,6 +702,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPrfDocumentRoot_XMLNSPrefixMap() {
 		return (EReference)prfDocumentRootEClass.getEStructuralFeatures().get(1);
 	}
@@ -688,6 +712,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPrfDocumentRoot_XSISchemaLocation() {
 		return (EReference)prfDocumentRootEClass.getEStructuralFeatures().get(2);
 	}
@@ -697,6 +722,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPrfDocumentRoot_Properties() {
 		return (EReference)prfDocumentRootEClass.getEStructuralFeatures().get(3);
 	}
@@ -706,6 +732,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProperties() {
 		return propertiesEClass;
 	}
@@ -715,6 +742,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProperties_Description() {
 		return (EAttribute)propertiesEClass.getEStructuralFeatures().get(0);
 	}
@@ -724,6 +752,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProperties_Properties() {
 		return (EAttribute)propertiesEClass.getEStructuralFeatures().get(1);
 	}
@@ -733,6 +762,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProperties_Simple() {
 		return (EReference)propertiesEClass.getEStructuralFeatures().get(2);
 	}
@@ -742,6 +772,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProperties_SimpleSequence() {
 		return (EReference)propertiesEClass.getEStructuralFeatures().get(3);
 	}
@@ -751,6 +782,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProperties_Test() {
 		return (EReference)propertiesEClass.getEStructuralFeatures().get(4);
 	}
@@ -760,6 +792,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProperties_Struct() {
 		return (EReference)propertiesEClass.getEStructuralFeatures().get(5);
 	}
@@ -769,6 +802,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProperties_StructSequence() {
 		return (EReference)propertiesEClass.getEStructuralFeatures().get(6);
 	}
@@ -778,6 +812,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRange() {
 		return rangeEClass;
 	}
@@ -787,6 +822,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRange_Max() {
 		return (EAttribute)rangeEClass.getEStructuralFeatures().get(0);
 	}
@@ -796,6 +832,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRange_Min() {
 		return (EAttribute)rangeEClass.getEStructuralFeatures().get(1);
 	}
@@ -805,6 +842,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getResultValue() {
 		return resultValueEClass;
 	}
@@ -814,6 +852,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getResultValue_Simple() {
 		return (EReference)resultValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -823,6 +862,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSimple() {
 		return simpleEClass;
 	}
@@ -832,6 +872,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimple_Value() {
 		return (EAttribute)simpleEClass.getEStructuralFeatures().get(0);
 	}
@@ -841,6 +882,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimple_Units() {
 		return (EAttribute)simpleEClass.getEStructuralFeatures().get(1);
 	}
@@ -850,6 +892,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimple_Range() {
 		return (EReference)simpleEClass.getEStructuralFeatures().get(2);
 	}
@@ -859,6 +902,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimple_Enumerations() {
 		return (EReference)simpleEClass.getEStructuralFeatures().get(3);
 	}
@@ -868,6 +912,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimple_Kind() {
 		return (EReference)simpleEClass.getEStructuralFeatures().get(4);
 	}
@@ -877,6 +922,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimple_Action() {
 		return (EReference)simpleEClass.getEStructuralFeatures().get(5);
 	}
@@ -886,16 +932,18 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimple_Type() {
 		return (EAttribute)simpleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimple_Complex() {
 		return (EAttribute)simpleEClass.getEStructuralFeatures().get(7);
 	}
@@ -905,6 +953,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSimpleSequence() {
 		return simpleSequenceEClass;
 	}
@@ -914,6 +963,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimpleSequence_Values() {
 		return (EReference)simpleSequenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -923,6 +973,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimpleSequence_Units() {
 		return (EAttribute)simpleSequenceEClass.getEStructuralFeatures().get(1);
 	}
@@ -932,6 +983,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimpleSequence_Range() {
 		return (EReference)simpleSequenceEClass.getEStructuralFeatures().get(2);
 	}
@@ -941,6 +993,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimpleSequence_Kind() {
 		return (EReference)simpleSequenceEClass.getEStructuralFeatures().get(3);
 	}
@@ -950,6 +1003,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimpleSequence_Action() {
 		return (EReference)simpleSequenceEClass.getEStructuralFeatures().get(4);
 	}
@@ -959,16 +1013,18 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimpleSequence_Type() {
 		return (EAttribute)simpleSequenceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimpleSequence_Complex() {
 		return (EAttribute)simpleSequenceEClass.getEStructuralFeatures().get(6);
 	}
@@ -978,6 +1034,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStruct() {
 		return structEClass;
 	}
@@ -987,6 +1044,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStruct_Simple() {
 		return (EReference)structEClass.getEStructuralFeatures().get(0);
 	}
@@ -996,6 +1054,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStruct_ConfigurationKind() {
 		return (EReference)structEClass.getEStructuralFeatures().get(1);
 	}
@@ -1005,6 +1064,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStructSequence() {
 		return structSequenceEClass;
 	}
@@ -1014,6 +1074,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStructSequence_Struct() {
 		return (EReference)structSequenceEClass.getEStructuralFeatures().get(0);
 	}
@@ -1023,6 +1084,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStructSequence_StructValue() {
 		return (EReference)structSequenceEClass.getEStructuralFeatures().get(1);
 	}
@@ -1032,6 +1094,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStructSequence_ConfigurationKind() {
 		return (EReference)structSequenceEClass.getEStructuralFeatures().get(2);
 	}
@@ -1041,6 +1104,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStructValue() {
 		return structValueEClass;
 	}
@@ -1050,6 +1114,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStructValue_SimpleRef() {
 		return (EReference)structValueEClass.getEStructuralFeatures().get(0);
 	}
@@ -1059,6 +1124,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStructValue_Struct() {
 		return (EReference)structValueEClass.getEStructuralFeatures().get(1);
 	}
@@ -1068,6 +1134,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getStructValue_Index() {
 		return (EAttribute)structValueEClass.getEStructuralFeatures().get(2);
 	}
@@ -1077,6 +1144,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTest() {
 		return testEClass;
 	}
@@ -1086,6 +1154,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTest_Description() {
 		return (EAttribute)testEClass.getEStructuralFeatures().get(0);
 	}
@@ -1095,6 +1164,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTest_InputValue() {
 		return (EReference)testEClass.getEStructuralFeatures().get(1);
 	}
@@ -1104,6 +1174,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTest_ResultValue() {
 		return (EReference)testEClass.getEStructuralFeatures().get(2);
 	}
@@ -1113,6 +1184,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTest_Id() {
 		return (EAttribute)testEClass.getEStructuralFeatures().get(3);
 	}
@@ -1122,6 +1194,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getValues() {
 		return valuesEClass;
 	}
@@ -1131,6 +1204,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getValues_Value() {
 		return (EAttribute)valuesEClass.getEStructuralFeatures().get(0);
 	}
@@ -1140,6 +1214,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyContainer() {
 		return propertyContainerEClass;
 	}
@@ -1149,6 +1224,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractPropertyRef() {
 		return abstractPropertyRefEClass;
 	}
@@ -1158,6 +1234,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractPropertyRef_RefID() {
 		return (EAttribute)abstractPropertyRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -1167,6 +1244,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractPropertyRef_Property() {
 		return (EReference)abstractPropertyRefEClass.getEStructuralFeatures().get(1);
 	}
@@ -1176,6 +1254,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyRefContainer() {
 		return propertyRefContainerEClass;
 	}
@@ -1185,6 +1264,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyRefGroup() {
 		return propertyRefGroupEClass;
 	}
@@ -1194,6 +1274,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyRefGroup_Properties() {
 		return (EAttribute)propertyRefGroupEClass.getEStructuralFeatures().get(0);
 	}
@@ -1203,6 +1284,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyRefGroup_SimpleRef() {
 		return (EReference)propertyRefGroupEClass.getEStructuralFeatures().get(1);
 	}
@@ -1212,6 +1294,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyRefGroup_SimpleSequenceRef() {
 		return (EReference)propertyRefGroupEClass.getEStructuralFeatures().get(2);
 	}
@@ -1221,6 +1304,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyRefGroup_StructRef() {
 		return (EReference)propertyRefGroupEClass.getEStructuralFeatures().get(3);
 	}
@@ -1230,6 +1314,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyRefGroup_StructSequenceRef() {
 		return (EReference)propertyRefGroupEClass.getEStructuralFeatures().get(4);
 	}
@@ -1239,6 +1324,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyRefSet() {
 		return propertyRefSetEClass;
 	}
@@ -1248,6 +1334,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyRefSet_Properties() {
 		return (EAttribute)propertyRefSetEClass.getEStructuralFeatures().get(0);
 	}
@@ -1257,6 +1344,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyRefSet_SimpleRef() {
 		return (EReference)propertyRefSetEClass.getEStructuralFeatures().get(1);
 	}
@@ -1266,6 +1354,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyRefSet_SimpleSequenceRef() {
 		return (EReference)propertyRefSetEClass.getEStructuralFeatures().get(2);
 	}
@@ -1275,6 +1364,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyRefSet_StructRef() {
 		return (EReference)propertyRefSetEClass.getEStructuralFeatures().get(3);
 	}
@@ -1284,6 +1374,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyRefSet_StructSequenceRef() {
 		return (EReference)propertyRefSetEClass.getEStructuralFeatures().get(4);
 	}
@@ -1293,6 +1384,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSimpleRef() {
 		return simpleRefEClass;
 	}
@@ -1302,6 +1394,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimpleRef_Value() {
 		return (EAttribute)simpleRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -1311,6 +1404,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSimpleSequenceRef() {
 		return simpleSequenceRefEClass;
 	}
@@ -1320,6 +1414,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimpleSequenceRef_Values() {
 		return (EReference)simpleSequenceRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -1329,6 +1424,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStructRef() {
 		return structRefEClass;
 	}
@@ -1338,6 +1434,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStructRef_SimpleRef() {
 		return (EReference)structRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -1347,6 +1444,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStructSequenceRef() {
 		return structSequenceRefEClass;
 	}
@@ -1356,6 +1454,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStructSequenceRef_StructValue() {
 		return (EReference)structSequenceRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -1365,6 +1464,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getAccessType() {
 		return accessTypeEEnum;
 	}
@@ -1374,6 +1474,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getActionType() {
 		return actionTypeEEnum;
 	}
@@ -1383,6 +1484,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getPropertyConfigurationType() {
 		return propertyConfigurationTypeEEnum;
 	}
@@ -1392,6 +1494,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getPropertyValueType() {
 		return propertyValueTypeEEnum;
 	}
@@ -1401,6 +1504,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getStructPropertyConfigurationType() {
 		return structPropertyConfigurationTypeEEnum;
 	}
@@ -1410,6 +1514,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getAccessTypeObject() {
 		return accessTypeObjectEDataType;
 	}
@@ -1419,6 +1524,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getActionTypeObject() {
 		return actionTypeObjectEDataType;
 	}
@@ -1428,6 +1534,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getCharacterObject() {
 		return characterObjectEDataType;
 	}
@@ -1437,6 +1544,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getDceUUID() {
 		return dceUUIDEDataType;
 	}
@@ -1446,6 +1554,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getPropertyConfigurationTypeObject() {
 		return propertyConfigurationTypeObjectEDataType;
 	}
@@ -1455,6 +1564,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getPropertyValueTypeObject() {
 		return propertyValueTypeObjectEDataType;
 	}
@@ -1464,6 +1574,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getStructPropertyConfigurationTypeObject() {
 		return structPropertyConfigurationTypeObjectEDataType;
 	}
@@ -1473,6 +1584,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getUnit() {
 		return unitEDataType;
 	}
@@ -1482,125 +1594,138 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getAny() {
 		return anyEDataType;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexBoolean() {
+	@Override
+	public EDataType getComplexBoolean() {
 		return complexBooleanEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexByte() {
+	@Override
+	public EDataType getComplexByte() {
 		return complexByteEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexDouble() {
+	@Override
+	public EDataType getComplexDouble() {
 		return complexDoubleEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexFloat() {
+	@Override
+	public EDataType getComplexFloat() {
 		return complexFloatEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexLong() {
+	@Override
+	public EDataType getComplexLong() {
 		return complexLongEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexLongLong() {
+	@Override
+	public EDataType getComplexLongLong() {
 		return complexLongLongEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexShort() {
+	@Override
+	public EDataType getComplexShort() {
 		return complexShortEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexUByte() {
+	@Override
+	public EDataType getComplexUByte() {
 		return complexUByteEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexULong() {
+	@Override
+	public EDataType getComplexULong() {
 		return complexULongEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexULongLong() {
+	@Override
+	public EDataType getComplexULongLong() {
 		return complexULongLongEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public EDataType getComplexUShort() {
+	@Override
+	public EDataType getComplexUShort() {
 		return complexUShortEDataType;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PrfFactory getPrfFactory() {
 		return (PrfFactory)getEFactoryInstance();
 	}

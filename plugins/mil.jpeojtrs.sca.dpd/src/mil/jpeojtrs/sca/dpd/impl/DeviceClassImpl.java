@@ -70,6 +70,7 @@ public class DeviceClassImpl extends EObjectImpl implements DeviceClass {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getClass_() {
 		if (class_ == null) {
 			class_ = new EDataTypeEList<String>(String.class, this, DpdPackage.DEVICE_CLASS__CLASS);

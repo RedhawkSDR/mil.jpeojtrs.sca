@@ -93,6 +93,7 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalFile getLocalFile() {
 		return localFile;
 	}
@@ -131,6 +132,7 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLocalFile(LocalFile newLocalFile) {
 		if (newLocalFile != localFile)
 		{
@@ -151,6 +153,7 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -160,6 +163,7 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -172,6 +176,7 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Properties getProperties() {
 		Properties properties = basicGetProperties();
 		return properties != null && properties.eIsProxy() ? (Properties)eResolveProxy((InternalEObject)properties) : properties;
@@ -197,6 +202,7 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void setProperties(final Properties newProperties) {
 		// END GENERATED CODE
 		LocalFile newFile = null;

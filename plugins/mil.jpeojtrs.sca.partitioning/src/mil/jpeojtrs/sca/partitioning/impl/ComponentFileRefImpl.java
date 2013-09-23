@@ -79,6 +79,7 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentFile getFile() {
 		ComponentFile file = basicGetFile();
 		return file != null && file.eIsProxy() ? (ComponentFile)eResolveProxy((InternalEObject)file) : file;
@@ -103,6 +104,7 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setFile(final ComponentFile newFile) {
 		// END GENERATED CODE
 		this.setRefid((newFile == null) ? null : newFile.getId());
@@ -114,6 +116,7 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRefid() {
 		return refid;
 	}
@@ -135,6 +138,7 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setRefid(String newRefid) {
 		ComponentFile oldFile = getFile();
 		setRefidGen(newRefid);

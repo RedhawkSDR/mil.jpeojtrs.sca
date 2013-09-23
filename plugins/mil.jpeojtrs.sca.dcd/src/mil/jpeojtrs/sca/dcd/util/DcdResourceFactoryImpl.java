@@ -56,6 +56,7 @@ public class DcdResourceFactoryImpl extends ResourceFactoryImpl {
 				if (eClass == DcdPackage.Literals.DCD_COMPONENT_PLACEMENT) {
 					Comparator<EStructuralFeature> comparator = new Comparator<EStructuralFeature>() {
 
+						@Override
 						public int compare(EStructuralFeature o1, EStructuralFeature o2) {
 							if (o1 == o2) {
 								return 0;

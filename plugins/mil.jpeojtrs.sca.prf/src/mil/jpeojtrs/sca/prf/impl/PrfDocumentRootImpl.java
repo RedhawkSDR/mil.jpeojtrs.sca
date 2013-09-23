@@ -98,6 +98,7 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getMixed() {
 		if (mixed == null)
 		{
@@ -111,6 +112,7 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
 		if (xMLNSPrefixMap == null)
 		{
@@ -124,6 +126,7 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXSISchemaLocation() {
 		if (xSISchemaLocation == null)
 		{
@@ -137,6 +140,7 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Properties getProperties() {
 		return (Properties)getMixed().get(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, true);
 	}
@@ -155,6 +159,7 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProperties(Properties newProperties) {
 		((FeatureMap.Internal)getMixed()).set(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, newProperties);
 	}

@@ -95,6 +95,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Simple> getSimple() {
 		if (simple == null)
 		{
@@ -108,6 +109,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ConfigurationKind> getConfigurationKind() {
 		if (configurationKind == null)
 		{
@@ -147,6 +149,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public AbstractProperty getProperty(String repID) {
 		// END GENERATED CODE
 		if (repID == null) {

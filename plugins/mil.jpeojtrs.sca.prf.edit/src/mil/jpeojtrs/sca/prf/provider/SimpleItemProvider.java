@@ -88,10 +88,12 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 			final IItemLabelProvider lp = super.getLabelProvider(thisObject);
 			return new IItemLabelProvider() {
 
+				@Override
 				public String getText(Object object) {
 					return getValueText(property, (String) object);
 				}
 
+				@Override
 				public Object getImage(Object object) {
 					return lp.getImage(property);
 				}

@@ -151,6 +151,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCorbaVersion() {
 		return corbaVersion;
 	}
@@ -160,6 +161,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCorbaVersion(String newCorbaVersion) {
 		String oldCorbaVersion = corbaVersion;
 		corbaVersion = newCorbaVersion;
@@ -172,6 +174,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentRepId getComponentRepID() {
 		return componentRepID;
 	}
@@ -197,6 +200,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentRepID(ComponentRepId newComponentRepID) {
 		if (newComponentRepID != componentRepID)
 		{
@@ -217,6 +221,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getComponentType() {
 		return componentType;
 	}
@@ -226,6 +231,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentType(String newComponentType) {
 		String oldComponentType = componentType;
 		componentType = newComponentType;
@@ -238,6 +244,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentFeatures getComponentFeatures() {
 		return componentFeatures;
 	}
@@ -263,6 +270,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentFeatures(ComponentFeatures newComponentFeatures) {
 		if (newComponentFeatures != componentFeatures)
 		{
@@ -283,6 +291,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Interfaces getInterfaces() {
 		return interfaces;
 	}
@@ -308,6 +317,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInterfaces(Interfaces newInterfaces) {
 		if (newInterfaces != interfaces)
 		{
@@ -328,6 +338,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PropertyFile getPropertyFile() {
 		return propertyFile;
 	}
@@ -353,6 +364,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPropertyFile(PropertyFile newPropertyFile) {
 		if (newPropertyFile != propertyFile)
 		{
@@ -373,6 +385,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public String getRepId() {
 		// END GENERATED CODE
 		if (this.componentRepID == null) {
@@ -387,6 +400,7 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void setRepId(final String newRepId) {
 		// END GENERATED CODE
 		if (this.componentRepID == null) {
