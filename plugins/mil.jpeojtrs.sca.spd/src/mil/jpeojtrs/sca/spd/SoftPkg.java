@@ -361,8 +361,14 @@ public interface SoftPkg extends EObject {
 	public static final String EOBJECT_PATH = "/";
 
 	public static final class Util {
-
 		// END GENERATED CODE
+		private static final EStructuralFeature [] SUPPORT_PATH = new EStructuralFeature[] {
+			SpdPackage.Literals.SOFT_PKG__DESCRIPTOR,
+			SpdPackage.Literals.DESCRIPTOR__COMPONENT,
+			ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_FEATURES,
+			ScdPackage.Literals.COMPONENT_FEATURES__SUPPORTS_INTERFACE
+		};
+
 		private Util() {
 
 		}
@@ -377,12 +383,6 @@ public interface SoftPkg extends EObject {
 			return ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM;
 		}
 
-		private static final EStructuralFeature [] SUPPORT_PATH = new EStructuralFeature[] {
-			SpdPackage.Literals.SOFT_PKG__DESCRIPTOR,
-			SpdPackage.Literals.DESCRIPTOR__COMPONENT,
-			ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_FEATURES,
-			ScdPackage.Literals.COMPONENT_FEATURES__SUPPORTS_INTERFACE
-		};
 		public static boolean isAggregateDevice(SoftPkg spd) {
 			if (spd != null) {
 				EList<SupportsInterface> interfaces = ScaEcoreUtils.getFeature(spd, SUPPORT_PATH);

@@ -189,11 +189,11 @@ public class AuthorItemProvider extends ItemProviderAdapter implements IEditingD
 			label.append(name);
 		}
 		String company = ((Author) object).getCompany();
-		if (company != null && !company.equals("")) {
+		if (company != null && !"".equals(company)) {
 			label.append("; Company: " + company);
 		}
 		String webpage = ((Author) object).getWebpage();
-		if (webpage != null && !webpage.equals("")) {
+		if (webpage != null && !"".equals(webpage)) {
 			label.append("; Webpage: " + webpage);
 		}
 		return label.toString();	

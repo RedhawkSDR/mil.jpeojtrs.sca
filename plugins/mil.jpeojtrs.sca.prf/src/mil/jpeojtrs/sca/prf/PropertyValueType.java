@@ -509,7 +509,7 @@ public enum PropertyValueType implements Enumerator {
 		try {
 			AnyUtils.convertString(value, getLiteral(), complex);
 			return true;
-		} catch (Exception e) {
+		} catch (Exception e) { // SUPPRESS CHECKSTYLE Return false
 			return false;
 		}
 	}
