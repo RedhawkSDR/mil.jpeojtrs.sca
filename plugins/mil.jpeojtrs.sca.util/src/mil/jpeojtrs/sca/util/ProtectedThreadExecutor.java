@@ -31,16 +31,16 @@ public final class ProtectedThreadExecutor {
 	}
 
 	private static boolean isProtectedThread(final Thread thread) {
-		if (thread.getName().equals("main") || thread.getId() == 0) {
+		if ("main".equals(thread.getName()) || thread.getId() == 0) {
 			return true;
 		}
 		for (final StackTraceElement element : thread.getStackTrace()) {
 			final String className = element.getClassName();
 			if (className.startsWith("org.eclipse.swt")) {
 				return true;
-			} else if (className.equals("gov.redhawk.model.sca.commands.ScaModelCommand")) {
+			} else if ("gov.redhawk.model.sca.commands.ScaModelCommand".equals(className)) {
 				return true;
-			} else if (className.equals("org.eclipse.emf.transaction.impl.TransactionalCommandStackImpl")) {
+			} else if ("org.eclipse.emf.transaction.impl.TransactionalCommandStackImpl".equals(className)) {
 				return true;
 			}
 		}
@@ -59,7 +59,7 @@ public final class ProtectedThreadExecutor {
 		} else {
 			try {
 				return callable.call();
-			} catch (final Exception e) {
+			} catch (final Exception e) { // SUPPRESS CHECKSTYLE Rethrown
 				throw new ExecutionException(e);
 			}
 		}

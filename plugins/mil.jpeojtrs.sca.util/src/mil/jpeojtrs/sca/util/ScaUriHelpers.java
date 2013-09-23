@@ -66,7 +66,7 @@ public class ScaUriHelpers {
 		final URI referenceUri = referenceResource.getURI();
 		final URI resolved = targetUri.deresolve(referenceUri);
 		String path = resolved.path();
-		if (path == null || path.equals("")) {
+		if (path == null || "".equals(path)) {
 			path = targetUri.lastSegment();
 		}
 		return path;
@@ -107,7 +107,7 @@ public class ScaUriHelpers {
 		if (newUri != null) {
 			try {
 				return resourceSet.getResource(newUri, true);
-			} catch (final Exception e) {
+			} catch (final Exception e) { // SUPPRESS CHECKSTYLE Trace statement
 				if (ScaUriHelpers.DEBUG) {
 					ScaUriHelpers.debug("getLocalFileEObject: Suppressing exception " + e.getMessage());
 					if (ScaUriHelpers.EXCEPTION) {
@@ -171,7 +171,7 @@ public class ScaUriHelpers {
 		if (resource != null) {
 			try {
 				return resource.getEObject(fragment);
-			} catch (final Exception e) {
+			} catch (final Exception e) { // SUPPRESS CHECKSTYLE Trace statement
 				if (ScaUriHelpers.DEBUG) {
 					ScaUriHelpers.debug("getLocalFileEObject: Suppressing exception " + e.getMessage());
 					if (ScaUriHelpers.EXCEPTION) {

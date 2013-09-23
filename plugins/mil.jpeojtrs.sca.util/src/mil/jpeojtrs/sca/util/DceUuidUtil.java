@@ -19,6 +19,13 @@ public final class DceUuidUtil {
 
 	/**
 	 * @since 3.0
+	 * @deprecated Use {@link #DCE_UUID_LENGTH} instead
+	 */
+	@Deprecated
+	public static final int LENGTH = DceUuidUtil.DCE_UUID_LENGTH;
+
+	/**
+	 * @since 3.0
 	 */
 	public static final int DCE_UUID_LENGTH = DceUuidUtil.createDceUUID().length();
 
@@ -26,12 +33,7 @@ public final class DceUuidUtil {
 	private static final String DCE_PREFIX = "DCE";
 	private static final int MAX_NUMBER_SECTIONS = 3;
 	private static final int MIN_NUMBER_SECTIONS = 2;
-	/**
-	 * @since 3.0
-	 * @deprecated Use {@link #DCE_UUID_LENGTH} instead
-	 */
-	@Deprecated
-	public static final int LENGTH = DceUuidUtil.DCE_UUID_LENGTH;
+
 
 	/**
 	 * Instantiates a new dce uuid util.

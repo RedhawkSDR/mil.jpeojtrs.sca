@@ -44,6 +44,10 @@ import CF.PropertiesHelper;
 
 public final class AnyUtils {
 
+	private static final int RADIX_DECIMAL = 10;
+	private static final int RADIX_HEX = 16;
+	private static final int RADIX_OCTAL = 8;
+
 	private AnyUtils() {
 	}
 
@@ -58,16 +62,16 @@ public final class AnyUtils {
 		if (stringValue == null) {
 			return null;
 		}
-		if (type.equals("string")) {
+		if ("string".equals(type)) {
 			return stringValue;
-		} else if (type.equals("wstring")) {
+		} else if ("wstring".equals(type)) {
 			return stringValue;
-		} else if (type.equals("boolean")) {
+		} else if ("boolean".equals(type)) {
 			if ("true".equalsIgnoreCase(stringValue) || "false".equalsIgnoreCase(stringValue)) {
 				return Boolean.parseBoolean(stringValue);
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid boolean value");
-		} else if (type.equals("char")) {
+		} else if ("char".equals(type)) {
 			switch (stringValue.length()) {
 			case 1:
 				return stringValue.charAt(0);
@@ -76,40 +80,40 @@ public final class AnyUtils {
 			default:
 				throw new IllegalArgumentException(stringValue + " is not a valid char value");
 			}
-		} else if (type.equals("wchar")) {
+		} else if ("wchar".equals(type)) {
 			return stringValue.charAt(0);
-		} else if (type.equals("double")) {
+		} else if ("double".equals(type)) {
 			return Double.parseDouble(stringValue);
-		} else if (type.equals("float")) {
+		} else if ("float".equals(type)) {
 			return Float.parseFloat(stringValue);
-		} else if (type.equals("short")) {
+		} else if ("short".equals(type)) {
 			return Short.decode(stringValue);
-		} else if (type.equals("long")) {
+		} else if ("long".equals(type)) {
 			return Integer.decode(stringValue);
-		} else if (type.equals("longlong")) {
+		} else if ("longlong".equals(type)) {
 			return Long.decode(stringValue);
-		} else if (type.equals("ulong")) {
+		} else if ("ulong".equals(type)) {
 			final long MAX_UINT = 2L * Integer.MAX_VALUE + 1L;
 			final Long retVal = Long.decode(stringValue);
 			if (retVal < 0 || retVal > MAX_UINT) {
 				throw new IllegalArgumentException("ulong value must be greater than '0' and less than " + MAX_UINT);
 			}
 			return retVal;
-		} else if (type.equals("ushort")) {
+		} else if ("ushort".equals(type)) {
 			final int MAX_USHORT = 2 * Short.MAX_VALUE + 1;
 			final Integer retVal = Integer.decode(stringValue);
 			if (retVal < 0 || retVal > MAX_USHORT) {
 				throw new IllegalArgumentException("ushort value must be greater than '0' and less than " + MAX_USHORT);
 			}
 			return retVal;
-		} else if (type.equals("ulonglong")) {
+		} else if ("ulonglong".equals(type)) {
 			final BigInteger MAX_ULONG_LONG = BigInteger.valueOf(Long.MAX_VALUE).multiply(BigInteger.valueOf(2)).add(BigInteger.ONE);
 			final BigInteger retVal = AnyUtils.bigIntegerDecode(stringValue);
 			if (retVal.compareTo(BigInteger.ZERO) < 0 || retVal.compareTo(MAX_ULONG_LONG) > 0) {
 				throw new IllegalArgumentException("ulonglong value must be greater than '0' and less than " + MAX_ULONG_LONG.toString());
 			}
 			return retVal;
-		} else if (type.equals("objref")) {
+		} else if ("objref".equals(type)) {
 			if ("".equals(stringValue)) {
 				return null;
 			}
@@ -120,7 +124,7 @@ public final class AnyUtils {
 				}
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid objref value");
-		} else if (type.equals("octet")) {
+		} else if ("octet".equals(type)) {
 			final short MIN_OCTET = 0;
 			final short MAX_OCTET = 0xFF;
 			final short val = Short.decode(stringValue);
@@ -132,10 +136,6 @@ public final class AnyUtils {
 			throw new IllegalArgumentException("Unknown CORBA Type: " + type);
 		}
 	}
-
-	private static final int RADIX_DECIMAL = 10;
-	private static final int RADIX_HEX = 16;
-	private static final int RADIX_OCTAL = 8;
 
 	/**
 	 * @since 3.0
@@ -382,41 +382,41 @@ public final class AnyUtils {
 	public static TCKind convertToTCKind(final String type) {
 		if (type == null || "".equals(type)) {
 			return TCKind.tk_null;
-		} else if (type.equals("boolean")) {
+		} else if ("boolean".equals(type)) {
 			return TCKind.tk_boolean;
-		} else if (type.equals("char")) {
+		} else if ("char".equals(type)) {
 			return TCKind.tk_char;
-		} else if (type.equals("double")) {
+		} else if ("double".equals(type)) {
 			return TCKind.tk_double;
-		} else if (type.equals("fixed")) {
+		} else if ("fixed".equals(type)) {
 			return TCKind.tk_fixed;
-		} else if (type.equals("float")) {
+		} else if ("float".equals(type)) {
 			return TCKind.tk_float;
-		} else if (type.equals("long")) {
+		} else if ("long".equals(type)) {
 			return TCKind.tk_long;
-		} else if (type.equals("longlong")) {
+		} else if ("longlong".equals(type)) {
 			return TCKind.tk_longlong;
-		} else if (type.equals("objref")) {
+		} else if ("objref".equals(type)) {
 			return TCKind.tk_objref;
-		} else if (type.equals("octet")) {
+		} else if ("octet".equals(type)) {
 			return TCKind.tk_octet;
-		} else if (type.equals("short")) {
+		} else if ("short".equals(type)) {
 			return TCKind.tk_short;
-		} else if (type.equals("string")) {
+		} else if ("string".equals(type)) {
 			return TCKind.tk_string;
-		} else if (type.equals("typecode")) {
+		} else if ("typecode".equals(type)) {
 			return TCKind.tk_TypeCode;
-		} else if (type.equals("ulong")) {
+		} else if ("ulong".equals(type)) {
 			return TCKind.tk_ulong;
-		} else if (type.equals("ulonglong")) {
+		} else if ("ulonglong".equals(type)) {
 			return TCKind.tk_ulonglong;
-		} else if (type.equals("ushort")) {
+		} else if ("ushort".equals(type)) {
 			return TCKind.tk_ushort;
-		} else if (type.equals("value")) {
+		} else if ("value".equals(type)) {
 			return TCKind.tk_value;
-		} else if (type.equals("wchar")) {
+		} else if ("wchar".equals(type)) {
 			return TCKind.tk_wchar;
-		} else if (type.equals("wstring")) {
+		} else if ("wstring".equals(type)) {
 			return TCKind.tk_wstring;
 		} else {
 			throw new IllegalArgumentException("Unknown type: " + type);

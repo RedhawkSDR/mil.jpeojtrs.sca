@@ -14,9 +14,6 @@ package mil.jpeojtrs.sca.util;
  * 
  */
 public final class ScaFileSystemConstants {
-	private ScaFileSystemConstants() {
-
-	}
 
 	/**
 	 * @since 3.0
@@ -44,5 +41,9 @@ public final class ScaFileSystemConstants {
 	public static final String FS_SCHEME_CORBA_NAME = "corbaname";
 
 	public static final String FS_SCHEME_CORBA_IOR = "IOR";
+
+	private ScaFileSystemConstants() {
+
+	}
 
 }
