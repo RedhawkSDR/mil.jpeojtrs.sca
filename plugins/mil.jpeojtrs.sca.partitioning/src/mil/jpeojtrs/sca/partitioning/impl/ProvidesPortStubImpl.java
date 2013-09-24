@@ -88,6 +88,7 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -97,6 +98,7 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -109,6 +111,7 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Provides getProvides() {
 		if (provides != null && provides.eIsProxy())
 		{
@@ -149,6 +152,7 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setProvides(Provides newProvides) {
 		setProvidesGen(newProvides);
 		setName(newProvides != null ? newProvides.getProvidesName() : null);

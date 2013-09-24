@@ -136,6 +136,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UP getUsesPort() {
 		return usesPort;
 	}
@@ -161,6 +162,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUsesPort(UP newUsesPort) {
 		if (newUsesPort != usesPort)
 		{
@@ -181,6 +183,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PP getProvidesPort() {
 		return providesPort;
 	}
@@ -206,6 +209,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProvidesPort(PP newProvidesPort) {
 		if (newProvidesPort != providesPort)
 		{
@@ -226,6 +230,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentSupportedInterface getComponentSupportedInterface() {
 		return componentSupportedInterface;
 	}
@@ -251,6 +256,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentSupportedInterface(ComponentSupportedInterface newComponentSupportedInterface) {
 		if (newComponentSupportedInterface != componentSupportedInterface)
 		{
@@ -271,6 +277,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FindBy getFindBy() {
 		return findBy;
 	}
@@ -296,6 +303,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFindBy(FindBy newFindBy) {
 		if (newFindBy != findBy)
 		{
@@ -316,6 +324,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -325,6 +334,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -337,6 +347,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public UsesPortStub getSource() {
 		UsesPortStub source = basicGetSource();
 		return source != null && source.eIsProxy() ? (UsesPortStub)eResolveProxy((InternalEObject)source) : source;
@@ -346,6 +357,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	protected ConnectionTarget target;
 	
 	private EContentAdapter sourceListener = new EContentAdapter() {
+		@Override
 		public void notifyChanged(Notification notification) {
 			super.notifyChanged(notification);
 			switch(notification.getEventType()) {
@@ -360,6 +372,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	};
 
 	private EContentAdapter targetListener = new EContentAdapter() {
+		@Override
 		public void notifyChanged(Notification notification) {
 			super.notifyChanged(notification);
 			switch(notification.getEventType()) {
@@ -448,6 +461,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setSource(final UsesPortStub newSource) {
 		// END GENERATED CODE
 		if (this.source != null) {
@@ -468,6 +482,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ConnectionTarget getTarget() {
 		ConnectionTarget target = basicGetTarget();
 		return target != null && target.eIsProxy() ? (ConnectionTarget)eResolveProxy((InternalEObject)target) : target;
@@ -572,6 +587,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setTarget(final ConnectionTarget newTarget) {
 		// END GENERATED CODE
 		if (this.target != null) {

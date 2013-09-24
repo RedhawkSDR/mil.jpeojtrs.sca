@@ -116,6 +116,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalFile getLocalFile() {
 		return localFile;
 	}
@@ -137,6 +138,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	}
 
 	private EContentAdapter notifier = new EContentAdapter() {
+		@Override
 		public void notifyChanged(Notification notification) {
 			super.notifyChanged(notification);
 			boolean spdChanged = false;
@@ -178,6 +180,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setLocalFile(LocalFile newLocalFile) {
 		SoftPkg oldValue = getSoftPkg();
 		setLocalFileGen(newLocalFile);
@@ -190,6 +193,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -199,6 +203,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -211,6 +216,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SoftPkg getSoftPkg() {
 		SoftPkg softPkg = basicGetSoftPkg();
 		return softPkg != null && softPkg.eIsProxy() ? (SoftPkg)eResolveProxy((InternalEObject)softPkg) : softPkg;
@@ -234,6 +240,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setSoftPkg(final SoftPkg newSoftPkg) {
 		// END GENERATED CODE
 		if (newSoftPkg == null) {
@@ -265,6 +272,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -274,6 +282,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;

@@ -96,6 +96,7 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DmdDocumentRoot createDmdDocumentRoot() {
 		DmdDocumentRootImpl dmdDocumentRoot = new DmdDocumentRootImpl();
 		return dmdDocumentRoot;
@@ -106,6 +107,7 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainFinder createDomainFinder() {
 		DomainFinderImpl domainFinder = new DomainFinderImpl();
 		return domainFinder;
@@ -116,6 +118,7 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainManagerConfiguration createDomainManagerConfiguration() {
 		DomainManagerConfigurationImpl domainManagerConfiguration = new DomainManagerConfigurationImpl();
 		return domainManagerConfiguration;
@@ -126,6 +129,7 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainManagerSoftPkg createDomainManagerSoftPkg() {
 		DomainManagerSoftPkgImpl domainManagerSoftPkg = new DomainManagerSoftPkgImpl();
 		return domainManagerSoftPkg;
@@ -136,6 +140,7 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FindBy createFindBy() {
 		FindByImpl findBy = new FindByImpl();
 		return findBy;
@@ -146,6 +151,7 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalFile createLocalFile() {
 		LocalFileImpl localFile = new LocalFileImpl();
 		return localFile;
@@ -156,6 +162,7 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NamingService createNamingService() {
 		NamingServiceImpl namingService = new NamingServiceImpl();
 		return namingService;
@@ -166,6 +173,7 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Service createService() {
 		ServiceImpl service = new ServiceImpl();
 		return service;
@@ -176,6 +184,7 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Services createServices() {
 		ServicesImpl services = new ServicesImpl();
 		return services;
@@ -186,6 +195,7 @@ public class DmdFactoryImpl extends EFactoryImpl implements DmdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DmdPackage getDmdPackage() {
 		return (DmdPackage)getEPackage();
 	}

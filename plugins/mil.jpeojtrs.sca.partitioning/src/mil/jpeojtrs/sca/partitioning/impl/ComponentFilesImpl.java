@@ -74,6 +74,7 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ComponentFile> getComponentFile() {
 		if (componentFile == null)
 		{

@@ -96,6 +96,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleRef> getSimpleRef() {
 		if (simpleRef == null)
 		{
@@ -109,6 +110,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Struct getStruct() {
 		Struct struct = basicGetStruct();
 		return struct != null && struct.eIsProxy() ? (Struct)eResolveProxy((InternalEObject)struct) : struct;
@@ -138,6 +140,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public int getIndex() {
 		// END GENERATED CODE
 		if (eContainer() != null && eContainer().eGet(eContainingFeature()) instanceof List< ? >) {
@@ -152,6 +155,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public Any toAny() {
 		// END GENERATED CODE
 		Any retVal = ORB.init().create_any();
@@ -169,6 +173,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public SimpleRef getRef(String id) {
 		// END GENERATED CODE
 		if (id == null) {
@@ -188,6 +193,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public PropertyContainer getPropertyContainer() {
 		// END GENERATED CODE
 		if (eContainer() instanceof PropertyContainer) {

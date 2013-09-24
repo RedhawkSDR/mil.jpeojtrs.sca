@@ -117,6 +117,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<PortTypeContainer> getPortType() {
 		if (portType == null)
 		{
@@ -130,6 +131,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -139,6 +141,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -151,6 +154,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRepID() {
 		return repID;
 	}
@@ -160,6 +164,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRepID(String newRepID) {
 		String oldRepID = repID;
 		repID = newRepID;
@@ -172,6 +177,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Interface getInterface() {
 		Interface interface_ = basicGetInterface();
 		return interface_ != null && interface_.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)interface_) : interface_;
@@ -198,6 +204,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setInterface(Interface newInterface) {
 		// END GENERATED CODE
 		this.setRepID(newInterface.getRepid());
@@ -209,6 +216,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isBiDirectional() {
 		// END GENERATED CODE
 		return getSibling() != null;
@@ -220,6 +228,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public AbstractPort getSibling() {
 		// END GENERATED CODE
 		if (eContainer() != null) {

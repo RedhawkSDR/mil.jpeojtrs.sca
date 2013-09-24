@@ -120,6 +120,7 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCompRefID() {
 		return compRefID;
 	}
@@ -129,6 +130,7 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCompRefID(String newCompRefID) {
 		String oldCompRefID = compRefID;
 		compRefID = newCompRefID;
@@ -141,6 +143,7 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPropID() {
 		return propID;
 	}
@@ -150,6 +153,7 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPropID(String newPropID) {
 		String oldPropID = propID;
 		propID = newPropID;
@@ -162,6 +166,7 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getExternalPropID() {
 		return externalPropID;
 	}
@@ -171,6 +176,7 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExternalPropID(String newExternalPropID) {
 		String oldExternalPropID = externalPropID;
 		externalPropID = newExternalPropID;
@@ -183,6 +189,7 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public String resolveExternalID()
 	{
 		if (this.getExternalPropID() != null) {

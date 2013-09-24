@@ -154,6 +154,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -163,6 +164,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -175,6 +177,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -184,6 +187,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -196,6 +200,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AccessType getLocalMode() {
 		return localMode;
 	}
@@ -205,6 +210,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLocalMode(AccessType newLocalMode) {
 		AccessType oldLocalMode = localMode;
 		localMode = newLocalMode == null ? LOCAL_MODE_EDEFAULT : newLocalMode;
@@ -219,6 +225,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void unsetLocalMode() {
 		AccessType oldLocalMode = localMode;
 		boolean oldLocalModeESet = localModeESet;
@@ -233,6 +240,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSetLocalMode() {
 		return localModeESet;
 	}
@@ -242,6 +250,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -251,6 +260,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -263,6 +273,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public AccessType getMode() {
 		// END GENERATED CODE
 		if (eContainer() instanceof AbstractProperty) {
@@ -277,6 +288,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setMode(AccessType newMode) {
 		// END GENERATED CODE
 		if (eContainer() instanceof AbstractProperty) {
@@ -300,6 +312,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void unsetMode() {
 		// END GENERATED CODE
 		if (eContainer() instanceof AbstractProperty) {
@@ -315,6 +328,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public boolean isSetMode() {
 		// END GENERATED CODE
 		if (eContainer() instanceof AbstractProperty) {
@@ -324,6 +338,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 		// BEGIN GENERATED CODE
 	}
 
+	@Override
 	public abstract boolean isKind(PropertyConfigurationType ... type);
 
 	/**
@@ -331,6 +346,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public abstract Any toAny();
 
 	/**

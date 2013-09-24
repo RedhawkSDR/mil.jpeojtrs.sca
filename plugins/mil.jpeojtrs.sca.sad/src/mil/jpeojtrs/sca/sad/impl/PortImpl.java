@@ -168,6 +168,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -177,6 +178,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -189,6 +191,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUsesIdentifier() {
 		return usesIdentifier;
 	}
@@ -198,6 +201,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUsesIdentifier(String newUsesIdentifier) {
 		String oldUsesIdentifier = usesIdentifier;
 		usesIdentifier = newUsesIdentifier;
@@ -210,6 +214,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getProvidesIndentifier() {
 		return providesIndentifier;
 	}
@@ -219,6 +224,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProvidesIndentifier(String newProvidesIndentifier) {
 		String oldProvidesIndentifier = providesIndentifier;
 		providesIndentifier = newProvidesIndentifier;
@@ -231,6 +237,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSupportedIdentifier() {
 		return supportedIdentifier;
 	}
@@ -240,6 +247,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSupportedIdentifier(String newSupportedIdentifier) {
 		String oldSupportedIdentifier = supportedIdentifier;
 		supportedIdentifier = newSupportedIdentifier;
@@ -252,6 +260,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadComponentInstantiationRef getComponentInstantiationRef() {
 		return componentInstantiationRef;
 	}
@@ -277,6 +286,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef) {
 		if (newComponentInstantiationRef != componentInstantiationRef)
 		{
@@ -298,6 +308,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getExternalName() {
 		return externalName;
 	}
@@ -308,6 +319,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExternalName(String newExternalName) {
 		String oldExternalName = externalName;
 		externalName = newExternalName;

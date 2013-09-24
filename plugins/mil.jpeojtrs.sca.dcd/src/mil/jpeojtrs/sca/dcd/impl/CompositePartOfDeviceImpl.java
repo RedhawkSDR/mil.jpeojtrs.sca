@@ -96,6 +96,7 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdComponentInstantiation getComponent() {
 		DcdComponentInstantiation component = basicGetComponent();
 		return component != null && component.eIsProxy() ? (DcdComponentInstantiation)eResolveProxy((InternalEObject)component) : component;
@@ -120,6 +121,7 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setComponent(DcdComponentInstantiation newComponent) {
 		// END GENERATED CODE
 		if (newComponent != null) {
@@ -135,6 +137,7 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRefID() {
 		return refID;
 	}
@@ -144,6 +147,7 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRefID(String newRefID) {
 		String oldRefID = refID;
 		refID = newRefID;

@@ -64,6 +64,7 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<HostCollocation> getHostCollocation() {
 		return getParts().list(SadPackage.Literals.SAD_PARTITIONING__HOST_COLLOCATION);
 	}

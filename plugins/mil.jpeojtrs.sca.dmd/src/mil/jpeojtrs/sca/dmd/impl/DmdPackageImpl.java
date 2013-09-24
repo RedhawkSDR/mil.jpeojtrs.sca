@@ -167,6 +167,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			AdvancedEObjectValidator validator = new AdvancedEObjectValidator();
+			@Override
 			public EValidator getEValidator() {
 				return this.validator;
 			}
@@ -180,6 +181,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDmdDocumentRoot() {
 		return dmdDocumentRootEClass;
 	}
@@ -189,6 +191,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDmdDocumentRoot_Mixed() {
 		return (EAttribute)dmdDocumentRootEClass.getEStructuralFeatures().get(0);
 	}
@@ -198,6 +201,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDmdDocumentRoot_XMLNSPrefixMap() {
 		return (EReference)dmdDocumentRootEClass.getEStructuralFeatures().get(1);
 	}
@@ -207,6 +211,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDmdDocumentRoot_XSISchemaLocation() {
 		return (EReference)dmdDocumentRootEClass.getEStructuralFeatures().get(2);
 	}
@@ -216,6 +221,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDmdDocumentRoot_Domainmanagerconfiguration() {
 		return (EReference)dmdDocumentRootEClass.getEStructuralFeatures().get(3);
 	}
@@ -225,6 +231,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDomainFinder() {
 		return domainFinderEClass;
 	}
@@ -234,6 +241,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDomainFinder_Name() {
 		return (EAttribute)domainFinderEClass.getEStructuralFeatures().get(0);
 	}
@@ -243,6 +251,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDomainFinder_Type() {
 		return (EAttribute)domainFinderEClass.getEStructuralFeatures().get(1);
 	}
@@ -252,6 +261,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDomainManagerConfiguration() {
 		return domainManagerConfigurationEClass;
 	}
@@ -261,6 +271,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDomainManagerConfiguration_Description() {
 		return (EAttribute)domainManagerConfigurationEClass.getEStructuralFeatures().get(0);
 	}
@@ -270,6 +281,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDomainManagerConfiguration_DomainManagerSoftPkg() {
 		return (EReference)domainManagerConfigurationEClass.getEStructuralFeatures().get(1);
 	}
@@ -279,6 +291,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDomainManagerConfiguration_Services() {
 		return (EReference)domainManagerConfigurationEClass.getEStructuralFeatures().get(2);
 	}
@@ -288,6 +301,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDomainManagerConfiguration_Id() {
 		return (EAttribute)domainManagerConfigurationEClass.getEStructuralFeatures().get(3);
 	}
@@ -297,6 +311,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDomainManagerConfiguration_Name() {
 		return (EAttribute)domainManagerConfigurationEClass.getEStructuralFeatures().get(4);
 	}
@@ -306,6 +321,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDomainManagerSoftPkg() {
 		return domainManagerSoftPkgEClass;
 	}
@@ -315,6 +331,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDomainManagerSoftPkg_LocalFile() {
 		return (EReference)domainManagerSoftPkgEClass.getEStructuralFeatures().get(0);
 	}
@@ -324,6 +341,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDomainManagerSoftPkg_SoftPkg() {
 		return (EReference)domainManagerSoftPkgEClass.getEStructuralFeatures().get(1);
 	}
@@ -333,6 +351,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFindBy() {
 		return findByEClass;
 	}
@@ -342,6 +361,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindBy_NameService() {
 		return (EReference)findByEClass.getEStructuralFeatures().get(0);
 	}
@@ -351,6 +371,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFindBy_StringifiedObjectRef() {
 		return (EAttribute)findByEClass.getEStructuralFeatures().get(1);
 	}
@@ -360,6 +381,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFindBy_DomainFinder() {
 		return (EReference)findByEClass.getEStructuralFeatures().get(2);
 	}
@@ -369,6 +391,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLocalFile() {
 		return localFileEClass;
 	}
@@ -378,6 +401,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalFile_Name() {
 		return (EAttribute)localFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -387,6 +411,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNamingService() {
 		return namingServiceEClass;
 	}
@@ -396,6 +421,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNamingService_Name() {
 		return (EAttribute)namingServiceEClass.getEStructuralFeatures().get(0);
 	}
@@ -405,6 +431,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getService() {
 		return serviceEClass;
 	}
@@ -414,6 +441,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getService_UsesIdentifier() {
 		return (EAttribute)serviceEClass.getEStructuralFeatures().get(0);
 	}
@@ -423,6 +451,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getService_FindBy() {
 		return (EReference)serviceEClass.getEStructuralFeatures().get(1);
 	}
@@ -432,6 +461,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getServices() {
 		return servicesEClass;
 	}
@@ -441,6 +471,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getServices_Service() {
 		return (EReference)servicesEClass.getEStructuralFeatures().get(0);
 	}
@@ -450,6 +481,7 @@ public class DmdPackageImpl extends EPackageImpl implements DmdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DmdFactory getDmdFactory() {
 		return (DmdFactory)getEFactoryInstance();
 	}

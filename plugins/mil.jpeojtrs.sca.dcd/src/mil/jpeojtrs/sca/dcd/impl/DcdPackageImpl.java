@@ -229,6 +229,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			private final AdvancedEObjectValidator validator = new AdvancedEObjectValidator();
+			@Override
 			public EValidator getEValidator() {
 				return this.validator;
 			}
@@ -243,6 +244,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDcdComponentPlacement() {
 		return dcdComponentPlacementEClass;
 	}
@@ -252,6 +254,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDcdComponentPlacement_DeployDevice() {
 		return (EReference)dcdComponentPlacementEClass.getEStructuralFeatures().get(0);
 	}
@@ -261,6 +264,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDcdComponentPlacement_CompositePartOfDevice() {
 		return (EReference)dcdComponentPlacementEClass.getEStructuralFeatures().get(1);
 	}
@@ -270,6 +274,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDcdComponentPlacement_DevicePkgFile() {
 		return (EReference)dcdComponentPlacementEClass.getEStructuralFeatures().get(2);
 	}
@@ -279,6 +284,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDcdComponentPlacement_ParentDevice() {
 		return (EReference)dcdComponentPlacementEClass.getEStructuralFeatures().get(3);
 	}
@@ -288,6 +294,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDcdComponentInstantiation() {
 		return dcdComponentInstantiationEClass;
 	}
@@ -297,6 +304,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDcdPartitioning() {
 		return dcdPartitioningEClass;
 	}
@@ -306,6 +314,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDcdComponentInstantiationRef() {
 		return dcdComponentInstantiationRefEClass;
 	}
@@ -315,6 +324,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDcdConnectInterface() {
 		return dcdConnectInterfaceEClass;
 	}
@@ -324,6 +334,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDcdUsesPort() {
 		return dcdUsesPortEClass;
 	}
@@ -333,6 +344,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDcdProvidesPort() {
 		return dcdProvidesPortEClass;
 	}
@@ -342,6 +354,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDcdConnections() {
 		return dcdConnectionsEClass;
 	}
@@ -351,6 +364,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCompositePartOfDevice() {
 		return compositePartOfDeviceEClass;
 	}
@@ -360,6 +374,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCompositePartOfDevice_Component() {
 		return (EReference)compositePartOfDeviceEClass.getEStructuralFeatures().get(0);
 	}
@@ -369,6 +384,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCompositePartOfDevice_RefID() {
 		return (EAttribute)compositePartOfDeviceEClass.getEStructuralFeatures().get(1);
 	}
@@ -378,6 +394,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDcdDocumentRoot() {
 		return dcdDocumentRootEClass;
 	}
@@ -387,6 +404,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDcdDocumentRoot_Mixed() {
 		return (EAttribute)dcdDocumentRootEClass.getEStructuralFeatures().get(0);
 	}
@@ -396,6 +414,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDcdDocumentRoot_XMLNSPrefixMap() {
 		return (EReference)dcdDocumentRootEClass.getEStructuralFeatures().get(1);
 	}
@@ -405,6 +424,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDcdDocumentRoot_XSISchemaLocation() {
 		return (EReference)dcdDocumentRootEClass.getEStructuralFeatures().get(2);
 	}
@@ -414,6 +434,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDcdDocumentRoot_Deviceconfiguration() {
 		return (EReference)dcdDocumentRootEClass.getEStructuralFeatures().get(3);
 	}
@@ -423,6 +444,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDeployOnDevice() {
 		return deployOnDeviceEClass;
 	}
@@ -432,6 +454,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeployOnDevice_Component() {
 		return (EReference)deployOnDeviceEClass.getEStructuralFeatures().get(0);
 	}
@@ -441,6 +464,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeployOnDevice_RefID() {
 		return (EAttribute)deployOnDeviceEClass.getEStructuralFeatures().get(1);
 	}
@@ -450,6 +474,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDeviceConfiguration() {
 		return deviceConfigurationEClass;
 	}
@@ -459,6 +484,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeviceConfiguration_Description() {
 		return (EAttribute)deviceConfigurationEClass.getEStructuralFeatures().get(0);
 	}
@@ -468,6 +494,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeviceConfiguration_DeviceManagerSoftPkg() {
 		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(1);
 	}
@@ -477,6 +504,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeviceConfiguration_ComponentFiles() {
 		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(2);
 	}
@@ -486,6 +514,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeviceConfiguration_Partitioning() {
 		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(3);
 	}
@@ -495,6 +524,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeviceConfiguration_Connections() {
 		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(4);
 	}
@@ -504,6 +534,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeviceConfiguration_DomainManager() {
 		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(5);
 	}
@@ -513,6 +544,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeviceConfiguration_FileSystemNames() {
 		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(6);
 	}
@@ -522,6 +554,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeviceConfiguration_Id() {
 		return (EAttribute)deviceConfigurationEClass.getEStructuralFeatures().get(7);
 	}
@@ -531,6 +564,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeviceConfiguration_Name() {
 		return (EAttribute)deviceConfigurationEClass.getEStructuralFeatures().get(8);
 	}
@@ -540,6 +574,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDeviceManagerSoftPkg() {
 		return deviceManagerSoftPkgEClass;
 	}
@@ -549,6 +584,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeviceManagerSoftPkg_LocalFile() {
 		return (EReference)deviceManagerSoftPkgEClass.getEStructuralFeatures().get(0);
 	}
@@ -558,6 +594,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeviceManagerSoftPkg_SoftPkg() {
 		return (EReference)deviceManagerSoftPkgEClass.getEStructuralFeatures().get(1);
 	}
@@ -567,6 +604,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDevicePkgFile() {
 		return devicePkgFileEClass;
 	}
@@ -576,6 +614,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDevicePkgFile_LocalFile() {
 		return (EReference)devicePkgFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -585,6 +624,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevicePkgFile_Type() {
 		return (EAttribute)devicePkgFileEClass.getEStructuralFeatures().get(1);
 	}
@@ -594,6 +634,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDevicePkgFile_DevicePkg() {
 		return (EReference)devicePkgFileEClass.getEStructuralFeatures().get(2);
 	}
@@ -603,6 +644,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDomainManager() {
 		return domainManagerEClass;
 	}
@@ -612,6 +654,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDomainManager_NamingService() {
 		return (EReference)domainManagerEClass.getEStructuralFeatures().get(0);
 	}
@@ -621,6 +664,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDomainManager_StringifiedObjectRef() {
 		return (EAttribute)domainManagerEClass.getEStructuralFeatures().get(1);
 	}
@@ -630,6 +674,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFileSystemName() {
 		return fileSystemNameEClass;
 	}
@@ -639,6 +684,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFileSystemName_DeviceID() {
 		return (EAttribute)fileSystemNameEClass.getEStructuralFeatures().get(0);
 	}
@@ -648,6 +694,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFileSystemName_MountName() {
 		return (EAttribute)fileSystemNameEClass.getEStructuralFeatures().get(1);
 	}
@@ -657,6 +704,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFileSystemNames() {
 		return fileSystemNamesEClass;
 	}
@@ -666,6 +714,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFileSystemNames_FileSystemName() {
 		return (EReference)fileSystemNamesEClass.getEStructuralFeatures().get(0);
 	}
@@ -675,6 +724,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdFactory getDcdFactory() {
 		return (DcdFactory)getEFactoryInstance();
 	}

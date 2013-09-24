@@ -76,6 +76,7 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getParts() {
 		if (parts == null)
 		{
@@ -89,6 +90,7 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<C> getComponentPlacement() {
 		return getParts().list(PartitioningPackage.Literals.PARTITIONING__COMPONENT_PLACEMENT);
 	}

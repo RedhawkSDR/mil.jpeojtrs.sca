@@ -86,6 +86,7 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StructPropertyConfigurationType getType() {
 		return type;
 	}
@@ -95,6 +96,7 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(StructPropertyConfigurationType newType) {
 		StructPropertyConfigurationType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -109,6 +111,7 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void unsetType() {
 		StructPropertyConfigurationType oldType = type;
 		boolean oldTypeESet = typeESet;
@@ -123,6 +126,7 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSetType() {
 		return typeESet;
 	}

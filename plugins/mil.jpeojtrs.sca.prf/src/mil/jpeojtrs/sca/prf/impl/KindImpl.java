@@ -86,6 +86,7 @@ public class KindImpl extends EObjectImpl implements Kind {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PropertyConfigurationType getType() {
 		return type;
 	}
@@ -95,6 +96,7 @@ public class KindImpl extends EObjectImpl implements Kind {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(PropertyConfigurationType newType) {
 		PropertyConfigurationType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -109,6 +111,7 @@ public class KindImpl extends EObjectImpl implements Kind {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void unsetType() {
 		PropertyConfigurationType oldType = type;
 		boolean oldTypeESet = typeESet;
@@ -123,6 +126,7 @@ public class KindImpl extends EObjectImpl implements Kind {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSetType() {
 		return typeESet;
 	}

@@ -98,6 +98,7 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getMixed() {
 		if (mixed == null)
 		{
@@ -111,6 +112,7 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
 		if (xMLNSPrefixMap == null)
 		{
@@ -124,6 +126,7 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXSISchemaLocation() {
 		if (xSISchemaLocation == null)
 		{
@@ -137,6 +140,7 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceConfiguration getDeviceconfiguration() {
 		return (DeviceConfiguration)getMixed().get(DcdPackage.Literals.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION, true);
 	}
@@ -155,6 +159,7 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeviceconfiguration(DeviceConfiguration newDeviceconfiguration) {
 		((FeatureMap.Internal)getMixed()).set(DcdPackage.Literals.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION, newDeviceconfiguration);
 	}

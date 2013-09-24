@@ -107,6 +107,7 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -116,6 +117,7 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -128,6 +130,7 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Uses getUses() {
 		if (uses != null && uses.eIsProxy())
 		{
@@ -168,6 +171,7 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setUses(Uses newUses) {
 		setUsesGen(newUses);
 		setName(newUses != null ? newUses.getUsesName() : null);
@@ -179,6 +183,7 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getSupportedIdentifier() {
 		return supportedIdentifier;
 	}
@@ -188,6 +193,7 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSupportedIdentifier(String newSupportedIdentifier) {
 		String oldSupportedIdentifier = supportedIdentifier;
 		supportedIdentifier = newSupportedIdentifier;

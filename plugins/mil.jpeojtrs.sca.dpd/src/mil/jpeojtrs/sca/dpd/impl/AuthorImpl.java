@@ -110,6 +110,7 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getName() {
 		if (name == null) {
 			name = new EDataTypeEList<String>(String.class, this, DpdPackage.AUTHOR__NAME);
@@ -122,6 +123,7 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCompany() {
 		return company;
 	}
@@ -131,6 +133,7 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCompany(String newCompany) {
 		String oldCompany = company;
 		company = newCompany;
@@ -143,6 +146,7 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getWebpage() {
 		return webpage;
 	}
@@ -152,6 +156,7 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setWebpage(String newWebpage) {
 		String oldWebpage = webpage;
 		webpage = newWebpage;

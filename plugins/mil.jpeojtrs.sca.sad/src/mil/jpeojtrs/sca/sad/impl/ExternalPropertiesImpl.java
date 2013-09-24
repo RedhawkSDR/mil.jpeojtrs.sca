@@ -74,6 +74,7 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ExternalProperty> getProperties() {
 		if (properties == null)
 		{

@@ -92,6 +92,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Author createAuthor() {
 		AuthorImpl author = new AuthorImpl();
 		return author;
@@ -102,6 +103,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ChildHwDevice createChildHwDevice() {
 		ChildHwDeviceImpl childHwDevice = new ChildHwDeviceImpl();
 		return childHwDevice;
@@ -112,6 +114,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceClass createDeviceClass() {
 		DeviceClassImpl deviceClass = new DeviceClassImpl();
 		return deviceClass;
@@ -122,6 +125,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DevicePkg createDevicePkg() {
 		DevicePkgImpl devicePkg = new DevicePkgImpl();
 		return devicePkg;
@@ -132,6 +136,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DevicePkgRef createDevicePkgRef() {
 		DevicePkgRefImpl devicePkgRef = new DevicePkgRefImpl();
 		return devicePkgRef;
@@ -142,6 +147,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DocumentRoot createDocumentRoot() {
 		DocumentRootImpl documentRoot = new DocumentRootImpl();
 		return documentRoot;
@@ -152,6 +158,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HwDeviceRegistration createHwDeviceRegistration() {
 		HwDeviceRegistrationImpl hwDeviceRegistration = new HwDeviceRegistrationImpl();
 		return hwDeviceRegistration;
@@ -162,6 +169,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalFile createLocalFile() {
 		LocalFileImpl localFile = new LocalFileImpl();
 		return localFile;
@@ -172,6 +180,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PropertyFile createPropertyFile() {
 		PropertyFileImpl propertyFile = new PropertyFileImpl();
 		return propertyFile;
@@ -182,6 +191,7 @@ public class DpdFactoryImpl extends EFactoryImpl implements DpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DpdPackage getDpdPackage() {
 		return (DpdPackage)getEPackage();
 	}

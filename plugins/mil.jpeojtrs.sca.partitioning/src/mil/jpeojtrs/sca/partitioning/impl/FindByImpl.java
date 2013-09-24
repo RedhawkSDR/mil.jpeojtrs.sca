@@ -82,6 +82,7 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NamingService getNamingService() {
 		return namingService;
 	}
@@ -107,6 +108,7 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNamingService(NamingService newNamingService) {
 		if (newNamingService != namingService)
 		{
@@ -127,6 +129,7 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainFinder getDomainFinder() {
 		return domainFinder;
 	}
@@ -152,6 +155,7 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDomainFinder(DomainFinder newDomainFinder) {
 		if (newDomainFinder != domainFinder)
 		{

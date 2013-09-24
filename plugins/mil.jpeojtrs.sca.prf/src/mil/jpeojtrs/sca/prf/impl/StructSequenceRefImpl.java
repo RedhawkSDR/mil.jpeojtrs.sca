@@ -91,6 +91,7 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<StructValue> getStructValue() {
 		if (structValue == null)
 		{
@@ -104,6 +105,7 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public PropertyContainer getPropertyContainer() {
 		// END GENERATED CODE
 		return getProperty();

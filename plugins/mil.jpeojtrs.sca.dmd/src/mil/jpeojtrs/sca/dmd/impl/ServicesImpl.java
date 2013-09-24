@@ -74,6 +74,7 @@ public class ServicesImpl extends EObjectImpl implements Services {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Service> getService() {
 		if (service == null)
 		{

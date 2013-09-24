@@ -74,6 +74,7 @@ public class InputValueImpl extends EObjectImpl implements InputValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Simple> getSimple() {
 		if (simple == null)
 		{

@@ -87,6 +87,7 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SupportsInterface> getSupportsInterface() {
 		if (supportsInterface == null)
 		{
@@ -100,6 +101,7 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Ports getPorts() {
 		return ports;
 	}
@@ -125,6 +127,7 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPorts(Ports newPorts) {
 		if (newPorts != ports)
 		{

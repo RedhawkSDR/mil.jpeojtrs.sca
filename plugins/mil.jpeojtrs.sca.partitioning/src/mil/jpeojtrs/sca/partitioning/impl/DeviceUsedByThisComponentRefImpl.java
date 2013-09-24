@@ -96,6 +96,7 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRefId() {
 		return refId;
 	}
@@ -105,6 +106,7 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRefId(String newRefId) {
 		String oldRefId = refId;
 		refId = newRefId;
@@ -117,6 +119,7 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUsesRefId() {
 		return usesRefId;
 	}
@@ -126,6 +129,7 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUsesRefId(String newUsesRefId) {
 		String oldUsesRefId = usesRefId;
 		usesRefId = newUsesRefId;

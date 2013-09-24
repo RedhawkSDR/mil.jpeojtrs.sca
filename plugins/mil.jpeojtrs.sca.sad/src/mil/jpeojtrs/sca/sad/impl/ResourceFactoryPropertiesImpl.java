@@ -92,6 +92,7 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getGroup() {
 		if (group == null)
 		{
@@ -105,6 +106,7 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleRef> getSimpleRef() {
 		return getGroup().list(SadPackage.Literals.RESOURCE_FACTORY_PROPERTIES__SIMPLE_REF);
 	}
@@ -114,6 +116,7 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleSequenceRef> getSimpleSequenceRef() {
 		return getGroup().list(SadPackage.Literals.RESOURCE_FACTORY_PROPERTIES__SIMPLE_SEQUENCE_REF);
 	}
@@ -123,6 +126,7 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<StructRef> getStructRef() {
 		return getGroup().list(SadPackage.Literals.RESOURCE_FACTORY_PROPERTIES__STRUCT_REF);
 	}
@@ -132,6 +136,7 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<StructSequenceRef> getStructSequenceRef() {
 		return getGroup().list(SadPackage.Literals.RESOURCE_FACTORY_PROPERTIES__STRUCT_SEQUENCE_REF);
 	}
@@ -141,6 +146,7 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentResourceFactoryRef getFactoryRef() {
 		if (eContainerFeatureID() != SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF) return null;
 		return (ComponentResourceFactoryRef)eInternalContainer();
@@ -161,6 +167,7 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFactoryRef(ComponentResourceFactoryRef newFactoryRef) {
 		if (newFactoryRef != eInternalContainer() || (eContainerFeatureID() != SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF && newFactoryRef != null))
 		{
@@ -194,6 +201,7 @@ public class ResourceFactoryPropertiesImpl extends EObjectImpl implements Resour
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public PropertyContainer getPropertyContainer() {
 		// END GENERATED CODE
 		return ScaEcoreUtils.getFeature(this, PROP_PATH);

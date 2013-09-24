@@ -82,6 +82,7 @@ public class ChildHwDeviceImpl extends EObjectImpl implements ChildHwDevice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HwDeviceRegistration getHwDeviceRegistration() {
 		return hwDeviceRegistration;
 	}
@@ -106,6 +107,7 @@ public class ChildHwDeviceImpl extends EObjectImpl implements ChildHwDevice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setHwDeviceRegistration(HwDeviceRegistration newHwDeviceRegistration) {
 		if (newHwDeviceRegistration != hwDeviceRegistration) {
 			NotificationChain msgs = null;
@@ -125,6 +127,7 @@ public class ChildHwDeviceImpl extends EObjectImpl implements ChildHwDevice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DevicePkgRef getDevicePkgRef() {
 		return devicePkgRef;
 	}
@@ -149,6 +152,7 @@ public class ChildHwDeviceImpl extends EObjectImpl implements ChildHwDevice {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDevicePkgRef(DevicePkgRef newDevicePkgRef) {
 		if (newDevicePkgRef != devicePkgRef) {
 			NotificationChain msgs = null;

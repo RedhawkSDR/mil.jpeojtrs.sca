@@ -96,6 +96,7 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDeviceID() {
 		return deviceID;
 	}
@@ -105,6 +106,7 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeviceID(String newDeviceID) {
 		String oldDeviceID = deviceID;
 		deviceID = newDeviceID;
@@ -117,6 +119,7 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getMountName() {
 		return mountName;
 	}
@@ -126,6 +129,7 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMountName(String newMountName) {
 		String oldMountName = mountName;
 		mountName = newMountName;

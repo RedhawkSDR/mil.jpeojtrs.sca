@@ -74,6 +74,7 @@ public class ResultValueImpl extends EObjectImpl implements ResultValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Simple> getSimple() {
 		if (simple == null)
 		{

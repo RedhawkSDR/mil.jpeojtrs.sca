@@ -130,7 +130,7 @@ public class PortsTest extends TestCase {
 		for (final Provides prov : this.fixture.getProvides()) {
 			Assert.assertNotNull(prov);
 
-			if (prov.getProvidesName().equals("provides_port")) {
+			if ("provides_port".equals(prov.getProvidesName())) {
 				hasPort = true;
 				break;
 			}
@@ -156,7 +156,7 @@ public class PortsTest extends TestCase {
 		for (final Uses prov : this.fixture.getUses()) {
 			Assert.assertNotNull(prov);
 
-			if (prov.getUsesName().equals("uses_port")) {
+			if ("uses_port".equals(prov.getUsesName())) {
 				hasPort = true;
 				break;
 			}

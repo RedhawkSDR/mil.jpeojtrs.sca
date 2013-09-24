@@ -114,6 +114,7 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeployOnDevice getDeployDevice() {
 		return deployDevice;
 	}
@@ -139,6 +140,7 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeployDevice(DeployOnDevice newDeployDevice) {
 		if (newDeployDevice != deployDevice)
 		{
@@ -159,6 +161,7 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CompositePartOfDevice getCompositePartOfDevice() {
 		return compositePartOfDevice;
 	}
@@ -204,6 +207,7 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCompositePartOfDevice(CompositePartOfDevice newCompositePartOfDevice) {
 		if (newCompositePartOfDevice != compositePartOfDevice)
 		{
@@ -224,6 +228,7 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DevicePkgFile getDevicePkgFile() {
 		return devicePkgFile;
 	}
@@ -249,6 +254,7 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDevicePkgFile(DevicePkgFile newDevicePkgFile) {
 		if (newDevicePkgFile != devicePkgFile)
 		{
@@ -269,6 +275,7 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DcdComponentInstantiation getParentDevice() {
 		DcdComponentInstantiation parentDevice = basicGetParentDevice();
 		return parentDevice != null && parentDevice.eIsProxy() ? (DcdComponentInstantiation)eResolveProxy((InternalEObject)parentDevice) : parentDevice;
@@ -294,6 +301,7 @@ public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdCompone
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setParentDevice(DcdComponentInstantiation newParentDevice) {
 		// END GENERATED CODE
 		if (newParentDevice != null) {

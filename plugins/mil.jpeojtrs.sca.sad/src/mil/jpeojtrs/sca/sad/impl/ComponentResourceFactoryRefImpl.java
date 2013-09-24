@@ -96,6 +96,7 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ResourceFactoryProperties getResourceFactoryProperties() {
 		return resourceFactoryProperties;
 	}
@@ -121,6 +122,7 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setResourceFactoryProperties(ResourceFactoryProperties newResourceFactoryProperties) {
 		if (newResourceFactoryProperties != resourceFactoryProperties)
 		{
@@ -141,6 +143,7 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRefid() {
 		return refid;
 	}
@@ -150,6 +153,7 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRefid(String newRefid) {
 		String oldRefid = refid;
 		refid = newRefid;
@@ -162,6 +166,7 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadComponentInstantiation getComponent() {
 		SadComponentInstantiation component = basicGetComponent();
 		return component != null && component.eIsProxy() ? (SadComponentInstantiation)eResolveProxy((InternalEObject)component) : component;
@@ -206,6 +211,7 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setComponent(SadComponentInstantiation newComponent) {
 		// END GENERATED CODE
 		if (newComponent != null) {

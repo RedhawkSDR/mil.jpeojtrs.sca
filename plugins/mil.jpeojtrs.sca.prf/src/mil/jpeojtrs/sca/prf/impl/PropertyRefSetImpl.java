@@ -79,6 +79,7 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getProperties() {
 		if (properties == null)
 		{
@@ -92,6 +93,7 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SimpleRef getSimpleRef() {
 		return (SimpleRef)getProperties().get(PrfPackage.Literals.PROPERTY_REF_SET__SIMPLE_REF, true);
 	}
@@ -110,6 +112,7 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSimpleRef(SimpleRef newSimpleRef) {
 		((FeatureMap.Internal)getProperties()).set(PrfPackage.Literals.PROPERTY_REF_SET__SIMPLE_REF, newSimpleRef);
 	}
@@ -119,6 +122,7 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SimpleSequenceRef getSimpleSequenceRef() {
 		return (SimpleSequenceRef)getProperties().get(PrfPackage.Literals.PROPERTY_REF_SET__SIMPLE_SEQUENCE_REF, true);
 	}
@@ -137,6 +141,7 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSimpleSequenceRef(SimpleSequenceRef newSimpleSequenceRef) {
 		((FeatureMap.Internal)getProperties()).set(PrfPackage.Literals.PROPERTY_REF_SET__SIMPLE_SEQUENCE_REF, newSimpleSequenceRef);
 	}
@@ -146,6 +151,7 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StructRef getStructRef() {
 		return (StructRef)getProperties().get(PrfPackage.Literals.PROPERTY_REF_SET__STRUCT_REF, true);
 	}
@@ -164,6 +170,7 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStructRef(StructRef newStructRef) {
 		((FeatureMap.Internal)getProperties()).set(PrfPackage.Literals.PROPERTY_REF_SET__STRUCT_REF, newStructRef);
 	}
@@ -173,6 +180,7 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StructSequenceRef getStructSequenceRef() {
 		return (StructSequenceRef)getProperties().get(PrfPackage.Literals.PROPERTY_REF_SET__STRUCT_SEQUENCE_REF, true);
 	}
@@ -191,6 +199,7 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStructSequenceRef(StructSequenceRef newStructSequenceRef) {
 		((FeatureMap.Internal)getProperties()).set(PrfPackage.Literals.PROPERTY_REF_SET__STRUCT_SEQUENCE_REF, newStructSequenceRef);
 	}
@@ -200,6 +209,7 @@ public abstract class PropertyRefSetImpl extends EObjectImpl implements Property
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public abstract PropertyContainer getPropertyContainer();
 
 	/**

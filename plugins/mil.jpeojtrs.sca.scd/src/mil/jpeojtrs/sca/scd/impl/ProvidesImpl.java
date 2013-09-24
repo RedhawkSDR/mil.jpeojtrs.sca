@@ -66,6 +66,7 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public String getProvidesName() {
 		// END GENERATED CODE
 		return getName();
@@ -88,6 +89,7 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setProvidesName(String newProvidesName) {
 		// END GENERATED CODE
 		setName(newProvidesName);

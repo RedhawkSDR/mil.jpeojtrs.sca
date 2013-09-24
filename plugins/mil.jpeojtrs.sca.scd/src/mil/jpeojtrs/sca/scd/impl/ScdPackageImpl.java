@@ -221,7 +221,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 			(theScdPackage, 
 			 new EValidator.Descriptor()
 			 {
-				 public EValidator getEValidator()
+				 @Override
+				public EValidator getEValidator()
 				 {
 					 return ScdValidator.INSTANCE;
 				 }
@@ -242,6 +243,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			AdvancedEObjectValidator validator = new AdvancedEObjectValidator(ScdValidator.INSTANCE);
+			@Override
 			public EValidator getEValidator() {
 				return this.validator;
 			}
@@ -255,6 +257,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentFeatures() {
 		return componentFeaturesEClass;
 	}
@@ -264,6 +267,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentFeatures_SupportsInterface() {
 		return (EReference)componentFeaturesEClass.getEStructuralFeatures().get(0);
 	}
@@ -273,6 +277,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentFeatures_Ports() {
 		return (EReference)componentFeaturesEClass.getEStructuralFeatures().get(1);
 	}
@@ -282,6 +287,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentRepId() {
 		return componentRepIdEClass;
 	}
@@ -291,6 +297,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentRepId_Repid() {
 		return (EAttribute)componentRepIdEClass.getEStructuralFeatures().get(0);
 	}
@@ -300,6 +307,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentRepId_Interface() {
 		return (EReference)componentRepIdEClass.getEStructuralFeatures().get(1);
 	}
@@ -309,6 +317,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInheritsInterface() {
 		return inheritsInterfaceEClass;
 	}
@@ -318,6 +327,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInheritsInterface_Repid() {
 		return (EAttribute)inheritsInterfaceEClass.getEStructuralFeatures().get(0);
 	}
@@ -327,6 +337,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInheritsInterface_Interface() {
 		return (EReference)inheritsInterfaceEClass.getEStructuralFeatures().get(1);
 	}
@@ -336,6 +347,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInterface() {
 		return interfaceEClass;
 	}
@@ -345,6 +357,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInterface_InheritsInterfaces() {
 		return (EReference)interfaceEClass.getEStructuralFeatures().get(0);
 	}
@@ -354,6 +367,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInterface_Name() {
 		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(1);
 	}
@@ -363,6 +377,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInterface_Repid() {
 		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(2);
 	}
@@ -372,6 +387,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInterfaces() {
 		return interfacesEClass;
 	}
@@ -381,6 +397,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getInterfaces_Interface() {
 		return (EReference)interfacesEClass.getEStructuralFeatures().get(0);
 	}
@@ -390,6 +407,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLocalFile() {
 		return localFileEClass;
 	}
@@ -399,6 +417,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalFile_Name() {
 		return (EAttribute)localFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -408,6 +427,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPorts() {
 		return portsEClass;
 	}
@@ -417,6 +437,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPorts_Group() {
 		return (EAttribute)portsEClass.getEStructuralFeatures().get(0);
 	}
@@ -426,6 +447,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPorts_Provides() {
 		return (EReference)portsEClass.getEStructuralFeatures().get(1);
 	}
@@ -435,6 +457,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPorts_Uses() {
 		return (EReference)portsEClass.getEStructuralFeatures().get(2);
 	}
@@ -444,6 +467,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPortTypeContainer() {
 		return portTypeContainerEClass;
 	}
@@ -453,6 +477,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPortTypeContainer_Type() {
 		return (EAttribute)portTypeContainerEClass.getEStructuralFeatures().get(0);
 	}
@@ -462,6 +487,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyFile() {
 		return propertyFileEClass;
 	}
@@ -471,6 +497,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyFile_LocalFile() {
 		return (EReference)propertyFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -480,6 +507,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyFile_Type() {
 		return (EAttribute)propertyFileEClass.getEStructuralFeatures().get(1);
 	}
@@ -489,6 +517,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyFile_Properties() {
 		return (EReference)propertyFileEClass.getEStructuralFeatures().get(2);
 	}
@@ -498,6 +527,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProvides() {
 		return providesEClass;
 	}
@@ -507,6 +537,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProvides_ProvidesName() {
 		return (EAttribute)providesEClass.getEStructuralFeatures().get(0);
 	}
@@ -516,6 +547,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractPort() {
 		return abstractPortEClass;
 	}
@@ -525,6 +557,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractPort_PortType() {
 		return (EReference)abstractPortEClass.getEStructuralFeatures().get(0);
 	}
@@ -534,6 +567,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractPort_Name() {
 		return (EAttribute)abstractPortEClass.getEStructuralFeatures().get(1);
 	}
@@ -543,6 +577,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractPort_RepID() {
 		return (EAttribute)abstractPortEClass.getEStructuralFeatures().get(2);
 	}
@@ -552,6 +587,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractPort_Interface() {
 		return (EReference)abstractPortEClass.getEStructuralFeatures().get(3);
 	}
@@ -561,6 +597,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getScdDocumentRoot() {
 		return scdDocumentRootEClass;
 	}
@@ -570,6 +607,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getScdDocumentRoot_Mixed() {
 		return (EAttribute)scdDocumentRootEClass.getEStructuralFeatures().get(0);
 	}
@@ -579,6 +617,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScdDocumentRoot_XMLNSPrefixMap() {
 		return (EReference)scdDocumentRootEClass.getEStructuralFeatures().get(1);
 	}
@@ -588,6 +627,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScdDocumentRoot_XSISchemaLocation() {
 		return (EReference)scdDocumentRootEClass.getEStructuralFeatures().get(2);
 	}
@@ -597,6 +637,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getScdDocumentRoot_Softwarecomponent() {
 		return (EReference)scdDocumentRootEClass.getEStructuralFeatures().get(3);
 	}
@@ -606,6 +647,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSoftwareComponent() {
 		return softwareComponentEClass;
 	}
@@ -615,6 +657,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSoftwareComponent_CorbaVersion() {
 		return (EAttribute)softwareComponentEClass.getEStructuralFeatures().get(0);
 	}
@@ -624,6 +667,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSoftwareComponent_ComponentRepID() {
 		return (EReference)softwareComponentEClass.getEStructuralFeatures().get(1);
 	}
@@ -633,6 +677,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSoftwareComponent_ComponentType() {
 		return (EAttribute)softwareComponentEClass.getEStructuralFeatures().get(2);
 	}
@@ -642,6 +687,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSoftwareComponent_ComponentFeatures() {
 		return (EReference)softwareComponentEClass.getEStructuralFeatures().get(3);
 	}
@@ -651,6 +697,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSoftwareComponent_Interfaces() {
 		return (EReference)softwareComponentEClass.getEStructuralFeatures().get(4);
 	}
@@ -660,6 +707,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSoftwareComponent_PropertyFile() {
 		return (EReference)softwareComponentEClass.getEStructuralFeatures().get(5);
 	}
@@ -669,6 +717,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSoftwareComponent_RepId() {
 		return (EAttribute)softwareComponentEClass.getEStructuralFeatures().get(6);
 	}
@@ -678,6 +727,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSupportsInterface() {
 		return supportsInterfaceEClass;
 	}
@@ -687,6 +737,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSupportsInterface_RepId() {
 		return (EAttribute)supportsInterfaceEClass.getEStructuralFeatures().get(0);
 	}
@@ -696,6 +747,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSupportsInterface_SupportsName() {
 		return (EAttribute)supportsInterfaceEClass.getEStructuralFeatures().get(1);
 	}
@@ -705,6 +757,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSupportsInterface_Id() {
 		return (EAttribute)supportsInterfaceEClass.getEStructuralFeatures().get(2);
 	}
@@ -714,6 +767,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSupportsInterface_Interface() {
 		return (EReference)supportsInterfaceEClass.getEStructuralFeatures().get(3);
 	}
@@ -723,6 +777,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getUses() {
 		return usesEClass;
 	}
@@ -732,6 +787,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getUses_UsesName() {
 		return (EAttribute)usesEClass.getEStructuralFeatures().get(0);
 	}
@@ -741,6 +797,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getPortType() {
 		return portTypeEEnum;
 	}
@@ -750,6 +807,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getComponentType() {
 		return componentTypeEEnum;
 	}
@@ -759,6 +817,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getPortTypeObject() {
 		return portTypeObjectEDataType;
 	}
@@ -768,6 +827,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ScdFactory getScdFactory() {
 		return (ScdFactory)getEFactoryInstance();
 	}

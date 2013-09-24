@@ -86,6 +86,7 @@ public class ActionImpl extends EObjectImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ActionType getType() {
 		return type;
 	}
@@ -95,6 +96,7 @@ public class ActionImpl extends EObjectImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(ActionType newType) {
 		ActionType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
@@ -109,6 +111,7 @@ public class ActionImpl extends EObjectImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void unsetType() {
 		ActionType oldType = type;
 		boolean oldTypeESet = typeESet;
@@ -123,6 +126,7 @@ public class ActionImpl extends EObjectImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isSetType() {
 		return typeESet;
 	}

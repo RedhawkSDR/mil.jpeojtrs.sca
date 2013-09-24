@@ -92,6 +92,7 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FindComponent getFindComponent() {
 		return findComponent;
 	}
@@ -117,6 +118,7 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFindComponent(FindComponent newFindComponent) {
 		if (newFindComponent != findComponent)
 		{
@@ -137,6 +139,7 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BigInteger getStartOrder() {
 		return startOrder;
 	}
@@ -146,6 +149,7 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStartOrder(BigInteger newStartOrder) {
 		BigInteger oldStartOrder = startOrder;
 		startOrder = newStartOrder;

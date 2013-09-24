@@ -98,6 +98,7 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getMixed() {
 		if (mixed == null)
 		{
@@ -111,6 +112,7 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
 		if (xMLNSPrefixMap == null)
 		{
@@ -124,6 +126,7 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EMap<String, String> getXSISchemaLocation() {
 		if (xSISchemaLocation == null)
 		{
@@ -137,6 +140,7 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SoftwareAssembly getSoftwareassembly() {
 		return (SoftwareAssembly)getMixed().get(SadPackage.Literals.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY, true);
 	}
@@ -155,6 +159,7 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSoftwareassembly(SoftwareAssembly newSoftwareassembly) {
 		((FeatureMap.Internal)getMixed()).set(SadPackage.Literals.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY, newSoftwareassembly);
 	}

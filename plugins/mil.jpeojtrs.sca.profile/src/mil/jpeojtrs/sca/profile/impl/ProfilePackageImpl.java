@@ -115,6 +115,7 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			AdvancedEObjectValidator validator = new AdvancedEObjectValidator();
+			@Override
 			public EValidator getEValidator() {
 				return this.validator;
 			}
@@ -128,6 +129,7 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDocumentRoot() {
 		return documentRootEClass;
 	}
@@ -137,6 +139,7 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentRoot_Mixed() {
 		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(0);
 	}
@@ -146,6 +149,7 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_XMLNSPrefixMap() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(1);
 	}
@@ -155,6 +159,7 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_XSISchemaLocation() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(2);
 	}
@@ -164,6 +169,7 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_Profile() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(3);
 	}
@@ -173,6 +179,7 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProfile() {
 		return profileEClass;
 	}
@@ -182,6 +189,7 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProfile_Filename() {
 		return (EAttribute)profileEClass.getEStructuralFeatures().get(0);
 	}
@@ -191,6 +199,7 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProfile_Type() {
 		return (EAttribute)profileEClass.getEStructuralFeatures().get(1);
 	}
@@ -200,6 +209,7 @@ public class ProfilePackageImpl extends EPackageImpl implements ProfilePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProfileFactory getProfileFactory() {
 		return (ProfileFactory)getEFactoryInstance();
 	}

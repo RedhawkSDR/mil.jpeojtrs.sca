@@ -70,6 +70,7 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getValue() {
 		if (value == null)
 		{

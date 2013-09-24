@@ -75,6 +75,7 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalFile getLocalFile() {
 		return localFile;
 	}
@@ -115,6 +116,7 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLocalFile(LocalFile newLocalFile) {
 		if (newLocalFile != localFile)
 		{
@@ -135,6 +137,7 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SoftPkg getSoftPkg() {
 		SoftPkg softPkg = basicGetSoftPkg();
 		return softPkg != null && softPkg.eIsProxy() ? (SoftPkg)eResolveProxy((InternalEObject)softPkg) : softPkg;
@@ -159,6 +162,7 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public void setSoftPkg(final SoftPkg newSoftPkg) {
 		// END GENERATED CODE
 		String path = ScaUriHelpers.getLocalFilePath(this, newSoftPkg);

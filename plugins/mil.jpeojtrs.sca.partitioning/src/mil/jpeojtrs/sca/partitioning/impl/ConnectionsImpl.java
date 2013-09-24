@@ -74,6 +74,7 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CI> getConnectInterface() {
 		if (connectInterface == null)
 		{

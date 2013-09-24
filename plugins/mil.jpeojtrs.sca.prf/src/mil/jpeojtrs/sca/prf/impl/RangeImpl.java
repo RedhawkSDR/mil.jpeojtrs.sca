@@ -96,6 +96,7 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getMax() {
 		return max;
 	}
@@ -105,6 +106,7 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMax(String newMax) {
 		String oldMax = max;
 		max = newMax;
@@ -117,6 +119,7 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getMin() {
 		return min;
 	}
@@ -126,6 +129,7 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMin(String newMin) {
 		String oldMin = min;
 		min = newMin;

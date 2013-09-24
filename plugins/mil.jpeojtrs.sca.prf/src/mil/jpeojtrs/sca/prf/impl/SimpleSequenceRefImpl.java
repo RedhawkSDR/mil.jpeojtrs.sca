@@ -85,6 +85,7 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Values getValues() {
 		return values;
 	}
@@ -110,6 +111,7 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValues(Values newValues) {
 		if (newValues != values)
 		{

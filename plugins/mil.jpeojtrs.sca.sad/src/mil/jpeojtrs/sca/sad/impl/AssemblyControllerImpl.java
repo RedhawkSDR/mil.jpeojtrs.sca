@@ -71,6 +71,7 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadComponentInstantiationRef getComponentInstantiationRef() {
 		return componentInstantiationRef;
 	}
@@ -96,6 +97,7 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef) {
 		if (newComponentInstantiationRef != componentInstantiationRef)
 		{

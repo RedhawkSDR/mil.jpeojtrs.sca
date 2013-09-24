@@ -212,6 +212,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PropertyFile getPropertyFile() {
 		return propertyFile;
 	}
@@ -236,6 +237,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPropertyFile(PropertyFile newPropertyFile) {
 		if (newPropertyFile != propertyFile) {
 			NotificationChain msgs = null;
@@ -255,6 +257,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -264,6 +267,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -276,6 +280,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getManufacturer() {
 		return manufacturer;
 	}
@@ -285,6 +290,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setManufacturer(String newManufacturer) {
 		String oldManufacturer = manufacturer;
 		manufacturer = newManufacturer;
@@ -297,6 +303,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getModelNumber() {
 		return modelNumber;
 	}
@@ -306,6 +313,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModelNumber(String newModelNumber) {
 		String oldModelNumber = modelNumber;
 		modelNumber = newModelNumber;
@@ -318,6 +326,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceClass getDeviceClass() {
 		return deviceClass;
 	}
@@ -342,6 +351,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeviceClass(DeviceClass newDeviceClass) {
 		if (newDeviceClass != deviceClass) {
 			NotificationChain msgs = null;
@@ -361,6 +371,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ChildHwDevice> getChildHwDevice() {
 		if (childHwDevice == null) {
 			childHwDevice = new EObjectContainmentEList<ChildHwDevice>(ChildHwDevice.class, this, DpdPackage.HW_DEVICE_REGISTRATION__CHILD_HW_DEVICE);
@@ -373,6 +384,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -382,6 +394,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -394,6 +407,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -403,6 +417,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -415,6 +430,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getVersion() {
 		return version;
 	}
@@ -424,6 +440,7 @@ public class HwDeviceRegistrationImpl extends EObjectImpl implements HwDeviceReg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVersion(String newVersion) {
 		String oldVersion = version;
 		version = newVersion;

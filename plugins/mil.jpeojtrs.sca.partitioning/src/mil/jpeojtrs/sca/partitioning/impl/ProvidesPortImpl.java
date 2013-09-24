@@ -123,6 +123,7 @@ public abstract class ProvidesPortImpl<P extends ComponentInstantiationRef<?>> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getProvidesIdentifier() {
 		return providesIdentifier;
 	}
@@ -132,6 +133,7 @@ public abstract class ProvidesPortImpl<P extends ComponentInstantiationRef<?>> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProvidesIdentifier(String newProvidesIdentifier) {
 		String oldProvidesIdentifier = providesIdentifier;
 		providesIdentifier = newProvidesIdentifier;
@@ -144,6 +146,7 @@ public abstract class ProvidesPortImpl<P extends ComponentInstantiationRef<?>> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public P getComponentInstantiationRef() {
 		return componentInstantiationRef;
 	}
@@ -169,6 +172,7 @@ public abstract class ProvidesPortImpl<P extends ComponentInstantiationRef<?>> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setComponentInstantiationRef(P newComponentInstantiationRef) {
 		if (newComponentInstantiationRef != componentInstantiationRef)
 		{
@@ -189,6 +193,7 @@ public abstract class ProvidesPortImpl<P extends ComponentInstantiationRef<?>> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceThatLoadedThisComponentRef getDeviceThatLoadedThisComponentRef() {
 		return deviceThatLoadedThisComponentRef;
 	}
@@ -214,6 +219,7 @@ public abstract class ProvidesPortImpl<P extends ComponentInstantiationRef<?>> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef newDeviceThatLoadedThisComponentRef) {
 		if (newDeviceThatLoadedThisComponentRef != deviceThatLoadedThisComponentRef)
 		{
@@ -234,6 +240,7 @@ public abstract class ProvidesPortImpl<P extends ComponentInstantiationRef<?>> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeviceUsedByThisComponentRef getDeviceUsedByThisComponentRef() {
 		return deviceUsedByThisComponentRef;
 	}
@@ -259,6 +266,7 @@ public abstract class ProvidesPortImpl<P extends ComponentInstantiationRef<?>> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef newDeviceUsedByThisComponentRef) {
 		if (newDeviceUsedByThisComponentRef != deviceUsedByThisComponentRef)
 		{
@@ -279,6 +287,7 @@ public abstract class ProvidesPortImpl<P extends ComponentInstantiationRef<?>> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FindBy getFindBy() {
 		return findBy;
 	}
@@ -304,6 +313,7 @@ public abstract class ProvidesPortImpl<P extends ComponentInstantiationRef<?>> e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFindBy(FindBy newFindBy) {
 		if (newFindBy != findBy)
 		{

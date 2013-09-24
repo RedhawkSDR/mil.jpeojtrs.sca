@@ -119,6 +119,10 @@ public class AnyUtilsTest {
 		Assert.assertEquals(Byte.MAX_VALUE, ((Short) val).byteValue());
 	}
 
+	
+	/**
+	 * @deprecated Test deprecated
+	 */
 	@Test
 	@Deprecated
 	public void test_insertInto() {

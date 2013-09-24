@@ -117,6 +117,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AssemblyController createAssemblyController() {
 		AssemblyControllerImpl assemblyController = new AssemblyControllerImpl();
 		return assemblyController;
@@ -127,6 +128,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadComponentInstantiation createSadComponentInstantiation() {
 		SadComponentInstantiationImpl sadComponentInstantiation = new SadComponentInstantiationImpl();
 		return sadComponentInstantiation;
@@ -137,6 +139,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadComponentInstantiationRef createSadComponentInstantiationRef() {
 		SadComponentInstantiationRefImpl sadComponentInstantiationRef = new SadComponentInstantiationRefImpl();
 		return sadComponentInstantiationRef;
@@ -147,6 +150,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadUsesPort createSadUsesPort() {
 		SadUsesPortImpl sadUsesPort = new SadUsesPortImpl();
 		return sadUsesPort;
@@ -157,6 +161,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadProvidesPort createSadProvidesPort() {
 		SadProvidesPortImpl sadProvidesPort = new SadProvidesPortImpl();
 		return sadProvidesPort;
@@ -167,6 +172,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadConnectInterface createSadConnectInterface() {
 		SadConnectInterfaceImpl sadConnectInterface = new SadConnectInterfaceImpl();
 		return sadConnectInterface;
@@ -177,6 +183,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadConnections createSadConnections() {
 		SadConnectionsImpl sadConnections = new SadConnectionsImpl();
 		return sadConnections;
@@ -187,6 +194,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentResourceFactoryRef createComponentResourceFactoryRef() {
 		ComponentResourceFactoryRefImpl componentResourceFactoryRef = new ComponentResourceFactoryRefImpl();
 		return componentResourceFactoryRef;
@@ -197,6 +205,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExternalPorts createExternalPorts() {
 		ExternalPortsImpl externalPorts = new ExternalPortsImpl();
 		return externalPorts;
@@ -208,6 +217,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExternalProperties createExternalProperties() {
 		ExternalPropertiesImpl externalProperties = new ExternalPropertiesImpl();
 		return externalProperties;
@@ -219,6 +229,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ExternalProperty createExternalProperty() {
 		ExternalPropertyImpl externalProperty = new ExternalPropertyImpl();
 		return externalProperty;
@@ -229,6 +240,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FindComponent createFindComponent() {
 		FindComponentImpl findComponent = new FindComponentImpl();
 		return findComponent;
@@ -239,6 +251,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HostCollocation createHostCollocation() {
 		HostCollocationImpl hostCollocation = new HostCollocationImpl();
 		return hostCollocation;
@@ -249,6 +262,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Port createPort() {
 		PortImpl port = new PortImpl();
 		return port;
@@ -259,6 +273,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadPartitioning createSadPartitioning() {
 		SadPartitioningImpl sadPartitioning = new SadPartitioningImpl();
 		return sadPartitioning;
@@ -269,6 +284,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadComponentPlacement createSadComponentPlacement() {
 		SadComponentPlacementImpl sadComponentPlacement = new SadComponentPlacementImpl();
 		return sadComponentPlacement;
@@ -279,6 +295,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ResourceFactoryProperties createResourceFactoryProperties() {
 		ResourceFactoryPropertiesImpl resourceFactoryProperties = new ResourceFactoryPropertiesImpl();
 		return resourceFactoryProperties;
@@ -289,6 +306,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadDocumentRoot createSadDocumentRoot() {
 		SadDocumentRootImpl sadDocumentRoot = new SadDocumentRootImpl();
 		return sadDocumentRoot;
@@ -299,6 +317,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SoftwareAssembly createSoftwareAssembly() {
 		SoftwareAssemblyImpl softwareAssembly = new SoftwareAssemblyImpl();
 		return softwareAssembly;
@@ -309,6 +328,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SadPackage getSadPackage() {
 		return (SadPackage)getEPackage();
 	}
@@ -324,6 +344,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 		return SadPackage.eINSTANCE;
 	}
 
+	@Override
 	public DomComponentFile createComponentFile() {
 	    return PartitioningFactory.eINSTANCE.createDomComponentFile();
     }

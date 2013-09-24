@@ -90,6 +90,7 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NamingService getNamingService() {
 		return namingService;
 	}
@@ -115,6 +116,7 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNamingService(NamingService newNamingService) {
 		if (newNamingService != namingService)
 		{
@@ -135,6 +137,7 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getStringifiedObjectRef() {
 		return stringifiedObjectRef;
 	}
@@ -144,6 +147,7 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStringifiedObjectRef(String newStringifiedObjectRef) {
 		String oldStringifiedObjectRef = stringifiedObjectRef;
 		stringifiedObjectRef = newStringifiedObjectRef;

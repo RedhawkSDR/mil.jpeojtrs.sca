@@ -77,6 +77,7 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRefid() {
 		return refid;
 	}
@@ -86,6 +87,7 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRefid(String newRefid) {
 		String oldRefid = refid;
 		refid = newRefid;

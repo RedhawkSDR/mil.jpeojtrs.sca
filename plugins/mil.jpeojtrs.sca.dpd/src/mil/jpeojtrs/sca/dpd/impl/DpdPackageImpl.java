@@ -164,6 +164,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			AdvancedEObjectValidator validator = new AdvancedEObjectValidator();
+			@Override
 			public EValidator getEValidator() {
 				return this.validator;
 			}
@@ -177,6 +178,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAuthor() {
 		return authorEClass;
 	}
@@ -186,6 +188,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthor_Name() {
 		return (EAttribute)authorEClass.getEStructuralFeatures().get(0);
 	}
@@ -195,6 +198,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthor_Company() {
 		return (EAttribute)authorEClass.getEStructuralFeatures().get(1);
 	}
@@ -204,6 +208,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAuthor_Webpage() {
 		return (EAttribute)authorEClass.getEStructuralFeatures().get(2);
 	}
@@ -213,6 +218,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getChildHwDevice() {
 		return childHwDeviceEClass;
 	}
@@ -222,6 +228,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getChildHwDevice_HwDeviceRegistration() {
 		return (EReference)childHwDeviceEClass.getEStructuralFeatures().get(0);
 	}
@@ -231,6 +238,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getChildHwDevice_DevicePkgRef() {
 		return (EReference)childHwDeviceEClass.getEStructuralFeatures().get(1);
 	}
@@ -240,6 +248,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDeviceClass() {
 		return deviceClassEClass;
 	}
@@ -249,6 +258,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDeviceClass_Class() {
 		return (EAttribute)deviceClassEClass.getEStructuralFeatures().get(0);
 	}
@@ -258,6 +268,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDevicePkg() {
 		return devicePkgEClass;
 	}
@@ -267,6 +278,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevicePkg_Title() {
 		return (EAttribute)devicePkgEClass.getEStructuralFeatures().get(0);
 	}
@@ -276,6 +288,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDevicePkg_Author() {
 		return (EReference)devicePkgEClass.getEStructuralFeatures().get(1);
 	}
@@ -285,6 +298,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevicePkg_Description() {
 		return (EAttribute)devicePkgEClass.getEStructuralFeatures().get(2);
 	}
@@ -294,6 +308,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDevicePkg_HwDeviceRegistration() {
 		return (EReference)devicePkgEClass.getEStructuralFeatures().get(3);
 	}
@@ -303,6 +318,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevicePkg_Id() {
 		return (EAttribute)devicePkgEClass.getEStructuralFeatures().get(4);
 	}
@@ -312,6 +328,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevicePkg_Name() {
 		return (EAttribute)devicePkgEClass.getEStructuralFeatures().get(5);
 	}
@@ -321,6 +338,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevicePkg_Version() {
 		return (EAttribute)devicePkgEClass.getEStructuralFeatures().get(6);
 	}
@@ -330,6 +348,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDevicePkgRef() {
 		return devicePkgRefEClass;
 	}
@@ -339,6 +358,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDevicePkgRef_LocalFile() {
 		return (EReference)devicePkgRefEClass.getEStructuralFeatures().get(0);
 	}
@@ -348,6 +368,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDevicePkgRef_Type() {
 		return (EAttribute)devicePkgRefEClass.getEStructuralFeatures().get(1);
 	}
@@ -357,6 +378,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDocumentRoot() {
 		return documentRootEClass;
 	}
@@ -366,6 +388,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentRoot_Mixed() {
 		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(0);
 	}
@@ -375,6 +398,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_XMLNSPrefixMap() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(1);
 	}
@@ -384,6 +408,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_XSISchemaLocation() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(2);
 	}
@@ -393,6 +418,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_Author() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(3);
 	}
@@ -402,6 +428,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_Childhwdevice() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(4);
 	}
@@ -411,6 +438,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentRoot_Class() {
 		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(5);
 	}
@@ -420,6 +448,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentRoot_Company() {
 		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(6);
 	}
@@ -429,6 +458,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentRoot_Description() {
 		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(7);
 	}
@@ -438,6 +468,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_Deviceclass() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(8);
 	}
@@ -447,6 +478,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_Devicepkg() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(9);
 	}
@@ -456,6 +488,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_Devicepkgref() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(10);
 	}
@@ -465,6 +498,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_Hwdeviceregistration() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(11);
 	}
@@ -474,6 +508,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_Localfile() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(12);
 	}
@@ -483,6 +518,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentRoot_Manufacturer() {
 		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(13);
 	}
@@ -492,6 +528,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentRoot_Modelnumber() {
 		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(14);
 	}
@@ -501,6 +538,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentRoot_Name() {
 		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(15);
 	}
@@ -510,6 +548,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDocumentRoot_Propertyfile() {
 		return (EReference)documentRootEClass.getEStructuralFeatures().get(16);
 	}
@@ -519,6 +558,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentRoot_Title() {
 		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(17);
 	}
@@ -528,6 +568,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentRoot_Webpage() {
 		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(18);
 	}
@@ -537,6 +578,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getHwDeviceRegistration() {
 		return hwDeviceRegistrationEClass;
 	}
@@ -546,6 +588,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getHwDeviceRegistration_PropertyFile() {
 		return (EReference)hwDeviceRegistrationEClass.getEStructuralFeatures().get(0);
 	}
@@ -555,6 +598,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwDeviceRegistration_Description() {
 		return (EAttribute)hwDeviceRegistrationEClass.getEStructuralFeatures().get(1);
 	}
@@ -564,6 +608,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwDeviceRegistration_Manufacturer() {
 		return (EAttribute)hwDeviceRegistrationEClass.getEStructuralFeatures().get(2);
 	}
@@ -573,6 +618,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwDeviceRegistration_ModelNumber() {
 		return (EAttribute)hwDeviceRegistrationEClass.getEStructuralFeatures().get(3);
 	}
@@ -582,6 +628,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getHwDeviceRegistration_DeviceClass() {
 		return (EReference)hwDeviceRegistrationEClass.getEStructuralFeatures().get(4);
 	}
@@ -591,6 +638,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getHwDeviceRegistration_ChildHwDevice() {
 		return (EReference)hwDeviceRegistrationEClass.getEStructuralFeatures().get(5);
 	}
@@ -600,6 +648,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwDeviceRegistration_Id() {
 		return (EAttribute)hwDeviceRegistrationEClass.getEStructuralFeatures().get(6);
 	}
@@ -609,6 +658,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwDeviceRegistration_Name() {
 		return (EAttribute)hwDeviceRegistrationEClass.getEStructuralFeatures().get(7);
 	}
@@ -618,6 +668,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getHwDeviceRegistration_Version() {
 		return (EAttribute)hwDeviceRegistrationEClass.getEStructuralFeatures().get(8);
 	}
@@ -627,6 +678,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLocalFile() {
 		return localFileEClass;
 	}
@@ -636,6 +688,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLocalFile_Name() {
 		return (EAttribute)localFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -645,6 +698,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyFile() {
 		return propertyFileEClass;
 	}
@@ -654,6 +708,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyFile_LocalFile() {
 		return (EReference)propertyFileEClass.getEStructuralFeatures().get(0);
 	}
@@ -663,6 +718,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyFile_Type() {
 		return (EAttribute)propertyFileEClass.getEStructuralFeatures().get(1);
 	}
@@ -672,6 +728,7 @@ public class DpdPackageImpl extends EPackageImpl implements DpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DpdFactory getDpdFactory() {
 		return (DpdFactory)getEFactoryInstance();
 	}

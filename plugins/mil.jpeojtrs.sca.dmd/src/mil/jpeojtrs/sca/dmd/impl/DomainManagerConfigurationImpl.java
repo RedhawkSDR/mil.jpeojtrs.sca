@@ -139,6 +139,7 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -148,6 +149,7 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -160,6 +162,7 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainManagerSoftPkg getDomainManagerSoftPkg() {
 		return domainManagerSoftPkg;
 	}
@@ -185,6 +188,7 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDomainManagerSoftPkg(DomainManagerSoftPkg newDomainManagerSoftPkg) {
 		if (newDomainManagerSoftPkg != domainManagerSoftPkg)
 		{
@@ -205,6 +209,7 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Services getServices() {
 		return services;
 	}
@@ -230,6 +235,7 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setServices(Services newServices) {
 		if (newServices != services)
 		{
@@ -250,6 +256,7 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -259,6 +266,7 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
@@ -271,6 +279,7 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -280,6 +289,7 @@ public class DomainManagerConfigurationImpl extends EObjectImpl implements Domai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

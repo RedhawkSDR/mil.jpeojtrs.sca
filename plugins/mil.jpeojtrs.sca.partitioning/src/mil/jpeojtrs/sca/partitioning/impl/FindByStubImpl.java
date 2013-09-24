@@ -120,6 +120,7 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NamingService getNamingService() {
 		return namingService;
 	}
@@ -145,6 +146,7 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNamingService(NamingService newNamingService) {
 		if (newNamingService != namingService)
 		{
@@ -165,6 +167,7 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DomainFinder getDomainFinder() {
 		return domainFinder;
 	}
@@ -190,6 +193,7 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDomainFinder(DomainFinder newDomainFinder) {
 		if (newDomainFinder != domainFinder)
 		{
@@ -210,6 +214,7 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ProvidesPortStub> getProvides() {
 		if (provides == null)
 		{
@@ -223,6 +228,7 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<UsesPortStub> getUses() {
 		if (uses == null)
 		{
@@ -236,6 +242,7 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentSupportedInterfaceStub getInterface() {
 		return interface_;
 	}
@@ -261,6 +268,7 @@ public class FindByStubImpl extends EObjectImpl implements FindByStub {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInterface(ComponentSupportedInterfaceStub newInterface) {
 		if (newInterface != interface_)
 		{

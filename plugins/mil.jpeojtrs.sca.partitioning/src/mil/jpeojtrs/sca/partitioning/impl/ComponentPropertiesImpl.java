@@ -99,6 +99,7 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureMap getProperties() {
 		if (properties == null)
 		{
@@ -112,6 +113,7 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleRef> getSimpleRef() {
 		return getProperties().list(PartitioningPackage.Literals.COMPONENT_PROPERTIES__SIMPLE_REF);
 	}
@@ -121,6 +123,7 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleSequenceRef> getSimpleSequenceRef() {
 		return getProperties().list(PartitioningPackage.Literals.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF);
 	}
@@ -130,6 +133,7 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<StructRef> getStructRef() {
 		return getProperties().list(PartitioningPackage.Literals.COMPONENT_PROPERTIES__STRUCT_REF);
 	}
@@ -139,6 +143,7 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<StructSequenceRef> getStructSequenceRef() {
 		return getProperties().list(PartitioningPackage.Literals.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF);
 	}
@@ -148,6 +153,7 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public PropertyContainer getPropertyContainer() {
 		// END GENERATED CODE
 		return ScaEcoreUtils.getFeature(this, PROP_PATH);

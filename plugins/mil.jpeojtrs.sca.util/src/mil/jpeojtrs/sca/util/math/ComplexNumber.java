@@ -27,23 +27,23 @@ public abstract class ComplexNumber {
 		if (value == null) {
 			return null;
 		}
-		if (type.equalsIgnoreCase("double")) {
+		if ("double".equalsIgnoreCase(type)) {
 			return ComplexDouble.valueOf(value);
-		} else if (type.equalsIgnoreCase("float")) {
+		} else if ("float".equalsIgnoreCase(type)) {
 			return ComplexFloat.valueOf(value);
-		} else if (type.equalsIgnoreCase("short")) {
+		} else if ("short".equalsIgnoreCase(type)) {
 			return ComplexShort.valueOf(value);
-		} else if (type.equalsIgnoreCase("long")) {
+		} else if ("long".equalsIgnoreCase(type)) {
 			return ComplexLong.valueOf(value);
-		} else if (type.equalsIgnoreCase("longlong")) {
+		} else if ("longlong".equalsIgnoreCase(type)) {
 			return ComplexLongLong.valueOf(value);
-		} else if (type.equalsIgnoreCase("ulong")) {
+		} else if ("ulong".equalsIgnoreCase(type)) {
 			return ComplexULong.valueOf(value);
-		} else if (type.equalsIgnoreCase("ushort")) {
+		} else if ("ushort".equalsIgnoreCase(type)) {
 			return ComplexUShort.valueOf(value);
-		} else if (type.equalsIgnoreCase("ulonglong")) {
+		} else if ("ulonglong".equalsIgnoreCase(type)) {
 			return ComplexULongLong.valueOf(value);
-		} else if (type.equalsIgnoreCase("octet")) {
+		} else if ("octet".equalsIgnoreCase(type)) {
 			return ComplexByte.valueOf(value);
 		} else {
 			throw new IllegalArgumentException("Unknown CORBA Type: " + type);

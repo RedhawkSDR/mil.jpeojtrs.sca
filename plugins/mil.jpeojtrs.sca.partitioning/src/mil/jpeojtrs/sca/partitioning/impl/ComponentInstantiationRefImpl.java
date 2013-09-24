@@ -79,6 +79,7 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public R getInstantiation() {
 		R instantiation = basicGetInstantiation();
@@ -109,6 +110,7 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@Override
 	public void setInstantiation(final R newInstantiation) {
 		// END GENERATED CODE
 		this.setRefid((newInstantiation == null) ? null : newInstantiation.getId());
@@ -120,6 +122,7 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRefid() {
 		return refid;
 	}
@@ -129,6 +132,7 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRefid(String newRefid) {
 		String oldRefid = refid;
 		refid = newRefid;

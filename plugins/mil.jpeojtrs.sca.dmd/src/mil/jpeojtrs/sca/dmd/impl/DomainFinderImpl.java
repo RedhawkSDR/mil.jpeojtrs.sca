@@ -96,6 +96,7 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -105,6 +106,7 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -117,6 +119,7 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -126,6 +129,7 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;

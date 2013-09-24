@@ -147,6 +147,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentFeatures createComponentFeatures() {
 		ComponentFeaturesImpl componentFeatures = new ComponentFeaturesImpl();
 		return componentFeatures;
@@ -157,6 +158,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentRepId createComponentRepId() {
 		ComponentRepIdImpl componentRepId = new ComponentRepIdImpl();
 		return componentRepId;
@@ -167,6 +169,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public InheritsInterface createInheritsInterface() {
 		InheritsInterfaceImpl inheritsInterface = new InheritsInterfaceImpl();
 		return inheritsInterface;
@@ -177,6 +180,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Interface createInterface() {
 		InterfaceImpl interface_ = new InterfaceImpl();
 		return interface_;
@@ -187,6 +191,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Interfaces createInterfaces() {
 		InterfacesImpl interfaces = new InterfacesImpl();
 		return interfaces;
@@ -197,6 +202,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LocalFile createLocalFile() {
 		LocalFileImpl localFile = new LocalFileImpl();
 		return localFile;
@@ -207,6 +213,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Ports createPorts() {
 		PortsImpl ports = new PortsImpl();
 		return ports;
@@ -217,6 +224,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PortTypeContainer createPortTypeContainer() {
 		PortTypeContainerImpl portTypeContainer = new PortTypeContainerImpl();
 		return portTypeContainer;
@@ -227,6 +235,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PropertyFile createPropertyFile() {
 		PropertyFileImpl propertyFile = new PropertyFileImpl();
 		return propertyFile;
@@ -237,6 +246,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Provides createProvides() {
 		ProvidesImpl provides = new ProvidesImpl();
 		return provides;
@@ -247,6 +257,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ScdDocumentRoot createScdDocumentRoot() {
 		ScdDocumentRootImpl scdDocumentRoot = new ScdDocumentRootImpl();
 		return scdDocumentRoot;
@@ -257,6 +268,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SoftwareComponent createSoftwareComponent() {
 		SoftwareComponentImpl softwareComponent = new SoftwareComponentImpl();
 		return softwareComponent;
@@ -267,6 +279,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SupportsInterface createSupportsInterface() {
 		SupportsInterfaceImpl supportsInterface = new SupportsInterfaceImpl();
 		return supportsInterface;
@@ -277,6 +290,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Uses createUses() {
 		UsesImpl uses = new UsesImpl();
 		return uses;
@@ -345,6 +359,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ScdPackage getScdPackage() {
 		return (ScdPackage)getEPackage();
 	}
@@ -363,6 +378,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public PortTypeContainer createPortTypeContainer(final PortType type) {
 		// END GENERATED CODE
 		final PortTypeContainer container = createPortTypeContainer();
