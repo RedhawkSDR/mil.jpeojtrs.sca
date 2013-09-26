@@ -140,7 +140,7 @@ public class SoftPkgTest extends TestCase {
 		Assert.assertEquals("DCE:9c4257a0-4281-45c7-85f6-a66adc018c7e", this.fixture.getImplementation().get(0).getId());
 		Assert.assertEquals(0, this.fixture.getUsesDevice().size());
 		Assert.assertNotNull(this.fixture.getType());
-		Assert.assertEquals("sca_compliant", this.fixture.getType().getLiteral());
+		Assert.assertEquals("sca_compliant", this.fixture.getType());
 		Assert.assertEquals("1.0", this.fixture.getVersion());
 	}
 
@@ -183,11 +183,11 @@ public class SoftPkgTest extends TestCase {
 		Assert.assertNull(this.fixture.getDescriptor());
 		
 		this.fixture.unsetType();
-		Assert.assertEquals("sca_compliant", this.fixture.getType().getLiteral());
+		Assert.assertEquals("sca_compliant", this.fixture.getType());
 		Assert.assertFalse(this.fixture.isSetType());
 
 		this.fixture.setType(null);
-		Assert.assertEquals("sca_compliant", this.fixture.getType().getLiteral());
+		Assert.assertEquals("sca_compliant", this.fixture.getType());
 		Assert.assertTrue(this.fixture.isSetType());
 	}
 } // SoftPkgTest

@@ -12,16 +12,13 @@
 package mil.jpeojtrs.sca.spd.impl;
 
 import java.util.Collection;
-
 import mil.jpeojtrs.sca.spd.Author;
 import mil.jpeojtrs.sca.spd.Descriptor;
 import mil.jpeojtrs.sca.spd.Implementation;
 import mil.jpeojtrs.sca.spd.PropertyFile;
-import mil.jpeojtrs.sca.spd.SCAComplianceType;
 import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.spd.UsesDevice;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -181,7 +178,7 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SCAComplianceType TYPE_EDEFAULT = SCAComplianceType.SCA_COMPLIANT;
+	protected static final String TYPE_EDEFAULT = "sca_compliant";
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -190,7 +187,7 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 * @ordered
 	 */
-	protected SCAComplianceType type = TYPE_EDEFAULT;
+	protected String type = TYPE_EDEFAULT;
 	/**
 	 * This is true if the Type attribute has been set.
 	 * <!-- begin-user-doc -->
@@ -452,21 +449,24 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SCAComplianceType getType() {
+	public String getType() {
 		return type;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(SCAComplianceType newType) {
-		SCAComplianceType oldType = type;
-		type = newType == null ? TYPE_EDEFAULT : newType;
+	public void setType(String newType)
+	{
+		String oldType = type;
+		type = newType;
 		boolean oldTypeESet = typeESet;
 		typeESet = true;
 		if (eNotificationRequired())
@@ -479,7 +479,7 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public void unsetType() {
-		SCAComplianceType oldType = type;
+		String oldType = type;
 		boolean oldTypeESet = typeESet;
 		type = TYPE_EDEFAULT;
 		typeESet = false;
@@ -651,7 +651,7 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 				setName((String)newValue);
 				return;
 			case SpdPackage.SOFT_PKG__TYPE:
-				setType((SCAComplianceType)newValue);
+				setType((String)newValue);
 				return;
 			case SpdPackage.SOFT_PKG__VERSION:
 				setVersion((String)newValue);

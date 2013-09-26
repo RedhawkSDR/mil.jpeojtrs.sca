@@ -1037,15 +1037,6 @@ public interface SpdPackage extends EPackage {
 	 */
 	int CODE_FILE_TYPE = 20;
 	/**
-	 * The meta object id for the '{@link mil.jpeojtrs.sca.spd.SCAComplianceType <em>SCA Compliance Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mil.jpeojtrs.sca.spd.SCAComplianceType
-	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getSCAComplianceType()
-	 * @generated
-	 */
-	int SCA_COMPLIANCE_TYPE = 21;
-	/**
 	 * The meta object id for the '<em>AEP Compliance Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1053,7 +1044,7 @@ public interface SpdPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getAEPComplianceTypeObject()
 	 * @generated
 	 */
-	int AEP_COMPLIANCE_TYPE_OBJECT = 22;
+	int AEP_COMPLIANCE_TYPE_OBJECT = 21;
 	/**
 	 * The meta object id for the '<em>Code File Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1062,16 +1053,7 @@ public interface SpdPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getCodeFileTypeObject()
 	 * @generated
 	 */
-	int CODE_FILE_TYPE_OBJECT = 23;
-	/**
-	 * The meta object id for the '<em>SCA Compliance Type Object</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mil.jpeojtrs.sca.spd.SCAComplianceType
-	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getSCAComplianceTypeObject()
-	 * @generated
-	 */
-	int SCA_COMPLIANCE_TYPE_OBJECT = 24;
+	int CODE_FILE_TYPE_OBJECT = 22;
 	/**
 	 * The meta object id for the '<em>URI</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1080,7 +1062,7 @@ public interface SpdPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getURI()
 	 * @generated
 	 */
-	int URI = 25;
+	int URI = 23;
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.spd.Author <em>Author</em>}'.
@@ -2041,16 +2023,6 @@ public interface SpdPackage extends EPackage {
 	EEnum getCodeFileType();
 
 	/**
-	 * Returns the meta object for enum '{@link mil.jpeojtrs.sca.spd.SCAComplianceType <em>SCA Compliance Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>SCA Compliance Type</em>'.
-	 * @see mil.jpeojtrs.sca.spd.SCAComplianceType
-	 * @generated
-	 */
-	EEnum getSCAComplianceType();
-
-	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.spd.AEPComplianceType <em>AEP Compliance Type Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2073,18 +2045,6 @@ public interface SpdPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getCodeFileTypeObject();
-
-	/**
-	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.spd.SCAComplianceType <em>SCA Compliance Type Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>SCA Compliance Type Object</em>'.
-	 * @see mil.jpeojtrs.sca.spd.SCAComplianceType
-	 * @model instanceClass="mil.jpeojtrs.sca.spd.SCAComplianceType"
-	 *        extendedMetaData="name='type_._1_._type:Object' baseType='type_._1_._type'"
-	 * @generated
-	 */
-	EDataType getSCAComplianceTypeObject();
 
 	/**
 	 * Returns the meta object for data type '{@link org.eclipse.emf.common.util.URI <em>URI</em>}'.
@@ -2787,15 +2747,6 @@ public interface SpdPackage extends EPackage {
 		 */
 		EEnum CODE_FILE_TYPE = eINSTANCE.getCodeFileType();
 		/**
-		 * The meta object literal for the '{@link mil.jpeojtrs.sca.spd.SCAComplianceType <em>SCA Compliance Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see mil.jpeojtrs.sca.spd.SCAComplianceType
-		 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getSCAComplianceType()
-		 * @generated
-		 */
-		EEnum SCA_COMPLIANCE_TYPE = eINSTANCE.getSCAComplianceType();
-		/**
 		 * The meta object literal for the '<em>AEP Compliance Type Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2813,15 +2764,6 @@ public interface SpdPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType CODE_FILE_TYPE_OBJECT = eINSTANCE.getCodeFileTypeObject();
-		/**
-		 * The meta object literal for the '<em>SCA Compliance Type Object</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see mil.jpeojtrs.sca.spd.SCAComplianceType
-		 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getSCAComplianceTypeObject()
-		 * @generated
-		 */
-		EDataType SCA_COMPLIANCE_TYPE_OBJECT = eINSTANCE.getSCAComplianceTypeObject();
 		/**
 		 * The meta object literal for the '<em>URI</em>' data type.
 		 * <!-- begin-user-doc -->

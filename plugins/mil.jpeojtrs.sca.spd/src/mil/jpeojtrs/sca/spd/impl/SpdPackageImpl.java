@@ -27,7 +27,6 @@ import mil.jpeojtrs.sca.spd.Processor;
 import mil.jpeojtrs.sca.spd.ProgrammingLanguage;
 import mil.jpeojtrs.sca.spd.PropertyFile;
 import mil.jpeojtrs.sca.spd.PropertyRef;
-import mil.jpeojtrs.sca.spd.SCAComplianceType;
 import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SoftPkgRef;
 import mil.jpeojtrs.sca.spd.SpdDocumentRoot;
@@ -36,7 +35,6 @@ import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.spd.UsesDevice;
 import mil.jpeojtrs.sca.spd.util.SpdValidator;
 import mil.jpeojtrs.sca.validator.AdvancedEObjectValidator;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -187,12 +185,6 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum scaComplianceTypeEEnum = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EDataType aepComplianceTypeObjectEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,12 +192,6 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 * @generated
 	 */
 	private EDataType codeFileTypeObjectEDataType = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType scaComplianceTypeObjectEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1116,15 +1102,6 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getSCAComplianceType() {
-		return scaComplianceTypeEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EDataType getAEPComplianceTypeObject() {
 		return aepComplianceTypeObjectEDataType;
 	}
@@ -1136,15 +1113,6 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 */
 	public EDataType getCodeFileTypeObject() {
 		return codeFileTypeObjectEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getSCAComplianceTypeObject() {
-		return scaComplianceTypeObjectEDataType;
 	}
 
 	/**
@@ -1293,12 +1261,10 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		// Create enums
 		aepComplianceTypeEEnum = createEEnum(AEP_COMPLIANCE_TYPE);
 		codeFileTypeEEnum = createEEnum(CODE_FILE_TYPE);
-		scaComplianceTypeEEnum = createEEnum(SCA_COMPLIANCE_TYPE);
 
 		// Create data types
 		aepComplianceTypeObjectEDataType = createEDataType(AEP_COMPLIANCE_TYPE_OBJECT);
 		codeFileTypeObjectEDataType = createEDataType(CODE_FILE_TYPE_OBJECT);
-		scaComplianceTypeObjectEDataType = createEDataType(SCA_COMPLIANCE_TYPE_OBJECT);
 		uriEDataType = createEDataType(URI);
 	}
 
@@ -1426,7 +1392,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		initEReference(getSoftPkg_UsesDevice(), this.getUsesDevice(), null, "usesDevice", null, 0, -1, SoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftPkg_Id(), thePrfPackage.getDceUUID(), "id", null, 1, 1, SoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftPkg_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, SoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSoftPkg_Type(), this.getSCAComplianceType(), "type", "sca_compliant", 0, 1, SoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSoftPkg_Type(), theEcorePackage.getEString(), "type", "sca_compliant", 0, 1, SoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftPkg_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, SoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(softPkgEClass, this.getImplementation(), "getImplementation", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1461,14 +1427,9 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addEEnumLiteral(codeFileTypeEEnum, CodeFileType.DRIVER);
 		addEEnumLiteral(codeFileTypeEEnum, CodeFileType.NODE_BOOTER);
 
-		initEEnum(scaComplianceTypeEEnum, SCAComplianceType.class, "SCAComplianceType");
-		addEEnumLiteral(scaComplianceTypeEEnum, SCAComplianceType.SCA_COMPLIANT);
-		addEEnumLiteral(scaComplianceTypeEEnum, SCAComplianceType.SCA_NON_COMPLIANT);
-
 		// Initialize data types
 		initEDataType(aepComplianceTypeObjectEDataType, AEPComplianceType.class, "AEPComplianceTypeObject", IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(codeFileTypeObjectEDataType, CodeFileType.class, "CodeFileTypeObject", IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(scaComplianceTypeObjectEDataType, SCAComplianceType.class, "SCAComplianceTypeObject", IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(uriEDataType, org.eclipse.emf.common.util.URI.class, "URI", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
@@ -2033,21 +1994,6 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 			 "name", "version"
 		   });		
 		addAnnotation
-		  (scaComplianceTypeEEnum, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "type_._1_._type"
-		   });		
-		addAnnotation
-		  (scaComplianceTypeObjectEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "type_._1_._type:Object",
-			 "baseType", "type_._1_._type"
-		   });		
-		addAnnotation
 		  (softPkgEClass, 
 		   source, 
 		   new String[] 
@@ -2289,7 +2235,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		   new String[] 
 		   {
 			 "constraints", "NonEmptyDependency"
-		   });																																																					
+		   });																																																			
 		addAnnotation
 		  (softPkgEClass, 
 		   source, 

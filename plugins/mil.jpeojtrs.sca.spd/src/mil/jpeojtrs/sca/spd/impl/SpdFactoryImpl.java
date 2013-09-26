@@ -26,14 +26,12 @@ import mil.jpeojtrs.sca.spd.Processor;
 import mil.jpeojtrs.sca.spd.ProgrammingLanguage;
 import mil.jpeojtrs.sca.spd.PropertyFile;
 import mil.jpeojtrs.sca.spd.PropertyRef;
-import mil.jpeojtrs.sca.spd.SCAComplianceType;
 import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SoftPkgRef;
 import mil.jpeojtrs.sca.spd.SpdDocumentRoot;
 import mil.jpeojtrs.sca.spd.SpdFactory;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.spd.UsesDevice;
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -127,14 +125,10 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 				return createAEPComplianceTypeFromString(eDataType, initialValue);
 			case SpdPackage.CODE_FILE_TYPE:
 				return createCodeFileTypeFromString(eDataType, initialValue);
-			case SpdPackage.SCA_COMPLIANCE_TYPE:
-				return createSCAComplianceTypeFromString(eDataType, initialValue);
 			case SpdPackage.AEP_COMPLIANCE_TYPE_OBJECT:
 				return createAEPComplianceTypeObjectFromString(eDataType, initialValue);
 			case SpdPackage.CODE_FILE_TYPE_OBJECT:
 				return createCodeFileTypeObjectFromString(eDataType, initialValue);
-			case SpdPackage.SCA_COMPLIANCE_TYPE_OBJECT:
-				return createSCAComplianceTypeObjectFromString(eDataType, initialValue);
 			case SpdPackage.URI:
 				return createURIFromString(eDataType, initialValue);
 			default:
@@ -155,14 +149,10 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 				return convertAEPComplianceTypeToString(eDataType, instanceValue);
 			case SpdPackage.CODE_FILE_TYPE:
 				return convertCodeFileTypeToString(eDataType, instanceValue);
-			case SpdPackage.SCA_COMPLIANCE_TYPE:
-				return convertSCAComplianceTypeToString(eDataType, instanceValue);
 			case SpdPackage.AEP_COMPLIANCE_TYPE_OBJECT:
 				return convertAEPComplianceTypeObjectToString(eDataType, instanceValue);
 			case SpdPackage.CODE_FILE_TYPE_OBJECT:
 				return convertCodeFileTypeObjectToString(eDataType, instanceValue);
-			case SpdPackage.SCA_COMPLIANCE_TYPE_OBJECT:
-				return convertSCAComplianceTypeObjectToString(eDataType, instanceValue);
 			case SpdPackage.URI:
 				return convertURIToString(eDataType, instanceValue);
 			default:
@@ -405,26 +395,6 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SCAComplianceType createSCAComplianceTypeFromString(EDataType eDataType, String initialValue) {
-		SCAComplianceType result = SCAComplianceType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertSCAComplianceTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AEPComplianceType createAEPComplianceTypeObjectFromString(EDataType eDataType, String initialValue) {
 		return createAEPComplianceTypeFromString(SpdPackage.Literals.AEP_COMPLIANCE_TYPE, initialValue);
 	}
@@ -454,24 +424,6 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 */
 	public String convertCodeFileTypeObjectToString(EDataType eDataType, Object instanceValue) {
 		return convertCodeFileTypeToString(SpdPackage.Literals.CODE_FILE_TYPE, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SCAComplianceType createSCAComplianceTypeObjectFromString(EDataType eDataType, String initialValue) {
-		return createSCAComplianceTypeFromString(SpdPackage.Literals.SCA_COMPLIANCE_TYPE, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertSCAComplianceTypeObjectToString(EDataType eDataType, Object instanceValue) {
-		return convertSCAComplianceTypeToString(SpdPackage.Literals.SCA_COMPLIANCE_TYPE, instanceValue);
 	}
 
 	/**

@@ -268,37 +268,36 @@ public interface SoftPkg extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The default value is <code>"sca_compliant"</code>.
-	 * The literals are from the enumeration {@link mil.jpeojtrs.sca.spd.SCAComplianceType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see mil.jpeojtrs.sca.spd.SCAComplianceType
 	 * @see #isSetType()
 	 * @see #unsetType()
-	 * @see #setType(SCAComplianceType)
+	 * @see #setType(String)
 	 * @see mil.jpeojtrs.sca.spd.SpdPackage#getSoftPkg_Type()
 	 * @model default="sca_compliant" unsettable="true"
 	 *        extendedMetaData="kind='attribute' name='type'"
 	 * @generated
 	 */
-	SCAComplianceType getType();
+	String getType();
 
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.spd.SoftPkg#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see mil.jpeojtrs.sca.spd.SCAComplianceType
 	 * @see #isSetType()
 	 * @see #unsetType()
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(SCAComplianceType value);
+	void setType(String value);
 
 	/**
 	 * Unsets the value of the '{@link mil.jpeojtrs.sca.spd.SoftPkg#getType <em>Type</em>}' attribute.
@@ -306,7 +305,7 @@ public interface SoftPkg extends EObject {
 	 * <!-- end-user-doc -->
 	 * @see #isSetType()
 	 * @see #getType()
-	 * @see #setType(SCAComplianceType)
+	 * @see #setType(String)
 	 * @generated
 	 */
 	void unsetType();
@@ -318,7 +317,7 @@ public interface SoftPkg extends EObject {
 	 * @return whether the value of the '<em>Type</em>' attribute is set.
 	 * @see #unsetType()
 	 * @see #getType()
-	 * @see #setType(SCAComplianceType)
+	 * @see #setType(String)
 	 * @generated
 	 */
 	boolean isSetType();

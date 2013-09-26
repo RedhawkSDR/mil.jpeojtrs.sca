@@ -12,7 +12,6 @@
 package mil.jpeojtrs.sca.spd.util;
 
 import java.util.Map;
-
 import mil.jpeojtrs.sca.spd.AEPComplianceType;
 import mil.jpeojtrs.sca.spd.Author;
 import mil.jpeojtrs.sca.spd.Code;
@@ -27,13 +26,11 @@ import mil.jpeojtrs.sca.spd.Processor;
 import mil.jpeojtrs.sca.spd.ProgrammingLanguage;
 import mil.jpeojtrs.sca.spd.PropertyFile;
 import mil.jpeojtrs.sca.spd.PropertyRef;
-import mil.jpeojtrs.sca.spd.SCAComplianceType;
 import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SoftPkgRef;
 import mil.jpeojtrs.sca.spd.SpdDocumentRoot;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.spd.UsesDevice;
-
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -153,14 +150,10 @@ public class SpdValidator extends EObjectValidator {
 				return validateAEPComplianceType((AEPComplianceType)value, diagnostics, context);
 			case SpdPackage.CODE_FILE_TYPE:
 				return validateCodeFileType((CodeFileType)value, diagnostics, context);
-			case SpdPackage.SCA_COMPLIANCE_TYPE:
-				return validateSCAComplianceType((SCAComplianceType)value, diagnostics, context);
 			case SpdPackage.AEP_COMPLIANCE_TYPE_OBJECT:
 				return validateAEPComplianceTypeObject((AEPComplianceType)value, diagnostics, context);
 			case SpdPackage.CODE_FILE_TYPE_OBJECT:
 				return validateCodeFileTypeObject((CodeFileType)value, diagnostics, context);
-			case SpdPackage.SCA_COMPLIANCE_TYPE_OBJECT:
-				return validateSCAComplianceTypeObject((SCAComplianceType)value, diagnostics, context);
 			case SpdPackage.URI:
 				return validateURI((URI)value, diagnostics, context);
 			default:
@@ -423,15 +416,6 @@ public class SpdValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSCAComplianceType(SCAComplianceType scaComplianceType, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateAEPComplianceTypeObject(AEPComplianceType aepComplianceTypeObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
@@ -442,15 +426,6 @@ public class SpdValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCodeFileTypeObject(CodeFileType codeFileTypeObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSCAComplianceTypeObject(SCAComplianceType scaComplianceTypeObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
