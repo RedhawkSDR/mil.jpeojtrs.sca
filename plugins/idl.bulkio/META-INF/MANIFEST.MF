@@ -7,6 +7,6 @@ Bundle-SymbolicName: idl.bulkio
 Import-Package: org.omg.CosEventChannelAdmin,
  org.omg.CosEventComm
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: idl.cf;bundle-version="2.2.2"
+Require-Bundle: idl.cf;bundle-version="2.2.2";visibility:=reexport
 Export-Package: BULKIO,
  BULKIO.dataSDDSPackage
