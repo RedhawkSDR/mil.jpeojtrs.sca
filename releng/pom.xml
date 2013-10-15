@@ -2,7 +2,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>mil.jpeojtrs.sca</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>mil.jpeojtrs.sca.parent</artifactId>
     <version>1.8.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -217,9 +217,20 @@
   <profiles>
     <profile>
       <id>code-analysis</id>
+      <properties>
+        <!-- Properties to enable jacoco code coverage analysis -->
+        <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+        <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+        <sonar.jacoco.reportPath>../../target/jacoco.exec</sonar.jacoco.reportPath>
+      </properties>
       <build>
         <pluginManagement>
           <plugins>
+            <plugin>
+              <groupId>org.jacoco</groupId>
+              <artifactId>jacoco-maven-plugin</artifactId>
+              <version>0.6.3.201306030806</version>
+            </plugin>
             <plugin>
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>findbugs-maven-plugin</artifactId>
@@ -238,6 +249,21 @@
           </plugins>
         </pluginManagement>
         <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+                <configuration>
+                  <!-- Where to put jacoco coverage report -->
+                  <destFile>${sonar.jacoco.reportPath}</destFile>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>findbugs-maven-plugin</artifactId>
