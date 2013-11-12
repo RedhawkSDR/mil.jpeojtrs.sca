@@ -9,6 +9,7 @@
     <artifactId>parent</artifactId>
     <version>1.9.0-SNAPSHOT</version>
   </parent>
+
   <artifactId>mil.jpeojtrs.sca.util</artifactId>
   <packaging>eclipse-plugin</packaging>
   <version>3.4.0-SNAPSHOT</version>
@@ -28,9 +29,9 @@
                 <configuration>
                   <target>
                     <replace file="about.properties">
-                      <replacefilter value="2.2.2" token="@buildLabel@" />
-                      <replacefilter value="${buildQualifier}" token="@buildId@" />
-                      <replacefilter value="${commitHash}" token="@commitHash@" />
+                      <replacefilter value="2.2.2" token="@buildLabel@"/>
+                      <replacefilter value="${buildQualifier}" token="@buildId@"/>
+                      <replacefilter value="${commitHash}" token="@commitHash@"/>
                     </replace>
                   </target>
                 </configuration>
