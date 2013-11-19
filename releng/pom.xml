@@ -13,7 +13,7 @@
     <checkstyle-config>http://download.redhawksdr.org/redhawk-checkstyle/checkstyle.xml</checkstyle-config>
     <eclipse>http://download.eclipse.org/releases/juno</eclipse>
     <jacorb>http://download.redhawksdr.org/jacorb/releases/3.1</jacorb>
-    <tycho.scmUrl>scm:git:https://github.com/RedhawkSDR/eclipse-products-gov.redhawk.ide.product.git</tycho.scmUrl>
+    <tycho.scmUrl>scm:git:https://github.com/RedhawkSDR/eclipse-mil.jpeojtrs.sca.git</tycho.scmUrl>
   </properties>
 
   <modules>
