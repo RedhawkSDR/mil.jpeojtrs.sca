@@ -11,7 +11,7 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.tests;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.AccessType;
 import mil.jpeojtrs.sca.prf.Action;

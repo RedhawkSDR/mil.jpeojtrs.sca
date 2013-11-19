@@ -12,7 +12,7 @@
 package mil.jpeojtrs.sca.dcd.tests;
 
 import java.io.IOException;
-import junit.framework.Assert;
+import org.junit.Assert;
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.dcd.DeviceConfiguration;

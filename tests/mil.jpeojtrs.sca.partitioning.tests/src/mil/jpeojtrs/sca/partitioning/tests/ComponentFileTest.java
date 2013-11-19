@@ -11,7 +11,7 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.tests;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import junit.framework.TestCase;
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
 

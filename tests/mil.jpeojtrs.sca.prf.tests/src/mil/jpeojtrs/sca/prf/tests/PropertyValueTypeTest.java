@@ -14,7 +14,7 @@ package mil.jpeojtrs.sca.prf.tests;
 
 import java.math.BigInteger;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import junit.framework.TestCase;
 import mil.jpeojtrs.sca.prf.PropertyValueType;
 

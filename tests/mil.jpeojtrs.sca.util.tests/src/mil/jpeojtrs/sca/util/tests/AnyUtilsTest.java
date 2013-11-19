@@ -14,7 +14,6 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Arrays;
 
-import junit.framework.Assert;
 import mil.jpeojtrs.sca.util.AnyUtils;
 import mil.jpeojtrs.sca.util.math.ComplexBoolean;
 import mil.jpeojtrs.sca.util.math.ComplexByte;
@@ -31,6 +30,7 @@ import mil.jpeojtrs.sca.util.math.ComplexUShort;
 
 import org.apache.commons.lang.ArrayUtils;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.omg.CORBA.Any;
@@ -155,9 +155,9 @@ public class AnyUtilsTest {
 		final long l = (Long) AnyUtils.convertAny(AnyUtils.toAny(Long.MAX_VALUE, TCKind.tk_longlong));
 		Assert.assertEquals(Long.MAX_VALUE, l);
 		final float f = (Float) AnyUtils.convertAny(AnyUtils.toAny(Float.MAX_VALUE, TCKind.tk_float));
-		Assert.assertEquals(Float.MAX_VALUE, f);
+		Assert.assertEquals(Float.MAX_VALUE, f, 0.00001);
 		final double d = (Double) AnyUtils.convertAny(AnyUtils.toAny(Double.MAX_VALUE, TCKind.tk_double));
-		Assert.assertEquals(Double.MAX_VALUE, d);
+		Assert.assertEquals(Double.MAX_VALUE, d, 0.00001);
 		final int us = (Integer) AnyUtils.convertAny(AnyUtils.toAny(Short.MAX_VALUE, TCKind.tk_ushort));
 		Assert.assertEquals(Short.MAX_VALUE, us);
 		final long ui = (Long) AnyUtils.convertAny(AnyUtils.toAny(Integer.MAX_VALUE, TCKind.tk_ulong));
@@ -165,7 +165,7 @@ public class AnyUtilsTest {
 		final BigInteger ul = (BigInteger) AnyUtils.convertAny(AnyUtils.toAny(Long.MAX_VALUE, TCKind.tk_ulonglong));
 		Assert.assertEquals(Long.MAX_VALUE, ul.longValue());
 		final BigDecimal fix = (BigDecimal) AnyUtils.convertAny(AnyUtils.toAny(new BigDecimal(1.0), TCKind.tk_fixed));
-		Assert.assertEquals(1.0, fix.doubleValue());
+		Assert.assertEquals(1.0, fix.doubleValue(), 0.00001);
 		Any tmpAny = (Any) AnyUtils.convertAny(AnyUtils.toAny(AnyUtils.toAny(1, TCKind.tk_long), TCKind.tk_any));
 		Assert.assertNotNull(tmpAny);
 		Assert.assertEquals(1, tmpAny.extract_long());
@@ -509,9 +509,9 @@ public class AnyUtilsTest {
 		final Long[] l = (Long[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new long[] { Long.MIN_VALUE, Long.MAX_VALUE }, TCKind.tk_longlong));
 		Assert.assertEquals(Long.MAX_VALUE, l[1].longValue());
 		final Float[] f = (Float[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new float[] { Float.MIN_VALUE, Float.MAX_VALUE }, TCKind.tk_float));
-		Assert.assertEquals(Float.MAX_VALUE, f[1].floatValue());
+		Assert.assertEquals(Float.MAX_VALUE, f[1].floatValue(), 0.00001);
 		final Double[] d = (Double[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new double[] { Double.MIN_VALUE, Double.MAX_VALUE }, TCKind.tk_double));
-		Assert.assertEquals(Double.MAX_VALUE, d[1].doubleValue());
+		Assert.assertEquals(Double.MAX_VALUE, d[1].doubleValue(), 0.00001);
 		final Integer[] us = (Integer[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new short[] { Short.MIN_VALUE, Short.MAX_VALUE }, TCKind.tk_ushort));
 		Assert.assertEquals(Short.MAX_VALUE, us[1].intValue());
 		final Long[] ui = (Long[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new int[] { Integer.MIN_VALUE, Integer.MAX_VALUE }, TCKind.tk_ulong));

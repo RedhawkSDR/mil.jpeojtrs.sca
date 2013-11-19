@@ -11,7 +11,7 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.tests;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.scd.Interface;
 import mil.jpeojtrs.sca.scd.PortType;

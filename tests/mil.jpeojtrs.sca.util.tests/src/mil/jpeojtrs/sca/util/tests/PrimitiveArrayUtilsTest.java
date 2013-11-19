@@ -10,9 +10,9 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.tests;
 
-import junit.framework.Assert;
 import mil.jpeojtrs.sca.util.PrimitiveArrayUtils;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class PrimitiveArrayUtilsTest {
@@ -220,12 +220,12 @@ public class PrimitiveArrayUtilsTest {
 		Assert.assertNull(PrimitiveArrayUtils.convertToFloatArray(null));
 		float[] convArray = PrimitiveArrayUtils.convertToFloatArray(PrimitiveArrayUtilsTest.TEST_ARRAY);
 
-		Assert.assertEquals(12F, convArray[0]);
-		Assert.assertEquals(2F, convArray[1]);
-		Assert.assertEquals(15F, convArray[2]);
-		Assert.assertEquals(123151F, convArray[3]);
-		Assert.assertEquals(123.561F, convArray[4]);
-		Assert.assertEquals((float) 12312.231e12, convArray[5]);
+		Assert.assertEquals(12F, convArray[0], 0.00001);
+		Assert.assertEquals(2F, convArray[1], 0.00001);
+		Assert.assertEquals(15F, convArray[2], 0.00001);
+		Assert.assertEquals(123151F, convArray[3], 0.00001);
+		Assert.assertEquals(123.561F, convArray[4], 0.00001);
+		Assert.assertEquals((float) 12312.231e12, convArray[5], 0.00001);
 
 		convArray = PrimitiveArrayUtils.convertToFloatArray(PrimitiveArrayUtilsTest.FLOAT_PRIM_ARRAY);
 		Assert.assertEquals(PrimitiveArrayUtilsTest.FLOAT_PRIM_ARRAY, convArray);
@@ -233,7 +233,7 @@ public class PrimitiveArrayUtilsTest {
 		convArray = PrimitiveArrayUtils.convertToFloatArray(PrimitiveArrayUtilsTest.FLOAT_ARRAY);
 		Assert.assertEquals(PrimitiveArrayUtilsTest.FLOAT_ARRAY.length, convArray.length);
 		for (int i = 0; i < convArray.length; ++i) {
-			Assert.assertEquals((float) i, convArray[i]);
+			Assert.assertEquals((float) i, convArray[i], 0.00001);
 		}
 	}
 
@@ -245,13 +245,13 @@ public class PrimitiveArrayUtilsTest {
 		Assert.assertNull(PrimitiveArrayUtils.convertToDoubleArray(null));
 		double[] convArray = PrimitiveArrayUtils.convertToDoubleArray(PrimitiveArrayUtilsTest.TEST_ARRAY);
 
-		Assert.assertEquals(12D, convArray[0]);
-		Assert.assertEquals(2D, convArray[1]);
-		Assert.assertEquals(15D, convArray[2]);
-		Assert.assertEquals(123151D, convArray[3]);
+		Assert.assertEquals(12D, convArray[0], 0.00001);
+		Assert.assertEquals(2D, convArray[1], 0.00001);
+		Assert.assertEquals(15D, convArray[2], 0.00001);
+		Assert.assertEquals(123151D, convArray[3], 0.00001);
 		// TODO This is a hack, the float version of 123.561 is 123.560997... Not sure what to do here
-		Assert.assertEquals(new Float(123.561F).doubleValue(), convArray[4]);
-		Assert.assertEquals(12312.231e12D, convArray[5]);
+		Assert.assertEquals(new Float(123.561F).doubleValue(), convArray[4], 0.01);
+		Assert.assertEquals(12312.231e12D, convArray[5], 0.00001);
 
 		convArray = PrimitiveArrayUtils.convertToDoubleArray(PrimitiveArrayUtilsTest.DOUBLE_PRIM_ARRAY);
 		Assert.assertEquals(PrimitiveArrayUtilsTest.DOUBLE_PRIM_ARRAY, convArray);
@@ -259,7 +259,7 @@ public class PrimitiveArrayUtilsTest {
 		convArray = PrimitiveArrayUtils.convertToDoubleArray(PrimitiveArrayUtilsTest.DOUBLE_ARRAY);
 		Assert.assertEquals(PrimitiveArrayUtilsTest.DOUBLE_ARRAY.length, convArray.length);
 		for (int i = 0; i < convArray.length; ++i) {
-			Assert.assertEquals((double) i, convArray[i]);
+			Assert.assertEquals((double) i, convArray[i], 0.00001);
 		}
 	}
 
