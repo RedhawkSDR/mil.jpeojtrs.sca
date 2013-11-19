@@ -12,7 +12,7 @@ package mil.jpeojtrs.sca.util.tests;
 
 import java.util.UUID;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import mil.jpeojtrs.sca.util.DceUuidUtil;
 
 import org.junit.After;

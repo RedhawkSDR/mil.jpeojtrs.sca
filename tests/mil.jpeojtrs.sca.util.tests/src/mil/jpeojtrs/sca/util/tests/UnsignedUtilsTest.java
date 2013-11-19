@@ -13,7 +13,7 @@ package mil.jpeojtrs.sca.util.tests;
 import java.math.BigInteger;
 import java.util.Random;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import mil.jpeojtrs.sca.util.UnsignedUtils;
 
 import org.junit.Test;

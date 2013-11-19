@@ -10,7 +10,7 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.tests;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import mil.jpeojtrs.sca.spd.Code;
 import mil.jpeojtrs.sca.spd.Implementation;
 import mil.jpeojtrs.sca.spd.LocalFile;

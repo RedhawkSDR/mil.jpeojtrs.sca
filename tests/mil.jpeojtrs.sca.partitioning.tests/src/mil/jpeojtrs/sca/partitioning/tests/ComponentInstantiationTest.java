@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.tests;
 
-import junit.framework.Assert;
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
@@ -23,6 +22,7 @@ import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.junit.Assert;
 
 /**
  * <!-- begin-user-doc -->
