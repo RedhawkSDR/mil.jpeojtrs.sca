@@ -456,6 +456,21 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	public String getType() {
 		return type;
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setType(String newType) {
+		if (newType == null) {
+			newType = TYPE_EDEFAULT;
+		}
+		setTypeGen(newType);
+	}
+	
+	
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -463,14 +478,16 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(String newType)
-	{
+	public void setTypeGen(String newType) {
+		// END GENERATED CODE
 		String oldType = type;
 		type = newType;
 		boolean oldTypeESet = typeESet;
 		typeESet = true;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG__TYPE, oldType, type, !oldTypeESet));
+		}
+		// BEGIN GENERATED CODE
 	}
 
 	/**

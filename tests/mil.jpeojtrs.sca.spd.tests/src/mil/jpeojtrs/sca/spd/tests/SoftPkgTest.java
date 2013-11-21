@@ -17,6 +17,7 @@ import mil.jpeojtrs.sca.spd.Descriptor;
 import mil.jpeojtrs.sca.spd.Implementation;
 import mil.jpeojtrs.sca.spd.LocalFile;
 import mil.jpeojtrs.sca.spd.PropertyFile;
+import mil.jpeojtrs.sca.spd.SCAComplianceType;
 import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SpdFactory;
 
@@ -183,11 +184,11 @@ public class SoftPkgTest extends TestCase {
 		Assert.assertNull(this.fixture.getDescriptor());
 		
 		this.fixture.unsetType();
-		Assert.assertEquals("sca_compliant", this.fixture.getType());
+		Assert.assertEquals(SCAComplianceType.SCA_COMPLIANT.getLiteral(), this.fixture.getType());
 		Assert.assertFalse(this.fixture.isSetType());
 
 		this.fixture.setType(null);
-		Assert.assertEquals("sca_compliant", this.fixture.getType());
+		Assert.assertEquals(SCAComplianceType.SCA_COMPLIANT.getLiteral(), this.fixture.getType());
 		Assert.assertTrue(this.fixture.isSetType());
 	}
 } // SoftPkgTest

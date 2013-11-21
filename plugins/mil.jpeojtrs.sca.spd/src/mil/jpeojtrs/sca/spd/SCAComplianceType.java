@@ -25,7 +25,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getSCAComplianceType()
  * @model extendedMetaData="name='type_._1_._type'"
  * @generated
+ * @deprecated Compliance type is now just a string
  */
+@Deprecated
 public enum SCAComplianceType implements Enumerator {
 	/**
 	 * The '<em><b>Sca Compliant</b></em>' literal object.
