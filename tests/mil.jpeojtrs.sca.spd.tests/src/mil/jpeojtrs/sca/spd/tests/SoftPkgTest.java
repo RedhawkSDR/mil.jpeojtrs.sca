@@ -157,6 +157,7 @@ public class SoftPkgTest extends TestCase {
 		Assert.assertEquals(Boolean.FALSE, SoftPkg.Util.isAggregateDevice(null));
 	}
 	
+	@SuppressWarnings("deprecation")
 	public void testExtra() {
 		final PropertyFile pf = SpdFactory.eINSTANCE.createPropertyFile();
 		final LocalFile lf = SpdFactory.eINSTANCE.createLocalFile();
