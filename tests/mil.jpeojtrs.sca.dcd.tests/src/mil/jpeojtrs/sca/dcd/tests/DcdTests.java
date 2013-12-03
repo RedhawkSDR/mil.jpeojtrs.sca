@@ -17,6 +17,7 @@ import junit.framework.Test;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.dcd.DeviceConfiguration;
+import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
 import mil.jpeojtrs.sca.util.SdrURIHandler;
 
 import org.eclipse.core.runtime.FileLocator;
@@ -74,7 +75,7 @@ public class DcdTests extends TestSuite {
 	}
 	
 	public static DeviceConfiguration getDeviceConfiguration()  throws Exception {
-		URI uri = URI.createURI("sdrDev:///nodes/defaultNode/defaultNode.dcd.xml");
+		URI uri = URI.createURI(ScaFileSystemConstants.SCHEME_TARGET_SDR_DEV + ":///nodes/defaultNode/defaultNode.dcd.xml");
 		ResourceSet resourceSet = new ResourceSetImpl();
 		URL url = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.dcd.tests"), new Path("sdr"), null);
 		SdrURIHandler handler = new SdrURIHandler(URI.createURI(url.toURI().toString()));
