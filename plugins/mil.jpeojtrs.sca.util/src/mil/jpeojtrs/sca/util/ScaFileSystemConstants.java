@@ -18,12 +18,12 @@ public final class ScaFileSystemConstants {
 	/**
 	 * @since 3.0
 	 */
-	public static final String SCHEME_TARGET_SDR_DEV = "sdrDev";
+	public static final String SCHEME_TARGET_SDR_DEV = "sdrdev";
 
 	/**
 	 * @since 3.0
 	 */
-	public static final String SCHEME_TARGET_SDR_DOM = "sdrDom";
+	public static final String SCHEME_TARGET_SDR_DOM = "sdrdom";
 
 	/**
 	 * @since 3.0
