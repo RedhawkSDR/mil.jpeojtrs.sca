@@ -21,6 +21,7 @@
     <module>../features/mil.jpeojtrs.sca.sdk</module>
     <module>../plugins/idl.cf</module>
     <module>../plugins/idl.bulkio</module>
+    <module>../plugins/idl.frontend</module>
     <module>../plugins/mil.jpeojtrs.sca.cf</module>
     <module>../plugins/mil.jpeojtrs.sca.cf.edit</module>
     <module>../plugins/mil.jpeojtrs.sca.dcd</module>

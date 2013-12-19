@@ -25,7 +25,7 @@
    </copyright>
 
    <license url="%licenseURL">
-   %license
+      %license
    </license>
 
    <plugin
@@ -160,6 +160,7 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
    <plugin
          id="mil.jpeojtrs.sca.cf.edit"
          download-size="0"
@@ -190,6 +191,13 @@
 
    <plugin
          id="mil.jpeojtrs.sca.partitioning.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="idl.frontend"
          download-size="0"
          install-size="0"
          version="0.0.0"
