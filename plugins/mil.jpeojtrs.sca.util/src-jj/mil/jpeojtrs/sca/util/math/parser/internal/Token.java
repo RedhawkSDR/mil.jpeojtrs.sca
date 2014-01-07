@@ -6,7 +6,6 @@ package mil.jpeojtrs.sca.util.math.parser.internal;
  * Describes the input token stream.
  */
 
-@SuppressWarnings("all")
 public class Token implements java.io.Serializable {
 
   /**
@@ -129,4 +128,4 @@ public class Token implements java.io.Serializable {
   }
 
 }
-/* JavaCC - OriginalChecksum=6a9c59cffc85ee37d31db71494324b3e (do not edit this line) */
+/* JavaCC - OriginalChecksum=2c337d2d94089164f6ac2265eb303e30 (do not edit this line) */

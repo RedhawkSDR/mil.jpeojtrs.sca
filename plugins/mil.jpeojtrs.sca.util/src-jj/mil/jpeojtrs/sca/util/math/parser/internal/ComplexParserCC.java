@@ -3,7 +3,6 @@ package mil.jpeojtrs.sca.util.math.parser.internal;
 import java.io.StringReader;
 import java.util.*;
 
-@SuppressWarnings("all")
 public class ComplexParserCC implements ComplexParserCCConstants {
   public static String [] fromString(String stringToParse) throws ParseException
   {

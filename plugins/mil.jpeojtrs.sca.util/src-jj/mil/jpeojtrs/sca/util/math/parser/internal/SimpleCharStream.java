@@ -7,7 +7,6 @@ package mil.jpeojtrs.sca.util.math.parser.internal;
  * contain only ASCII characters (without unicode processing).
  */
 
-@SuppressWarnings("all")
 public class SimpleCharStream
 {
 /** Whether parser is static. */
@@ -469,4 +468,4 @@ public class SimpleCharStream
   }
 
 }
-/* JavaCC - OriginalChecksum=72cfe54a01689892357a7d1a452dc327 (do not edit this line) */
+/* JavaCC - OriginalChecksum=97b7d297acbb7fc6ad9226143873643d (do not edit this line) */
