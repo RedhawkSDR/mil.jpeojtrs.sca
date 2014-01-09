@@ -52,6 +52,7 @@ import org.omg.CORBA.WCharSeqHelper;
 import org.omg.CORBA.WStringSeqHelper;
 import org.omg.CORBA.TypeCodePackage.BadKind;
 
+import CF.DataType;
 import CF.DataTypeHelper;
 import CF.PropertiesHelper;
 import CF.complexBooleanHelper;
@@ -67,7 +68,7 @@ import CF.complexULongLongHelper;
 import CF.complexUShortHelper;
 
 public final class AnyUtils {
-	
+
 	private static final int RADIX_DECIMAL = 10;
 	private static final int RADIX_HEX = 16;
 	private static final int RADIX_OCTAL = 8;
@@ -86,13 +87,13 @@ public final class AnyUtils {
 	 */
 	public static Object convertString(final String stringValue, final String type, boolean complex) {
 		if (!complex) {
-			return primitiveConvertString(stringValue, type);
+			return AnyUtils.primitiveConvertString(stringValue, type);
 		}
 		return ComplexNumber.valueOf(type, stringValue);
 	}
 
 	public static Object convertString(final String stringValue, final String type) {
-		return convertString(stringValue, type, false);
+		return AnyUtils.convertString(stringValue, type, false);
 
 	}
 
@@ -381,7 +382,7 @@ public final class AnyUtils {
 				Any[] anyArray = AnySeqHelper.extract(theAny);
 				Object[] objArray = new Object[anyArray.length];
 				for (int i = 0; i < objArray.length; i++) {
-					objArray[i] = convertAny(anyArray[i]);
+					objArray[i] = AnyUtils.convertAny(anyArray[i]);
 				}
 				return objArray;
 			case TCKind._tk_boolean:
@@ -506,11 +507,11 @@ public final class AnyUtils {
 	 * @return
 	 */
 	public static Any toAny(final Object[] value, final TCKind type) {
-		return toAny(value, type, false);
+		return AnyUtils.toAny(value, type, false);
 	}
 
 	public static Any toAny(final Object value, final TCKind type) {
-		return toAny(value, type, false);
+		return AnyUtils.toAny(value, type, false);
 	}
 
 	/**
@@ -521,13 +522,13 @@ public final class AnyUtils {
 			return JacorbUtil.init().create_any();
 		}
 		if (value.getClass().isArray()) {
-			return toAnySequence(value, type);
+			return AnyUtils.toAnySequence(value, type);
 		}
 		if (value instanceof ComplexNumber) {
 			complex = true;
 		}
 		if (!complex) {
-			return primitiveToAny(value, type);
+			return AnyUtils.primitiveToAny(value, type);
 		} else {
 			if (value instanceof ComplexNumber) {
 				return ((ComplexNumber) value).toAny();
@@ -544,7 +545,7 @@ public final class AnyUtils {
 		if (retVal == null) {
 			return null;
 		}
-		return toAny(value, type, false);
+		return AnyUtils.toAny(value, type, false);
 	}
 
 	/**
@@ -628,7 +629,7 @@ public final class AnyUtils {
 	 * @return
 	 */
 	public static Any toAny(final Object value, final String type) {
-		return toAny(value, type, false);
+		return AnyUtils.toAny(value, type, false);
 	}
 
 	/**
@@ -654,7 +655,7 @@ public final class AnyUtils {
 	 * @return
 	 */
 	public static Any toAny(final Object[] value, final String type) {
-		return toAny(value, type, false);
+		return AnyUtils.toAny(value, type, false);
 	}
 
 	/**
@@ -914,7 +915,7 @@ public final class AnyUtils {
 	 * @since 3.3
 	 */
 	public static Any stringToAny(final String value, final String type) {
-		return stringToAny(value, type, false);
+		return AnyUtils.stringToAny(value, type, false);
 	}
 
 	/**
@@ -1074,6 +1075,140 @@ public final class AnyUtils {
 			return lt || eq;
 		}
 		return false;
+	}
+
+	/**
+	 * @since 3.5
+	 */
+	public static boolean isSequence(DataType dt) {
+		TypeCode typeCode = dt.value.type();
+		// Do this check because extract doesn't throw correctly
+		try {
+			final TCKind kind = typeCode.kind();
+			switch (kind.value()) {
+			case TCKind._tk_sequence:
+				if (PropertiesHelper.type().equivalent(typeCode)) {
+					return false;
+				} else {
+					return true;
+				}
+			default:
+				return false;
+			}
+		} catch (final BAD_OPERATION ex) {
+			return false;
+		}
+	}
+
+	/**
+	 * @since 3.5
+	 */
+	public static boolean isStructSequence(DataType dt) {
+		return AnySeqHelper.type().equivalent(dt.value.type());
+	}
+
+	/**
+	 * @since 3.5
+	 */
+	public static boolean isStruct(DataType dt) {
+		return PropertiesHelper.type().equivalent(dt.value.type());
+	}
+
+	/**
+	 * @since 3.5
+	 */
+	public static boolean isSimple(DataType dt) {
+		TypeCode typeCode = dt.value.type();
+		// Do this check because extract doesn't throw correctly
+		try {
+			// Extract Complex Types
+			if (complexBooleanHelper.type().equivalent(typeCode)) {
+				return true;
+			} else if (complexDoubleHelper.type().equivalent(typeCode)) {
+				return true;
+			} else if (complexFloatHelper.type().equivalent(typeCode)) {
+				return true;
+			} else if (complexLongHelper.type().equivalent(typeCode)) {
+				return true;
+			} else if (complexLongLongHelper.type().equivalent(typeCode)) {
+				return true;
+			} else if (complexShortHelper.type().equivalent(typeCode)) {
+				return true;
+			} else if (complexULongHelper.type().equivalent(typeCode)) {
+				return true;
+			} else if (complexULongLongHelper.type().equivalent(typeCode)) {
+				return true;
+			} else if (complexUShortHelper.type().equivalent(typeCode)) {
+				return true;
+			} else if (complexOctetHelper.type().equivalent(typeCode)) {
+				return true;
+			} else if (complexCharHelper.type().equivalent(typeCode)) {
+				return true;
+			}
+
+			final TCKind kind = typeCode.kind();
+			switch (kind.value()) {
+			case TCKind._tk_any:
+				return false;
+			case TCKind._tk_boolean:
+				return true;
+			case TCKind._tk_char:
+				return true;
+			case TCKind._tk_double:
+				return true;
+			case TCKind._tk_fixed:
+				return false;
+			case TCKind._tk_float:
+				return true;
+			case TCKind._tk_long:
+				return true;
+			case TCKind._tk_longlong:
+				return true;
+			case TCKind._tk_objref:
+				return false;
+			case TCKind._tk_octet:
+				return true;
+			case TCKind._tk_short:
+				return true;
+			case TCKind._tk_string:
+				return true;
+			case TCKind._tk_TypeCode:
+				return false;
+			case TCKind._tk_ulong:
+				return true;
+			case TCKind._tk_ulonglong:
+				return true;
+			case TCKind._tk_ushort:
+				return true;
+			case TCKind._tk_value:
+				return false;
+			case TCKind._tk_wchar:
+				return true;
+			case TCKind._tk_wstring:
+				return true;
+			case TCKind._tk_null:
+				return true;
+			case TCKind._tk_sequence:
+				return false;
+			case TCKind._tk_alias:
+				return false;
+			case TCKind._tk_struct:
+			case TCKind._tk_longdouble:
+			case TCKind._tk_array:
+			case TCKind._tk_abstract_interface:
+			case TCKind._tk_enum:
+			case TCKind._tk_except:
+			case TCKind._tk_native:
+			case TCKind._tk_Principal:
+			case TCKind._tk_union:
+			case TCKind._tk_value_box:
+			case TCKind._tk_void:
+			default:
+				return false;
+			}
+		} catch (final BAD_OPERATION ex) {
+			return false;
+		}
 	}
 
 }

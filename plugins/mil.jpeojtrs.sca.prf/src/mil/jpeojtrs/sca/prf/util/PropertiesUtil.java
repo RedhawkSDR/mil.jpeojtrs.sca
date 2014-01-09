@@ -54,6 +54,9 @@ public final class PropertiesUtil {
 	}
 	
 	public static boolean canConfigure(final AbstractProperty property) {
+		if (property == null) {
+			return false;
+		}
 		if (property.getMode() != AccessType.READONLY) {
 			return property.isKind(PropertyConfigurationType.CONFIGURE);
 		}
@@ -61,6 +64,9 @@ public final class PropertiesUtil {
 	}
 
 	public static boolean canOverride(final AbstractProperty property) {
+		if (property == null) {
+			return false;
+		}
 		// Per D.6.1.3.3 configure, factoryparam, and/or execparam
 		// with mode "readwrite" or "writeonly" can be overridden
 		if (property.getMode() != AccessType.READONLY) {
