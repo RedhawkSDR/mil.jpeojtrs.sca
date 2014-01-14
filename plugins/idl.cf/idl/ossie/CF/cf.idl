@@ -626,6 +626,8 @@ module CF {
         readonly attribute string identifier;
         /* Backport from SCA Next; the readonly started attribute shall return the component's started value. */
         readonly attribute boolean started;
+        /* The softwareProfile attribute is the XML description for this logical Device. The softwareProfile attribute contains a profile DTD element with a file reference to the SPD profile file. */
+        readonly attribute string softwareProfile;
         /* The start operation is provided to command a Resource implementing this interface to start internal processing. 
 	The start operation shall set the started attribute to a value of true.
 	*/
@@ -680,8 +682,6 @@ module CF {
         attribute CF::Device::AdminType adminState;
         /* The operationalState attribute contains the device's operational state. The operational state indicates whether or not the device is functioning. */
         readonly attribute CF::Device::OperationalType operationalState;
-        /* The softwareProfile attribute is the XML description for this logical Device. The softwareProfile attribute contains a profile DTD element with a file reference to the SPD profile file. */
-        readonly attribute string softwareProfile;
         /* The label attribute is the meaningful name given to a Device. */
         readonly attribute string label;
         /* The compositeDevice attribute contains the object reference of the AggregateDevice with which this Device is associated or a nil CORBA object reference if no association exists. */
