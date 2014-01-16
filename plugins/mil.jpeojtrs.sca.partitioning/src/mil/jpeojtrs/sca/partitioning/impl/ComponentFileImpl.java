@@ -150,6 +150,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 			}
 		}
 	};
+	private SoftPkg spd;
 
 	{
 		eAdapters().add(notifier);
@@ -232,7 +233,10 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 		if (this.localFile == null) {
 			return null;
 		}
-		return (SoftPkg) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, SoftPkg.EOBJECT_PATH, getFileSystem());
+		if (this.spd == null) {
+			spd = (SoftPkg) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, SoftPkg.EOBJECT_PATH, getFileSystem());
+		}
+		return spd;
 		// BEGIN GENERATED CODE
 	}
 
@@ -264,6 +268,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 		setId(newId);
 		setType("SPD");
 		this.localFile.setName(spdPath);
+		this.spd = newSoftPkg;
 		// BEGIN GENERATED CODE
 	}
 
