@@ -4,5 +4,6 @@ Bundle-Name: Frontendinterfaces
 Bundle-SymbolicName: idl.frontend
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: idl.bulkio;bundle-version="1.9.0"
+Require-Bundle: idl.bulkio;bundle-version="1.9.0",
+ idl.cf;bundle-version="3.0.0"
 Export-Package: FRONTEND
