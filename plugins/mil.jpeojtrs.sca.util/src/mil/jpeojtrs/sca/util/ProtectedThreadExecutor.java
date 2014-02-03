@@ -56,11 +56,12 @@ public final class ProtectedThreadExecutor {
 				future.cancel(true);
 				throw e;
 			}
-		}
-		try {
-			return callable.call();
-		} catch (final Exception e) { // SUPPRESS CHECKSTYLE Rethrown
-			throw new ExecutionException(e);
+		} else {
+			try {
+				return callable.call();
+			} catch (final Exception e) { // SUPPRESS CHECKSTYLE Rethrown
+				throw new ExecutionException(e);
+			}
 		}
 	}
 }
