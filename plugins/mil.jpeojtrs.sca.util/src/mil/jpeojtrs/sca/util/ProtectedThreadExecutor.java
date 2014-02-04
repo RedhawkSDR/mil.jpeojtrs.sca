@@ -47,11 +47,38 @@ public final class ProtectedThreadExecutor {
 		return false;
 	}
 
-	public static < T > T submit(final Callable<T> callable) throws InterruptedException, ExecutionException, TimeoutException {
+	/**
+	 * @since 3.5
+	 */
+	public static void submit(Runnable runnable, int timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+		if (ProtectedThreadExecutor.isProtectedThread(Thread.currentThread())) {
+			final Future< ? > future = ProtectedThreadExecutor.EXECUTOR.submit(runnable);
+			try {
+				future.get(4, TimeUnit.SECONDS);
+			} catch (final InterruptedException e) {
+				future.cancel(true);
+				throw e;
+			}
+		} else {
+			runnable.run();
+		}
+	}
+
+	/**
+	 * @since 3.5
+	 */
+	public static void submit(Runnable runnable) throws InterruptedException, ExecutionException, TimeoutException {
+		ProtectedThreadExecutor.submit(runnable, 4, TimeUnit.SECONDS);
+	}
+
+	/**
+	 * @since 3.5
+	 */
+	public static < T > T submit(final Callable<T> callable, int timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
 		if (ProtectedThreadExecutor.isProtectedThread(Thread.currentThread())) {
 			final Future<T> future = ProtectedThreadExecutor.EXECUTOR.submit(callable);
 			try {
-				return future.get(4, TimeUnit.SECONDS);
+				return future.get(timeout, unit);
 			} catch (final InterruptedException e) {
 				future.cancel(true);
 				throw e;
@@ -63,5 +90,9 @@ public final class ProtectedThreadExecutor {
 				throw new ExecutionException(e);
 			}
 		}
+	}
+
+	public static < T > T submit(final Callable<T> callable) throws InterruptedException, ExecutionException, TimeoutException {
+		return ProtectedThreadExecutor.submit(callable, 4, TimeUnit.SECONDS);
 	}
 }
