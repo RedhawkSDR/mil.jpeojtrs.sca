@@ -68,7 +68,7 @@ public final class CorbaUtils {
 	 *  <code>InterruptedException</code>
 	 */
 	public static org.omg.CORBA.Object resolve_str(final NamingContextExt ext, final String name, IProgressMonitor monitor) throws CoreException,
-		InterruptedException {
+	InterruptedException {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Resoling object in naming context at ref " + name, 1);
 		return CorbaUtils.invoke(new Callable<org.omg.CORBA.Object>() {
 
@@ -138,7 +138,7 @@ public final class CorbaUtils {
 				try {
 					return task.get(500, TimeUnit.MILLISECONDS);
 				} catch (ExecutionException e) {
-					throw new CoreException(new Status(IStatus.ERROR, "mil.jpeojtrs.sca.util", "Error while executing callable", e));
+					throw new CoreException(new Status(IStatus.ERROR, "mil.jpeojtrs.sca.util", "Error while executing callable", e.getCause()));
 				} catch (TimeoutException e) {
 					// PASS
 				}
