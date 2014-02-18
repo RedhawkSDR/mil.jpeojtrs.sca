@@ -45,7 +45,6 @@ public final class CorbaUtils {
 	 * @exception InterruptedException if the operation detects a request to cancel, 
 	 *  using <code>IProgressMonitor.isCanceled()</code>, it will exit by throwing 
 	 *  <code>InterruptedException</code>
-	 * @since 3.5
 	 */
 	public static org.omg.CORBA.Object string_to_object(final ORB orb, final String ior, IProgressMonitor monitor) throws CoreException, InterruptedException {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Resoling object in orb ", 1);
@@ -66,7 +65,6 @@ public final class CorbaUtils {
 	 * @exception InterruptedException if the operation detects a request to cancel, 
 	 *  using <code>IProgressMonitor.isCanceled()</code>, it will exit by throwing 
 	 *  <code>InterruptedException</code>
-	 * @since 3.5
 	 */
 	public static org.omg.CORBA.Object resolve_str(final NamingContextExt ext, final String name, IProgressMonitor monitor) throws CoreException,
 		InterruptedException {
@@ -88,7 +86,6 @@ public final class CorbaUtils {
 	 * @exception InterruptedException if the operation detects a request to cancel, 
 	 *  using <code>IProgressMonitor.isCanceled()</code>, it will exit by throwing 
 	 *  <code>InterruptedException</code>
-	 * @since 3.5
 	 */
 	public static boolean is_a(final org.omg.CORBA.Object obj, final String repID, final IProgressMonitor monitor) throws CoreException, InterruptedException {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Checking if obj is a " + repID, 1);
@@ -109,8 +106,6 @@ public final class CorbaUtils {
 	 * @exception InterruptedException if the operation detects a request to cancel, 
 	 *  using <code>IProgressMonitor.isCanceled()</code>, it will exit by throwing 
 	 *  <code>InterruptedException</code>
-	 * 
-	 * @since 3.5
 	 */
 	public static boolean non_existent(final org.omg.CORBA.Object obj, final IProgressMonitor monitor) throws CoreException, InterruptedException {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Checking if obj non existent", 1);
@@ -131,8 +126,6 @@ public final class CorbaUtils {
 	 * @exception InterruptedException if the operation detects a request to cancel, 
 	 *  using <code>IProgressMonitor.isCanceled()</code>, it will exit by throwing 
 	 *  <code>InterruptedException</code>
-	 * 
-	 * @since 3.5
 	 */
 	public static < T > T invoke(Callable<T> callable, IProgressMonitor monitor) throws CoreException, InterruptedException {
 		if (monitor == null) {
@@ -144,7 +137,7 @@ public final class CorbaUtils {
 				try {
 					return task.get(500, TimeUnit.MILLISECONDS);
 				} catch (ExecutionException e) {
-					throw new CoreException(new Status(Status.ERROR, "mil.jpeojtrs.sca.util", "Error while executing callable", e));
+					throw new CoreException(new Status(Status.ERROR, "mil.jpeojtrs.sca.util", "Error while executing callable", e.getCause()));
 				} catch (TimeoutException e) {
 					// PASS
 				}
