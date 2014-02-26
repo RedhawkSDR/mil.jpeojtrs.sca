@@ -6,4 +6,4 @@ Bundle-Version: 1.10.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: idl.bulkio;bundle-version="1.10.0",
  idl.cf;bundle-version="3.0.0"
-Export-Package: FRONTEND
+Export-Package: FRONTEND;version="1.10.0"
