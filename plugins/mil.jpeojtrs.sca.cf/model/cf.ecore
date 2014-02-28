@@ -240,6 +240,18 @@
       <eParameters name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Logging" instanceClassName="CF.Logging"
+      abstract="true" interface="true" eSuperTypes="#//LoggingOperations #//LogEventConsumer #//LogConfiguration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LoggingOperations" instanceClassName="CF.LoggingOperations"
+      abstract="true" interface="true" eSuperTypes="#//LogEventConsumerOperations #//LogConfigurationOperations"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LogEventConsumer" instanceClassName="CF.LogEventConsumer"
+      abstract="true" interface="true" eSuperTypes="#//LogEventConsumerOperations #//Object #//IDLEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LogEventConsumerOperations" instanceClassName="CF.LogEventConsumerOperations"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LogConfiguration" instanceClassName="CF.LogConfiguration"
+      abstract="true" interface="true" eSuperTypes="#//LogConfigurationOperations #//Object #//IDLEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LogConfigurationOperations" instanceClassName="CF.LogConfigurationOperations"
+      abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Port" instanceClassName="CF.Port" abstract="true"
       interface="true" eSuperTypes="#//PortOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortOperations" instanceClassName="CF.PortOperations"

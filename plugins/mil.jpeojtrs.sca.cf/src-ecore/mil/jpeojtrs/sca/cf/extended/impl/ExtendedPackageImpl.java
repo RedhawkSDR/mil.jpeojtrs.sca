@@ -97,15 +97,18 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 	 * @generated
 	 */
 	public static ExtendedPackage init() {
-		if (isInited) return (ExtendedPackage)EPackage.Registry.INSTANCE.getEPackage(ExtendedPackage.eNS_URI);
+		if (isInited)
+			return (ExtendedPackage) EPackage.Registry.INSTANCE.getEPackage(ExtendedPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ExtendedPackageImpl theExtendedPackage = (ExtendedPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExtendedPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ExtendedPackageImpl());
+		ExtendedPackageImpl theExtendedPackage = (ExtendedPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExtendedPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+			: new ExtendedPackageImpl());
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		CfPackageImpl theCfPackage = (CfPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CfPackage.eNS_URI) instanceof CfPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CfPackage.eNS_URI) : CfPackage.eINSTANCE);
+		CfPackageImpl theCfPackage = (CfPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(CfPackage.eNS_URI) instanceof CfPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CfPackage.eNS_URI)
+			: CfPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theExtendedPackage.createPackageContents();
@@ -118,7 +121,6 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 		// Mark meta-data to indicate it can't be changed
 		theExtendedPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ExtendedPackage.eNS_URI, theExtendedPackage);
 		return theExtendedPackage;
@@ -166,7 +168,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 	 * @generated
 	 */
 	public ExtendedFactory getExtendedFactory() {
-		return (ExtendedFactory)getEFactoryInstance();
+		return (ExtendedFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -184,7 +186,8 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -212,7 +215,8 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -221,7 +225,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CfPackage theCfPackage = (CfPackage)EPackage.Registry.INSTANCE.getEPackage(CfPackage.eNS_URI);
+		CfPackage theCfPackage = (CfPackage) EPackage.Registry.INSTANCE.getEPackage(CfPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -236,7 +240,8 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 		// Initialize classes and features; add operations and parameters
 		initEClass(queryablePortEClass, QueryablePort.class, "QueryablePort", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(queryablePortOperationsEClass, QueryablePortOperations.class, "QueryablePortOperations", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEClass(queryablePortOperationsEClass, QueryablePortOperations.class, "QueryablePortOperations", IS_ABSTRACT, IS_INTERFACE,
+			!IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(queryablePortOperationsEClass, this.getUsesConnectionArray(), "connections", 0, 1, IS_UNIQUE, IS_ORDERED);
 

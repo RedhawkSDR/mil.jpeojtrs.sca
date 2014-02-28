@@ -36,12 +36,11 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
 	 */
 	public static ExtendedFactory init() {
 		try {
-			ExtendedFactory theExtendedFactory = (ExtendedFactory)EPackage.Registry.INSTANCE.getEFactory(ExtendedPackage.eNS_URI);
+			ExtendedFactory theExtendedFactory = (ExtendedFactory) EPackage.Registry.INSTANCE.getEFactory(ExtendedPackage.eNS_URI);
 			if (theExtendedFactory != null) {
 				return theExtendedFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ExtendedFactoryImpl();
@@ -65,8 +64,8 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -78,8 +77,8 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -91,8 +90,8 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -102,7 +101,7 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
 	 * @generated
 	 */
 	public ExtendedPackage getExtendedPackage() {
-		return (ExtendedPackage)getEPackage();
+		return (ExtendedPackage) getEPackage();
 	}
 
 	/**

@@ -34,7 +34,7 @@ import ExtendedCF.QueryablePortOperations;
  * @see mil.jpeojtrs.sca.cf.extended.ExtendedPackage
  * @generated
  */
-public class ExtendedSwitch<T> extends Switch<T> {
+public class ExtendedSwitch< T > extends Switch<T> {
 
 	/**
 	 * The cached model package
@@ -79,25 +79,34 @@ public class ExtendedSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ExtendedPackage.QUERYABLE_PORT: {
-				QueryablePort queryablePort = (QueryablePort)theEObject;
-				T result = caseQueryablePort(queryablePort);
-				if (result == null) result = caseQueryablePortOperations(queryablePort);
-				if (result == null) result = casePort(queryablePort);
-				if (result == null) result = casePortOperations(queryablePort);
-				if (result == null) result = caseObject(queryablePort);
-				if (result == null) result = caseIDLEntity(queryablePort);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExtendedPackage.QUERYABLE_PORT_OPERATIONS: {
-				QueryablePortOperations queryablePortOperations = (QueryablePortOperations)theEObject;
-				T result = caseQueryablePortOperations(queryablePortOperations);
-				if (result == null) result = casePortOperations(queryablePortOperations);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		case ExtendedPackage.QUERYABLE_PORT: {
+			QueryablePort queryablePort = (QueryablePort) theEObject;
+			T result = caseQueryablePort(queryablePort);
+			if (result == null)
+				result = caseQueryablePortOperations(queryablePort);
+			if (result == null)
+				result = casePort(queryablePort);
+			if (result == null)
+				result = casePortOperations(queryablePort);
+			if (result == null)
+				result = caseObject(queryablePort);
+			if (result == null)
+				result = caseIDLEntity(queryablePort);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ExtendedPackage.QUERYABLE_PORT_OPERATIONS: {
+			QueryablePortOperations queryablePortOperations = (QueryablePortOperations) theEObject;
+			T result = caseQueryablePortOperations(queryablePortOperations);
+			if (result == null)
+				result = casePortOperations(queryablePortOperations);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

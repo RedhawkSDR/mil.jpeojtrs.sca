@@ -32,4 +32,5 @@ Bundle-SymbolicName: idl.cf
 Import-Package: org.omg.CosEventChannelAdmin,
  org.omg.CosEventComm
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.jacorb.eclipse;bundle-version="1.0.0";resolution:=optional
 
