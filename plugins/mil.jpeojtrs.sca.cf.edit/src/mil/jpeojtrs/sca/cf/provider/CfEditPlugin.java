@@ -43,9 +43,7 @@ public final class CfEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public CfEditPlugin() {
-		super
-		  (new ResourceLocator [] {
-		   });
+		super(new ResourceLocator[] {});
 	}
 
 	/**

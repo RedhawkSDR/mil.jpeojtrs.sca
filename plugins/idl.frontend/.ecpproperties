@@ -1,0 +1,10 @@
+#ECP Compilation Preferences
+#Wed Mar 05 08:42:51 EST 2014
+.INVOKE_COMPILERS=
+.INCLUDE_PATHS=${project_loc}/idl;${project_loc\:idl.bulkio}/idl;${project_loc\:idl.cf}/idl
+.CUSTOM_OPTIONS=false
+.GENERATE_SKELETONS=false
+.GENERATE_TIES=false
+.GENERATE_STUBS=false
+.COMPILE=false
+.OUTPUT_DIRECTORY=

@@ -49,6 +49,12 @@ import CF.LifeCycle;
 import CF.LifeCycleOperations;
 import CF.LoadableDevice;
 import CF.LoadableDeviceOperations;
+import CF.LogConfiguration;
+import CF.LogConfigurationOperations;
+import CF.LogEventConsumer;
+import CF.LogEventConsumerOperations;
+import CF.Logging;
+import CF.LoggingOperations;
 import CF.Port;
 import CF.PortOperations;
 import CF.PortSupplier;
@@ -106,7 +112,7 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -117,189 +123,262 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CfSwitch<Adapter> modelSwitch =
-		new CfSwitch<Adapter>() {
-			@Override
-			public Adapter caseObject(org.omg.CORBA.Object object) {
-				return createObjectAdapter();
-			}
-			@Override
-			public Adapter caseIDLEntity(IDLEntity object) {
-				return createIDLEntityAdapter();
-			}
-			@Override
-			public Adapter caseAggregateDevice(AggregateDevice object) {
-				return createAggregateDeviceAdapter();
-			}
-			@Override
-			public Adapter caseAggregateDeviceOperations(AggregateDeviceOperations object) {
-				return createAggregateDeviceOperationsAdapter();
-			}
-			@Override
-			public Adapter caseAggregateExecutableDevice(AggregateExecutableDevice object) {
-				return createAggregateExecutableDeviceAdapter();
-			}
-			@Override
-			public Adapter caseAggregateExecutableDeviceOperations(AggregateExecutableDeviceOperations object) {
-				return createAggregateExecutableDeviceOperationsAdapter();
-			}
-			@Override
-			public Adapter caseAggregateLoadableDevice(AggregateLoadableDevice object) {
-				return createAggregateLoadableDeviceAdapter();
-			}
-			@Override
-			public Adapter caseAggregateLoadableDeviceOperations(AggregateLoadableDeviceOperations object) {
-				return createAggregateLoadableDeviceOperationsAdapter();
-			}
-			@Override
-			public Adapter caseAggregatePlainDevice(AggregatePlainDevice object) {
-				return createAggregatePlainDeviceAdapter();
-			}
-			@Override
-			public Adapter caseAggregatePlainDeviceOperations(AggregatePlainDeviceOperations object) {
-				return createAggregatePlainDeviceOperationsAdapter();
-			}
-			@Override
-			public Adapter caseApplication(Application object) {
-				return createApplicationAdapter();
-			}
-			@Override
-			public Adapter caseApplicationFactory(ApplicationFactory object) {
-				return createApplicationFactoryAdapter();
-			}
-			@Override
-			public Adapter caseApplicationFactoryOperations(ApplicationFactoryOperations object) {
-				return createApplicationFactoryOperationsAdapter();
-			}
-			@Override
-			public Adapter caseApplicationOperations(ApplicationOperations object) {
-				return createApplicationOperationsAdapter();
-			}
-			@Override
-			public Adapter caseDevice(Device object) {
-				return createDeviceAdapter();
-			}
-			@Override
-			public Adapter caseDeviceManager(DeviceManager object) {
-				return createDeviceManagerAdapter();
-			}
-			@Override
-			public Adapter caseDeviceManagerOperations(DeviceManagerOperations object) {
-				return createDeviceManagerOperationsAdapter();
-			}
-			@Override
-			public Adapter caseDeviceOperations(DeviceOperations object) {
-				return createDeviceOperationsAdapter();
-			}
-			@Override
-			public Adapter caseDomainManager(DomainManager object) {
-				return createDomainManagerAdapter();
-			}
-			@Override
-			public Adapter caseDomainManagerOperations(DomainManagerOperations object) {
-				return createDomainManagerOperationsAdapter();
-			}
-			@Override
-			public Adapter caseExecutableDevice(ExecutableDevice object) {
-				return createExecutableDeviceAdapter();
-			}
-			@Override
-			public Adapter caseExecutableDeviceOperations(ExecutableDeviceOperations object) {
-				return createExecutableDeviceOperationsAdapter();
-			}
-			@Override
-			public Adapter caseFile(File object) {
-				return createFileAdapter();
-			}
-			@Override
-			public Adapter caseFileManager(FileManager object) {
-				return createFileManagerAdapter();
-			}
-			@Override
-			public Adapter caseFileManagerOperations(FileManagerOperations object) {
-				return createFileManagerOperationsAdapter();
-			}
-			@Override
-			public Adapter caseFileOperations(FileOperations object) {
-				return createFileOperationsAdapter();
-			}
-			@Override
-			public Adapter caseFileSystem(FileSystem object) {
-				return createFileSystemAdapter();
-			}
-			@Override
-			public Adapter caseFileSystemOperations(FileSystemOperations object) {
-				return createFileSystemOperationsAdapter();
-			}
-			@Override
-			public Adapter caseLifeCycle(LifeCycle object) {
-				return createLifeCycleAdapter();
-			}
-			@Override
-			public Adapter caseLifeCycleOperations(LifeCycleOperations object) {
-				return createLifeCycleOperationsAdapter();
-			}
-			@Override
-			public Adapter caseLoadableDevice(LoadableDevice object) {
-				return createLoadableDeviceAdapter();
-			}
-			@Override
-			public Adapter caseLoadableDeviceOperations(LoadableDeviceOperations object) {
-				return createLoadableDeviceOperationsAdapter();
-			}
-			@Override
-			public Adapter casePort(Port object) {
-				return createPortAdapter();
-			}
-			@Override
-			public Adapter casePortOperations(PortOperations object) {
-				return createPortOperationsAdapter();
-			}
-			@Override
-			public Adapter casePortSupplier(PortSupplier object) {
-				return createPortSupplierAdapter();
-			}
-			@Override
-			public Adapter casePortSupplierOperations(PortSupplierOperations object) {
-				return createPortSupplierOperationsAdapter();
-			}
-			@Override
-			public Adapter casePropertySet(PropertySet object) {
-				return createPropertySetAdapter();
-			}
-			@Override
-			public Adapter casePropertySetOperations(PropertySetOperations object) {
-				return createPropertySetOperationsAdapter();
-			}
-			@Override
-			public Adapter caseResource(Resource object) {
-				return createResourceAdapter();
-			}
-			@Override
-			public Adapter caseResourceFactory(ResourceFactory object) {
-				return createResourceFactoryAdapter();
-			}
-			@Override
-			public Adapter caseResourceFactoryOperations(ResourceFactoryOperations object) {
-				return createResourceFactoryOperationsAdapter();
-			}
-			@Override
-			public Adapter caseResourceOperations(ResourceOperations object) {
-				return createResourceOperationsAdapter();
-			}
-			@Override
-			public Adapter caseTestableObject(TestableObject object) {
-				return createTestableObjectAdapter();
-			}
-			@Override
-			public Adapter caseTestableObjectOperations(TestableObjectOperations object) {
-				return createTestableObjectOperationsAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected CfSwitch<Adapter> modelSwitch = new CfSwitch<Adapter>() {
+		@Override
+		public Adapter caseObject(org.omg.CORBA.Object object) {
+			return createObjectAdapter();
+		}
+
+		@Override
+		public Adapter caseIDLEntity(IDLEntity object) {
+			return createIDLEntityAdapter();
+		}
+
+		@Override
+		public Adapter caseAggregateDevice(AggregateDevice object) {
+			return createAggregateDeviceAdapter();
+		}
+
+		@Override
+		public Adapter caseAggregateDeviceOperations(AggregateDeviceOperations object) {
+			return createAggregateDeviceOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseAggregateExecutableDevice(AggregateExecutableDevice object) {
+			return createAggregateExecutableDeviceAdapter();
+		}
+
+		@Override
+		public Adapter caseAggregateExecutableDeviceOperations(AggregateExecutableDeviceOperations object) {
+			return createAggregateExecutableDeviceOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseAggregateLoadableDevice(AggregateLoadableDevice object) {
+			return createAggregateLoadableDeviceAdapter();
+		}
+
+		@Override
+		public Adapter caseAggregateLoadableDeviceOperations(AggregateLoadableDeviceOperations object) {
+			return createAggregateLoadableDeviceOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseAggregatePlainDevice(AggregatePlainDevice object) {
+			return createAggregatePlainDeviceAdapter();
+		}
+
+		@Override
+		public Adapter caseAggregatePlainDeviceOperations(AggregatePlainDeviceOperations object) {
+			return createAggregatePlainDeviceOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseApplication(Application object) {
+			return createApplicationAdapter();
+		}
+
+		@Override
+		public Adapter caseApplicationFactory(ApplicationFactory object) {
+			return createApplicationFactoryAdapter();
+		}
+
+		@Override
+		public Adapter caseApplicationFactoryOperations(ApplicationFactoryOperations object) {
+			return createApplicationFactoryOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseApplicationOperations(ApplicationOperations object) {
+			return createApplicationOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseDevice(Device object) {
+			return createDeviceAdapter();
+		}
+
+		@Override
+		public Adapter caseDeviceManager(DeviceManager object) {
+			return createDeviceManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseDeviceManagerOperations(DeviceManagerOperations object) {
+			return createDeviceManagerOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseDeviceOperations(DeviceOperations object) {
+			return createDeviceOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainManager(DomainManager object) {
+			return createDomainManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainManagerOperations(DomainManagerOperations object) {
+			return createDomainManagerOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseExecutableDevice(ExecutableDevice object) {
+			return createExecutableDeviceAdapter();
+		}
+
+		@Override
+		public Adapter caseExecutableDeviceOperations(ExecutableDeviceOperations object) {
+			return createExecutableDeviceOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseFile(File object) {
+			return createFileAdapter();
+		}
+
+		@Override
+		public Adapter caseFileManager(FileManager object) {
+			return createFileManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseFileManagerOperations(FileManagerOperations object) {
+			return createFileManagerOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseFileOperations(FileOperations object) {
+			return createFileOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseFileSystem(FileSystem object) {
+			return createFileSystemAdapter();
+		}
+
+		@Override
+		public Adapter caseFileSystemOperations(FileSystemOperations object) {
+			return createFileSystemOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseLifeCycle(LifeCycle object) {
+			return createLifeCycleAdapter();
+		}
+
+		@Override
+		public Adapter caseLifeCycleOperations(LifeCycleOperations object) {
+			return createLifeCycleOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseLoadableDevice(LoadableDevice object) {
+			return createLoadableDeviceAdapter();
+		}
+
+		@Override
+		public Adapter caseLoadableDeviceOperations(LoadableDeviceOperations object) {
+			return createLoadableDeviceOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseLogging(Logging object) {
+			return createLoggingAdapter();
+		}
+
+		@Override
+		public Adapter caseLoggingOperations(LoggingOperations object) {
+			return createLoggingOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseLogEventConsumer(LogEventConsumer object) {
+			return createLogEventConsumerAdapter();
+		}
+
+		@Override
+		public Adapter caseLogEventConsumerOperations(LogEventConsumerOperations object) {
+			return createLogEventConsumerOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseLogConfiguration(LogConfiguration object) {
+			return createLogConfigurationAdapter();
+		}
+
+		@Override
+		public Adapter caseLogConfigurationOperations(LogConfigurationOperations object) {
+			return createLogConfigurationOperationsAdapter();
+		}
+
+		@Override
+		public Adapter casePort(Port object) {
+			return createPortAdapter();
+		}
+
+		@Override
+		public Adapter casePortOperations(PortOperations object) {
+			return createPortOperationsAdapter();
+		}
+
+		@Override
+		public Adapter casePortSupplier(PortSupplier object) {
+			return createPortSupplierAdapter();
+		}
+
+		@Override
+		public Adapter casePortSupplierOperations(PortSupplierOperations object) {
+			return createPortSupplierOperationsAdapter();
+		}
+
+		@Override
+		public Adapter casePropertySet(PropertySet object) {
+			return createPropertySetAdapter();
+		}
+
+		@Override
+		public Adapter casePropertySetOperations(PropertySetOperations object) {
+			return createPropertySetOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseResource(Resource object) {
+			return createResourceAdapter();
+		}
+
+		@Override
+		public Adapter caseResourceFactory(ResourceFactory object) {
+			return createResourceFactoryAdapter();
+		}
+
+		@Override
+		public Adapter caseResourceFactoryOperations(ResourceFactoryOperations object) {
+			return createResourceFactoryOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseResourceOperations(ResourceOperations object) {
+			return createResourceOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseTestableObject(TestableObject object) {
+			return createTestableObjectAdapter();
+		}
+
+		@Override
+		public Adapter caseTestableObjectOperations(TestableObjectOperations object) {
+			return createTestableObjectOperationsAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -311,7 +390,7 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 	/**
@@ -759,6 +838,90 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLoadableDeviceOperationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.Logging <em>Logging</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.Logging
+	 * @generated
+	 */
+	public Adapter createLoggingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.LoggingOperations <em>Logging Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.LoggingOperations
+	 * @generated
+	 */
+	public Adapter createLoggingOperationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.LogEventConsumer <em>Log Event Consumer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.LogEventConsumer
+	 * @generated
+	 */
+	public Adapter createLogEventConsumerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.LogEventConsumerOperations <em>Log Event Consumer Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.LogEventConsumerOperations
+	 * @generated
+	 */
+	public Adapter createLogEventConsumerOperationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.LogConfiguration <em>Log Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.LogConfiguration
+	 * @generated
+	 */
+	public Adapter createLogConfigurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.LogConfigurationOperations <em>Log Configuration Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.LogConfigurationOperations
+	 * @generated
+	 */
+	public Adapter createLogConfigurationOperationsAdapter() {
 		return null;
 	}
 

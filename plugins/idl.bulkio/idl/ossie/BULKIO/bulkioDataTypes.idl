@@ -37,7 +37,7 @@ module BULKIO {
     const short TCM_DTL  = 5;
     const short TCM_IRB  = 6;
     const short TCM_SDDS = 7;
-
+	
     //
     // Time code status
     //
