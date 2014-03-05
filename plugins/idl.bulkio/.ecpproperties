@@ -1,0 +1,10 @@
+#ECP Compilation Preferences
+#Wed Mar 05 08:36:52 EST 2014
+.INVOKE_COMPILERS=
+.GENERATE_SKELETONS=false
+.CUSTOM_OPTIONS=false
+.INCLUDE_PATHS=${project_loc}/idl;${project_loc\:idl.cf}/idl
+.GENERATE_STUBS=false
+.GENERATE_TIES=false
+.COMPILE=false
+.OUTPUT_DIRECTORY=
