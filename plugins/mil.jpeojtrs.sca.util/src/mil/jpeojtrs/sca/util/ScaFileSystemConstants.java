@@ -43,12 +43,12 @@ public final class ScaFileSystemConstants {
 	public static final String FS_SCHEME_CORBA_IOR = "IOR";
 
 	/**
-	 * @since 4.0
+	 * @since 3.6
 	 */
 	public static final String QUERY_PARAM_DOMAIN_NAME = "domain";
 
 	/**
-	 * @since 4.0
+	 * @since 3.6
 	 */
 	public static final String QUERY_PARAM_DEVICE_MGR_NAME = "devMgr";
 

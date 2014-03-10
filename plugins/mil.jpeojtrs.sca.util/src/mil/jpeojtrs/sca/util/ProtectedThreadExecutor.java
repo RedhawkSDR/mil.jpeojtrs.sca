@@ -48,7 +48,7 @@ public final class ProtectedThreadExecutor {
 	}
 
 	/**
-	 * @since 4.0
+	 * @since 3.6
 	 */
 	public static void submit(Runnable runnable, int timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
 		if (ProtectedThreadExecutor.isProtectedThread(Thread.currentThread())) {
@@ -65,14 +65,14 @@ public final class ProtectedThreadExecutor {
 	}
 
 	/**
-	 * @since 4.0
+	 * @since 3.6
 	 */
 	public static void submit(Runnable runnable) throws InterruptedException, ExecutionException, TimeoutException {
 		ProtectedThreadExecutor.submit(runnable, 4, TimeUnit.SECONDS);
 	}
 
 	/**
-	 * @since 4.0
+	 * @since 3.6
 	 */
 	public static < T > T submit(final Callable<T> callable, int timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
 		if (ProtectedThreadExecutor.isProtectedThread(Thread.currentThread())) {

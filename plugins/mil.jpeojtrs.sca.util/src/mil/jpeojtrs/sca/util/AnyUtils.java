@@ -1078,7 +1078,7 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * @since 4.0
+	 * @since 3.6
 	 */
 	public static boolean isSequence(DataType dt) {
 		TypeCode typeCode = dt.value.type();
@@ -1101,21 +1101,21 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * @since 4.0
+	 * @since 3.6
 	 */
 	public static boolean isStructSequence(DataType dt) {
 		return AnySeqHelper.type().equivalent(dt.value.type());
 	}
 
 	/**
-	 * @since 4.0
+	 * @since 3.6
 	 */
 	public static boolean isStruct(DataType dt) {
 		return PropertiesHelper.type().equivalent(dt.value.type());
 	}
 
 	/**
-	 * @since 4.0
+	 * @since 3.6
 	 */
 	public static boolean isSimple(DataType dt) {
 		TypeCode typeCode = dt.value.type();
