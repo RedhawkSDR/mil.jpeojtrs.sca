@@ -28,7 +28,7 @@ import org.omg.CORBA.ORB;
 import org.omg.CosNaming.NamingContextExt;
 
 /**
- * @since 3.4
+ * @since 3.5
  * 
  */
 public final class CorbaUtils {
