@@ -1143,6 +1143,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1152,6 +1153,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1161,6 +1163,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1170,6 +1173,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1179,6 +1183,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1188,6 +1193,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

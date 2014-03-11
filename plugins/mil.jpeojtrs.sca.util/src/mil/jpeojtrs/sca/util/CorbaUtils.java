@@ -28,7 +28,7 @@ import org.omg.CORBA.ORB;
 import org.omg.CosNaming.NamingContextExt;
 
 /**
- * @since 4.0
+ * @since 3.6
  * 
  */
 public final class CorbaUtils {
@@ -51,7 +51,6 @@ public final class CorbaUtils {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Resoling object in orb ", 1);
 		return CorbaUtils.invoke(new Callable<org.omg.CORBA.Object>() {
 
-			@Override
 			public org.omg.CORBA.Object call() throws Exception {
 				return orb.string_to_object(ior);
 			}
@@ -68,11 +67,10 @@ public final class CorbaUtils {
 	 * <code>InterruptedException</code>
 	 */
 	public static org.omg.CORBA.Object resolve_str(final NamingContextExt ext, final String name, IProgressMonitor monitor) throws CoreException,
-		InterruptedException {
+	InterruptedException {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Resolving object in naming context at ref " + name, 1);
 		return CorbaUtils.invoke(new Callable<org.omg.CORBA.Object>() {
 
-			@Override
 			public org.omg.CORBA.Object call() throws Exception {
 				return ext.resolve_str(name);
 			}
@@ -92,7 +90,6 @@ public final class CorbaUtils {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Checking if obj is a " + repID, 1);
 		return CorbaUtils.invoke(new Callable<Boolean>() {
 
-			@Override
 			public Boolean call() throws Exception {
 				return obj._is_a(repID);
 			}
@@ -112,7 +109,6 @@ public final class CorbaUtils {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Checking if obj non existent", 1);
 		return CorbaUtils.invoke(new Callable<Boolean>() {
 
-			@Override
 			public Boolean call() throws Exception {
 				return obj._non_existent();
 			}
@@ -138,6 +134,11 @@ public final class CorbaUtils {
 				try {
 					return task.get(500, TimeUnit.MILLISECONDS);
 				} catch (ExecutionException e) {
+					if (e.getCause() instanceof CoreException) {
+						throw (CoreException) e.getCause();
+					} else if (e.getCause() instanceof InterruptedException) {
+						throw (InterruptedException) e.getCause();
+					}
 					throw new CoreException(new Status(IStatus.ERROR, "mil.jpeojtrs.sca.util", "Error while executing callable", e.getCause()));
 				} catch (TimeoutException e) {
 					// PASS

@@ -846,6 +846,7 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see CF.Logging
@@ -860,6 +861,7 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see CF.LoggingOperations
@@ -874,6 +876,7 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see CF.LogEventConsumer
@@ -888,6 +891,7 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see CF.LogEventConsumerOperations
@@ -902,6 +906,7 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see CF.LogConfiguration
@@ -916,6 +921,7 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see CF.LogConfigurationOperations
