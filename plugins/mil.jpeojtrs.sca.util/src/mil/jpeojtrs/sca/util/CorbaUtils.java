@@ -134,12 +134,13 @@ public final class CorbaUtils {
 				try {
 					return task.get(500, TimeUnit.MILLISECONDS);
 				} catch (ExecutionException e) {
-					if (e.getCause() instanceof CoreException) {
-						throw (CoreException) e.getCause();
-					} else if (e.getCause() instanceof InterruptedException) {
-						throw (InterruptedException) e.getCause();
+					Throwable cause = e.getCause();
+					if (cause instanceof CoreException) {
+						throw (CoreException) cause;
+					} else if (cause instanceof InterruptedException) {
+						throw (InterruptedException) cause;
 					}
-					throw new CoreException(new Status(IStatus.ERROR, "mil.jpeojtrs.sca.util", "Error while executing callable", e.getCause()));
+					throw new CoreException(new Status(IStatus.ERROR, "mil.jpeojtrs.sca.util", "Error while executing callable. Caused by " + cause, cause));
 				} catch (TimeoutException e) {
 					// PASS
 				}
