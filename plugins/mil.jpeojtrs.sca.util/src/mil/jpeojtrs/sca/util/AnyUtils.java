@@ -771,8 +771,44 @@ public final class AnyUtils {
 		case TCKind._tk_wstring:
 			WStringSeqHelper.insert(retVal, AnyUtils.convertStringArray(value));
 			break;
+		case TCKind._tk_abstract_interface:
+			throw new IllegalArgumentException("Unhandled target type: _tk_abstract_interface");
+		case TCKind._tk_alias:
+			throw new IllegalArgumentException("Unhandled target type: _tk_alias");
+		case TCKind._tk_array:
+			throw new IllegalArgumentException("Unhandled target type: _tk_array");
+		case TCKind._tk_enum:
+			throw new IllegalArgumentException("Unhandled target type: _tk_enum");
+		case TCKind._tk_except:
+			throw new IllegalArgumentException("Unhandled target type: _tk_enum");
+		case TCKind._tk_fixed:
+			throw new IllegalArgumentException("Unhandled target type: _tk_fixed");
+		case TCKind._tk_longdouble:
+			throw new IllegalArgumentException("Unhandled target type: _tk_longdouble");
+		case TCKind._tk_native:
+			throw new IllegalArgumentException("Unhandled target type: _tk_longdouble");
+		case TCKind._tk_null:
+			return retVal;
+		case TCKind._tk_objref:
+			throw new IllegalArgumentException("Unhandled target type: _tk_objref");
+		case TCKind._tk_Principal:
+			throw new IllegalArgumentException("Unhandled target type: _tk_Principal");
+		case TCKind._tk_sequence:
+			throw new IllegalArgumentException("Unhandled target type: _tk_sequence");
+		case TCKind._tk_struct:
+			throw new IllegalArgumentException("Unhandled target type: _tk_struct");
+		case TCKind._tk_TypeCode:
+			throw new IllegalArgumentException("Unhandled target type: _tk_TypeCode");
+		case TCKind._tk_union:
+			throw new IllegalArgumentException("Unhandled target type: _tk_union");
+		case TCKind._tk_value:
+			throw new IllegalArgumentException("Unhandled target type: _tk_value");
+		case TCKind._tk_value_box:
+			throw new IllegalArgumentException("Unhandled target type: _tk_value_box");
+		case TCKind._tk_void:
+			throw new IllegalArgumentException("Unhandled target type: _tk_void");
 		default:
-			throw new IllegalArgumentException("Unknown target type: " + type);
+			throw new IllegalArgumentException("Unknown target type: " + type.value());
 		}
 		return retVal;
 	}
