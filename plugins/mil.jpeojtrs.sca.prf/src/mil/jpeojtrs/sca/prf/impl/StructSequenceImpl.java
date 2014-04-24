@@ -258,7 +258,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	        	ref.setValue(PropertiesUtil.getDefaultValue(simple));
 	        	SimpleRef oldRef = null;
 	        	for (SimpleRef sr: structValue.getSimpleRef()) {
-	        		if (sr.getRefID().equals(simple.getId())) {
+	        		if (sr.getRefID() != null && sr.getRefID().equals(simple.getId())) {
 	        			oldRef = sr;
 	        			break;
 	        		}
