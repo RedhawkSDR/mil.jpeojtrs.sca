@@ -30,6 +30,5 @@ Bundle-Version: 3.0.0.qualifier
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: idl.cf
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.jacorb.eclipse;bundle-version="1.0.0";visibility:=reexport,
- org.jacorb.services;bundle-version="3.3.0";visibility:=reexport
+Import-Package: org.omg.CosEventChannelAdmin;version="3.3.0"
 
