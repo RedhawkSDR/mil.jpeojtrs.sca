@@ -95,4 +95,12 @@ public final class ProtectedThreadExecutor {
 	public static < T > T submit(final Callable<T> callable) throws InterruptedException, ExecutionException, TimeoutException {
 		return ProtectedThreadExecutor.submit(callable, 4, TimeUnit.SECONDS);
 	}
+
+	/**
+	 * Executes the runnable asyncronously sometime in the future
+	 * @since 3.6
+	 */
+	public static void async(Runnable runnable) {
+		 ProtectedThreadExecutor.EXECUTOR.submit(runnable);
+	}
 }
