@@ -97,7 +97,7 @@ public final class ProtectedThreadExecutor {
 	}
 
 	/**
-	 * Executes the runnable asyncronously sometime in the future
+	 * Executes the runnable asynchronously sometime in the future
 	 * @since 3.6
 	 */
 	public static void async(Runnable runnable) {
