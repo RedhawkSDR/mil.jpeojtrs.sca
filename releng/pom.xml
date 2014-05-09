@@ -13,6 +13,8 @@
         <checkstyle-config>http://download.redhawksdr.org/redhawk-checkstyle/checkstyle.xml</checkstyle-config>
         <eclipse>http://download.eclipse.org/releases/helios</eclipse>
         <redhawk-core-framework>http://download.redhawksdr.org/redhawk-core-framework/releases/1.8</redhawk-core-framework>
+        <jacorb>http://download.redhawksdr.org/jacorb/updates/stable</jacorb>
+        <orbit>http://download.eclipse.org/tools/orbit/downloads/drops/R20130118183705/repository</orbit>
     </properties>
 
     <modules>
@@ -60,11 +62,20 @@
             <layout>p2</layout>
             <url>${eclipse}</url>
         </repository>
-
         <repository>
             <id>redhawk-core-framework</id>
             <layout>p2</layout>
             <url>${redhawk-core-framework}</url>
+        </repository>
+        <repository>
+            <id>jacorb</id>
+            <layout>p2</layout>
+            <url>${jacorb}</url>
+        </repository>
+        <repository>
+            <id>orbit</id>
+            <layout>p2</layout>
+            <url>${orbit}</url>
         </repository>
     </repositories>
 
