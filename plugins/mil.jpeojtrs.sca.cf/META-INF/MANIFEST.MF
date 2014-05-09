@@ -9,7 +9,8 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.6.1";visibility:=reexport,
  org.eclipse.wst.xml.core;bundle-version="1.1.503";resolution:=optional,
- idl.cf;bundle-version="1.7.0";visibility:=reexport
+ idl.cf;bundle-version="1.7.0";visibility:=reexport,
+ org.jacorb;bundle-version="3.3.0"
 Export-Package: mil.jpeojtrs.sca.cf,
  mil.jpeojtrs.sca.cf.extended,
  mil.jpeojtrs.sca.cf.extended.impl,
