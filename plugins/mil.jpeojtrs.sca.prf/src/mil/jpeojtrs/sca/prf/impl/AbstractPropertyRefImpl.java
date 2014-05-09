@@ -129,7 +129,10 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 			}
 		}
 		// Revert to looking for it by ID
-		return (P) eResource().getEObject(getRefID());
+		if (eResource() != null) {
+			return (P) eResource().getEObject(getRefID());
+		}
+		return null;
 	}
 
 	/**

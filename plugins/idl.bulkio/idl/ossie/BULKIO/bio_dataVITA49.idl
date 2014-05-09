@@ -78,13 +78,13 @@ module BULKIO {
 	
     /*** BULKIO VITA49 stream definition structure ***/
     struct VITA49StreamDefinition {                  
-		string ip_address;                     		 // IP address 
+	string ip_address;                     	     // IP address 
         unsigned long vlan;                          // VLAN (can be zero or greater)
         unsigned long port;                          // Port Number
-		TransportProtocol protocol;                  // Transport protocl - UDP, TCP or UNKNOWN
-        
-		boolean valid_data_format;              	 // True - Data will be processed immediately (will not wait on context packet) with the specified settings. False - data will not be processed until a context packet is received
-		VITA49DataPacketPayloadFormat data_format;   // Describes data format when context packet is not received. 
+	TransportProtocol protocol;                  // Transport protocl - UDP, TCP or UNKNOWN
+        string id;                                   // Addition of id for multiport implementations
+	boolean valid_data_format;                   // True - Data will be processed immediately (will not wait on context packet) with the specified settings. False - data will not be processed until a context packet is received
+	VITA49DataPacketPayloadFormat data_format;   // Describes data format when context packet is not received. 
     };
     
   
