@@ -5,13 +5,8 @@
 
   <parent>
     <groupId>mil.jpeojtrs.sca</groupId>
-<<<<<<< HEAD
     <artifactId>parent</artifactId>
     <version>1.9.1-SNAPSHOT</version>
-=======
-    <artifactId>mil.jpeojtrs.sca.parent</artifactId>
-    <version>1.8.7-SNAPSHOT</version>
->>>>>>> origin/develop-1_8
   </parent>
   <packaging>eclipse-repository</packaging>
 
