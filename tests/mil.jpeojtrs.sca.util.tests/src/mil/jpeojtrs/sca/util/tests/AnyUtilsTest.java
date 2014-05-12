@@ -18,6 +18,7 @@ import junit.framework.Assert;
 import mil.jpeojtrs.sca.util.AnyUtils;
 
 import org.apache.commons.lang.ArrayUtils;
+import org.jacorb.JacorbUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,7 +27,6 @@ import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.BAD_OPERATION;
 import org.omg.CORBA.DoubleSeqHelper;
 import org.omg.CORBA.LongSeqHelper;
-import org.omg.CORBA.ORB;
 import org.omg.CORBA.StringSeqHelper;
 import org.omg.CORBA.TCKind;
 import org.omg.CORBA.TypeCode;
@@ -110,7 +110,7 @@ public class AnyUtilsTest {
 	@Test
 	public void test_insertInto() {
 		Assert.assertNull(AnyUtils.insertInto(null, null, TCKind.tk_boolean));
-		Assert.assertNotNull(AnyUtils.insertInto(ORB.init().create_any(), null, TCKind.tk_boolean));
+		Assert.assertNotNull(AnyUtils.insertInto(JacorbUtil.init().create_any(), null, TCKind.tk_boolean));
 	}
 
 	@Test
@@ -298,7 +298,7 @@ public class AnyUtilsTest {
 	public void test_convertAnySequences() throws Exception {
 		// Test Strings
 		Object obj = null;
-		Any theAny = ORB.init().create_any();
+		Any theAny = JacorbUtil.init().create_any();
 
 		final String[] stringInitialValue = new String[] {
 		        "a", "b", "c"
@@ -315,7 +315,7 @@ public class AnyUtilsTest {
 
 		// Test Doubles
 		obj = null;
-		theAny = ORB.init().create_any();
+		theAny = JacorbUtil.init().create_any();
 
 		final double[] doubleInitialValue = new double[] {
 		        0.1, 0.2, 0.3
@@ -332,7 +332,7 @@ public class AnyUtilsTest {
 
 		// Test Integers
 		obj = null;
-		theAny = ORB.init().create_any();
+		theAny = JacorbUtil.init().create_any();
 
 		final int[] intInitialValue = new int[] {
 		        1, 2, 3
@@ -350,8 +350,8 @@ public class AnyUtilsTest {
 		// Test Recursive Sequence
 		obj = null;
 		final Any[] theAnys = new Any[2];
-		theAnys[0] = ORB.init().create_any();
-		theAnys[1] = ORB.init().create_any();
+		theAnys[0] = JacorbUtil.init().create_any();
+		theAnys[1] = JacorbUtil.init().create_any();
 
 		LongSeqHelper.insert(theAnys[0], intInitialValue);
 		LongSeqHelper.insert(theAnys[1], intInitialValue);

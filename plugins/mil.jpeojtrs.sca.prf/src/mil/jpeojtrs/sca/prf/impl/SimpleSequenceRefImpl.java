@@ -22,6 +22,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.ORB;
 
@@ -188,7 +189,7 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 		 if (getValues() != null) {
              return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral());
 	     } else {
-	             return ORB.init().create_any();
+	             return JacorbUtil.init().create_any();
 	     }
     }
 

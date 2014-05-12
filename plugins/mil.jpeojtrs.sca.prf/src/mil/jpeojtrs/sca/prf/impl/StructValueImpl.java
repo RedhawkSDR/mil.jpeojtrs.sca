@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.ORB;
 
@@ -153,7 +154,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	public Any toAny() {
 		// END GENERATED CODE
-		Any retVal = ORB.init().create_any();
+		Any retVal = JacorbUtil.init().create_any();
 		List<DataType> fields = new ArrayList<DataType>(getSimpleRef().size());
 		for (SimpleRef prop : getSimpleRef()) {
 			fields.add(new DataType(prop.getRefID(), prop.toAny()));

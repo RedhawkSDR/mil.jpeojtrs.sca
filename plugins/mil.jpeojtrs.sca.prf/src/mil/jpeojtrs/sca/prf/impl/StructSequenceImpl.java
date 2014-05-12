@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
@@ -414,7 +415,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 
 	@Override
     public Any toAny() {
-		Any retVal = ORB.init().create_any();
+		Any retVal = JacorbUtil.init().create_any();
 		List<Any> structVals = new ArrayList<Any>();
 		for (StructValue structProp : getStructValue()) {
 			structVals.add(structProp.toAny());
