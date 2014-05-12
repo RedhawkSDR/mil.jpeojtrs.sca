@@ -30,6 +30,7 @@ import mil.jpeojtrs.sca.util.math.ComplexULongLong;
 import mil.jpeojtrs.sca.util.math.ComplexUShort;
 
 import org.apache.commons.lang.ArrayUtils;
+import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.BAD_OPERATION;
@@ -39,7 +40,6 @@ import org.omg.CORBA.DoubleSeqHelper;
 import org.omg.CORBA.FloatSeqHelper;
 import org.omg.CORBA.LongLongSeqHelper;
 import org.omg.CORBA.LongSeqHelper;
-import org.omg.CORBA.ORB;
 import org.omg.CORBA.OctetSeqHelper;
 import org.omg.CORBA.ShortSeqHelper;
 import org.omg.CORBA.StringSeqHelper;
@@ -453,7 +453,7 @@ public final class AnyUtils {
 		if (type == null) {
 			throw new NullPointerException();
 		}
-		return ORB.init().get_primitive_tc(type).name();
+		return JacorbUtil.init().get_primitive_tc(type).name();
 	}
 
 	public static TCKind convertToTCKind(final String type) {
@@ -519,7 +519,7 @@ public final class AnyUtils {
 	 */
 	public static Any toAny(final Object value, final TCKind type, boolean complex) {
 		if (value == null) {
-			return ORB.init().create_any();
+			return JacorbUtil.init().create_any();
 		}
 		if (value.getClass().isArray()) {
 			return AnyUtils.toAnySequence(value, type);
@@ -552,7 +552,7 @@ public final class AnyUtils {
 	 * @since 3.0
 	 */
 	private static Any primitiveToAny(final Object value, final TCKind type) {
-		final Any retVal = ORB.init().create_any();
+		final Any retVal = JacorbUtil.init().create_any();
 		if (value == null) {
 			return retVal;
 		}
@@ -703,7 +703,7 @@ public final class AnyUtils {
 	 * @since 3.0
 	 */
 	public static Any toAnySequence(final Object value, TCKind type) {
-		final Any retVal = ORB.init().create_any();
+		final Any retVal = JacorbUtil.init().create_any();
 
 		if (value instanceof Object[]) {
 			Object[] cArray = (Object[]) value;

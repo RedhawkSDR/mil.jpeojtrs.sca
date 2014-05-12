@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.ORB;
 
@@ -258,7 +259,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 
 	@Override
     public Any toAny() {
-		Any retVal = ORB.init().create_any();
+		Any retVal = JacorbUtil.init().create_any();
 		List<DataType> fields = new ArrayList<DataType>(getSimple().size());
 		for (Simple prop : getSimple()) {
 			fields.add(new DataType(prop.getId(), prop.toAny()));
