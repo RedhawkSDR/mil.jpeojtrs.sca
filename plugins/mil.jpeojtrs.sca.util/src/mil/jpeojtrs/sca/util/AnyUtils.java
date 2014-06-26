@@ -617,7 +617,7 @@ public final class AnyUtils {
 			retVal.insert_wstring(value.toString());
 			break;
 		default:
-			throw new IllegalArgumentException("Unknown target type: " + type);
+			throw new IllegalArgumentException("Unknown target type: TCKind value " + type.value());
 		}
 		return retVal;
 	}
