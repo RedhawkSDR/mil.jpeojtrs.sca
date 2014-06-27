@@ -44,7 +44,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
-import org.omg.CORBA.ORB;
 
 /**
  * <!-- begin-user-doc -->

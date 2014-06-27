@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
-import org.omg.CORBA.ORB;
 
 /**
  * <!-- begin-user-doc -->

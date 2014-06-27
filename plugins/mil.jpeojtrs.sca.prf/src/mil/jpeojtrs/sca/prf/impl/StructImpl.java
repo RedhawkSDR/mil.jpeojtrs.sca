@@ -33,7 +33,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
-import org.omg.CORBA.ORB;
 
 import CF.DataType;
 import CF.PropertiesHelper;
