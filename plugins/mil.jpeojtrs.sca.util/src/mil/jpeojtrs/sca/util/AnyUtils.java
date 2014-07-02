@@ -557,6 +557,8 @@ public final class AnyUtils {
 			return retVal;
 		}
 		switch (type.value()) {
+		case TCKind._tk_null:
+			break;
 		case TCKind._tk_any:
 			retVal.insert_any((Any) value);
 			break;
