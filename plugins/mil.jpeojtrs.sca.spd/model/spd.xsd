@@ -1,150 +1,204 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:prf="http://sca.jpeojtrs.mil/prf" xmlns:scd="http://sca.jpeojtrs.mil/scd" xmlns:spd="http://sca.jpeojtrs.mil/spd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:documentRoot="SpdDocumentRoot" ecore:nsPrefix="spd" ecore:package="mil.jpeojtrs.sca.spd" targetNamespace="http://sca.jpeojtrs.mil/spd">
-  <xsd:import namespace="http://sca.jpeojtrs.mil/prf" schemaLocation="platform:/resource/mil.jpeojtrs.sca.prf/model/prf.xsd"/>
-  <xsd:import namespace="http://sca.jpeojtrs.mil/scd" schemaLocation="platform:/resource/mil.jpeojtrs.sca.scd/model/scd.xsd"/>
-  <xsd:import namespace="http://www.eclipse.org/emf/2002/Ecore" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.xsd"/>
-  <xsd:element name="softpkg" type="spd:softPkg"/>
-  <xsd:simpleType ecore:name="AEPComplianceType" name="aepcompliance_._type">
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration ecore:name="aepCompliant" value="aep_compliant"/>
-      <xsd:enumeration ecore:name="aepNonCompliant" value="aep_non_compliant"/>
-    </xsd:restriction>
-  </xsd:simpleType>
-  <xsd:complexType ecore:name="Author" name="author">
-    <xsd:sequence>
-      <xsd:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="name" nillable="true" type="xsd:string"/>
-      <xsd:element form="qualified" minOccurs="0" name="company" type="xsd:string"/>
-      <xsd:element form="qualified" minOccurs="0" name="webpage" type="xsd:anyURI"/>
-    </xsd:sequence>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="Code" name="code">
-    <xsd:sequence>
-      <xsd:element ecore:name="localFile" form="qualified" name="localfile" type="spd:localFile"/>
-      <xsd:element ecore:name="entryPoint" form="qualified" minOccurs="0" name="entrypoint" type="xsd:string"/>
-      <xsd:element ecore:name="stackSize" form="qualified" minOccurs="0" name="stacksize" type="xsd:unsignedLong"/>
-      <xsd:element form="qualified" minOccurs="0" name="priority" type="xsd:unsignedLong"/>
-    </xsd:sequence>
-    <xsd:attribute name="type" type="spd:type_._type"/>
-  </xsd:complexType>
-  <xsd:simpleType ecore:name="CodeFileType" name="type_._type">
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="Executable"/>
-      <xsd:enumeration value="KernelModule"/>
-      <xsd:enumeration value="SharedLibrary"/>
-      <xsd:enumeration value="Driver"/>
-      <xsd:enumeration value="NodeBooter"/>
-    </xsd:restriction>
-  </xsd:simpleType>
-  <xsd:complexType ecore:name="Compiler" name="compiler">
-    <xsd:attribute name="name" type="xsd:string" use="required"/>
-    <xsd:attribute name="version" type="xsd:string"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:constraints="NonEmptyDependency" ecore:name="Dependency" name="dependency">
-    <xsd:choice maxOccurs="1" minOccurs="1">
-      <xsd:element ecore:name="softPkgRef" form="qualified" minOccurs="0" name="softpkgref" type="spd:softPkgRef"/>
-      <xsd:element ecore:name="propertyRef" form="qualified" minOccurs="0" name="propertyref" type="spd:propertyRef"/>
-    </xsd:choice>
-    <xsd:attribute name="type" type="xsd:string" use="required"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="Descriptor" name="descriptor">
-    <xsd:sequence>
-      <xsd:element form="qualified" name="localfile" type="spd:localFile"/>
-    </xsd:sequence>
-    <xsd:attribute ecore:derived="true" ecore:reference="scd:softwareComponent" ecore:transient="true" ecore:volatile="true" name="component" type="xsd:anyURI"/>
-    <xsd:attribute name="name" type="xsd:string"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="HumanLanguage" name="humanLanguage">
-    <xsd:attribute name="name" type="xsd:string" use="required"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="Implementation" name="implementation">
-    <xsd:sequence>
-      <xsd:element form="qualified" minOccurs="0" name="description" type="xsd:string"/>
-      <xsd:element ecore:name="propertyFile" form="qualified" minOccurs="0" name="propertyfile" type="spd:propertyFile"/>
-      <xsd:element form="qualified" name="code" type="spd:code"/>
-      <xsd:element form="qualified" minOccurs="0" name="compiler" type="spd:compiler"/>
-      <xsd:element ecore:name="programmingLanguage" form="qualified" minOccurs="0" name="programminglanguage" type="spd:programmingLanguage"/>
-      <xsd:element ecore:name="humanLanguage" form="qualified" minOccurs="0" name="humanlanguage" type="spd:humanLanguage"/>
-      <xsd:element form="qualified" minOccurs="0" name="runtime" type="spd:runtime"/>
-      <xsd:choice ecore:featureMap="dependencyMap" maxOccurs="unbounded">
-        <xsd:element ecore:upperBound="-1" form="qualified" minOccurs="0" name="os" type="spd:os"/>
-        <xsd:element ecore:upperBound="-1" form="qualified" minOccurs="0" name="processor" type="spd:processor"/>
-        <xsd:element ecore:upperBound="-1" form="qualified" minOccurs="0" name="dependency" type="spd:dependency"/>
-      </xsd:choice>
-      <xsd:element ecore:name="usesDevice" form="qualified" maxOccurs="unbounded" minOccurs="0" name="usesdevice" type="spd:usesDevice"/>
-    </xsd:sequence>
-    <xsd:attribute default="aep_compliant" ecore:name="aepCompliance" name="aepcompliance" type="spd:aepcompliance_._type"/>
-    <xsd:attribute ecore:id="true" name="id" type="xsd:Name" use="required"/>
-    <xsd:attribute ecore:opposite="implementation" ecore:reference="spd:softPkg" name="softPkg" type="xsd:anyURI"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="ImplRef" name="implRef">
-    <xsd:attribute name="refid" type="xsd:string" use="required"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="LocalFile" name="localFile">
-    <xsd:attribute name="name" type="xsd:string" use="required"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="Os" name="os">
-    <xsd:attribute name="name" type="xsd:string" use="required"/>
-    <xsd:attribute name="version" type="xsd:string"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="Processor" name="processor">
-    <xsd:attribute name="name" type="xsd:string" use="required"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="ProgrammingLanguage" name="programmingLanguage">
-    <xsd:attribute name="name" type="xsd:string" use="required"/>
-    <xsd:attribute name="version" type="xsd:string"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="PropertyFile" name="propertyFile">
-    <xsd:sequence>
-      <xsd:element ecore:name="localFile" form="qualified" name="localfile" type="spd:localFile"/>
-    </xsd:sequence>    
-    <xsd:attribute ecore:derived="true" ecore:reference="prf:properties" ecore:suppressedSetVisibility="true" ecore:suppressedUnsetVisibility="true" ecore:transient="true" ecore:volatile="true" name="properties" type="xsd:anyURI"/>
-    <xsd:attribute name="type" type="xsd:string"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="PropertyRef" name="propertyRef">
-    <xsd:attribute ecore:name="refId" name="refid" type="prf:DceUUID" use="required"/>
-    <xsd:attribute name="value" type="xsd:string" use="required"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="Runtime" name="runtime">
-    <xsd:attribute name="name" type="xsd:string" use="required"/>
-    <xsd:attribute name="version" type="xsd:string"/>
-  </xsd:complexType>
-  <xsd:simpleType ecore:name="SCAComplianceType" name="type_._1_._type">
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration ecore:name="scaCompliant" value="sca_compliant"/>
-      <xsd:enumeration ecore:name="scaNonCompliant" value="sca_non_compliant"/>
-    </xsd:restriction>
-  </xsd:simpleType>
-  <xsd:complexType ecore:constraints="isValueConsistent" ecore:name="SoftPkg" name="softPkg">
-    <xsd:sequence>
-      <xsd:element form="qualified" minOccurs="0" name="title" type="xsd:string"/>
-      <xsd:element form="qualified" maxOccurs="unbounded" name="author" type="spd:author"/>
-      <xsd:element form="qualified" minOccurs="0" name="description" type="xsd:string"/>
-      <xsd:element ecore:name="propertyFile" form="qualified" minOccurs="0" name="propertyfile" type="spd:propertyFile"/>
-      <xsd:element form="qualified" minOccurs="0" name="descriptor" type="spd:descriptor"/>
-      <xsd:element form="qualified" maxOccurs="unbounded" name="implementation" type="spd:implementation"/>
-      <xsd:element ecore:name="usesDevice" form="qualified" maxOccurs="unbounded" minOccurs="0" name="usesdevice" type="spd:usesDevice"/>
-    </xsd:sequence>
-    <xsd:attribute ecore:id="true" name="id" type="prf:DceUUID" use="required"/>
-    <xsd:attribute name="name" type="xsd:string" use="required"/>
-    <xsd:attribute default="sca_compliant" name="type" type="spd:type_._1_._type"/>
-    <xsd:attribute name="version" type="xsd:string"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="SoftPkgRef" name="softPkgRef">
-    <xsd:sequence>
-      <xsd:element ecore:name="localFile" form="qualified" name="localfile" type="spd:localFile"/>
-      <xsd:element ecore:name="implRef" form="qualified" minOccurs="0" name="implref" type="spd:implRef"/>
-    </xsd:sequence>
-    <xsd:attribute ecore:derived="true" ecore:reference="spd:implementation" ecore:transient="true" ecore:volatile="true" name="implementation" type="xsd:anyURI"/>
-    <xsd:attribute ecore:derived="true" ecore:reference="spd:softPkg" ecore:transient="true" ecore:volatile="true" name="softPkg" type="xsd:anyURI"/>
-  </xsd:complexType>
-  <xsd:complexType ecore:name="UsesDevice" name="usesDevice">
-    <xsd:sequence>
-      <xsd:element ecore:name="propertyRef" form="qualified" maxOccurs="unbounded" name="propertyref" type="spd:propertyRef"/>
-    </xsd:sequence>
-    <xsd:attribute ecore:id="true" name="id" type="ecore:EString" use="required"/>
-    <xsd:attribute name="type" type="xsd:string" use="required"/>
-  </xsd:complexType>
-  <xsd:simpleType ecore:instanceClass="org.eclipse.emf.common.util.URI" name="URI">
-    <xsd:restriction base="xsd:string"/>
-  </xsd:simpleType>
-</xsd:schema>
+<!--
+This file is protected by Copyright. Please refer to the COPYRIGHT file 
+distributed with this source distribution.
+
+This file is part of REDHAWK core.
+
+REDHAWK core is free software: you can redistribute it and/or modify it under 
+the terms of the GNU Lesser General Public License as published by the Free 
+Software Foundation, either version 3 of the License, or (at your option) any 
+later version.
+
+REDHAWK core is distributed in the hope that it will be useful, but WITHOUT ANY 
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR 
+A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more 
+details.
+
+You should have received a copy of the GNU Lesser General Public License along 
+with this program.  If not, see http://www.gnu.org/licenses/.
+-->
+
+<!--W3C Schema generated by XMLSpy v2009 sp1 (http://www.altova.com)-->
+<!--Please add namespace attributes, a targetNamespace attribute and import elements according to your requirements-->
+<xs:schema targetNamespace="urn:mil:jpeojtrs:sca:spd"
+           xmlns="urn:mil:jpeojtrs:sca:spd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	   xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+           elementFormDefault="unqualified"
+	   ecore:nsPrefix=""
+	   ecore:package="mil.jpeojtrs.sca.spd">
+	<xs:complexType name="softPkg">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" minOccurs="0"/>
+			<xs:element type="author" name="author" maxOccurs="unbounded"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="propertyfile" type="propertyFile" minOccurs="0" ecore:name="propertyFile"/>
+			<xs:element name="descriptor" type="descriptor" minOccurs="0"/>
+			<xs:element name="implementation" type="implementation" maxOccurs="unbounded"/>
+			<xs:element name="usesdevice" type="usesDevice" minOccurs="0" maxOccurs="unbounded" ecore:name="usesDevice"/>
+		</xs:sequence>
+		<xs:attribute ecore:id="true" name="id" use="required" type="xs:string"/>
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="type" type="xs:string"/>
+		<xs:attribute name="version" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="softpkg" type="softPkg"/>
+	<xs:complexType name="localFile">
+		<xs:attribute name="name" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="propertyFile">
+		<xs:sequence>
+			<xs:element name="localfile" type="localFile" ecore:name="localFile"/>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="author">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="company" type="xs:string" minOccurs="0"/>
+			<xs:element name="webpage" type="xs:anyURI" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="descriptor">
+		<xs:sequence>
+			<xs:element name="localfile" type="localFile"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="implementation">
+		<xs:sequence>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="propertyfile" type="propertyFile" minOccurs="0" ecore:name="propertyFile"/>
+			<xs:element type="code" name="code"/>
+			<xs:element name="compiler" type="compiler" minOccurs="0"/>
+			<xs:element name="programminglanguage" type="programmingLanguage" minOccurs="0" ecore:name="programmingLanguage"/>
+			<xs:element name="humanlanguage" type="humanLanguage" minOccurs="0" ecore:name="humanLanguage"/>
+			<xs:element name="runtime" type="runtime" minOccurs="0"/>
+			<xs:choice maxOccurs="unbounded" ecore:name="dependencyMap">
+				<xs:element name="os" type="os"/>
+				<xs:element name="processor" type="processor"/>
+				<xs:element name="dependency" type="dependency"/>
+			</xs:choice>
+			<xs:element name="usesdevice" type="usesDevice" minOccurs="0" maxOccurs="unbounded" ecore:name="usesDevice"/>
+		</xs:sequence>
+		<xs:attribute ecore:id="true" name="id" use="required" type="xs:string"/>
+		<xs:attribute name="aepcompliance" default="aep_compliant" ecore:name="aepCompliance">
+			<xs:simpleType ecore:name="AEPComplianceType">
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="aep_compliant"/>
+					<xs:enumeration value="aep_non_compliant"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="code">
+		<xs:sequence>
+			<xs:element name="localfile" type="localFile" ecore:name="localFile"/>
+			<xs:element name="entrypoint" type="xs:string" minOccurs="0" ecore:name="entryPoint"/>
+			<xs:element name="stacksize" type="xs:unsignedLong" minOccurs="0" ecore:name="stackSize"/>
+			<xs:element name="priority" type="xs:unsignedLong" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="type" type="codeFileType"/>
+	</xs:complexType>
+	<xs:simpleType name="codeFileType" ecore:name="CodeFileType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Executable"/>
+			<xs:enumeration value="KernelModule"/>
+			<xs:enumeration value="SharedLibrary"/>
+			<xs:enumeration value="Driver"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="compiler">
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="version" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="programmingLanguage">
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="version" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="humanLanguage">
+		<xs:attribute name="name" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="os">
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="version" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="processor">
+		<xs:attribute name="name" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="dependency">
+		<xs:choice>
+			<xs:element name="softpkgref" type="softPkgRef" ecore:name="softPkgRef"/>
+			<xs:element name="propertyref" type="propertyRef" ecore:name="propertyRef"/>
+                        <!-- REDHAWK extension: support any property type dependency -->
+			<xs:element name="simpleref" type="simpleref" ecore:name="simpleRef"/>
+			<xs:element name="simplesequenceref" type="simplesequenceref" ecore:name="simpleSequenceRef"/>
+			<xs:element name="structref" type="structref" ecore:name="structRef"/>
+			<xs:element name="structsequenceref" type="structsequenceref" ecore:name="structSequenceRef"/>
+		</xs:choice>
+		<xs:attribute name="type" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="runtime">
+		<xs:attribute name="name" use="required" type="xs:string"/>
+		<xs:attribute name="version" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="propertyRef">
+		<xs:attribute name="refid" use="required" type="xs:string" ecore:name="refId"/>
+		<xs:attribute name="value" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="softPkgRef">
+		<xs:sequence>
+			<xs:element name="localfile" type="localFile" ecore:name="localFile"/>
+			<xs:element name="implref" type="implRef" minOccurs="0" ecore:name="implRef"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="implRef">
+		<xs:attribute name="refid" use="required" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="usesDevice">
+		<!-- REDHAWK extension: support any property type dependency -->
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="propertyref" type="propertyRef" ecore:name="propertyRef"/>
+			<xs:element name="simpleref" type="simpleref" ecore:name="simpleRef"/>
+			<xs:element name="simplesequenceref" type="simplesequenceref" ecore:name="simpleSequenceRef"/>
+			<xs:element name="structref" type="structref" ecore:name="structRef"/>
+			<xs:element name="structsequenceref" type="structsequenceref" ecore:name="structSequenceRef"/>
+		</xs:choice>
+		<xs:attribute ecore:id="true" name="id" use="required" type="xs:string"/>
+		<xs:attribute name="type" use="required" type="xs:string"/>
+	</xs:complexType>
+        <!-- REDHAWK extension: support any property type dependency -->
+	<xs:complexType name="simpleref">
+		<xs:attribute name="refid" use="required" type="xs:string" ecore:name="refId"/>
+		<xs:attribute name="value" use="required" type="xs:string" />
+	</xs:complexType>
+	<xs:complexType name="simplesequenceref" >
+		<xs:sequence>
+			<xs:element name="values" type="values"/>
+		</xs:sequence>
+		<xs:attribute name="refid" use="required" type="xs:string" ecore:name="refId"/>
+	</xs:complexType>
+	<xs:complexType name="structref">
+		<xs:sequence>
+			<xs:element name="simpleref" type="simpleref" maxOccurs="unbounded" ecore:name="simpleRef"/>
+		</xs:sequence>
+		<xs:attribute name="refid" use="required" type="xs:string" ecore:name="refId"/>
+	</xs:complexType>
+	<xs:complexType name="structsequenceref">
+		<xs:sequence>
+			<xs:element name="structvalue" type="structvalue" maxOccurs="unbounded" ecore:name="structValue"/>
+		</xs:sequence>
+		<xs:attribute name="refid" use="required" type="xs:string" ecore:name="refId"/>
+	</xs:complexType>
+	<xs:complexType name="structvalue">
+		<xs:sequence>
+			<xs:element name="simpleref" type="simpleref" maxOccurs="unbounded" ecore:name="simpleRef"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="values">
+		<xs:sequence>
+			<xs:element name="value" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
