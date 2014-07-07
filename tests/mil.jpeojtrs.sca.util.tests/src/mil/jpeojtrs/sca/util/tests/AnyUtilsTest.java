@@ -65,6 +65,16 @@ public class AnyUtilsTest {
 		Assert.assertTrue(this.any instanceof Any);
 		Assert.assertEquals(TCKind.tk_string, this.any.type().kind());
 		Assert.assertEquals("Typecode Value", this.any.extract_string());
+		
+		this.any = AnyUtils.toAny(null, TCKind.tk_null);
+		Assert.assertNotNull(this.any);
+		Assert.assertTrue(this.any instanceof Any);
+		Assert.assertEquals(TCKind.tk_null, this.any.type().kind());
+		
+		this.any = AnyUtils.toAny(8.8, TCKind.tk_null);
+		Assert.assertNotNull(this.any);
+		Assert.assertTrue(this.any instanceof Any);
+		Assert.assertEquals(TCKind.tk_null, this.any.type().kind());
 	}
 
 	@Test
