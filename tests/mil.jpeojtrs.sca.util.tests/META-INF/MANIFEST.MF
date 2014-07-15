@@ -15,3 +15,5 @@ Require-Bundle: mil.jpeojtrs.sca.util;bundle-version="2.2.2",
  org.jacorb
 Export-Package: mil.jpeojtrs.sca.util.tests
 Bundle-Vendor: %Bundle-Vendor
+Bundle-Activator: mil.jpeojtrs.sca.util.tests.PluginActivator
+Bundle-ActivationPolicy: lazy
