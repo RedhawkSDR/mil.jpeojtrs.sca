@@ -151,4 +151,18 @@ public final class CorbaUtils {
 			monitor.done();
 		}
 	}
+	
+	public static void release(final org.omg.CORBA.Object obj) {
+		if (obj == null) {
+			return;
+		}
+		EXECUTOR.execute(new Runnable() {
+
+			@Override
+			public void run() {
+				obj._release();
+			}
+			
+		});
+	}
 }
