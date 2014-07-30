@@ -112,7 +112,7 @@ public interface ComponentInstantiation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Provides</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation_Provides()
-	 * @model containment="true" transient="true" changeable="false" derived="true"
+	 * @model containment="true" keys="name" transient="true" changeable="false" derived="true"
 	 *        extendedMetaData="kind='element' name='provides'"
 	 * @generated
 	 */
@@ -129,7 +129,7 @@ public interface ComponentInstantiation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Uses</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation_Uses()
-	 * @model containment="true" transient="true" changeable="false" derived="true"
+	 * @model containment="true" keys="name" transient="true" changeable="false" derived="true"
 	 *        extendedMetaData="kind='element' name='uses'"
 	 * @generated
 	 */

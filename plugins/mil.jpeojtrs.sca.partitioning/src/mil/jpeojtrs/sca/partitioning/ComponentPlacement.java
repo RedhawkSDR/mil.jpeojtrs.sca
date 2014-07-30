@@ -75,7 +75,7 @@ public interface ComponentPlacement<I extends ComponentInstantiation> extends EO
 	 * @return the value of the '<em>Component Instantiation</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentPlacement_ComponentInstantiation()
 	 * @see mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getPlacement
-	 * @model opposite="placement" containment="true" required="true"
+	 * @model opposite="placement" containment="true" keys="id" required="true"
 	 *        extendedMetaData="kind='element' name='componentinstantiation'"
 	 * @generated
 	 */

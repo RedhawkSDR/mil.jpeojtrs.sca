@@ -63,7 +63,7 @@ public interface Partitioning<C extends ComponentPlacement<?>> extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Component Placement</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getPartitioning_ComponentPlacement()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
+	 * @model containment="true" keys="name" transient="true" volatile="true" derived="true"
 	 *        extendedMetaData="kind='element' name='componentplacement' group='#parts:0'"
 	 * @generated
 	 */

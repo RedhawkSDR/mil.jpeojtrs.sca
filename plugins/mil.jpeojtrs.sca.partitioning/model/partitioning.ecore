@@ -124,14 +124,14 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="provides" upperBound="-1"
         eType="#//ProvidesPortStub" changeable="false" transient="true" derived="true"
-        containment="true">
+        containment="true" eKeys="#//ProvidesPortStub/name">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="provides"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//UsesPortStub"
-        changeable="false" transient="true" derived="true" containment="true">
+        changeable="false" transient="true" derived="true" containment="true" eKeys="#//UsesPortStub/name">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="uses"/>
@@ -204,7 +204,8 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstantiation"
-        lowerBound="1" upperBound="-1" containment="true" resolveProxies="false" eOpposite="#//ComponentInstantiation/placement">
+        lowerBound="1" upperBound="-1" containment="true" resolveProxies="false" eOpposite="#//ComponentInstantiation/placement"
+        eKeys="#//ComponentInstantiation/id">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="componentinstantiation"/>
@@ -594,7 +595,8 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentPlacement" upperBound="-1"
-        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
+        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false"
+        eKeys="#//ComponentPlacement/name">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="componentplacement"/>

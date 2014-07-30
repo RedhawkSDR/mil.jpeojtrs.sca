@@ -303,8 +303,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 			(thePartitioningPackage, 
 			 new EValidator.Descriptor()
 			 {
-				 @Override
-				public EValidator getEValidator()
+				 public EValidator getEValidator()
 				 {
 					 return PartitioningValidator.INSTANCE;
 				 }
@@ -1568,7 +1567,9 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		initEAttribute(getComponentInstantiation_UsageName(), theXMLTypePackage.getString(), "usageName", null, 0, 1, ComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstantiation_ComponentProperties(), this.getComponentProperties(), null, "componentProperties", null, 0, 1, ComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstantiation_Provides(), this.getProvidesPortStub(), null, "provides", null, 0, -1, ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		getComponentInstantiation_Provides().getEKeys().add(this.getProvidesPortStub_Name());
 		initEReference(getComponentInstantiation_Uses(), this.getUsesPortStub(), null, "uses", null, 0, -1, ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		getComponentInstantiation_Uses().getEKeys().add(this.getUsesPortStub_Name());
 		initEReference(getComponentInstantiation_InterfaceStub(), this.getComponentSupportedInterfaceStub(), null, "interfaceStub", null, 0, 1, ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentInstantiation_Id(), theXMLTypePackage.getName_(), "id", null, 1, 1, ComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(this.getComponentPlacement());
@@ -1586,6 +1587,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		initEReference(getComponentPlacement_ComponentFileRef(), this.getComponentFileRef(), null, "componentFileRef", null, 1, 1, ComponentPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(componentPlacementEClass_I);
 		initEReference(getComponentPlacement_ComponentInstantiation(), g1, this.getComponentInstantiation_Placement(), "componentInstantiation", null, 1, -1, ComponentPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getComponentPlacement_ComponentInstantiation().getEKeys().add(this.getComponentInstantiation_Id());
 		initEAttribute(getComponentPlacement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ComponentPlacement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentPropertiesEClass, ComponentProperties.class, "ComponentProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1658,6 +1660,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		initEAttribute(getPartitioning_Parts(), ecorePackage.getEFeatureMapEntry(), "parts", null, 0, -1, Partitioning.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(partitioningEClass_C);
 		initEReference(getPartitioning_ComponentPlacement(), g1, null, "componentPlacement", null, 0, -1, Partitioning.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		getPartitioning_ComponentPlacement().getEKeys().add(this.getComponentPlacement_Name());
 
 		initEClass(providesPortEClass, ProvidesPort.class, "ProvidesPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProvidesPort_ProvidesIdentifier(), theXMLTypePackage.getString(), "providesIdentifier", null, 1, 1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
