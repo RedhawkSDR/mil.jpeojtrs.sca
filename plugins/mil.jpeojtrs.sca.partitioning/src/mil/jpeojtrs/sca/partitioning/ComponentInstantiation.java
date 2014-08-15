@@ -112,7 +112,7 @@ public interface ComponentInstantiation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Provides</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation_Provides()
-	 * @model containment="true" keys="name" transient="true" changeable="false" derived="true"
+	 * @model containment="true" transient="true" changeable="false" derived="true"
 	 *        extendedMetaData="kind='element' name='provides'"
 	 * @generated
 	 */
@@ -129,7 +129,7 @@ public interface ComponentInstantiation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Uses</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation_Uses()
-	 * @model containment="true" keys="name" transient="true" changeable="false" derived="true"
+	 * @model containment="true" transient="true" changeable="false" derived="true"
 	 *        extendedMetaData="kind='element' name='uses'"
 	 * @generated
 	 */
@@ -204,7 +204,7 @@ public interface ComponentInstantiation extends EObject {
 	 * @model opposite="componentInstantiation"
 	 * @generated
 	 */
-	ComponentPlacement<?> getPlacement();
+	ComponentPlacement< ? > getPlacement();
 
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getPlacement <em>Placement</em>}' container reference.
@@ -214,7 +214,7 @@ public interface ComponentInstantiation extends EObject {
 	 * @see #getPlacement()
 	 * @generated
 	 */
-	void setPlacement(ComponentPlacement<?> value);
+	void setPlacement(ComponentPlacement< ? > value);
 
 	/**
 	 * Returns the value of the '<em><b>Impl ID</b></em>' attribute.

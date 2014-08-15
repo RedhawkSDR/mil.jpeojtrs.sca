@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  *        extendedMetaData="kind='elementOnly' name='componentplacement' qualified='false'"
  * @generated
  */
-public interface ComponentPlacement<I extends ComponentInstantiation> extends EObject {
+public interface ComponentPlacement< I extends ComponentInstantiation > extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Component File Ref</b></em>' containment reference.
@@ -64,7 +64,6 @@ public interface ComponentPlacement<I extends ComponentInstantiation> extends EO
 
 	/**
 	 * Returns the value of the '<em><b>Component Instantiation</b></em>' containment reference list.
-	 * The list contents are of type {@link I}.
 	 * It is bidirectional and its opposite is '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getPlacement <em>Placement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -75,7 +74,7 @@ public interface ComponentPlacement<I extends ComponentInstantiation> extends EO
 	 * @return the value of the '<em>Component Instantiation</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentPlacement_ComponentInstantiation()
 	 * @see mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getPlacement
-	 * @model opposite="placement" containment="true" keys="id" required="true"
+	 * @model opposite="placement" containment="true" required="true"
 	 *        extendedMetaData="kind='element' name='componentinstantiation'"
 	 * @generated
 	 */

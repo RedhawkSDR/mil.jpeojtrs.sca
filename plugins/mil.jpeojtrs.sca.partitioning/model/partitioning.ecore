@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    This file is protected by Copyright.
-    Please refer to the COPYRIGHT file distributed with this source distribution.
-
-    This file is part of REDHAWK IDE.
-
-    All rights reserved.  This program and the accompanying materials are made available under
-    the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
-    http://www.eclipse.org/legal/epl-v10.html.
--->
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="partitioning" nsURI="http://sca.jpeojtrs.mil/partitioning" nsPrefix="partitioning">
   <eClassifiers xsi:type="ecore:EClass" name="ComponentFile" abstract="true">
@@ -124,14 +114,14 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="provides" upperBound="-1"
         eType="#//ProvidesPortStub" changeable="false" transient="true" derived="true"
-        containment="true" eKeys="#//ProvidesPortStub/name">
+        containment="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="provides"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//UsesPortStub"
-        changeable="false" transient="true" derived="true" containment="true" eKeys="#//UsesPortStub/name">
+        changeable="false" transient="true" derived="true" containment="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="uses"/>
@@ -204,8 +194,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstantiation"
-        lowerBound="1" upperBound="-1" containment="true" resolveProxies="false" eOpposite="#//ComponentInstantiation/placement"
-        eKeys="#//ComponentInstantiation/id">
+        lowerBound="1" upperBound="-1" containment="true" resolveProxies="false" eOpposite="#//ComponentInstantiation/placement">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="componentinstantiation"/>
@@ -595,8 +584,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentPlacement" upperBound="-1"
-        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false"
-        eKeys="#//ComponentPlacement/name">
+        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="componentplacement"/>

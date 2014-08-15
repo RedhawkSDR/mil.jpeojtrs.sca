@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *        extendedMetaData="kind='elementOnly' name='partitioning' qualified='false'"
  * @generated
  */
-public interface Partitioning<C extends ComponentPlacement<?>> extends EObject {
+public interface Partitioning< C extends ComponentPlacement< ? >> extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Parts</b></em>' attribute list.
@@ -54,7 +54,6 @@ public interface Partitioning<C extends ComponentPlacement<?>> extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Component Placement</b></em>' containment reference list.
-	 * The list contents are of type {@link C}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Component Placement</em>' containment reference list isn't clear,
@@ -63,7 +62,7 @@ public interface Partitioning<C extends ComponentPlacement<?>> extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Component Placement</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getPartitioning_ComponentPlacement()
-	 * @model containment="true" keys="name" transient="true" volatile="true" derived="true"
+	 * @model containment="true" transient="true" volatile="true" derived="true"
 	 *        extendedMetaData="kind='element' name='componentplacement' group='#parts:0'"
 	 * @generated
 	 */

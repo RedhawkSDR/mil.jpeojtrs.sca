@@ -281,10 +281,12 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * @generated
 	 */
 	public static PartitioningPackage init() {
-		if (isInited) return (PartitioningPackage)EPackage.Registry.INSTANCE.getEPackage(PartitioningPackage.eNS_URI);
+		if (isInited)
+			return (PartitioningPackage) EPackage.Registry.INSTANCE.getEPackage(PartitioningPackage.eNS_URI);
 
 		// Obtain or create and register package
-		PartitioningPackageImpl thePartitioningPackage = (PartitioningPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PartitioningPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PartitioningPackageImpl());
+		PartitioningPackageImpl thePartitioningPackage = (PartitioningPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PartitioningPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+			: new PartitioningPackageImpl());
 
 		isInited = true;
 
@@ -299,20 +301,15 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		thePartitioningPackage.initializePackageContents();
 
 		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(thePartitioningPackage, 
-			 new EValidator.Descriptor()
-			 {
-				 public EValidator getEValidator()
-				 {
-					 return PartitioningValidator.INSTANCE;
-				 }
-			 });
+		EValidator.Registry.INSTANCE.put(thePartitioningPackage, new EValidator.Descriptor() {
+			public EValidator getEValidator() {
+				return PartitioningValidator.INSTANCE;
+			}
+		});
 
 		// Mark meta-data to indicate it can't be changed
 		thePartitioningPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PartitioningPackage.eNS_URI, thePartitioningPackage);
 		return thePartitioningPackage;
@@ -335,7 +332,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentFile_LocalFile() {
-		return (EReference)componentFileEClass.getEStructuralFeatures().get(0);
+		return (EReference) componentFileEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -345,7 +342,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentFile_Id() {
-		return (EAttribute)componentFileEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) componentFileEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -355,7 +352,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentFile_SoftPkg() {
-		return (EReference)componentFileEClass.getEStructuralFeatures().get(2);
+		return (EReference) componentFileEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -365,7 +362,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentFile_Type() {
-		return (EAttribute)componentFileEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) componentFileEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -405,7 +402,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentFileRef_File() {
-		return (EReference)componentFileRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) componentFileRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -415,7 +412,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentFileRef_Refid() {
-		return (EAttribute)componentFileRefEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) componentFileRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -435,7 +432,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentFiles_ComponentFile() {
-		return (EReference)componentFilesEClass.getEStructuralFeatures().get(0);
+		return (EReference) componentFilesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -455,7 +452,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentInstantiation_UsageName() {
-		return (EAttribute)componentInstantiationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) componentInstantiationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -465,7 +462,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentInstantiation_ComponentProperties() {
-		return (EReference)componentInstantiationEClass.getEStructuralFeatures().get(1);
+		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -475,7 +472,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentInstantiation_Provides() {
-		return (EReference)componentInstantiationEClass.getEStructuralFeatures().get(2);
+		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -485,7 +482,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentInstantiation_Uses() {
-		return (EReference)componentInstantiationEClass.getEStructuralFeatures().get(3);
+		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -495,7 +492,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentInstantiation_InterfaceStub() {
-		return (EReference)componentInstantiationEClass.getEStructuralFeatures().get(4);
+		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -505,7 +502,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentInstantiation_Id() {
-		return (EAttribute)componentInstantiationEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) componentInstantiationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -515,7 +512,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentInstantiation_Placement() {
-		return (EReference)componentInstantiationEClass.getEStructuralFeatures().get(6);
+		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -526,7 +523,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentInstantiation_ImplID() {
-		return (EAttribute)componentInstantiationEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) componentInstantiationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -546,7 +543,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentInstantiationRef_Instantiation() {
-		return (EReference)componentInstantiationRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) componentInstantiationRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -556,7 +553,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentInstantiationRef_Refid() {
-		return (EAttribute)componentInstantiationRefEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) componentInstantiationRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -576,7 +573,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentPlacement_ComponentFileRef() {
-		return (EReference)componentPlacementEClass.getEStructuralFeatures().get(0);
+		return (EReference) componentPlacementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -586,7 +583,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentPlacement_ComponentInstantiation() {
-		return (EReference)componentPlacementEClass.getEStructuralFeatures().get(1);
+		return (EReference) componentPlacementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -596,7 +593,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentPlacement_Name() {
-		return (EAttribute)componentPlacementEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) componentPlacementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -616,7 +613,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentProperties_Properties() {
-		return (EAttribute)componentPropertiesEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) componentPropertiesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -626,7 +623,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentProperties_SimpleRef() {
-		return (EReference)componentPropertiesEClass.getEStructuralFeatures().get(1);
+		return (EReference) componentPropertiesEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -636,7 +633,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentProperties_SimpleSequenceRef() {
-		return (EReference)componentPropertiesEClass.getEStructuralFeatures().get(2);
+		return (EReference) componentPropertiesEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -646,7 +643,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentProperties_StructRef() {
-		return (EReference)componentPropertiesEClass.getEStructuralFeatures().get(3);
+		return (EReference) componentPropertiesEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -656,7 +653,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentProperties_StructSequenceRef() {
-		return (EReference)componentPropertiesEClass.getEStructuralFeatures().get(4);
+		return (EReference) componentPropertiesEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -676,7 +673,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentSupportedInterface_SupportedIdentifier() {
-		return (EAttribute)componentSupportedInterfaceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) componentSupportedInterfaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -686,7 +683,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentSupportedInterface_ComponentInstantiationRef() {
-		return (EReference)componentSupportedInterfaceEClass.getEStructuralFeatures().get(1);
+		return (EReference) componentSupportedInterfaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -696,7 +693,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentSupportedInterface_FindBy() {
-		return (EReference)componentSupportedInterfaceEClass.getEStructuralFeatures().get(2);
+		return (EReference) componentSupportedInterfaceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -706,7 +703,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentSupportedInterface_Interface() {
-		return (EReference)componentSupportedInterfaceEClass.getEStructuralFeatures().get(3);
+		return (EReference) componentSupportedInterfaceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -736,7 +733,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getConnectInterface_UsesPort() {
-		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(0);
+		return (EReference) connectInterfaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -746,7 +743,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getConnectInterface_ProvidesPort() {
-		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(1);
+		return (EReference) connectInterfaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -756,7 +753,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getConnectInterface_ComponentSupportedInterface() {
-		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(2);
+		return (EReference) connectInterfaceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -766,7 +763,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getConnectInterface_FindBy() {
-		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(3);
+		return (EReference) connectInterfaceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -776,7 +773,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getConnectInterface_Id() {
-		return (EAttribute)connectInterfaceEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) connectInterfaceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -786,7 +783,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getConnectInterface_Source() {
-		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(5);
+		return (EReference) connectInterfaceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -796,7 +793,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getConnectInterface_Target() {
-		return (EReference)connectInterfaceEClass.getEStructuralFeatures().get(6);
+		return (EReference) connectInterfaceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -816,7 +813,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getConnections_ConnectInterface() {
-		return (EReference)connectionsEClass.getEStructuralFeatures().get(0);
+		return (EReference) connectionsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -846,7 +843,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getDeviceThatLoadedThisComponentRef_Refid() {
-		return (EAttribute)deviceThatLoadedThisComponentRefEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) deviceThatLoadedThisComponentRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -866,7 +863,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getDeviceUsedByThisComponentRef_RefId() {
-		return (EAttribute)deviceUsedByThisComponentRefEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) deviceUsedByThisComponentRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -876,7 +873,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getDeviceUsedByThisComponentRef_UsesRefId() {
-		return (EAttribute)deviceUsedByThisComponentRefEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) deviceUsedByThisComponentRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -896,7 +893,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getDomainFinder_Name() {
-		return (EAttribute)domainFinderEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) domainFinderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -906,7 +903,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getDomainFinder_Type() {
-		return (EAttribute)domainFinderEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) domainFinderEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -926,7 +923,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getFindBy_NamingService() {
-		return (EReference)findByEClass.getEStructuralFeatures().get(0);
+		return (EReference) findByEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -936,7 +933,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getFindBy_DomainFinder() {
-		return (EReference)findByEClass.getEStructuralFeatures().get(1);
+		return (EReference) findByEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -956,7 +953,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getFindByStub_NamingService() {
-		return (EReference)findByStubEClass.getEStructuralFeatures().get(0);
+		return (EReference) findByStubEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -966,7 +963,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getFindByStub_DomainFinder() {
-		return (EReference)findByStubEClass.getEStructuralFeatures().get(1);
+		return (EReference) findByStubEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -976,7 +973,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getFindByStub_Provides() {
-		return (EReference)findByStubEClass.getEStructuralFeatures().get(2);
+		return (EReference) findByStubEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -986,7 +983,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getFindByStub_Uses() {
-		return (EReference)findByStubEClass.getEStructuralFeatures().get(3);
+		return (EReference) findByStubEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -996,7 +993,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getFindByStub_Interface() {
-		return (EReference)findByStubEClass.getEStructuralFeatures().get(4);
+		return (EReference) findByStubEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1016,7 +1013,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getFindByStubContainer_Stubs() {
-		return (EReference)findByStubContainerEClass.getEStructuralFeatures().get(0);
+		return (EReference) findByStubContainerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1036,7 +1033,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getLocalFile_Name() {
-		return (EAttribute)localFileEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) localFileEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1056,7 +1053,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getNamingService_Name() {
-		return (EAttribute)namingServiceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) namingServiceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1076,7 +1073,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getPartitioning_Parts() {
-		return (EAttribute)partitioningEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) partitioningEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1086,7 +1083,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getPartitioning_ComponentPlacement() {
-		return (EReference)partitioningEClass.getEStructuralFeatures().get(1);
+		return (EReference) partitioningEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1106,7 +1103,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getProvidesPort_ProvidesIdentifier() {
-		return (EAttribute)providesPortEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) providesPortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1116,7 +1113,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getProvidesPort_ComponentInstantiationRef() {
-		return (EReference)providesPortEClass.getEStructuralFeatures().get(1);
+		return (EReference) providesPortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1126,7 +1123,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getProvidesPort_DeviceThatLoadedThisComponentRef() {
-		return (EReference)providesPortEClass.getEStructuralFeatures().get(2);
+		return (EReference) providesPortEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1136,7 +1133,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getProvidesPort_DeviceUsedByThisComponentRef() {
-		return (EReference)providesPortEClass.getEStructuralFeatures().get(3);
+		return (EReference) providesPortEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1146,7 +1143,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getProvidesPort_FindBy() {
-		return (EReference)providesPortEClass.getEStructuralFeatures().get(4);
+		return (EReference) providesPortEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1166,7 +1163,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getProvidesPortStub_Name() {
-		return (EAttribute)providesPortStubEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) providesPortStubEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1176,7 +1173,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getProvidesPortStub_Provides() {
-		return (EReference)providesPortStubEClass.getEStructuralFeatures().get(1);
+		return (EReference) providesPortStubEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1196,7 +1193,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getUsesPort_UsesIndentifier() {
-		return (EAttribute)usesPortEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) usesPortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1206,7 +1203,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getUsesPort_ComponentInstantiationRef() {
-		return (EReference)usesPortEClass.getEStructuralFeatures().get(1);
+		return (EReference) usesPortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1216,7 +1213,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getUsesPort_DeviceThatLoadedThisComponentRef() {
-		return (EReference)usesPortEClass.getEStructuralFeatures().get(2);
+		return (EReference) usesPortEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1226,7 +1223,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getUsesPort_DeviceUsedByThisComponentRef() {
-		return (EReference)usesPortEClass.getEStructuralFeatures().get(3);
+		return (EReference) usesPortEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1236,7 +1233,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getUsesPort_FindBy() {
-		return (EReference)usesPortEClass.getEStructuralFeatures().get(4);
+		return (EReference) usesPortEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1256,7 +1253,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getUsesPortStub_Name() {
-		return (EAttribute)usesPortStubEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) usesPortStubEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1266,7 +1263,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getUsesPortStub_Uses() {
-		return (EReference)usesPortStubEClass.getEStructuralFeatures().get(1);
+		return (EReference) usesPortStubEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1276,7 +1273,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getUsesPortStub_SupportedIdentifier() {
-		return (EAttribute)usesPortStubEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) usesPortStubEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1306,7 +1303,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public PartitioningFactory getPartitioningFactory() {
-		return (PartitioningFactory)getEFactoryInstance();
+		return (PartitioningFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -1324,7 +1321,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -1473,7 +1471,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -1482,11 +1481,11 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
-		SpdPackage theSpdPackage = (SpdPackage)EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		PrfPackage thePrfPackage = (PrfPackage)EPackage.Registry.INSTANCE.getEPackage(PrfPackage.eNS_URI);
-		ScdPackage theScdPackage = (ScdPackage)EPackage.Registry.INSTANCE.getEPackage(ScdPackage.eNS_URI);
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
+		SpdPackage theSpdPackage = (SpdPackage) EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		PrfPackage thePrfPackage = (PrfPackage) EPackage.Registry.INSTANCE.getEPackage(PrfPackage.eNS_URI);
+		ScdPackage theScdPackage = (ScdPackage) EPackage.Registry.INSTANCE.getEPackage(ScdPackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter componentInstantiationRefEClass_R = addETypeParameter(componentInstantiationRefEClass, "R");
@@ -1547,145 +1546,228 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentFileEClass, ComponentFile.class, "ComponentFile", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentFile_LocalFile(), this.getLocalFile(), null, "localFile", null, 1, 1, ComponentFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentFile_Id(), theXMLTypePackage.getString(), "id", null, 1, 1, ComponentFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentFile_SoftPkg(), theSpdPackage.getSoftPkg(), null, "softPkg", null, 0, 1, ComponentFile.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentFile_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, ComponentFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentFile_LocalFile(), this.getLocalFile(), null, "localFile", null, 1, 1, ComponentFile.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentFile_Id(), theXMLTypePackage.getString(), "id", null, 1, 1, ComponentFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentFile_SoftPkg(), theSpdPackage.getSoftPkg(), null, "softPkg", null, 0, 1, ComponentFile.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentFile_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, ComponentFile.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(domComponentFileEClass, DomComponentFile.class, "DomComponentFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(devComponentFileEClass, DevComponentFile.class, "DevComponentFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(componentFileRefEClass, ComponentFileRef.class, "ComponentFileRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentFileRef_File(), this.getComponentFile(), null, "file", null, 0, 1, ComponentFileRef.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentFileRef_Refid(), theXMLTypePackage.getString(), "refid", null, 1, 1, ComponentFileRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentFileRef_File(), this.getComponentFile(), null, "file", null, 0, 1, ComponentFileRef.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentFileRef_Refid(), theXMLTypePackage.getString(), "refid", null, 1, 1, ComponentFileRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentFilesEClass, ComponentFiles.class, "ComponentFiles", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentFiles_ComponentFile(), this.getComponentFile(), null, "componentFile", null, 1, -1, ComponentFiles.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentFiles_ComponentFile(), this.getComponentFile(), null, "componentFile", null, 1, -1, ComponentFiles.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentInstantiationEClass, ComponentInstantiation.class, "ComponentInstantiation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentInstantiation_UsageName(), theXMLTypePackage.getString(), "usageName", null, 0, 1, ComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInstantiation_ComponentProperties(), this.getComponentProperties(), null, "componentProperties", null, 0, 1, ComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentInstantiation_Provides(), this.getProvidesPortStub(), null, "provides", null, 0, -1, ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		getComponentInstantiation_Provides().getEKeys().add(this.getProvidesPortStub_Name());
-		initEReference(getComponentInstantiation_Uses(), this.getUsesPortStub(), null, "uses", null, 0, -1, ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		getComponentInstantiation_Uses().getEKeys().add(this.getUsesPortStub_Name());
-		initEReference(getComponentInstantiation_InterfaceStub(), this.getComponentSupportedInterfaceStub(), null, "interfaceStub", null, 0, 1, ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentInstantiation_Id(), theXMLTypePackage.getName_(), "id", null, 1, 1, ComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(componentInstantiationEClass, ComponentInstantiation.class, "ComponentInstantiation", !IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponentInstantiation_UsageName(), theXMLTypePackage.getString(), "usageName", null, 0, 1, ComponentInstantiation.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstantiation_ComponentProperties(), this.getComponentProperties(), null, "componentProperties", null, 0, 1,
+			ComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+			!IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstantiation_Provides(), this.getProvidesPortStub(), null, "provides", null, 0, -1, ComponentInstantiation.class,
+			IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstantiation_Uses(), this.getUsesPortStub(), null, "uses", null, 0, -1, ComponentInstantiation.class, IS_TRANSIENT,
+			!IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstantiation_InterfaceStub(), this.getComponentSupportedInterfaceStub(), null, "interfaceStub", null, 0, 1,
+			ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+			IS_ORDERED);
+		initEAttribute(getComponentInstantiation_Id(), theXMLTypePackage.getName_(), "id", null, 1, 1, ComponentInstantiation.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(this.getComponentPlacement());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
-		initEReference(getComponentInstantiation_Placement(), g1, this.getComponentPlacement_ComponentInstantiation(), "placement", null, 0, 1, ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentInstantiation_ImplID(), theEcorePackage.getEString(), "implID", null, 0, 1, ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstantiation_Placement(), g1, this.getComponentPlacement_ComponentInstantiation(), "placement", null, 0, 1,
+			ComponentInstantiation.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+			!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentInstantiation_ImplID(), theEcorePackage.getEString(), "implID", null, 0, 1, ComponentInstantiation.class, IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentInstantiationRefEClass, ComponentInstantiationRef.class, "ComponentInstantiationRef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(componentInstantiationRefEClass, ComponentInstantiationRef.class, "ComponentInstantiationRef", IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
 		g1 = createEGenericType(componentInstantiationRefEClass_R);
-		initEReference(getComponentInstantiationRef_Instantiation(), g1, null, "instantiation", null, 0, 1, ComponentInstantiationRef.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentInstantiationRef_Refid(), theXMLTypePackage.getString(), "refid", null, 1, 1, ComponentInstantiationRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstantiationRef_Instantiation(), g1, null, "instantiation", null, 0, 1, ComponentInstantiationRef.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentInstantiationRef_Refid(), theXMLTypePackage.getString(), "refid", null, 1, 1, ComponentInstantiationRef.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentPlacementEClass, ComponentPlacement.class, "ComponentPlacement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentPlacement_ComponentFileRef(), this.getComponentFileRef(), null, "componentFileRef", null, 1, 1, ComponentPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentPlacement_ComponentFileRef(), this.getComponentFileRef(), null, "componentFileRef", null, 1, 1, ComponentPlacement.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(componentPlacementEClass_I);
-		initEReference(getComponentPlacement_ComponentInstantiation(), g1, this.getComponentInstantiation_Placement(), "componentInstantiation", null, 1, -1, ComponentPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		getComponentPlacement_ComponentInstantiation().getEKeys().add(this.getComponentInstantiation_Id());
-		initEAttribute(getComponentPlacement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ComponentPlacement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentPlacement_ComponentInstantiation(), g1, this.getComponentInstantiation_Placement(), "componentInstantiation", null, 1, -1,
+			ComponentPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+			IS_ORDERED);
+		initEAttribute(getComponentPlacement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ComponentPlacement.class, IS_TRANSIENT, IS_VOLATILE,
+			!IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentPropertiesEClass, ComponentProperties.class, "ComponentProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentProperties_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 0, -1, ComponentProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentProperties_SimpleRef(), thePrfPackage.getSimpleRef(), null, "simpleRef", null, 0, -1, ComponentProperties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentProperties_SimpleSequenceRef(), thePrfPackage.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, -1, ComponentProperties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentProperties_StructRef(), thePrfPackage.getStructRef(), null, "structRef", null, 0, -1, ComponentProperties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentProperties_StructSequenceRef(), thePrfPackage.getStructSequenceRef(), null, "structSequenceRef", null, 0, -1, ComponentProperties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentProperties_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 0, -1, ComponentProperties.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentProperties_SimpleRef(), thePrfPackage.getSimpleRef(), null, "simpleRef", null, 0, -1, ComponentProperties.class,
+			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentProperties_SimpleSequenceRef(), thePrfPackage.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, -1,
+			ComponentProperties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+			IS_ORDERED);
+		initEReference(getComponentProperties_StructRef(), thePrfPackage.getStructRef(), null, "structRef", null, 0, -1, ComponentProperties.class,
+			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentProperties_StructSequenceRef(), thePrfPackage.getStructSequenceRef(), null, "structSequenceRef", null, 0, -1,
+			ComponentProperties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+			IS_ORDERED);
 
-		initEClass(componentSupportedInterfaceEClass, ComponentSupportedInterface.class, "ComponentSupportedInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentSupportedInterface_SupportedIdentifier(), theXMLTypePackage.getString(), "supportedIdentifier", null, 1, 1, ComponentSupportedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(componentSupportedInterfaceEClass, ComponentSupportedInterface.class, "ComponentSupportedInterface", !IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponentSupportedInterface_SupportedIdentifier(), theXMLTypePackage.getString(), "supportedIdentifier", null, 1, 1,
+			ComponentSupportedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(this.getComponentInstantiationRef());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
-		initEReference(getComponentSupportedInterface_ComponentInstantiationRef(), g1, null, "componentInstantiationRef", null, 0, 1, ComponentSupportedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentSupportedInterface_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, ComponentSupportedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentSupportedInterface_Interface(), theScdPackage.getInterface(), null, "interface", null, 0, 1, ComponentSupportedInterface.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentSupportedInterface_ComponentInstantiationRef(), g1, null, "componentInstantiationRef", null, 0, 1,
+			ComponentSupportedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+			!IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentSupportedInterface_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, ComponentSupportedInterface.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentSupportedInterface_Interface(), theScdPackage.getInterface(), null, "interface", null, 0, 1,
+			ComponentSupportedInterface.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+			IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentSupportedInterfaceStubEClass, ComponentSupportedInterfaceStub.class, "ComponentSupportedInterfaceStub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(componentSupportedInterfaceStubEClass, ComponentSupportedInterfaceStub.class, "ComponentSupportedInterfaceStub", !IS_ABSTRACT,
+			!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(connectInterfaceEClass, ConnectInterface.class, "ConnectInterface", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		g1 = createEGenericType(connectInterfaceEClass_UP);
-		initEReference(getConnectInterface_UsesPort(), g1, null, "usesPort", null, 1, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectInterface_UsesPort(), g1, null, "usesPort", null, 1, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(connectInterfaceEClass_PP);
-		initEReference(getConnectInterface_ProvidesPort(), g1, null, "providesPort", null, 0, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectInterface_ComponentSupportedInterface(), this.getComponentSupportedInterface(), null, "componentSupportedInterface", null, 0, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectInterface_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getConnectInterface_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectInterface_Source(), this.getUsesPortStub(), null, "source", null, 0, 1, ConnectInterface.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectInterface_Target(), this.getConnectionTarget(), null, "target", null, 0, 1, ConnectInterface.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectInterface_ProvidesPort(), g1, null, "providesPort", null, 0, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectInterface_ComponentSupportedInterface(), this.getComponentSupportedInterface(), null, "componentSupportedInterface", null, 0,
+			1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+			IS_ORDERED);
+		initEReference(getConnectInterface_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConnectInterface_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectInterface_Source(), this.getUsesPortStub(), null, "source", null, 0, 1, ConnectInterface.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectInterface_Target(), this.getConnectionTarget(), null, "target", null, 0, 1, ConnectInterface.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectionsEClass, Connections.class, "Connections", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		g1 = createEGenericType(connectionsEClass_CI);
-		initEReference(getConnections_ConnectInterface(), g1, null, "connectInterface", null, 0, -1, Connections.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnections_ConnectInterface(), g1, null, "connectInterface", null, 0, -1, Connections.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectionTargetEClass, ConnectionTarget.class, "ConnectionTarget", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(deviceThatLoadedThisComponentRefEClass, DeviceThatLoadedThisComponentRef.class, "DeviceThatLoadedThisComponentRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDeviceThatLoadedThisComponentRef_Refid(), theXMLTypePackage.getString(), "refid", null, 1, 1, DeviceThatLoadedThisComponentRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(deviceThatLoadedThisComponentRefEClass, DeviceThatLoadedThisComponentRef.class, "DeviceThatLoadedThisComponentRef", !IS_ABSTRACT,
+			!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDeviceThatLoadedThisComponentRef_Refid(), theXMLTypePackage.getString(), "refid", null, 1, 1, DeviceThatLoadedThisComponentRef.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(deviceUsedByThisComponentRefEClass, DeviceUsedByThisComponentRef.class, "DeviceUsedByThisComponentRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDeviceUsedByThisComponentRef_RefId(), theXMLTypePackage.getString(), "refId", null, 1, 1, DeviceUsedByThisComponentRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDeviceUsedByThisComponentRef_UsesRefId(), theXMLTypePackage.getString(), "usesRefId", null, 1, 1, DeviceUsedByThisComponentRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(deviceUsedByThisComponentRefEClass, DeviceUsedByThisComponentRef.class, "DeviceUsedByThisComponentRef", !IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDeviceUsedByThisComponentRef_RefId(), theXMLTypePackage.getString(), "refId", null, 1, 1, DeviceUsedByThisComponentRef.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeviceUsedByThisComponentRef_UsesRefId(), theXMLTypePackage.getString(), "usesRefId", null, 1, 1, DeviceUsedByThisComponentRef.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(domainFinderEClass, DomainFinder.class, "DomainFinder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDomainFinder_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, DomainFinder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDomainFinder_Type(), this.getDomainFinderType(), "type", null, 1, 1, DomainFinder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDomainFinder_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, DomainFinder.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDomainFinder_Type(), this.getDomainFinderType(), "type", null, 1, 1, DomainFinder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(findByEClass, FindBy.class, "FindBy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFindBy_NamingService(), this.getNamingService(), null, "namingService", null, 0, 1, FindBy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFindBy_DomainFinder(), this.getDomainFinder(), null, "domainFinder", null, 0, 1, FindBy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFindBy_NamingService(), this.getNamingService(), null, "namingService", null, 0, 1, FindBy.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFindBy_DomainFinder(), this.getDomainFinder(), null, "domainFinder", null, 0, 1, FindBy.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(findByStubEClass, FindByStub.class, "FindByStub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFindByStub_NamingService(), this.getNamingService(), null, "namingService", null, 0, 1, FindByStub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFindByStub_DomainFinder(), this.getDomainFinder(), null, "domainFinder", null, 0, 1, FindByStub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFindByStub_Provides(), this.getProvidesPortStub(), null, "provides", null, 0, -1, FindByStub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFindByStub_Uses(), this.getUsesPortStub(), null, "uses", null, 0, -1, FindByStub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFindByStub_Interface(), this.getComponentSupportedInterfaceStub(), null, "interface", null, 0, 1, FindByStub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFindByStub_NamingService(), this.getNamingService(), null, "namingService", null, 0, 1, FindByStub.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFindByStub_DomainFinder(), this.getDomainFinder(), null, "domainFinder", null, 0, 1, FindByStub.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFindByStub_Provides(), this.getProvidesPortStub(), null, "provides", null, 0, -1, FindByStub.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFindByStub_Uses(), this.getUsesPortStub(), null, "uses", null, 0, -1, FindByStub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFindByStub_Interface(), this.getComponentSupportedInterfaceStub(), null, "interface", null, 0, 1, FindByStub.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(findByStubContainerEClass, FindByStubContainer.class, "FindByStubContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFindByStubContainer_Stubs(), this.getFindByStub(), null, "stubs", null, 0, -1, FindByStubContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFindByStubContainer_Stubs(), this.getFindByStub(), null, "stubs", null, 0, -1, FindByStubContainer.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(localFileEClass, LocalFile.class, "LocalFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLocalFile_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, LocalFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocalFile_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, LocalFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namingServiceEClass, NamingService.class, "NamingService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamingService_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, NamingService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNamingService_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, NamingService.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(partitioningEClass, Partitioning.class, "Partitioning", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPartitioning_Parts(), ecorePackage.getEFeatureMapEntry(), "parts", null, 0, -1, Partitioning.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPartitioning_Parts(), ecorePackage.getEFeatureMapEntry(), "parts", null, 0, -1, Partitioning.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(partitioningEClass_C);
-		initEReference(getPartitioning_ComponentPlacement(), g1, null, "componentPlacement", null, 0, -1, Partitioning.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		getPartitioning_ComponentPlacement().getEKeys().add(this.getComponentPlacement_Name());
+		initEReference(getPartitioning_ComponentPlacement(), g1, null, "componentPlacement", null, 0, -1, Partitioning.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(providesPortEClass, ProvidesPort.class, "ProvidesPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProvidesPort_ProvidesIdentifier(), theXMLTypePackage.getString(), "providesIdentifier", null, 1, 1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProvidesPort_ProvidesIdentifier(), theXMLTypePackage.getString(), "providesIdentifier", null, 1, 1, ProvidesPort.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(providesPortEClass_P);
-		initEReference(getProvidesPort_ComponentInstantiationRef(), g1, null, "componentInstantiationRef", null, 0, 1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProvidesPort_DeviceThatLoadedThisComponentRef(), this.getDeviceThatLoadedThisComponentRef(), null, "deviceThatLoadedThisComponentRef", null, 0, 1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProvidesPort_DeviceUsedByThisComponentRef(), this.getDeviceUsedByThisComponentRef(), null, "deviceUsedByThisComponentRef", null, 0, 1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProvidesPort_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProvidesPort_ComponentInstantiationRef(), g1, null, "componentInstantiationRef", null, 0, 1, ProvidesPort.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProvidesPort_DeviceThatLoadedThisComponentRef(), this.getDeviceThatLoadedThisComponentRef(), null,
+			"deviceThatLoadedThisComponentRef", null, 0, 1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+			!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProvidesPort_DeviceUsedByThisComponentRef(), this.getDeviceUsedByThisComponentRef(), null, "deviceUsedByThisComponentRef", null, 0,
+			1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+			IS_ORDERED);
+		initEReference(getProvidesPort_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(providesPortStubEClass, ProvidesPortStub.class, "ProvidesPortStub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProvidesPortStub_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ProvidesPortStub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProvidesPortStub_Provides(), theScdPackage.getProvides(), null, "provides", null, 0, 1, ProvidesPortStub.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProvidesPortStub_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ProvidesPortStub.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProvidesPortStub_Provides(), theScdPackage.getProvides(), null, "provides", null, 0, 1, ProvidesPortStub.class, IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(usesPortEClass, UsesPort.class, "UsesPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUsesPort_UsesIndentifier(), theXMLTypePackage.getString(), "usesIndentifier", null, 1, 1, UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUsesPort_UsesIndentifier(), theXMLTypePackage.getString(), "usesIndentifier", null, 1, 1, UsesPort.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(usesPortEClass_U);
-		initEReference(getUsesPort_ComponentInstantiationRef(), g1, null, "componentInstantiationRef", null, 0, 1, UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUsesPort_DeviceThatLoadedThisComponentRef(), this.getDeviceThatLoadedThisComponentRef(), null, "deviceThatLoadedThisComponentRef", null, 0, 1, UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUsesPort_DeviceUsedByThisComponentRef(), this.getDeviceUsedByThisComponentRef(), null, "deviceUsedByThisComponentRef", null, 0, 1, UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUsesPort_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUsesPort_ComponentInstantiationRef(), g1, null, "componentInstantiationRef", null, 0, 1, UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUsesPort_DeviceThatLoadedThisComponentRef(), this.getDeviceThatLoadedThisComponentRef(), null, "deviceThatLoadedThisComponentRef",
+			null, 0, 1, UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+			IS_ORDERED);
+		initEReference(getUsesPort_DeviceUsedByThisComponentRef(), this.getDeviceUsedByThisComponentRef(), null, "deviceUsedByThisComponentRef", null, 0, 1,
+			UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUsesPort_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(usesPortStubEClass, UsesPortStub.class, "UsesPortStub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUsesPortStub_Name(), theEcorePackage.getEString(), "name", null, 0, 1, UsesPortStub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUsesPortStub_Uses(), theScdPackage.getUses(), null, "uses", null, 0, 1, UsesPortStub.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUsesPortStub_SupportedIdentifier(), theEcorePackage.getEString(), "supportedIdentifier", null, 0, 1, UsesPortStub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUsesPortStub_Name(), theEcorePackage.getEString(), "name", null, 0, 1, UsesPortStub.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUsesPortStub_Uses(), theScdPackage.getUses(), null, "uses", null, 0, 1, UsesPortStub.class, IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUsesPortStub_SupportedIdentifier(), theEcorePackage.getEString(), "supportedIdentifier", null, 0, 1, UsesPortStub.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(domainFinderTypeEEnum, DomainFinderType.class, "DomainFinderType");
@@ -1717,754 +1799,106 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";		
-		addAnnotation
-		  (componentFileEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "componentfile",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getComponentFile_LocalFile(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "localfile"
-		   });		
-		addAnnotation
-		  (getComponentFile_Id(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "id"
-		   });		
-		addAnnotation
-		  (getComponentFile_SoftPkg(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "softPkg"
-		   });		
-		addAnnotation
-		  (getComponentFile_Type(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "type"
-		   });		
-		addAnnotation
-		  (domComponentFileEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "componentfile",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (devComponentFileEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "componentfile",
-			 "qualified", "false"
-		   });			
-		addAnnotation
-		  (componentFileRefEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "componentfileref",
-			 "qualified", "false"
-		   });			
-		addAnnotation
-		  (getComponentFileRef_File(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "file"
-		   });		
-		addAnnotation
-		  (getComponentFileRef_Refid(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "refid"
-		   });		
-		addAnnotation
-		  (componentFilesEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "componentfiles",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getComponentFiles_ComponentFile(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentfile"
-		   });				
-		addAnnotation
-		  (getComponentInstantiation_UsageName(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "usagename"
-		   });			
-		addAnnotation
-		  (getComponentInstantiation_ComponentProperties(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentproperties"
-		   });		
-		addAnnotation
-		  (getComponentInstantiation_Provides(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "provides"
-		   });		
-		addAnnotation
-		  (getComponentInstantiation_Uses(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "uses"
-		   });		
-		addAnnotation
-		  (getComponentInstantiation_InterfaceStub(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "interfaceports"
-		   });			
-		addAnnotation
-		  (getComponentInstantiation_Id(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "id"
-		   });		
-		addAnnotation
-		  (componentInstantiationRefEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "componentinstantiationref",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getComponentInstantiationRef_Instantiation(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "instantiation"
-		   });		
-		addAnnotation
-		  (getComponentInstantiationRef_Refid(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "refid"
-		   });		
-		addAnnotation
-		  (componentPlacementEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "componentplacement",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getComponentPlacement_ComponentFileRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentfileref"
-		   });		
-		addAnnotation
-		  (getComponentPlacement_ComponentInstantiation(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentinstantiation"
-		   });		
-		addAnnotation
-		  (getComponentPlacement_Name(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "name"
-		   });		
-		addAnnotation
-		  (componentPropertiesEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "componentproperties",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getComponentProperties_Properties(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "group",
-			 "name", "properties:0"
-		   });		
-		addAnnotation
-		  (getComponentProperties_SimpleRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simpleref",
-			 "group", "#properties:0"
-		   });		
-		addAnnotation
-		  (getComponentProperties_SimpleSequenceRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simplesequenceref",
-			 "group", "#properties:0"
-		   });		
-		addAnnotation
-		  (getComponentProperties_StructRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "structref",
-			 "group", "#properties:0"
-		   });		
-		addAnnotation
-		  (getComponentProperties_StructSequenceRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "structsequenceref",
-			 "group", "#properties:0"
-		   });		
-		addAnnotation
-		  (componentSupportedInterfaceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "componentsupportedinterface",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getComponentSupportedInterface_SupportedIdentifier(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "supportedidentifier"
-		   });		
-		addAnnotation
-		  (getComponentSupportedInterface_ComponentInstantiationRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentinstantiationref"
-		   });		
-		addAnnotation
-		  (getComponentSupportedInterface_FindBy(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "findby"
-		   });		
-		addAnnotation
-		  (getComponentSupportedInterface_Interface(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "interface"
-		   });			
-		addAnnotation
-		  (connectInterfaceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "connectinterface",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getConnectInterface_UsesPort(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "usesport"
-		   });		
-		addAnnotation
-		  (getConnectInterface_ProvidesPort(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "providesport"
-		   });		
-		addAnnotation
-		  (getConnectInterface_ComponentSupportedInterface(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentsupportedinterface"
-		   });		
-		addAnnotation
-		  (getConnectInterface_FindBy(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "findby"
-		   });		
-		addAnnotation
-		  (getConnectInterface_Id(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "id"
-		   });		
-		addAnnotation
-		  (getConnectInterface_Source(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "source"
-		   });		
-		addAnnotation
-		  (getConnectInterface_Target(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "target"
-		   });		
-		addAnnotation
-		  (connectionsEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "connections",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getConnections_ConnectInterface(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "connectinterface"
-		   });		
-		addAnnotation
-		  (deviceThatLoadedThisComponentRefEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "devicethatloadedthiscomponentref",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getDeviceThatLoadedThisComponentRef_Refid(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "refid"
-		   });		
-		addAnnotation
-		  (deviceUsedByThisComponentRefEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "deviceusedbythiscomponentref",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getDeviceUsedByThisComponentRef_RefId(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "refid"
-		   });		
-		addAnnotation
-		  (getDeviceUsedByThisComponentRef_UsesRefId(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "usesrefid"
-		   });		
-		addAnnotation
-		  (domainFinderEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "domainfinder",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getDomainFinder_Name(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "name"
-		   });		
-		addAnnotation
-		  (getDomainFinder_Type(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "type"
-		   });		
-		addAnnotation
-		  (domainFinderTypeEEnum, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "domainfindertype",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (domainFinderTypeObjectEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "domainfindertype:object",
-			 "baseType", "domainfindertype",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (findByEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "findby",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getFindBy_NamingService(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "namingservice"
-		   });		
-		addAnnotation
-		  (getFindBy_DomainFinder(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "domainfinder"
-		   });			
-		addAnnotation
-		  (getFindByStub_NamingService(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "namingservice"
-		   });		
-		addAnnotation
-		  (getFindByStub_DomainFinder(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "domainfinder"
-		   });		
-		addAnnotation
-		  (getFindByStub_Provides(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "provides"
-		   });		
-		addAnnotation
-		  (getFindByStub_Uses(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "uses"
-		   });		
-		addAnnotation
-		  (getFindByStub_Interface(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "interfaceports"
-		   });		
-		addAnnotation
-		  (getFindByStubContainer_Stubs(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "stubs"
-		   });		
-		addAnnotation
-		  (localFileEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "localfile",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getLocalFile_Name(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "name"
-		   });		
-		addAnnotation
-		  (namingServiceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "namingservice",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getNamingService_Name(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "name"
-		   });		
-		addAnnotation
-		  (partitioningEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "partitioning",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getPartitioning_Parts(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "group",
-			 "name", "parts:0"
-		   });		
-		addAnnotation
-		  (getPartitioning_ComponentPlacement(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentplacement",
-			 "group", "#parts:0"
-		   });		
-		addAnnotation
-		  (providesPortEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "providesport",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getProvidesPort_ProvidesIdentifier(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "providesidentifier"
-		   });		
-		addAnnotation
-		  (getProvidesPort_ComponentInstantiationRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentinstantiationref"
-		   });		
-		addAnnotation
-		  (getProvidesPort_DeviceThatLoadedThisComponentRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "devicethatloadedthiscomponentref"
-		   });		
-		addAnnotation
-		  (getProvidesPort_DeviceUsedByThisComponentRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "deviceusedbythiscomponentref"
-		   });		
-		addAnnotation
-		  (getProvidesPort_FindBy(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "findby"
-		   });		
-		addAnnotation
-		  (providesPortStubEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "providesportstub",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getProvidesPortStub_Name(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "name"
-		   });		
-		addAnnotation
-		  (getProvidesPortStub_Provides(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "provides"
-		   });		
-		addAnnotation
-		  (usesPortEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "usesport",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (getUsesPort_UsesIndentifier(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "usesidentifier"
-		   });		
-		addAnnotation
-		  (getUsesPort_ComponentInstantiationRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentinstantiationref"
-		   });		
-		addAnnotation
-		  (getUsesPort_DeviceThatLoadedThisComponentRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "devicethatloadedthiscomponentref"
-		   });		
-		addAnnotation
-		  (getUsesPort_DeviceUsedByThisComponentRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "deviceusedbythiscomponentref"
-		   });		
-		addAnnotation
-		  (getUsesPort_FindBy(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "findby"
-		   });		
-		addAnnotation
-		  (getUsesPortStub_Name(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "name"
-		   });		
-		addAnnotation
-		  (getUsesPortStub_Uses(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "uses"
-		   });		
-		addAnnotation
-		  (getUsesPortStub_SupportedIdentifier(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "supportedIdentifier"
-		   });
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation(componentFileEClass, source, new String[] { "kind", "elementOnly", "name", "componentfile", "qualified", "false" });
+		addAnnotation(getComponentFile_LocalFile(), source, new String[] { "kind", "element", "name", "localfile" });
+		addAnnotation(getComponentFile_Id(), source, new String[] { "kind", "attribute", "name", "id" });
+		addAnnotation(getComponentFile_SoftPkg(), source, new String[] { "kind", "attribute", "name", "softPkg" });
+		addAnnotation(getComponentFile_Type(), source, new String[] { "kind", "attribute", "name", "type" });
+		addAnnotation(domComponentFileEClass, source, new String[] { "kind", "elementOnly", "name", "componentfile", "qualified", "false" });
+		addAnnotation(devComponentFileEClass, source, new String[] { "kind", "elementOnly", "name", "componentfile", "qualified", "false" });
+		addAnnotation(componentFileRefEClass, source, new String[] { "kind", "elementOnly", "name", "componentfileref", "qualified", "false" });
+		addAnnotation(getComponentFileRef_File(), source, new String[] { "kind", "attribute", "name", "file" });
+		addAnnotation(getComponentFileRef_Refid(), source, new String[] { "kind", "attribute", "name", "refid" });
+		addAnnotation(componentFilesEClass, source, new String[] { "kind", "elementOnly", "name", "componentfiles", "qualified", "false" });
+		addAnnotation(getComponentFiles_ComponentFile(), source, new String[] { "kind", "element", "name", "componentfile" });
+		addAnnotation(getComponentInstantiation_UsageName(), source, new String[] { "kind", "element", "name", "usagename" });
+		addAnnotation(getComponentInstantiation_ComponentProperties(), source, new String[] { "kind", "element", "name", "componentproperties" });
+		addAnnotation(getComponentInstantiation_Provides(), source, new String[] { "kind", "element", "name", "provides" });
+		addAnnotation(getComponentInstantiation_Uses(), source, new String[] { "kind", "element", "name", "uses" });
+		addAnnotation(getComponentInstantiation_InterfaceStub(), source, new String[] { "kind", "element", "name", "interfaceports" });
+		addAnnotation(getComponentInstantiation_Id(), source, new String[] { "kind", "attribute", "name", "id" });
+		addAnnotation(componentInstantiationRefEClass, source,
+			new String[] { "kind", "elementOnly", "name", "componentinstantiationref", "qualified", "false" });
+		addAnnotation(getComponentInstantiationRef_Instantiation(), source, new String[] { "kind", "attribute", "name", "instantiation" });
+		addAnnotation(getComponentInstantiationRef_Refid(), source, new String[] { "kind", "attribute", "name", "refid" });
+		addAnnotation(componentPlacementEClass, source, new String[] { "kind", "elementOnly", "name", "componentplacement", "qualified", "false" });
+		addAnnotation(getComponentPlacement_ComponentFileRef(), source, new String[] { "kind", "element", "name", "componentfileref" });
+		addAnnotation(getComponentPlacement_ComponentInstantiation(), source, new String[] { "kind", "element", "name", "componentinstantiation" });
+		addAnnotation(getComponentPlacement_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(componentPropertiesEClass, source, new String[] { "kind", "elementOnly", "name", "componentproperties", "qualified", "false" });
+		addAnnotation(getComponentProperties_Properties(), source, new String[] { "kind", "group", "name", "properties:0" });
+		addAnnotation(getComponentProperties_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref", "group", "#properties:0" });
+		addAnnotation(getComponentProperties_SimpleSequenceRef(), source, new String[] { "kind", "element", "name", "simplesequenceref", "group",
+			"#properties:0" });
+		addAnnotation(getComponentProperties_StructRef(), source, new String[] { "kind", "element", "name", "structref", "group", "#properties:0" });
+		addAnnotation(getComponentProperties_StructSequenceRef(), source, new String[] { "kind", "element", "name", "structsequenceref", "group",
+			"#properties:0" });
+		addAnnotation(componentSupportedInterfaceEClass, source, new String[] { "kind", "elementOnly", "name", "componentsupportedinterface", "qualified",
+			"false" });
+		addAnnotation(getComponentSupportedInterface_SupportedIdentifier(), source, new String[] { "kind", "element", "name", "supportedidentifier" });
+		addAnnotation(getComponentSupportedInterface_ComponentInstantiationRef(), source,
+			new String[] { "kind", "element", "name", "componentinstantiationref" });
+		addAnnotation(getComponentSupportedInterface_FindBy(), source, new String[] { "kind", "element", "name", "findby" });
+		addAnnotation(getComponentSupportedInterface_Interface(), source, new String[] { "kind", "attribute", "name", "interface" });
+		addAnnotation(connectInterfaceEClass, source, new String[] { "kind", "elementOnly", "name", "connectinterface", "qualified", "false" });
+		addAnnotation(getConnectInterface_UsesPort(), source, new String[] { "kind", "element", "name", "usesport" });
+		addAnnotation(getConnectInterface_ProvidesPort(), source, new String[] { "kind", "element", "name", "providesport" });
+		addAnnotation(getConnectInterface_ComponentSupportedInterface(), source, new String[] { "kind", "element", "name", "componentsupportedinterface" });
+		addAnnotation(getConnectInterface_FindBy(), source, new String[] { "kind", "element", "name", "findby" });
+		addAnnotation(getConnectInterface_Id(), source, new String[] { "kind", "attribute", "name", "id" });
+		addAnnotation(getConnectInterface_Source(), source, new String[] { "kind", "attribute", "name", "source" });
+		addAnnotation(getConnectInterface_Target(), source, new String[] { "kind", "attribute", "name", "target" });
+		addAnnotation(connectionsEClass, source, new String[] { "kind", "elementOnly", "name", "connections", "qualified", "false" });
+		addAnnotation(getConnections_ConnectInterface(), source, new String[] { "kind", "element", "name", "connectinterface" });
+		addAnnotation(deviceThatLoadedThisComponentRefEClass, source, new String[] { "kind", "elementOnly", "name", "devicethatloadedthiscomponentref",
+			"qualified", "false" });
+		addAnnotation(getDeviceThatLoadedThisComponentRef_Refid(), source, new String[] { "kind", "attribute", "name", "refid" });
+		addAnnotation(deviceUsedByThisComponentRefEClass, source, new String[] { "kind", "elementOnly", "name", "deviceusedbythiscomponentref", "qualified",
+			"false" });
+		addAnnotation(getDeviceUsedByThisComponentRef_RefId(), source, new String[] { "kind", "attribute", "name", "refid" });
+		addAnnotation(getDeviceUsedByThisComponentRef_UsesRefId(), source, new String[] { "kind", "attribute", "name", "usesrefid" });
+		addAnnotation(domainFinderEClass, source, new String[] { "kind", "elementOnly", "name", "domainfinder", "qualified", "false" });
+		addAnnotation(getDomainFinder_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(getDomainFinder_Type(), source, new String[] { "kind", "attribute", "name", "type" });
+		addAnnotation(domainFinderTypeEEnum, source, new String[] { "name", "domainfindertype", "qualified", "false" });
+		addAnnotation(domainFinderTypeObjectEDataType, source, new String[] { "name", "domainfindertype:object", "baseType", "domainfindertype", "qualified",
+			"false" });
+		addAnnotation(findByEClass, source, new String[] { "kind", "elementOnly", "name", "findby", "qualified", "false" });
+		addAnnotation(getFindBy_NamingService(), source, new String[] { "kind", "element", "name", "namingservice" });
+		addAnnotation(getFindBy_DomainFinder(), source, new String[] { "kind", "element", "name", "domainfinder" });
+		addAnnotation(getFindByStub_NamingService(), source, new String[] { "kind", "element", "name", "namingservice" });
+		addAnnotation(getFindByStub_DomainFinder(), source, new String[] { "kind", "element", "name", "domainfinder" });
+		addAnnotation(getFindByStub_Provides(), source, new String[] { "kind", "element", "name", "provides" });
+		addAnnotation(getFindByStub_Uses(), source, new String[] { "kind", "element", "name", "uses" });
+		addAnnotation(getFindByStub_Interface(), source, new String[] { "kind", "element", "name", "interfaceports" });
+		addAnnotation(getFindByStubContainer_Stubs(), source, new String[] { "kind", "element", "name", "stubs" });
+		addAnnotation(localFileEClass, source, new String[] { "kind", "elementOnly", "name", "localfile", "qualified", "false" });
+		addAnnotation(getLocalFile_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(namingServiceEClass, source, new String[] { "kind", "elementOnly", "name", "namingservice", "qualified", "false" });
+		addAnnotation(getNamingService_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(partitioningEClass, source, new String[] { "kind", "elementOnly", "name", "partitioning", "qualified", "false" });
+		addAnnotation(getPartitioning_Parts(), source, new String[] { "kind", "group", "name", "parts:0" });
+		addAnnotation(getPartitioning_ComponentPlacement(), source, new String[] { "kind", "element", "name", "componentplacement", "group", "#parts:0" });
+		addAnnotation(providesPortEClass, source, new String[] { "kind", "elementOnly", "name", "providesport", "qualified", "false" });
+		addAnnotation(getProvidesPort_ProvidesIdentifier(), source, new String[] { "kind", "element", "name", "providesidentifier" });
+		addAnnotation(getProvidesPort_ComponentInstantiationRef(), source, new String[] { "kind", "element", "name", "componentinstantiationref" });
+		addAnnotation(getProvidesPort_DeviceThatLoadedThisComponentRef(), source,
+			new String[] { "kind", "element", "name", "devicethatloadedthiscomponentref" });
+		addAnnotation(getProvidesPort_DeviceUsedByThisComponentRef(), source, new String[] { "kind", "element", "name", "deviceusedbythiscomponentref" });
+		addAnnotation(getProvidesPort_FindBy(), source, new String[] { "kind", "element", "name", "findby" });
+		addAnnotation(providesPortStubEClass, source, new String[] { "kind", "elementOnly", "name", "providesportstub", "qualified", "false" });
+		addAnnotation(getProvidesPortStub_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(getProvidesPortStub_Provides(), source, new String[] { "kind", "attribute", "name", "provides" });
+		addAnnotation(usesPortEClass, source, new String[] { "kind", "elementOnly", "name", "usesport", "qualified", "false" });
+		addAnnotation(getUsesPort_UsesIndentifier(), source, new String[] { "kind", "element", "name", "usesidentifier" });
+		addAnnotation(getUsesPort_ComponentInstantiationRef(), source, new String[] { "kind", "element", "name", "componentinstantiationref" });
+		addAnnotation(getUsesPort_DeviceThatLoadedThisComponentRef(), source, new String[] { "kind", "element", "name", "devicethatloadedthiscomponentref" });
+		addAnnotation(getUsesPort_DeviceUsedByThisComponentRef(), source, new String[] { "kind", "element", "name", "deviceusedbythiscomponentref" });
+		addAnnotation(getUsesPort_FindBy(), source, new String[] { "kind", "element", "name", "findby" });
+		addAnnotation(getUsesPortStub_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(getUsesPortStub_Uses(), source, new String[] { "kind", "attribute", "name", "uses" });
+		addAnnotation(getUsesPortStub_SupportedIdentifier(), source, new String[] { "kind", "attribute", "name", "supportedIdentifier" });
 	}
 
 	/**
@@ -2474,21 +1908,9 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";																																												
-		addAnnotation
-		  (connectInterfaceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "constraints", "ValidSourceReference ValidTargetReference"
-		   });																									
-		addAnnotation
-		  (findByStubEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "constraints", "ValidFindByStub"
-		   });																															
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation(connectInterfaceEClass, source, new String[] { "constraints", "ValidSourceReference ValidTargetReference" });
+		addAnnotation(findByStubEClass, source, new String[] { "constraints", "ValidFindByStub" });
 	}
 
 } //PartitioningPackageImpl
