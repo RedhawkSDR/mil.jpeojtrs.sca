@@ -14,9 +14,6 @@ package mil.jpeojtrs.sca.dmd.tests;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
-import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.dmd.DomainManagerConfiguration;
 import mil.jpeojtrs.sca.util.SdrURIHandler;
 
@@ -32,48 +29,9 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * <!-- begin-user-doc -->
  * A test suite for the '<em><b>dmd</b></em>' package.
  * <!-- end-user-doc -->
- * @generated
+ * @generated NOT
  */
-public class DmdTests extends TestSuite {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(suite());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public static Test suite() {
-		// END GENERATED CODE
-		final TestSuite suite = new DmdTests("dmd Tests");
-		suite.addTestSuite(DmdDocumentRootTest.class);
-		suite.addTestSuite(DomainFinderTest.class);
-		suite.addTestSuite(DomainManagerConfigurationTest.class);
-		suite.addTestSuite(DomainManagerSoftPkgTest.class);
-		suite.addTestSuite(FindByTest.class);
-		suite.addTestSuite(LocalFileTest.class);
-		suite.addTestSuite(NamingServiceTest.class);
-		suite.addTestSuite(ServicesTest.class);
-		suite.addTestSuite(ServiceTest.class);
-		return suite;
-		// BEGIN GENERATED CODE GENERATED CODE
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DmdTests(String name) {
-		super(name);
-	}
+public class DmdTests {
 	
 	private static ResourceSet createResourceSet() throws URISyntaxException {
 		ResourceSet resourceSet = new ResourceSetImpl();

@@ -32,47 +32,10 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * <!-- begin-user-doc -->
  * A test suite for the '<em><b>dcd</b></em>' package.
  * <!-- end-user-doc -->
- * @generated
+ * @generated NOT
  */
-public class DcdTests extends TestSuite {
+public class DcdTests {
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(suite());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static Test suite() {
-		TestSuite suite = new DcdTests("dcd Tests");
-		suite.addTestSuite(DcdComponentPlacementTest.class);
-		suite.addTestSuite(DcdComponentInstantiationTest.class);
-		suite.addTestSuite(DcdPartitioningTest.class);
-		suite.addTestSuite(DcdComponentInstantiationRefTest.class);
-		suite.addTestSuite(DcdConnectInterfaceTest.class);
-		suite.addTestSuite(CompositePartOfDeviceTest.class);
-		suite.addTestSuite(DcdDocumentRootTest.class);
-		suite.addTestSuite(DeployOnDeviceTest.class);
-		suite.addTestSuite(DeviceManagerSoftPkgTest.class);
-		suite.addTestSuite(DevicePkgFileTest.class);
-		return suite;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DcdTests(String name) {
-		super(name);
-	}
 	
 	public static DeviceConfiguration getDeviceConfiguration()  throws Exception {
 		URI uri = URI.createURI(ScaFileSystemConstants.SCHEME_TARGET_SDR_DEV + ":///nodes/defaultNode/defaultNode.dcd.xml");

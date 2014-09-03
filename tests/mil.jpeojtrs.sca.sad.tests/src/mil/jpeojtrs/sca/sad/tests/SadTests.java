@@ -14,9 +14,6 @@ package mil.jpeojtrs.sca.sad.tests;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
-import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 import mil.jpeojtrs.sca.util.SdrURIHandler;
 
@@ -32,45 +29,9 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * <!-- begin-user-doc -->
  * A test suite for the '<em><b>sad</b></em>' package.
  * <!-- end-user-doc -->
- * @generated
+ * @generated NOT
  */
-public class SadTests extends TestSuite {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(suite());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public static Test suite() {
-		final TestSuite suite = new SadTests("sad Tests");
-		suite.addTestSuite(SadComponentInstantiationTest.class);
-		suite.addTestSuite(SadComponentInstantiationRefTest.class);
-		suite.addTestSuite(SadConnectInterfaceTest.class);
-		suite.addTestSuite(SadPartitioningTest.class);
-		suite.addTestSuite(SadComponentPlacementTest.class);
-		suite.addTestSuite(ResourceFactoryPropertiesTest.class);
-		suite.addTestSuite(SadDocumentRootTest.class);
-		suite.addTestSuite(PortTest.class);
-		return suite;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SadTests(String name) {
-		super(name);
-	}
+public class SadTests {
 	
 	private static ResourceSet createResourceSet() throws URISyntaxException {
 		ResourceSet resourceSet = new ResourceSetImpl();

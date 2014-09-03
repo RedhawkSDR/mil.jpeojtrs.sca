@@ -15,10 +15,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
-import junit.textui.TestRunner;
-
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
@@ -28,43 +24,10 @@ import org.eclipse.emf.common.util.URI;
  * <!-- begin-user-doc -->
  * A test suite for the '<em><b>partitioning</b></em>' package.
  * <!-- end-user-doc -->
- * @generated
+ * @generated NOT
  */
-public class PartitioningTests extends TestSuite {
+public class PartitioningTests {
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(suite());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static Test suite() {
-		TestSuite suite = new PartitioningTests("partitioning Tests");
-		suite.addTestSuite(DomComponentFileTest.class);
-		suite.addTestSuite(DevComponentFileTest.class);
-		suite.addTestSuite(ComponentFileRefTest.class);
-		suite.addTestSuite(ComponentInstantiationTest.class);
-		suite.addTestSuite(ComponentPropertiesTest.class);
-		suite.addTestSuite(ComponentSupportedInterfaceTest.class);
-		return suite;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PartitioningTests(String name) {
-		super(name);
-	}
 
 	public static URI getURI(final String filePath) throws IOException {
 		final URL bundleUrl = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.partitioning.tests"), new Path(filePath), null);
