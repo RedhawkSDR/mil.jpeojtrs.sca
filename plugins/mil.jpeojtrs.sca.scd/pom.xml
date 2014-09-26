@@ -23,7 +23,7 @@
   <artifactId>mil.jpeojtrs.sca.scd</artifactId>
   <packaging>eclipse-plugin</packaging>
 
-  <version>2.3.0-SNAPSHOT</version>
+  <version>3.0.0-SNAPSHOT</version>
 
   <properties>
     <pmd.skip>true</pmd.skip>
