@@ -37,10 +37,10 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getPortType <em>Port Type</em>}</li>
- *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getName <em>Name</em>}</li>
- *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getRepID <em>Rep ID</em>}</li>
- *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getInterface <em>Interface</em>}</li>
+ * <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getPortType <em>Port Type</em>}</li>
+ * <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getName <em>Name</em>}</li>
+ * <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getRepID <em>Rep ID</em>}</li>
+ * <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getInterface <em>Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -119,8 +119,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public EList<PortTypeContainer> getPortType() {
-		if (portType == null)
-		{
+		if (portType == null) {
 			portType = new EObjectContainmentEList<PortTypeContainer>(PortTypeContainer.class, this, ScdPackage.ABSTRACT_PORT__PORT_TYPE);
 		}
 		return portType;
@@ -180,7 +179,7 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	@Override
 	public Interface getInterface() {
 		Interface interface_ = basicGetInterface();
-		return interface_ != null && interface_.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)interface_) : interface_;
+		return interface_ != null && interface_.eIsProxy() ? (Interface) eResolveProxy((InternalEObject) interface_) : interface_;
 	}
 
 	/**
@@ -193,9 +192,9 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 		if (getRepID() != null && eResource() != null) {
 			String uriFragment = getRepID();
 			return (Interface) eResource().getEObject(uriFragment);
-		} 
+		}
 		return null;
-		
+
 		// BEGIN GENERATED CODE
 	}
 
@@ -256,10 +255,9 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
-				return ((InternalEList<?>)getPortType()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
+			return ((InternalEList< ? >) getPortType()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -271,17 +269,17 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
-				return getPortType();
-			case ScdPackage.ABSTRACT_PORT__NAME:
-				return getName();
-			case ScdPackage.ABSTRACT_PORT__REP_ID:
-				return getRepID();
-			case ScdPackage.ABSTRACT_PORT__INTERFACE:
-				if (resolve) return getInterface();
-				return basicGetInterface();
+		switch (featureID) {
+		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
+			return getPortType();
+		case ScdPackage.ABSTRACT_PORT__NAME:
+			return getName();
+		case ScdPackage.ABSTRACT_PORT__REP_ID:
+			return getRepID();
+		case ScdPackage.ABSTRACT_PORT__INTERFACE:
+			if (resolve)
+				return getInterface();
+			return basicGetInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -294,21 +292,20 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
-				getPortType().clear();
-				getPortType().addAll((Collection<? extends PortTypeContainer>)newValue);
-				return;
-			case ScdPackage.ABSTRACT_PORT__NAME:
-				setName((String)newValue);
-				return;
-			case ScdPackage.ABSTRACT_PORT__REP_ID:
-				setRepID((String)newValue);
-				return;
-			case ScdPackage.ABSTRACT_PORT__INTERFACE:
-				setInterface((Interface)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
+			getPortType().clear();
+			getPortType().addAll((Collection< ? extends PortTypeContainer>) newValue);
+			return;
+		case ScdPackage.ABSTRACT_PORT__NAME:
+			setName((String) newValue);
+			return;
+		case ScdPackage.ABSTRACT_PORT__REP_ID:
+			setRepID((String) newValue);
+			return;
+		case ScdPackage.ABSTRACT_PORT__INTERFACE:
+			setInterface((Interface) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -320,20 +317,19 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
-				getPortType().clear();
-				return;
-			case ScdPackage.ABSTRACT_PORT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case ScdPackage.ABSTRACT_PORT__REP_ID:
-				setRepID(REP_ID_EDEFAULT);
-				return;
-			case ScdPackage.ABSTRACT_PORT__INTERFACE:
-				setInterface((Interface)null);
-				return;
+		switch (featureID) {
+		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
+			getPortType().clear();
+			return;
+		case ScdPackage.ABSTRACT_PORT__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case ScdPackage.ABSTRACT_PORT__REP_ID:
+			setRepID(REP_ID_EDEFAULT);
+			return;
+		case ScdPackage.ABSTRACT_PORT__INTERFACE:
+			setInterface((Interface) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -345,16 +341,15 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
-				return portType != null && !portType.isEmpty();
-			case ScdPackage.ABSTRACT_PORT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ScdPackage.ABSTRACT_PORT__REP_ID:
-				return REP_ID_EDEFAULT == null ? repID != null : !REP_ID_EDEFAULT.equals(repID);
-			case ScdPackage.ABSTRACT_PORT__INTERFACE:
-				return basicGetInterface() != null;
+		switch (featureID) {
+		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
+			return portType != null && !portType.isEmpty();
+		case ScdPackage.ABSTRACT_PORT__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case ScdPackage.ABSTRACT_PORT__REP_ID:
+			return REP_ID_EDEFAULT == null ? repID != null : !REP_ID_EDEFAULT.equals(repID);
+		case ScdPackage.ABSTRACT_PORT__INTERFACE:
+			return basicGetInterface() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -366,7 +361,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -377,4 +373,49 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 		return result.toString();
 	}
 
-} //AbstractPortImpl
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((portType == null) ? 0 : portType.hashCode());
+		result = prime * result + ((repID == null) ? 0 : repID.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AbstractPortImpl other = (AbstractPortImpl) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (portType == null) {
+			if (other.portType != null)
+				return false;
+		} else  {
+			if (portType.size() != other.portType.size()) {
+				return false;
+			}
+			for (int i=0; i<portType.size(); i++) {
+				if (!portType.get(i).equals(other.portType.get(i))) {
+					return false;
+				}
+			}
+		}
+		if (repID == null) {
+			if (other.repID != null)
+				return false;
+		} else if (!repID.equals(other.repID))
+			return false;
+		return true;
+	}
+
+} // AbstractPortImpl

@@ -11,6 +11,8 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd;
 
+import java.util.List;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.FeatureMap;
@@ -84,6 +86,12 @@ public interface Ports extends EObject {
 	 * @generated
 	 */
 	EList<Uses> getUses();
+	
+	/**
+	 * @since 3.0
+	 * @return An unmodifiable list of all the ports
+	 */
+	List<AbstractPort> getAllPorts();
 
 	public static String [] RESERVED_NAMES = new String [] {
 		Uses.PORT_NAME_PROP_EVENTS

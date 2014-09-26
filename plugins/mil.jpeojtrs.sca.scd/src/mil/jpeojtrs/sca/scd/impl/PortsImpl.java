@@ -11,8 +11,12 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
+import mil.jpeojtrs.sca.scd.AbstractPort;
 import mil.jpeojtrs.sca.scd.Ports;
 import mil.jpeojtrs.sca.scd.Provides;
 import mil.jpeojtrs.sca.scd.ScdPackage;
@@ -226,6 +230,17 @@ public class PortsImpl extends EObjectImpl implements Ports {
 		result.append(group);
 		result.append(')');
 		return result.toString();
+	}
+
+	/**
+	 * @since 3.0
+	 */
+	@Override
+	public List<AbstractPort> getAllPorts() {
+		List<AbstractPort> retVal = new ArrayList<AbstractPort>();
+		retVal.addAll(getProvides());
+		retVal.addAll(getUses());
+		return Collections.unmodifiableList(retVal);
 	}
 
 } //PortsImpl
