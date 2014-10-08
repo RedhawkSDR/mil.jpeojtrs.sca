@@ -48,7 +48,7 @@ public final class CorbaUtils {
 	 * <code>InterruptedException</code>
 	 */
 	public static org.omg.CORBA.Object string_to_object(final ORB orb, final String ior, IProgressMonitor monitor) throws CoreException, InterruptedException {
-		SubMonitor subMonitor = SubMonitor.convert(monitor, "Resoling object in orb ", 1);
+		SubMonitor subMonitor = SubMonitor.convert(monitor, "Resolving object in orb ", 1);
 		return CorbaUtils.invoke(new Callable<org.omg.CORBA.Object>() {
 
 			public org.omg.CORBA.Object call() throws Exception {
