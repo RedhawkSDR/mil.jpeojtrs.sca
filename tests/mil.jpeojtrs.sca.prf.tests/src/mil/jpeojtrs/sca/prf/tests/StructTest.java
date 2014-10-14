@@ -12,6 +12,8 @@
 package mil.jpeojtrs.sca.prf.tests;
 
 import org.junit.Assert;
+import java.io.ByteArrayOutputStream;
+
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.AccessType;
 import mil.jpeojtrs.sca.prf.ConfigurationKind;
@@ -146,6 +148,7 @@ public class StructTest extends AbstractPropertyTest {
 		
 		
 		// test set null and non null type
+		struct.getConfigurationKind().clear();
 		final ConfigurationKind ck = PrfFactory.eINSTANCE.createConfigurationKind();
 		ck.setType(StructPropertyConfigurationType.ALLOCATION);
 		struct.getConfigurationKind().clear();
@@ -153,9 +156,22 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, struct.getConfigurationKind().get(0).getType());
 		struct.getConfigurationKind().set(0, ck);
 		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, struct.getConfigurationKind().get(0).getType());
+	}
+	
+	public void testEmptyConfigurationKind_IDE_917() throws Exception {
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
+		Assert.assertNotNull(props);
+		final Struct struct = props.getStruct().get(0);
+		Assert.assertNotNull(struct);
 
+		// test unsetType
 		struct.getConfigurationKind().clear();
 		Assert.assertTrue(struct.getConfigurationKind().isEmpty());
+		ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+		struct.eResource().save(buffer, null);
+		String xml = new String(buffer.toByteArray());
+		Assert.assertFalse("Empty configuration kind serialized wrong.", xml.contains("configurationkind=\"\""));
 	}
 
 } //StructTest

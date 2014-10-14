@@ -209,29 +209,9 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	public EList<ConfigurationKind> getConfigurationKind() {
 		if (configurationKind == null)
 		{
-			configurationKind = new EObjectContainmentEList.Unsettable<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND);
+			configurationKind = new EObjectContainmentEList<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND);
 		}
 		return configurationKind;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void unsetConfigurationKind() {
-		if (configurationKind != null) ((InternalEList.Unsettable<?>)configurationKind).unset();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isSetConfigurationKind() {
-		return configurationKind != null && ((InternalEList.Unsettable<?>)configurationKind).isSet();
 	}
 
 	protected void updateSimpleRefID(Notification notification) {
@@ -413,7 +393,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 				getStructValue().clear();
 				return;
 			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-				unsetConfigurationKind();
+				getConfigurationKind().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -433,7 +413,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
 				return structValue != null && !structValue.isEmpty();
 			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-				return isSetConfigurationKind();
+				return configurationKind != null && !configurationKind.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

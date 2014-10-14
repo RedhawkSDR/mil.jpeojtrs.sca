@@ -2050,7 +2050,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		initEClass(structSequenceEClass, StructSequence.class, "StructSequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructSequence_Struct(), this.getStruct(), null, "struct", null, 1, 1, StructSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructSequence_StructValue(), this.getStructValue(), null, "structValue", null, 0, -1, StructSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructSequence_ConfigurationKind(), this.getConfigurationKind(), null, "configurationKind", null, 0, -1, StructSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructSequence_ConfigurationKind(), this.getConfigurationKind(), null, "configurationKind", null, 0, -1, StructSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structValueEClass, StructValue.class, "StructValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructValue_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 1, -1, StructValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2197,7 +2197,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";		
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
 		addAnnotation
 		  (abstractPropertyEClass, 
 		   source, 
@@ -2205,7 +2205,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "abstractproperty",
 			 "kind", "elementOnly"
-		   });			
+		   });	
 		addAnnotation
 		  (getAbstractProperty_Description(), 
 		   source, 
@@ -2213,7 +2213,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "description"
-		   });		
+		   });	
 		addAnnotation
 		  (getAbstractProperty_Id(), 
 		   source, 
@@ -2221,7 +2221,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "id"
-		   });		
+		   });	
 		addAnnotation
 		  (getAbstractProperty_LocalMode(), 
 		   source, 
@@ -2229,7 +2229,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "mode"
-		   });		
+		   });	
 		addAnnotation
 		  (getAbstractProperty_Name(), 
 		   source, 
@@ -2237,14 +2237,14 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "name"
-		   });		
+		   });	
 		addAnnotation
 		  (accessTypeEEnum, 
 		   source, 
 		   new String[] 
 		   {
 			 "name", "AccessType"
-		   });		
+		   });	
 		addAnnotation
 		  (accessTypeObjectEDataType, 
 		   source, 
@@ -2252,7 +2252,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "AccessType:Object",
 			 "baseType", "AccessType"
-		   });		
+		   });	
 		addAnnotation
 		  (actionEClass, 
 		   source, 
@@ -2260,7 +2260,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "action",
 			 "kind", "empty"
-		   });		
+		   });	
 		addAnnotation
 		  (getAction_Type(), 
 		   source, 
@@ -2268,14 +2268,14 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "type"
-		   });		
+		   });	
 		addAnnotation
 		  (actionTypeEEnum, 
 		   source, 
 		   new String[] 
 		   {
 			 "name", "ActionType"
-		   });		
+		   });	
 		addAnnotation
 		  (actionTypeObjectEDataType, 
 		   source, 
@@ -2283,14 +2283,14 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "ActionType:Object",
 			 "baseType", "ActionType"
-		   });		
+		   });	
 		addAnnotation
 		  (characterObjectEDataType, 
 		   source, 
 		   new String[] 
 		   {
 			 "name", "CharacterObject"
-		   });		
+		   });	
 		addAnnotation
 		  (configurationKindEClass, 
 		   source, 
@@ -2298,7 +2298,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "configurationkind",
 			 "kind", "empty"
-		   });		
+		   });	
 		addAnnotation
 		  (getConfigurationKind_Type(), 
 		   source, 
@@ -2306,7 +2306,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "kindtype"
-		   });		
+		   });	
 		addAnnotation
 		  (dceUUIDEDataType, 
 		   source, 
@@ -2315,7 +2315,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "name", "DceUUID",
 			 "baseType", "http://www.eclipse.org/emf/2003/XMLType#string",
 			 "pattern", "DCE:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}(:\\d+(.\\d+)?)?"
-		   });		
+		   });	
 		addAnnotation
 		  (enumerationEClass, 
 		   source, 
@@ -2323,7 +2323,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "enumeration",
 			 "kind", "empty"
-		   });		
+		   });	
 		addAnnotation
 		  (getEnumeration_Label(), 
 		   source, 
@@ -2331,7 +2331,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "label"
-		   });		
+		   });	
 		addAnnotation
 		  (getEnumeration_Value(), 
 		   source, 
@@ -2339,7 +2339,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "value"
-		   });		
+		   });	
 		addAnnotation
 		  (enumerationsEClass, 
 		   source, 
@@ -2347,7 +2347,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "enumerations",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getEnumerations_Enumeration(), 
 		   source, 
@@ -2355,7 +2355,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "enumeration"
-		   });		
+		   });	
 		addAnnotation
 		  (inputValueEClass, 
 		   source, 
@@ -2363,7 +2363,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "inputvalue",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getInputValue_Simple(), 
 		   source, 
@@ -2371,7 +2371,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "simple"
-		   });		
+		   });	
 		addAnnotation
 		  (kindEClass, 
 		   source, 
@@ -2379,7 +2379,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "kind",
 			 "kind", "empty"
-		   });		
+		   });	
 		addAnnotation
 		  (getKind_Type(), 
 		   source, 
@@ -2387,7 +2387,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "kindtype"
-		   });		
+		   });	
 		addAnnotation
 		  (prfDocumentRootEClass, 
 		   source, 
@@ -2395,7 +2395,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "",
 			 "kind", "mixed"
-		   });		
+		   });	
 		addAnnotation
 		  (getPrfDocumentRoot_Mixed(), 
 		   source, 
@@ -2403,7 +2403,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "elementWildcard",
 			 "name", ":mixed"
-		   });		
+		   });	
 		addAnnotation
 		  (getPrfDocumentRoot_XMLNSPrefixMap(), 
 		   source, 
@@ -2411,7 +2411,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "xmlns:prefix"
-		   });		
+		   });	
 		addAnnotation
 		  (getPrfDocumentRoot_XSISchemaLocation(), 
 		   source, 
@@ -2419,7 +2419,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "xsi:schemaLocation"
-		   });		
+		   });	
 		addAnnotation
 		  (getPrfDocumentRoot_Properties(), 
 		   source, 
@@ -2428,7 +2428,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "properties",
 			 "namespace", "##targetNamespace"
-		   });			
+		   });	
 		addAnnotation
 		  (propertiesEClass, 
 		   source, 
@@ -2436,7 +2436,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "properties",
 			 "kind", "elementOnly"
-		   });			
+		   });	
 		addAnnotation
 		  (getProperties_Description(), 
 		   source, 
@@ -2444,7 +2444,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "description"
-		   });		
+		   });	
 		addAnnotation
 		  (getProperties_Properties(), 
 		   source, 
@@ -2452,7 +2452,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "group",
 			 "name", "properties:1"
-		   });		
+		   });	
 		addAnnotation
 		  (getProperties_Simple(), 
 		   source, 
@@ -2461,7 +2461,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "simple",
 			 "group", "#properties:1"
-		   });		
+		   });	
 		addAnnotation
 		  (getProperties_SimpleSequence(), 
 		   source, 
@@ -2470,7 +2470,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "simplesequence",
 			 "group", "#properties:1"
-		   });		
+		   });	
 		addAnnotation
 		  (getProperties_Test(), 
 		   source, 
@@ -2479,7 +2479,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "test",
 			 "group", "#properties:1"
-		   });		
+		   });	
 		addAnnotation
 		  (getProperties_Struct(), 
 		   source, 
@@ -2488,7 +2488,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "struct",
 			 "group", "#properties:1"
-		   });		
+		   });	
 		addAnnotation
 		  (getProperties_StructSequence(), 
 		   source, 
@@ -2497,14 +2497,14 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "structsequence",
 			 "group", "#properties:1"
-		   });		
+		   });	
 		addAnnotation
 		  (propertyConfigurationTypeEEnum, 
 		   source, 
 		   new String[] 
 		   {
 			 "name", "PropertyConfigurationType"
-		   });		
+		   });	
 		addAnnotation
 		  (propertyConfigurationTypeObjectEDataType, 
 		   source, 
@@ -2512,14 +2512,14 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "PropertyConfigurationType:Object",
 			 "baseType", "PropertyConfigurationType"
-		   });		
+		   });	
 		addAnnotation
 		  (propertyValueTypeEEnum, 
 		   source, 
 		   new String[] 
 		   {
 			 "name", "PropertyValueType"
-		   });		
+		   });	
 		addAnnotation
 		  (propertyValueTypeObjectEDataType, 
 		   source, 
@@ -2527,7 +2527,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "PropertyValueType:Object",
 			 "baseType", "PropertyValueType"
-		   });		
+		   });	
 		addAnnotation
 		  (rangeEClass, 
 		   source, 
@@ -2535,7 +2535,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "range",
 			 "kind", "empty"
-		   });		
+		   });	
 		addAnnotation
 		  (getRange_Max(), 
 		   source, 
@@ -2543,7 +2543,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "max"
-		   });		
+		   });	
 		addAnnotation
 		  (getRange_Min(), 
 		   source, 
@@ -2551,7 +2551,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "min"
-		   });		
+		   });	
 		addAnnotation
 		  (resultValueEClass, 
 		   source, 
@@ -2559,7 +2559,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "resultvalue",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getResultValue_Simple(), 
 		   source, 
@@ -2567,7 +2567,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "simple"
-		   });			
+		   });	
 		addAnnotation
 		  (simpleEClass, 
 		   source, 
@@ -2575,7 +2575,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "simple",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimple_Value(), 
 		   source, 
@@ -2583,7 +2583,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "value"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimple_Units(), 
 		   source, 
@@ -2591,7 +2591,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "units"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimple_Range(), 
 		   source, 
@@ -2599,7 +2599,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "range"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimple_Enumerations(), 
 		   source, 
@@ -2607,7 +2607,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "enumerations"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimple_Kind(), 
 		   source, 
@@ -2615,7 +2615,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "kind"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimple_Action(), 
 		   source, 
@@ -2623,7 +2623,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "action"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimple_Type(), 
 		   source, 
@@ -2631,7 +2631,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "type"
-		   });		
+		   });	
 		addAnnotation
 		  (simpleSequenceEClass, 
 		   source, 
@@ -2639,7 +2639,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "simplesequence",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimpleSequence_Values(), 
 		   source, 
@@ -2647,7 +2647,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "values"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimpleSequence_Units(), 
 		   source, 
@@ -2655,7 +2655,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "units"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimpleSequence_Range(), 
 		   source, 
@@ -2663,7 +2663,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "range"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimpleSequence_Kind(), 
 		   source, 
@@ -2671,7 +2671,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "kind"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimpleSequence_Action(), 
 		   source, 
@@ -2679,7 +2679,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "action"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimpleSequence_Type(), 
 		   source, 
@@ -2687,7 +2687,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "type"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimpleSequence_Complex(), 
 		   source, 
@@ -2703,7 +2703,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "struct",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getStruct_Simple(), 
 		   source, 
@@ -2711,7 +2711,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "simple"
-		   });		
+		   });	
 		addAnnotation
 		  (getStruct_ConfigurationKind(), 
 		   source, 
@@ -2719,14 +2719,14 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "configurationkind"
-		   });		
+		   });	
 		addAnnotation
 		  (structPropertyConfigurationTypeEEnum, 
 		   source, 
 		   new String[] 
 		   {
 			 "name", "StructPropertyConfigurationType"
-		   });		
+		   });	
 		addAnnotation
 		  (structPropertyConfigurationTypeObjectEDataType, 
 		   source, 
@@ -2734,7 +2734,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "StructPropertyConfigurationType:Object",
 			 "baseType", "StructPropertyConfigurationType"
-		   });		
+		   });	
 		addAnnotation
 		  (structSequenceEClass, 
 		   source, 
@@ -2742,7 +2742,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "structsequence",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getStructSequence_Struct(), 
 		   source, 
@@ -2750,7 +2750,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "struct"
-		   });		
+		   });	
 		addAnnotation
 		  (getStructSequence_StructValue(), 
 		   source, 
@@ -2758,7 +2758,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "structvalue"
-		   });		
+		   });	
 		addAnnotation
 		  (getStructSequence_ConfigurationKind(), 
 		   source, 
@@ -2766,7 +2766,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "configurationkind"
-		   });		
+		   });	
 		addAnnotation
 		  (structValueEClass, 
 		   source, 
@@ -2774,7 +2774,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "structvalue",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getStructValue_SimpleRef(), 
 		   source, 
@@ -2782,7 +2782,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "simpleref"
-		   });		
+		   });	
 		addAnnotation
 		  (testEClass, 
 		   source, 
@@ -2790,7 +2790,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "test",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getTest_Description(), 
 		   source, 
@@ -2798,7 +2798,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "description"
-		   });		
+		   });	
 		addAnnotation
 		  (getTest_InputValue(), 
 		   source, 
@@ -2806,7 +2806,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "inputvalue"
-		   });		
+		   });	
 		addAnnotation
 		  (getTest_ResultValue(), 
 		   source, 
@@ -2814,7 +2814,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "resultvalue"
-		   });		
+		   });	
 		addAnnotation
 		  (getTest_Id(), 
 		   source, 
@@ -2822,7 +2822,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "id"
-		   });		
+		   });	
 		addAnnotation
 		  (unitEDataType, 
 		   source, 
@@ -2830,7 +2830,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "Unit",
 			 "baseType", "http://www.eclipse.org/emf/2003/XMLType#string"
-		   });		
+		   });	
 		addAnnotation
 		  (valuesEClass, 
 		   source, 
@@ -2838,7 +2838,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "name", "values",
 			 "kind", "elementOnly"
-		   });		
+		   });	
 		addAnnotation
 		  (getValues_Value(), 
 		   source, 
@@ -2846,7 +2846,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "value"
-		   });		
+		   });	
 		addAnnotation
 		  (abstractPropertyRefEClass, 
 		   source, 
@@ -2855,7 +2855,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "elementOnly",
 			 "name", "propertyref",
 			 "qualified", "false"
-		   });		
+		   });	
 		addAnnotation
 		  (getAbstractPropertyRef_RefID(), 
 		   source, 
@@ -2863,7 +2863,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "refid"
-		   });		
+		   });	
 		addAnnotation
 		  (propertyRefGroupEClass, 
 		   source, 
@@ -2872,7 +2872,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "elementOnly",
 			 "name", "propertyrefgroup",
 			 "qualified", "false"
-		   });		
+		   });	
 		addAnnotation
 		  (getPropertyRefGroup_Properties(), 
 		   source, 
@@ -2880,7 +2880,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "group",
 			 "name", "properties:0"
-		   });		
+		   });	
 		addAnnotation
 		  (getPropertyRefGroup_SimpleRef(), 
 		   source, 
@@ -2889,7 +2889,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "simpleref",
 			 "group", "#properties:0"
-		   });		
+		   });	
 		addAnnotation
 		  (getPropertyRefGroup_SimpleSequenceRef(), 
 		   source, 
@@ -2898,7 +2898,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "simplesequenceref",
 			 "group", "#properties:0"
-		   });		
+		   });	
 		addAnnotation
 		  (getPropertyRefGroup_StructRef(), 
 		   source, 
@@ -2907,7 +2907,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "structref",
 			 "group", "#properties:0"
-		   });		
+		   });	
 		addAnnotation
 		  (getPropertyRefGroup_StructSequenceRef(), 
 		   source, 
@@ -2916,7 +2916,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "structsequenceref",
 			 "group", "#properties:0"
-		   });		
+		   });	
 		addAnnotation
 		  (propertyRefSetEClass, 
 		   source, 
@@ -2925,7 +2925,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "elementOnly",
 			 "name", "propertyrefset",
 			 "qualified", "false"
-		   });		
+		   });	
 		addAnnotation
 		  (getPropertyRefSet_Properties(), 
 		   source, 
@@ -2933,7 +2933,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "group",
 			 "name", "properties:0"
-		   });		
+		   });	
 		addAnnotation
 		  (getPropertyRefSet_SimpleRef(), 
 		   source, 
@@ -2942,7 +2942,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "simpleref",
 			 "group", "#properties:0"
-		   });		
+		   });	
 		addAnnotation
 		  (getPropertyRefSet_SimpleSequenceRef(), 
 		   source, 
@@ -2951,7 +2951,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "simplesequenceref",
 			 "group", "#properties:0"
-		   });		
+		   });	
 		addAnnotation
 		  (getPropertyRefSet_StructRef(), 
 		   source, 
@@ -2960,7 +2960,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "structref",
 			 "group", "#properties:0"
-		   });		
+		   });	
 		addAnnotation
 		  (getPropertyRefSet_StructSequenceRef(), 
 		   source, 
@@ -2969,7 +2969,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "element",
 			 "name", "structsequenceref",
 			 "group", "#properties:0"
-		   });		
+		   });	
 		addAnnotation
 		  (simpleRefEClass, 
 		   source, 
@@ -2978,7 +2978,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "name", "simpleref",
 			 "kind", "empty",
 			 "qualified", "false"
-		   });		
+		   });	
 		addAnnotation
 		  (getSimpleRef_Value(), 
 		   source, 
@@ -2986,7 +2986,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "attribute",
 			 "name", "value"
-		   });		
+		   });	
 		addAnnotation
 		  (simpleSequenceRefEClass, 
 		   source, 
@@ -2995,7 +2995,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "elementOnly",
 			 "name", "simplesequenceref",
 			 "qualified", "false"
-		   });		
+		   });	
 		addAnnotation
 		  (structRefEClass, 
 		   source, 
@@ -3004,7 +3004,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "elementOnly",
 			 "name", "structref",
 			 "qualified", "false"
-		   });		
+		   });	
 		addAnnotation
 		  (getStructRef_SimpleRef(), 
 		   source, 
@@ -3012,7 +3012,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		   {
 			 "kind", "element",
 			 "name", "simpleref"
-		   });		
+		   });	
 		addAnnotation
 		  (structSequenceRefEClass, 
 		   source, 
@@ -3021,7 +3021,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			 "kind", "elementOnly",
 			 "name", "structsequenceref",
 			 "qualified", "false"
-		   });		
+		   });	
 		addAnnotation
 		  (getStructSequenceRef_StructValue(), 
 		   source, 
