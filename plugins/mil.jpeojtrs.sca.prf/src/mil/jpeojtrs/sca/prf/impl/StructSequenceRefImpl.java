@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
@@ -73,6 +74,17 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	@Override
 	protected EClass eStaticClass() {
 		return PrfPackage.Literals.STRUCT_SEQUENCE_REF;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setProperty(StructSequence newProperty) {
+		super.setProperty(newProperty);
 	}
 
 	/**

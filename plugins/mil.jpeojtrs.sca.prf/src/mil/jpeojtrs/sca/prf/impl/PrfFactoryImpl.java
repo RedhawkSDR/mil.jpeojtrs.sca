@@ -8,9 +8,11 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
+import mil.jpeojtrs.sca.prf.*;
 import mil.jpeojtrs.sca.prf.AccessType;
 import mil.jpeojtrs.sca.prf.Action;
 import mil.jpeojtrs.sca.prf.ActionType;
@@ -63,7 +65,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	public static PrfFactory init() {
 		try {
-			PrfFactory thePrfFactory = (PrfFactory)EPackage.Registry.INSTANCE.getEFactory("http://sca.jpeojtrs.mil/prf"); 
+			PrfFactory thePrfFactory = (PrfFactory)EPackage.Registry.INSTANCE.getEFactory(PrfPackage.eNS_URI);
 			if (thePrfFactory != null) {
 				return thePrfFactory;
 			}

@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
@@ -110,27 +111,9 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	public EList<ConfigurationKind> getConfigurationKind() {
 		if (configurationKind == null) {
-			configurationKind = new EObjectContainmentEList.Unsettable<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT__CONFIGURATION_KIND);
+			configurationKind = new EObjectContainmentEList<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT__CONFIGURATION_KIND);
 		}
 		return configurationKind;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetConfigurationKind() {
-		if (configurationKind != null) ((InternalEList.Unsettable<?>)configurationKind).unset();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetConfigurationKind() {
-		return configurationKind != null && ((InternalEList.Unsettable<?>)configurationKind).isSet();
 	}
 
 	@Override
@@ -243,7 +226,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 				getSimple().clear();
 				return;
 			case PrfPackage.STRUCT__CONFIGURATION_KIND:
-				unsetConfigurationKind();
+				getConfigurationKind().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -260,7 +243,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 			case PrfPackage.STRUCT__SIMPLE:
 				return simple != null && !simple.isEmpty();
 			case PrfPackage.STRUCT__CONFIGURATION_KIND:
-				return isSetConfigurationKind();
+				return configurationKind != null && !configurationKind.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

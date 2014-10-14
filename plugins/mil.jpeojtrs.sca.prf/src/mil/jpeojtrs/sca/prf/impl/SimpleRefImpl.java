@@ -8,6 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
+
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
@@ -71,6 +72,17 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 	@Override
 	protected EClass eStaticClass() {
 		return PrfPackage.Literals.SIMPLE_REF;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setProperty(Simple newProperty) {
+		super.setProperty(newProperty);
 	}
 
 	/**

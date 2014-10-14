@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: mil.jpeojtrs.sca.prf;singleton:=true
-Bundle-Version: 2.2.2.qualifier
+Bundle-Version: 3.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -18,3 +18,4 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  mil.jpeojtrs.sca.util;bundle-version="3.0.0",
  idl.cf;bundle-version="2.2.2",
  org.jacorb;bundle-version="3.3.0"
+Bundle-ActivationPolicy: lazy

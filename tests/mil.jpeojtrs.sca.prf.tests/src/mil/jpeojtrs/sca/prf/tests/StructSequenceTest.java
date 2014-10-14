@@ -11,6 +11,8 @@
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.tests;
 
+import java.io.ByteArrayOutputStream;
+
 import junit.framework.Assert;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.AccessType;
@@ -168,11 +170,6 @@ public class StructSequenceTest extends AbstractPropertyTest {
 		structSeq.setMode(AccessType.READWRITE);
 		Assert.assertEquals(AccessType.READWRITE, structSeq.getMode());
 
-		// test unsetType
-		structSeq.unsetConfigurationKind();
-		Assert.assertFalse(structSeq.isSetConfigurationKind());
-		Assert.assertTrue(structSeq.getConfigurationKind().isEmpty());
-
 		// test set null and non null type
 		structSeq.getConfigurationKind().clear();
 		structSeq.getConfigurationKind().add(ck);
@@ -181,10 +178,29 @@ public class StructSequenceTest extends AbstractPropertyTest {
 		structSeq.getConfigurationKind().add(ck);
 		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, structSeq.getConfigurationKind().get(0).getType());
 
+	}
+	
+	public void testEmptyConfigurationKind_IDE_917() throws Exception {
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructSequenceTest.prf.xml"), true));
+		Assert.assertNotNull(props);
+		final StructSequence structSeq = props.getStructSequence().get(0);
+		Assert.assertNotNull(structSeq);
+
+		// test setStruct
+		final Struct struct = PrfFactory.eINSTANCE.createStruct();
+		final ConfigurationKind ck = PrfFactory.eINSTANCE.createConfigurationKind();
+		ck.setType(StructPropertyConfigurationType.ALLOCATION);
+		struct.setName("Replace");
+		struct.getConfigurationKind().add(ck);
+		structSeq.setStruct(struct);
+
+		// test unsetType
 		structSeq.getConfigurationKind().clear();
-		Assert.assertTrue(structSeq.getConfigurationKind().isEmpty());
-		structSeq.unsetConfigurationKind();
-		Assert.assertFalse(structSeq.isSetConfigurationKind());
+		ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+		structSeq.eResource().save(buffer, null);
+		String xml = new String(buffer.toByteArray());
+		Assert.assertFalse("Empty configuration kind serialized wrong.", xml.contains("configurationkind=\"\""));
 	}
 
 } //StructSequenceTest

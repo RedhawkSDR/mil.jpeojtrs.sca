@@ -11,6 +11,8 @@
  // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.tests;
 
+import java.io.ByteArrayOutputStream;
+
 import junit.framework.Assert;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.AccessType;
@@ -20,6 +22,7 @@ import mil.jpeojtrs.sca.prf.Properties;
 import mil.jpeojtrs.sca.prf.PropertyValueType;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructPropertyConfigurationType;
+import mil.jpeojtrs.sca.prf.StructSequence;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -144,23 +147,29 @@ public class StructTest extends AbstractPropertyTest {
 		struct.setMode(AccessType.READWRITE);
 		Assert.assertEquals(AccessType.READWRITE, struct.getMode());
 		
-		// test unsetType
-		struct.unsetConfigurationKind();
-		Assert.assertFalse(struct.isSetConfigurationKind());
-		Assert.assertTrue(struct.getConfigurationKind().isEmpty());
-		
 		// test set null and non null type
+		struct.getConfigurationKind().clear();
 		final ConfigurationKind ck = PrfFactory.eINSTANCE.createConfigurationKind();
 		ck.setType(StructPropertyConfigurationType.ALLOCATION);
 		struct.getConfigurationKind().add(ck);
 		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, struct.getConfigurationKind().get(0).getType());
 		struct.getConfigurationKind().set(0, ck);
 		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, struct.getConfigurationKind().get(0).getType());
+	}
+	
+	public void testEmptyConfigurationKind_IDE_917() throws Exception {
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
+		Assert.assertNotNull(props);
+		final Struct struct = props.getStruct().get(0);
+		Assert.assertNotNull(struct);
 
+		// test unsetType
 		struct.getConfigurationKind().clear();
-		Assert.assertTrue(struct.getConfigurationKind().isEmpty());
-		struct.unsetConfigurationKind();
-		Assert.assertFalse(struct.isSetConfigurationKind());
+		ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+		struct.eResource().save(buffer, null);
+		String xml = new String(buffer.toByteArray());
+		Assert.assertFalse("Empty configuration kind serialized wrong.", xml.contains("configurationkind=\"\""));
 	}
 
 } //StructTest
