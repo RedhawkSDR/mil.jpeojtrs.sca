@@ -517,7 +517,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="configurationKind" upperBound="-1"
-        eType="#//ConfigurationKind" unsettable="true" containment="true" resolveProxies="false">
+        eType="#//ConfigurationKind" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="configurationkind"/>
