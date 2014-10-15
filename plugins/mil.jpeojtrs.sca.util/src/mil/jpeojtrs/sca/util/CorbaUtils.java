@@ -34,6 +34,8 @@ import org.omg.CosNaming.NamingContextExt;
 public final class CorbaUtils {
 
 	private static final ExecutorService EXECUTOR = Executors.newCachedThreadPool(new NamedThreadFactory(CorbaUtils.class.getName()));
+	
+	private static final ExecutorService RELEASE_WORKERS = Executors.newFixedThreadPool(5, new NamedThreadFactory(CorbaUtils.class.getName() + ":ReleaseWorker"));
 
 	private CorbaUtils() {
 
@@ -96,33 +98,6 @@ public final class CorbaUtils {
 
 		}, subMonitor);
 	}
-	
-	/**
-	 * Check if a CORBA Object exists
-	 * @since 3.6
-	 */
-	public static boolean non_existent(final org.omg.CORBA.Object obj) {
-		if (obj == null) {
-			return true;
-		}
-		Future<Boolean> task = CorbaUtils.EXECUTOR.submit(new Callable<Boolean>() {
-
-			@Override
-			public Boolean call() throws Exception {
-				return obj._non_existent();
-			}
-			
-		});
-		try {
-			return task.get(5, TimeUnit.SECONDS);
-		} catch (InterruptedException e) {
-			return true;
-		} catch (ExecutionException e) {
-			return true;
-		} catch (TimeoutException e) {
-			return true;
-		}
-	}
 
 	/**
 	 * Check if a CORBA Object exists in an interruptible fashion
@@ -183,7 +158,7 @@ public final class CorbaUtils {
 		if (obj == null) {
 			return;
 		}
-		EXECUTOR.execute(new Runnable() {
+		RELEASE_WORKERS.execute(new Runnable() {
 
 			@Override
 			public void run() {
