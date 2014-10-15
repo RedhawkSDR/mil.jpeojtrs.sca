@@ -96,6 +96,33 @@ public final class CorbaUtils {
 
 		}, subMonitor);
 	}
+	
+	/**
+	 * Check if a CORBA Object exists
+	 * @since 3.6
+	 */
+	public static boolean non_existent(final org.omg.CORBA.Object obj) {
+		if (obj == null) {
+			return true;
+		}
+		Future<Boolean> task = CorbaUtils.EXECUTOR.submit(new Callable<Boolean>() {
+
+			@Override
+			public Boolean call() throws Exception {
+				return obj._non_existent();
+			}
+			
+		});
+		try {
+			return task.get(5, TimeUnit.SECONDS);
+		} catch (InterruptedException e) {
+			return true;
+		} catch (ExecutionException e) {
+			return true;
+		} catch (TimeoutException e) {
+			return true;
+		}
+	}
 
 	/**
 	 * Check if a CORBA Object exists in an interruptible fashion
