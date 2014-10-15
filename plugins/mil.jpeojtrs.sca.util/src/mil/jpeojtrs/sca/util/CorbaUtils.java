@@ -34,6 +34,8 @@ import org.omg.CosNaming.NamingContextExt;
 public final class CorbaUtils {
 
 	private static final ExecutorService EXECUTOR = Executors.newCachedThreadPool(new NamedThreadFactory(CorbaUtils.class.getName()));
+	
+	private static final ExecutorService RELEASE_WORKERS = Executors.newFixedThreadPool(5, new NamedThreadFactory(CorbaUtils.class.getName() + ":ReleaseWorker"));
 
 	private CorbaUtils() {
 
@@ -156,7 +158,7 @@ public final class CorbaUtils {
 		if (obj == null) {
 			return;
 		}
-		EXECUTOR.execute(new Runnable() {
+		RELEASE_WORKERS.execute(new Runnable() {
 
 			@Override
 			public void run() {
