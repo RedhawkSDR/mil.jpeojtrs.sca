@@ -8,7 +8,7 @@
     All rights reserved.  This program and the accompanying materials are made available under
     the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
     http://www.eclipse.org/legal/epl-v10.html.
- 
+
 -->
 <!-- ===================================================================== -->
 <!-- Custom targets called from a project's generated build.xml            -->
@@ -100,15 +100,15 @@
 		<eclipse.refreshLocal resource="idl.cf/src" depth="infinite"/>
 		<eclipse.incrementalBuild project="idl.cf" builder="org.eclipse.pde.ManifestBuilder"/>
 	</target>
-	
+
 	<target name="clean" depends="clean-headless,clean-eclipse-post"/>
-	
+
 	<target name="clean-headless">
-		<delete includeemptydirs="true">
+		<delete includeemptydirs="true" quiet="true">
 			<fileset dir="src" includes="**/*" />
 		</delete>
 	</target>
-	
+
 	<target name="clean-eclipse-post" if="eclipse.running">
 		<eclipse.refreshLocal resource="idl.cf/src" depth="infinite"/>
 	</target>
