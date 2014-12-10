@@ -7,7 +7,7 @@
     <relativePath>../../releng</relativePath>
     <groupId>mil.jpeojtrs.sca</groupId>
     <artifactId>mil.jpeojtrs.sca.parent</artifactId>
-    <version>1.8.8-SNAPSHOT</version>
+    <version>1.8.9-SNAPSHOT</version>
   </parent>
 
   <artifactId>mil.jpeojtrs.sca.scd.edit</artifactId>
