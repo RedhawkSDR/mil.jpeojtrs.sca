@@ -25,6 +25,7 @@
     <tycho.scmUrl>scm:git:https://github.com/RedhawkSDR/eclipse-mil.jpeojtrs.sca.git</tycho.scmUrl>
     <eclipse>http://download.eclipse.org/releases/luna</eclipse>
     <jacorb>http://download.redhawksdr.org/jacorb/updates/stable</jacorb>
+    <logback>http://download.redhawksdr.org/logback/latest</logback>
   </properties>
 
   <modules>
@@ -79,6 +80,12 @@
       <id>jacorb</id>
       <layout>p2</layout>
       <url>${jacorb}</url>
+    </repository>
+
+    <repository>
+      <id>logback</id>
+      <layout>p2</layout>
+      <url>${logback}</url>
     </repository>
   </repositories>
 
