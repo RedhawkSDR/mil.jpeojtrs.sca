@@ -76,10 +76,9 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
-				return ((InternalEList<?>)getHostCollocation()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
+			return ((InternalEList< ? >) getHostCollocation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -91,10 +90,9 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
-				return getHostCollocation();
+		switch (featureID) {
+		case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
+			return getHostCollocation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -107,12 +105,11 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
-				getHostCollocation().clear();
-				getHostCollocation().addAll((Collection<? extends HostCollocation>)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
+			getHostCollocation().clear();
+			getHostCollocation().addAll((Collection< ? extends HostCollocation>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -124,11 +121,10 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
-				getHostCollocation().clear();
-				return;
+		switch (featureID) {
+		case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
+			getHostCollocation().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,10 +136,9 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
-				return !getHostCollocation().isEmpty();
+		switch (featureID) {
+		case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
+			return !getHostCollocation().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

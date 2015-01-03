@@ -43,7 +43,7 @@ public final class SadPluginActivator extends EMFPlugin {
 	 * @generated
 	 */
 	public SadPluginActivator() {
-		super(new ResourceLocator [] {});
+		super(new ResourceLocator[] {});
 	}
 
 	/**

@@ -100,8 +100,7 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public FeatureMap getMixed() {
-		if (mixed == null)
-		{
+		if (mixed == null) {
 			mixed = new BasicFeatureMap(this, SadPackage.SAD_DOCUMENT_ROOT__MIXED);
 		}
 		return mixed;
@@ -114,9 +113,9 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
-		if (xMLNSPrefixMap == null)
-		{
-			xMLNSPrefixMap = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+		if (xMLNSPrefixMap == null) {
+			xMLNSPrefixMap = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
 		}
 		return xMLNSPrefixMap;
 	}
@@ -128,9 +127,9 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public EMap<String, String> getXSISchemaLocation() {
-		if (xSISchemaLocation == null)
-		{
-			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+		if (xSISchemaLocation == null) {
+			xSISchemaLocation = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
 	}
@@ -142,7 +141,7 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public SoftwareAssembly getSoftwareassembly() {
-		return (SoftwareAssembly)getMixed().get(SadPackage.Literals.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY, true);
+		return (SoftwareAssembly) getMixed().get(SadPackage.Literals.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY, true);
 	}
 
 	/**
@@ -151,7 +150,7 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 * @generated
 	 */
 	public NotificationChain basicSetSoftwareassembly(SoftwareAssembly newSoftwareassembly, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(SadPackage.Literals.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY, newSoftwareassembly, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(SadPackage.Literals.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY, newSoftwareassembly, msgs);
 	}
 
 	/**
@@ -161,7 +160,7 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public void setSoftwareassembly(SoftwareAssembly newSoftwareassembly) {
-		((FeatureMap.Internal)getMixed()).set(SadPackage.Literals.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY, newSoftwareassembly);
+		((FeatureMap.Internal) getMixed()).set(SadPackage.Literals.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY, newSoftwareassembly);
 	}
 
 	/**
@@ -171,16 +170,15 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_DOCUMENT_ROOT__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
-			case SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return ((InternalEList<?>)getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
-			case SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return ((InternalEList<?>)getXSISchemaLocation()).basicRemove(otherEnd, msgs);
-			case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
-				return basicSetSoftwareassembly(null, msgs);
+		switch (featureID) {
+		case SadPackage.SAD_DOCUMENT_ROOT__MIXED:
+			return ((InternalEList< ? >) getMixed()).basicRemove(otherEnd, msgs);
+		case SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return ((InternalEList< ? >) getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
+		case SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return ((InternalEList< ? >) getXSISchemaLocation()).basicRemove(otherEnd, msgs);
+		case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
+			return basicSetSoftwareassembly(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -192,19 +190,23 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_DOCUMENT_ROOT__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
-			case SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				if (coreType) return getXMLNSPrefixMap();
-				else return getXMLNSPrefixMap().map();
-			case SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				if (coreType) return getXSISchemaLocation();
-				else return getXSISchemaLocation().map();
-			case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
-				return getSoftwareassembly();
+		switch (featureID) {
+		case SadPackage.SAD_DOCUMENT_ROOT__MIXED:
+			if (coreType)
+				return getMixed();
+			return ((FeatureMap.Internal) getMixed()).getWrapper();
+		case SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			if (coreType)
+				return getXMLNSPrefixMap();
+			else
+				return getXMLNSPrefixMap().map();
+		case SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			if (coreType)
+				return getXSISchemaLocation();
+			else
+				return getXSISchemaLocation().map();
+		case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
+			return getSoftwareassembly();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,20 +218,19 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_DOCUMENT_ROOT__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
-				return;
-			case SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				((EStructuralFeature.Setting)getXMLNSPrefixMap()).set(newValue);
-				return;
-			case SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				((EStructuralFeature.Setting)getXSISchemaLocation()).set(newValue);
-				return;
-			case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
-				setSoftwareassembly((SoftwareAssembly)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.SAD_DOCUMENT_ROOT__MIXED:
+			((FeatureMap.Internal) getMixed()).set(newValue);
+			return;
+		case SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			((EStructuralFeature.Setting) getXMLNSPrefixMap()).set(newValue);
+			return;
+		case SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			((EStructuralFeature.Setting) getXSISchemaLocation()).set(newValue);
+			return;
+		case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
+			setSoftwareassembly((SoftwareAssembly) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -241,20 +242,19 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_DOCUMENT_ROOT__MIXED:
-				getMixed().clear();
-				return;
-			case SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				getXMLNSPrefixMap().clear();
-				return;
-			case SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				getXSISchemaLocation().clear();
-				return;
-			case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
-				setSoftwareassembly((SoftwareAssembly)null);
-				return;
+		switch (featureID) {
+		case SadPackage.SAD_DOCUMENT_ROOT__MIXED:
+			getMixed().clear();
+			return;
+		case SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			getXMLNSPrefixMap().clear();
+			return;
+		case SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			getXSISchemaLocation().clear();
+			return;
+		case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
+			setSoftwareassembly((SoftwareAssembly) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,16 +266,15 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_DOCUMENT_ROOT__MIXED:
-				return mixed != null && !mixed.isEmpty();
-			case SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
-			case SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
-			case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
-				return getSoftwareassembly() != null;
+		switch (featureID) {
+		case SadPackage.SAD_DOCUMENT_ROOT__MIXED:
+			return mixed != null && !mixed.isEmpty();
+		case SadPackage.SAD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
+		case SadPackage.SAD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
+		case SadPackage.SAD_DOCUMENT_ROOT__SOFTWAREASSEMBLY:
+			return getSoftwareassembly() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -287,7 +286,8 @@ public class SadDocumentRootImpl extends EObjectImpl implements SadDocumentRoot 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");

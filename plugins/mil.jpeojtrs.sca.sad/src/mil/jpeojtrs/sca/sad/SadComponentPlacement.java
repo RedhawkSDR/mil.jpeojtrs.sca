@@ -13,7 +13,6 @@ package mil.jpeojtrs.sca.sad;
 
 import mil.jpeojtrs.sca.partitioning.ComponentPlacement;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Component Placement</b></em>'.

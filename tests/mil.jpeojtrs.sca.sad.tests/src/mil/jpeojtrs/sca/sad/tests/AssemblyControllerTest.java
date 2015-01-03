@@ -33,6 +33,7 @@ public class AssemblyControllerTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected AssemblyController fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

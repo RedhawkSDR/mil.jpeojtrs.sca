@@ -20,6 +20,7 @@ import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
+import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
@@ -57,7 +58,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * @see mil.jpeojtrs.sca.sad.SadPackage
  * @generated
  */
-public class SadSwitch<T> extends Switch<T> {
+public class SadSwitch< T > extends Switch<T> {
 
 	/**
 	 * The cached model package
@@ -74,8 +75,7 @@ public class SadSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public SadSwitch() {
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = SadPackage.eINSTANCE;
 		}
 	}
@@ -89,8 +89,7 @@ public class SadSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	@Override
-	protected boolean isSwitchFor(EPackage ePackage)
-	{
+	protected boolean isSwitchFor(EPackage ePackage) {
 		return ePackage == modelPackage;
 	}
 
@@ -103,151 +102,167 @@ public class SadSwitch<T> extends Switch<T> {
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID)
-		{
-			case SadPackage.ASSEMBLY_CONTROLLER:
-			{
-				AssemblyController assemblyController = (AssemblyController)theEObject;
-				T result = caseAssemblyController(assemblyController);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.SAD_COMPONENT_INSTANTIATION:
-			{
-				SadComponentInstantiation sadComponentInstantiation = (SadComponentInstantiation)theEObject;
-				T result = caseSadComponentInstantiation(sadComponentInstantiation);
-				if (result == null) result = caseComponentInstantiation(sadComponentInstantiation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.SAD_COMPONENT_INSTANTIATION_REF:
-			{
-				SadComponentInstantiationRef sadComponentInstantiationRef = (SadComponentInstantiationRef)theEObject;
-				T result = caseSadComponentInstantiationRef(sadComponentInstantiationRef);
-				if (result == null) result = caseComponentInstantiationRef(sadComponentInstantiationRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.SAD_USES_PORT:
-			{
-				SadUsesPort sadUsesPort = (SadUsesPort)theEObject;
-				T result = caseSadUsesPort(sadUsesPort);
-				if (result == null) result = caseUsesPort(sadUsesPort);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.SAD_PROVIDES_PORT:
-			{
-				SadProvidesPort sadProvidesPort = (SadProvidesPort)theEObject;
-				T result = caseSadProvidesPort(sadProvidesPort);
-				if (result == null) result = caseProvidesPort(sadProvidesPort);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.SAD_CONNECT_INTERFACE:
-			{
-				SadConnectInterface sadConnectInterface = (SadConnectInterface)theEObject;
-				T result = caseSadConnectInterface(sadConnectInterface);
-				if (result == null) result = caseConnectInterface(sadConnectInterface);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.SAD_CONNECTIONS:
-			{
-				SadConnections sadConnections = (SadConnections)theEObject;
-				T result = caseSadConnections(sadConnections);
-				if (result == null) result = caseConnections(sadConnections);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF:
-			{
-				ComponentResourceFactoryRef componentResourceFactoryRef = (ComponentResourceFactoryRef)theEObject;
-				T result = caseComponentResourceFactoryRef(componentResourceFactoryRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.EXTERNAL_PORTS:
-			{
-				ExternalPorts externalPorts = (ExternalPorts)theEObject;
-				T result = caseExternalPorts(externalPorts);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.EXTERNAL_PROPERTIES:
-			{
-				ExternalProperties externalProperties = (ExternalProperties)theEObject;
-				T result = caseExternalProperties(externalProperties);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.EXTERNAL_PROPERTY:
-			{
-				ExternalProperty externalProperty = (ExternalProperty)theEObject;
-				T result = caseExternalProperty(externalProperty);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.FIND_COMPONENT:
-			{
-				FindComponent findComponent = (FindComponent)theEObject;
-				T result = caseFindComponent(findComponent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.HOST_COLLOCATION:
-			{
-				HostCollocation hostCollocation = (HostCollocation)theEObject;
-				T result = caseHostCollocation(hostCollocation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.PORT:
-			{
-				Port port = (Port)theEObject;
-				T result = casePort(port);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.SAD_PARTITIONING:
-			{
-				SadPartitioning sadPartitioning = (SadPartitioning)theEObject;
-				T result = caseSadPartitioning(sadPartitioning);
-				if (result == null) result = casePartitioning(sadPartitioning);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.SAD_COMPONENT_PLACEMENT:
-			{
-				SadComponentPlacement sadComponentPlacement = (SadComponentPlacement)theEObject;
-				T result = caseSadComponentPlacement(sadComponentPlacement);
-				if (result == null) result = caseComponentPlacement(sadComponentPlacement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.RESOURCE_FACTORY_PROPERTIES:
-			{
-				ResourceFactoryProperties resourceFactoryProperties = (ResourceFactoryProperties)theEObject;
-				T result = caseResourceFactoryProperties(resourceFactoryProperties);
-				if (result == null) result = casePropertyRefContainer(resourceFactoryProperties);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.SAD_DOCUMENT_ROOT:
-			{
-				SadDocumentRoot sadDocumentRoot = (SadDocumentRoot)theEObject;
-				T result = caseSadDocumentRoot(sadDocumentRoot);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SadPackage.SOFTWARE_ASSEMBLY:
-			{
-				SoftwareAssembly softwareAssembly = (SoftwareAssembly)theEObject;
-				T result = caseSoftwareAssembly(softwareAssembly);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		switch (classifierID) {
+		case SadPackage.ASSEMBLY_CONTROLLER: {
+			AssemblyController assemblyController = (AssemblyController) theEObject;
+			T result = caseAssemblyController(assemblyController);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.SAD_COMPONENT_INSTANTIATION: {
+			SadComponentInstantiation sadComponentInstantiation = (SadComponentInstantiation) theEObject;
+			T result = caseSadComponentInstantiation(sadComponentInstantiation);
+			if (result == null)
+				result = caseComponentInstantiation(sadComponentInstantiation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.SAD_COMPONENT_INSTANTIATION_REF: {
+			SadComponentInstantiationRef sadComponentInstantiationRef = (SadComponentInstantiationRef) theEObject;
+			T result = caseSadComponentInstantiationRef(sadComponentInstantiationRef);
+			if (result == null)
+				result = caseComponentInstantiationRef(sadComponentInstantiationRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.SAD_USES_PORT: {
+			SadUsesPort sadUsesPort = (SadUsesPort) theEObject;
+			T result = caseSadUsesPort(sadUsesPort);
+			if (result == null)
+				result = caseUsesPort(sadUsesPort);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.SAD_PROVIDES_PORT: {
+			SadProvidesPort sadProvidesPort = (SadProvidesPort) theEObject;
+			T result = caseSadProvidesPort(sadProvidesPort);
+			if (result == null)
+				result = caseProvidesPort(sadProvidesPort);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.SAD_CONNECT_INTERFACE: {
+			SadConnectInterface sadConnectInterface = (SadConnectInterface) theEObject;
+			T result = caseSadConnectInterface(sadConnectInterface);
+			if (result == null)
+				result = caseConnectInterface(sadConnectInterface);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.SAD_CONNECTIONS: {
+			SadConnections sadConnections = (SadConnections) theEObject;
+			T result = caseSadConnections(sadConnections);
+			if (result == null)
+				result = caseConnections(sadConnections);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF: {
+			ComponentResourceFactoryRef componentResourceFactoryRef = (ComponentResourceFactoryRef) theEObject;
+			T result = caseComponentResourceFactoryRef(componentResourceFactoryRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.EXTERNAL_PORTS: {
+			ExternalPorts externalPorts = (ExternalPorts) theEObject;
+			T result = caseExternalPorts(externalPorts);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.EXTERNAL_PROPERTIES: {
+			ExternalProperties externalProperties = (ExternalProperties) theEObject;
+			T result = caseExternalProperties(externalProperties);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.EXTERNAL_PROPERTY: {
+			ExternalProperty externalProperty = (ExternalProperty) theEObject;
+			T result = caseExternalProperty(externalProperty);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.FIND_COMPONENT: {
+			FindComponent findComponent = (FindComponent) theEObject;
+			T result = caseFindComponent(findComponent);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.HOST_COLLOCATION: {
+			HostCollocation hostCollocation = (HostCollocation) theEObject;
+			T result = caseHostCollocation(hostCollocation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.PORT: {
+			Port port = (Port) theEObject;
+			T result = casePort(port);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.SAD_PARTITIONING: {
+			SadPartitioning sadPartitioning = (SadPartitioning) theEObject;
+			T result = caseSadPartitioning(sadPartitioning);
+			if (result == null)
+				result = casePartitioning(sadPartitioning);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.SAD_COMPONENT_PLACEMENT: {
+			SadComponentPlacement sadComponentPlacement = (SadComponentPlacement) theEObject;
+			T result = caseSadComponentPlacement(sadComponentPlacement);
+			if (result == null)
+				result = caseComponentPlacement(sadComponentPlacement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.RESOURCE_FACTORY_PROPERTIES: {
+			ResourceFactoryProperties resourceFactoryProperties = (ResourceFactoryProperties) theEObject;
+			T result = caseResourceFactoryProperties(resourceFactoryProperties);
+			if (result == null)
+				result = casePropertyRefContainer(resourceFactoryProperties);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.SAD_DOCUMENT_ROOT: {
+			SadDocumentRoot sadDocumentRoot = (SadDocumentRoot) theEObject;
+			T result = caseSadDocumentRoot(sadDocumentRoot);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.SOFTWARE_ASSEMBLY: {
+			SoftwareAssembly softwareAssembly = (SoftwareAssembly) theEObject;
+			T result = caseSoftwareAssembly(softwareAssembly);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.USES_DEVICE_DEPENDENCIES: {
+			UsesDeviceDependencies usesDeviceDependencies = (UsesDeviceDependencies) theEObject;
+			T result = caseUsesDeviceDependencies(usesDeviceDependencies);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
@@ -539,6 +554,21 @@ public class SadSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Uses Device Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Uses Device Dependencies</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUsesDeviceDependencies(UsesDeviceDependencies object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Component Instantiation</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -564,7 +594,7 @@ public class SadSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <R extends ComponentInstantiation> T caseComponentInstantiationRef(ComponentInstantiationRef<R> object) {
+	public < R extends ComponentInstantiation > T caseComponentInstantiationRef(ComponentInstantiationRef<R> object) {
 		return null;
 	}
 
@@ -579,7 +609,7 @@ public class SadSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <U extends ComponentInstantiationRef<?>> T caseUsesPort(UsesPort<U> object) {
+	public < U extends ComponentInstantiationRef< ? > > T caseUsesPort(UsesPort<U> object) {
 		return null;
 	}
 
@@ -594,7 +624,7 @@ public class SadSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <P extends ComponentInstantiationRef<?>> T caseProvidesPort(ProvidesPort<P> object) {
+	public < P extends ComponentInstantiationRef< ? > > T caseProvidesPort(ProvidesPort<P> object) {
 		return null;
 	}
 
@@ -609,7 +639,8 @@ public class SadSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> T caseConnectInterface(ConnectInterface<CIR, UP, PP> object) {
+	public < CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR> > T caseConnectInterface(
+		ConnectInterface<CIR, UP, PP> object) {
 		return null;
 	}
 
@@ -624,7 +655,7 @@ public class SadSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <CI extends ConnectInterface<?, ?, ?>> T caseConnections(Connections<CI> object) {
+	public < CI extends ConnectInterface< ? , ? , ? > > T caseConnections(Connections<CI> object) {
 		return null;
 	}
 
@@ -639,7 +670,7 @@ public class SadSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <C extends ComponentPlacement<?>> T casePartitioning(Partitioning<C> object) {
+	public < C extends ComponentPlacement< ? > > T casePartitioning(Partitioning<C> object) {
 		return null;
 	}
 
@@ -654,7 +685,7 @@ public class SadSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <I extends ComponentInstantiation> T caseComponentPlacement(ComponentPlacement<I> object) {
+	public < I extends ComponentInstantiation > T caseComponentPlacement(ComponentPlacement<I> object) {
 		return null;
 	}
 

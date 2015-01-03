@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -40,15 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExternalPropertyItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		ITableItemLabelProvider {
+public class ExternalPropertyItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -67,8 +59,7 @@ public class ExternalPropertyItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addCompRefIDPropertyDescriptor(object);
@@ -85,19 +76,10 @@ public class ExternalPropertyItemProvider
 	 * @generated
 	 */
 	protected void addCompRefIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExternalProperty_compRefID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExternalProperty_compRefID_feature", "_UI_ExternalProperty_type"),
-				 SadPackage.Literals.EXTERNAL_PROPERTY__COMP_REF_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ExternalProperty_compRefID_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ExternalProperty_compRefID_feature", "_UI_ExternalProperty_type"),
+			SadPackage.Literals.EXTERNAL_PROPERTY__COMP_REF_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -107,19 +89,10 @@ public class ExternalPropertyItemProvider
 	 * @generated
 	 */
 	protected void addPropIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExternalProperty_propID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExternalProperty_propID_feature", "_UI_ExternalProperty_type"),
-				 SadPackage.Literals.EXTERNAL_PROPERTY__PROP_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ExternalProperty_propID_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ExternalProperty_propID_feature", "_UI_ExternalProperty_type"),
+			SadPackage.Literals.EXTERNAL_PROPERTY__PROP_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -129,19 +102,10 @@ public class ExternalPropertyItemProvider
 	 * @generated
 	 */
 	protected void addExternalPropIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ExternalProperty_externalPropID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ExternalProperty_externalPropID_feature", "_UI_ExternalProperty_type"),
-				 SadPackage.Literals.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ExternalProperty_externalPropID_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ExternalProperty_externalPropID_feature", "_UI_ExternalProperty_type"),
+			SadPackage.Literals.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -163,10 +127,8 @@ public class ExternalPropertyItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ExternalProperty)object).getCompRefID();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ExternalProperty_type") :
-			getString("_UI_ExternalProperty_type") + " " + label;
+		String label = ((ExternalProperty) object).getCompRefID();
+		return label == null || label.length() == 0 ? getString("_UI_ExternalProperty_type") : getString("_UI_ExternalProperty_type") + " " + label;
 	}
 
 	/**
@@ -180,13 +142,12 @@ public class ExternalPropertyItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ExternalProperty.class))
-		{
-			case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
-			case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
-			case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(ExternalProperty.class)) {
+		case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
+		case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
+		case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

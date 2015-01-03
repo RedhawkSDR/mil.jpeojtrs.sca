@@ -144,6 +144,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 * @ordered
 	 */
 	protected String externalName = EXTERNAL_NAME_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -273,10 +274,13 @@ public class PortImpl extends EObjectImpl implements Port {
 	public NotificationChain basicSetComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef, NotificationChain msgs) {
 		SadComponentInstantiationRef oldComponentInstantiationRef = componentInstantiationRef;
 		componentInstantiationRef = newComponentInstantiationRef;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.PORT__COMPONENT_INSTANTIATION_REF, oldComponentInstantiationRef, newComponentInstantiationRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.PORT__COMPONENT_INSTANTIATION_REF,
+				oldComponentInstantiationRef, newComponentInstantiationRef);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -288,18 +292,20 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public void setComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef) {
-		if (newComponentInstantiationRef != componentInstantiationRef)
-		{
+		if (newComponentInstantiationRef != componentInstantiationRef) {
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
-				msgs = ((InternalEObject)componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - SadPackage.PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
 			if (newComponentInstantiationRef != null)
-				msgs = ((InternalEObject)newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - SadPackage.PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
 			msgs = basicSetComponentInstantiationRef(newComponentInstantiationRef, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.PORT__COMPONENT_INSTANTIATION_REF, newComponentInstantiationRef, newComponentInstantiationRef));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.PORT__COMPONENT_INSTANTIATION_REF, newComponentInstantiationRef,
+				newComponentInstantiationRef));
 	}
 
 	/**
@@ -334,10 +340,9 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
-				return basicSetComponentInstantiationRef(null, msgs);
+		switch (featureID) {
+		case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
+			return basicSetComponentInstantiationRef(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -349,20 +354,19 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.PORT__DESCRIPTION:
-				return getDescription();
-			case SadPackage.PORT__USES_IDENTIFIER:
-				return getUsesIdentifier();
-			case SadPackage.PORT__PROVIDES_INDENTIFIER:
-				return getProvidesIndentifier();
-			case SadPackage.PORT__SUPPORTED_IDENTIFIER:
-				return getSupportedIdentifier();
-			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
-				return getComponentInstantiationRef();
-			case SadPackage.PORT__EXTERNAL_NAME:
-				return getExternalName();
+		switch (featureID) {
+		case SadPackage.PORT__DESCRIPTION:
+			return getDescription();
+		case SadPackage.PORT__USES_IDENTIFIER:
+			return getUsesIdentifier();
+		case SadPackage.PORT__PROVIDES_INDENTIFIER:
+			return getProvidesIndentifier();
+		case SadPackage.PORT__SUPPORTED_IDENTIFIER:
+			return getSupportedIdentifier();
+		case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
+			return getComponentInstantiationRef();
+		case SadPackage.PORT__EXTERNAL_NAME:
+			return getExternalName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -374,26 +378,25 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.PORT__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case SadPackage.PORT__USES_IDENTIFIER:
-				setUsesIdentifier((String)newValue);
-				return;
-			case SadPackage.PORT__PROVIDES_INDENTIFIER:
-				setProvidesIndentifier((String)newValue);
-				return;
-			case SadPackage.PORT__SUPPORTED_IDENTIFIER:
-				setSupportedIdentifier((String)newValue);
-				return;
-			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
-				setComponentInstantiationRef((SadComponentInstantiationRef)newValue);
-				return;
-			case SadPackage.PORT__EXTERNAL_NAME:
-				setExternalName((String)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.PORT__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case SadPackage.PORT__USES_IDENTIFIER:
+			setUsesIdentifier((String) newValue);
+			return;
+		case SadPackage.PORT__PROVIDES_INDENTIFIER:
+			setProvidesIndentifier((String) newValue);
+			return;
+		case SadPackage.PORT__SUPPORTED_IDENTIFIER:
+			setSupportedIdentifier((String) newValue);
+			return;
+		case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
+			setComponentInstantiationRef((SadComponentInstantiationRef) newValue);
+			return;
+		case SadPackage.PORT__EXTERNAL_NAME:
+			setExternalName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -405,26 +408,25 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.PORT__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case SadPackage.PORT__USES_IDENTIFIER:
-				setUsesIdentifier(USES_IDENTIFIER_EDEFAULT);
-				return;
-			case SadPackage.PORT__PROVIDES_INDENTIFIER:
-				setProvidesIndentifier(PROVIDES_INDENTIFIER_EDEFAULT);
-				return;
-			case SadPackage.PORT__SUPPORTED_IDENTIFIER:
-				setSupportedIdentifier(SUPPORTED_IDENTIFIER_EDEFAULT);
-				return;
-			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
-				setComponentInstantiationRef((SadComponentInstantiationRef)null);
-				return;
-			case SadPackage.PORT__EXTERNAL_NAME:
-				setExternalName(EXTERNAL_NAME_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SadPackage.PORT__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case SadPackage.PORT__USES_IDENTIFIER:
+			setUsesIdentifier(USES_IDENTIFIER_EDEFAULT);
+			return;
+		case SadPackage.PORT__PROVIDES_INDENTIFIER:
+			setProvidesIndentifier(PROVIDES_INDENTIFIER_EDEFAULT);
+			return;
+		case SadPackage.PORT__SUPPORTED_IDENTIFIER:
+			setSupportedIdentifier(SUPPORTED_IDENTIFIER_EDEFAULT);
+			return;
+		case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
+			setComponentInstantiationRef((SadComponentInstantiationRef) null);
+			return;
+		case SadPackage.PORT__EXTERNAL_NAME:
+			setExternalName(EXTERNAL_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -436,20 +438,19 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.PORT__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case SadPackage.PORT__USES_IDENTIFIER:
-				return USES_IDENTIFIER_EDEFAULT == null ? usesIdentifier != null : !USES_IDENTIFIER_EDEFAULT.equals(usesIdentifier);
-			case SadPackage.PORT__PROVIDES_INDENTIFIER:
-				return PROVIDES_INDENTIFIER_EDEFAULT == null ? providesIndentifier != null : !PROVIDES_INDENTIFIER_EDEFAULT.equals(providesIndentifier);
-			case SadPackage.PORT__SUPPORTED_IDENTIFIER:
-				return SUPPORTED_IDENTIFIER_EDEFAULT == null ? supportedIdentifier != null : !SUPPORTED_IDENTIFIER_EDEFAULT.equals(supportedIdentifier);
-			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
-				return componentInstantiationRef != null;
-			case SadPackage.PORT__EXTERNAL_NAME:
-				return EXTERNAL_NAME_EDEFAULT == null ? externalName != null : !EXTERNAL_NAME_EDEFAULT.equals(externalName);
+		switch (featureID) {
+		case SadPackage.PORT__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case SadPackage.PORT__USES_IDENTIFIER:
+			return USES_IDENTIFIER_EDEFAULT == null ? usesIdentifier != null : !USES_IDENTIFIER_EDEFAULT.equals(usesIdentifier);
+		case SadPackage.PORT__PROVIDES_INDENTIFIER:
+			return PROVIDES_INDENTIFIER_EDEFAULT == null ? providesIndentifier != null : !PROVIDES_INDENTIFIER_EDEFAULT.equals(providesIndentifier);
+		case SadPackage.PORT__SUPPORTED_IDENTIFIER:
+			return SUPPORTED_IDENTIFIER_EDEFAULT == null ? supportedIdentifier != null : !SUPPORTED_IDENTIFIER_EDEFAULT.equals(supportedIdentifier);
+		case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
+			return componentInstantiationRef != null;
+		case SadPackage.PORT__EXTERNAL_NAME:
+			return EXTERNAL_NAME_EDEFAULT == null ? externalName != null : !EXTERNAL_NAME_EDEFAULT.equals(externalName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -461,7 +462,8 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");

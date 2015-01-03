@@ -32,6 +32,7 @@ public class HostCollocationTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected HostCollocation fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

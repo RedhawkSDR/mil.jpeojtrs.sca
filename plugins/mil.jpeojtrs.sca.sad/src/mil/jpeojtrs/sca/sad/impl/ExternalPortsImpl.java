@@ -76,8 +76,7 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 */
 	@Override
 	public EList<Port> getPort() {
-		if (port == null)
-		{
+		if (port == null) {
 			port = new EObjectContainmentEList<Port>(Port.class, this, SadPackage.EXTERNAL_PORTS__PORT);
 		}
 		return port;
@@ -90,10 +89,9 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.EXTERNAL_PORTS__PORT:
-				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case SadPackage.EXTERNAL_PORTS__PORT:
+			return ((InternalEList< ? >) getPort()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -105,10 +103,9 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.EXTERNAL_PORTS__PORT:
-				return getPort();
+		switch (featureID) {
+		case SadPackage.EXTERNAL_PORTS__PORT:
+			return getPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,12 +118,11 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.EXTERNAL_PORTS__PORT:
-				getPort().clear();
-				getPort().addAll((Collection<? extends Port>)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.EXTERNAL_PORTS__PORT:
+			getPort().clear();
+			getPort().addAll((Collection< ? extends Port>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -138,11 +134,10 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.EXTERNAL_PORTS__PORT:
-				getPort().clear();
-				return;
+		switch (featureID) {
+		case SadPackage.EXTERNAL_PORTS__PORT:
+			getPort().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,10 +149,9 @@ public class ExternalPortsImpl extends EObjectImpl implements ExternalPorts {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.EXTERNAL_PORTS__PORT:
-				return port != null && !port.isEmpty();
+		switch (featureID) {
+		case SadPackage.EXTERNAL_PORTS__PORT:
+			return port != null && !port.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

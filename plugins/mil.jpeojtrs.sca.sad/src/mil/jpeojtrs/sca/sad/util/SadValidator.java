@@ -13,6 +13,7 @@ package mil.jpeojtrs.sca.sad.util;
 
 import java.util.Map;
 import mil.jpeojtrs.sca.partitioning.util.PartitioningValidator;
+import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
@@ -105,7 +106,7 @@ public class SadValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return SadPackage.eINSTANCE;
+		return SadPackage.eINSTANCE;
 	}
 
 	/**
@@ -116,48 +117,49 @@ public class SadValidator extends EObjectValidator {
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID)
-		{
-			case SadPackage.ASSEMBLY_CONTROLLER:
-				return validateAssemblyController((AssemblyController)value, diagnostics, context);
-			case SadPackage.SAD_COMPONENT_INSTANTIATION:
-				return validateSadComponentInstantiation((SadComponentInstantiation)value, diagnostics, context);
-			case SadPackage.SAD_COMPONENT_INSTANTIATION_REF:
-				return validateSadComponentInstantiationRef((SadComponentInstantiationRef)value, diagnostics, context);
-			case SadPackage.SAD_USES_PORT:
-				return validateSadUsesPort((SadUsesPort)value, diagnostics, context);
-			case SadPackage.SAD_PROVIDES_PORT:
-				return validateSadProvidesPort((SadProvidesPort)value, diagnostics, context);
-			case SadPackage.SAD_CONNECT_INTERFACE:
-				return validateSadConnectInterface((SadConnectInterface)value, diagnostics, context);
-			case SadPackage.SAD_CONNECTIONS:
-				return validateSadConnections((SadConnections)value, diagnostics, context);
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF:
-				return validateComponentResourceFactoryRef((ComponentResourceFactoryRef)value, diagnostics, context);
-			case SadPackage.EXTERNAL_PORTS:
-				return validateExternalPorts((ExternalPorts)value, diagnostics, context);
-			case SadPackage.EXTERNAL_PROPERTIES:
-				return validateExternalProperties((ExternalProperties)value, diagnostics, context);
-			case SadPackage.EXTERNAL_PROPERTY:
-				return validateExternalProperty((ExternalProperty)value, diagnostics, context);
-			case SadPackage.FIND_COMPONENT:
-				return validateFindComponent((FindComponent)value, diagnostics, context);
-			case SadPackage.HOST_COLLOCATION:
-				return validateHostCollocation((HostCollocation)value, diagnostics, context);
-			case SadPackage.PORT:
-				return validatePort((Port)value, diagnostics, context);
-			case SadPackage.SAD_PARTITIONING:
-				return validateSadPartitioning((SadPartitioning)value, diagnostics, context);
-			case SadPackage.SAD_COMPONENT_PLACEMENT:
-				return validateSadComponentPlacement((SadComponentPlacement)value, diagnostics, context);
-			case SadPackage.RESOURCE_FACTORY_PROPERTIES:
-				return validateResourceFactoryProperties((ResourceFactoryProperties)value, diagnostics, context);
-			case SadPackage.SAD_DOCUMENT_ROOT:
-				return validateSadDocumentRoot((SadDocumentRoot)value, diagnostics, context);
-			case SadPackage.SOFTWARE_ASSEMBLY:
-				return validateSoftwareAssembly((SoftwareAssembly)value, diagnostics, context);
-			default:
-				return true;
+		switch (classifierID) {
+		case SadPackage.ASSEMBLY_CONTROLLER:
+			return validateAssemblyController((AssemblyController) value, diagnostics, context);
+		case SadPackage.SAD_COMPONENT_INSTANTIATION:
+			return validateSadComponentInstantiation((SadComponentInstantiation) value, diagnostics, context);
+		case SadPackage.SAD_COMPONENT_INSTANTIATION_REF:
+			return validateSadComponentInstantiationRef((SadComponentInstantiationRef) value, diagnostics, context);
+		case SadPackage.SAD_USES_PORT:
+			return validateSadUsesPort((SadUsesPort) value, diagnostics, context);
+		case SadPackage.SAD_PROVIDES_PORT:
+			return validateSadProvidesPort((SadProvidesPort) value, diagnostics, context);
+		case SadPackage.SAD_CONNECT_INTERFACE:
+			return validateSadConnectInterface((SadConnectInterface) value, diagnostics, context);
+		case SadPackage.SAD_CONNECTIONS:
+			return validateSadConnections((SadConnections) value, diagnostics, context);
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF:
+			return validateComponentResourceFactoryRef((ComponentResourceFactoryRef) value, diagnostics, context);
+		case SadPackage.EXTERNAL_PORTS:
+			return validateExternalPorts((ExternalPorts) value, diagnostics, context);
+		case SadPackage.EXTERNAL_PROPERTIES:
+			return validateExternalProperties((ExternalProperties) value, diagnostics, context);
+		case SadPackage.EXTERNAL_PROPERTY:
+			return validateExternalProperty((ExternalProperty) value, diagnostics, context);
+		case SadPackage.FIND_COMPONENT:
+			return validateFindComponent((FindComponent) value, diagnostics, context);
+		case SadPackage.HOST_COLLOCATION:
+			return validateHostCollocation((HostCollocation) value, diagnostics, context);
+		case SadPackage.PORT:
+			return validatePort((Port) value, diagnostics, context);
+		case SadPackage.SAD_PARTITIONING:
+			return validateSadPartitioning((SadPartitioning) value, diagnostics, context);
+		case SadPackage.SAD_COMPONENT_PLACEMENT:
+			return validateSadComponentPlacement((SadComponentPlacement) value, diagnostics, context);
+		case SadPackage.RESOURCE_FACTORY_PROPERTIES:
+			return validateResourceFactoryProperties((ResourceFactoryProperties) value, diagnostics, context);
+		case SadPackage.SAD_DOCUMENT_ROOT:
+			return validateSadDocumentRoot((SadDocumentRoot) value, diagnostics, context);
+		case SadPackage.SOFTWARE_ASSEMBLY:
+			return validateSoftwareAssembly((SoftwareAssembly) value, diagnostics, context);
+		case SadPackage.USES_DEVICE_DEPENDENCIES:
+			return validateUsesDeviceDependencies((UsesDeviceDependencies) value, diagnostics, context);
+		default:
+			return true;
 		}
 	}
 
@@ -175,7 +177,8 @@ public class SadValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSadComponentInstantiation(SadComponentInstantiation sadComponentInstantiation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateSadComponentInstantiation(SadComponentInstantiation sadComponentInstantiation, DiagnosticChain diagnostics,
+		Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(sadComponentInstantiation, diagnostics, context);
 	}
 
@@ -184,7 +187,8 @@ public class SadValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSadComponentInstantiationRef(SadComponentInstantiationRef sadComponentInstantiationRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateSadComponentInstantiationRef(SadComponentInstantiationRef sadComponentInstantiationRef, DiagnosticChain diagnostics,
+		Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(sadComponentInstantiationRef, diagnostics, context);
 	}
 
@@ -212,17 +216,27 @@ public class SadValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSadConnectInterface(SadConnectInterface sadConnectInterface, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(sadConnectInterface, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(sadConnectInterface, diagnostics, context))
+			return false;
 		boolean result = validate_EveryMultiplicityConforms(sadConnectInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(sadConnectInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(sadConnectInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(sadConnectInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(sadConnectInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(sadConnectInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sadConnectInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sadConnectInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= partitioningValidator.validateConnectInterface_ValidSourceReference(sadConnectInterface, diagnostics, context);
-		if (result || diagnostics != null) result &= partitioningValidator.validateConnectInterface_ValidTargetReference(sadConnectInterface, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(sadConnectInterface, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(sadConnectInterface, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(sadConnectInterface, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(sadConnectInterface, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(sadConnectInterface, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(sadConnectInterface, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(sadConnectInterface, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= partitioningValidator.validateConnectInterface_ValidSourceReference(sadConnectInterface, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= partitioningValidator.validateConnectInterface_ValidTargetReference(sadConnectInterface, diagnostics, context);
 		return result;
 	}
 
@@ -240,7 +254,8 @@ public class SadValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComponentResourceFactoryRef(ComponentResourceFactoryRef componentResourceFactoryRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComponentResourceFactoryRef(ComponentResourceFactoryRef componentResourceFactoryRef, DiagnosticChain diagnostics,
+		Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(componentResourceFactoryRef, diagnostics, context);
 	}
 
@@ -297,16 +312,25 @@ public class SadValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePort(Port port, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(port, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(port, diagnostics, context))
+			return false;
 		boolean result = validate_EveryMultiplicityConforms(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePort_NonEmptyPort(port, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(port, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(port, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(port, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(port, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(port, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(port, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(port, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validatePort_NonEmptyPort(port, diagnostics, context);
 		return result;
 	}
 
@@ -320,17 +344,11 @@ public class SadValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (port.getComponentInstantiationRef() == null && port.getProvidesIndentifier() == null && port.getSupportedIdentifier() == null && port.getUsesIdentifier() == null) {
+		if (port.getComponentInstantiationRef() == null && port.getProvidesIndentifier() == null && port.getSupportedIdentifier() == null
+			&& port.getUsesIdentifier() == null) {
 			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "NonEmptyPort", getObjectLabel(port, context) },
-						 new Object[] { port },
-						 context));
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic", new Object[] { "NonEmptyPort",
+					getObjectLabel(port, context) }, new Object[] { port }, context));
 			}
 			return false;
 		}
@@ -360,7 +378,8 @@ public class SadValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateResourceFactoryProperties(ResourceFactoryProperties resourceFactoryProperties, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateResourceFactoryProperties(ResourceFactoryProperties resourceFactoryProperties, DiagnosticChain diagnostics,
+		Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(resourceFactoryProperties, diagnostics, context);
 	}
 
@@ -380,6 +399,15 @@ public class SadValidator extends EObjectValidator {
 	 */
 	public boolean validateSoftwareAssembly(SoftwareAssembly softwareAssembly, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(softwareAssembly, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUsesDeviceDependencies(UsesDeviceDependencies usesDeviceDependencies, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(usesDeviceDependencies, diagnostics, context);
 	}
 
 	/**

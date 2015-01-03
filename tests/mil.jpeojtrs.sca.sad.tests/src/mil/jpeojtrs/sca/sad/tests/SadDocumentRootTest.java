@@ -40,6 +40,7 @@ public class SadDocumentRootTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected SadDocumentRoot fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

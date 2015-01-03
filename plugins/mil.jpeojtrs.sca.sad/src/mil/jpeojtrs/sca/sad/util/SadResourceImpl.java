@@ -47,19 +47,21 @@ public class SadResourceImpl extends XMLResourceImpl {
 	}
 
 	public static final String DOC_TYPE_SYSTEM = "softwareassembly.dtd";
-	
+
 	protected static class SadXMLHelper extends XMLHelperImpl {
 		public SadXMLHelper() {
-	        super();
-        }
+			super();
+		}
+
 		public SadXMLHelper(XMLResource resource) {
-	        super(resource);
-        }
+			super(resource);
+		}
+
 		@Override
 		public EObject createObject(EFactory eFactory, EClassifier type) {
 			if (type == PartitioningPackage.eINSTANCE.getComponentFile()) {
 				type = PartitioningPackage.eINSTANCE.getDomComponentFile();
-			} else if ( type == PartitioningPackage.eINSTANCE.getComponentInstantiation()) {
+			} else if (type == PartitioningPackage.eINSTANCE.getComponentInstantiation()) {
 				eFactory = SadFactory.eINSTANCE;
 				type = SadPackage.eINSTANCE.getSadComponentInstantiation();
 			} else if (type == PartitioningPackage.eINSTANCE.getPartitioning()) {
@@ -83,9 +85,10 @@ public class SadResourceImpl extends XMLResourceImpl {
 			} else if (type == PartitioningPackage.eINSTANCE.getComponentInstantiationRef()) {
 				eFactory = SadFactory.eINSTANCE;
 				type = SadPackage.eINSTANCE.getSadComponentInstantiationRef();
-			} 
-		    return super.createObject(eFactory, type);
+			}
+			return super.createObject(eFactory, type);
 		}
+
 		@Override
 		protected String getPrefix(EPackage ePackage, boolean mustHavePrefix) {
 			return "";
@@ -96,7 +99,7 @@ public class SadResourceImpl extends XMLResourceImpl {
 	protected XMLHelper createXMLHelper() {
 		return new SadXMLHelper(this);
 	}
-	
+
 	@Override
 	protected XMLSave createXMLSave() {
 		return new DTDSaveImpl(createXMLHelper());

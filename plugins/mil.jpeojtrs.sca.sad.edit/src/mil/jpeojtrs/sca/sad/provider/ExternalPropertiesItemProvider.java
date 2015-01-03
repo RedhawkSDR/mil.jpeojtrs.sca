@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import mil.jpeojtrs.sca.sad.ExternalProperties;
@@ -38,15 +37,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExternalPropertiesItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		ITableItemLabelProvider {
+public class ExternalPropertiesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -65,8 +57,7 @@ public class ExternalPropertiesItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -82,9 +73,8 @@ public class ExternalPropertiesItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SadPackage.Literals.EXTERNAL_PROPERTIES__PROPERTIES);
 		}
@@ -137,11 +127,10 @@ public class ExternalPropertiesItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ExternalProperties.class))
-		{
-			case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(ExternalProperties.class)) {
+		case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -157,10 +146,7 @@ public class ExternalPropertiesItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.EXTERNAL_PROPERTIES__PROPERTIES,
-				 SadFactory.eINSTANCE.createExternalProperty()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.EXTERNAL_PROPERTIES__PROPERTIES, SadFactory.eINSTANCE.createExternalProperty()));
 	}
 
 	/**

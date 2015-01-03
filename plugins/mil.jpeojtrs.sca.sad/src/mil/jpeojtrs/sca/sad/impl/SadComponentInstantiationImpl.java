@@ -105,10 +105,13 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	public NotificationChain basicSetFindComponent(FindComponent newFindComponent, NotificationChain msgs) {
 		FindComponent oldFindComponent = findComponent;
 		findComponent = newFindComponent;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT, oldFindComponent, newFindComponent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT,
+				oldFindComponent, newFindComponent);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -120,17 +123,18 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public void setFindComponent(FindComponent newFindComponent) {
-		if (newFindComponent != findComponent)
-		{
+		if (newFindComponent != findComponent) {
 			NotificationChain msgs = null;
 			if (findComponent != null)
-				msgs = ((InternalEObject)findComponent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT, null, msgs);
+				msgs = ((InternalEObject) findComponent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT,
+					null, msgs);
 			if (newFindComponent != null)
-				msgs = ((InternalEObject)newFindComponent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT, null, msgs);
+				msgs = ((InternalEObject) newFindComponent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT,
+					null, msgs);
 			msgs = basicSetFindComponent(newFindComponent, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT, newFindComponent, newFindComponent));
 	}
 
@@ -164,10 +168,9 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
-				return basicSetFindComponent(null, msgs);
+		switch (featureID) {
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
+			return basicSetFindComponent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -179,12 +182,11 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
-				return getFindComponent();
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
-				return getStartOrder();
+		switch (featureID) {
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
+			return getFindComponent();
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
+			return getStartOrder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -196,14 +198,13 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
-				setFindComponent((FindComponent)newValue);
-				return;
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
-				setStartOrder((BigInteger)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
+			setFindComponent((FindComponent) newValue);
+			return;
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
+			setStartOrder((BigInteger) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -215,14 +216,13 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
-				setFindComponent((FindComponent)null);
-				return;
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
-				setStartOrder(START_ORDER_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
+			setFindComponent((FindComponent) null);
+			return;
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
+			setStartOrder(START_ORDER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -234,12 +234,11 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
-				return findComponent != null;
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
-				return START_ORDER_EDEFAULT == null ? startOrder != null : !START_ORDER_EDEFAULT.equals(startOrder);
+		switch (featureID) {
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
+			return findComponent != null;
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
+			return START_ORDER_EDEFAULT == null ? startOrder != null : !START_ORDER_EDEFAULT.equals(startOrder);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -251,7 +250,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (startOrder: ");

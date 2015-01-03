@@ -20,6 +20,7 @@ import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
+import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
@@ -70,8 +71,7 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public SadAdapterFactory() {
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = SadPackage.eINSTANCE;
 		}
 	}
@@ -86,13 +86,11 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage)
-		{
+		if (object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject)
-		{
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		if (object instanceof EObject) {
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -103,155 +101,158 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SadSwitch<Adapter> modelSwitch =
-		new SadSwitch<Adapter>()
-		{
-			@Override
-			public Adapter caseAssemblyController(AssemblyController object)
-			{
-				return createAssemblyControllerAdapter();
-			}
-			@Override
-			public Adapter caseSadComponentInstantiation(SadComponentInstantiation object)
-			{
-				return createSadComponentInstantiationAdapter();
-			}
-			@Override
-			public Adapter caseSadComponentInstantiationRef(SadComponentInstantiationRef object)
-			{
-				return createSadComponentInstantiationRefAdapter();
-			}
-			@Override
-			public Adapter caseSadUsesPort(SadUsesPort object)
-			{
-				return createSadUsesPortAdapter();
-			}
-			@Override
-			public Adapter caseSadProvidesPort(SadProvidesPort object)
-			{
-				return createSadProvidesPortAdapter();
-			}
-			@Override
-			public Adapter caseSadConnectInterface(SadConnectInterface object)
-			{
-				return createSadConnectInterfaceAdapter();
-			}
-			@Override
-			public Adapter caseSadConnections(SadConnections object)
-			{
-				return createSadConnectionsAdapter();
-			}
-			@Override
-			public Adapter caseComponentResourceFactoryRef(ComponentResourceFactoryRef object)
-			{
-				return createComponentResourceFactoryRefAdapter();
-			}
-			@Override
-			public Adapter caseExternalPorts(ExternalPorts object)
-			{
-				return createExternalPortsAdapter();
-			}
-			@Override
-			public Adapter caseExternalProperties(ExternalProperties object)
-			{
-				return createExternalPropertiesAdapter();
-			}
-			@Override
-			public Adapter caseExternalProperty(ExternalProperty object)
-			{
-				return createExternalPropertyAdapter();
-			}
-			@Override
-			public Adapter caseFindComponent(FindComponent object)
-			{
-				return createFindComponentAdapter();
-			}
-			@Override
-			public Adapter caseHostCollocation(HostCollocation object)
-			{
-				return createHostCollocationAdapter();
-			}
-			@Override
-			public Adapter casePort(Port object)
-			{
-				return createPortAdapter();
-			}
-			@Override
-			public Adapter caseSadPartitioning(SadPartitioning object)
-			{
-				return createSadPartitioningAdapter();
-			}
-			@Override
-			public Adapter caseSadComponentPlacement(SadComponentPlacement object)
-			{
-				return createSadComponentPlacementAdapter();
-			}
-			@Override
-			public Adapter caseResourceFactoryProperties(ResourceFactoryProperties object)
-			{
-				return createResourceFactoryPropertiesAdapter();
-			}
-			@Override
-			public Adapter caseSadDocumentRoot(SadDocumentRoot object)
-			{
-				return createSadDocumentRootAdapter();
-			}
-			@Override
-			public Adapter caseSoftwareAssembly(SoftwareAssembly object)
-			{
-				return createSoftwareAssemblyAdapter();
-			}
-			@Override
-			public Adapter caseComponentInstantiation(ComponentInstantiation object)
-			{
-				return createComponentInstantiationAdapter();
-			}
-			@Override
-			public <R extends ComponentInstantiation> Adapter caseComponentInstantiationRef(ComponentInstantiationRef<R> object)
-			{
-				return createComponentInstantiationRefAdapter();
-			}
-			@Override
-			public <U extends ComponentInstantiationRef<?>> Adapter caseUsesPort(UsesPort<U> object)
-			{
-				return createUsesPortAdapter();
-			}
-			@Override
-			public <P extends ComponentInstantiationRef<?>> Adapter caseProvidesPort(ProvidesPort<P> object)
-			{
-				return createProvidesPortAdapter();
-			}
-			@Override
-			public <CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(ConnectInterface<CIR, UP, PP> object)
-			{
-				return createConnectInterfaceAdapter();
-			}
-			@Override
-			public <CI extends ConnectInterface<?, ?, ?>> Adapter caseConnections(Connections<CI> object)
-			{
-				return createConnectionsAdapter();
-			}
-			@Override
-			public <C extends ComponentPlacement<?>> Adapter casePartitioning(Partitioning<C> object)
-			{
-				return createPartitioningAdapter();
-			}
-			@Override
-			public <I extends ComponentInstantiation> Adapter caseComponentPlacement(ComponentPlacement<I> object)
-			{
-				return createComponentPlacementAdapter();
-			}
-			@Override
-			public Adapter casePropertyRefContainer(PropertyRefContainer object)
-			{
-				return createPropertyRefContainerAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object)
-			{
-				return createEObjectAdapter();
-			}
-		};
+	protected SadSwitch<Adapter> modelSwitch = new SadSwitch<Adapter>() {
+		@Override
+		public Adapter caseAssemblyController(AssemblyController object) {
+			return createAssemblyControllerAdapter();
+		}
+
+		@Override
+		public Adapter caseSadComponentInstantiation(SadComponentInstantiation object) {
+			return createSadComponentInstantiationAdapter();
+		}
+
+		@Override
+		public Adapter caseSadComponentInstantiationRef(SadComponentInstantiationRef object) {
+			return createSadComponentInstantiationRefAdapter();
+		}
+
+		@Override
+		public Adapter caseSadUsesPort(SadUsesPort object) {
+			return createSadUsesPortAdapter();
+		}
+
+		@Override
+		public Adapter caseSadProvidesPort(SadProvidesPort object) {
+			return createSadProvidesPortAdapter();
+		}
+
+		@Override
+		public Adapter caseSadConnectInterface(SadConnectInterface object) {
+			return createSadConnectInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseSadConnections(SadConnections object) {
+			return createSadConnectionsAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentResourceFactoryRef(ComponentResourceFactoryRef object) {
+			return createComponentResourceFactoryRefAdapter();
+		}
+
+		@Override
+		public Adapter caseExternalPorts(ExternalPorts object) {
+			return createExternalPortsAdapter();
+		}
+
+		@Override
+		public Adapter caseExternalProperties(ExternalProperties object) {
+			return createExternalPropertiesAdapter();
+		}
+
+		@Override
+		public Adapter caseExternalProperty(ExternalProperty object) {
+			return createExternalPropertyAdapter();
+		}
+
+		@Override
+		public Adapter caseFindComponent(FindComponent object) {
+			return createFindComponentAdapter();
+		}
+
+		@Override
+		public Adapter caseHostCollocation(HostCollocation object) {
+			return createHostCollocationAdapter();
+		}
+
+		@Override
+		public Adapter casePort(Port object) {
+			return createPortAdapter();
+		}
+
+		@Override
+		public Adapter caseSadPartitioning(SadPartitioning object) {
+			return createSadPartitioningAdapter();
+		}
+
+		@Override
+		public Adapter caseSadComponentPlacement(SadComponentPlacement object) {
+			return createSadComponentPlacementAdapter();
+		}
+
+		@Override
+		public Adapter caseResourceFactoryProperties(ResourceFactoryProperties object) {
+			return createResourceFactoryPropertiesAdapter();
+		}
+
+		@Override
+		public Adapter caseSadDocumentRoot(SadDocumentRoot object) {
+			return createSadDocumentRootAdapter();
+		}
+
+		@Override
+		public Adapter caseSoftwareAssembly(SoftwareAssembly object) {
+			return createSoftwareAssemblyAdapter();
+		}
+
+		@Override
+		public Adapter caseUsesDeviceDependencies(UsesDeviceDependencies object) {
+			return createUsesDeviceDependenciesAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentInstantiation(ComponentInstantiation object) {
+			return createComponentInstantiationAdapter();
+		}
+
+		@Override
+		public < R extends ComponentInstantiation > Adapter caseComponentInstantiationRef(ComponentInstantiationRef<R> object) {
+			return createComponentInstantiationRefAdapter();
+		}
+
+		@Override
+		public < U extends ComponentInstantiationRef< ? >> Adapter caseUsesPort(UsesPort<U> object) {
+			return createUsesPortAdapter();
+		}
+
+		@Override
+		public < P extends ComponentInstantiationRef< ? >> Adapter caseProvidesPort(ProvidesPort<P> object) {
+			return createProvidesPortAdapter();
+		}
+
+		@Override
+		public < CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(
+			ConnectInterface<CIR, UP, PP> object) {
+			return createConnectInterfaceAdapter();
+		}
+
+		@Override
+		public < CI extends ConnectInterface< ? , ? , ? >> Adapter caseConnections(Connections<CI> object) {
+			return createConnectionsAdapter();
+		}
+
+		@Override
+		public < C extends ComponentPlacement< ? >> Adapter casePartitioning(Partitioning<C> object) {
+			return createPartitioningAdapter();
+		}
+
+		@Override
+		public < I extends ComponentInstantiation > Adapter caseComponentPlacement(ComponentPlacement<I> object) {
+			return createComponentPlacementAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyRefContainer(PropertyRefContainer object) {
+			return createPropertyRefContainerAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -263,7 +264,7 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 	/**
@@ -531,6 +532,20 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSoftwareAssemblyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.sad.UsesDeviceDependencies <em>Uses Device Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.sad.UsesDeviceDependencies
+	 * @generated
+	 */
+	public Adapter createUsesDeviceDependenciesAdapter() {
 		return null;
 	}
 

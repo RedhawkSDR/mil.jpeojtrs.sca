@@ -49,15 +49,8 @@ public final class SadEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public SadEditPlugin() {
-		super
-		  (new ResourceLocator [] 
-		   {
-		     EcoreEditPlugin.INSTANCE,
-		     ScdEditPlugin.INSTANCE,
-		     SpdEditPlugin.INSTANCE,
-		     PrfEditPlugin.INSTANCE,
-		     PartitioningEditPlugin.INSTANCE,
-		   });
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, ScdEditPlugin.INSTANCE, SpdEditPlugin.INSTANCE, PrfEditPlugin.INSTANCE,
+			PartitioningEditPlugin.INSTANCE, });
 	}
 
 	/**

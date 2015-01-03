@@ -43,7 +43,6 @@ public class SadConnectInterfaceImpl extends ConnectInterfaceImpl<SadComponentIn
 		super();
 	}
 
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -53,7 +52,6 @@ public class SadConnectInterfaceImpl extends ConnectInterfaceImpl<SadComponentIn
 	protected EClass eStaticClass() {
 		return SadPackage.Literals.SAD_CONNECT_INTERFACE;
 	}
-
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,7 +65,6 @@ public class SadConnectInterfaceImpl extends ConnectInterfaceImpl<SadComponentIn
 		return super.basicSetUsesPort(newUsesPort, msgs);
 	}
 
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * @since 2.3
@@ -80,23 +77,21 @@ public class SadConnectInterfaceImpl extends ConnectInterfaceImpl<SadComponentIn
 		return super.basicSetProvidesPort(newProvidesPort, msgs);
 	}
 
+	@Override
+	protected SadUsesPort createUsesPort() {
+		return SadFactory.eINSTANCE.createSadUsesPort();
+	}
 
 	@Override
-    protected SadUsesPort createUsesPort() {
-	    return SadFactory.eINSTANCE.createSadUsesPort();
-    }
-
-
-	@Override
-    protected SadProvidesPort createProvidesPort() {
+	protected SadProvidesPort createProvidesPort() {
 		return SadFactory.eINSTANCE.createSadProvidesPort();
-    }
+	}
 
 	@Override
-    protected SadComponentInstantiationRef createComponentInstantiationRef(ComponentInstantiation container) {
+	protected SadComponentInstantiationRef createComponentInstantiationRef(ComponentInstantiation container) {
 		SadComponentInstantiationRef retVal = SadFactory.eINSTANCE.createSadComponentInstantiationRef();
 		retVal.setInstantiation((SadComponentInstantiation) container);
-	    return retVal;
-    }
+		return retVal;
+	}
 
 } //SadConnectInterfaceImpl

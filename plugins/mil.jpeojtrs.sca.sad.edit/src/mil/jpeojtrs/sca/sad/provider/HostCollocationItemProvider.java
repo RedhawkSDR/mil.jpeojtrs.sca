@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,10 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class HostCollocationItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class HostCollocationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -64,8 +61,7 @@ public class HostCollocationItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addIdPropertyDescriptor(object);
@@ -81,19 +77,10 @@ public class HostCollocationItemProvider
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HostCollocation_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HostCollocation_id_feature", "_UI_HostCollocation_type"),
-				 SadPackage.Literals.HOST_COLLOCATION__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_HostCollocation_id_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_HostCollocation_id_feature", "_UI_HostCollocation_type"),
+			SadPackage.Literals.HOST_COLLOCATION__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -103,19 +90,10 @@ public class HostCollocationItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HostCollocation_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HostCollocation_name_feature", "_UI_HostCollocation_type"),
-				 SadPackage.Literals.HOST_COLLOCATION__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_HostCollocation_name_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_HostCollocation_name_feature", "_UI_HostCollocation_type"),
+			SadPackage.Literals.HOST_COLLOCATION__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -127,9 +105,8 @@ public class HostCollocationItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SadPackage.Literals.HOST_COLLOCATION__COMPONENT_PLACEMENT);
 		}
@@ -168,10 +145,8 @@ public class HostCollocationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((HostCollocation)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_HostCollocation_type") :
-			getString("_UI_HostCollocation_type") + " " + label;
+		String label = ((HostCollocation) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_HostCollocation_type") : getString("_UI_HostCollocation_type") + " " + label;
 	}
 
 	/**
@@ -185,15 +160,14 @@ public class HostCollocationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(HostCollocation.class))
-		{
-			case SadPackage.HOST_COLLOCATION__ID:
-			case SadPackage.HOST_COLLOCATION__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(HostCollocation.class)) {
+		case SadPackage.HOST_COLLOCATION__ID:
+		case SadPackage.HOST_COLLOCATION__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -209,10 +183,8 @@ public class HostCollocationItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.HOST_COLLOCATION__COMPONENT_PLACEMENT,
-				 SadFactory.eINSTANCE.createSadComponentPlacement()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.HOST_COLLOCATION__COMPONENT_PLACEMENT,
+			SadFactory.eINSTANCE.createSadComponentPlacement()));
 	}
 
 	/**

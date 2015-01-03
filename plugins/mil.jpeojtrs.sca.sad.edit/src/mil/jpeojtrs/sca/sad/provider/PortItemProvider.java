@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,10 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PortItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class PortItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -63,8 +60,7 @@ public class PortItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -83,19 +79,9 @@ public class PortItemProvider
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_description_feature", "_UI_Port_type"),
-				 SadPackage.Literals.PORT__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Port_description_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Port_description_feature", "_UI_Port_type"),
+			SadPackage.Literals.PORT__DESCRIPTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -105,19 +91,9 @@ public class PortItemProvider
 	 * @generated
 	 */
 	protected void addUsesIdentifierPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_usesIdentifier_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_usesIdentifier_feature", "_UI_Port_type"),
-				 SadPackage.Literals.PORT__USES_IDENTIFIER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Port_usesIdentifier_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Port_usesIdentifier_feature", "_UI_Port_type"),
+			SadPackage.Literals.PORT__USES_IDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -127,19 +103,10 @@ public class PortItemProvider
 	 * @generated
 	 */
 	protected void addProvidesIndentifierPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_providesIndentifier_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_providesIndentifier_feature", "_UI_Port_type"),
-				 SadPackage.Literals.PORT__PROVIDES_INDENTIFIER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Port_providesIndentifier_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Port_providesIndentifier_feature", "_UI_Port_type"),
+			SadPackage.Literals.PORT__PROVIDES_INDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -149,19 +116,10 @@ public class PortItemProvider
 	 * @generated
 	 */
 	protected void addSupportedIdentifierPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_supportedIdentifier_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_supportedIdentifier_feature", "_UI_Port_type"),
-				 SadPackage.Literals.PORT__SUPPORTED_IDENTIFIER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Port_supportedIdentifier_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Port_supportedIdentifier_feature", "_UI_Port_type"),
+			SadPackage.Literals.PORT__SUPPORTED_IDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -172,19 +130,9 @@ public class PortItemProvider
 	 * @generated
 	 */
 	protected void addExternalNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_externalName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_externalName_feature", "_UI_Port_type"),
-				 SadPackage.Literals.PORT__EXTERNAL_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Port_externalName_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Port_externalName_feature", "_UI_Port_type"),
+			SadPackage.Literals.PORT__EXTERNAL_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -196,9 +144,8 @@ public class PortItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF);
 		}
@@ -245,10 +192,8 @@ public class PortItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Port)object).getExternalName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Port_type") :
-			getString("_UI_Port_type") + " " + label;
+		String label = ((Port) object).getExternalName();
+		return label == null || label.length() == 0 ? getString("_UI_Port_type") : getString("_UI_Port_type") + " " + label;
 	}
 
 	/**
@@ -262,18 +207,17 @@ public class PortItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Port.class))
-		{
-			case SadPackage.PORT__DESCRIPTION:
-			case SadPackage.PORT__USES_IDENTIFIER:
-			case SadPackage.PORT__PROVIDES_INDENTIFIER:
-			case SadPackage.PORT__SUPPORTED_IDENTIFIER:
-			case SadPackage.PORT__EXTERNAL_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(Port.class)) {
+		case SadPackage.PORT__DESCRIPTION:
+		case SadPackage.PORT__USES_IDENTIFIER:
+		case SadPackage.PORT__PROVIDES_INDENTIFIER:
+		case SadPackage.PORT__SUPPORTED_IDENTIFIER:
+		case SadPackage.PORT__EXTERNAL_NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -289,10 +233,8 @@ public class PortItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF,
-				 SadFactory.eINSTANCE.createSadComponentInstantiationRef()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF,
+			SadFactory.eINSTANCE.createSadComponentInstantiationRef()));
 	}
 
 	/**
@@ -308,18 +250,18 @@ public class PortItemProvider
 
 	@Override
 	public Object getColumnImage(Object object, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case 0:
 			return getComponentImage(object);
 		case 1:
 			return getPortImage((Port) object);
 		}
-	    return super.getColumnImage(object, columnIndex);
+		return super.getColumnImage(object, columnIndex);
 	}
-	
+
 	private Object getPortImage(Port object) {
-		if (object.getSupportedIdentifier() != null){
-			return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentSupportedInterface")); 
+		if (object.getSupportedIdentifier() != null) {
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentSupportedInterface"));
 		}
 		if (object.getProvidesIndentifier() != null) {
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/ProvidesPort"));
@@ -327,29 +269,29 @@ public class PortItemProvider
 		if (object.getUsesIdentifier() != null) {
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/UsesPort"));
 		}
-	    return null;
-    }
+		return null;
+	}
 
 	private Object getComponentImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentInstantiation"));
-    }
+	}
 
 	@Override
 	public String getColumnText(Object object, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case 0:
 			return getComponentName((Port) object);
 		case 1:
-			return getPortName((Port)object);
+			return getPortName((Port) object);
 		case 2:
-			return getExternalPortName((Port)object);
+			return getExternalPortName((Port) object);
 		}
-	    return super.getColumnText(object, columnIndex);
+		return super.getColumnText(object, columnIndex);
 	}
 
 	private String getExternalPortName(Port port) {
 		return (port.getExternalName() == null) ? "" : port.getExternalName();
-    }
+	}
 
 	private String getPortName(Port port) {
 		String portLabel = "<Port>";
@@ -360,8 +302,8 @@ public class PortItemProvider
 		} else if (port.getUsesIdentifier() != null) {
 			portLabel = port.getUsesIdentifier();
 		}
-	    return portLabel;
-    }
+		return portLabel;
+	}
 
 	private String getComponentName(Port port) {
 		String componentName = "<Component>";
@@ -371,6 +313,6 @@ public class PortItemProvider
 				componentName = port.getComponentInstantiationRef().getRefid();
 			}
 		}
-	    return componentName;
-    }
+		return componentName;
+	}
 }

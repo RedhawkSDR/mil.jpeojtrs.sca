@@ -112,5 +112,4 @@ public class SadPartitioningTest extends TestCase {
 		// BEGIN GENERATED CODE
 	}
 
-
 } //SadPartitioningTest

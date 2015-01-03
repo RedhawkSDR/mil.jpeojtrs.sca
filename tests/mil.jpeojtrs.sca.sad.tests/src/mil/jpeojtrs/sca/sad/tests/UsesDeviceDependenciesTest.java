@@ -11,28 +11,28 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.tests;
 
-import org.junit.Test;
-
 import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
-import mil.jpeojtrs.sca.sad.ExternalProperties;
+
 import mil.jpeojtrs.sca.sad.SadFactory;
+import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>External Properties</b></em>'.
+ * A test case for the model object '<em><b>Uses Device Dependencies</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExternalPropertiesTest extends TestCase {
+public class UsesDeviceDependenciesTest extends TestCase {
 
 	/**
-	 * The fixture for this External Properties test case.
+	 * The fixture for this Uses Device Dependencies test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExternalProperties fixture = null;
+	protected UsesDeviceDependencies fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -40,36 +40,36 @@ public class ExternalPropertiesTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(ExternalPropertiesTest.class);
+		TestRunner.run(UsesDeviceDependenciesTest.class);
 	}
 
 	/**
-	 * Constructs a new External Properties test case with the given name.
+	 * Constructs a new Uses Device Dependencies test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExternalPropertiesTest(String name) {
+	public UsesDeviceDependenciesTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this External Properties test case.
+	 * Sets the fixture for this Uses Device Dependencies test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(ExternalProperties fixture) {
+	protected void setFixture(UsesDeviceDependencies fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this External Properties test case.
+	 * Returns the fixture for this Uses Device Dependencies test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExternalProperties getFixture() {
+	protected UsesDeviceDependencies getFixture() {
 		return fixture;
 	}
 
@@ -81,7 +81,7 @@ public class ExternalPropertiesTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(SadFactory.eINSTANCE.createExternalProperties());
+		setFixture(SadFactory.eINSTANCE.createUsesDeviceDependencies());
 	}
 
 	/**
@@ -95,9 +95,4 @@ public class ExternalPropertiesTest extends TestCase {
 		setFixture(null);
 	}
 
-	@Test
-	public void test_stub() throws Exception {
-		// PASS
-	}
-
-} //ExternalPropertiesTest
+} //UsesDeviceDependenciesTest

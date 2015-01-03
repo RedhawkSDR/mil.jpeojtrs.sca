@@ -58,8 +58,7 @@ public class SadConnectionsImpl extends ConnectionsImpl<SadConnectInterface> imp
 	 */
 	@Override
 	public EList<SadConnectInterface> getConnectInterface() {
-		if (connectInterface == null)
-		{
+		if (connectInterface == null) {
 			connectInterface = new EObjectContainmentEList<SadConnectInterface>(SadConnectInterface.class, this, SadPackage.SAD_CONNECTIONS__CONNECT_INTERFACE);
 		}
 		return connectInterface;

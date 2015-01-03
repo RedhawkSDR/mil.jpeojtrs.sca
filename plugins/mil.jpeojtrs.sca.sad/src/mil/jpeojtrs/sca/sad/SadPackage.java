@@ -1009,13 +1009,47 @@ public interface SadPackage extends EPackage {
 	 */
 	int SOFTWARE_ASSEMBLY__VERSION = 9;
 	/**
+	 * The feature id for the '<em><b>Uses Device Dependencies</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES = 10;
+	/**
 	 * The number of structural features of the '<em>Software Assembly</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_ASSEMBLY_FEATURE_COUNT = 10;
+	int SOFTWARE_ASSEMBLY_FEATURE_COUNT = 11;
+	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl <em>Uses Device Dependencies</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl
+	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceDependencies()
+	 * @generated
+	 */
+	int USES_DEVICE_DEPENDENCIES = 19;
+	/**
+	 * The feature id for the '<em><b>Usesdevice</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_DEVICE_DEPENDENCIES__USESDEVICE = 0;
+	/**
+	 * The number of structural features of the '<em>Uses Device Dependencies</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_DEVICE_DEPENDENCIES_FEATURE_COUNT = 1;
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.AssemblyController <em>Assembly Controller</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1025,6 +1059,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAssemblyController();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.AssemblyController#getComponentInstantiationRef <em>Component Instantiation Ref</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1035,6 +1070,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAssemblyController_ComponentInstantiationRef();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadComponentInstantiation <em>Component Instantiation</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1044,6 +1080,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSadComponentInstantiation();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SadComponentInstantiation#getFindComponent <em>Find Component</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1054,6 +1091,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSadComponentInstantiation_FindComponent();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.SadComponentInstantiation#getStartOrder <em>Start Order</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1064,6 +1102,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSadComponentInstantiation_StartOrder();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadComponentInstantiationRef <em>Component Instantiation Ref</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1073,6 +1112,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSadComponentInstantiationRef();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadUsesPort <em>Uses Port</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1082,6 +1122,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSadUsesPort();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadProvidesPort <em>Provides Port</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1091,6 +1132,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSadProvidesPort();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadConnectInterface <em>Connect Interface</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1100,6 +1142,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSadConnectInterface();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadConnections <em>Connections</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1109,6 +1152,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSadConnections();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef <em>Component Resource Factory Ref</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1118,6 +1162,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponentResourceFactoryRef();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef#getResourceFactoryProperties <em>Resource Factory Properties</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1128,6 +1173,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentResourceFactoryRef_ResourceFactoryProperties();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef#getRefid <em>Refid</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1138,6 +1184,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComponentResourceFactoryRef_Refid();
+
 	/**
 	 * Returns the meta object for the reference '{@link mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef#getComponent <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1148,6 +1195,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentResourceFactoryRef_Component();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.ExternalPorts <em>External Ports</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1157,6 +1205,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExternalPorts();
+
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.ExternalPorts#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1167,6 +1216,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getExternalPorts_Port();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.ExternalProperties <em>External Properties</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1177,6 +1227,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExternalProperties();
+
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.ExternalProperties#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1188,6 +1239,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getExternalProperties_Properties();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.ExternalProperty <em>External Property</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1198,6 +1250,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExternalProperty();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.ExternalProperty#getCompRefID <em>Comp Ref ID</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1209,6 +1262,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getExternalProperty_CompRefID();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.ExternalProperty#getPropID <em>Prop ID</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1220,6 +1274,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getExternalProperty_PropID();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.ExternalProperty#getExternalPropID <em>External Prop ID</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1231,6 +1286,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getExternalProperty_ExternalPropID();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.FindComponent <em>Find Component</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1240,6 +1296,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFindComponent();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.FindComponent#getComponentResourceFactoryRef <em>Component Resource Factory Ref</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1250,6 +1307,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFindComponent_ComponentResourceFactoryRef();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.FindComponent#getNamingService <em>Naming Service</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1260,6 +1318,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFindComponent_NamingService();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.HostCollocation <em>Host Collocation</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1269,6 +1328,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getHostCollocation();
+
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.HostCollocation#getComponentPlacement <em>Component Placement</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1279,6 +1339,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHostCollocation_ComponentPlacement();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.HostCollocation#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1289,6 +1350,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getHostCollocation_Id();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.HostCollocation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1299,6 +1361,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getHostCollocation_Name();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.Port <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1308,6 +1371,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPort();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Port#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1318,6 +1382,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPort_Description();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Port#getUsesIdentifier <em>Uses Identifier</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1328,6 +1393,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPort_UsesIdentifier();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Port#getProvidesIndentifier <em>Provides Indentifier</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1338,6 +1404,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPort_ProvidesIndentifier();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Port#getSupportedIdentifier <em>Supported Identifier</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1348,6 +1415,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPort_SupportedIdentifier();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.Port#getComponentInstantiationRef <em>Component Instantiation Ref</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1358,6 +1426,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_ComponentInstantiationRef();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Port#getExternalName <em>External Name</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1369,6 +1438,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPort_ExternalName();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadPartitioning <em>Partitioning</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1378,6 +1448,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSadPartitioning();
+
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.SadPartitioning#getHostCollocation <em>Host Collocation</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1388,6 +1459,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSadPartitioning_HostCollocation();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadComponentPlacement <em>Component Placement</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1397,6 +1469,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSadComponentPlacement();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties <em>Resource Factory Properties</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1406,6 +1479,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getResourceFactoryProperties();
+
 	/**
 	 * Returns the meta object for the attribute list '{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1416,6 +1490,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getResourceFactoryProperties_Group();
+
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties#getSimpleRef <em>Simple Ref</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1426,6 +1501,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getResourceFactoryProperties_SimpleRef();
+
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties#getSimpleSequenceRef <em>Simple Sequence Ref</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1436,6 +1512,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getResourceFactoryProperties_SimpleSequenceRef();
+
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties#getStructRef <em>Struct Ref</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1446,6 +1523,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getResourceFactoryProperties_StructRef();
+
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties#getStructSequenceRef <em>Struct Sequence Ref</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1456,6 +1534,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getResourceFactoryProperties_StructSequenceRef();
+
 	/**
 	 * Returns the meta object for the container reference '{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties#getFactoryRef <em>Factory Ref</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1466,6 +1545,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getResourceFactoryProperties_FactoryRef();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadDocumentRoot <em>Document Root</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1475,6 +1555,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSadDocumentRoot();
+
 	/**
 	 * Returns the meta object for the attribute list '{@link mil.jpeojtrs.sca.sad.SadDocumentRoot#getMixed <em>Mixed</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1485,6 +1566,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSadDocumentRoot_Mixed();
+
 	/**
 	 * Returns the meta object for the map '{@link mil.jpeojtrs.sca.sad.SadDocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1495,6 +1577,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSadDocumentRoot_XMLNSPrefixMap();
+
 	/**
 	 * Returns the meta object for the map '{@link mil.jpeojtrs.sca.sad.SadDocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1505,6 +1588,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSadDocumentRoot_XSISchemaLocation();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SadDocumentRoot#getSoftwareassembly <em>Softwareassembly</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1515,6 +1599,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSadDocumentRoot_Softwareassembly();
+
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly <em>Software Assembly</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1524,6 +1609,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSoftwareAssembly();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1534,6 +1620,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSoftwareAssembly_Description();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getComponentFiles <em>Component Files</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1544,6 +1631,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSoftwareAssembly_ComponentFiles();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getPartitioning <em>Partitioning</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1554,6 +1642,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSoftwareAssembly_Partitioning();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getAssemblyController <em>Assembly Controller</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1564,6 +1653,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSoftwareAssembly_AssemblyController();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getConnections <em>Connections</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1574,6 +1664,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSoftwareAssembly_Connections();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalPorts <em>External Ports</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1584,6 +1675,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSoftwareAssembly_ExternalPorts();
+
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalProperties <em>External Properties</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1595,6 +1687,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSoftwareAssembly_ExternalProperties();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1605,6 +1698,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSoftwareAssembly_Id();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1615,6 +1709,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSoftwareAssembly_Name();
+
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
@@ -1625,6 +1720,39 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSoftwareAssembly_Version();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Uses Device Dependencies</em>'.
+	 * @see mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies()
+	 * @see #getSoftwareAssembly()
+	 * @generated
+	 */
+	EReference getSoftwareAssembly_UsesDeviceDependencies();
+
+	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.UsesDeviceDependencies <em>Uses Device Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Uses Device Dependencies</em>'.
+	 * @see mil.jpeojtrs.sca.sad.UsesDeviceDependencies
+	 * @generated
+	 */
+	EClass getUsesDeviceDependencies();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.UsesDeviceDependencies#getUsesdevice <em>Usesdevice</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Usesdevice</em>'.
+	 * @see mil.jpeojtrs.sca.sad.UsesDeviceDependencies#getUsesdevice()
+	 * @see #getUsesDeviceDependencies()
+	 * @generated
+	 */
+	EReference getUsesDeviceDependencies_Usesdevice();
+
 	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
@@ -1633,7 +1761,9 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	SadFactory getSadFactory();
+
 	String FILE_EXTENSION = ".sad.xml";
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
@@ -2128,6 +2258,29 @@ public interface SadPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SOFTWARE_ASSEMBLY__VERSION = eINSTANCE.getSoftwareAssembly_Version();
+		/**
+		 * The meta object literal for the '<em><b>Uses Device Dependencies</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES = eINSTANCE.getSoftwareAssembly_UsesDeviceDependencies();
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl <em>Uses Device Dependencies</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl
+		 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceDependencies()
+		 * @generated
+		 */
+		EClass USES_DEVICE_DEPENDENCIES = eINSTANCE.getUsesDeviceDependencies();
+		/**
+		 * The meta object literal for the '<em><b>Usesdevice</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USES_DEVICE_DEPENDENCIES__USESDEVICE = eINSTANCE.getUsesDeviceDependencies_Usesdevice();
 
 	}
 

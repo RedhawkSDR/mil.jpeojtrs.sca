@@ -13,6 +13,7 @@ package mil.jpeojtrs.sca.sad.impl;
 
 import mil.jpeojtrs.sca.partitioning.DomComponentFile;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
+import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
@@ -54,16 +55,12 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * @generated
 	 */
 	public static SadFactory init() {
-		try
-		{
-			SadFactory theSadFactory = (SadFactory)EPackage.Registry.INSTANCE.getEFactory(SadPackage.eNS_URI);
-			if (theSadFactory != null)
-			{
+		try {
+			SadFactory theSadFactory = (SadFactory) EPackage.Registry.INSTANCE.getEFactory(SadPackage.eNS_URI);
+			if (theSadFactory != null) {
 				return theSadFactory;
 			}
-		}
-		catch (Exception exception)
-		{
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new SadFactoryImpl();
@@ -86,29 +83,49 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID())
-		{
-			case SadPackage.ASSEMBLY_CONTROLLER: return createAssemblyController();
-			case SadPackage.SAD_COMPONENT_INSTANTIATION: return createSadComponentInstantiation();
-			case SadPackage.SAD_COMPONENT_INSTANTIATION_REF: return createSadComponentInstantiationRef();
-			case SadPackage.SAD_USES_PORT: return createSadUsesPort();
-			case SadPackage.SAD_PROVIDES_PORT: return createSadProvidesPort();
-			case SadPackage.SAD_CONNECT_INTERFACE: return createSadConnectInterface();
-			case SadPackage.SAD_CONNECTIONS: return createSadConnections();
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF: return createComponentResourceFactoryRef();
-			case SadPackage.EXTERNAL_PORTS: return createExternalPorts();
-			case SadPackage.EXTERNAL_PROPERTIES: return createExternalProperties();
-			case SadPackage.EXTERNAL_PROPERTY: return createExternalProperty();
-			case SadPackage.FIND_COMPONENT: return createFindComponent();
-			case SadPackage.HOST_COLLOCATION: return createHostCollocation();
-			case SadPackage.PORT: return createPort();
-			case SadPackage.SAD_PARTITIONING: return createSadPartitioning();
-			case SadPackage.SAD_COMPONENT_PLACEMENT: return createSadComponentPlacement();
-			case SadPackage.RESOURCE_FACTORY_PROPERTIES: return createResourceFactoryProperties();
-			case SadPackage.SAD_DOCUMENT_ROOT: return createSadDocumentRoot();
-			case SadPackage.SOFTWARE_ASSEMBLY: return createSoftwareAssembly();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+		case SadPackage.ASSEMBLY_CONTROLLER:
+			return createAssemblyController();
+		case SadPackage.SAD_COMPONENT_INSTANTIATION:
+			return createSadComponentInstantiation();
+		case SadPackage.SAD_COMPONENT_INSTANTIATION_REF:
+			return createSadComponentInstantiationRef();
+		case SadPackage.SAD_USES_PORT:
+			return createSadUsesPort();
+		case SadPackage.SAD_PROVIDES_PORT:
+			return createSadProvidesPort();
+		case SadPackage.SAD_CONNECT_INTERFACE:
+			return createSadConnectInterface();
+		case SadPackage.SAD_CONNECTIONS:
+			return createSadConnections();
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF:
+			return createComponentResourceFactoryRef();
+		case SadPackage.EXTERNAL_PORTS:
+			return createExternalPorts();
+		case SadPackage.EXTERNAL_PROPERTIES:
+			return createExternalProperties();
+		case SadPackage.EXTERNAL_PROPERTY:
+			return createExternalProperty();
+		case SadPackage.FIND_COMPONENT:
+			return createFindComponent();
+		case SadPackage.HOST_COLLOCATION:
+			return createHostCollocation();
+		case SadPackage.PORT:
+			return createPort();
+		case SadPackage.SAD_PARTITIONING:
+			return createSadPartitioning();
+		case SadPackage.SAD_COMPONENT_PLACEMENT:
+			return createSadComponentPlacement();
+		case SadPackage.RESOURCE_FACTORY_PROPERTIES:
+			return createResourceFactoryProperties();
+		case SadPackage.SAD_DOCUMENT_ROOT:
+			return createSadDocumentRoot();
+		case SadPackage.SOFTWARE_ASSEMBLY:
+			return createSoftwareAssembly();
+		case SadPackage.USES_DEVICE_DEPENDENCIES:
+			return createUsesDeviceDependencies();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -328,9 +345,19 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public UsesDeviceDependencies createUsesDeviceDependencies() {
+		UsesDeviceDependenciesImpl usesDeviceDependencies = new UsesDeviceDependenciesImpl();
+		return usesDeviceDependencies;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public SadPackage getSadPackage() {
-		return (SadPackage)getEPackage();
+		return (SadPackage) getEPackage();
 	}
 
 	/**
@@ -346,7 +373,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 
 	@Override
 	public DomComponentFile createComponentFile() {
-	    return PartitioningFactory.eINSTANCE.createDomComponentFile();
-    }
+		return PartitioningFactory.eINSTANCE.createDomComponentFile();
+	}
 
 } //SadFactoryImpl

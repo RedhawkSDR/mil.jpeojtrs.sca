@@ -48,6 +48,7 @@ public class ResourceFactoryPropertiesTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected ResourceFactoryProperties fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -181,13 +182,8 @@ public class ResourceFactoryPropertiesTest extends TestCase {
 		Assert.assertNotNull(this.fixture.getStructSequenceRef().get(0));
 		Assert.assertEquals("DCE:dfff8371-15a0-4e5e-9c90-d09425ba3125", this.fixture.getStructSequenceRef().get(0).getRefID());
 		Assert.assertNotNull(this.fixture.getStructSequenceRef().get(0).getStructValue().get(0));
-		Assert.assertEquals("Struct Sequence Overridden Value", this.fixture.getStructSequenceRef()
-		        .get(0)
-		        .getStructValue()
-		        .get(0)
-		        .getSimpleRef()
-		        .get(0)
-		        .getValue());
+		Assert.assertEquals("Struct Sequence Overridden Value",
+			this.fixture.getStructSequenceRef().get(0).getStructValue().get(0).getSimpleRef().get(0).getValue());
 
 		// BEGIN GENERATED CODE
 	}

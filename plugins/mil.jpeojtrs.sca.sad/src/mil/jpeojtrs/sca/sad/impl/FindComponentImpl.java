@@ -95,10 +95,13 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	public NotificationChain basicSetComponentResourceFactoryRef(ComponentResourceFactoryRef newComponentResourceFactoryRef, NotificationChain msgs) {
 		ComponentResourceFactoryRef oldComponentResourceFactoryRef = componentResourceFactoryRef;
 		componentResourceFactoryRef = newComponentResourceFactoryRef;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, oldComponentResourceFactoryRef, newComponentResourceFactoryRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF,
+				oldComponentResourceFactoryRef, newComponentResourceFactoryRef);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -110,18 +113,20 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 */
 	@Override
 	public void setComponentResourceFactoryRef(ComponentResourceFactoryRef newComponentResourceFactoryRef) {
-		if (newComponentResourceFactoryRef != componentResourceFactoryRef)
-		{
+		if (newComponentResourceFactoryRef != componentResourceFactoryRef) {
 			NotificationChain msgs = null;
 			if (componentResourceFactoryRef != null)
-				msgs = ((InternalEObject)componentResourceFactoryRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, null, msgs);
+				msgs = ((InternalEObject) componentResourceFactoryRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, null, msgs);
 			if (newComponentResourceFactoryRef != null)
-				msgs = ((InternalEObject)newComponentResourceFactoryRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentResourceFactoryRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, null, msgs);
 			msgs = basicSetComponentResourceFactoryRef(newComponentResourceFactoryRef, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, newComponentResourceFactoryRef, newComponentResourceFactoryRef));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, newComponentResourceFactoryRef,
+				newComponentResourceFactoryRef));
 	}
 
 	/**
@@ -142,10 +147,13 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	public NotificationChain basicSetNamingService(NamingService newNamingService, NotificationChain msgs) {
 		NamingService oldNamingService = namingService;
 		namingService = newNamingService;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.FIND_COMPONENT__NAMING_SERVICE, oldNamingService, newNamingService);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.FIND_COMPONENT__NAMING_SERVICE, oldNamingService,
+				newNamingService);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -157,17 +165,16 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 */
 	@Override
 	public void setNamingService(NamingService newNamingService) {
-		if (newNamingService != namingService)
-		{
+		if (newNamingService != namingService) {
 			NotificationChain msgs = null;
 			if (namingService != null)
-				msgs = ((InternalEObject)namingService).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.FIND_COMPONENT__NAMING_SERVICE, null, msgs);
+				msgs = ((InternalEObject) namingService).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.FIND_COMPONENT__NAMING_SERVICE, null, msgs);
 			if (newNamingService != null)
-				msgs = ((InternalEObject)newNamingService).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.FIND_COMPONENT__NAMING_SERVICE, null, msgs);
+				msgs = ((InternalEObject) newNamingService).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.FIND_COMPONENT__NAMING_SERVICE, null, msgs);
 			msgs = basicSetNamingService(newNamingService, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.FIND_COMPONENT__NAMING_SERVICE, newNamingService, newNamingService));
 	}
 
@@ -178,12 +185,11 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
-				return basicSetComponentResourceFactoryRef(null, msgs);
-			case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
-				return basicSetNamingService(null, msgs);
+		switch (featureID) {
+		case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
+			return basicSetComponentResourceFactoryRef(null, msgs);
+		case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
+			return basicSetNamingService(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -195,12 +201,11 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
-				return getComponentResourceFactoryRef();
-			case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
-				return getNamingService();
+		switch (featureID) {
+		case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
+			return getComponentResourceFactoryRef();
+		case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
+			return getNamingService();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,14 +217,13 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
-				setComponentResourceFactoryRef((ComponentResourceFactoryRef)newValue);
-				return;
-			case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
-				setNamingService((NamingService)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
+			setComponentResourceFactoryRef((ComponentResourceFactoryRef) newValue);
+			return;
+		case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
+			setNamingService((NamingService) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -231,14 +235,13 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
-				setComponentResourceFactoryRef((ComponentResourceFactoryRef)null);
-				return;
-			case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
-				setNamingService((NamingService)null);
-				return;
+		switch (featureID) {
+		case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
+			setComponentResourceFactoryRef((ComponentResourceFactoryRef) null);
+			return;
+		case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
+			setNamingService((NamingService) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -250,12 +253,11 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
-				return componentResourceFactoryRef != null;
-			case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
-				return namingService != null;
+		switch (featureID) {
+		case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
+			return componentResourceFactoryRef != null;
+		case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
+			return namingService != null;
 		}
 		return super.eIsSet(featureID);
 	}

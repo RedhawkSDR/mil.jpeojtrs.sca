@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getVersion <em>Version</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +68,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	String getDescription();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,6 +78,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setDescription(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Component Files</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -92,6 +95,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	ComponentFiles getComponentFiles();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getComponentFiles <em>Component Files</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -101,6 +105,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setComponentFiles(ComponentFiles value);
+
 	/**
 	 * Returns the value of the '<em><b>Partitioning</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -117,6 +122,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	SadPartitioning getPartitioning();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getPartitioning <em>Partitioning</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -126,6 +132,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setPartitioning(SadPartitioning value);
+
 	/**
 	 * Returns the value of the '<em><b>Assembly Controller</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -142,6 +149,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	AssemblyController getAssemblyController();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getAssemblyController <em>Assembly Controller</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -151,6 +159,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setAssemblyController(AssemblyController value);
+
 	/**
 	 * Returns the value of the '<em><b>Connections</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -167,6 +176,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	SadConnections getConnections();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getConnections <em>Connections</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -176,6 +186,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setConnections(SadConnections value);
+
 	/**
 	 * Returns the value of the '<em><b>External Ports</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -192,6 +203,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	ExternalPorts getExternalPorts();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalPorts <em>External Ports</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -201,6 +213,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setExternalPorts(ExternalPorts value);
+
 	/**
 	 * Returns the value of the '<em><b>External Properties</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -218,6 +231,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	ExternalProperties getExternalProperties();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalProperties <em>External Properties</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -228,6 +242,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setExternalProperties(ExternalProperties value);
+
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -244,6 +259,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	String getId();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -253,6 +269,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setId(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -269,6 +286,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	String getName();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -278,6 +296,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -294,6 +313,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	String getVersion();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getVersion <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -303,6 +323,36 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setVersion(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Uses Device Dependencies</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Uses Device Dependencies</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uses Device Dependencies</em>' containment reference.
+	 * @see #setUsesDeviceDependencies(UsesDeviceDependencies)
+	 * @see mil.jpeojtrs.sca.sad.SadPackage#getSoftwareAssembly_UsesDeviceDependencies()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='usesdevicedependencies' namespace='##targetNamespace'"
+	 * @generated
+	 * @since 2.4
+	 */
+	UsesDeviceDependencies getUsesDeviceDependencies();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Uses Device Dependencies</em>' containment reference.
+	 * @see #getUsesDeviceDependencies()
+	 * @generated
+	 * @since 2.4
+	 */
+	void setUsesDeviceDependencies(UsesDeviceDependencies value);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -310,6 +360,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	SadComponentInstantiation getComponentInstantiation(String instantiationId);
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -317,6 +368,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	EList<SadComponentInstantiation> getComponentInstantiationsInStartOrder();
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,7 +376,9 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	EList<SadComponentInstantiation> getAllComponentInstantiations();
+
 	String EOBJECT_PATH = "/";
+
 	public static class Util {
 		// END GENERATED CODE
 		private Util() {

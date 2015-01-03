@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    This file is protected by Copyright.
-    Please refer to the COPYRIGHT file distributed with this source distribution.
-
-    This file is part of REDHAWK IDE.
-
-    All rights reserved.  This program and the accompanying materials are made available under
-    the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
-    http://www.eclipse.org/legal/epl-v10.html.
--->
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/mil.jpeojtrs.sca.sad/src" editorDirectory=""
     modelPluginID="mil.jpeojtrs.sca.sad" templateDirectory="/mil.jpeojtrs.sca.sad/templates"
     dynamicTemplates="true" forceOverwrite="true" modelName="Sad" modelPluginClass="SadPluginActivator"
-    codeFormatting="true" importerID="org.eclipse.xsd.ecore.importer" complianceLevel="6.0"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
     copyrightFields="false" tableProviders="true" runtimeVersion="2.8" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/mil.jpeojtrs.sca.scd/model/scd.genmodel#//scd platform:/plugin/mil.jpeojtrs.sca.spd/model/spd.genmodel#//spd platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.genmodel#//prf platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.genmodel#//partitioning"
     importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
@@ -28,7 +18,7 @@
     </genAnnotations>
     <details key="directoryURI" value="."/>
   </genAnnotations>
-  <foreignModel>sad.xsd</foreignModel>
+  <foreignModel>sad.ecore</foreignModel>
   <genPackages prefix="Sad" basePackage="mil.jpeojtrs.sca" resource="XML" disposableProviderFactory="true"
       generateExampleClass="false" contentTypeIdentifier="mil.jpeojtrs.sca.sad.content-type"
       fileExtensions="xml" ecorePackage="sad.ecore#/">
@@ -62,6 +52,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//ExternalProperty/compRefID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//ExternalProperty/propID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//ExternalProperty/externalPropID"/>
+      <genOperations ecoreOperation="sad.ecore#//ExternalProperty/resolveExternalID"/>
     </genClasses>
     <genClasses ecoreClass="sad.ecore#//FindComponent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//FindComponent/componentResourceFactoryRef"/>
@@ -109,11 +100,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//SoftwareAssembly/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//SoftwareAssembly/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//SoftwareAssembly/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//SoftwareAssembly/usesDeviceDependencies"/>
       <genOperations ecoreOperation="sad.ecore#//SoftwareAssembly/getComponentInstantiation">
         <genParameters ecoreParameter="sad.ecore#//SoftwareAssembly/getComponentInstantiation/instantiationId"/>
       </genOperations>
       <genOperations ecoreOperation="sad.ecore#//SoftwareAssembly/getComponentInstantiationsInStartOrder"/>
       <genOperations ecoreOperation="sad.ecore#//SoftwareAssembly/getAllComponentInstantiations"/>
+    </genClasses>
+    <genClasses ecoreClass="sad.ecore#//UsesDeviceDependencies">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//UsesDeviceDependencies/usesdevice"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

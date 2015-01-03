@@ -32,6 +32,7 @@ public class PortTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected Port fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -153,6 +154,5 @@ public class PortTest extends TestCase {
 	public void test_toString() throws Exception {
 		Assert.assertNotNull(this.fixture.toString());
 	}
-	
 
 } //PortTest

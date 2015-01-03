@@ -33,6 +33,7 @@ public class ExternalPortsTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected ExternalPorts fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

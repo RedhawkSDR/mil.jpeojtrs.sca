@@ -190,8 +190,7 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 * @generated NOT
 	 */
 	@Override
-	public String resolveExternalID()
-	{
+	public String resolveExternalID() {
 		if (this.getExternalPropID() != null) {
 			return getExternalPropID();
 		} else {
@@ -206,14 +205,13 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
-				return getCompRefID();
-			case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
-				return getPropID();
-			case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:
-				return getExternalPropID();
+		switch (featureID) {
+		case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
+			return getCompRefID();
+		case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
+			return getPropID();
+		case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:
+			return getExternalPropID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,17 +223,16 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
-				setCompRefID((String)newValue);
-				return;
-			case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
-				setPropID((String)newValue);
-				return;
-			case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:
-				setExternalPropID((String)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
+			setCompRefID((String) newValue);
+			return;
+		case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
+			setPropID((String) newValue);
+			return;
+		case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:
+			setExternalPropID((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -247,17 +244,16 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
-				setCompRefID(COMP_REF_ID_EDEFAULT);
-				return;
-			case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
-				setPropID(PROP_ID_EDEFAULT);
-				return;
-			case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:
-				setExternalPropID(EXTERNAL_PROP_ID_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
+			setCompRefID(COMP_REF_ID_EDEFAULT);
+			return;
+		case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
+			setPropID(PROP_ID_EDEFAULT);
+			return;
+		case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:
+			setExternalPropID(EXTERNAL_PROP_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -269,14 +265,13 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
-				return COMP_REF_ID_EDEFAULT == null ? compRefID != null : !COMP_REF_ID_EDEFAULT.equals(compRefID);
-			case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
-				return PROP_ID_EDEFAULT == null ? propID != null : !PROP_ID_EDEFAULT.equals(propID);
-			case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:
-				return EXTERNAL_PROP_ID_EDEFAULT == null ? externalPropID != null : !EXTERNAL_PROP_ID_EDEFAULT.equals(externalPropID);
+		switch (featureID) {
+		case SadPackage.EXTERNAL_PROPERTY__COMP_REF_ID:
+			return COMP_REF_ID_EDEFAULT == null ? compRefID != null : !COMP_REF_ID_EDEFAULT.equals(compRefID);
+		case SadPackage.EXTERNAL_PROPERTY__PROP_ID:
+			return PROP_ID_EDEFAULT == null ? propID != null : !PROP_ID_EDEFAULT.equals(propID);
+		case SadPackage.EXTERNAL_PROPERTY__EXTERNAL_PROP_ID:
+			return EXTERNAL_PROP_ID_EDEFAULT == null ? externalPropID != null : !EXTERNAL_PROP_ID_EDEFAULT.equals(externalPropID);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -288,7 +283,8 @@ public class ExternalPropertyImpl extends EObjectImpl implements ExternalPropert
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (compRefID: ");

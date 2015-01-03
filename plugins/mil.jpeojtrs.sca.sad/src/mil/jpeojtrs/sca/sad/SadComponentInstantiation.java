@@ -15,8 +15,6 @@ import java.math.BigInteger;
 
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
 
-
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Component Instantiation</b></em>'.

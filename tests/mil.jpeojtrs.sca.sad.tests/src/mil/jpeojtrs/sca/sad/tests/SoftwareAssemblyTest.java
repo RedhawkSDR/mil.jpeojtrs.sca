@@ -50,6 +50,7 @@ public class SoftwareAssemblyTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected SoftwareAssembly fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,7 +142,7 @@ public class SoftwareAssemblyTest extends TestCase {
 		// END GENERATED CODE
 		EList<SadComponentInstantiation> list = getFixture().getComponentInstantiationsInStartOrder();
 		SadComponentInstantiation prev = null;
-		
+
 		for (SadComponentInstantiation inst : list) {
 			if (prev != null && inst.getStartOrder() != null) {
 				Assert.assertTrue(prev.getStartOrder().compareTo(inst.getStartOrder()) < 0);

@@ -116,9 +116,9 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 */
 	@Override
 	public EList<SadComponentPlacement> getComponentPlacement() {
-		if (componentPlacement == null)
-		{
-			componentPlacement = new EObjectContainmentEList<SadComponentPlacement>(SadComponentPlacement.class, this, SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT);
+		if (componentPlacement == null) {
+			componentPlacement = new EObjectContainmentEList<SadComponentPlacement>(SadComponentPlacement.class, this,
+				SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT);
 		}
 		return componentPlacement;
 	}
@@ -176,10 +176,9 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
-				return ((InternalEList<?>)getComponentPlacement()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
+			return ((InternalEList< ? >) getComponentPlacement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -191,14 +190,13 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
-				return getComponentPlacement();
-			case SadPackage.HOST_COLLOCATION__ID:
-				return getId();
-			case SadPackage.HOST_COLLOCATION__NAME:
-				return getName();
+		switch (featureID) {
+		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
+			return getComponentPlacement();
+		case SadPackage.HOST_COLLOCATION__ID:
+			return getId();
+		case SadPackage.HOST_COLLOCATION__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,18 +209,17 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
-				getComponentPlacement().clear();
-				getComponentPlacement().addAll((Collection<? extends SadComponentPlacement>)newValue);
-				return;
-			case SadPackage.HOST_COLLOCATION__ID:
-				setId((String)newValue);
-				return;
-			case SadPackage.HOST_COLLOCATION__NAME:
-				setName((String)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
+			getComponentPlacement().clear();
+			getComponentPlacement().addAll((Collection< ? extends SadComponentPlacement>) newValue);
+			return;
+		case SadPackage.HOST_COLLOCATION__ID:
+			setId((String) newValue);
+			return;
+		case SadPackage.HOST_COLLOCATION__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -234,17 +231,16 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
-				getComponentPlacement().clear();
-				return;
-			case SadPackage.HOST_COLLOCATION__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case SadPackage.HOST_COLLOCATION__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
+			getComponentPlacement().clear();
+			return;
+		case SadPackage.HOST_COLLOCATION__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case SadPackage.HOST_COLLOCATION__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -256,14 +252,13 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
-				return componentPlacement != null && !componentPlacement.isEmpty();
-			case SadPackage.HOST_COLLOCATION__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case SadPackage.HOST_COLLOCATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		switch (featureID) {
+		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
+			return componentPlacement != null && !componentPlacement.isEmpty();
+		case SadPackage.HOST_COLLOCATION__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case SadPackage.HOST_COLLOCATION__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -275,7 +270,8 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");

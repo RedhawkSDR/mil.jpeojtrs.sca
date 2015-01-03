@@ -84,10 +84,13 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	public NotificationChain basicSetComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef, NotificationChain msgs) {
 		SadComponentInstantiationRef oldComponentInstantiationRef = componentInstantiationRef;
 		componentInstantiationRef = newComponentInstantiationRef;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, oldComponentInstantiationRef, newComponentInstantiationRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF,
+				oldComponentInstantiationRef, newComponentInstantiationRef);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -99,18 +102,20 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public void setComponentInstantiationRef(SadComponentInstantiationRef newComponentInstantiationRef) {
-		if (newComponentInstantiationRef != componentInstantiationRef)
-		{
+		if (newComponentInstantiationRef != componentInstantiationRef) {
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
-				msgs = ((InternalEObject)componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, null, msgs);
 			if (newComponentInstantiationRef != null)
-				msgs = ((InternalEObject)newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, null, msgs);
 			msgs = basicSetComponentInstantiationRef(newComponentInstantiationRef, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, newComponentInstantiationRef, newComponentInstantiationRef));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, newComponentInstantiationRef,
+				newComponentInstantiationRef));
 	}
 
 	/**
@@ -120,10 +125,9 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
-				return basicSetComponentInstantiationRef(null, msgs);
+		switch (featureID) {
+		case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
+			return basicSetComponentInstantiationRef(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -135,10 +139,9 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
-				return getComponentInstantiationRef();
+		switch (featureID) {
+		case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
+			return getComponentInstantiationRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,11 +153,10 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
-				setComponentInstantiationRef((SadComponentInstantiationRef)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
+			setComponentInstantiationRef((SadComponentInstantiationRef) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,11 +168,10 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
-				setComponentInstantiationRef((SadComponentInstantiationRef)null);
-				return;
+		switch (featureID) {
+		case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
+			setComponentInstantiationRef((SadComponentInstantiationRef) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -182,10 +183,9 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
-				return componentInstantiationRef != null;
+		switch (featureID) {
+		case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
+			return componentInstantiationRef != null;
 		}
 		return super.eIsSet(featureID);
 	}

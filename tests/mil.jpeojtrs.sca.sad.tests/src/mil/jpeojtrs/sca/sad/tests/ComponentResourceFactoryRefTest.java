@@ -42,6 +42,7 @@ public class ComponentResourceFactoryRefTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected ComponentResourceFactoryRef fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,8 +93,7 @@ public class ComponentResourceFactoryRefTest extends TestCase {
 	@Override
 	protected void setUp() throws Exception {
 		this.sad = SadTests.getSoftwareAssembly();
-		this.setFixture(this.sad.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getFindComponent()
-		        .getComponentResourceFactoryRef());
+		this.setFixture(this.sad.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getFindComponent().getComponentResourceFactoryRef());
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class ComponentResourceFactoryRefTest extends TestCase {
 	 */
 	public void testGetComponent() {
 		// END GENERATED CODE
-//		Assert.assertNotNull(getFixture().getComponent());
+		//		Assert.assertNotNull(getFixture().getComponent());
 		// BEGIN GENERATED CODE
 	}
 

@@ -27,6 +27,7 @@ import mil.jpeojtrs.sca.sad.SadConnections;
 import mil.jpeojtrs.sca.sad.SadPackage;
 import mil.jpeojtrs.sca.sad.SadPartitioning;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
+import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
 import mil.jpeojtrs.sca.util.QueryParser;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -54,6 +55,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getVersion <em>Version</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}</li>
  * </ul>
  * </p>
  *
@@ -189,6 +191,16 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	protected String version = VERSION_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getUsesDeviceDependencies() <em>Uses Device Dependencies</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsesDeviceDependencies()
+	 * @generated
+	 * @ordered
+	 */
+	protected UsesDeviceDependencies usesDeviceDependencies;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -248,10 +260,13 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetComponentFiles(ComponentFiles newComponentFiles, NotificationChain msgs) {
 		ComponentFiles oldComponentFiles = componentFiles;
 		componentFiles = newComponentFiles;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES, oldComponentFiles, newComponentFiles);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES, oldComponentFiles,
+				newComponentFiles);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -263,17 +278,18 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public void setComponentFiles(ComponentFiles newComponentFiles) {
-		if (newComponentFiles != componentFiles)
-		{
+		if (newComponentFiles != componentFiles) {
 			NotificationChain msgs = null;
 			if (componentFiles != null)
-				msgs = ((InternalEObject)componentFiles).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES, null, msgs);
+				msgs = ((InternalEObject) componentFiles).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES, null,
+					msgs);
 			if (newComponentFiles != null)
-				msgs = ((InternalEObject)newComponentFiles).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES, null, msgs);
+				msgs = ((InternalEObject) newComponentFiles).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES, null,
+					msgs);
 			msgs = basicSetComponentFiles(newComponentFiles, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES, newComponentFiles, newComponentFiles));
 	}
 
@@ -295,10 +311,13 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetPartitioning(SadPartitioning newPartitioning, NotificationChain msgs) {
 		SadPartitioning oldPartitioning = partitioning;
 		partitioning = newPartitioning;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING, oldPartitioning, newPartitioning);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING, oldPartitioning,
+				newPartitioning);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -310,17 +329,16 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public void setPartitioning(SadPartitioning newPartitioning) {
-		if (newPartitioning != partitioning)
-		{
+		if (newPartitioning != partitioning) {
 			NotificationChain msgs = null;
 			if (partitioning != null)
-				msgs = ((InternalEObject)partitioning).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING, null, msgs);
+				msgs = ((InternalEObject) partitioning).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING, null, msgs);
 			if (newPartitioning != null)
-				msgs = ((InternalEObject)newPartitioning).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING, null, msgs);
+				msgs = ((InternalEObject) newPartitioning).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING, null, msgs);
 			msgs = basicSetPartitioning(newPartitioning, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING, newPartitioning, newPartitioning));
 	}
 
@@ -342,10 +360,13 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetAssemblyController(AssemblyController newAssemblyController, NotificationChain msgs) {
 		AssemblyController oldAssemblyController = assemblyController;
 		assemblyController = newAssemblyController;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER, oldAssemblyController, newAssemblyController);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER,
+				oldAssemblyController, newAssemblyController);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -357,18 +378,20 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public void setAssemblyController(AssemblyController newAssemblyController) {
-		if (newAssemblyController != assemblyController)
-		{
+		if (newAssemblyController != assemblyController) {
 			NotificationChain msgs = null;
 			if (assemblyController != null)
-				msgs = ((InternalEObject)assemblyController).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER, null, msgs);
+				msgs = ((InternalEObject) assemblyController).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER,
+					null, msgs);
 			if (newAssemblyController != null)
-				msgs = ((InternalEObject)newAssemblyController).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER, null, msgs);
+				msgs = ((InternalEObject) newAssemblyController).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER,
+					null, msgs);
 			msgs = basicSetAssemblyController(newAssemblyController, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER, newAssemblyController, newAssemblyController));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER, newAssemblyController,
+				newAssemblyController));
 	}
 
 	/**
@@ -389,10 +412,13 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetConnections(SadConnections newConnections, NotificationChain msgs) {
 		SadConnections oldConnections = connections;
 		connections = newConnections;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS, oldConnections, newConnections);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS, oldConnections,
+				newConnections);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -404,17 +430,16 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public void setConnections(SadConnections newConnections) {
-		if (newConnections != connections)
-		{
+		if (newConnections != connections) {
 			NotificationChain msgs = null;
 			if (connections != null)
-				msgs = ((InternalEObject)connections).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS, null, msgs);
+				msgs = ((InternalEObject) connections).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS, null, msgs);
 			if (newConnections != null)
-				msgs = ((InternalEObject)newConnections).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS, null, msgs);
+				msgs = ((InternalEObject) newConnections).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS, null, msgs);
 			msgs = basicSetConnections(newConnections, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS, newConnections, newConnections));
 	}
 
@@ -436,10 +461,13 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetExternalPorts(ExternalPorts newExternalPorts, NotificationChain msgs) {
 		ExternalPorts oldExternalPorts = externalPorts;
 		externalPorts = newExternalPorts;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, oldExternalPorts, newExternalPorts);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, oldExternalPorts,
+				newExternalPorts);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -451,17 +479,16 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public void setExternalPorts(ExternalPorts newExternalPorts) {
-		if (newExternalPorts != externalPorts)
-		{
+		if (newExternalPorts != externalPorts) {
 			NotificationChain msgs = null;
 			if (externalPorts != null)
-				msgs = ((InternalEObject)externalPorts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, null, msgs);
+				msgs = ((InternalEObject) externalPorts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, null, msgs);
 			if (newExternalPorts != null)
-				msgs = ((InternalEObject)newExternalPorts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, null, msgs);
+				msgs = ((InternalEObject) newExternalPorts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, null, msgs);
 			msgs = basicSetExternalPorts(newExternalPorts, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, newExternalPorts, newExternalPorts));
 	}
 
@@ -485,10 +512,13 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	public NotificationChain basicSetExternalProperties(ExternalProperties newExternalProperties, NotificationChain msgs) {
 		ExternalProperties oldExternalProperties = externalProperties;
 		externalProperties = newExternalProperties;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, oldExternalProperties, newExternalProperties);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES,
+				oldExternalProperties, newExternalProperties);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -501,18 +531,20 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public void setExternalProperties(ExternalProperties newExternalProperties) {
-		if (newExternalProperties != externalProperties)
-		{
+		if (newExternalProperties != externalProperties) {
 			NotificationChain msgs = null;
 			if (externalProperties != null)
-				msgs = ((InternalEObject)externalProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, null, msgs);
+				msgs = ((InternalEObject) externalProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES,
+					null, msgs);
 			if (newExternalProperties != null)
-				msgs = ((InternalEObject)newExternalProperties).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, null, msgs);
+				msgs = ((InternalEObject) newExternalProperties).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES,
+					null, msgs);
 			msgs = basicSetExternalProperties(newExternalProperties, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, newExternalProperties, newExternalProperties));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, newExternalProperties,
+				newExternalProperties));
 	}
 
 	/**
@@ -595,6 +627,56 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UsesDeviceDependencies getUsesDeviceDependencies() {
+		return usesDeviceDependencies;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetUsesDeviceDependencies(UsesDeviceDependencies newUsesDeviceDependencies, NotificationChain msgs) {
+		UsesDeviceDependencies oldUsesDeviceDependencies = usesDeviceDependencies;
+		usesDeviceDependencies = newUsesDeviceDependencies;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES,
+				oldUsesDeviceDependencies, newUsesDeviceDependencies);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUsesDeviceDependencies(UsesDeviceDependencies newUsesDeviceDependencies) {
+		if (newUsesDeviceDependencies != usesDeviceDependencies) {
+			NotificationChain msgs = null;
+			if (usesDeviceDependencies != null)
+				msgs = ((InternalEObject) usesDeviceDependencies).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES, null, msgs);
+			if (newUsesDeviceDependencies != null)
+				msgs = ((InternalEObject) newUsesDeviceDependencies).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES, null, msgs);
+			msgs = basicSetUsesDeviceDependencies(newUsesDeviceDependencies, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES, newUsesDeviceDependencies,
+				newUsesDeviceDependencies));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
@@ -623,7 +705,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 		return retVal;
 		// BEGIN GENERATED CODE
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * Get's all components in their start order; components without a start order
@@ -704,20 +786,21 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
-				return basicSetComponentFiles(null, msgs);
-			case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
-				return basicSetPartitioning(null, msgs);
-			case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
-				return basicSetAssemblyController(null, msgs);
-			case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
-				return basicSetConnections(null, msgs);
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
-				return basicSetExternalPorts(null, msgs);
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
-				return basicSetExternalProperties(null, msgs);
+		switch (featureID) {
+		case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
+			return basicSetComponentFiles(null, msgs);
+		case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
+			return basicSetPartitioning(null, msgs);
+		case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
+			return basicSetAssemblyController(null, msgs);
+		case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
+			return basicSetConnections(null, msgs);
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
+			return basicSetExternalPorts(null, msgs);
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+			return basicSetExternalProperties(null, msgs);
+		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
+			return basicSetUsesDeviceDependencies(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -729,28 +812,29 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
-				return getDescription();
-			case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
-				return getComponentFiles();
-			case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
-				return getPartitioning();
-			case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
-				return getAssemblyController();
-			case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
-				return getConnections();
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
-				return getExternalPorts();
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
-				return getExternalProperties();
-			case SadPackage.SOFTWARE_ASSEMBLY__ID:
-				return getId();
-			case SadPackage.SOFTWARE_ASSEMBLY__NAME:
-				return getName();
-			case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
-				return getVersion();
+		switch (featureID) {
+		case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
+			return getDescription();
+		case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
+			return getComponentFiles();
+		case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
+			return getPartitioning();
+		case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
+			return getAssemblyController();
+		case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
+			return getConnections();
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
+			return getExternalPorts();
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+			return getExternalProperties();
+		case SadPackage.SOFTWARE_ASSEMBLY__ID:
+			return getId();
+		case SadPackage.SOFTWARE_ASSEMBLY__NAME:
+			return getName();
+		case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
+			return getVersion();
+		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
+			return getUsesDeviceDependencies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -762,38 +846,40 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
-				setComponentFiles((ComponentFiles)newValue);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
-				setPartitioning((SadPartitioning)newValue);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
-				setAssemblyController((AssemblyController)newValue);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
-				setConnections((SadConnections)newValue);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
-				setExternalPorts((ExternalPorts)newValue);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
-				setExternalProperties((ExternalProperties)newValue);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__ID:
-				setId((String)newValue);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__NAME:
-				setName((String)newValue);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
-				setVersion((String)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
+			setComponentFiles((ComponentFiles) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
+			setPartitioning((SadPartitioning) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
+			setAssemblyController((AssemblyController) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
+			setConnections((SadConnections) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
+			setExternalPorts((ExternalPorts) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+			setExternalProperties((ExternalProperties) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__ID:
+			setId((String) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__NAME:
+			setName((String) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
+			setVersion((String) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
+			setUsesDeviceDependencies((UsesDeviceDependencies) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -805,38 +891,40 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
-				setComponentFiles((ComponentFiles)null);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
-				setPartitioning((SadPartitioning)null);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
-				setAssemblyController((AssemblyController)null);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
-				setConnections((SadConnections)null);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
-				setExternalPorts((ExternalPorts)null);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
-				setExternalProperties((ExternalProperties)null);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
-				setVersion(VERSION_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
+			setComponentFiles((ComponentFiles) null);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
+			setPartitioning((SadPartitioning) null);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
+			setAssemblyController((AssemblyController) null);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
+			setConnections((SadConnections) null);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
+			setExternalPorts((ExternalPorts) null);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+			setExternalProperties((ExternalProperties) null);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
+			setVersion(VERSION_EDEFAULT);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
+			setUsesDeviceDependencies((UsesDeviceDependencies) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -848,28 +936,29 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
-				return componentFiles != null;
-			case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
-				return partitioning != null;
-			case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
-				return assemblyController != null;
-			case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
-				return connections != null;
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
-				return externalPorts != null;
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
-				return externalProperties != null;
-			case SadPackage.SOFTWARE_ASSEMBLY__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case SadPackage.SOFTWARE_ASSEMBLY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
-				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+		switch (featureID) {
+		case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
+			return componentFiles != null;
+		case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
+			return partitioning != null;
+		case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
+			return assemblyController != null;
+		case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
+			return connections != null;
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
+			return externalPorts != null;
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+			return externalProperties != null;
+		case SadPackage.SOFTWARE_ASSEMBLY__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case SadPackage.SOFTWARE_ASSEMBLY__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
+			return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
+			return usesDeviceDependencies != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -881,7 +970,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
@@ -897,8 +987,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	}
 
 	private SadComponentInstantiation getComponentInstantiation(String instantiationId, List<SadComponentInstantiation> instantiations) {
-		for(SadComponentInstantiation inst : instantiations) {
-			if (inst.getId().equals(instantiationId)){
+		for (SadComponentInstantiation inst : instantiations) {
+			if (inst.getId().equals(instantiationId)) {
 				return inst;
 			}
 		}

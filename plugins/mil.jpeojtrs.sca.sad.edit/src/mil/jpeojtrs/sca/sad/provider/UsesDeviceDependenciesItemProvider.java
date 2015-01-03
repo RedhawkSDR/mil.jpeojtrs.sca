@@ -14,15 +14,18 @@ package mil.jpeojtrs.sca.sad.provider;
 import java.util.Collection;
 import java.util.List;
 
-import mil.jpeojtrs.sca.sad.AssemblyController;
-import mil.jpeojtrs.sca.sad.SadFactory;
 import mil.jpeojtrs.sca.sad.SadPackage;
+import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
+
+import mil.jpeojtrs.sca.spd.SpdFactory;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -34,21 +37,20 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link mil.jpeojtrs.sca.sad.AssemblyController} object.
+ * This is the item provider adapter for a {@link mil.jpeojtrs.sca.sad.UsesDeviceDependencies} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AssemblyControllerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+public class UsesDeviceDependenciesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
-
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssemblyControllerItemProvider(AdapterFactory adapterFactory) {
+	public UsesDeviceDependenciesItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,22 +65,8 @@ public class AssemblyControllerItemProvider extends ItemProviderAdapter implemen
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addComponentInstantiationRefPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Component Instantiation Ref feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addComponentInstantiationRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_AssemblyController_componentInstantiationRef_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_AssemblyController_componentInstantiationRef_feature", "_UI_AssemblyController_type"),
-			SadPackage.Literals.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, true, false, false, null, null, null));
 	}
 
 	/**
@@ -93,7 +81,7 @@ public class AssemblyControllerItemProvider extends ItemProviderAdapter implemen
 	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SadPackage.Literals.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF);
+			childrenFeatures.add(SadPackage.Literals.USES_DEVICE_DEPENDENCIES__USESDEVICE);
 		}
 		return childrenFeatures;
 	}
@@ -112,14 +100,14 @@ public class AssemblyControllerItemProvider extends ItemProviderAdapter implemen
 	}
 
 	/**
-	 * This returns AssemblyController.gif.
+	 * This returns UsesDeviceDependencies.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/AssemblyController"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/UsesDeviceDependencies"));
 	}
 
 	/**
@@ -130,7 +118,7 @@ public class AssemblyControllerItemProvider extends ItemProviderAdapter implemen
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_AssemblyController_type");
+		return getString("_UI_UsesDeviceDependencies_type");
 	}
 
 	/**
@@ -144,8 +132,8 @@ public class AssemblyControllerItemProvider extends ItemProviderAdapter implemen
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AssemblyController.class)) {
-		case SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF:
+		switch (notification.getFeatureID(UsesDeviceDependencies.class)) {
+		case SadPackage.USES_DEVICE_DEPENDENCIES__USESDEVICE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -163,8 +151,7 @@ public class AssemblyControllerItemProvider extends ItemProviderAdapter implemen
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SadPackage.Literals.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF,
-			SadFactory.eINSTANCE.createSadComponentInstantiationRef()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.USES_DEVICE_DEPENDENCIES__USESDEVICE, SpdFactory.eINSTANCE.createUsesDevice()));
 	}
 
 	/**

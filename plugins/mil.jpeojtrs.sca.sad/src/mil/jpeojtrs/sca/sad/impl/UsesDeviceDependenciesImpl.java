@@ -13,49 +13,53 @@ package mil.jpeojtrs.sca.sad.impl;
 
 import java.util.Collection;
 
-import mil.jpeojtrs.sca.sad.ExternalProperties;
-import mil.jpeojtrs.sca.sad.ExternalProperty;
 import mil.jpeojtrs.sca.sad.SadPackage;
+import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
+
+import mil.jpeojtrs.sca.spd.UsesDevice;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>External Properties</b></em>'.
- * @since 2.3
+ * An implementation of the model object '<em><b>Uses Device Dependencies</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link mil.jpeojtrs.sca.sad.impl.ExternalPropertiesImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl#getUsesdevice <em>Usesdevice</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ExternalPropertiesImpl extends EObjectImpl implements ExternalProperties {
+public class UsesDeviceDependenciesImpl extends EObjectImpl implements UsesDeviceDependencies {
 	/**
-	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
+	 * The cached value of the '{@link #getUsesdevice() <em>Usesdevice</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProperties()
+	 * @see #getUsesdevice()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ExternalProperty> properties;
+	protected EList<UsesDevice> usesdevice;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExternalPropertiesImpl() {
+	protected UsesDeviceDependenciesImpl() {
 		super();
 	}
 
@@ -66,7 +70,7 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SadPackage.Literals.EXTERNAL_PROPERTIES;
+		return SadPackage.Literals.USES_DEVICE_DEPENDENCIES;
 	}
 
 	/**
@@ -74,12 +78,11 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EList<ExternalProperty> getProperties() {
-		if (properties == null) {
-			properties = new EObjectContainmentEList<ExternalProperty>(ExternalProperty.class, this, SadPackage.EXTERNAL_PROPERTIES__PROPERTIES);
+	public EList<UsesDevice> getUsesdevice() {
+		if (usesdevice == null) {
+			usesdevice = new EObjectContainmentEList<UsesDevice>(UsesDevice.class, this, SadPackage.USES_DEVICE_DEPENDENCIES__USESDEVICE);
 		}
-		return properties;
+		return usesdevice;
 	}
 
 	/**
@@ -90,8 +93,8 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
-			return ((InternalEList< ? >) getProperties()).basicRemove(otherEnd, msgs);
+		case SadPackage.USES_DEVICE_DEPENDENCIES__USESDEVICE:
+			return ((InternalEList< ? >) getUsesdevice()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -104,8 +107,8 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
-			return getProperties();
+		case SadPackage.USES_DEVICE_DEPENDENCIES__USESDEVICE:
+			return getUsesdevice();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,9 +122,9 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
-			getProperties().clear();
-			getProperties().addAll((Collection< ? extends ExternalProperty>) newValue);
+		case SadPackage.USES_DEVICE_DEPENDENCIES__USESDEVICE:
+			getUsesdevice().clear();
+			getUsesdevice().addAll((Collection< ? extends UsesDevice>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,8 +138,8 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
-			getProperties().clear();
+		case SadPackage.USES_DEVICE_DEPENDENCIES__USESDEVICE:
+			getUsesdevice().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -150,10 +153,10 @@ public class ExternalPropertiesImpl extends EObjectImpl implements ExternalPrope
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SadPackage.EXTERNAL_PROPERTIES__PROPERTIES:
-			return properties != null && !properties.isEmpty();
+		case SadPackage.USES_DEVICE_DEPENDENCIES__USESDEVICE:
+			return usesdevice != null && !usesdevice.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ExternalPropertiesImpl
+} //UsesDeviceDependenciesImpl

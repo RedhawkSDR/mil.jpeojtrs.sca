@@ -15,7 +15,6 @@ import mil.jpeojtrs.sca.partitioning.Partitioning;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Partitioning</b></em>'.

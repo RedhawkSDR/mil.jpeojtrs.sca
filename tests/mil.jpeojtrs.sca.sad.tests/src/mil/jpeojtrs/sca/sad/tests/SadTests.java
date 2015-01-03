@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * @generated NOT
  */
 public class SadTests {
-	
+
 	private static ResourceSet createResourceSet() throws URISyntaxException {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		URL url = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.sad.tests"), new Path("sdr"), null);
@@ -40,8 +40,8 @@ public class SadTests {
 		resourceSet.getURIConverter().getURIHandlers().add(0, handler);
 		return resourceSet;
 	}
-	
-	public static SoftwareAssembly getSoftwareAssembly()  throws Exception {
+
+	public static SoftwareAssembly getSoftwareAssembly() throws Exception {
 		URI uri = URI.createURI("sdrDom:///waveforms/GenericWaveform/GenericSadFile.sad.xml");
 		ResourceSet resourceSet = createResourceSet();
 		Resource resource = resourceSet.getResource(uri, true);

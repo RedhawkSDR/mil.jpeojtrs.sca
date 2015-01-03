@@ -109,10 +109,13 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	public NotificationChain basicSetResourceFactoryProperties(ResourceFactoryProperties newResourceFactoryProperties, NotificationChain msgs) {
 		ResourceFactoryProperties oldResourceFactoryProperties = resourceFactoryProperties;
 		resourceFactoryProperties = newResourceFactoryProperties;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES, oldResourceFactoryProperties, newResourceFactoryProperties);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+				SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES, oldResourceFactoryProperties, newResourceFactoryProperties);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -124,18 +127,20 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public void setResourceFactoryProperties(ResourceFactoryProperties newResourceFactoryProperties) {
-		if (newResourceFactoryProperties != resourceFactoryProperties)
-		{
+		if (newResourceFactoryProperties != resourceFactoryProperties) {
 			NotificationChain msgs = null;
 			if (resourceFactoryProperties != null)
-				msgs = ((InternalEObject)resourceFactoryProperties).eInverseRemove(this, SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF, ResourceFactoryProperties.class, msgs);
+				msgs = ((InternalEObject) resourceFactoryProperties).eInverseRemove(this, SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF,
+					ResourceFactoryProperties.class, msgs);
 			if (newResourceFactoryProperties != null)
-				msgs = ((InternalEObject)newResourceFactoryProperties).eInverseAdd(this, SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF, ResourceFactoryProperties.class, msgs);
+				msgs = ((InternalEObject) newResourceFactoryProperties).eInverseAdd(this, SadPackage.RESOURCE_FACTORY_PROPERTIES__FACTORY_REF,
+					ResourceFactoryProperties.class, msgs);
 			msgs = basicSetResourceFactoryProperties(newResourceFactoryProperties, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES, newResourceFactoryProperties, newResourceFactoryProperties));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES,
+				newResourceFactoryProperties, newResourceFactoryProperties));
 	}
 
 	/**
@@ -169,7 +174,7 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	@Override
 	public SadComponentInstantiation getComponent() {
 		SadComponentInstantiation component = basicGetComponent();
-		return component != null && component.eIsProxy() ? (SadComponentInstantiation)eResolveProxy((InternalEObject)component) : component;
+		return component != null && component.eIsProxy() ? (SadComponentInstantiation) eResolveProxy((InternalEObject) component) : component;
 	}
 
 	/**
@@ -229,12 +234,12 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
-				if (resourceFactoryProperties != null)
-					msgs = ((InternalEObject)resourceFactoryProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES, null, msgs);
-				return basicSetResourceFactoryProperties((ResourceFactoryProperties)otherEnd, msgs);
+		switch (featureID) {
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
+			if (resourceFactoryProperties != null)
+				msgs = ((InternalEObject) resourceFactoryProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES, null, msgs);
+			return basicSetResourceFactoryProperties((ResourceFactoryProperties) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -246,10 +251,9 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
-				return basicSetResourceFactoryProperties(null, msgs);
+		switch (featureID) {
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
+			return basicSetResourceFactoryProperties(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -261,15 +265,15 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
-				return getResourceFactoryProperties();
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__REFID:
-				return getRefid();
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__COMPONENT:
-				if (resolve) return getComponent();
-				return basicGetComponent();
+		switch (featureID) {
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
+			return getResourceFactoryProperties();
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__REFID:
+			return getRefid();
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__COMPONENT:
+			if (resolve)
+				return getComponent();
+			return basicGetComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -281,17 +285,16 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
-				setResourceFactoryProperties((ResourceFactoryProperties)newValue);
-				return;
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__REFID:
-				setRefid((String)newValue);
-				return;
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__COMPONENT:
-				setComponent((SadComponentInstantiation)newValue);
-				return;
+		switch (featureID) {
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
+			setResourceFactoryProperties((ResourceFactoryProperties) newValue);
+			return;
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__REFID:
+			setRefid((String) newValue);
+			return;
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__COMPONENT:
+			setComponent((SadComponentInstantiation) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -303,17 +306,16 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
-				setResourceFactoryProperties((ResourceFactoryProperties)null);
-				return;
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__REFID:
-				setRefid(REFID_EDEFAULT);
-				return;
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__COMPONENT:
-				setComponent((SadComponentInstantiation)null);
-				return;
+		switch (featureID) {
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
+			setResourceFactoryProperties((ResourceFactoryProperties) null);
+			return;
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__REFID:
+			setRefid(REFID_EDEFAULT);
+			return;
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__COMPONENT:
+			setComponent((SadComponentInstantiation) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -325,14 +327,13 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
-				return resourceFactoryProperties != null;
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__REFID:
-				return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
-			case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__COMPONENT:
-				return basicGetComponent() != null;
+		switch (featureID) {
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
+			return resourceFactoryProperties != null;
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__REFID:
+			return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
+		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__COMPONENT:
+			return basicGetComponent() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -344,7 +345,8 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (refid: ");

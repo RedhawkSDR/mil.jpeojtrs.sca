@@ -22,6 +22,12 @@ import mil.jpeojtrs.sca.sad.SadFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>External Property</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.sad.ExternalProperty#resolveExternalID() <em>Resolve External ID</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class ExternalPropertyTest extends TestCase {
@@ -94,9 +100,22 @@ public class ExternalPropertyTest extends TestCase {
 	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
-	
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.sad.ExternalProperty#resolveExternalID() <em>Resolve External ID</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.sad.ExternalProperty#resolveExternalID()
+	 * @generated
+	 */
+	public void testResolveExternalID() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
 	@Test
-	public void test_stub() throws Exception{
+	public void test_stub() throws Exception {
 		// PASS
 	}
 

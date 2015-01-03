@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -42,10 +41,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SoftwareAssemblyItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class SoftwareAssemblyItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -64,8 +61,7 @@ public class SoftwareAssemblyItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -83,19 +79,10 @@ public class SoftwareAssemblyItemProvider
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftwareAssembly_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftwareAssembly_description_feature", "_UI_SoftwareAssembly_type"),
-				 SadPackage.Literals.SOFTWARE_ASSEMBLY__DESCRIPTION,
-				 true,
-				 true,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftwareAssembly_description_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftwareAssembly_description_feature", "_UI_SoftwareAssembly_type"),
+			SadPackage.Literals.SOFTWARE_ASSEMBLY__DESCRIPTION, true, true, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -105,19 +92,10 @@ public class SoftwareAssemblyItemProvider
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftwareAssembly_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftwareAssembly_id_feature", "_UI_SoftwareAssembly_type"),
-				 SadPackage.Literals.SOFTWARE_ASSEMBLY__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftwareAssembly_id_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftwareAssembly_id_feature", "_UI_SoftwareAssembly_type"),
+			SadPackage.Literals.SOFTWARE_ASSEMBLY__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -127,19 +105,10 @@ public class SoftwareAssemblyItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftwareAssembly_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftwareAssembly_name_feature", "_UI_SoftwareAssembly_type"),
-				 SadPackage.Literals.SOFTWARE_ASSEMBLY__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftwareAssembly_name_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftwareAssembly_name_feature", "_UI_SoftwareAssembly_type"),
+			SadPackage.Literals.SOFTWARE_ASSEMBLY__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -149,19 +118,10 @@ public class SoftwareAssemblyItemProvider
 	 * @generated
 	 */
 	protected void addVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftwareAssembly_version_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftwareAssembly_version_feature", "_UI_SoftwareAssembly_type"),
-				 SadPackage.Literals.SOFTWARE_ASSEMBLY__VERSION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftwareAssembly_version_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftwareAssembly_version_feature", "_UI_SoftwareAssembly_type"),
+			SadPackage.Literals.SOFTWARE_ASSEMBLY__VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -173,9 +133,8 @@ public class SoftwareAssemblyItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__COMPONENT_FILES);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__PARTITIONING);
@@ -183,6 +142,7 @@ public class SoftwareAssemblyItemProvider
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__CONNECTIONS);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES);
+			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES);
 		}
 		return childrenFeatures;
 	}
@@ -241,22 +201,22 @@ public class SoftwareAssemblyItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SoftwareAssembly.class))
-		{
-			case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
-			case SadPackage.SOFTWARE_ASSEMBLY__ID:
-			case SadPackage.SOFTWARE_ASSEMBLY__NAME:
-			case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
-			case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
-			case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
-			case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
-			case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(SoftwareAssembly.class)) {
+		case SadPackage.SOFTWARE_ASSEMBLY__DESCRIPTION:
+		case SadPackage.SOFTWARE_ASSEMBLY__ID:
+		case SadPackage.SOFTWARE_ASSEMBLY__NAME:
+		case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__COMPONENT_FILES:
+		case SadPackage.SOFTWARE_ASSEMBLY__PARTITIONING:
+		case SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER:
+		case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
+		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -272,30 +232,21 @@ public class SoftwareAssemblyItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.SOFTWARE_ASSEMBLY__COMPONENT_FILES,
-				 PartitioningFactory.eINSTANCE.createComponentFiles()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__COMPONENT_FILES,
+			PartitioningFactory.eINSTANCE.createComponentFiles()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.SOFTWARE_ASSEMBLY__PARTITIONING,
-				 SadFactory.eINSTANCE.createSadPartitioning()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__PARTITIONING, SadFactory.eINSTANCE.createSadPartitioning()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER,
-				 SadFactory.eINSTANCE.createAssemblyController()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER,
+			SadFactory.eINSTANCE.createAssemblyController()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS,
-				 SadFactory.eINSTANCE.createExternalPorts()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, SadFactory.eINSTANCE.createExternalPorts()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES,
-				 SadFactory.eINSTANCE.createExternalProperties()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES,
+			SadFactory.eINSTANCE.createExternalProperties()));
+
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES,
+			SadFactory.eINSTANCE.createUsesDeviceDependencies()));
 	}
 
 	/**

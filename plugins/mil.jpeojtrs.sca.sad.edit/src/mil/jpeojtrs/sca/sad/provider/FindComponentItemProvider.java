@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -40,15 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FindComponentItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		ITableItemLabelProvider {
+public class FindComponentItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -68,8 +60,7 @@ public class FindComponentItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -85,9 +76,8 @@ public class FindComponentItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SadPackage.Literals.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF);
 			childrenFeatures.add(SadPackage.Literals.FIND_COMPONENT__NAMING_SERVICE);
@@ -141,12 +131,11 @@ public class FindComponentItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(FindComponent.class))
-		{
-			case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
-			case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(FindComponent.class)) {
+		case SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF:
+		case SadPackage.FIND_COMPONENT__NAMING_SERVICE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -162,15 +151,10 @@ public class FindComponentItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF,
-				 SadFactory.eINSTANCE.createComponentResourceFactoryRef()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF,
+			SadFactory.eINSTANCE.createComponentResourceFactoryRef()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.FIND_COMPONENT__NAMING_SERVICE,
-				 PartitioningFactory.eINSTANCE.createNamingService()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.FIND_COMPONENT__NAMING_SERVICE, PartitioningFactory.eINSTANCE.createNamingService()));
 	}
 
 	/**

@@ -11,27 +11,19 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
-
 import java.util.Collection;
 import java.util.List;
-
 import mil.jpeojtrs.sca.partitioning.provider.ComponentInstantiationItemProvider;
 import mil.jpeojtrs.sca.sad.SadComponentInstantiation;
 import mil.jpeojtrs.sca.sad.SadFactory;
 import mil.jpeojtrs.sca.sad.SadPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -41,15 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SadComponentInstantiationItemProvider
-	extends ComponentInstantiationItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		ITableItemLabelProvider {
+public class SadComponentInstantiationItemProvider extends ComponentInstantiationItemProvider implements ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -68,8 +52,7 @@ public class SadComponentInstantiationItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addStartOrderPropertyDescriptor(object);
@@ -84,19 +67,10 @@ public class SadComponentInstantiationItemProvider
 	 * @generated
 	 */
 	protected void addStartOrderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SadComponentInstantiation_startOrder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SadComponentInstantiation_startOrder_feature", "_UI_SadComponentInstantiation_type"),
-				 SadPackage.Literals.SAD_COMPONENT_INSTANTIATION__START_ORDER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SadComponentInstantiation_startOrder_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SadComponentInstantiation_startOrder_feature", "_UI_SadComponentInstantiation_type"),
+			SadPackage.Literals.SAD_COMPONENT_INSTANTIATION__START_ORDER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -108,9 +82,8 @@ public class SadComponentInstantiationItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SadPackage.Literals.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT);
 		}
@@ -152,14 +125,13 @@ public class SadComponentInstantiationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SadComponentInstantiation.class))
-		{
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(SadComponentInstantiation.class)) {
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -175,10 +147,8 @@ public class SadComponentInstantiationItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SadPackage.Literals.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT,
-				 SadFactory.eINSTANCE.createFindComponent()));
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT,
+			SadFactory.eINSTANCE.createFindComponent()));
 	}
 
 	/**

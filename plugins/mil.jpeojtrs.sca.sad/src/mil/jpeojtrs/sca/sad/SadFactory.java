@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface SadFactory extends EFactory {
-	
+
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
@@ -206,6 +206,15 @@ public interface SadFactory extends EFactory {
 	 * @generated
 	 */
 	SoftwareAssembly createSoftwareAssembly();
+
+	/**
+	 * Returns a new object of class '<em>Uses Device Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Uses Device Dependencies</em>'.
+	 * @generated
+	 */
+	UsesDeviceDependencies createUsesDeviceDependencies();
 
 	/**
 	 * Returns the package supported by this factory.
