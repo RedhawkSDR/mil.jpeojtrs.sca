@@ -14,6 +14,8 @@ package mil.jpeojtrs.sca.sad.tests;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import junit.framework.Test;
+import junit.framework.TestSuite;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 import mil.jpeojtrs.sca.util.SdrURIHandler;
 
@@ -31,7 +33,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * <!-- end-user-doc -->
  * @generated NOT
  */
-public class SadTests {
+public class SadTests extends TestSuite{
 
 	private static ResourceSet createResourceSet() throws URISyntaxException {
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -46,6 +48,33 @@ public class SadTests {
 		ResourceSet resourceSet = createResourceSet();
 		Resource resource = resourceSet.getResource(uri, true);
 		return SoftwareAssembly.Util.getSoftwareAssembly(resource);
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SadTests(String name) {
+		super(name);
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public static Test suite() {
+		final TestSuite suite = new SadTests("sad Tests");
+		suite.addTestSuite(SadComponentInstantiationTest.class);
+		suite.addTestSuite(SadComponentInstantiationRefTest.class);
+		suite.addTestSuite(SadConnectInterfaceTest.class);
+		suite.addTestSuite(SadPartitioningTest.class);
+		suite.addTestSuite(SadComponentPlacementTest.class);
+		suite.addTestSuite(ResourceFactoryPropertiesTest.class);
+		suite.addTestSuite(SadDocumentRootTest.class);
+		suite.addTestSuite(PortTest.class);
+		return suite;
 	}
 
 } //SadTests
