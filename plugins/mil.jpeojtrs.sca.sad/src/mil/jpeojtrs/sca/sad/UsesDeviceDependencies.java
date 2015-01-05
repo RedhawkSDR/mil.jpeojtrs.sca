@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see mil.jpeojtrs.sca.sad.SadPackage#getUsesDeviceDependencies()
  * @model extendedMetaData="name='usesdevicedependencies' kind='elementOnly' qualified='false'"
  * @generated
+ * @since 2.4
  */
 public interface UsesDeviceDependencies extends EObject {
 	/**

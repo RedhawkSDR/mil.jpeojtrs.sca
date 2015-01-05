@@ -213,6 +213,7 @@ public interface SadFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Uses Device Dependencies</em>'.
 	 * @generated
+	 * @since 2.4
 	 */
 	UsesDeviceDependencies createUsesDeviceDependencies();
 

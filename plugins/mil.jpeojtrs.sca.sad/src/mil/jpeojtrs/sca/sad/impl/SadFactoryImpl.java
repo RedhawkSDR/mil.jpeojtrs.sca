@@ -344,6 +344,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 2.4
 	 */
 	public UsesDeviceDependencies createUsesDeviceDependencies() {
 		UsesDeviceDependenciesImpl usesDeviceDependencies = new UsesDeviceDependenciesImpl();

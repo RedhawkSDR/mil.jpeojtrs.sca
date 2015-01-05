@@ -405,6 +405,7 @@ public class SadValidator extends EObjectValidator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 2.4
 	 */
 	public boolean validateUsesDeviceDependencies(UsesDeviceDependencies usesDeviceDependencies, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(usesDeviceDependencies, diagnostics, context);

@@ -563,6 +563,7 @@ public class SadSwitch< T > extends Switch<T> {
 	 * @return the result of interpreting the object as an instance of '<em>Uses Device Dependencies</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
+	 * @since 2.4
 	 */
 	public T caseUsesDeviceDependencies(UsesDeviceDependencies object) {
 		return null;

@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  *
  * @generated
+ * @since 2.4
  */
 public class UsesDeviceDependenciesImpl extends EObjectImpl implements UsesDeviceDependencies {
 	/**

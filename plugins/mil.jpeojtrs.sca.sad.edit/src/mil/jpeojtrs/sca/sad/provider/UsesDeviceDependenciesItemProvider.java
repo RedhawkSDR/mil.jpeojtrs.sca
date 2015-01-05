@@ -41,6 +41,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
+ * @since 2.4
  */
 public class UsesDeviceDependenciesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {

@@ -197,6 +197,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * @see #getUsesDeviceDependencies()
 	 * @generated
 	 * @ordered
+	 * @since 2.4
 	 */
 	protected UsesDeviceDependencies usesDeviceDependencies;
 
@@ -628,6 +629,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 2.4
 	 */
 	public UsesDeviceDependencies getUsesDeviceDependencies() {
 		return usesDeviceDependencies;
@@ -637,6 +639,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 2.4
 	 */
 	public NotificationChain basicSetUsesDeviceDependencies(UsesDeviceDependencies newUsesDeviceDependencies, NotificationChain msgs) {
 		UsesDeviceDependencies oldUsesDeviceDependencies = usesDeviceDependencies;
@@ -656,6 +659,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 2.4
 	 */
 	public void setUsesDeviceDependencies(UsesDeviceDependencies newUsesDeviceDependencies) {
 		if (newUsesDeviceDependencies != usesDeviceDependencies) {
