@@ -544,6 +544,7 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceDependencies
 	 * @generated
+	 * @since 2.4
 	 */
 	public Adapter createUsesDeviceDependenciesAdapter() {
 		return null;

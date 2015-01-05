@@ -1014,6 +1014,7 @@ public interface SadPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 2.4
 	 */
 	int SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES = 10;
 	/**
@@ -1031,6 +1032,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceDependencies()
 	 * @generated
+	 * @since 2.4
 	 */
 	int USES_DEVICE_DEPENDENCIES = 19;
 	/**
@@ -1039,6 +1041,7 @@ public interface SadPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 2.4
 	 */
 	int USES_DEVICE_DEPENDENCIES__USESDEVICE = 0;
 	/**
@@ -1047,6 +1050,7 @@ public interface SadPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 2.4
 	 */
 	int USES_DEVICE_DEPENDENCIES_FEATURE_COUNT = 1;
 
@@ -1729,6 +1733,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies()
 	 * @see #getSoftwareAssembly()
 	 * @generated
+	 * @since 2.4
 	 */
 	EReference getSoftwareAssembly_UsesDeviceDependencies();
 
@@ -1739,6 +1744,7 @@ public interface SadPackage extends EPackage {
 	 * @return the meta object for class '<em>Uses Device Dependencies</em>'.
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceDependencies
 	 * @generated
+	 * @since 2.4
 	 */
 	EClass getUsesDeviceDependencies();
 
@@ -1750,6 +1756,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceDependencies#getUsesdevice()
 	 * @see #getUsesDeviceDependencies()
 	 * @generated
+	 * @since 2.4
 	 */
 	EReference getUsesDeviceDependencies_Usesdevice();
 
@@ -2263,6 +2270,7 @@ public interface SadPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
+		 * @since 2.4
 		 */
 		EReference SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES = eINSTANCE.getSoftwareAssembly_UsesDeviceDependencies();
 		/**
@@ -2272,6 +2280,7 @@ public interface SadPackage extends EPackage {
 		 * @see mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl
 		 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceDependencies()
 		 * @generated
+		 * @since 2.4
 		 */
 		EClass USES_DEVICE_DEPENDENCIES = eINSTANCE.getUsesDeviceDependencies();
 		/**
@@ -2279,6 +2288,7 @@ public interface SadPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
+		 * @since 2.4
 		 */
 		EReference USES_DEVICE_DEPENDENCIES__USESDEVICE = eINSTANCE.getUsesDeviceDependencies_Usesdevice();
 
