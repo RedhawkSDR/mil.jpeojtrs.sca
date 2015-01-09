@@ -235,7 +235,7 @@ public interface SoftwareComponent extends EObject {
 		}
 		
 		public static String getFileSystem(SoftwareComponent scd) {
-			switch(getWellKnownComponentType(scd)) {
+			switch (getWellKnownComponentType(scd)) {
 			case DEVICE:
 			case SERVICE:
 			case DEVICE_MANAGER:
