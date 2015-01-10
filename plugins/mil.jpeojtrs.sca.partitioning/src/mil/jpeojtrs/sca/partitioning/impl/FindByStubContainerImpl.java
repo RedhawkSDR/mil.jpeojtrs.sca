@@ -76,8 +76,7 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 */
 	@Override
 	public EList<FindByStub> getStubs() {
-		if (stubs == null)
-		{
+		if (stubs == null) {
 			stubs = new EObjectContainmentEList<FindByStub>(FindByStub.class, this, PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS);
 		}
 		return stubs;
@@ -90,10 +89,9 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
-				return ((InternalEList<?>)getStubs()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
+			return ((InternalEList< ? >) getStubs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -105,10 +103,9 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
-				return getStubs();
+		switch (featureID) {
+		case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
+			return getStubs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,12 +118,11 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
-				getStubs().clear();
-				getStubs().addAll((Collection<? extends FindByStub>)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
+			getStubs().clear();
+			getStubs().addAll((Collection< ? extends FindByStub>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -138,11 +134,10 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
-				getStubs().clear();
-				return;
+		switch (featureID) {
+		case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
+			getStubs().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,10 +149,9 @@ public class FindByStubContainerImpl extends EObjectImpl implements FindByStubCo
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
-				return stubs != null && !stubs.isEmpty();
+		switch (featureID) {
+		case PartitioningPackage.FIND_BY_STUB_CONTAINER__STUBS:
+			return stubs != null && !stubs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

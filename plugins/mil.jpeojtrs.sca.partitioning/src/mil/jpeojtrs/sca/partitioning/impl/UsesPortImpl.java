@@ -13,6 +13,7 @@ package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiationRef;
 import mil.jpeojtrs.sca.partitioning.DeviceThatLoadedThisComponentRef;
+import mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication;
 import mil.jpeojtrs.sca.partitioning.DeviceUsedByThisComponentRef;
 import mil.jpeojtrs.sca.partitioning.FindBy;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
@@ -36,13 +37,14 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortImpl#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortImpl#getDeviceThatLoadedThisComponentRef <em>Device That Loaded This Component Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortImpl#getDeviceUsedByThisComponentRef <em>Device Used By This Component Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortImpl#getDeviceUsedByApplication <em>Device Used By Application</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortImpl#getFindBy <em>Find By</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> extends EObjectImpl implements UsesPort<U> {
+public abstract class UsesPortImpl< U extends ComponentInstantiationRef< ? >> extends EObjectImpl implements UsesPort<U> {
 
 	/**
 	 * The default value of the '{@link #getUsesIndentifier() <em>Uses Indentifier</em>}' attribute.
@@ -89,6 +91,16 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 * @ordered
 	 */
 	protected DeviceUsedByThisComponentRef deviceUsedByThisComponentRef;
+	/**
+	 * The cached value of the '{@link #getDeviceUsedByApplication() <em>Device Used By Application</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @see #getDeviceUsedByApplication()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeviceUsedByApplication deviceUsedByApplication;
 	/**
 	 * The cached value of the '{@link #getFindBy() <em>Find By</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -159,10 +171,13 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	public NotificationChain basicSetComponentInstantiationRef(U newComponentInstantiationRef, NotificationChain msgs) {
 		U oldComponentInstantiationRef = componentInstantiationRef;
 		componentInstantiationRef = newComponentInstantiationRef;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF, oldComponentInstantiationRef, newComponentInstantiationRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF,
+				oldComponentInstantiationRef, newComponentInstantiationRef);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -174,18 +189,20 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 */
 	@Override
 	public void setComponentInstantiationRef(U newComponentInstantiationRef) {
-		if (newComponentInstantiationRef != componentInstantiationRef)
-		{
+		if (newComponentInstantiationRef != componentInstantiationRef) {
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
-				msgs = ((InternalEObject)componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
 			if (newComponentInstantiationRef != null)
-				msgs = ((InternalEObject)newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
 			msgs = basicSetComponentInstantiationRef(newComponentInstantiationRef, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF, newComponentInstantiationRef, newComponentInstantiationRef));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF, newComponentInstantiationRef,
+				newComponentInstantiationRef));
 	}
 
 	/**
@@ -203,13 +220,17 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef newDeviceThatLoadedThisComponentRef, NotificationChain msgs) {
+	public NotificationChain basicSetDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef newDeviceThatLoadedThisComponentRef,
+		NotificationChain msgs) {
 		DeviceThatLoadedThisComponentRef oldDeviceThatLoadedThisComponentRef = deviceThatLoadedThisComponentRef;
 		deviceThatLoadedThisComponentRef = newDeviceThatLoadedThisComponentRef;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, oldDeviceThatLoadedThisComponentRef, newDeviceThatLoadedThisComponentRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+				PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, oldDeviceThatLoadedThisComponentRef, newDeviceThatLoadedThisComponentRef);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -221,18 +242,20 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 */
 	@Override
 	public void setDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef newDeviceThatLoadedThisComponentRef) {
-		if (newDeviceThatLoadedThisComponentRef != deviceThatLoadedThisComponentRef)
-		{
+		if (newDeviceThatLoadedThisComponentRef != deviceThatLoadedThisComponentRef) {
 			NotificationChain msgs = null;
 			if (deviceThatLoadedThisComponentRef != null)
-				msgs = ((InternalEObject)deviceThatLoadedThisComponentRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) deviceThatLoadedThisComponentRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
 			if (newDeviceThatLoadedThisComponentRef != null)
-				msgs = ((InternalEObject)newDeviceThatLoadedThisComponentRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) newDeviceThatLoadedThisComponentRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
 			msgs = basicSetDeviceThatLoadedThisComponentRef(newDeviceThatLoadedThisComponentRef, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, newDeviceThatLoadedThisComponentRef, newDeviceThatLoadedThisComponentRef));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF,
+				newDeviceThatLoadedThisComponentRef, newDeviceThatLoadedThisComponentRef));
 	}
 
 	/**
@@ -253,10 +276,13 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	public NotificationChain basicSetDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef newDeviceUsedByThisComponentRef, NotificationChain msgs) {
 		DeviceUsedByThisComponentRef oldDeviceUsedByThisComponentRef = deviceUsedByThisComponentRef;
 		deviceUsedByThisComponentRef = newDeviceUsedByThisComponentRef;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, oldDeviceUsedByThisComponentRef, newDeviceUsedByThisComponentRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF,
+				oldDeviceUsedByThisComponentRef, newDeviceUsedByThisComponentRef);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -268,18 +294,73 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 */
 	@Override
 	public void setDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef newDeviceUsedByThisComponentRef) {
-		if (newDeviceUsedByThisComponentRef != deviceUsedByThisComponentRef)
-		{
+		if (newDeviceUsedByThisComponentRef != deviceUsedByThisComponentRef) {
 			NotificationChain msgs = null;
 			if (deviceUsedByThisComponentRef != null)
-				msgs = ((InternalEObject)deviceUsedByThisComponentRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) deviceUsedByThisComponentRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
 			if (newDeviceUsedByThisComponentRef != null)
-				msgs = ((InternalEObject)newDeviceUsedByThisComponentRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) newDeviceUsedByThisComponentRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
 			msgs = basicSetDeviceUsedByThisComponentRef(newDeviceUsedByThisComponentRef, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF,
+				newDeviceUsedByThisComponentRef, newDeviceUsedByThisComponentRef));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeviceUsedByApplication getDeviceUsedByApplication() {
+		return deviceUsedByApplication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDeviceUsedByApplication(DeviceUsedByApplication newDeviceUsedByApplication, NotificationChain msgs) {
+		DeviceUsedByApplication oldDeviceUsedByApplication = deviceUsedByApplication;
+		deviceUsedByApplication = newDeviceUsedByApplication;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION,
+				oldDeviceUsedByApplication, newDeviceUsedByApplication);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, newDeviceUsedByThisComponentRef, newDeviceUsedByThisComponentRef));
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDeviceUsedByApplication(DeviceUsedByApplication newDeviceUsedByApplication) {
+		if (newDeviceUsedByApplication != deviceUsedByApplication) {
+			NotificationChain msgs = null;
+			if (deviceUsedByApplication != null)
+				msgs = ((InternalEObject) deviceUsedByApplication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION, null, msgs);
+			if (newDeviceUsedByApplication != null)
+				msgs = ((InternalEObject) newDeviceUsedByApplication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION, null, msgs);
+			msgs = basicSetDeviceUsedByApplication(newDeviceUsedByApplication, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION, newDeviceUsedByApplication,
+				newDeviceUsedByApplication));
 	}
 
 	/**
@@ -300,10 +381,12 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	public NotificationChain basicSetFindBy(FindBy newFindBy, NotificationChain msgs) {
 		FindBy oldFindBy = findBy;
 		findBy = newFindBy;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__FIND_BY, oldFindBy, newFindBy);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -315,17 +398,16 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 */
 	@Override
 	public void setFindBy(FindBy newFindBy) {
-		if (newFindBy != findBy)
-		{
+		if (newFindBy != findBy) {
 			NotificationChain msgs = null;
 			if (findBy != null)
-				msgs = ((InternalEObject)findBy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_PORT__FIND_BY, null, msgs);
+				msgs = ((InternalEObject) findBy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_PORT__FIND_BY, null, msgs);
 			if (newFindBy != null)
-				msgs = ((InternalEObject)newFindBy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_PORT__FIND_BY, null, msgs);
+				msgs = ((InternalEObject) newFindBy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_PORT__FIND_BY, null, msgs);
 			msgs = basicSetFindBy(newFindBy, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT__FIND_BY, newFindBy, newFindBy));
 	}
 
@@ -336,16 +418,17 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:
-				return basicSetComponentInstantiationRef(null, msgs);
-			case PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
-				return basicSetDeviceThatLoadedThisComponentRef(null, msgs);
-			case PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
-				return basicSetDeviceUsedByThisComponentRef(null, msgs);
-			case PartitioningPackage.USES_PORT__FIND_BY:
-				return basicSetFindBy(null, msgs);
+		switch (featureID) {
+		case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:
+			return basicSetComponentInstantiationRef(null, msgs);
+		case PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			return basicSetDeviceThatLoadedThisComponentRef(null, msgs);
+		case PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
+			return basicSetDeviceUsedByThisComponentRef(null, msgs);
+		case PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION:
+			return basicSetDeviceUsedByApplication(null, msgs);
+		case PartitioningPackage.USES_PORT__FIND_BY:
+			return basicSetFindBy(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -357,18 +440,19 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.USES_PORT__USES_INDENTIFIER:
-				return getUsesIndentifier();
-			case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:
-				return getComponentInstantiationRef();
-			case PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
-				return getDeviceThatLoadedThisComponentRef();
-			case PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
-				return getDeviceUsedByThisComponentRef();
-			case PartitioningPackage.USES_PORT__FIND_BY:
-				return getFindBy();
+		switch (featureID) {
+		case PartitioningPackage.USES_PORT__USES_INDENTIFIER:
+			return getUsesIndentifier();
+		case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:
+			return getComponentInstantiationRef();
+		case PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			return getDeviceThatLoadedThisComponentRef();
+		case PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
+			return getDeviceUsedByThisComponentRef();
+		case PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION:
+			return getDeviceUsedByApplication();
+		case PartitioningPackage.USES_PORT__FIND_BY:
+			return getFindBy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -381,23 +465,25 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.USES_PORT__USES_INDENTIFIER:
-				setUsesIndentifier((String)newValue);
-				return;
-			case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:
-				setComponentInstantiationRef((U)newValue);
-				return;
-			case PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
-				setDeviceThatLoadedThisComponentRef((DeviceThatLoadedThisComponentRef)newValue);
-				return;
-			case PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
-				setDeviceUsedByThisComponentRef((DeviceUsedByThisComponentRef)newValue);
-				return;
-			case PartitioningPackage.USES_PORT__FIND_BY:
-				setFindBy((FindBy)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.USES_PORT__USES_INDENTIFIER:
+			setUsesIndentifier((String) newValue);
+			return;
+		case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:
+			setComponentInstantiationRef((U) newValue);
+			return;
+		case PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			setDeviceThatLoadedThisComponentRef((DeviceThatLoadedThisComponentRef) newValue);
+			return;
+		case PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
+			setDeviceUsedByThisComponentRef((DeviceUsedByThisComponentRef) newValue);
+			return;
+		case PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION:
+			setDeviceUsedByApplication((DeviceUsedByApplication) newValue);
+			return;
+		case PartitioningPackage.USES_PORT__FIND_BY:
+			setFindBy((FindBy) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -409,23 +495,25 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.USES_PORT__USES_INDENTIFIER:
-				setUsesIndentifier(USES_INDENTIFIER_EDEFAULT);
-				return;
-			case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:
-				setComponentInstantiationRef((U)null);
-				return;
-			case PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
-				setDeviceThatLoadedThisComponentRef((DeviceThatLoadedThisComponentRef)null);
-				return;
-			case PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
-				setDeviceUsedByThisComponentRef((DeviceUsedByThisComponentRef)null);
-				return;
-			case PartitioningPackage.USES_PORT__FIND_BY:
-				setFindBy((FindBy)null);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.USES_PORT__USES_INDENTIFIER:
+			setUsesIndentifier(USES_INDENTIFIER_EDEFAULT);
+			return;
+		case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:
+			setComponentInstantiationRef((U) null);
+			return;
+		case PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			setDeviceThatLoadedThisComponentRef((DeviceThatLoadedThisComponentRef) null);
+			return;
+		case PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
+			setDeviceUsedByThisComponentRef((DeviceUsedByThisComponentRef) null);
+			return;
+		case PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION:
+			setDeviceUsedByApplication((DeviceUsedByApplication) null);
+			return;
+		case PartitioningPackage.USES_PORT__FIND_BY:
+			setFindBy((FindBy) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -437,18 +525,19 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.USES_PORT__USES_INDENTIFIER:
-				return USES_INDENTIFIER_EDEFAULT == null ? usesIndentifier != null : !USES_INDENTIFIER_EDEFAULT.equals(usesIndentifier);
-			case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:
-				return componentInstantiationRef != null;
-			case PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
-				return deviceThatLoadedThisComponentRef != null;
-			case PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
-				return deviceUsedByThisComponentRef != null;
-			case PartitioningPackage.USES_PORT__FIND_BY:
-				return findBy != null;
+		switch (featureID) {
+		case PartitioningPackage.USES_PORT__USES_INDENTIFIER:
+			return USES_INDENTIFIER_EDEFAULT == null ? usesIndentifier != null : !USES_INDENTIFIER_EDEFAULT.equals(usesIndentifier);
+		case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:
+			return componentInstantiationRef != null;
+		case PartitioningPackage.USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			return deviceThatLoadedThisComponentRef != null;
+		case PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
+			return deviceUsedByThisComponentRef != null;
+		case PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION:
+			return deviceUsedByApplication != null;
+		case PartitioningPackage.USES_PORT__FIND_BY:
+			return findBy != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -460,7 +549,8 @@ public abstract class UsesPortImpl<U extends ComponentInstantiationRef<?>> exten
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (usesIndentifier: ");

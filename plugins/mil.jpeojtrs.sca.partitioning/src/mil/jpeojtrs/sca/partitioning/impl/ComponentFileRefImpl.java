@@ -82,7 +82,7 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	@Override
 	public ComponentFile getFile() {
 		ComponentFile file = basicGetFile();
-		return file != null && file.eIsProxy() ? (ComponentFile)eResolveProxy((InternalEObject)file) : file;
+		return file != null && file.eIsProxy() ? (ComponentFile) eResolveProxy((InternalEObject) file) : file;
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_FILE_REF__REFID, oldRefid, refid));
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -143,7 +143,7 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 		ComponentFile oldFile = getFile();
 		setRefidGen(newRefid);
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_FILE_REF__FILE, oldFile, getFile()));		
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_FILE_REF__FILE, oldFile, getFile()));
 	}
 
 	/**
@@ -153,13 +153,13 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILE_REF__FILE:
-				if (resolve) return getFile();
-				return basicGetFile();
-			case PartitioningPackage.COMPONENT_FILE_REF__REFID:
-				return getRefid();
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILE_REF__FILE:
+			if (resolve)
+				return getFile();
+			return basicGetFile();
+		case PartitioningPackage.COMPONENT_FILE_REF__REFID:
+			return getRefid();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,14 +171,13 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILE_REF__FILE:
-				setFile((ComponentFile)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_FILE_REF__REFID:
-				setRefid((String)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILE_REF__FILE:
+			setFile((ComponentFile) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_FILE_REF__REFID:
+			setRefid((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -190,14 +189,13 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILE_REF__FILE:
-				setFile((ComponentFile)null);
-				return;
-			case PartitioningPackage.COMPONENT_FILE_REF__REFID:
-				setRefid(REFID_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILE_REF__FILE:
+			setFile((ComponentFile) null);
+			return;
+		case PartitioningPackage.COMPONENT_FILE_REF__REFID:
+			setRefid(REFID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -209,12 +207,11 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILE_REF__FILE:
-				return basicGetFile() != null;
-			case PartitioningPackage.COMPONENT_FILE_REF__REFID:
-				return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILE_REF__FILE:
+			return basicGetFile() != null;
+		case PartitioningPackage.COMPONENT_FILE_REF__REFID:
+			return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -226,7 +223,8 @@ public class ComponentFileRefImpl extends EObjectImpl implements ComponentFileRe
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (refid: ");

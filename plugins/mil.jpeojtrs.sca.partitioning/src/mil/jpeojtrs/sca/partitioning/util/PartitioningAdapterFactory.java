@@ -25,6 +25,7 @@ import mil.jpeojtrs.sca.partitioning.ConnectionTarget;
 import mil.jpeojtrs.sca.partitioning.Connections;
 import mil.jpeojtrs.sca.partitioning.DevComponentFile;
 import mil.jpeojtrs.sca.partitioning.DeviceThatLoadedThisComponentRef;
+import mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication;
 import mil.jpeojtrs.sca.partitioning.DeviceUsedByThisComponentRef;
 import mil.jpeojtrs.sca.partitioning.DomComponentFile;
 import mil.jpeojtrs.sca.partitioning.DomainFinder;
@@ -37,6 +38,7 @@ import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
+import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
@@ -70,8 +72,7 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public PartitioningAdapterFactory() {
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = PartitioningPackage.eINSTANCE;
 		}
 	}
@@ -86,13 +87,11 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage)
-		{
+		if (object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject)
-		{
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		if (object instanceof EObject) {
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -103,155 +102,163 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PartitioningSwitch<Adapter> modelSwitch =
-		new PartitioningSwitch<Adapter>()
-		{
-			@Override
-			public Adapter caseComponentFile(ComponentFile object)
-			{
-				return createComponentFileAdapter();
-			}
-			@Override
-			public Adapter caseDomComponentFile(DomComponentFile object)
-			{
-				return createDomComponentFileAdapter();
-			}
-			@Override
-			public Adapter caseDevComponentFile(DevComponentFile object)
-			{
-				return createDevComponentFileAdapter();
-			}
-			@Override
-			public Adapter caseComponentFileRef(ComponentFileRef object)
-			{
-				return createComponentFileRefAdapter();
-			}
-			@Override
-			public Adapter caseComponentFiles(ComponentFiles object)
-			{
-				return createComponentFilesAdapter();
-			}
-			@Override
-			public Adapter caseComponentInstantiation(ComponentInstantiation object)
-			{
-				return createComponentInstantiationAdapter();
-			}
-			@Override
-			public <R extends ComponentInstantiation> Adapter caseComponentInstantiationRef(ComponentInstantiationRef<R> object)
-			{
-				return createComponentInstantiationRefAdapter();
-			}
-			@Override
-			public <I extends ComponentInstantiation> Adapter caseComponentPlacement(ComponentPlacement<I> object)
-			{
-				return createComponentPlacementAdapter();
-			}
-			@Override
-			public Adapter caseComponentProperties(ComponentProperties object)
-			{
-				return createComponentPropertiesAdapter();
-			}
-			@Override
-			public Adapter caseComponentSupportedInterface(ComponentSupportedInterface object)
-			{
-				return createComponentSupportedInterfaceAdapter();
-			}
-			@Override
-			public Adapter caseComponentSupportedInterfaceStub(ComponentSupportedInterfaceStub object)
-			{
-				return createComponentSupportedInterfaceStubAdapter();
-			}
-			@Override
-			public <CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(ConnectInterface<CIR, UP, PP> object)
-			{
-				return createConnectInterfaceAdapter();
-			}
-			@Override
-			public <CI extends ConnectInterface<?, ?, ?>> Adapter caseConnections(Connections<CI> object)
-			{
-				return createConnectionsAdapter();
-			}
-			@Override
-			public Adapter caseConnectionTarget(ConnectionTarget object)
-			{
-				return createConnectionTargetAdapter();
-			}
-			@Override
-			public Adapter caseDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef object)
-			{
-				return createDeviceThatLoadedThisComponentRefAdapter();
-			}
-			@Override
-			public Adapter caseDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef object)
-			{
-				return createDeviceUsedByThisComponentRefAdapter();
-			}
-			@Override
-			public Adapter caseDomainFinder(DomainFinder object)
-			{
-				return createDomainFinderAdapter();
-			}
-			@Override
-			public Adapter caseFindBy(FindBy object)
-			{
-				return createFindByAdapter();
-			}
-			@Override
-			public Adapter caseFindByStub(FindByStub object)
-			{
-				return createFindByStubAdapter();
-			}
-			@Override
-			public Adapter caseFindByStubContainer(FindByStubContainer object)
-			{
-				return createFindByStubContainerAdapter();
-			}
-			@Override
-			public Adapter caseLocalFile(LocalFile object)
-			{
-				return createLocalFileAdapter();
-			}
-			@Override
-			public Adapter caseNamingService(NamingService object)
-			{
-				return createNamingServiceAdapter();
-			}
-			@Override
-			public <C extends ComponentPlacement<?>> Adapter casePartitioning(Partitioning<C> object)
-			{
-				return createPartitioningAdapter();
-			}
-			@Override
-			public <P extends ComponentInstantiationRef<?>> Adapter caseProvidesPort(ProvidesPort<P> object)
-			{
-				return createProvidesPortAdapter();
-			}
-			@Override
-			public Adapter caseProvidesPortStub(ProvidesPortStub object)
-			{
-				return createProvidesPortStubAdapter();
-			}
-			@Override
-			public <U extends ComponentInstantiationRef<?>> Adapter caseUsesPort(UsesPort<U> object)
-			{
-				return createUsesPortAdapter();
-			}
-			@Override
-			public Adapter caseUsesPortStub(UsesPortStub object)
-			{
-				return createUsesPortStubAdapter();
-			}
-			@Override
-			public Adapter casePropertyRefContainer(PropertyRefContainer object)
-			{
-				return createPropertyRefContainerAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object)
-			{
-				return createEObjectAdapter();
-			}
-		};
+	protected PartitioningSwitch<Adapter> modelSwitch = new PartitioningSwitch<Adapter>() {
+		@Override
+		public Adapter caseComponentFile(ComponentFile object) {
+			return createComponentFileAdapter();
+		}
+
+		@Override
+		public Adapter caseDomComponentFile(DomComponentFile object) {
+			return createDomComponentFileAdapter();
+		}
+
+		@Override
+		public Adapter caseDevComponentFile(DevComponentFile object) {
+			return createDevComponentFileAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentFileRef(ComponentFileRef object) {
+			return createComponentFileRefAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentFiles(ComponentFiles object) {
+			return createComponentFilesAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentInstantiation(ComponentInstantiation object) {
+			return createComponentInstantiationAdapter();
+		}
+
+		@Override
+		public < R extends ComponentInstantiation > Adapter caseComponentInstantiationRef(ComponentInstantiationRef<R> object) {
+			return createComponentInstantiationRefAdapter();
+		}
+
+		@Override
+		public < I extends ComponentInstantiation > Adapter caseComponentPlacement(ComponentPlacement<I> object) {
+			return createComponentPlacementAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentProperties(ComponentProperties object) {
+			return createComponentPropertiesAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentSupportedInterface(ComponentSupportedInterface object) {
+			return createComponentSupportedInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentSupportedInterfaceStub(ComponentSupportedInterfaceStub object) {
+			return createComponentSupportedInterfaceStubAdapter();
+		}
+
+		@Override
+		public < CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(
+			ConnectInterface<CIR, UP, PP> object) {
+			return createConnectInterfaceAdapter();
+		}
+
+		@Override
+		public < CI extends ConnectInterface< ? , ? , ? >> Adapter caseConnections(Connections<CI> object) {
+			return createConnectionsAdapter();
+		}
+
+		@Override
+		public Adapter caseConnectionTarget(ConnectionTarget object) {
+			return createConnectionTargetAdapter();
+		}
+
+		@Override
+		public Adapter caseDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef object) {
+			return createDeviceThatLoadedThisComponentRefAdapter();
+		}
+
+		@Override
+		public Adapter caseDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef object) {
+			return createDeviceUsedByThisComponentRefAdapter();
+		}
+
+		@Override
+		public Adapter caseDeviceUsedByApplication(DeviceUsedByApplication object) {
+			return createDeviceUsedByApplicationAdapter();
+		}
+
+		@Override
+		public Adapter caseDomainFinder(DomainFinder object) {
+			return createDomainFinderAdapter();
+		}
+
+		@Override
+		public Adapter caseFindBy(FindBy object) {
+			return createFindByAdapter();
+		}
+
+		@Override
+		public Adapter caseFindByStub(FindByStub object) {
+			return createFindByStubAdapter();
+		}
+
+		@Override
+		public Adapter caseFindByStubContainer(FindByStubContainer object) {
+			return createFindByStubContainerAdapter();
+		}
+
+		@Override
+		public Adapter caseLocalFile(LocalFile object) {
+			return createLocalFileAdapter();
+		}
+
+		@Override
+		public Adapter caseNamingService(NamingService object) {
+			return createNamingServiceAdapter();
+		}
+
+		@Override
+		public < C extends ComponentPlacement< ? >> Adapter casePartitioning(Partitioning<C> object) {
+			return createPartitioningAdapter();
+		}
+
+		@Override
+		public < P extends ComponentInstantiationRef< ? >> Adapter caseProvidesPort(ProvidesPort<P> object) {
+			return createProvidesPortAdapter();
+		}
+
+		@Override
+		public Adapter caseProvidesPortStub(ProvidesPortStub object) {
+			return createProvidesPortStubAdapter();
+		}
+
+		@Override
+		public < U extends ComponentInstantiationRef< ? >> Adapter caseUsesPort(UsesPort<U> object) {
+			return createUsesPortAdapter();
+		}
+
+		@Override
+		public Adapter caseUsesPortStub(UsesPortStub object) {
+			return createUsesPortStubAdapter();
+		}
+
+		@Override
+		public Adapter caseUsesDeviceStub(UsesDeviceStub object) {
+			return createUsesDeviceStubAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyRefContainer(PropertyRefContainer object) {
+			return createPropertyRefContainerAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -263,7 +270,7 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 	/**
@@ -491,6 +498,21 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication <em>Device Used By Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication
+	 * @generated
+	 */
+	public Adapter createDeviceUsedByApplicationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.partitioning.DomainFinder <em>Domain Finder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -641,6 +663,21 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUsesPortStubAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub <em>Uses Device Stub</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.partitioning.UsesDeviceStub
+	 * @generated
+	 */
+	public Adapter createUsesDeviceStubAdapter() {
 		return null;
 	}
 

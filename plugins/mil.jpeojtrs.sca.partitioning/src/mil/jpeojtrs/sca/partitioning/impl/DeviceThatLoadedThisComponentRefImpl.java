@@ -102,10 +102,9 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
-				return getRefid();
+		switch (featureID) {
+		case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
+			return getRefid();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,11 +116,10 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
-				setRefid((String)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
+			setRefid((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -133,11 +131,10 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
-				setRefid(REFID_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
+			setRefid(REFID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,10 +146,9 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
-				return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
+		switch (featureID) {
+		case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID:
+			return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -164,7 +160,8 @@ public class DeviceThatLoadedThisComponentRefImpl extends EObjectImpl implements
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (refid: ");

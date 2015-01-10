@@ -47,7 +47,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable,
+		IChildCreationExtender {
 
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
@@ -76,7 +77,8 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(PartitioningEditPlugin.INSTANCE, PartitioningPackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(PartitioningEditPlugin.INSTANCE,
+		PartitioningPackage.eNS_URI);
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
@@ -115,8 +117,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createDomComponentFileAdapter() {
-		if (domComponentFileItemProvider == null)
-		{
+		if (domComponentFileItemProvider == null) {
 			domComponentFileItemProvider = new DomComponentFileItemProvider(this);
 		}
 
@@ -139,8 +140,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createDevComponentFileAdapter() {
-		if (devComponentFileItemProvider == null)
-		{
+		if (devComponentFileItemProvider == null) {
 			devComponentFileItemProvider = new DevComponentFileItemProvider(this);
 		}
 
@@ -163,8 +163,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentFileRefAdapter() {
-		if (componentFileRefItemProvider == null)
-		{
+		if (componentFileRefItemProvider == null) {
 			componentFileRefItemProvider = new ComponentFileRefItemProvider(this);
 		}
 
@@ -187,8 +186,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentFilesAdapter() {
-		if (componentFilesItemProvider == null)
-		{
+		if (componentFilesItemProvider == null) {
 			componentFilesItemProvider = new ComponentFilesItemProvider(this);
 		}
 
@@ -211,8 +209,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentInstantiationAdapter() {
-		if (componentInstantiationItemProvider == null)
-		{
+		if (componentInstantiationItemProvider == null) {
 			componentInstantiationItemProvider = new ComponentInstantiationItemProvider(this);
 		}
 
@@ -235,8 +232,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentPropertiesAdapter() {
-		if (componentPropertiesItemProvider == null)
-		{
+		if (componentPropertiesItemProvider == null) {
 			componentPropertiesItemProvider = new ComponentPropertiesItemProvider(this);
 		}
 
@@ -259,8 +255,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentSupportedInterfaceAdapter() {
-		if (componentSupportedInterfaceItemProvider == null)
-		{
+		if (componentSupportedInterfaceItemProvider == null) {
 			componentSupportedInterfaceItemProvider = new ComponentSupportedInterfaceItemProvider(this);
 		}
 
@@ -283,8 +278,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createComponentSupportedInterfaceStubAdapter() {
-		if (componentSupportedInterfaceStubItemProvider == null)
-		{
+		if (componentSupportedInterfaceStubItemProvider == null) {
 			componentSupportedInterfaceStubItemProvider = new ComponentSupportedInterfaceStubItemProvider(this);
 		}
 
@@ -307,8 +301,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createDeviceThatLoadedThisComponentRefAdapter() {
-		if (deviceThatLoadedThisComponentRefItemProvider == null)
-		{
+		if (deviceThatLoadedThisComponentRefItemProvider == null) {
 			deviceThatLoadedThisComponentRefItemProvider = new DeviceThatLoadedThisComponentRefItemProvider(this);
 		}
 
@@ -331,12 +324,34 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createDeviceUsedByThisComponentRefAdapter() {
-		if (deviceUsedByThisComponentRefItemProvider == null)
-		{
+		if (deviceUsedByThisComponentRefItemProvider == null) {
 			deviceUsedByThisComponentRefItemProvider = new DeviceUsedByThisComponentRefItemProvider(this);
 		}
 
 		return deviceUsedByThisComponentRefItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DeviceUsedByApplicationItemProvider deviceUsedByApplicationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDeviceUsedByApplicationAdapter() {
+		if (deviceUsedByApplicationItemProvider == null) {
+			deviceUsedByApplicationItemProvider = new DeviceUsedByApplicationItemProvider(this);
+		}
+
+		return deviceUsedByApplicationItemProvider;
 	}
 
 	/**
@@ -355,8 +370,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createDomainFinderAdapter() {
-		if (domainFinderItemProvider == null)
-		{
+		if (domainFinderItemProvider == null) {
 			domainFinderItemProvider = new DomainFinderItemProvider(this);
 		}
 
@@ -379,8 +393,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createFindByAdapter() {
-		if (findByItemProvider == null)
-		{
+		if (findByItemProvider == null) {
 			findByItemProvider = new FindByItemProvider(this);
 		}
 
@@ -403,8 +416,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createFindByStubAdapter() {
-		if (findByStubItemProvider == null)
-		{
+		if (findByStubItemProvider == null) {
 			findByStubItemProvider = new FindByStubItemProvider(this);
 		}
 
@@ -427,8 +439,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createFindByStubContainerAdapter() {
-		if (findByStubContainerItemProvider == null)
-		{
+		if (findByStubContainerItemProvider == null) {
 			findByStubContainerItemProvider = new FindByStubContainerItemProvider(this);
 		}
 
@@ -451,8 +462,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createLocalFileAdapter() {
-		if (localFileItemProvider == null)
-		{
+		if (localFileItemProvider == null) {
 			localFileItemProvider = new LocalFileItemProvider(this);
 		}
 
@@ -475,8 +485,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Adapter createNamingServiceAdapter() {
-		if (namingServiceItemProvider == null)
-		{
+		if (namingServiceItemProvider == null) {
 			namingServiceItemProvider = new NamingServiceItemProvider(this);
 		}
 
@@ -503,6 +512,30 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	@Override
 	public Adapter createUsesPortStubAdapter() {
 		return new UsesPortStubItemProvider(this);
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 1.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UsesDeviceStubItemProvider usesDeviceStubItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUsesDeviceStubAdapter() {
+		if (usesDeviceStubItemProvider == null) {
+			usesDeviceStubItemProvider = new UsesDeviceStubItemProvider(this);
+		}
+
+		return usesDeviceStubItemProvider;
 	}
 
 	/**
@@ -555,11 +588,9 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type))
-		{
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class< ? >) || (((Class< ? >) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -576,8 +607,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	@Override
 	protected void associate(Adapter adapter, Notifier target) {
 		super.associate(adapter, target);
-		if (adapter != null)
-		{
+		if (adapter != null) {
 			disposable.add(adapter);
 		}
 	}
@@ -597,7 +627,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 * @generated
 	 */
 	@Override
-	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+	public Collection< ? > getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
 	}
 
@@ -643,8 +673,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

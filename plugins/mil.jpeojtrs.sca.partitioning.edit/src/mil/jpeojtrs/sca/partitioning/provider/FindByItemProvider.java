@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -39,14 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FindByItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class FindByItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -66,8 +59,7 @@ public class FindByItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -83,9 +75,8 @@ public class FindByItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PartitioningPackage.Literals.FIND_BY__NAMING_SERVICE);
 			childrenFeatures.add(PartitioningPackage.Literals.FIND_BY__DOMAIN_FINDER);
@@ -139,12 +130,11 @@ public class FindByItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(FindBy.class))
-		{
-			case PartitioningPackage.FIND_BY__NAMING_SERVICE:
-			case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(FindBy.class)) {
+		case PartitioningPackage.FIND_BY__NAMING_SERVICE:
+		case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -160,15 +150,9 @@ public class FindByItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PartitioningPackage.Literals.FIND_BY__NAMING_SERVICE,
-				 PartitioningFactory.eINSTANCE.createNamingService()));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.FIND_BY__NAMING_SERVICE, PartitioningFactory.eINSTANCE.createNamingService()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PartitioningPackage.Literals.FIND_BY__DOMAIN_FINDER,
-				 PartitioningFactory.eINSTANCE.createDomainFinder()));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.FIND_BY__DOMAIN_FINDER, PartitioningFactory.eINSTANCE.createDomainFinder()));
 	}
 
 	/**
@@ -179,7 +163,7 @@ public class FindByItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

@@ -17,6 +17,9 @@ import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiationRef;
 import mil.jpeojtrs.sca.partitioning.ComponentPlacement;
 import mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface;
+import mil.jpeojtrs.sca.partitioning.DeviceThatLoadedThisComponentRef;
+import mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication;
+import mil.jpeojtrs.sca.partitioning.DeviceUsedByThisComponentRef;
 import mil.jpeojtrs.sca.partitioning.FindBy;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.scd.Interface;
@@ -42,6 +45,9 @@ import org.eclipse.emf.ecore.resource.Resource;
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getSupportedIdentifier <em>Supported Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getDeviceThatLoadedThisComponentRef <em>Device That Loaded This Component Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getDeviceUsedByThisComponentRef <em>Device Used By This Component Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getDeviceUsedByApplication <em>Device Used By Application</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getFindBy <em>Find By</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getInterface <em>Interface</em>}</li>
  * </ul>
@@ -76,7 +82,37 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * @generated
 	 * @ordered
 	 */
-	protected ComponentInstantiationRef<?> componentInstantiationRef;
+	protected ComponentInstantiationRef< ? > componentInstantiationRef;
+	/**
+	 * The cached value of the '{@link #getDeviceThatLoadedThisComponentRef() <em>Device That Loaded This Component Ref</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @see #getDeviceThatLoadedThisComponentRef()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeviceThatLoadedThisComponentRef deviceThatLoadedThisComponentRef;
+	/**
+	 * The cached value of the '{@link #getDeviceUsedByThisComponentRef() <em>Device Used By This Component Ref</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @see #getDeviceUsedByThisComponentRef()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeviceUsedByThisComponentRef deviceUsedByThisComponentRef;
+	/**
+	 * The cached value of the '{@link #getDeviceUsedByApplication() <em>Device Used By Application</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @see #getDeviceUsedByApplication()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeviceUsedByApplication deviceUsedByApplication;
 	/**
 	 * The cached value of the '{@link #getFindBy() <em>Find By</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -125,7 +161,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 		String oldSupportedIdentifier = supportedIdentifier;
 		supportedIdentifier = newSupportedIdentifier;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER, oldSupportedIdentifier, supportedIdentifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER,
+				oldSupportedIdentifier, supportedIdentifier));
 	}
 
 	/**
@@ -148,7 +185,7 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * @generated
 	 */
 	@Override
-	public ComponentInstantiationRef<?> getComponentInstantiationRef() {
+	public ComponentInstantiationRef< ? > getComponentInstantiationRef() {
 		return componentInstantiationRef;
 	}
 
@@ -157,13 +194,16 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetComponentInstantiationRef(ComponentInstantiationRef<?> newComponentInstantiationRef, NotificationChain msgs) {
-		ComponentInstantiationRef<?> oldComponentInstantiationRef = componentInstantiationRef;
+	public NotificationChain basicSetComponentInstantiationRef(ComponentInstantiationRef< ? > newComponentInstantiationRef, NotificationChain msgs) {
+		ComponentInstantiationRef< ? > oldComponentInstantiationRef = componentInstantiationRef;
 		componentInstantiationRef = newComponentInstantiationRef;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, oldComponentInstantiationRef, newComponentInstantiationRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+				PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, oldComponentInstantiationRef, newComponentInstantiationRef);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -174,19 +214,183 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 * @generated
 	 */
 	@Override
-	public void setComponentInstantiationRef(ComponentInstantiationRef<?> newComponentInstantiationRef) {
-		if (newComponentInstantiationRef != componentInstantiationRef)
-		{
+	public void setComponentInstantiationRef(ComponentInstantiationRef< ? > newComponentInstantiationRef) {
+		if (newComponentInstantiationRef != componentInstantiationRef) {
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
-				msgs = ((InternalEObject)componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, null, msgs);
 			if (newComponentInstantiationRef != null)
-				msgs = ((InternalEObject)newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, null, msgs);
 			msgs = basicSetComponentInstantiationRef(newComponentInstantiationRef, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF,
+				newComponentInstantiationRef, newComponentInstantiationRef));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeviceThatLoadedThisComponentRef getDeviceThatLoadedThisComponentRef() {
+		return deviceThatLoadedThisComponentRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef newDeviceThatLoadedThisComponentRef,
+		NotificationChain msgs) {
+		DeviceThatLoadedThisComponentRef oldDeviceThatLoadedThisComponentRef = deviceThatLoadedThisComponentRef;
+		deviceThatLoadedThisComponentRef = newDeviceThatLoadedThisComponentRef;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+				PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, oldDeviceThatLoadedThisComponentRef,
+				newDeviceThatLoadedThisComponentRef);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, newComponentInstantiationRef, newComponentInstantiationRef));
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef newDeviceThatLoadedThisComponentRef) {
+		if (newDeviceThatLoadedThisComponentRef != deviceThatLoadedThisComponentRef) {
+			NotificationChain msgs = null;
+			if (deviceThatLoadedThisComponentRef != null)
+				msgs = ((InternalEObject) deviceThatLoadedThisComponentRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
+			if (newDeviceThatLoadedThisComponentRef != null)
+				msgs = ((InternalEObject) newDeviceThatLoadedThisComponentRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
+			msgs = basicSetDeviceThatLoadedThisComponentRef(newDeviceThatLoadedThisComponentRef, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF,
+				newDeviceThatLoadedThisComponentRef, newDeviceThatLoadedThisComponentRef));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeviceUsedByThisComponentRef getDeviceUsedByThisComponentRef() {
+		return deviceUsedByThisComponentRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef newDeviceUsedByThisComponentRef, NotificationChain msgs) {
+		DeviceUsedByThisComponentRef oldDeviceUsedByThisComponentRef = deviceUsedByThisComponentRef;
+		deviceUsedByThisComponentRef = newDeviceUsedByThisComponentRef;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+				PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF, oldDeviceUsedByThisComponentRef,
+				newDeviceUsedByThisComponentRef);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef newDeviceUsedByThisComponentRef) {
+		if (newDeviceUsedByThisComponentRef != deviceUsedByThisComponentRef) {
+			NotificationChain msgs = null;
+			if (deviceUsedByThisComponentRef != null)
+				msgs = ((InternalEObject) deviceUsedByThisComponentRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
+			if (newDeviceUsedByThisComponentRef != null)
+				msgs = ((InternalEObject) newDeviceUsedByThisComponentRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
+			msgs = basicSetDeviceUsedByThisComponentRef(newDeviceUsedByThisComponentRef, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF,
+				newDeviceUsedByThisComponentRef, newDeviceUsedByThisComponentRef));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeviceUsedByApplication getDeviceUsedByApplication() {
+		return deviceUsedByApplication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDeviceUsedByApplication(DeviceUsedByApplication newDeviceUsedByApplication, NotificationChain msgs) {
+		DeviceUsedByApplication oldDeviceUsedByApplication = deviceUsedByApplication;
+		deviceUsedByApplication = newDeviceUsedByApplication;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+				PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION, oldDeviceUsedByApplication, newDeviceUsedByApplication);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDeviceUsedByApplication(DeviceUsedByApplication newDeviceUsedByApplication) {
+		if (newDeviceUsedByApplication != deviceUsedByApplication) {
+			NotificationChain msgs = null;
+			if (deviceUsedByApplication != null)
+				msgs = ((InternalEObject) deviceUsedByApplication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION, null, msgs);
+			if (newDeviceUsedByApplication != null)
+				msgs = ((InternalEObject) newDeviceUsedByApplication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION, null, msgs);
+			msgs = basicSetDeviceUsedByApplication(newDeviceUsedByApplication, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION,
+				newDeviceUsedByApplication, newDeviceUsedByApplication));
 	}
 
 	/**
@@ -207,10 +411,13 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	public NotificationChain basicSetFindBy(FindBy newFindBy, NotificationChain msgs) {
 		FindBy oldFindBy = findBy;
 		findBy = newFindBy;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY, oldFindBy, newFindBy);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY,
+				oldFindBy, newFindBy);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -222,17 +429,18 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public void setFindBy(FindBy newFindBy) {
-		if (newFindBy != findBy)
-		{
+		if (newFindBy != findBy) {
 			NotificationChain msgs = null;
 			if (findBy != null)
-				msgs = ((InternalEObject)findBy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY, null, msgs);
+				msgs = ((InternalEObject) findBy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY,
+					null, msgs);
 			if (newFindBy != null)
-				msgs = ((InternalEObject)newFindBy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY, null, msgs);
+				msgs = ((InternalEObject) newFindBy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY,
+					null, msgs);
 			msgs = basicSetFindBy(newFindBy, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY, newFindBy, newFindBy));
 	}
 
@@ -244,7 +452,7 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	@Override
 	public Interface getInterface() {
 		Interface interface_ = basicGetInterface();
-		return interface_ != null && interface_.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)interface_) : interface_;
+		return interface_ != null && interface_.eIsProxy() ? (Interface) eResolveProxy((InternalEObject) interface_) : interface_;
 	}
 
 	/**
@@ -325,12 +533,17 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
-				return basicSetComponentInstantiationRef(null, msgs);
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
-				return basicSetFindBy(null, msgs);
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
+			return basicSetComponentInstantiationRef(null, msgs);
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			return basicSetDeviceThatLoadedThisComponentRef(null, msgs);
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF:
+			return basicSetDeviceUsedByThisComponentRef(null, msgs);
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION:
+			return basicSetDeviceUsedByApplication(null, msgs);
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
+			return basicSetFindBy(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -342,17 +555,23 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
-				return getSupportedIdentifier();
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
-				return getComponentInstantiationRef();
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
-				return getFindBy();
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__INTERFACE:
-				if (resolve) return getInterface();
-				return basicGetInterface();
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
+			return getSupportedIdentifier();
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
+			return getComponentInstantiationRef();
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			return getDeviceThatLoadedThisComponentRef();
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF:
+			return getDeviceUsedByThisComponentRef();
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION:
+			return getDeviceUsedByApplication();
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
+			return getFindBy();
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__INTERFACE:
+			if (resolve)
+				return getInterface();
+			return basicGetInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -364,20 +583,28 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
-				setSupportedIdentifier((String)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
-				setComponentInstantiationRef((ComponentInstantiationRef<?>)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
-				setFindBy((FindBy)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__INTERFACE:
-				setInterface((Interface)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
+			setSupportedIdentifier((String) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
+			setComponentInstantiationRef((ComponentInstantiationRef< ? >) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			setDeviceThatLoadedThisComponentRef((DeviceThatLoadedThisComponentRef) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF:
+			setDeviceUsedByThisComponentRef((DeviceUsedByThisComponentRef) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION:
+			setDeviceUsedByApplication((DeviceUsedByApplication) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
+			setFindBy((FindBy) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__INTERFACE:
+			setInterface((Interface) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -389,20 +616,28 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
-				setSupportedIdentifier(SUPPORTED_IDENTIFIER_EDEFAULT);
-				return;
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
-				setComponentInstantiationRef((ComponentInstantiationRef<?>)null);
-				return;
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
-				setFindBy((FindBy)null);
-				return;
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__INTERFACE:
-				setInterface((Interface)null);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
+			setSupportedIdentifier(SUPPORTED_IDENTIFIER_EDEFAULT);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
+			setComponentInstantiationRef((ComponentInstantiationRef< ? >) null);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			setDeviceThatLoadedThisComponentRef((DeviceThatLoadedThisComponentRef) null);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF:
+			setDeviceUsedByThisComponentRef((DeviceUsedByThisComponentRef) null);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION:
+			setDeviceUsedByApplication((DeviceUsedByApplication) null);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
+			setFindBy((FindBy) null);
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__INTERFACE:
+			setInterface((Interface) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -414,16 +649,21 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
-				return SUPPORTED_IDENTIFIER_EDEFAULT == null ? supportedIdentifier != null : !SUPPORTED_IDENTIFIER_EDEFAULT.equals(supportedIdentifier);
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
-				return componentInstantiationRef != null;
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
-				return findBy != null;
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__INTERFACE:
-				return basicGetInterface() != null;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
+			return SUPPORTED_IDENTIFIER_EDEFAULT == null ? supportedIdentifier != null : !SUPPORTED_IDENTIFIER_EDEFAULT.equals(supportedIdentifier);
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
+			return componentInstantiationRef != null;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			return deviceThatLoadedThisComponentRef != null;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF:
+			return deviceUsedByThisComponentRef != null;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION:
+			return deviceUsedByApplication != null;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
+			return findBy != null;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__INTERFACE:
+			return basicGetInterface() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -435,7 +675,8 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (supportedIdentifier: ");

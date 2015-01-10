@@ -92,9 +92,9 @@ public class FindByStubContainerTest extends TestCase {
 	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
-	
+
 	public void testStub() {
-		
+
 	}
 
 } //FindByStubContainerTest

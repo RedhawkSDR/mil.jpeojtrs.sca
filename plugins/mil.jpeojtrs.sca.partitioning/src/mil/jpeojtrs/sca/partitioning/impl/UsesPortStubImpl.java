@@ -132,12 +132,10 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 */
 	@Override
 	public Uses getUses() {
-		if (uses != null && uses.eIsProxy())
-		{
-			InternalEObject oldUses = (InternalEObject)uses;
-			uses = (Uses)eResolveProxy(oldUses);
-			if (uses != oldUses)
-			{
+		if (uses != null && uses.eIsProxy()) {
+			InternalEObject oldUses = (InternalEObject) uses;
+			uses = (Uses) eResolveProxy(oldUses);
+			if (uses != oldUses) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartitioningPackage.USES_PORT_STUB__USES, oldUses, uses));
 			}
@@ -198,7 +196,8 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 		String oldSupportedIdentifier = supportedIdentifier;
 		supportedIdentifier = newSupportedIdentifier;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER, oldSupportedIdentifier, supportedIdentifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER, oldSupportedIdentifier,
+				supportedIdentifier));
 	}
 
 	/**
@@ -208,15 +207,15 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.USES_PORT_STUB__NAME:
-				return getName();
-			case PartitioningPackage.USES_PORT_STUB__USES:
-				if (resolve) return getUses();
-				return basicGetUses();
-			case PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER:
-				return getSupportedIdentifier();
+		switch (featureID) {
+		case PartitioningPackage.USES_PORT_STUB__NAME:
+			return getName();
+		case PartitioningPackage.USES_PORT_STUB__USES:
+			if (resolve)
+				return getUses();
+			return basicGetUses();
+		case PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER:
+			return getSupportedIdentifier();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -228,17 +227,16 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.USES_PORT_STUB__NAME:
-				setName((String)newValue);
-				return;
-			case PartitioningPackage.USES_PORT_STUB__USES:
-				setUses((Uses)newValue);
-				return;
-			case PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER:
-				setSupportedIdentifier((String)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.USES_PORT_STUB__NAME:
+			setName((String) newValue);
+			return;
+		case PartitioningPackage.USES_PORT_STUB__USES:
+			setUses((Uses) newValue);
+			return;
+		case PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER:
+			setSupportedIdentifier((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -250,17 +248,16 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.USES_PORT_STUB__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case PartitioningPackage.USES_PORT_STUB__USES:
-				setUses((Uses)null);
-				return;
-			case PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER:
-				setSupportedIdentifier(SUPPORTED_IDENTIFIER_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.USES_PORT_STUB__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case PartitioningPackage.USES_PORT_STUB__USES:
+			setUses((Uses) null);
+			return;
+		case PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER:
+			setSupportedIdentifier(SUPPORTED_IDENTIFIER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -272,14 +269,13 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.USES_PORT_STUB__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PartitioningPackage.USES_PORT_STUB__USES:
-				return uses != null;
-			case PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER:
-				return SUPPORTED_IDENTIFIER_EDEFAULT == null ? supportedIdentifier != null : !SUPPORTED_IDENTIFIER_EDEFAULT.equals(supportedIdentifier);
+		switch (featureID) {
+		case PartitioningPackage.USES_PORT_STUB__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case PartitioningPackage.USES_PORT_STUB__USES:
+			return uses != null;
+		case PartitioningPackage.USES_PORT_STUB__SUPPORTED_IDENTIFIER:
+			return SUPPORTED_IDENTIFIER_EDEFAULT == null ? supportedIdentifier != null : !SUPPORTED_IDENTIFIER_EDEFAULT.equals(supportedIdentifier);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -291,7 +287,8 @@ public class UsesPortStubImpl extends EObjectImpl implements UsesPortStub {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

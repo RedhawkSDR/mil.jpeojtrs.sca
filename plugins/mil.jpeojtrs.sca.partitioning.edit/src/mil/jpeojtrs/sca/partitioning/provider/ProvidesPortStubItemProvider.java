@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,14 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ProvidesPortStubItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ProvidesPortStubItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -67,8 +60,7 @@ public class ProvidesPortStubItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -86,21 +78,13 @@ public class ProvidesPortStubItemProvider
 	protected void addNamePropertyDescriptor(Object object) {
 		// When the stub doesn't have an interface (or provides) we want the name to be editable
 		EObject stub = (EObject) object;
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ProvidesPortStub_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ProvidesPortStub_name_feature", "_UI_ProvidesPortStub_type"),
-				 PartitioningPackage.Literals.PROVIDES_PORT_STUB__NAME,
-				 stub.eContainer() instanceof FindByStub,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ProvidesPortStub_name_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ProvidesPortStub_name_feature", "_UI_ProvidesPortStub_type"),
+			PartitioningPackage.Literals.PROVIDES_PORT_STUB__NAME, stub.eContainer() instanceof FindByStub, false, false,
+			ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
-	
+
 	/**
 	 * This adds a property descriptor for the Provides feature.
 	 * <!-- begin-user-doc -->
@@ -108,19 +92,10 @@ public class ProvidesPortStubItemProvider
 	 * @generated
 	 */
 	protected void addProvidesPropertyDescriptorGen(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ProvidesPortStub_provides_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ProvidesPortStub_provides_feature", "_UI_ProvidesPortStub_type"),
-				 PartitioningPackage.Literals.PROVIDES_PORT_STUB__PROVIDES,
-				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ProvidesPortStub_provides_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ProvidesPortStub_provides_feature", "_UI_ProvidesPortStub_type"),
+			PartitioningPackage.Literals.PROVIDES_PORT_STUB__PROVIDES, false, false, true, null, null, null));
 	}
 
 	/**
@@ -145,10 +120,8 @@ public class ProvidesPortStubItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ProvidesPortStub)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ProvidesPortStub_type") :
-			getString("_UI_ProvidesPortStub_type") + " " + label;
+		String label = ((ProvidesPortStub) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ProvidesPortStub_type") : getString("_UI_ProvidesPortStub_type") + " " + label;
 	}
 
 	/**
@@ -162,12 +135,11 @@ public class ProvidesPortStubItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ProvidesPortStub.class))
-		{
-			case PartitioningPackage.PROVIDES_PORT_STUB__NAME:
-			case PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(ProvidesPortStub.class)) {
+		case PartitioningPackage.PROVIDES_PORT_STUB__NAME:
+		case PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -192,7 +164,7 @@ public class ProvidesPortStubItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 	/**

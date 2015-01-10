@@ -144,12 +144,11 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
-				return getRefId();
-			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID:
-				return getUsesRefId();
+		switch (featureID) {
+		case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
+			return getRefId();
+		case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID:
+			return getUsesRefId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,14 +160,13 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
-				setRefId((String)newValue);
-				return;
-			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID:
-				setUsesRefId((String)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
+			setRefId((String) newValue);
+			return;
+		case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID:
+			setUsesRefId((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,14 +178,13 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
-				setRefId(REF_ID_EDEFAULT);
-				return;
-			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID:
-				setUsesRefId(USES_REF_ID_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
+			setRefId(REF_ID_EDEFAULT);
+			return;
+		case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID:
+			setUsesRefId(USES_REF_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,12 +196,11 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
-				return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
-			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID:
-				return USES_REF_ID_EDEFAULT == null ? usesRefId != null : !USES_REF_ID_EDEFAULT.equals(usesRefId);
+		switch (featureID) {
+		case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID:
+			return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
+		case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID:
+			return USES_REF_ID_EDEFAULT == null ? usesRefId != null : !USES_REF_ID_EDEFAULT.equals(usesRefId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,7 +212,8 @@ public class DeviceUsedByThisComponentRefImpl extends EObjectImpl implements Dev
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (refId: ");

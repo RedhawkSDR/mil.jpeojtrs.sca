@@ -25,6 +25,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getSupportedIdentifier <em>Supported Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceThatLoadedThisComponentRef <em>Device That Loaded This Component Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByThisComponentRef <em>Device Used By This Component Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByApplication <em>Device Used By Application</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getFindBy <em>Find By</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getInterface <em>Interface</em>}</li>
  * </ul>
@@ -78,7 +81,7 @@ public interface ComponentSupportedInterface extends EObject {
 	 *        extendedMetaData="kind='element' name='componentinstantiationref'"
 	 * @generated
 	 */
-	ComponentInstantiationRef<?> getComponentInstantiationRef();
+	ComponentInstantiationRef< ? > getComponentInstantiationRef();
 
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getComponentInstantiationRef <em>Component Instantiation Ref</em>}' containment reference.
@@ -88,7 +91,94 @@ public interface ComponentSupportedInterface extends EObject {
 	 * @see #getComponentInstantiationRef()
 	 * @generated
 	 */
-	void setComponentInstantiationRef(ComponentInstantiationRef<?> value);
+	void setComponentInstantiationRef(ComponentInstantiationRef< ? > value);
+
+	/**
+	 * Returns the value of the '<em><b>Device That Loaded This Component Ref</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Device That Loaded This Component Ref</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Device That Loaded This Component Ref</em>' containment reference.
+	 * @see #setDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef)
+	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentSupportedInterface_DeviceThatLoadedThisComponentRef()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='devicethatloadedthiscomponentref'"
+	 * @generated
+	 */
+	DeviceThatLoadedThisComponentRef getDeviceThatLoadedThisComponentRef();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceThatLoadedThisComponentRef <em>Device That Loaded This Component Ref</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Device That Loaded This Component Ref</em>' containment reference.
+	 * @see #getDeviceThatLoadedThisComponentRef()
+	 * @generated
+	 */
+	void setDeviceThatLoadedThisComponentRef(DeviceThatLoadedThisComponentRef value);
+
+	/**
+	 * Returns the value of the '<em><b>Device Used By This Component Ref</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Device Used By This Component Ref</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Device Used By This Component Ref</em>' containment reference.
+	 * @see #setDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef)
+	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentSupportedInterface_DeviceUsedByThisComponentRef()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='deviceusedbythiscomponentref'"
+	 * @generated
+	 */
+	DeviceUsedByThisComponentRef getDeviceUsedByThisComponentRef();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByThisComponentRef <em>Device Used By This Component Ref</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Device Used By This Component Ref</em>' containment reference.
+	 * @see #getDeviceUsedByThisComponentRef()
+	 * @generated
+	 */
+	void setDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef value);
+
+	/**
+	 * Returns the value of the '<em><b>Device Used By Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Device Used By Application</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Device Used By Application</em>' containment reference.
+	 * @see #setDeviceUsedByApplication(DeviceUsedByApplication)
+	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentSupportedInterface_DeviceUsedByApplication()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='deviceusedbyapplication'"
+	 * @generated
+	 */
+	DeviceUsedByApplication getDeviceUsedByApplication();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByApplication <em>Device Used By Application</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Device Used By Application</em>' containment reference.
+	 * @see #getDeviceUsedByApplication()
+	 * @generated
+	 */
+	void setDeviceUsedByApplication(DeviceUsedByApplication value);
 
 	/**
 	 * Returns the value of the '<em><b>Find By</b></em>' containment reference.

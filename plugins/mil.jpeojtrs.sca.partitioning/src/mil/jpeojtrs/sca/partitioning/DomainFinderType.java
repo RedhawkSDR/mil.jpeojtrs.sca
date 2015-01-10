@@ -35,7 +35,8 @@ public enum DomainFinderType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FILEMANAGER(0, "filemanager", "filemanager"), /**
+	FILEMANAGER(0, "filemanager", "filemanager"),
+	/**
 	 * The '<em><b>Log</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,7 +44,8 @@ public enum DomainFinderType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LOG(1, "log", "log"), /**
+	LOG(1, "log", "log"),
+	/**
 	 * The '<em><b>Eventchannel</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,7 +53,8 @@ public enum DomainFinderType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EVENTCHANNEL(2, "eventchannel", "eventchannel"), /**
+	EVENTCHANNEL(2, "eventchannel", "eventchannel"),
+	/**
 	 * The '<em><b>Namingservice</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -59,7 +62,8 @@ public enum DomainFinderType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NAMINGSERVICE(3, "namingservice", "namingservice"), /**
+	NAMINGSERVICE(3, "namingservice", "namingservice"),
+	/**
 	 * The '<em><b>Domainmanager</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +71,8 @@ public enum DomainFinderType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DOMAINMANAGER(4, "domainmanager", "domainmanager"), /**
+	DOMAINMANAGER(4, "domainmanager", "domainmanager"),
+	/**
 	 * The '<em><b>Servicename</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,7 +80,8 @@ public enum DomainFinderType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SERVICENAME(5, "servicename", "servicename"), /**
+	SERVICENAME(5, "servicename", "servicename"),
+	/**
 	 * The '<em><b>Servicetype</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,7 +91,7 @@ public enum DomainFinderType implements Enumerator {
 	 */
 	SERVICETYPE(6, "servicetype", "servicetype");
 
-/**
+	/**
 	 * The '<em><b>Filemanager</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -99,7 +105,7 @@ public enum DomainFinderType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int FILEMANAGER_VALUE = 0;
-/**
+	/**
 	 * The '<em><b>Log</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -113,7 +119,7 @@ public enum DomainFinderType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int LOG_VALUE = 1;
-/**
+	/**
 	 * The '<em><b>Eventchannel</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -127,7 +133,7 @@ public enum DomainFinderType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int EVENTCHANNEL_VALUE = 2;
-/**
+	/**
 	 * The '<em><b>Namingservice</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -141,7 +147,7 @@ public enum DomainFinderType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int NAMINGSERVICE_VALUE = 3;
-/**
+	/**
 	 * The '<em><b>Domainmanager</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -155,7 +161,7 @@ public enum DomainFinderType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int DOMAINMANAGER_VALUE = 4;
-/**
+	/**
 	 * The '<em><b>Servicename</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -169,7 +175,7 @@ public enum DomainFinderType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int SERVICENAME_VALUE = 5;
-/**
+	/**
 	 * The '<em><b>Servicetype</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -183,24 +189,15 @@ public enum DomainFinderType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int SERVICETYPE_VALUE = 6;
-/**
+	/**
 	 * An array of all the '<em><b>Domain Finder Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DomainFinderType[] VALUES_ARRAY =
-		new DomainFinderType[]
-		{
-			FILEMANAGER,
-			LOG,
-			EVENTCHANNEL,
-			NAMINGSERVICE,
-			DOMAINMANAGER,
-			SERVICENAME,
-			SERVICETYPE,
-		};
-/**
+	private static final DomainFinderType[] VALUES_ARRAY = new DomainFinderType[] { FILEMANAGER, LOG, EVENTCHANNEL, NAMINGSERVICE, DOMAINMANAGER, SERVICENAME,
+		SERVICETYPE, };
+	/**
 	 * A public read-only list of all the '<em><b>Domain Finder Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,82 +205,84 @@ public enum DomainFinderType implements Enumerator {
 	 */
 	public static final List<DomainFinderType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
-/**
+	/**
 	 * Returns the '<em><b>Domain Finder Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static DomainFinderType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			DomainFinderType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal))
-			{
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Domain Finder Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static DomainFinderType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			DomainFinderType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name))
-			{
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Domain Finder Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static DomainFinderType get(int value) {
-		switch (value)
-		{
-			case FILEMANAGER_VALUE: return FILEMANAGER;
-			case LOG_VALUE: return LOG;
-			case EVENTCHANNEL_VALUE: return EVENTCHANNEL;
-			case NAMINGSERVICE_VALUE: return NAMINGSERVICE;
-			case DOMAINMANAGER_VALUE: return DOMAINMANAGER;
-			case SERVICENAME_VALUE: return SERVICENAME;
-			case SERVICETYPE_VALUE: return SERVICETYPE;
+		switch (value) {
+		case FILEMANAGER_VALUE:
+			return FILEMANAGER;
+		case LOG_VALUE:
+			return LOG;
+		case EVENTCHANNEL_VALUE:
+			return EVENTCHANNEL;
+		case NAMINGSERVICE_VALUE:
+			return NAMINGSERVICE;
+		case DOMAINMANAGER_VALUE:
+			return DOMAINMANAGER;
+		case SERVICENAME_VALUE:
+			return SERVICENAME;
+		case SERVICETYPE_VALUE:
+			return SERVICETYPE;
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final int value;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String name;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String literal;
 
-/**
+	/**
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,37 +294,37 @@ public enum DomainFinderType implements Enumerator {
 		this.literal = literal;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
-/**
+	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,5 +334,5 @@ public enum DomainFinderType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
+
 } //DomainFinderType

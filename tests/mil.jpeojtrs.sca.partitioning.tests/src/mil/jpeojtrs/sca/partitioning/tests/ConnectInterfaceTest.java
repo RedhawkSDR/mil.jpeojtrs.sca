@@ -36,7 +36,7 @@ public abstract class ConnectInterfaceTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConnectInterface<?, ?, ?> fixture = null;
+	protected ConnectInterface< ? , ? , ? > fixture = null;
 
 	/**
 	 * Constructs a new Connect Interface test case with the given name.
@@ -54,7 +54,7 @@ public abstract class ConnectInterfaceTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(ConnectInterface<?, ?, ?> fixture) {
+	protected void setFixture(ConnectInterface< ? , ? , ? > fixture) {
 		this.fixture = fixture;
 	}
 
@@ -64,7 +64,7 @@ public abstract class ConnectInterfaceTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConnectInterface<?, ?, ?> getFixture() {
+	protected ConnectInterface< ? , ? , ? > getFixture() {
 		return fixture;
 	}
 
@@ -105,7 +105,7 @@ public abstract class ConnectInterfaceTest extends TestCase {
 	public void testGetTarget() {
 		// END GENERATED CODE
 		final boolean hasTarget = getFixture().getProvidesPort() != null || getFixture().getFindBy() != null
-		        || getFixture().getComponentSupportedInterface() != null;
+			|| getFixture().getComponentSupportedInterface() != null;
 		Assert.assertEquals(hasTarget, getFixture().getTarget() != null);
 		// BEGIN GENERATED CODE
 	}

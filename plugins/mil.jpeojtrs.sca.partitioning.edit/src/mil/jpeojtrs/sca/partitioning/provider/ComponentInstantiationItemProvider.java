@@ -41,7 +41,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class ComponentInstantiationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-        ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,8 +60,7 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addUsageNamePropertyDescriptor(object);
@@ -77,19 +76,10 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 	 * @generated
 	 */
 	protected void addUsageNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstantiation_usageName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstantiation_usageName_feature", "_UI_ComponentInstantiation_type"),
-				 PartitioningPackage.Literals.COMPONENT_INSTANTIATION__USAGE_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentInstantiation_usageName_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstantiation_usageName_feature", "_UI_ComponentInstantiation_type"),
+			PartitioningPackage.Literals.COMPONENT_INSTANTIATION__USAGE_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -99,19 +89,10 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstantiation_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstantiation_id_feature", "_UI_ComponentInstantiation_type"),
-				 PartitioningPackage.Literals.COMPONENT_INSTANTIATION__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentInstantiation_id_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstantiation_id_feature", "_UI_ComponentInstantiation_type"),
+			PartitioningPackage.Literals.COMPONENT_INSTANTIATION__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -123,9 +104,8 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__PROVIDES);
@@ -182,19 +162,18 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentInstantiation.class))
-		{
-			case PartitioningPackage.COMPONENT_INSTANTIATION__USAGE_NAME:
-			case PartitioningPackage.COMPONENT_INSTANTIATION__ID:
-			case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
-			case PartitioningPackage.COMPONENT_INSTANTIATION__PROVIDES:
-			case PartitioningPackage.COMPONENT_INSTANTIATION__USES:
-			case PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(ComponentInstantiation.class)) {
+		case PartitioningPackage.COMPONENT_INSTANTIATION__USAGE_NAME:
+		case PartitioningPackage.COMPONENT_INSTANTIATION__ID:
+		case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
+		case PartitioningPackage.COMPONENT_INSTANTIATION__PROVIDES:
+		case PartitioningPackage.COMPONENT_INSTANTIATION__USES:
+		case PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -210,15 +189,11 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES,
-				 PartitioningFactory.eINSTANCE.createComponentProperties()));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES,
+			PartitioningFactory.eINSTANCE.createComponentProperties()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__INTERFACE_STUB,
-				 PartitioningFactory.eINSTANCE.createComponentSupportedInterfaceStub()));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__INTERFACE_STUB,
+			PartitioningFactory.eINSTANCE.createComponentSupportedInterfaceStub()));
 	}
 
 	/**
@@ -229,7 +204,7 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter impl
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

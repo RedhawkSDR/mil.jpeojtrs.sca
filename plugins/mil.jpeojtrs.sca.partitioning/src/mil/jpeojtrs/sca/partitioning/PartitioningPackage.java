@@ -509,13 +509,37 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF = 1;
 	/**
+	 * The feature id for the '<em><b>Device That Loaded This Component Ref</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF = 2;
+	/**
+	 * The feature id for the '<em><b>Device Used By This Component Ref</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF = 3;
+	/**
+	 * The feature id for the '<em><b>Device Used By Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION = 4;
+	/**
 	 * The feature id for the '<em><b>Find By</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_SUPPORTED_INTERFACE__FIND_BY = 2;
+	int COMPONENT_SUPPORTED_INTERFACE__FIND_BY = 5;
 	/**
 	 * The feature id for the '<em><b>Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -523,7 +547,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_SUPPORTED_INTERFACE__INTERFACE = 3;
+	int COMPONENT_SUPPORTED_INTERFACE__INTERFACE = 6;
 	/**
 	 * The number of structural features of the '<em>Component Supported Interface</em>' class.
 	 * <!-- begin-user-doc -->
@@ -531,7 +555,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_SUPPORTED_INTERFACE_FEATURE_COUNT = 4;
+	int COMPONENT_SUPPORTED_INTERFACE_FEATURE_COUNT = 7;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.ConnectionTarget <em>Connection Target</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -723,6 +747,39 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int DEVICE_USED_BY_THIS_COMPONENT_REF_FEATURE_COUNT = 2;
 	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByApplicationImpl <em>Device Used By Application</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByApplicationImpl
+	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDeviceUsedByApplication()
+	 * @generated
+	 */
+	int DEVICE_USED_BY_APPLICATION = 16;
+	/**
+	 * The feature id for the '<em><b>Ref Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_USED_BY_APPLICATION__REF_ID = 0;
+	/**
+	 * The feature id for the '<em><b>Uses Ref Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_USED_BY_APPLICATION__USES_REF_ID = 1;
+	/**
+	 * The number of structural features of the '<em>Device Used By Application</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_USED_BY_APPLICATION_FEATURE_COUNT = 2;
+	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.DomainFinderImpl <em>Domain Finder</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -730,7 +787,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDomainFinder()
 	 * @generated
 	 */
-	int DOMAIN_FINDER = 16;
+	int DOMAIN_FINDER = 17;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -763,7 +820,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getFindBy()
 	 * @generated
 	 */
-	int FIND_BY = 17;
+	int FIND_BY = 18;
 	/**
 	 * The feature id for the '<em><b>Naming Service</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -796,7 +853,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getFindByStub()
 	 * @generated
 	 */
-	int FIND_BY_STUB = 18;
+	int FIND_BY_STUB = 19;
 	/**
 	 * The feature id for the '<em><b>Naming Service</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -853,7 +910,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getFindByStubContainer()
 	 * @generated
 	 */
-	int FIND_BY_STUB_CONTAINER = 19;
+	int FIND_BY_STUB_CONTAINER = 20;
 	/**
 	 * The feature id for the '<em><b>Stubs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -878,7 +935,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getLocalFile()
 	 * @generated
 	 */
-	int LOCAL_FILE = 20;
+	int LOCAL_FILE = 21;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -903,7 +960,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getNamingService()
 	 * @generated
 	 */
-	int NAMING_SERVICE = 21;
+	int NAMING_SERVICE = 22;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -928,7 +985,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getPartitioning()
 	 * @generated
 	 */
-	int PARTITIONING = 22;
+	int PARTITIONING = 23;
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
@@ -961,7 +1018,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getProvidesPort()
 	 * @generated
 	 */
-	int PROVIDES_PORT = 23;
+	int PROVIDES_PORT = 24;
 	/**
 	 * The feature id for the '<em><b>Provides Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -995,13 +1052,21 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF = 3;
 	/**
+	 * The feature id for the '<em><b>Device Used By Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDES_PORT__DEVICE_USED_BY_APPLICATION = 4;
+	/**
 	 * The feature id for the '<em><b>Find By</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDES_PORT__FIND_BY = 4;
+	int PROVIDES_PORT__FIND_BY = 5;
 	/**
 	 * The number of structural features of the '<em>Provides Port</em>' class.
 	 * <!-- begin-user-doc -->
@@ -1009,7 +1074,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDES_PORT_FEATURE_COUNT = 5;
+	int PROVIDES_PORT_FEATURE_COUNT = 6;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.ProvidesPortStubImpl <em>Provides Port Stub</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1018,7 +1083,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getProvidesPortStub()
 	 * @generated
 	 */
-	int PROVIDES_PORT_STUB = 24;
+	int PROVIDES_PORT_STUB = 25;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1051,7 +1116,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getUsesPort()
 	 * @generated
 	 */
-	int USES_PORT = 25;
+	int USES_PORT = 26;
 	/**
 	 * The feature id for the '<em><b>Uses Indentifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1085,13 +1150,21 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF = 3;
 	/**
+	 * The feature id for the '<em><b>Device Used By Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_PORT__DEVICE_USED_BY_APPLICATION = 4;
+	/**
 	 * The feature id for the '<em><b>Find By</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USES_PORT__FIND_BY = 4;
+	int USES_PORT__FIND_BY = 5;
 	/**
 	 * The number of structural features of the '<em>Uses Port</em>' class.
 	 * <!-- begin-user-doc -->
@@ -1099,7 +1172,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USES_PORT_FEATURE_COUNT = 5;
+	int USES_PORT_FEATURE_COUNT = 6;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortStubImpl <em>Uses Port Stub</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1108,7 +1181,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getUsesPortStub()
 	 * @generated
 	 */
-	int USES_PORT_STUB = 26;
+	int USES_PORT_STUB = 27;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1142,6 +1215,60 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int USES_PORT_STUB_FEATURE_COUNT = 3;
 	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.UsesDeviceStubImpl <em>Uses Device Stub</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.partitioning.impl.UsesDeviceStubImpl
+	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getUsesDeviceStub()
+	 * @generated
+	 */
+	int USES_DEVICE_STUB = 28;
+	/**
+	 * The feature id for the '<em><b>Uses Device</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_DEVICE_STUB__USES_DEVICE = 0;
+	/**
+	 * The feature id for the '<em><b>Provides Port Stubs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_DEVICE_STUB__PROVIDES_PORT_STUBS = 1;
+	/**
+	 * The feature id for the '<em><b>Uses Port Stubs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_DEVICE_STUB__USES_PORT_STUBS = 2;
+	/**
+	 * The feature id for the '<em><b>Interface</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_DEVICE_STUB__INTERFACE = 3;
+	/**
+	 * The number of structural features of the '<em>Uses Device Stub</em>' class.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_DEVICE_STUB_FEATURE_COUNT = 4;
+	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.DomainFinderType <em>Domain Finder Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1149,7 +1276,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDomainFinderType()
 	 * @generated
 	 */
-	int DOMAIN_FINDER_TYPE = 27;
+	int DOMAIN_FINDER_TYPE = 29;
 	/**
 	 * The meta object id for the '<em>Domain Finder Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1158,7 +1285,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDomainFinderTypeObject()
 	 * @generated
 	 */
-	int DOMAIN_FINDER_TYPE_OBJECT = 28;
+	int DOMAIN_FINDER_TYPE_OBJECT = 30;
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.ComponentFile <em>Component File</em>}'.
@@ -1559,6 +1686,39 @@ public interface PartitioningPackage extends EPackage {
 	EReference getComponentSupportedInterface_ComponentInstantiationRef();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceThatLoadedThisComponentRef <em>Device That Loaded This Component Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Device That Loaded This Component Ref</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceThatLoadedThisComponentRef()
+	 * @see #getComponentSupportedInterface()
+	 * @generated
+	 */
+	EReference getComponentSupportedInterface_DeviceThatLoadedThisComponentRef();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByThisComponentRef <em>Device Used By This Component Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Device Used By This Component Ref</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByThisComponentRef()
+	 * @see #getComponentSupportedInterface()
+	 * @generated
+	 */
+	EReference getComponentSupportedInterface_DeviceUsedByThisComponentRef();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByApplication <em>Device Used By Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Device Used By Application</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByApplication()
+	 * @see #getComponentSupportedInterface()
+	 * @generated
+	 */
+	EReference getComponentSupportedInterface_DeviceUsedByApplication();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getFindBy <em>Find By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1760,6 +1920,38 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDeviceUsedByThisComponentRef_UsesRefId();
+
+	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication <em>Device Used By Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Device Used By Application</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication
+	 * @generated
+	 */
+	EClass getDeviceUsedByApplication();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getRefId <em>Ref Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ref Id</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getRefId()
+	 * @see #getDeviceUsedByApplication()
+	 * @generated
+	 */
+	EAttribute getDeviceUsedByApplication_RefId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getUsesRefId <em>Uses Ref Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uses Ref Id</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getUsesRefId()
+	 * @see #getDeviceUsedByApplication()
+	 * @generated
+	 */
+	EAttribute getDeviceUsedByApplication_UsesRefId();
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.DomainFinder <em>Domain Finder</em>}'.
@@ -2040,6 +2232,17 @@ public interface PartitioningPackage extends EPackage {
 	EReference getProvidesPort_DeviceUsedByThisComponentRef();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ProvidesPort#getDeviceUsedByApplication <em>Device Used By Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Device Used By Application</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.ProvidesPort#getDeviceUsedByApplication()
+	 * @see #getProvidesPort()
+	 * @generated
+	 */
+	EReference getProvidesPort_DeviceUsedByApplication();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ProvidesPort#getFindBy <em>Find By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2137,6 +2340,17 @@ public interface PartitioningPackage extends EPackage {
 	EReference getUsesPort_DeviceUsedByThisComponentRef();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.UsesPort#getDeviceUsedByApplication <em>Device Used By Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Device Used By Application</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.UsesPort#getDeviceUsedByApplication()
+	 * @see #getUsesPort()
+	 * @generated
+	 */
+	EReference getUsesPort_DeviceUsedByApplication();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.UsesPort#getFindBy <em>Find By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2189,6 +2403,64 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUsesPortStub_SupportedIdentifier();
+
+	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub <em>Uses Device Stub</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Uses Device Stub</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.UsesDeviceStub
+	 * @generated
+	 */
+	EClass getUsesDeviceStub();
+
+	/**
+	 * Returns the meta object for the reference '{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getUsesDevice <em>Uses Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Uses Device</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getUsesDevice()
+	 * @see #getUsesDeviceStub()
+	 * @generated
+	 */
+	EReference getUsesDeviceStub_UsesDevice();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getProvidesPortStubs <em>Provides Port Stubs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Provides Port Stubs</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getProvidesPortStubs()
+	 * @see #getUsesDeviceStub()
+	 * @generated
+	 */
+	EReference getUsesDeviceStub_ProvidesPortStubs();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getUsesPortStubs <em>Uses Port Stubs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Uses Port Stubs</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getUsesPortStubs()
+	 * @see #getUsesDeviceStub()
+	 * @generated
+	 */
+	EReference getUsesDeviceStub_UsesPortStubs();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getInterface <em>Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Interface</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getInterface()
+	 * @see #getUsesDeviceStub()
+	 * @generated
+	 */
+	EReference getUsesDeviceStub_Interface();
 
 	/**
 	 * Returns the meta object for enum '{@link mil.jpeojtrs.sca.partitioning.DomainFinderType <em>Domain Finder Type</em>}'.
@@ -2517,6 +2789,27 @@ public interface PartitioningPackage extends EPackage {
 		 */
 		EReference COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF = eINSTANCE.getComponentSupportedInterface_ComponentInstantiationRef();
 		/**
+		 * The meta object literal for the '<em><b>Device That Loaded This Component Ref</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF = eINSTANCE.getComponentSupportedInterface_DeviceThatLoadedThisComponentRef();
+		/**
+		 * The meta object literal for the '<em><b>Device Used By This Component Ref</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF = eINSTANCE.getComponentSupportedInterface_DeviceUsedByThisComponentRef();
+		/**
+		 * The meta object literal for the '<em><b>Device Used By Application</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION = eINSTANCE.getComponentSupportedInterface_DeviceUsedByApplication();
+		/**
 		 * The meta object literal for the '<em><b>Find By</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2661,6 +2954,29 @@ public interface PartitioningPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID = eINSTANCE.getDeviceUsedByThisComponentRef_UsesRefId();
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByApplicationImpl <em>Device Used By Application</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByApplicationImpl
+		 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDeviceUsedByApplication()
+		 * @generated
+		 */
+		EClass DEVICE_USED_BY_APPLICATION = eINSTANCE.getDeviceUsedByApplication();
+		/**
+		 * The meta object literal for the '<em><b>Ref Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE_USED_BY_APPLICATION__REF_ID = eINSTANCE.getDeviceUsedByApplication_RefId();
+		/**
+		 * The meta object literal for the '<em><b>Uses Ref Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DEVICE_USED_BY_APPLICATION__USES_REF_ID = eINSTANCE.getDeviceUsedByApplication_UsesRefId();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.DomainFinderImpl <em>Domain Finder</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -2860,6 +3176,13 @@ public interface PartitioningPackage extends EPackage {
 		 */
 		EReference PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF = eINSTANCE.getProvidesPort_DeviceUsedByThisComponentRef();
 		/**
+		 * The meta object literal for the '<em><b>Device Used By Application</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROVIDES_PORT__DEVICE_USED_BY_APPLICATION = eINSTANCE.getProvidesPort_DeviceUsedByApplication();
+		/**
 		 * The meta object literal for the '<em><b>Find By</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2927,6 +3250,13 @@ public interface PartitioningPackage extends EPackage {
 		 */
 		EReference USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF = eINSTANCE.getUsesPort_DeviceUsedByThisComponentRef();
 		/**
+		 * The meta object literal for the '<em><b>Device Used By Application</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USES_PORT__DEVICE_USED_BY_APPLICATION = eINSTANCE.getUsesPort_DeviceUsedByApplication();
+		/**
 		 * The meta object literal for the '<em><b>Find By</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2964,6 +3294,47 @@ public interface PartitioningPackage extends EPackage {
 		 */
 		EAttribute USES_PORT_STUB__SUPPORTED_IDENTIFIER = eINSTANCE.getUsesPortStub_SupportedIdentifier();
 		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.UsesDeviceStubImpl <em>Uses Device Stub</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * @since 2.0
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.partitioning.impl.UsesDeviceStubImpl
+		 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getUsesDeviceStub()
+		 * @generated
+		 */
+		EClass USES_DEVICE_STUB = eINSTANCE.getUsesDeviceStub();
+		/**
+		 * The meta object literal for the '<em><b>Uses Device</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * @since 2.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USES_DEVICE_STUB__USES_DEVICE = eINSTANCE.getUsesDeviceStub_UsesDevice();
+		/**
+		 * The meta object literal for the '<em><b>Provides Port Stubs</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * @since 2.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USES_DEVICE_STUB__PROVIDES_PORT_STUBS = eINSTANCE.getUsesDeviceStub_ProvidesPortStubs();
+		/**
+		 * The meta object literal for the '<em><b>Uses Port Stubs</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * @since 2.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USES_DEVICE_STUB__USES_PORT_STUBS = eINSTANCE.getUsesDeviceStub_UsesPortStubs();
+		/**
+		 * The meta object literal for the '<em><b>Interface</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USES_DEVICE_STUB__INTERFACE = eINSTANCE.getUsesDeviceStub_Interface();
+		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.DomainFinderType <em>Domain Finder Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2981,7 +3352,6 @@ public interface PartitioningPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType DOMAIN_FINDER_TYPE_OBJECT = eINSTANCE.getDomainFinderTypeObject();
-	
 
 	}
 

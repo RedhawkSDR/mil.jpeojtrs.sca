@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.EObject;
  *        extendedMetaData="kind='elementOnly' name='connectinterface' qualified='false'"
  * @generated
  */
-public interface ConnectInterface<CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> extends EObject {
+public interface ConnectInterface< CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Uses Port</b></em>' containment reference.

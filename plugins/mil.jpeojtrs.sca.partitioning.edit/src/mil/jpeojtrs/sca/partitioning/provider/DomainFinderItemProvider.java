@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -39,14 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DomainFinderItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class DomainFinderItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -66,8 +59,7 @@ public class DomainFinderItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -83,19 +75,10 @@ public class DomainFinderItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DomainFinder_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DomainFinder_name_feature", "_UI_DomainFinder_type"),
-				 PartitioningPackage.Literals.DOMAIN_FINDER__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_DomainFinder_name_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DomainFinder_name_feature", "_UI_DomainFinder_type"),
+			PartitioningPackage.Literals.DOMAIN_FINDER__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -105,19 +88,10 @@ public class DomainFinderItemProvider
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DomainFinder_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DomainFinder_type_feature", "_UI_DomainFinder_type"),
-				 PartitioningPackage.Literals.DOMAIN_FINDER__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_DomainFinder_type_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DomainFinder_type_feature", "_UI_DomainFinder_type"),
+			PartitioningPackage.Literals.DOMAIN_FINDER__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -139,10 +113,8 @@ public class DomainFinderItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DomainFinder)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DomainFinder_type") :
-			getString("_UI_DomainFinder_type") + " " + label;
+		String label = ((DomainFinder) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_DomainFinder_type") : getString("_UI_DomainFinder_type") + " " + label;
 	}
 
 	/**
@@ -156,12 +128,11 @@ public class DomainFinderItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DomainFinder.class))
-		{
-			case PartitioningPackage.DOMAIN_FINDER__NAME:
-			case PartitioningPackage.DOMAIN_FINDER__TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(DomainFinder.class)) {
+		case PartitioningPackage.DOMAIN_FINDER__NAME:
+		case PartitioningPackage.DOMAIN_FINDER__TYPE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -186,7 +157,7 @@ public class DomainFinderItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

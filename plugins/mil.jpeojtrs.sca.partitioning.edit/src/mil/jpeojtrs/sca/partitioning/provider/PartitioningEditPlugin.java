@@ -48,14 +48,7 @@ public final class PartitioningEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public PartitioningEditPlugin() {
-		super
-		  (new ResourceLocator [] 
-		   {
-		     EcoreEditPlugin.INSTANCE,
-		     PrfEditPlugin.INSTANCE,
-		     ScdEditPlugin.INSTANCE,
-		     SpdEditPlugin.INSTANCE,
-		   });
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, PrfEditPlugin.INSTANCE, ScdEditPlugin.INSTANCE, SpdEditPlugin.INSTANCE, });
 	}
 
 	/**

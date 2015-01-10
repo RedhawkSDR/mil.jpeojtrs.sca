@@ -50,7 +50,7 @@ public class DomComponentFileTest extends ComponentFileTest {
 	 */
 	@Override
 	protected DomComponentFile getFixture() {
-		return (DomComponentFile)fixture;
+		return (DomComponentFile) fixture;
 	}
 
 	/**

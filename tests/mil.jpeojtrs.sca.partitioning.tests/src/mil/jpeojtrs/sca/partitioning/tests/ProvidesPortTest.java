@@ -28,7 +28,7 @@ public abstract class ProvidesPortTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProvidesPort<?> fixture = null;
+	protected ProvidesPort< ? > fixture = null;
 
 	/**
 	 * Constructs a new Provides Port test case with the given name.
@@ -46,7 +46,7 @@ public abstract class ProvidesPortTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(ProvidesPort<?> fixture) {
+	protected void setFixture(ProvidesPort< ? > fixture) {
 		this.fixture = fixture;
 	}
 
@@ -56,7 +56,7 @@ public abstract class ProvidesPortTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProvidesPort<?> getFixture() {
+	protected ProvidesPort< ? > getFixture() {
 		return fixture;
 	}
 

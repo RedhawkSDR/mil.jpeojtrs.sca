@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ProvidesPort#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ProvidesPort#getDeviceThatLoadedThisComponentRef <em>Device That Loaded This Component Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ProvidesPort#getDeviceUsedByThisComponentRef <em>Device Used By This Component Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.ProvidesPort#getDeviceUsedByApplication <em>Device Used By Application</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ProvidesPort#getFindBy <em>Find By</em>}</li>
  * </ul>
  * </p>
@@ -34,7 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  *        extendedMetaData="kind='elementOnly' name='providesport' qualified='false'"
  * @generated
  */
-public interface ProvidesPort<P extends ComponentInstantiationRef<?>> extends EObject {
+public interface ProvidesPort< P extends ComponentInstantiationRef< ? >> extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Provides Identifier</b></em>' attribute.
@@ -143,6 +144,33 @@ public interface ProvidesPort<P extends ComponentInstantiationRef<?>> extends EO
 	 * @generated
 	 */
 	void setDeviceUsedByThisComponentRef(DeviceUsedByThisComponentRef value);
+
+	/**
+	 * Returns the value of the '<em><b>Device Used By Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Device Used By Application</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Device Used By Application</em>' containment reference.
+	 * @see #setDeviceUsedByApplication(DeviceUsedByApplication)
+	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getProvidesPort_DeviceUsedByApplication()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='deviceusedbyapplication'"
+	 * @generated
+	 */
+	DeviceUsedByApplication getDeviceUsedByApplication();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ProvidesPort#getDeviceUsedByApplication <em>Device Used By Application</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Device Used By Application</em>' containment reference.
+	 * @see #getDeviceUsedByApplication()
+	 * @generated
+	 */
+	void setDeviceUsedByApplication(DeviceUsedByApplication value);
 
 	/**
 	 * Returns the value of the '<em><b>Find By</b></em>' containment reference.

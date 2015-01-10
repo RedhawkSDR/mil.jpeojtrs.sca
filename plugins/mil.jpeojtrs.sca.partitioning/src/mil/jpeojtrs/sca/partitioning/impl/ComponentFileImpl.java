@@ -129,10 +129,13 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	public NotificationChain basicSetLocalFile(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_FILE__LOCAL_FILE, oldLocalFile, newLocalFile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_FILE__LOCAL_FILE, oldLocalFile,
+				newLocalFile);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -162,17 +165,16 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 * @generated
 	 */
 	public void setLocalFileGen(LocalFile newLocalFile) {
-		if (newLocalFile != localFile)
-		{
+		if (newLocalFile != localFile) {
 			NotificationChain msgs = null;
 			if (localFile != null)
-				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_FILE__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_FILE__LOCAL_FILE, null, msgs);
 			if (newLocalFile != null)
-				msgs = ((InternalEObject)newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_FILE__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_FILE__LOCAL_FILE, null, msgs);
 			msgs = basicSetLocalFile(newLocalFile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_FILE__LOCAL_FILE, newLocalFile, newLocalFile));
 	}
 
@@ -220,7 +222,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	@Override
 	public SoftPkg getSoftPkg() {
 		SoftPkg softPkg = basicGetSoftPkg();
-		return softPkg != null && softPkg.eIsProxy() ? (SoftPkg)eResolveProxy((InternalEObject)softPkg) : softPkg;
+		return softPkg != null && softPkg.eIsProxy() ? (SoftPkg) eResolveProxy((InternalEObject) softPkg) : softPkg;
 	}
 
 	/**
@@ -302,10 +304,9 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
-				return basicSetLocalFile(null, msgs);
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
+			return basicSetLocalFile(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -317,17 +318,17 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
-				return getLocalFile();
-			case PartitioningPackage.COMPONENT_FILE__ID:
-				return getId();
-			case PartitioningPackage.COMPONENT_FILE__SOFT_PKG:
-				if (resolve) return getSoftPkg();
-				return basicGetSoftPkg();
-			case PartitioningPackage.COMPONENT_FILE__TYPE:
-				return getType();
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
+			return getLocalFile();
+		case PartitioningPackage.COMPONENT_FILE__ID:
+			return getId();
+		case PartitioningPackage.COMPONENT_FILE__SOFT_PKG:
+			if (resolve)
+				return getSoftPkg();
+			return basicGetSoftPkg();
+		case PartitioningPackage.COMPONENT_FILE__TYPE:
+			return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -339,20 +340,19 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
-				setLocalFile((LocalFile)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_FILE__ID:
-				setId((String)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_FILE__SOFT_PKG:
-				setSoftPkg((SoftPkg)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_FILE__TYPE:
-				setType((String)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
+			setLocalFile((LocalFile) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_FILE__ID:
+			setId((String) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_FILE__SOFT_PKG:
+			setSoftPkg((SoftPkg) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_FILE__TYPE:
+			setType((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -364,20 +364,19 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
-				setLocalFile((LocalFile)null);
-				return;
-			case PartitioningPackage.COMPONENT_FILE__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case PartitioningPackage.COMPONENT_FILE__SOFT_PKG:
-				setSoftPkg((SoftPkg)null);
-				return;
-			case PartitioningPackage.COMPONENT_FILE__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
+			setLocalFile((LocalFile) null);
+			return;
+		case PartitioningPackage.COMPONENT_FILE__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case PartitioningPackage.COMPONENT_FILE__SOFT_PKG:
+			setSoftPkg((SoftPkg) null);
+			return;
+		case PartitioningPackage.COMPONENT_FILE__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -389,16 +388,15 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
-				return localFile != null;
-			case PartitioningPackage.COMPONENT_FILE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case PartitioningPackage.COMPONENT_FILE__SOFT_PKG:
-				return basicGetSoftPkg() != null;
-			case PartitioningPackage.COMPONENT_FILE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
+			return localFile != null;
+		case PartitioningPackage.COMPONENT_FILE__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case PartitioningPackage.COMPONENT_FILE__SOFT_PKG:
+			return basicGetSoftPkg() != null;
+		case PartitioningPackage.COMPONENT_FILE__TYPE:
+			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -410,7 +408,8 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");

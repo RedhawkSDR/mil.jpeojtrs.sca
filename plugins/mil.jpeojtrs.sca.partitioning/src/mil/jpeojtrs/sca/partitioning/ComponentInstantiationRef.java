@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  *        extendedMetaData="kind='elementOnly' name='componentinstantiationref' qualified='false'"
  * @generated
  */
-public interface ComponentInstantiationRef<R extends ComponentInstantiation> extends EObject {
+public interface ComponentInstantiationRef< R extends ComponentInstantiation > extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Instantiation</b></em>' reference.

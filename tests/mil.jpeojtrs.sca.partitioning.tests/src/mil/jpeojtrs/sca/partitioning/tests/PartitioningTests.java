@@ -28,7 +28,6 @@ import org.eclipse.emf.common.util.URI;
  */
 public class PartitioningTests {
 
-
 	public static URI getURI(final String filePath) throws IOException {
 		final URL bundleUrl = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.partitioning.tests"), new Path(filePath), null);
 		if (bundleUrl == null) {

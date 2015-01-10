@@ -13,6 +13,7 @@ package mil.jpeojtrs.sca.partitioning.impl;
 
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiationRef;
 import mil.jpeojtrs.sca.partitioning.DeviceThatLoadedThisComponentRef;
+import mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication;
 import mil.jpeojtrs.sca.partitioning.DeviceUsedByThisComponentRef;
 import mil.jpeojtrs.sca.partitioning.FindBy;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
@@ -36,6 +37,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ProvidesPortImpl#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ProvidesPortImpl#getDeviceThatLoadedThisComponentRef <em>Device That Loaded This Component Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ProvidesPortImpl#getDeviceUsedByThisComponentRef <em>Device Used By This Component Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ProvidesPortImpl#getDeviceUsedByApplication <em>Device Used By Application</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ProvidesPortImpl#getFindBy <em>Find By</em>}</li>
  * </ul>
  * </p>
@@ -89,6 +91,16 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 	 * @ordered
 	 */
 	protected DeviceUsedByThisComponentRef deviceUsedByThisComponentRef;
+	/**
+	 * The cached value of the '{@link #getDeviceUsedByApplication() <em>Device Used By Application</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @see #getDeviceUsedByApplication()
+	 * @generated
+	 * @ordered
+	 */
+	protected DeviceUsedByApplication deviceUsedByApplication;
 	/**
 	 * The cached value of the '{@link #getFindBy() <em>Find By</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -302,6 +314,59 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DeviceUsedByApplication getDeviceUsedByApplication() {
+		return deviceUsedByApplication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDeviceUsedByApplication(DeviceUsedByApplication newDeviceUsedByApplication, NotificationChain msgs) {
+		DeviceUsedByApplication oldDeviceUsedByApplication = deviceUsedByApplication;
+		deviceUsedByApplication = newDeviceUsedByApplication;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION,
+				oldDeviceUsedByApplication, newDeviceUsedByApplication);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDeviceUsedByApplication(DeviceUsedByApplication newDeviceUsedByApplication) {
+		if (newDeviceUsedByApplication != deviceUsedByApplication) {
+			NotificationChain msgs = null;
+			if (deviceUsedByApplication != null)
+				msgs = ((InternalEObject) deviceUsedByApplication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION, null, msgs);
+			if (newDeviceUsedByApplication != null)
+				msgs = ((InternalEObject) newDeviceUsedByApplication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION, null, msgs);
+			msgs = basicSetDeviceUsedByApplication(newDeviceUsedByApplication, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION, newDeviceUsedByApplication,
+				newDeviceUsedByApplication));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -362,6 +427,8 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 			return basicSetDeviceThatLoadedThisComponentRef(null, msgs);
 		case PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
 			return basicSetDeviceUsedByThisComponentRef(null, msgs);
+		case PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION:
+			return basicSetDeviceUsedByApplication(null, msgs);
 		case PartitioningPackage.PROVIDES_PORT__FIND_BY:
 			return basicSetFindBy(null, msgs);
 		}
@@ -384,6 +451,8 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 			return getDeviceThatLoadedThisComponentRef();
 		case PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
 			return getDeviceUsedByThisComponentRef();
+		case PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION:
+			return getDeviceUsedByApplication();
 		case PartitioningPackage.PROVIDES_PORT__FIND_BY:
 			return getFindBy();
 		}
@@ -410,6 +479,9 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 			return;
 		case PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
 			setDeviceUsedByThisComponentRef((DeviceUsedByThisComponentRef) newValue);
+			return;
+		case PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION:
+			setDeviceUsedByApplication((DeviceUsedByApplication) newValue);
 			return;
 		case PartitioningPackage.PROVIDES_PORT__FIND_BY:
 			setFindBy((FindBy) newValue);
@@ -438,6 +510,9 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 		case PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
 			setDeviceUsedByThisComponentRef((DeviceUsedByThisComponentRef) null);
 			return;
+		case PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION:
+			setDeviceUsedByApplication((DeviceUsedByApplication) null);
+			return;
 		case PartitioningPackage.PROVIDES_PORT__FIND_BY:
 			setFindBy((FindBy) null);
 			return;
@@ -461,6 +536,8 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 			return deviceThatLoadedThisComponentRef != null;
 		case PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF:
 			return deviceUsedByThisComponentRef != null;
+		case PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION:
+			return deviceUsedByApplication != null;
 		case PartitioningPackage.PROVIDES_PORT__FIND_BY:
 			return findBy != null;
 		}

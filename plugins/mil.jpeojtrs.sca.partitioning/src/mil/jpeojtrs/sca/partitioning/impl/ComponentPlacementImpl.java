@@ -45,7 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> extends EObjectImpl implements ComponentPlacement<I> {
+public abstract class ComponentPlacementImpl< I extends ComponentInstantiation > extends EObjectImpl implements ComponentPlacement<I> {
 	/**
 	 * The cached value of the '{@link #getComponentFileRef() <em>Component File Ref</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -111,10 +111,13 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	public NotificationChain basicSetComponentFileRef(ComponentFileRef newComponentFileRef, NotificationChain msgs) {
 		ComponentFileRef oldComponentFileRef = componentFileRef;
 		componentFileRef = newComponentFileRef;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, oldComponentFileRef, newComponentFileRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
+				oldComponentFileRef, newComponentFileRef);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -126,18 +129,20 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 */
 	@Override
 	public void setComponentFileRef(ComponentFileRef newComponentFileRef) {
-		if (newComponentFileRef != componentFileRef)
-		{
+		if (newComponentFileRef != componentFileRef) {
 			NotificationChain msgs = null;
 			if (componentFileRef != null)
-				msgs = ((InternalEObject)componentFileRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, null, msgs);
+				msgs = ((InternalEObject) componentFileRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, null, msgs);
 			if (newComponentFileRef != null)
-				msgs = ((InternalEObject)newComponentFileRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentFileRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, null, msgs);
 			msgs = basicSetComponentFileRef(newComponentFileRef, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, newComponentFileRef, newComponentFileRef));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, newComponentFileRef,
+				newComponentFileRef));
 	}
 
 	/**
@@ -147,9 +152,9 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 */
 	@Override
 	public EList<I> getComponentInstantiation() {
-		if (componentInstantiation == null)
-		{
-			componentInstantiation = new EObjectContainmentWithInverseEList<I>(ComponentInstantiation.class, this, PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION, PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT);
+		if (componentInstantiation == null) {
+			componentInstantiation = new EObjectContainmentWithInverseEList<I>(ComponentInstantiation.class, this,
+				PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION, PartitioningPackage.COMPONENT_INSTANTIATION__PLACEMENT);
 		}
 		return componentInstantiation;
 	}
@@ -186,10 +191,9 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getComponentInstantiation()).basicAdd(otherEnd, msgs);
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
+			return ((InternalEList<InternalEObject>) (InternalEList< ? >) getComponentInstantiation()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -201,12 +205,11 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
-				return basicSetComponentFileRef(null, msgs);
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
-				return ((InternalEList<?>)getComponentInstantiation()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
+			return basicSetComponentFileRef(null, msgs);
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
+			return ((InternalEList< ? >) getComponentInstantiation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -218,14 +221,13 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
-				return getComponentFileRef();
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
-				return getComponentInstantiation();
-			case PartitioningPackage.COMPONENT_PLACEMENT__NAME:
-				return getName();
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
+			return getComponentFileRef();
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
+			return getComponentInstantiation();
+		case PartitioningPackage.COMPONENT_PLACEMENT__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -238,15 +240,14 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
-				setComponentFileRef((ComponentFileRef)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
-				getComponentInstantiation().clear();
-				getComponentInstantiation().addAll((Collection<? extends I>)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
+			setComponentFileRef((ComponentFileRef) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
+			getComponentInstantiation().clear();
+			getComponentInstantiation().addAll((Collection< ? extends I>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -258,14 +259,13 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
-				setComponentFileRef((ComponentFileRef)null);
-				return;
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
-				getComponentInstantiation().clear();
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
+			setComponentFileRef((ComponentFileRef) null);
+			return;
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
+			getComponentInstantiation().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -277,14 +277,13 @@ public abstract class ComponentPlacementImpl<I extends ComponentInstantiation> e
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
-				return componentFileRef != null;
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
-				return componentInstantiation != null && !componentInstantiation.isEmpty();
-			case PartitioningPackage.COMPONENT_PLACEMENT__NAME:
-				return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
+			return componentFileRef != null;
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
+			return componentInstantiation != null && !componentInstantiation.isEmpty();
+		case PartitioningPackage.COMPONENT_PLACEMENT__NAME:
+			return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
 		}
 		return super.eIsSet(featureID);
 	}

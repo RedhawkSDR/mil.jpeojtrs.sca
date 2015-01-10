@@ -112,12 +112,10 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 	 */
 	@Override
 	public Provides getProvides() {
-		if (provides != null && provides.eIsProxy())
-		{
-			InternalEObject oldProvides = (InternalEObject)provides;
-			provides = (Provides)eResolveProxy(oldProvides);
-			if (provides != oldProvides)
-			{
+		if (provides != null && provides.eIsProxy()) {
+			InternalEObject oldProvides = (InternalEObject) provides;
+			provides = (Provides) eResolveProxy(oldProvides);
+			if (provides != oldProvides) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES, oldProvides, provides));
 			}
@@ -145,7 +143,7 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES, oldProvides, provides));
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,13 +162,13 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.PROVIDES_PORT_STUB__NAME:
-				return getName();
-			case PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES:
-				if (resolve) return getProvides();
-				return basicGetProvides();
+		switch (featureID) {
+		case PartitioningPackage.PROVIDES_PORT_STUB__NAME:
+			return getName();
+		case PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES:
+			if (resolve)
+				return getProvides();
+			return basicGetProvides();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -182,14 +180,13 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.PROVIDES_PORT_STUB__NAME:
-				setName((String)newValue);
-				return;
-			case PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES:
-				setProvides((Provides)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.PROVIDES_PORT_STUB__NAME:
+			setName((String) newValue);
+			return;
+		case PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES:
+			setProvides((Provides) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,14 +198,13 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.PROVIDES_PORT_STUB__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES:
-				setProvides((Provides)null);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.PROVIDES_PORT_STUB__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES:
+			setProvides((Provides) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -220,12 +216,11 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.PROVIDES_PORT_STUB__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES:
-				return provides != null;
+		switch (featureID) {
+		case PartitioningPackage.PROVIDES_PORT_STUB__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case PartitioningPackage.PROVIDES_PORT_STUB__PROVIDES:
+			return provides != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -237,7 +232,8 @@ public class ProvidesPortStubImpl extends EObjectImpl implements ProvidesPortStu
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

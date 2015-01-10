@@ -43,7 +43,7 @@ public final class ScaPartitioningActivator extends EMFPlugin {
 	 * @generated
 	 */
 	public ScaPartitioningActivator() {
-		super(new ResourceLocator [] {});
+		super(new ResourceLocator[] {});
 	}
 
 	/**

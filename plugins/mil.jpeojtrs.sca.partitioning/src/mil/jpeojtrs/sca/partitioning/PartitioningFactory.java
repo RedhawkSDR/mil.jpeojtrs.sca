@@ -122,6 +122,15 @@ public interface PartitioningFactory extends EFactory {
 	DeviceUsedByThisComponentRef createDeviceUsedByThisComponentRef();
 
 	/**
+	 * Returns a new object of class '<em>Device Used By Application</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Device Used By Application</em>'.
+	 * @generated
+	 */
+	DeviceUsedByApplication createDeviceUsedByApplication();
+
+	/**
 	 * Returns a new object of class '<em>Domain Finder</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,6 +201,16 @@ public interface PartitioningFactory extends EFactory {
 	 * @generated
 	 */
 	UsesPortStub createUsesPortStub();
+
+	/**
+	 * Returns a new object of class '<em>Uses Device Stub</em>'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Uses Device Stub</em>'.
+	 * @generated
+	 */
+	UsesDeviceStub createUsesDeviceStub();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends EObjectImpl implements Partitioning<C> {
+public abstract class PartitioningImpl< C extends ComponentPlacement< ? >> extends EObjectImpl implements Partitioning<C> {
 
 	/**
 	 * The cached value of the '{@link #getParts() <em>Parts</em>}' attribute list.
@@ -78,8 +78,7 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 */
 	@Override
 	public FeatureMap getParts() {
-		if (parts == null)
-		{
+		if (parts == null) {
 			parts = new BasicFeatureMap(this, PartitioningPackage.PARTITIONING__PARTS);
 		}
 		return parts;
@@ -102,12 +101,11 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.PARTITIONING__PARTS:
-				return ((InternalEList<?>)getParts()).basicRemove(otherEnd, msgs);
-			case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
-				return ((InternalEList<?>)getComponentPlacement()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PartitioningPackage.PARTITIONING__PARTS:
+			return ((InternalEList< ? >) getParts()).basicRemove(otherEnd, msgs);
+		case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
+			return ((InternalEList< ? >) getComponentPlacement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -119,13 +117,13 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.PARTITIONING__PARTS:
-				if (coreType) return getParts();
-				return ((FeatureMap.Internal)getParts()).getWrapper();
-			case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
-				return getComponentPlacement();
+		switch (featureID) {
+		case PartitioningPackage.PARTITIONING__PARTS:
+			if (coreType)
+				return getParts();
+			return ((FeatureMap.Internal) getParts()).getWrapper();
+		case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
+			return getComponentPlacement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,15 +136,14 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.PARTITIONING__PARTS:
-				((FeatureMap.Internal)getParts()).set(newValue);
-				return;
-			case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
-				getComponentPlacement().clear();
-				getComponentPlacement().addAll((Collection<? extends C>)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.PARTITIONING__PARTS:
+			((FeatureMap.Internal) getParts()).set(newValue);
+			return;
+		case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
+			getComponentPlacement().clear();
+			getComponentPlacement().addAll((Collection< ? extends C>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -158,14 +155,13 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.PARTITIONING__PARTS:
-				getParts().clear();
-				return;
-			case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
-				getComponentPlacement().clear();
-				return;
+		switch (featureID) {
+		case PartitioningPackage.PARTITIONING__PARTS:
+			getParts().clear();
+			return;
+		case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
+			getComponentPlacement().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -177,12 +173,11 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.PARTITIONING__PARTS:
-				return parts != null && !parts.isEmpty();
-			case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
-				return !getComponentPlacement().isEmpty();
+		switch (featureID) {
+		case PartitioningPackage.PARTITIONING__PARTS:
+			return parts != null && !parts.isEmpty();
+		case PartitioningPackage.PARTITIONING__COMPONENT_PLACEMENT:
+			return !getComponentPlacement().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -194,7 +189,8 @@ public abstract class PartitioningImpl<C extends ComponentPlacement<?>> extends 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (parts: ");

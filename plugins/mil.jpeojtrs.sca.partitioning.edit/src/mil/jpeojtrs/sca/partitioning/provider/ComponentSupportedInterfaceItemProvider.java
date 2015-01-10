@@ -41,7 +41,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-        ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,8 +60,7 @@ public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addSupportedIdentifierPropertyDescriptor(object);
@@ -77,19 +76,13 @@ public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addSupportedIdentifierPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentSupportedInterface_supportedIdentifier_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentSupportedInterface_supportedIdentifier_feature", "_UI_ComponentSupportedInterface_type"),
-				 PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(),
+			getString("_UI_ComponentSupportedInterface_supportedIdentifier_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentSupportedInterface_supportedIdentifier_feature",
+				"_UI_ComponentSupportedInterface_type"), PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER, true, false, false,
+			ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -99,19 +92,10 @@ public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addInterfacePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentSupportedInterface_interface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentSupportedInterface_interface_feature", "_UI_ComponentSupportedInterface_type"),
-				 PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__INTERFACE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentSupportedInterface_interface_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentSupportedInterface_interface_feature", "_UI_ComponentSupportedInterface_type"),
+			PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__INTERFACE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -123,11 +107,13 @@ public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF);
+			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF);
+			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF);
+			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__FIND_BY);
 		}
 		return childrenFeatures;
@@ -180,15 +166,17 @@ public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentSupportedInterface.class))
-		{
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(ComponentSupportedInterface.class)) {
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF:
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF:
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION:
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__FIND_BY:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -204,10 +192,17 @@ public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__FIND_BY,
-				 PartitioningFactory.eINSTANCE.createFindBy()));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF,
+			PartitioningFactory.eINSTANCE.createDeviceThatLoadedThisComponentRef()));
+
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF,
+			PartitioningFactory.eINSTANCE.createDeviceUsedByThisComponentRef()));
+
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION,
+			PartitioningFactory.eINSTANCE.createDeviceUsedByApplication()));
+
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__FIND_BY,
+			PartitioningFactory.eINSTANCE.createFindBy()));
 	}
 
 	/**
@@ -218,7 +213,7 @@ public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

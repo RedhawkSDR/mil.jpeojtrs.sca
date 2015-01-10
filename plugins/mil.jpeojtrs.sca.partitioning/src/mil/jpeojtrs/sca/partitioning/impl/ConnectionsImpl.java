@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> extends EObjectImpl implements Connections<CI> {
+public abstract class ConnectionsImpl< CI extends ConnectInterface< ? , ? , ? >> extends EObjectImpl implements Connections<CI> {
 
 	/**
 	 * The cached value of the '{@link #getConnectInterface() <em>Connect Interface</em>}' containment reference list.
@@ -76,8 +76,7 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 */
 	@Override
 	public EList<CI> getConnectInterface() {
-		if (connectInterface == null)
-		{
+		if (connectInterface == null) {
 			connectInterface = new EObjectContainmentEList<CI>(ConnectInterface.class, this, PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE);
 		}
 		return connectInterface;
@@ -90,10 +89,9 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
-				return ((InternalEList<?>)getConnectInterface()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
+			return ((InternalEList< ? >) getConnectInterface()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -105,10 +103,9 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
-				return getConnectInterface();
+		switch (featureID) {
+		case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
+			return getConnectInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,12 +118,11 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
-				getConnectInterface().clear();
-				getConnectInterface().addAll((Collection<? extends CI>)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
+			getConnectInterface().clear();
+			getConnectInterface().addAll((Collection< ? extends CI>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -138,11 +134,10 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
-				getConnectInterface().clear();
-				return;
+		switch (featureID) {
+		case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
+			getConnectInterface().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,10 +149,9 @@ public abstract class ConnectionsImpl<CI extends ConnectInterface<?, ?, ?>> exte
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
-				return connectInterface != null && !connectInterface.isEmpty();
+		switch (featureID) {
+		case PartitioningPackage.CONNECTIONS__CONNECT_INTERFACE:
+			return connectInterface != null && !connectInterface.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

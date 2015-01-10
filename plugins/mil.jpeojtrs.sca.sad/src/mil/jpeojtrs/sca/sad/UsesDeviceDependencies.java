@@ -14,7 +14,6 @@ package mil.jpeojtrs.sca.sad;
 import mil.jpeojtrs.sca.spd.UsesDevice;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

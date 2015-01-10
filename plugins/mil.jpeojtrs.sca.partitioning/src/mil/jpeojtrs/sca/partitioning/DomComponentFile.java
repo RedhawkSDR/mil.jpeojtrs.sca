@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Dom Component File</b></em>'.

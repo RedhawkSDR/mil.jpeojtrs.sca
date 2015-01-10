@@ -63,15 +63,10 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 * @ordered
 	 */
 	protected FeatureMap properties;
-	private static final EStructuralFeature [] PROP_PATH = new EStructuralFeature[] {
-		ScaEcoreUtils.ECONTAINER,
-		PartitioningPackage.Literals.COMPONENT_INSTANTIATION__PLACEMENT,
-		PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
-		PartitioningPackage.Literals.COMPONENT_FILE_REF__FILE,
-		PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG,
-		SpdPackage.Literals.SOFT_PKG__PROPERTY_FILE,
-		SpdPackage.Literals.PROPERTY_FILE__PROPERTIES
-	};
+	private static final EStructuralFeature[] PROP_PATH = new EStructuralFeature[] { ScaEcoreUtils.ECONTAINER,
+		PartitioningPackage.Literals.COMPONENT_INSTANTIATION__PLACEMENT, PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
+		PartitioningPackage.Literals.COMPONENT_FILE_REF__FILE, PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG,
+		SpdPackage.Literals.SOFT_PKG__PROPERTY_FILE, SpdPackage.Literals.PROPERTY_FILE__PROPERTIES };
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,8 +96,7 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 */
 	@Override
 	public FeatureMap getProperties() {
-		if (properties == null)
-		{
+		if (properties == null) {
 			properties = new BasicFeatureMap(this, PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES);
 		}
 		return properties;
@@ -167,18 +161,17 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
-				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
-				return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
-			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF:
-				return ((InternalEList<?>)getSimpleSequenceRef()).basicRemove(otherEnd, msgs);
-			case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_REF:
-				return ((InternalEList<?>)getStructRef()).basicRemove(otherEnd, msgs);
-			case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF:
-				return ((InternalEList<?>)getStructSequenceRef()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
+			return ((InternalEList< ? >) getProperties()).basicRemove(otherEnd, msgs);
+		case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
+			return ((InternalEList< ? >) getSimpleRef()).basicRemove(otherEnd, msgs);
+		case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF:
+			return ((InternalEList< ? >) getSimpleSequenceRef()).basicRemove(otherEnd, msgs);
+		case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_REF:
+			return ((InternalEList< ? >) getStructRef()).basicRemove(otherEnd, msgs);
+		case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF:
+			return ((InternalEList< ? >) getStructSequenceRef()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -190,19 +183,19 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
-				if (coreType) return getProperties();
-				return ((FeatureMap.Internal)getProperties()).getWrapper();
-			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
-				return getSimpleRef();
-			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF:
-				return getSimpleSequenceRef();
-			case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_REF:
-				return getStructRef();
-			case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF:
-				return getStructSequenceRef();
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
+			if (coreType)
+				return getProperties();
+			return ((FeatureMap.Internal) getProperties()).getWrapper();
+		case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
+			return getSimpleRef();
+		case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF:
+			return getSimpleSequenceRef();
+		case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_REF:
+			return getStructRef();
+		case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF:
+			return getStructSequenceRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -215,27 +208,26 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
-				((FeatureMap.Internal)getProperties()).set(newValue);
-				return;
-			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
-				getSimpleRef().clear();
-				getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF:
-				getSimpleSequenceRef().clear();
-				getSimpleSequenceRef().addAll((Collection<? extends SimpleSequenceRef>)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_REF:
-				getStructRef().clear();
-				getStructRef().addAll((Collection<? extends StructRef>)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF:
-				getStructSequenceRef().clear();
-				getStructSequenceRef().addAll((Collection<? extends StructSequenceRef>)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
+			((FeatureMap.Internal) getProperties()).set(newValue);
+			return;
+		case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
+			getSimpleRef().clear();
+			getSimpleRef().addAll((Collection< ? extends SimpleRef>) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF:
+			getSimpleSequenceRef().clear();
+			getSimpleSequenceRef().addAll((Collection< ? extends SimpleSequenceRef>) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_REF:
+			getStructRef().clear();
+			getStructRef().addAll((Collection< ? extends StructRef>) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF:
+			getStructSequenceRef().clear();
+			getStructSequenceRef().addAll((Collection< ? extends StructSequenceRef>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -247,23 +239,22 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
-				getProperties().clear();
-				return;
-			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
-				getSimpleRef().clear();
-				return;
-			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF:
-				getSimpleSequenceRef().clear();
-				return;
-			case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_REF:
-				getStructRef().clear();
-				return;
-			case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF:
-				getStructSequenceRef().clear();
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
+			getProperties().clear();
+			return;
+		case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
+			getSimpleRef().clear();
+			return;
+		case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF:
+			getSimpleSequenceRef().clear();
+			return;
+		case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_REF:
+			getStructRef().clear();
+			return;
+		case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF:
+			getStructSequenceRef().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -275,18 +266,17 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
-				return properties != null && !properties.isEmpty();
-			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
-				return !getSimpleRef().isEmpty();
-			case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF:
-				return !getSimpleSequenceRef().isEmpty();
-			case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_REF:
-				return !getStructRef().isEmpty();
-			case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF:
-				return !getStructSequenceRef().isEmpty();
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_PROPERTIES__PROPERTIES:
+			return properties != null && !properties.isEmpty();
+		case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_REF:
+			return !getSimpleRef().isEmpty();
+		case PartitioningPackage.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF:
+			return !getSimpleSequenceRef().isEmpty();
+		case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_REF:
+			return !getStructRef().isEmpty();
+		case PartitioningPackage.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF:
+			return !getStructSequenceRef().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -298,7 +288,8 @@ public class ComponentPropertiesImpl extends EObjectImpl implements ComponentPro
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (properties: ");

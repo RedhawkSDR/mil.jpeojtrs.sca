@@ -83,7 +83,7 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	@SuppressWarnings("unchecked")
 	public R getInstantiation() {
 		R instantiation = basicGetInstantiation();
-		return instantiation != null && instantiation.eIsProxy() ? (R)eResolveProxy((InternalEObject)instantiation) : instantiation;
+		return instantiation != null && instantiation.eIsProxy() ? (R) eResolveProxy((InternalEObject) instantiation) : instantiation;
 	}
 
 	/**
@@ -147,13 +147,13 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
-				if (resolve) return getInstantiation();
-				return basicGetInstantiation();
-			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:
-				return getRefid();
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
+			if (resolve)
+				return getInstantiation();
+			return basicGetInstantiation();
+		case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:
+			return getRefid();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,14 +166,13 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
-				setInstantiation((R)newValue);
-				return;
-			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:
-				setRefid((String)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
+			setInstantiation((R) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:
+			setRefid((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -185,14 +184,13 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
-				setInstantiation((R)null);
-				return;
-			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:
-				setRefid(REFID_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
+			setInstantiation((R) null);
+			return;
+		case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:
+			setRefid(REFID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -204,12 +202,11 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
-				return basicGetInstantiation() != null;
-			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:
-				return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_INSTANTIATION_REF__INSTANTIATION:
+			return basicGetInstantiation() != null;
+		case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:
+			return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,7 +218,8 @@ public abstract class ComponentInstantiationRefImpl< R extends ComponentInstanti
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (refid: ");

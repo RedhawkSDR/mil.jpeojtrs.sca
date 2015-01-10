@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    This file is protected by Copyright.
-    Please refer to the COPYRIGHT file distributed with this source distribution.
-
-    This file is part of REDHAWK IDE.
-
-    All rights reserved.  This program and the accompanying materials are made available under
-    the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
-    http://www.eclipse.org/legal/epl-v10.html.
--->
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mil.jpeojtrs.sca.partitioning/src" editorDirectory=""
     modelPluginID="mil.jpeojtrs.sca.partitioning" templateDirectory="/mil.jpeojtrs.sca.partitioning/templates"
@@ -94,6 +84,9 @@
     <genClasses ecoreClass="partitioning.ecore#//ComponentSupportedInterface">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentSupportedInterface/supportedIdentifier"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentSupportedInterface/componentInstantiationRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentSupportedInterface/deviceThatLoadedThisComponentRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentSupportedInterface/deviceUsedByThisComponentRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentSupportedInterface/deviceUsedByApplication"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentSupportedInterface/findBy"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentSupportedInterface/interface"/>
     </genClasses>
@@ -121,6 +114,10 @@
     <genClasses ecoreClass="partitioning.ecore#//DeviceUsedByThisComponentRef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DeviceUsedByThisComponentRef/refId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DeviceUsedByThisComponentRef/usesRefId"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//DeviceUsedByApplication">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DeviceUsedByApplication/refId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DeviceUsedByApplication/usesRefId"/>
     </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//DomainFinder">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DomainFinder/name"/>
@@ -157,6 +154,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPort/componentInstantiationRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPort/deviceThatLoadedThisComponentRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPort/deviceUsedByThisComponentRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPort/deviceUsedByApplication"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPort/findBy"/>
     </genClasses>
     <genClasses provider="Stateful" image="false" ecoreClass="partitioning.ecore#//ProvidesPortStub">
@@ -170,6 +168,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/componentInstantiationRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/deviceThatLoadedThisComponentRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/deviceUsedByThisComponentRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/deviceUsedByApplication"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/findBy"/>
     </genClasses>
     <genClasses provider="Stateful" image="false" ecoreClass="partitioning.ecore#//UsesPortStub">
@@ -177,6 +176,12 @@
       <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference partitioning.ecore#//UsesPortStub/uses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//UsesPortStub/supportedIdentifier"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//UsesDeviceStub">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesDeviceStub/usesDevice"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesDeviceStub/providesPortStubs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesDeviceStub/usesPortStubs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesDeviceStub/interface"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -39,14 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentInstantiationRefItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ComponentInstantiationRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -66,8 +59,7 @@ public class ComponentInstantiationRefItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addInstantiationPropertyDescriptor(object);
@@ -83,19 +75,10 @@ public class ComponentInstantiationRefItemProvider
 	 * @generated
 	 */
 	protected void addInstantiationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstantiationRef_instantiation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstantiationRef_instantiation_feature", "_UI_ComponentInstantiationRef_type"),
-				 PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__INSTANTIATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentInstantiationRef_instantiation_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstantiationRef_instantiation_feature", "_UI_ComponentInstantiationRef_type"),
+			PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__INSTANTIATION, true, false, true, null, null, null));
 	}
 
 	/**
@@ -105,19 +88,10 @@ public class ComponentInstantiationRefItemProvider
 	 * @generated
 	 */
 	protected void addRefidPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstantiationRef_refid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstantiationRef_refid_feature", "_UI_ComponentInstantiationRef_type"),
-				 PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__REFID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentInstantiationRef_refid_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstantiationRef_refid_feature", "_UI_ComponentInstantiationRef_type"),
+			PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__REFID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -139,10 +113,9 @@ public class ComponentInstantiationRefItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentInstantiationRef<?>)object).getRefid();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentInstantiationRef_type") :
-			getString("_UI_ComponentInstantiationRef_type") + " " + label;
+		String label = ((ComponentInstantiationRef< ? >) object).getRefid();
+		return label == null || label.length() == 0 ? getString("_UI_ComponentInstantiationRef_type") : getString("_UI_ComponentInstantiationRef_type") + " "
+			+ label;
 	}
 
 	/**
@@ -156,11 +129,10 @@ public class ComponentInstantiationRefItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentInstantiationRef.class))
-		{
-			case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(ComponentInstantiationRef.class)) {
+		case PartitioningPackage.COMPONENT_INSTANTIATION_REF__REFID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -185,7 +157,7 @@ public class ComponentInstantiationRefItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -39,14 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LocalFileItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class LocalFileItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -66,8 +59,7 @@ public class LocalFileItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -82,19 +74,9 @@ public class LocalFileItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LocalFile_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LocalFile_name_feature", "_UI_LocalFile_type"),
-				 PartitioningPackage.Literals.LOCAL_FILE__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_LocalFile_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_LocalFile_name_feature", "_UI_LocalFile_type"),
+			PartitioningPackage.Literals.LOCAL_FILE__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -116,10 +98,8 @@ public class LocalFileItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LocalFile)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_LocalFile_type") :
-			getString("_UI_LocalFile_type") + " " + label;
+		String label = ((LocalFile) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_LocalFile_type") : getString("_UI_LocalFile_type") + " " + label;
 	}
 
 	/**
@@ -133,11 +113,10 @@ public class LocalFileItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(LocalFile.class))
-		{
-			case PartitioningPackage.LOCAL_FILE__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(LocalFile.class)) {
+		case PartitioningPackage.LOCAL_FILE__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -162,7 +141,7 @@ public class LocalFileItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

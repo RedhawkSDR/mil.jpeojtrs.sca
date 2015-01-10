@@ -25,6 +25,7 @@ import mil.jpeojtrs.sca.partitioning.ConnectionTarget;
 import mil.jpeojtrs.sca.partitioning.Connections;
 import mil.jpeojtrs.sca.partitioning.DevComponentFile;
 import mil.jpeojtrs.sca.partitioning.DeviceThatLoadedThisComponentRef;
+import mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication;
 import mil.jpeojtrs.sca.partitioning.DeviceUsedByThisComponentRef;
 import mil.jpeojtrs.sca.partitioning.DomComponentFile;
 import mil.jpeojtrs.sca.partitioning.DomainFinder;
@@ -39,6 +40,7 @@ import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
+import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
 import mil.jpeojtrs.sca.partitioning.util.PartitioningValidator;
@@ -168,6 +170,12 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass deviceUsedByApplicationEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass domainFinderEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,6 +237,12 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * @generated
 	 */
 	private EClass usesPortStubEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass usesDeviceStubEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -688,12 +702,42 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentSupportedInterface_DeviceThatLoadedThisComponentRef() {
+		return (EReference) componentSupportedInterfaceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentSupportedInterface_DeviceUsedByThisComponentRef() {
+		return (EReference) componentSupportedInterfaceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentSupportedInterface_DeviceUsedByApplication() {
+		return (EReference) componentSupportedInterfaceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EReference getComponentSupportedInterface_FindBy() {
-		return (EReference) componentSupportedInterfaceEClass.getEStructuralFeatures().get(2);
+		return (EReference) componentSupportedInterfaceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -703,7 +747,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentSupportedInterface_Interface() {
-		return (EReference) componentSupportedInterfaceEClass.getEStructuralFeatures().get(3);
+		return (EReference) componentSupportedInterfaceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -874,6 +918,36 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	@Override
 	public EAttribute getDeviceUsedByThisComponentRef_UsesRefId() {
 		return (EAttribute) deviceUsedByThisComponentRefEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDeviceUsedByApplication() {
+		return deviceUsedByApplicationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDeviceUsedByApplication_RefId() {
+		return (EAttribute) deviceUsedByApplicationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDeviceUsedByApplication_UsesRefId() {
+		return (EAttribute) deviceUsedByApplicationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1138,12 +1212,22 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProvidesPort_DeviceUsedByApplication() {
+		return (EReference) providesPortEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EReference getProvidesPort_FindBy() {
-		return (EReference) providesPortEClass.getEStructuralFeatures().get(4);
+		return (EReference) providesPortEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1228,12 +1312,22 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUsesPort_DeviceUsedByApplication() {
+		return (EReference) usesPortEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EReference getUsesPort_FindBy() {
-		return (EReference) usesPortEClass.getEStructuralFeatures().get(4);
+		return (EReference) usesPortEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1274,6 +1368,56 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	@Override
 	public EAttribute getUsesPortStub_SupportedIdentifier() {
 		return (EAttribute) usesPortStubEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUsesDeviceStub() {
+		return usesDeviceStubEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUsesDeviceStub_UsesDevice() {
+		return (EReference) usesDeviceStubEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUsesDeviceStub_ProvidesPortStubs() {
+		return (EReference) usesDeviceStubEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUsesDeviceStub_UsesPortStubs() {
+		return (EReference) usesDeviceStubEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUsesDeviceStub_Interface() {
+		return (EReference) usesDeviceStubEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1372,6 +1516,9 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		componentSupportedInterfaceEClass = createEClass(COMPONENT_SUPPORTED_INTERFACE);
 		createEAttribute(componentSupportedInterfaceEClass, COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER);
 		createEReference(componentSupportedInterfaceEClass, COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF);
+		createEReference(componentSupportedInterfaceEClass, COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF);
+		createEReference(componentSupportedInterfaceEClass, COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF);
+		createEReference(componentSupportedInterfaceEClass, COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION);
 		createEReference(componentSupportedInterfaceEClass, COMPONENT_SUPPORTED_INTERFACE__FIND_BY);
 		createEReference(componentSupportedInterfaceEClass, COMPONENT_SUPPORTED_INTERFACE__INTERFACE);
 
@@ -1397,6 +1544,10 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		deviceUsedByThisComponentRefEClass = createEClass(DEVICE_USED_BY_THIS_COMPONENT_REF);
 		createEAttribute(deviceUsedByThisComponentRefEClass, DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID);
 		createEAttribute(deviceUsedByThisComponentRefEClass, DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID);
+
+		deviceUsedByApplicationEClass = createEClass(DEVICE_USED_BY_APPLICATION);
+		createEAttribute(deviceUsedByApplicationEClass, DEVICE_USED_BY_APPLICATION__REF_ID);
+		createEAttribute(deviceUsedByApplicationEClass, DEVICE_USED_BY_APPLICATION__USES_REF_ID);
 
 		domainFinderEClass = createEClass(DOMAIN_FINDER);
 		createEAttribute(domainFinderEClass, DOMAIN_FINDER__NAME);
@@ -1431,6 +1582,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		createEReference(providesPortEClass, PROVIDES_PORT__COMPONENT_INSTANTIATION_REF);
 		createEReference(providesPortEClass, PROVIDES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF);
 		createEReference(providesPortEClass, PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF);
+		createEReference(providesPortEClass, PROVIDES_PORT__DEVICE_USED_BY_APPLICATION);
 		createEReference(providesPortEClass, PROVIDES_PORT__FIND_BY);
 
 		providesPortStubEClass = createEClass(PROVIDES_PORT_STUB);
@@ -1442,12 +1594,19 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		createEReference(usesPortEClass, USES_PORT__COMPONENT_INSTANTIATION_REF);
 		createEReference(usesPortEClass, USES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF);
 		createEReference(usesPortEClass, USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF);
+		createEReference(usesPortEClass, USES_PORT__DEVICE_USED_BY_APPLICATION);
 		createEReference(usesPortEClass, USES_PORT__FIND_BY);
 
 		usesPortStubEClass = createEClass(USES_PORT_STUB);
 		createEAttribute(usesPortStubEClass, USES_PORT_STUB__NAME);
 		createEReference(usesPortStubEClass, USES_PORT_STUB__USES);
 		createEAttribute(usesPortStubEClass, USES_PORT_STUB__SUPPORTED_IDENTIFIER);
+
+		usesDeviceStubEClass = createEClass(USES_DEVICE_STUB);
+		createEReference(usesDeviceStubEClass, USES_DEVICE_STUB__USES_DEVICE);
+		createEReference(usesDeviceStubEClass, USES_DEVICE_STUB__PROVIDES_PORT_STUBS);
+		createEReference(usesDeviceStubEClass, USES_DEVICE_STUB__USES_PORT_STUBS);
+		createEReference(usesDeviceStubEClass, USES_DEVICE_STUB__INTERFACE);
 
 		// Create enums
 		domainFinderTypeEEnum = createEEnum(DOMAIN_FINDER_TYPE);
@@ -1467,6 +1626,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * Complete the initialization of the package and its meta-model.  This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1636,6 +1796,15 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		initEReference(getComponentSupportedInterface_ComponentInstantiationRef(), g1, null, "componentInstantiationRef", null, 0, 1,
 			ComponentSupportedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 			!IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentSupportedInterface_DeviceThatLoadedThisComponentRef(), this.getDeviceThatLoadedThisComponentRef(), null,
+			"deviceThatLoadedThisComponentRef", null, 0, 1, ComponentSupportedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+			!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentSupportedInterface_DeviceUsedByThisComponentRef(), this.getDeviceUsedByThisComponentRef(), null,
+			"deviceUsedByThisComponentRef", null, 0, 1, ComponentSupportedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+			!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentSupportedInterface_DeviceUsedByApplication(), this.getDeviceUsedByApplication(), null, "deviceUsedByApplication", null, 0,
+			1, ComponentSupportedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+			!IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentSupportedInterface_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, ComponentSupportedInterface.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentSupportedInterface_Interface(), theScdPackage.getInterface(), null, "interface", null, 0, 1,
@@ -1681,6 +1850,13 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		initEAttribute(getDeviceUsedByThisComponentRef_RefId(), theXMLTypePackage.getString(), "refId", null, 1, 1, DeviceUsedByThisComponentRef.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeviceUsedByThisComponentRef_UsesRefId(), theXMLTypePackage.getString(), "usesRefId", null, 1, 1, DeviceUsedByThisComponentRef.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(deviceUsedByApplicationEClass, DeviceUsedByApplication.class, "DeviceUsedByApplication", !IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDeviceUsedByApplication_RefId(), theXMLTypePackage.getString(), "refId", null, 1, 1, DeviceUsedByApplication.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeviceUsedByApplication_UsesRefId(), theXMLTypePackage.getString(), "usesRefId", null, 1, 1, DeviceUsedByApplication.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(domainFinderEClass, DomainFinder.class, "DomainFinder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1738,6 +1914,9 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		initEReference(getProvidesPort_DeviceUsedByThisComponentRef(), this.getDeviceUsedByThisComponentRef(), null, "deviceUsedByThisComponentRef", null, 0,
 			1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 			IS_ORDERED);
+		initEReference(getProvidesPort_DeviceUsedByApplication(), this.getDeviceUsedByApplication(), null, "deviceUsedByApplication", null, 0, 1,
+			ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+			IS_ORDERED);
 		initEReference(getProvidesPort_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, ProvidesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1758,6 +1937,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 			IS_ORDERED);
 		initEReference(getUsesPort_DeviceUsedByThisComponentRef(), this.getDeviceUsedByThisComponentRef(), null, "deviceUsedByThisComponentRef", null, 0, 1,
 			UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUsesPort_DeviceUsedByApplication(), this.getDeviceUsedByApplication(), null, "deviceUsedByApplication", null, 0, 1, UsesPort.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUsesPort_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1768,6 +1949,16 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUsesPortStub_SupportedIdentifier(), theEcorePackage.getEString(), "supportedIdentifier", null, 0, 1, UsesPortStub.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(usesDeviceStubEClass, UsesDeviceStub.class, "UsesDeviceStub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUsesDeviceStub_UsesDevice(), theSpdPackage.getUsesDevice(), null, "usesDevice", null, 0, 1, UsesDeviceStub.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUsesDeviceStub_ProvidesPortStubs(), this.getProvidesPortStub(), null, "providesPortStubs", null, 0, -1, UsesDeviceStub.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUsesDeviceStub_UsesPortStubs(), this.getUsesPortStub(), null, "usesPortStubs", null, 0, -1, UsesDeviceStub.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUsesDeviceStub_Interface(), this.getComponentSupportedInterfaceStub(), null, "interface", null, 0, 1, UsesDeviceStub.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(domainFinderTypeEEnum, DomainFinderType.class, "DomainFinderType");
@@ -1839,6 +2030,11 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation(getComponentSupportedInterface_SupportedIdentifier(), source, new String[] { "kind", "element", "name", "supportedidentifier" });
 		addAnnotation(getComponentSupportedInterface_ComponentInstantiationRef(), source,
 			new String[] { "kind", "element", "name", "componentinstantiationref" });
+		addAnnotation(getComponentSupportedInterface_DeviceThatLoadedThisComponentRef(), source, new String[] { "kind", "element", "name",
+			"devicethatloadedthiscomponentref" });
+		addAnnotation(getComponentSupportedInterface_DeviceUsedByThisComponentRef(), source, new String[] { "kind", "element", "name",
+			"deviceusedbythiscomponentref" });
+		addAnnotation(getComponentSupportedInterface_DeviceUsedByApplication(), source, new String[] { "kind", "element", "name", "deviceusedbyapplication" });
 		addAnnotation(getComponentSupportedInterface_FindBy(), source, new String[] { "kind", "element", "name", "findby" });
 		addAnnotation(getComponentSupportedInterface_Interface(), source, new String[] { "kind", "attribute", "name", "interface" });
 		addAnnotation(connectInterfaceEClass, source, new String[] { "kind", "elementOnly", "name", "connectinterface", "qualified", "false" });
@@ -1858,6 +2054,9 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 			"false" });
 		addAnnotation(getDeviceUsedByThisComponentRef_RefId(), source, new String[] { "kind", "attribute", "name", "refid" });
 		addAnnotation(getDeviceUsedByThisComponentRef_UsesRefId(), source, new String[] { "kind", "attribute", "name", "usesrefid" });
+		addAnnotation(deviceUsedByApplicationEClass, source, new String[] { "kind", "elementOnly", "name", "deviceusedbyapplication", "qualified", "false" });
+		addAnnotation(getDeviceUsedByApplication_RefId(), source, new String[] { "kind", "attribute", "name", "refid" });
+		addAnnotation(getDeviceUsedByApplication_UsesRefId(), source, new String[] { "kind", "attribute", "name", "usesrefid" });
 		addAnnotation(domainFinderEClass, source, new String[] { "kind", "elementOnly", "name", "domainfinder", "qualified", "false" });
 		addAnnotation(getDomainFinder_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(getDomainFinder_Type(), source, new String[] { "kind", "attribute", "name", "type" });
@@ -1886,6 +2085,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation(getProvidesPort_DeviceThatLoadedThisComponentRef(), source,
 			new String[] { "kind", "element", "name", "devicethatloadedthiscomponentref" });
 		addAnnotation(getProvidesPort_DeviceUsedByThisComponentRef(), source, new String[] { "kind", "element", "name", "deviceusedbythiscomponentref" });
+		addAnnotation(getProvidesPort_DeviceUsedByApplication(), source, new String[] { "kind", "element", "name", "deviceusedbyapplication" });
 		addAnnotation(getProvidesPort_FindBy(), source, new String[] { "kind", "element", "name", "findby" });
 		addAnnotation(providesPortStubEClass, source, new String[] { "kind", "elementOnly", "name", "providesportstub", "qualified", "false" });
 		addAnnotation(getProvidesPortStub_Name(), source, new String[] { "kind", "attribute", "name", "name" });
@@ -1895,10 +2095,13 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation(getUsesPort_ComponentInstantiationRef(), source, new String[] { "kind", "element", "name", "componentinstantiationref" });
 		addAnnotation(getUsesPort_DeviceThatLoadedThisComponentRef(), source, new String[] { "kind", "element", "name", "devicethatloadedthiscomponentref" });
 		addAnnotation(getUsesPort_DeviceUsedByThisComponentRef(), source, new String[] { "kind", "element", "name", "deviceusedbythiscomponentref" });
+		addAnnotation(getUsesPort_DeviceUsedByApplication(), source, new String[] { "kind", "element", "name", "deviceusedbyapplication" });
 		addAnnotation(getUsesPort_FindBy(), source, new String[] { "kind", "element", "name", "findby" });
 		addAnnotation(getUsesPortStub_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(getUsesPortStub_Uses(), source, new String[] { "kind", "attribute", "name", "uses" });
 		addAnnotation(getUsesPortStub_SupportedIdentifier(), source, new String[] { "kind", "attribute", "name", "supportedIdentifier" });
+		addAnnotation(usesDeviceStubEClass, source, new String[] { "kind", "elementOnly", "name", "deviceportstub", "qualified", "false" });
+		addAnnotation(getUsesDeviceStub_Interface(), source, new String[] { "kind", "element", "name", "interfaceports" });
 	}
 
 	/**

@@ -45,7 +45,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class ComponentPlacementItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-        ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -63,20 +63,16 @@ public class ComponentPlacementItemProvider extends ItemProviderAdapter implemen
 	 * @generated
 	 */
 	public List<IItemPropertyDescriptor> getPropertyDescriptorsGen(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
-	
-	private static final EStructuralFeature [] CP_SPD_PATH = {
-		PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
-		PartitioningPackage.Literals.COMPONENT_FILE_REF__FILE,
-		PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG
-	};
+
+	private static final EStructuralFeature[] CP_SPD_PATH = { PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
+		PartitioningPackage.Literals.COMPONENT_FILE_REF__FILE, PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG };
 
 	/**
 	 * This returns the property descriptors for the adapted class.
@@ -89,7 +85,7 @@ public class ComponentPlacementItemProvider extends ItemProviderAdapter implemen
 		// END GENERATED CODE
 		if (this.itemPropertyDescriptors == null) {
 			if (object instanceof ComponentPlacement) {
-				final ComponentPlacement<?> cp = (ComponentPlacement<?>) object;
+				final ComponentPlacement< ? > cp = (ComponentPlacement< ? >) object;
 				getPropertyDescriptorsGen(object);
 				final SoftPkg spd = ScaEcoreUtils.getFeature(cp, CP_SPD_PATH);
 				addChildPropertyDescriptors(spd, "Soft Package", true);
@@ -107,19 +103,10 @@ public class ComponentPlacementItemProvider extends ItemProviderAdapter implemen
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentPlacement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPlacement_name_feature", "_UI_ComponentPlacement_type"),
-				 PartitioningPackage.Literals.COMPONENT_PLACEMENT__NAME,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentPlacement_name_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentPlacement_name_feature", "_UI_ComponentPlacement_type"),
+			PartitioningPackage.Literals.COMPONENT_PLACEMENT__NAME, false, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -131,9 +118,8 @@ public class ComponentPlacementItemProvider extends ItemProviderAdapter implemen
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION);
@@ -173,10 +159,8 @@ public class ComponentPlacementItemProvider extends ItemProviderAdapter implemen
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentPlacement<?>)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentPlacement_type") :
-			getString("_UI_ComponentPlacement_type") + " " + label;
+		String label = ((ComponentPlacement< ? >) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ComponentPlacement_type") : getString("_UI_ComponentPlacement_type") + " " + label;
 	}
 
 	/**
@@ -190,15 +174,14 @@ public class ComponentPlacementItemProvider extends ItemProviderAdapter implemen
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentPlacement.class))
-		{
-			case PartitioningPackage.COMPONENT_PLACEMENT__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
-			case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(ComponentPlacement.class)) {
+		case PartitioningPackage.COMPONENT_PLACEMENT__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF:
+		case PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -214,10 +197,8 @@ public class ComponentPlacementItemProvider extends ItemProviderAdapter implemen
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
-				 PartitioningFactory.eINSTANCE.createComponentFileRef()));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
+			PartitioningFactory.eINSTANCE.createComponentFileRef()));
 	}
 
 	/**
@@ -228,7 +209,7 @@ public class ComponentPlacementItemProvider extends ItemProviderAdapter implemen
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 	/**

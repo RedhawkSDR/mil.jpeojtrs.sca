@@ -50,7 +50,7 @@ public class DevComponentFileTest extends ComponentFileTest {
 	 */
 	@Override
 	protected DevComponentFile getFixture() {
-		return (DevComponentFile)fixture;
+		return (DevComponentFile) fixture;
 	}
 
 	/**

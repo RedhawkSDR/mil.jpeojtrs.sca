@@ -17,12 +17,14 @@ import mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface;
 import mil.jpeojtrs.sca.partitioning.ComponentSupportedInterfaceStub;
 import mil.jpeojtrs.sca.partitioning.ConnectInterface;
 import mil.jpeojtrs.sca.partitioning.ConnectionTarget;
+import mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication;
 import mil.jpeojtrs.sca.partitioning.FindBy;
 import mil.jpeojtrs.sca.partitioning.FindByStub;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
+import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
 
@@ -55,8 +57,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRef<?>, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> extends
-        EObjectImpl implements ConnectInterface<CIR, UP, PP> {
+public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> extends
+		EObjectImpl implements ConnectInterface<CIR, UP, PP> {
 	/**
 	 * The cached value of the '{@link #getUsesPort() <em>Uses Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -149,10 +151,13 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	public NotificationChain basicSetUsesPort(UP newUsesPort, NotificationChain msgs) {
 		UP oldUsesPort = usesPort;
 		usesPort = newUsesPort;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__USES_PORT, oldUsesPort, newUsesPort);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__USES_PORT, oldUsesPort,
+				newUsesPort);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -164,17 +169,16 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 */
 	@Override
 	public void setUsesPort(UP newUsesPort) {
-		if (newUsesPort != usesPort)
-		{
+		if (newUsesPort != usesPort) {
 			NotificationChain msgs = null;
 			if (usesPort != null)
-				msgs = ((InternalEObject)usesPort).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__USES_PORT, null, msgs);
+				msgs = ((InternalEObject) usesPort).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__USES_PORT, null, msgs);
 			if (newUsesPort != null)
-				msgs = ((InternalEObject)newUsesPort).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__USES_PORT, null, msgs);
+				msgs = ((InternalEObject) newUsesPort).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__USES_PORT, null, msgs);
 			msgs = basicSetUsesPort(newUsesPort, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__USES_PORT, newUsesPort, newUsesPort));
 	}
 
@@ -196,10 +200,13 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	public NotificationChain basicSetProvidesPort(PP newProvidesPort, NotificationChain msgs) {
 		PP oldProvidesPort = providesPort;
 		providesPort = newProvidesPort;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT, oldProvidesPort, newProvidesPort);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT,
+				oldProvidesPort, newProvidesPort);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -211,17 +218,18 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 */
 	@Override
 	public void setProvidesPort(PP newProvidesPort) {
-		if (newProvidesPort != providesPort)
-		{
+		if (newProvidesPort != providesPort) {
 			NotificationChain msgs = null;
 			if (providesPort != null)
-				msgs = ((InternalEObject)providesPort).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT, null, msgs);
+				msgs = ((InternalEObject) providesPort).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT,
+					null, msgs);
 			if (newProvidesPort != null)
-				msgs = ((InternalEObject)newProvidesPort).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT, null, msgs);
+				msgs = ((InternalEObject) newProvidesPort).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT,
+					null, msgs);
 			msgs = basicSetProvidesPort(newProvidesPort, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT, newProvidesPort, newProvidesPort));
 	}
 
@@ -243,10 +251,13 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	public NotificationChain basicSetComponentSupportedInterface(ComponentSupportedInterface newComponentSupportedInterface, NotificationChain msgs) {
 		ComponentSupportedInterface oldComponentSupportedInterface = componentSupportedInterface;
 		componentSupportedInterface = newComponentSupportedInterface;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, oldComponentSupportedInterface, newComponentSupportedInterface);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+				PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, oldComponentSupportedInterface, newComponentSupportedInterface);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -258,18 +269,20 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 */
 	@Override
 	public void setComponentSupportedInterface(ComponentSupportedInterface newComponentSupportedInterface) {
-		if (newComponentSupportedInterface != componentSupportedInterface)
-		{
+		if (newComponentSupportedInterface != componentSupportedInterface) {
 			NotificationChain msgs = null;
 			if (componentSupportedInterface != null)
-				msgs = ((InternalEObject)componentSupportedInterface).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, null, msgs);
+				msgs = ((InternalEObject) componentSupportedInterface).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, null, msgs);
 			if (newComponentSupportedInterface != null)
-				msgs = ((InternalEObject)newComponentSupportedInterface).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, null, msgs);
+				msgs = ((InternalEObject) newComponentSupportedInterface).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+					- PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, null, msgs);
 			msgs = basicSetComponentSupportedInterface(newComponentSupportedInterface, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, newComponentSupportedInterface, newComponentSupportedInterface));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE,
+				newComponentSupportedInterface, newComponentSupportedInterface));
 	}
 
 	/**
@@ -290,10 +303,12 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	public NotificationChain basicSetFindBy(FindBy newFindBy, NotificationChain msgs) {
 		FindBy oldFindBy = findBy;
 		findBy = newFindBy;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__FIND_BY, oldFindBy, newFindBy);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -305,17 +320,16 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 */
 	@Override
 	public void setFindBy(FindBy newFindBy) {
-		if (newFindBy != findBy)
-		{
+		if (newFindBy != findBy) {
 			NotificationChain msgs = null;
 			if (findBy != null)
-				msgs = ((InternalEObject)findBy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__FIND_BY, null, msgs);
+				msgs = ((InternalEObject) findBy).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__FIND_BY, null, msgs);
 			if (newFindBy != null)
-				msgs = ((InternalEObject)newFindBy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__FIND_BY, null, msgs);
+				msgs = ((InternalEObject) newFindBy).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__FIND_BY, null, msgs);
 			msgs = basicSetFindBy(newFindBy, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__FIND_BY, newFindBy, newFindBy));
 	}
 
@@ -350,17 +364,17 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	@Override
 	public UsesPortStub getSource() {
 		UsesPortStub source = basicGetSource();
-		return source != null && source.eIsProxy() ? (UsesPortStub)eResolveProxy((InternalEObject)source) : source;
+		return source != null && source.eIsProxy() ? (UsesPortStub) eResolveProxy((InternalEObject) source) : source;
 	}
 
 	protected UsesPortStub source;
 	protected ConnectionTarget target;
-	
+
 	private EContentAdapter sourceListener = new EContentAdapter() {
 		@Override
 		public void notifyChanged(Notification notification) {
 			super.notifyChanged(notification);
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			case Notification.SET:
 			case Notification.ADD:
 			case Notification.ADD_MANY:
@@ -375,7 +389,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 		@Override
 		public void notifyChanged(Notification notification) {
 			super.notifyChanged(notification);
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			case Notification.SET:
 			case Notification.ADD:
 			case Notification.ADD_MANY:
@@ -443,7 +457,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 
 		// BEGIN GENERATED CODE
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -485,13 +499,13 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	@Override
 	public ConnectionTarget getTarget() {
 		ConnectionTarget target = basicGetTarget();
-		return target != null && target.eIsProxy() ? (ConnectionTarget)eResolveProxy((InternalEObject)target) : target;
+		return target != null && target.eIsProxy() ? (ConnectionTarget) eResolveProxy((InternalEObject) target) : target;
 	}
 
 	private void updateSource(UsesPortStub newSource) {
 		final UP newUsesPort = createUsesPort(newSource);
 		setUsesPort(newUsesPort);
-    }
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -569,7 +583,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 		return null;
 		// BEGIN GENERATED CODE
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -613,7 +627,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 		// BEGIN GENERATED CODE
 
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -621,16 +635,15 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
-				return basicSetUsesPort(null, msgs);
-			case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
-				return basicSetProvidesPort(null, msgs);
-			case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
-				return basicSetComponentSupportedInterface(null, msgs);
-			case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
-				return basicSetFindBy(null, msgs);
+		switch (featureID) {
+		case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
+			return basicSetUsesPort(null, msgs);
+		case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
+			return basicSetProvidesPort(null, msgs);
+		case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
+			return basicSetComponentSupportedInterface(null, msgs);
+		case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
+			return basicSetFindBy(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -642,24 +655,25 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
-				return getUsesPort();
-			case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
-				return getProvidesPort();
-			case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
-				return getComponentSupportedInterface();
-			case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
-				return getFindBy();
-			case PartitioningPackage.CONNECT_INTERFACE__ID:
-				return getId();
-			case PartitioningPackage.CONNECT_INTERFACE__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case PartitioningPackage.CONNECT_INTERFACE__TARGET:
-				if (resolve) return getTarget();
-				return basicGetTarget();
+		switch (featureID) {
+		case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
+			return getUsesPort();
+		case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
+			return getProvidesPort();
+		case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
+			return getComponentSupportedInterface();
+		case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
+			return getFindBy();
+		case PartitioningPackage.CONNECT_INTERFACE__ID:
+			return getId();
+		case PartitioningPackage.CONNECT_INTERFACE__SOURCE:
+			if (resolve)
+				return getSource();
+			return basicGetSource();
+		case PartitioningPackage.CONNECT_INTERFACE__TARGET:
+			if (resolve)
+				return getTarget();
+			return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -672,29 +686,28 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
-				setUsesPort((UP)newValue);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
-				setProvidesPort((PP)newValue);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
-				setComponentSupportedInterface((ComponentSupportedInterface)newValue);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
-				setFindBy((FindBy)newValue);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__ID:
-				setId((String)newValue);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__SOURCE:
-				setSource((UsesPortStub)newValue);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__TARGET:
-				setTarget((ConnectionTarget)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
+			setUsesPort((UP) newValue);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
+			setProvidesPort((PP) newValue);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
+			setComponentSupportedInterface((ComponentSupportedInterface) newValue);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
+			setFindBy((FindBy) newValue);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__ID:
+			setId((String) newValue);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__SOURCE:
+			setSource((UsesPortStub) newValue);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__TARGET:
+			setTarget((ConnectionTarget) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -706,29 +719,28 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
-				setUsesPort((UP)null);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
-				setProvidesPort((PP)null);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
-				setComponentSupportedInterface((ComponentSupportedInterface)null);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
-				setFindBy((FindBy)null);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__SOURCE:
-				setSource((UsesPortStub)null);
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__TARGET:
-				setTarget((ConnectionTarget)null);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
+			setUsesPort((UP) null);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
+			setProvidesPort((PP) null);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
+			setComponentSupportedInterface((ComponentSupportedInterface) null);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
+			setFindBy((FindBy) null);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__SOURCE:
+			setSource((UsesPortStub) null);
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__TARGET:
+			setTarget((ConnectionTarget) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -740,22 +752,21 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
-				return usesPort != null;
-			case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
-				return providesPort != null;
-			case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
-				return componentSupportedInterface != null;
-			case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
-				return findBy != null;
-			case PartitioningPackage.CONNECT_INTERFACE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case PartitioningPackage.CONNECT_INTERFACE__SOURCE:
-				return basicGetSource() != null;
-			case PartitioningPackage.CONNECT_INTERFACE__TARGET:
-				return basicGetTarget() != null;
+		switch (featureID) {
+		case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
+			return usesPort != null;
+		case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
+			return providesPort != null;
+		case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
+			return componentSupportedInterface != null;
+		case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
+			return findBy != null;
+		case PartitioningPackage.CONNECT_INTERFACE__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case PartitioningPackage.CONNECT_INTERFACE__SOURCE:
+			return basicGetSource() != null;
+		case PartitioningPackage.CONNECT_INTERFACE__TARGET:
+			return basicGetTarget() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -767,7 +778,8 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
@@ -789,7 +801,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 			final PP newProvidesPort = createProvidesPort((ProvidesPortStub) newTarget);
 			this.setProvidesPort(newProvidesPort);
 		} else if (newTarget instanceof ComponentSupportedInterfaceStub) {
-			String supportedIdentifier = (source !=  null) ? source.getSupportedIdentifier(): null;
+			String supportedIdentifier = (source != null) ? source.getSupportedIdentifier() : null;
 			final ComponentSupportedInterface csi = createComponentSupportedInterface((ComponentSupportedInterfaceStub) newTarget, supportedIdentifier);
 			this.setComponentSupportedInterface(csi);
 		} else {
@@ -815,6 +827,10 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 			final FindByStub findByStub = (FindByStub) container;
 			final FindBy newFindBy = createFindBy(findByStub);
 			newUsesPort.setFindBy(newFindBy);
+		} else if (container instanceof UsesDeviceStub) {
+			final UsesDeviceStub usesDeviceStub = (UsesDeviceStub) container;
+			final DeviceUsedByApplication deviceUsedByApplication = createDeviceUsedByApplication(usesDeviceStub);
+			newUsesPort.setDeviceUsedByApplication(deviceUsedByApplication);
 		} else {
 			// FIXME: implement this method to set the 'Source' reference
 			// Ensure that you remove @generated or mark it @generated NOT
@@ -838,6 +854,16 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 			findBy.setNamingService(EcoreUtil.copy(stub.getNamingService()));
 		}
 		return findBy;
+	}
+
+	private DeviceUsedByApplication createDeviceUsedByApplication(final UsesDeviceStub stub) {
+		if (stub == null) {
+			return null;
+		}
+		DeviceUsedByApplication deviceUsedByApplication = PartitioningFactory.eINSTANCE.createDeviceUsedByApplication();
+		deviceUsedByApplication.setUsesRefId(stub.getUsesDevice().getId());
+
+		return deviceUsedByApplication;
 	}
 
 	protected FindBy createFindBy() {
@@ -896,6 +922,10 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 			final ComponentInstantiation componentInstantiation = (ComponentInstantiation) container;
 			final ComponentInstantiationRef< ? > ref = createComponentInstantiationRef(componentInstantiation);
 			csi.setComponentInstantiationRef(ref);
+		} else if (container instanceof UsesDeviceStub) {
+			final UsesDeviceStub usesDeviceStub = (UsesDeviceStub) container;
+			final DeviceUsedByApplication deviceUsedByApplication = createDeviceUsedByApplication(usesDeviceStub);
+			csi.setDeviceUsedByApplication(deviceUsedByApplication);
 		}
 		return csi;
 	}
@@ -913,7 +943,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 		final EObject container = stub.eContainer();
 		final PP newProvidesPort = createProvidesPort();
 		newProvidesPort.setProvidesIdentifier(stub.getName());
-		
+
 		if (container instanceof FindByStub) {
 			final FindByStub findByStub = (FindByStub) container;
 			final FindBy newFindBy = createFindBy(findByStub);
@@ -921,7 +951,11 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 		} else if (container instanceof ComponentInstantiation) {
 			final ComponentInstantiation componentInstantiation = (ComponentInstantiation) container;
 			final CIR ref = createComponentInstantiationRef(componentInstantiation);
-			newProvidesPort.setComponentInstantiationRef(ref);	
+			newProvidesPort.setComponentInstantiationRef(ref);
+		} else if (container instanceof UsesDeviceStub) {
+			final UsesDeviceStub usesDeviceStub = (UsesDeviceStub) container;
+			final DeviceUsedByApplication deviceUsedByApplication = createDeviceUsedByApplication(usesDeviceStub);
+			newProvidesPort.setDeviceUsedByApplication(deviceUsedByApplication);
 		}
 		return newProvidesPort;
 	}

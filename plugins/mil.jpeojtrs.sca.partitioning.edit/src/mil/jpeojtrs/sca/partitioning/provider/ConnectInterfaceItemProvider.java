@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,14 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectInterfaceItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ConnectInterfaceItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -68,8 +61,7 @@ public class ConnectInterfaceItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addIdPropertyDescriptor(object);
@@ -86,19 +78,10 @@ public class ConnectInterfaceItemProvider
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectInterface_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_id_feature", "_UI_ConnectInterface_type"),
-				 PartitioningPackage.Literals.CONNECT_INTERFACE__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ConnectInterface_id_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_id_feature", "_UI_ConnectInterface_type"),
+			PartitioningPackage.Literals.CONNECT_INTERFACE__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -108,19 +91,10 @@ public class ConnectInterfaceItemProvider
 	 * @generated
 	 */
 	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectInterface_source_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_source_feature", "_UI_ConnectInterface_type"),
-				 PartitioningPackage.Literals.CONNECT_INTERFACE__SOURCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ConnectInterface_source_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_source_feature", "_UI_ConnectInterface_type"),
+			PartitioningPackage.Literals.CONNECT_INTERFACE__SOURCE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -130,19 +104,10 @@ public class ConnectInterfaceItemProvider
 	 * @generated
 	 */
 	protected void addTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectInterface_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_target_feature", "_UI_ConnectInterface_type"),
-				 PartitioningPackage.Literals.CONNECT_INTERFACE__TARGET,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ConnectInterface_target_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_target_feature", "_UI_ConnectInterface_type"),
+			PartitioningPackage.Literals.CONNECT_INTERFACE__TARGET, true, false, true, null, null, null));
 	}
 
 	/**
@@ -154,9 +119,8 @@ public class ConnectInterfaceItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PartitioningPackage.Literals.CONNECT_INTERFACE__USES_PORT);
 			childrenFeatures.add(PartitioningPackage.Literals.CONNECT_INTERFACE__PROVIDES_PORT);
@@ -198,10 +162,8 @@ public class ConnectInterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConnectInterface<?, ?, ?>)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ConnectInterface_type") :
-			getString("_UI_ConnectInterface_type") + " " + label;
+		String label = ((ConnectInterface< ? , ? , ? >) object).getId();
+		return label == null || label.length() == 0 ? getString("_UI_ConnectInterface_type") : getString("_UI_ConnectInterface_type") + " " + label;
 	}
 
 	/**
@@ -215,17 +177,16 @@ public class ConnectInterfaceItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ConnectInterface.class))
-		{
-			case PartitioningPackage.CONNECT_INTERFACE__ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
-			case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
-			case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
-			case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(ConnectInterface.class)) {
+		case PartitioningPackage.CONNECT_INTERFACE__ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PartitioningPackage.CONNECT_INTERFACE__USES_PORT:
+		case PartitioningPackage.CONNECT_INTERFACE__PROVIDES_PORT:
+		case PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE:
+		case PartitioningPackage.CONNECT_INTERFACE__FIND_BY:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -241,15 +202,10 @@ public class ConnectInterfaceItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PartitioningPackage.Literals.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE,
-				 PartitioningFactory.eINSTANCE.createComponentSupportedInterface()));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE,
+			PartitioningFactory.eINSTANCE.createComponentSupportedInterface()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PartitioningPackage.Literals.CONNECT_INTERFACE__FIND_BY,
-				 PartitioningFactory.eINSTANCE.createFindBy()));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.CONNECT_INTERFACE__FIND_BY, PartitioningFactory.eINSTANCE.createFindBy()));
 	}
 
 	/**
@@ -260,7 +216,7 @@ public class ConnectInterfaceItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

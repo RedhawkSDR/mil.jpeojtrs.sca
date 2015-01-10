@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,14 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentFileItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class ComponentFileItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -68,8 +61,7 @@ public class ComponentFileItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addIdPropertyDescriptor(object);
@@ -86,19 +78,10 @@ public class ComponentFileItemProvider
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentFile_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentFile_id_feature", "_UI_ComponentFile_type"),
-				 PartitioningPackage.Literals.COMPONENT_FILE__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentFile_id_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentFile_id_feature", "_UI_ComponentFile_type"),
+			PartitioningPackage.Literals.COMPONENT_FILE__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -108,19 +91,10 @@ public class ComponentFileItemProvider
 	 * @generated
 	 */
 	protected void addSoftPkgPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentFile_softPkg_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentFile_softPkg_feature", "_UI_ComponentFile_type"),
-				 PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentFile_softPkg_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentFile_softPkg_feature", "_UI_ComponentFile_type"),
+			PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG, true, false, true, null, null, null));
 	}
 
 	/**
@@ -130,19 +104,10 @@ public class ComponentFileItemProvider
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentFile_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentFile_type_feature", "_UI_ComponentFile_type"),
-				 PartitioningPackage.Literals.COMPONENT_FILE__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentFile_type_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentFile_type_feature", "_UI_ComponentFile_type"),
+			PartitioningPackage.Literals.COMPONENT_FILE__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -154,9 +119,8 @@ public class ComponentFileItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_FILE__LOCAL_FILE);
 		}
@@ -195,10 +159,8 @@ public class ComponentFileItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentFile)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentFile_type") :
-			getString("_UI_ComponentFile_type") + " " + label;
+		String label = ((ComponentFile) object).getId();
+		return label == null || label.length() == 0 ? getString("_UI_ComponentFile_type") : getString("_UI_ComponentFile_type") + " " + label;
 	}
 
 	/**
@@ -212,15 +174,14 @@ public class ComponentFileItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentFile.class))
-		{
-			case PartitioningPackage.COMPONENT_FILE__ID:
-			case PartitioningPackage.COMPONENT_FILE__TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(ComponentFile.class)) {
+		case PartitioningPackage.COMPONENT_FILE__ID:
+		case PartitioningPackage.COMPONENT_FILE__TYPE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PartitioningPackage.COMPONENT_FILE__LOCAL_FILE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -236,10 +197,7 @@ public class ComponentFileItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PartitioningPackage.Literals.COMPONENT_FILE__LOCAL_FILE,
-				 PartitioningFactory.eINSTANCE.createLocalFile()));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_FILE__LOCAL_FILE, PartitioningFactory.eINSTANCE.createLocalFile()));
 	}
 
 	/**
@@ -250,7 +208,7 @@ public class ComponentFileItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

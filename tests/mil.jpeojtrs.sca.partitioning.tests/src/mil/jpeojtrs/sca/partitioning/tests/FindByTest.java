@@ -92,9 +92,9 @@ public class FindByTest extends TestCase {
 	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
-	
+
 	public void testStub() {
-		
+
 	}
 
 } //FindByTest

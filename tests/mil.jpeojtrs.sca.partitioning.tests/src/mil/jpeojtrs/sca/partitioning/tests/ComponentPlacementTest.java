@@ -40,7 +40,7 @@ public abstract class ComponentPlacementTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentPlacement<?> fixture = null;
+	protected ComponentPlacement< ? > fixture = null;
 
 	/**
 	 * Constructs a new Component Placement test case with the given name.
@@ -58,7 +58,7 @@ public abstract class ComponentPlacementTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(ComponentPlacement<?> fixture) {
+	protected void setFixture(ComponentPlacement< ? > fixture) {
 		this.fixture = fixture;
 	}
 
@@ -68,16 +68,12 @@ public abstract class ComponentPlacementTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentPlacement<?> getFixture() {
+	protected ComponentPlacement< ? > getFixture() {
 		return fixture;
 	}
 
-	private static final EStructuralFeature[] NAME_PATH = {
-	        PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
-	        PartitioningPackage.Literals.COMPONENT_FILE_REF__FILE,
-	        PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG,
-	        SpdPackage.Literals.SOFT_PKG__NAME
-	};
+	private static final EStructuralFeature[] NAME_PATH = { PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
+		PartitioningPackage.Literals.COMPONENT_FILE_REF__FILE, PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG, SpdPackage.Literals.SOFT_PKG__NAME };
 
 	/**
 	 * Tests the '{@link mil.jpeojtrs.sca.partitioning.ComponentPlacement#getName() <em>Name</em>}' feature getter.

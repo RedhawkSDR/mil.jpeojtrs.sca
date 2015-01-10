@@ -28,7 +28,7 @@ public abstract class ConnectionsTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Connections<?> fixture = null;
+	protected Connections< ? > fixture = null;
 
 	/**
 	 * Constructs a new Connections test case with the given name.
@@ -46,7 +46,7 @@ public abstract class ConnectionsTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Connections<?> fixture) {
+	protected void setFixture(Connections< ? > fixture) {
 		this.fixture = fixture;
 	}
 
@@ -56,7 +56,7 @@ public abstract class ConnectionsTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Connections<?> getFixture() {
+	protected Connections< ? > getFixture() {
 		return fixture;
 	}
 

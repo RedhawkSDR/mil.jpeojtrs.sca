@@ -12,7 +12,6 @@
 package mil.jpeojtrs.sca.partitioning;
 
 import mil.jpeojtrs.sca.spd.SoftPkg;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -98,6 +97,7 @@ public interface ComponentFile extends EObject {
 	 * If the meaning of the '<em>Soft Pkg</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Soft Pkg</em>' reference.
 	 * @see #setSoftPkg(SoftPkg)

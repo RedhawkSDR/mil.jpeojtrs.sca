@@ -92,9 +92,9 @@ public class NamingServiceTest extends TestCase {
 	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
-	
+
 	public void testStub() {
-		
+
 	}
 
 } //NamingServiceTest

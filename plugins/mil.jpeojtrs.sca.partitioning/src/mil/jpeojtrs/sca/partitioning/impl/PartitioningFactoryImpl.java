@@ -11,6 +11,7 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
+import mil.jpeojtrs.sca.partitioning.*;
 import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
 import mil.jpeojtrs.sca.partitioning.ComponentFiles;
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
@@ -31,7 +32,9 @@ import mil.jpeojtrs.sca.partitioning.NamingService;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
+import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -54,16 +57,12 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * @generated
 	 */
 	public static PartitioningFactory init() {
-		try
-		{
-			PartitioningFactory thePartitioningFactory = (PartitioningFactory)EPackage.Registry.INSTANCE.getEFactory(PartitioningPackage.eNS_URI);
-			if (thePartitioningFactory != null)
-			{
+		try {
+			PartitioningFactory thePartitioningFactory = (PartitioningFactory) EPackage.Registry.INSTANCE.getEFactory(PartitioningPackage.eNS_URI);
+			if (thePartitioningFactory != null) {
 				return thePartitioningFactory;
 			}
-		}
-		catch (Exception exception)
-		{
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new PartitioningFactoryImpl();
@@ -86,28 +85,49 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID())
-		{
-			case PartitioningPackage.DOM_COMPONENT_FILE: return createDomComponentFile();
-			case PartitioningPackage.DEV_COMPONENT_FILE: return createDevComponentFile();
-			case PartitioningPackage.COMPONENT_FILE_REF: return createComponentFileRef();
-			case PartitioningPackage.COMPONENT_FILES: return createComponentFiles();
-			case PartitioningPackage.COMPONENT_INSTANTIATION: return createComponentInstantiation();
-			case PartitioningPackage.COMPONENT_PROPERTIES: return createComponentProperties();
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE: return createComponentSupportedInterface();
-			case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE_STUB: return createComponentSupportedInterfaceStub();
-			case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF: return createDeviceThatLoadedThisComponentRef();
-			case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF: return createDeviceUsedByThisComponentRef();
-			case PartitioningPackage.DOMAIN_FINDER: return createDomainFinder();
-			case PartitioningPackage.FIND_BY: return createFindBy();
-			case PartitioningPackage.FIND_BY_STUB: return createFindByStub();
-			case PartitioningPackage.FIND_BY_STUB_CONTAINER: return createFindByStubContainer();
-			case PartitioningPackage.LOCAL_FILE: return createLocalFile();
-			case PartitioningPackage.NAMING_SERVICE: return createNamingService();
-			case PartitioningPackage.PROVIDES_PORT_STUB: return createProvidesPortStub();
-			case PartitioningPackage.USES_PORT_STUB: return createUsesPortStub();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+		case PartitioningPackage.DOM_COMPONENT_FILE:
+			return createDomComponentFile();
+		case PartitioningPackage.DEV_COMPONENT_FILE:
+			return createDevComponentFile();
+		case PartitioningPackage.COMPONENT_FILE_REF:
+			return createComponentFileRef();
+		case PartitioningPackage.COMPONENT_FILES:
+			return createComponentFiles();
+		case PartitioningPackage.COMPONENT_INSTANTIATION:
+			return createComponentInstantiation();
+		case PartitioningPackage.COMPONENT_PROPERTIES:
+			return createComponentProperties();
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE:
+			return createComponentSupportedInterface();
+		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE_STUB:
+			return createComponentSupportedInterfaceStub();
+		case PartitioningPackage.DEVICE_THAT_LOADED_THIS_COMPONENT_REF:
+			return createDeviceThatLoadedThisComponentRef();
+		case PartitioningPackage.DEVICE_USED_BY_THIS_COMPONENT_REF:
+			return createDeviceUsedByThisComponentRef();
+		case PartitioningPackage.DEVICE_USED_BY_APPLICATION:
+			return createDeviceUsedByApplication();
+		case PartitioningPackage.DOMAIN_FINDER:
+			return createDomainFinder();
+		case PartitioningPackage.FIND_BY:
+			return createFindBy();
+		case PartitioningPackage.FIND_BY_STUB:
+			return createFindByStub();
+		case PartitioningPackage.FIND_BY_STUB_CONTAINER:
+			return createFindByStubContainer();
+		case PartitioningPackage.LOCAL_FILE:
+			return createLocalFile();
+		case PartitioningPackage.NAMING_SERVICE:
+			return createNamingService();
+		case PartitioningPackage.PROVIDES_PORT_STUB:
+			return createProvidesPortStub();
+		case PartitioningPackage.USES_PORT_STUB:
+			return createUsesPortStub();
+		case PartitioningPackage.USES_DEVICE_STUB:
+			return createUsesDeviceStub();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -118,14 +138,13 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID())
-		{
-			case PartitioningPackage.DOMAIN_FINDER_TYPE:
-				return createDomainFinderTypeFromString(eDataType, initialValue);
-			case PartitioningPackage.DOMAIN_FINDER_TYPE_OBJECT:
-				return createDomainFinderTypeObjectFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+		case PartitioningPackage.DOMAIN_FINDER_TYPE:
+			return createDomainFinderTypeFromString(eDataType, initialValue);
+		case PartitioningPackage.DOMAIN_FINDER_TYPE_OBJECT:
+			return createDomainFinderTypeObjectFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -136,14 +155,13 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID())
-		{
-			case PartitioningPackage.DOMAIN_FINDER_TYPE:
-				return convertDomainFinderTypeToString(eDataType, instanceValue);
-			case PartitioningPackage.DOMAIN_FINDER_TYPE_OBJECT:
-				return convertDomainFinderTypeObjectToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+		case PartitioningPackage.DOMAIN_FINDER_TYPE:
+			return convertDomainFinderTypeToString(eDataType, instanceValue);
+		case PartitioningPackage.DOMAIN_FINDER_TYPE_OBJECT:
+			return convertDomainFinderTypeObjectToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -262,6 +280,16 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DeviceUsedByApplication createDeviceUsedByApplication() {
+		DeviceUsedByApplicationImpl deviceUsedByApplication = new DeviceUsedByApplicationImpl();
+		return deviceUsedByApplication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public DomainFinder createDomainFinder() {
 		DomainFinderImpl domainFinder = new DomainFinderImpl();
@@ -347,12 +375,24 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UsesDeviceStub createUsesDeviceStub() {
+		UsesDeviceStubImpl usesDeviceStub = new UsesDeviceStubImpl();
+		return usesDeviceStub;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DomainFinderType createDomainFinderTypeFromString(EDataType eDataType, String initialValue) {
 		DomainFinderType result = DomainFinderType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -390,7 +430,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 */
 	@Override
 	public PartitioningPackage getPartitioningPackage() {
-		return (PartitioningPackage)getEPackage();
+		return (PartitioningPackage) getEPackage();
 	}
 
 	/**

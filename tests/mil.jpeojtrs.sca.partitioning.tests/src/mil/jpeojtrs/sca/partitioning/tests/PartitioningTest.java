@@ -34,7 +34,7 @@ public abstract class PartitioningTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Partitioning<?> fixture = null;
+	protected Partitioning< ? > fixture = null;
 
 	/**
 	 * Constructs a new Partitioning test case with the given name.
@@ -52,7 +52,7 @@ public abstract class PartitioningTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Partitioning<?> fixture) {
+	protected void setFixture(Partitioning< ? > fixture) {
 		this.fixture = fixture;
 	}
 
@@ -62,7 +62,7 @@ public abstract class PartitioningTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Partitioning<?> getFixture() {
+	protected Partitioning< ? > getFixture() {
 		return fixture;
 	}
 

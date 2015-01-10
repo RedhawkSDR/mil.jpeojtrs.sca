@@ -76,8 +76,7 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 */
 	@Override
 	public EList<ComponentFile> getComponentFile() {
-		if (componentFile == null)
-		{
+		if (componentFile == null) {
 			componentFile = new EObjectContainmentEList<ComponentFile>(ComponentFile.class, this, PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE);
 		}
 		return componentFile;
@@ -90,10 +89,9 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
-				return ((InternalEList<?>)getComponentFile()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
+			return ((InternalEList< ? >) getComponentFile()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -105,10 +103,9 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
-				return getComponentFile();
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
+			return getComponentFile();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,12 +118,11 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
-				getComponentFile().clear();
-				getComponentFile().addAll((Collection<? extends ComponentFile>)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
+			getComponentFile().clear();
+			getComponentFile().addAll((Collection< ? extends ComponentFile>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -138,11 +134,10 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
-				getComponentFile().clear();
-				return;
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
+			getComponentFile().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,10 +149,9 @@ public class ComponentFilesImpl extends EObjectImpl implements ComponentFiles {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
-				return componentFile != null && !componentFile.isEmpty();
+		switch (featureID) {
+		case PartitioningPackage.COMPONENT_FILES__COMPONENT_FILE:
+			return componentFile != null && !componentFile.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

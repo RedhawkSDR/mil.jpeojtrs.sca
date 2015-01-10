@@ -52,14 +52,14 @@ public class PartitioningResourceFactoryImpl extends ResourceFactoryImpl {
 	@Override
 	public Resource createResource(URI uri) {
 		XMLResource result = new PartitioningResourceImpl(uri);
-		
+
 		ScaResourceFactoryUtil.setDefaultLoadOptions(result.getDefaultLoadOptions());
 		ScaResourceFactoryUtil.setDefaultSaveOptions(result.getDefaultSaveOptions());
-		
+
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
-		
+
 		return result;
 	}
 

@@ -95,10 +95,13 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	public NotificationChain basicSetNamingService(NamingService newNamingService, NotificationChain msgs) {
 		NamingService oldNamingService = namingService;
 		namingService = newNamingService;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.FIND_BY__NAMING_SERVICE, oldNamingService, newNamingService);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.FIND_BY__NAMING_SERVICE, oldNamingService,
+				newNamingService);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -110,17 +113,16 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public void setNamingService(NamingService newNamingService) {
-		if (newNamingService != namingService)
-		{
+		if (newNamingService != namingService) {
 			NotificationChain msgs = null;
 			if (namingService != null)
-				msgs = ((InternalEObject)namingService).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY__NAMING_SERVICE, null, msgs);
+				msgs = ((InternalEObject) namingService).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY__NAMING_SERVICE, null, msgs);
 			if (newNamingService != null)
-				msgs = ((InternalEObject)newNamingService).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY__NAMING_SERVICE, null, msgs);
+				msgs = ((InternalEObject) newNamingService).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY__NAMING_SERVICE, null, msgs);
 			msgs = basicSetNamingService(newNamingService, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.FIND_BY__NAMING_SERVICE, newNamingService, newNamingService));
 	}
 
@@ -142,10 +144,13 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	public NotificationChain basicSetDomainFinder(DomainFinder newDomainFinder, NotificationChain msgs) {
 		DomainFinder oldDomainFinder = domainFinder;
 		domainFinder = newDomainFinder;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.FIND_BY__DOMAIN_FINDER, oldDomainFinder, newDomainFinder);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.FIND_BY__DOMAIN_FINDER, oldDomainFinder,
+				newDomainFinder);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -157,17 +162,16 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public void setDomainFinder(DomainFinder newDomainFinder) {
-		if (newDomainFinder != domainFinder)
-		{
+		if (newDomainFinder != domainFinder) {
 			NotificationChain msgs = null;
 			if (domainFinder != null)
-				msgs = ((InternalEObject)domainFinder).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY__DOMAIN_FINDER, null, msgs);
+				msgs = ((InternalEObject) domainFinder).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY__DOMAIN_FINDER, null, msgs);
 			if (newDomainFinder != null)
-				msgs = ((InternalEObject)newDomainFinder).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY__DOMAIN_FINDER, null, msgs);
+				msgs = ((InternalEObject) newDomainFinder).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.FIND_BY__DOMAIN_FINDER, null, msgs);
 			msgs = basicSetDomainFinder(newDomainFinder, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.FIND_BY__DOMAIN_FINDER, newDomainFinder, newDomainFinder));
 	}
 
@@ -178,12 +182,11 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PartitioningPackage.FIND_BY__NAMING_SERVICE:
-				return basicSetNamingService(null, msgs);
-			case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
-				return basicSetDomainFinder(null, msgs);
+		switch (featureID) {
+		case PartitioningPackage.FIND_BY__NAMING_SERVICE:
+			return basicSetNamingService(null, msgs);
+		case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
+			return basicSetDomainFinder(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -195,12 +198,11 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.FIND_BY__NAMING_SERVICE:
-				return getNamingService();
-			case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
-				return getDomainFinder();
+		switch (featureID) {
+		case PartitioningPackage.FIND_BY__NAMING_SERVICE:
+			return getNamingService();
+		case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
+			return getDomainFinder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,14 +214,13 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.FIND_BY__NAMING_SERVICE:
-				setNamingService((NamingService)newValue);
-				return;
-			case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
-				setDomainFinder((DomainFinder)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.FIND_BY__NAMING_SERVICE:
+			setNamingService((NamingService) newValue);
+			return;
+		case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
+			setDomainFinder((DomainFinder) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -231,14 +232,13 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.FIND_BY__NAMING_SERVICE:
-				setNamingService((NamingService)null);
-				return;
-			case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
-				setDomainFinder((DomainFinder)null);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.FIND_BY__NAMING_SERVICE:
+			setNamingService((NamingService) null);
+			return;
+		case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
+			setDomainFinder((DomainFinder) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -250,12 +250,11 @@ public class FindByImpl extends EObjectImpl implements FindBy {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.FIND_BY__NAMING_SERVICE:
-				return namingService != null;
-			case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
-				return domainFinder != null;
+		switch (featureID) {
+		case PartitioningPackage.FIND_BY__NAMING_SERVICE:
+			return namingService != null;
+		case PartitioningPackage.FIND_BY__DOMAIN_FINDER:
+			return domainFinder != null;
 		}
 		return super.eIsSet(featureID);
 	}

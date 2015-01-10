@@ -28,7 +28,7 @@ public abstract class UsesPortTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UsesPort<?> fixture = null;
+	protected UsesPort< ? > fixture = null;
 
 	/**
 	 * Constructs a new Uses Port test case with the given name.
@@ -46,7 +46,7 @@ public abstract class UsesPortTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(UsesPort<?> fixture) {
+	protected void setFixture(UsesPort< ? > fixture) {
 		this.fixture = fixture;
 	}
 
@@ -56,7 +56,7 @@ public abstract class UsesPortTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UsesPort<?> getFixture() {
+	protected UsesPort< ? > getFixture() {
 		return fixture;
 	}
 

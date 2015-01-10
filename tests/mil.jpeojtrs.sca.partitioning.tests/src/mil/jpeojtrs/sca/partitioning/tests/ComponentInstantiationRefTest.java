@@ -35,7 +35,7 @@ public abstract class ComponentInstantiationRefTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentInstantiationRef<?> fixture = null;
+	protected ComponentInstantiationRef< ? > fixture = null;
 
 	/**
 	 * Constructs a new Component Instantiation Ref test case with the given name.
@@ -53,7 +53,7 @@ public abstract class ComponentInstantiationRefTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(ComponentInstantiationRef<?> fixture) {
+	protected void setFixture(ComponentInstantiationRef< ? > fixture) {
 		this.fixture = fixture;
 	}
 
@@ -63,7 +63,7 @@ public abstract class ComponentInstantiationRefTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentInstantiationRef<?> getFixture() {
+	protected ComponentInstantiationRef< ? > getFixture() {
 		return fixture;
 	}
 

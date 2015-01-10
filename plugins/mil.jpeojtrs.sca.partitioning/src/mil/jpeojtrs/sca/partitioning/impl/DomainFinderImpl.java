@@ -144,12 +144,11 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DOMAIN_FINDER__NAME:
-				return getName();
-			case PartitioningPackage.DOMAIN_FINDER__TYPE:
-				return getType();
+		switch (featureID) {
+		case PartitioningPackage.DOMAIN_FINDER__NAME:
+			return getName();
+		case PartitioningPackage.DOMAIN_FINDER__TYPE:
+			return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,14 +160,13 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DOMAIN_FINDER__NAME:
-				setName((String)newValue);
-				return;
-			case PartitioningPackage.DOMAIN_FINDER__TYPE:
-				setType((DomainFinderType)newValue);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.DOMAIN_FINDER__NAME:
+			setName((String) newValue);
+			return;
+		case PartitioningPackage.DOMAIN_FINDER__TYPE:
+			setType((DomainFinderType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,14 +178,13 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DOMAIN_FINDER__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case PartitioningPackage.DOMAIN_FINDER__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PartitioningPackage.DOMAIN_FINDER__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case PartitioningPackage.DOMAIN_FINDER__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,8 +199,8 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 		switch (featureID) {
 		case PartitioningPackage.DOMAIN_FINDER__TYPE:
 			return type != null;
-	}
-	return eIsSetGen(featureID);
+		}
+		return eIsSetGen(featureID);
 	}
 
 	/**
@@ -212,12 +209,11 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 * @generated
 	 */
 	public boolean eIsSetGen(int featureID) {
-		switch (featureID)
-		{
-			case PartitioningPackage.DOMAIN_FINDER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PartitioningPackage.DOMAIN_FINDER__TYPE:
-				return type != TYPE_EDEFAULT;
+		switch (featureID) {
+		case PartitioningPackage.DOMAIN_FINDER__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case PartitioningPackage.DOMAIN_FINDER__TYPE:
+			return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -229,7 +225,8 @@ public class DomainFinderImpl extends EObjectImpl implements DomainFinder {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
