@@ -159,6 +159,7 @@ public interface ProvidesPort< P extends ComponentInstantiationRef< ? >> extends
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='deviceusedbyapplication'"
 	 * @generated
+	 * @since 2.0
 	 */
 	DeviceUsedByApplication getDeviceUsedByApplication();
 
@@ -169,6 +170,7 @@ public interface ProvidesPort< P extends ComponentInstantiationRef< ? >> extends
 	 * @param value the new value of the '<em>Device Used By Application</em>' containment reference.
 	 * @see #getDeviceUsedByApplication()
 	 * @generated
+	 * @since 2.0
 	 */
 	void setDeviceUsedByApplication(DeviceUsedByApplication value);
 

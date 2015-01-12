@@ -336,6 +336,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 1.2
 	 */
 	protected DeviceUsedByApplicationItemProvider deviceUsedByApplicationItemProvider;
 
