@@ -511,6 +511,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Device That Loaded This Component Ref</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -519,6 +520,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Device Used By This Component Ref</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -527,6 +529,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Device Used By Application</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -749,6 +752,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByApplicationImpl <em>Device Used By Application</em>}' class.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByApplicationImpl
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDeviceUsedByApplication()
@@ -758,6 +762,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Ref Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -766,6 +771,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Uses Ref Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -774,6 +780,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Device Used By Application</em>' class.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1054,6 +1061,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Device Used By Application</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1152,6 +1160,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Device Used By Application</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1254,6 +1263,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Interface</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1688,6 +1698,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceThatLoadedThisComponentRef <em>Device That Loaded This Component Ref</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Device That Loaded This Component Ref</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceThatLoadedThisComponentRef()
@@ -1699,6 +1710,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByThisComponentRef <em>Device Used By This Component Ref</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Device Used By This Component Ref</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByThisComponentRef()
@@ -1710,6 +1722,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByApplication <em>Device Used By Application</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Device Used By Application</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface#getDeviceUsedByApplication()
@@ -1924,6 +1937,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication <em>Device Used By Application</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Device Used By Application</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication
@@ -1934,6 +1948,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getRefId <em>Ref Id</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Ref Id</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getRefId()
@@ -1945,6 +1960,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getUsesRefId <em>Uses Ref Id</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Uses Ref Id</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getUsesRefId()
@@ -2234,6 +2250,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ProvidesPort#getDeviceUsedByApplication <em>Device Used By Application</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Device Used By Application</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.ProvidesPort#getDeviceUsedByApplication()
@@ -2342,6 +2359,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.UsesPort#getDeviceUsedByApplication <em>Device Used By Application</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Device Used By Application</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.UsesPort#getDeviceUsedByApplication()
@@ -2454,6 +2472,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getInterface <em>Interface</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Interface</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getInterface()
@@ -2791,6 +2810,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Device That Loaded This Component Ref</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -2798,6 +2818,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Device Used By This Component Ref</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -2805,6 +2826,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Device Used By Application</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -2957,6 +2979,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByApplicationImpl <em>Device Used By Application</em>}' class.
 		 * <!-- begin-user-doc -->
+		 * @since 2.0
 		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByApplicationImpl
 		 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDeviceUsedByApplication()
@@ -2966,6 +2989,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Ref Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -2973,6 +2997,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Uses Ref Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3178,6 +3203,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Device Used By Application</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3252,6 +3278,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Device Used By Application</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3330,6 +3357,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Interface</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
