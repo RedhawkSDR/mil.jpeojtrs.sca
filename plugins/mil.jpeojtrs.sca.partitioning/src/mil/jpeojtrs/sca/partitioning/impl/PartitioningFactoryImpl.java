@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
-import mil.jpeojtrs.sca.partitioning.*;
 import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
 import mil.jpeojtrs.sca.partitioning.ComponentFiles;
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
@@ -20,6 +19,7 @@ import mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface;
 import mil.jpeojtrs.sca.partitioning.ComponentSupportedInterfaceStub;
 import mil.jpeojtrs.sca.partitioning.DevComponentFile;
 import mil.jpeojtrs.sca.partitioning.DeviceThatLoadedThisComponentRef;
+import mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication;
 import mil.jpeojtrs.sca.partitioning.DeviceUsedByThisComponentRef;
 import mil.jpeojtrs.sca.partitioning.DomComponentFile;
 import mil.jpeojtrs.sca.partitioning.DomainFinder;
@@ -279,6 +279,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 2.0
 	 */
 	public DeviceUsedByApplication createDeviceUsedByApplication() {
 		DeviceUsedByApplicationImpl deviceUsedByApplication = new DeviceUsedByApplicationImpl();
