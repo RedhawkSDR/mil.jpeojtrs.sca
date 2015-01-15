@@ -11,10 +11,10 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.tests;
 
+import org.junit.Test;
+
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
-
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 
@@ -95,4 +95,11 @@ public class UsesDeviceStubTest extends TestCase {
 		setFixture(null);
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	@Test
+	public void testStub() {
+		// PASS
+	}
 } //UsesDeviceStubTest
