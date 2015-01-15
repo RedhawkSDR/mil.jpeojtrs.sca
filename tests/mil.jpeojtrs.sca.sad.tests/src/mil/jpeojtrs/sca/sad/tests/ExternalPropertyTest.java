@@ -106,17 +106,19 @@ public class ExternalPropertyTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.ExternalProperty#resolveExternalID()
-	 * @generated
+	 * @generated NOT
 	 */
-	public void testResolveExternalID() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
 	@Test
-	public void test_stub() throws Exception {
-		// PASS
+	public void testResolveExternalID() {
+		assertNotNull("fixture", fixture);
+		final String TEST_ID = "test_setExternalPropID";
+		fixture.setExternalPropID(TEST_ID);
+
+		String externalPropID = fixture.getExternalPropID();
+		assertEquals("set/get ExternalPropID", TEST_ID, externalPropID);
+		
+		String externalId = fixture.resolveExternalID();
+		assertEquals("resolveExternalID", TEST_ID, externalId);
 	}
 
 } //ExternalPropertyTest
