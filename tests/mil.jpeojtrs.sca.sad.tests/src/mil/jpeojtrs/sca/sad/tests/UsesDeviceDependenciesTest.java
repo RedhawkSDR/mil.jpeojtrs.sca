@@ -11,12 +11,14 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.tests;
 
+import org.eclipse.emf.common.util.EList;
+import org.junit.Assert;
+
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
-
 import mil.jpeojtrs.sca.sad.SadFactory;
 import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
+import mil.jpeojtrs.sca.spd.UsesDevice;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,4 +97,12 @@ public class UsesDeviceDependenciesTest extends TestCase {
 		setFixture(null);
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	public void testGetUsesdevice() {
+		assertNotNull("fixture", fixture);
+		EList<UsesDevice> usesDeviceEList = fixture.getUsesdevice();
+		assertNotNull("getUsesdevice", usesDeviceEList);
+	}
 } //UsesDeviceDependenciesTest
