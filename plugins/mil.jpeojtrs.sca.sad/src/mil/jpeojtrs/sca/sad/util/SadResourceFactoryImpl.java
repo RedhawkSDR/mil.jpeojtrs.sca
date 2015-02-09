@@ -75,7 +75,8 @@ public class SadResourceFactoryImpl extends ResourceFactoryImpl {
 		// Since we include a super project need to add a custom element handler here
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_ELEMENT_HANDLER, new ElementHandlerImpl(false, packageList));
 
-		result.setDoctypeInfo(null, SadResourceImpl.DOC_TYPE_SYSTEM);
+		result.setEncoding("UTF-8");
+		result.setDoctypeInfo(SadResourceImpl.DOC_TYPE_PUBLIC, SadResourceImpl.DOC_TYPE_SYSTEM);
 
 		return result;
 		// BEGIN GENERATED CODE

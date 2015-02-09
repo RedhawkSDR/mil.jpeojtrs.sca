@@ -32,6 +32,16 @@ public class ScdResourceImpl extends XMLResourceImpl {
 		super(uri);
 	}
 
+	/**
+	 * The DTD system identifier.
+	 */
 	public static final String DOC_TYPE_SYSTEM = "softwarecomponent.dtd";
+
+	/**
+	 * The DTD formal public identifier (FPI).
+	 *
+	 * @since 3.0
+	 */
+	public static final String DOC_TYPE_PUBLIC = "-//JTRS//DTD SCA V2.2.2 SCD//EN";
 
 } // ScdResourceImpl

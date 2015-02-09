@@ -69,7 +69,8 @@ public class PrfResourceFactoryImpl extends ResourceFactoryImpl {
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
 
-		result.setDoctypeInfo(null, PrfResourceImpl.DOC_TYPE_SYSTEM);
+		result.setEncoding("UTF-8");
+		result.setDoctypeInfo(PrfResourceImpl.DOC_TYPE_PUBLIC, PrfResourceImpl.DOC_TYPE_SYSTEM);
 
 		return result;
 		// BEGIN GENERATED CODE

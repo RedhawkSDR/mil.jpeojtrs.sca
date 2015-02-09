@@ -33,6 +33,16 @@ public class SpdResourceImpl extends XMLResourceImpl {
 		super(uri);
 	}
 
+	/**
+	 * The DTD system identifier.
+	 */
 	public static final String DOC_TYPE_SYSTEM = "softpkg.dtd";
+
+	/**
+	 * The DTD formal public identifier (FPI).
+	 *
+	 * @since 3.1
+	 */
+	public static final String DOC_TYPE_PUBLIC = "-//JTRS//DTD SCA V2.2.2 SPD//EN";
 
 } //SpdResourceImpl

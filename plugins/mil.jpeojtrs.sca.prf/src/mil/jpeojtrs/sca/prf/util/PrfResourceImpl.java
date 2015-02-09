@@ -35,7 +35,16 @@ public class PrfResourceImpl extends XMLResourceImpl {
 		super(uri);
 	}
 
-	/** The Constant DOC_TYPE_SYSTEM. */
+	/**
+	 * The DTD system identifier.
+	 */
 	public static final String DOC_TYPE_SYSTEM = "properties.dtd";
+
+	/**
+	 * The DTD formal public identifier (FPI).
+	 *
+	 * @since 4.1
+	 */
+	public static final String DOC_TYPE_PUBLIC = "-//JTRS//DTD SCA V2.2.2 PRF//EN";
 
 } //PrfResourceImpl

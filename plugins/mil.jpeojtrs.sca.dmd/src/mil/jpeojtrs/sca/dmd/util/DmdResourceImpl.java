@@ -33,6 +33,16 @@ public class DmdResourceImpl extends XMLResourceImpl {
 		super(uri);
 	}
 
+	/**
+	 * The DTD system identifier.
+	 */
 	public static final String DOC_TYPE_SYSTEM = "domainmanagerconfiguration.dtd";
+
+	/**
+	 * The DTD formal public identifier (FPI).
+	 *
+	 * @since 2.4
+	 */
+	public static final String DOC_TYPE_PUBLIC = "-//JTRS//DTD SCA V2.2.2 DMD//EN";
 
 } //DmdResourceImpl

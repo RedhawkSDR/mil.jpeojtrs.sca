@@ -62,6 +62,7 @@ public class ProfileResourceFactoryImpl extends ResourceFactoryImpl {
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 
+		result.setEncoding("UTF-8");
 		result.setDoctypeInfo(null, ProfileResourceImpl.DOC_TYPE_SYSTEM);
 		
 		return result;

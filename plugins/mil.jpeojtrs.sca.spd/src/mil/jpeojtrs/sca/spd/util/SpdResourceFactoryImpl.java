@@ -63,7 +63,8 @@ public class SpdResourceFactoryImpl extends ResourceFactoryImpl {
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
 
-		result.setDoctypeInfo(null, SpdResourceImpl.DOC_TYPE_SYSTEM);
+		result.setEncoding("UTF-8");
+		result.setDoctypeInfo(SpdResourceImpl.DOC_TYPE_PUBLIC, SpdResourceImpl.DOC_TYPE_SYSTEM);
 		
 		return result;
 		// BEGIN GENERATED CODE

@@ -101,7 +101,8 @@ public class DcdResourceFactoryImpl extends ResourceFactoryImpl {
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);
 
-		result.setDoctypeInfo(null, DcdResourceImpl.DOC_TYPE_SYSTEM);
+		result.setEncoding("UTF-8");
+		result.setDoctypeInfo(DcdResourceImpl.DOC_TYPE_PUBLIC, DcdResourceImpl.DOC_TYPE_SYSTEM);
 
 		return result;
 		// BEGIN GENERATED CODE

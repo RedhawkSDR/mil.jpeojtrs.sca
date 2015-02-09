@@ -33,6 +33,9 @@ public class ProfileResourceImpl extends XMLResourceImpl {
 		super(uri);
 	}
 
+	/**
+	 * The DTD system identifier.
+	 */
 	public static final String DOC_TYPE_SYSTEM = "profile.dtd";
 
 } //ProfileResourceImpl

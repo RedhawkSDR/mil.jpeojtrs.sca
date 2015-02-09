@@ -46,8 +46,18 @@ public class DcdResourceImpl extends XMLResourceImpl {
 		super(uri);
 	}
 
+	/**
+	 * The DTD system identifier.
+	 */
 	public static final String DOC_TYPE_SYSTEM = "deviceconfiguration.dtd";
 	
+	/**
+	 * The DTD formal public identifier (FPI).
+	 *
+	 * @since 2.4
+	 */
+	public static final String DOC_TYPE_PUBLIC = "-//JTRS//DTD SCA V2.2.2 DCD//EN";
+
 	protected static class DcdXMLHelper extends XMLHelperImpl {
 
 		public DcdXMLHelper() {
