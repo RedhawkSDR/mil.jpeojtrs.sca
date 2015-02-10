@@ -73,7 +73,7 @@ public abstract class ComplexNumber {
 					complexStr = complexStr.substring(1, complexStr.length());
 					modifier = '-';
 				}
-				return getValue(0) + " " + modifier + " j" + complexStr;
+				return getValue(0).toString() + modifier + "j" + complexStr;
 			}
 		}
 		StringBuilder builder = new StringBuilder();
