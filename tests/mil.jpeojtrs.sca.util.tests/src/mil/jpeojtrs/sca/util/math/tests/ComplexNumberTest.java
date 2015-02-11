@@ -24,13 +24,15 @@ public abstract class ComplexNumberTest {
 	public abstract void testGetSize();
 
 	@Test
-	public void testValueOfStringAny() {
-
-	}
+	public abstract void testValueOfAny();
 
 	@Test
-	public void testValueOfStringString() {
+	public abstract void testValueOfString();
 
-	}
+	@Test
+	public abstract void testValueOfStringString();
+
+	@Test
+	public abstract void testToString();
 
 }
