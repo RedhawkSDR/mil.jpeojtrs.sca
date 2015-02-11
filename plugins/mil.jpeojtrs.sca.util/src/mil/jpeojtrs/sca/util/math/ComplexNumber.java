@@ -23,6 +23,12 @@ public abstract class ComplexNumber {
 
 	public abstract int getSize();
 
+	/**
+	 * Converts a string to the appropriate {@link ComplexNumber} type.
+	 * @param type The CORBA type name
+	 * @param value The value expressed as a string
+	 * @return A {@link ComplexNumber} representing the string
+	 */
 	public static ComplexNumber valueOf(String type, String value) {
 		if (value == null) {
 			return null;

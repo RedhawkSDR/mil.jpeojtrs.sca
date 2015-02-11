@@ -12,6 +12,7 @@ package mil.jpeojtrs.sca.util.math.tests;
 
 import org.junit.Assert;
 import mil.jpeojtrs.sca.util.math.ComplexByte;
+import mil.jpeojtrs.sca.util.math.ComplexNumber;
 
 import org.junit.Test;
 import org.omg.CORBA.Any;
@@ -21,59 +22,66 @@ import CF.complexOctet;
 import CF.complexOctetHelper;
 
 public class ComplexByteTest extends ComplexNumberTest {
-	private static final ComplexByte[] DATA_SET = new ComplexByte[] { ComplexByte.valueOf("8+7i"), ComplexByte.valueOf("8+7j"), ComplexByte.valueOf("8+j7"),
-	        ComplexByte.valueOf("8+i7"), ComplexByte.valueOf("(8,7)") };
+
+	private final ComplexByte complexByte = new ComplexByte((byte) 7, (byte) 8);
+
+	@Override
+	public void testToAny() {
+		Any any = complexByte.toAny();
+
+		complexOctet cfType = complexOctetHelper.extract(any);
+		Assert.assertEquals((byte) 7, cfType.real);
+		Assert.assertEquals((byte) 8, cfType.imag);
+	}
+
+	@Override
+	public void testGetValue() {
+		Assert.assertEquals((byte) 7, complexByte.getValue(0).byteValue());
+		Assert.assertEquals((byte) 8, complexByte.getValue(1).byteValue());
+	}
 
 	@Test
 	public void testGetByteValue() {
-		for (ComplexByte b : DATA_SET) {
-			Assert.assertEquals((byte) 8, b.getByteValue(0));
-			Assert.assertEquals((byte) 7, b.getByteValue(1));
-		}
-	}
-
-	@Test
-	public void testValueOfAny() {
-		complexOctet octet = new complexOctet((byte) 7, (byte) 8);
-		Any any = ORB.init().create_any();
-		complexOctetHelper.insert(any, octet);
-		ComplexByte cb = ComplexByte.valueOf(any);
-		Assert.assertEquals((byte) 7, cb.getByteValue(0));
-		Assert.assertEquals((byte) 8, cb.getByteValue(1));
-	}
-
-	@Test
-	public void testValueOfString() {
-		ComplexByte.valueOf("8+i7");
+		Assert.assertEquals((byte) 7, complexByte.getByteValue(0));
+		Assert.assertEquals((byte) 8, complexByte.getByteValue(1));
 	}
 
 	@Override
-	@Test
-	public void testToAny() {
-		for (ComplexByte b : DATA_SET) {
-			for (int i = 0; i < b.getSize(); i++) {
-				b.toAny();
-			}
-		}
-	}
-
-	@Override
-	@Test
-	public void testGetValue() {
-		for (ComplexByte b : DATA_SET) {
-			for (int i = 0; i < b.getSize(); i++) {
-				b.getValue(i);
-			}
-		}
-	}
-
-	@Override
-	@Test
 	public void testGetSize() {
-		for (ComplexByte b : DATA_SET) {
-			b.getSize();
-		}
+		Assert.assertEquals(2, complexByte.getSize());
+	}
 
+	@Override
+	public void testValueOfAny() {
+		complexOctet cfType = new complexOctet((byte) 7, (byte) 8);
+		Any any = ORB.init().create_any();
+		complexOctetHelper.insert(any, cfType);
+
+		ComplexByte complexByte2 = ComplexByte.valueOf(any);
+		Assert.assertEquals((byte) 7, complexByte2.getByteValue(0));
+		Assert.assertEquals((byte) 8, complexByte2.getByteValue(1));
+	}
+
+	@Override
+	public void testValueOfString() {
+		ComplexByte complexByte2 = ComplexByte.valueOf("5+i6");
+
+		Assert.assertEquals((byte) 5, complexByte2.getByteValue(0));
+		Assert.assertEquals((byte) 6, complexByte2.getByteValue(1));
+	}
+
+	@Override
+	public void testValueOfStringString() {
+		ComplexNumber complexNumber = ComplexNumber.valueOf("octet", "5+i6");
+
+		Assert.assertTrue("Invalid complex type", complexNumber instanceof ComplexByte);
+		Assert.assertEquals((byte) 5, ((ComplexByte) complexNumber).getByteValue(0));
+		Assert.assertEquals((byte) 6, ((ComplexByte) complexNumber).getByteValue(1));
+	}
+
+	@Override
+	public void testToString() {
+		Assert.assertEquals("7+j8", complexByte.toString());
 	}
 
 }

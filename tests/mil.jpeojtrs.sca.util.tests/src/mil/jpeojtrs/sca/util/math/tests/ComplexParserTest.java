@@ -15,132 +15,154 @@ import mil.jpeojtrs.sca.util.math.ComplexParser;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * Tests the complex number parser's ability to parse a complex number string into individual strings of just the
+ * constituent numbers.
+ */
 public class ComplexParserTest {
 
 	@Test
-	public void testParse() {
-		String [] retVal = ComplexParser.parse("7+8i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7", "8"}, retVal);
+	public void testParseConstantConstantI() {
+		String[] retVal = ComplexParser.parse("7+8i");
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7", "8" }, retVal);
 		retVal = ComplexParser.parse("7.6+8.5i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "8.5"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "8.5" }, retVal);
 		retVal = ComplexParser.parse("7e9+8e3i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e9", "8e3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e9", "8e3" }, retVal);
 		retVal = ComplexParser.parse("7.543e9+8.321e3i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.543e9", "8.321e3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.543e9", "8.321e3" }, retVal);
 		retVal = ComplexParser.parse("7e-9+8e-3i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e-9", "8e-3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e-9", "8e-3" }, retVal);
 		retVal = ComplexParser.parse("7E9+8E3i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e9", "8e3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e9", "8e3" }, retVal);
 		retVal = ComplexParser.parse("7.543E9+8.321E3i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.543e9", "8.321e3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.543e9", "8.321e3" }, retVal);
 		retVal = ComplexParser.parse("7E-9+8E-3i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e-9", "8e-3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e-9", "8e-3" }, retVal);
 		retVal = ComplexParser.parse("-7-8i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "-8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "-8" }, retVal);
 		retVal = ComplexParser.parse("-7+-8i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "-8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "-8" }, retVal);
 		retVal = ComplexParser.parse("-7--8i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "8" }, retVal);
 		retVal = ComplexParser.parse(" 7.6 + 8.5i ");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "8.5"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "8.5" }, retVal);
 		retVal = ComplexParser.parse("7.6+i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "1"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "1" }, retVal);
 		retVal = ComplexParser.parse("7.6-i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "-1"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "-1" }, retVal);
 		retVal = ComplexParser.parse("7.6+-i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "-1"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "-1" }, retVal);
 		retVal = ComplexParser.parse("7.6--i");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "1"}, retVal);
-		
-		retVal = ComplexParser.parse("7+8j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7", "8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "1" }, retVal);
+	}
+
+	@Test
+	public void testParseConstantConstantJ() {
+		String[] retVal = ComplexParser.parse("7+8j");
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7", "8" }, retVal);
 		retVal = ComplexParser.parse("7.6+8.5j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "8.5"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "8.5" }, retVal);
 		retVal = ComplexParser.parse("7e9+8e3j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e9", "8e3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e9", "8e3" }, retVal);
 		retVal = ComplexParser.parse("7e-9+8e-3j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e-9", "8e-3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e-9", "8e-3" }, retVal);
 		retVal = ComplexParser.parse("-7-8j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "-8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "-8" }, retVal);
 		retVal = ComplexParser.parse("-7+-8j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "-8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "-8" }, retVal);
 		retVal = ComplexParser.parse("-7--8j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "8" }, retVal);
 		retVal = ComplexParser.parse("7.6+j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "1"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "1" }, retVal);
 		retVal = ComplexParser.parse("7.6-j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "-1"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "-1" }, retVal);
 		retVal = ComplexParser.parse("7.6+-j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "-1"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "-1" }, retVal);
 		retVal = ComplexParser.parse("7.6--j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "1"}, retVal);
-		
-		retVal = ComplexParser.parse("7+i8");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7", "8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "1" }, retVal);
+	}
+
+	@Test
+	public void testParseConstantIConstant() {
+		String[] retVal = ComplexParser.parse("7+i8");
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7", "8" }, retVal);
 		retVal = ComplexParser.parse("7.6+i8.5");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "8.5"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "8.5" }, retVal);
 		retVal = ComplexParser.parse("7e9+i8e3");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e9", "8e3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e9", "8e3" }, retVal);
 		retVal = ComplexParser.parse("7e-9+i8e-3");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e-9", "8e-3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e-9", "8e-3" }, retVal);
 		retVal = ComplexParser.parse("-7-i8");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "-8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "-8" }, retVal);
 		retVal = ComplexParser.parse("-7+-i8");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "-8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "-8" }, retVal);
 		retVal = ComplexParser.parse("-7--i8");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "8" }, retVal);
 		retVal = ComplexParser.parse(" 7.6 + i8.5 ");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "8.5"}, retVal);
-		
-		retVal = ComplexParser.parse("i8.5");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"0", "8.5"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "8.5" }, retVal);
+	}
+
+	@Test
+	public void testParseConstantIOrJ() {
+		String[] retVal = ComplexParser.parse("i8.5");
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "0", "8.5" }, retVal);
 		retVal = ComplexParser.parse("8.5j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"0", "8.5"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "0", "8.5" }, retVal);
 		retVal = ComplexParser.parse("8.5");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"8.5", "0"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "8.5", "0" }, retVal);
 		retVal = ComplexParser.parse("-i8.5");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"0", "-8.5"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "0", "-8.5" }, retVal);
 		retVal = ComplexParser.parse("-8.5j");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"0", "-8.5"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "0", "-8.5" }, retVal);
 		retVal = ComplexParser.parse("-8.5");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-8.5", "0"}, retVal);
-		
-		retVal = ComplexParser.parse("7+j8");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7", "8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-8.5", "0" }, retVal);
+	}
+
+	@Test
+	public void testParseConstantJConstant() {
+		String[] retVal = ComplexParser.parse("7+j8");
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7", "8" }, retVal);
 		retVal = ComplexParser.parse("7.6+j8.5");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "8.5"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "8.5" }, retVal);
 		retVal = ComplexParser.parse("7e9+j8e3");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e9", "8e3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e9", "8e3" }, retVal);
 		retVal = ComplexParser.parse("7e-9+j8e-3");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e-9", "8e-3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e-9", "8e-3" }, retVal);
 		retVal = ComplexParser.parse("-7-j8");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "-8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "-8" }, retVal);
 		retVal = ComplexParser.parse("-7+-j8");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "-8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "-8" }, retVal);
 		retVal = ComplexParser.parse("-7--j8");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "8" }, retVal);
 		retVal = ComplexParser.parse(" 7.6 + j8.5 ");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "8.5"}, retVal);
-		
-		retVal = ComplexParser.parse("(7,8)");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7", "8"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "8.5" }, retVal);
+	}
+
+	@Test
+	public void testParseParens() {
+		String[] retVal = ComplexParser.parse("(7,8)");
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7", "8" }, retVal);
 		retVal = ComplexParser.parse("(7.6,8.5)");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "8.5"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "8.5" }, retVal);
 		retVal = ComplexParser.parse("(7e9,8e3)");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e9", "8e3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e9", "8e3" }, retVal);
 		retVal = ComplexParser.parse("(7e-9,8e-3)");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e-9", "8e-3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e-9", "8e-3" }, retVal);
 		retVal = ComplexParser.parse("(-7,-8)");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "-8"}, retVal);
-		
-		retVal = ComplexParser.parse("(7,8,9)");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7", "8", "9"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "-8" }, retVal);
+	}
+
+	@Test
+	public void testParseParensMultiDimension() {
+		String[] retVal = ComplexParser.parse("(7,8,9)");
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7", "8", "9" }, retVal);
 		retVal = ComplexParser.parse("(7.6,8.5,0.4)");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7.6", "8.5", "0.4"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7.6", "8.5", "0.4" }, retVal);
 		retVal = ComplexParser.parse("(7e9,8e3,0.2e3)");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"7e9", "8e3", "0.2e3"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "7e9", "8e3", "0.2e3" }, retVal);
 		retVal = ComplexParser.parse("(-7,-8,-9)");
-		Assert.assertArrayEquals("Invalid Parse", new String []{"-7", "-8", "-9"}, retVal);
+		Assert.assertArrayEquals("Invalid Parse", new String[] { "-7", "-8", "-9" }, retVal);
 	}
 
 }
