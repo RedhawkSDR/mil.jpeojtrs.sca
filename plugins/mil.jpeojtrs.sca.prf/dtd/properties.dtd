@@ -1,20 +1,20 @@
 <!--
-This file is protected by Copyright. Please refer to the COPYRIGHT file 
+This file is protected by Copyright. Please refer to the COPYRIGHT file
 distributed with this source distribution.
 
 This file is part of REDHAWK core.
 
-REDHAWK core is free software: you can redistribute it and/or modify it under 
-the terms of the GNU Lesser General Public License as published by the Free 
-Software Foundation, either version 3 of the License, or (at your option) any 
+REDHAWK core is free software: you can redistribute it and/or modify it under
+the terms of the GNU Lesser General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
 later version.
 
-REDHAWK core is distributed in the hope that it will be useful, but WITHOUT ANY 
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR 
-A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more 
+REDHAWK core is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
 details.
 
-You should have received a copy of the GNU Lesser General Public License along 
+You should have received a copy of the GNU Lesser General Public License along
 with this program.  If not, see http://www.gnu.org/licenses/.
 -->
 
@@ -25,9 +25,9 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 		| test
 		| struct
 		| structsequence)*
-       )> 
+       )>
 
-<!ELEMENT simple 
+<!ELEMENT simple
 	( description?
 	, value?
 	, units?
@@ -69,14 +69,14 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 
 <!ELEMENT kind EMPTY>
 <!ATTLIST kind
-	kindtype	(allocation | configure | test | execparam | factoryparam | event | message) 
+	kindtype	(allocation | configure | test | execparam | factoryparam | event | message)
 "configure">
 
 <!ELEMENT action EMPTY>
 <!ATTLIST action
 	type	( eq  | ne | gt  |  lt | ge | le | external ) "external">
 
-<!ELEMENT simplesequence 
+<!ELEMENT simplesequence
 	( description?
 	, values?
 	, units?
@@ -94,10 +94,10 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 	mode	(readonly | readwrite | writeonly)	"readwrite">
 
 <!ELEMENT values
-	( value+ 
+	( value+
 	)>
 
-<!ELEMENT test 
+<!ELEMENT test
 	( description
       , inputValue?
 	, resultValue
@@ -113,7 +113,7 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 	( simple+
 	)>
 
-<!ELEMENT struct 
+<!ELEMENT struct
 	( description?
 	, simple+
 	, configurationkind*
@@ -138,11 +138,11 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 	id       	ID	#REQUIRED
 	name		CDATA	#IMPLIED
 	mode		(readonly | readwrite | writeonly)  "readwrite">
-		
+
 <!ELEMENT structvalue
-	(simpleref+	        
+	(simpleref+
 	)>
-		
+
 <!ELEMENT simpleref EMPTY>
 <!ATTLIST simpleref
 	refid 	CDATA	#REQUIRED
