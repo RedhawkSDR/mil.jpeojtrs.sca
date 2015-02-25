@@ -19,33 +19,35 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 -->
 
 <!ELEMENT properties
-     	 ( description?
-     	 , 	( simple
-		| simplesequence
-		| test
-		| struct
-		| structsequence)*
-       )>
+    ( description?
+    , ( simple
+      | simplesequence
+      | test
+      | struct
+      | structsequence
+      )*
+    )>
 
 <!ELEMENT simple
-	( description?
-	, value?
-	, units?
-	, range?
-	, enumerations?
-	, kind*
-	, action?
-	)>
+    ( description?
+    , value?
+    , units?
+    , range?
+    , enumerations?
+    , kind*
+    , action?
+    )>
 
 <!-- Support non-SCA compliant longlong -->
 <!ATTLIST simple
-	id	ID							#REQUIRED
-	type	( boolean	| char	| double | float
-		| short	| long	| longlong | objref | octet
-		| string	| ulong	| ushort )		#REQUIRED
-	name	CDATA							#IMPLIED
-	complex ( false | true ) "false"
-	mode	( readonly	| readwrite | writeonly)	"readwrite">
+    id       ID                #REQUIRED
+    type     ( boolean | char  | double   | float
+             | short   | long  | longlong | objref | octet
+             | string  | ulong | ushort
+             )                 #REQUIRED
+    name     CDATA             #IMPLIED
+    complex  ( false | true )  "false"
+    mode     ( readonly | readwrite | writeonly)  "readwrite">
 
 <!ELEMENT description (#PCDATA)>
 
@@ -55,95 +57,94 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 
 <!ELEMENT range EMPTY>
 <!ATTLIST range
-	min		CDATA	#REQUIRED
-	max		CDATA	#REQUIRED>
+    min  CDATA  #REQUIRED
+    max  CDATA  #REQUIRED>
 
 <!ELEMENT enumerations
-	( enumeration+
-	)>
+    ( enumeration+
+    )>
 
 <!ELEMENT enumeration EMPTY>
 <!ATTLIST enumeration
-	label		CDATA	#REQUIRED
-	value		CDATA	#IMPLIED>
+    label  CDATA  #REQUIRED
+    value  CDATA  #IMPLIED>
 
 <!ELEMENT kind EMPTY>
 <!ATTLIST kind
-	kindtype	(allocation | configure | test | execparam | factoryparam | event | message)
-"configure">
+    kindtype  ( allocation | configure | test | execparam | factoryparam | event | message ) "configure">
 
 <!ELEMENT action EMPTY>
 <!ATTLIST action
-	type	( eq  | ne | gt  |  lt | ge | le | external ) "external">
+    type  ( eq  | ne | gt  |  lt | ge | le | external ) "external">
 
 <!ELEMENT simplesequence
-	( description?
-	, values?
-	, units?
-	, range?
-	, kind*
-	, action?
-	)>
+    ( description?
+    , values?
+    , units?
+    , range?
+    , kind*
+    , action?
+    )>
 <!ATTLIST simplesequence
-	id	ID						#REQUIRED
-	type  ( boolean | char   | double | float
-	      | short  | long   | objref | octet
-	      | string | ulong  | ushort )		#REQUIRED
-	name	CDATA						#IMPLIED
-	complex ( false | true ) "false"
-	mode	(readonly | readwrite | writeonly)	"readwrite">
+    id       ID                #REQUIRED
+    type     ( boolean | char  | double | float
+             | short   | long  | objref | octet
+             | string  | ulong | ushort
+             )                 #REQUIRED
+    name     CDATA             #IMPLIED
+    complex  ( false | true )  "false"
+    mode     ( readonly | readwrite | writeonly )  "readwrite">
 
 <!ELEMENT values
-	( value+
-	)>
+    ( value+
+    )>
 
 <!ELEMENT test
-	( description
-      , inputValue?
-	, resultValue
-	)>
+    ( description
+    , inputValue?
+    , resultValue
+    )>
 <!ATTLIST test
-	id		CDATA #REQUIRED>
+    id  CDATA  #REQUIRED>
 
 <!ELEMENT inputValue
-	( simple+
-	)>
+    ( simple+
+    )>
 
 <!ELEMENT resultValue
-	( simple+
-	)>
+    ( simple+
+    )>
 
 <!ELEMENT struct
-	( description?
-	, simple+
-	, configurationkind*
-	)>
+    ( description?
+    , simple+
+    , configurationkind*
+    )>
 <!ATTLIST struct
-	id		ID	#REQUIRED
-	name		CDATA	#IMPLIED
-	mode		(readonly | readwrite | writeonly)  "readwrite">
+    id    ID     #REQUIRED
+    name  CDATA  #IMPLIED
+    mode  ( readonly | readwrite | writeonly )  "readwrite">
 
 <!ELEMENT configurationkind EMPTY>
 <!ATTLIST configurationkind
-	kindtype	(allocation | configure | test | factoryparam | event | message)
-"configure">
+    kindtype  ( allocation | configure | test | factoryparam | event | message )  "configure">
 
 <!ELEMENT structsequence
-	( description?
-	, struct
-	, structvalue*
-	, configurationkind*
-	)>
+    ( description?
+    , struct
+    , structvalue*
+    , configurationkind*
+    )>
 <!ATTLIST structsequence
-	id       	ID	#REQUIRED
-	name		CDATA	#IMPLIED
-	mode		(readonly | readwrite | writeonly)  "readwrite">
+    id    ID     #REQUIRED
+    name  CDATA  #IMPLIED
+    mode  ( readonly | readwrite | writeonly )  "readwrite">
 
 <!ELEMENT structvalue
-	(simpleref+
-	)>
+    ( simpleref+
+    )>
 
 <!ELEMENT simpleref EMPTY>
 <!ATTLIST simpleref
-	refid 	CDATA	#REQUIRED
-	value 	CDATA	#REQUIRED>
+    refid  CDATA  #REQUIRED
+    value  CDATA  #REQUIRED>
