@@ -600,21 +600,29 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Complex</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int SIMPLE__COMPLEX = ABSTRACT_PROPERTY_FEATURE_COUNT + 7;
 	/**
-	 * The number of structural features of the '<em>Simple</em>' class.
+	 * The feature id for the '<em><b>Optional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 8;
+	int SIMPLE__OPTIONAL = ABSTRACT_PROPERTY_FEATURE_COUNT + 8;
+	/**
+	 * The number of structural features of the '<em>Simple</em>' class.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 9;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl <em>Simple Sequence</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -715,7 +723,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Complex</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1456,115 +1464,115 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The meta object id for the '<em>Complex Boolean</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexBoolean
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexBoolean()
 	 * @generated
 	 */
-    int COMPLEX_BOOLEAN = 41;
-    /**
+	int COMPLEX_BOOLEAN = 41;
+	/**
 	 * The meta object id for the '<em>Complex Byte</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexByte
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexByte()
 	 * @generated
 	 */
-    int COMPLEX_BYTE = 42;
-    /**
+	int COMPLEX_BYTE = 42;
+	/**
 	 * The meta object id for the '<em>Complex Double</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexDouble
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexDouble()
 	 * @generated
 	 */
-    int COMPLEX_DOUBLE = 43;
-    /**
+	int COMPLEX_DOUBLE = 43;
+	/**
 	 * The meta object id for the '<em>Complex Float</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexFloat
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexFloat()
 	 * @generated
 	 */
-    int COMPLEX_FLOAT = 44;
-    /**
+	int COMPLEX_FLOAT = 44;
+	/**
 	 * The meta object id for the '<em>Complex Long</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexLong
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexLong()
 	 * @generated
 	 */
-    int COMPLEX_LONG = 45;
-    /**
+	int COMPLEX_LONG = 45;
+	/**
 	 * The meta object id for the '<em>Complex Long Long</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexLongLong
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexLongLong()
 	 * @generated
 	 */
-    int COMPLEX_LONG_LONG = 46;
-    /**
+	int COMPLEX_LONG_LONG = 46;
+	/**
 	 * The meta object id for the '<em>Complex Short</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexShort
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexShort()
 	 * @generated
 	 */
-    int COMPLEX_SHORT = 47;
-    /**
+	int COMPLEX_SHORT = 47;
+	/**
 	 * The meta object id for the '<em>Complex UByte</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexUByte
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexUByte()
 	 * @generated
 	 */
-    int COMPLEX_UBYTE = 48;
-    /**
+	int COMPLEX_UBYTE = 48;
+	/**
 	 * The meta object id for the '<em>Complex ULong</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexULong
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexULong()
 	 * @generated
 	 */
-    int COMPLEX_ULONG = 49;
-    /**
+	int COMPLEX_ULONG = 49;
+	/**
 	 * The meta object id for the '<em>Complex ULong Long</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexULongLong
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexULongLong()
 	 * @generated
 	 */
-    int COMPLEX_ULONG_LONG = 50;
-    /**
+	int COMPLEX_ULONG_LONG = 50;
+	/**
 	 * The meta object id for the '<em>Complex UShort</em>' data type.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexUShort
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexUShort()
 	 * @generated
 	 */
-    int COMPLEX_USHORT = 51;
+	int COMPLEX_USHORT = 51;
 
-    /**
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.prf.AbstractProperty <em>Abstract Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2050,7 +2058,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.Simple#getComplex <em>Complex</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Complex</em>'.
 	 * @see mil.jpeojtrs.sca.prf.Simple#getComplex()
@@ -2058,6 +2066,17 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSimple_Complex();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.Simple#getOptional <em>Optional</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Optional</em>'.
+	 * @see mil.jpeojtrs.sca.prf.Simple#getOptional()
+	 * @see #getSimple()
+	 * @generated
+	 */
+	EAttribute getSimple_Optional();
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.prf.SimpleSequence <em>Simple Sequence</em>}'.
@@ -2138,7 +2157,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.SimpleSequence#getComplex <em>Complex</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Complex</em>'.
 	 * @see mil.jpeojtrs.sca.prf.SimpleSequence#getComplex()
@@ -2766,136 +2785,136 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexBoolean <em>Complex Boolean</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex Boolean</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexBoolean
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexBoolean"
 	 * @generated
 	 */
-    EDataType getComplexBoolean();
+	EDataType getComplexBoolean();
 
-    /**
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexByte <em>Complex Byte</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex Byte</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexByte
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexByte"
 	 * @generated
 	 */
-    EDataType getComplexByte();
+	EDataType getComplexByte();
 
-    /**
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexDouble <em>Complex Double</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex Double</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexDouble
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexDouble"
 	 * @generated
 	 */
-    EDataType getComplexDouble();
+	EDataType getComplexDouble();
 
-    /**
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexFloat <em>Complex Float</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex Float</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexFloat
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexFloat"
 	 * @generated
 	 */
-    EDataType getComplexFloat();
+	EDataType getComplexFloat();
 
-    /**
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexLong <em>Complex Long</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex Long</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexLong
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexLong"
 	 * @generated
 	 */
-    EDataType getComplexLong();
+	EDataType getComplexLong();
 
-    /**
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexLongLong <em>Complex Long Long</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex Long Long</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexLongLong
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexLongLong"
 	 * @generated
 	 */
-    EDataType getComplexLongLong();
+	EDataType getComplexLongLong();
 
-    /**
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexShort <em>Complex Short</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex Short</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexShort
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexShort"
 	 * @generated
 	 */
-    EDataType getComplexShort();
+	EDataType getComplexShort();
 
-    /**
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexUByte <em>Complex UByte</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex UByte</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexUByte
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexUByte"
 	 * @generated
 	 */
-    EDataType getComplexUByte();
+	EDataType getComplexUByte();
 
-    /**
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexULong <em>Complex ULong</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex ULong</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexULong
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexULong"
 	 * @generated
 	 */
-    EDataType getComplexULong();
+	EDataType getComplexULong();
 
-    /**
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexULongLong <em>Complex ULong Long</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex ULong Long</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexULongLong
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexULongLong"
 	 * @generated
 	 */
-    EDataType getComplexULongLong();
+	EDataType getComplexULongLong();
 
-    /**
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexUShort <em>Complex UShort</em>}'.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex UShort</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexUShort
 	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexUShort"
 	 * @generated
 	 */
-    EDataType getComplexUShort();
+	EDataType getComplexUShort();
 
-    /**
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3326,11 +3345,19 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Complex</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute SIMPLE__COMPLEX = eINSTANCE.getSimple_Complex();
+
+		/**
+		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIMPLE__OPTIONAL = eINSTANCE.getSimple_Optional();
 
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl <em>Simple Sequence</em>}' class.
@@ -3393,7 +3420,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Complex</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3914,125 +3941,125 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>Complex Boolean</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexBoolean
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexBoolean()
 		 * @generated
 		 */
-        EDataType COMPLEX_BOOLEAN = eINSTANCE.getComplexBoolean();
+		EDataType COMPLEX_BOOLEAN = eINSTANCE.getComplexBoolean();
 
-        /**
+		/**
 		 * The meta object literal for the '<em>Complex Byte</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexByte
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexByte()
 		 * @generated
 		 */
-        EDataType COMPLEX_BYTE = eINSTANCE.getComplexByte();
+		EDataType COMPLEX_BYTE = eINSTANCE.getComplexByte();
 
-        /**
+		/**
 		 * The meta object literal for the '<em>Complex Double</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexDouble
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexDouble()
 		 * @generated
 		 */
-        EDataType COMPLEX_DOUBLE = eINSTANCE.getComplexDouble();
+		EDataType COMPLEX_DOUBLE = eINSTANCE.getComplexDouble();
 
-        /**
+		/**
 		 * The meta object literal for the '<em>Complex Float</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexFloat
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexFloat()
 		 * @generated
 		 */
-        EDataType COMPLEX_FLOAT = eINSTANCE.getComplexFloat();
+		EDataType COMPLEX_FLOAT = eINSTANCE.getComplexFloat();
 
-        /**
+		/**
 		 * The meta object literal for the '<em>Complex Long</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexLong
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexLong()
 		 * @generated
 		 */
-        EDataType COMPLEX_LONG = eINSTANCE.getComplexLong();
+		EDataType COMPLEX_LONG = eINSTANCE.getComplexLong();
 
-        /**
+		/**
 		 * The meta object literal for the '<em>Complex Long Long</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexLongLong
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexLongLong()
 		 * @generated
 		 */
-        EDataType COMPLEX_LONG_LONG = eINSTANCE.getComplexLongLong();
+		EDataType COMPLEX_LONG_LONG = eINSTANCE.getComplexLongLong();
 
-        /**
+		/**
 		 * The meta object literal for the '<em>Complex Short</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexShort
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexShort()
 		 * @generated
 		 */
-        EDataType COMPLEX_SHORT = eINSTANCE.getComplexShort();
+		EDataType COMPLEX_SHORT = eINSTANCE.getComplexShort();
 
-        /**
+		/**
 		 * The meta object literal for the '<em>Complex UByte</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexUByte
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexUByte()
 		 * @generated
 		 */
-        EDataType COMPLEX_UBYTE = eINSTANCE.getComplexUByte();
+		EDataType COMPLEX_UBYTE = eINSTANCE.getComplexUByte();
 
-        /**
+		/**
 		 * The meta object literal for the '<em>Complex ULong</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexULong
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexULong()
 		 * @generated
 		 */
-        EDataType COMPLEX_ULONG = eINSTANCE.getComplexULong();
+		EDataType COMPLEX_ULONG = eINSTANCE.getComplexULong();
 
-        /**
+		/**
 		 * The meta object literal for the '<em>Complex ULong Long</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexULongLong
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexULongLong()
 		 * @generated
 		 */
-        EDataType COMPLEX_ULONG_LONG = eINSTANCE.getComplexULongLong();
+		EDataType COMPLEX_ULONG_LONG = eINSTANCE.getComplexULongLong();
 
-        /**
+		/**
 		 * The meta object literal for the '<em>Complex UShort</em>' data type.
 		 * <!-- begin-user-doc -->
-         * @since 3.0
-         * <!-- end-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexUShort
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexUShort()
 		 * @generated
 		 */
-        EDataType COMPLEX_USHORT = eINSTANCE.getComplexUShort();
+		EDataType COMPLEX_USHORT = eINSTANCE.getComplexUShort();
 
-        /**
+		/**
 		 * <!-- begin-user-doc -->
 		 * @deprecated Switch to using {@link #STRUCT_SEQUENCE__STRUCT_VALUE}
 		 * <!-- end-user-doc -->

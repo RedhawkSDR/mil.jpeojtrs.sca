@@ -404,6 +404,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="complex" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBooleanObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimpleSequence" eSuperTypes="#//AbstractProperty">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

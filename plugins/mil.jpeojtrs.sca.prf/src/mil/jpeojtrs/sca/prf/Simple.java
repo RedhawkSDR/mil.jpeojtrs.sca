@@ -47,6 +47,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getAction <em>Action</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getComplex <em>Complex</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getOptional <em>Optional</em>}</li>
  * </ul>
  * </p>
  *
@@ -268,35 +269,63 @@ public interface Simple extends AbstractProperty {
 	/**
 	 * Returns the value of the '<em><b>Complex</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-     * True if the value should be treated as a complex number.  False or null otherwise.
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * True if the value should be treated as a complex number.  False or null otherwise.
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Complex</em>' attribute.
 	 * @see #setComplex(Boolean)
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimple_Complex()
 	 * @model
 	 * @generated
 	 */
-    Boolean getComplex();
+	Boolean getComplex();
 
-    /**
+	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Simple#getComplex <em>Complex</em>}' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Complex</em>' attribute.
 	 * @see #getComplex()
 	 * @generated
 	 */
-    void setComplex(Boolean value);
+	void setComplex(Boolean value);
 
-    /**
+	/**
+	 * Returns the value of the '<em><b>Optional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Optional</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Optional</em>' attribute.
+	 * @see #setOptional(Boolean)
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimple_Optional()
+	 * @model
+	 * @generated
+	 */
+	Boolean getOptional();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Simple#getOptional <em>Optional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Optional</em>' attribute.
+	 * @see #getOptional()
+	 * @generated
+	 */
+	void setOptional(Boolean value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated
 	 */
-    boolean isComplex();
+	boolean isComplex();
 
 } // Simple

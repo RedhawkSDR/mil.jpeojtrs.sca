@@ -73,16 +73,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated
 	 */
 	public static PrfFactory init() {
-		try
-		{
-			PrfFactory thePrfFactory = (PrfFactory)EPackage.Registry.INSTANCE.getEFactory(PrfPackage.eNS_URI);
-			if (thePrfFactory != null)
-			{
+		try {
+			PrfFactory thePrfFactory = (PrfFactory) EPackage.Registry.INSTANCE.getEFactory(PrfPackage.eNS_URI);
+			if (thePrfFactory != null) {
 				return thePrfFactory;
 			}
-		}
-		catch (Exception exception)
-		{
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new PrfFactoryImpl();
@@ -105,31 +101,51 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID())
-		{
-			case PrfPackage.ACTION: return createAction();
-			case PrfPackage.CONFIGURATION_KIND: return createConfigurationKind();
-			case PrfPackage.ENUMERATION: return createEnumeration();
-			case PrfPackage.ENUMERATIONS: return createEnumerations();
-			case PrfPackage.INPUT_VALUE: return createInputValue();
-			case PrfPackage.KIND: return createKind();
-			case PrfPackage.PRF_DOCUMENT_ROOT: return createPrfDocumentRoot();
-			case PrfPackage.PROPERTIES: return createProperties();
-			case PrfPackage.RANGE: return createRange();
-			case PrfPackage.RESULT_VALUE: return createResultValue();
-			case PrfPackage.SIMPLE: return createSimple();
-			case PrfPackage.SIMPLE_SEQUENCE: return createSimpleSequence();
-			case PrfPackage.STRUCT: return createStruct();
-			case PrfPackage.STRUCT_SEQUENCE: return createStructSequence();
-			case PrfPackage.STRUCT_VALUE: return createStructValue();
-			case PrfPackage.TEST: return createTest();
-			case PrfPackage.VALUES: return createValues();
-			case PrfPackage.SIMPLE_REF: return createSimpleRef();
-			case PrfPackage.SIMPLE_SEQUENCE_REF: return createSimpleSequenceRef();
-			case PrfPackage.STRUCT_REF: return createStructRef();
-			case PrfPackage.STRUCT_SEQUENCE_REF: return createStructSequenceRef();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+		case PrfPackage.ACTION:
+			return createAction();
+		case PrfPackage.CONFIGURATION_KIND:
+			return createConfigurationKind();
+		case PrfPackage.ENUMERATION:
+			return createEnumeration();
+		case PrfPackage.ENUMERATIONS:
+			return createEnumerations();
+		case PrfPackage.INPUT_VALUE:
+			return createInputValue();
+		case PrfPackage.KIND:
+			return createKind();
+		case PrfPackage.PRF_DOCUMENT_ROOT:
+			return createPrfDocumentRoot();
+		case PrfPackage.PROPERTIES:
+			return createProperties();
+		case PrfPackage.RANGE:
+			return createRange();
+		case PrfPackage.RESULT_VALUE:
+			return createResultValue();
+		case PrfPackage.SIMPLE:
+			return createSimple();
+		case PrfPackage.SIMPLE_SEQUENCE:
+			return createSimpleSequence();
+		case PrfPackage.STRUCT:
+			return createStruct();
+		case PrfPackage.STRUCT_SEQUENCE:
+			return createStructSequence();
+		case PrfPackage.STRUCT_VALUE:
+			return createStructValue();
+		case PrfPackage.TEST:
+			return createTest();
+		case PrfPackage.VALUES:
+			return createValues();
+		case PrfPackage.SIMPLE_REF:
+			return createSimpleRef();
+		case PrfPackage.SIMPLE_SEQUENCE_REF:
+			return createSimpleSequenceRef();
+		case PrfPackage.STRUCT_REF:
+			return createStructRef();
+		case PrfPackage.STRUCT_SEQUENCE_REF:
+			return createStructSequenceRef();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -140,58 +156,57 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID())
-		{
-			case PrfPackage.ACCESS_TYPE:
-				return createAccessTypeFromString(eDataType, initialValue);
-			case PrfPackage.ACTION_TYPE:
-				return createActionTypeFromString(eDataType, initialValue);
-			case PrfPackage.PROPERTY_CONFIGURATION_TYPE:
-				return createPropertyConfigurationTypeFromString(eDataType, initialValue);
-			case PrfPackage.PROPERTY_VALUE_TYPE:
-				return createPropertyValueTypeFromString(eDataType, initialValue);
-			case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE:
-				return createStructPropertyConfigurationTypeFromString(eDataType, initialValue);
-			case PrfPackage.ACCESS_TYPE_OBJECT:
-				return createAccessTypeObjectFromString(eDataType, initialValue);
-			case PrfPackage.ACTION_TYPE_OBJECT:
-				return createActionTypeObjectFromString(eDataType, initialValue);
-			case PrfPackage.CHARACTER_OBJECT:
-				return createCharacterObjectFromString(eDataType, initialValue);
-			case PrfPackage.DCE_UUID:
-				return createDceUUIDFromString(eDataType, initialValue);
-			case PrfPackage.PROPERTY_CONFIGURATION_TYPE_OBJECT:
-				return createPropertyConfigurationTypeObjectFromString(eDataType, initialValue);
-			case PrfPackage.PROPERTY_VALUE_TYPE_OBJECT:
-				return createPropertyValueTypeObjectFromString(eDataType, initialValue);
-			case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE_OBJECT:
-				return createStructPropertyConfigurationTypeObjectFromString(eDataType, initialValue);
-			case PrfPackage.UNIT:
-				return createUnitFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_BOOLEAN:
-				return createComplexBooleanFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_BYTE:
-				return createComplexByteFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_DOUBLE:
-				return createComplexDoubleFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_FLOAT:
-				return createComplexFloatFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_LONG:
-				return createComplexLongFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_LONG_LONG:
-				return createComplexLongLongFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_SHORT:
-				return createComplexShortFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_UBYTE:
-				return createComplexUByteFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_ULONG:
-				return createComplexULongFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_ULONG_LONG:
-				return createComplexULongLongFromString(eDataType, initialValue);
-			case PrfPackage.COMPLEX_USHORT:
-				return createComplexUShortFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+		case PrfPackage.ACCESS_TYPE:
+			return createAccessTypeFromString(eDataType, initialValue);
+		case PrfPackage.ACTION_TYPE:
+			return createActionTypeFromString(eDataType, initialValue);
+		case PrfPackage.PROPERTY_CONFIGURATION_TYPE:
+			return createPropertyConfigurationTypeFromString(eDataType, initialValue);
+		case PrfPackage.PROPERTY_VALUE_TYPE:
+			return createPropertyValueTypeFromString(eDataType, initialValue);
+		case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE:
+			return createStructPropertyConfigurationTypeFromString(eDataType, initialValue);
+		case PrfPackage.ACCESS_TYPE_OBJECT:
+			return createAccessTypeObjectFromString(eDataType, initialValue);
+		case PrfPackage.ACTION_TYPE_OBJECT:
+			return createActionTypeObjectFromString(eDataType, initialValue);
+		case PrfPackage.CHARACTER_OBJECT:
+			return createCharacterObjectFromString(eDataType, initialValue);
+		case PrfPackage.DCE_UUID:
+			return createDceUUIDFromString(eDataType, initialValue);
+		case PrfPackage.PROPERTY_CONFIGURATION_TYPE_OBJECT:
+			return createPropertyConfigurationTypeObjectFromString(eDataType, initialValue);
+		case PrfPackage.PROPERTY_VALUE_TYPE_OBJECT:
+			return createPropertyValueTypeObjectFromString(eDataType, initialValue);
+		case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE_OBJECT:
+			return createStructPropertyConfigurationTypeObjectFromString(eDataType, initialValue);
+		case PrfPackage.UNIT:
+			return createUnitFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_BOOLEAN:
+			return createComplexBooleanFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_BYTE:
+			return createComplexByteFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_DOUBLE:
+			return createComplexDoubleFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_FLOAT:
+			return createComplexFloatFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_LONG:
+			return createComplexLongFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_LONG_LONG:
+			return createComplexLongLongFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_SHORT:
+			return createComplexShortFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_UBYTE:
+			return createComplexUByteFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_ULONG:
+			return createComplexULongFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_ULONG_LONG:
+			return createComplexULongLongFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_USHORT:
+			return createComplexUShortFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -202,58 +217,57 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID())
-		{
-			case PrfPackage.ACCESS_TYPE:
-				return convertAccessTypeToString(eDataType, instanceValue);
-			case PrfPackage.ACTION_TYPE:
-				return convertActionTypeToString(eDataType, instanceValue);
-			case PrfPackage.PROPERTY_CONFIGURATION_TYPE:
-				return convertPropertyConfigurationTypeToString(eDataType, instanceValue);
-			case PrfPackage.PROPERTY_VALUE_TYPE:
-				return convertPropertyValueTypeToString(eDataType, instanceValue);
-			case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE:
-				return convertStructPropertyConfigurationTypeToString(eDataType, instanceValue);
-			case PrfPackage.ACCESS_TYPE_OBJECT:
-				return convertAccessTypeObjectToString(eDataType, instanceValue);
-			case PrfPackage.ACTION_TYPE_OBJECT:
-				return convertActionTypeObjectToString(eDataType, instanceValue);
-			case PrfPackage.CHARACTER_OBJECT:
-				return convertCharacterObjectToString(eDataType, instanceValue);
-			case PrfPackage.DCE_UUID:
-				return convertDceUUIDToString(eDataType, instanceValue);
-			case PrfPackage.PROPERTY_CONFIGURATION_TYPE_OBJECT:
-				return convertPropertyConfigurationTypeObjectToString(eDataType, instanceValue);
-			case PrfPackage.PROPERTY_VALUE_TYPE_OBJECT:
-				return convertPropertyValueTypeObjectToString(eDataType, instanceValue);
-			case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE_OBJECT:
-				return convertStructPropertyConfigurationTypeObjectToString(eDataType, instanceValue);
-			case PrfPackage.UNIT:
-				return convertUnitToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_BOOLEAN:
-				return convertComplexBooleanToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_BYTE:
-				return convertComplexByteToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_DOUBLE:
-				return convertComplexDoubleToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_FLOAT:
-				return convertComplexFloatToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_LONG:
-				return convertComplexLongToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_LONG_LONG:
-				return convertComplexLongLongToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_SHORT:
-				return convertComplexShortToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_UBYTE:
-				return convertComplexUByteToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_ULONG:
-				return convertComplexULongToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_ULONG_LONG:
-				return convertComplexULongLongToString(eDataType, instanceValue);
-			case PrfPackage.COMPLEX_USHORT:
-				return convertComplexUShortToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+		case PrfPackage.ACCESS_TYPE:
+			return convertAccessTypeToString(eDataType, instanceValue);
+		case PrfPackage.ACTION_TYPE:
+			return convertActionTypeToString(eDataType, instanceValue);
+		case PrfPackage.PROPERTY_CONFIGURATION_TYPE:
+			return convertPropertyConfigurationTypeToString(eDataType, instanceValue);
+		case PrfPackage.PROPERTY_VALUE_TYPE:
+			return convertPropertyValueTypeToString(eDataType, instanceValue);
+		case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE:
+			return convertStructPropertyConfigurationTypeToString(eDataType, instanceValue);
+		case PrfPackage.ACCESS_TYPE_OBJECT:
+			return convertAccessTypeObjectToString(eDataType, instanceValue);
+		case PrfPackage.ACTION_TYPE_OBJECT:
+			return convertActionTypeObjectToString(eDataType, instanceValue);
+		case PrfPackage.CHARACTER_OBJECT:
+			return convertCharacterObjectToString(eDataType, instanceValue);
+		case PrfPackage.DCE_UUID:
+			return convertDceUUIDToString(eDataType, instanceValue);
+		case PrfPackage.PROPERTY_CONFIGURATION_TYPE_OBJECT:
+			return convertPropertyConfigurationTypeObjectToString(eDataType, instanceValue);
+		case PrfPackage.PROPERTY_VALUE_TYPE_OBJECT:
+			return convertPropertyValueTypeObjectToString(eDataType, instanceValue);
+		case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE_OBJECT:
+			return convertStructPropertyConfigurationTypeObjectToString(eDataType, instanceValue);
+		case PrfPackage.UNIT:
+			return convertUnitToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_BOOLEAN:
+			return convertComplexBooleanToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_BYTE:
+			return convertComplexByteToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_DOUBLE:
+			return convertComplexDoubleToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_FLOAT:
+			return convertComplexFloatToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_LONG:
+			return convertComplexLongToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_LONG_LONG:
+			return convertComplexLongLongToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_SHORT:
+			return convertComplexShortToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_UBYTE:
+			return convertComplexUByteToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_ULONG:
+			return convertComplexULongToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_ULONG_LONG:
+			return convertComplexULongLongToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_USHORT:
+			return convertComplexUShortToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -495,7 +509,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	public AccessType createAccessTypeFromString(EDataType eDataType, String initialValue) {
 		AccessType result = AccessType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -515,7 +530,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	public ActionType createActionTypeFromString(EDataType eDataType, String initialValue) {
 		ActionType result = ActionType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -535,7 +551,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	public PropertyConfigurationType createPropertyConfigurationTypeFromString(EDataType eDataType, String initialValue) {
 		PropertyConfigurationType result = PropertyConfigurationType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -555,7 +572,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	public PropertyValueType createPropertyValueTypeFromString(EDataType eDataType, String initialValue) {
 		PropertyValueType result = PropertyValueType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -575,7 +593,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 */
 	public StructPropertyConfigurationType createStructPropertyConfigurationTypeFromString(EDataType eDataType, String initialValue) {
 		StructPropertyConfigurationType result = StructPropertyConfigurationType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -648,7 +667,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated
 	 */
 	public String createDceUUIDFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
 	}
 
 	/**
@@ -720,7 +739,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated
 	 */
 	public String createUnitFromString(EDataType eDataType, String initialValue) {
-		return (String)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
+		return (String) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.STRING, initialValue);
 	}
 
 	/**
@@ -733,266 +752,266 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	}
 
 	/**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexBoolean createComplexBooleanFromString(EDataType eDataType, String initialValue) {
-    	return ComplexBoolean.valueOf(initialValue);
-    }
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexBoolean createComplexBooleanFromString(EDataType eDataType, String initialValue) {
+		return ComplexBoolean.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexBooleanToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-    	return ((ComplexNumber) instanceValue).toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexBooleanToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return ((ComplexNumber) instanceValue).toString();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexByte createComplexByteFromString(EDataType eDataType, String initialValue) {
-        return ComplexByte.valueOf(initialValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexByte createComplexByteFromString(EDataType eDataType, String initialValue) {
+		return ComplexByte.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexByteToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-        return ((ComplexByte) instanceValue).toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexByteToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return ((ComplexByte) instanceValue).toString();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexDouble createComplexDoubleFromString(EDataType eDataType, String initialValue) {
-        return ComplexDouble.valueOf(initialValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexDouble createComplexDoubleFromString(EDataType eDataType, String initialValue) {
+		return ComplexDouble.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexDoubleToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-        return ((ComplexDouble) instanceValue).toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexDoubleToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return ((ComplexDouble) instanceValue).toString();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexFloat createComplexFloatFromString(EDataType eDataType, String initialValue) {
-        return ComplexFloat.valueOf(initialValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexFloat createComplexFloatFromString(EDataType eDataType, String initialValue) {
+		return ComplexFloat.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexFloatToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-        return ((ComplexFloat) instanceValue).toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexFloatToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return ((ComplexFloat) instanceValue).toString();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexLong createComplexLongFromString(EDataType eDataType, String initialValue) {
-        return ComplexLong.valueOf(initialValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexLong createComplexLongFromString(EDataType eDataType, String initialValue) {
+		return ComplexLong.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexLongToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-        return ((ComplexLong) instanceValue).toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexLongToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return ((ComplexLong) instanceValue).toString();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexLongLong createComplexLongLongFromString(EDataType eDataType, String initialValue) {
-        return ComplexLongLong.valueOf(initialValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexLongLong createComplexLongLongFromString(EDataType eDataType, String initialValue) {
+		return ComplexLongLong.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexLongLongToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-        return instanceValue.toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexLongLongToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return instanceValue.toString();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexShort createComplexShortFromString(EDataType eDataType, String initialValue) {
-        return ComplexShort.valueOf(initialValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexShort createComplexShortFromString(EDataType eDataType, String initialValue) {
+		return ComplexShort.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexShortToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-        return instanceValue.toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexShortToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return instanceValue.toString();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexUByte createComplexUByteFromString(EDataType eDataType, String initialValue) {
-        return ComplexUByte.valueOf(initialValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexUByte createComplexUByteFromString(EDataType eDataType, String initialValue) {
+		return ComplexUByte.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexUByteToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-        return instanceValue.toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexUByteToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return instanceValue.toString();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexULong createComplexULongFromString(EDataType eDataType, String initialValue) {
-        return ComplexULong.valueOf(initialValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexULong createComplexULongFromString(EDataType eDataType, String initialValue) {
+		return ComplexULong.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexULongToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-        return instanceValue.toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexULongToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return instanceValue.toString();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexULongLong createComplexULongLongFromString(EDataType eDataType, String initialValue) {
-        return ComplexULongLong.valueOf(initialValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexULongLong createComplexULongLongFromString(EDataType eDataType, String initialValue) {
+		return ComplexULongLong.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexULongLongToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-        return instanceValue.toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexULongLongToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return instanceValue.toString();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public ComplexUShort createComplexUShortFromString(EDataType eDataType, String initialValue) {
-        return ComplexUShort.valueOf(initialValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexUShort createComplexUShortFromString(EDataType eDataType, String initialValue) {
+		return ComplexUShort.valueOf(initialValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    public String convertComplexUShortToString(EDataType eDataType, Object instanceValue) {
-    	if (instanceValue == null) {
-    		return null;
-    	}
-        return instanceValue.toString();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexUShortToString(EDataType eDataType, Object instanceValue) {
+		if (instanceValue == null) {
+			return null;
+		}
+		return instanceValue.toString();
+	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public PrfPackage getPrfPackage() {
-		return (PrfPackage)getEPackage();
+		return (PrfPackage) getEPackage();
 	}
 
 	/**

@@ -434,10 +434,12 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * @generated
 	 */
 	public static PrfPackage initGen() {
-		if (isInited) return (PrfPackage)EPackage.Registry.INSTANCE.getEPackage(PrfPackage.eNS_URI);
+		if (isInited)
+			return (PrfPackage) EPackage.Registry.INSTANCE.getEPackage(PrfPackage.eNS_URI);
 
 		// Obtain or create and register package
-		PrfPackageImpl thePrfPackage = (PrfPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PrfPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PrfPackageImpl());
+		PrfPackageImpl thePrfPackage = (PrfPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PrfPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+			: new PrfPackageImpl());
 
 		isInited = true;
 
@@ -452,21 +454,15 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		thePrfPackage.initializePackageContents();
 
 		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(thePrfPackage, 
-			 new EValidator.Descriptor()
-			 {
-				 @Override
-				public EValidator getEValidator()
-				 {
-					 return PrfValidator.INSTANCE;
-				 }
-			 });
+		EValidator.Registry.INSTANCE.put(thePrfPackage, new EValidator.Descriptor() {
+			public EValidator getEValidator() {
+				return PrfValidator.INSTANCE;
+			}
+		});
 
 		// Mark meta-data to indicate it can't be changed
 		thePrfPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PrfPackage.eNS_URI, thePrfPackage);
 		return thePrfPackage;
@@ -478,6 +474,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			AdvancedEObjectValidator validator = new AdvancedEObjectValidator(PrfValidator.INSTANCE);
+
 			@Override
 			public EValidator getEValidator() {
 				return this.validator;
@@ -504,7 +501,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getAbstractProperty_Description() {
-		return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) abstractPropertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -514,7 +511,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getAbstractProperty_Id() {
-		return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) abstractPropertyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -524,7 +521,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getAbstractProperty_LocalMode() {
-		return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) abstractPropertyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -534,7 +531,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getAbstractProperty_Name() {
-		return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) abstractPropertyEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -544,7 +541,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getAbstractProperty_Mode() {
-		return (EAttribute)abstractPropertyEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) abstractPropertyEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -564,7 +561,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getAction_Type() {
-		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -584,7 +581,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getConfigurationKind_Type() {
-		return (EAttribute)configurationKindEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) configurationKindEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -604,7 +601,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getEnumeration_Label() {
-		return (EAttribute)enumerationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) enumerationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -614,7 +611,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getEnumeration_Value() {
-		return (EAttribute)enumerationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) enumerationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -634,7 +631,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getEnumerations_Enumeration() {
-		return (EReference)enumerationsEClass.getEStructuralFeatures().get(0);
+		return (EReference) enumerationsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -654,7 +651,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getInputValue_Simple() {
-		return (EReference)inputValueEClass.getEStructuralFeatures().get(0);
+		return (EReference) inputValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -674,7 +671,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getKind_Type() {
-		return (EAttribute)kindEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) kindEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -694,7 +691,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getPrfDocumentRoot_Mixed() {
-		return (EAttribute)prfDocumentRootEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) prfDocumentRootEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -704,7 +701,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPrfDocumentRoot_XMLNSPrefixMap() {
-		return (EReference)prfDocumentRootEClass.getEStructuralFeatures().get(1);
+		return (EReference) prfDocumentRootEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -714,7 +711,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPrfDocumentRoot_XSISchemaLocation() {
-		return (EReference)prfDocumentRootEClass.getEStructuralFeatures().get(2);
+		return (EReference) prfDocumentRootEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -724,7 +721,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPrfDocumentRoot_Properties() {
-		return (EReference)prfDocumentRootEClass.getEStructuralFeatures().get(3);
+		return (EReference) prfDocumentRootEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -744,7 +741,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getProperties_Description() {
-		return (EAttribute)propertiesEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) propertiesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -754,7 +751,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getProperties_Properties() {
-		return (EAttribute)propertiesEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) propertiesEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -764,7 +761,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getProperties_Simple() {
-		return (EReference)propertiesEClass.getEStructuralFeatures().get(2);
+		return (EReference) propertiesEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -774,7 +771,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getProperties_SimpleSequence() {
-		return (EReference)propertiesEClass.getEStructuralFeatures().get(3);
+		return (EReference) propertiesEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -784,7 +781,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getProperties_Test() {
-		return (EReference)propertiesEClass.getEStructuralFeatures().get(4);
+		return (EReference) propertiesEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -794,7 +791,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getProperties_Struct() {
-		return (EReference)propertiesEClass.getEStructuralFeatures().get(5);
+		return (EReference) propertiesEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -804,7 +801,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getProperties_StructSequence() {
-		return (EReference)propertiesEClass.getEStructuralFeatures().get(6);
+		return (EReference) propertiesEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -824,7 +821,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getRange_Max() {
-		return (EAttribute)rangeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) rangeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -834,7 +831,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getRange_Min() {
-		return (EAttribute)rangeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) rangeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -854,7 +851,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getResultValue_Simple() {
-		return (EReference)resultValueEClass.getEStructuralFeatures().get(0);
+		return (EReference) resultValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -874,7 +871,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getSimple_Value() {
-		return (EAttribute)simpleEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) simpleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -884,7 +881,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getSimple_Units() {
-		return (EAttribute)simpleEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) simpleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -894,7 +891,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getSimple_Range() {
-		return (EReference)simpleEClass.getEStructuralFeatures().get(2);
+		return (EReference) simpleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -904,7 +901,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getSimple_Enumerations() {
-		return (EReference)simpleEClass.getEStructuralFeatures().get(3);
+		return (EReference) simpleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -914,7 +911,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getSimple_Kind() {
-		return (EReference)simpleEClass.getEStructuralFeatures().get(4);
+		return (EReference) simpleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -924,7 +921,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getSimple_Action() {
-		return (EReference)simpleEClass.getEStructuralFeatures().get(5);
+		return (EReference) simpleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -934,7 +931,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getSimple_Type() {
-		return (EAttribute)simpleEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) simpleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -945,7 +942,16 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getSimple_Complex() {
-		return (EAttribute)simpleEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) simpleEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSimple_Optional() {
+		return (EAttribute) simpleEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -965,7 +971,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getSimpleSequence_Values() {
-		return (EReference)simpleSequenceEClass.getEStructuralFeatures().get(0);
+		return (EReference) simpleSequenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -975,7 +981,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getSimpleSequence_Units() {
-		return (EAttribute)simpleSequenceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) simpleSequenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -985,7 +991,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getSimpleSequence_Range() {
-		return (EReference)simpleSequenceEClass.getEStructuralFeatures().get(2);
+		return (EReference) simpleSequenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -995,7 +1001,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getSimpleSequence_Kind() {
-		return (EReference)simpleSequenceEClass.getEStructuralFeatures().get(3);
+		return (EReference) simpleSequenceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1005,7 +1011,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getSimpleSequence_Action() {
-		return (EReference)simpleSequenceEClass.getEStructuralFeatures().get(4);
+		return (EReference) simpleSequenceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1015,7 +1021,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getSimpleSequence_Type() {
-		return (EAttribute)simpleSequenceEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) simpleSequenceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1026,7 +1032,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getSimpleSequence_Complex() {
-		return (EAttribute)simpleSequenceEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) simpleSequenceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1046,7 +1052,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getStruct_Simple() {
-		return (EReference)structEClass.getEStructuralFeatures().get(0);
+		return (EReference) structEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1056,7 +1062,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getStruct_ConfigurationKind() {
-		return (EReference)structEClass.getEStructuralFeatures().get(1);
+		return (EReference) structEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1076,7 +1082,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getStructSequence_Struct() {
-		return (EReference)structSequenceEClass.getEStructuralFeatures().get(0);
+		return (EReference) structSequenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1086,7 +1092,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getStructSequence_StructValue() {
-		return (EReference)structSequenceEClass.getEStructuralFeatures().get(1);
+		return (EReference) structSequenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1096,7 +1102,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getStructSequence_ConfigurationKind() {
-		return (EReference)structSequenceEClass.getEStructuralFeatures().get(2);
+		return (EReference) structSequenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1116,7 +1122,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getStructValue_SimpleRef() {
-		return (EReference)structValueEClass.getEStructuralFeatures().get(0);
+		return (EReference) structValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1126,7 +1132,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getStructValue_Struct() {
-		return (EReference)structValueEClass.getEStructuralFeatures().get(1);
+		return (EReference) structValueEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1136,7 +1142,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getStructValue_Index() {
-		return (EAttribute)structValueEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) structValueEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1156,7 +1162,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getTest_Description() {
-		return (EAttribute)testEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) testEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1166,7 +1172,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getTest_InputValue() {
-		return (EReference)testEClass.getEStructuralFeatures().get(1);
+		return (EReference) testEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1176,7 +1182,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getTest_ResultValue() {
-		return (EReference)testEClass.getEStructuralFeatures().get(2);
+		return (EReference) testEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1186,7 +1192,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getTest_Id() {
-		return (EAttribute)testEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) testEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1206,7 +1212,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getValues_Value() {
-		return (EAttribute)valuesEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) valuesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1236,7 +1242,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getAbstractPropertyRef_RefID() {
-		return (EAttribute)abstractPropertyRefEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) abstractPropertyRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1246,7 +1252,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getAbstractPropertyRef_Property() {
-		return (EReference)abstractPropertyRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) abstractPropertyRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1276,7 +1282,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getPropertyRefGroup_Properties() {
-		return (EAttribute)propertyRefGroupEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) propertyRefGroupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1286,7 +1292,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPropertyRefGroup_SimpleRef() {
-		return (EReference)propertyRefGroupEClass.getEStructuralFeatures().get(1);
+		return (EReference) propertyRefGroupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1296,7 +1302,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPropertyRefGroup_SimpleSequenceRef() {
-		return (EReference)propertyRefGroupEClass.getEStructuralFeatures().get(2);
+		return (EReference) propertyRefGroupEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1306,7 +1312,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPropertyRefGroup_StructRef() {
-		return (EReference)propertyRefGroupEClass.getEStructuralFeatures().get(3);
+		return (EReference) propertyRefGroupEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1316,7 +1322,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPropertyRefGroup_StructSequenceRef() {
-		return (EReference)propertyRefGroupEClass.getEStructuralFeatures().get(4);
+		return (EReference) propertyRefGroupEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1336,7 +1342,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getPropertyRefSet_Properties() {
-		return (EAttribute)propertyRefSetEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) propertyRefSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1346,7 +1352,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPropertyRefSet_SimpleRef() {
-		return (EReference)propertyRefSetEClass.getEStructuralFeatures().get(1);
+		return (EReference) propertyRefSetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1356,7 +1362,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPropertyRefSet_SimpleSequenceRef() {
-		return (EReference)propertyRefSetEClass.getEStructuralFeatures().get(2);
+		return (EReference) propertyRefSetEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1366,7 +1372,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPropertyRefSet_StructRef() {
-		return (EReference)propertyRefSetEClass.getEStructuralFeatures().get(3);
+		return (EReference) propertyRefSetEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1376,7 +1382,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getPropertyRefSet_StructSequenceRef() {
-		return (EReference)propertyRefSetEClass.getEStructuralFeatures().get(4);
+		return (EReference) propertyRefSetEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1396,7 +1402,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EAttribute getSimpleRef_Value() {
-		return (EAttribute)simpleRefEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) simpleRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1416,7 +1422,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getSimpleSequenceRef_Values() {
-		return (EReference)simpleSequenceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) simpleSequenceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1436,7 +1442,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getStructRef_SimpleRef() {
-		return (EReference)structRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) structRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1456,7 +1462,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getStructSequenceRef_StructValue() {
-		return (EReference)structSequenceRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) structSequenceRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1727,7 +1733,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public PrfFactory getPrfFactory() {
-		return (PrfFactory)getEFactoryInstance();
+		return (PrfFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -1745,7 +1751,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -1806,6 +1813,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		createEReference(simpleEClass, SIMPLE__ACTION);
 		createEAttribute(simpleEClass, SIMPLE__TYPE);
 		createEAttribute(simpleEClass, SIMPLE__COMPLEX);
+		createEAttribute(simpleEClass, SIMPLE__OPTIONAL);
 
 		simpleSequenceEClass = createEClass(SIMPLE_SEQUENCE);
 		createEReference(simpleSequenceEClass, SIMPLE_SEQUENCE__VALUES);
@@ -1918,7 +1926,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -1927,8 +1936,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter abstractPropertyRefEClass_P = addETypeParameter(abstractPropertyRefEClass, "P");
@@ -1971,91 +1980,142 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(abstractPropertyEClass, AbstractProperty.class, "AbstractProperty", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbstractProperty_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, AbstractProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractProperty_Id(), theXMLTypePackage.getToken(), "id", null, 1, 1, AbstractProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractProperty_LocalMode(), this.getAccessType(), "localMode", "readwrite", 0, 1, AbstractProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractProperty_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, AbstractProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractProperty_Mode(), this.getAccessType(), "mode", null, 0, 1, AbstractProperty.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractProperty_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, AbstractProperty.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractProperty_Id(), theXMLTypePackage.getToken(), "id", null, 1, 1, AbstractProperty.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractProperty_LocalMode(), this.getAccessType(), "localMode", "readwrite", 0, 1, AbstractProperty.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractProperty_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, AbstractProperty.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractProperty_Mode(), this.getAccessType(), "mode", null, 0, 1, AbstractProperty.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+			IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(abstractPropertyEClass, this.getAny(), "toAny", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAction_Type(), this.getActionType(), "type", "external", 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_Type(), this.getActionType(), "type", "external", 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(configurationKindEClass, ConfigurationKind.class, "ConfigurationKind", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConfigurationKind_Type(), this.getStructPropertyConfigurationType(), "type", "configure", 0, 1, ConfigurationKind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConfigurationKind_Type(), this.getStructPropertyConfigurationType(), "type", "configure", 0, 1, ConfigurationKind.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumerationEClass, Enumeration.class, "Enumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEnumeration_Label(), theXMLTypePackage.getString(), "label", null, 1, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEnumeration_Value(), theEcorePackage.getEString(), "value", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnumeration_Label(), theXMLTypePackage.getString(), "label", null, 1, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnumeration_Value(), theEcorePackage.getEString(), "value", null, 0, 1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumerationsEClass, Enumerations.class, "Enumerations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnumerations_Enumeration(), this.getEnumeration(), null, "enumeration", null, 1, -1, Enumerations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnumerations_Enumeration(), this.getEnumeration(), null, "enumeration", null, 1, -1, Enumerations.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inputValueEClass, InputValue.class, "InputValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInputValue_Simple(), this.getSimple(), null, "simple", null, 1, -1, InputValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInputValue_Simple(), this.getSimple(), null, "simple", null, 1, -1, InputValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(kindEClass, Kind.class, "Kind", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getKind_Type(), this.getPropertyConfigurationType(), "type", "configure", 0, 1, Kind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getKind_Type(), this.getPropertyConfigurationType(), "type", "configure", 0, 1, Kind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(prfDocumentRootEClass, PrfDocumentRoot.class, "PrfDocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPrfDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPrfDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPrfDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPrfDocumentRoot_Properties(), this.getProperties(), null, "properties", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPrfDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPrfDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPrfDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null,
+			IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPrfDocumentRoot_Properties(), this.getProperties(), null, "properties", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertiesEClass, Properties.class, "Properties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProperties_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProperties_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 0, -1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProperties_Simple(), this.getSimple(), null, "simple", null, 0, -1, Properties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getProperties_SimpleSequence(), this.getSimpleSequence(), null, "simpleSequence", null, 0, -1, Properties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getProperties_Test(), this.getTest(), null, "test", null, 0, -1, Properties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getProperties_Struct(), this.getStruct(), null, "struct", null, 0, -1, Properties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getProperties_StructSequence(), this.getStructSequence(), null, "structSequence", null, 0, -1, Properties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperties_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperties_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 0, -1, Properties.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperties_Simple(), this.getSimple(), null, "simple", null, 0, -1, Properties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getProperties_SimpleSequence(), this.getSimpleSequence(), null, "simpleSequence", null, 0, -1, Properties.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getProperties_Test(), this.getTest(), null, "test", null, 0, -1, Properties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getProperties_Struct(), this.getStruct(), null, "struct", null, 0, -1, Properties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getProperties_StructSequence(), this.getStructSequence(), null, "structSequence", null, 0, -1, Properties.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(rangeEClass, Range.class, "Range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRange_Max(), theEcorePackage.getEString(), "max", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRange_Min(), theEcorePackage.getEString(), "min", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRange_Max(), theEcorePackage.getEString(), "max", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRange_Min(), theEcorePackage.getEString(), "min", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resultValueEClass, ResultValue.class, "ResultValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getResultValue_Simple(), this.getSimple(), null, "simple", null, 1, -1, ResultValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResultValue_Simple(), this.getSimple(), null, "simple", null, 1, -1, ResultValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(simpleEClass, Simple.class, "Simple", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSimple_Value(), theXMLTypePackage.getString(), "value", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSimple_Units(), this.getUnit(), "units", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSimple_Range(), this.getRange(), null, "range", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSimple_Enumerations(), this.getEnumerations(), null, "enumerations", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSimple_Kind(), this.getKind(), null, "kind", null, 0, -1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSimple_Action(), this.getAction(), null, "action", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSimple_Type(), this.getPropertyValueType(), "type", null, 1, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSimple_Complex(), theEcorePackage.getEBooleanObject(), "complex", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimple_Value(), theXMLTypePackage.getString(), "value", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimple_Units(), this.getUnit(), "units", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+			!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimple_Range(), this.getRange(), null, "range", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+			!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimple_Enumerations(), this.getEnumerations(), null, "enumerations", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimple_Kind(), this.getKind(), null, "kind", null, 0, -1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+			!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimple_Action(), this.getAction(), null, "action", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimple_Type(), this.getPropertyValueType(), "type", null, 1, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimple_Complex(), theEcorePackage.getEBooleanObject(), "complex", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimple_Optional(), theEcorePackage.getEBooleanObject(), "optional", null, 0, 1, Simple.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(simpleEClass, theEcorePackage.getEBoolean(), "isComplex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(simpleSequenceEClass, SimpleSequence.class, "SimpleSequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSimpleSequence_Values(), this.getValues(), null, "values", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSimpleSequence_Units(), this.getUnit(), "units", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSimpleSequence_Range(), this.getRange(), null, "range", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSimpleSequence_Kind(), this.getKind(), null, "kind", null, 0, -1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSimpleSequence_Action(), this.getAction(), null, "action", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSimpleSequence_Type(), this.getPropertyValueType(), "type", null, 1, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSimpleSequence_Complex(), theEcorePackage.getEBooleanObject(), "complex", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimpleSequence_Values(), this.getValues(), null, "values", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimpleSequence_Units(), this.getUnit(), "units", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimpleSequence_Range(), this.getRange(), null, "range", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimpleSequence_Kind(), this.getKind(), null, "kind", null, 0, -1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimpleSequence_Action(), this.getAction(), null, "action", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimpleSequence_Type(), this.getPropertyValueType(), "type", null, 1, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimpleSequence_Complex(), theEcorePackage.getEBooleanObject(), "complex", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(simpleSequenceEClass, theEcorePackage.getEBoolean(), "isComplex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(structEClass, Struct.class, "Struct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStruct_Simple(), this.getSimple(), null, "simple", null, 1, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStruct_ConfigurationKind(), this.getConfigurationKind(), null, "configurationKind", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStruct_Simple(), this.getSimple(), null, "simple", null, 1, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStruct_ConfigurationKind(), this.getConfigurationKind(), null, "configurationKind", null, 0, -1, Struct.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structSequenceEClass, StructSequence.class, "StructSequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructSequence_Struct(), this.getStruct(), null, "struct", null, 1, 1, StructSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructSequence_StructValue(), this.getStructValue(), null, "structValue", null, 0, -1, StructSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructSequence_ConfigurationKind(), this.getConfigurationKind(), null, "configurationKind", null, 0, -1, StructSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructSequence_Struct(), this.getStruct(), null, "struct", null, 1, 1, StructSequence.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructSequence_StructValue(), this.getStructValue(), null, "structValue", null, 0, -1, StructSequence.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructSequence_ConfigurationKind(), this.getConfigurationKind(), null, "configurationKind", null, 0, -1, StructSequence.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structValueEClass, StructValue.class, "StructValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructValue_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 1, -1, StructValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructValue_Struct(), this.getStruct(), null, "struct", null, 0, 1, StructValue.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStructValue_Index(), theEcorePackage.getEInt(), "index", null, 0, 1, StructValue.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getStructValue_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 1, -1, StructValue.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructValue_Struct(), this.getStruct(), null, "struct", null, 0, 1, StructValue.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE,
+			!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStructValue_Index(), theEcorePackage.getEInt(), "index", null, 0, 1, StructValue.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(structValueEClass, this.getAny(), "toAny", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2063,13 +2123,18 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(testEClass, Test.class, "Test", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTest_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTest_InputValue(), this.getInputValue(), null, "inputValue", null, 0, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTest_ResultValue(), this.getResultValue(), null, "resultValue", null, 1, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTest_Id(), theXMLTypePackage.getString(), "id", null, 1, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTest_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTest_InputValue(), this.getInputValue(), null, "inputValue", null, 0, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTest_ResultValue(), this.getResultValue(), null, "resultValue", null, 1, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTest_Id(), theXMLTypePackage.getString(), "id", null, 1, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+			IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(valuesEClass, Values.class, "Values", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getValues_Value(), theXMLTypePackage.getString(), "value", null, 1, -1, Values.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getValues_Value(), theXMLTypePackage.getString(), "value", null, 1, -1, Values.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyContainerEClass, PropertyContainer.class, "PropertyContainer", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2077,9 +2142,11 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addEParameter(op, theEcorePackage.getEString(), "repID", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(abstractPropertyRefEClass, AbstractPropertyRef.class, "AbstractPropertyRef", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbstractPropertyRef_RefID(), ecorePackage.getEString(), "refID", null, 1, 1, AbstractPropertyRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractPropertyRef_RefID(), ecorePackage.getEString(), "refID", null, 1, 1, AbstractPropertyRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(abstractPropertyRefEClass_P);
-		initEReference(getAbstractPropertyRef_Property(), g1, null, "property", null, 0, 1, AbstractPropertyRef.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractPropertyRef_Property(), g1, null, "property", null, 0, 1, AbstractPropertyRef.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(abstractPropertyRefEClass, this.getAny(), "toAny", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2088,30 +2155,44 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addEOperation(propertyRefContainerEClass, this.getPropertyContainer(), "getPropertyContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(propertyRefGroupEClass, PropertyRefGroup.class, "PropertyRefGroup", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPropertyRefGroup_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 0, -1, PropertyRefGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyRefGroup_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 0, -1, PropertyRefGroup.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyRefGroup_SimpleSequenceRef(), this.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, -1, PropertyRefGroup.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyRefGroup_StructRef(), this.getStructRef(), null, "structRef", null, 0, -1, PropertyRefGroup.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyRefGroup_StructSequenceRef(), this.getStructSequenceRef(), null, "structSequenceRef", null, 0, -1, PropertyRefGroup.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyRefGroup_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 0, -1, PropertyRefGroup.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyRefGroup_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 0, -1, PropertyRefGroup.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyRefGroup_SimpleSequenceRef(), this.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, -1, PropertyRefGroup.class,
+			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyRefGroup_StructRef(), this.getStructRef(), null, "structRef", null, 0, -1, PropertyRefGroup.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyRefGroup_StructSequenceRef(), this.getStructSequenceRef(), null, "structSequenceRef", null, 0, -1, PropertyRefGroup.class,
+			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyRefSetEClass, PropertyRefSet.class, "PropertyRefSet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPropertyRefSet_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 0, 1, PropertyRefSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyRefSet_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 0, 1, PropertyRefSet.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyRefSet_SimpleSequenceRef(), this.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, 1, PropertyRefSet.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyRefSet_StructRef(), this.getStructRef(), null, "structRef", null, 0, 1, PropertyRefSet.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyRefSet_StructSequenceRef(), this.getStructSequenceRef(), null, "structSequenceRef", null, 0, 1, PropertyRefSet.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyRefSet_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 0, 1, PropertyRefSet.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyRefSet_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 0, 1, PropertyRefSet.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyRefSet_SimpleSequenceRef(), this.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, 1, PropertyRefSet.class,
+			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyRefSet_StructRef(), this.getStructRef(), null, "structRef", null, 0, 1, PropertyRefSet.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyRefSet_StructSequenceRef(), this.getStructSequenceRef(), null, "structSequenceRef", null, 0, 1, PropertyRefSet.class,
+			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(simpleRefEClass, SimpleRef.class, "SimpleRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSimpleRef_Value(), theXMLTypePackage.getString(), "value", null, 1, 1, SimpleRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimpleRef_Value(), theXMLTypePackage.getString(), "value", null, 1, 1, SimpleRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(simpleSequenceRefEClass, SimpleSequenceRef.class, "SimpleSequenceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSimpleSequenceRef_Values(), this.getValues(), null, "values", null, 1, 1, SimpleSequenceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimpleSequenceRef_Values(), this.getValues(), null, "values", null, 1, 1, SimpleSequenceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structRefEClass, StructRef.class, "StructRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructRef_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 1, -1, StructRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructRef_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 1, -1, StructRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structSequenceRefEClass, StructSequenceRef.class, "StructSequenceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructSequenceRef_StructValue(), this.getStructValue(), null, "structValue", null, 1, -1, StructSequenceRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructSequenceRef_StructValue(), this.getStructValue(), null, "structValue", null, 1, -1, StructSequenceRef.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(accessTypeEEnum, AccessType.class, "AccessType");
@@ -2165,9 +2246,11 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		initEDataType(actionTypeObjectEDataType, ActionType.class, "ActionTypeObject", IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(characterObjectEDataType, Character.class, "CharacterObject", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(dceUUIDEDataType, String.class, "DceUUID", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(propertyConfigurationTypeObjectEDataType, PropertyConfigurationType.class, "PropertyConfigurationTypeObject", IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(propertyConfigurationTypeObjectEDataType, PropertyConfigurationType.class, "PropertyConfigurationTypeObject", IS_SERIALIZABLE,
+			IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(propertyValueTypeObjectEDataType, PropertyValueType.class, "PropertyValueTypeObject", IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(structPropertyConfigurationTypeObjectEDataType, StructPropertyConfigurationType.class, "StructPropertyConfigurationTypeObject", IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(structPropertyConfigurationTypeObjectEDataType, StructPropertyConfigurationType.class, "StructPropertyConfigurationTypeObject",
+			IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unitEDataType, String.class, "Unit", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(anyEDataType, Any.class, "Any", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(complexBooleanEDataType, ComplexBoolean.class, "ComplexBoolean", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -2197,839 +2280,114 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
-		addAnnotation
-		  (abstractPropertyEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "abstractproperty",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getAbstractProperty_Description(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "description"
-		   });	
-		addAnnotation
-		  (getAbstractProperty_Id(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "id"
-		   });	
-		addAnnotation
-		  (getAbstractProperty_LocalMode(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "mode"
-		   });	
-		addAnnotation
-		  (getAbstractProperty_Name(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "name"
-		   });	
-		addAnnotation
-		  (accessTypeEEnum, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "AccessType"
-		   });	
-		addAnnotation
-		  (accessTypeObjectEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "AccessType:Object",
-			 "baseType", "AccessType"
-		   });	
-		addAnnotation
-		  (actionEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "action",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getAction_Type(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "type"
-		   });	
-		addAnnotation
-		  (actionTypeEEnum, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "ActionType"
-		   });	
-		addAnnotation
-		  (actionTypeObjectEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "ActionType:Object",
-			 "baseType", "ActionType"
-		   });	
-		addAnnotation
-		  (characterObjectEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "CharacterObject"
-		   });	
-		addAnnotation
-		  (configurationKindEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "configurationkind",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getConfigurationKind_Type(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "kindtype"
-		   });	
-		addAnnotation
-		  (dceUUIDEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "DceUUID",
-			 "baseType", "http://www.eclipse.org/emf/2003/XMLType#string",
-			 "pattern", "DCE:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}(:\\d+(.\\d+)?)?"
-		   });	
-		addAnnotation
-		  (enumerationEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "enumeration",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getEnumeration_Label(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "label"
-		   });	
-		addAnnotation
-		  (getEnumeration_Value(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "value"
-		   });	
-		addAnnotation
-		  (enumerationsEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "enumerations",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getEnumerations_Enumeration(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "enumeration"
-		   });	
-		addAnnotation
-		  (inputValueEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "inputvalue",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getInputValue_Simple(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simple"
-		   });	
-		addAnnotation
-		  (kindEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "kind",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getKind_Type(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "kindtype"
-		   });	
-		addAnnotation
-		  (prfDocumentRootEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "",
-			 "kind", "mixed"
-		   });	
-		addAnnotation
-		  (getPrfDocumentRoot_Mixed(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementWildcard",
-			 "name", ":mixed"
-		   });	
-		addAnnotation
-		  (getPrfDocumentRoot_XMLNSPrefixMap(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "xmlns:prefix"
-		   });	
-		addAnnotation
-		  (getPrfDocumentRoot_XSISchemaLocation(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "xsi:schemaLocation"
-		   });	
-		addAnnotation
-		  (getPrfDocumentRoot_Properties(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "properties",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (propertiesEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "properties",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getProperties_Description(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "description"
-		   });	
-		addAnnotation
-		  (getProperties_Properties(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "group",
-			 "name", "properties:1"
-		   });	
-		addAnnotation
-		  (getProperties_Simple(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simple",
-			 "group", "#properties:1"
-		   });	
-		addAnnotation
-		  (getProperties_SimpleSequence(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simplesequence",
-			 "group", "#properties:1"
-		   });	
-		addAnnotation
-		  (getProperties_Test(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "test",
-			 "group", "#properties:1"
-		   });	
-		addAnnotation
-		  (getProperties_Struct(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "struct",
-			 "group", "#properties:1"
-		   });	
-		addAnnotation
-		  (getProperties_StructSequence(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "structsequence",
-			 "group", "#properties:1"
-		   });	
-		addAnnotation
-		  (propertyConfigurationTypeEEnum, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "PropertyConfigurationType"
-		   });	
-		addAnnotation
-		  (propertyConfigurationTypeObjectEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "PropertyConfigurationType:Object",
-			 "baseType", "PropertyConfigurationType"
-		   });	
-		addAnnotation
-		  (propertyValueTypeEEnum, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "PropertyValueType"
-		   });	
-		addAnnotation
-		  (propertyValueTypeObjectEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "PropertyValueType:Object",
-			 "baseType", "PropertyValueType"
-		   });	
-		addAnnotation
-		  (rangeEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "range",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getRange_Max(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "max"
-		   });	
-		addAnnotation
-		  (getRange_Min(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "min"
-		   });	
-		addAnnotation
-		  (resultValueEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "resultvalue",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getResultValue_Simple(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simple"
-		   });	
-		addAnnotation
-		  (simpleEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "simple",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getSimple_Value(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "value"
-		   });	
-		addAnnotation
-		  (getSimple_Units(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "units"
-		   });	
-		addAnnotation
-		  (getSimple_Range(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "range"
-		   });	
-		addAnnotation
-		  (getSimple_Enumerations(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "enumerations"
-		   });	
-		addAnnotation
-		  (getSimple_Kind(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "kind"
-		   });	
-		addAnnotation
-		  (getSimple_Action(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "action"
-		   });	
-		addAnnotation
-		  (getSimple_Type(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "type"
-		   });	
-		addAnnotation
-		  (simpleSequenceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "simplesequence",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getSimpleSequence_Values(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "values"
-		   });	
-		addAnnotation
-		  (getSimpleSequence_Units(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "units"
-		   });	
-		addAnnotation
-		  (getSimpleSequence_Range(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "range"
-		   });	
-		addAnnotation
-		  (getSimpleSequence_Kind(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "kind"
-		   });	
-		addAnnotation
-		  (getSimpleSequence_Action(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "action"
-		   });	
-		addAnnotation
-		  (getSimpleSequence_Type(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "type"
-		   });	
-		addAnnotation
-		  (getSimpleSequence_Complex(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "complex"
-		   });		
-		addAnnotation
-		  (structEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "struct",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getStruct_Simple(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simple"
-		   });	
-		addAnnotation
-		  (getStruct_ConfigurationKind(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "configurationkind"
-		   });	
-		addAnnotation
-		  (structPropertyConfigurationTypeEEnum, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "StructPropertyConfigurationType"
-		   });	
-		addAnnotation
-		  (structPropertyConfigurationTypeObjectEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "StructPropertyConfigurationType:Object",
-			 "baseType", "StructPropertyConfigurationType"
-		   });	
-		addAnnotation
-		  (structSequenceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "structsequence",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getStructSequence_Struct(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "struct"
-		   });	
-		addAnnotation
-		  (getStructSequence_StructValue(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "structvalue"
-		   });	
-		addAnnotation
-		  (getStructSequence_ConfigurationKind(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "configurationkind"
-		   });	
-		addAnnotation
-		  (structValueEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "structvalue",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getStructValue_SimpleRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simpleref"
-		   });	
-		addAnnotation
-		  (testEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "test",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getTest_Description(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "description"
-		   });	
-		addAnnotation
-		  (getTest_InputValue(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "inputvalue"
-		   });	
-		addAnnotation
-		  (getTest_ResultValue(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "resultvalue"
-		   });	
-		addAnnotation
-		  (getTest_Id(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "id"
-		   });	
-		addAnnotation
-		  (unitEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "Unit",
-			 "baseType", "http://www.eclipse.org/emf/2003/XMLType#string"
-		   });	
-		addAnnotation
-		  (valuesEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "values",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getValues_Value(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "value"
-		   });	
-		addAnnotation
-		  (abstractPropertyRefEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "propertyref",
-			 "qualified", "false"
-		   });	
-		addAnnotation
-		  (getAbstractPropertyRef_RefID(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "refid"
-		   });	
-		addAnnotation
-		  (propertyRefGroupEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "propertyrefgroup",
-			 "qualified", "false"
-		   });	
-		addAnnotation
-		  (getPropertyRefGroup_Properties(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "group",
-			 "name", "properties:0"
-		   });	
-		addAnnotation
-		  (getPropertyRefGroup_SimpleRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simpleref",
-			 "group", "#properties:0"
-		   });	
-		addAnnotation
-		  (getPropertyRefGroup_SimpleSequenceRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simplesequenceref",
-			 "group", "#properties:0"
-		   });	
-		addAnnotation
-		  (getPropertyRefGroup_StructRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "structref",
-			 "group", "#properties:0"
-		   });	
-		addAnnotation
-		  (getPropertyRefGroup_StructSequenceRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "structsequenceref",
-			 "group", "#properties:0"
-		   });	
-		addAnnotation
-		  (propertyRefSetEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "propertyrefset",
-			 "qualified", "false"
-		   });	
-		addAnnotation
-		  (getPropertyRefSet_Properties(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "group",
-			 "name", "properties:0"
-		   });	
-		addAnnotation
-		  (getPropertyRefSet_SimpleRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simpleref",
-			 "group", "#properties:0"
-		   });	
-		addAnnotation
-		  (getPropertyRefSet_SimpleSequenceRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simplesequenceref",
-			 "group", "#properties:0"
-		   });	
-		addAnnotation
-		  (getPropertyRefSet_StructRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "structref",
-			 "group", "#properties:0"
-		   });	
-		addAnnotation
-		  (getPropertyRefSet_StructSequenceRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "structsequenceref",
-			 "group", "#properties:0"
-		   });	
-		addAnnotation
-		  (simpleRefEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "simpleref",
-			 "kind", "empty",
-			 "qualified", "false"
-		   });	
-		addAnnotation
-		  (getSimpleRef_Value(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "value"
-		   });	
-		addAnnotation
-		  (simpleSequenceRefEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "simplesequenceref",
-			 "qualified", "false"
-		   });	
-		addAnnotation
-		  (structRefEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "structref",
-			 "qualified", "false"
-		   });	
-		addAnnotation
-		  (getStructRef_SimpleRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "simpleref"
-		   });	
-		addAnnotation
-		  (structSequenceRefEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementOnly",
-			 "name", "structsequenceref",
-			 "qualified", "false"
-		   });	
-		addAnnotation
-		  (getStructSequenceRef_StructValue(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "structvalue"
-		   });
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation(abstractPropertyEClass, source, new String[] { "name", "abstractproperty", "kind", "elementOnly" });
+		addAnnotation(getAbstractProperty_Description(), source, new String[] { "kind", "element", "name", "description" });
+		addAnnotation(getAbstractProperty_Id(), source, new String[] { "kind", "attribute", "name", "id" });
+		addAnnotation(getAbstractProperty_LocalMode(), source, new String[] { "kind", "attribute", "name", "mode" });
+		addAnnotation(getAbstractProperty_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(accessTypeEEnum, source, new String[] { "name", "AccessType" });
+		addAnnotation(accessTypeObjectEDataType, source, new String[] { "name", "AccessType:Object", "baseType", "AccessType" });
+		addAnnotation(actionEClass, source, new String[] { "name", "action", "kind", "empty" });
+		addAnnotation(getAction_Type(), source, new String[] { "kind", "attribute", "name", "type" });
+		addAnnotation(actionTypeEEnum, source, new String[] { "name", "ActionType" });
+		addAnnotation(actionTypeObjectEDataType, source, new String[] { "name", "ActionType:Object", "baseType", "ActionType" });
+		addAnnotation(characterObjectEDataType, source, new String[] { "name", "CharacterObject" });
+		addAnnotation(configurationKindEClass, source, new String[] { "name", "configurationkind", "kind", "empty" });
+		addAnnotation(getConfigurationKind_Type(), source, new String[] { "kind", "attribute", "name", "kindtype" });
+		addAnnotation(dceUUIDEDataType, source, new String[] { "name", "DceUUID", "baseType", "http://www.eclipse.org/emf/2003/XMLType#string", "pattern",
+			"DCE:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}(:\\d+(.\\d+)?)?" });
+		addAnnotation(enumerationEClass, source, new String[] { "name", "enumeration", "kind", "empty" });
+		addAnnotation(getEnumeration_Label(), source, new String[] { "kind", "attribute", "name", "label" });
+		addAnnotation(getEnumeration_Value(), source, new String[] { "kind", "attribute", "name", "value" });
+		addAnnotation(enumerationsEClass, source, new String[] { "name", "enumerations", "kind", "elementOnly" });
+		addAnnotation(getEnumerations_Enumeration(), source, new String[] { "kind", "element", "name", "enumeration" });
+		addAnnotation(inputValueEClass, source, new String[] { "name", "inputvalue", "kind", "elementOnly" });
+		addAnnotation(getInputValue_Simple(), source, new String[] { "kind", "element", "name", "simple" });
+		addAnnotation(kindEClass, source, new String[] { "name", "kind", "kind", "empty" });
+		addAnnotation(getKind_Type(), source, new String[] { "kind", "attribute", "name", "kindtype" });
+		addAnnotation(prfDocumentRootEClass, source, new String[] { "name", "", "kind", "mixed" });
+		addAnnotation(getPrfDocumentRoot_Mixed(), source, new String[] { "kind", "elementWildcard", "name", ":mixed" });
+		addAnnotation(getPrfDocumentRoot_XMLNSPrefixMap(), source, new String[] { "kind", "attribute", "name", "xmlns:prefix" });
+		addAnnotation(getPrfDocumentRoot_XSISchemaLocation(), source, new String[] { "kind", "attribute", "name", "xsi:schemaLocation" });
+		addAnnotation(getPrfDocumentRoot_Properties(), source, new String[] { "kind", "element", "name", "properties", "namespace", "##targetNamespace" });
+		addAnnotation(propertiesEClass, source, new String[] { "name", "properties", "kind", "elementOnly" });
+		addAnnotation(getProperties_Description(), source, new String[] { "kind", "element", "name", "description" });
+		addAnnotation(getProperties_Properties(), source, new String[] { "kind", "group", "name", "properties:1" });
+		addAnnotation(getProperties_Simple(), source, new String[] { "kind", "element", "name", "simple", "group", "#properties:1" });
+		addAnnotation(getProperties_SimpleSequence(), source, new String[] { "kind", "element", "name", "simplesequence", "group", "#properties:1" });
+		addAnnotation(getProperties_Test(), source, new String[] { "kind", "element", "name", "test", "group", "#properties:1" });
+		addAnnotation(getProperties_Struct(), source, new String[] { "kind", "element", "name", "struct", "group", "#properties:1" });
+		addAnnotation(getProperties_StructSequence(), source, new String[] { "kind", "element", "name", "structsequence", "group", "#properties:1" });
+		addAnnotation(propertyConfigurationTypeEEnum, source, new String[] { "name", "PropertyConfigurationType" });
+		addAnnotation(propertyConfigurationTypeObjectEDataType, source, new String[] { "name", "PropertyConfigurationType:Object", "baseType",
+			"PropertyConfigurationType" });
+		addAnnotation(propertyValueTypeEEnum, source, new String[] { "name", "PropertyValueType" });
+		addAnnotation(propertyValueTypeObjectEDataType, source, new String[] { "name", "PropertyValueType:Object", "baseType", "PropertyValueType" });
+		addAnnotation(rangeEClass, source, new String[] { "name", "range", "kind", "empty" });
+		addAnnotation(getRange_Max(), source, new String[] { "kind", "attribute", "name", "max" });
+		addAnnotation(getRange_Min(), source, new String[] { "kind", "attribute", "name", "min" });
+		addAnnotation(resultValueEClass, source, new String[] { "name", "resultvalue", "kind", "elementOnly" });
+		addAnnotation(getResultValue_Simple(), source, new String[] { "kind", "element", "name", "simple" });
+		addAnnotation(simpleEClass, source, new String[] { "name", "simple", "kind", "elementOnly" });
+		addAnnotation(getSimple_Value(), source, new String[] { "kind", "element", "name", "value" });
+		addAnnotation(getSimple_Units(), source, new String[] { "kind", "element", "name", "units" });
+		addAnnotation(getSimple_Range(), source, new String[] { "kind", "element", "name", "range" });
+		addAnnotation(getSimple_Enumerations(), source, new String[] { "kind", "element", "name", "enumerations" });
+		addAnnotation(getSimple_Kind(), source, new String[] { "kind", "element", "name", "kind" });
+		addAnnotation(getSimple_Action(), source, new String[] { "kind", "element", "name", "action" });
+		addAnnotation(getSimple_Type(), source, new String[] { "kind", "attribute", "name", "type" });
+		addAnnotation(simpleSequenceEClass, source, new String[] { "name", "simplesequence", "kind", "elementOnly" });
+		addAnnotation(getSimpleSequence_Values(), source, new String[] { "kind", "element", "name", "values" });
+		addAnnotation(getSimpleSequence_Units(), source, new String[] { "kind", "element", "name", "units" });
+		addAnnotation(getSimpleSequence_Range(), source, new String[] { "kind", "element", "name", "range" });
+		addAnnotation(getSimpleSequence_Kind(), source, new String[] { "kind", "element", "name", "kind" });
+		addAnnotation(getSimpleSequence_Action(), source, new String[] { "kind", "element", "name", "action" });
+		addAnnotation(getSimpleSequence_Type(), source, new String[] { "kind", "attribute", "name", "type" });
+		addAnnotation(getSimpleSequence_Complex(), source, new String[] { "kind", "attribute", "name", "complex" });
+		addAnnotation(structEClass, source, new String[] { "name", "struct", "kind", "elementOnly" });
+		addAnnotation(getStruct_Simple(), source, new String[] { "kind", "element", "name", "simple" });
+		addAnnotation(getStruct_ConfigurationKind(), source, new String[] { "kind", "element", "name", "configurationkind" });
+		addAnnotation(structPropertyConfigurationTypeEEnum, source, new String[] { "name", "StructPropertyConfigurationType" });
+		addAnnotation(structPropertyConfigurationTypeObjectEDataType, source, new String[] { "name", "StructPropertyConfigurationType:Object", "baseType",
+			"StructPropertyConfigurationType" });
+		addAnnotation(structSequenceEClass, source, new String[] { "name", "structsequence", "kind", "elementOnly" });
+		addAnnotation(getStructSequence_Struct(), source, new String[] { "kind", "element", "name", "struct" });
+		addAnnotation(getStructSequence_StructValue(), source, new String[] { "kind", "element", "name", "structvalue" });
+		addAnnotation(getStructSequence_ConfigurationKind(), source, new String[] { "kind", "element", "name", "configurationkind" });
+		addAnnotation(structValueEClass, source, new String[] { "name", "structvalue", "kind", "elementOnly" });
+		addAnnotation(getStructValue_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref" });
+		addAnnotation(testEClass, source, new String[] { "name", "test", "kind", "elementOnly" });
+		addAnnotation(getTest_Description(), source, new String[] { "kind", "element", "name", "description" });
+		addAnnotation(getTest_InputValue(), source, new String[] { "kind", "element", "name", "inputvalue" });
+		addAnnotation(getTest_ResultValue(), source, new String[] { "kind", "element", "name", "resultvalue" });
+		addAnnotation(getTest_Id(), source, new String[] { "kind", "attribute", "name", "id" });
+		addAnnotation(unitEDataType, source, new String[] { "name", "Unit", "baseType", "http://www.eclipse.org/emf/2003/XMLType#string" });
+		addAnnotation(valuesEClass, source, new String[] { "name", "values", "kind", "elementOnly" });
+		addAnnotation(getValues_Value(), source, new String[] { "kind", "element", "name", "value" });
+		addAnnotation(abstractPropertyRefEClass, source, new String[] { "kind", "elementOnly", "name", "propertyref", "qualified", "false" });
+		addAnnotation(getAbstractPropertyRef_RefID(), source, new String[] { "kind", "attribute", "name", "refid" });
+		addAnnotation(propertyRefGroupEClass, source, new String[] { "kind", "elementOnly", "name", "propertyrefgroup", "qualified", "false" });
+		addAnnotation(getPropertyRefGroup_Properties(), source, new String[] { "kind", "group", "name", "properties:0" });
+		addAnnotation(getPropertyRefGroup_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref", "group", "#properties:0" });
+		addAnnotation(getPropertyRefGroup_SimpleSequenceRef(), source,
+			new String[] { "kind", "element", "name", "simplesequenceref", "group", "#properties:0" });
+		addAnnotation(getPropertyRefGroup_StructRef(), source, new String[] { "kind", "element", "name", "structref", "group", "#properties:0" });
+		addAnnotation(getPropertyRefGroup_StructSequenceRef(), source,
+			new String[] { "kind", "element", "name", "structsequenceref", "group", "#properties:0" });
+		addAnnotation(propertyRefSetEClass, source, new String[] { "kind", "elementOnly", "name", "propertyrefset", "qualified", "false" });
+		addAnnotation(getPropertyRefSet_Properties(), source, new String[] { "kind", "group", "name", "properties:0" });
+		addAnnotation(getPropertyRefSet_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref", "group", "#properties:0" });
+		addAnnotation(getPropertyRefSet_SimpleSequenceRef(), source, new String[] { "kind", "element", "name", "simplesequenceref", "group", "#properties:0" });
+		addAnnotation(getPropertyRefSet_StructRef(), source, new String[] { "kind", "element", "name", "structref", "group", "#properties:0" });
+		addAnnotation(getPropertyRefSet_StructSequenceRef(), source, new String[] { "kind", "element", "name", "structsequenceref", "group", "#properties:0" });
+		addAnnotation(simpleRefEClass, source, new String[] { "name", "simpleref", "kind", "empty", "qualified", "false" });
+		addAnnotation(getSimpleRef_Value(), source, new String[] { "kind", "attribute", "name", "value" });
+		addAnnotation(simpleSequenceRefEClass, source, new String[] { "kind", "elementOnly", "name", "simplesequenceref", "qualified", "false" });
+		addAnnotation(structRefEClass, source, new String[] { "kind", "elementOnly", "name", "structref", "qualified", "false" });
+		addAnnotation(getStructRef_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref" });
+		addAnnotation(structSequenceRefEClass, source, new String[] { "kind", "elementOnly", "name", "structsequenceref", "qualified", "false" });
+		addAnnotation(getStructSequenceRef_StructValue(), source, new String[] { "kind", "element", "name", "structvalue" });
 	}
 
 } //PrfPackageImpl

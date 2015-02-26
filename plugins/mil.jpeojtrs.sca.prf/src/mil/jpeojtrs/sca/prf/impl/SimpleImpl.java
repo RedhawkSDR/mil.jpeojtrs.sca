@@ -52,6 +52,7 @@ import org.omg.CORBA.Any;
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getAction <em>Action</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getComplex <em>Complex</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getOptional <em>Optional</em>}</li>
  * </ul>
  * </p>
  *
@@ -179,6 +180,25 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	protected Boolean complex = COMPLEX_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getOptional() <em>Optional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOptional()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean OPTIONAL_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getOptional() <em>Optional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOptional()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean optional = OPTIONAL_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -261,10 +281,12 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	public NotificationChain basicSetRange(Range newRange, NotificationChain msgs) {
 		Range oldRange = range;
 		range = newRange;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__RANGE, oldRange, newRange);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -276,17 +298,16 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	@Override
 	public void setRange(Range newRange) {
-		if (newRange != range)
-		{
+		if (newRange != range) {
 			NotificationChain msgs = null;
 			if (range != null)
-				msgs = ((InternalEObject)range).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__RANGE, null, msgs);
+				msgs = ((InternalEObject) range).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__RANGE, null, msgs);
 			if (newRange != null)
-				msgs = ((InternalEObject)newRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__RANGE, null, msgs);
+				msgs = ((InternalEObject) newRange).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__RANGE, null, msgs);
 			msgs = basicSetRange(newRange, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__RANGE, newRange, newRange));
 	}
 
@@ -308,10 +329,12 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	public NotificationChain basicSetEnumerations(Enumerations newEnumerations, NotificationChain msgs) {
 		Enumerations oldEnumerations = enumerations;
 		enumerations = newEnumerations;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ENUMERATIONS, oldEnumerations, newEnumerations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -323,17 +346,16 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	@Override
 	public void setEnumerations(Enumerations newEnumerations) {
-		if (newEnumerations != enumerations)
-		{
+		if (newEnumerations != enumerations) {
 			NotificationChain msgs = null;
 			if (enumerations != null)
-				msgs = ((InternalEObject)enumerations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ENUMERATIONS, null, msgs);
+				msgs = ((InternalEObject) enumerations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ENUMERATIONS, null, msgs);
 			if (newEnumerations != null)
-				msgs = ((InternalEObject)newEnumerations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ENUMERATIONS, null, msgs);
+				msgs = ((InternalEObject) newEnumerations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ENUMERATIONS, null, msgs);
 			msgs = basicSetEnumerations(newEnumerations, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ENUMERATIONS, newEnumerations, newEnumerations));
 	}
 
@@ -344,8 +366,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	@Override
 	public EList<Kind> getKind() {
-		if (kind == null)
-		{
+		if (kind == null) {
 			kind = new EObjectContainmentEList<Kind>(Kind.class, this, PrfPackage.SIMPLE__KIND);
 		}
 		return kind;
@@ -369,10 +390,12 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	public NotificationChain basicSetAction(Action newAction, NotificationChain msgs) {
 		Action oldAction = action;
 		action = newAction;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ACTION, oldAction, newAction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -384,17 +407,16 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	@Override
 	public void setAction(Action newAction) {
-		if (newAction != action)
-		{
+		if (newAction != action) {
 			NotificationChain msgs = null;
 			if (action != null)
-				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ACTION, null, msgs);
+				msgs = ((InternalEObject) action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ACTION, null, msgs);
 			if (newAction != null)
-				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ACTION, null, msgs);
+				msgs = ((InternalEObject) newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE__ACTION, null, msgs);
 			msgs = basicSetAction(newAction, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__ACTION, newAction, newAction));
 	}
 
@@ -475,6 +497,27 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Boolean getOptional() {
+		return optional;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOptional(Boolean newOptional) {
+		Boolean oldOptional = optional;
+		optional = newOptional;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__OPTIONAL, oldOptional, optional));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -491,16 +534,15 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.SIMPLE__RANGE:
-				return basicSetRange(null, msgs);
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-				return basicSetEnumerations(null, msgs);
-			case PrfPackage.SIMPLE__KIND:
-				return ((InternalEList<?>)getKind()).basicRemove(otherEnd, msgs);
-			case PrfPackage.SIMPLE__ACTION:
-				return basicSetAction(null, msgs);
+		switch (featureID) {
+		case PrfPackage.SIMPLE__RANGE:
+			return basicSetRange(null, msgs);
+		case PrfPackage.SIMPLE__ENUMERATIONS:
+			return basicSetEnumerations(null, msgs);
+		case PrfPackage.SIMPLE__KIND:
+			return ((InternalEList< ? >) getKind()).basicRemove(otherEnd, msgs);
+		case PrfPackage.SIMPLE__ACTION:
+			return basicSetAction(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -512,24 +554,25 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.SIMPLE__VALUE:
-				return getValue();
-			case PrfPackage.SIMPLE__UNITS:
-				return getUnits();
-			case PrfPackage.SIMPLE__RANGE:
-				return getRange();
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-				return getEnumerations();
-			case PrfPackage.SIMPLE__KIND:
-				return getKind();
-			case PrfPackage.SIMPLE__ACTION:
-				return getAction();
-			case PrfPackage.SIMPLE__TYPE:
-				return getType();
-			case PrfPackage.SIMPLE__COMPLEX:
-				return getComplex();
+		switch (featureID) {
+		case PrfPackage.SIMPLE__VALUE:
+			return getValue();
+		case PrfPackage.SIMPLE__UNITS:
+			return getUnits();
+		case PrfPackage.SIMPLE__RANGE:
+			return getRange();
+		case PrfPackage.SIMPLE__ENUMERATIONS:
+			return getEnumerations();
+		case PrfPackage.SIMPLE__KIND:
+			return getKind();
+		case PrfPackage.SIMPLE__ACTION:
+			return getAction();
+		case PrfPackage.SIMPLE__TYPE:
+			return getType();
+		case PrfPackage.SIMPLE__COMPLEX:
+			return getComplex();
+		case PrfPackage.SIMPLE__OPTIONAL:
+			return getOptional();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -542,33 +585,35 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.SIMPLE__VALUE:
-				setValue((String)newValue);
-				return;
-			case PrfPackage.SIMPLE__UNITS:
-				setUnits((String)newValue);
-				return;
-			case PrfPackage.SIMPLE__RANGE:
-				setRange((Range)newValue);
-				return;
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-				setEnumerations((Enumerations)newValue);
-				return;
-			case PrfPackage.SIMPLE__KIND:
-				getKind().clear();
-				getKind().addAll((Collection<? extends Kind>)newValue);
-				return;
-			case PrfPackage.SIMPLE__ACTION:
-				setAction((Action)newValue);
-				return;
-			case PrfPackage.SIMPLE__TYPE:
-				setType((PropertyValueType)newValue);
-				return;
-			case PrfPackage.SIMPLE__COMPLEX:
-				setComplex((Boolean)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.SIMPLE__VALUE:
+			setValue((String) newValue);
+			return;
+		case PrfPackage.SIMPLE__UNITS:
+			setUnits((String) newValue);
+			return;
+		case PrfPackage.SIMPLE__RANGE:
+			setRange((Range) newValue);
+			return;
+		case PrfPackage.SIMPLE__ENUMERATIONS:
+			setEnumerations((Enumerations) newValue);
+			return;
+		case PrfPackage.SIMPLE__KIND:
+			getKind().clear();
+			getKind().addAll((Collection< ? extends Kind>) newValue);
+			return;
+		case PrfPackage.SIMPLE__ACTION:
+			setAction((Action) newValue);
+			return;
+		case PrfPackage.SIMPLE__TYPE:
+			setType((PropertyValueType) newValue);
+			return;
+		case PrfPackage.SIMPLE__COMPLEX:
+			setComplex((Boolean) newValue);
+			return;
+		case PrfPackage.SIMPLE__OPTIONAL:
+			setOptional((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -580,32 +625,34 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.SIMPLE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
-			case PrfPackage.SIMPLE__UNITS:
-				setUnits(UNITS_EDEFAULT);
-				return;
-			case PrfPackage.SIMPLE__RANGE:
-				setRange((Range)null);
-				return;
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-				setEnumerations((Enumerations)null);
-				return;
-			case PrfPackage.SIMPLE__KIND:
-				getKind().clear();
-				return;
-			case PrfPackage.SIMPLE__ACTION:
-				setAction((Action)null);
-				return;
-			case PrfPackage.SIMPLE__TYPE:
-				unsetType();
-				return;
-			case PrfPackage.SIMPLE__COMPLEX:
-				setComplex(COMPLEX_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PrfPackage.SIMPLE__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
+		case PrfPackage.SIMPLE__UNITS:
+			setUnits(UNITS_EDEFAULT);
+			return;
+		case PrfPackage.SIMPLE__RANGE:
+			setRange((Range) null);
+			return;
+		case PrfPackage.SIMPLE__ENUMERATIONS:
+			setEnumerations((Enumerations) null);
+			return;
+		case PrfPackage.SIMPLE__KIND:
+			getKind().clear();
+			return;
+		case PrfPackage.SIMPLE__ACTION:
+			setAction((Action) null);
+			return;
+		case PrfPackage.SIMPLE__TYPE:
+			unsetType();
+			return;
+		case PrfPackage.SIMPLE__COMPLEX:
+			setComplex(COMPLEX_EDEFAULT);
+			return;
+		case PrfPackage.SIMPLE__OPTIONAL:
+			setOptional(OPTIONAL_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -617,24 +664,25 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.SIMPLE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-			case PrfPackage.SIMPLE__UNITS:
-				return UNITS_EDEFAULT == null ? units != null : !UNITS_EDEFAULT.equals(units);
-			case PrfPackage.SIMPLE__RANGE:
-				return range != null;
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-				return enumerations != null;
-			case PrfPackage.SIMPLE__KIND:
-				return kind != null && !kind.isEmpty();
-			case PrfPackage.SIMPLE__ACTION:
-				return action != null;
-			case PrfPackage.SIMPLE__TYPE:
-				return isSetType();
-			case PrfPackage.SIMPLE__COMPLEX:
-				return COMPLEX_EDEFAULT == null ? complex != null : !COMPLEX_EDEFAULT.equals(complex);
+		switch (featureID) {
+		case PrfPackage.SIMPLE__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		case PrfPackage.SIMPLE__UNITS:
+			return UNITS_EDEFAULT == null ? units != null : !UNITS_EDEFAULT.equals(units);
+		case PrfPackage.SIMPLE__RANGE:
+			return range != null;
+		case PrfPackage.SIMPLE__ENUMERATIONS:
+			return enumerations != null;
+		case PrfPackage.SIMPLE__KIND:
+			return kind != null && !kind.isEmpty();
+		case PrfPackage.SIMPLE__ACTION:
+			return action != null;
+		case PrfPackage.SIMPLE__TYPE:
+			return isSetType();
+		case PrfPackage.SIMPLE__COMPLEX:
+			return COMPLEX_EDEFAULT == null ? complex != null : !COMPLEX_EDEFAULT.equals(complex);
+		case PrfPackage.SIMPLE__OPTIONAL:
+			return OPTIONAL_EDEFAULT == null ? optional != null : !OPTIONAL_EDEFAULT.equals(optional);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -646,7 +694,8 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
@@ -654,15 +703,20 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 		result.append(", units: ");
 		result.append(units);
 		result.append(", type: ");
-		if (typeESet) result.append(type); else result.append("<unset>");
+		if (typeESet)
+			result.append(type);
+		else
+			result.append("<unset>");
 		result.append(", complex: ");
 		result.append(complex);
+		result.append(", optional: ");
+		result.append(optional);
 		result.append(')');
 		return result.toString();
 	}
 
 	@Override
-	public boolean isKind(PropertyConfigurationType ... type) {
+	public boolean isKind(PropertyConfigurationType... type) {
 		// END GENERATED CODE
 		if (type == null) {
 			return false;

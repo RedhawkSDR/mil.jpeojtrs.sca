@@ -156,6 +156,8 @@
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Simple/action"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/complex"/>
+      <genFeatures createChild="false" propertyCategory="" propertyDescription=""
+          ecoreFeature="ecore:EAttribute prf.ecore#//Simple/optional"/>
       <genOperations ecoreOperation="prf.ecore#//Simple/isComplex"/>
     </genClasses>
     <genClasses provider="Stateful" ecoreClass="prf.ecore#//SimpleSequence">
