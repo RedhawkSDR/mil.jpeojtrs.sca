@@ -47,8 +47,8 @@ with this program.  If not, see http://www.gnu.org/licenses/.
              )                 #REQUIRED
     name     CDATA             #IMPLIED
     complex  ( false | true )  "false"
-    mode     ( readonly | readwrite | writeonly ) "readwrite"
-    optional ( false | true )  #IMPLIED>
+    optional ( false | true )  "false"
+    mode     ( readonly | readwrite | writeonly ) "readwrite">
 
 <!ELEMENT description (#PCDATA)>
 
