@@ -45,6 +45,12 @@ values used by a CF Resource component’s configure(), query(), and runTest() o
       <xs:enumeration value="true"/>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="IsOptional">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="false"/>
+      <xs:enumeration value="true"/>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="AccessType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="writeonly"/>
@@ -185,6 +191,7 @@ defined.</xs:documentation></xs:annotation></xs:element>
     <xs:attribute default="readwrite" name="mode" type="AccessType"/>
     <xs:attribute name="name" type="xs:string"/>
     <xs:attribute default="false" name="complex" type="IsComplex"/>
+    <xs:attribute default="false" name="optional" type="IsOptional"/>
     <xs:attribute name="type" type="PropertyValueType" use="required"/>
   </xs:complexType>
   <xs:complexType name="simpleRef">
