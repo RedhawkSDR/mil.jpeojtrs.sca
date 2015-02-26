@@ -244,6 +244,6 @@ public interface AbstractProperty extends EObject {
 	 * @param types
 	 * @return True if any of the given types is in this property
 	 */
-	boolean isKind(PropertyConfigurationType ... types);
+	boolean isKind(PropertyConfigurationType... types);
 
 } // AbstractProperty

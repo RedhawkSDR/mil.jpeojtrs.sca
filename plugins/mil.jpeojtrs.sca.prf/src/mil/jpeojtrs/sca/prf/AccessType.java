@@ -35,7 +35,8 @@ public enum AccessType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WRITEONLY(0, "writeonly", "writeonly"), /**
+	WRITEONLY(0, "writeonly", "writeonly"),
+	/**
 	 * The '<em><b>Readonly</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,7 +44,8 @@ public enum AccessType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	READONLY(1, "readonly", "readonly"), /**
+	READONLY(1, "readonly", "readonly"),
+	/**
 	 * The '<em><b>Readwrite</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -53,7 +55,7 @@ public enum AccessType implements Enumerator {
 	 */
 	READWRITE(2, "readwrite", "readwrite");
 
-/**
+	/**
 	 * The '<em><b>Writeonly</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -67,7 +69,7 @@ public enum AccessType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int WRITEONLY_VALUE = 0;
-/**
+	/**
 	 * The '<em><b>Readonly</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -81,7 +83,7 @@ public enum AccessType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int READONLY_VALUE = 1;
-/**
+	/**
 	 * The '<em><b>Readwrite</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -95,20 +97,14 @@ public enum AccessType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int READWRITE_VALUE = 2;
-/**
+	/**
 	 * An array of all the '<em><b>Access Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final AccessType[] VALUES_ARRAY =
-		new AccessType[]
-		{
-			WRITEONLY,
-			READONLY,
-			READWRITE,
-		};
-/**
+	private static final AccessType[] VALUES_ARRAY = new AccessType[] { WRITEONLY, READONLY, READWRITE, };
+	/**
 	 * A public read-only list of all the '<em><b>Access Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,78 +112,76 @@ public enum AccessType implements Enumerator {
 	 */
 	public static final List<AccessType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
-/**
+	/**
 	 * Returns the '<em><b>Access Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static AccessType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			AccessType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal))
-			{
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Access Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static AccessType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			AccessType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name))
-			{
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Access Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static AccessType get(int value) {
-		switch (value)
-		{
-			case WRITEONLY_VALUE: return WRITEONLY;
-			case READONLY_VALUE: return READONLY;
-			case READWRITE_VALUE: return READWRITE;
+		switch (value) {
+		case WRITEONLY_VALUE:
+			return WRITEONLY;
+		case READONLY_VALUE:
+			return READONLY;
+		case READWRITE_VALUE:
+			return READWRITE;
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final int value;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String name;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String literal;
 
-/**
+	/**
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,37 +193,37 @@ public enum AccessType implements Enumerator {
 		this.literal = literal;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
-/**
+	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

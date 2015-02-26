@@ -100,8 +100,7 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public FeatureMap getMixed() {
-		if (mixed == null)
-		{
+		if (mixed == null) {
 			mixed = new BasicFeatureMap(this, PrfPackage.PRF_DOCUMENT_ROOT__MIXED);
 		}
 		return mixed;
@@ -114,9 +113,9 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
-		if (xMLNSPrefixMap == null)
-		{
-			xMLNSPrefixMap = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+		if (xMLNSPrefixMap == null) {
+			xMLNSPrefixMap = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
 		}
 		return xMLNSPrefixMap;
 	}
@@ -128,9 +127,9 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public EMap<String, String> getXSISchemaLocation() {
-		if (xSISchemaLocation == null)
-		{
-			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+		if (xSISchemaLocation == null) {
+			xSISchemaLocation = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
 	}
@@ -142,7 +141,7 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public Properties getProperties() {
-		return (Properties)getMixed().get(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, true);
+		return (Properties) getMixed().get(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, true);
 	}
 
 	/**
@@ -151,7 +150,7 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 * @generated
 	 */
 	public NotificationChain basicSetProperties(Properties newProperties, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, newProperties, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, newProperties, msgs);
 	}
 
 	/**
@@ -161,7 +160,7 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public void setProperties(Properties newProperties) {
-		((FeatureMap.Internal)getMixed()).set(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, newProperties);
+		((FeatureMap.Internal) getMixed()).set(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, newProperties);
 	}
 
 	/**
@@ -171,16 +170,15 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return ((InternalEList<?>)getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return ((InternalEList<?>)getXSISchemaLocation()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
-				return basicSetProperties(null, msgs);
+		switch (featureID) {
+		case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
+			return ((InternalEList< ? >) getMixed()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return ((InternalEList< ? >) getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return ((InternalEList< ? >) getXSISchemaLocation()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
+			return basicSetProperties(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -192,19 +190,23 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
-			case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				if (coreType) return getXMLNSPrefixMap();
-				else return getXMLNSPrefixMap().map();
-			case PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				if (coreType) return getXSISchemaLocation();
-				else return getXSISchemaLocation().map();
-			case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
-				return getProperties();
+		switch (featureID) {
+		case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
+			if (coreType)
+				return getMixed();
+			return ((FeatureMap.Internal) getMixed()).getWrapper();
+		case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			if (coreType)
+				return getXMLNSPrefixMap();
+			else
+				return getXMLNSPrefixMap().map();
+		case PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			if (coreType)
+				return getXSISchemaLocation();
+			else
+				return getXSISchemaLocation().map();
+		case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
+			return getProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,20 +218,19 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
-				return;
-			case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				((EStructuralFeature.Setting)getXMLNSPrefixMap()).set(newValue);
-				return;
-			case PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				((EStructuralFeature.Setting)getXSISchemaLocation()).set(newValue);
-				return;
-			case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
-				setProperties((Properties)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
+			((FeatureMap.Internal) getMixed()).set(newValue);
+			return;
+		case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			((EStructuralFeature.Setting) getXMLNSPrefixMap()).set(newValue);
+			return;
+		case PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			((EStructuralFeature.Setting) getXSISchemaLocation()).set(newValue);
+			return;
+		case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
+			setProperties((Properties) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -241,20 +242,19 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
-				getMixed().clear();
-				return;
-			case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				getXMLNSPrefixMap().clear();
-				return;
-			case PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				getXSISchemaLocation().clear();
-				return;
-			case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
-				setProperties((Properties)null);
-				return;
+		switch (featureID) {
+		case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
+			getMixed().clear();
+			return;
+		case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			getXMLNSPrefixMap().clear();
+			return;
+		case PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			getXSISchemaLocation().clear();
+			return;
+		case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
+			setProperties((Properties) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,16 +266,15 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
-				return mixed != null && !mixed.isEmpty();
-			case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
-			case PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
-			case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
-				return getProperties() != null;
+		switch (featureID) {
+		case PrfPackage.PRF_DOCUMENT_ROOT__MIXED:
+			return mixed != null && !mixed.isEmpty();
+		case PrfPackage.PRF_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
+		case PrfPackage.PRF_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
+		case PrfPackage.PRF_DOCUMENT_ROOT__PROPERTIES:
+			return getProperties() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -287,7 +286,8 @@ public class PrfDocumentRootImpl extends EObjectImpl implements PrfDocumentRoot 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");

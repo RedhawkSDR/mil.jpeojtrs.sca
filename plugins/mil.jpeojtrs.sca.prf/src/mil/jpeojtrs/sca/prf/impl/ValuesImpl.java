@@ -72,8 +72,7 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	 */
 	@Override
 	public EList<String> getValue() {
-		if (value == null)
-		{
+		if (value == null) {
 			value = new EDataTypeEList<String>(String.class, this, PrfPackage.VALUES__VALUE);
 		}
 		return value;
@@ -86,10 +85,9 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.VALUES__VALUE:
-				return getValue();
+		switch (featureID) {
+		case PrfPackage.VALUES__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -102,12 +100,11 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.VALUES__VALUE:
-				getValue().clear();
-				getValue().addAll((Collection<? extends String>)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.VALUES__VALUE:
+			getValue().clear();
+			getValue().addAll((Collection< ? extends String>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -119,11 +116,10 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.VALUES__VALUE:
-				getValue().clear();
-				return;
+		switch (featureID) {
+		case PrfPackage.VALUES__VALUE:
+			getValue().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -135,10 +131,9 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.VALUES__VALUE:
-				return value != null && !value.isEmpty();
+		switch (featureID) {
+		case PrfPackage.VALUES__VALUE:
+			return value != null && !value.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -150,7 +145,8 @@ public class ValuesImpl extends EObjectImpl implements Values {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");

@@ -98,10 +98,12 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	public NotificationChain basicSetValues(Values newValues, NotificationChain msgs) {
 		Values oldValues = values;
 		values = newValues;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, oldValues, newValues);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -113,17 +115,16 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public void setValues(Values newValues) {
-		if (newValues != values)
-		{
+		if (newValues != values) {
 			NotificationChain msgs = null;
 			if (values != null)
-				msgs = ((InternalEObject)values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
+				msgs = ((InternalEObject) values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
 			if (newValues != null)
-				msgs = ((InternalEObject)newValues).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
+				msgs = ((InternalEObject) newValues).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
 			msgs = basicSetValues(newValues, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, newValues, newValues));
 	}
 
@@ -134,10 +135,9 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-				return basicSetValues(null, msgs);
+		switch (featureID) {
+		case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+			return basicSetValues(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -149,10 +149,9 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-				return getValues();
+		switch (featureID) {
+		case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+			return getValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,11 +163,10 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-				setValues((Values)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+			setValues((Values) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,11 +178,10 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-				setValues((Values)null);
-				return;
+		switch (featureID) {
+		case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+			setValues((Values) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -196,21 +193,20 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-				return values != null;
+		switch (featureID) {
+		case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
+			return values != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	@Override
-    public Any toAny() {
+	public Any toAny() {
 		if (getValues() != null) {
 			return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral(), getProperty().isComplex());
 		} else {
 			return JacorbUtil.init().create_any();
 		}
-    }
+	}
 
 } //SimpleSequenceRefImpl

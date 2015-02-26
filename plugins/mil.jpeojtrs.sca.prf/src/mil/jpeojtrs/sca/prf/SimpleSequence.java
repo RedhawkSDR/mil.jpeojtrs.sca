@@ -223,36 +223,36 @@ public interface SimpleSequence extends AbstractProperty {
 	/**
 	 * Returns the value of the '<em><b>Complex</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-     * True if the value should be treated as a complex value.  Null or false otherwise.  Default null.
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * True if the value should be treated as a complex value.  Null or false otherwise.  Default null.
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Complex</em>' attribute.
 	 * @see #setComplex(Boolean)
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimpleSequence_Complex()
 	 * @model extendedMetaData="kind='attribute' name='complex'"
 	 * @generated
 	 */
-    Boolean getComplex();
+	Boolean getComplex();
 
-    /**
+	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.SimpleSequence#getComplex <em>Complex</em>}' attribute.
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Complex</em>' attribute.
 	 * @see #getComplex()
 	 * @generated
 	 */
-    void setComplex(Boolean value);
+	void setComplex(Boolean value);
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * Helper method to check if is complex.
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * Helper method to check if is complex.
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated
 	 */
-    boolean isComplex();
+	boolean isComplex();
 
 } // SimpleSequence

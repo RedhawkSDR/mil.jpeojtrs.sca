@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Simple Sequence Ref</b></em>'.

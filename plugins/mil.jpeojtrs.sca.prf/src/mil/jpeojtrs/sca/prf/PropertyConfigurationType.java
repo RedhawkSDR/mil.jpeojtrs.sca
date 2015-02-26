@@ -35,7 +35,8 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CONFIGURE(0, "configure", "configure"), /**
+	CONFIGURE(0, "configure", "configure"),
+	/**
 	 * The '<em><b>Execparam</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,7 +44,8 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EXECPARAM(1, "execparam", "execparam"), /**
+	EXECPARAM(1, "execparam", "execparam"),
+	/**
 	 * The '<em><b>Allocation</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,7 +53,8 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ALLOCATION(2, "allocation", "allocation"), /**
+	ALLOCATION(2, "allocation", "allocation"),
+	/**
 	 * The '<em><b>Factoryparam</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -59,7 +62,8 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FACTORYPARAM(3, "factoryparam", "factoryparam"), /**
+	FACTORYPARAM(3, "factoryparam", "factoryparam"),
+	/**
 	 * The '<em><b>Test</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +71,8 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TEST(4, "test", "test"), /**
+	TEST(4, "test", "test"),
+	/**
 	 * The '<em><b>Event</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,7 +80,8 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EVENT(5, "event", "event"), /**
+	EVENT(5, "event", "event"),
+	/**
 	 * The '<em><b>Message</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,7 +91,7 @@ public enum PropertyConfigurationType implements Enumerator {
 	 */
 	MESSAGE(6, "message", "message");
 
-/**
+	/**
 	 * The '<em><b>Configure</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -99,7 +105,7 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int CONFIGURE_VALUE = 0;
-/**
+	/**
 	 * The '<em><b>Execparam</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -113,7 +119,7 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int EXECPARAM_VALUE = 1;
-/**
+	/**
 	 * The '<em><b>Allocation</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -127,7 +133,7 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int ALLOCATION_VALUE = 2;
-/**
+	/**
 	 * The '<em><b>Factoryparam</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -141,7 +147,7 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int FACTORYPARAM_VALUE = 3;
-/**
+	/**
 	 * The '<em><b>Test</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -155,7 +161,7 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int TEST_VALUE = 4;
-/**
+	/**
 	 * The '<em><b>Event</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -169,7 +175,7 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int EVENT_VALUE = 5;
-/**
+	/**
 	 * The '<em><b>Message</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -183,7 +189,7 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int MESSAGE_VALUE = 6;
-/**
+	/**
 	 * An array of all the '<em><b>Property Configuration Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,82 +214,84 @@ public enum PropertyConfigurationType implements Enumerator {
 	 */
 	public static final List<PropertyConfigurationType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
-/**
+	/**
 	 * Returns the '<em><b>Property Configuration Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static PropertyConfigurationType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			PropertyConfigurationType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal))
-			{
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Property Configuration Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static PropertyConfigurationType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			PropertyConfigurationType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name))
-			{
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Property Configuration Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static PropertyConfigurationType get(int value) {
-		switch (value)
-		{
-			case CONFIGURE_VALUE: return CONFIGURE;
-			case EXECPARAM_VALUE: return EXECPARAM;
-			case ALLOCATION_VALUE: return ALLOCATION;
-			case FACTORYPARAM_VALUE: return FACTORYPARAM;
-			case TEST_VALUE: return TEST;
-			case EVENT_VALUE: return EVENT;
-			case MESSAGE_VALUE: return MESSAGE;
+		switch (value) {
+		case CONFIGURE_VALUE:
+			return CONFIGURE;
+		case EXECPARAM_VALUE:
+			return EXECPARAM;
+		case ALLOCATION_VALUE:
+			return ALLOCATION;
+		case FACTORYPARAM_VALUE:
+			return FACTORYPARAM;
+		case TEST_VALUE:
+			return TEST;
+		case EVENT_VALUE:
+			return EVENT;
+		case MESSAGE_VALUE:
+			return MESSAGE;
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final int value;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String name;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String literal;
 
-/**
+	/**
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,37 +303,37 @@ public enum PropertyConfigurationType implements Enumerator {
 		this.literal = literal;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
-/**
+	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

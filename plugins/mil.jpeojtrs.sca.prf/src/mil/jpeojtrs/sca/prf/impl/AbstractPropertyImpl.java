@@ -232,7 +232,8 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 		localMode = LOCAL_MODE_EDEFAULT;
 		localModeESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE, oldLocalMode, LOCAL_MODE_EDEFAULT, oldLocalModeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE, oldLocalMode, LOCAL_MODE_EDEFAULT,
+				oldLocalModeESet));
 	}
 
 	/**
@@ -298,13 +299,14 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 		}
 		// BEGIN GENERATED CODE
 	}
-	
+
 	@Override
 	public void eNotify(Notification notification) {
-	    super.eNotify(notification);
-	    if (notification.getFeature() == PrfPackage.Literals.ABSTRACT_PROPERTY__LOCAL_MODE) {
-	    	super.eNotify(new ENotificationImpl(this, notification.getEventType(), PrfPackage.ABSTRACT_PROPERTY__MODE, notification.getOldValue(), notification.getNewValue(), notification.wasSet()));
-	    }
+		super.eNotify(notification);
+		if (notification.getFeature() == PrfPackage.Literals.ABSTRACT_PROPERTY__LOCAL_MODE) {
+			super.eNotify(new ENotificationImpl(this, notification.getEventType(), PrfPackage.ABSTRACT_PROPERTY__MODE, notification.getOldValue(),
+				notification.getNewValue(), notification.wasSet()));
+		}
 	}
 
 	/**
@@ -339,7 +341,7 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	}
 
 	@Override
-	public abstract boolean isKind(PropertyConfigurationType ... type);
+	public abstract boolean isKind(PropertyConfigurationType... type);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -356,18 +358,17 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
-				return getDescription();
-			case PrfPackage.ABSTRACT_PROPERTY__ID:
-				return getId();
-			case PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE:
-				return getLocalMode();
-			case PrfPackage.ABSTRACT_PROPERTY__NAME:
-				return getName();
-			case PrfPackage.ABSTRACT_PROPERTY__MODE:
-				return getMode();
+		switch (featureID) {
+		case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
+			return getDescription();
+		case PrfPackage.ABSTRACT_PROPERTY__ID:
+			return getId();
+		case PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE:
+			return getLocalMode();
+		case PrfPackage.ABSTRACT_PROPERTY__NAME:
+			return getName();
+		case PrfPackage.ABSTRACT_PROPERTY__MODE:
+			return getMode();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -379,23 +380,22 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case PrfPackage.ABSTRACT_PROPERTY__ID:
-				setId((String)newValue);
-				return;
-			case PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE:
-				setLocalMode((AccessType)newValue);
-				return;
-			case PrfPackage.ABSTRACT_PROPERTY__NAME:
-				setName((String)newValue);
-				return;
-			case PrfPackage.ABSTRACT_PROPERTY__MODE:
-				setMode((AccessType)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case PrfPackage.ABSTRACT_PROPERTY__ID:
+			setId((String) newValue);
+			return;
+		case PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE:
+			setLocalMode((AccessType) newValue);
+			return;
+		case PrfPackage.ABSTRACT_PROPERTY__NAME:
+			setName((String) newValue);
+			return;
+		case PrfPackage.ABSTRACT_PROPERTY__MODE:
+			setMode((AccessType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -407,23 +407,22 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case PrfPackage.ABSTRACT_PROPERTY__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE:
-				unsetLocalMode();
-				return;
-			case PrfPackage.ABSTRACT_PROPERTY__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case PrfPackage.ABSTRACT_PROPERTY__MODE:
-				unsetMode();
-				return;
+		switch (featureID) {
+		case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case PrfPackage.ABSTRACT_PROPERTY__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE:
+			unsetLocalMode();
+			return;
+		case PrfPackage.ABSTRACT_PROPERTY__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case PrfPackage.ABSTRACT_PROPERTY__MODE:
+			unsetMode();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -435,18 +434,17 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case PrfPackage.ABSTRACT_PROPERTY__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE:
-				return isSetLocalMode();
-			case PrfPackage.ABSTRACT_PROPERTY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PrfPackage.ABSTRACT_PROPERTY__MODE:
-				return isSetMode();
+		switch (featureID) {
+		case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case PrfPackage.ABSTRACT_PROPERTY__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE:
+			return isSetLocalMode();
+		case PrfPackage.ABSTRACT_PROPERTY__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case PrfPackage.ABSTRACT_PROPERTY__MODE:
+			return isSetMode();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -458,7 +456,8 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
@@ -466,7 +465,10 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 		result.append(", id: ");
 		result.append(id);
 		result.append(", localMode: ");
-		if (localModeESet) result.append(localMode); else result.append("<unset>");
+		if (localModeESet)
+			result.append(localMode);
+		else
+			result.append("<unset>");
 		result.append(", name: ");
 		result.append(name);
 		result.append(')');

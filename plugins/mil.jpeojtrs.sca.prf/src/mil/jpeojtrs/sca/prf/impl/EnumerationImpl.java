@@ -144,12 +144,11 @@ public class EnumerationImpl extends EObjectImpl implements Enumeration {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.ENUMERATION__LABEL:
-				return getLabel();
-			case PrfPackage.ENUMERATION__VALUE:
-				return getValue();
+		switch (featureID) {
+		case PrfPackage.ENUMERATION__LABEL:
+			return getLabel();
+		case PrfPackage.ENUMERATION__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,14 +160,13 @@ public class EnumerationImpl extends EObjectImpl implements Enumeration {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.ENUMERATION__LABEL:
-				setLabel((String)newValue);
-				return;
-			case PrfPackage.ENUMERATION__VALUE:
-				setValue((String)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.ENUMERATION__LABEL:
+			setLabel((String) newValue);
+			return;
+		case PrfPackage.ENUMERATION__VALUE:
+			setValue((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,14 +178,13 @@ public class EnumerationImpl extends EObjectImpl implements Enumeration {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.ENUMERATION__LABEL:
-				setLabel(LABEL_EDEFAULT);
-				return;
-			case PrfPackage.ENUMERATION__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PrfPackage.ENUMERATION__LABEL:
+			setLabel(LABEL_EDEFAULT);
+			return;
+		case PrfPackage.ENUMERATION__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,12 +196,11 @@ public class EnumerationImpl extends EObjectImpl implements Enumeration {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.ENUMERATION__LABEL:
-				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-			case PrfPackage.ENUMERATION__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		switch (featureID) {
+		case PrfPackage.ENUMERATION__LABEL:
+			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+		case PrfPackage.ENUMERATION__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,7 +212,8 @@ public class EnumerationImpl extends EObjectImpl implements Enumeration {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (label: ");

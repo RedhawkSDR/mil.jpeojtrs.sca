@@ -62,6 +62,7 @@ public interface Properties extends PropertyContainer {
 	 * @generated
 	 */
 	String getDescription();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Properties#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,6 +72,7 @@ public interface Properties extends PropertyContainer {
 	 * @generated
 	 */
 	void setDescription(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' attribute list.
 	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
@@ -87,6 +89,7 @@ public interface Properties extends PropertyContainer {
 	 * @generated
 	 */
 	FeatureMap getProperties();
+
 	/**
 	 * Returns the value of the '<em><b>Simple</b></em>' containment reference list.
 	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.Simple}.
@@ -103,6 +106,7 @@ public interface Properties extends PropertyContainer {
 	 * @generated
 	 */
 	EList<Simple> getSimple();
+
 	/**
 	 * Returns the value of the '<em><b>Simple Sequence</b></em>' containment reference list.
 	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleSequence}.
@@ -119,6 +123,7 @@ public interface Properties extends PropertyContainer {
 	 * @generated
 	 */
 	EList<SimpleSequence> getSimpleSequence();
+
 	/**
 	 * Returns the value of the '<em><b>Test</b></em>' containment reference list.
 	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.Test}.
@@ -135,6 +140,7 @@ public interface Properties extends PropertyContainer {
 	 * @generated
 	 */
 	EList<Test> getTest();
+
 	/**
 	 * Returns the value of the '<em><b>Struct</b></em>' containment reference list.
 	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.Struct}.
@@ -151,6 +157,7 @@ public interface Properties extends PropertyContainer {
 	 * @generated
 	 */
 	EList<Struct> getStruct();
+
 	/**
 	 * Returns the value of the '<em><b>Struct Sequence</b></em>' containment reference list.
 	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.StructSequence}.
@@ -167,7 +174,9 @@ public interface Properties extends PropertyContainer {
 	 * @generated
 	 */
 	EList<StructSequence> getStructSequence();
+
 	public static final String EOBJECT_PATH = "/";
+
 	public static class Util {
 		// END GENERATED CODE
 		private Util() {

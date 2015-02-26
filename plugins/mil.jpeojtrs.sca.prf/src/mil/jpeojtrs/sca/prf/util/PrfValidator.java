@@ -129,7 +129,7 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return PrfPackage.eINSTANCE;
+		return PrfPackage.eINSTANCE;
 	}
 
 	/**
@@ -140,114 +140,113 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID)
-		{
-			case PrfPackage.ABSTRACT_PROPERTY:
-				return validateAbstractProperty((AbstractProperty)value, diagnostics, context);
-			case PrfPackage.ACTION:
-				return validateAction((Action)value, diagnostics, context);
-			case PrfPackage.CONFIGURATION_KIND:
-				return validateConfigurationKind((ConfigurationKind)value, diagnostics, context);
-			case PrfPackage.ENUMERATION:
-				return validateEnumeration((Enumeration)value, diagnostics, context);
-			case PrfPackage.ENUMERATIONS:
-				return validateEnumerations((Enumerations)value, diagnostics, context);
-			case PrfPackage.INPUT_VALUE:
-				return validateInputValue((InputValue)value, diagnostics, context);
-			case PrfPackage.KIND:
-				return validateKind((Kind)value, diagnostics, context);
-			case PrfPackage.PRF_DOCUMENT_ROOT:
-				return validatePrfDocumentRoot((PrfDocumentRoot)value, diagnostics, context);
-			case PrfPackage.PROPERTIES:
-				return validateProperties((Properties)value, diagnostics, context);
-			case PrfPackage.RANGE:
-				return validateRange((Range)value, diagnostics, context);
-			case PrfPackage.RESULT_VALUE:
-				return validateResultValue((ResultValue)value, diagnostics, context);
-			case PrfPackage.SIMPLE:
-				return validateSimple((Simple)value, diagnostics, context);
-			case PrfPackage.SIMPLE_SEQUENCE:
-				return validateSimpleSequence((SimpleSequence)value, diagnostics, context);
-			case PrfPackage.STRUCT:
-				return validateStruct((Struct)value, diagnostics, context);
-			case PrfPackage.STRUCT_SEQUENCE:
-				return validateStructSequence((StructSequence)value, diagnostics, context);
-			case PrfPackage.STRUCT_VALUE:
-				return validateStructValue((StructValue)value, diagnostics, context);
-			case PrfPackage.TEST:
-				return validateTest((Test)value, diagnostics, context);
-			case PrfPackage.VALUES:
-				return validateValues((Values)value, diagnostics, context);
-			case PrfPackage.PROPERTY_CONTAINER:
-				return validatePropertyContainer((PropertyContainer)value, diagnostics, context);
-			case PrfPackage.ABSTRACT_PROPERTY_REF:
-				return validateAbstractPropertyRef((AbstractPropertyRef<?>)value, diagnostics, context);
-			case PrfPackage.PROPERTY_REF_CONTAINER:
-				return validatePropertyRefContainer((PropertyRefContainer)value, diagnostics, context);
-			case PrfPackage.PROPERTY_REF_GROUP:
-				return validatePropertyRefGroup((PropertyRefGroup)value, diagnostics, context);
-			case PrfPackage.PROPERTY_REF_SET:
-				return validatePropertyRefSet((PropertyRefSet)value, diagnostics, context);
-			case PrfPackage.SIMPLE_REF:
-				return validateSimpleRef((SimpleRef)value, diagnostics, context);
-			case PrfPackage.SIMPLE_SEQUENCE_REF:
-				return validateSimpleSequenceRef((SimpleSequenceRef)value, diagnostics, context);
-			case PrfPackage.STRUCT_REF:
-				return validateStructRef((StructRef)value, diagnostics, context);
-			case PrfPackage.STRUCT_SEQUENCE_REF:
-				return validateStructSequenceRef((StructSequenceRef)value, diagnostics, context);
-			case PrfPackage.ACCESS_TYPE:
-				return validateAccessType((AccessType)value, diagnostics, context);
-			case PrfPackage.ACTION_TYPE:
-				return validateActionType((ActionType)value, diagnostics, context);
-			case PrfPackage.PROPERTY_CONFIGURATION_TYPE:
-				return validatePropertyConfigurationType((PropertyConfigurationType)value, diagnostics, context);
-			case PrfPackage.PROPERTY_VALUE_TYPE:
-				return validatePropertyValueType((PropertyValueType)value, diagnostics, context);
-			case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE:
-				return validateStructPropertyConfigurationType((StructPropertyConfigurationType)value, diagnostics, context);
-			case PrfPackage.ACCESS_TYPE_OBJECT:
-				return validateAccessTypeObject((AccessType)value, diagnostics, context);
-			case PrfPackage.ACTION_TYPE_OBJECT:
-				return validateActionTypeObject((ActionType)value, diagnostics, context);
-			case PrfPackage.CHARACTER_OBJECT:
-				return validateCharacterObject((Character)value, diagnostics, context);
-			case PrfPackage.DCE_UUID:
-				return validateDceUUID((String)value, diagnostics, context);
-			case PrfPackage.PROPERTY_CONFIGURATION_TYPE_OBJECT:
-				return validatePropertyConfigurationTypeObject((PropertyConfigurationType)value, diagnostics, context);
-			case PrfPackage.PROPERTY_VALUE_TYPE_OBJECT:
-				return validatePropertyValueTypeObject((PropertyValueType)value, diagnostics, context);
-			case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE_OBJECT:
-				return validateStructPropertyConfigurationTypeObject((StructPropertyConfigurationType)value, diagnostics, context);
-			case PrfPackage.UNIT:
-				return validateUnit((String)value, diagnostics, context);
-			case PrfPackage.ANY:
-				return validateAny((Any)value, diagnostics, context);
-			case PrfPackage.COMPLEX_BOOLEAN:
-				return validateComplexBoolean((ComplexBoolean)value, diagnostics, context);
-			case PrfPackage.COMPLEX_BYTE:
-				return validateComplexByte((ComplexByte)value, diagnostics, context);
-			case PrfPackage.COMPLEX_DOUBLE:
-				return validateComplexDouble((ComplexDouble)value, diagnostics, context);
-			case PrfPackage.COMPLEX_FLOAT:
-				return validateComplexFloat((ComplexFloat)value, diagnostics, context);
-			case PrfPackage.COMPLEX_LONG:
-				return validateComplexLong((ComplexLong)value, diagnostics, context);
-			case PrfPackage.COMPLEX_LONG_LONG:
-				return validateComplexLongLong((ComplexLongLong)value, diagnostics, context);
-			case PrfPackage.COMPLEX_SHORT:
-				return validateComplexShort((ComplexShort)value, diagnostics, context);
-			case PrfPackage.COMPLEX_UBYTE:
-				return validateComplexUByte((ComplexUByte)value, diagnostics, context);
-			case PrfPackage.COMPLEX_ULONG:
-				return validateComplexULong((ComplexULong)value, diagnostics, context);
-			case PrfPackage.COMPLEX_ULONG_LONG:
-				return validateComplexULongLong((ComplexULongLong)value, diagnostics, context);
-			case PrfPackage.COMPLEX_USHORT:
-				return validateComplexUShort((ComplexUShort)value, diagnostics, context);
-			default:
-				return true;
+		switch (classifierID) {
+		case PrfPackage.ABSTRACT_PROPERTY:
+			return validateAbstractProperty((AbstractProperty) value, diagnostics, context);
+		case PrfPackage.ACTION:
+			return validateAction((Action) value, diagnostics, context);
+		case PrfPackage.CONFIGURATION_KIND:
+			return validateConfigurationKind((ConfigurationKind) value, diagnostics, context);
+		case PrfPackage.ENUMERATION:
+			return validateEnumeration((Enumeration) value, diagnostics, context);
+		case PrfPackage.ENUMERATIONS:
+			return validateEnumerations((Enumerations) value, diagnostics, context);
+		case PrfPackage.INPUT_VALUE:
+			return validateInputValue((InputValue) value, diagnostics, context);
+		case PrfPackage.KIND:
+			return validateKind((Kind) value, diagnostics, context);
+		case PrfPackage.PRF_DOCUMENT_ROOT:
+			return validatePrfDocumentRoot((PrfDocumentRoot) value, diagnostics, context);
+		case PrfPackage.PROPERTIES:
+			return validateProperties((Properties) value, diagnostics, context);
+		case PrfPackage.RANGE:
+			return validateRange((Range) value, diagnostics, context);
+		case PrfPackage.RESULT_VALUE:
+			return validateResultValue((ResultValue) value, diagnostics, context);
+		case PrfPackage.SIMPLE:
+			return validateSimple((Simple) value, diagnostics, context);
+		case PrfPackage.SIMPLE_SEQUENCE:
+			return validateSimpleSequence((SimpleSequence) value, diagnostics, context);
+		case PrfPackage.STRUCT:
+			return validateStruct((Struct) value, diagnostics, context);
+		case PrfPackage.STRUCT_SEQUENCE:
+			return validateStructSequence((StructSequence) value, diagnostics, context);
+		case PrfPackage.STRUCT_VALUE:
+			return validateStructValue((StructValue) value, diagnostics, context);
+		case PrfPackage.TEST:
+			return validateTest((Test) value, diagnostics, context);
+		case PrfPackage.VALUES:
+			return validateValues((Values) value, diagnostics, context);
+		case PrfPackage.PROPERTY_CONTAINER:
+			return validatePropertyContainer((PropertyContainer) value, diagnostics, context);
+		case PrfPackage.ABSTRACT_PROPERTY_REF:
+			return validateAbstractPropertyRef((AbstractPropertyRef< ? >) value, diagnostics, context);
+		case PrfPackage.PROPERTY_REF_CONTAINER:
+			return validatePropertyRefContainer((PropertyRefContainer) value, diagnostics, context);
+		case PrfPackage.PROPERTY_REF_GROUP:
+			return validatePropertyRefGroup((PropertyRefGroup) value, diagnostics, context);
+		case PrfPackage.PROPERTY_REF_SET:
+			return validatePropertyRefSet((PropertyRefSet) value, diagnostics, context);
+		case PrfPackage.SIMPLE_REF:
+			return validateSimpleRef((SimpleRef) value, diagnostics, context);
+		case PrfPackage.SIMPLE_SEQUENCE_REF:
+			return validateSimpleSequenceRef((SimpleSequenceRef) value, diagnostics, context);
+		case PrfPackage.STRUCT_REF:
+			return validateStructRef((StructRef) value, diagnostics, context);
+		case PrfPackage.STRUCT_SEQUENCE_REF:
+			return validateStructSequenceRef((StructSequenceRef) value, diagnostics, context);
+		case PrfPackage.ACCESS_TYPE:
+			return validateAccessType((AccessType) value, diagnostics, context);
+		case PrfPackage.ACTION_TYPE:
+			return validateActionType((ActionType) value, diagnostics, context);
+		case PrfPackage.PROPERTY_CONFIGURATION_TYPE:
+			return validatePropertyConfigurationType((PropertyConfigurationType) value, diagnostics, context);
+		case PrfPackage.PROPERTY_VALUE_TYPE:
+			return validatePropertyValueType((PropertyValueType) value, diagnostics, context);
+		case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE:
+			return validateStructPropertyConfigurationType((StructPropertyConfigurationType) value, diagnostics, context);
+		case PrfPackage.ACCESS_TYPE_OBJECT:
+			return validateAccessTypeObject((AccessType) value, diagnostics, context);
+		case PrfPackage.ACTION_TYPE_OBJECT:
+			return validateActionTypeObject((ActionType) value, diagnostics, context);
+		case PrfPackage.CHARACTER_OBJECT:
+			return validateCharacterObject((Character) value, diagnostics, context);
+		case PrfPackage.DCE_UUID:
+			return validateDceUUID((String) value, diagnostics, context);
+		case PrfPackage.PROPERTY_CONFIGURATION_TYPE_OBJECT:
+			return validatePropertyConfigurationTypeObject((PropertyConfigurationType) value, diagnostics, context);
+		case PrfPackage.PROPERTY_VALUE_TYPE_OBJECT:
+			return validatePropertyValueTypeObject((PropertyValueType) value, diagnostics, context);
+		case PrfPackage.STRUCT_PROPERTY_CONFIGURATION_TYPE_OBJECT:
+			return validateStructPropertyConfigurationTypeObject((StructPropertyConfigurationType) value, diagnostics, context);
+		case PrfPackage.UNIT:
+			return validateUnit((String) value, diagnostics, context);
+		case PrfPackage.ANY:
+			return validateAny((Any) value, diagnostics, context);
+		case PrfPackage.COMPLEX_BOOLEAN:
+			return validateComplexBoolean((ComplexBoolean) value, diagnostics, context);
+		case PrfPackage.COMPLEX_BYTE:
+			return validateComplexByte((ComplexByte) value, diagnostics, context);
+		case PrfPackage.COMPLEX_DOUBLE:
+			return validateComplexDouble((ComplexDouble) value, diagnostics, context);
+		case PrfPackage.COMPLEX_FLOAT:
+			return validateComplexFloat((ComplexFloat) value, diagnostics, context);
+		case PrfPackage.COMPLEX_LONG:
+			return validateComplexLong((ComplexLong) value, diagnostics, context);
+		case PrfPackage.COMPLEX_LONG_LONG:
+			return validateComplexLongLong((ComplexLongLong) value, diagnostics, context);
+		case PrfPackage.COMPLEX_SHORT:
+			return validateComplexShort((ComplexShort) value, diagnostics, context);
+		case PrfPackage.COMPLEX_UBYTE:
+			return validateComplexUByte((ComplexUByte) value, diagnostics, context);
+		case PrfPackage.COMPLEX_ULONG:
+			return validateComplexULong((ComplexULong) value, diagnostics, context);
+		case PrfPackage.COMPLEX_ULONG_LONG:
+			return validateComplexULongLong((ComplexULongLong) value, diagnostics, context);
+		case PrfPackage.COMPLEX_USHORT:
+			return validateComplexUShort((ComplexUShort) value, diagnostics, context);
+		default:
+			return true;
 		}
 	}
 
@@ -427,7 +426,7 @@ public class PrfValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAbstractPropertyRef(AbstractPropertyRef<?> abstractPropertyRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAbstractPropertyRef(AbstractPropertyRef< ? > abstractPropertyRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(abstractPropertyRef, diagnostics, context);
 	}
 
@@ -517,7 +516,8 @@ public class PrfValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePropertyConfigurationType(PropertyConfigurationType propertyConfigurationType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validatePropertyConfigurationType(PropertyConfigurationType propertyConfigurationType, DiagnosticChain diagnostics,
+		Map<Object, Object> context) {
 		return true;
 	}
 
@@ -535,7 +535,8 @@ public class PrfValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStructPropertyConfigurationType(StructPropertyConfigurationType structPropertyConfigurationType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateStructPropertyConfigurationType(StructPropertyConfigurationType structPropertyConfigurationType, DiagnosticChain diagnostics,
+		Map<Object, Object> context) {
 		return true;
 	}
 
@@ -582,7 +583,7 @@ public class PrfValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validateDceUUID_Pattern
 	 */
-	public static final  PatternMatcher [][] DCE_UUID__PATTERN__VALUES =
+	public static final PatternMatcher [][] DCE_UUID__PATTERN__VALUES =
 		new PatternMatcher [][]
 		{
 			new PatternMatcher []
@@ -606,7 +607,8 @@ public class PrfValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePropertyConfigurationTypeObject(PropertyConfigurationType propertyConfigurationTypeObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validatePropertyConfigurationTypeObject(PropertyConfigurationType propertyConfigurationTypeObject, DiagnosticChain diagnostics,
+		Map<Object, Object> context) {
 		return true;
 	}
 
@@ -624,7 +626,8 @@ public class PrfValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStructPropertyConfigurationTypeObject(StructPropertyConfigurationType structPropertyConfigurationTypeObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateStructPropertyConfigurationTypeObject(StructPropertyConfigurationType structPropertyConfigurationTypeObject,
+		DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -648,115 +651,115 @@ public class PrfValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexBoolean(ComplexBoolean complexBoolean, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexBoolean(ComplexBoolean complexBoolean, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexByte(ComplexByte complexByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexByte(ComplexByte complexByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexDouble(ComplexDouble complexDouble, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexDouble(ComplexDouble complexDouble, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexFloat(ComplexFloat complexFloat, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexFloat(ComplexFloat complexFloat, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexLong(ComplexLong complexLong, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexLong(ComplexLong complexLong, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexLongLong(ComplexLongLong complexLongLong, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexLongLong(ComplexLongLong complexLongLong, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexShort(ComplexShort complexShort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexShort(ComplexShort complexShort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexUByte(ComplexUByte complexUByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexUByte(ComplexUByte complexUByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexULong(ComplexULong complexULong, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexULong(ComplexULong complexULong, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexULongLong(ComplexULongLong complexULongLong, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexULongLong(ComplexULongLong complexULongLong, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * <!-- begin-user-doc -->
-     * @since 3.0
-     * <!-- end-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-    public boolean validateComplexUShort(ComplexUShort complexUShort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexUShort(ComplexUShort complexUShort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
-    /**
+	/**
 	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -32,7 +32,7 @@ import org.omg.CORBA.Any;
  *        extendedMetaData="kind='elementOnly' name='propertyref' qualified='false'"
  * @generated
  */
-public interface AbstractPropertyRef<P extends AbstractProperty> extends EObject {
+public interface AbstractPropertyRef< P extends AbstractProperty > extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Ref ID</b></em>' attribute.

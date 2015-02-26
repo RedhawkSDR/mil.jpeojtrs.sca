@@ -73,8 +73,7 @@ public class PrfSwitch< T > extends Switch<T> {
 	 * @generated
 	 */
 	public PrfSwitch() {
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = PrfPackage.eINSTANCE;
 		}
 	}
@@ -88,8 +87,7 @@ public class PrfSwitch< T > extends Switch<T> {
 	 * @generated
 	 */
 	@Override
-	protected boolean isSwitchFor(EPackage ePackage)
-	{
+	protected boolean isSwitchFor(EPackage ePackage) {
 		return ePackage == modelPackage;
 	}
 
@@ -102,214 +100,230 @@ public class PrfSwitch< T > extends Switch<T> {
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID)
-		{
-			case PrfPackage.ABSTRACT_PROPERTY:
-			{
-				AbstractProperty abstractProperty = (AbstractProperty)theEObject;
-				T result = caseAbstractProperty(abstractProperty);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.ACTION:
-			{
-				Action action = (Action)theEObject;
-				T result = caseAction(action);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.CONFIGURATION_KIND:
-			{
-				ConfigurationKind configurationKind = (ConfigurationKind)theEObject;
-				T result = caseConfigurationKind(configurationKind);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.ENUMERATION:
-			{
-				Enumeration enumeration = (Enumeration)theEObject;
-				T result = caseEnumeration(enumeration);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.ENUMERATIONS:
-			{
-				Enumerations enumerations = (Enumerations)theEObject;
-				T result = caseEnumerations(enumerations);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.INPUT_VALUE:
-			{
-				InputValue inputValue = (InputValue)theEObject;
-				T result = caseInputValue(inputValue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.KIND:
-			{
-				Kind kind = (Kind)theEObject;
-				T result = caseKind(kind);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.PRF_DOCUMENT_ROOT:
-			{
-				PrfDocumentRoot prfDocumentRoot = (PrfDocumentRoot)theEObject;
-				T result = casePrfDocumentRoot(prfDocumentRoot);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.PROPERTIES:
-			{
-				Properties properties = (Properties)theEObject;
-				T result = caseProperties(properties);
-				if (result == null) result = casePropertyContainer(properties);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.RANGE:
-			{
-				Range range = (Range)theEObject;
-				T result = caseRange(range);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.RESULT_VALUE:
-			{
-				ResultValue resultValue = (ResultValue)theEObject;
-				T result = caseResultValue(resultValue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.SIMPLE:
-			{
-				Simple simple = (Simple)theEObject;
-				T result = caseSimple(simple);
-				if (result == null) result = caseAbstractProperty(simple);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.SIMPLE_SEQUENCE:
-			{
-				SimpleSequence simpleSequence = (SimpleSequence)theEObject;
-				T result = caseSimpleSequence(simpleSequence);
-				if (result == null) result = caseAbstractProperty(simpleSequence);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.STRUCT:
-			{
-				Struct struct = (Struct)theEObject;
-				T result = caseStruct(struct);
-				if (result == null) result = caseAbstractProperty(struct);
-				if (result == null) result = casePropertyContainer(struct);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.STRUCT_SEQUENCE:
-			{
-				StructSequence structSequence = (StructSequence)theEObject;
-				T result = caseStructSequence(structSequence);
-				if (result == null) result = caseAbstractProperty(structSequence);
-				if (result == null) result = casePropertyContainer(structSequence);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.STRUCT_VALUE:
-			{
-				StructValue structValue = (StructValue)theEObject;
-				T result = caseStructValue(structValue);
-				if (result == null) result = casePropertyRefContainer(structValue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.TEST:
-			{
-				Test test = (Test)theEObject;
-				T result = caseTest(test);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.VALUES:
-			{
-				Values values = (Values)theEObject;
-				T result = caseValues(values);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.PROPERTY_CONTAINER:
-			{
-				PropertyContainer propertyContainer = (PropertyContainer)theEObject;
-				T result = casePropertyContainer(propertyContainer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.ABSTRACT_PROPERTY_REF:
-			{
-				AbstractPropertyRef<?> abstractPropertyRef = (AbstractPropertyRef<?>)theEObject;
-				T result = caseAbstractPropertyRef(abstractPropertyRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.PROPERTY_REF_CONTAINER:
-			{
-				PropertyRefContainer propertyRefContainer = (PropertyRefContainer)theEObject;
-				T result = casePropertyRefContainer(propertyRefContainer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.PROPERTY_REF_GROUP:
-			{
-				PropertyRefGroup propertyRefGroup = (PropertyRefGroup)theEObject;
-				T result = casePropertyRefGroup(propertyRefGroup);
-				if (result == null) result = casePropertyRefContainer(propertyRefGroup);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.PROPERTY_REF_SET:
-			{
-				PropertyRefSet propertyRefSet = (PropertyRefSet)theEObject;
-				T result = casePropertyRefSet(propertyRefSet);
-				if (result == null) result = casePropertyRefContainer(propertyRefSet);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.SIMPLE_REF:
-			{
-				SimpleRef simpleRef = (SimpleRef)theEObject;
-				T result = caseSimpleRef(simpleRef);
-				if (result == null) result = caseAbstractPropertyRef(simpleRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.SIMPLE_SEQUENCE_REF:
-			{
-				SimpleSequenceRef simpleSequenceRef = (SimpleSequenceRef)theEObject;
-				T result = caseSimpleSequenceRef(simpleSequenceRef);
-				if (result == null) result = caseAbstractPropertyRef(simpleSequenceRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.STRUCT_REF:
-			{
-				StructRef structRef = (StructRef)theEObject;
-				T result = caseStructRef(structRef);
-				if (result == null) result = caseAbstractPropertyRef(structRef);
-				if (result == null) result = casePropertyRefContainer(structRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrfPackage.STRUCT_SEQUENCE_REF:
-			{
-				StructSequenceRef structSequenceRef = (StructSequenceRef)theEObject;
-				T result = caseStructSequenceRef(structSequenceRef);
-				if (result == null) result = caseAbstractPropertyRef(structSequenceRef);
-				if (result == null) result = casePropertyRefContainer(structSequenceRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		switch (classifierID) {
+		case PrfPackage.ABSTRACT_PROPERTY: {
+			AbstractProperty abstractProperty = (AbstractProperty) theEObject;
+			T result = caseAbstractProperty(abstractProperty);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.ACTION: {
+			Action action = (Action) theEObject;
+			T result = caseAction(action);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.CONFIGURATION_KIND: {
+			ConfigurationKind configurationKind = (ConfigurationKind) theEObject;
+			T result = caseConfigurationKind(configurationKind);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.ENUMERATION: {
+			Enumeration enumeration = (Enumeration) theEObject;
+			T result = caseEnumeration(enumeration);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.ENUMERATIONS: {
+			Enumerations enumerations = (Enumerations) theEObject;
+			T result = caseEnumerations(enumerations);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.INPUT_VALUE: {
+			InputValue inputValue = (InputValue) theEObject;
+			T result = caseInputValue(inputValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.KIND: {
+			Kind kind = (Kind) theEObject;
+			T result = caseKind(kind);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.PRF_DOCUMENT_ROOT: {
+			PrfDocumentRoot prfDocumentRoot = (PrfDocumentRoot) theEObject;
+			T result = casePrfDocumentRoot(prfDocumentRoot);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.PROPERTIES: {
+			Properties properties = (Properties) theEObject;
+			T result = caseProperties(properties);
+			if (result == null)
+				result = casePropertyContainer(properties);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.RANGE: {
+			Range range = (Range) theEObject;
+			T result = caseRange(range);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.RESULT_VALUE: {
+			ResultValue resultValue = (ResultValue) theEObject;
+			T result = caseResultValue(resultValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.SIMPLE: {
+			Simple simple = (Simple) theEObject;
+			T result = caseSimple(simple);
+			if (result == null)
+				result = caseAbstractProperty(simple);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.SIMPLE_SEQUENCE: {
+			SimpleSequence simpleSequence = (SimpleSequence) theEObject;
+			T result = caseSimpleSequence(simpleSequence);
+			if (result == null)
+				result = caseAbstractProperty(simpleSequence);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.STRUCT: {
+			Struct struct = (Struct) theEObject;
+			T result = caseStruct(struct);
+			if (result == null)
+				result = caseAbstractProperty(struct);
+			if (result == null)
+				result = casePropertyContainer(struct);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.STRUCT_SEQUENCE: {
+			StructSequence structSequence = (StructSequence) theEObject;
+			T result = caseStructSequence(structSequence);
+			if (result == null)
+				result = caseAbstractProperty(structSequence);
+			if (result == null)
+				result = casePropertyContainer(structSequence);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.STRUCT_VALUE: {
+			StructValue structValue = (StructValue) theEObject;
+			T result = caseStructValue(structValue);
+			if (result == null)
+				result = casePropertyRefContainer(structValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.TEST: {
+			Test test = (Test) theEObject;
+			T result = caseTest(test);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.VALUES: {
+			Values values = (Values) theEObject;
+			T result = caseValues(values);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.PROPERTY_CONTAINER: {
+			PropertyContainer propertyContainer = (PropertyContainer) theEObject;
+			T result = casePropertyContainer(propertyContainer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.ABSTRACT_PROPERTY_REF: {
+			AbstractPropertyRef< ? > abstractPropertyRef = (AbstractPropertyRef< ? >) theEObject;
+			T result = caseAbstractPropertyRef(abstractPropertyRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.PROPERTY_REF_CONTAINER: {
+			PropertyRefContainer propertyRefContainer = (PropertyRefContainer) theEObject;
+			T result = casePropertyRefContainer(propertyRefContainer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.PROPERTY_REF_GROUP: {
+			PropertyRefGroup propertyRefGroup = (PropertyRefGroup) theEObject;
+			T result = casePropertyRefGroup(propertyRefGroup);
+			if (result == null)
+				result = casePropertyRefContainer(propertyRefGroup);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.PROPERTY_REF_SET: {
+			PropertyRefSet propertyRefSet = (PropertyRefSet) theEObject;
+			T result = casePropertyRefSet(propertyRefSet);
+			if (result == null)
+				result = casePropertyRefContainer(propertyRefSet);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.SIMPLE_REF: {
+			SimpleRef simpleRef = (SimpleRef) theEObject;
+			T result = caseSimpleRef(simpleRef);
+			if (result == null)
+				result = caseAbstractPropertyRef(simpleRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.SIMPLE_SEQUENCE_REF: {
+			SimpleSequenceRef simpleSequenceRef = (SimpleSequenceRef) theEObject;
+			T result = caseSimpleSequenceRef(simpleSequenceRef);
+			if (result == null)
+				result = caseAbstractPropertyRef(simpleSequenceRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.STRUCT_REF: {
+			StructRef structRef = (StructRef) theEObject;
+			T result = caseStructRef(structRef);
+			if (result == null)
+				result = caseAbstractPropertyRef(structRef);
+			if (result == null)
+				result = casePropertyRefContainer(structRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PrfPackage.STRUCT_SEQUENCE_REF: {
+			StructSequenceRef structSequenceRef = (StructSequenceRef) theEObject;
+			T result = caseStructSequenceRef(structSequenceRef);
+			if (result == null)
+				result = caseAbstractPropertyRef(structSequenceRef);
+			if (result == null)
+				result = casePropertyRefContainer(structSequenceRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
@@ -609,7 +623,7 @@ public class PrfSwitch< T > extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <P extends AbstractProperty> T caseAbstractPropertyRef(AbstractPropertyRef<P> object) {
+	public < P extends AbstractProperty > T caseAbstractPropertyRef(AbstractPropertyRef<P> object) {
 		return null;
 	}
 

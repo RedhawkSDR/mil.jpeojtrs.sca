@@ -131,8 +131,7 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 */
 	@Override
 	public FeatureMap getProperties() {
-		if (properties == null)
-		{
+		if (properties == null) {
 			properties = new BasicFeatureMap(this, PrfPackage.PROPERTIES__PROPERTIES);
 		}
 		return properties;
@@ -215,20 +214,19 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTIES__SIMPLE:
-				return ((InternalEList<?>)getSimple()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-				return ((InternalEList<?>)getSimpleSequence()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTIES__TEST:
-				return ((InternalEList<?>)getTest()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTIES__STRUCT:
-				return ((InternalEList<?>)getStruct()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				return ((InternalEList<?>)getStructSequence()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PrfPackage.PROPERTIES__PROPERTIES:
+			return ((InternalEList< ? >) getProperties()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PROPERTIES__SIMPLE:
+			return ((InternalEList< ? >) getSimple()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+			return ((InternalEList< ? >) getSimpleSequence()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PROPERTIES__TEST:
+			return ((InternalEList< ? >) getTest()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PROPERTIES__STRUCT:
+			return ((InternalEList< ? >) getStruct()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+			return ((InternalEList< ? >) getStructSequence()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -240,23 +238,23 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.PROPERTIES__DESCRIPTION:
-				return getDescription();
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				if (coreType) return getProperties();
-				return ((FeatureMap.Internal)getProperties()).getWrapper();
-			case PrfPackage.PROPERTIES__SIMPLE:
-				return getSimple();
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-				return getSimpleSequence();
-			case PrfPackage.PROPERTIES__TEST:
-				return getTest();
-			case PrfPackage.PROPERTIES__STRUCT:
-				return getStruct();
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				return getStructSequence();
+		switch (featureID) {
+		case PrfPackage.PROPERTIES__DESCRIPTION:
+			return getDescription();
+		case PrfPackage.PROPERTIES__PROPERTIES:
+			if (coreType)
+				return getProperties();
+			return ((FeatureMap.Internal) getProperties()).getWrapper();
+		case PrfPackage.PROPERTIES__SIMPLE:
+			return getSimple();
+		case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+			return getSimpleSequence();
+		case PrfPackage.PROPERTIES__TEST:
+			return getTest();
+		case PrfPackage.PROPERTIES__STRUCT:
+			return getStruct();
+		case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+			return getStructSequence();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,34 +267,33 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.PROPERTIES__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				((FeatureMap.Internal)getProperties()).set(newValue);
-				return;
-			case PrfPackage.PROPERTIES__SIMPLE:
-				getSimple().clear();
-				getSimple().addAll((Collection<? extends Simple>)newValue);
-				return;
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-				getSimpleSequence().clear();
-				getSimpleSequence().addAll((Collection<? extends SimpleSequence>)newValue);
-				return;
-			case PrfPackage.PROPERTIES__TEST:
-				getTest().clear();
-				getTest().addAll((Collection<? extends Test>)newValue);
-				return;
-			case PrfPackage.PROPERTIES__STRUCT:
-				getStruct().clear();
-				getStruct().addAll((Collection<? extends Struct>)newValue);
-				return;
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				getStructSequence().clear();
-				getStructSequence().addAll((Collection<? extends StructSequence>)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.PROPERTIES__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case PrfPackage.PROPERTIES__PROPERTIES:
+			((FeatureMap.Internal) getProperties()).set(newValue);
+			return;
+		case PrfPackage.PROPERTIES__SIMPLE:
+			getSimple().clear();
+			getSimple().addAll((Collection< ? extends Simple>) newValue);
+			return;
+		case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+			getSimpleSequence().clear();
+			getSimpleSequence().addAll((Collection< ? extends SimpleSequence>) newValue);
+			return;
+		case PrfPackage.PROPERTIES__TEST:
+			getTest().clear();
+			getTest().addAll((Collection< ? extends Test>) newValue);
+			return;
+		case PrfPackage.PROPERTIES__STRUCT:
+			getStruct().clear();
+			getStruct().addAll((Collection< ? extends Struct>) newValue);
+			return;
+		case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+			getStructSequence().clear();
+			getStructSequence().addAll((Collection< ? extends StructSequence>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -308,29 +305,28 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.PROPERTIES__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				getProperties().clear();
-				return;
-			case PrfPackage.PROPERTIES__SIMPLE:
-				getSimple().clear();
-				return;
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-				getSimpleSequence().clear();
-				return;
-			case PrfPackage.PROPERTIES__TEST:
-				getTest().clear();
-				return;
-			case PrfPackage.PROPERTIES__STRUCT:
-				getStruct().clear();
-				return;
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				getStructSequence().clear();
-				return;
+		switch (featureID) {
+		case PrfPackage.PROPERTIES__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case PrfPackage.PROPERTIES__PROPERTIES:
+			getProperties().clear();
+			return;
+		case PrfPackage.PROPERTIES__SIMPLE:
+			getSimple().clear();
+			return;
+		case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+			getSimpleSequence().clear();
+			return;
+		case PrfPackage.PROPERTIES__TEST:
+			getTest().clear();
+			return;
+		case PrfPackage.PROPERTIES__STRUCT:
+			getStruct().clear();
+			return;
+		case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+			getStructSequence().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -342,22 +338,21 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.PROPERTIES__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				return properties != null && !properties.isEmpty();
-			case PrfPackage.PROPERTIES__SIMPLE:
-				return !getSimple().isEmpty();
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-				return !getSimpleSequence().isEmpty();
-			case PrfPackage.PROPERTIES__TEST:
-				return !getTest().isEmpty();
-			case PrfPackage.PROPERTIES__STRUCT:
-				return !getStruct().isEmpty();
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				return !getStructSequence().isEmpty();
+		switch (featureID) {
+		case PrfPackage.PROPERTIES__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case PrfPackage.PROPERTIES__PROPERTIES:
+			return properties != null && !properties.isEmpty();
+		case PrfPackage.PROPERTIES__SIMPLE:
+			return !getSimple().isEmpty();
+		case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+			return !getSimpleSequence().isEmpty();
+		case PrfPackage.PROPERTIES__TEST:
+			return !getTest().isEmpty();
+		case PrfPackage.PROPERTIES__STRUCT:
+			return !getStruct().isEmpty();
+		case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+			return !getStructSequence().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -369,7 +364,8 @@ public class PropertiesImpl extends EObjectImpl implements Properties {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");

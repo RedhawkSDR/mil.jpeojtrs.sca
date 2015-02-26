@@ -35,7 +35,8 @@ public enum ActionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GE(0, "ge", "ge"), /**
+	GE(0, "ge", "ge"),
+	/**
 	 * The '<em><b>Gt</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,7 +44,8 @@ public enum ActionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GT(1, "gt", "gt"), /**
+	GT(1, "gt", "gt"),
+	/**
 	 * The '<em><b>External</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,7 +53,8 @@ public enum ActionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EXTERNAL(2, "external", "external"), /**
+	EXTERNAL(2, "external", "external"),
+	/**
 	 * The '<em><b>Le</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -59,7 +62,8 @@ public enum ActionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LE(3, "le", "le"), /**
+	LE(3, "le", "le"),
+	/**
 	 * The '<em><b>Lt</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +71,8 @@ public enum ActionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LT(4, "lt", "lt"), /**
+	LT(4, "lt", "lt"),
+	/**
 	 * The '<em><b>Ne</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,7 +80,8 @@ public enum ActionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NE(5, "ne", "ne"), /**
+	NE(5, "ne", "ne"),
+	/**
 	 * The '<em><b>Eq</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -85,7 +91,7 @@ public enum ActionType implements Enumerator {
 	 */
 	EQ(6, "eq", "eq");
 
-/**
+	/**
 	 * The '<em><b>Ge</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -99,7 +105,7 @@ public enum ActionType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int GE_VALUE = 0;
-/**
+	/**
 	 * The '<em><b>Gt</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -113,7 +119,7 @@ public enum ActionType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int GT_VALUE = 1;
-/**
+	/**
 	 * The '<em><b>External</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -127,7 +133,7 @@ public enum ActionType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int EXTERNAL_VALUE = 2;
-/**
+	/**
 	 * The '<em><b>Le</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -141,7 +147,7 @@ public enum ActionType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int LE_VALUE = 3;
-/**
+	/**
 	 * The '<em><b>Lt</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -155,7 +161,7 @@ public enum ActionType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int LT_VALUE = 4;
-/**
+	/**
 	 * The '<em><b>Ne</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -169,7 +175,7 @@ public enum ActionType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int NE_VALUE = 5;
-/**
+	/**
 	 * The '<em><b>Eq</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -183,24 +189,14 @@ public enum ActionType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int EQ_VALUE = 6;
-/**
+	/**
 	 * An array of all the '<em><b>Action Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ActionType[] VALUES_ARRAY =
-		new ActionType[]
-		{
-			GE,
-			GT,
-			EXTERNAL,
-			LE,
-			LT,
-			NE,
-			EQ,
-		};
-/**
+	private static final ActionType[] VALUES_ARRAY = new ActionType[] { GE, GT, EXTERNAL, LE, LT, NE, EQ, };
+	/**
 	 * A public read-only list of all the '<em><b>Action Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,82 +204,84 @@ public enum ActionType implements Enumerator {
 	 */
 	public static final List<ActionType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
-/**
+	/**
 	 * Returns the '<em><b>Action Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static ActionType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ActionType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal))
-			{
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Action Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static ActionType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ActionType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name))
-			{
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Action Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static ActionType get(int value) {
-		switch (value)
-		{
-			case GE_VALUE: return GE;
-			case GT_VALUE: return GT;
-			case EXTERNAL_VALUE: return EXTERNAL;
-			case LE_VALUE: return LE;
-			case LT_VALUE: return LT;
-			case NE_VALUE: return NE;
-			case EQ_VALUE: return EQ;
+		switch (value) {
+		case GE_VALUE:
+			return GE;
+		case GT_VALUE:
+			return GT;
+		case EXTERNAL_VALUE:
+			return EXTERNAL;
+		case LE_VALUE:
+			return LE;
+		case LT_VALUE:
+			return LT;
+		case NE_VALUE:
+			return NE;
+		case EQ_VALUE:
+			return EQ;
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final int value;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String name;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String literal;
 
-/**
+	/**
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,37 +293,37 @@ public enum ActionType implements Enumerator {
 		this.literal = literal;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
-/**
+	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

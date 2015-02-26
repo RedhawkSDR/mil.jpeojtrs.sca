@@ -93,7 +93,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 		public void notifyChanged(Notification notification) {
 			super.notifyChanged(notification);
 			if (notification.getNotifier() instanceof Simple) {
-				switch(notification.getFeatureID(Simple.class)) {
+				switch (notification.getFeatureID(Simple.class)) {
 				case PrfPackage.SIMPLE__ID:
 					updateSimpleRefID(notification);
 					break;
@@ -101,15 +101,16 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 					break;
 				}
 			} else if (notification.getNotifier() instanceof Struct) {
-				switch(notification.getFeatureID(Struct.class)) {
+				switch (notification.getFeatureID(Struct.class)) {
 				case PrfPackage.STRUCT__SIMPLE:
 					updateSimpleRefs(notification);
 					break;
 				default:
 					break;
+				}
 			}
 		}
-		}
+
 		@Override
 		protected void addAdapter(org.eclipse.emf.common.notify.Notifier notifier) {
 			if (notifier instanceof StructSequence || notifier instanceof Struct || notifier instanceof Simple) {
@@ -127,7 +128,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 		super();
 		eAdapters().add(this.simpleListener);
 	}
-		
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,10 +157,12 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	public NotificationChain basicSetStruct(Struct newStruct, NotificationChain msgs) {
 		Struct oldStruct = struct;
 		struct = newStruct;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.STRUCT_SEQUENCE__STRUCT, oldStruct, newStruct);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -171,17 +174,16 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public void setStruct(Struct newStruct) {
-		if (newStruct != struct)
-		{
+		if (newStruct != struct) {
 			NotificationChain msgs = null;
 			if (struct != null)
-				msgs = ((InternalEObject)struct).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.STRUCT_SEQUENCE__STRUCT, null, msgs);
+				msgs = ((InternalEObject) struct).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.STRUCT_SEQUENCE__STRUCT, null, msgs);
 			if (newStruct != null)
-				msgs = ((InternalEObject)newStruct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.STRUCT_SEQUENCE__STRUCT, null, msgs);
+				msgs = ((InternalEObject) newStruct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.STRUCT_SEQUENCE__STRUCT, null, msgs);
 			msgs = basicSetStruct(newStruct, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.STRUCT_SEQUENCE__STRUCT, newStruct, newStruct));
 	}
 
@@ -192,8 +194,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public EList<StructValue> getStructValue() {
-		if (structValue == null)
-		{
+		if (structValue == null) {
 			structValue = new EObjectContainmentEList<StructValue>(StructValue.class, this, PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE);
 		}
 		return structValue;
@@ -206,8 +207,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public EList<ConfigurationKind> getConfigurationKind() {
-		if (configurationKind == null)
-		{
+		if (configurationKind == null) {
 			configurationKind = new EObjectContainmentEList<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND);
 		}
 		return configurationKind;
@@ -228,29 +228,29 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 			}
 		}
 	}
-	
+
 	protected void updateSimpleRefs(Notification notification) {
 		Simple simple = (Simple) notification.getNewValue();
 		if (simple != null) { //Add Simple Refs associated with new value
 			for (StructValue structValue : getStructValue()) {
-	        	SimpleRef ref = PrfFactory.eINSTANCE.createSimpleRef();
-	        	ref.setRefID(simple.getId());
-	        	ref.setValue(PropertiesUtil.getDefaultValue(simple));
-	        	SimpleRef oldRef = null;
-	        	for (SimpleRef sr: structValue.getSimpleRef()) {
-	        		if (sr.getRefID() != null && sr.getRefID().equals(simple.getId())) {
-	        			oldRef = sr;
-	        			break;
-	        		}
-	        	}
-	        	if (oldRef != null) {
-	        		structValue.getSimpleRef().remove(oldRef);
-	        	}
-	        	int index = this.getStruct().getSimple().indexOf(simple);
-	        	structValue.getSimpleRef().add(index, ref);
-	        }
+				SimpleRef ref = PrfFactory.eINSTANCE.createSimpleRef();
+				ref.setRefID(simple.getId());
+				ref.setValue(PropertiesUtil.getDefaultValue(simple));
+				SimpleRef oldRef = null;
+				for (SimpleRef sr : structValue.getSimpleRef()) {
+					if (sr.getRefID() != null && sr.getRefID().equals(simple.getId())) {
+						oldRef = sr;
+						break;
+					}
+				}
+				if (oldRef != null) {
+					structValue.getSimpleRef().remove(oldRef);
+				}
+				int index = this.getStruct().getSimple().indexOf(simple);
+				structValue.getSimpleRef().add(index, ref);
+			}
 		} else { //Remove SimpleRefs associated with the oldValue
-			simple = (Simple)notification.getOldValue();
+			simple = (Simple) notification.getOldValue();
 			if (simple != null) {
 				for (StructValue structValue : getStructValue()) {
 					Collection<SimpleRef> removeRefs = null;
@@ -270,13 +270,13 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 					}
 				}
 			}
-			
+
 		}
-        
-    }
-	
+
+	}
+
 	@Override
-	public boolean isKind(PropertyConfigurationType ... type) {
+	public boolean isKind(PropertyConfigurationType... type) {
 		// END GENERATED CODE
 		if (type == null) {
 			return false;
@@ -320,14 +320,13 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-				return basicSetStruct(null, msgs);
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-				return ((InternalEList<?>)getStructValue()).basicRemove(otherEnd, msgs);
-			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-				return ((InternalEList<?>)getConfigurationKind()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+			return basicSetStruct(null, msgs);
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+			return ((InternalEList< ? >) getStructValue()).basicRemove(otherEnd, msgs);
+		case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+			return ((InternalEList< ? >) getConfigurationKind()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -339,14 +338,13 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-				return getStruct();
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-				return getStructValue();
-			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-				return getConfigurationKind();
+		switch (featureID) {
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+			return getStruct();
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+			return getStructValue();
+		case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+			return getConfigurationKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -359,19 +357,18 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-				setStruct((Struct)newValue);
-				return;
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-				getStructValue().clear();
-				getStructValue().addAll((Collection<? extends StructValue>)newValue);
-				return;
-			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-				getConfigurationKind().clear();
-				getConfigurationKind().addAll((Collection<? extends ConfigurationKind>)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+			setStruct((Struct) newValue);
+			return;
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+			getStructValue().clear();
+			getStructValue().addAll((Collection< ? extends StructValue>) newValue);
+			return;
+		case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+			getConfigurationKind().clear();
+			getConfigurationKind().addAll((Collection< ? extends ConfigurationKind>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -383,17 +380,16 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-				setStruct((Struct)null);
-				return;
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-				getStructValue().clear();
-				return;
-			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-				getConfigurationKind().clear();
-				return;
+		switch (featureID) {
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+			setStruct((Struct) null);
+			return;
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+			getStructValue().clear();
+			return;
+		case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+			getConfigurationKind().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -405,25 +401,24 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-				return struct != null;
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-				return structValue != null && !structValue.isEmpty();
-			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-				return configurationKind != null && !configurationKind.isEmpty();
+		switch (featureID) {
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+			return struct != null;
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+			return structValue != null && !structValue.isEmpty();
+		case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+			return configurationKind != null && !configurationKind.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	@Override
 	public EList<StructValue> getStructvalue() {
-	    return getStructValue();
-    }
+		return getStructValue();
+	}
 
 	@Override
-    public Any toAny() {
+	public Any toAny() {
 		Any retVal = JacorbUtil.init().create_any();
 		List<Any> structVals = new ArrayList<Any>();
 		for (StructValue structProp : getStructValue()) {
@@ -431,6 +426,6 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 		}
 		AnySeqHelper.insert(retVal, structVals.toArray(new Any[structVals.size()]));
 		return retVal;
-    }
+	}
 
 } //StructSequenceImpl

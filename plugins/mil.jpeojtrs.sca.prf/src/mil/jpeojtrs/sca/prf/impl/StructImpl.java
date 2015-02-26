@@ -97,8 +97,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public EList<Simple> getSimple() {
-		if (simple == null)
-		{
+		if (simple == null) {
 			simple = new EObjectContainmentEList<Simple>(Simple.class, this, PrfPackage.STRUCT__SIMPLE);
 		}
 		return simple;
@@ -111,15 +110,14 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public EList<ConfigurationKind> getConfigurationKind() {
-		if (configurationKind == null)
-		{
+		if (configurationKind == null) {
 			configurationKind = new EObjectContainmentEList<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT__CONFIGURATION_KIND);
 		}
 		return configurationKind;
 	}
 
 	@Override
-	public boolean isKind(PropertyConfigurationType ... type) {
+	public boolean isKind(PropertyConfigurationType... type) {
 		// END GENERATED CODE
 		if (type == null) {
 			return false;
@@ -171,12 +169,11 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT__SIMPLE:
-				return ((InternalEList<?>)getSimple()).basicRemove(otherEnd, msgs);
-			case PrfPackage.STRUCT__CONFIGURATION_KIND:
-				return ((InternalEList<?>)getConfigurationKind()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PrfPackage.STRUCT__SIMPLE:
+			return ((InternalEList< ? >) getSimple()).basicRemove(otherEnd, msgs);
+		case PrfPackage.STRUCT__CONFIGURATION_KIND:
+			return ((InternalEList< ? >) getConfigurationKind()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -188,12 +185,11 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT__SIMPLE:
-				return getSimple();
-			case PrfPackage.STRUCT__CONFIGURATION_KIND:
-				return getConfigurationKind();
+		switch (featureID) {
+		case PrfPackage.STRUCT__SIMPLE:
+			return getSimple();
+		case PrfPackage.STRUCT__CONFIGURATION_KIND:
+			return getConfigurationKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,16 +202,15 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT__SIMPLE:
-				getSimple().clear();
-				getSimple().addAll((Collection<? extends Simple>)newValue);
-				return;
-			case PrfPackage.STRUCT__CONFIGURATION_KIND:
-				getConfigurationKind().clear();
-				getConfigurationKind().addAll((Collection<? extends ConfigurationKind>)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.STRUCT__SIMPLE:
+			getSimple().clear();
+			getSimple().addAll((Collection< ? extends Simple>) newValue);
+			return;
+		case PrfPackage.STRUCT__CONFIGURATION_KIND:
+			getConfigurationKind().clear();
+			getConfigurationKind().addAll((Collection< ? extends ConfigurationKind>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -227,14 +222,13 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT__SIMPLE:
-				getSimple().clear();
-				return;
-			case PrfPackage.STRUCT__CONFIGURATION_KIND:
-				getConfigurationKind().clear();
-				return;
+		switch (featureID) {
+		case PrfPackage.STRUCT__SIMPLE:
+			getSimple().clear();
+			return;
+		case PrfPackage.STRUCT__CONFIGURATION_KIND:
+			getConfigurationKind().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -246,18 +240,17 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT__SIMPLE:
-				return simple != null && !simple.isEmpty();
-			case PrfPackage.STRUCT__CONFIGURATION_KIND:
-				return configurationKind != null && !configurationKind.isEmpty();
+		switch (featureID) {
+		case PrfPackage.STRUCT__SIMPLE:
+			return simple != null && !simple.isEmpty();
+		case PrfPackage.STRUCT__CONFIGURATION_KIND:
+			return configurationKind != null && !configurationKind.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	@Override
-    public Any toAny() {
+	public Any toAny() {
 		Any retVal = JacorbUtil.init().create_any();
 		List<DataType> fields = new ArrayList<DataType>(getSimple().size());
 		for (Simple prop : getSimple()) {
@@ -265,6 +258,6 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 		}
 		PropertiesHelper.insert(retVal, fields.toArray(new DataType[fields.size()]));
 		return retVal;
-    }
+	}
 
 } //StructImpl

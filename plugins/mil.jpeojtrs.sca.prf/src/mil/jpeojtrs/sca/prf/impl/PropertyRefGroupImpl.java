@@ -84,8 +84,7 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 */
 	@Override
 	public FeatureMap getProperties() {
-		if (properties == null)
-		{
+		if (properties == null) {
 			properties = new BasicFeatureMap(this, PrfPackage.PROPERTY_REF_GROUP__PROPERTIES);
 		}
 		return properties;
@@ -146,18 +145,17 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
-				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
-				return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
-				return ((InternalEList<?>)getSimpleSequenceRef()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
-				return ((InternalEList<?>)getStructRef()).basicRemove(otherEnd, msgs);
-			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
-				return ((InternalEList<?>)getStructSequenceRef()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
+			return ((InternalEList< ? >) getProperties()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
+			return ((InternalEList< ? >) getSimpleRef()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
+			return ((InternalEList< ? >) getSimpleSequenceRef()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
+			return ((InternalEList< ? >) getStructRef()).basicRemove(otherEnd, msgs);
+		case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
+			return ((InternalEList< ? >) getStructSequenceRef()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -169,19 +167,19 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
-				if (coreType) return getProperties();
-				return ((FeatureMap.Internal)getProperties()).getWrapper();
-			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
-				return getSimpleRef();
-			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
-				return getSimpleSequenceRef();
-			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
-				return getStructRef();
-			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
-				return getStructSequenceRef();
+		switch (featureID) {
+		case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
+			if (coreType)
+				return getProperties();
+			return ((FeatureMap.Internal) getProperties()).getWrapper();
+		case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
+			return getSimpleRef();
+		case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
+			return getSimpleSequenceRef();
+		case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
+			return getStructRef();
+		case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
+			return getStructSequenceRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -194,27 +192,26 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
-				((FeatureMap.Internal)getProperties()).set(newValue);
-				return;
-			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
-				getSimpleRef().clear();
-				getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
-				return;
-			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
-				getSimpleSequenceRef().clear();
-				getSimpleSequenceRef().addAll((Collection<? extends SimpleSequenceRef>)newValue);
-				return;
-			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
-				getStructRef().clear();
-				getStructRef().addAll((Collection<? extends StructRef>)newValue);
-				return;
-			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
-				getStructSequenceRef().clear();
-				getStructSequenceRef().addAll((Collection<? extends StructSequenceRef>)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
+			((FeatureMap.Internal) getProperties()).set(newValue);
+			return;
+		case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
+			getSimpleRef().clear();
+			getSimpleRef().addAll((Collection< ? extends SimpleRef>) newValue);
+			return;
+		case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
+			getSimpleSequenceRef().clear();
+			getSimpleSequenceRef().addAll((Collection< ? extends SimpleSequenceRef>) newValue);
+			return;
+		case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
+			getStructRef().clear();
+			getStructRef().addAll((Collection< ? extends StructRef>) newValue);
+			return;
+		case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
+			getStructSequenceRef().clear();
+			getStructSequenceRef().addAll((Collection< ? extends StructSequenceRef>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -226,23 +223,22 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
-				getProperties().clear();
-				return;
-			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
-				getSimpleRef().clear();
-				return;
-			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
-				getSimpleSequenceRef().clear();
-				return;
-			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
-				getStructRef().clear();
-				return;
-			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
-				getStructSequenceRef().clear();
-				return;
+		switch (featureID) {
+		case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
+			getProperties().clear();
+			return;
+		case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
+			getSimpleRef().clear();
+			return;
+		case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
+			getSimpleSequenceRef().clear();
+			return;
+		case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
+			getStructRef().clear();
+			return;
+		case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
+			getStructSequenceRef().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,18 +250,17 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
-				return properties != null && !properties.isEmpty();
-			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
-				return !getSimpleRef().isEmpty();
-			case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
-				return !getSimpleSequenceRef().isEmpty();
-			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
-				return !getStructRef().isEmpty();
-			case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
-				return !getStructSequenceRef().isEmpty();
+		switch (featureID) {
+		case PrfPackage.PROPERTY_REF_GROUP__PROPERTIES:
+			return properties != null && !properties.isEmpty();
+		case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_REF:
+			return !getSimpleRef().isEmpty();
+		case PrfPackage.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF:
+			return !getSimpleSequenceRef().isEmpty();
+		case PrfPackage.PROPERTY_REF_GROUP__STRUCT_REF:
+			return !getStructRef().isEmpty();
+		case PrfPackage.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF:
+			return !getStructSequenceRef().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -277,7 +272,8 @@ public abstract class PropertyRefGroupImpl extends EObjectImpl implements Proper
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (properties: ");

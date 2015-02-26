@@ -144,12 +144,11 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.RANGE__MAX:
-				return getMax();
-			case PrfPackage.RANGE__MIN:
-				return getMin();
+		switch (featureID) {
+		case PrfPackage.RANGE__MAX:
+			return getMax();
+		case PrfPackage.RANGE__MIN:
+			return getMin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,14 +160,13 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.RANGE__MAX:
-				setMax((String)newValue);
-				return;
-			case PrfPackage.RANGE__MIN:
-				setMin((String)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.RANGE__MAX:
+			setMax((String) newValue);
+			return;
+		case PrfPackage.RANGE__MIN:
+			setMin((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,14 +178,13 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.RANGE__MAX:
-				setMax(MAX_EDEFAULT);
-				return;
-			case PrfPackage.RANGE__MIN:
-				setMin(MIN_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PrfPackage.RANGE__MAX:
+			setMax(MAX_EDEFAULT);
+			return;
+		case PrfPackage.RANGE__MIN:
+			setMin(MIN_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,12 +196,11 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.RANGE__MAX:
-				return MAX_EDEFAULT == null ? max != null : !MAX_EDEFAULT.equals(max);
-			case PrfPackage.RANGE__MIN:
-				return MIN_EDEFAULT == null ? min != null : !MIN_EDEFAULT.equals(min);
+		switch (featureID) {
+		case PrfPackage.RANGE__MAX:
+			return MAX_EDEFAULT == null ? max != null : !MAX_EDEFAULT.equals(max);
+		case PrfPackage.RANGE__MIN:
+			return MIN_EDEFAULT == null ? min != null : !MIN_EDEFAULT.equals(min);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,7 +212,8 @@ public class RangeImpl extends EObjectImpl implements Range {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (max: ");

@@ -35,7 +35,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CONFIGURE(0, "configure", "configure"), /**
+	CONFIGURE(0, "configure", "configure"),
+	/**
 	 * The '<em><b>Allocation</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,7 +44,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ALLOCATION(1, "allocation", "allocation"), /**
+	ALLOCATION(1, "allocation", "allocation"),
+	/**
 	 * The '<em><b>Factoryparam</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,7 +53,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FACTORYPARAM(2, "factoryparam", "factoryparam"), /**
+	FACTORYPARAM(2, "factoryparam", "factoryparam"),
+	/**
 	 * The '<em><b>Test</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -59,7 +62,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TEST(3, "test", "test"), /**
+	TEST(3, "test", "test"),
+	/**
 	 * The '<em><b>Event</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +71,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EVENT(4, "event", "event"), /**
+	EVENT(4, "event", "event"),
+	/**
 	 * The '<em><b>Message</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,7 +96,7 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int CONFIGURE_VALUE = 0;
-/**
+	/**
 	 * The '<em><b>Allocation</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -105,7 +110,7 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int ALLOCATION_VALUE = 1;
-/**
+	/**
 	 * The '<em><b>Factoryparam</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -119,7 +124,7 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int FACTORYPARAM_VALUE = 2;
-/**
+	/**
 	 * The '<em><b>Test</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -133,7 +138,7 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int TEST_VALUE = 3;
-/**
+	/**
 	 * The '<em><b>Event</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -147,7 +152,7 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int EVENT_VALUE = 4;
-/**
+	/**
 	 * The '<em><b>Message</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -161,7 +166,7 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int MESSAGE_VALUE = 5;
-/**
+	/**
 	 * An array of all the '<em><b>Struct Property Configuration Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -185,86 +190,82 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 */
 	public static final List<StructPropertyConfigurationType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
-
-/**
+	/**
 	 * Returns the '<em><b>Struct Property Configuration Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static StructPropertyConfigurationType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			StructPropertyConfigurationType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal))
-			{
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-
-/**
+	/**
 	 * Returns the '<em><b>Struct Property Configuration Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static StructPropertyConfigurationType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			StructPropertyConfigurationType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name))
-			{
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-
-/**
+	/**
 	 * Returns the '<em><b>Struct Property Configuration Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static StructPropertyConfigurationType get(int value) {
-		switch (value)
-		{
-			case CONFIGURE_VALUE: return CONFIGURE;
-			case ALLOCATION_VALUE: return ALLOCATION;
-			case FACTORYPARAM_VALUE: return FACTORYPARAM;
-			case TEST_VALUE: return TEST;
-			case EVENT_VALUE: return EVENT;
-			case MESSAGE_VALUE: return MESSAGE;
+		switch (value) {
+		case CONFIGURE_VALUE:
+			return CONFIGURE;
+		case ALLOCATION_VALUE:
+			return ALLOCATION;
+		case FACTORYPARAM_VALUE:
+			return FACTORYPARAM;
+		case TEST_VALUE:
+			return TEST;
+		case EVENT_VALUE:
+			return EVENT;
+		case MESSAGE_VALUE:
+			return MESSAGE;
 		}
 		return null;
 	}
 
-
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final int value;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String name;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String literal;
 
-
-/**
+	/**
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -276,41 +277,37 @@ public enum StructPropertyConfigurationType implements Enumerator {
 		this.literal = literal;
 	}
 
-
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
-
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
-
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
-
-/**
+	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -320,7 +317,6 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-
 
 	public PropertyConfigurationType getPropertyConfigurationType() {
 		switch (this) {
@@ -340,13 +336,12 @@ public enum StructPropertyConfigurationType implements Enumerator {
 			throw new UnsupportedOperationException("Unknown type conversion: " + this);
 		}
 	}
-	
-	
+
 	public static StructPropertyConfigurationType getStructPropertyConfigurationType(PropertyConfigurationType type) {
 		if (type == null) {
 			return null;
 		}
-			
+
 		switch (type) {
 		case ALLOCATION:
 			return StructPropertyConfigurationType.ALLOCATION;

@@ -93,8 +93,7 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 */
 	@Override
 	public EList<StructValue> getStructValue() {
-		if (structValue == null)
-		{
+		if (structValue == null) {
 			structValue = new EObjectContainmentEList<StructValue>(StructValue.class, this, PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE);
 		}
 		return structValue;
@@ -119,10 +118,9 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-				return ((InternalEList<?>)getStructValue()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+			return ((InternalEList< ? >) getStructValue()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -134,10 +132,9 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-				return getStructValue();
+		switch (featureID) {
+		case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+			return getStructValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,12 +147,11 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-				getStructValue().clear();
-				getStructValue().addAll((Collection<? extends StructValue>)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+			getStructValue().clear();
+			getStructValue().addAll((Collection< ? extends StructValue>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -167,11 +163,10 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-				getStructValue().clear();
-				return;
+		switch (featureID) {
+		case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+			getStructValue().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -183,16 +178,15 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
-				return structValue != null && !structValue.isEmpty();
+		switch (featureID) {
+		case PrfPackage.STRUCT_SEQUENCE_REF__STRUCT_VALUE:
+			return structValue != null && !structValue.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	@Override
-    public Any toAny() {
+	public Any toAny() {
 		Any retVal = JacorbUtil.init().create_any();
 		List<Any> structVals = new ArrayList<Any>();
 		for (StructValue structProp : getStructValue()) {
@@ -200,6 +194,6 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 		}
 		AnySeqHelper.insert(retVal, structVals.toArray(new Any[structVals.size()]));
 		return retVal;
-    }
+	}
 
 } //StructSequenceRefImpl

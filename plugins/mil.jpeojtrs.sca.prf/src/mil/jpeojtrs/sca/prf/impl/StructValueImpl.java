@@ -98,8 +98,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	@Override
 	public EList<SimpleRef> getSimpleRef() {
-		if (simpleRef == null)
-		{
+		if (simpleRef == null) {
 			simpleRef = new EObjectContainmentEList<SimpleRef>(SimpleRef.class, this, PrfPackage.STRUCT_VALUE__SIMPLE_REF);
 		}
 		return simpleRef;
@@ -113,7 +112,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	@Override
 	public Struct getStruct() {
 		Struct struct = basicGetStruct();
-		return struct != null && struct.eIsProxy() ? (Struct)eResolveProxy((InternalEObject)struct) : struct;
+		return struct != null && struct.eIsProxy() ? (Struct) eResolveProxy((InternalEObject) struct) : struct;
 	}
 
 	/**
@@ -212,10 +211,9 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-				return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+			return ((InternalEList< ? >) getSimpleRef()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -227,15 +225,15 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-				return getSimpleRef();
-			case PrfPackage.STRUCT_VALUE__STRUCT:
-				if (resolve) return getStruct();
-				return basicGetStruct();
-			case PrfPackage.STRUCT_VALUE__INDEX:
-				return getIndex();
+		switch (featureID) {
+		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+			return getSimpleRef();
+		case PrfPackage.STRUCT_VALUE__STRUCT:
+			if (resolve)
+				return getStruct();
+			return basicGetStruct();
+		case PrfPackage.STRUCT_VALUE__INDEX:
+			return getIndex();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -248,12 +246,11 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-				getSimpleRef().clear();
-				getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+			getSimpleRef().clear();
+			getSimpleRef().addAll((Collection< ? extends SimpleRef>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -265,11 +262,10 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-				getSimpleRef().clear();
-				return;
+		switch (featureID) {
+		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+			getSimpleRef().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -281,14 +277,13 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-				return simpleRef != null && !simpleRef.isEmpty();
-			case PrfPackage.STRUCT_VALUE__STRUCT:
-				return basicGetStruct() != null;
-			case PrfPackage.STRUCT_VALUE__INDEX:
-				return getIndex() != INDEX_EDEFAULT;
+		switch (featureID) {
+		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+			return simpleRef != null && !simpleRef.isEmpty();
+		case PrfPackage.STRUCT_VALUE__STRUCT:
+			return basicGetStruct() != null;
+		case PrfPackage.STRUCT_VALUE__INDEX:
+			return getIndex() != INDEX_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

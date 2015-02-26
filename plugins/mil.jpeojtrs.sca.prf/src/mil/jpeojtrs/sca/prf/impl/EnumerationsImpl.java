@@ -76,8 +76,7 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 */
 	@Override
 	public EList<Enumeration> getEnumeration() {
-		if (enumeration == null)
-		{
+		if (enumeration == null) {
 			enumeration = new EObjectContainmentEList<Enumeration>(Enumeration.class, this, PrfPackage.ENUMERATIONS__ENUMERATION);
 		}
 		return enumeration;
@@ -90,10 +89,9 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.ENUMERATIONS__ENUMERATION:
-				return ((InternalEList<?>)getEnumeration()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PrfPackage.ENUMERATIONS__ENUMERATION:
+			return ((InternalEList< ? >) getEnumeration()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -105,10 +103,9 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.ENUMERATIONS__ENUMERATION:
-				return getEnumeration();
+		switch (featureID) {
+		case PrfPackage.ENUMERATIONS__ENUMERATION:
+			return getEnumeration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,12 +118,11 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.ENUMERATIONS__ENUMERATION:
-				getEnumeration().clear();
-				getEnumeration().addAll((Collection<? extends Enumeration>)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.ENUMERATIONS__ENUMERATION:
+			getEnumeration().clear();
+			getEnumeration().addAll((Collection< ? extends Enumeration>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -138,11 +134,10 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.ENUMERATIONS__ENUMERATION:
-				getEnumeration().clear();
-				return;
+		switch (featureID) {
+		case PrfPackage.ENUMERATIONS__ENUMERATION:
+			getEnumeration().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,10 +149,9 @@ public class EnumerationsImpl extends EObjectImpl implements Enumerations {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.ENUMERATIONS__ENUMERATION:
-				return enumeration != null && !enumeration.isEmpty();
+		switch (featureID) {
+		case PrfPackage.ENUMERATIONS__ENUMERATION:
+			return enumeration != null && !enumeration.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

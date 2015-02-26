@@ -38,7 +38,7 @@ import org.omg.CORBA.Any;
  *
  * @generated
  */
-public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extends EObjectImpl implements AbstractPropertyRef<P> {
+public abstract class AbstractPropertyRefImpl< P extends AbstractProperty > extends EObjectImpl implements AbstractPropertyRef<P> {
 	/**
 	 * The default value of the '{@link #getRefID() <em>Ref ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -109,7 +109,7 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	@SuppressWarnings("unchecked")
 	public P getProperty() {
 		P property = basicGetProperty();
-		return property != null && property.eIsProxy() ? (P)eResolveProxy((InternalEObject)property) : property;
+		return property != null && property.eIsProxy() ? (P) eResolveProxy((InternalEObject) property) : property;
 	}
 
 	/**
@@ -118,7 +118,7 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 * @generated NOT
 	 */
 	@SuppressWarnings("unchecked")
-    public P basicGetProperty() {
+	public P basicGetProperty() {
 		if (getRefID() == null) {
 			return null;
 		}
@@ -164,13 +164,13 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
-				return getRefID();
-			case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
-				if (resolve) return getProperty();
-				return basicGetProperty();
+		switch (featureID) {
+		case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
+			return getRefID();
+		case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
+			if (resolve)
+				return getProperty();
+			return basicGetProperty();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,14 +183,13 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
-				setRefID((String)newValue);
-				return;
-			case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
-				setProperty((P)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
+			setRefID((String) newValue);
+			return;
+		case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
+			setProperty((P) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -202,14 +201,13 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
-				setRefID(REF_ID_EDEFAULT);
-				return;
-			case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
-				setProperty((P)null);
-				return;
+		switch (featureID) {
+		case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
+			setRefID(REF_ID_EDEFAULT);
+			return;
+		case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
+			setProperty((P) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -221,12 +219,11 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
-				return REF_ID_EDEFAULT == null ? refID != null : !REF_ID_EDEFAULT.equals(refID);
-			case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
-				return basicGetProperty() != null;
+		switch (featureID) {
+		case PrfPackage.ABSTRACT_PROPERTY_REF__REF_ID:
+			return REF_ID_EDEFAULT == null ? refID != null : !REF_ID_EDEFAULT.equals(refID);
+		case PrfPackage.ABSTRACT_PROPERTY_REF__PROPERTY:
+			return basicGetProperty() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -238,7 +235,8 @@ public abstract class AbstractPropertyRefImpl<P extends AbstractProperty> extend
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (refID: ");

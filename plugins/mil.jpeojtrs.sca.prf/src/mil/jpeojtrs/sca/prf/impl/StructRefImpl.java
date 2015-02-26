@@ -95,8 +95,7 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 */
 	@Override
 	public EList<SimpleRef> getSimpleRef() {
-		if (simpleRef == null)
-		{
+		if (simpleRef == null) {
 			simpleRef = new EObjectContainmentEList<SimpleRef>(SimpleRef.class, this, PrfPackage.STRUCT_REF__SIMPLE_REF);
 		}
 		return simpleRef;
@@ -121,10 +120,9 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_REF__SIMPLE_REF:
-				return ((InternalEList<?>)getSimpleRef()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PrfPackage.STRUCT_REF__SIMPLE_REF:
+			return ((InternalEList< ? >) getSimpleRef()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -136,10 +134,9 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_REF__SIMPLE_REF:
-				return getSimpleRef();
+		switch (featureID) {
+		case PrfPackage.STRUCT_REF__SIMPLE_REF:
+			return getSimpleRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -152,12 +149,11 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_REF__SIMPLE_REF:
-				getSimpleRef().clear();
-				getSimpleRef().addAll((Collection<? extends SimpleRef>)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.STRUCT_REF__SIMPLE_REF:
+			getSimpleRef().clear();
+			getSimpleRef().addAll((Collection< ? extends SimpleRef>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -169,11 +165,10 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_REF__SIMPLE_REF:
-				getSimpleRef().clear();
-				return;
+		switch (featureID) {
+		case PrfPackage.STRUCT_REF__SIMPLE_REF:
+			getSimpleRef().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -185,16 +180,15 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.STRUCT_REF__SIMPLE_REF:
-				return simpleRef != null && !simpleRef.isEmpty();
+		switch (featureID) {
+		case PrfPackage.STRUCT_REF__SIMPLE_REF:
+			return simpleRef != null && !simpleRef.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	@Override
-    public Any toAny() {
+	public Any toAny() {
 		Any retVal = JacorbUtil.init().create_any();
 		List<DataType> fields = new ArrayList<DataType>(getSimpleRef().size());
 		for (SimpleRef prop : getSimpleRef()) {
@@ -202,6 +196,6 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 		}
 		PropertiesHelper.insert(retVal, fields.toArray(new DataType[fields.size()]));
 		return retVal;
-    }
+	}
 
 } //StructRefImpl

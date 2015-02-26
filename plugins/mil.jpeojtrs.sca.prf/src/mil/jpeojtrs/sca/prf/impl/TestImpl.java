@@ -155,10 +155,12 @@ public class TestImpl extends EObjectImpl implements Test {
 	public NotificationChain basicSetInputValue(InputValue newInputValue, NotificationChain msgs) {
 		InputValue oldInputValue = inputValue;
 		inputValue = newInputValue;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.TEST__INPUT_VALUE, oldInputValue, newInputValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -170,17 +172,16 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public void setInputValue(InputValue newInputValue) {
-		if (newInputValue != inputValue)
-		{
+		if (newInputValue != inputValue) {
 			NotificationChain msgs = null;
 			if (inputValue != null)
-				msgs = ((InternalEObject)inputValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.TEST__INPUT_VALUE, null, msgs);
+				msgs = ((InternalEObject) inputValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.TEST__INPUT_VALUE, null, msgs);
 			if (newInputValue != null)
-				msgs = ((InternalEObject)newInputValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.TEST__INPUT_VALUE, null, msgs);
+				msgs = ((InternalEObject) newInputValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.TEST__INPUT_VALUE, null, msgs);
 			msgs = basicSetInputValue(newInputValue, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.TEST__INPUT_VALUE, newInputValue, newInputValue));
 	}
 
@@ -202,10 +203,12 @@ public class TestImpl extends EObjectImpl implements Test {
 	public NotificationChain basicSetResultValue(ResultValue newResultValue, NotificationChain msgs) {
 		ResultValue oldResultValue = resultValue;
 		resultValue = newResultValue;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.TEST__RESULT_VALUE, oldResultValue, newResultValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -217,17 +220,16 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public void setResultValue(ResultValue newResultValue) {
-		if (newResultValue != resultValue)
-		{
+		if (newResultValue != resultValue) {
 			NotificationChain msgs = null;
 			if (resultValue != null)
-				msgs = ((InternalEObject)resultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.TEST__RESULT_VALUE, null, msgs);
+				msgs = ((InternalEObject) resultValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.TEST__RESULT_VALUE, null, msgs);
 			if (newResultValue != null)
-				msgs = ((InternalEObject)newResultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.TEST__RESULT_VALUE, null, msgs);
+				msgs = ((InternalEObject) newResultValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.TEST__RESULT_VALUE, null, msgs);
 			msgs = basicSetResultValue(newResultValue, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.TEST__RESULT_VALUE, newResultValue, newResultValue));
 	}
 
@@ -261,12 +263,11 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.TEST__INPUT_VALUE:
-				return basicSetInputValue(null, msgs);
-			case PrfPackage.TEST__RESULT_VALUE:
-				return basicSetResultValue(null, msgs);
+		switch (featureID) {
+		case PrfPackage.TEST__INPUT_VALUE:
+			return basicSetInputValue(null, msgs);
+		case PrfPackage.TEST__RESULT_VALUE:
+			return basicSetResultValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -278,16 +279,15 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.TEST__DESCRIPTION:
-				return getDescription();
-			case PrfPackage.TEST__INPUT_VALUE:
-				return getInputValue();
-			case PrfPackage.TEST__RESULT_VALUE:
-				return getResultValue();
-			case PrfPackage.TEST__ID:
-				return getId();
+		switch (featureID) {
+		case PrfPackage.TEST__DESCRIPTION:
+			return getDescription();
+		case PrfPackage.TEST__INPUT_VALUE:
+			return getInputValue();
+		case PrfPackage.TEST__RESULT_VALUE:
+			return getResultValue();
+		case PrfPackage.TEST__ID:
+			return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -299,20 +299,19 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.TEST__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case PrfPackage.TEST__INPUT_VALUE:
-				setInputValue((InputValue)newValue);
-				return;
-			case PrfPackage.TEST__RESULT_VALUE:
-				setResultValue((ResultValue)newValue);
-				return;
-			case PrfPackage.TEST__ID:
-				setId((String)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.TEST__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case PrfPackage.TEST__INPUT_VALUE:
+			setInputValue((InputValue) newValue);
+			return;
+		case PrfPackage.TEST__RESULT_VALUE:
+			setResultValue((ResultValue) newValue);
+			return;
+		case PrfPackage.TEST__ID:
+			setId((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -324,20 +323,19 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.TEST__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case PrfPackage.TEST__INPUT_VALUE:
-				setInputValue((InputValue)null);
-				return;
-			case PrfPackage.TEST__RESULT_VALUE:
-				setResultValue((ResultValue)null);
-				return;
-			case PrfPackage.TEST__ID:
-				setId(ID_EDEFAULT);
-				return;
+		switch (featureID) {
+		case PrfPackage.TEST__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case PrfPackage.TEST__INPUT_VALUE:
+			setInputValue((InputValue) null);
+			return;
+		case PrfPackage.TEST__RESULT_VALUE:
+			setResultValue((ResultValue) null);
+			return;
+		case PrfPackage.TEST__ID:
+			setId(ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -349,16 +347,15 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.TEST__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case PrfPackage.TEST__INPUT_VALUE:
-				return inputValue != null;
-			case PrfPackage.TEST__RESULT_VALUE:
-				return resultValue != null;
-			case PrfPackage.TEST__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		switch (featureID) {
+		case PrfPackage.TEST__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case PrfPackage.TEST__INPUT_VALUE:
+			return inputValue != null;
+		case PrfPackage.TEST__RESULT_VALUE:
+			return resultValue != null;
+		case PrfPackage.TEST__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -370,7 +367,8 @@ public class TestImpl extends EObjectImpl implements Test {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
@@ -383,7 +381,7 @@ public class TestImpl extends EObjectImpl implements Test {
 
 	@Override
 	public InputValue getInputvalue() {
-	    return getInputValue();
-    }
+		return getInputValue();
+	}
 
 } //TestImpl

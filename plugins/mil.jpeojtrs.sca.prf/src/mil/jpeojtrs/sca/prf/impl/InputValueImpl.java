@@ -76,8 +76,7 @@ public class InputValueImpl extends EObjectImpl implements InputValue {
 	 */
 	@Override
 	public EList<Simple> getSimple() {
-		if (simple == null)
-		{
+		if (simple == null) {
 			simple = new EObjectContainmentEList<Simple>(Simple.class, this, PrfPackage.INPUT_VALUE__SIMPLE);
 		}
 		return simple;
@@ -90,10 +89,9 @@ public class InputValueImpl extends EObjectImpl implements InputValue {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case PrfPackage.INPUT_VALUE__SIMPLE:
-				return ((InternalEList<?>)getSimple()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case PrfPackage.INPUT_VALUE__SIMPLE:
+			return ((InternalEList< ? >) getSimple()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -105,10 +103,9 @@ public class InputValueImpl extends EObjectImpl implements InputValue {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case PrfPackage.INPUT_VALUE__SIMPLE:
-				return getSimple();
+		switch (featureID) {
+		case PrfPackage.INPUT_VALUE__SIMPLE:
+			return getSimple();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,12 +118,11 @@ public class InputValueImpl extends EObjectImpl implements InputValue {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case PrfPackage.INPUT_VALUE__SIMPLE:
-				getSimple().clear();
-				getSimple().addAll((Collection<? extends Simple>)newValue);
-				return;
+		switch (featureID) {
+		case PrfPackage.INPUT_VALUE__SIMPLE:
+			getSimple().clear();
+			getSimple().addAll((Collection< ? extends Simple>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -138,11 +134,10 @@ public class InputValueImpl extends EObjectImpl implements InputValue {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.INPUT_VALUE__SIMPLE:
-				getSimple().clear();
-				return;
+		switch (featureID) {
+		case PrfPackage.INPUT_VALUE__SIMPLE:
+			getSimple().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,10 +149,9 @@ public class InputValueImpl extends EObjectImpl implements InputValue {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case PrfPackage.INPUT_VALUE__SIMPLE:
-				return simple != null && !simple.isEmpty();
+		switch (featureID) {
+		case PrfPackage.INPUT_VALUE__SIMPLE:
+			return simple != null && !simple.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
