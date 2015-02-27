@@ -19,6 +19,7 @@ import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.PropertyContainer;
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
 import mil.jpeojtrs.sca.prf.SimpleRef;
+import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructSequence;
 import mil.jpeojtrs.sca.prf.StructSequenceRef;
@@ -45,6 +46,7 @@ import CF.PropertiesHelper;
  * The following features are implemented:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getSimpleRef <em>Simple Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getSimpleSequenceRef <em>Simple Sequence Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getStruct <em>Struct</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getIndex <em>Index</em>}</li>
  * </ul>
@@ -62,6 +64,16 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * @ordered
 	 */
 	protected EList<SimpleRef> simpleRef;
+	/**
+	 * The cached value of the '{@link #getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @see #getSimpleSequenceRef()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SimpleSequenceRef> simpleSequenceRef;
 	/**
 	 * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -102,6 +114,19 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 			simpleRef = new EObjectContainmentEList<SimpleRef>(SimpleRef.class, this, PrfPackage.STRUCT_VALUE__SIMPLE_REF);
 		}
 		return simpleRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SimpleSequenceRef> getSimpleSequenceRef() {
+		if (simpleSequenceRef == null) {
+			simpleSequenceRef = new EObjectContainmentEList<SimpleSequenceRef>(SimpleSequenceRef.class, this, PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF);
+		}
+		return simpleSequenceRef;
 	}
 
 	/**
@@ -214,6 +239,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 		switch (featureID) {
 		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 			return ((InternalEList< ? >) getSimpleRef()).basicRemove(otherEnd, msgs);
+		case PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF:
+			return ((InternalEList< ? >) getSimpleSequenceRef()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -228,6 +255,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 		switch (featureID) {
 		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 			return getSimpleRef();
+		case PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF:
+			return getSimpleSequenceRef();
 		case PrfPackage.STRUCT_VALUE__STRUCT:
 			if (resolve)
 				return getStruct();
@@ -251,6 +280,10 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 			getSimpleRef().clear();
 			getSimpleRef().addAll((Collection< ? extends SimpleRef>) newValue);
 			return;
+		case PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF:
+			getSimpleSequenceRef().clear();
+			getSimpleSequenceRef().addAll((Collection< ? extends SimpleSequenceRef>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -266,6 +299,9 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 			getSimpleRef().clear();
 			return;
+		case PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF:
+			getSimpleSequenceRef().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -280,6 +316,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 		switch (featureID) {
 		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 			return simpleRef != null && !simpleRef.isEmpty();
+		case PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF:
+			return simpleSequenceRef != null && !simpleSequenceRef.isEmpty();
 		case PrfPackage.STRUCT_VALUE__STRUCT:
 			return basicGetStruct() != null;
 		case PrfPackage.STRUCT_VALUE__INDEX:

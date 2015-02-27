@@ -609,6 +609,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 4.1
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -795,13 +796,22 @@ public interface PrfPackage extends EPackage {
 	 */
 	int STRUCT__SIMPLE = ABSTRACT_PROPERTY_FEATURE_COUNT + 0;
 	/**
+	 * The feature id for the '<em><b>Simplesequence</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCT__SIMPLESEQUENCE = ABSTRACT_PROPERTY_FEATURE_COUNT + 1;
+	/**
 	 * The feature id for the '<em><b>Configuration Kind</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT__CONFIGURATION_KIND = ABSTRACT_PROPERTY_FEATURE_COUNT + 1;
+	int STRUCT__CONFIGURATION_KIND = ABSTRACT_PROPERTY_FEATURE_COUNT + 2;
 	/**
 	 * The number of structural features of the '<em>Struct</em>' class.
 	 * <!-- begin-user-doc -->
@@ -809,7 +819,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 2;
+	int STRUCT_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 3;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.StructSequenceImpl <em>Struct Sequence</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -926,13 +936,22 @@ public interface PrfPackage extends EPackage {
 	 */
 	int STRUCT_VALUE__SIMPLE_REF = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 0;
 	/**
+	 * The feature id for the '<em><b>Simple Sequence Ref</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCT_VALUE__SIMPLE_SEQUENCE_REF = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 1;
+	/**
 	 * The feature id for the '<em><b>Struct</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_VALUE__STRUCT = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 1;
+	int STRUCT_VALUE__STRUCT = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 2;
 	/**
 	 * The feature id for the '<em><b>Index</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -940,7 +959,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_VALUE__INDEX = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 2;
+	int STRUCT_VALUE__INDEX = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 3;
 	/**
 	 * The number of structural features of the '<em>Struct Value</em>' class.
 	 * <!-- begin-user-doc -->
@@ -948,7 +967,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_VALUE_FEATURE_COUNT = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 3;
+	int STRUCT_VALUE_FEATURE_COUNT = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 4;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.TestImpl <em>Test</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -2070,6 +2089,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.Simple#getOptional <em>Optional</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 4.1
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Optional</em>'.
 	 * @see mil.jpeojtrs.sca.prf.Simple#getOptional()
@@ -2188,6 +2208,18 @@ public interface PrfPackage extends EPackage {
 	EReference getStruct_Simple();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.Struct#getSimplesequence <em>Simplesequence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Simplesequence</em>'.
+	 * @see mil.jpeojtrs.sca.prf.Struct#getSimplesequence()
+	 * @see #getStruct()
+	 * @generated
+	 */
+	EReference getStruct_Simplesequence();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.Struct#getConfigurationKind <em>Configuration Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2261,6 +2293,18 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStructValue_SimpleRef();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef <em>Simple Sequence Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Simple Sequence Ref</em>'.
+	 * @see mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef()
+	 * @see #getStructValue()
+	 * @generated
+	 */
+	EReference getStructValue_SimpleSequenceRef();
 
 	/**
 	 * Returns the meta object for the reference '{@link mil.jpeojtrs.sca.prf.StructValue#getStruct <em>Struct</em>}'.
@@ -3354,6 +3398,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 4.1
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3445,6 +3490,15 @@ public interface PrfPackage extends EPackage {
 		EReference STRUCT__SIMPLE = eINSTANCE.getStruct_Simple();
 
 		/**
+		 * The meta object literal for the '<em><b>Simplesequence</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * @since 4.1
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCT__SIMPLESEQUENCE = eINSTANCE.getStruct_Simplesequence();
+
+		/**
 		 * The meta object literal for the '<em><b>Configuration Kind</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3503,6 +3557,15 @@ public interface PrfPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STRUCT_VALUE__SIMPLE_REF = eINSTANCE.getStructValue_SimpleRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Simple Sequence Ref</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * @since 4.1
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCT_VALUE__SIMPLE_SEQUENCE_REF = eINSTANCE.getStructValue_SimpleSequenceRef();
 
 		/**
 		 * The meta object literal for the '<em><b>Struct</b></em>' reference feature.

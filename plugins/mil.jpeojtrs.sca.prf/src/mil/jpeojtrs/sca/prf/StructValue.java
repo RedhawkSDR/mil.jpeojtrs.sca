@@ -23,6 +23,7 @@ import org.omg.CORBA.Any;
  * The following features are supported:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleRef <em>Simple Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef <em>Simple Sequence Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructValue#getStruct <em>Struct</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructValue#getIndex <em>Index</em>}</li>
  * </ul>
@@ -45,11 +46,29 @@ public interface StructValue extends PropertyRefContainer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Simple Ref</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructValue_SimpleRef()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='simpleref'"
 	 * @generated
 	 */
 	EList<SimpleRef> getSimpleRef();
+
+	/**
+	 * Returns the value of the '<em><b>Simple Sequence Ref</b></em>' containment reference list.
+	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleSequenceRef}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Simple Sequence Ref</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * @since 4.1
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Simple Sequence Ref</em>' containment reference list.
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructValue_SimpleSequenceRef()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='simplesequenceref'"
+	 * @generated
+	 */
+	EList<SimpleSequenceRef> getSimpleSequenceRef();
 
 	/**
 	 * Returns the value of the '<em><b>Struct</b></em>' reference.

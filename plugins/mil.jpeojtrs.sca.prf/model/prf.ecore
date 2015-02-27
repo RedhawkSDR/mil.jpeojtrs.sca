@@ -465,11 +465,18 @@
       <details key="name" value="struct"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="simple" lowerBound="1"
-        upperBound="-1" eType="#//Simple" containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simple" upperBound="-1"
+        eType="#//Simple" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simplesequence" upperBound="-1"
+        eType="#//SimpleSequence" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="simplesequence"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="configurationKind" upperBound="-1"
@@ -534,11 +541,18 @@
     <eOperations name="getRef" eType="#//SimpleRef">
       <eParameters name="id" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="simpleRef" lowerBound="1"
-        upperBound="-1" eType="#//SimpleRef" containment="true" resolveProxies="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simpleRef" upperBound="-1"
+        eType="#//SimpleRef" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="simpleref"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simpleSequenceRef" upperBound="-1"
+        eType="#//SimpleSequenceRef" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="simplesequenceref"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="struct" eType="#//Struct"

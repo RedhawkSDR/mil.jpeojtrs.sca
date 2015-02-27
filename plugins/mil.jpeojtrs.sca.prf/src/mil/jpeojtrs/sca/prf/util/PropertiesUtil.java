@@ -8,7 +8,7 @@
  * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
- // BEGIN GENERATED CODE
+// BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.util;
 
 import mil.jpeojtrs.sca.prf.AbstractProperty;
@@ -39,7 +39,7 @@ public final class PropertiesUtil {
 	private PropertiesUtil() {
 
 	}
-	
+
 	/**
 	 * Evaluates the {@link AbstractProperty} to determine if it can be edited.
 	 * 
@@ -52,7 +52,7 @@ public final class PropertiesUtil {
 	public static boolean canEdit(final AbstractProperty property) {
 		return canOverride(property);
 	}
-	
+
 	public static boolean canConfigure(final AbstractProperty property) {
 		if (property == null) {
 			return false;
@@ -74,21 +74,21 @@ public final class PropertiesUtil {
 		}
 		return false;
 	}
-	
+
 	public static SimpleRef createRef(Simple simple) {
 		SimpleRef ref = PrfFactory.eINSTANCE.createSimpleRef();
 		ref.setRefID(simple.getId());
 		ref.setValue(simple.getValue());
 		return ref;
 	}
-	
+
 	public static SimpleSequenceRef createRef(SimpleSequence property) {
 		SimpleSequenceRef ref = PrfFactory.eINSTANCE.createSimpleSequenceRef();
 		ref.setRefID(property.getId());
 		ref.setValues(EcoreUtil.copy(property.getValues()));
 		return ref;
 	}
-	
+
 	public static StructRef createRef(Struct property) {
 		StructRef ref = PrfFactory.eINSTANCE.createStructRef();
 		ref.setRefID(property.getId());
@@ -97,7 +97,7 @@ public final class PropertiesUtil {
 		}
 		return ref;
 	}
-	
+
 	public static StructValue createStructValue(StructSequence property) {
 		StructValue retVal = PrfFactory.eINSTANCE.createStructValue();
 		for (Simple s : property.getStruct().getSimple()) {
@@ -109,7 +109,7 @@ public final class PropertiesUtil {
 		}
 		return retVal;
 	}
-	
+
 	public static StructSequenceRef createRef(StructSequence structSequence) {
 		StructSequenceRef ref = PrfFactory.eINSTANCE.createStructSequenceRef();
 		ref.setRefID(structSequence.getId());
@@ -118,7 +118,7 @@ public final class PropertiesUtil {
 		}
 		return ref;
 	}
-	
+
 	public static String getDefaultValue(PropertyValueType type) {
 		switch (type) {
 		case STRING:
@@ -168,7 +168,7 @@ public final class PropertiesUtil {
 			return getDefaultValue(simple.getType());
 		}
 	}
-	
+
 	/**
 	 * @since 4.0
 	 */
@@ -196,17 +196,17 @@ public final class PropertiesUtil {
 		}
 		return null;
 	}
-	
+
 	public static AbstractPropertyRef< ? > getPropertyRef(final Simple property, final PropertyRefContainer props) {
 		if (property.eContainer() instanceof Struct) {
 			Struct struct = (Struct) property.eContainer();
 			StructRef structRef = (StructRef) getPropertyRef(struct, props);
 			return getPropertyRef(property, structRef);
 		} else {
-			return getPropertyRef((AbstractProperty) property, (PropertyRefContainer) props); 
+			return getPropertyRef((AbstractProperty) property, (PropertyRefContainer) props);
 		}
 	}
-	
+
 	public static AbstractPropertyRef< ? > getPropertyRef(final Simple property, final StructRef props) {
 		return getPropertyRef((AbstractProperty) property, (PropertyRefContainer) props);
 	}

@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.Struct#getSimple <em>Simple</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.Struct#getSimplesequence <em>Simplesequence</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Struct#getConfigurationKind <em>Configuration Kind</em>}</li>
  * </ul>
  * </p>
@@ -43,11 +44,29 @@ public interface Struct extends AbstractProperty, PropertyContainer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Simple</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_Simple()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='simple'"
 	 * @generated
 	 */
 	EList<Simple> getSimple();
+
+	/**
+	 * Returns the value of the '<em><b>Simplesequence</b></em>' containment reference list.
+	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleSequence}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Simplesequence</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * @since 4.1
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Simplesequence</em>' containment reference list.
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_Simplesequence()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='simplesequence'"
+	 * @generated
+	 */
+	EList<SimpleSequence> getSimplesequence();
 
 	/**
 	 * Returns the value of the '<em><b>Configuration Kind</b></em>' containment reference list.

@@ -22,6 +22,7 @@ import mil.jpeojtrs.sca.prf.ConfigurationKind;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.PropertyConfigurationType;
 import mil.jpeojtrs.sca.prf.Simple;
+import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructPropertyConfigurationType;
 
@@ -45,6 +46,7 @@ import CF.PropertiesHelper;
  * The following features are implemented:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getSimple <em>Simple</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getSimplesequence <em>Simplesequence</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getConfigurationKind <em>Configuration Kind</em>}</li>
  * </ul>
  * </p>
@@ -61,6 +63,16 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * @ordered
 	 */
 	protected EList<Simple> simple;
+	/**
+	 * The cached value of the '{@link #getSimplesequence() <em>Simplesequence</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @see #getSimplesequence()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SimpleSequence> simplesequence;
 	/**
 	 * The cached value of the '{@link #getConfigurationKind() <em>Configuration Kind</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -101,6 +113,19 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 			simple = new EObjectContainmentEList<Simple>(Simple.class, this, PrfPackage.STRUCT__SIMPLE);
 		}
 		return simple;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SimpleSequence> getSimplesequence() {
+		if (simplesequence == null) {
+			simplesequence = new EObjectContainmentEList<SimpleSequence>(SimpleSequence.class, this, PrfPackage.STRUCT__SIMPLESEQUENCE);
+		}
+		return simplesequence;
 	}
 
 	/**
@@ -172,6 +197,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 		switch (featureID) {
 		case PrfPackage.STRUCT__SIMPLE:
 			return ((InternalEList< ? >) getSimple()).basicRemove(otherEnd, msgs);
+		case PrfPackage.STRUCT__SIMPLESEQUENCE:
+			return ((InternalEList< ? >) getSimplesequence()).basicRemove(otherEnd, msgs);
 		case PrfPackage.STRUCT__CONFIGURATION_KIND:
 			return ((InternalEList< ? >) getConfigurationKind()).basicRemove(otherEnd, msgs);
 		}
@@ -188,6 +215,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 		switch (featureID) {
 		case PrfPackage.STRUCT__SIMPLE:
 			return getSimple();
+		case PrfPackage.STRUCT__SIMPLESEQUENCE:
+			return getSimplesequence();
 		case PrfPackage.STRUCT__CONFIGURATION_KIND:
 			return getConfigurationKind();
 		}
@@ -206,6 +235,10 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 		case PrfPackage.STRUCT__SIMPLE:
 			getSimple().clear();
 			getSimple().addAll((Collection< ? extends Simple>) newValue);
+			return;
+		case PrfPackage.STRUCT__SIMPLESEQUENCE:
+			getSimplesequence().clear();
+			getSimplesequence().addAll((Collection< ? extends SimpleSequence>) newValue);
 			return;
 		case PrfPackage.STRUCT__CONFIGURATION_KIND:
 			getConfigurationKind().clear();
@@ -226,6 +259,9 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 		case PrfPackage.STRUCT__SIMPLE:
 			getSimple().clear();
 			return;
+		case PrfPackage.STRUCT__SIMPLESEQUENCE:
+			getSimplesequence().clear();
+			return;
 		case PrfPackage.STRUCT__CONFIGURATION_KIND:
 			getConfigurationKind().clear();
 			return;
@@ -243,6 +279,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 		switch (featureID) {
 		case PrfPackage.STRUCT__SIMPLE:
 			return simple != null && !simple.isEmpty();
+		case PrfPackage.STRUCT__SIMPLESEQUENCE:
+			return simplesequence != null && !simplesequence.isEmpty();
 		case PrfPackage.STRUCT__CONFIGURATION_KIND:
 			return configurationKind != null && !configurationKind.isEmpty();
 		}
