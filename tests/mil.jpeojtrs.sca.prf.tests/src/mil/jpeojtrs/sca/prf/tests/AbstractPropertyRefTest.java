@@ -42,7 +42,7 @@ public abstract class AbstractPropertyRefTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AbstractPropertyRef<?> fixture = null;
+	protected AbstractPropertyRef< ? > fixture = null;
 
 	/**
 	 * Constructs a new Abstract Property Ref test case with the given name.
@@ -60,7 +60,7 @@ public abstract class AbstractPropertyRefTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(AbstractPropertyRef<?> fixture) {
+	protected void setFixture(AbstractPropertyRef< ? > fixture) {
 		this.fixture = fixture;
 	}
 
@@ -70,7 +70,7 @@ public abstract class AbstractPropertyRefTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AbstractPropertyRef<?> getFixture() {
+	protected AbstractPropertyRef< ? > getFixture() {
 		return fixture;
 	}
 

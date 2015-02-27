@@ -38,6 +38,7 @@ public class ConfigurationKindTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected ConfigurationKind fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

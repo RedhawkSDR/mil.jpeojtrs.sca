@@ -59,7 +59,7 @@ public class StructSequenceRefTest extends AbstractPropertyRefTest {
 	 */
 	@Override
 	protected StructSequenceRef getFixture() {
-		return (StructSequenceRef)fixture;
+		return (StructSequenceRef) fixture;
 	}
 
 	/**

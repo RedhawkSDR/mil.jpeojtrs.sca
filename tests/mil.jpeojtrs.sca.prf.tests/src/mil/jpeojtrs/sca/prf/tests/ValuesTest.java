@@ -35,6 +35,7 @@ public class ValuesTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected Values fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

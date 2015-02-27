@@ -42,6 +42,7 @@ public class KindTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected Kind fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

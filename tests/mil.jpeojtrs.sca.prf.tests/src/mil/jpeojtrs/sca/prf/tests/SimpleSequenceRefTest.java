@@ -53,7 +53,7 @@ public class SimpleSequenceRefTest extends AbstractPropertyRefTest {
 	 */
 	@Override
 	protected SimpleSequenceRef getFixture() {
-		return (SimpleSequenceRef)fixture;
+		return (SimpleSequenceRef) fixture;
 	}
 
 	/**

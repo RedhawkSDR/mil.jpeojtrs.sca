@@ -50,6 +50,7 @@ public class PropertiesTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected Properties fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,7 +119,7 @@ public class PropertiesTest extends TestCase {
 		this.resourceSet = null;
 		this.props = null;
 	}
-	
+
 	public void testParse() {
 		Assert.assertNotNull(this.props);
 		Assert.assertEquals("Test description", this.props.getDescription());

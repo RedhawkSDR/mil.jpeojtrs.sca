@@ -35,6 +35,7 @@ public class EnumerationsTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected Enumerations fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

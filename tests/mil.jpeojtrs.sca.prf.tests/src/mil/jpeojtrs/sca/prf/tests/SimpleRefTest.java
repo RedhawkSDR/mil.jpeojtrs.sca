@@ -51,7 +51,7 @@ public class SimpleRefTest extends AbstractPropertyRefTest {
 	 */
 	@Override
 	protected SimpleRef getFixture() {
-		return (SimpleRef)fixture;
+		return (SimpleRef) fixture;
 	}
 
 	/**

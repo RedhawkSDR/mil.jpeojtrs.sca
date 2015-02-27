@@ -41,6 +41,7 @@ public class ActionTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected Action fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

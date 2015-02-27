@@ -68,7 +68,7 @@ public class SimpleTest extends AbstractPropertyTest {
 	 */
 	@Override
 	protected Simple getFixture() {
-		return (Simple)fixture;
+		return (Simple) fixture;
 	}
 
 	/**
@@ -103,8 +103,7 @@ public class SimpleTest extends AbstractPropertyTest {
 	 * @see mil.jpeojtrs.sca.prf.Simple#isComplex()
 	 * @generated NOT
 	 */
-	public void testIsComplex()
-	{
+	public void testIsComplex() {
 		Assert.assertFalse(getFixture().isComplex());
 	}
 
@@ -119,19 +118,19 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals("The units", simple.getUnits());
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
-		
+
 		Assert.assertEquals("my min", simple.getRange().getMin());
 		Assert.assertEquals("my max", simple.getRange().getMax());
-		
+
 		Assert.assertEquals(1, simple.getEnumerations().getEnumeration().size());
 		Assert.assertEquals("enuLabel", simple.getEnumerations().getEnumeration().get(0).getLabel());
 		Assert.assertEquals("enumValue", simple.getEnumerations().getEnumeration().get(0).getValue());
-		
+
 		Assert.assertEquals(1, simple.getKind().size());
 		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
-		
+
 		Assert.assertEquals(ActionType.EXTERNAL, simple.getAction().getType());
-		
+
 		simple = props.getSimple().get(1);
 		Assert.assertNotNull(simple);
 		Assert.assertEquals("Name", simple.getName());
@@ -140,9 +139,9 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
 		Assert.assertEquals(1, simple.getKind().size());
-		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());		
+		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.EQ, simple.getAction().getType());
-		
+
 		simple = props.getSimple().get(2);
 		Assert.assertNotNull(simple);
 		Assert.assertNull(simple.getName());
@@ -151,9 +150,9 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
 		Assert.assertEquals(1, simple.getKind().size());
-		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());		
+		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.GE, simple.getAction().getType());
-		
+
 		simple = props.getSimple().get(3);
 		Assert.assertNotNull(simple);
 		Assert.assertNull(simple.getName());
@@ -162,9 +161,9 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
 		Assert.assertEquals(1, simple.getKind().size());
-		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());		
+		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.GT, simple.getAction().getType());
-		
+
 		simple = props.getSimple().get(4);
 		Assert.assertNotNull(simple);
 		Assert.assertNull(simple.getName());
@@ -173,9 +172,9 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
 		Assert.assertEquals(1, simple.getKind().size());
-		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());		
+		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.LE, simple.getAction().getType());
-		
+
 		simple = props.getSimple().get(5);
 		Assert.assertNotNull(simple);
 		Assert.assertNull(simple.getName());
@@ -184,9 +183,9 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
 		Assert.assertEquals(1, simple.getKind().size());
-		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());		
+		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.LT, simple.getAction().getType());
-		
+
 		simple = props.getSimple().get(6);
 		Assert.assertNotNull(simple);
 		Assert.assertNull(simple.getName());
@@ -195,10 +194,10 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
 		Assert.assertEquals(1, simple.getKind().size());
-		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());		
+		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.NE, simple.getAction().getType());
 	}
-	
+
 	public void testExtra() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/SimpleTest.prf.xml"), true));
@@ -218,7 +217,7 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertNotNull(simple.getRange());
 		Assert.assertEquals("1", simple.getRange().getMin());
 		Assert.assertEquals("100", simple.getRange().getMax());
-		
+
 		// Clear out the Range object
 		simple.setRange(null);
 		Assert.assertNull(simple.getRange());
@@ -226,7 +225,7 @@ public class SimpleTest extends AbstractPropertyTest {
 		// Clear out the Enumerations object
 		simple.setEnumerations(null);
 		Assert.assertNull(simple.getEnumerations());
-		
+
 		// test set non null enum
 		final Enumerations enums = PrfFactory.eINSTANCE.createEnumerations();
 		final Enumeration enu = PrfFactory.eINSTANCE.createEnumeration();
@@ -238,11 +237,11 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(1, simple.getEnumerations().getEnumeration().size());
 		Assert.assertEquals("enuTest", simple.getEnumerations().getEnumeration().get(0).getLabel());
 		Assert.assertEquals("enuTestValue", simple.getEnumerations().getEnumeration().get(0).getValue());
-		
+
 		// Clear out the Enumerations object
 		simple.setEnumerations(null);
 		Assert.assertNull(simple.getEnumerations());
-		
+
 		// test set non null action
 		final Action act = PrfFactory.eINSTANCE.createAction();
 		act.setType(ActionType.GT);
@@ -254,21 +253,21 @@ public class SimpleTest extends AbstractPropertyTest {
 		simple.unsetMode();
 		Assert.assertFalse(simple.isSetMode());
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
-		
+
 		simple.setMode(AccessType.WRITEONLY);
 		Assert.assertEquals(AccessType.WRITEONLY, simple.getMode());
-		
+
 		simple.setMode(null);
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
-		
+
 		simple.setMode(AccessType.READWRITE);
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
-		
+
 		// test unsetType
 		simple.unsetType();
 		Assert.assertFalse(simple.isSetType());
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
-		
+
 		// test set null and non null type
 		simple.setType(null);
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());

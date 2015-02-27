@@ -37,6 +37,7 @@ public class TestTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected Test fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

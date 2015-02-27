@@ -67,7 +67,7 @@ public class SimpleSequenceTest extends AbstractPropertyTest {
 	 */
 	@Override
 	protected SimpleSequence getFixture() {
-		return (SimpleSequence)fixture;
+		return (SimpleSequence) fixture;
 	}
 
 	/**
@@ -103,8 +103,7 @@ public class SimpleSequenceTest extends AbstractPropertyTest {
 	 * @see mil.jpeojtrs.sca.prf.SimpleSequence#isComplex()
 	 * @generated NOT
 	 */
-	public void testIsComplex()
-	{
+	public void testIsComplex() {
 		Assert.assertFalse(getFixture().isComplex());
 	}
 

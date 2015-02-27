@@ -66,7 +66,7 @@ public class StructTest extends AbstractPropertyTest {
 	 */
 	@Override
 	protected Struct getFixture() {
-		return (Struct)fixture;
+		return (Struct) fixture;
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertEquals(AccessType.READONLY, struct.getMode());
 		Assert.assertEquals("Name", struct.getName());
 		Assert.assertEquals("Sample Description", struct.getDescription());
-		
+
 		Assert.assertEquals(1, struct.getSimple().size());
 		Assert.assertEquals(PropertyValueType.BOOLEAN, struct.getSimple().get(0).getType());
 		Assert.assertEquals("DCE:24acefac-62eb-4b7f-9177-cc7d78c76acb", struct.getSimple().get(0).getId());
@@ -136,17 +136,16 @@ public class StructTest extends AbstractPropertyTest {
 		struct.unsetMode();
 		Assert.assertFalse(struct.isSetMode());
 		Assert.assertEquals(AccessType.READWRITE, struct.getMode());
-		
+
 		struct.setMode(AccessType.WRITEONLY);
 		Assert.assertEquals(AccessType.WRITEONLY, struct.getMode());
-		
+
 		struct.setMode(null);
 		Assert.assertEquals(AccessType.READWRITE, struct.getMode());
-		
+
 		struct.setMode(AccessType.READWRITE);
 		Assert.assertEquals(AccessType.READWRITE, struct.getMode());
-		
-		
+
 		// test set null and non null type
 		struct.getConfigurationKind().clear();
 		final ConfigurationKind ck = PrfFactory.eINSTANCE.createConfigurationKind();
@@ -157,7 +156,7 @@ public class StructTest extends AbstractPropertyTest {
 		struct.getConfigurationKind().set(0, ck);
 		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, struct.getConfigurationKind().get(0).getType());
 	}
-	
+
 	public void testEmptyConfigurationKind_IDE_917() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));

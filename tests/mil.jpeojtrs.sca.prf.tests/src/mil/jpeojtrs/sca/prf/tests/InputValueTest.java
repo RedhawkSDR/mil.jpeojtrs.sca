@@ -37,6 +37,7 @@ public class InputValueTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected InputValue fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

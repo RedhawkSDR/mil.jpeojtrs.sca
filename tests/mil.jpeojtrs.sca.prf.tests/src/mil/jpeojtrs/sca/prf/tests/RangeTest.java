@@ -35,6 +35,7 @@ public class RangeTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected Range fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -98,7 +98,8 @@ public class StructValueTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"), true));
+		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
+			true));
 		setFixture(props.getStructSequence().get(0).getStructValue().get(0));
 	}
 
@@ -180,7 +181,8 @@ public class StructValueTest extends TestCase {
 	}
 
 	public void test_parse() throws Exception {
-		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"), true));
+		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
+			true));
 		Assert.assertNotNull(props.getStructSequence());
 	}
 

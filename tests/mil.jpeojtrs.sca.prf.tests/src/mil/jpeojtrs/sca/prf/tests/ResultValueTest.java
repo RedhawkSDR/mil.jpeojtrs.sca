@@ -35,6 +35,7 @@ public class ResultValueTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected ResultValue fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

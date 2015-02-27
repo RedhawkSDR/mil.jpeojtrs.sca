@@ -68,7 +68,7 @@ public class StructSequenceTest extends AbstractPropertyTest {
 	 */
 	@Override
 	protected StructSequence getFixture() {
-		return (StructSequence)fixture;
+		return (StructSequence) fixture;
 	}
 
 	/**
@@ -179,7 +179,7 @@ public class StructSequenceTest extends AbstractPropertyTest {
 		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, structSeq.getConfigurationKind().get(0).getType());
 
 	}
-	
+
 	public void testEmptyConfigurationKind_IDE_917() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructSequenceTest.prf.xml"), true));
