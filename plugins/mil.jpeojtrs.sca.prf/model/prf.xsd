@@ -198,6 +198,12 @@ defined.</xs:documentation></xs:annotation></xs:element>
     <xs:attribute name="refid" type="xs:string" use="required"/>
     <xs:attribute name="value" type="xs:string" use="required"/>
   </xs:complexType>
+  <xs:complexType name="simpleSequenceRef" >
+    <xs:sequence>
+      <xs:element name="values" type="values"/>
+    </xs:sequence>
+    <xs:attribute name="refid" use="required" type="xs:string"/>
+  </xs:complexType>
   <xs:complexType name="simpleSequence">
     <xs:sequence>
       <xs:element minOccurs="0" type="xs:string" name="description"/>
@@ -212,11 +218,13 @@ defined.</xs:documentation></xs:annotation></xs:element>
     <xs:attribute name="name" type="xs:string"/>
     <xs:attribute name="type" type="PropertyValueType" use="required"/>
     <xs:attribute default="false" name="complex" type="IsComplex"/>
+    <xs:attribute default="false" name="optional" type="IsOptional"/>
   </xs:complexType>
   <xs:complexType name="struct">
     <xs:sequence>
-     <xs:element minOccurs="0" type="xs:string" name="description"/>
-      <xs:element maxOccurs="unbounded" type="simple" name="simple"/>
+      <xs:element minOccurs="0" type="xs:string" name="description"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="simple" name="simple"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="simpleSequence" name="simplesequence" ecore:name="simpleSequence"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" type="configurationKind" name="configurationkind" ecore:name="configurationKind"/>
     </xs:sequence>
     <xs:attribute ecore:id="true" name="id" type="xs:string" use="required"/>
@@ -236,7 +244,8 @@ defined.</xs:documentation></xs:annotation></xs:element>
   </xs:complexType>
   <xs:complexType name="structValue">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" type="simpleRef" name="simpleref"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="simpleRef" name="simpleref"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="simpleSequenceRef" name="simplesequenceref"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="test">
