@@ -796,14 +796,14 @@ public interface PrfPackage extends EPackage {
 	 */
 	int STRUCT__SIMPLE = ABSTRACT_PROPERTY_FEATURE_COUNT + 0;
 	/**
-	 * The feature id for the '<em><b>Simplesequence</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Simple Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * @since 4.1
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT__SIMPLESEQUENCE = ABSTRACT_PROPERTY_FEATURE_COUNT + 1;
+	int STRUCT__SIMPLE_SEQUENCE = ABSTRACT_PROPERTY_FEATURE_COUNT + 1;
 	/**
 	 * The feature id for the '<em><b>Configuration Kind</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -2208,16 +2208,15 @@ public interface PrfPackage extends EPackage {
 	EReference getStruct_Simple();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.Struct#getSimplesequence <em>Simplesequence</em>}'.
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.Struct#getSimpleSequence <em>Simple Sequence</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Simplesequence</em>'.
-	 * @see mil.jpeojtrs.sca.prf.Struct#getSimplesequence()
+	 * @return the meta object for the containment reference list '<em>Simple Sequence</em>'.
+	 * @see mil.jpeojtrs.sca.prf.Struct#getSimpleSequence()
 	 * @see #getStruct()
 	 * @generated
 	 */
-	EReference getStruct_Simplesequence();
+	EReference getStruct_SimpleSequence();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.Struct#getConfigurationKind <em>Configuration Kind</em>}'.
@@ -3490,13 +3489,13 @@ public interface PrfPackage extends EPackage {
 		EReference STRUCT__SIMPLE = eINSTANCE.getStruct_Simple();
 
 		/**
-		 * The meta object literal for the '<em><b>Simplesequence</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Simple Sequence</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * @since 4.1
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCT__SIMPLESEQUENCE = eINSTANCE.getStruct_Simplesequence();
+		EReference STRUCT__SIMPLE_SEQUENCE = eINSTANCE.getStruct_SimpleSequence();
 
 		/**
 		 * The meta object literal for the '<em><b>Configuration Kind</b></em>' containment reference list feature.

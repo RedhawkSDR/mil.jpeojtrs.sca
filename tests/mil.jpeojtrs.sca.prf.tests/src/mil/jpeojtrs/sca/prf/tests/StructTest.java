@@ -12,6 +12,7 @@
 package mil.jpeojtrs.sca.prf.tests;
 
 import org.junit.Assert;
+
 import java.io.ByteArrayOutputStream;
 
 import junit.textui.TestRunner;
@@ -20,9 +21,12 @@ import mil.jpeojtrs.sca.prf.ConfigurationKind;
 import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.Properties;
 import mil.jpeojtrs.sca.prf.PropertyValueType;
+import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructPropertyConfigurationType;
+import mil.jpeojtrs.sca.prf.Values;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
@@ -111,7 +115,7 @@ public class StructTest extends AbstractPropertyTest {
 	public void test_parse() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
-		final Struct struct = props.getStruct().get(0);
+		Struct struct = props.getStruct().get(0);
 		Assert.assertNotNull(struct);
 		Assert.assertEquals("DCE:24acefac-62eb-4b7f-9177-cc7d78c76aca", struct.getId());
 		Assert.assertEquals(AccessType.READONLY, struct.getMode());
@@ -123,6 +127,28 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertEquals("DCE:24acefac-62eb-4b7f-9177-cc7d78c76acb", struct.getSimple().get(0).getId());
 		Assert.assertNotNull(struct.getConfigurationKind());
 		Assert.assertEquals(StructPropertyConfigurationType.FACTORYPARAM, struct.getConfigurationKind().get(0).getType());
+
+		//////////////////////////////////////////////////////////////////////
+		struct = props.getStruct().get(1);
+		Assert.assertNotNull(struct);
+		Assert.assertEquals("fc79476d-9b0c-4208-abe3-b2967cd03421", struct.getId());
+		Assert.assertEquals("testStructNameWithSimpleSeq", struct.getName());
+		Assert.assertEquals(AccessType.READWRITE, struct.getMode());
+
+		EList<SimpleSequence> simpleSeqList = struct.getSimpleSequence();
+		Assert.assertNotNull(simpleSeqList);
+		Assert.assertEquals(1, simpleSeqList.size());
+		SimpleSequence simpleSeq = simpleSeqList.get(0);
+		Assert.assertEquals(PropertyValueType.SHORT, simpleSeq.getType());
+		Assert.assertEquals("testSimpleSequence", simpleSeq.getId());
+		Values values = simpleSeq.getValues();
+		Assert.assertNotNull(values);
+		EList<String> valueList = values.getValue();
+		Assert.assertNotNull(valueList);
+		Assert.assertEquals(3, valueList.size());
+
+		Assert.assertNotNull(struct.getConfigurationKind());
+		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, struct.getConfigurationKind().get(0).getType());
 	}
 
 	public void testExtra() throws Exception {

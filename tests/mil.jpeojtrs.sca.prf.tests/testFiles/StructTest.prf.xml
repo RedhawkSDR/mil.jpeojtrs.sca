@@ -16,4 +16,14 @@
   	<simple type="boolean" id="DCE:24acefac-62eb-4b7f-9177-cc7d78c76acb"></simple>
   	<configurationkind kindtype="factoryparam"/>
   </struct>
+  <struct id="fc79476d-9b0c-4208-abe3-b2967cd03421" name="testStructNameWithSimpleSeq" mode="readwrite">
+    <simplesequence type="short" id="testSimpleSequence">
+      <values>
+        <value>2</value>
+        <value>4</value>
+        <value>8</value>
+      </values>
+    </simplesequence>
+    <configurationkind kindtype="allocation"/>
+  </struct>
 </properties>

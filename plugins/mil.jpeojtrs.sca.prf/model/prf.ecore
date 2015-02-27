@@ -472,7 +472,7 @@
         <details key="name" value="simple"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="simplesequence" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simpleSequence" upperBound="-1"
         eType="#//SimpleSequence" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>

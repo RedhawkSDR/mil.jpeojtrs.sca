@@ -1062,7 +1062,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStruct_Simplesequence() {
+	public EReference getStruct_SimpleSequence() {
 		return (EReference) structEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1847,7 +1847,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 		structEClass = createEClass(STRUCT);
 		createEReference(structEClass, STRUCT__SIMPLE);
-		createEReference(structEClass, STRUCT__SIMPLESEQUENCE);
+		createEReference(structEClass, STRUCT__SIMPLE_SEQUENCE);
 		createEReference(structEClass, STRUCT__CONFIGURATION_KIND);
 
 		structSequenceEClass = createEClass(STRUCT_SEQUENCE);
@@ -2121,7 +2121,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		initEClass(structEClass, Struct.class, "Struct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStruct_Simple(), this.getSimple(), null, "simple", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStruct_Simplesequence(), this.getSimpleSequence(), null, "simplesequence", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE,
+		initEReference(getStruct_SimpleSequence(), this.getSimpleSequence(), null, "simpleSequence", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStruct_ConfigurationKind(), this.getConfigurationKind(), null, "configurationKind", null, 0, -1, Struct.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2374,7 +2374,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation(getSimpleSequence_Complex(), source, new String[] { "kind", "attribute", "name", "complex" });
 		addAnnotation(structEClass, source, new String[] { "name", "struct", "kind", "elementOnly" });
 		addAnnotation(getStruct_Simple(), source, new String[] { "kind", "element", "name", "simple" });
-		addAnnotation(getStruct_Simplesequence(), source, new String[] { "kind", "element", "name", "simplesequence" });
+		addAnnotation(getStruct_SimpleSequence(), source, new String[] { "kind", "element", "name", "simplesequence" });
 		addAnnotation(getStruct_ConfigurationKind(), source, new String[] { "kind", "element", "name", "configurationkind" });
 		addAnnotation(structPropertyConfigurationTypeEEnum, source, new String[] { "name", "StructPropertyConfigurationType" });
 		addAnnotation(structPropertyConfigurationTypeObjectEDataType, source, new String[] { "name", "StructPropertyConfigurationType:Object", "baseType",
