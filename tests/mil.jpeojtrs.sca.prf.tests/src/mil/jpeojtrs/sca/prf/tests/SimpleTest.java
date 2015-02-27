@@ -118,6 +118,7 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals("The units", simple.getUnits());
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
+		Assert.assertNull("optional attribute", simple.getOptional());
 
 		Assert.assertEquals("my min", simple.getRange().getMin());
 		Assert.assertEquals("my max", simple.getRange().getMax());
@@ -141,6 +142,7 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(1, simple.getKind().size());
 		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.EQ, simple.getAction().getType());
+		Assert.assertFalse("optional attribute", simple.getOptional());
 
 		simple = props.getSimple().get(2);
 		Assert.assertNotNull(simple);
@@ -152,6 +154,7 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(1, simple.getKind().size());
 		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.GE, simple.getAction().getType());
+		Assert.assertTrue("optional attribute", simple.getOptional());
 
 		simple = props.getSimple().get(3);
 		Assert.assertNotNull(simple);

@@ -20,11 +20,11 @@
     <kind kindtype="configure"/>
     <action type="external"/>
   </simple>
-  <simple id="DCE:753b3ef5-fa23-4c51-9711-c1183ab23cbd" mode="readwrite" type="string"  name="Name">
+  <simple id="DCE:753b3ef5-fa23-4c51-9711-c1183ab23cbd" mode="readwrite" type="string"  name="Name" optional="false">
     <kind kindtype="configure"/>
     <action type="eq"/>
   </simple>
-  <simple id="DCE:a0dae7c6-1f49-4cc0-9219-2b669ca392c8" mode="readwrite" type="string">
+  <simple id="DCE:a0dae7c6-1f49-4cc0-9219-2b669ca392c8" mode="readwrite" type="string" optional="true">
     <kind kindtype="configure"/>
     <action type="ge"/>
   </simple>
