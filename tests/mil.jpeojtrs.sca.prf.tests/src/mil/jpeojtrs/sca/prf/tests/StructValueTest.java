@@ -12,10 +12,16 @@
 package mil.jpeojtrs.sca.prf.tests;
 
 import org.junit.Assert;
+
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.Properties;
+import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
+import mil.jpeojtrs.sca.prf.StructSequence;
 import mil.jpeojtrs.sca.prf.StructValue;
+import mil.jpeojtrs.sca.prf.Values;
+
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
@@ -183,7 +189,33 @@ public class StructValueTest extends TestCase {
 	public void test_parse() throws Exception {
 		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
 			true));
-		Assert.assertNotNull(props.getStructSequence());
+		EList<StructSequence> structSequenceList = props.getStructSequence();
+		Assert.assertNotNull(structSequenceList);
+		Assert.assertEquals(2, structSequenceList.size());
+		
+		StructSequence structSeq = structSequenceList.get(0);
+		Assert.assertNotNull(structSeq);
+		
+		structSeq = structSequenceList.get(1);
+		Assert.assertNotNull(structSeq);
+		EList<StructValue> stuctValueList = structSeq.getStructValue();
+		Assert.assertNotNull(stuctValueList);
+		Assert.assertEquals(2, stuctValueList.size());
+		StructValue structValue2 = stuctValueList.get(1);
+		Assert.assertNotNull(structValue2);
+		
+		EList<SimpleSequenceRef> simpleSeqRefList = structValue2.getSimpleSequenceRef();
+		Assert.assertNotNull(simpleSeqRefList);
+		Assert.assertEquals(1, simpleSeqRefList.size());
+		SimpleSequenceRef simpleSeqRef = simpleSeqRefList.get(0);
+		Assert.assertNotNull(simpleSeqRef);
+		Assert.assertEquals("DCE:8ab14a5d-00a0-4468-9ab3-7298f7025470", simpleSeqRef.getRefID());
+		
+		Values values = simpleSeqRef.getValues();
+		Assert.assertNotNull(values);
+		EList<String> valueList = values.getValue();
+		Assert.assertNotNull(valueList);
+		Assert.assertEquals(3, valueList.size());
 	}
 
 } //StructValueTest

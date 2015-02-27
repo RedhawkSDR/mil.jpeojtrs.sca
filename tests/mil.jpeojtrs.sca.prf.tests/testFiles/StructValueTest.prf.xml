@@ -27,4 +27,25 @@
     </structvalue>
     <configurationkind kindtype="configure"/>
   </structsequence>
+  <structsequence id="ce21bc58-ee87-4380-a15d-c541e4576c70" mode="readwrite" name="structSequence2">
+    <struct id="1298c312-0714-4a35-9b5b-920b732ce162" mode="readwrite" name="testStruct2">
+      <simple id="75e35fc2-6e2d-4d42-8496-48eb900bc896" mode="readwrite" name="testShort2" type="short">
+        <kind kindtype="configure"/>
+        <action type="external"/>
+      </simple>
+      <configurationkind kindtype="configure"/>
+    </struct>
+    <structvalue>
+      <simpleref refid="75e35fc2-6e2d-4d42-8496-48eb900bc896" value="t1"/>
+    </structvalue>
+    <structvalue>
+      <simplesequenceref refid="DCE:8ab14a5d-00a0-4468-9ab3-7298f7025470">
+        <values>
+          <value>1</value>
+          <value>2</value>
+          <value>3</value>
+        </values>
+      </simplesequenceref>
+    </structvalue>    <configurationkind kindtype="configure"/>
+  </structsequence>
 </properties>
