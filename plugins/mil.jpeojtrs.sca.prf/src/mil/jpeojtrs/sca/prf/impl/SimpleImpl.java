@@ -533,6 +533,16 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean isOptional() {
+		return (optional != null && optional);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

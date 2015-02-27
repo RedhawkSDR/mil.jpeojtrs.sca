@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * The following operations are tested:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#isComplex() <em>Is Complex</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.Simple#isOptional() <em>Is Optional</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -107,6 +108,17 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertFalse(getFixture().isComplex());
 	}
 
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.Simple#isOptional() <em>Is Optional</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.Simple#isOptional()
+	 * @generated NOT
+	 */
+	public void testIsOptional() {
+		Assert.assertFalse(getFixture().isOptional());
+	}
+
 	public void test_parse() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/SimpleTest.prf.xml"), true));
@@ -119,7 +131,9 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
 		Assert.assertNull("complex attribute", simple.getComplex());
+		Assert.assertFalse("isComplex()", simple.isComplex());
 		Assert.assertNull("optional attribute", simple.getOptional());
+		Assert.assertFalse("isOptional()", simple.isOptional());
 
 		Assert.assertEquals("my min", simple.getRange().getMin());
 		Assert.assertEquals("my max", simple.getRange().getMax());
@@ -144,7 +158,9 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.EQ, simple.getAction().getType());
 		Assert.assertTrue("complex attribute", simple.getComplex());
+		Assert.assertTrue("isComplex()", simple.isComplex());
 		Assert.assertFalse("optional attribute", simple.getOptional());
+		Assert.assertFalse("isOptional()", simple.isOptional());
 
 		simple = props.getSimple().get(2);
 		Assert.assertNotNull(simple);
@@ -157,7 +173,9 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.GE, simple.getAction().getType());
 		Assert.assertFalse("complex attribute", simple.getComplex());
+		Assert.assertFalse("isComplex()", simple.isComplex());
 		Assert.assertTrue("optional attribute", simple.getOptional());
+		Assert.assertTrue("isOptional()", simple.isOptional());
 
 		simple = props.getSimple().get(3);
 		Assert.assertNotNull(simple);

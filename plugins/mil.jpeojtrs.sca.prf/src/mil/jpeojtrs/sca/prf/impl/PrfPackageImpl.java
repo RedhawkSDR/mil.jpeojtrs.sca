@@ -2100,6 +2100,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 		addEOperation(simpleEClass, theEcorePackage.getEBoolean(), "isComplex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(simpleEClass, theEcorePackage.getEBoolean(), "isOptional", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(simpleSequenceEClass, SimpleSequence.class, "SimpleSequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSimpleSequence_Values(), this.getValues(), null, "values", null, 0, 1, SimpleSequence.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

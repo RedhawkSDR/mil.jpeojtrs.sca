@@ -2210,6 +2210,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.Struct#getSimpleSequence <em>Simple Sequence</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 4.1
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Simple Sequence</em>'.
 	 * @see mil.jpeojtrs.sca.prf.Struct#getSimpleSequence()

@@ -328,4 +328,13 @@ public interface Simple extends AbstractProperty {
 	 */
 	boolean isComplex();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.1
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	boolean isOptional();
+
 } // Simple
