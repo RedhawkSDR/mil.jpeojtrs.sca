@@ -309,6 +309,79 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	}
 
 	/**
+	 * @since 2.0
+	 */
+	@Override
+	public FindBy createFindByDomainManager() {
+		FindBy findBy = createFindBy();
+		DomainFinder domainFinder = createDomainFinder();
+		domainFinder.setType(DomainFinderType.DOMAINMANAGER);
+		findBy.setDomainFinder(domainFinder);
+		return findBy;
+	}
+
+	/**
+	 * @since 2.0
+	 */
+	@Override
+	public FindBy createFindByEventChannel(String name) {
+		FindBy findBy = createFindBy();
+		DomainFinder domainFinder = createDomainFinder();
+		domainFinder.setName(name);
+		domainFinder.setType(DomainFinderType.EVENTCHANNEL);
+		findBy.setDomainFinder(domainFinder);
+		return findBy;
+	}
+
+	/**
+	 * @since 2.0
+	 */
+	@Override
+	public FindBy createFindByFileManager() {
+		FindBy findBy = createFindBy();
+		DomainFinder domainFinder = createDomainFinder();
+		domainFinder.setType(DomainFinderType.FILEMANAGER);
+		findBy.setDomainFinder(domainFinder);
+		return findBy;
+	}
+
+	/**
+	 * @since 2.0
+	 */
+	@Override
+	public FindBy createFindByNamingServiceName(String name) {
+		FindBy findBy = createFindBy();
+		NamingService namingService = createNamingService();
+		namingService.setName(name);
+		findBy.setNamingService(namingService);
+		return findBy;
+	}
+
+	/**
+	 * @since 2.0
+	 */
+	public FindBy createFindByServiceName(String name) {
+		FindBy findBy = createFindBy();
+		DomainFinder domainFinder = createDomainFinder();
+		domainFinder.setName(name);
+		domainFinder.setType(DomainFinderType.SERVICENAME);
+		findBy.setDomainFinder(domainFinder);
+		return findBy;
+	}
+
+	/**
+	 * @since 2.0
+	 */
+	public FindBy createFindByServiceType(String type) {
+		FindBy findBy = createFindBy();
+		DomainFinder domainFinder = createDomainFinder();
+		domainFinder.setName(type);
+		domainFinder.setType(DomainFinderType.SERVICETYPE);
+		findBy.setDomainFinder(domainFinder);
+		return findBy;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

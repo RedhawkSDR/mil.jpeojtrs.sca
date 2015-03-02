@@ -150,6 +150,53 @@ public interface PartitioningFactory extends EFactory {
 	FindBy createFindBy();
 
 	/**
+	 * A utility method that returns a new FindBy configured to find the domain manager
+	 * @return The FindBy instance
+	 * @since 2.0
+	 */
+	FindBy createFindByDomainManager();
+
+	/**
+	 * A utility method that returns a new FindBy configured to search the domain for an event channel with a
+	 * particular name.
+	 * @param name The event channel name
+	 * @return The FindBy instance
+	 * @since 2.0
+	 */
+	FindBy createFindByEventChannel(String name);
+
+	/**
+	 * A utility method that returns a new FindBy configured to find the file manager
+	 * @return The FindBy instance
+	 * @since 2.0
+	 */
+	FindBy createFindByFileManager();
+
+	/**
+	 * A utility method that returns a new FindBy configured to use the naming service for a particular name.
+	 * @param name The name of the object to find via the naming service.
+	 * @return The FindBy instance
+	 * @since 2.0
+	 */
+	FindBy createFindByNamingServiceName(String name);
+
+	/**
+	 * A utility method that returns a new FindBy configured to search the domain for a service with a particular name.
+	 * @param name The name of the service to find in the domain
+	 * @return The FindBy instance
+	 * @since 2.0
+	 */
+	FindBy createFindByServiceName(String name);
+
+	/**
+	 * A utility method that returns a new FindBy configured to search the domain for a service with a particular IDL type.
+	 * @param type The IDL type of the service to find in the domain
+	 * @return The FindBy instance
+	 * @since 2.0
+	 */
+	FindBy createFindByServiceType(String type);
+
+	/**
 	 * Returns a new object of class '<em>Find By Stub</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

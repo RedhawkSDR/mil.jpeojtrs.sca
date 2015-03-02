@@ -174,6 +174,19 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	}
 
 	/**
+	 * @since 2.4
+	 */
+	@Override
+	public SadUsesPort createSadUsesPort(String usesIdentifier, String componentRefId) {
+		SadUsesPort usesPort = createSadUsesPort();
+		usesPort.setUsesIndentifier(usesIdentifier);
+		SadComponentInstantiationRef compInstanceRef = createSadComponentInstantiationRef();
+		compInstanceRef.setRefid(componentRefId);
+		usesPort.setComponentInstantiationRef(compInstanceRef);
+		return usesPort;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

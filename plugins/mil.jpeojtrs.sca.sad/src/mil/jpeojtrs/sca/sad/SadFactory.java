@@ -71,6 +71,15 @@ public interface SadFactory extends EFactory {
 	SadUsesPort createSadUsesPort();
 
 	/**
+	 * A utility method that returns a new SadUsesPort for a specific component's port.
+	 * @param usesIdentifier The identifier of the uses port
+	 * @param componentRefId The component's reference ID in the SoftwareAssembly
+	 * @return The SadUsesPort instance
+	 * @since 2.4
+	 */
+	SadUsesPort createSadUsesPort(String usesIdentifier, String componentRefId);
+
+	/**
 	 * Returns a new object of class '<em>Provides Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
