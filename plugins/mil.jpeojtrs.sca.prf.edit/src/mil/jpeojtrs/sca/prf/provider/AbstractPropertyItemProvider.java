@@ -42,8 +42,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractPropertyItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class AbstractPropertyItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -63,8 +63,7 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -156,10 +155,10 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 			showMode = ((EObject) object).eContainer() instanceof Properties;
 		}
 		if (showMode) {
-			itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			        getString("_UI_AbstractProperty_mode_feature"),
-			        getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_mode_feature", "_UI_AbstractProperty_type"), PrfPackage.Literals.ABSTRACT_PROPERTY__MODE,
-			        true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+			itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_AbstractProperty_mode_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_mode_feature", "_UI_AbstractProperty_type"),
+				PrfPackage.Literals.ABSTRACT_PROPERTY__MODE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 		}
 	}
 
@@ -188,14 +187,13 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AbstractProperty.class))
-		{
-			case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
-			case PrfPackage.ABSTRACT_PROPERTY__ID:
-			case PrfPackage.ABSTRACT_PROPERTY__NAME:
-			case PrfPackage.ABSTRACT_PROPERTY__MODE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(AbstractProperty.class)) {
+		case PrfPackage.ABSTRACT_PROPERTY__DESCRIPTION:
+		case PrfPackage.ABSTRACT_PROPERTY__ID:
+		case PrfPackage.ABSTRACT_PROPERTY__NAME:
+		case PrfPackage.ABSTRACT_PROPERTY__MODE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

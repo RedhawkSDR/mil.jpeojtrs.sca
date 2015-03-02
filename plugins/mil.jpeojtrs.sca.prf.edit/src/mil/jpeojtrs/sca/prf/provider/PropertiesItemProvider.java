@@ -41,8 +41,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertiesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class PropertiesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -62,8 +62,7 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -102,9 +101,8 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.PROPERTIES__SIMPLE);
 			childrenFeatures.add(PrfPackage.Literals.PROPERTIES__SIMPLE_SEQUENCE);
@@ -164,19 +162,18 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Properties.class))
-		{
-			case PrfPackage.PROPERTIES__DESCRIPTION:
-			case PrfPackage.PROPERTIES__PROPERTIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case PrfPackage.PROPERTIES__SIMPLE:
-			case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
-			case PrfPackage.PROPERTIES__TEST:
-			case PrfPackage.PROPERTIES__STRUCT:
-			case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(Properties.class)) {
+		case PrfPackage.PROPERTIES__DESCRIPTION:
+		case PrfPackage.PROPERTIES__PROPERTIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PrfPackage.PROPERTIES__SIMPLE:
+		case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
+		case PrfPackage.PROPERTIES__TEST:
+		case PrfPackage.PROPERTIES__STRUCT:
+		case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

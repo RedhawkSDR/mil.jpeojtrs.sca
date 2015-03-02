@@ -38,8 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated NOT
  */
-public class EnumerationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class EnumerationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -87,8 +87,9 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_Enumeration_value_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Enumeration_value_feature", "_UI_Enumeration_type"),
-		        PrfPackage.Literals.ENUMERATION__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+			getString("_UI_Enumeration_value_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Enumeration_value_feature", "_UI_Enumeration_type"),
+			PrfPackage.Literals.ENUMERATION__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
