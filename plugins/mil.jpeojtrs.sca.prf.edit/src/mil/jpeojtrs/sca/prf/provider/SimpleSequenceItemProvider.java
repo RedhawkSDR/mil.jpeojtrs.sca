@@ -15,24 +15,15 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-
 import mil.jpeojtrs.sca.prf.AbstractProperty;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.Values;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptorDecorator;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -43,8 +34,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -63,8 +53,7 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addValuesPropertyDescriptor(object);
@@ -259,17 +248,16 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SimpleSequence.class))
-		{
-			case PrfPackage.SIMPLE_SEQUENCE__VALUES:
-			case PrfPackage.SIMPLE_SEQUENCE__UNITS:
-			case PrfPackage.SIMPLE_SEQUENCE__RANGE:
-			case PrfPackage.SIMPLE_SEQUENCE__KIND:
-			case PrfPackage.SIMPLE_SEQUENCE__ACTION:
-			case PrfPackage.SIMPLE_SEQUENCE__TYPE:
-			case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(SimpleSequence.class)) {
+		case PrfPackage.SIMPLE_SEQUENCE__VALUES:
+		case PrfPackage.SIMPLE_SEQUENCE__UNITS:
+		case PrfPackage.SIMPLE_SEQUENCE__RANGE:
+		case PrfPackage.SIMPLE_SEQUENCE__KIND:
+		case PrfPackage.SIMPLE_SEQUENCE__ACTION:
+		case PrfPackage.SIMPLE_SEQUENCE__TYPE:
+		case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -288,10 +276,10 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 
 	@Override
 	protected String getValueText(AbstractProperty object) {
-	    SimpleSequence seq = (SimpleSequence) object;
-	    return getValueText(seq, seq.getValues() == null ? null : seq.getValues().getValue());
+		SimpleSequence seq = (SimpleSequence) object;
+		return getValueText(seq, seq.getValues() == null ? null : seq.getValues().getValue());
 	}
-	
+
 	public static String getValueText(SimpleSequence property, List<String> value) {
 		String retVal = null;
 		if (value == null || value.isEmpty()) {
@@ -299,7 +287,7 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider imp
 		} else {
 			retVal = value.toString();
 		}
-		
+
 		final String units = property.getUnits();
 		if (units != null) {
 			return retVal + " " + units;

@@ -13,25 +13,15 @@ package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import mil.jpeojtrs.sca.prf.AbstractProperty;
 import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.StructSequence;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -40,8 +30,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StructSequenceItemProvider extends AbstractPropertyItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class StructSequenceItemProvider extends AbstractPropertyItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,8 +49,7 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addStructValuePropertyDescriptor(object);
@@ -100,9 +88,8 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider imp
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT_VALUE);
@@ -155,7 +142,7 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider imp
 		}
 		// BEGIN GENERATED CODE
 	}
-	
+
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
@@ -167,13 +154,12 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider imp
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StructSequence.class))
-		{
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT:
-			case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
-			case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(StructSequence.class)) {
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT:
+		case PrfPackage.STRUCT_SEQUENCE__STRUCT_VALUE:
+		case PrfPackage.STRUCT_SEQUENCE__CONFIGURATION_KIND:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -207,7 +193,7 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider imp
 
 	@Override
 	protected String getValueText(AbstractProperty object) {
-	    return "[" + ((StructSequence)object).getStructValue().size() + "]";
+		return "[" + ((StructSequence) object).getStructValue().size() + "]";
 	}
 
 }

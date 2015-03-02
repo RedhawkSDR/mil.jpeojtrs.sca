@@ -14,25 +14,16 @@ package mil.jpeojtrs.sca.prf.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import mil.jpeojtrs.sca.prf.AbstractProperty;
 import mil.jpeojtrs.sca.prf.Enumeration;
 import mil.jpeojtrs.sca.prf.Enumerations;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.Simple;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemColorProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptorDecorator;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -43,8 +34,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SimpleItemProvider extends AbstractPropertyItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class SimpleItemProvider extends AbstractPropertyItemProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -64,8 +54,7 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addValuePropertyDescriptor(object);
@@ -264,18 +253,18 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Simple.class))
-		{
-			case PrfPackage.SIMPLE__VALUE:
-			case PrfPackage.SIMPLE__UNITS:
-			case PrfPackage.SIMPLE__RANGE:
-			case PrfPackage.SIMPLE__ENUMERATIONS:
-			case PrfPackage.SIMPLE__KIND:
-			case PrfPackage.SIMPLE__ACTION:
-			case PrfPackage.SIMPLE__TYPE:
-			case PrfPackage.SIMPLE__COMPLEX:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(Simple.class)) {
+		case PrfPackage.SIMPLE__VALUE:
+		case PrfPackage.SIMPLE__UNITS:
+		case PrfPackage.SIMPLE__RANGE:
+		case PrfPackage.SIMPLE__ENUMERATIONS:
+		case PrfPackage.SIMPLE__KIND:
+		case PrfPackage.SIMPLE__ACTION:
+		case PrfPackage.SIMPLE__TYPE:
+		case PrfPackage.SIMPLE__COMPLEX:
+		case PrfPackage.SIMPLE__OPTIONAL:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -293,17 +282,17 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 	}
 
 	@Override
-    protected String getValueText(AbstractProperty object) {
+	protected String getValueText(AbstractProperty object) {
 		Simple simple = (Simple) object;
-	    return getValueText(simple, simple.getValue());
-    }
-	
+		return getValueText(simple, simple.getValue());
+	}
+
 	public static String getValueText(Simple property, String value) {
 		String retVal = null;
 		if (value == null || value.toString().length() == 0) {
 			return "";
 		}
-		
+
 		if (property.getEnumerations() != null) {
 			for (Enumeration e : property.getEnumerations().getEnumeration()) {
 				if (e.getValue().equals(value.toString())) {
@@ -311,12 +300,12 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider implements 
 					break;
 				}
 			}
-		} 
-		
+		}
+
 		if (retVal == null) {
 			retVal = value.toString();
 		}
-		
+
 		final String units = property.getUnits();
 		if (units != null) {
 			return retVal + " " + units;
