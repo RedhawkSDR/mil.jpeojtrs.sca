@@ -93,10 +93,8 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StructRef)object).getRefID();
-		return label == null || label.length() == 0 ?
-			getString("_UI_StructRef_type") :
-			getString("_UI_StructRef_type") + " " + label;
+		String label = ((StructRef) object).getRefID();
+		return label == null || label.length() == 0 ? getString("_UI_StructRef_type") : getString("_UI_StructRef_type") + " " + label;
 	}
 
 	/**
@@ -129,10 +127,7 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF,
-				 PrfFactory.eINSTANCE.createSimpleRef()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF, PrfFactory.eINSTANCE.createSimpleRef()));
 	}
 
 }

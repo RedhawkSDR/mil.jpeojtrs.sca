@@ -77,19 +77,10 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Properties_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Properties_description_feature", "_UI_Properties_type"),
-				 PrfPackage.Literals.PROPERTIES__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Properties_description_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Properties_description_feature", "_UI_Properties_type"),
+			PrfPackage.Literals.PROPERTIES__DESCRIPTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -145,10 +136,8 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Properties)object).getDescription();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Properties_type") :
-			getString("_UI_Properties_type") + " " + label;
+		String label = ((Properties) object).getDescription();
+		return label == null || label.length() == 0 ? getString("_UI_Properties_type") : getString("_UI_Properties_type") + " " + label;
 	}
 
 	/**

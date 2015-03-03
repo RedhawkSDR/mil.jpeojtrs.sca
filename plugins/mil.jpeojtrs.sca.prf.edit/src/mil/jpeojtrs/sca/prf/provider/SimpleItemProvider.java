@@ -61,6 +61,7 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 			addUnitsPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addComplexPropertyDescriptor(object);
+			addOptionalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,19 +112,9 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptorGen(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Simple_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Simple_value_feature", "_UI_Simple_type"),
-				 PrfPackage.Literals.SIMPLE__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Simple_value_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Simple_value_feature", "_UI_Simple_type"),
+			PrfPackage.Literals.SIMPLE__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -150,19 +141,9 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 	 * @generated
 	 */
 	protected void addUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Simple_units_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Simple_units_feature", "_UI_Simple_type"),
-				 PrfPackage.Literals.SIMPLE__UNITS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Simple_units_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Simple_units_feature", "_UI_Simple_type"),
+			PrfPackage.Literals.SIMPLE__UNITS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -172,19 +153,9 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Simple_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Simple_type_feature", "_UI_Simple_type"),
-				 PrfPackage.Literals.SIMPLE__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Simple_type_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Simple_type_feature", "_UI_Simple_type"),
+			PrfPackage.Literals.SIMPLE__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -195,19 +166,22 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 	 * @generated
 	 */
 	protected void addComplexPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Simple_complex_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Simple_complex_feature", "_UI_Simple_type"),
-				 PrfPackage.Literals.SIMPLE__COMPLEX,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Simple_complex_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Simple_complex_feature", "_UI_Simple_type"),
+			PrfPackage.Literals.SIMPLE__COMPLEX, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Optional feature.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOptionalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Simple_optional_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Simple_optional_feature", "_UI_Simple_type"),
+			PrfPackage.Literals.SIMPLE__OPTIONAL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**

@@ -140,33 +140,17 @@ public class PropertyRefGroupItemProvider extends ItemProviderAdapter implements
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.PROPERTY_REF_GROUP__PROPERTIES,
-				 FeatureMapUtil.createEntry
-					(PrfPackage.Literals.PROPERTY_REF_GROUP__SIMPLE_REF,
-					 PrfFactory.eINSTANCE.createSimpleRef())));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.PROPERTY_REF_GROUP__PROPERTIES,
+			FeatureMapUtil.createEntry(PrfPackage.Literals.PROPERTY_REF_GROUP__SIMPLE_REF, PrfFactory.eINSTANCE.createSimpleRef())));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.PROPERTY_REF_GROUP__PROPERTIES,
-				 FeatureMapUtil.createEntry
-					(PrfPackage.Literals.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF,
-					 PrfFactory.eINSTANCE.createSimpleSequenceRef())));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.PROPERTY_REF_GROUP__PROPERTIES,
+			FeatureMapUtil.createEntry(PrfPackage.Literals.PROPERTY_REF_GROUP__SIMPLE_SEQUENCE_REF, PrfFactory.eINSTANCE.createSimpleSequenceRef())));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.PROPERTY_REF_GROUP__PROPERTIES,
-				 FeatureMapUtil.createEntry
-					(PrfPackage.Literals.PROPERTY_REF_GROUP__STRUCT_REF,
-					 PrfFactory.eINSTANCE.createStructRef())));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.PROPERTY_REF_GROUP__PROPERTIES,
+			FeatureMapUtil.createEntry(PrfPackage.Literals.PROPERTY_REF_GROUP__STRUCT_REF, PrfFactory.eINSTANCE.createStructRef())));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.PROPERTY_REF_GROUP__PROPERTIES,
-				 FeatureMapUtil.createEntry
-					(PrfPackage.Literals.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF,
-					 PrfFactory.eINSTANCE.createStructSequenceRef())));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.PROPERTY_REF_GROUP__PROPERTIES,
+			FeatureMapUtil.createEntry(PrfPackage.Literals.PROPERTY_REF_GROUP__STRUCT_SEQUENCE_REF, PrfFactory.eINSTANCE.createStructSequenceRef())));
 	}
 
 	/**

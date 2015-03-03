@@ -77,19 +77,10 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 	 * @generated
 	 */
 	protected void addSimpleRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StructValue_simpleRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StructValue_simpleRef_feature", "_UI_StructValue_type"),
-				 PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_StructValue_simpleRef_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_StructValue_simpleRef_feature", "_UI_StructValue_type"),
+			PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF, false, false, false, null, null, null));
 	}
 
 	/**
@@ -105,6 +96,7 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF);
+			childrenFeatures.add(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_SEQUENCE_REF);
 		}
 		return childrenFeatures;
 	}
@@ -171,11 +163,11 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StructValue.class))
-		{
-			case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(StructValue.class)) {
+		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
+		case PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -191,10 +183,9 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF,
-				 PrfFactory.eINSTANCE.createSimpleRef()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF, PrfFactory.eINSTANCE.createSimpleRef()));
+
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_SEQUENCE_REF, PrfFactory.eINSTANCE.createSimpleSequenceRef()));
 	}
 
 	/**

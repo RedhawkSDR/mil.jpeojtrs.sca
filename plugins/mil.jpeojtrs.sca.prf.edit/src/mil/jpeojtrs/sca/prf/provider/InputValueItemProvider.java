@@ -150,10 +150,7 @@ public class InputValueItemProvider extends ItemProviderAdapter implements IEdit
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.INPUT_VALUE__SIMPLE,
-				 PrfFactory.eINSTANCE.createSimple()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.INPUT_VALUE__SIMPLE, PrfFactory.eINSTANCE.createSimple()));
 	}
 
 	/**

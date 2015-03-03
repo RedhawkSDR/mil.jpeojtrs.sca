@@ -63,19 +63,9 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 	 * @generated
 	 */
 	protected void addSimplePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Struct_simple_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Struct_simple_feature", "_UI_Struct_type"),
-				 PrfPackage.Literals.STRUCT__SIMPLE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Struct_simple_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Struct_simple_feature", "_UI_Struct_type"),
+			PrfPackage.Literals.STRUCT__SIMPLE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -151,12 +141,12 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Struct.class))
-		{
-			case PrfPackage.STRUCT__SIMPLE:
-			case PrfPackage.STRUCT__CONFIGURATION_KIND:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(Struct.class)) {
+		case PrfPackage.STRUCT__SIMPLE:
+		case PrfPackage.STRUCT__SIMPLE_SEQUENCE:
+		case PrfPackage.STRUCT__CONFIGURATION_KIND:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -172,14 +162,10 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT__SIMPLE,
-				 PrfFactory.eINSTANCE.createSimple()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__SIMPLE, PrfFactory.eINSTANCE.createSimple()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT__CONFIGURATION_KIND,
-				 PrfFactory.eINSTANCE.createConfigurationKind()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE, PrfFactory.eINSTANCE.createSimpleSequence()));
+
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONFIGURATION_KIND, PrfFactory.eINSTANCE.createConfigurationKind()));
 	}
 }

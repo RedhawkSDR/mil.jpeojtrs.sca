@@ -77,19 +77,9 @@ public class KindItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Kind_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Kind_type_feature", "_UI_Kind_type"),
-				 PrfPackage.Literals.KIND__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Kind_type_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Kind_type_feature", "_UI_Kind_type"),
+			PrfPackage.Literals.KIND__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -113,9 +103,7 @@ public class KindItemProvider extends ItemProviderAdapter implements IEditingDom
 	public String getText(Object object) {
 		PropertyConfigurationType labelValue = ((Kind) object).getType();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Kind_type") :
-			getString("_UI_Kind_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Kind_type") : getString("_UI_Kind_type") + " " + label;
 	}
 
 	/**

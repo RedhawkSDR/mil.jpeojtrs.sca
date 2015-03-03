@@ -77,19 +77,9 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Action_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Action_type_feature", "_UI_Action_type"),
-				 PrfPackage.Literals.ACTION__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Action_type_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Action_type_feature", "_UI_Action_type"),
+			PrfPackage.Literals.ACTION__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -113,9 +103,7 @@ public class ActionItemProvider extends ItemProviderAdapter implements IEditingD
 	public String getText(Object object) {
 		ActionType labelValue = ((Action) object).getType();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Action_type") :
-			getString("_UI_Action_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Action_type") : getString("_UI_Action_type") + " " + label;
 	}
 
 	/**

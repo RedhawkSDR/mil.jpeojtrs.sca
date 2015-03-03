@@ -136,10 +136,7 @@ public class StructSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT_SEQUENCE_REF__STRUCT_VALUE,
-				 PrfFactory.eINSTANCE.createStructValue()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_SEQUENCE_REF__STRUCT_VALUE, PrfFactory.eINSTANCE.createStructValue()));
 	}
 
 }

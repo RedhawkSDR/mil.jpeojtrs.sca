@@ -150,10 +150,7 @@ public class PrfDocumentRootItemProvider extends ItemProviderAdapter implements 
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES,
-				 PrfFactory.eINSTANCE.createProperties()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.PRF_DOCUMENT_ROOT__PROPERTIES, PrfFactory.eINSTANCE.createProperties()));
 	}
 
 	/**

@@ -150,10 +150,7 @@ public class ResultValueItemProvider extends ItemProviderAdapter implements IEdi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.RESULT_VALUE__SIMPLE,
-				 PrfFactory.eINSTANCE.createSimple()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.RESULT_VALUE__SIMPLE, PrfFactory.eINSTANCE.createSimple()));
 	}
 
 	/**

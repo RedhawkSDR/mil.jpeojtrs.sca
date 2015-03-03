@@ -75,8 +75,9 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	protected void addLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-		        getString("_UI_Enumeration_label_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Enumeration_label_feature", "_UI_Enumeration_type"),
-		        PrfPackage.Literals.ENUMERATION__LABEL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+			getString("_UI_Enumeration_label_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Enumeration_label_feature", "_UI_Enumeration_type"), PrfPackage.Literals.ENUMERATION__LABEL,
+			true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -88,8 +89,8 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 			getString("_UI_Enumeration_value_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Enumeration_value_feature", "_UI_Enumeration_type"),
-			PrfPackage.Literals.ENUMERATION__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+			getString("_UI_PropertyDescriptor_description", "_UI_Enumeration_value_feature", "_UI_Enumeration_type"), PrfPackage.Literals.ENUMERATION__VALUE,
+			true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**

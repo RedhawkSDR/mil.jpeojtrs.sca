@@ -139,10 +139,7 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES,
-				 PrfFactory.eINSTANCE.createValues()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, PrfFactory.eINSTANCE.createValues()));
 	}
 
 	@Override

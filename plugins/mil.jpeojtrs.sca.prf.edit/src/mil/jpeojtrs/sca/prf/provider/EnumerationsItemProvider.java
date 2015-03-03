@@ -150,10 +150,7 @@ public class EnumerationsItemProvider extends ItemProviderAdapter implements IEd
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.ENUMERATIONS__ENUMERATION,
-				 PrfFactory.eINSTANCE.createEnumeration()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.ENUMERATIONS__ENUMERATION, PrfFactory.eINSTANCE.createEnumeration()));
 	}
 
 	/**

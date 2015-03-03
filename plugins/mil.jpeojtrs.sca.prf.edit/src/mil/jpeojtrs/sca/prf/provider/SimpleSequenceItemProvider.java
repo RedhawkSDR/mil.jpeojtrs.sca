@@ -106,19 +106,10 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider {
 	 * @generated
 	 */
 	protected void addValuesPropertyDescriptorGen(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SimpleSequence_values_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_values_feature", "_UI_SimpleSequence_type"),
-				 PrfPackage.Literals.SIMPLE_SEQUENCE__VALUES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SimpleSequence_values_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_values_feature", "_UI_SimpleSequence_type"),
+			PrfPackage.Literals.SIMPLE_SEQUENCE__VALUES, false, false, false, null, null, null));
 	}
 
 	/**
@@ -145,19 +136,10 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider {
 	 * @generated
 	 */
 	protected void addUnitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SimpleSequence_units_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_units_feature", "_UI_SimpleSequence_type"),
-				 PrfPackage.Literals.SIMPLE_SEQUENCE__UNITS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SimpleSequence_units_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_units_feature", "_UI_SimpleSequence_type"),
+			PrfPackage.Literals.SIMPLE_SEQUENCE__UNITS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -167,19 +149,10 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider {
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SimpleSequence_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_type_feature", "_UI_SimpleSequence_type"),
-				 PrfPackage.Literals.SIMPLE_SEQUENCE__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SimpleSequence_type_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_type_feature", "_UI_SimpleSequence_type"),
+			PrfPackage.Literals.SIMPLE_SEQUENCE__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -190,19 +163,10 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider {
 	 * @generated
 	 */
 	protected void addComplexPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SimpleSequence_complex_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_complex_feature", "_UI_SimpleSequence_type"),
-				 PrfPackage.Literals.SIMPLE_SEQUENCE__COMPLEX,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SimpleSequence_complex_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_complex_feature", "_UI_SimpleSequence_type"),
+			PrfPackage.Literals.SIMPLE_SEQUENCE__COMPLEX, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**

@@ -64,19 +64,10 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider {
 	 * @generated
 	 */
 	protected void addStructValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StructSequence_structValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StructSequence_structValue_feature", "_UI_StructSequence_type"),
-				 PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT_VALUE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_StructSequence_structValue_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_StructSequence_structValue_feature", "_UI_StructSequence_type"),
+			PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT_VALUE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -175,20 +166,11 @@ public class StructSequenceItemProvider extends AbstractPropertyItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT,
-				 PrfFactory.eINSTANCE.createStruct()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT, PrfFactory.eINSTANCE.createStruct()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT_VALUE,
-				 PrfFactory.eINSTANCE.createStructValue()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_SEQUENCE__STRUCT_VALUE, PrfFactory.eINSTANCE.createStructValue()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PrfPackage.Literals.STRUCT_SEQUENCE__CONFIGURATION_KIND,
-				 PrfFactory.eINSTANCE.createConfigurationKind()));
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_SEQUENCE__CONFIGURATION_KIND, PrfFactory.eINSTANCE.createConfigurationKind()));
 	}
 
 	@Override
