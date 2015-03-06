@@ -10,10 +10,10 @@
     http://www.eclipse.org/legal/epl-v10.html.
 -->
 <site>
-   <feature url="features/mil.jpeojtrs.sca_2.2.2.qualifier.jar" id="mil.jpeojtrs.sca" version="2.2.2.qualifier">
+   <feature url="features/mil.jpeojtrs.sca_0.0.0.qualifier.jar" id="mil.jpeojtrs.sca">
       <category name="mil.jpeojtrs.sca"/>
    </feature>
-   <feature url="features/mil.jpeojtrs.sca.sdk_2.2.2.qualifier.jar" id="mil.jpeojtrs.sca.sdk" version="2.2.2.qualifier">
+   <feature url="features/mil.jpeojtrs.sca.sdk_0.0.0.qualifier.jar" id="mil.jpeojtrs.sca.sdk">
       <category name="mil.jpeojtrs.sca"/>
    </feature>
    <category-def name="mil.jpeojtrs.sca" label="SCA"/>
