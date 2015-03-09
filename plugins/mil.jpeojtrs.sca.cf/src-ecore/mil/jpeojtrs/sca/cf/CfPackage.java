@@ -1094,14 +1094,24 @@ public interface CfPackage extends EPackage {
 	 */
 	int APPLICATION_ALREADY_INSTALLED = 68;
 	/**
-	 * The meta object id for the '<em>Invalid Identifier</em>' data type.
+	 * The meta object id for the '<em>Invalid Dom Mgr Identifier</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see CF.DomainManagerPackage.InvalidIdentifier
+	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidDomMgrIdentifier()
+	 * @generated
+	 * @since 4.0
+	 */
+	int INVALID_DOM_MGR_IDENTIFIER = 69;
+	/**
+	 * The meta object id for the '<em>Invalid Identifier</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see CF.InvalidIdentifier
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidIdentifier()
 	 * @generated
 	 */
-	int INVALID_IDENTIFIER = 69;
+	int INVALID_IDENTIFIER = 110;
 	/**
 	 * The meta object id for the '<em>Application Uninstallation Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1442,6 +1452,26 @@ public interface CfPackage extends EPackage {
 	 * @generated
 	 */
 	int UNKNOWN_TEST = 107;
+
+	/**
+	 * The meta object id for the '<em>Unknown Identifier</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see CF.UnknownIdentifier
+	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUnknownIdentifier()
+	 * @generated
+	 * @since 4.0
+	 */
+	int UNKNOWN_IDENTIFIER = 108;
+	/**
+	 * The meta object id for the '<em>Log Event Array</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getLogEventArray()
+	 * @generated
+	 * @since 4.0
+	 */
+	int LOG_EVENT_ARRAY = 109;
 
 	/**
 	 * Returns the meta object for class '{@link org.omg.CORBA.Object <em>Object</em>}'.
@@ -1939,7 +1969,7 @@ public interface CfPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Resource</em>'.
 	 * @see CF.Resource
-	 * @model instanceClass="CF.Resource" superTypes="mil.jpeojtrs.sca.cf.ResourceOperations mil.jpeojtrs.sca.cf.LifeCycle mil.jpeojtrs.sca.cf.TestableObject mil.jpeojtrs.sca.cf.PropertySet mil.jpeojtrs.sca.cf.PortSupplier"
+	 * @model instanceClass="CF.Resource" superTypes="mil.jpeojtrs.sca.cf.ResourceOperations mil.jpeojtrs.sca.cf.LifeCycle mil.jpeojtrs.sca.cf.TestableObject mil.jpeojtrs.sca.cf.PropertySet mil.jpeojtrs.sca.cf.PortSupplier mil.jpeojtrs.sca.cf.Logging"
 	 * @generated
 	 */
 	EClass getResource();
@@ -2211,12 +2241,24 @@ public interface CfPackage extends EPackage {
 	EDataType getApplicationAlreadyInstalled();
 
 	/**
-	 * Returns the meta object for data type '{@link CF.DomainManagerPackage.InvalidIdentifier <em>Invalid Identifier</em>}'.
+	 * Returns the meta object for data type '{@link CF.DomainManagerPackage.InvalidIdentifier <em>Invalid Dom Mgr Identifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Invalid Dom Mgr Identifier</em>'.
+	 * @see CF.DomainManagerPackage.InvalidIdentifier
+	 * @model instanceClass="CF.DomainManagerPackage.InvalidIdentifier"
+	 * @generated
+	 * @since 4.0
+	 */
+	EDataType getInvalidDomMgrIdentifier();
+
+	/**
+	 * Returns the meta object for data type '{@link CF.InvalidIdentifier <em>Invalid Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Invalid Identifier</em>'.
-	 * @see CF.DomainManagerPackage.InvalidIdentifier
-	 * @model instanceClass="CF.DomainManagerPackage.InvalidIdentifier"
+	 * @see CF.InvalidIdentifier
+	 * @model instanceClass="CF.InvalidIdentifier"
 	 * @generated
 	 */
 	EDataType getInvalidIdentifier();
@@ -2636,6 +2678,29 @@ public interface CfPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getUnknownTest();
+
+	/**
+	 * Returns the meta object for data type '{@link CF.UnknownIdentifier <em>Unknown Identifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Unknown Identifier</em>'.
+	 * @see CF.UnknownIdentifier
+	 * @model instanceClass="CF.UnknownIdentifier"
+	 * @generated
+	 * @since 4.0
+	 */
+	EDataType getUnknownIdentifier();
+
+	/**
+	 * Returns the meta object for data type '<em>Log Event Array</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Log Event Array</em>'.
+	 * @model instanceClass="CF.LogEvent[]"
+	 * @generated
+	 * @since 4.0
+	 */
+	EDataType getLogEventArray();
 
 	/**
 	 * Returns the factory that creates the instances of the model.

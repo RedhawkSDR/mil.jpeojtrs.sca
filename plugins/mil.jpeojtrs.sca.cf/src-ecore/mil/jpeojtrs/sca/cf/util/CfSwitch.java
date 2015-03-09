@@ -191,6 +191,8 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplier(aggregateExecutableDevice);
 			if (result == null)
+				result = caseLogging(aggregateExecutableDevice);
+			if (result == null)
 				result = caseLifeCycleOperations(aggregateExecutableDevice);
 			if (result == null)
 				result = caseTestableObjectOperations(aggregateExecutableDevice);
@@ -199,9 +201,19 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplierOperations(aggregateExecutableDevice);
 			if (result == null)
+				result = caseLoggingOperations(aggregateExecutableDevice);
+			if (result == null)
+				result = caseLogEventConsumer(aggregateExecutableDevice);
+			if (result == null)
+				result = caseLogConfiguration(aggregateExecutableDevice);
+			if (result == null)
 				result = caseObject(aggregateExecutableDevice);
 			if (result == null)
 				result = caseIDLEntity(aggregateExecutableDevice);
+			if (result == null)
+				result = caseLogEventConsumerOperations(aggregateExecutableDevice);
+			if (result == null)
+				result = caseLogConfigurationOperations(aggregateExecutableDevice);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -261,6 +273,8 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplier(aggregateLoadableDevice);
 			if (result == null)
+				result = caseLogging(aggregateLoadableDevice);
+			if (result == null)
 				result = caseLifeCycleOperations(aggregateLoadableDevice);
 			if (result == null)
 				result = caseTestableObjectOperations(aggregateLoadableDevice);
@@ -269,9 +283,19 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplierOperations(aggregateLoadableDevice);
 			if (result == null)
+				result = caseLoggingOperations(aggregateLoadableDevice);
+			if (result == null)
+				result = caseLogEventConsumer(aggregateLoadableDevice);
+			if (result == null)
+				result = caseLogConfiguration(aggregateLoadableDevice);
+			if (result == null)
 				result = caseObject(aggregateLoadableDevice);
 			if (result == null)
 				result = caseIDLEntity(aggregateLoadableDevice);
+			if (result == null)
+				result = caseLogEventConsumerOperations(aggregateLoadableDevice);
+			if (result == null)
+				result = caseLogConfigurationOperations(aggregateLoadableDevice);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -325,6 +349,8 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplier(aggregatePlainDevice);
 			if (result == null)
+				result = caseLogging(aggregatePlainDevice);
+			if (result == null)
 				result = caseLifeCycleOperations(aggregatePlainDevice);
 			if (result == null)
 				result = caseTestableObjectOperations(aggregatePlainDevice);
@@ -333,9 +359,19 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplierOperations(aggregatePlainDevice);
 			if (result == null)
+				result = caseLoggingOperations(aggregatePlainDevice);
+			if (result == null)
+				result = caseLogEventConsumer(aggregatePlainDevice);
+			if (result == null)
+				result = caseLogConfiguration(aggregatePlainDevice);
+			if (result == null)
 				result = caseObject(aggregatePlainDevice);
 			if (result == null)
 				result = caseIDLEntity(aggregatePlainDevice);
+			if (result == null)
+				result = caseLogEventConsumerOperations(aggregatePlainDevice);
+			if (result == null)
+				result = caseLogConfigurationOperations(aggregatePlainDevice);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -379,6 +415,8 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplier(application);
 			if (result == null)
+				result = caseLogging(application);
+			if (result == null)
 				result = caseLifeCycleOperations(application);
 			if (result == null)
 				result = caseTestableObjectOperations(application);
@@ -387,9 +425,19 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplierOperations(application);
 			if (result == null)
+				result = caseLoggingOperations(application);
+			if (result == null)
+				result = caseLogEventConsumer(application);
+			if (result == null)
+				result = caseLogConfiguration(application);
+			if (result == null)
 				result = caseObject(application);
 			if (result == null)
 				result = caseIDLEntity(application);
+			if (result == null)
+				result = caseLogEventConsumerOperations(application);
+			if (result == null)
+				result = caseLogConfigurationOperations(application);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -449,6 +497,8 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplier(device);
 			if (result == null)
+				result = caseLogging(device);
+			if (result == null)
 				result = caseLifeCycleOperations(device);
 			if (result == null)
 				result = caseTestableObjectOperations(device);
@@ -457,9 +507,19 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplierOperations(device);
 			if (result == null)
+				result = caseLoggingOperations(device);
+			if (result == null)
+				result = caseLogEventConsumer(device);
+			if (result == null)
+				result = caseLogConfiguration(device);
+			if (result == null)
 				result = caseObject(device);
 			if (result == null)
 				result = caseIDLEntity(device);
+			if (result == null)
+				result = caseLogEventConsumerOperations(device);
+			if (result == null)
+				result = caseLogConfigurationOperations(device);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -565,6 +625,8 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplier(executableDevice);
 			if (result == null)
+				result = caseLogging(executableDevice);
+			if (result == null)
 				result = caseLifeCycleOperations(executableDevice);
 			if (result == null)
 				result = caseTestableObjectOperations(executableDevice);
@@ -573,9 +635,19 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplierOperations(executableDevice);
 			if (result == null)
+				result = caseLoggingOperations(executableDevice);
+			if (result == null)
+				result = caseLogEventConsumer(executableDevice);
+			if (result == null)
+				result = caseLogConfiguration(executableDevice);
+			if (result == null)
 				result = caseObject(executableDevice);
 			if (result == null)
 				result = caseIDLEntity(executableDevice);
+			if (result == null)
+				result = caseLogEventConsumerOperations(executableDevice);
+			if (result == null)
+				result = caseLogConfigurationOperations(executableDevice);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -709,6 +781,8 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplier(loadableDevice);
 			if (result == null)
+				result = caseLogging(loadableDevice);
+			if (result == null)
 				result = caseLifeCycleOperations(loadableDevice);
 			if (result == null)
 				result = caseTestableObjectOperations(loadableDevice);
@@ -717,9 +791,19 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplierOperations(loadableDevice);
 			if (result == null)
+				result = caseLoggingOperations(loadableDevice);
+			if (result == null)
+				result = caseLogEventConsumer(loadableDevice);
+			if (result == null)
+				result = caseLogConfiguration(loadableDevice);
+			if (result == null)
 				result = caseObject(loadableDevice);
 			if (result == null)
 				result = caseIDLEntity(loadableDevice);
+			if (result == null)
+				result = caseLogEventConsumerOperations(loadableDevice);
+			if (result == null)
+				result = caseLogConfigurationOperations(loadableDevice);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -889,6 +973,8 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplier(resource);
 			if (result == null)
+				result = caseLogging(resource);
+			if (result == null)
 				result = caseLifeCycleOperations(resource);
 			if (result == null)
 				result = caseTestableObjectOperations(resource);
@@ -897,9 +983,19 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePortSupplierOperations(resource);
 			if (result == null)
+				result = caseLoggingOperations(resource);
+			if (result == null)
+				result = caseLogEventConsumer(resource);
+			if (result == null)
+				result = caseLogConfiguration(resource);
+			if (result == null)
 				result = caseObject(resource);
 			if (result == null)
 				result = caseIDLEntity(resource);
+			if (result == null)
+				result = caseLogEventConsumerOperations(resource);
+			if (result == null)
+				result = caseLogConfigurationOperations(resource);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;

@@ -112,6 +112,7 @@ import CF.LoadableDevicePackage.LoadFail;
 import CF.LoadableDevicePackage.LoadType;
 import CF.LogConfiguration;
 import CF.LogConfigurationOperations;
+import CF.LogEvent;
 import CF.LogEventConsumer;
 import CF.LogEventConsumerOperations;
 import CF.Logging;
@@ -127,6 +128,7 @@ import CF.ResourceFactoryPackage.ShutdownFailure;
 import CF.ResourcePackage.StartError;
 import CF.ResourcePackage.StopError;
 import CF.TestableObjectPackage.UnknownTest;
+import CF.UnknownIdentifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -555,6 +557,12 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EDataType invalidDomMgrIdentifierEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType invalidIdentifierEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -784,6 +792,19 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EDataType unknownTestEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType unknownIdentifierEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType logEventArrayEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1484,6 +1505,16 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 4.0
+	 */
+	public EDataType getInvalidDomMgrIdentifier() {
+		return invalidDomMgrIdentifierEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	public EDataType getInvalidIdentifier() {
 		return invalidIdentifierEDataType;
@@ -1835,6 +1866,26 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 4.0
+	 */
+	public EDataType getUnknownIdentifier() {
+		return unknownIdentifierEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @since 4.0
+	 */
+	public EDataType getLogEventArray() {
+		return logEventArrayEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	public CfFactory getCfFactory() {
 		return (CfFactory) getEFactoryInstance();
@@ -1980,7 +2031,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		invalidFileNameEDataType = createEDataType(INVALID_FILE_NAME);
 		applicationInstallationErrorEDataType = createEDataType(APPLICATION_INSTALLATION_ERROR);
 		applicationAlreadyInstalledEDataType = createEDataType(APPLICATION_ALREADY_INSTALLED);
-		invalidIdentifierEDataType = createEDataType(INVALID_IDENTIFIER);
+		invalidDomMgrIdentifierEDataType = createEDataType(INVALID_DOM_MGR_IDENTIFIER);
 		applicationUninstallationErrorEDataType = createEDataType(APPLICATION_UNINSTALLATION_ERROR);
 		insufficientCapacityEDataType = createEDataType(INSUFFICIENT_CAPACITY);
 		invalidEventChannelNameEDataType = createEDataType(INVALID_EVENT_CHANNEL_NAME);
@@ -2019,6 +2070,9 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		startErrorEDataType = createEDataType(START_ERROR);
 		stopErrorEDataType = createEDataType(STOP_ERROR);
 		unknownTestEDataType = createEDataType(UNKNOWN_TEST);
+		unknownIdentifierEDataType = createEDataType(UNKNOWN_IDENTIFIER);
+		logEventArrayEDataType = createEDataType(LOG_EVENT_ARRAY);
+		invalidIdentifierEDataType = createEDataType(INVALID_IDENTIFIER);
 	}
 
 	/**
@@ -2134,6 +2188,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		resourceEClass.getESuperTypes().add(this.getTestableObject());
 		resourceEClass.getESuperTypes().add(this.getPropertySet());
 		resourceEClass.getESuperTypes().add(this.getPortSupplier());
+		resourceEClass.getESuperTypes().add(this.getLogging());
 		resourceFactoryEClass.getESuperTypes().add(this.getResourceFactoryOperations());
 		resourceFactoryEClass.getESuperTypes().add(this.getObject());
 		resourceFactoryEClass.getESuperTypes().add(this.getIDLEntity());
@@ -2268,6 +2323,17 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		addEException(op, this.getInvalidObjectReference());
 		addEException(op, this.getUnregisterError());
 
+		op = addEOperation(domainManagerOperationsEClass, null, "createApplication", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "profileFileName", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTypeArray(), "initConfiguration", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDeviceAssignmentTypeArray(), "deviceAssignments", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getInvalidFileName());
+		addEException(op, this.getCreateApplicationError());
+		addEException(op, this.getCreateApplicationRequestError());
+		addEException(op, this.getCreateApplicationInsufficientCapacityError());
+		addEException(op, this.getInvalidInitConfiguration());
+
 		op = addEOperation(domainManagerOperationsEClass, null, "installApplication", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "profileFileName", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getInvalidProfile());
@@ -2277,7 +2343,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 		op = addEOperation(domainManagerOperationsEClass, null, "uninstallApplication", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "applicationId", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEException(op, this.getInvalidIdentifier());
+		addEException(op, this.getInvalidDomMgrIdentifier());
 		addEException(op, this.getApplicationUninstallationError());
 
 		op = addEOperation(domainManagerOperationsEClass, null, "registerService", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -2308,6 +2374,16 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		addEException(op, this.getInvalidEventChannelName());
 		addEException(op, this.getNotConnected());
 
+		op = addEOperation(domainManagerOperationsEClass, null, "registerRemoteDomainManager", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDomainManager(), "registeringDomainManager", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getInvalidObjectReference());
+		addEException(op, this.getRegisterError());
+
+		op = addEOperation(domainManagerOperationsEClass, null, "unregisterRemoteDomainManager", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDomainManager(), "unregisteringDomainManager", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getInvalidObjectReference());
+		addEException(op, this.getUnregisterError());
+
 		initEClass(executableDeviceEClass, ExecutableDevice.class, "ExecutableDevice", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(executableDeviceOperationsEClass, ExecutableDeviceOperations.class, "ExecutableDeviceOperations", IS_ABSTRACT, IS_INTERFACE,
@@ -2322,6 +2398,18 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDataTypeArray(), "options", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDataTypeArray(), "parameters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getInvalidState());
+		addEException(op, this.getInvalidFunction());
+		addEException(op, this.getInvalidParameters());
+		addEException(op, this.getInvalidOptions());
+		addEException(op, this.getInvalidFileName());
+		addEException(op, this.getExecuteFail());
+
+		op = addEOperation(executableDeviceOperationsEClass, null, "executeLinked", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTypeArray(), "options", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTypeArray(), "parameters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "deps", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getInvalidState());
 		addEException(op, this.getInvalidFunction());
 		addEException(op, this.getInvalidParameters());
@@ -2457,10 +2545,35 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEClass(logEventConsumerOperationsEClass, LogEventConsumerOperations.class, "LogEventConsumerOperations", IS_ABSTRACT, IS_INTERFACE,
 			!IS_GENERATED_INSTANCE_CLASS);
 
+		op = addEOperation(logEventConsumerOperationsEClass, this.getLogEventArray(), "retrieve_records", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "howMany", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "startingRecord", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(logEventConsumerOperationsEClass, this.getLogEventArray(), "retrieve_records_by_date", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "howMany", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "to_timeStamp", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(logEventConsumerOperationsEClass, this.getLogEventArray(), "retrieve_records_from_date", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "howMany", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "from_timeStamp", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(logConfigurationEClass, LogConfiguration.class, "LogConfiguration", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(logConfigurationOperationsEClass, LogConfigurationOperations.class, "LogConfigurationOperations", IS_ABSTRACT, IS_INTERFACE,
 			!IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(logConfigurationOperationsEClass, null, "setLogLevel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "logger_id", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "newLevel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getUnknownIdentifier());
+
+		addEOperation(logConfigurationOperationsEClass, ecorePackage.getEString(), "getLogConfig", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(logConfigurationOperationsEClass, null, "setLogConfig", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "config_contents", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(logConfigurationOperationsEClass, null, "setLogConfigURL", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "config_url", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
@@ -2497,6 +2610,17 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		op = addEOperation(propertySetOperationsEClass, null, "query", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getPropertiesHolder(), "configProperties", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getUnknownProperties());
+
+		op = addEOperation(propertySetOperationsEClass, ecorePackage.getEString(), "registerPropertyListener", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getObject(), "obj", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "prop_ids", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEFloat(), "interval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getUnknownProperties());
+		addEException(op, this.getInvalidObjectReference());
+
+		op = addEOperation(propertySetOperationsEClass, null, "unregisterPropertyListener", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getInvalidIdentifier());
 
 		initEClass(resourceEClass, Resource.class, "Resource", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
@@ -2563,7 +2687,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(applicationAlreadyInstalledEDataType, ApplicationAlreadyInstalled.class, "ApplicationAlreadyInstalled", IS_SERIALIZABLE,
 			!IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(invalidIdentifierEDataType, InvalidIdentifier.class, "InvalidIdentifier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(invalidDomMgrIdentifierEDataType, InvalidIdentifier.class, "InvalidDomMgrIdentifier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(applicationUninstallationErrorEDataType, ApplicationUninstallationError.class, "ApplicationUninstallationError", IS_SERIALIZABLE,
 			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(insufficientCapacityEDataType, InsufficientCapacity.class, "InsufficientCapacity", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -2604,6 +2728,9 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEDataType(startErrorEDataType, StartError.class, "StartError", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(stopErrorEDataType, StopError.class, "StopError", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownTestEDataType, UnknownTest.class, "UnknownTest", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(unknownIdentifierEDataType, UnknownIdentifier.class, "UnknownIdentifier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(logEventArrayEDataType, LogEvent[].class, "LogEventArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(invalidIdentifierEDataType, CF.InvalidIdentifier.class, "InvalidIdentifier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -66,6 +66,7 @@ import CF.LifeCyclePackage.ReleaseError;
 import CF.LoadableDevicePackage.InvalidLoadKind;
 import CF.LoadableDevicePackage.LoadFail;
 import CF.LoadableDevicePackage.LoadType;
+import CF.LogEvent;
 import CF.PortPackage.InvalidPort;
 import CF.PortPackage.OccupiedPort;
 import CF.PortSupplierPackage.UnknownPort;
@@ -77,6 +78,7 @@ import CF.ResourceFactoryPackage.ShutdownFailure;
 import CF.ResourcePackage.StartError;
 import CF.ResourcePackage.StopError;
 import CF.TestableObjectPackage.UnknownTest;
+import CF.UnknownIdentifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -173,8 +175,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createApplicationInstallationErrorFromString(eDataType, initialValue);
 		case CfPackage.APPLICATION_ALREADY_INSTALLED:
 			return createApplicationAlreadyInstalledFromString(eDataType, initialValue);
-		case CfPackage.INVALID_IDENTIFIER:
-			return createInvalidIdentifierFromString(eDataType, initialValue);
+		case CfPackage.INVALID_DOM_MGR_IDENTIFIER:
+			return createInvalidDomMgrIdentifierFromString(eDataType, initialValue);
 		case CfPackage.APPLICATION_UNINSTALLATION_ERROR:
 			return createApplicationUninstallationErrorFromString(eDataType, initialValue);
 		case CfPackage.INVALID_EVENT_CHANNEL_NAME:
@@ -249,6 +251,12 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createStopErrorFromString(eDataType, initialValue);
 		case CfPackage.UNKNOWN_TEST:
 			return createUnknownTestFromString(eDataType, initialValue);
+		case CfPackage.UNKNOWN_IDENTIFIER:
+			return createUnknownIdentifierFromString(eDataType, initialValue);
+		case CfPackage.LOG_EVENT_ARRAY:
+			return createLogEventArrayFromString(eDataType, initialValue);
+		case CfPackage.INVALID_IDENTIFIER:
+			return createInvalidIdentifierFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -300,8 +308,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertApplicationInstallationErrorToString(eDataType, instanceValue);
 		case CfPackage.APPLICATION_ALREADY_INSTALLED:
 			return convertApplicationAlreadyInstalledToString(eDataType, instanceValue);
-		case CfPackage.INVALID_IDENTIFIER:
-			return convertInvalidIdentifierToString(eDataType, instanceValue);
+		case CfPackage.INVALID_DOM_MGR_IDENTIFIER:
+			return convertInvalidDomMgrIdentifierToString(eDataType, instanceValue);
 		case CfPackage.APPLICATION_UNINSTALLATION_ERROR:
 			return convertApplicationUninstallationErrorToString(eDataType, instanceValue);
 		case CfPackage.INVALID_EVENT_CHANNEL_NAME:
@@ -376,6 +384,12 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertStopErrorToString(eDataType, instanceValue);
 		case CfPackage.UNKNOWN_TEST:
 			return convertUnknownTestToString(eDataType, instanceValue);
+		case CfPackage.UNKNOWN_IDENTIFIER:
+			return convertUnknownIdentifierToString(eDataType, instanceValue);
+		case CfPackage.LOG_EVENT_ARRAY:
+			return convertLogEventArrayToString(eDataType, instanceValue);
+		case CfPackage.INVALID_IDENTIFIER:
+			return convertInvalidIdentifierToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -727,9 +741,30 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 4.0
 	 */
-	public InvalidIdentifier createInvalidIdentifierFromString(EDataType eDataType, String initialValue) {
+	public InvalidIdentifier createInvalidDomMgrIdentifierFromString(EDataType eDataType, String initialValue) {
 		return (InvalidIdentifier) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @since 4.0
+	 */
+	public String convertInvalidDomMgrIdentifierToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @since 4.0
+	 */
+	public CF.InvalidIdentifier createInvalidIdentifierFromString(EDataType eDataType, String initialValue) {
+		return (CF.InvalidIdentifier) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -1405,6 +1440,46 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	 */
 	public String convertUnknownTestToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @since 4.0
+	 */
+	public UnknownIdentifier createUnknownIdentifierFromString(EDataType eDataType, String initialValue) {
+		return (UnknownIdentifier) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @since 4.0
+	 */
+	public String convertUnknownIdentifierToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @since 4.0
+	 */
+	public LogEvent[] createLogEventArrayFromString(EDataType eDataType, String initialValue) {
+		return (LogEvent[]) super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @since 4.0
+	 */
+	public String convertLogEventArrayToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
 	}
 
 	/**

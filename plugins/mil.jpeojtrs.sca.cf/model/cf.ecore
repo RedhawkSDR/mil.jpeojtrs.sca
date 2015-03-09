@@ -125,10 +125,16 @@
     <eOperations name="unregisterDevice" eExceptions="#//InvalidObjectReference #//UnregisterError">
       <eParameters name="unregisteringDevice" eType="#//Device"/>
     </eOperations>
+    <eOperations name="createApplication" eExceptions="#//InvalidFileName #//CreateApplicationError #//CreateApplicationRequestError #//CreateApplicationInsufficientCapacityError #//InvalidInitConfiguration">
+      <eParameters name="profileFileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="initConfiguration" eType="#//DataTypeArray"/>
+      <eParameters name="deviceAssignments" eType="#//DeviceAssignmentTypeArray"/>
+    </eOperations>
     <eOperations name="installApplication" eExceptions="#//InvalidProfile #//InvalidFileName #//ApplicationInstallationError #//ApplicationAlreadyInstalled">
       <eParameters name="profileFileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="uninstallApplication" eExceptions="#//InvalidIdentifier #//ApplicationUninstallationError">
+    <eOperations name="uninstallApplication" eExceptions="#//InvalidDomMgrIdentifier #//ApplicationUninstallationError">
       <eParameters name="applicationId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="registerService" eExceptions="#//InvalidObjectReference #//DeviceManagerNotRegistered #//RegisterError">
@@ -149,6 +155,12 @@
       <eParameters name="unregisteringId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="eventChannelName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="registerRemoteDomainManager" eExceptions="#//InvalidObjectReference #//RegisterError">
+      <eParameters name="registeringDomainManager" eType="#//DomainManager"/>
+    </eOperations>
+    <eOperations name="unregisterRemoteDomainManager" eExceptions="#//InvalidObjectReference #//UnregisterError">
+      <eParameters name="unregisteringDomainManager" eType="#//DomainManager"/>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutableDevice" instanceClassName="CF.ExecutableDevice"
       abstract="true" interface="true" eSuperTypes="#//ExecutableDeviceOperations #//LoadableDevice #//IDLEntity"/>
@@ -162,6 +174,12 @@
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="options" eType="#//DataTypeArray"/>
       <eParameters name="parameters" eType="#//DataTypeArray"/>
+    </eOperations>
+    <eOperations name="executeLinked" eExceptions="#//InvalidState #//InvalidFunction #//InvalidParameters #//InvalidOptions #//InvalidFileName #//ExecuteFail">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="options" eType="#//DataTypeArray"/>
+      <eParameters name="parameters" eType="#//DataTypeArray"/>
+      <eParameters name="deps" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="File" instanceClassName="CF.File" abstract="true"
@@ -257,11 +275,36 @@
   <eClassifiers xsi:type="ecore:EClass" name="LogEventConsumer" instanceClassName="CF.LogEventConsumer"
       abstract="true" interface="true" eSuperTypes="#//LogEventConsumerOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="LogEventConsumerOperations" instanceClassName="CF.LogEventConsumerOperations"
-      abstract="true" interface="true"/>
+      abstract="true" interface="true">
+    <eOperations name="retrieve_records" eType="#//LogEventArray">
+      <eParameters name="howMany" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="startingRecord" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="retrieve_records_by_date" eType="#//LogEventArray">
+      <eParameters name="howMany" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="to_timeStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eOperations>
+    <eOperations name="retrieve_records_from_date" eType="#//LogEventArray">
+      <eParameters name="howMany" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="from_timeStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LogConfiguration" instanceClassName="CF.LogConfiguration"
       abstract="true" interface="true" eSuperTypes="#//LogConfigurationOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="LogConfigurationOperations" instanceClassName="CF.LogConfigurationOperations"
-      abstract="true" interface="true"/>
+      abstract="true" interface="true">
+    <eOperations name="setLogLevel" eExceptions="#//UnknownIdentifier">
+      <eParameters name="logger_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="newLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="getLogConfig" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="setLogConfig">
+      <eParameters name="config_contents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="setLogConfigURL">
+      <eParameters name="config_url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Port" instanceClassName="CF.Port" abstract="true"
       interface="true" eSuperTypes="#//PortOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortOperations" instanceClassName="CF.PortOperations"
@@ -292,9 +335,18 @@
     <eOperations name="query" eExceptions="#//UnknownProperties">
       <eParameters name="configProperties" eType="#//PropertiesHolder"/>
     </eOperations>
+    <eOperations name="registerPropertyListener" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        eExceptions="#//UnknownProperties #//InvalidObjectReference">
+      <eParameters name="obj" eType="#//Object"/>
+      <eParameters name="prop_ids" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="interval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    </eOperations>
+    <eOperations name="unregisterPropertyListener" eExceptions="#//InvalidIdentifier">
+      <eParameters name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Resource" instanceClassName="CF.Resource"
-      abstract="true" interface="true" eSuperTypes="#//ResourceOperations #//LifeCycle #//TestableObject #//PropertySet #//PortSupplier"/>
+      abstract="true" interface="true" eSuperTypes="#//ResourceOperations #//LifeCycle #//TestableObject #//PropertySet #//PortSupplier #//Logging"/>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceFactory" instanceClassName="CF.ResourceFactory"
       abstract="true" interface="true" eSuperTypes="#//ResourceFactoryOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceFactoryOperations" instanceClassName="CF.ResourceFactoryOperations"
@@ -338,7 +390,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidFileName" instanceClassName="CF.InvalidFileName"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ApplicationInstallationError" instanceClassName="CF.DomainManagerPackage.ApplicationInstallationError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ApplicationAlreadyInstalled" instanceClassName="CF.DomainManagerPackage.ApplicationAlreadyInstalled"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="InvalidIdentifier" instanceClassName="CF.DomainManagerPackage.InvalidIdentifier"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="InvalidDomMgrIdentifier" instanceClassName="CF.DomainManagerPackage.InvalidIdentifier"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ApplicationUninstallationError" instanceClassName="CF.DomainManagerPackage.ApplicationUninstallationError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InsufficientCapacity" instanceClassName="CF.DevicePackage.InsufficientCapacity"
       serializable="false"/>
@@ -378,4 +430,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="StartError" instanceClassName="CF.ResourcePackage.StartError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="StopError" instanceClassName="CF.ResourcePackage.StopError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownTest" instanceClassName="CF.TestableObjectPackage.UnknownTest"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="UnknownIdentifier" instanceClassName="CF.UnknownIdentifier"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="LogEventArray" instanceClassName="CF.LogEvent[]"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="InvalidIdentifier" instanceClassName="CF.InvalidIdentifier"/>
 </ecore:EPackage>
