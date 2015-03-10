@@ -181,12 +181,10 @@ public class SoftwareAssemblyItemProvider extends ItemProviderAdapter implements
 	public String getText(Object object) {
 		// END GENERATED CODE
 		String label = ((SoftwareAssembly) object).getName();
+		while (label.contains(".")) {
+			label = label.substring(label.indexOf('.') + 1);
+		}
 		return label;
-		/*
-		return label == null || label.length() == 0 ?
-			getString("_UI_SoftwareAssembly_type") :
-			getString("_UI_SoftwareAssembly_type") + " " + label;
-		*/
 		// BEGIN GENERATED CODE
 	}
 

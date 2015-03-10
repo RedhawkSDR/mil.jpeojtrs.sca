@@ -201,12 +201,10 @@ public class DeviceConfigurationItemProvider
 	public String getText(Object object) {
 		// END GENERATED CODE
 		String label = ((DeviceConfiguration) object).getName();
+		while (label.contains(".")) {
+			label = label.substring(label.indexOf('.') + 1);
+		}
 		return label;
-		/*
-		return label == null || label.length() == 0 ?
-			getString("_UI_DeviceConfiguration_type") :
-			getString("_UI_DeviceConfiguration_type") + " " + label;
-			*/
 		// BEGIN GENERATED CODE
 	}
 
