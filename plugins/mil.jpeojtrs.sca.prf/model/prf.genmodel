@@ -13,8 +13,9 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/mil.jpeojtrs.sca.prf/src" editorDirectory=""
     modelPluginID="mil.jpeojtrs.sca.prf" templateDirectory="mil.jpeojtrs.sca.prf/templates"
     dynamicTemplates="true" redirection="" forceOverwrite="true" modelName="Prf" codeFormatting="true"
-    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="6.0" copyrightFields="false"
-    tableProviders="true" colorProviders="true" runtimeVersion="2.8" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    testSuiteClass="" importerID="org.eclipse.xsd.ecore.importer" complianceLevel="6.0"
+    copyrightFields="false" tableProviders="true" colorProviders="true" runtimeVersion="2.8"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
     <genAnnotations source="selectedPackages">
@@ -158,6 +159,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/complex"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/optional"/>
       <genOperations ecoreOperation="prf.ecore#//Simple/isComplex"/>
+      <genOperations ecoreOperation="prf.ecore#//Simple/isOptional"/>
     </genClasses>
     <genClasses provider="Stateful" ecoreClass="prf.ecore#//SimpleSequence">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequence/values"/>
