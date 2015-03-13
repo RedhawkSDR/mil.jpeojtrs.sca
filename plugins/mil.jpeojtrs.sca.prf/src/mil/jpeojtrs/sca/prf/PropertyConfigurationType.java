@@ -195,18 +195,9 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final PropertyConfigurationType[] VALUES_ARRAY =
-		new PropertyConfigurationType[]
-		{
-			CONFIGURE,
-			EXECPARAM,
-			ALLOCATION,
-			FACTORYPARAM,
-			TEST,
-			EVENT,
-			MESSAGE,
-		};
-/**
+	private static final PropertyConfigurationType[] VALUES_ARRAY = new PropertyConfigurationType[] { CONFIGURE, EXECPARAM, ALLOCATION, FACTORYPARAM, TEST,
+		EVENT, MESSAGE, };
+	/**
 	 * A public read-only list of all the '<em><b>Property Configuration Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

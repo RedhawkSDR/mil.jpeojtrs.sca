@@ -18,6 +18,7 @@ import java.util.List;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.PropertyContainer;
 import mil.jpeojtrs.sca.prf.SimpleRef;
+import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructRef;
 
@@ -41,6 +42,7 @@ import CF.PropertiesHelper;
  * The following features are implemented:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructRefImpl#getSimpleRef <em>Simple Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructRefImpl#getSimpleSequenceRef <em>Simple Sequence Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,6 +58,16 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	 * @ordered
 	 */
 	protected EList<SimpleRef> simpleRef;
+
+	/**
+	 * The cached value of the '{@link #getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSimpleSequenceRef()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SimpleSequenceRef> simpleSequenceRef;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,6 +116,18 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SimpleSequenceRef> getSimpleSequenceRef() {
+		if (simpleSequenceRef == null) {
+			simpleSequenceRef = new EObjectContainmentEList<SimpleSequenceRef>(SimpleSequenceRef.class, this, PrfPackage.STRUCT_REF__SIMPLE_SEQUENCE_REF);
+		}
+		return simpleSequenceRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
@@ -123,6 +147,8 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 		switch (featureID) {
 		case PrfPackage.STRUCT_REF__SIMPLE_REF:
 			return ((InternalEList< ? >) getSimpleRef()).basicRemove(otherEnd, msgs);
+		case PrfPackage.STRUCT_REF__SIMPLE_SEQUENCE_REF:
+			return ((InternalEList< ? >) getSimpleSequenceRef()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -137,6 +163,8 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 		switch (featureID) {
 		case PrfPackage.STRUCT_REF__SIMPLE_REF:
 			return getSimpleRef();
+		case PrfPackage.STRUCT_REF__SIMPLE_SEQUENCE_REF:
+			return getSimpleSequenceRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,6 +182,10 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 			getSimpleRef().clear();
 			getSimpleRef().addAll((Collection< ? extends SimpleRef>) newValue);
 			return;
+		case PrfPackage.STRUCT_REF__SIMPLE_SEQUENCE_REF:
+			getSimpleSequenceRef().clear();
+			getSimpleSequenceRef().addAll((Collection< ? extends SimpleSequenceRef>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -169,6 +201,9 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 		case PrfPackage.STRUCT_REF__SIMPLE_REF:
 			getSimpleRef().clear();
 			return;
+		case PrfPackage.STRUCT_REF__SIMPLE_SEQUENCE_REF:
+			getSimpleSequenceRef().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -183,6 +218,8 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 		switch (featureID) {
 		case PrfPackage.STRUCT_REF__SIMPLE_REF:
 			return simpleRef != null && !simpleRef.isEmpty();
+		case PrfPackage.STRUCT_REF__SIMPLE_SEQUENCE_REF:
+			return simpleSequenceRef != null && !simpleSequenceRef.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

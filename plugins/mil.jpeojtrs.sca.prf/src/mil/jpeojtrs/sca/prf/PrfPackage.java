@@ -1305,13 +1305,21 @@ public interface PrfPackage extends EPackage {
 	 */
 	int STRUCT_REF__SIMPLE_REF = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 0;
 	/**
+	 * The feature id for the '<em><b>Simple Sequence Ref</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCT_REF__SIMPLE_SEQUENCE_REF = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 1;
+	/**
 	 * The number of structural features of the '<em>Struct Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_REF_FEATURE_COUNT = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 1;
+	int STRUCT_REF_FEATURE_COUNT = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 2;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.StructSequenceRefImpl <em>Struct Sequence Ref</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -2649,6 +2657,17 @@ public interface PrfPackage extends EPackage {
 	EReference getStructRef_SimpleRef();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef <em>Simple Sequence Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Simple Sequence Ref</em>'.
+	 * @see mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef()
+	 * @see #getStructRef()
+	 * @generated
+	 */
+	EReference getStructRef_SimpleSequenceRef();
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.prf.StructSequenceRef <em>Struct Sequence Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3842,6 +3861,14 @@ public interface PrfPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STRUCT_REF__SIMPLE_REF = eINSTANCE.getStructRef_SimpleRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Simple Sequence Ref</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCT_REF__SIMPLE_SEQUENCE_REF = eINSTANCE.getStructRef_SimpleSequenceRef();
 
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.prf.impl.StructSequenceRefImpl <em>Struct Sequence Ref</em>}' class.

@@ -68,6 +68,7 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF);
+			childrenFeatures.add(PrfPackage.Literals.STRUCT_REF__SIMPLE_SEQUENCE_REF);
 		}
 		return childrenFeatures;
 	}
@@ -110,6 +111,7 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 
 		switch (notification.getFeatureID(StructRef.class)) {
 		case PrfPackage.STRUCT_REF__SIMPLE_REF:
+		case PrfPackage.STRUCT_REF__SIMPLE_SEQUENCE_REF:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -128,6 +130,8 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF, PrfFactory.eINSTANCE.createSimpleRef()));
+
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_REF__SIMPLE_SEQUENCE_REF, PrfFactory.eINSTANCE.createSimpleSequenceRef()));
 	}
 
 }

@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleRef <em>Simple Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef <em>Simple Sequence Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,5 +48,21 @@ public interface StructRef extends AbstractPropertyRef<Struct>, PropertyRefConta
 	 * @generated
 	 */
 	EList<SimpleRef> getSimpleRef();
+
+	/**
+	 * Returns the value of the '<em><b>Simple Sequence Ref</b></em>' containment reference list.
+	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleSequenceRef}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Simple Sequence Ref</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Simple Sequence Ref</em>' containment reference list.
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructRef_SimpleSequenceRef()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<SimpleSequenceRef> getSimpleSequenceRef();
 
 } // StructRef

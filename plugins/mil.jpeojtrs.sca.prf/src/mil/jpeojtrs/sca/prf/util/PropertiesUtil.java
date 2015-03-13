@@ -27,6 +27,7 @@ import mil.jpeojtrs.sca.prf.StructRef;
 import mil.jpeojtrs.sca.prf.StructSequence;
 import mil.jpeojtrs.sca.prf.StructSequenceRef;
 import mil.jpeojtrs.sca.prf.StructValue;
+import mil.jpeojtrs.sca.prf.Values;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -166,6 +167,22 @@ public final class PropertiesUtil {
 			return simple.getValue();
 		} else {
 			return getDefaultValue(simple.getType());
+		}
+	}
+
+	/**
+	 * Get the default value for a property type should the {@link Simple} not already have a value
+	 * 
+	 * @param simple The {@link Simple} instance that we shall find an appropriate value for
+	 * @return a new default value for the {@link Simple} should it not have a value already
+	 * 
+	 * @since 4.0
+	 */
+	public static Values getDefaultValues(final SimpleSequence simples) {
+		if (simples.getValues() != null) {
+			return simples.getValues();
+		} else {
+			return PrfFactory.eINSTANCE.createValues();
 		}
 	}
 

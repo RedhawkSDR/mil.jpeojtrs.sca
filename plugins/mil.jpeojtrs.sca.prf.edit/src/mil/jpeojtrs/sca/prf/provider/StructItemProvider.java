@@ -81,6 +81,7 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT__SIMPLE);
+			childrenFeatures.add(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE);
 		}
 		return childrenFeatures;
 	}

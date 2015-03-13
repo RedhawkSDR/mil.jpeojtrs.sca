@@ -1471,6 +1471,15 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getStructRef_SimpleSequenceRef() {
+		return (EReference) structRefEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EClass getStructSequenceRef() {
 		return structSequenceRefEClass;
@@ -1900,6 +1909,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 		structRefEClass = createEClass(STRUCT_REF);
 		createEReference(structRefEClass, STRUCT_REF__SIMPLE_REF);
+		createEReference(structRefEClass, STRUCT_REF__SIMPLE_SEQUENCE_REF);
 
 		structSequenceRefEClass = createEClass(STRUCT_SEQUENCE_REF);
 		createEReference(structSequenceRefEClass, STRUCT_SEQUENCE_REF__STRUCT_VALUE);
@@ -2218,6 +2228,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		initEClass(structRefEClass, StructRef.class, "StructRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructRef_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 1, -1, StructRef.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructRef_SimpleSequenceRef(), this.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, -1, StructRef.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structSequenceRefEClass, StructSequenceRef.class, "StructSequenceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructSequenceRef_StructValue(), this.getStructValue(), null, "structValue", null, 1, -1, StructSequenceRef.class, !IS_TRANSIENT,
