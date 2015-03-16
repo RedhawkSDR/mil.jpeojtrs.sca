@@ -176,7 +176,7 @@ public final class PropertiesUtil {
 	 * @param simple The {@link Simple} instance that we shall find an appropriate value for
 	 * @return a new default value for the {@link Simple} should it not have a value already
 	 * 
-	 * @since 4.0
+	 * @since 4.1
 	 */
 	public static Values getDefaultValues(final SimpleSequence simples) {
 		if (simples.getValues() != null) {

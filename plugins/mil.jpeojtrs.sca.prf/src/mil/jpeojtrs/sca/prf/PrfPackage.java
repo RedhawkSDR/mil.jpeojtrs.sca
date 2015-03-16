@@ -2664,6 +2664,7 @@ public interface PrfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef()
 	 * @see #getStructRef()
 	 * @generated
+	 * @since 4.1
 	 */
 	EReference getStructRef_SimpleSequenceRef();
 
