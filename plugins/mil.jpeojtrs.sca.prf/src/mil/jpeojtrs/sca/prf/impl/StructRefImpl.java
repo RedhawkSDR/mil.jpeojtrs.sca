@@ -62,6 +62,7 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 	/**
 	 * The cached value of the '{@link #getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
+	 * @since 4.1
 	 * <!-- end-user-doc -->
 	 * @see #getSimpleSequenceRef()
 	 * @generated
@@ -115,6 +116,7 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.1
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

@@ -1468,6 +1468,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.1
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
