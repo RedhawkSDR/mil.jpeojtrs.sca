@@ -1307,6 +1307,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Simple Sequence Ref</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
+	 * @since 4.1
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -3866,6 +3867,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Simple Sequence Ref</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
+		 * @since 4.1
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
