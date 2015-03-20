@@ -1125,11 +1125,7 @@ public final class AnyUtils {
 			final TCKind kind = typeCode.kind();
 			switch (kind.value()) {
 			case TCKind._tk_sequence:
-				if (PropertiesHelper.type().equivalent(typeCode)) {
-					return false;
-				} else {
-					return true;
-				}
+				return !PropertiesHelper.type().equivalent(typeCode);
 			default:
 				return false;
 			}
