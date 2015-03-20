@@ -2159,8 +2159,12 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 		addEOperation(structValueEClass, this.getAny(), "toAny", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		EOperation op = addEOperation(structValueEClass, this.getSimpleRef(), "getRef", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(structValueEClass, null, "getRef", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(this.getAbstractPropertyRef());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
 
 		initEClass(testEClass, Test.class, "Test", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTest_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
@@ -2428,6 +2432,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation(simpleRefEClass, source, new String[] { "name", "simpleref", "kind", "empty", "qualified", "false" });
 		addAnnotation(getSimpleRef_Value(), source, new String[] { "kind", "attribute", "name", "value" });
 		addAnnotation(simpleSequenceRefEClass, source, new String[] { "kind", "elementOnly", "name", "simplesequenceref", "qualified", "false" });
+		addAnnotation(getSimpleSequenceRef_Values(), source, new String[] { "kind", "element", "name", "values" });
 		addAnnotation(structRefEClass, source, new String[] { "kind", "elementOnly", "name", "structref", "qualified", "false" });
 		addAnnotation(getStructRef_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref" });
 		addAnnotation(structSequenceRefEClass, source, new String[] { "kind", "elementOnly", "name", "structsequenceref", "qualified", "false" });

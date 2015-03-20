@@ -11,6 +11,7 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
+import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
@@ -78,6 +79,12 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	@Override
 	public void setProperty(SimpleSequence newProperty) {
 		super.setProperty(newProperty);
+		Values newValues = values;
+		if (newValues == null) {
+			newValues = PrfFactory.eINSTANCE.createValues();
+		}
+		newValues.getValue().addAll(newProperty.getValues().getValue());
+		basicSetValues(newValues, null);
 	}
 
 	/**

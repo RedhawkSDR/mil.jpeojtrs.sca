@@ -41,6 +41,7 @@ public interface SimpleSequenceRef extends AbstractPropertyRef<SimpleSequence> {
 	 * @see #setValues(Values)
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimpleSequenceRef_Values()
 	 * @model containment="true" required="true"
+	 *        extendedMetaData="kind='element' name='values'"
 	 * @generated
 	 */
 	Values getValues();

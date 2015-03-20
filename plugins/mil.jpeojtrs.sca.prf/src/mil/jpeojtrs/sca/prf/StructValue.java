@@ -114,6 +114,6 @@ public interface StructValue extends PropertyRefContainer {
 	 * @model
 	 * @generated
 	 */
-	SimpleRef getRef(String id);
+	AbstractPropertyRef< ? > getRef(String id);
 
 } // StructValue

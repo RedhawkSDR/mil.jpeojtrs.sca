@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.PropertyContainer;
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
@@ -198,12 +199,17 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * @generated NOT
 	 */
 	@Override
-	public SimpleRef getRef(String id) {
+	public AbstractPropertyRef< ? > getRef(String id) {
 		// END GENERATED CODE
 		if (id == null) {
 			return null;
 		}
 		for (SimpleRef ref : getSimpleRef()) {
+			if (id.equals(ref.getRefID())) {
+				return ref;
+			}
+		}
+		for (SimpleSequenceRef ref : getSimpleSequenceRef()) {
 			if (id.equals(ref.getRefID())) {
 				return ref;
 			}

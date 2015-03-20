@@ -337,24 +337,9 @@ public enum PropertyValueType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final PropertyValueType[] VALUES_ARRAY =
-		new PropertyValueType[]
-		{
-			STRING,
-			BOOLEAN,
-			ULONG,
-			OBJREF,
-			SHORT,
-			FLOAT,
-			OCTET,
-			CHAR,
-			USHORT,
-			DOUBLE,
-			LONG,
-			LONGLONG,
-			ULONGLONG,
-		};
-/**
+	private static final PropertyValueType[] VALUES_ARRAY = new PropertyValueType[] { STRING, BOOLEAN, ULONG, OBJREF, SHORT, FLOAT, OCTET, CHAR, USHORT,
+		DOUBLE, LONG, LONGLONG, ULONGLONG, };
+	/**
 	 * A public read-only list of all the '<em><b>Property Value Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

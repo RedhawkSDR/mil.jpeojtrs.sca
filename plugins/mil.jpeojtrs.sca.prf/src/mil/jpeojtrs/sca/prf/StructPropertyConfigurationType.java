@@ -172,17 +172,9 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final StructPropertyConfigurationType[] VALUES_ARRAY =
-		new StructPropertyConfigurationType[]
-		{
-			CONFIGURE,
-			ALLOCATION,
-			FACTORYPARAM,
-			TEST,
-			EVENT,
-			MESSAGE,
-		};
-/**
+	private static final StructPropertyConfigurationType[] VALUES_ARRAY = new StructPropertyConfigurationType[] { CONFIGURE, ALLOCATION, FACTORYPARAM, TEST,
+		EVENT, MESSAGE, };
+	/**
 	 * A public read-only list of all the '<em><b>Struct Property Configuration Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
