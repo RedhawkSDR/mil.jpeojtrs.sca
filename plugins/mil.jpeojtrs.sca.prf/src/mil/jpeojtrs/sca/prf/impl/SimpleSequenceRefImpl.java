@@ -79,6 +79,9 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	@Override
 	public void setProperty(SimpleSequence newProperty) {
 		super.setProperty(newProperty);
+		if (newProperty == null) {
+			return;
+		}
 		Values newValues = values;
 		if (newValues == null) {
 			newValues = PrfFactory.eINSTANCE.createValues();
