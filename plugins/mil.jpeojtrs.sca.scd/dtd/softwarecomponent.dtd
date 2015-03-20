@@ -61,13 +61,17 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 	)*> 
 
 <!ELEMENT provides
-	( porttype*)>
+	( description?
+	, porttype*
+	)>
 <!ATTLIST provides
 	repid			CDATA	#REQUIRED
 	providesname	CDATA	#REQUIRED>
 
 <!ELEMENT uses
-	( porttype*)>
+	( description?
+	, porttype*
+	)>
 <!ATTLIST uses
 	repid		CDATA	#REQUIRED
 	usesname	CDATA	#REQUIRED>
