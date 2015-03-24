@@ -83,7 +83,7 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 			getString("_UI_AbstractPort_description_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_AbstractPort_description_feature", "_UI_AbstractPort_type"),
-			ScdPackage.Literals.ABSTRACT_PORT__DESCRIPTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+			ScdPackage.Literals.ABSTRACT_PORT__DESCRIPTION, true, true, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**

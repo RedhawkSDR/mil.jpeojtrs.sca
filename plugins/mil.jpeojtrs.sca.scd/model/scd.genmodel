@@ -99,6 +99,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//Provides/providesName"/>
     </genClasses>
     <genClasses image="false" ecoreClass="scd.ecore#//AbstractPort">
+      <genFeatures createChild="false" propertyCategory="" propertyDescription=""
+          propertyMultiLine="true" ecoreFeature="ecore:EAttribute scd.ecore#//AbstractPort/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//AbstractPort/portType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//AbstractPort/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//AbstractPort/repID"/>
