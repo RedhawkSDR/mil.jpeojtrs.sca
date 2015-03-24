@@ -302,12 +302,18 @@ public interface DeviceConfiguration extends EObject {
 		}
 		
 		public static String createDeviceUsageName(DeviceConfiguration dcd, String deviceName) {
+			String baseName = deviceName;
+			if (baseName.contains(".")) {
+				int baseNameIndex = baseName.lastIndexOf(".");
+				baseName = baseName.substring(baseNameIndex + 1);
+			}
+			
 			// Make up a unique new name here.
 			final StringBuilder usageName = new StringBuilder();
-			final Pattern p = Pattern.compile(deviceName + "_([0-9]+)");
+			final Pattern p = Pattern.compile(baseName + "_([0-9]+)");
 			final List<Integer> usedIndexes = new ArrayList<Integer>();
 
-			usageName.append(deviceName);
+			usageName.append(baseName);
 
 			if (dcd.getPartitioning() != null) {
 				for (final DcdComponentPlacement impl : dcd.getPartitioning().getComponentPlacement()) {

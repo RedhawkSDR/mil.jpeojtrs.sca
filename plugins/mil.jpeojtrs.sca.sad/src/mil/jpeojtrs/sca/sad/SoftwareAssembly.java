@@ -437,12 +437,18 @@ public interface SoftwareAssembly extends EObject {
 		}
 
 		public static String createComponentUsageName(SoftwareAssembly sa, String componentName) {
+			String baseName = componentName;
+			if (baseName.contains(".")) {
+				int baseNameIndex = baseName.lastIndexOf(".");
+				baseName = baseName.substring(baseNameIndex + 1);
+			}
+			
 			// Make up a unique new name here.
 			final StringBuilder usageName = new StringBuilder();
-			final Pattern p = Pattern.compile(componentName + "_([0-9]+)");
+			final Pattern p = Pattern.compile(baseName + "_([0-9]+)");
 			final List<Integer> usedIndexes = new ArrayList<Integer>();
 
-			usageName.append(componentName);
+			usageName.append(baseName);
 
 			if (sa.getPartitioning() != null) {
 				for (final SadComponentInstantiation impl : sa.getAllComponentInstantiations()) {
