@@ -37,6 +37,7 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getRepID <em>Rep ID</em>}</li>
@@ -47,6 +48,26 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
  * @generated
  */
 public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPort {
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getPortType() <em>Port Type</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -110,6 +131,29 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	@Override
 	protected EClass eStaticClass() {
 		return ScdPackage.Literals.ABSTRACT_PORT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.ABSTRACT_PORT__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -270,6 +314,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
+			return getDescription();
 		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
 			return getPortType();
 		case ScdPackage.ABSTRACT_PORT__NAME:
@@ -293,6 +339,9 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
 		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
 			getPortType().clear();
 			getPortType().addAll((Collection< ? extends PortTypeContainer>) newValue);
@@ -318,6 +367,9 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
 		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
 			getPortType().clear();
 			return;
@@ -342,6 +394,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
 			return portType != null && !portType.isEmpty();
 		case ScdPackage.ABSTRACT_PORT__NAME:
@@ -365,7 +419,9 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
+		result.append(" (description: ");
+		result.append(description);
+		result.append(", name: ");
 		result.append(name);
 		result.append(", repID: ");
 		result.append(repID);

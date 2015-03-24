@@ -64,11 +64,26 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDescriptionPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addRepIDPropertyDescriptor(object);
 			addInterfacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * @since 2.4
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_AbstractPort_description_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_AbstractPort_description_feature", "_UI_AbstractPort_type"),
+			ScdPackage.Literals.ABSTRACT_PORT__DESCRIPTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -164,6 +179,7 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AbstractPort.class)) {
+		case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
 		case ScdPackage.ABSTRACT_PORT__NAME:
 		case ScdPackage.ABSTRACT_PORT__REP_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -551,12 +551,22 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractPort_Description() {
+		return (EAttribute) abstractPortEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EReference getAbstractPort_PortType() {
-		return (EReference) abstractPortEClass.getEStructuralFeatures().get(0);
+		return (EReference) abstractPortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -566,16 +576,6 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getAbstractPort_Name() {
-		return (EAttribute) abstractPortEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAbstractPort_RepID() {
 		return (EAttribute) abstractPortEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -585,8 +585,18 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getAbstractPort_RepID() {
+		return (EAttribute) abstractPortEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getAbstractPort_Interface() {
-		return (EReference) abstractPortEClass.getEStructuralFeatures().get(3);
+		return (EReference) abstractPortEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -889,6 +899,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		createEAttribute(providesEClass, PROVIDES__PROVIDES_NAME);
 
 		abstractPortEClass = createEClass(ABSTRACT_PORT);
+		createEAttribute(abstractPortEClass, ABSTRACT_PORT__DESCRIPTION);
 		createEReference(abstractPortEClass, ABSTRACT_PORT__PORT_TYPE);
 		createEAttribute(abstractPortEClass, ABSTRACT_PORT__NAME);
 		createEAttribute(abstractPortEClass, ABSTRACT_PORT__REP_ID);
@@ -1026,6 +1037,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractPortEClass, AbstractPort.class, "AbstractPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAbstractPort_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, AbstractPort.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractPort_PortType(), this.getPortTypeContainer(), null, "portType", null, 0, -1, AbstractPort.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractPort_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, AbstractPort.class, IS_TRANSIENT, !IS_VOLATILE,
@@ -1152,6 +1165,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation(getPropertyFile_Type(), source, new String[] { "kind", "attribute", "name", "type" });
 		addAnnotation(providesEClass, source, new String[] { "name", "provides", "kind", "elementOnly" });
 		addAnnotation(getProvides_ProvidesName(), source, new String[] { "kind", "attribute", "name", "providesname" });
+		addAnnotation(getAbstractPort_Description(), source, new String[] { "kind", "element", "name", "description" });
 		addAnnotation(getAbstractPort_PortType(), source, new String[] { "kind", "element", "name", "porttype", "namespace", "##targetNamespace" });
 		addAnnotation(getAbstractPort_RepID(), source, new String[] { "kind", "attribute", "name", "repid" });
 		addAnnotation(scdDocumentRootEClass, source, new String[] { "name", "", "kind", "mixed" });

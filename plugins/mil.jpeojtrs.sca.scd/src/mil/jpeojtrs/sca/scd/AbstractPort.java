@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getPortType <em>Port Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getRepID <em>Rep ID</em>}</li>
@@ -34,6 +35,35 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface AbstractPort extends EObject {
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see mil.jpeojtrs.sca.scd.ScdPackage#getAbstractPort_Description()
+	 * @model unique="false" dataType="org.eclipse.emf.ecore.xml.type.String"
+	 *        extendedMetaData="kind='element' name='description'"
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.scd.AbstractPort#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Port Type</b></em>' containment reference list.

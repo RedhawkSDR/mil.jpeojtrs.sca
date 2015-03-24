@@ -376,13 +376,22 @@ public interface ScdPackage extends EPackage {
 	 */
 	int ABSTRACT_PORT = 10;
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_PORT__DESCRIPTION = 0;
+	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PORT__PORT_TYPE = 0;
+	int ABSTRACT_PORT__PORT_TYPE = 1;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -390,7 +399,7 @@ public interface ScdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PORT__NAME = 1;
+	int ABSTRACT_PORT__NAME = 2;
 	/**
 	 * The feature id for the '<em><b>Rep ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -398,7 +407,7 @@ public interface ScdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PORT__REP_ID = 2;
+	int ABSTRACT_PORT__REP_ID = 3;
 	/**
 	 * The feature id for the '<em><b>Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -406,7 +415,7 @@ public interface ScdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PORT__INTERFACE = 3;
+	int ABSTRACT_PORT__INTERFACE = 4;
 	/**
 	 * The number of structural features of the '<em>Abstract Port</em>' class.
 	 * <!-- begin-user-doc -->
@@ -414,7 +423,7 @@ public interface ScdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PORT_FEATURE_COUNT = 4;
+	int ABSTRACT_PORT_FEATURE_COUNT = 5;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.scd.impl.ProvidesImpl <em>Provides</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -424,6 +433,15 @@ public interface ScdPackage extends EPackage {
 	 * @generated
 	 */
 	int PROVIDES = 9;
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDES__DESCRIPTION = ABSTRACT_PORT__DESCRIPTION;
 	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -652,6 +670,15 @@ public interface ScdPackage extends EPackage {
 	 * @generated
 	 */
 	int USES = 14;
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES__DESCRIPTION = ABSTRACT_PORT__DESCRIPTION;
 	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -1046,6 +1073,18 @@ public interface ScdPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAbstractPort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.scd.AbstractPort#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see mil.jpeojtrs.sca.scd.AbstractPort#getDescription()
+	 * @see #getAbstractPort()
+	 * @generated
+	 */
+	EAttribute getAbstractPort_Description();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.scd.AbstractPort#getPortType <em>Port Type</em>}'.
@@ -1622,6 +1661,15 @@ public interface ScdPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ABSTRACT_PORT = eINSTANCE.getAbstractPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_PORT__DESCRIPTION = eINSTANCE.getAbstractPort_Description();
 
 		/**
 		 * The meta object literal for the '<em><b>Port Type</b></em>' containment reference list feature.
