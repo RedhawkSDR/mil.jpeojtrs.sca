@@ -83,6 +83,9 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 			PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF, false, false, false, null, null, null));
 	}
 
+	/**
+	 * @since 3.0
+	 */
 	protected void addSimpleSequenceRefPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 			getString("_UI_StructValue_simpleSequenceRef_feature"),

@@ -110,6 +110,7 @@ public interface StructValue extends PropertyRefContainer {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.1
 	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
