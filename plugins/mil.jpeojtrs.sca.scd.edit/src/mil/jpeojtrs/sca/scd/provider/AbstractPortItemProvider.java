@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,10 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractPortItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class AbstractPortItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -64,8 +61,7 @@ public class AbstractPortItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -82,19 +78,10 @@ public class AbstractPortItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractPort_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractPort_name_feature", "_UI_AbstractPort_type"),
-				 ScdPackage.Literals.ABSTRACT_PORT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_AbstractPort_name_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_AbstractPort_name_feature", "_UI_AbstractPort_type"), ScdPackage.Literals.ABSTRACT_PORT__NAME,
+			true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -104,19 +91,10 @@ public class AbstractPortItemProvider
 	 * @generated
 	 */
 	protected void addRepIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractPort_repID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractPort_repID_feature", "_UI_AbstractPort_type"),
-				 ScdPackage.Literals.ABSTRACT_PORT__REP_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_AbstractPort_repID_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_AbstractPort_repID_feature", "_UI_AbstractPort_type"),
+			ScdPackage.Literals.ABSTRACT_PORT__REP_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -126,19 +104,10 @@ public class AbstractPortItemProvider
 	 * @generated
 	 */
 	protected void addInterfacePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractPort_interface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractPort_interface_feature", "_UI_AbstractPort_type"),
-				 ScdPackage.Literals.ABSTRACT_PORT__INTERFACE,
-				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_AbstractPort_interface_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_AbstractPort_interface_feature", "_UI_AbstractPort_type"),
+			ScdPackage.Literals.ABSTRACT_PORT__INTERFACE, false, false, true, null, null, null));
 	}
 
 	/**
@@ -150,9 +119,8 @@ public class AbstractPortItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ScdPackage.Literals.ABSTRACT_PORT__PORT_TYPE);
 		}
@@ -180,10 +148,8 @@ public class AbstractPortItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AbstractPort)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AbstractPort_type") :
-			getString("_UI_AbstractPort_type") + " " + label;
+		String label = ((AbstractPort) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_AbstractPort_type") : getString("_UI_AbstractPort_type") + " " + label;
 	}
 
 	/**
@@ -197,15 +163,14 @@ public class AbstractPortItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(AbstractPort.class))
-		{
-			case ScdPackage.ABSTRACT_PORT__NAME:
-			case ScdPackage.ABSTRACT_PORT__REP_ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(AbstractPort.class)) {
+		case ScdPackage.ABSTRACT_PORT__NAME:
+		case ScdPackage.ABSTRACT_PORT__REP_ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -221,10 +186,7 @@ public class AbstractPortItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.ABSTRACT_PORT__PORT_TYPE,
-				 ScdFactory.eINSTANCE.createPortTypeContainer()));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.ABSTRACT_PORT__PORT_TYPE, ScdFactory.eINSTANCE.createPortTypeContainer()));
 	}
 
 	/**

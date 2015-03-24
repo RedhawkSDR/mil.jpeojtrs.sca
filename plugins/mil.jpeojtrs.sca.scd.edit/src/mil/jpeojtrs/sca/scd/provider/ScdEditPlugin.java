@@ -46,12 +46,7 @@ public final class ScdEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public ScdEditPlugin() {
-		super
-		  (new ResourceLocator [] 
-		   {
-		     EcoreEditPlugin.INSTANCE,
-		     PrfEditPlugin.INSTANCE,
-		   });
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, PrfEditPlugin.INSTANCE, });
 	}
 
 	/**

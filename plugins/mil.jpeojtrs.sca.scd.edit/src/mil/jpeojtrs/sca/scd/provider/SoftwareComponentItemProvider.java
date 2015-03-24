@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,10 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SoftwareComponentItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class SoftwareComponentItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -64,8 +61,7 @@ public class SoftwareComponentItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addComponentTypePropertyDescriptor(object);
@@ -81,19 +77,10 @@ public class SoftwareComponentItemProvider
 	 * @generated
 	 */
 	protected void addComponentTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftwareComponent_componentType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftwareComponent_componentType_feature", "_UI_SoftwareComponent_type"),
-				 ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftwareComponent_componentType_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftwareComponent_componentType_feature", "_UI_SoftwareComponent_type"),
+			ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -103,19 +90,10 @@ public class SoftwareComponentItemProvider
 	 * @generated
 	 */
 	protected void addRepIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftwareComponent_repId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftwareComponent_repId_feature", "_UI_SoftwareComponent_type"),
-				 ScdPackage.Literals.SOFTWARE_COMPONENT__REP_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftwareComponent_repId_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftwareComponent_repId_feature", "_UI_SoftwareComponent_type"),
+			ScdPackage.Literals.SOFTWARE_COMPONENT__REP_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -127,9 +105,8 @@ public class SoftwareComponentItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ScdPackage.Literals.SOFTWARE_COMPONENT__CORBA_VERSION);
 			childrenFeatures.add(ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_REP_ID);
@@ -172,10 +149,8 @@ public class SoftwareComponentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SoftwareComponent)object).getCorbaVersion();
-		return label == null || label.length() == 0 ?
-			getString("_UI_SoftwareComponent_type") :
-			getString("_UI_SoftwareComponent_type") + " " + label;
+		String label = ((SoftwareComponent) object).getCorbaVersion();
+		return label == null || label.length() == 0 ? getString("_UI_SoftwareComponent_type") : getString("_UI_SoftwareComponent_type") + " " + label;
 	}
 
 	/**
@@ -189,21 +164,20 @@ public class SoftwareComponentItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SoftwareComponent.class))
-		{
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
-			case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
-			case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
-			case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, true));
-				return;
+		switch (notification.getFeatureID(SoftwareComponent.class)) {
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
+		case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
+		case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
+		case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -219,30 +193,15 @@ public class SoftwareComponentItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.SOFTWARE_COMPONENT__CORBA_VERSION,
-				 ""));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.SOFTWARE_COMPONENT__CORBA_VERSION, ""));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_REP_ID,
-				 ScdFactory.eINSTANCE.createComponentRepId()));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_REP_ID, ScdFactory.eINSTANCE.createComponentRepId()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_FEATURES,
-				 ScdFactory.eINSTANCE.createComponentFeatures()));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_FEATURES, ScdFactory.eINSTANCE.createComponentFeatures()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.SOFTWARE_COMPONENT__INTERFACES,
-				 ScdFactory.eINSTANCE.createInterfaces()));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.SOFTWARE_COMPONENT__INTERFACES, ScdFactory.eINSTANCE.createInterfaces()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.SOFTWARE_COMPONENT__PROPERTY_FILE,
-				 ScdFactory.eINSTANCE.createPropertyFile()));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.SOFTWARE_COMPONENT__PROPERTY_FILE, ScdFactory.eINSTANCE.createPropertyFile()));
 	}
 
 	/**

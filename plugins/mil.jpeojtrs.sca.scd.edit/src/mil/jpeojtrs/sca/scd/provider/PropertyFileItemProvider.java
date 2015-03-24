@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,10 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyFileItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class PropertyFileItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -64,8 +61,7 @@ public class PropertyFileItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
@@ -81,19 +77,10 @@ public class PropertyFileItemProvider
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyFile_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyFile_type_feature", "_UI_PropertyFile_type"),
-				 ScdPackage.Literals.PROPERTY_FILE__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_PropertyFile_type_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_PropertyFile_type_feature", "_UI_PropertyFile_type"), ScdPackage.Literals.PROPERTY_FILE__TYPE,
+			true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -103,19 +90,10 @@ public class PropertyFileItemProvider
 	 * @generated
 	 */
 	protected void addPropertiesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyFile_properties_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyFile_properties_feature", "_UI_PropertyFile_type"),
-				 ScdPackage.Literals.PROPERTY_FILE__PROPERTIES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_PropertyFile_properties_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_PropertyFile_properties_feature", "_UI_PropertyFile_type"),
+			ScdPackage.Literals.PROPERTY_FILE__PROPERTIES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -127,9 +105,8 @@ public class PropertyFileItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ScdPackage.Literals.PROPERTY_FILE__LOCAL_FILE);
 		}
@@ -168,10 +145,8 @@ public class PropertyFileItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PropertyFile)object).getType();
-		return label == null || label.length() == 0 ?
-			getString("_UI_PropertyFile_type") :
-			getString("_UI_PropertyFile_type") + " " + label;
+		String label = ((PropertyFile) object).getType();
+		return label == null || label.length() == 0 ? getString("_UI_PropertyFile_type") : getString("_UI_PropertyFile_type") + " " + label;
 	}
 
 	/**
@@ -185,14 +160,13 @@ public class PropertyFileItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PropertyFile.class))
-		{
-			case ScdPackage.PROPERTY_FILE__TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(PropertyFile.class)) {
+		case ScdPackage.PROPERTY_FILE__TYPE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -208,10 +182,7 @@ public class PropertyFileItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.PROPERTY_FILE__LOCAL_FILE,
-				 ScdFactory.eINSTANCE.createLocalFile()));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.PROPERTY_FILE__LOCAL_FILE, ScdFactory.eINSTANCE.createLocalFile()));
 	}
 
 	/**

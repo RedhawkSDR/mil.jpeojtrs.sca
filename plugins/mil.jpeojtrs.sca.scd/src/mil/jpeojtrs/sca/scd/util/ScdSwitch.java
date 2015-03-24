@@ -44,7 +44,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * @see mil.jpeojtrs.sca.scd.ScdPackage
  * @generated
  */
-public class ScdSwitch<T> extends Switch<T> {
+public class ScdSwitch< T > extends Switch<T> {
 
 	/**
 	 * The cached model package
@@ -61,8 +61,7 @@ public class ScdSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public ScdSwitch() {
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = ScdPackage.eINSTANCE;
 		}
 	}
@@ -76,8 +75,7 @@ public class ScdSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	@Override
-	protected boolean isSwitchFor(EPackage ePackage)
-	{
+	protected boolean isSwitchFor(EPackage ePackage) {
 		return ePackage == modelPackage;
 	}
 
@@ -90,116 +88,118 @@ public class ScdSwitch<T> extends Switch<T> {
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID)
-		{
-			case ScdPackage.COMPONENT_FEATURES:
-			{
-				ComponentFeatures componentFeatures = (ComponentFeatures)theEObject;
-				T result = caseComponentFeatures(componentFeatures);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.COMPONENT_REP_ID:
-			{
-				ComponentRepId componentRepId = (ComponentRepId)theEObject;
-				T result = caseComponentRepId(componentRepId);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.INHERITS_INTERFACE:
-			{
-				InheritsInterface inheritsInterface = (InheritsInterface)theEObject;
-				T result = caseInheritsInterface(inheritsInterface);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.INTERFACE:
-			{
-				Interface interface_ = (Interface)theEObject;
-				T result = caseInterface(interface_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.INTERFACES:
-			{
-				Interfaces interfaces = (Interfaces)theEObject;
-				T result = caseInterfaces(interfaces);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.LOCAL_FILE:
-			{
-				LocalFile localFile = (LocalFile)theEObject;
-				T result = caseLocalFile(localFile);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.PORTS:
-			{
-				Ports ports = (Ports)theEObject;
-				T result = casePorts(ports);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.PORT_TYPE_CONTAINER:
-			{
-				PortTypeContainer portTypeContainer = (PortTypeContainer)theEObject;
-				T result = casePortTypeContainer(portTypeContainer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.PROPERTY_FILE:
-			{
-				PropertyFile propertyFile = (PropertyFile)theEObject;
-				T result = casePropertyFile(propertyFile);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.PROVIDES:
-			{
-				Provides provides = (Provides)theEObject;
-				T result = caseProvides(provides);
-				if (result == null) result = caseAbstractPort(provides);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.ABSTRACT_PORT:
-			{
-				AbstractPort abstractPort = (AbstractPort)theEObject;
-				T result = caseAbstractPort(abstractPort);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.SCD_DOCUMENT_ROOT:
-			{
-				ScdDocumentRoot scdDocumentRoot = (ScdDocumentRoot)theEObject;
-				T result = caseScdDocumentRoot(scdDocumentRoot);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.SOFTWARE_COMPONENT:
-			{
-				SoftwareComponent softwareComponent = (SoftwareComponent)theEObject;
-				T result = caseSoftwareComponent(softwareComponent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.SUPPORTS_INTERFACE:
-			{
-				SupportsInterface supportsInterface = (SupportsInterface)theEObject;
-				T result = caseSupportsInterface(supportsInterface);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScdPackage.USES:
-			{
-				Uses uses = (Uses)theEObject;
-				T result = caseUses(uses);
-				if (result == null) result = caseAbstractPort(uses);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		switch (classifierID) {
+		case ScdPackage.COMPONENT_FEATURES: {
+			ComponentFeatures componentFeatures = (ComponentFeatures) theEObject;
+			T result = caseComponentFeatures(componentFeatures);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.COMPONENT_REP_ID: {
+			ComponentRepId componentRepId = (ComponentRepId) theEObject;
+			T result = caseComponentRepId(componentRepId);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.INHERITS_INTERFACE: {
+			InheritsInterface inheritsInterface = (InheritsInterface) theEObject;
+			T result = caseInheritsInterface(inheritsInterface);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.INTERFACE: {
+			Interface interface_ = (Interface) theEObject;
+			T result = caseInterface(interface_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.INTERFACES: {
+			Interfaces interfaces = (Interfaces) theEObject;
+			T result = caseInterfaces(interfaces);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.LOCAL_FILE: {
+			LocalFile localFile = (LocalFile) theEObject;
+			T result = caseLocalFile(localFile);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.PORTS: {
+			Ports ports = (Ports) theEObject;
+			T result = casePorts(ports);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.PORT_TYPE_CONTAINER: {
+			PortTypeContainer portTypeContainer = (PortTypeContainer) theEObject;
+			T result = casePortTypeContainer(portTypeContainer);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.PROPERTY_FILE: {
+			PropertyFile propertyFile = (PropertyFile) theEObject;
+			T result = casePropertyFile(propertyFile);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.PROVIDES: {
+			Provides provides = (Provides) theEObject;
+			T result = caseProvides(provides);
+			if (result == null)
+				result = caseAbstractPort(provides);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.ABSTRACT_PORT: {
+			AbstractPort abstractPort = (AbstractPort) theEObject;
+			T result = caseAbstractPort(abstractPort);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.SCD_DOCUMENT_ROOT: {
+			ScdDocumentRoot scdDocumentRoot = (ScdDocumentRoot) theEObject;
+			T result = caseScdDocumentRoot(scdDocumentRoot);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.SOFTWARE_COMPONENT: {
+			SoftwareComponent softwareComponent = (SoftwareComponent) theEObject;
+			T result = caseSoftwareComponent(softwareComponent);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.SUPPORTS_INTERFACE: {
+			SupportsInterface supportsInterface = (SupportsInterface) theEObject;
+			T result = caseSupportsInterface(supportsInterface);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScdPackage.USES: {
+			Uses uses = (Uses) theEObject;
+			T result = caseUses(uses);
+			if (result == null)
+				result = caseAbstractPort(uses);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

@@ -187,10 +187,13 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	public NotificationChain basicSetComponentRepID(ComponentRepId newComponentRepID, NotificationChain msgs) {
 		ComponentRepId oldComponentRepID = componentRepID;
 		componentRepID = newComponentRepID;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID, oldComponentRepID, newComponentRepID);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID, oldComponentRepID,
+				newComponentRepID);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -202,17 +205,18 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public void setComponentRepID(ComponentRepId newComponentRepID) {
-		if (newComponentRepID != componentRepID)
-		{
+		if (newComponentRepID != componentRepID) {
 			NotificationChain msgs = null;
 			if (componentRepID != null)
-				msgs = ((InternalEObject)componentRepID).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID, null, msgs);
+				msgs = ((InternalEObject) componentRepID).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID, null,
+					msgs);
 			if (newComponentRepID != null)
-				msgs = ((InternalEObject)newComponentRepID).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID, null, msgs);
+				msgs = ((InternalEObject) newComponentRepID).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID, null,
+					msgs);
 			msgs = basicSetComponentRepID(newComponentRepID, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID, newComponentRepID, newComponentRepID));
 	}
 
@@ -257,10 +261,13 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	public NotificationChain basicSetComponentFeatures(ComponentFeatures newComponentFeatures, NotificationChain msgs) {
 		ComponentFeatures oldComponentFeatures = componentFeatures;
 		componentFeatures = newComponentFeatures;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES, oldComponentFeatures, newComponentFeatures);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES,
+				oldComponentFeatures, newComponentFeatures);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -272,17 +279,18 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public void setComponentFeatures(ComponentFeatures newComponentFeatures) {
-		if (newComponentFeatures != componentFeatures)
-		{
+		if (newComponentFeatures != componentFeatures) {
 			NotificationChain msgs = null;
 			if (componentFeatures != null)
-				msgs = ((InternalEObject)componentFeatures).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES, null, msgs);
+				msgs = ((InternalEObject) componentFeatures).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES,
+					null, msgs);
 			if (newComponentFeatures != null)
-				msgs = ((InternalEObject)newComponentFeatures).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES, null, msgs);
+				msgs = ((InternalEObject) newComponentFeatures).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES,
+					null, msgs);
 			msgs = basicSetComponentFeatures(newComponentFeatures, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES, newComponentFeatures, newComponentFeatures));
 	}
 
@@ -304,10 +312,13 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	public NotificationChain basicSetInterfaces(Interfaces newInterfaces, NotificationChain msgs) {
 		Interfaces oldInterfaces = interfaces;
 		interfaces = newInterfaces;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__INTERFACES, oldInterfaces, newInterfaces);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__INTERFACES, oldInterfaces,
+				newInterfaces);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -319,17 +330,16 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public void setInterfaces(Interfaces newInterfaces) {
-		if (newInterfaces != interfaces)
-		{
+		if (newInterfaces != interfaces) {
 			NotificationChain msgs = null;
 			if (interfaces != null)
-				msgs = ((InternalEObject)interfaces).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__INTERFACES, null, msgs);
+				msgs = ((InternalEObject) interfaces).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__INTERFACES, null, msgs);
 			if (newInterfaces != null)
-				msgs = ((InternalEObject)newInterfaces).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__INTERFACES, null, msgs);
+				msgs = ((InternalEObject) newInterfaces).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__INTERFACES, null, msgs);
 			msgs = basicSetInterfaces(newInterfaces, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__INTERFACES, newInterfaces, newInterfaces));
 	}
 
@@ -351,10 +361,13 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	public NotificationChain basicSetPropertyFile(PropertyFile newPropertyFile, NotificationChain msgs) {
 		PropertyFile oldPropertyFile = propertyFile;
 		propertyFile = newPropertyFile;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE, oldPropertyFile, newPropertyFile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE, oldPropertyFile,
+				newPropertyFile);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -366,17 +379,16 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public void setPropertyFile(PropertyFile newPropertyFile) {
-		if (newPropertyFile != propertyFile)
-		{
+		if (newPropertyFile != propertyFile) {
 			NotificationChain msgs = null;
 			if (propertyFile != null)
-				msgs = ((InternalEObject)propertyFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE, null, msgs);
+				msgs = ((InternalEObject) propertyFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE, null, msgs);
 			if (newPropertyFile != null)
-				msgs = ((InternalEObject)newPropertyFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE, null, msgs);
+				msgs = ((InternalEObject) newPropertyFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE, null, msgs);
 			msgs = basicSetPropertyFile(newPropertyFile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE, newPropertyFile, newPropertyFile));
 	}
 
@@ -417,16 +429,15 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
-				return basicSetComponentRepID(null, msgs);
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
-				return basicSetComponentFeatures(null, msgs);
-			case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
-				return basicSetInterfaces(null, msgs);
-			case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
-				return basicSetPropertyFile(null, msgs);
+		switch (featureID) {
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
+			return basicSetComponentRepID(null, msgs);
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
+			return basicSetComponentFeatures(null, msgs);
+		case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
+			return basicSetInterfaces(null, msgs);
+		case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
+			return basicSetPropertyFile(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -438,22 +449,21 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
-				return getCorbaVersion();
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
-				return getComponentRepID();
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
-				return getComponentType();
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
-				return getComponentFeatures();
-			case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
-				return getInterfaces();
-			case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
-				return getPropertyFile();
-			case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
-				return getRepId();
+		switch (featureID) {
+		case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
+			return getCorbaVersion();
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
+			return getComponentRepID();
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
+			return getComponentType();
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
+			return getComponentFeatures();
+		case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
+			return getInterfaces();
+		case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
+			return getPropertyFile();
+		case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
+			return getRepId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -465,29 +475,28 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
-				setCorbaVersion((String)newValue);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
-				setComponentRepID((ComponentRepId)newValue);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
-				setComponentType((String)newValue);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
-				setComponentFeatures((ComponentFeatures)newValue);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
-				setInterfaces((Interfaces)newValue);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
-				setPropertyFile((PropertyFile)newValue);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
-				setRepId((String)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
+			setCorbaVersion((String) newValue);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
+			setComponentRepID((ComponentRepId) newValue);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
+			setComponentType((String) newValue);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
+			setComponentFeatures((ComponentFeatures) newValue);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
+			setInterfaces((Interfaces) newValue);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
+			setPropertyFile((PropertyFile) newValue);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
+			setRepId((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -499,29 +508,28 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
-				setCorbaVersion(CORBA_VERSION_EDEFAULT);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
-				setComponentRepID((ComponentRepId)null);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
-				setComponentType(COMPONENT_TYPE_EDEFAULT);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
-				setComponentFeatures((ComponentFeatures)null);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
-				setInterfaces((Interfaces)null);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
-				setPropertyFile((PropertyFile)null);
-				return;
-			case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
-				setRepId(REP_ID_EDEFAULT);
-				return;
+		switch (featureID) {
+		case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
+			setCorbaVersion(CORBA_VERSION_EDEFAULT);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
+			setComponentRepID((ComponentRepId) null);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
+			setComponentType(COMPONENT_TYPE_EDEFAULT);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
+			setComponentFeatures((ComponentFeatures) null);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
+			setInterfaces((Interfaces) null);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
+			setPropertyFile((PropertyFile) null);
+			return;
+		case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
+			setRepId(REP_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -533,22 +541,21 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
-				return CORBA_VERSION_EDEFAULT == null ? corbaVersion != null : !CORBA_VERSION_EDEFAULT.equals(corbaVersion);
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
-				return componentRepID != null;
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
-				return COMPONENT_TYPE_EDEFAULT == null ? componentType != null : !COMPONENT_TYPE_EDEFAULT.equals(componentType);
-			case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
-				return componentFeatures != null;
-			case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
-				return interfaces != null;
-			case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
-				return propertyFile != null;
-			case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
-				return REP_ID_EDEFAULT == null ? getRepId() != null : !REP_ID_EDEFAULT.equals(getRepId());
+		switch (featureID) {
+		case ScdPackage.SOFTWARE_COMPONENT__CORBA_VERSION:
+			return CORBA_VERSION_EDEFAULT == null ? corbaVersion != null : !CORBA_VERSION_EDEFAULT.equals(corbaVersion);
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_REP_ID:
+			return componentRepID != null;
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_TYPE:
+			return COMPONENT_TYPE_EDEFAULT == null ? componentType != null : !COMPONENT_TYPE_EDEFAULT.equals(componentType);
+		case ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES:
+			return componentFeatures != null;
+		case ScdPackage.SOFTWARE_COMPONENT__INTERFACES:
+			return interfaces != null;
+		case ScdPackage.SOFTWARE_COMPONENT__PROPERTY_FILE:
+			return propertyFile != null;
+		case ScdPackage.SOFTWARE_COMPONENT__REP_ID:
+			return REP_ID_EDEFAULT == null ? getRepId() != null : !REP_ID_EDEFAULT.equals(getRepId());
 		}
 		return super.eIsSet(featureID);
 	}
@@ -560,7 +567,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (corbaVersion: ");

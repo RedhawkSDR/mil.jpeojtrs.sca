@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -39,10 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ScdDocumentRootItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class ScdDocumentRootItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -62,8 +59,7 @@ public class ScdDocumentRootItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -79,9 +75,8 @@ public class ScdDocumentRootItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT);
 		}
@@ -134,11 +129,10 @@ public class ScdDocumentRootItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ScdDocumentRoot.class))
-		{
-			case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(ScdDocumentRoot.class)) {
+		case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -154,10 +148,7 @@ public class ScdDocumentRootItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT,
-				 ScdFactory.eINSTANCE.createSoftwareComponent()));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT, ScdFactory.eINSTANCE.createSoftwareComponent()));
 	}
 
 	/**

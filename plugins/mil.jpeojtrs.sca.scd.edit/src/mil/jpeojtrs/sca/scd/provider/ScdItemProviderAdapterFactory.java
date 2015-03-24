@@ -95,8 +95,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createComponentFeaturesAdapter() {
-		if (componentFeaturesItemProvider == null)
-		{
+		if (componentFeaturesItemProvider == null) {
 			componentFeaturesItemProvider = new ComponentFeaturesItemProvider(this);
 		}
 
@@ -119,8 +118,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createComponentRepIdAdapter() {
-		if (componentRepIdItemProvider == null)
-		{
+		if (componentRepIdItemProvider == null) {
 			componentRepIdItemProvider = new ComponentRepIdItemProvider(this);
 		}
 
@@ -143,8 +141,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createInheritsInterfaceAdapter() {
-		if (inheritsInterfaceItemProvider == null)
-		{
+		if (inheritsInterfaceItemProvider == null) {
 			inheritsInterfaceItemProvider = new InheritsInterfaceItemProvider(this);
 		}
 
@@ -167,8 +164,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createInterfaceAdapter() {
-		if (interfaceItemProvider == null)
-		{
+		if (interfaceItemProvider == null) {
 			interfaceItemProvider = new InterfaceItemProvider(this);
 		}
 
@@ -191,8 +187,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createInterfacesAdapter() {
-		if (interfacesItemProvider == null)
-		{
+		if (interfacesItemProvider == null) {
 			interfacesItemProvider = new InterfacesItemProvider(this);
 		}
 
@@ -215,8 +210,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createLocalFileAdapter() {
-		if (localFileItemProvider == null)
-		{
+		if (localFileItemProvider == null) {
 			localFileItemProvider = new LocalFileItemProvider(this);
 		}
 
@@ -239,8 +233,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createPortsAdapter() {
-		if (portsItemProvider == null)
-		{
+		if (portsItemProvider == null) {
 			portsItemProvider = new PortsItemProvider(this);
 		}
 
@@ -263,8 +256,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createPortTypeContainerAdapter() {
-		if (portTypeContainerItemProvider == null)
-		{
+		if (portTypeContainerItemProvider == null) {
 			portTypeContainerItemProvider = new PortTypeContainerItemProvider(this);
 		}
 
@@ -287,8 +279,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createPropertyFileAdapter() {
-		if (propertyFileItemProvider == null)
-		{
+		if (propertyFileItemProvider == null) {
 			propertyFileItemProvider = new PropertyFileItemProvider(this);
 		}
 
@@ -311,8 +302,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createProvidesAdapter() {
-		if (providesItemProvider == null)
-		{
+		if (providesItemProvider == null) {
 			providesItemProvider = new ProvidesItemProvider(this);
 		}
 
@@ -335,8 +325,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createScdDocumentRootAdapter() {
-		if (scdDocumentRootItemProvider == null)
-		{
+		if (scdDocumentRootItemProvider == null) {
 			scdDocumentRootItemProvider = new ScdDocumentRootItemProvider(this);
 		}
 
@@ -359,8 +348,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSoftwareComponentAdapter() {
-		if (softwareComponentItemProvider == null)
-		{
+		if (softwareComponentItemProvider == null) {
 			softwareComponentItemProvider = new SoftwareComponentItemProvider(this);
 		}
 
@@ -383,8 +371,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSupportsInterfaceAdapter() {
-		if (supportsInterfaceItemProvider == null)
-		{
+		if (supportsInterfaceItemProvider == null) {
 			supportsInterfaceItemProvider = new SupportsInterfaceItemProvider(this);
 		}
 
@@ -407,8 +394,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createUsesAdapter() {
-		if (usesItemProvider == null)
-		{
+		if (usesItemProvider == null) {
 			usesItemProvider = new UsesItemProvider(this);
 		}
 
@@ -465,11 +451,9 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type))
-		{
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class< ? >) || (((Class< ? >) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -509,8 +493,7 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -523,20 +506,34 @@ public class ScdItemProviderAdapterFactory extends ScdAdapterFactory implements 
 	 */
 	@Override
 	public void dispose() {
-		if (componentFeaturesItemProvider != null) componentFeaturesItemProvider.dispose();
-		if (componentRepIdItemProvider != null) componentRepIdItemProvider.dispose();
-		if (inheritsInterfaceItemProvider != null) inheritsInterfaceItemProvider.dispose();
-		if (interfaceItemProvider != null) interfaceItemProvider.dispose();
-		if (interfacesItemProvider != null) interfacesItemProvider.dispose();
-		if (localFileItemProvider != null) localFileItemProvider.dispose();
-		if (portsItemProvider != null) portsItemProvider.dispose();
-		if (portTypeContainerItemProvider != null) portTypeContainerItemProvider.dispose();
-		if (propertyFileItemProvider != null) propertyFileItemProvider.dispose();
-		if (providesItemProvider != null) providesItemProvider.dispose();
-		if (scdDocumentRootItemProvider != null) scdDocumentRootItemProvider.dispose();
-		if (softwareComponentItemProvider != null) softwareComponentItemProvider.dispose();
-		if (supportsInterfaceItemProvider != null) supportsInterfaceItemProvider.dispose();
-		if (usesItemProvider != null) usesItemProvider.dispose();
+		if (componentFeaturesItemProvider != null)
+			componentFeaturesItemProvider.dispose();
+		if (componentRepIdItemProvider != null)
+			componentRepIdItemProvider.dispose();
+		if (inheritsInterfaceItemProvider != null)
+			inheritsInterfaceItemProvider.dispose();
+		if (interfaceItemProvider != null)
+			interfaceItemProvider.dispose();
+		if (interfacesItemProvider != null)
+			interfacesItemProvider.dispose();
+		if (localFileItemProvider != null)
+			localFileItemProvider.dispose();
+		if (portsItemProvider != null)
+			portsItemProvider.dispose();
+		if (portTypeContainerItemProvider != null)
+			portTypeContainerItemProvider.dispose();
+		if (propertyFileItemProvider != null)
+			propertyFileItemProvider.dispose();
+		if (providesItemProvider != null)
+			providesItemProvider.dispose();
+		if (scdDocumentRootItemProvider != null)
+			scdDocumentRootItemProvider.dispose();
+		if (softwareComponentItemProvider != null)
+			softwareComponentItemProvider.dispose();
+		if (supportsInterfaceItemProvider != null)
+			supportsInterfaceItemProvider.dispose();
+		if (usesItemProvider != null)
+			usesItemProvider.dispose();
 	}
 
 }

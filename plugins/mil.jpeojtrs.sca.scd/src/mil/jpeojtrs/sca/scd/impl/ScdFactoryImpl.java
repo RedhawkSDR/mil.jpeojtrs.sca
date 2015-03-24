@@ -49,16 +49,12 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * @generated
 	 */
 	public static ScdFactory init() {
-		try
-		{
-			ScdFactory theScdFactory = (ScdFactory)EPackage.Registry.INSTANCE.getEFactory(ScdPackage.eNS_URI);
-			if (theScdFactory != null)
-			{
+		try {
+			ScdFactory theScdFactory = (ScdFactory) EPackage.Registry.INSTANCE.getEFactory(ScdPackage.eNS_URI);
+			if (theScdFactory != null) {
 				return theScdFactory;
 			}
-		}
-		catch (Exception exception)
-		{
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ScdFactoryImpl();
@@ -81,24 +77,37 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID())
-		{
-			case ScdPackage.COMPONENT_FEATURES: return createComponentFeatures();
-			case ScdPackage.COMPONENT_REP_ID: return createComponentRepId();
-			case ScdPackage.INHERITS_INTERFACE: return createInheritsInterface();
-			case ScdPackage.INTERFACE: return createInterface();
-			case ScdPackage.INTERFACES: return createInterfaces();
-			case ScdPackage.LOCAL_FILE: return createLocalFile();
-			case ScdPackage.PORTS: return createPorts();
-			case ScdPackage.PORT_TYPE_CONTAINER: return createPortTypeContainer();
-			case ScdPackage.PROPERTY_FILE: return createPropertyFile();
-			case ScdPackage.PROVIDES: return createProvides();
-			case ScdPackage.SCD_DOCUMENT_ROOT: return createScdDocumentRoot();
-			case ScdPackage.SOFTWARE_COMPONENT: return createSoftwareComponent();
-			case ScdPackage.SUPPORTS_INTERFACE: return createSupportsInterface();
-			case ScdPackage.USES: return createUses();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+		case ScdPackage.COMPONENT_FEATURES:
+			return createComponentFeatures();
+		case ScdPackage.COMPONENT_REP_ID:
+			return createComponentRepId();
+		case ScdPackage.INHERITS_INTERFACE:
+			return createInheritsInterface();
+		case ScdPackage.INTERFACE:
+			return createInterface();
+		case ScdPackage.INTERFACES:
+			return createInterfaces();
+		case ScdPackage.LOCAL_FILE:
+			return createLocalFile();
+		case ScdPackage.PORTS:
+			return createPorts();
+		case ScdPackage.PORT_TYPE_CONTAINER:
+			return createPortTypeContainer();
+		case ScdPackage.PROPERTY_FILE:
+			return createPropertyFile();
+		case ScdPackage.PROVIDES:
+			return createProvides();
+		case ScdPackage.SCD_DOCUMENT_ROOT:
+			return createScdDocumentRoot();
+		case ScdPackage.SOFTWARE_COMPONENT:
+			return createSoftwareComponent();
+		case ScdPackage.SUPPORTS_INTERFACE:
+			return createSupportsInterface();
+		case ScdPackage.USES:
+			return createUses();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -109,16 +118,15 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID())
-		{
-			case ScdPackage.PORT_TYPE:
-				return createPortTypeFromString(eDataType, initialValue);
-			case ScdPackage.COMPONENT_TYPE:
-				return createComponentTypeFromString(eDataType, initialValue);
-			case ScdPackage.PORT_TYPE_OBJECT:
-				return createPortTypeObjectFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+		case ScdPackage.PORT_TYPE:
+			return createPortTypeFromString(eDataType, initialValue);
+		case ScdPackage.COMPONENT_TYPE:
+			return createComponentTypeFromString(eDataType, initialValue);
+		case ScdPackage.PORT_TYPE_OBJECT:
+			return createPortTypeObjectFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -129,16 +137,15 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID())
-		{
-			case ScdPackage.PORT_TYPE:
-				return convertPortTypeToString(eDataType, instanceValue);
-			case ScdPackage.COMPONENT_TYPE:
-				return convertComponentTypeToString(eDataType, instanceValue);
-			case ScdPackage.PORT_TYPE_OBJECT:
-				return convertPortTypeObjectToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+		case ScdPackage.PORT_TYPE:
+			return convertPortTypeToString(eDataType, instanceValue);
+		case ScdPackage.COMPONENT_TYPE:
+			return convertComponentTypeToString(eDataType, instanceValue);
+		case ScdPackage.PORT_TYPE_OBJECT:
+			return convertPortTypeObjectToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -303,7 +310,8 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 */
 	public PortType createPortTypeFromString(EDataType eDataType, String initialValue) {
 		PortType result = PortType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -323,7 +331,8 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 */
 	public ComponentType createComponentTypeFromString(EDataType eDataType, String initialValue) {
 		ComponentType result = ComponentType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -361,7 +370,7 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 */
 	@Override
 	public ScdPackage getScdPackage() {
-		return (ScdPackage)getEPackage();
+		return (ScdPackage) getEPackage();
 	}
 
 	/**

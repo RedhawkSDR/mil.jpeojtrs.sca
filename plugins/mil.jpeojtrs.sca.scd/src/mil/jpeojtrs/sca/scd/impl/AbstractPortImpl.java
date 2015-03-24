@@ -37,10 +37,10 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getPortType <em>Port Type</em>}</li>
- * <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getName <em>Name</em>}</li>
- * <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getRepID <em>Rep ID</em>}</li>
- * <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getInterface <em>Interface</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getPortType <em>Port Type</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getName <em>Name</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getRepID <em>Rep ID</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getInterface <em>Interface</em>}</li>
  * </ul>
  * </p>
  *
@@ -400,11 +400,11 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 		if (portType == null) {
 			if (other.portType != null)
 				return false;
-		} else  {
+		} else {
 			if (portType.size() != other.portType.size()) {
 				return false;
 			}
-			for (int i=0; i<portType.size(); i++) {
+			for (int i = 0; i < portType.size(); i++) {
 				if (!portType.get(i).equals(other.portType.get(i))) {
 					return false;
 				}

@@ -45,6 +45,7 @@ public class PropertyFileTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected PropertyFile fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,17 +167,17 @@ public class PropertyFileTest extends TestCase {
 
 		Assert.assertNotNull(this.fixture.getLocalFile());
 		Assert.assertEquals("New file name", this.fixture.getLocalFile().getName());
-		
+
 		final LocalFile lf = ScdFactory.eINSTANCE.createLocalFile();
 		lf.setName("BadFIleName.prf.xml");
 		this.fixture.setLocalFile(lf);
 		Assert.assertNotNull(this.fixture.getLocalFile());
 		Assert.assertEquals("BadFIleName.prf.xml", this.fixture.getLocalFile().getName());
-		
+
 		this.fixture.setLocalFile(null);
 		Assert.assertNull(this.fixture.getLocalFile());
 		Assert.assertNull(this.fixture.getProperties());
-		
+
 		this.fixture.setProperties(oldProps);
 		Assert.assertNotNull(this.fixture.getLocalFile());
 	}

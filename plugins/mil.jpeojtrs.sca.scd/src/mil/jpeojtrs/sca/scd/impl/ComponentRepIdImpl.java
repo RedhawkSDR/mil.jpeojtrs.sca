@@ -105,7 +105,7 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 	@Override
 	public Interface getInterface() {
 		Interface interface_ = basicGetInterface();
-		return interface_ != null && interface_.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)interface_) : interface_;
+		return interface_ != null && interface_.eIsProxy() ? (Interface) eResolveProxy((InternalEObject) interface_) : interface_;
 	}
 
 	/**
@@ -132,11 +132,11 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 		// END GENERATED CODE
 		String newRepId;
 		if (newInterface == null) {
-	        newRepId = null;
+			newRepId = null;
 		} else {
-	        newRepId = newInterface.getRepid();
+			newRepId = newInterface.getRepid();
 		}
-		this.setRepid(newRepId);		
+		this.setRepid(newRepId);
 		// BEGIN GENERATED CODE
 	}
 
@@ -147,13 +147,13 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.COMPONENT_REP_ID__REPID:
-				return getRepid();
-			case ScdPackage.COMPONENT_REP_ID__INTERFACE:
-				if (resolve) return getInterface();
-				return basicGetInterface();
+		switch (featureID) {
+		case ScdPackage.COMPONENT_REP_ID__REPID:
+			return getRepid();
+		case ScdPackage.COMPONENT_REP_ID__INTERFACE:
+			if (resolve)
+				return getInterface();
+			return basicGetInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,14 +165,13 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.COMPONENT_REP_ID__REPID:
-				setRepid((String)newValue);
-				return;
-			case ScdPackage.COMPONENT_REP_ID__INTERFACE:
-				setInterface((Interface)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.COMPONENT_REP_ID__REPID:
+			setRepid((String) newValue);
+			return;
+		case ScdPackage.COMPONENT_REP_ID__INTERFACE:
+			setInterface((Interface) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -184,14 +183,13 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.COMPONENT_REP_ID__REPID:
-				setRepid(REPID_EDEFAULT);
-				return;
-			case ScdPackage.COMPONENT_REP_ID__INTERFACE:
-				setInterface((Interface)null);
-				return;
+		switch (featureID) {
+		case ScdPackage.COMPONENT_REP_ID__REPID:
+			setRepid(REPID_EDEFAULT);
+			return;
+		case ScdPackage.COMPONENT_REP_ID__INTERFACE:
+			setInterface((Interface) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,12 +201,11 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.COMPONENT_REP_ID__REPID:
-				return REPID_EDEFAULT == null ? repid != null : !REPID_EDEFAULT.equals(repid);
-			case ScdPackage.COMPONENT_REP_ID__INTERFACE:
-				return basicGetInterface() != null;
+		switch (featureID) {
+		case ScdPackage.COMPONENT_REP_ID__REPID:
+			return REPID_EDEFAULT == null ? repid != null : !REPID_EDEFAULT.equals(repid);
+		case ScdPackage.COMPONENT_REP_ID__INTERFACE:
+			return basicGetInterface() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,7 +217,8 @@ public class ComponentRepIdImpl extends EObjectImpl implements ComponentRepId {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (repid: ");

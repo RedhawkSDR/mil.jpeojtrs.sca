@@ -40,6 +40,7 @@ public class ComponentFeaturesTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected ComponentFeatures fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,8 +155,7 @@ public class ComponentFeaturesTest extends TestCase {
 
 		Assert.assertNotNull(this.fixture.getPorts());
 		Assert.assertEquals("New name", this.fixture.getPorts().getProvides().get(0).getProvidesName());
-		
-		
+
 		final Ports ports2 = this.fixture.getPorts();
 		Assert.assertNotNull(ports2);
 

@@ -44,6 +44,7 @@ public class ComponentRepIdTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected ComponentRepId fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -167,10 +168,10 @@ public class ComponentRepIdTest extends TestCase {
 		this.fixture.setRepid("new repid");
 		Assert.assertNotNull(this.fixture.getRepid());
 		Assert.assertEquals("new repid", this.fixture.getRepid());
-		
+
 		this.fixture.setRepid(null);
 		Assert.assertNull(this.fixture.getRepid());
-		
+
 		this.fixture.setInterface(null);
 		Assert.assertNull(this.fixture.getInterface());
 		Assert.assertNull(this.fixture.getRepid());

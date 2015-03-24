@@ -138,10 +138,9 @@ public class PortTypeContainerImpl extends EObjectImpl implements PortTypeContai
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
-				return getType();
+		switch (featureID) {
+		case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
+			return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -153,11 +152,10 @@ public class PortTypeContainerImpl extends EObjectImpl implements PortTypeContai
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
-				setType((PortType)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
+			setType((PortType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -169,11 +167,10 @@ public class PortTypeContainerImpl extends EObjectImpl implements PortTypeContai
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
-				unsetType();
-				return;
+		switch (featureID) {
+		case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
+			unsetType();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -185,10 +182,9 @@ public class PortTypeContainerImpl extends EObjectImpl implements PortTypeContai
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
-				return isSetType();
+		switch (featureID) {
+		case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
+			return isSetType();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -200,11 +196,15 @@ public class PortTypeContainerImpl extends EObjectImpl implements PortTypeContai
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (type: ");
-		if (typeESet) result.append(type); else result.append("<unset>");
+		if (typeESet)
+			result.append(type);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

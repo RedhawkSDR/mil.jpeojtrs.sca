@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,15 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated NOT
  */
-public class InterfaceItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		ITableItemLabelProvider,
-		IItemPropertySource {
+public class InterfaceItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, ITableItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -109,19 +101,9 @@ public class InterfaceItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Interface_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Interface_name_feature", "_UI_Interface_type"),
-				 ScdPackage.Literals.INTERFACE__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Interface_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Interface_name_feature", "_UI_Interface_type"),
+			ScdPackage.Literals.INTERFACE__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -131,19 +113,9 @@ public class InterfaceItemProvider
 	 * @generated
 	 */
 	protected void addRepidPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Interface_repid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Interface_repid_feature", "_UI_Interface_type"),
-				 ScdPackage.Literals.INTERFACE__REPID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Interface_repid_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Interface_repid_feature", "_UI_Interface_type"),
+			ScdPackage.Literals.INTERFACE__REPID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -155,7 +127,7 @@ public class InterfaceItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ScdPackage.Literals.INTERFACE__INHERITS_INTERFACES);
@@ -195,10 +167,8 @@ public class InterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Interface)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Interface_type") :
-			getString("_UI_Interface_type") + " " + label;
+		String label = ((Interface) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Interface_type") : getString("_UI_Interface_type") + " " + label;
 	}
 
 	/**
@@ -213,13 +183,13 @@ public class InterfaceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Interface.class)) {
-			case ScdPackage.INTERFACE__NAME:
-			case ScdPackage.INTERFACE__REPID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ScdPackage.INTERFACE__NAME:
+		case ScdPackage.INTERFACE__REPID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ScdPackage.INTERFACE__INHERITS_INTERFACES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -235,10 +205,7 @@ public class InterfaceItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.INTERFACE__INHERITS_INTERFACES,
-				 ScdFactory.eINSTANCE.createInheritsInterface()));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.INTERFACE__INHERITS_INTERFACES, ScdFactory.eINSTANCE.createInheritsInterface()));
 	}
 
 	/**

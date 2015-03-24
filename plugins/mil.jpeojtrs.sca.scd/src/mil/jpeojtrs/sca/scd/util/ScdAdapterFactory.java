@@ -57,8 +57,7 @@ public class ScdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public ScdAdapterFactory() {
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = ScdPackage.eINSTANCE;
 		}
 	}
@@ -73,13 +72,11 @@ public class ScdAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage)
-		{
+		if (object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject)
-		{
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		if (object instanceof EObject) {
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -90,90 +87,87 @@ public class ScdAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ScdSwitch<Adapter> modelSwitch =
-		new ScdSwitch<Adapter>()
-		{
-			@Override
-			public Adapter caseComponentFeatures(ComponentFeatures object)
-			{
-				return createComponentFeaturesAdapter();
-			}
-			@Override
-			public Adapter caseComponentRepId(ComponentRepId object)
-			{
-				return createComponentRepIdAdapter();
-			}
-			@Override
-			public Adapter caseInheritsInterface(InheritsInterface object)
-			{
-				return createInheritsInterfaceAdapter();
-			}
-			@Override
-			public Adapter caseInterface(Interface object)
-			{
-				return createInterfaceAdapter();
-			}
-			@Override
-			public Adapter caseInterfaces(Interfaces object)
-			{
-				return createInterfacesAdapter();
-			}
-			@Override
-			public Adapter caseLocalFile(LocalFile object)
-			{
-				return createLocalFileAdapter();
-			}
-			@Override
-			public Adapter casePorts(Ports object)
-			{
-				return createPortsAdapter();
-			}
-			@Override
-			public Adapter casePortTypeContainer(PortTypeContainer object)
-			{
-				return createPortTypeContainerAdapter();
-			}
-			@Override
-			public Adapter casePropertyFile(PropertyFile object)
-			{
-				return createPropertyFileAdapter();
-			}
-			@Override
-			public Adapter caseProvides(Provides object)
-			{
-				return createProvidesAdapter();
-			}
-			@Override
-			public Adapter caseAbstractPort(AbstractPort object)
-			{
-				return createAbstractPortAdapter();
-			}
-			@Override
-			public Adapter caseScdDocumentRoot(ScdDocumentRoot object)
-			{
-				return createScdDocumentRootAdapter();
-			}
-			@Override
-			public Adapter caseSoftwareComponent(SoftwareComponent object)
-			{
-				return createSoftwareComponentAdapter();
-			}
-			@Override
-			public Adapter caseSupportsInterface(SupportsInterface object)
-			{
-				return createSupportsInterfaceAdapter();
-			}
-			@Override
-			public Adapter caseUses(Uses object)
-			{
-				return createUsesAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object)
-			{
-				return createEObjectAdapter();
-			}
-		};
+	protected ScdSwitch<Adapter> modelSwitch = new ScdSwitch<Adapter>() {
+		@Override
+		public Adapter caseComponentFeatures(ComponentFeatures object) {
+			return createComponentFeaturesAdapter();
+		}
+
+		@Override
+		public Adapter caseComponentRepId(ComponentRepId object) {
+			return createComponentRepIdAdapter();
+		}
+
+		@Override
+		public Adapter caseInheritsInterface(InheritsInterface object) {
+			return createInheritsInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseInterface(Interface object) {
+			return createInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseInterfaces(Interfaces object) {
+			return createInterfacesAdapter();
+		}
+
+		@Override
+		public Adapter caseLocalFile(LocalFile object) {
+			return createLocalFileAdapter();
+		}
+
+		@Override
+		public Adapter casePorts(Ports object) {
+			return createPortsAdapter();
+		}
+
+		@Override
+		public Adapter casePortTypeContainer(PortTypeContainer object) {
+			return createPortTypeContainerAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyFile(PropertyFile object) {
+			return createPropertyFileAdapter();
+		}
+
+		@Override
+		public Adapter caseProvides(Provides object) {
+			return createProvidesAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractPort(AbstractPort object) {
+			return createAbstractPortAdapter();
+		}
+
+		@Override
+		public Adapter caseScdDocumentRoot(ScdDocumentRoot object) {
+			return createScdDocumentRootAdapter();
+		}
+
+		@Override
+		public Adapter caseSoftwareComponent(SoftwareComponent object) {
+			return createSoftwareComponentAdapter();
+		}
+
+		@Override
+		public Adapter caseSupportsInterface(SupportsInterface object) {
+			return createSupportsInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseUses(Uses object) {
+			return createUsesAdapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -185,7 +179,7 @@ public class ScdAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 	/**

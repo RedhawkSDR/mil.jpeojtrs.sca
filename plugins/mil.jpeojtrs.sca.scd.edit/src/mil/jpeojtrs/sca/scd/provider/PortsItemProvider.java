@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -40,10 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PortsItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class PortsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -63,8 +60,7 @@ public class PortsItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -80,9 +76,8 @@ public class PortsItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ScdPackage.Literals.PORTS__GROUP);
 		}
@@ -135,11 +130,10 @@ public class PortsItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Ports.class))
-		{
-			case ScdPackage.PORTS__GROUP:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(Ports.class)) {
+		case ScdPackage.PORTS__GROUP:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -155,19 +149,11 @@ public class PortsItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.PORTS__GROUP,
-				 FeatureMapUtil.createEntry
-					(ScdPackage.Literals.PORTS__PROVIDES,
-					 ScdFactory.eINSTANCE.createProvides())));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.PORTS__GROUP,
+			FeatureMapUtil.createEntry(ScdPackage.Literals.PORTS__PROVIDES, ScdFactory.eINSTANCE.createProvides())));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.PORTS__GROUP,
-				 FeatureMapUtil.createEntry
-					(ScdPackage.Literals.PORTS__USES,
-					 ScdFactory.eINSTANCE.createUses())));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.PORTS__GROUP,
+			FeatureMapUtil.createEntry(ScdPackage.Literals.PORTS__USES, ScdFactory.eINSTANCE.createUses())));
 	}
 
 	/**

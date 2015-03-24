@@ -128,15 +128,17 @@ public interface SupportsInterface extends EObject {
 	void setInterface(Interface value);
 
 	public static final class Util {
-	// END GENERATED CODE
+		// END GENERATED CODE
 		private static final String ID_PREFIX = "supportsInterface:";
+
 		private Util() {
-			
+
 		}
+
 		public static String buildId(String repId) {
 			return ID_PREFIX + repId;
 		}
-	// BEGIN GENERATED CODE
+		// BEGIN GENERATED CODE
 	}
 
 } // SupportsInterface

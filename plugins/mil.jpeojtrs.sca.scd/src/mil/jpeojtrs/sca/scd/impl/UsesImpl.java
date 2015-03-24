@@ -72,15 +72,15 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 		return getName();
 		// BEGIN GENERATED CODE
 	}
-	
+
 	@Override
 	public void setName(String newName) {
 		// END GENERATED CODE
 		String oldValue = getUsesName();
-	    super.setName(newName);
-	    if (eNotificationRequired()) {
+		super.setName(newName);
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.USES__USES_NAME, oldValue, getUsesName()));
-	    }
+		}
 		// BEGIN GENERATED CODE
 	}
 
@@ -103,10 +103,9 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.USES__USES_NAME:
-				return getUsesName();
+		switch (featureID) {
+		case ScdPackage.USES__USES_NAME:
+			return getUsesName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,11 +117,10 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.USES__USES_NAME:
-				setUsesName((String)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.USES__USES_NAME:
+			setUsesName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -134,11 +132,10 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.USES__USES_NAME:
-				setUsesName(USES_NAME_EDEFAULT);
-				return;
+		switch (featureID) {
+		case ScdPackage.USES__USES_NAME:
+			setUsesName(USES_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,10 +147,9 @@ public class UsesImpl extends AbstractPortImpl implements Uses {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.USES__USES_NAME:
-				return USES_NAME_EDEFAULT == null ? getUsesName() != null : !USES_NAME_EDEFAULT.equals(getUsesName());
+		switch (featureID) {
+		case ScdPackage.USES__USES_NAME:
+			return USES_NAME_EDEFAULT == null ? getUsesName() != null : !USES_NAME_EDEFAULT.equals(getUsesName());
 		}
 		return super.eIsSet(featureID);
 	}

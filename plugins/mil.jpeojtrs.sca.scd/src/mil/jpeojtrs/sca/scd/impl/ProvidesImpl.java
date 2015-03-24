@@ -72,15 +72,15 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 		return getName();
 		// BEGIN GENERATED CODE
 	}
-	
+
 	@Override
 	public void setName(String newName) {
 		// END GENERATED CODE
 		String oldValue = getProvidesName();
-	    super.setName(newName);
-	    if (eNotificationRequired()) {
+		super.setName(newName);
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.PROVIDES__PROVIDES_NAME, oldValue, getProvidesName()));
-	    }
+		}
 		// BEGIN GENERATED CODE
 	}
 
@@ -103,10 +103,9 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.PROVIDES__PROVIDES_NAME:
-				return getProvidesName();
+		switch (featureID) {
+		case ScdPackage.PROVIDES__PROVIDES_NAME:
+			return getProvidesName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,11 +117,10 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.PROVIDES__PROVIDES_NAME:
-				setProvidesName((String)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.PROVIDES__PROVIDES_NAME:
+			setProvidesName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -134,11 +132,10 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.PROVIDES__PROVIDES_NAME:
-				setProvidesName(PROVIDES_NAME_EDEFAULT);
-				return;
+		switch (featureID) {
+		case ScdPackage.PROVIDES__PROVIDES_NAME:
+			setProvidesName(PROVIDES_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,10 +147,9 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.PROVIDES__PROVIDES_NAME:
-				return PROVIDES_NAME_EDEFAULT == null ? getProvidesName() != null : !PROVIDES_NAME_EDEFAULT.equals(getProvidesName());
+		switch (featureID) {
+		case ScdPackage.PROVIDES__PROVIDES_NAME:
+			return PROVIDES_NAME_EDEFAULT == null ? getProvidesName() != null : !PROVIDES_NAME_EDEFAULT.equals(getProvidesName());
 		}
 		return super.eIsSet(featureID);
 	}

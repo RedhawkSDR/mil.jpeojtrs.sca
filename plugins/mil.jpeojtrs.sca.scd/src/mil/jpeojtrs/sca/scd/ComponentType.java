@@ -35,7 +35,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RESOURCE(0, "RESOURCE", "resource"), /**
+	RESOURCE(0, "RESOURCE", "resource"),
+	/**
 	 * The '<em><b>DEVICE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -43,7 +44,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DEVICE(1, "DEVICE", "device"), /**
+	DEVICE(1, "DEVICE", "device"),
+	/**
 	 * The '<em><b>RESOURCE FACTORY</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,7 +53,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RESOURCE_FACTORY(2, "RESOURCE_FACTORY", "resourcefactory"), /**
+	RESOURCE_FACTORY(2, "RESOURCE_FACTORY", "resourcefactory"),
+	/**
 	 * The '<em><b>DOMAIN MANAGER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -59,7 +62,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DOMAIN_MANAGER(3, "DOMAIN_MANAGER", "domainmanager"), /**
+	DOMAIN_MANAGER(3, "DOMAIN_MANAGER", "domainmanager"),
+	/**
 	 * The '<em><b>LOG</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,7 +71,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LOG(4, "LOG", "log"), /**
+	LOG(4, "LOG", "log"),
+	/**
 	 * The '<em><b>FILE SYSTEM</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,7 +80,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FILE_SYSTEM(5, "FILE_SYSTEM", "filesystem"), /**
+	FILE_SYSTEM(5, "FILE_SYSTEM", "filesystem"),
+	/**
 	 * The '<em><b>FILE MANAGER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,7 +89,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FILE_MANAGER(6, "FILE_MANAGER", "filemanager"), /**
+	FILE_MANAGER(6, "FILE_MANAGER", "filemanager"),
+	/**
 	 * The '<em><b>DEVICE MANAGER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,7 +98,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DEVICE_MANAGER(7, "DEVICE_MANAGER", "devicemanager"), /**
+	DEVICE_MANAGER(7, "DEVICE_MANAGER", "devicemanager"),
+	/**
 	 * The '<em><b>NAMING SERVICE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,7 +107,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NAMING_SERVICE(8, "NAMING_SERVICE", "namingservice"), /**
+	NAMING_SERVICE(8, "NAMING_SERVICE", "namingservice"),
+	/**
 	 * The '<em><b>EVENT SERVICE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,7 +116,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EVENT_SERVICE(9, "EVENT_SERVICE", "eventservice"), /**
+	EVENT_SERVICE(9, "EVENT_SERVICE", "eventservice"),
+	/**
 	 * The '<em><b>SERVICE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +125,8 @@ public enum ComponentType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SERVICE(10, "SERVICE", "service"), /**
+	SERVICE(10, "SERVICE", "service"),
+	/**
 	 * The '<em><b>OTHER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -125,7 +136,7 @@ public enum ComponentType implements Enumerator {
 	 */
 	OTHER(11, "OTHER", "OTHER");
 
-/**
+	/**
 	 * The '<em><b>RESOURCE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -139,7 +150,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int RESOURCE_VALUE = 0;
-/**
+	/**
 	 * The '<em><b>DEVICE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -153,7 +164,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int DEVICE_VALUE = 1;
-/**
+	/**
 	 * The '<em><b>RESOURCE FACTORY</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -167,7 +178,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int RESOURCE_FACTORY_VALUE = 2;
-/**
+	/**
 	 * The '<em><b>DOMAIN MANAGER</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -181,7 +192,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int DOMAIN_MANAGER_VALUE = 3;
-/**
+	/**
 	 * The '<em><b>LOG</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -195,7 +206,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int LOG_VALUE = 4;
-/**
+	/**
 	 * The '<em><b>FILE SYSTEM</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -209,7 +220,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int FILE_SYSTEM_VALUE = 5;
-/**
+	/**
 	 * The '<em><b>FILE MANAGER</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -223,7 +234,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int FILE_MANAGER_VALUE = 6;
-/**
+	/**
 	 * The '<em><b>DEVICE MANAGER</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -237,7 +248,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int DEVICE_MANAGER_VALUE = 7;
-/**
+	/**
 	 * The '<em><b>NAMING SERVICE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -251,7 +262,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int NAMING_SERVICE_VALUE = 8;
-/**
+	/**
 	 * The '<em><b>EVENT SERVICE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -265,7 +276,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int EVENT_SERVICE_VALUE = 9;
-/**
+	/**
 	 * The '<em><b>SERVICE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -279,7 +290,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int SERVICE_VALUE = 10;
-/**
+	/**
 	 * The '<em><b>OTHER</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -293,7 +304,7 @@ public enum ComponentType implements Enumerator {
 	 * @ordered
 	 */
 	public static final int OTHER_VALUE = 11;
-/**
+	/**
 	 * An array of all the '<em><b>Component Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -323,87 +334,94 @@ public enum ComponentType implements Enumerator {
 	 */
 	public static final List<ComponentType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
-/**
+	/**
 	 * Returns the '<em><b>Component Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static ComponentType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ComponentType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal))
-			{
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Component Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static ComponentType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ComponentType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name))
-			{
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Component Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static ComponentType get(int value) {
-		switch (value)
-		{
-			case RESOURCE_VALUE: return RESOURCE;
-			case DEVICE_VALUE: return DEVICE;
-			case RESOURCE_FACTORY_VALUE: return RESOURCE_FACTORY;
-			case DOMAIN_MANAGER_VALUE: return DOMAIN_MANAGER;
-			case LOG_VALUE: return LOG;
-			case FILE_SYSTEM_VALUE: return FILE_SYSTEM;
-			case FILE_MANAGER_VALUE: return FILE_MANAGER;
-			case DEVICE_MANAGER_VALUE: return DEVICE_MANAGER;
-			case NAMING_SERVICE_VALUE: return NAMING_SERVICE;
-			case EVENT_SERVICE_VALUE: return EVENT_SERVICE;
-			case SERVICE_VALUE: return SERVICE;
-			case OTHER_VALUE: return OTHER;
+		switch (value) {
+		case RESOURCE_VALUE:
+			return RESOURCE;
+		case DEVICE_VALUE:
+			return DEVICE;
+		case RESOURCE_FACTORY_VALUE:
+			return RESOURCE_FACTORY;
+		case DOMAIN_MANAGER_VALUE:
+			return DOMAIN_MANAGER;
+		case LOG_VALUE:
+			return LOG;
+		case FILE_SYSTEM_VALUE:
+			return FILE_SYSTEM;
+		case FILE_MANAGER_VALUE:
+			return FILE_MANAGER;
+		case DEVICE_MANAGER_VALUE:
+			return DEVICE_MANAGER;
+		case NAMING_SERVICE_VALUE:
+			return NAMING_SERVICE;
+		case EVENT_SERVICE_VALUE:
+			return EVENT_SERVICE;
+		case SERVICE_VALUE:
+			return SERVICE;
+		case OTHER_VALUE:
+			return OTHER;
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final int value;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String name;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String literal;
 
-/**
+	/**
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -415,37 +433,37 @@ public enum ComponentType implements Enumerator {
 		this.literal = literal;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
-/**
+	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -455,5 +473,5 @@ public enum ComponentType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
+
 } //ComponentType

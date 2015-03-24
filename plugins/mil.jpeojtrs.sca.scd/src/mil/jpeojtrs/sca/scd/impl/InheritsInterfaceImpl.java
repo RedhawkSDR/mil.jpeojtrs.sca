@@ -105,7 +105,7 @@ public class InheritsInterfaceImpl extends EObjectImpl implements InheritsInterf
 	@Override
 	public Interface getInterface() {
 		Interface interface_ = basicGetInterface();
-		return interface_ != null && interface_.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)interface_) : interface_;
+		return interface_ != null && interface_.eIsProxy() ? (Interface) eResolveProxy((InternalEObject) interface_) : interface_;
 	}
 
 	/**
@@ -139,13 +139,13 @@ public class InheritsInterfaceImpl extends EObjectImpl implements InheritsInterf
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.INHERITS_INTERFACE__REPID:
-				return getRepid();
-			case ScdPackage.INHERITS_INTERFACE__INTERFACE:
-				if (resolve) return getInterface();
-				return basicGetInterface();
+		switch (featureID) {
+		case ScdPackage.INHERITS_INTERFACE__REPID:
+			return getRepid();
+		case ScdPackage.INHERITS_INTERFACE__INTERFACE:
+			if (resolve)
+				return getInterface();
+			return basicGetInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,14 +157,13 @@ public class InheritsInterfaceImpl extends EObjectImpl implements InheritsInterf
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.INHERITS_INTERFACE__REPID:
-				setRepid((String)newValue);
-				return;
-			case ScdPackage.INHERITS_INTERFACE__INTERFACE:
-				setInterface((Interface)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.INHERITS_INTERFACE__REPID:
+			setRepid((String) newValue);
+			return;
+		case ScdPackage.INHERITS_INTERFACE__INTERFACE:
+			setInterface((Interface) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -176,14 +175,13 @@ public class InheritsInterfaceImpl extends EObjectImpl implements InheritsInterf
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.INHERITS_INTERFACE__REPID:
-				setRepid(REPID_EDEFAULT);
-				return;
-			case ScdPackage.INHERITS_INTERFACE__INTERFACE:
-				setInterface((Interface)null);
-				return;
+		switch (featureID) {
+		case ScdPackage.INHERITS_INTERFACE__REPID:
+			setRepid(REPID_EDEFAULT);
+			return;
+		case ScdPackage.INHERITS_INTERFACE__INTERFACE:
+			setInterface((Interface) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -195,12 +193,11 @@ public class InheritsInterfaceImpl extends EObjectImpl implements InheritsInterf
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.INHERITS_INTERFACE__REPID:
-				return REPID_EDEFAULT == null ? repid != null : !REPID_EDEFAULT.equals(repid);
-			case ScdPackage.INHERITS_INTERFACE__INTERFACE:
-				return basicGetInterface() != null;
+		switch (featureID) {
+		case ScdPackage.INHERITS_INTERFACE__REPID:
+			return REPID_EDEFAULT == null ? repid != null : !REPID_EDEFAULT.equals(repid);
+		case ScdPackage.INHERITS_INTERFACE__INTERFACE:
+			return basicGetInterface() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -212,7 +209,8 @@ public class InheritsInterfaceImpl extends EObjectImpl implements InheritsInterf
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (repid: ");

@@ -89,8 +89,7 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 */
 	@Override
 	public EList<SupportsInterface> getSupportsInterface() {
-		if (supportsInterface == null)
-		{
+		if (supportsInterface == null) {
 			supportsInterface = new EObjectContainmentEList<SupportsInterface>(SupportsInterface.class, this, ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE);
 		}
 		return supportsInterface;
@@ -114,10 +113,12 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	public NotificationChain basicSetPorts(Ports newPorts, NotificationChain msgs) {
 		Ports oldPorts = ports;
 		ports = newPorts;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.COMPONENT_FEATURES__PORTS, oldPorts, newPorts);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -129,17 +130,16 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 */
 	@Override
 	public void setPorts(Ports newPorts) {
-		if (newPorts != ports)
-		{
+		if (newPorts != ports) {
 			NotificationChain msgs = null;
 			if (ports != null)
-				msgs = ((InternalEObject)ports).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.COMPONENT_FEATURES__PORTS, null, msgs);
+				msgs = ((InternalEObject) ports).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.COMPONENT_FEATURES__PORTS, null, msgs);
 			if (newPorts != null)
-				msgs = ((InternalEObject)newPorts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.COMPONENT_FEATURES__PORTS, null, msgs);
+				msgs = ((InternalEObject) newPorts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.COMPONENT_FEATURES__PORTS, null, msgs);
 			msgs = basicSetPorts(newPorts, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.COMPONENT_FEATURES__PORTS, newPorts, newPorts));
 	}
 
@@ -150,12 +150,11 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
-				return ((InternalEList<?>)getSupportsInterface()).basicRemove(otherEnd, msgs);
-			case ScdPackage.COMPONENT_FEATURES__PORTS:
-				return basicSetPorts(null, msgs);
+		switch (featureID) {
+		case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
+			return ((InternalEList< ? >) getSupportsInterface()).basicRemove(otherEnd, msgs);
+		case ScdPackage.COMPONENT_FEATURES__PORTS:
+			return basicSetPorts(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -167,12 +166,11 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
-				return getSupportsInterface();
-			case ScdPackage.COMPONENT_FEATURES__PORTS:
-				return getPorts();
+		switch (featureID) {
+		case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
+			return getSupportsInterface();
+		case ScdPackage.COMPONENT_FEATURES__PORTS:
+			return getPorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,15 +183,14 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
-				getSupportsInterface().clear();
-				getSupportsInterface().addAll((Collection<? extends SupportsInterface>)newValue);
-				return;
-			case ScdPackage.COMPONENT_FEATURES__PORTS:
-				setPorts((Ports)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
+			getSupportsInterface().clear();
+			getSupportsInterface().addAll((Collection< ? extends SupportsInterface>) newValue);
+			return;
+		case ScdPackage.COMPONENT_FEATURES__PORTS:
+			setPorts((Ports) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -205,14 +202,13 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
-				getSupportsInterface().clear();
-				return;
-			case ScdPackage.COMPONENT_FEATURES__PORTS:
-				setPorts((Ports)null);
-				return;
+		switch (featureID) {
+		case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
+			getSupportsInterface().clear();
+			return;
+		case ScdPackage.COMPONENT_FEATURES__PORTS:
+			setPorts((Ports) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -224,12 +220,11 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
-				return supportsInterface != null && !supportsInterface.isEmpty();
-			case ScdPackage.COMPONENT_FEATURES__PORTS:
-				return ports != null;
+		switch (featureID) {
+		case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
+			return supportsInterface != null && !supportsInterface.isEmpty();
+		case ScdPackage.COMPONENT_FEATURES__PORTS:
+			return ports != null;
 		}
 		return super.eIsSet(featureID);
 	}

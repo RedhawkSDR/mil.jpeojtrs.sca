@@ -37,6 +37,7 @@ public class LocalFileTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected LocalFile fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -13,21 +13,13 @@ package mil.jpeojtrs.sca.scd.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import mil.jpeojtrs.sca.scd.AbstractPort;
 import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.scd.Uses;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -37,8 +29,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UsesItemProvider extends AbstractPortItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-        IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class UsesItemProvider extends AbstractPortItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -57,8 +48,7 @@ public class UsesItemProvider extends AbstractPortItemProvider implements IEditi
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addUsesNamePropertyDescriptor(object);
@@ -73,19 +63,9 @@ public class UsesItemProvider extends AbstractPortItemProvider implements IEditi
 	 * @generated
 	 */
 	protected void addUsesNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Uses_usesName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Uses_usesName_feature", "_UI_Uses_type"),
-				 ScdPackage.Literals.USES__USES_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Uses_usesName_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Uses_usesName_feature", "_UI_Uses_type"),
+			ScdPackage.Literals.USES__USES_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -96,8 +76,8 @@ public class UsesItemProvider extends AbstractPortItemProvider implements IEditi
 	 */
 	@Override
 	public Object getImage(Object object) {
-		if (((AbstractPort)object).isBiDirectional()) {
-			return overlayImage(object, getResourceLocator().getImage("full/obj16/BiDirectional")); 
+		if (((AbstractPort) object).isBiDirectional()) {
+			return overlayImage(object, getResourceLocator().getImage("full/obj16/BiDirectional"));
 		}
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/Uses"));
 	}
@@ -142,11 +122,10 @@ public class UsesItemProvider extends AbstractPortItemProvider implements IEditi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Uses.class))
-		{
-			case ScdPackage.USES__USES_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(Uses.class)) {
+		case ScdPackage.USES__USES_NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -184,9 +163,9 @@ public class UsesItemProvider extends AbstractPortItemProvider implements IEditi
 		switch (columnIndex) {
 		case 0:
 			if (uses.isBiDirectional()) {
-				text =  "<bi-dir> " + uses.getUsesName();
+				text = "<bi-dir> " + uses.getUsesName();
 			} else {
-				text =  "<uses> " + uses.getUsesName();
+				text = "<uses> " + uses.getUsesName();
 			}
 			break;
 		case 1:

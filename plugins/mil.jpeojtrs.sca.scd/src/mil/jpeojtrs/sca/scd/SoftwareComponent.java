@@ -55,6 +55,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	String getCorbaVersion();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getCorbaVersion <em>Corba Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,6 +65,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	void setCorbaVersion(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Component Rep ID</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -80,6 +82,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	ComponentRepId getComponentRepID();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getComponentRepID <em>Component Rep ID</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -89,6 +92,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	void setComponentRepID(ComponentRepId value);
+
 	/**
 	 * Returns the value of the '<em><b>Component Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -105,6 +109,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	String getComponentType();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getComponentType <em>Component Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -114,6 +119,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	void setComponentType(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Component Features</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -130,6 +136,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	ComponentFeatures getComponentFeatures();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getComponentFeatures <em>Component Features</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -139,6 +146,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	void setComponentFeatures(ComponentFeatures value);
+
 	/**
 	 * Returns the value of the '<em><b>Interfaces</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -155,6 +163,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	Interfaces getInterfaces();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getInterfaces <em>Interfaces</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -164,6 +173,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	void setInterfaces(Interfaces value);
+
 	/**
 	 * Returns the value of the '<em><b>Property File</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -180,6 +190,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	PropertyFile getPropertyFile();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getPropertyFile <em>Property File</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -189,6 +200,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	void setPropertyFile(PropertyFile value);
+
 	/**
 	 * Returns the value of the '<em><b>Rep Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -204,6 +216,7 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	String getRepId();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getRepId <em>Rep Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -213,13 +226,16 @@ public interface SoftwareComponent extends EObject {
 	 * @generated
 	 */
 	void setRepId(String value);
+
 	public static final String EOBJECT_PATH = "/";
+
 	public static class Util {
 
 		// END GENERATED CODE
 		private Util() {
-			
+
 		}
+
 		public static SoftwareComponent getSoftwareComponent(Resource resource) {
 			if (resource == null) {
 				return null;
@@ -233,7 +249,7 @@ public interface SoftwareComponent extends EObject {
 				throw new IllegalArgumentException(resource + " is not a valid scd resource.");
 			}
 		}
-		
+
 		public static String getFileSystem(SoftwareComponent scd) {
 			switch (getWellKnownComponentType(scd)) {
 			case DEVICE:
@@ -248,7 +264,7 @@ public interface SoftwareComponent extends EObject {
 				return ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM;
 			}
 		}
-		
+
 		/**
 		 * Parses the component type of the SCD into an enumerated well known type. Will never return null.
 		 * @param scd the component to get the type for

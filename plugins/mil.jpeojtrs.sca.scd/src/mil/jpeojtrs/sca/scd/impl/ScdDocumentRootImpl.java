@@ -100,8 +100,7 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public FeatureMap getMixed() {
-		if (mixed == null)
-		{
+		if (mixed == null) {
 			mixed = new BasicFeatureMap(this, ScdPackage.SCD_DOCUMENT_ROOT__MIXED);
 		}
 		return mixed;
@@ -114,9 +113,9 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
-		if (xMLNSPrefixMap == null)
-		{
-			xMLNSPrefixMap = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+		if (xMLNSPrefixMap == null) {
+			xMLNSPrefixMap = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
 		}
 		return xMLNSPrefixMap;
 	}
@@ -128,9 +127,9 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public EMap<String, String> getXSISchemaLocation() {
-		if (xSISchemaLocation == null)
-		{
-			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+		if (xSISchemaLocation == null) {
+			xSISchemaLocation = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
 	}
@@ -142,7 +141,7 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public SoftwareComponent getSoftwarecomponent() {
-		return (SoftwareComponent)getMixed().get(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT, true);
+		return (SoftwareComponent) getMixed().get(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT, true);
 	}
 
 	/**
@@ -151,7 +150,7 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 * @generated
 	 */
 	public NotificationChain basicSetSoftwarecomponent(SoftwareComponent newSoftwarecomponent, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT, newSoftwarecomponent, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT, newSoftwarecomponent, msgs);
 	}
 
 	/**
@@ -161,7 +160,7 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public void setSoftwarecomponent(SoftwareComponent newSoftwarecomponent) {
-		((FeatureMap.Internal)getMixed()).set(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT, newSoftwarecomponent);
+		((FeatureMap.Internal) getMixed()).set(ScdPackage.Literals.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT, newSoftwarecomponent);
 	}
 
 	/**
@@ -171,16 +170,15 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case ScdPackage.SCD_DOCUMENT_ROOT__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
-			case ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return ((InternalEList<?>)getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
-			case ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return ((InternalEList<?>)getXSISchemaLocation()).basicRemove(otherEnd, msgs);
-			case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
-				return basicSetSoftwarecomponent(null, msgs);
+		switch (featureID) {
+		case ScdPackage.SCD_DOCUMENT_ROOT__MIXED:
+			return ((InternalEList< ? >) getMixed()).basicRemove(otherEnd, msgs);
+		case ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return ((InternalEList< ? >) getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
+		case ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return ((InternalEList< ? >) getXSISchemaLocation()).basicRemove(otherEnd, msgs);
+		case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
+			return basicSetSoftwarecomponent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -192,19 +190,23 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.SCD_DOCUMENT_ROOT__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
-			case ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				if (coreType) return getXMLNSPrefixMap();
-				else return getXMLNSPrefixMap().map();
-			case ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				if (coreType) return getXSISchemaLocation();
-				else return getXSISchemaLocation().map();
-			case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
-				return getSoftwarecomponent();
+		switch (featureID) {
+		case ScdPackage.SCD_DOCUMENT_ROOT__MIXED:
+			if (coreType)
+				return getMixed();
+			return ((FeatureMap.Internal) getMixed()).getWrapper();
+		case ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			if (coreType)
+				return getXMLNSPrefixMap();
+			else
+				return getXMLNSPrefixMap().map();
+		case ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			if (coreType)
+				return getXSISchemaLocation();
+			else
+				return getXSISchemaLocation().map();
+		case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
+			return getSoftwarecomponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,20 +218,19 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.SCD_DOCUMENT_ROOT__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
-				return;
-			case ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				((EStructuralFeature.Setting)getXMLNSPrefixMap()).set(newValue);
-				return;
-			case ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				((EStructuralFeature.Setting)getXSISchemaLocation()).set(newValue);
-				return;
-			case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
-				setSoftwarecomponent((SoftwareComponent)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.SCD_DOCUMENT_ROOT__MIXED:
+			((FeatureMap.Internal) getMixed()).set(newValue);
+			return;
+		case ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			((EStructuralFeature.Setting) getXMLNSPrefixMap()).set(newValue);
+			return;
+		case ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			((EStructuralFeature.Setting) getXSISchemaLocation()).set(newValue);
+			return;
+		case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
+			setSoftwarecomponent((SoftwareComponent) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -241,20 +242,19 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.SCD_DOCUMENT_ROOT__MIXED:
-				getMixed().clear();
-				return;
-			case ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				getXMLNSPrefixMap().clear();
-				return;
-			case ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				getXSISchemaLocation().clear();
-				return;
-			case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
-				setSoftwarecomponent((SoftwareComponent)null);
-				return;
+		switch (featureID) {
+		case ScdPackage.SCD_DOCUMENT_ROOT__MIXED:
+			getMixed().clear();
+			return;
+		case ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			getXMLNSPrefixMap().clear();
+			return;
+		case ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			getXSISchemaLocation().clear();
+			return;
+		case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
+			setSoftwarecomponent((SoftwareComponent) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,16 +266,15 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.SCD_DOCUMENT_ROOT__MIXED:
-				return mixed != null && !mixed.isEmpty();
-			case ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
-			case ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
-			case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
-				return getSoftwarecomponent() != null;
+		switch (featureID) {
+		case ScdPackage.SCD_DOCUMENT_ROOT__MIXED:
+			return mixed != null && !mixed.isEmpty();
+		case ScdPackage.SCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
+		case ScdPackage.SCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
+		case ScdPackage.SCD_DOCUMENT_ROOT__SOFTWARECOMPONENT:
+			return getSoftwarecomponent() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -287,7 +286,8 @@ public class ScdDocumentRootImpl extends EObjectImpl implements ScdDocumentRoot 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");

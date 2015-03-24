@@ -44,6 +44,7 @@ public class InheritsInterfaceTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected InheritsInterface fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

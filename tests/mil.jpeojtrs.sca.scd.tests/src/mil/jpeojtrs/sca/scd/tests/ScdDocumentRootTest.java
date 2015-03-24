@@ -43,6 +43,7 @@ public class ScdDocumentRootTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected ScdDocumentRoot fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

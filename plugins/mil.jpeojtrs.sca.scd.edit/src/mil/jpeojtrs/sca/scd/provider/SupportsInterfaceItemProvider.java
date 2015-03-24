@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -39,10 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SupportsInterfaceItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class SupportsInterfaceItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -62,8 +59,7 @@ public class SupportsInterfaceItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addRepIdPropertyDescriptor(object);
@@ -79,19 +75,10 @@ public class SupportsInterfaceItemProvider
 	 * @generated
 	 */
 	protected void addRepIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SupportsInterface_repId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SupportsInterface_repId_feature", "_UI_SupportsInterface_type"),
-				 ScdPackage.Literals.SUPPORTS_INTERFACE__REP_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SupportsInterface_repId_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SupportsInterface_repId_feature", "_UI_SupportsInterface_type"),
+			ScdPackage.Literals.SUPPORTS_INTERFACE__REP_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -101,19 +88,10 @@ public class SupportsInterfaceItemProvider
 	 * @generated
 	 */
 	protected void addSupportsNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SupportsInterface_supportsName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SupportsInterface_supportsName_feature", "_UI_SupportsInterface_type"),
-				 ScdPackage.Literals.SUPPORTS_INTERFACE__SUPPORTS_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SupportsInterface_supportsName_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SupportsInterface_supportsName_feature", "_UI_SupportsInterface_type"),
+			ScdPackage.Literals.SUPPORTS_INTERFACE__SUPPORTS_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -135,10 +113,8 @@ public class SupportsInterfaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SupportsInterface)object).getSupportsName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_SupportsInterface_type") :
-			getString("_UI_SupportsInterface_type") + " " + label;
+		String label = ((SupportsInterface) object).getSupportsName();
+		return label == null || label.length() == 0 ? getString("_UI_SupportsInterface_type") : getString("_UI_SupportsInterface_type") + " " + label;
 	}
 
 	/**
@@ -152,13 +128,12 @@ public class SupportsInterfaceItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SupportsInterface.class))
-		{
-			case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
-			case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
-			case ScdPackage.SUPPORTS_INTERFACE__ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(SupportsInterface.class)) {
+		case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
+		case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
+		case ScdPackage.SUPPORTS_INTERFACE__ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

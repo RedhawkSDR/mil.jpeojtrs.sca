@@ -92,7 +92,7 @@ public class ScdValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return ScdPackage.eINSTANCE;
+		return ScdPackage.eINSTANCE;
 	}
 
 	/**
@@ -103,46 +103,45 @@ public class ScdValidator extends EObjectValidator {
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID)
-		{
-			case ScdPackage.COMPONENT_FEATURES:
-				return validateComponentFeatures((ComponentFeatures)value, diagnostics, context);
-			case ScdPackage.COMPONENT_REP_ID:
-				return validateComponentRepId((ComponentRepId)value, diagnostics, context);
-			case ScdPackage.INHERITS_INTERFACE:
-				return validateInheritsInterface((InheritsInterface)value, diagnostics, context);
-			case ScdPackage.INTERFACE:
-				return validateInterface((Interface)value, diagnostics, context);
-			case ScdPackage.INTERFACES:
-				return validateInterfaces((Interfaces)value, diagnostics, context);
-			case ScdPackage.LOCAL_FILE:
-				return validateLocalFile((LocalFile)value, diagnostics, context);
-			case ScdPackage.PORTS:
-				return validatePorts((Ports)value, diagnostics, context);
-			case ScdPackage.PORT_TYPE_CONTAINER:
-				return validatePortTypeContainer((PortTypeContainer)value, diagnostics, context);
-			case ScdPackage.PROPERTY_FILE:
-				return validatePropertyFile((PropertyFile)value, diagnostics, context);
-			case ScdPackage.PROVIDES:
-				return validateProvides((Provides)value, diagnostics, context);
-			case ScdPackage.ABSTRACT_PORT:
-				return validateAbstractPort((AbstractPort)value, diagnostics, context);
-			case ScdPackage.SCD_DOCUMENT_ROOT:
-				return validateScdDocumentRoot((ScdDocumentRoot)value, diagnostics, context);
-			case ScdPackage.SOFTWARE_COMPONENT:
-				return validateSoftwareComponent((SoftwareComponent)value, diagnostics, context);
-			case ScdPackage.SUPPORTS_INTERFACE:
-				return validateSupportsInterface((SupportsInterface)value, diagnostics, context);
-			case ScdPackage.USES:
-				return validateUses((Uses)value, diagnostics, context);
-			case ScdPackage.PORT_TYPE:
-				return validatePortType((PortType)value, diagnostics, context);
-			case ScdPackage.COMPONENT_TYPE:
-				return validateComponentType((ComponentType)value, diagnostics, context);
-			case ScdPackage.PORT_TYPE_OBJECT:
-				return validatePortTypeObject((PortType)value, diagnostics, context);
-			default:
-				return true;
+		switch (classifierID) {
+		case ScdPackage.COMPONENT_FEATURES:
+			return validateComponentFeatures((ComponentFeatures) value, diagnostics, context);
+		case ScdPackage.COMPONENT_REP_ID:
+			return validateComponentRepId((ComponentRepId) value, diagnostics, context);
+		case ScdPackage.INHERITS_INTERFACE:
+			return validateInheritsInterface((InheritsInterface) value, diagnostics, context);
+		case ScdPackage.INTERFACE:
+			return validateInterface((Interface) value, diagnostics, context);
+		case ScdPackage.INTERFACES:
+			return validateInterfaces((Interfaces) value, diagnostics, context);
+		case ScdPackage.LOCAL_FILE:
+			return validateLocalFile((LocalFile) value, diagnostics, context);
+		case ScdPackage.PORTS:
+			return validatePorts((Ports) value, diagnostics, context);
+		case ScdPackage.PORT_TYPE_CONTAINER:
+			return validatePortTypeContainer((PortTypeContainer) value, diagnostics, context);
+		case ScdPackage.PROPERTY_FILE:
+			return validatePropertyFile((PropertyFile) value, diagnostics, context);
+		case ScdPackage.PROVIDES:
+			return validateProvides((Provides) value, diagnostics, context);
+		case ScdPackage.ABSTRACT_PORT:
+			return validateAbstractPort((AbstractPort) value, diagnostics, context);
+		case ScdPackage.SCD_DOCUMENT_ROOT:
+			return validateScdDocumentRoot((ScdDocumentRoot) value, diagnostics, context);
+		case ScdPackage.SOFTWARE_COMPONENT:
+			return validateSoftwareComponent((SoftwareComponent) value, diagnostics, context);
+		case ScdPackage.SUPPORTS_INTERFACE:
+			return validateSupportsInterface((SupportsInterface) value, diagnostics, context);
+		case ScdPackage.USES:
+			return validateUses((Uses) value, diagnostics, context);
+		case ScdPackage.PORT_TYPE:
+			return validatePortType((PortType) value, diagnostics, context);
+		case ScdPackage.COMPONENT_TYPE:
+			return validateComponentType((ComponentType) value, diagnostics, context);
+		case ScdPackage.PORT_TYPE_OBJECT:
+			return validatePortTypeObject((PortType) value, diagnostics, context);
+		default:
+			return true;
 		}
 	}
 
@@ -296,7 +295,7 @@ public class ScdValidator extends EObjectValidator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
-	 */ 
+	 */
 	public boolean validatePortType_isValueConsistent(PortType portType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO implement the constraint
 		// -> specify the condition that violates the constraint

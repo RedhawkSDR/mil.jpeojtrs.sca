@@ -38,6 +38,7 @@ public class PortTypeContainerTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected PortTypeContainer fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

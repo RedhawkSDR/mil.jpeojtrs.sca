@@ -115,8 +115,7 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public EList<InheritsInterface> getInheritsInterfaces() {
-		if (inheritsInterfaces == null)
-		{
+		if (inheritsInterfaces == null) {
 			inheritsInterfaces = new EObjectContainmentEList<InheritsInterface>(InheritsInterface.class, this, ScdPackage.INTERFACE__INHERITS_INTERFACES);
 		}
 		return inheritsInterfaces;
@@ -200,10 +199,9 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
-				return ((InternalEList<?>)getInheritsInterfaces()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case ScdPackage.INTERFACE__INHERITS_INTERFACES:
+			return ((InternalEList< ? >) getInheritsInterfaces()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -215,14 +213,13 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
-				return getInheritsInterfaces();
-			case ScdPackage.INTERFACE__NAME:
-				return getName();
-			case ScdPackage.INTERFACE__REPID:
-				return getRepid();
+		switch (featureID) {
+		case ScdPackage.INTERFACE__INHERITS_INTERFACES:
+			return getInheritsInterfaces();
+		case ScdPackage.INTERFACE__NAME:
+			return getName();
+		case ScdPackage.INTERFACE__REPID:
+			return getRepid();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -235,18 +232,17 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
-				getInheritsInterfaces().clear();
-				getInheritsInterfaces().addAll((Collection<? extends InheritsInterface>)newValue);
-				return;
-			case ScdPackage.INTERFACE__NAME:
-				setName((String)newValue);
-				return;
-			case ScdPackage.INTERFACE__REPID:
-				setRepid((String)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.INTERFACE__INHERITS_INTERFACES:
+			getInheritsInterfaces().clear();
+			getInheritsInterfaces().addAll((Collection< ? extends InheritsInterface>) newValue);
+			return;
+		case ScdPackage.INTERFACE__NAME:
+			setName((String) newValue);
+			return;
+		case ScdPackage.INTERFACE__REPID:
+			setRepid((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -258,17 +254,16 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
-				getInheritsInterfaces().clear();
-				return;
-			case ScdPackage.INTERFACE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case ScdPackage.INTERFACE__REPID:
-				setRepid(REPID_EDEFAULT);
-				return;
+		switch (featureID) {
+		case ScdPackage.INTERFACE__INHERITS_INTERFACES:
+			getInheritsInterfaces().clear();
+			return;
+		case ScdPackage.INTERFACE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case ScdPackage.INTERFACE__REPID:
+			setRepid(REPID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -280,14 +275,13 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.INTERFACE__INHERITS_INTERFACES:
-				return inheritsInterfaces != null && !inheritsInterfaces.isEmpty();
-			case ScdPackage.INTERFACE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ScdPackage.INTERFACE__REPID:
-				return REPID_EDEFAULT == null ? repid != null : !REPID_EDEFAULT.equals(repid);
+		switch (featureID) {
+		case ScdPackage.INTERFACE__INHERITS_INTERFACES:
+			return inheritsInterfaces != null && !inheritsInterfaces.isEmpty();
+		case ScdPackage.INTERFACE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case ScdPackage.INTERFACE__REPID:
+			return REPID_EDEFAULT == null ? repid != null : !REPID_EDEFAULT.equals(repid);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -299,7 +293,8 @@ public class InterfaceImpl extends EObjectImpl implements Interface {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

@@ -45,6 +45,7 @@ public class SupportsInterfaceTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected SupportsInterface fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

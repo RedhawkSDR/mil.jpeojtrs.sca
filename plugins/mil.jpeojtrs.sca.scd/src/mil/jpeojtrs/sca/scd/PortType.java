@@ -26,8 +26,7 @@ import org.eclipse.emf.common.util.Enumerator;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='isValueConsistent'"
  * @generated
  */
-public enum PortType implements Enumerator
-{
+public enum PortType implements Enumerator {
 	/**
 	 * The '<em><b>Data</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -36,7 +35,8 @@ public enum PortType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-	DATA(0, "data", "data"), /**
+	DATA(0, "data", "data"),
+	/**
 	 * The '<em><b>Responses</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -44,7 +44,8 @@ public enum PortType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-	RESPONSES(1, "responses", "responses"), /**
+	RESPONSES(1, "responses", "responses"),
+	/**
 	 * The '<em><b>Control</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52,7 +53,8 @@ public enum PortType implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-	CONTROL(2, "control", "control"), /**
+	CONTROL(2, "control", "control"),
+	/**
 	 * The '<em><b>Test</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,7 +64,7 @@ public enum PortType implements Enumerator
 	 */
 	TEST(3, "test", "test");
 
-/**
+	/**
 	 * The '<em><b>Data</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -76,7 +78,7 @@ public enum PortType implements Enumerator
 	 * @ordered
 	 */
 	public static final int DATA_VALUE = 0;
-/**
+	/**
 	 * The '<em><b>Responses</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -90,7 +92,7 @@ public enum PortType implements Enumerator
 	 * @ordered
 	 */
 	public static final int RESPONSES_VALUE = 1;
-/**
+	/**
 	 * The '<em><b>Control</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -104,7 +106,7 @@ public enum PortType implements Enumerator
 	 * @ordered
 	 */
 	public static final int CONTROL_VALUE = 2;
-/**
+	/**
 	 * The '<em><b>Test</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -118,7 +120,7 @@ public enum PortType implements Enumerator
 	 * @ordered
 	 */
 	public static final int TEST_VALUE = 3;
-/**
+	/**
 	 * An array of all the '<em><b>Port Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -140,79 +142,78 @@ public enum PortType implements Enumerator
 	 */
 	public static final List<PortType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
-/**
+	/**
 	 * Returns the '<em><b>Port Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static PortType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			PortType result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal))
-			{
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Port Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static PortType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			PortType result = VALUES_ARRAY[i];
-			if (result.getName().equals(name))
-			{
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * Returns the '<em><b>Port Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static PortType get(int value) {
-		switch (value)
-		{
-			case DATA_VALUE: return DATA;
-			case RESPONSES_VALUE: return RESPONSES;
-			case CONTROL_VALUE: return CONTROL;
-			case TEST_VALUE: return TEST;
+		switch (value) {
+		case DATA_VALUE:
+			return DATA;
+		case RESPONSES_VALUE:
+			return RESPONSES;
+		case CONTROL_VALUE:
+			return CONTROL;
+		case TEST_VALUE:
+			return TEST;
 		}
 		return null;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final int value;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String name;
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String literal;
 
-/**
+	/**
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -224,37 +225,37 @@ public enum PortType implements Enumerator
 		this.literal = literal;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
-/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
-/**
+	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

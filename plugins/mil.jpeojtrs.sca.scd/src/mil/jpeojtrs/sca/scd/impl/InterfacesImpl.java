@@ -76,8 +76,7 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 */
 	@Override
 	public EList<Interface> getInterface() {
-		if (interface_ == null)
-		{
+		if (interface_ == null) {
 			interface_ = new EObjectContainmentEList<Interface>(Interface.class, this, ScdPackage.INTERFACES__INTERFACE);
 		}
 		return interface_;
@@ -90,10 +89,9 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case ScdPackage.INTERFACES__INTERFACE:
-				return ((InternalEList<?>)getInterface()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case ScdPackage.INTERFACES__INTERFACE:
+			return ((InternalEList< ? >) getInterface()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -105,10 +103,9 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.INTERFACES__INTERFACE:
-				return getInterface();
+		switch (featureID) {
+		case ScdPackage.INTERFACES__INTERFACE:
+			return getInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,12 +118,11 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.INTERFACES__INTERFACE:
-				getInterface().clear();
-				getInterface().addAll((Collection<? extends Interface>)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.INTERFACES__INTERFACE:
+			getInterface().clear();
+			getInterface().addAll((Collection< ? extends Interface>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -138,11 +134,10 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.INTERFACES__INTERFACE:
-				getInterface().clear();
-				return;
+		switch (featureID) {
+		case ScdPackage.INTERFACES__INTERFACE:
+			getInterface().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,10 +149,9 @@ public class InterfacesImpl extends EObjectImpl implements Interfaces {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.INTERFACES__INTERFACE:
-				return interface_ != null && !interface_.isEmpty();
+		switch (featureID) {
+		case ScdPackage.INTERFACES__INTERFACE:
+			return interface_ != null && !interface_.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

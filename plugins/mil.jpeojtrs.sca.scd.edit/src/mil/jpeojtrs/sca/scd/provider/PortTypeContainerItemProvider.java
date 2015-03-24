@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -40,10 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PortTypeContainerItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class PortTypeContainerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -63,8 +60,7 @@ public class PortTypeContainerItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
@@ -79,19 +75,10 @@ public class PortTypeContainerItemProvider
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PortTypeContainer_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortTypeContainer_type_feature", "_UI_PortTypeContainer_type"),
-				 ScdPackage.Literals.PORT_TYPE_CONTAINER__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_PortTypeContainer_type_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_PortTypeContainer_type_feature", "_UI_PortTypeContainer_type"),
+			ScdPackage.Literals.PORT_TYPE_CONTAINER__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -113,11 +100,9 @@ public class PortTypeContainerItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		PortType labelValue = ((PortTypeContainer)object).getType();
+		PortType labelValue = ((PortTypeContainer) object).getType();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_PortTypeContainer_type") :
-			getString("_UI_PortTypeContainer_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_PortTypeContainer_type") : getString("_UI_PortTypeContainer_type") + " " + label;
 	}
 
 	/**
@@ -131,11 +116,10 @@ public class PortTypeContainerItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PortTypeContainer.class))
-		{
-			case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(PortTypeContainer.class)) {
+		case ScdPackage.PORT_TYPE_CONTAINER__TYPE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

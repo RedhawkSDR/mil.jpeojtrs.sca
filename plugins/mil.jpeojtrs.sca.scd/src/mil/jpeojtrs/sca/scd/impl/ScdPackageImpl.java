@@ -199,10 +199,12 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * @generated
 	 */
 	public static ScdPackage initGen() {
-		if (isInited) return (ScdPackage)EPackage.Registry.INSTANCE.getEPackage(ScdPackage.eNS_URI);
+		if (isInited)
+			return (ScdPackage) EPackage.Registry.INSTANCE.getEPackage(ScdPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ScdPackageImpl theScdPackage = (ScdPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ScdPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ScdPackageImpl());
+		ScdPackageImpl theScdPackage = (ScdPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ScdPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+			: new ScdPackageImpl());
 
 		isInited = true;
 
@@ -217,21 +219,15 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		theScdPackage.initializePackageContents();
 
 		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theScdPackage, 
-			 new EValidator.Descriptor()
-			 {
-				 @Override
-				public EValidator getEValidator()
-				 {
-					 return ScdValidator.INSTANCE;
-				 }
-			 });
+		EValidator.Registry.INSTANCE.put(theScdPackage, new EValidator.Descriptor() {
+			public EValidator getEValidator() {
+				return ScdValidator.INSTANCE;
+			}
+		});
 
 		// Mark meta-data to indicate it can't be changed
 		theScdPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ScdPackage.eNS_URI, theScdPackage);
 		return theScdPackage;
@@ -243,6 +239,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			AdvancedEObjectValidator validator = new AdvancedEObjectValidator(ScdValidator.INSTANCE);
+
 			@Override
 			public EValidator getEValidator() {
 				return this.validator;
@@ -269,7 +266,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getComponentFeatures_SupportsInterface() {
-		return (EReference)componentFeaturesEClass.getEStructuralFeatures().get(0);
+		return (EReference) componentFeaturesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -279,7 +276,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getComponentFeatures_Ports() {
-		return (EReference)componentFeaturesEClass.getEStructuralFeatures().get(1);
+		return (EReference) componentFeaturesEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -299,7 +296,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getComponentRepId_Repid() {
-		return (EAttribute)componentRepIdEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) componentRepIdEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -309,7 +306,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getComponentRepId_Interface() {
-		return (EReference)componentRepIdEClass.getEStructuralFeatures().get(1);
+		return (EReference) componentRepIdEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -329,7 +326,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getInheritsInterface_Repid() {
-		return (EAttribute)inheritsInterfaceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) inheritsInterfaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -339,7 +336,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getInheritsInterface_Interface() {
-		return (EReference)inheritsInterfaceEClass.getEStructuralFeatures().get(1);
+		return (EReference) inheritsInterfaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -359,7 +356,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getInterface_InheritsInterfaces() {
-		return (EReference)interfaceEClass.getEStructuralFeatures().get(0);
+		return (EReference) interfaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -369,7 +366,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getInterface_Name() {
-		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) interfaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -379,7 +376,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getInterface_Repid() {
-		return (EAttribute)interfaceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) interfaceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -399,7 +396,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getInterfaces_Interface() {
-		return (EReference)interfacesEClass.getEStructuralFeatures().get(0);
+		return (EReference) interfacesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -419,7 +416,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getLocalFile_Name() {
-		return (EAttribute)localFileEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) localFileEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -439,7 +436,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getPorts_Group() {
-		return (EAttribute)portsEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) portsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -449,7 +446,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getPorts_Provides() {
-		return (EReference)portsEClass.getEStructuralFeatures().get(1);
+		return (EReference) portsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -459,7 +456,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getPorts_Uses() {
-		return (EReference)portsEClass.getEStructuralFeatures().get(2);
+		return (EReference) portsEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -479,7 +476,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getPortTypeContainer_Type() {
-		return (EAttribute)portTypeContainerEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) portTypeContainerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -499,7 +496,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getPropertyFile_LocalFile() {
-		return (EReference)propertyFileEClass.getEStructuralFeatures().get(0);
+		return (EReference) propertyFileEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -509,7 +506,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getPropertyFile_Type() {
-		return (EAttribute)propertyFileEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) propertyFileEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -519,7 +516,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getPropertyFile_Properties() {
-		return (EReference)propertyFileEClass.getEStructuralFeatures().get(2);
+		return (EReference) propertyFileEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -539,7 +536,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getProvides_ProvidesName() {
-		return (EAttribute)providesEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) providesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -559,7 +556,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getAbstractPort_PortType() {
-		return (EReference)abstractPortEClass.getEStructuralFeatures().get(0);
+		return (EReference) abstractPortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -569,7 +566,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getAbstractPort_Name() {
-		return (EAttribute)abstractPortEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) abstractPortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -579,7 +576,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getAbstractPort_RepID() {
-		return (EAttribute)abstractPortEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) abstractPortEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -589,7 +586,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getAbstractPort_Interface() {
-		return (EReference)abstractPortEClass.getEStructuralFeatures().get(3);
+		return (EReference) abstractPortEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -609,7 +606,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getScdDocumentRoot_Mixed() {
-		return (EAttribute)scdDocumentRootEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) scdDocumentRootEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -619,7 +616,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getScdDocumentRoot_XMLNSPrefixMap() {
-		return (EReference)scdDocumentRootEClass.getEStructuralFeatures().get(1);
+		return (EReference) scdDocumentRootEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -629,7 +626,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getScdDocumentRoot_XSISchemaLocation() {
-		return (EReference)scdDocumentRootEClass.getEStructuralFeatures().get(2);
+		return (EReference) scdDocumentRootEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -639,7 +636,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getScdDocumentRoot_Softwarecomponent() {
-		return (EReference)scdDocumentRootEClass.getEStructuralFeatures().get(3);
+		return (EReference) scdDocumentRootEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -659,7 +656,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getSoftwareComponent_CorbaVersion() {
-		return (EAttribute)softwareComponentEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) softwareComponentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -669,7 +666,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getSoftwareComponent_ComponentRepID() {
-		return (EReference)softwareComponentEClass.getEStructuralFeatures().get(1);
+		return (EReference) softwareComponentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -679,7 +676,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getSoftwareComponent_ComponentType() {
-		return (EAttribute)softwareComponentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) softwareComponentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -689,7 +686,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getSoftwareComponent_ComponentFeatures() {
-		return (EReference)softwareComponentEClass.getEStructuralFeatures().get(3);
+		return (EReference) softwareComponentEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -699,7 +696,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getSoftwareComponent_Interfaces() {
-		return (EReference)softwareComponentEClass.getEStructuralFeatures().get(4);
+		return (EReference) softwareComponentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -709,7 +706,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getSoftwareComponent_PropertyFile() {
-		return (EReference)softwareComponentEClass.getEStructuralFeatures().get(5);
+		return (EReference) softwareComponentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -719,7 +716,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getSoftwareComponent_RepId() {
-		return (EAttribute)softwareComponentEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) softwareComponentEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -739,7 +736,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getSupportsInterface_RepId() {
-		return (EAttribute)supportsInterfaceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) supportsInterfaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -749,7 +746,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getSupportsInterface_SupportsName() {
-		return (EAttribute)supportsInterfaceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) supportsInterfaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -759,7 +756,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getSupportsInterface_Id() {
-		return (EAttribute)supportsInterfaceEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) supportsInterfaceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -769,7 +766,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EReference getSupportsInterface_Interface() {
-		return (EReference)supportsInterfaceEClass.getEStructuralFeatures().get(3);
+		return (EReference) supportsInterfaceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -789,7 +786,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public EAttribute getUses_UsesName() {
-		return (EAttribute)usesEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) usesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -829,7 +826,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 */
 	@Override
 	public ScdFactory getScdFactory() {
-		return (ScdFactory)getEFactoryInstance();
+		return (ScdFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -847,7 +844,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -943,7 +941,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -952,9 +951,9 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		PrfPackage thePrfPackage = (PrfPackage)EPackage.Registry.INSTANCE.getEPackage(PrfPackage.eNS_URI);
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		PrfPackage thePrfPackage = (PrfPackage) EPackage.Registry.INSTANCE.getEPackage(PrfPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -966,80 +965,119 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentFeaturesEClass, ComponentFeatures.class, "ComponentFeatures", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponentFeatures_SupportsInterface(), this.getSupportsInterface(), null, "supportsInterface", null, 0, -1, ComponentFeatures.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentFeatures_Ports(), this.getPorts(), null, "ports", null, 1, 1, ComponentFeatures.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentFeatures_SupportsInterface(), this.getSupportsInterface(), null, "supportsInterface", null, 0, -1, ComponentFeatures.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentFeatures_Ports(), this.getPorts(), null, "ports", null, 1, 1, ComponentFeatures.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentRepIdEClass, ComponentRepId.class, "ComponentRepId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentRepId_Repid(), theXMLTypePackage.getString(), "repid", null, 1, 1, ComponentRepId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentRepId_Interface(), this.getInterface(), null, "interface", null, 0, 1, ComponentRepId.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentRepId_Repid(), theXMLTypePackage.getString(), "repid", null, 1, 1, ComponentRepId.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentRepId_Interface(), this.getInterface(), null, "interface", null, 0, 1, ComponentRepId.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(inheritsInterfaceEClass, InheritsInterface.class, "InheritsInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInheritsInterface_Repid(), theXMLTypePackage.getString(), "repid", null, 1, 1, InheritsInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInheritsInterface_Interface(), this.getInterface(), null, "interface", null, 0, 1, InheritsInterface.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInheritsInterface_Repid(), theXMLTypePackage.getString(), "repid", null, 1, 1, InheritsInterface.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInheritsInterface_Interface(), this.getInterface(), null, "interface", null, 0, 1, InheritsInterface.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInterface_InheritsInterfaces(), this.getInheritsInterface(), null, "inheritsInterfaces", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInterface_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInterface_Repid(), theXMLTypePackage.getString(), "repid", null, 1, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_InheritsInterfaces(), this.getInheritsInterface(), null, "inheritsInterfaces", null, 0, -1, Interface.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterface_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInterface_Repid(), theXMLTypePackage.getString(), "repid", null, 1, 1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(interfaceEClass, theEcorePackage.getEBoolean(), "isInstance", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getInterface(), "obj", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(interfacesEClass, Interfaces.class, "Interfaces", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInterfaces_Interface(), this.getInterface(), null, "interface", null, 1, -1, Interfaces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInterfaces_Interface(), this.getInterface(), null, "interface", null, 1, -1, Interfaces.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(localFileEClass, LocalFile.class, "LocalFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLocalFile_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, LocalFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocalFile_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, LocalFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portsEClass, Ports.class, "Ports", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPorts_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, Ports.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPorts_Provides(), this.getProvides(), null, "provides", null, 0, -1, Ports.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getPorts_Uses(), this.getUses(), null, "uses", null, 0, -1, Ports.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPorts_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, Ports.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPorts_Provides(), this.getProvides(), null, "provides", null, 0, -1, Ports.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPorts_Uses(), this.getUses(), null, "uses", null, 0, -1, Ports.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+			!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(portTypeContainerEClass, PortTypeContainer.class, "PortTypeContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPortTypeContainer_Type(), this.getPortType(), "type", "control", 1, 1, PortTypeContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortTypeContainer_Type(), this.getPortType(), "type", "control", 1, 1, PortTypeContainer.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyFileEClass, PropertyFile.class, "PropertyFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPropertyFile_LocalFile(), this.getLocalFile(), null, "localFile", null, 1, 1, PropertyFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPropertyFile_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, PropertyFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyFile_Properties(), thePrfPackage.getProperties(), null, "properties", null, 0, 1, PropertyFile.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyFile_LocalFile(), this.getLocalFile(), null, "localFile", null, 1, 1, PropertyFile.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyFile_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, PropertyFile.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyFile_Properties(), thePrfPackage.getProperties(), null, "properties", null, 0, 1, PropertyFile.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(providesEClass, Provides.class, "Provides", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProvides_ProvidesName(), theXMLTypePackage.getString(), "providesName", null, 1, 1, Provides.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProvides_ProvidesName(), theXMLTypePackage.getString(), "providesName", null, 1, 1, Provides.class, !IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractPortEClass, AbstractPort.class, "AbstractPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractPort_PortType(), this.getPortTypeContainer(), null, "portType", null, 0, -1, AbstractPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractPort_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, AbstractPort.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractPort_RepID(), theXMLTypePackage.getString(), "repID", null, 1, 1, AbstractPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractPort_Interface(), this.getInterface(), null, "interface", null, 0, 1, AbstractPort.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractPort_PortType(), this.getPortTypeContainer(), null, "portType", null, 0, -1, AbstractPort.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractPort_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, AbstractPort.class, IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractPort_RepID(), theXMLTypePackage.getString(), "repID", null, 1, 1, AbstractPort.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractPort_Interface(), this.getInterface(), null, "interface", null, 0, 1, AbstractPort.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(abstractPortEClass, theEcorePackage.getEBoolean(), "isBiDirectional", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(abstractPortEClass, this.getAbstractPort(), "getSibling", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(scdDocumentRootEClass, ScdDocumentRoot.class, "ScdDocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getScdDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScdDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScdDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScdDocumentRoot_Softwarecomponent(), this.getSoftwareComponent(), null, "softwarecomponent", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScdDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScdDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScdDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null,
+			IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScdDocumentRoot_Softwarecomponent(), this.getSoftwareComponent(), null, "softwarecomponent", null, 0, -2, null, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(softwareComponentEClass, SoftwareComponent.class, "SoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSoftwareComponent_CorbaVersion(), theXMLTypePackage.getString(), "corbaVersion", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSoftwareComponent_ComponentRepID(), this.getComponentRepId(), null, "componentRepID", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSoftwareComponent_ComponentType(), theXMLTypePackage.getString(), "componentType", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSoftwareComponent_ComponentFeatures(), this.getComponentFeatures(), null, "componentFeatures", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSoftwareComponent_Interfaces(), this.getInterfaces(), null, "interfaces", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSoftwareComponent_PropertyFile(), this.getPropertyFile(), null, "propertyFile", null, 0, 1, SoftwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSoftwareComponent_RepId(), theEcorePackage.getEString(), "repId", null, 0, 1, SoftwareComponent.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSoftwareComponent_CorbaVersion(), theXMLTypePackage.getString(), "corbaVersion", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSoftwareComponent_ComponentRepID(), this.getComponentRepId(), null, "componentRepID", null, 1, 1, SoftwareComponent.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSoftwareComponent_ComponentType(), theXMLTypePackage.getString(), "componentType", null, 1, 1, SoftwareComponent.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSoftwareComponent_ComponentFeatures(), this.getComponentFeatures(), null, "componentFeatures", null, 1, 1, SoftwareComponent.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSoftwareComponent_Interfaces(), this.getInterfaces(), null, "interfaces", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSoftwareComponent_PropertyFile(), this.getPropertyFile(), null, "propertyFile", null, 0, 1, SoftwareComponent.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSoftwareComponent_RepId(), theEcorePackage.getEString(), "repId", null, 0, 1, SoftwareComponent.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(supportsInterfaceEClass, SupportsInterface.class, "SupportsInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSupportsInterface_RepId(), theXMLTypePackage.getString(), "repId", null, 1, 1, SupportsInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSupportsInterface_SupportsName(), theXMLTypePackage.getString(), "supportsName", null, 1, 1, SupportsInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSupportsInterface_Id(), theEcorePackage.getEString(), "id", null, 0, 1, SupportsInterface.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getSupportsInterface_Interface(), this.getInterface(), null, "interface", null, 0, 1, SupportsInterface.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupportsInterface_RepId(), theXMLTypePackage.getString(), "repId", null, 1, 1, SupportsInterface.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupportsInterface_SupportsName(), theXMLTypePackage.getString(), "supportsName", null, 1, 1, SupportsInterface.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSupportsInterface_Id(), theEcorePackage.getEString(), "id", null, 0, 1, SupportsInterface.class, IS_TRANSIENT, IS_VOLATILE,
+			!IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getSupportsInterface_Interface(), this.getInterface(), null, "interface", null, 0, 1, SupportsInterface.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(usesEClass, Uses.class, "Uses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUses_UsesName(), theXMLTypePackage.getString(), "usesName", null, 1, 1, Uses.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUses_UsesName(), theXMLTypePackage.getString(), "usesName", null, 1, 1, Uses.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(portTypeEEnum, PortType.class, "PortType");
@@ -1082,399 +1120,61 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";		
-		addAnnotation
-		  (componentFeaturesEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "componentFeatures",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getComponentFeatures_SupportsInterface(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "supportsinterface",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (getComponentFeatures_Ports(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "ports",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (componentRepIdEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "componentRepId",
-			 "kind", "empty"
-		   });		
-		addAnnotation
-		  (getComponentRepId_Repid(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "repid"
-		   });		
-		addAnnotation
-		  (inheritsInterfaceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "inheritsInterface",
-			 "kind", "empty"
-		   });		
-		addAnnotation
-		  (getInheritsInterface_Repid(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "repid"
-		   });			
-		addAnnotation
-		  (interfaceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "interface",
-			 "kind", "elementOnly"
-		   });			
-		addAnnotation
-		  (getInterface_InheritsInterfaces(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "inheritsinterface",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (getInterface_Name(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "name"
-		   });			
-		addAnnotation
-		  (getInterface_Repid(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "repid"
-		   });			
-		addAnnotation
-		  (interfacesEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "interfaces",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getInterfaces_Interface(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "interface",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (localFileEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "localFile",
-			 "kind", "empty"
-		   });		
-		addAnnotation
-		  (getLocalFile_Name(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "name"
-		   });		
-		addAnnotation
-		  (portsEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "ports",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getPorts_Group(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "group",
-			 "name", "group:0"
-		   });		
-		addAnnotation
-		  (getPorts_Provides(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "provides",
-			 "namespace", "##targetNamespace",
-			 "group", "#group:0"
-		   });		
-		addAnnotation
-		  (getPorts_Uses(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "uses",
-			 "namespace", "##targetNamespace",
-			 "group", "#group:0"
-		   });		
-		addAnnotation
-		  (portTypeEEnum, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "type_._type"
-		   });			
-		addAnnotation
-		  (portTypeContainerEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "portType",
-			 "kind", "empty"
-		   });		
-		addAnnotation
-		  (getPortTypeContainer_Type(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "type"
-		   });		
-		addAnnotation
-		  (portTypeObjectEDataType, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "type_._type:Object",
-			 "baseType", "type_._type"
-		   });		
-		addAnnotation
-		  (propertyFileEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "propertyFile",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getPropertyFile_LocalFile(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "localfile",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (getPropertyFile_Type(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "type"
-		   });		
-		addAnnotation
-		  (providesEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "provides",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getProvides_ProvidesName(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "providesname"
-		   });		
-		addAnnotation
-		  (getAbstractPort_PortType(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "porttype",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (getAbstractPort_RepID(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "repid"
-		   });			
-		addAnnotation
-		  (scdDocumentRootEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "",
-			 "kind", "mixed"
-		   });		
-		addAnnotation
-		  (getScdDocumentRoot_Mixed(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementWildcard",
-			 "name", ":mixed"
-		   });		
-		addAnnotation
-		  (getScdDocumentRoot_XMLNSPrefixMap(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "xmlns:prefix"
-		   });		
-		addAnnotation
-		  (getScdDocumentRoot_XSISchemaLocation(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "xsi:schemaLocation"
-		   });		
-		addAnnotation
-		  (getScdDocumentRoot_Softwarecomponent(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "softwarecomponent",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (softwareComponentEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "softwareComponent",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getSoftwareComponent_CorbaVersion(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "corbaversion",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (getSoftwareComponent_ComponentRepID(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentrepid",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (getSoftwareComponent_ComponentType(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componenttype",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (getSoftwareComponent_ComponentFeatures(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentfeatures",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (getSoftwareComponent_Interfaces(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "interfaces",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (getSoftwareComponent_PropertyFile(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "propertyfile",
-			 "namespace", "##targetNamespace"
-		   });		
-		addAnnotation
-		  (supportsInterfaceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "supportsInterface",
-			 "kind", "empty"
-		   });		
-		addAnnotation
-		  (getSupportsInterface_RepId(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "repid"
-		   });			
-		addAnnotation
-		  (getSupportsInterface_SupportsName(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "supportsname"
-		   });		
-		addAnnotation
-		  (usesEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "uses",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getUses_UsesName(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "usesname"
-		   });
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation(componentFeaturesEClass, source, new String[] { "name", "componentFeatures", "kind", "elementOnly" });
+		addAnnotation(getComponentFeatures_SupportsInterface(), source, new String[] { "kind", "element", "name", "supportsinterface", "namespace",
+			"##targetNamespace" });
+		addAnnotation(getComponentFeatures_Ports(), source, new String[] { "kind", "element", "name", "ports", "namespace", "##targetNamespace" });
+		addAnnotation(componentRepIdEClass, source, new String[] { "name", "componentRepId", "kind", "empty" });
+		addAnnotation(getComponentRepId_Repid(), source, new String[] { "kind", "attribute", "name", "repid" });
+		addAnnotation(inheritsInterfaceEClass, source, new String[] { "name", "inheritsInterface", "kind", "empty" });
+		addAnnotation(getInheritsInterface_Repid(), source, new String[] { "kind", "attribute", "name", "repid" });
+		addAnnotation(interfaceEClass, source, new String[] { "name", "interface", "kind", "elementOnly" });
+		addAnnotation(getInterface_InheritsInterfaces(), source, new String[] { "kind", "element", "name", "inheritsinterface", "namespace",
+			"##targetNamespace" });
+		addAnnotation(getInterface_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(getInterface_Repid(), source, new String[] { "kind", "attribute", "name", "repid" });
+		addAnnotation(interfacesEClass, source, new String[] { "name", "interfaces", "kind", "elementOnly" });
+		addAnnotation(getInterfaces_Interface(), source, new String[] { "kind", "element", "name", "interface", "namespace", "##targetNamespace" });
+		addAnnotation(localFileEClass, source, new String[] { "name", "localFile", "kind", "empty" });
+		addAnnotation(getLocalFile_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(portsEClass, source, new String[] { "name", "ports", "kind", "elementOnly" });
+		addAnnotation(getPorts_Group(), source, new String[] { "kind", "group", "name", "group:0" });
+		addAnnotation(getPorts_Provides(), source,
+			new String[] { "kind", "element", "name", "provides", "namespace", "##targetNamespace", "group", "#group:0" });
+		addAnnotation(getPorts_Uses(), source, new String[] { "kind", "element", "name", "uses", "namespace", "##targetNamespace", "group", "#group:0" });
+		addAnnotation(portTypeEEnum, source, new String[] { "name", "type_._type" });
+		addAnnotation(portTypeContainerEClass, source, new String[] { "name", "portType", "kind", "empty" });
+		addAnnotation(getPortTypeContainer_Type(), source, new String[] { "kind", "attribute", "name", "type" });
+		addAnnotation(portTypeObjectEDataType, source, new String[] { "name", "type_._type:Object", "baseType", "type_._type" });
+		addAnnotation(propertyFileEClass, source, new String[] { "name", "propertyFile", "kind", "elementOnly" });
+		addAnnotation(getPropertyFile_LocalFile(), source, new String[] { "kind", "element", "name", "localfile", "namespace", "##targetNamespace" });
+		addAnnotation(getPropertyFile_Type(), source, new String[] { "kind", "attribute", "name", "type" });
+		addAnnotation(providesEClass, source, new String[] { "name", "provides", "kind", "elementOnly" });
+		addAnnotation(getProvides_ProvidesName(), source, new String[] { "kind", "attribute", "name", "providesname" });
+		addAnnotation(getAbstractPort_PortType(), source, new String[] { "kind", "element", "name", "porttype", "namespace", "##targetNamespace" });
+		addAnnotation(getAbstractPort_RepID(), source, new String[] { "kind", "attribute", "name", "repid" });
+		addAnnotation(scdDocumentRootEClass, source, new String[] { "name", "", "kind", "mixed" });
+		addAnnotation(getScdDocumentRoot_Mixed(), source, new String[] { "kind", "elementWildcard", "name", ":mixed" });
+		addAnnotation(getScdDocumentRoot_XMLNSPrefixMap(), source, new String[] { "kind", "attribute", "name", "xmlns:prefix" });
+		addAnnotation(getScdDocumentRoot_XSISchemaLocation(), source, new String[] { "kind", "attribute", "name", "xsi:schemaLocation" });
+		addAnnotation(getScdDocumentRoot_Softwarecomponent(), source, new String[] { "kind", "element", "name", "softwarecomponent", "namespace",
+			"##targetNamespace" });
+		addAnnotation(softwareComponentEClass, source, new String[] { "name", "softwareComponent", "kind", "elementOnly" });
+		addAnnotation(getSoftwareComponent_CorbaVersion(), source, new String[] { "kind", "element", "name", "corbaversion", "namespace", "##targetNamespace" });
+		addAnnotation(getSoftwareComponent_ComponentRepID(), source, new String[] { "kind", "element", "name", "componentrepid", "namespace",
+			"##targetNamespace" });
+		addAnnotation(getSoftwareComponent_ComponentType(), source,
+			new String[] { "kind", "element", "name", "componenttype", "namespace", "##targetNamespace" });
+		addAnnotation(getSoftwareComponent_ComponentFeatures(), source, new String[] { "kind", "element", "name", "componentfeatures", "namespace",
+			"##targetNamespace" });
+		addAnnotation(getSoftwareComponent_Interfaces(), source, new String[] { "kind", "element", "name", "interfaces", "namespace", "##targetNamespace" });
+		addAnnotation(getSoftwareComponent_PropertyFile(), source, new String[] { "kind", "element", "name", "propertyfile", "namespace", "##targetNamespace" });
+		addAnnotation(supportsInterfaceEClass, source, new String[] { "name", "supportsInterface", "kind", "empty" });
+		addAnnotation(getSupportsInterface_RepId(), source, new String[] { "kind", "attribute", "name", "repid" });
+		addAnnotation(getSupportsInterface_SupportsName(), source, new String[] { "kind", "attribute", "name", "supportsname" });
+		addAnnotation(usesEClass, source, new String[] { "name", "uses", "kind", "elementOnly" });
+		addAnnotation(getUses_UsesName(), source, new String[] { "kind", "attribute", "name", "usesname" });
 	}
 
 	/**
@@ -1484,14 +1184,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";																										
-		addAnnotation
-		  (portTypeEEnum, 
-		   source, 
-		   new String[] 
-		   {
-			 "constraints", "isValueConsistent"
-		   });																													
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation(portTypeEEnum, source, new String[] { "constraints", "isValueConsistent" });
 	}
 
 } // ScdPackageImpl

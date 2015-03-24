@@ -105,14 +105,16 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	public NotificationChain basicSetLocalFileGen(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.PROPERTY_FILE__LOCAL_FILE, oldLocalFile, newLocalFile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated NOT
@@ -122,7 +124,10 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 		msgs = basicSetLocalFileGen(newLocalFile, msgs);
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScdPackage.PROPERTY_FILE__PROPERTIES, oldValue, getProperties());
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -134,17 +139,16 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public void setLocalFile(LocalFile newLocalFile) {
-		if (newLocalFile != localFile)
-		{
+		if (newLocalFile != localFile) {
 			NotificationChain msgs = null;
 			if (localFile != null)
-				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.PROPERTY_FILE__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScdPackage.PROPERTY_FILE__LOCAL_FILE, null, msgs);
 			if (newLocalFile != null)
-				msgs = ((InternalEObject)newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.PROPERTY_FILE__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScdPackage.PROPERTY_FILE__LOCAL_FILE, null, msgs);
 			msgs = basicSetLocalFile(newLocalFile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.PROPERTY_FILE__LOCAL_FILE, newLocalFile, newLocalFile));
 	}
 
@@ -179,7 +183,7 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	@Override
 	public Properties getProperties() {
 		Properties properties = basicGetProperties();
-		return properties != null && properties.eIsProxy() ? (Properties)eResolveProxy((InternalEObject)properties) : properties;
+		return properties != null && properties.eIsProxy() ? (Properties) eResolveProxy((InternalEObject) properties) : properties;
 	}
 
 	/**
@@ -192,8 +196,8 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 		if (this.getLocalFile() == null) {
 			return null;
 		}
-		return (Properties) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, Properties.EOBJECT_PATH, 
-				SoftwareComponent.Util.getFileSystem(SoftwareComponent.Util.getSoftwareComponent(eResource())));
+		return (Properties) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, Properties.EOBJECT_PATH,
+			SoftwareComponent.Util.getFileSystem(SoftwareComponent.Util.getSoftwareComponent(eResource())));
 		// BEGIN GENERATED CODE
 	}
 
@@ -225,10 +229,9 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
-				return basicSetLocalFile(null, msgs);
+		switch (featureID) {
+		case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
+			return basicSetLocalFile(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -240,15 +243,15 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
-				return getLocalFile();
-			case ScdPackage.PROPERTY_FILE__TYPE:
-				return getType();
-			case ScdPackage.PROPERTY_FILE__PROPERTIES:
-				if (resolve) return getProperties();
-				return basicGetProperties();
+		switch (featureID) {
+		case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
+			return getLocalFile();
+		case ScdPackage.PROPERTY_FILE__TYPE:
+			return getType();
+		case ScdPackage.PROPERTY_FILE__PROPERTIES:
+			if (resolve)
+				return getProperties();
+			return basicGetProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,17 +263,16 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
-				setLocalFile((LocalFile)newValue);
-				return;
-			case ScdPackage.PROPERTY_FILE__TYPE:
-				setType((String)newValue);
-				return;
-			case ScdPackage.PROPERTY_FILE__PROPERTIES:
-				setProperties((Properties)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
+			setLocalFile((LocalFile) newValue);
+			return;
+		case ScdPackage.PROPERTY_FILE__TYPE:
+			setType((String) newValue);
+			return;
+		case ScdPackage.PROPERTY_FILE__PROPERTIES:
+			setProperties((Properties) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -282,17 +284,16 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
-				setLocalFile((LocalFile)null);
-				return;
-			case ScdPackage.PROPERTY_FILE__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
-			case ScdPackage.PROPERTY_FILE__PROPERTIES:
-				setProperties((Properties)null);
-				return;
+		switch (featureID) {
+		case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
+			setLocalFile((LocalFile) null);
+			return;
+		case ScdPackage.PROPERTY_FILE__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
+		case ScdPackage.PROPERTY_FILE__PROPERTIES:
+			setProperties((Properties) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -304,14 +305,13 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
-				return localFile != null;
-			case ScdPackage.PROPERTY_FILE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case ScdPackage.PROPERTY_FILE__PROPERTIES:
-				return basicGetProperties() != null;
+		switch (featureID) {
+		case ScdPackage.PROPERTY_FILE__LOCAL_FILE:
+			return localFile != null;
+		case ScdPackage.PROPERTY_FILE__TYPE:
+			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		case ScdPackage.PROPERTY_FILE__PROPERTIES:
+			return basicGetProperties() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -323,7 +323,8 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (type: ");

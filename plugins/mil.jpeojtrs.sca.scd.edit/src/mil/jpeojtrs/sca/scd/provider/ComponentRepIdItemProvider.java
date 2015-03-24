@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -39,10 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentRepIdItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class ComponentRepIdItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -62,8 +59,7 @@ public class ComponentRepIdItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addRepidPropertyDescriptor(object);
@@ -79,19 +75,10 @@ public class ComponentRepIdItemProvider
 	 * @generated
 	 */
 	protected void addRepidPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentRepId_repid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentRepId_repid_feature", "_UI_ComponentRepId_type"),
-				 ScdPackage.Literals.COMPONENT_REP_ID__REPID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentRepId_repid_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentRepId_repid_feature", "_UI_ComponentRepId_type"),
+			ScdPackage.Literals.COMPONENT_REP_ID__REPID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -101,19 +88,10 @@ public class ComponentRepIdItemProvider
 	 * @generated
 	 */
 	protected void addInterfacePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentRepId_interface_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentRepId_interface_feature", "_UI_ComponentRepId_type"),
-				 ScdPackage.Literals.COMPONENT_REP_ID__INTERFACE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentRepId_interface_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentRepId_interface_feature", "_UI_ComponentRepId_type"),
+			ScdPackage.Literals.COMPONENT_REP_ID__INTERFACE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -135,10 +113,8 @@ public class ComponentRepIdItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComponentRepId)object).getRepid();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ComponentRepId_type") :
-			getString("_UI_ComponentRepId_type") + " " + label;
+		String label = ((ComponentRepId) object).getRepid();
+		return label == null || label.length() == 0 ? getString("_UI_ComponentRepId_type") : getString("_UI_ComponentRepId_type") + " " + label;
 	}
 
 	/**
@@ -152,11 +128,10 @@ public class ComponentRepIdItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentRepId.class))
-		{
-			case ScdPackage.COMPONENT_REP_ID__REPID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(ComponentRepId.class)) {
+		case ScdPackage.COMPONENT_REP_ID__REPID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

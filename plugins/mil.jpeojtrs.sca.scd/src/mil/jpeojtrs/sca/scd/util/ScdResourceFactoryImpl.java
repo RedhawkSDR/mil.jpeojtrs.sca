@@ -55,7 +55,7 @@ public class ScdResourceFactoryImpl extends ResourceFactoryImpl {
 	public Resource createResource(final URI uri) {
 		// END GENERATED CODE
 		final XMLResource result = new ScdResourceImpl(uri);
-		
+
 		ScaResourceFactoryUtil.setDefaultSaveOptions(result.getDefaultSaveOptions());
 		ScaResourceFactoryUtil.setDefaultLoadOptions(result.getDefaultLoadOptions());
 
@@ -65,7 +65,7 @@ public class ScdResourceFactoryImpl extends ResourceFactoryImpl {
 
 		result.setEncoding("UTF-8");
 		result.setDoctypeInfo(ScdResourceImpl.DOC_TYPE_PUBLIC, ScdResourceImpl.DOC_TYPE_SYSTEM);
-		
+
 		return result;
 		// BEGIN GENERATED CODE
 	}

@@ -48,6 +48,7 @@ public class SoftwareComponentTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected SoftwareComponent fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -177,7 +178,7 @@ public class SoftwareComponentTest extends TestCase {
 		Assert.assertNotNull(this.fixture.getComponentRepID());
 
 		Assert.assertEquals("New repid", this.fixture.getComponentRepID().getRepid());
-		
+
 		final ComponentRepId cri = ScdFactory.eINSTANCE.createComponentRepId();
 		final Interface iface = ScdFactory.eINSTANCE.createInterface();
 		iface.setName("badRep");
@@ -212,7 +213,7 @@ public class SoftwareComponentTest extends TestCase {
 
 		Assert.assertEquals(3, this.fixture.getComponentFeatures().getPorts().getGroup().size()); // SUPPRESS CHECKSTYLE MAGIC NUMBER
 		Assert.assertEquals(5, this.fixture.getComponentFeatures().getSupportsInterface().size()); // SUPPRESS CHECKSTYLE MAGIC NUMBER
-		
+
 		this.fixture.setComponentFeatures(ScdFactory.eINSTANCE.createComponentFeatures());
 		Assert.assertNotNull(this.fixture.getComponentFeatures());
 	}
@@ -254,7 +255,7 @@ public class SoftwareComponentTest extends TestCase {
 		this.fixture.setInterfaces(inters);
 		Assert.assertNotNull(this.fixture.getInterfaces());
 		Assert.assertEquals("new name", this.fixture.getInterfaces().getInterface().get(0).getName());
-		
+
 		this.fixture.setInterfaces(ScdFactory.eINSTANCE.createInterfaces());
 		Assert.assertNotNull(this.fixture.getInterfaces());
 		Assert.assertEquals(0, this.fixture.getInterfaces().getInterface().size());
@@ -279,7 +280,7 @@ public class SoftwareComponentTest extends TestCase {
 
 		Assert.assertNotNull(this.fixture.getPropertyFile());
 		Assert.assertEquals("New type", this.fixture.getPropertyFile().getType());
-		
+
 		this.fixture.setPropertyFile(ScdFactory.eINSTANCE.createPropertyFile());
 		Assert.assertNotNull(this.fixture.getPropertyFile());
 		Assert.assertNull(this.fixture.getPropertyFile().getLocalFile());

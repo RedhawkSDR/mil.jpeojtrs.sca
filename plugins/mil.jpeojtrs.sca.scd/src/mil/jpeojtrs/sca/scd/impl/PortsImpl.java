@@ -84,8 +84,7 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public FeatureMap getGroup() {
-		if (group == null)
-		{
+		if (group == null) {
 			group = new BasicFeatureMap(this, ScdPackage.PORTS__GROUP);
 		}
 		return group;
@@ -118,14 +117,13 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case ScdPackage.PORTS__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
-			case ScdPackage.PORTS__PROVIDES:
-				return ((InternalEList<?>)getProvides()).basicRemove(otherEnd, msgs);
-			case ScdPackage.PORTS__USES:
-				return ((InternalEList<?>)getUses()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case ScdPackage.PORTS__GROUP:
+			return ((InternalEList< ? >) getGroup()).basicRemove(otherEnd, msgs);
+		case ScdPackage.PORTS__PROVIDES:
+			return ((InternalEList< ? >) getProvides()).basicRemove(otherEnd, msgs);
+		case ScdPackage.PORTS__USES:
+			return ((InternalEList< ? >) getUses()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -137,15 +135,15 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.PORTS__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
-			case ScdPackage.PORTS__PROVIDES:
-				return getProvides();
-			case ScdPackage.PORTS__USES:
-				return getUses();
+		switch (featureID) {
+		case ScdPackage.PORTS__GROUP:
+			if (coreType)
+				return getGroup();
+			return ((FeatureMap.Internal) getGroup()).getWrapper();
+		case ScdPackage.PORTS__PROVIDES:
+			return getProvides();
+		case ScdPackage.PORTS__USES:
+			return getUses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,19 +156,18 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.PORTS__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
-				return;
-			case ScdPackage.PORTS__PROVIDES:
-				getProvides().clear();
-				getProvides().addAll((Collection<? extends Provides>)newValue);
-				return;
-			case ScdPackage.PORTS__USES:
-				getUses().clear();
-				getUses().addAll((Collection<? extends Uses>)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.PORTS__GROUP:
+			((FeatureMap.Internal) getGroup()).set(newValue);
+			return;
+		case ScdPackage.PORTS__PROVIDES:
+			getProvides().clear();
+			getProvides().addAll((Collection< ? extends Provides>) newValue);
+			return;
+		case ScdPackage.PORTS__USES:
+			getUses().clear();
+			getUses().addAll((Collection< ? extends Uses>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -182,17 +179,16 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.PORTS__GROUP:
-				getGroup().clear();
-				return;
-			case ScdPackage.PORTS__PROVIDES:
-				getProvides().clear();
-				return;
-			case ScdPackage.PORTS__USES:
-				getUses().clear();
-				return;
+		switch (featureID) {
+		case ScdPackage.PORTS__GROUP:
+			getGroup().clear();
+			return;
+		case ScdPackage.PORTS__PROVIDES:
+			getProvides().clear();
+			return;
+		case ScdPackage.PORTS__USES:
+			getUses().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -204,14 +200,13 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.PORTS__GROUP:
-				return group != null && !group.isEmpty();
-			case ScdPackage.PORTS__PROVIDES:
-				return !getProvides().isEmpty();
-			case ScdPackage.PORTS__USES:
-				return !getUses().isEmpty();
+		switch (featureID) {
+		case ScdPackage.PORTS__GROUP:
+			return group != null && !group.isEmpty();
+		case ScdPackage.PORTS__PROVIDES:
+			return !getProvides().isEmpty();
+		case ScdPackage.PORTS__USES:
+			return !getUses().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -223,7 +218,8 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (group: ");

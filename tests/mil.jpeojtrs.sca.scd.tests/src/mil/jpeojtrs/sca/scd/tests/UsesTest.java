@@ -61,7 +61,7 @@ public class UsesTest extends AbstractPortTest {
 	 */
 	@Override
 	protected Uses getFixture() {
-		return (Uses)fixture;
+		return (Uses) fixture;
 	}
 
 	private ResourceSet resourceSet;
@@ -157,7 +157,7 @@ public class UsesTest extends AbstractPortTest {
 	 * @generated NOT
 	 */
 	@Override
-    public void testSetInterface() {
+	public void testSetInterface() {
 		// END GENERATED CODE
 
 		final Interface inter = this.fixture.getInterface();

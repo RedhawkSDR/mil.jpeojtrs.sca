@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -39,10 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentFeaturesItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
+public class ComponentFeaturesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -62,8 +59,7 @@ public class ComponentFeaturesItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -79,9 +75,8 @@ public class ComponentFeaturesItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ScdPackage.Literals.COMPONENT_FEATURES__SUPPORTS_INTERFACE);
 			childrenFeatures.add(ScdPackage.Literals.COMPONENT_FEATURES__PORTS);
@@ -135,12 +130,11 @@ public class ComponentFeaturesItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ComponentFeatures.class))
-		{
-			case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
-			case ScdPackage.COMPONENT_FEATURES__PORTS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(ComponentFeatures.class)) {
+		case ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE:
+		case ScdPackage.COMPONENT_FEATURES__PORTS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -156,15 +150,9 @@ public class ComponentFeaturesItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.COMPONENT_FEATURES__SUPPORTS_INTERFACE,
-				 ScdFactory.eINSTANCE.createSupportsInterface()));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.COMPONENT_FEATURES__SUPPORTS_INTERFACE, ScdFactory.eINSTANCE.createSupportsInterface()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(ScdPackage.Literals.COMPONENT_FEATURES__PORTS,
-				 ScdFactory.eINSTANCE.createPorts()));
+		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.COMPONENT_FEATURES__PORTS, ScdFactory.eINSTANCE.createPorts()));
 	}
 
 	/**

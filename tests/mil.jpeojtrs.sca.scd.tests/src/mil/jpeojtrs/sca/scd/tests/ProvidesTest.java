@@ -61,7 +61,7 @@ public class ProvidesTest extends AbstractPortTest {
 	 */
 	@Override
 	protected Provides getFixture() {
-		return (Provides)fixture;
+		return (Provides) fixture;
 	}
 
 	private ResourceSet resourceSet;
@@ -155,7 +155,7 @@ public class ProvidesTest extends AbstractPortTest {
 	 * @generated NOT
 	 */
 	@Override
-    public void testSetInterface() {
+	public void testSetInterface() {
 		// END GENERATED CODE
 
 		final Interface inter = this.fixture.getInterface();

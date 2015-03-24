@@ -37,6 +37,7 @@ public class InterfacesTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected Interfaces fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

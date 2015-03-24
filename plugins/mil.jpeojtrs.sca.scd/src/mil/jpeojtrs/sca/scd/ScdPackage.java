@@ -1855,7 +1855,7 @@ public interface ScdPackage extends EPackage {
 
 		@Deprecated
 		EAttribute PROVIDES__REP_ID = ABSTRACT_PORT__REP_ID;
-		
+
 		@Deprecated
 		EAttribute USES__REP_ID = ABSTRACT_PORT__REP_ID;
 

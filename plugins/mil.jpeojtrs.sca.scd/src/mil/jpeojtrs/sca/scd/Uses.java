@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Uses</b></em>'.
@@ -29,7 +28,7 @@ package mil.jpeojtrs.sca.scd;
  * @generated
  */
 public interface Uses extends AbstractPort {
-	
+
 	/**
 	 * Returns the value of the '<em><b>Uses Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

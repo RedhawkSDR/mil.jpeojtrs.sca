@@ -169,7 +169,7 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	@Override
 	public Interface getInterface() {
 		Interface interface_ = basicGetInterface();
-		return interface_ != null && interface_.eIsProxy() ? (Interface)eResolveProxy((InternalEObject)interface_) : interface_;
+		return interface_ != null && interface_.eIsProxy() ? (Interface) eResolveProxy((InternalEObject) interface_) : interface_;
 	}
 
 	/**
@@ -180,7 +180,7 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	public Interface basicGetInterface() {
 		// END GENERATED CODE
 		String uriFragment = getRepId();
-		return (Interface) eResource().getEObject(uriFragment);		
+		return (Interface) eResource().getEObject(uriFragment);
 		// BEGIN GENERATED CODE
 	}
 
@@ -203,17 +203,17 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
-				return getRepId();
-			case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
-				return getSupportsName();
-			case ScdPackage.SUPPORTS_INTERFACE__ID:
-				return getId();
-			case ScdPackage.SUPPORTS_INTERFACE__INTERFACE:
-				if (resolve) return getInterface();
-				return basicGetInterface();
+		switch (featureID) {
+		case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
+			return getRepId();
+		case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
+			return getSupportsName();
+		case ScdPackage.SUPPORTS_INTERFACE__ID:
+			return getId();
+		case ScdPackage.SUPPORTS_INTERFACE__INTERFACE:
+			if (resolve)
+				return getInterface();
+			return basicGetInterface();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,17 +225,16 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
-				setRepId((String)newValue);
-				return;
-			case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
-				setSupportsName((String)newValue);
-				return;
-			case ScdPackage.SUPPORTS_INTERFACE__INTERFACE:
-				setInterface((Interface)newValue);
-				return;
+		switch (featureID) {
+		case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
+			setRepId((String) newValue);
+			return;
+		case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
+			setSupportsName((String) newValue);
+			return;
+		case ScdPackage.SUPPORTS_INTERFACE__INTERFACE:
+			setInterface((Interface) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -247,17 +246,16 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
-				setRepId(REP_ID_EDEFAULT);
-				return;
-			case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
-				setSupportsName(SUPPORTS_NAME_EDEFAULT);
-				return;
-			case ScdPackage.SUPPORTS_INTERFACE__INTERFACE:
-				setInterface((Interface)null);
-				return;
+		switch (featureID) {
+		case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
+			setRepId(REP_ID_EDEFAULT);
+			return;
+		case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
+			setSupportsName(SUPPORTS_NAME_EDEFAULT);
+			return;
+		case ScdPackage.SUPPORTS_INTERFACE__INTERFACE:
+			setInterface((Interface) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -269,16 +267,15 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
-				return REP_ID_EDEFAULT == null ? repId != null : !REP_ID_EDEFAULT.equals(repId);
-			case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
-				return SUPPORTS_NAME_EDEFAULT == null ? supportsName != null : !SUPPORTS_NAME_EDEFAULT.equals(supportsName);
-			case ScdPackage.SUPPORTS_INTERFACE__ID:
-				return ID_EDEFAULT == null ? getId() != null : !ID_EDEFAULT.equals(getId());
-			case ScdPackage.SUPPORTS_INTERFACE__INTERFACE:
-				return basicGetInterface() != null;
+		switch (featureID) {
+		case ScdPackage.SUPPORTS_INTERFACE__REP_ID:
+			return REP_ID_EDEFAULT == null ? repId != null : !REP_ID_EDEFAULT.equals(repId);
+		case ScdPackage.SUPPORTS_INTERFACE__SUPPORTS_NAME:
+			return SUPPORTS_NAME_EDEFAULT == null ? supportsName != null : !SUPPORTS_NAME_EDEFAULT.equals(supportsName);
+		case ScdPackage.SUPPORTS_INTERFACE__ID:
+			return ID_EDEFAULT == null ? getId() != null : !ID_EDEFAULT.equals(getId());
+		case ScdPackage.SUPPORTS_INTERFACE__INTERFACE:
+			return basicGetInterface() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -290,7 +287,8 @@ public class SupportsInterfaceImpl extends EObjectImpl implements SupportsInterf
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (repId: ");

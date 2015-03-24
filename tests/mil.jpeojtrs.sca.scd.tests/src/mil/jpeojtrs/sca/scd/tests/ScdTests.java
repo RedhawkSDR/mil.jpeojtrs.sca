@@ -27,7 +27,6 @@ import org.eclipse.emf.common.util.URI;
  */
 public class ScdTests {
 
-
 	public static URI getURI(final String filePath) throws IOException {
 		final URL url = FileLocator.toFileURL(FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.scd.tests"), new Path(filePath), null));
 		return URI.createURI(url.toString());

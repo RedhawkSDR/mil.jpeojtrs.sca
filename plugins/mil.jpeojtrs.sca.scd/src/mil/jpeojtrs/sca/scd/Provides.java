@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Provides</b></em>'.

@@ -46,6 +46,7 @@ public class PortsTest extends TestCase {
 	 * @generated NOT
 	 */
 	protected Ports fixture = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
