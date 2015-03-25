@@ -30,6 +30,10 @@
         <porttype type="control"/>
         <porttype type="test"/>
       </provides>
+      <provides providesname="provides_port2" repid="IDL:BULKIO/dataFloat:1.0">
+        <description>Optional provides Port description element</description>
+        <porttype type="data"/>
+      </provides>
       <uses repid="IDL:BULKIO/dataFloat:1.0" usesname="uses_port_virtual">
         <porttype type="data"/>
         <porttype type="responses"/>
@@ -37,6 +41,7 @@
         <porttype type="test"/>
       </uses>
       <uses repid="IDL:BULKIO/dataFloat:1.0" usesname="uses_port">
+        <description>Optional uses Port description element</description>
         <porttype type="data"/>
         <porttype type="responses"/>
         <porttype type="control"/>

@@ -127,4 +127,17 @@ public abstract class AbstractPortTest extends TestCase {
 		// BEGIN GENERATED CODE
 	}
 
-} //AbstractPortTest
+	/** utility method for subclasses to use */
+	protected void testGetSetDescription(final AbstractPort port2, final String expectedDescription) {
+		AbstractPort port = getFixture();
+		Assert.assertNotNull(port);
+		String description = port.getDescription();
+		Assert.assertNull(description);
+		final String EXPECTED_DESCRIPTION = "Optional Port description.";
+		this.fixture.setDescription(EXPECTED_DESCRIPTION);
+		Assert.assertEquals("setDescription", EXPECTED_DESCRIPTION, port.getDescription());
+		
+		Assert.assertNotNull(port2);
+		Assert.assertEquals("port2.description", expectedDescription, port2.getDescription());
+	}
+} // AbstractPortTest
