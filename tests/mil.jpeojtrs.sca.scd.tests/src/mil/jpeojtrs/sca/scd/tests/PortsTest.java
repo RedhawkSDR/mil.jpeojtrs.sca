@@ -171,7 +171,7 @@ public class PortsTest extends TestCase {
 	@Test
 	public void test_getGroup() throws Exception {
 		Assert.assertNotNull(this.fixture.getGroup());
-		Assert.assertEquals(3, this.fixture.getGroup().size());
+		Assert.assertEquals(4, this.fixture.getGroup().size());
 	}
 
 	@Test

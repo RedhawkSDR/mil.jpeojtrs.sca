@@ -127,7 +127,9 @@ public abstract class AbstractPortTest extends TestCase {
 		// BEGIN GENERATED CODE
 	}
 
-	/** utility method for subclasses to use */
+	/** utility method for subclasses to use
+	 * @generated NOT 
+	 * */
 	protected void testGetSetDescription(final AbstractPort port2, final String expectedDescription) {
 		AbstractPort port = getFixture();
 		Assert.assertNotNull(port);

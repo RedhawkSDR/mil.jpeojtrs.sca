@@ -211,7 +211,7 @@ public class SoftwareComponentTest extends TestCase {
 		Assert.assertNotNull(this.fixture.getComponentFeatures().getPorts().getGroup());
 		Assert.assertNotNull(this.fixture.getComponentFeatures().getSupportsInterface());
 
-		Assert.assertEquals(3, this.fixture.getComponentFeatures().getPorts().getGroup().size()); // SUPPRESS CHECKSTYLE MAGIC NUMBER
+		Assert.assertEquals(4, this.fixture.getComponentFeatures().getPorts().getGroup().size()); // SUPPRESS CHECKSTYLE MAGIC NUMBER
 		Assert.assertEquals(5, this.fixture.getComponentFeatures().getSupportsInterface().size()); // SUPPRESS CHECKSTYLE MAGIC NUMBER
 
 		this.fixture.setComponentFeatures(ScdFactory.eINSTANCE.createComponentFeatures());
