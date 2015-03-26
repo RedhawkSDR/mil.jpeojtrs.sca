@@ -58,7 +58,7 @@ public interface Struct extends AbstractProperty, PropertyContainer {
 	 * If the meaning of the '<em>Simple Sequence</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Simple Sequence</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_SimpleSequence()

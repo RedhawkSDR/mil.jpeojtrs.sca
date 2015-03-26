@@ -62,7 +62,7 @@ public interface StructRef extends AbstractPropertyRef<Struct>, PropertyRefConta
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructRef_SimpleSequenceRef()
 	 * @model containment="true"
 	 * @generated
-	 * @since 4.1
+	 * @since 5.0
 	 */
 	EList<SimpleSequenceRef> getSimpleSequenceRef();
 

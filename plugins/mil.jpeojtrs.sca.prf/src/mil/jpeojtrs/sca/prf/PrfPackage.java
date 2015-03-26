@@ -609,7 +609,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -798,7 +798,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Simple Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -938,7 +938,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Simple Sequence Ref</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1307,7 +1307,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Simple Sequence Ref</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -2098,7 +2098,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.Simple#getOptional <em>Optional</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Optional</em>'.
 	 * @see mil.jpeojtrs.sca.prf.Simple#getOptional()
@@ -2219,7 +2219,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.Struct#getSimpleSequence <em>Simple Sequence</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Simple Sequence</em>'.
 	 * @see mil.jpeojtrs.sca.prf.Struct#getSimpleSequence()
@@ -2306,7 +2306,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef <em>Simple Sequence Ref</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Simple Sequence Ref</em>'.
 	 * @see mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef()
@@ -2665,7 +2665,7 @@ public interface PrfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef()
 	 * @see #getStructRef()
 	 * @generated
-	 * @since 4.1
+	 * @since 5.0
 	 */
 	EReference getStructRef_SimpleSequenceRef();
 
@@ -3419,7 +3419,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
-		 * @since 4.1
+		 * @since 5.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3513,7 +3513,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Simple Sequence</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
-		 * @since 4.1
+		 * @since 5.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3582,7 +3582,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Simple Sequence Ref</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
-		 * @since 4.1
+		 * @since 5.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3867,7 +3867,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Simple Sequence Ref</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
-		 * @since 4.1
+		 * @since 5.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */

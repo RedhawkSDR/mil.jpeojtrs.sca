@@ -43,7 +43,7 @@ public class PrfResourceImpl extends XMLResourceImpl {
 	/**
 	 * The DTD formal public identifier (FPI).
 	 *
-	 * @since 4.1
+	 * @since 5.0
 	 */
 	public static final String DOC_TYPE_PUBLIC = "-//JTRS//DTD SCA V2.2.2 PRF//EN";
 

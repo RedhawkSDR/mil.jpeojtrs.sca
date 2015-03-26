@@ -59,7 +59,7 @@ public interface StructValue extends PropertyRefContainer {
 	 * <p>
 	 * If the meaning of the '<em>Simple Sequence Ref</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
-	 * @since 4.1
+	 * @since 5.0
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Simple Sequence Ref</em>' containment reference list.
@@ -110,7 +110,7 @@ public interface StructValue extends PropertyRefContainer {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated

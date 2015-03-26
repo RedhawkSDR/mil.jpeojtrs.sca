@@ -68,7 +68,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	/**
 	 * The cached value of the '{@link #getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @see #getSimpleSequenceRef()
 	 * @generated
@@ -119,7 +119,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -197,6 +197,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
+	 * @since 5.0
 	 */
 	@Override
 	public AbstractPropertyRef< ? > getRef(String id) {

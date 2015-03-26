@@ -182,7 +182,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	/**
 	 * The default value of the '{@link #getOptional() <em>Optional</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @see #getOptional()
 	 * @generated
@@ -192,7 +192,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	/**
 	 * The cached value of the '{@link #getOptional() <em>Optional</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @see #getOptional()
 	 * @generated
@@ -499,7 +499,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -509,7 +509,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -533,7 +533,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */

@@ -298,7 +298,7 @@ public interface Simple extends AbstractProperty {
 	 * If the meaning of the '<em>Optional</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Optional</em>' attribute.
 	 * @see #setOptional(Boolean)
@@ -311,7 +311,7 @@ public interface Simple extends AbstractProperty {
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Simple#getOptional <em>Optional</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Optional</em>' attribute.
 	 * @see #getOptional()
@@ -330,7 +330,7 @@ public interface Simple extends AbstractProperty {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated

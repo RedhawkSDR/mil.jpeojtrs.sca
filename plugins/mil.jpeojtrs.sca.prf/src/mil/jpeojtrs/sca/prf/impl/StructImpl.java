@@ -66,7 +66,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	/**
 	 * The cached value of the '{@link #getSimpleSequence() <em>Simple Sequence</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @see #getSimpleSequence()
 	 * @generated
@@ -117,7 +117,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 4.1
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
