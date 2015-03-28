@@ -438,8 +438,8 @@ public interface SoftwareAssembly extends EObject {
 
 		public static String createComponentUsageName(SoftwareAssembly sa, String componentName) {
 			String baseName = componentName;
-			if (baseName.contains(".")) {
-				int baseNameIndex = baseName.lastIndexOf(".");
+			int baseNameIndex = baseName.lastIndexOf('.');
+			if (baseNameIndex != -1) {
 				baseName = baseName.substring(baseNameIndex + 1);
 			}
 			
