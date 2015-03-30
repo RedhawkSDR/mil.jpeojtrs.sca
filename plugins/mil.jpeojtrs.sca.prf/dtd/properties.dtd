@@ -119,9 +119,7 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 
 <!ELEMENT struct
     ( description?
-    , ( simple*
-      | simplesequence*
-      )
+    , (simple | simplesequence)+
     , configurationkind*
     )>
 <!ATTLIST struct
