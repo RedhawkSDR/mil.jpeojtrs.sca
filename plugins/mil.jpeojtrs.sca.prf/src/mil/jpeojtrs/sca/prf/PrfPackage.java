@@ -731,13 +731,22 @@ public interface PrfPackage extends EPackage {
 	 */
 	int SIMPLE_SEQUENCE__COMPLEX = ABSTRACT_PROPERTY_FEATURE_COUNT + 6;
 	/**
+	 * The feature id for the '<em><b>Optional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_SEQUENCE__OPTIONAL = ABSTRACT_PROPERTY_FEATURE_COUNT + 7;
+	/**
 	 * The number of structural features of the '<em>Simple Sequence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_SEQUENCE_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 7;
+	int SIMPLE_SEQUENCE_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 8;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.StructImpl <em>Struct</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -2196,6 +2205,18 @@ public interface PrfPackage extends EPackage {
 	EAttribute getSimpleSequence_Complex();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.SimpleSequence#getOptional <em>Optional</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Optional</em>'.
+	 * @see mil.jpeojtrs.sca.prf.SimpleSequence#getOptional()
+	 * @see #getSimpleSequence()
+	 * @generated
+	 */
+	EAttribute getSimpleSequence_Optional();
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.prf.Struct <em>Struct</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2660,12 +2681,12 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef <em>Simple Sequence Ref</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Simple Sequence Ref</em>'.
 	 * @see mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef()
 	 * @see #getStructRef()
 	 * @generated
-	 * @since 5.0
 	 */
 	EReference getStructRef_SimpleSequenceRef();
 
@@ -3491,6 +3512,15 @@ public interface PrfPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SIMPLE_SEQUENCE__COMPLEX = eINSTANCE.getSimpleSequence_Complex();
+
+		/**
+		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 5.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIMPLE_SEQUENCE__OPTIONAL = eINSTANCE.getSimpleSequence_Optional();
 
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.prf.impl.StructImpl <em>Struct</em>}' class.

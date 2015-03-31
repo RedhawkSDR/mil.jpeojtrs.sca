@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * The following operations are tested:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequence#isComplex() <em>Is Complex</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequence#isOptional() <em>Is Optional</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -107,15 +108,30 @@ public class SimpleSequenceTest extends AbstractPropertyTest {
 		Assert.assertFalse(getFixture().isComplex());
 	}
 
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.SimpleSequence#isOptional() <em>Is Optional</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.SimpleSequence#isOptional()
+	 * @generated NOT
+	 */
+	public void testIsOptional() {
+		Assert.assertFalse(getFixture().isOptional());
+	}
+
 	public void test_parse() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/SimpleSequenceTest.prf.xml"), true));
-		final SimpleSequence simpleSequence = props.getSimpleSequence().get(0);
+		SimpleSequence simpleSequence = props.getSimpleSequence().get(0);
 		Assert.assertNotNull(simpleSequence);
 		Assert.assertEquals("DCE:24acefac-62eb-4b7f-9177-cc7d78c76aca", simpleSequence.getId());
 		Assert.assertEquals("Name", simpleSequence.getName());
 		Assert.assertEquals(AccessType.READONLY, simpleSequence.getMode());
 		Assert.assertEquals(PropertyValueType.STRING, simpleSequence.getType());
+		Assert.assertNull("complex attribute", simpleSequence.getComplex());
+		Assert.assertFalse("isComplex()", simpleSequence.isComplex());
+		Assert.assertNull("optional attribute", simpleSequence.getOptional());
+		Assert.assertFalse("isOptional()", simpleSequence.isOptional());		
 		Assert.assertEquals("Sample Description", simpleSequence.getDescription());
 		Assert.assertEquals(1, simpleSequence.getValues().getValue().size());
 		Assert.assertEquals("Value 1", simpleSequence.getValues().getValue().get(0));
@@ -124,6 +140,28 @@ public class SimpleSequenceTest extends AbstractPropertyTest {
 		Assert.assertEquals("rangeMin", simpleSequence.getRange().getMax()); // On purpose
 		Assert.assertEquals(PropertyConfigurationType.TEST, simpleSequence.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.EQ, simpleSequence.getAction().getType());
+		
+		simpleSequence = props.getSimpleSequence().get(1);
+		Assert.assertNotNull(simpleSequence);
+		Assert.assertEquals("DCE:37d9f294-6abb-4b7e-967f-8f7e2a838ccc", simpleSequence.getId());
+		Assert.assertEquals("Name2", simpleSequence.getName());
+		Assert.assertEquals(AccessType.READWRITE, simpleSequence.getMode());
+		Assert.assertEquals(PropertyValueType.FLOAT, simpleSequence.getType());
+		Assert.assertFalse("complex attribute", simpleSequence.getComplex());
+		Assert.assertFalse("isComplex()", simpleSequence.isComplex());
+		Assert.assertTrue("optional attribute", simpleSequence.getOptional());
+		Assert.assertTrue("isOptional()", simpleSequence.isOptional());
+
+		simpleSequence = props.getSimpleSequence().get(1);
+		Assert.assertNotNull(simpleSequence);
+		Assert.assertEquals("DCE:37d9f294-6abb-4b7e-967f-8f7e2a838ddd", simpleSequence.getId());
+		Assert.assertEquals("Name3", simpleSequence.getName());
+		Assert.assertEquals(AccessType.WRITEONLY, simpleSequence.getMode());
+		Assert.assertEquals(PropertyValueType.SHORT, simpleSequence.getType());
+		Assert.assertTrue("complex attribute", simpleSequence.getComplex());
+		Assert.assertTrue("isComplex()", simpleSequence.isComplex());
+		Assert.assertFalse("optional attribute", simpleSequence.getOptional());
+		Assert.assertFalse("isOptional()", simpleSequence.isOptional());
 	}
 
 	public void testExtra() throws Exception {

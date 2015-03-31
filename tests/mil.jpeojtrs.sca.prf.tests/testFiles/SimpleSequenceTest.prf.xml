@@ -19,4 +19,10 @@
 	  <kind kindtype="test"/>
 	  <action type="eq"/>
   </simplesequence>
+  <simplesequence id="DCE:37d9f294-6abb-4b7e-967f-8f7e2a838ccc" name="Name2" mode="readwrite" type="float" complex="false" optional="true">
+    <description>Sample Description 2</description>
+  </simplesequence>
+  <simplesequence id="DCE:37d9f294-6abb-4b7e-967f-8f7e2a838ddd" name="Name3" mode="writeonly" type="short" complex="true" optional="false">
+    <description>Sample Description 3</description>
+  </simplesequence>
 </properties>

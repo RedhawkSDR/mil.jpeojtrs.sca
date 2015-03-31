@@ -74,7 +74,7 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 *  @since 3.0
 	 * <!-- end-user-doc -->
 	 * This is specialized for the more specific type known in this context.
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void setProperty(SimpleSequence newProperty) {

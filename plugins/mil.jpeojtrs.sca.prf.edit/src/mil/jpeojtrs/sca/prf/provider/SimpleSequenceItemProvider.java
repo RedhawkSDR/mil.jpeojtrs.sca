@@ -60,6 +60,7 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider {
 			addUnitsPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addComplexPropertyDescriptor(object);
+			addOptionalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -170,6 +171,20 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Optional feature.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOptionalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SimpleSequence_optional_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequence_optional_feature", "_UI_SimpleSequence_type"),
+			PrfPackage.Literals.SIMPLE_SEQUENCE__OPTIONAL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns SimpleSequence.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -220,6 +235,7 @@ public class SimpleSequenceItemProvider extends AbstractPropertyItemProvider {
 		case PrfPackage.SIMPLE_SEQUENCE__ACTION:
 		case PrfPackage.SIMPLE_SEQUENCE__TYPE:
 		case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
+		case PrfPackage.SIMPLE_SEQUENCE__OPTIONAL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

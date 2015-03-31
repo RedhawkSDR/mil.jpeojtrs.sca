@@ -29,6 +29,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequence#getAction <em>Action</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequence#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequence#getComplex <em>Complex</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequence#getOptional <em>Optional</em>}</li>
  * </ul>
  * </p>
  *
@@ -246,6 +247,34 @@ public interface SimpleSequence extends AbstractProperty {
 	void setComplex(Boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Optional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Optional</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Optional</em>' attribute.
+	 * @see #setOptional(Boolean)
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimpleSequence_Optional()
+	 * @model
+	 * @generated
+	 */
+	Boolean getOptional();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.SimpleSequence#getOptional <em>Optional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Optional</em>' attribute.
+	 * @see #getOptional()
+	 * @generated
+	 */
+	void setOptional(Boolean value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * Helper method to check if is complex.
 	 * @since 3.0
@@ -254,5 +283,14 @@ public interface SimpleSequence extends AbstractProperty {
 	 * @generated
 	 */
 	boolean isComplex();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	boolean isOptional();
 
 } // SimpleSequence

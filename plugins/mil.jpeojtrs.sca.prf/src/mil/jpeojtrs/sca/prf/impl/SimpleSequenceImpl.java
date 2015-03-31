@@ -51,6 +51,7 @@ import org.omg.CORBA.Any;
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getAction <em>Action</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getComplex <em>Complex</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getOptional <em>Optional</em>}</li>
  * </ul>
  * </p>
  *
@@ -158,6 +159,27 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * @ordered
 	 */
 	protected Boolean complex = COMPLEX_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOptional() <em>Optional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @see #getOptional()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean OPTIONAL_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getOptional() <em>Optional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @see #getOptional()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean optional = OPTIONAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -435,6 +457,29 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Boolean getOptional() {
+		return optional;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOptional(Boolean newOptional) {
+		Boolean oldOptional = optional;
+		optional = newOptional;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE__OPTIONAL, oldOptional, optional));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -442,6 +487,16 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	@Override
 	public boolean isComplex() {
 		return (complex != null && complex);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean isOptional() {
+		return (optional != null && optional);
 	}
 
 	/**
@@ -486,6 +541,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 			return getType();
 		case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
 			return getComplex();
+		case PrfPackage.SIMPLE_SEQUENCE__OPTIONAL:
+			return getOptional();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -521,6 +578,9 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 		case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
 			setComplex((Boolean) newValue);
 			return;
+		case PrfPackage.SIMPLE_SEQUENCE__OPTIONAL:
+			setOptional((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -554,6 +614,9 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 		case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
 			setComplex(COMPLEX_EDEFAULT);
 			return;
+		case PrfPackage.SIMPLE_SEQUENCE__OPTIONAL:
+			setOptional(OPTIONAL_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -580,6 +643,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 			return isSetType();
 		case PrfPackage.SIMPLE_SEQUENCE__COMPLEX:
 			return COMPLEX_EDEFAULT == null ? complex != null : !COMPLEX_EDEFAULT.equals(complex);
+		case PrfPackage.SIMPLE_SEQUENCE__OPTIONAL:
+			return OPTIONAL_EDEFAULT == null ? optional != null : !OPTIONAL_EDEFAULT.equals(optional);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -604,6 +669,8 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 			result.append("<unset>");
 		result.append(", complex: ");
 		result.append(complex);
+		result.append(", optional: ");
+		result.append(optional);
 		result.append(')');
 		return result.toString();
 	}

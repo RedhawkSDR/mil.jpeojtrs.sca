@@ -43,7 +43,7 @@ public interface StructRef extends AbstractPropertyRef<Struct>, PropertyRefConta
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Simple Ref</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructRef_SimpleRef()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='simpleref'"
 	 * @generated
 	 */
@@ -57,12 +57,13 @@ public interface StructRef extends AbstractPropertyRef<Struct>, PropertyRefConta
 	 * If the meaning of the '<em>Simple Sequence Ref</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Simple Sequence Ref</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructRef_SimpleSequenceRef()
 	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='simplesequenceref'"
 	 * @generated
-	 * @since 5.0
 	 */
 	EList<SimpleSequenceRef> getSimpleSequenceRef();
 
