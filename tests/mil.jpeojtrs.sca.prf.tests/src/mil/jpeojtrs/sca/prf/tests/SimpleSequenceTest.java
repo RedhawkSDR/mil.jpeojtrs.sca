@@ -152,7 +152,7 @@ public class SimpleSequenceTest extends AbstractPropertyTest {
 		Assert.assertTrue("optional attribute", simpleSequence.getOptional());
 		Assert.assertTrue("isOptional()", simpleSequence.isOptional());
 
-		simpleSequence = props.getSimpleSequence().get(1);
+		simpleSequence = props.getSimpleSequence().get(2);
 		Assert.assertNotNull(simpleSequence);
 		Assert.assertEquals("DCE:37d9f294-6abb-4b7e-967f-8f7e2a838ddd", simpleSequence.getId());
 		Assert.assertEquals("Name3", simpleSequence.getName());
