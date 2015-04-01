@@ -258,7 +258,7 @@ public interface SimpleSequence extends AbstractProperty {
 	 * @return the value of the '<em>Optional</em>' attribute.
 	 * @see #setOptional(Boolean)
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimpleSequence_Optional()
-	 * @model
+	 * @model extendedMetaData="kind='attribute' name='optional'"
 	 * @generated
 	 */
 	Boolean getOptional();

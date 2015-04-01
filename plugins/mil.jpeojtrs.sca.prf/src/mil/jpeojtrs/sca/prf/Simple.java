@@ -275,7 +275,7 @@ public interface Simple extends AbstractProperty {
 	 * @return the value of the '<em>Complex</em>' attribute.
 	 * @see #setComplex(Boolean)
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimple_Complex()
-	 * @model
+	 * @model extendedMetaData="kind='attribute' name='complex'"
 	 * @generated
 	 */
 	Boolean getComplex();
@@ -303,7 +303,7 @@ public interface Simple extends AbstractProperty {
 	 * @return the value of the '<em>Optional</em>' attribute.
 	 * @see #setOptional(Boolean)
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimple_Optional()
-	 * @model
+	 * @model extendedMetaData="kind='attribute' name='optional'"
 	 * @generated
 	 */
 	Boolean getOptional();

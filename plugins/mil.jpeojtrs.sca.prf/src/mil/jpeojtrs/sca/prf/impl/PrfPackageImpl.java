@@ -2398,6 +2398,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation(getSimple_Kind(), source, new String[] { "kind", "element", "name", "kind" });
 		addAnnotation(getSimple_Action(), source, new String[] { "kind", "element", "name", "action" });
 		addAnnotation(getSimple_Type(), source, new String[] { "kind", "attribute", "name", "type" });
+		addAnnotation(getSimple_Complex(), source, new String[] { "kind", "attribute", "name", "complex" });
+		addAnnotation(getSimple_Optional(), source, new String[] { "kind", "attribute", "name", "optional" });
 		addAnnotation(simpleSequenceEClass, source, new String[] { "name", "simplesequence", "kind", "elementOnly" });
 		addAnnotation(getSimpleSequence_Values(), source, new String[] { "kind", "element", "name", "values" });
 		addAnnotation(getSimpleSequence_Units(), source, new String[] { "kind", "element", "name", "units" });
@@ -2406,6 +2408,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation(getSimpleSequence_Action(), source, new String[] { "kind", "element", "name", "action" });
 		addAnnotation(getSimpleSequence_Type(), source, new String[] { "kind", "attribute", "name", "type" });
 		addAnnotation(getSimpleSequence_Complex(), source, new String[] { "kind", "attribute", "name", "complex" });
+		addAnnotation(getSimpleSequence_Optional(), source, new String[] { "kind", "attribute", "name", "optional" });
 		addAnnotation(structEClass, source, new String[] { "name", "struct", "kind", "elementOnly" });
 		addAnnotation(getStruct_Simple(), source, new String[] { "kind", "element", "name", "simple" });
 		addAnnotation(getStruct_SimpleSequence(), source, new String[] { "kind", "element", "name", "simplesequence" });
