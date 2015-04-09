@@ -39,6 +39,25 @@ if [ ! -d ${rootdir}/plugins ] || [ ! -d ${rootdir}/features ]; then
   exit 1
 fi
 
+# Update DTD files
+rm ${rootdir}/plugins/mil.jpeojtrs.sca.dmd/dtd/domainmanagerconfiguration.dtd
+rm ${rootdir}/plugins/mil.jpeojtrs.sca.sad/dtd/softwareassembly.dtd
+rm ${rootdir}/plugins/mil.jpeojtrs.sca.profile/dtd/profile.dtd
+rm ${rootdir}/plugins/mil.jpeojtrs.sca.scd/dtd/softwarecomponent.dtd
+rm ${rootdir}/plugins/mil.jpeojtrs.sca.spd/dtd/softpkg.dtd
+rm ${rootdir}/plugins/mil.jpeojtrs.sca.dcd/dtd/deviceconfiguration.dtd
+rm ${rootdir}/plugins/mil.jpeojtrs.sca.dpd/dtd/devicepkg.dtd
+rm ${rootdir}/plugins/mil.jpeojtrs.sca.prf/dtd/properties.dtd
+
+cp ${cfdir}/src/xml/dtd/domainmanagerconfiguration.dtd ${rootdir}/plugins/mil.jpeojtrs.sca.dmd/dtd
+cp ${cfdir}/src/xml/dtd/softwareassembly.dtd ${rootdir}/plugins/mil.jpeojtrs.sca.sad/dtd
+cp ${cfdir}/src/xml/dtd/profile.dtd ${rootdir}/plugins/mil.jpeojtrs.sca.profile/dtd
+cp ${cfdir}/src/xml/dtd/softwarecomponent.dtd ${rootdir}/plugins/mil.jpeojtrs.sca.scd/dtd
+cp ${cfdir}/src/xml/dtd/softpkg.dtd ${rootdir}/plugins/mil.jpeojtrs.sca.spd/dtd
+cp ${cfdir}/src/xml/dtd/deviceconfiguration.dtd ${rootdir}/plugins/mil.jpeojtrs.sca.dcd/dtd
+cp ${cfdir}/src/xml/dtd/devicepkg.dtd ${rootdir}/plugins/mil.jpeojtrs.sca.dpd/dtd
+cp ${cfdir}/src/xml/dtd/properties.dtd ${rootdir}/plugins/mil.jpeojtrs.sca.prf/dtd
+
 # Update IDL files
 rm -rf ${rootdir}/plugins/idl.cf/idl/ossie
 rm -rf ${rootdir}/plugins/idl.bulkio/idl/ossie
