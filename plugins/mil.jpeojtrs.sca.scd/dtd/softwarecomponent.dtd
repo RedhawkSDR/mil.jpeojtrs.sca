@@ -44,6 +44,7 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 	repid		CDATA	#REQUIRED>
 
 <!ELEMENT componenttype (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
 
 <!ELEMENT componentfeatures
 	( supportsinterface* 
