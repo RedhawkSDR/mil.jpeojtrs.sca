@@ -34,6 +34,13 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * <!-- begin-user-doc --> A test case for the model object '
  * <em><b>Struct</b></em>'. <!-- end-user-doc -->
  * <p>
+ * The following features are tested:
+ * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.prf.Struct#getSimple() <em>Simple</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.Struct#getSimpleSequence() <em>Simple Sequence</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
  * The following operations are tested:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.PropertyContainer#getProperty(java.lang.String) <em>Get Property</em>}</li>
@@ -97,6 +104,32 @@ public class StructTest extends AbstractPropertyTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.Struct#getSimple() <em>Simple</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.Struct#getSimple()
+	 * @generated
+	 */
+	public void testGetSimple() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.Struct#getSimpleSequence() <em>Simple Sequence</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.Struct#getSimpleSequence()
+	 * @generated
+	 */
+	public void testGetSimpleSequence() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

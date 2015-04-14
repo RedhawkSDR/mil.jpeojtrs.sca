@@ -23,6 +23,13 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * A test case for the model object '<em><b>Struct Ref</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * The following features are tested:
+ * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleRef() <em>Simple Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef() <em>Simple Sequence Ref</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
  * The following operations are tested:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.PropertyRefContainer#getPropertyContainer() <em>Get Property Container</em>}</li>
@@ -86,6 +93,32 @@ public class StructRefTest extends AbstractPropertyRefTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleRef() <em>Simple Ref</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.StructRef#getSimpleRef()
+	 * @generated
+	 */
+	public void testGetSimpleRef() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef()
+	 * @generated
+	 */
+	public void testGetSimpleSequenceRef() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

@@ -222,10 +222,14 @@ defined.</xs:documentation></xs:annotation></xs:element>
   </xs:complexType>
   <xs:complexType name="struct">
     <xs:sequence>
-      <xs:element minOccurs="0" type="xs:string" name="description"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type="simple" name="simple"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type="simpleSequence" name="simplesequence" ecore:name="simpleSequence"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type="configurationKind" name="configurationkind" ecore:name="configurationKind"/>
+    	<xs:element minOccurs="0" type="xs:string" name="description" />
+    	<xs:choice minOccurs="1" maxOccurs="unbounded">
+    		<xs:element type="simple" name="simple" />
+    		<xs:element type="simpleSequence" name="simplesequence" ecore:name="simpleSequence" />
+    	</xs:choice>
+    	<xs:element minOccurs="0" maxOccurs="unbounded"
+    		type="configurationKind" name="configurationkind"
+    		ecore:name="configurationKind" />
     </xs:sequence>
     <xs:attribute ecore:id="true" name="id" type="xs:string" use="required"/>
     <xs:attribute default="readwrite" name="mode" type="AccessType"/>
@@ -244,8 +248,10 @@ defined.</xs:documentation></xs:annotation></xs:element>
   </xs:complexType>
   <xs:complexType name="structValue">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type="simpleRef" name="simpleref"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type="simpleSequenceRef" name="simplesequenceref"/>
+    	<xs:choice minOccurs="1" maxOccurs="unbounded">
+    		<xs:element type="simpleRef" name="simpleref"/>
+    		<xs:element type="simpleSequenceRef" name="simplesequenceref"/>
+    	</xs:choice>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="test">

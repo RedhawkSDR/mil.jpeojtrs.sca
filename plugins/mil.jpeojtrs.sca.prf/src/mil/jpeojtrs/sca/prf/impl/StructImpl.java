@@ -30,7 +30,9 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
@@ -45,6 +47,7 @@ import CF.PropertiesHelper;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getContents <em>Contents</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getSimple <em>Simple</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getSimpleSequence <em>Simple Sequence</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getConfigurationKind <em>Configuration Kind</em>}</li>
@@ -55,14 +58,15 @@ import CF.PropertiesHelper;
  */
 public class StructImpl extends AbstractPropertyImpl implements Struct {
 	/**
-	 * The cached value of the '{@link #getSimple() <em>Simple</em>}' containment reference list.
+	 * The cached value of the '{@link #getContents() <em>Contents</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSimple()
+	 * @see #getContents()
 	 * @generated
 	 * @ordered
 	 */
 	protected EList<Simple> simple;
+	
 	/**
 	 * The cached value of the '{@link #getSimpleSequence() <em>Simple Sequence</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -73,6 +77,12 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * @ordered
 	 */
 	protected EList<SimpleSequence> simpleSequence;
+	
+	/**
+	 * @since 5.0
+	 */
+	protected FeatureMap contents;
+	
 	/**
 	 * The cached value of the '{@link #getConfigurationKind() <em>Configuration Kind</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -104,15 +114,25 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeatureMap getContents() {
+		if (contents == null) {
+			contents = new BasicFeatureMap(this, PrfPackage.STRUCT__CONTENTS);
+		}
+		return contents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EList<Simple> getSimple() {
-		if (simple == null) {
-			simple = new EObjectContainmentEList<Simple>(Simple.class, this, PrfPackage.STRUCT__SIMPLE);
-		}
-		return simple;
+		return getContents().list(PrfPackage.Literals.STRUCT__SIMPLE);
 	}
 
 	/**
@@ -122,10 +142,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * @generated
 	 */
 	public EList<SimpleSequence> getSimpleSequence() {
-		if (simpleSequence == null) {
-			simpleSequence = new EObjectContainmentEList<SimpleSequence>(SimpleSequence.class, this, PrfPackage.STRUCT__SIMPLE_SEQUENCE);
-		}
-		return simpleSequence;
+		return getContents().list(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE);
 	}
 
 	/**
@@ -183,6 +200,11 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 				return s;
 			}
 		}
+		for (SimpleSequence s : getSimpleSequence()) {
+			if (repID.equals(s.getId())) {
+				return s;
+			}
+		}
 		return null;
 		// BEGIN GENERATED CODE
 	}
@@ -195,6 +217,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case PrfPackage.STRUCT__CONTENTS:
+			return ((InternalEList< ? >) getContents()).basicRemove(otherEnd, msgs);
 		case PrfPackage.STRUCT__SIMPLE:
 			return ((InternalEList< ? >) getSimple()).basicRemove(otherEnd, msgs);
 		case PrfPackage.STRUCT__SIMPLE_SEQUENCE:
@@ -213,6 +237,10 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case PrfPackage.STRUCT__CONTENTS:
+			if (coreType)
+				return getContents();
+			return ((FeatureMap.Internal) getContents()).getWrapper();
 		case PrfPackage.STRUCT__SIMPLE:
 			return getSimple();
 		case PrfPackage.STRUCT__SIMPLE_SEQUENCE:
@@ -232,6 +260,9 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case PrfPackage.STRUCT__CONTENTS:
+			((FeatureMap.Internal) getContents()).set(newValue);
+			return;
 		case PrfPackage.STRUCT__SIMPLE:
 			getSimple().clear();
 			getSimple().addAll((Collection< ? extends Simple>) newValue);
@@ -256,6 +287,9 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case PrfPackage.STRUCT__CONTENTS:
+			getContents().clear();
+			return;
 		case PrfPackage.STRUCT__SIMPLE:
 			getSimple().clear();
 			return;
@@ -277,14 +311,33 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case PrfPackage.STRUCT__CONTENTS:
+			return contents != null && !contents.isEmpty();
 		case PrfPackage.STRUCT__SIMPLE:
-			return simple != null && !simple.isEmpty();
+			return !getSimple().isEmpty();
 		case PrfPackage.STRUCT__SIMPLE_SEQUENCE:
-			return simpleSequence != null && !simpleSequence.isEmpty();
+			return !getSimpleSequence().isEmpty();
 		case PrfPackage.STRUCT__CONFIGURATION_KIND:
 			return configurationKind != null && !configurationKind.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (contents: ");
+		result.append(contents);
+		result.append(')');
+		return result.toString();
 	}
 
 	@Override

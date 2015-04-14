@@ -79,15 +79,6 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	@Override
 	public void setProperty(SimpleSequence newProperty) {
 		super.setProperty(newProperty);
-		if (newProperty == null) {
-			return;
-		}
-		Values newValues = values;
-		if (newValues == null) {
-			newValues = PrfFactory.eINSTANCE.createValues();
-		}
-		newValues.getValue().addAll(newProperty.getValues().getValue());
-		basicSetValues(newValues, null);
 	}
 
 	/**
@@ -103,13 +94,13 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public NotificationChain basicSetValues(Values newValues, NotificationChain msgs) {
 		Values oldValues = values;
 		values = newValues;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, oldValues, newValues);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, oldValues, values);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -121,7 +112,7 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void setValues(Values newValues) {
@@ -129,8 +120,14 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 			NotificationChain msgs = null;
 			if (values != null)
 				msgs = ((InternalEObject) values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
-			if (newValues != null)
+			if (newValues != null) {
+				if (newValues.eContainer() != null) {
+					Values realNewValues = PrfFactory.eINSTANCE.createValues();
+					realNewValues.getValue().addAll(newValues.getValue());
+					newValues = realNewValues;
+				}
 				msgs = ((InternalEObject) newValues).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
+			}
 			msgs = basicSetValues(newValues, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -217,6 +214,20 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 		} else {
 			return JacorbUtil.init().create_any();
 		}
+	}
+
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (value: ");
+		if (getValues() != null && getValues().getValue() != null) {
+			result.append(getValues().getValue().toString());
+		}
+		result.append(')');
+		return result.toString();
 	}
 
 } //SimpleSequenceRefImpl

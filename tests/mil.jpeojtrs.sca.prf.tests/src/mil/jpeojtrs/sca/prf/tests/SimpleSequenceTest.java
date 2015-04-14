@@ -131,7 +131,7 @@ public class SimpleSequenceTest extends AbstractPropertyTest {
 		Assert.assertNull("complex attribute", simpleSequence.getComplex());
 		Assert.assertFalse("isComplex()", simpleSequence.isComplex());
 		Assert.assertNull("optional attribute", simpleSequence.getOptional());
-		Assert.assertFalse("isOptional()", simpleSequence.isOptional());		
+		Assert.assertFalse("isOptional()", simpleSequence.isOptional());
 		Assert.assertEquals("Sample Description", simpleSequence.getDescription());
 		Assert.assertEquals(1, simpleSequence.getValues().getValue().size());
 		Assert.assertEquals("Value 1", simpleSequence.getValues().getValue().get(0));
@@ -140,7 +140,7 @@ public class SimpleSequenceTest extends AbstractPropertyTest {
 		Assert.assertEquals("rangeMin", simpleSequence.getRange().getMax()); // On purpose
 		Assert.assertEquals(PropertyConfigurationType.TEST, simpleSequence.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.EQ, simpleSequence.getAction().getType());
-		
+
 		simpleSequence = props.getSimpleSequence().get(1);
 		Assert.assertNotNull(simpleSequence);
 		Assert.assertEquals("DCE:37d9f294-6abb-4b7e-967f-8f7e2a838ccc", simpleSequence.getId());

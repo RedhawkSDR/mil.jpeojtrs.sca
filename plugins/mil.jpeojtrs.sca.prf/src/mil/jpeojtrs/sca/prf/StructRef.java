@@ -12,6 +12,7 @@
 package mil.jpeojtrs.sca.prf;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.prf.StructRef#getRefs <em>Refs</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleRef <em>Simple Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef <em>Simple Sequence Ref</em>}</li>
  * </ul>
@@ -33,6 +35,24 @@ import org.eclipse.emf.common.util.EList;
 public interface StructRef extends AbstractPropertyRef<Struct>, PropertyRefContainer {
 
 	/**
+	 * Returns the value of the '<em><b>Refs</b></em>' attribute list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Refs</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Refs</em>' attribute list.
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructRef_Refs()
+	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+	 *        extendedMetaData="kind='group' name='refs:0'"
+	 * @generated
+	 */
+	FeatureMap getRefs();
+
+	/**
 	 * Returns the value of the '<em><b>Simple Ref</b></em>' containment reference list.
 	 * The list contents are of type {@link mil.jpeojtrs.sca.prf.SimpleRef}.
 	 * <!-- begin-user-doc -->
@@ -43,8 +63,8 @@ public interface StructRef extends AbstractPropertyRef<Struct>, PropertyRefConta
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Simple Ref</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructRef_SimpleRef()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='simpleref'"
+	 * @model containment="true" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='simpleref' group='#refs:0'"
 	 * @generated
 	 */
 	EList<SimpleRef> getSimpleRef();
@@ -61,8 +81,8 @@ public interface StructRef extends AbstractPropertyRef<Struct>, PropertyRefConta
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Simple Sequence Ref</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructRef_SimpleSequenceRef()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='simplesequenceref'"
+	 * @model containment="true" transient="true" volatile="true" derived="true"
+	 *        extendedMetaData="kind='element' name='simplesequenceref' group='#refs:0'"
 	 * @generated
 	 */
 	EList<SimpleSequenceRef> getSimpleSequenceRef();

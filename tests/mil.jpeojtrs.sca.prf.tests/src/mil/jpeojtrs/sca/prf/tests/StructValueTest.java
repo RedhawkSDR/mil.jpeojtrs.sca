@@ -29,6 +29,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * <p>
  * The following features are tested:
  * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleRef() <em>Simple Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef() <em>Simple Sequence Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructValue#getStruct() <em>Struct</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructValue#getIndex() <em>Index</em>}</li>
  * </ul>
@@ -116,6 +118,32 @@ public class StructValueTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleRef() <em>Simple Ref</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.StructValue#getSimpleRef()
+	 * @generated
+	 */
+	public void testGetSimpleRef() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef()
+	 * @generated
+	 */
+	public void testGetSimpleSequenceRef() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

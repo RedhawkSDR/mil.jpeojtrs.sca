@@ -14,7 +14,6 @@ package mil.jpeojtrs.sca.prf.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.PropertyContainer;
@@ -25,17 +24,16 @@ import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructSequence;
 import mil.jpeojtrs.sca.prf.StructSequenceRef;
 import mil.jpeojtrs.sca.prf.StructValue;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.BasicFeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
-
 import CF.DataType;
 import CF.PropertiesHelper;
 
@@ -46,6 +44,7 @@ import CF.PropertiesHelper;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getRefs <em>Refs</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getSimpleRef <em>Simple Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getSimpleSequenceRef <em>Simple Sequence Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getStruct <em>Struct</em>}</li>
@@ -57,24 +56,15 @@ import CF.PropertiesHelper;
  */
 public class StructValueImpl extends EObjectImpl implements StructValue {
 	/**
-	 * The cached value of the '{@link #getSimpleRef() <em>Simple Ref</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSimpleRef()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SimpleRef> simpleRef;
-	/**
-	 * The cached value of the '{@link #getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' containment reference list.
+	 * The cached value of the '{@link #getRefs() <em>Refs</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * @since 5.0
 	 * <!-- end-user-doc -->
-	 * @see #getSimpleSequenceRef()
+	 * @see #getRefs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SimpleSequenceRef> simpleSequenceRef;
+	protected FeatureMap refs;
 	/**
 	 * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -106,15 +96,25 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeatureMap getRefs() {
+		if (refs == null) {
+			refs = new BasicFeatureMap(this, PrfPackage.STRUCT_VALUE__REFS);
+		}
+		return refs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EList<SimpleRef> getSimpleRef() {
-		if (simpleRef == null) {
-			simpleRef = new EObjectContainmentEList<SimpleRef>(SimpleRef.class, this, PrfPackage.STRUCT_VALUE__SIMPLE_REF);
-		}
-		return simpleRef;
+		return getRefs().list(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF);
 	}
 
 	/**
@@ -124,10 +124,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	 * @generated
 	 */
 	public EList<SimpleSequenceRef> getSimpleSequenceRef() {
-		if (simpleSequenceRef == null) {
-			simpleSequenceRef = new EObjectContainmentEList<SimpleSequenceRef>(SimpleSequenceRef.class, this, PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF);
-		}
-		return simpleSequenceRef;
+		return getRefs().list(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_SEQUENCE_REF);
 	}
 
 	/**
@@ -245,6 +242,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case PrfPackage.STRUCT_VALUE__REFS:
+			return ((InternalEList< ? >) getRefs()).basicRemove(otherEnd, msgs);
 		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 			return ((InternalEList< ? >) getSimpleRef()).basicRemove(otherEnd, msgs);
 		case PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF:
@@ -261,6 +260,10 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case PrfPackage.STRUCT_VALUE__REFS:
+			if (coreType)
+				return getRefs();
+			return ((FeatureMap.Internal) getRefs()).getWrapper();
 		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 			return getSimpleRef();
 		case PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF:
@@ -284,6 +287,9 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case PrfPackage.STRUCT_VALUE__REFS:
+			((FeatureMap.Internal) getRefs()).set(newValue);
+			return;
 		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 			getSimpleRef().clear();
 			getSimpleRef().addAll((Collection< ? extends SimpleRef>) newValue);
@@ -304,6 +310,9 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case PrfPackage.STRUCT_VALUE__REFS:
+			getRefs().clear();
+			return;
 		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 			getSimpleRef().clear();
 			return;
@@ -322,16 +331,35 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case PrfPackage.STRUCT_VALUE__REFS:
+			return refs != null && !refs.isEmpty();
 		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
-			return simpleRef != null && !simpleRef.isEmpty();
+			return !getSimpleRef().isEmpty();
 		case PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF:
-			return simpleSequenceRef != null && !simpleSequenceRef.isEmpty();
+			return !getSimpleSequenceRef().isEmpty();
 		case PrfPackage.STRUCT_VALUE__STRUCT:
 			return basicGetStruct() != null;
 		case PrfPackage.STRUCT_VALUE__INDEX:
 			return getIndex() != INDEX_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (refs: ");
+		result.append(refs);
+		result.append(')');
+		return result.toString();
 	}
 
 } //StructValueImpl

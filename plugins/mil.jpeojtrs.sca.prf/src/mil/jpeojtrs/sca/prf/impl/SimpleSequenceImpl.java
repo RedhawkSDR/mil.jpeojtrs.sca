@@ -19,6 +19,7 @@ import java.util.Set;
 import mil.jpeojtrs.sca.prf.AbstractProperty;
 import mil.jpeojtrs.sca.prf.Action;
 import mil.jpeojtrs.sca.prf.Kind;
+import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.PropertyConfigurationType;
 import mil.jpeojtrs.sca.prf.PropertyValueType;
@@ -213,7 +214,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public NotificationChain basicSetValues(Values newValues, NotificationChain msgs) {
 		Values oldValues = values;
@@ -231,7 +232,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void setValues(Values newValues) {
@@ -239,8 +240,14 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 			NotificationChain msgs = null;
 			if (values != null)
 				msgs = ((InternalEObject) values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE__VALUES, null, msgs);
-			if (newValues != null)
+			if (newValues != null) {
+				if (newValues.eContainer() != null) {
+					Values realNewValues = PrfFactory.eINSTANCE.createValues();
+					realNewValues.getValue().addAll(newValues.getValue());
+					newValues = realNewValues;
+				}
 				msgs = ((InternalEObject) newValues).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE__VALUES, null, msgs);
+			}
 			msgs = basicSetValues(newValues, msgs);
 			if (msgs != null)
 				msgs.dispatch();

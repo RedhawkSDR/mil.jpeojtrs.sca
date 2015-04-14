@@ -19,6 +19,8 @@ import mil.jpeojtrs.sca.prf.Struct;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -143,6 +145,7 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Struct.class)) {
+		case PrfPackage.STRUCT__CONTENTS:
 		case PrfPackage.STRUCT__SIMPLE:
 		case PrfPackage.STRUCT__SIMPLE_SEQUENCE:
 		case PrfPackage.STRUCT__CONFIGURATION_KIND:
@@ -163,10 +166,41 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONTENTS,
+			FeatureMapUtil.createEntry(PrfPackage.Literals.STRUCT__SIMPLE, PrfFactory.eINSTANCE.createSimple())));
+
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONTENTS,
+			FeatureMapUtil.createEntry(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE, PrfFactory.eINSTANCE.createSimpleSequence())));
+
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__SIMPLE, PrfFactory.eINSTANCE.createSimple()));
 
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE, PrfFactory.eINSTANCE.createSimpleSequence()));
 
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONFIGURATION_KIND, PrfFactory.eINSTANCE.createConfigurationKind()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection< ? > selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		if (childFeature instanceof EStructuralFeature && FeatureMapUtil.isFeatureMap((EStructuralFeature) childFeature)) {
+			FeatureMap.Entry entry = (FeatureMap.Entry) childObject;
+			childFeature = entry.getEStructuralFeature();
+			childObject = entry.getValue();
+		}
+
+		boolean qualify = childFeature == PrfPackage.Literals.STRUCT__SIMPLE || childFeature == PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 }

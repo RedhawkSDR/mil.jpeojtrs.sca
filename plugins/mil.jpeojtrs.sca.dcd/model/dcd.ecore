@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    This file is protected by Copyright.
-    Please refer to the COPYRIGHT file distributed with this source distribution.
-
-    This file is part of REDHAWK IDE.
-
-    All rights reserved.  This program and the accompanying materials are made available under
-    the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
-    http://www.eclipse.org/legal/epl-v10.html.
--->
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dcd" nsURI="http://sca.jpeojtrs.mil/dcd" nsPrefix="dcd">
   <eClassifiers xsi:type="ecore:EClass" name="DcdComponentPlacement">
@@ -53,11 +43,11 @@
         <details key="name" value="parentDevice"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentPlacement">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentPlacement">
       <eTypeArguments eClassifier="#//DcdComponentInstantiation"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DcdComponentInstantiation" eSuperTypes="platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentInstantiation">
+  <eClassifiers xsi:type="ecore:EClass" name="DcdComponentInstantiation" eSuperTypes="../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentInstantiation">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="componentinstantiation"/>
       <details key="kind" value="elementOnly"/>
@@ -70,7 +60,7 @@
       <details key="kind" value="elementOnly"/>
       <details key="qualified" value="false"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//Partitioning">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//Partitioning">
       <eTypeArguments eClassifier="#//DcdComponentPlacement"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -79,7 +69,7 @@
       <details key="name" value="componentinstantiationref"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentInstantiationRef">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentInstantiationRef">
       <eTypeArguments eClassifier="#//DcdComponentInstantiation"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -88,7 +78,7 @@
       <details key="name" value="connectinterface"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ConnectInterface">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ConnectInterface">
       <eTypeArguments eClassifier="#//DcdComponentInstantiationRef"/>
       <eTypeArguments eClassifier="#//DcdUsesPort"/>
       <eTypeArguments eClassifier="#//DcdProvidesPort"/>
@@ -99,7 +89,7 @@
       <details key="name" value="usesport"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//UsesPort">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//UsesPort">
       <eTypeArguments eClassifier="#//DcdComponentInstantiationRef"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -108,7 +98,7 @@
       <details key="name" value="providesport"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ProvidesPort">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ProvidesPort">
       <eTypeArguments eClassifier="#//DcdComponentInstantiationRef"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -117,7 +107,7 @@
       <details key="name" value="connections"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//Connections">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//Connections">
       <eTypeArguments eClassifier="#//DcdConnectInterface"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -136,7 +126,7 @@
         <details key="name" value="component"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refID" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refID" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
         <details key="name" value="refid"/>
@@ -196,7 +186,7 @@
         <details key="name" value="component"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refID" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refID" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
         <details key="name" value="refid"/>
@@ -230,7 +220,7 @@
         <details key="name" value="devicemanagersoftpkg"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="componentFiles" eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentFiles"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentFiles" eType="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentFiles"
         containment="true" resolveProxies="false">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The optional componentfiles element is used to reference deployment information for&#xA;components that are started up on the device. The componentfile element references a Software&#xA;Package Descriptor (SPD). The SPD, for example, can be used to describe logical Devices, a CF&#xA;DeviceManager, a CF DomainManager, a Naming Service, and CF FileSystems."/>
@@ -271,7 +261,7 @@
         <details key="name" value="filesystemnames"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.ecore#//DceUUID"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType ../../mil.jpeojtrs.sca.prf/model/prf.ecore#//DceUUID"
         iD="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The deviceconfiguration element’s id attribute is a unique identifier within the domain for the&#xA;device configuration. This id attribute is a UUID value as specified in section D.2.1."/>
@@ -297,14 +287,14 @@
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="localFile" lowerBound="1"
-        eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//LocalFile"
+        eType="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//LocalFile"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="localfile"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="softPkg" eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.spd/model/spd.ecore#//SoftPkg"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="softPkg" eType="ecore:EClass ../../mil.jpeojtrs.sca.spd/model/spd.ecore#//SoftPkg"
         volatile="true" transient="true" derived="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
@@ -321,7 +311,7 @@
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="localFile" lowerBound="1"
-        eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//LocalFile"
+        eType="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//LocalFile"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -334,7 +324,7 @@
         <details key="name" value="type"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="devicePkg" eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.dpd/model/dpd.ecore#//DevicePkg"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="devicePkg" eType="ecore:EClass ../../mil.jpeojtrs.sca.dpd/model/dpd.ecore#//DevicePkg"
         volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DomainManager">
@@ -345,7 +335,7 @@
       <details key="name" value="domainmanager"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="namingService" eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//NamingService"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="namingService" eType="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//NamingService"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>

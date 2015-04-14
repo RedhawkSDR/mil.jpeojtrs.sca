@@ -143,8 +143,7 @@ with this program.  If not, see http://www.gnu.org/licenses/.
     mode  ( readonly | readwrite | writeonly )  "readwrite">
 
 <!ELEMENT structvalue
-    ( simpleref*
-    | simplesequenceref*
+    ( (simpleref | simplesequenceref)+
     )>
 
 <!ELEMENT simpleref EMPTY>

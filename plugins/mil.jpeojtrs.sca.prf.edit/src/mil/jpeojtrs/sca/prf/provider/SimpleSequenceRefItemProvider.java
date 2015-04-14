@@ -11,18 +11,26 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+
 import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
 import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
+import mil.jpeojtrs.sca.prf.Values;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptorDecorator;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -43,16 +51,78 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	}
 
 	/**
+	 * This adds a property descriptor for the Values feature.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addValuesPropertyDescriptor(Object object) {
+		// END GENERATED CODE
+		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+			getResourceLocator(), getString("_UI_SimpleSequenceRef_values_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequenceRef_values_feature", "_UI_SimpleSequenceRef_type"),
+			PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, false, false, false, null, null, null);
+
+		this.itemPropertyDescriptors.add(new ValuesDecorator(object, defaultDescriptor));
+		// BEGIN GENERATED CODE
+	}
+
+	private class ValuesDecorator extends ItemPropertyDescriptorDecorator {
+		public ValuesDecorator(Object object, IItemPropertyDescriptor itemPropertyDescriptor) {
+			super(object, itemPropertyDescriptor);
+		}
+
+		@Override
+		public IItemLabelProvider getLabelProvider(final Object thisObject) {
+			final SimpleSequenceRef property = (SimpleSequenceRef) thisObject;
+
+			final IItemLabelProvider lp = super.getLabelProvider(thisObject);
+			return new IItemLabelProvider() {
+
+				@Override
+				@SuppressWarnings("unchecked")
+				public String getText(Object object) {
+					List<String> value = null;
+					if (object instanceof Values) {
+						value = ((Values) object).getValue();
+					} else if (object != null && object.getClass().isArray()) {
+						value = Arrays.asList((String[]) object);
+					} else if (object instanceof List< ? >) {
+						value = (List<String>) object;
+					}
+					return getValueText(property, value);
+				}
+
+				@Override
+				public Object getImage(Object object) {
+					return lp.getImage(object);
+				}
+			};
+		}
+
+		@Override
+		public boolean canSetProperty(Object thisObject) {
+			if (thisObject instanceof SimpleSequenceRef) {
+				return true;
+			}
+			return super.canSetProperty(thisObject);
+		}
+
+	}
+
+	/**
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}

@@ -1058,12 +1058,22 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStruct_Contents() {
+		return (EAttribute) structEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EReference getStruct_Simple() {
-		return (EReference) structEClass.getEStructuralFeatures().get(0);
+		return (EReference) structEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1073,7 +1083,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * @generated
 	 */
 	public EReference getStruct_SimpleSequence() {
-		return (EReference) structEClass.getEStructuralFeatures().get(1);
+		return (EReference) structEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1083,7 +1093,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 */
 	@Override
 	public EReference getStruct_ConfigurationKind() {
-		return (EReference) structEClass.getEStructuralFeatures().get(2);
+		return (EReference) structEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1138,12 +1148,22 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStructValue_Refs() {
+		return (EAttribute) structValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EReference getStructValue_SimpleRef() {
-		return (EReference) structValueEClass.getEStructuralFeatures().get(0);
+		return (EReference) structValueEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1153,16 +1173,6 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * @generated
 	 */
 	public EReference getStructValue_SimpleSequenceRef() {
-		return (EReference) structValueEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getStructValue_Struct() {
 		return (EReference) structValueEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1172,8 +1182,18 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getStructValue_Struct() {
+		return (EReference) structValueEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getStructValue_Index() {
-		return (EAttribute) structValueEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) structValueEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1468,12 +1488,22 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStructRef_Refs() {
+		return (EAttribute) structRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EReference getStructRef_SimpleRef() {
-		return (EReference) structRefEClass.getEStructuralFeatures().get(0);
+		return (EReference) structRefEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1483,7 +1513,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * @generated
 	 */
 	public EReference getStructRef_SimpleSequenceRef() {
-		return (EReference) structRefEClass.getEStructuralFeatures().get(1);
+		return (EReference) structRefEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1867,6 +1897,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		createEAttribute(simpleSequenceEClass, SIMPLE_SEQUENCE__OPTIONAL);
 
 		structEClass = createEClass(STRUCT);
+		createEAttribute(structEClass, STRUCT__CONTENTS);
 		createEReference(structEClass, STRUCT__SIMPLE);
 		createEReference(structEClass, STRUCT__SIMPLE_SEQUENCE);
 		createEReference(structEClass, STRUCT__CONFIGURATION_KIND);
@@ -1877,6 +1908,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		createEReference(structSequenceEClass, STRUCT_SEQUENCE__CONFIGURATION_KIND);
 
 		structValueEClass = createEClass(STRUCT_VALUE);
+		createEAttribute(structValueEClass, STRUCT_VALUE__REFS);
 		createEReference(structValueEClass, STRUCT_VALUE__SIMPLE_REF);
 		createEReference(structValueEClass, STRUCT_VALUE__SIMPLE_SEQUENCE_REF);
 		createEReference(structValueEClass, STRUCT_VALUE__STRUCT);
@@ -1920,6 +1952,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		createEReference(simpleSequenceRefEClass, SIMPLE_SEQUENCE_REF__VALUES);
 
 		structRefEClass = createEClass(STRUCT_REF);
+		createEAttribute(structRefEClass, STRUCT_REF__REFS);
 		createEReference(structRefEClass, STRUCT_REF__SIMPLE_REF);
 		createEReference(structRefEClass, STRUCT_REF__SIMPLE_SEQUENCE_REF);
 
@@ -2147,10 +2180,12 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addEOperation(simpleSequenceEClass, theEcorePackage.getEBoolean(), "isOptional", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(structEClass, Struct.class, "Struct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStruct_Simple(), this.getSimple(), null, "simple", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStruct_SimpleSequence(), this.getSimpleSequence(), null, "simpleSequence", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE,
-			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStruct_Contents(), ecorePackage.getEFeatureMapEntry(), "contents", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStruct_Simple(), this.getSimple(), null, "simple", null, 0, -1, Struct.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+			!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getStruct_SimpleSequence(), this.getSimpleSequence(), null, "simpleSequence", null, 0, -1, Struct.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getStruct_ConfigurationKind(), this.getConfigurationKind(), null, "configurationKind", null, 0, -1, Struct.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2163,10 +2198,12 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structValueEClass, StructValue.class, "StructValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructValue_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 0, -1, StructValue.class, !IS_TRANSIENT, !IS_VOLATILE,
-			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStructValue_Refs(), ecorePackage.getEFeatureMapEntry(), "refs", null, 0, -1, StructValue.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructValue_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 0, -1, StructValue.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getStructValue_SimpleSequenceRef(), this.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, -1, StructValue.class,
-			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getStructValue_Struct(), this.getStruct(), null, "struct", null, 0, 1, StructValue.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE,
 			!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStructValue_Index(), theEcorePackage.getEInt(), "index", null, 0, 1, StructValue.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE,
@@ -2246,10 +2283,12 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structRefEClass, StructRef.class, "StructRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStructRef_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 0, -1, StructRef.class, !IS_TRANSIENT, !IS_VOLATILE,
-			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStructRef_SimpleSequenceRef(), this.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, -1, StructRef.class, !IS_TRANSIENT,
-			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStructRef_Refs(), ecorePackage.getEFeatureMapEntry(), "refs", null, 0, -1, StructRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructRef_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 0, -1, StructRef.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getStructRef_SimpleSequenceRef(), this.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, -1, StructRef.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(structSequenceRefEClass, StructSequenceRef.class, "StructSequenceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructSequenceRef_StructValue(), this.getStructValue(), null, "structValue", null, 1, -1, StructSequenceRef.class, !IS_TRANSIENT,
@@ -2410,8 +2449,9 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation(getSimpleSequence_Complex(), source, new String[] { "kind", "attribute", "name", "complex" });
 		addAnnotation(getSimpleSequence_Optional(), source, new String[] { "kind", "attribute", "name", "optional" });
 		addAnnotation(structEClass, source, new String[] { "name", "struct", "kind", "elementOnly" });
-		addAnnotation(getStruct_Simple(), source, new String[] { "kind", "element", "name", "simple" });
-		addAnnotation(getStruct_SimpleSequence(), source, new String[] { "kind", "element", "name", "simplesequence" });
+		addAnnotation(getStruct_Contents(), source, new String[] { "kind", "group", "name", "contents:0" });
+		addAnnotation(getStruct_Simple(), source, new String[] { "kind", "element", "name", "simple", "group", "#contents:0" });
+		addAnnotation(getStruct_SimpleSequence(), source, new String[] { "kind", "element", "name", "simplesequence", "group", "#contents:0" });
 		addAnnotation(getStruct_ConfigurationKind(), source, new String[] { "kind", "element", "name", "configurationkind" });
 		addAnnotation(structPropertyConfigurationTypeEEnum, source, new String[] { "name", "StructPropertyConfigurationType" });
 		addAnnotation(structPropertyConfigurationTypeObjectEDataType, source, new String[] { "name", "StructPropertyConfigurationType:Object", "baseType",
@@ -2421,8 +2461,9 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation(getStructSequence_StructValue(), source, new String[] { "kind", "element", "name", "structvalue" });
 		addAnnotation(getStructSequence_ConfigurationKind(), source, new String[] { "kind", "element", "name", "configurationkind" });
 		addAnnotation(structValueEClass, source, new String[] { "name", "structvalue", "kind", "elementOnly" });
-		addAnnotation(getStructValue_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref" });
-		addAnnotation(getStructValue_SimpleSequenceRef(), source, new String[] { "kind", "element", "name", "simplesequenceref" });
+		addAnnotation(getStructValue_Refs(), source, new String[] { "kind", "group", "name", "refs:0" });
+		addAnnotation(getStructValue_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref", "group", "#refs:0" });
+		addAnnotation(getStructValue_SimpleSequenceRef(), source, new String[] { "kind", "element", "name", "simplesequenceref", "group", "#refs:0" });
 		addAnnotation(testEClass, source, new String[] { "name", "test", "kind", "elementOnly" });
 		addAnnotation(getTest_Description(), source, new String[] { "kind", "element", "name", "description" });
 		addAnnotation(getTest_InputValue(), source, new String[] { "kind", "element", "name", "inputvalue" });
@@ -2452,8 +2493,9 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addAnnotation(simpleSequenceRefEClass, source, new String[] { "kind", "elementOnly", "name", "simplesequenceref", "qualified", "false" });
 		addAnnotation(getSimpleSequenceRef_Values(), source, new String[] { "kind", "element", "name", "values" });
 		addAnnotation(structRefEClass, source, new String[] { "kind", "elementOnly", "name", "structref", "qualified", "false" });
-		addAnnotation(getStructRef_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref" });
-		addAnnotation(getStructRef_SimpleSequenceRef(), source, new String[] { "kind", "element", "name", "simplesequenceref" });
+		addAnnotation(getStructRef_Refs(), source, new String[] { "kind", "group", "name", "refs:0" });
+		addAnnotation(getStructRef_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref", "group", "#refs:0" });
+		addAnnotation(getStructRef_SimpleSequenceRef(), source, new String[] { "kind", "element", "name", "simplesequenceref", "group", "#refs:0" });
 		addAnnotation(structSequenceRefEClass, source, new String[] { "kind", "elementOnly", "name", "structsequenceref", "qualified", "false" });
 		addAnnotation(getStructSequenceRef_StructValue(), source, new String[] { "kind", "element", "name", "structvalue" });
 	}

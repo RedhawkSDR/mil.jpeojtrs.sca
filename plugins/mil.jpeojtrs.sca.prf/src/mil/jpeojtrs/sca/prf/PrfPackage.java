@@ -797,13 +797,21 @@ public interface PrfPackage extends EPackage {
 	 */
 	int STRUCT__MODE = ABSTRACT_PROPERTY__MODE;
 	/**
+	 * The feature id for the '<em><b>Contents</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCT__CONTENTS = ABSTRACT_PROPERTY_FEATURE_COUNT + 0;
+	/**
 	 * The feature id for the '<em><b>Simple</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT__SIMPLE = ABSTRACT_PROPERTY_FEATURE_COUNT + 0;
+	int STRUCT__SIMPLE = ABSTRACT_PROPERTY_FEATURE_COUNT + 1;
 	/**
 	 * The feature id for the '<em><b>Simple Sequence</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -812,7 +820,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT__SIMPLE_SEQUENCE = ABSTRACT_PROPERTY_FEATURE_COUNT + 1;
+	int STRUCT__SIMPLE_SEQUENCE = ABSTRACT_PROPERTY_FEATURE_COUNT + 2;
 	/**
 	 * The feature id for the '<em><b>Configuration Kind</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -820,7 +828,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT__CONFIGURATION_KIND = ABSTRACT_PROPERTY_FEATURE_COUNT + 2;
+	int STRUCT__CONFIGURATION_KIND = ABSTRACT_PROPERTY_FEATURE_COUNT + 3;
 	/**
 	 * The number of structural features of the '<em>Struct</em>' class.
 	 * <!-- begin-user-doc -->
@@ -828,7 +836,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 3;
+	int STRUCT_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 4;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.StructSequenceImpl <em>Struct Sequence</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -937,13 +945,21 @@ public interface PrfPackage extends EPackage {
 	 */
 	int STRUCT_VALUE = 15;
 	/**
+	 * The feature id for the '<em><b>Refs</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCT_VALUE__REFS = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 0;
+	/**
 	 * The feature id for the '<em><b>Simple Ref</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_VALUE__SIMPLE_REF = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 0;
+	int STRUCT_VALUE__SIMPLE_REF = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 1;
 	/**
 	 * The feature id for the '<em><b>Simple Sequence Ref</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -952,7 +968,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_VALUE__SIMPLE_SEQUENCE_REF = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 1;
+	int STRUCT_VALUE__SIMPLE_SEQUENCE_REF = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 2;
 	/**
 	 * The feature id for the '<em><b>Struct</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -960,7 +976,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_VALUE__STRUCT = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 2;
+	int STRUCT_VALUE__STRUCT = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 3;
 	/**
 	 * The feature id for the '<em><b>Index</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -968,7 +984,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_VALUE__INDEX = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 3;
+	int STRUCT_VALUE__INDEX = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 4;
 	/**
 	 * The number of structural features of the '<em>Struct Value</em>' class.
 	 * <!-- begin-user-doc -->
@@ -976,7 +992,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_VALUE_FEATURE_COUNT = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 4;
+	int STRUCT_VALUE_FEATURE_COUNT = PROPERTY_REF_CONTAINER_FEATURE_COUNT + 5;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.TestImpl <em>Test</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1306,13 +1322,21 @@ public interface PrfPackage extends EPackage {
 	 */
 	int STRUCT_REF__PROPERTY = ABSTRACT_PROPERTY_REF__PROPERTY;
 	/**
+	 * The feature id for the '<em><b>Refs</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCT_REF__REFS = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 0;
+	/**
 	 * The feature id for the '<em><b>Simple Ref</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_REF__SIMPLE_REF = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 0;
+	int STRUCT_REF__SIMPLE_REF = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 1;
 	/**
 	 * The feature id for the '<em><b>Simple Sequence Ref</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -1321,7 +1345,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_REF__SIMPLE_SEQUENCE_REF = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 1;
+	int STRUCT_REF__SIMPLE_SEQUENCE_REF = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 2;
 	/**
 	 * The number of structural features of the '<em>Struct Ref</em>' class.
 	 * <!-- begin-user-doc -->
@@ -1329,7 +1353,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT_REF_FEATURE_COUNT = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 2;
+	int STRUCT_REF_FEATURE_COUNT = ABSTRACT_PROPERTY_REF_FEATURE_COUNT + 3;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.StructSequenceRefImpl <em>Struct Sequence Ref</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -2227,6 +2251,17 @@ public interface PrfPackage extends EPackage {
 	EClass getStruct();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link mil.jpeojtrs.sca.prf.Struct#getContents <em>Contents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Contents</em>'.
+	 * @see mil.jpeojtrs.sca.prf.Struct#getContents()
+	 * @see #getStruct()
+	 * @generated
+	 */
+	EAttribute getStruct_Contents();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.Struct#getSimple <em>Simple</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2312,6 +2347,17 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getStructValue();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link mil.jpeojtrs.sca.prf.StructValue#getRefs <em>Refs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Refs</em>'.
+	 * @see mil.jpeojtrs.sca.prf.StructValue#getRefs()
+	 * @see #getStructValue()
+	 * @generated
+	 */
+	EAttribute getStructValue_Refs();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleRef <em>Simple Ref</em>}'.
@@ -2666,6 +2712,17 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getStructRef();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link mil.jpeojtrs.sca.prf.StructRef#getRefs <em>Refs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Refs</em>'.
+	 * @see mil.jpeojtrs.sca.prf.StructRef#getRefs()
+	 * @see #getStructRef()
+	 * @generated
+	 */
+	EAttribute getStructRef_Refs();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleRef <em>Simple Ref</em>}'.
@@ -3533,6 +3590,14 @@ public interface PrfPackage extends EPackage {
 		EClass STRUCT = eINSTANCE.getStruct();
 
 		/**
+		 * The meta object literal for the '<em><b>Contents</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCT__CONTENTS = eINSTANCE.getStruct_Contents();
+
+		/**
 		 * The meta object literal for the '<em><b>Simple</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3600,6 +3665,14 @@ public interface PrfPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STRUCT_VALUE = eINSTANCE.getStructValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Refs</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCT_VALUE__REFS = eINSTANCE.getStructValue_Refs();
 
 		/**
 		 * The meta object literal for the '<em><b>Simple Ref</b></em>' containment reference list feature.
@@ -3885,6 +3958,14 @@ public interface PrfPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STRUCT_REF = eINSTANCE.getStructRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Refs</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCT_REF__REFS = eINSTANCE.getStructRef_Refs();
 
 		/**
 		 * The meta object literal for the '<em><b>Simple Ref</b></em>' containment reference list feature.

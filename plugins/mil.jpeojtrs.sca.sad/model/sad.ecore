@@ -17,7 +17,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SadComponentInstantiation" eSuperTypes="platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentInstantiation">
+  <eClassifiers xsi:type="ecore:EClass" name="SadComponentInstantiation" eSuperTypes="../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentInstantiation">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="componentinstantiation"/>
       <details key="kind" value="elementOnly"/>
@@ -45,7 +45,7 @@
       <details key="kind" value="elementOnly"/>
       <details key="qualified" value="false"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentInstantiationRef">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentInstantiationRef">
       <eTypeArguments eClassifier="#//SadComponentInstantiation"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -55,7 +55,7 @@
       <details key="kind" value="elementOnly"/>
       <details key="qualified" value="false"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//UsesPort">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//UsesPort">
       <eTypeArguments eClassifier="#//SadComponentInstantiationRef"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -65,7 +65,7 @@
       <details key="kind" value="elementOnly"/>
       <details key="qualified" value="false"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ProvidesPort">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ProvidesPort">
       <eTypeArguments eClassifier="#//SadComponentInstantiationRef"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -75,7 +75,7 @@
       <details key="kind" value="elementOnly"/>
       <details key="qualified" value="false"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ConnectInterface">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ConnectInterface">
       <eTypeArguments eClassifier="#//SadComponentInstantiationRef"/>
       <eTypeArguments eClassifier="#//SadUsesPort"/>
       <eTypeArguments eClassifier="#//SadProvidesPort"/>
@@ -87,7 +87,7 @@
       <details key="kind" value="elementOnly"/>
       <details key="qualified" value="false"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//Connections">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//Connections">
       <eTypeArguments eClassifier="#//SadConnectInterface"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -151,23 +151,23 @@
       <details key="kind" value="elementOnly"/>
       <details key="qualified" value="false"/>
     </eAnnotations>
-    <eOperations name="resolveExternalID" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eOperations name="resolveExternalID" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="compRefID" unique="false"
-        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
         <details key="name" value="comprefid"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="propID" unique="false"
-        lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
         <details key="name" value="propid"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalPropID" unique="false"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
         <details key="name" value="externalpropid"/>
@@ -188,7 +188,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="namingService" eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//NamingService"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="namingService" eType="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//NamingService"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -271,7 +271,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalName" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalName" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
         <details key="name" value="externalname"/>
@@ -293,7 +293,7 @@
         <details key="group" value="#parts:0"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//Partitioning">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//Partitioning">
       <eTypeArguments eClassifier="#//SadComponentPlacement"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -303,11 +303,11 @@
       <details key="kind" value="elementOnly"/>
       <details key="qualified" value="false"/>
     </eAnnotations>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentPlacement">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentPlacement">
       <eTypeArguments eClassifier="#//SadComponentInstantiation"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceFactoryProperties" eSuperTypes="platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.ecore#//PropertyRefContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceFactoryProperties" eSuperTypes="../../mil.jpeojtrs.sca.prf/model/prf.ecore#//PropertyRefContainer">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="resourcefactoryproperties"/>
       <details key="kind" value="elementOnly"/>
@@ -321,7 +321,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="simpleRef" upperBound="-1"
-        eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.ecore#//SimpleRef"
+        eType="ecore:EClass ../../mil.jpeojtrs.sca.prf/model/prf.ecore#//SimpleRef"
         volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -331,7 +331,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="simpleSequenceRef" upperBound="-1"
-        eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.ecore#//SimpleSequenceRef"
+        eType="ecore:EClass ../../mil.jpeojtrs.sca.prf/model/prf.ecore#//SimpleSequenceRef"
         volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -341,7 +341,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="structRef" upperBound="-1"
-        eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.ecore#//StructRef"
+        eType="ecore:EClass ../../mil.jpeojtrs.sca.prf/model/prf.ecore#//StructRef"
         volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -351,7 +351,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="structSequenceRef" upperBound="-1"
-        eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.ecore#//StructSequenceRef"
+        eType="ecore:EClass ../../mil.jpeojtrs.sca.prf/model/prf.ecore#//StructSequenceRef"
         volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -408,7 +408,7 @@
       <details key="qualified" value="false"/>
     </eAnnotations>
     <eOperations name="getComponentInstantiation" eType="#//SadComponentInstantiation">
-      <eParameters name="instantiationId" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+      <eParameters name="instantiationId" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eOperations>
     <eOperations name="getComponentInstantiationsInStartOrder" upperBound="-1" eType="#//SadComponentInstantiation"/>
     <eOperations name="getAllComponentInstantiations" upperBound="-1" eType="#//SadComponentInstantiation"/>
@@ -420,7 +420,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentFiles" lowerBound="1"
-        eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentFiles"
+        eType="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentFiles"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
@@ -468,7 +468,7 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType platform:/plugin/mil.jpeojtrs.sca.prf/model/prf.ecore#//DceUUID"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType ../../mil.jpeojtrs.sca.prf/model/prf.ecore#//DceUUID"
         iD="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
@@ -503,7 +503,7 @@
       <details key="qualified" value="false"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usesdevice" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass platform:/plugin/mil.jpeojtrs.sca.spd/model/spd.ecore#//UsesDevice"
+        upperBound="-1" eType="ecore:EClass ../../mil.jpeojtrs.sca.spd/model/spd.ecore#//UsesDevice"
         containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
