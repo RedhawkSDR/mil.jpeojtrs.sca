@@ -178,29 +178,4 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONFIGURATION_KIND, PrfFactory.eINSTANCE.createConfigurationKind()));
 	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection< ? > selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		if (childFeature instanceof EStructuralFeature && FeatureMapUtil.isFeatureMap((EStructuralFeature) childFeature)) {
-			FeatureMap.Entry entry = (FeatureMap.Entry) childObject;
-			childFeature = entry.getEStructuralFeature();
-			childObject = entry.getValue();
-		}
-
-		boolean qualify = childFeature == PrfPackage.Literals.STRUCT__SIMPLE || childFeature == PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
-	}
 }
