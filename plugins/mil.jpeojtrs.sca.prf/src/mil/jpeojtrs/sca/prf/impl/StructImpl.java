@@ -60,6 +60,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	/**
 	 * The cached value of the '{@link #getContents() <em>Contents</em>}' attribute list.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @see #getContents()
 	 * @generated

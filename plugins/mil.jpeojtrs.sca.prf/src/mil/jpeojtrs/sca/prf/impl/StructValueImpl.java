@@ -193,6 +193,7 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 * @since 5.0

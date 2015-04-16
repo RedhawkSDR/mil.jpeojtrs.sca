@@ -43,6 +43,7 @@ public interface Struct extends AbstractProperty, PropertyContainer {
 	 * If the meaning of the '<em>Contents</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contents</em>' attribute list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_Contents()

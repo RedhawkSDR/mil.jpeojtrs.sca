@@ -45,6 +45,7 @@ public interface StructValue extends PropertyRefContainer {
 	 * If the meaning of the '<em>Refs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Refs</em>' attribute list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructValue_Refs()

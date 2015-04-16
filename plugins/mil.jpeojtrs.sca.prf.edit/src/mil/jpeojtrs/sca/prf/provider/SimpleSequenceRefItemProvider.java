@@ -56,6 +56,7 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
+	 * @since 3.0
 	 */
 	protected void addValuesPropertyDescriptor(Object object) {
 		// END GENERATED CODE
