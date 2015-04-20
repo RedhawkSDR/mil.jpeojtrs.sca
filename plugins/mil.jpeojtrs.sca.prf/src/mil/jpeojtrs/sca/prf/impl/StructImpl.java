@@ -58,28 +58,6 @@ import CF.PropertiesHelper;
  */
 public class StructImpl extends AbstractPropertyImpl implements Struct {
 	/**
-	 * The cached value of the '{@link #getContents() <em>Contents</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * @since 5.0
-	 * <!-- end-user-doc -->
-	 * @see #getContents()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Simple> simple;
-	
-	/**
-	 * The cached value of the '{@link #getSimpleSequence() <em>Simple Sequence</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * @since 5.0
-	 * <!-- end-user-doc -->
-	 * @see #getSimpleSequence()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SimpleSequence> simpleSequence;
-	
-	/**
 	 * @since 5.0
 	 */
 	protected FeatureMap contents;

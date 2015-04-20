@@ -13,9 +13,11 @@ package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Collection;
 import java.util.List;
+
 import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.Struct;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -177,5 +179,17 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE, PrfFactory.eINSTANCE.createSimpleSequence()));
 
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONFIGURATION_KIND, PrfFactory.eINSTANCE.createConfigurationKind()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * The method is being handled by super.  Generated code will cause a redundant return (ex: "Simple Simple" instead of just "Simple");
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection< ? > selection) {
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 }
