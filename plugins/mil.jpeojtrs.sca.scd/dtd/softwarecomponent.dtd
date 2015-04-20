@@ -44,7 +44,6 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 	repid		CDATA	#REQUIRED>
 
 <!ELEMENT componenttype (#PCDATA)>
-<!ELEMENT description (#PCDATA)>
 
 <!ELEMENT componentfeatures
 	( supportsinterface* 
@@ -63,8 +62,8 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 
 <!ELEMENT provides
 	( description?
-	, porttype*
-	)>
+	, porttype* 
+        )>
 <!ATTLIST provides
 	repid			CDATA	#REQUIRED
 	providesname	CDATA	#REQUIRED>
@@ -72,11 +71,12 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 <!ELEMENT uses
 	( description?
 	, porttype*
-	)>
+        )>
 <!ATTLIST uses
 	repid		CDATA	#REQUIRED
 	usesname	CDATA	#REQUIRED>
 
+<!ELEMENT description (#PCDATA)>
 <!ELEMENT porttype EMPTY>
 <!ATTLIST porttype
     	type	( data | control | responses	| test | virtual ) 	#REQUIRED>

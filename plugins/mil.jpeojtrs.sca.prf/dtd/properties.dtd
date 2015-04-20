@@ -1,54 +1,52 @@
 <!--
-This file is protected by Copyright. Please refer to the COPYRIGHT file
+This file is protected by Copyright. Please refer to the COPYRIGHT file 
 distributed with this source distribution.
 
 This file is part of REDHAWK core.
 
-REDHAWK core is free software: you can redistribute it and/or modify it under
-the terms of the GNU Lesser General Public License as published by the Free
-Software Foundation, either version 3 of the License, or (at your option) any
+REDHAWK core is free software: you can redistribute it and/or modify it under 
+the terms of the GNU Lesser General Public License as published by the Free 
+Software Foundation, either version 3 of the License, or (at your option) any 
 later version.
 
-REDHAWK core is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
-A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+REDHAWK core is distributed in the hope that it will be useful, but WITHOUT ANY 
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR 
+A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more 
 details.
 
-You should have received a copy of the GNU Lesser General Public License along
+You should have received a copy of the GNU Lesser General Public License along 
 with this program.  If not, see http://www.gnu.org/licenses/.
 -->
 
 <!ELEMENT properties
-    ( description?
-    , ( simple
-      | simplesequence
-      | test
-      | struct
-      | structsequence
-      )*
-    )>
+     	 ( description?
+     	 , 	( simple
+		| simplesequence
+		| test
+		| struct
+		| structsequence)*
+       )> 
 
-<!ELEMENT simple
-    ( description?
-    , value?
-    , units?
-    , range?
-    , enumerations?
-    , kind*
-    , action?
-    )>
+<!ELEMENT simple 
+	( description?
+	, value?
+	, units?
+	, range?
+	, enumerations?
+	, kind*
+	, action?
+	)>
 
 <!-- Support non-SCA compliant longlong -->
 <!ATTLIST simple
-    id       ID                #REQUIRED
-    type     ( boolean | char  | double   | float
-             | short   | long  | longlong | objref | octet
-             | string  | ulong | ushort
-             )                 #REQUIRED
-    name     CDATA             #IMPLIED
-    complex  ( false | true )  "false"
-    optional ( false | true )  "false"
-    mode     ( readonly | readwrite | writeonly ) "readwrite">
+	id	ID							#REQUIRED
+	type	( boolean	| char	| double | float
+		| short	| long	| longlong | objref | octet
+		| string	| ulong	| ushort )		#REQUIRED
+	name	CDATA							#IMPLIED
+	complex ( false | true ) "false"
+	optional ( false | true ) "false"
+	mode	( readonly	| readwrite | writeonly)	"readwrite">
 
 <!ELEMENT description (#PCDATA)>
 
@@ -58,17 +56,17 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 
 <!ELEMENT range EMPTY>
 <!ATTLIST range
-    min  CDATA  #REQUIRED
-    max  CDATA  #REQUIRED>
+	min		CDATA	#REQUIRED
+	max		CDATA	#REQUIRED>
 
 <!ELEMENT enumerations
-    ( enumeration+
-    )>
+	( enumeration+
+	)>
 
 <!ELEMENT enumeration EMPTY>
 <!ATTLIST enumeration
-    label  CDATA  #REQUIRED
-    value  CDATA  #IMPLIED>
+	label		CDATA	#REQUIRED
+	value		CDATA	#IMPLIED>
 
 <!ELEMENT kind EMPTY>
 <!ATTLIST kind
@@ -77,56 +75,55 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 
 <!ELEMENT action EMPTY>
 <!ATTLIST action
-    type  ( eq  | ne | gt  |  lt | ge | le | external ) "external">
+	type	( eq  | ne | gt  |  lt | ge | le | external ) "external">
 
-<!ELEMENT simplesequence
-    ( description?
-    , values?
-    , units?
-    , range?
-    , kind*
-    , action?
-    )>
+<!ELEMENT simplesequence 
+	( description?
+	, values?
+	, units?
+	, range?
+	, kind*
+	, action?
+	)>
 <!ATTLIST simplesequence
-    id       ID                #REQUIRED
-    type     ( boolean | char  | double | float
-             | short   | long  | objref | octet
-             | string  | ulong | ushort
-             )                 #REQUIRED
-    name     CDATA             #IMPLIED
-    complex  ( false | true )  "false"
-    optional ( false | true )  "false"
-    mode     ( readonly | readwrite | writeonly )  "readwrite">
+	id	ID						#REQUIRED
+	type  ( boolean | char   | double | float
+	      | short  | long   | objref | octet
+	      | string | ulong  | ushort )		#REQUIRED
+	name	CDATA						#IMPLIED
+	complex ( false | true ) "false"
+	optional ( false | true ) "false"
+	mode	(readonly | readwrite | writeonly)	"readwrite">
 
 <!ELEMENT values
-    ( value+
-    )>
+	( value+ 
+	)>
 
-<!ELEMENT test
-    ( description
-    , inputValue?
-    , resultValue
-    )>
+<!ELEMENT test 
+	( description
+      , inputValue?
+	, resultValue
+	)>
 <!ATTLIST test
-    id  CDATA  #REQUIRED>
+	id		CDATA #REQUIRED>
 
 <!ELEMENT inputValue
-    ( simple+
-    )>
+	( simple+
+	)>
 
 <!ELEMENT resultValue
-    ( simple+
-    )>
+	( simple+
+	)>
 
-<!ELEMENT struct
-    ( description?
-    , (simple | simplesequence)+
-    , configurationkind*
-    )>
+<!ELEMENT struct 
+	( description?
+	, (simple | simplesequence)+
+	, configurationkind*
+	)>
 <!ATTLIST struct
-    id    ID     #REQUIRED
-    name  CDATA  #IMPLIED
-    mode  ( readonly | readwrite | writeonly )  "readwrite">
+	id		ID	#REQUIRED
+	name		CDATA	#IMPLIED
+	mode		(readonly | readwrite | writeonly)  "readwrite">
 
 <!ELEMENT configurationkind EMPTY>
 <!ATTLIST configurationkind
@@ -134,24 +131,24 @@ with this program.  If not, see http://www.gnu.org/licenses/.
 "property">
 
 <!ELEMENT structsequence
-    ( description?
-    , struct
-    , structvalue*
-    , configurationkind*
-    )>
+	( description?
+	, struct
+	, structvalue*
+	, configurationkind*
+	)>
 <!ATTLIST structsequence
-    id    ID     #REQUIRED
-    name  CDATA  #IMPLIED
-    mode  ( readonly | readwrite | writeonly )  "readwrite">
-
+	id       	ID	#REQUIRED
+	name		CDATA	#IMPLIED
+	mode		(readonly | readwrite | writeonly)  "readwrite">
+		
 <!ELEMENT structvalue
-    ( (simpleref | simplesequenceref)+
-    )>
-
+	( (simpleref | simplesequenceref)+	        
+	)>
+		
 <!ELEMENT simpleref EMPTY>
 <!ATTLIST simpleref
-    refid  CDATA  #REQUIRED
-    value  CDATA  #REQUIRED>
+	refid 	CDATA	#REQUIRED
+	value 	CDATA	#REQUIRED>
 
 <!ELEMENT simplesequenceref
         ( values
