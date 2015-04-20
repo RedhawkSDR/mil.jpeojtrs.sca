@@ -799,6 +799,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Contents</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -947,6 +948,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Refs</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1324,6 +1326,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Refs</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -2253,6 +2256,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute list '{@link mil.jpeojtrs.sca.prf.Struct#getContents <em>Contents</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Contents</em>'.
 	 * @see mil.jpeojtrs.sca.prf.Struct#getContents()
@@ -2351,6 +2355,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute list '{@link mil.jpeojtrs.sca.prf.StructValue#getRefs <em>Refs</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Refs</em>'.
 	 * @see mil.jpeojtrs.sca.prf.StructValue#getRefs()
@@ -2716,6 +2721,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute list '{@link mil.jpeojtrs.sca.prf.StructRef#getRefs <em>Refs</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Refs</em>'.
 	 * @see mil.jpeojtrs.sca.prf.StructRef#getRefs()
@@ -3592,6 +3598,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Contents</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
+		 * @since 5.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3669,6 +3676,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Refs</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
+		 * @since 5.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3962,6 +3970,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Refs</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
+		 * @since 5.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
