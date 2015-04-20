@@ -859,6 +859,18 @@ module CF {
                       in string name
                       )
         raises (CF::PortSupplier::UnknownPort);
+	  /* The PortInfoType defines a type for returning information about a port in the getPortSet function. */
+	  struct PortInfoType {
+		Object obj_ptr;
+		string name;
+		string repid;
+		string description;
+		string direction;
+	  };
+	  /* The PortInfoSequence type defines an unbounded sequence of ports' information for getPortSet function. */
+	  typedef sequence <PortInfoType> PortInfoSequence;
+	  /* The getPortSet operation provides a mechanism to obtain information about all ports in the resource. */
+	  PortInfoSequence getPortSet ();
     };
     /* The Resource interface provides a common interface for the control and configuration of a software component. */
     interface Resource : LifeCycle, TestableObject, PropertySet, PortSupplier, Logging {
