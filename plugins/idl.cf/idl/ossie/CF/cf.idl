@@ -430,6 +430,14 @@ module CF {
     exception PartialConfiguration {
       CF::Properties invalidProperties;
     };
+    /* The AlreadyInitialized exception indicates that initializeProperties has already been called on this component. */
+    exception AlreadyInitialized {
+    };
+
+    /* The purpose of this operation is to set the initial id/value pair configuration properties for components implementing this interface. */
+    void initializeProperties(in CF::Properties initialProperties)
+      raises (CF::PropertySet::AlreadyInitialized,CF::PropertySet::InvalidConfiguration,CF::PropertySet::PartialConfiguration);
+
     /* The purpose of this operation is to allow id/value pair configuration properties to be assigned to components implementing this interface. */
     void configure (in CF::Properties configProperties )
       raises (CF::PropertySet::InvalidConfiguration,CF::PropertySet::PartialConfiguration);
