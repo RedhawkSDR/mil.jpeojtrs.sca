@@ -96,32 +96,6 @@ public class StructRefTest extends AbstractPropertyRefTest {
 	}
 
 	/**
-	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleRef() <em>Simple Ref</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mil.jpeojtrs.sca.prf.StructRef#getSimpleRef()
-	 * @generated
-	 */
-	public void testGetSimpleRef() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef()
-	 * @generated
-	 */
-	public void testGetSimpleSequenceRef() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link mil.jpeojtrs.sca.prf.PropertyRefContainer#getPropertyContainer() <em>Get Property Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

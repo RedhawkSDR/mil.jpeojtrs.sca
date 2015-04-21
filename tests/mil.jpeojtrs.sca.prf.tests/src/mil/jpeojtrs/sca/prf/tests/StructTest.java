@@ -107,32 +107,6 @@ public class StructTest extends AbstractPropertyTest {
 	}
 
 	/**
-	 * Tests the '{@link mil.jpeojtrs.sca.prf.Struct#getSimple() <em>Simple</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mil.jpeojtrs.sca.prf.Struct#getSimple()
-	 * @generated
-	 */
-	public void testGetSimple() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link mil.jpeojtrs.sca.prf.Struct#getSimpleSequence() <em>Simple Sequence</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mil.jpeojtrs.sca.prf.Struct#getSimpleSequence()
-	 * @generated
-	 */
-	public void testGetSimpleSequence() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link mil.jpeojtrs.sca.prf.PropertyContainer#getProperty(java.lang.String) <em>Get Property</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
