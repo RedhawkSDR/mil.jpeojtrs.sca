@@ -89,7 +89,17 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MESSAGE(6, "message", "message");
+	MESSAGE(6, "message", "message"),
+	/**
+	 * The '<em><b>Property</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PROPERTY_VALUE
+	 * @generated
+	 * @ordered
+	 * @since 5.0
+	 */
+	PROPERTY(7, "property", "property");
 
 	/**
 	 * The '<em><b>Configure</b></em>' literal value.
@@ -190,13 +200,28 @@ public enum PropertyConfigurationType implements Enumerator {
 	 */
 	public static final int MESSAGE_VALUE = 6;
 	/**
+	 * The '<em><b>Property</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Property</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #PROPERTY
+	 * @model name="property"
+	 * @generated
+	 * @ordered
+	 * @since 5.0
+	 */
+	public static final int PROPERTY_VALUE = 7;
+	/**
 	 * An array of all the '<em><b>Property Configuration Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private static final PropertyConfigurationType[] VALUES_ARRAY = new PropertyConfigurationType[] { CONFIGURE, EXECPARAM, ALLOCATION, FACTORYPARAM, TEST,
-		EVENT, MESSAGE, };
+		EVENT, MESSAGE, PROPERTY, };
 	/**
 	 * A public read-only list of all the '<em><b>Property Configuration Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
@@ -259,6 +284,8 @@ public enum PropertyConfigurationType implements Enumerator {
 			return EVENT;
 		case MESSAGE_VALUE:
 			return MESSAGE;
+		case PROPERTY_VALUE:
+			return PROPERTY;
 		}
 		return null;
 	}

@@ -111,19 +111,26 @@ public class KindTest extends TestCase {
 
 	public void test_parse() throws Exception {
 		final Properties props = Properties.Util.getProperties(this.resourceSet.getResource(PrfTests.getURI("testFiles/KindTest.prf.xml"), true));
+		Assert.assertEquals("Unexpected number of properties", 10, props.getSimple().size());
 		for (final Simple simple : props.getSimple()) {
 			final EList<Kind> kind = simple.getKind();
-			if (simple.getId().equals("DCE:949af1fc-87ec-49a9-92fc-488fce348a0e")) {
+			if (simple.getId().equals("configureid")) {
 				Assert.assertEquals(PropertyConfigurationType.CONFIGURE, kind.get(0).getType());
-			} else if (simple.getId().equals("DCE:a0dae7c6-1f49-4cc0-9219-2b669ca392c8")) {
-				Assert.assertEquals(PropertyConfigurationType.ALLOCATION, kind.get(0).getType());
-			} else if (simple.getId().equals("DCE:753b3ef5-fa23-4c51-9711-c1183ab23cbd")) {
+			} else if (simple.getId().equals("execparamid")) {
 				Assert.assertEquals(PropertyConfigurationType.EXECPARAM, kind.get(0).getType());
-			} else if (simple.getId().equals("DCE:193f45bf-bed8-4eed-acc3-144d6ab848a7")) {
+			} else if (simple.getId().equals("allocationid")) {
+				Assert.assertEquals(PropertyConfigurationType.ALLOCATION, kind.get(0).getType());
+			} else if (simple.getId().equals("factoryparamid")) {
 				Assert.assertEquals(PropertyConfigurationType.FACTORYPARAM, kind.get(0).getType());
-			} else if (simple.getId().equals("DCE:72f5dfb1-cc06-4901-9f8e-a86bb7955381")) {
+			} else if (simple.getId().equals("testid")) {
 				Assert.assertEquals(PropertyConfigurationType.TEST, kind.get(0).getType());
-			} else if (simple.getId().equals("DCE:c86bcbee-7940-4218-8eca-29e3dcd830fa")) {
+			} else if (simple.getId().equals("eventid")) {
+				Assert.assertEquals(PropertyConfigurationType.EVENT, kind.get(0).getType());
+			} else if (simple.getId().equals("messageid")) {
+				Assert.assertEquals(PropertyConfigurationType.MESSAGE, kind.get(0).getType());
+			} else if (simple.getId().equals("propertyid")) {
+				Assert.assertEquals(PropertyConfigurationType.PROPERTY, kind.get(0).getType());
+			} else if (simple.getId().equals("allid")) {
 				final List<PropertyConfigurationType> types = new ArrayList<PropertyConfigurationType>();
 				types.addAll(Arrays.asList(PropertyConfigurationType.values()));
 				for (final Kind k : kind) {
@@ -136,7 +143,7 @@ public class KindTest extends TestCase {
 					Assert.assertEquals(PropertyConfigurationType.CONFIGURE, k.getType());
 				}
 				Assert.assertEquals(0, types.size());
-			} else if (simple.getId().equals("DCE:2aaac878-1416-4199-af3f-bafdde245091")) {
+			} else if (simple.getId().equals("noneid")) {
 				Assert.assertEquals(0, kind.size());
 			} else {
 				Assert.fail();

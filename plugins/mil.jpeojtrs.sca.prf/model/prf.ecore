@@ -284,6 +284,7 @@
     <eLiterals name="test" value="4"/>
     <eLiterals name="event" value="5"/>
     <eLiterals name="message" value="6"/>
+    <eLiterals name="property" value="7" literal="property"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="PropertyConfigurationTypeObject"
       instanceClassName="org.eclipse.emf.common.util.Enumerator">
@@ -471,7 +472,7 @@
         <details key="name" value="complex"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBooleanObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBooleanObject">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
         <details key="name" value="optional"/>

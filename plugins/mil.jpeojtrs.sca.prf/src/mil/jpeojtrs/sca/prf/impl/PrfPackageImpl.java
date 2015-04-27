@@ -2317,6 +2317,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addEEnumLiteral(propertyConfigurationTypeEEnum, PropertyConfigurationType.TEST);
 		addEEnumLiteral(propertyConfigurationTypeEEnum, PropertyConfigurationType.EVENT);
 		addEEnumLiteral(propertyConfigurationTypeEEnum, PropertyConfigurationType.MESSAGE);
+		addEEnumLiteral(propertyConfigurationTypeEEnum, PropertyConfigurationType.PROPERTY);
 
 		initEEnum(propertyValueTypeEEnum, PropertyValueType.class, "PropertyValueType");
 		addEEnumLiteral(propertyValueTypeEEnum, PropertyValueType.STRING);

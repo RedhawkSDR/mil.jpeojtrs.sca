@@ -61,7 +61,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * @since 5.0
 	 */
 	protected FeatureMap contents;
-	
+
 	/**
 	 * The cached value of the '{@link #getConfigurationKind() <em>Configuration Kind</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
