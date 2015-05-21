@@ -11,14 +11,13 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.tests;
 
-import org.eclipse.emf.common.util.EList;
-import org.junit.Assert;
-
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.sad.SadFactory;
 import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
 import mil.jpeojtrs.sca.spd.UsesDevice;
+
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

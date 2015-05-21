@@ -11,17 +11,15 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.tests;
 
-import org.junit.Assert;
-
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.scd.Interface;
 import mil.jpeojtrs.sca.scd.PortType;
 import mil.jpeojtrs.sca.scd.Provides;
 import mil.jpeojtrs.sca.scd.SoftwareComponent;
-import mil.jpeojtrs.sca.scd.Uses;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**

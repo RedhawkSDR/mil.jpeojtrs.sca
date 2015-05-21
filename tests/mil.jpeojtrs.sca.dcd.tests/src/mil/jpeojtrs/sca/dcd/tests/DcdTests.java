@@ -13,9 +13,6 @@ package mil.jpeojtrs.sca.dcd.tests;
 
 import java.net.URL;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
-import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.dcd.DeviceConfiguration;
 import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
 import mil.jpeojtrs.sca.util.SdrURIHandler;
