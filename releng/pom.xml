@@ -23,7 +23,7 @@
 
   <properties>
     <tycho.scmUrl>scm:git:https://github.com/RedhawkSDR/eclipse-mil.jpeojtrs.sca.git</tycho.scmUrl>
-    <eclipse>http://download.eclipse.org/releases/luna</eclipse>
+    <eclipse>http://download.eclipse.org/releases/mars</eclipse>
     <jacorb>http://download.redhawksdr.org/jacorb/updates/stable</jacorb>
     <logback>http://download.redhawksdr.org/logback/latest</logback>
   </properties>
