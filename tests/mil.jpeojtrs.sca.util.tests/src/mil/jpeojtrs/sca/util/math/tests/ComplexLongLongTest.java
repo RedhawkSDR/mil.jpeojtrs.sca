@@ -10,7 +10,7 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math.tests;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import mil.jpeojtrs.sca.util.math.ComplexLongLong;
 import mil.jpeojtrs.sca.util.math.ComplexNumber;
 

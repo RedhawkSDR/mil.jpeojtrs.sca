@@ -10,7 +10,7 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math.tests;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import mil.jpeojtrs.sca.util.math.ComplexFloat;
 import mil.jpeojtrs.sca.util.math.ComplexNumber;
 
@@ -30,20 +30,20 @@ public class ComplexFloatTest extends ComplexNumberTest {
 		Any any = complexFloat.toAny();
 
 		complexFloat cfType = complexFloatHelper.extract(any);
-		Assert.assertEquals(7f, cfType.real);
-		Assert.assertEquals(8f, cfType.imag);
+		Assert.assertEquals(7f, cfType.real, 0.0);
+		Assert.assertEquals(8f, cfType.imag, 0.0);
 	}
 
 	@Override
 	public void testGetValue() {
-		Assert.assertEquals(7f, complexFloat.getValue(0).floatValue());
-		Assert.assertEquals(8f, complexFloat.getValue(1).floatValue());
+		Assert.assertEquals(7f, complexFloat.getValue(0).floatValue(), 0.0);
+		Assert.assertEquals(8f, complexFloat.getValue(1).floatValue(), 0.0);
 	}
 
 	@Test
 	public void testGetFloatValue() {
-		Assert.assertEquals(7f, complexFloat.getFloatValue(0));
-		Assert.assertEquals(8f, complexFloat.getFloatValue(1));
+		Assert.assertEquals(7f, complexFloat.getFloatValue(0), 0.0);
+		Assert.assertEquals(8f, complexFloat.getFloatValue(1), 0.0);
 	}
 
 	@Override
@@ -58,16 +58,16 @@ public class ComplexFloatTest extends ComplexNumberTest {
 		complexFloatHelper.insert(any, cfType);
 
 		ComplexFloat complexFloat2 = ComplexFloat.valueOf(any);
-		Assert.assertEquals(7f, complexFloat2.getFloatValue(0));
-		Assert.assertEquals(8f, complexFloat2.getFloatValue(1));
+		Assert.assertEquals(7f, complexFloat2.getFloatValue(0), 0.0);
+		Assert.assertEquals(8f, complexFloat2.getFloatValue(1), 0.0);
 	}
 
 	@Override
 	public void testValueOfString() {
 		ComplexFloat complexFloat2 = ComplexFloat.valueOf("5+i6");
 
-		Assert.assertEquals(5f, complexFloat2.getFloatValue(0));
-		Assert.assertEquals(6f, complexFloat2.getFloatValue(1));
+		Assert.assertEquals(5f, complexFloat2.getFloatValue(0), 0.0);
+		Assert.assertEquals(6f, complexFloat2.getFloatValue(1), 0.0);
 	}
 
 	@Override
@@ -75,8 +75,8 @@ public class ComplexFloatTest extends ComplexNumberTest {
 		ComplexNumber complexNumber = ComplexNumber.valueOf("float", "5+i6");
 
 		Assert.assertTrue("Invalid complex type", complexNumber instanceof ComplexFloat);
-		Assert.assertEquals(5f, ((ComplexFloat) complexNumber).getFloatValue(0));
-		Assert.assertEquals(6f, ((ComplexFloat) complexNumber).getFloatValue(1));
+		Assert.assertEquals(5f, ((ComplexFloat) complexNumber).getFloatValue(0), 0.0);
+		Assert.assertEquals(6f, ((ComplexFloat) complexNumber).getFloatValue(1), 0.0);
 	}
 
 	@Override

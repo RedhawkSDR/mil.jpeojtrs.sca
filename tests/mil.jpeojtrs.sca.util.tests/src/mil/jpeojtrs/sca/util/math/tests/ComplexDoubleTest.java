@@ -10,7 +10,7 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math.tests;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import mil.jpeojtrs.sca.util.math.ComplexDouble;
 import mil.jpeojtrs.sca.util.math.ComplexNumber;
 
@@ -30,20 +30,20 @@ public class ComplexDoubleTest extends ComplexNumberTest {
 		Any any = complexDouble.toAny();
 
 		complexDouble cfType = complexDoubleHelper.extract(any);
-		Assert.assertEquals(7.0, cfType.real);
-		Assert.assertEquals(8.0, cfType.imag);
+		Assert.assertEquals(7.0, cfType.real, 0.0);
+		Assert.assertEquals(8.0, cfType.imag, 0.0);
 	}
 
 	@Override
 	public void testGetValue() {
-		Assert.assertEquals(7.0, complexDouble.getValue(0).doubleValue());
-		Assert.assertEquals(8.0, complexDouble.getValue(1).doubleValue());
+		Assert.assertEquals(7.0, complexDouble.getValue(0).doubleValue(), 0.0);
+		Assert.assertEquals(8.0, complexDouble.getValue(1).doubleValue(), 0.0);
 	}
 
 	@Test
 	public void testGetDoubleValue() {
-		Assert.assertEquals(7.0, complexDouble.getDoubleValue(0));
-		Assert.assertEquals(8.0, complexDouble.getDoubleValue(1));
+		Assert.assertEquals(7.0, complexDouble.getDoubleValue(0), 0.0);
+		Assert.assertEquals(8.0, complexDouble.getDoubleValue(1), 0.0);
 	}
 
 	@Override
@@ -58,16 +58,16 @@ public class ComplexDoubleTest extends ComplexNumberTest {
 		complexDoubleHelper.insert(any, cfType);
 
 		ComplexDouble complexDouble2 = ComplexDouble.valueOf(any);
-		Assert.assertEquals(7.0, complexDouble2.getDoubleValue(0));
-		Assert.assertEquals(8.0, complexDouble2.getDoubleValue(1));
+		Assert.assertEquals(7.0, complexDouble2.getDoubleValue(0), 0.0);
+		Assert.assertEquals(8.0, complexDouble2.getDoubleValue(1), 0.0);
 	}
 
 	@Override
 	public void testValueOfString() {
 		ComplexDouble complexDouble2 = ComplexDouble.valueOf("5+i6");
 
-		Assert.assertEquals(5.0, complexDouble2.getDoubleValue(0));
-		Assert.assertEquals(6.0, complexDouble2.getDoubleValue(1));
+		Assert.assertEquals(5.0, complexDouble2.getDoubleValue(0), 0.0);
+		Assert.assertEquals(6.0, complexDouble2.getDoubleValue(1), 0.0);
 	}
 
 	@Override
@@ -75,8 +75,8 @@ public class ComplexDoubleTest extends ComplexNumberTest {
 		ComplexNumber complexNumber = ComplexNumber.valueOf("double", "5+i6");
 
 		Assert.assertTrue("Invalid complex type", complexNumber instanceof ComplexDouble);
-		Assert.assertEquals(5.0, ((ComplexDouble) complexNumber).getDoubleValue(0));
-		Assert.assertEquals(6.0, ((ComplexDouble) complexNumber).getDoubleValue(1));
+		Assert.assertEquals(5.0, ((ComplexDouble) complexNumber).getDoubleValue(0), 0.0);
+		Assert.assertEquals(6.0, ((ComplexDouble) complexNumber).getDoubleValue(1), 0.0);
 	}
 
 	@Override
