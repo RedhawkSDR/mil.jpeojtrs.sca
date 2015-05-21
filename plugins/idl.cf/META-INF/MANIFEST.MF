@@ -29,7 +29,7 @@ Export-Package: CF;version="2.0.0",
  StandardEvent;version="2.0.0"
 Bundle-Name: %Bundle-Name
 Bundle-Vendor: %Bundle-Vendor
-Bundle-Version: 3.0.0.qualifier
+Bundle-Version: 2.0.0.qualifier
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: idl.cf
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

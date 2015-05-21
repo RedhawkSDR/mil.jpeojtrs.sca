@@ -1,13 +1,11 @@
 Manifest-Version: 1.0
 Bundle-Name: %Bundle-Name
 Bundle-Vendor: %Bundle-Vendor
-Bundle-Version: 1.11.0.qualifier
+Bundle-Version: 2.0.0.qualifier
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: idl.bulkio
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: BULKIO;version="2.0.0",
  BULKIO.dataSDDSPackage;version="2.0.0",
  BULKIO.dataVITA49Package;version="2.0.0"
-Require-Bundle: idl.cf;bundle-version="3.0.0";visibility:=reexport
-Import-Package: org.omg.CosEventChannelAdmin;version="3.3.0",
- org.omg.CosEventComm;version="3.3.0"
+Require-Bundle: idl.cf;bundle-version="2.0.0";visibility:=reexport
