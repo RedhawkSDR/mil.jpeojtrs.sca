@@ -144,7 +144,7 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Struct.class)) {
-		case PrfPackage.STRUCT__CONTENTS:
+		case PrfPackage.STRUCT__FIELDS:
 		case PrfPackage.STRUCT__SIMPLE:
 		case PrfPackage.STRUCT__SIMPLE_SEQUENCE:
 		case PrfPackage.STRUCT__CONFIGURATION_KIND:
@@ -165,10 +165,10 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONTENTS,
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__FIELDS,
 			FeatureMapUtil.createEntry(PrfPackage.Literals.STRUCT__SIMPLE, PrfFactory.eINSTANCE.createSimple())));
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONTENTS,
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__FIELDS,
 			FeatureMapUtil.createEntry(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE, PrfFactory.eINSTANCE.createSimpleSequence())));
 
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__SIMPLE, PrfFactory.eINSTANCE.createSimple()));

@@ -484,11 +484,11 @@
       <details key="name" value="struct"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contents" unique="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fields" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="group"/>
-        <details key="name" value="contents:0"/>
+        <details key="name" value="fields:0"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="simple" upperBound="-1"
@@ -497,7 +497,7 @@
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="simple"/>
-        <details key="group" value="#contents:0"/>
+        <details key="group" value="#fields:0"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="simpleSequence" upperBound="-1"
@@ -506,7 +506,7 @@
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
         <details key="name" value="simplesequence"/>
-        <details key="group" value="#contents:0"/>
+        <details key="group" value="#fields:0"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="configurationKind" upperBound="-1"

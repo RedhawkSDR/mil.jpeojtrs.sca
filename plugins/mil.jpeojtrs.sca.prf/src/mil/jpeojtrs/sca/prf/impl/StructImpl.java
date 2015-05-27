@@ -46,17 +46,28 @@ import CF.PropertiesHelper;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getContents <em>Contents</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getSimple <em>Simple</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getSimpleSequence <em>Simple Sequence</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructImpl#getConfigurationKind <em>Configuration Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class StructImpl extends AbstractPropertyImpl implements Struct {
+	/**
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @see #getFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected FeatureMap fields;
+
 	/**
 	 * @since 5.0
 	 */
@@ -97,11 +108,11 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureMap getContents() {
-		if (contents == null) {
-			contents = new BasicFeatureMap(this, PrfPackage.STRUCT__CONTENTS);
+	public FeatureMap getFields() {
+		if (fields == null) {
+			fields = new BasicFeatureMap(this, PrfPackage.STRUCT__FIELDS);
 		}
-		return contents;
+		return fields;
 	}
 
 	/**
@@ -111,7 +122,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 */
 	@Override
 	public EList<Simple> getSimple() {
-		return getContents().list(PrfPackage.Literals.STRUCT__SIMPLE);
+		return getFields().list(PrfPackage.Literals.STRUCT__SIMPLE);
 	}
 
 	/**
@@ -121,7 +132,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	 * @generated
 	 */
 	public EList<SimpleSequence> getSimpleSequence() {
-		return getContents().list(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE);
+		return getFields().list(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE);
 	}
 
 	/**
@@ -174,14 +185,10 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 		if (repID == null) {
 			return null;
 		}
-		for (Simple s : getSimple()) {
-			if (repID.equals(s.getId())) {
-				return s;
-			}
-		}
-		for (SimpleSequence s : getSimpleSequence()) {
-			if (repID.equals(s.getId())) {
-				return s;
+		for (FeatureMap.Entry entry : getFields()) {
+			AbstractProperty property = (AbstractProperty) entry.getValue();
+			if (repID.equals(property.getId())) {
+				return property;
 			}
 		}
 		return null;
@@ -196,8 +203,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case PrfPackage.STRUCT__CONTENTS:
-			return ((InternalEList< ? >) getContents()).basicRemove(otherEnd, msgs);
+		case PrfPackage.STRUCT__FIELDS:
+			return ((InternalEList< ? >) getFields()).basicRemove(otherEnd, msgs);
 		case PrfPackage.STRUCT__SIMPLE:
 			return ((InternalEList< ? >) getSimple()).basicRemove(otherEnd, msgs);
 		case PrfPackage.STRUCT__SIMPLE_SEQUENCE:
@@ -216,10 +223,10 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PrfPackage.STRUCT__CONTENTS:
+		case PrfPackage.STRUCT__FIELDS:
 			if (coreType)
-				return getContents();
-			return ((FeatureMap.Internal) getContents()).getWrapper();
+				return getFields();
+			return ((FeatureMap.Internal) getFields()).getWrapper();
 		case PrfPackage.STRUCT__SIMPLE:
 			return getSimple();
 		case PrfPackage.STRUCT__SIMPLE_SEQUENCE:
@@ -239,8 +246,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PrfPackage.STRUCT__CONTENTS:
-			((FeatureMap.Internal) getContents()).set(newValue);
+		case PrfPackage.STRUCT__FIELDS:
+			((FeatureMap.Internal) getFields()).set(newValue);
 			return;
 		case PrfPackage.STRUCT__SIMPLE:
 			getSimple().clear();
@@ -266,8 +273,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PrfPackage.STRUCT__CONTENTS:
-			getContents().clear();
+		case PrfPackage.STRUCT__FIELDS:
+			getFields().clear();
 			return;
 		case PrfPackage.STRUCT__SIMPLE:
 			getSimple().clear();
@@ -290,8 +297,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PrfPackage.STRUCT__CONTENTS:
-			return contents != null && !contents.isEmpty();
+		case PrfPackage.STRUCT__FIELDS:
+			return fields != null && !fields.isEmpty();
 		case PrfPackage.STRUCT__SIMPLE:
 			return !getSimple().isEmpty();
 		case PrfPackage.STRUCT__SIMPLE_SEQUENCE:
@@ -313,8 +320,8 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (contents: ");
-		result.append(contents);
+		result.append(" (fields: ");
+		result.append(fields);
 		result.append(')');
 		return result.toString();
 	}

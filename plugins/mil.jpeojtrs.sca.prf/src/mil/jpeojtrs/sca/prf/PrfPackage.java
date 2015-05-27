@@ -797,14 +797,14 @@ public interface PrfPackage extends EPackage {
 	 */
 	int STRUCT__MODE = ABSTRACT_PROPERTY__MODE;
 	/**
-	 * The feature id for the '<em><b>Contents</b></em>' attribute list.
+	 * The feature id for the '<em><b>Fields</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCT__CONTENTS = ABSTRACT_PROPERTY_FEATURE_COUNT + 0;
+	int STRUCT__FIELDS = ABSTRACT_PROPERTY_FEATURE_COUNT + 0;
 	/**
 	 * The feature id for the '<em><b>Simple</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -2254,16 +2254,16 @@ public interface PrfPackage extends EPackage {
 	EClass getStruct();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link mil.jpeojtrs.sca.prf.Struct#getContents <em>Contents</em>}'.
+	 * Returns the meta object for the attribute list '{@link mil.jpeojtrs.sca.prf.Struct#getFields <em>Fields</em>}'.
 	 * <!-- begin-user-doc -->
 	 * @since 5.0
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Contents</em>'.
-	 * @see mil.jpeojtrs.sca.prf.Struct#getContents()
+	 * @return the meta object for the attribute list '<em>Fields</em>'.
+	 * @see mil.jpeojtrs.sca.prf.Struct#getFields()
 	 * @see #getStruct()
 	 * @generated
 	 */
-	EAttribute getStruct_Contents();
+	EAttribute getStruct_Fields();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.prf.Struct#getSimple <em>Simple</em>}'.
@@ -3596,13 +3596,13 @@ public interface PrfPackage extends EPackage {
 		EClass STRUCT = eINSTANCE.getStruct();
 
 		/**
-		 * The meta object literal for the '<em><b>Contents</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Fields</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * @since 5.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STRUCT__CONTENTS = eINSTANCE.getStruct_Contents();
+		EAttribute STRUCT__FIELDS = eINSTANCE.getStruct_Fields();
 
 		/**
 		 * The meta object literal for the '<em><b>Simple</b></em>' containment reference list feature.
