@@ -527,6 +527,7 @@
     <eLiterals name="test" value="3"/>
     <eLiterals name="event" value="4"/>
     <eLiterals name="message" value="5"/>
+    <eLiterals name="property" value="6" literal="property"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="StructPropertyConfigurationTypeObject"
       instanceClassName="org.eclipse.emf.common.util.Enumerator">

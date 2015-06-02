@@ -2341,6 +2341,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addEEnumLiteral(structPropertyConfigurationTypeEEnum, StructPropertyConfigurationType.TEST);
 		addEEnumLiteral(structPropertyConfigurationTypeEEnum, StructPropertyConfigurationType.EVENT);
 		addEEnumLiteral(structPropertyConfigurationTypeEEnum, StructPropertyConfigurationType.MESSAGE);
+		addEEnumLiteral(structPropertyConfigurationTypeEEnum, StructPropertyConfigurationType.PROPERTY);
 
 		// Initialize data types
 		initEDataType(accessTypeObjectEDataType, AccessType.class, "AccessTypeObject", IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);
