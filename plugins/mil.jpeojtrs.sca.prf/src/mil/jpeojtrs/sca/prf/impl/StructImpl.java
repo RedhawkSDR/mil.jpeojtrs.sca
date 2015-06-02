@@ -156,7 +156,7 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 				return true;
 			}
 		}
-		if (getConfigurationKind().isEmpty() && types.contains(StructPropertyConfigurationType.CONFIGURE)) {
+		if (getConfigurationKind().isEmpty() && types.contains(StructPropertyConfigurationType.PROPERTY)) {
 			return true;
 		}
 		return false;

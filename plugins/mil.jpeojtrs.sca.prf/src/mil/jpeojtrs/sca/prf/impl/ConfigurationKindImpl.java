@@ -43,7 +43,7 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 	 * @generated
 	 * @ordered
 	 */
-	protected static final StructPropertyConfigurationType TYPE_EDEFAULT = StructPropertyConfigurationType.CONFIGURE;
+	protected static final StructPropertyConfigurationType TYPE_EDEFAULT = StructPropertyConfigurationType.PROPERTY;
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->

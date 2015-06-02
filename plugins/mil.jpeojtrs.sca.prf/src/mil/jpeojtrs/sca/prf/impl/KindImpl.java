@@ -43,7 +43,7 @@ public class KindImpl extends EObjectImpl implements Kind {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final PropertyConfigurationType TYPE_EDEFAULT = PropertyConfigurationType.CONFIGURE;
+	protected static final PropertyConfigurationType TYPE_EDEFAULT = PropertyConfigurationType.PROPERTY;
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->

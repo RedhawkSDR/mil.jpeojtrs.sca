@@ -744,7 +744,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 				return true;
 			}
 		}
-		if (getKind().isEmpty() && types.contains(PropertyConfigurationType.CONFIGURE)) {
+		if (getKind().isEmpty() && types.contains(PropertyConfigurationType.PROPERTY)) {
 			return true;
 		}
 		return false;

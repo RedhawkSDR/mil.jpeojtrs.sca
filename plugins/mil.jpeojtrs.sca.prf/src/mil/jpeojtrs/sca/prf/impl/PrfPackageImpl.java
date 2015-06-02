@@ -2076,7 +2076,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(configurationKindEClass, ConfigurationKind.class, "ConfigurationKind", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConfigurationKind_Type(), this.getStructPropertyConfigurationType(), "type", "configure", 0, 1, ConfigurationKind.class,
+		initEAttribute(getConfigurationKind_Type(), this.getStructPropertyConfigurationType(), "type", "property", 0, 1, ConfigurationKind.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enumerationEClass, Enumeration.class, "Enumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2094,7 +2094,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(kindEClass, Kind.class, "Kind", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getKind_Type(), this.getPropertyConfigurationType(), "type", "configure", 0, 1, Kind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEAttribute(getKind_Type(), this.getPropertyConfigurationType(), "type", "property", 0, 1, Kind.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(prfDocumentRootEClass, PrfDocumentRoot.class, "PrfDocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
