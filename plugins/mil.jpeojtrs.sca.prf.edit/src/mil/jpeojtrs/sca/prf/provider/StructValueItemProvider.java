@@ -23,7 +23,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -108,8 +107,6 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_VALUE__REFS);
-			childrenFeatures.add(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF);
-			childrenFeatures.add(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_SEQUENCE_REF);
 		}
 		return childrenFeatures;
 	}
@@ -177,9 +174,11 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructValue.class)) {
-		case PrfPackage.STRUCT_VALUE__REFS:
 		case PrfPackage.STRUCT_VALUE__SIMPLE_REF:
 		case PrfPackage.STRUCT_VALUE__SIMPLE_SEQUENCE_REF:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PrfPackage.STRUCT_VALUE__REFS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -202,35 +201,6 @@ public class StructValueItemProvider extends ItemProviderAdapter implements IEdi
 
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_VALUE__REFS,
 			FeatureMapUtil.createEntry(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_SEQUENCE_REF, PrfFactory.eINSTANCE.createSimpleSequenceRef())));
-
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF, PrfFactory.eINSTANCE.createSimpleRef()));
-
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_VALUE__SIMPLE_SEQUENCE_REF, PrfFactory.eINSTANCE.createSimpleSequenceRef()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection< ? > selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		if (childFeature instanceof EStructuralFeature && FeatureMapUtil.isFeatureMap((EStructuralFeature) childFeature)) {
-			FeatureMap.Entry entry = (FeatureMap.Entry) childObject;
-			childFeature = entry.getEStructuralFeature();
-			childObject = entry.getValue();
-		}
-
-		boolean qualify = childFeature == PrfPackage.Literals.STRUCT_VALUE__SIMPLE_REF || childFeature == PrfPackage.Literals.STRUCT_VALUE__SIMPLE_SEQUENCE_REF;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**
