@@ -166,9 +166,9 @@
     </genClasses>
     <genClasses provider="Stateful" ecoreClass="prf.ecore#//Struct">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//Struct/fields"/>
-      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Struct/simple"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Struct/simpleSequence"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Struct/configurationKind"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Struct/simple"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Struct/simpleSequence"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Struct/configurationKind"/>
     </genClasses>
     <genClasses provider="Stateful" ecoreClass="prf.ecore#//StructSequence">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructSequence/struct"/>
