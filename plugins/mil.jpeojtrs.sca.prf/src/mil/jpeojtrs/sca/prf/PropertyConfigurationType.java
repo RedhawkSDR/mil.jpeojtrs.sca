@@ -93,11 +93,11 @@ public enum PropertyConfigurationType implements Enumerator {
 	/**
 	 * The '<em><b>Property</b></em>' literal object.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @see #PROPERTY_VALUE
 	 * @generated
 	 * @ordered
-	 * @since 5.0
 	 */
 	PROPERTY(7, "property", "property");
 
@@ -206,12 +206,12 @@ public enum PropertyConfigurationType implements Enumerator {
 	 * If the meaning of '<em><b>Property</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @see #PROPERTY
 	 * @model name="property"
 	 * @generated
 	 * @ordered
-	 * @since 5.0
 	 */
 	public static final int PROPERTY_VALUE = 7;
 	/**
