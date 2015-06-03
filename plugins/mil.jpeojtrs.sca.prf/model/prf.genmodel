@@ -125,12 +125,12 @@
     </genClasses>
     <genClasses ecoreClass="prf.ecore#//Properties">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Properties/description"/>
-      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Properties/properties"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/simple"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/simpleSequence"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/test"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/struct"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/structSequence"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Properties/properties"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/simple"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/simpleSequence"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/test"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/struct"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/structSequence"/>
     </genClasses>
     <genClasses ecoreClass="prf.ecore#//Range">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Range/max"/>
