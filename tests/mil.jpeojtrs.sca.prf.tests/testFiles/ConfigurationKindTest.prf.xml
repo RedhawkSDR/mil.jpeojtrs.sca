@@ -11,12 +11,32 @@
 -->
 <!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA PRF V2.2.2//EN" "properties.dtd">
 <properties>
-  <struct id="DCE:24acefac-62eb-4b7f-9177-cc7d78c76aca">
-  	<simple type="boolean" id="DCE:24acefac-62eb-4b7f-9177-cc7d78c76acb"></simple>
-  	<configurationkind kindtype="factoryparam"/>
+  <struct id="structconfigure">
+    <simple type="boolean" id="boola"></simple>
+    <configurationkind kindtype="configure"/>
   </struct>
-  <struct id="DCE:24acefac-62eb-4b7f-9177-cc7d78c76acb">
-  	<simple type="boolean" id="DCE:24acefac-62eb-4b7f-9177-cc7d78c76acb"></simple>
-  	<configurationkind kindtype="configure"/>
+  <struct id="structallocation">
+    <simple type="boolean" id="boolb"></simple>
+    <configurationkind kindtype="allocation"/>
+  </struct>
+  <struct id="structfactoryparam">
+    <simple type="boolean" id="boolc"></simple>
+    <configurationkind kindtype="factoryparam"/>
+  </struct>
+  <struct id="structtest">
+    <simple type="boolean" id="boold"></simple>
+    <configurationkind kindtype="test"/>
+  </struct>
+  <struct id="structevent">
+    <simple type="boolean" id="boole"></simple>
+    <configurationkind kindtype="event"/>
+  </struct>
+  <struct id="structmessage">
+    <simple type="boolean" id="boolf"></simple>
+    <configurationkind kindtype="message"/>
+  </struct>
+  <struct id="structproperty">
+    <simple type="boolean" id="boolg"></simple>
+    <configurationkind kindtype="property"/>
   </struct>
 </properties>

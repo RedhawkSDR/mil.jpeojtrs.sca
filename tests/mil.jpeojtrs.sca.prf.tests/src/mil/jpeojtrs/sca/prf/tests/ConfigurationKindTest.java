@@ -11,7 +11,8 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.tests;
 
-import org.junit.Assert;
+import java.util.List;
+
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.ConfigurationKind;
@@ -23,6 +24,7 @@ import mil.jpeojtrs.sca.prf.StructPropertyConfigurationType;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.junit.Assert;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
@@ -108,21 +110,45 @@ public class ConfigurationKindTest extends TestCase {
 	public void test_parse() throws Exception {
 		final Properties props = Properties.Util.getProperties(this.resourceSet.getResource(PrfTests.getURI("testFiles/ConfigurationKindTest.prf.xml"), true));
 		final EList<Struct> structs = props.getStruct();
+		Assert.assertEquals(7, structs.size());
 		for (final Struct struct : structs) {
-			if (struct.getId().equals("DCE:24acefac-62eb-4b7f-9177-cc7d78c76aca")) {
-				Assert.assertEquals(StructPropertyConfigurationType.FACTORYPARAM, struct.getConfigurationKind().get(0).getType());
-			} else if (struct.getId().equals("DCE:24acefac-62eb-4b7f-9177-cc7d78c76acb")) {
+			List<ConfigurationKind> configKind = struct.getConfigurationKind();
+			if (struct.getId().equals("structconfigure")) {
+				Assert.assertEquals(1, configKind.size());
 				Assert.assertEquals(StructPropertyConfigurationType.CONFIGURE, struct.getConfigurationKind().get(0).getType());
-				Assert.assertTrue(struct.getConfigurationKind().get(0).isSetType());
-				struct.getConfigurationKind().get(0).unsetType();
-				Assert.assertEquals(StructPropertyConfigurationType.CONFIGURE, struct.getConfigurationKind().get(0).getType());
-				Assert.assertFalse(struct.getConfigurationKind().get(0).isSetType());
-				struct.getConfigurationKind().get(0).setType(null);
-				Assert.assertEquals(StructPropertyConfigurationType.CONFIGURE, struct.getConfigurationKind().get(0).getType());
+			} else if (struct.getId().equals("structallocation")) {
+				Assert.assertEquals(1, configKind.size());
+				Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, configKind.get(0).getType());
+			} else if (struct.getId().equals("structfactoryparam")) {
+				Assert.assertEquals(1, configKind.size());
+				Assert.assertEquals(StructPropertyConfigurationType.FACTORYPARAM, configKind.get(0).getType());
+			} else if (struct.getId().equals("structtest")) {
+				Assert.assertEquals(1, configKind.size());
+				Assert.assertEquals(StructPropertyConfigurationType.TEST, configKind.get(0).getType());
+			} else if (struct.getId().equals("structevent")) {
+				Assert.assertEquals(1, configKind.size());
+				Assert.assertEquals(StructPropertyConfigurationType.EVENT, configKind.get(0).getType());
+			} else if (struct.getId().equals("structmessage")) {
+				Assert.assertEquals(1, configKind.size());
+				Assert.assertEquals(StructPropertyConfigurationType.MESSAGE, configKind.get(0).getType());
+			} else if (struct.getId().equals("structproperty")) {
+				Assert.assertEquals(1, configKind.size());
+				Assert.assertEquals(StructPropertyConfigurationType.PROPERTY, configKind.get(0).getType());
 			} else {
 				Assert.fail("Unexpected object found during test");
 			}
 		}
 	}
 
-} //ConfigurationKindTest
+	public void test_default() {
+		ConfigurationKind k = PrfFactory.eINSTANCE.createConfigurationKind();
+		Assert.assertFalse(k.isSetType());
+		Assert.assertEquals(StructPropertyConfigurationType.PROPERTY, k.getType());
+		k.setType(StructPropertyConfigurationType.ALLOCATION);
+		Assert.assertTrue(k.isSetType());
+		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, k.getType());
+		k.setType(null);
+		Assert.assertEquals(StructPropertyConfigurationType.PROPERTY, k.getType());
+	}
+
+} // ConfigurationKindTest

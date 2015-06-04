@@ -152,7 +152,7 @@ public class KindTest extends TestCase {
 				Assert.assertEquals(0, types.size());
 			} else if (simple.getId().equals("noneid")) {
 				Assert.assertEquals(0, kind.size());
-			} else { 
+			} else {
 				Assert.fail();
 			}
 		}
@@ -186,15 +186,15 @@ public class KindTest extends TestCase {
 			}
 		}
 	}
-	
+
 	public void test_default() {
 		Kind k = PrfFactory.eINSTANCE.createKind();
 		Assert.assertFalse(k.isSetType());
-		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, k.getType());
+		Assert.assertEquals(PropertyConfigurationType.PROPERTY, k.getType());
 		k.setType(PropertyConfigurationType.ALLOCATION);
 		Assert.assertTrue(k.isSetType());
 		Assert.assertEquals(PropertyConfigurationType.ALLOCATION, k.getType());
 		k.setType(null);
-		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, k.getType());
+		Assert.assertEquals(PropertyConfigurationType.PROPERTY, k.getType());
 	}
-} //KindTest
+} // KindTest
