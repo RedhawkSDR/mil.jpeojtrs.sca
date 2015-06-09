@@ -57,4 +57,39 @@
   <simple id="noneid" mode="readwrite" type="string">
     <action type="external"/>
   </simple>
+  <struct id="structconfigureid" mode="readwrite">
+    <simple id="asimple" type="boolean">
+    </simple>
+    <configurationkind kindtype="configure"/>
+  </struct>
+  <struct id="structallocationid" mode="readwrite">
+    <simple id="asimple" type="boolean">
+    </simple>
+    <configurationkind kindtype="allocation"/>
+  </struct>
+  <struct id="structfactoryparamid" mode="readwrite">
+    <simple id="asimple" type="boolean">
+    </simple>
+    <configurationkind kindtype="factoryparam"/>
+  </struct>
+  <struct id="structtestid" mode="readwrite">
+    <simple id="asimple" type="boolean">
+    </simple>
+    <configurationkind kindtype="test"/>
+  </struct>
+  <struct id="structeventid" mode="readwrite">
+    <simple id="asimple" type="boolean">
+    </simple>
+    <configurationkind kindtype="event"/>
+  </struct>
+  <struct id="structmessageid" mode="readwrite">
+    <simple id="asimple" type="boolean">
+    </simple>
+    <configurationkind kindtype="message"/>
+  </struct>
+  <struct id="structpropertyid" mode="readwrite">
+    <simple id="asimple" type="boolean">
+    </simple>
+    <configurationkind kindtype="property"/>
+  </struct>
 </properties>
