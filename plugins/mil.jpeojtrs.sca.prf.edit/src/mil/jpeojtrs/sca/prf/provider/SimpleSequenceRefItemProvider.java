@@ -26,7 +26,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptorDecorator;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -67,12 +66,12 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 * @since 3.0
 	 */
 	protected void addValuesPropertyDescriptor(Object object) {
-		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(), getString("_UI_SimpleSequenceRef_values_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequenceRef_values_feature", "_UI_SimpleSequenceRef_type"),
-			PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, true, false, false, null, null, null);
-
-		this.itemPropertyDescriptors.add(new ValuesDecorator(object, defaultDescriptor));
+		// Use the generated method to create the default descriptor, then replace it with a decorated version that
+		// adds additional functionality
+		addValuesPropertyDescriptorGen(object);
+		final IItemPropertyDescriptor defaultDescriptor = getPropertyDescriptor(object, PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES);
+		itemPropertyDescriptors.remove(defaultDescriptor);
+		itemPropertyDescriptors.add(new ValuesDecorator(object, defaultDescriptor));
 	}
 
 	private class ValuesDecorator extends ItemPropertyDescriptorDecorator {
