@@ -75,6 +75,8 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	}
 
 	private class ValuesDecorator extends ItemPropertyDescriptorDecorator {
+		private IItemLabelProvider labelProvider = null;
+
 		public ValuesDecorator(Object object, IItemPropertyDescriptor itemPropertyDescriptor) {
 			super(object, itemPropertyDescriptor);
 		}
@@ -86,21 +88,23 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 
 		@Override
 		public IItemLabelProvider getLabelProvider(final Object thisObject) {
-			final IItemLabelProvider labelProvider = super.getLabelProvider(thisObject);
-			return new IItemLabelProvider() {
+			if (labelProvider == null) {
+				labelProvider = new IItemLabelProvider() {
 
-				@Override
-				public String getText(Object object) {
-					final Values values = (Values) object;
-					final SimpleSequenceRef simpleSequenceRef = (SimpleSequenceRef) values.eContainer();
-					return SimpleSequenceRefItemProvider.getValueText(simpleSequenceRef, values.getValue());
-				}
+					@Override
+					public String getText(Object object) {
+						final Values values = (Values) object;
+						final SimpleSequenceRef simpleSequenceRef = (SimpleSequenceRef) values.eContainer();
+						return SimpleSequenceRefItemProvider.getValueText(simpleSequenceRef, values.getValue());
+					}
 
-				@Override
-				public Object getImage(Object object) {
-					return labelProvider.getImage(object);
-				}
-			};
+					@Override
+					public Object getImage(Object object) {
+						return itemPropertyDescriptor.getLabelProvider(thisObject).getImage(object);
+					}
+				};
+			}
+			return labelProvider;
 		}
 
 	}
