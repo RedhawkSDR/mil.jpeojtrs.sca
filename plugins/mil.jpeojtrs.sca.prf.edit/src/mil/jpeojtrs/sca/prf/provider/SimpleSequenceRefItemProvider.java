@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -53,18 +52,27 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 * <!-- begin-user-doc -->
 	 * @since 3.0
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuesPropertyDescriptorGen(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SimpleSequenceRef_values_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequenceRef_values_feature", "_UI_SimpleSequenceRef_type"),
+			PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, true, false, false, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Values feature.
 	 * @generated NOT
 	 * @since 3.0
 	 */
 	protected void addValuesPropertyDescriptor(Object object) {
-		// END GENERATED CODE
 		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 			getResourceLocator(), getString("_UI_SimpleSequenceRef_values_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequenceRef_values_feature", "_UI_SimpleSequenceRef_type"),
-			PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, false, false, false, null, null, null);
+			PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, true, false, false, null, null, null);
 
 		this.itemPropertyDescriptors.add(new ValuesDecorator(object, defaultDescriptor));
-		// BEGIN GENERATED CODE
 	}
 
 	private class ValuesDecorator extends ItemPropertyDescriptorDecorator {
@@ -73,39 +81,27 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 		}
 
 		@Override
-		public IItemLabelProvider getLabelProvider(final Object thisObject) {
-			final SimpleSequenceRef property = (SimpleSequenceRef) thisObject;
+		public Object getPropertyValue(Object thisObject) {
+			return ((SimpleSequenceRef) thisObject).getValues();
+		}
 
-			final IItemLabelProvider lp = super.getLabelProvider(thisObject);
+		@Override
+		public IItemLabelProvider getLabelProvider(final Object thisObject) {
+			final IItemLabelProvider labelProvider = super.getLabelProvider(thisObject);
 			return new IItemLabelProvider() {
 
 				@Override
-				@SuppressWarnings("unchecked")
 				public String getText(Object object) {
-					List<String> value = null;
-					if (object instanceof Values) {
-						value = ((Values) object).getValue();
-					} else if (object != null && object.getClass().isArray()) {
-						value = Arrays.asList((String[]) object);
-					} else if (object instanceof List< ? >) {
-						value = (List<String>) object;
-					}
-					return getValueText(property, value);
+					final Values values = (Values) object;
+					final SimpleSequenceRef simpleSequenceRef = (SimpleSequenceRef) values.eContainer();
+					return SimpleSequenceRefItemProvider.getValueText(simpleSequenceRef, values.getValue());
 				}
 
 				@Override
 				public Object getImage(Object object) {
-					return lp.getImage(object);
+					return labelProvider.getImage(object);
 				}
 			};
-		}
-
-		@Override
-		public boolean canSetProperty(Object thisObject) {
-			if (thisObject instanceof SimpleSequenceRef) {
-				return true;
-			}
-			return super.canSetProperty(thisObject);
 		}
 
 	}
@@ -114,7 +110,7 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
@@ -124,17 +120,6 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 			addValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This returns SimpleSequenceRef.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return super.getImage(object);
 	}
 
 	/**

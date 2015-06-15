@@ -228,7 +228,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//SimpleRef/value"/>
     </genClasses>
     <genClasses image="false" ecoreClass="prf.ecore#//SimpleSequenceRef">
-      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequenceRef/values"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequenceRef/values"/>
     </genClasses>
     <genClasses image="false" ecoreClass="prf.ecore#//StructRef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//StructRef/refs"/>
