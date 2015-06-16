@@ -13,7 +13,6 @@ package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
@@ -187,24 +186,12 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	}
 
 	public static String getValueText(SimpleSequenceRef ref, List<String> value) {
-		String retVal = null;
-		if (value == null || value.isEmpty()) {
-			retVal = Collections.emptyList().toString();
-		} else {
-			retVal = value.toString();
-		}
-
 		SimpleSequence property = ref.getProperty();
 		if (property == null) {
 			return (value == null) ? "" : value.toString();
 		}
 
-		final String units = property.getUnits();
-		if (units != null) {
-			return retVal + " " + units;
-		} else {
-			return retVal;
-		}
+		return SimpleSequenceItemProvider.getValueText(property, value);
 	}
 
 }
