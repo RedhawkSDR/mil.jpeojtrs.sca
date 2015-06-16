@@ -11,11 +11,13 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.provider;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
+import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
@@ -83,24 +85,35 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 
 		@Override
 		public Object getPropertyValue(Object thisObject) {
-			return ((SimpleSequenceRef) thisObject).getValues();
+			final List<String> value = ((SimpleSequenceRef) thisObject).getValues().getValue();
+			return value.toArray(new String[value.size()]);
 		}
 
 		@Override
-		public IItemLabelProvider getLabelProvider(final Object thisObject) {
+		public void setPropertyValue(Object thisObject, Object value) {
+			// Create a new Values instance with the new values, then defer to the wrapped property descriptor to
+			// ensure that the set is able to execute correctly
+			final Values values = PrfFactory.eINSTANCE.createValues();
+			values.getValue().addAll(Arrays.asList((String[]) value));
+			itemPropertyDescriptor.setPropertyValue(thisObject, values);
+		}
+
+		@Override
+		public IItemLabelProvider getLabelProvider(Object thisObject) {
 			if (labelProvider == null) {
 				labelProvider = new IItemLabelProvider() {
 
 					@Override
 					public String getText(Object object) {
-						final Values values = (Values) object;
-						final SimpleSequenceRef simpleSequenceRef = (SimpleSequenceRef) values.eContainer();
-						return SimpleSequenceRefItemProvider.getValueText(simpleSequenceRef, values.getValue());
+						String[] values = (String[]) object;
+						final SimpleSequenceRef simpleSequenceRef = (SimpleSequenceRef) ValuesDecorator.this.object;
+						return SimpleSequenceRefItemProvider.getValueText(simpleSequenceRef, Arrays.asList(values));
 					}
 
 					@Override
 					public Object getImage(Object object) {
-						return itemPropertyDescriptor.getLabelProvider(thisObject).getImage(object);
+						final Values values = ((SimpleSequenceRef) ValuesDecorator.this.object).getValues();
+						return itemPropertyDescriptor.getLabelProvider(values).getImage(values);
 					}
 				};
 			}
