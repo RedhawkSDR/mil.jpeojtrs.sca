@@ -14,6 +14,7 @@ package mil.jpeojtrs.sca.prf.tests;
 import org.junit.Assert;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.AccessType;
@@ -88,11 +89,13 @@ public class StructTest extends AbstractPropertyTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
+		// END GENERATED CODE
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
 		final Struct struct = props.getStruct().get(0);
 		Assert.assertNotNull(struct);
 		setFixture(struct);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -103,33 +106,49 @@ public class StructTest extends AbstractPropertyTest {
 	 */
 	@Override
 	protected void tearDown() throws Exception {
+		// END GENERATED CODE
 		setFixture(null);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * Tests the '{@link mil.jpeojtrs.sca.prf.Struct#getSimple() <em>Simple</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws IOException
 	 * @see mil.jpeojtrs.sca.prf.Struct#getSimple()
-	 * @generated
+	 * @generated NOT
 	 */
-	public void testGetSimple() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+	public void testGetSimple() throws IOException {
+		// END GENERATED CODE
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
+		Struct struct = props.getStruct().get(0);
+
+		Assert.assertNotNull(struct);
+		Assert.assertNotNull(struct.getSimple());
+		Assert.assertEquals(1, struct.getSimple().size());
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * Tests the '{@link mil.jpeojtrs.sca.prf.Struct#getSimpleSequence() <em>Simple Sequence</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws IOException
 	 * @see mil.jpeojtrs.sca.prf.Struct#getSimpleSequence()
-	 * @generated
+	 * @generated NOT
 	 */
-	public void testGetSimpleSequence() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+	public void testGetSimpleSequence() throws IOException {
+		// END GENERATED CODE
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
+		Struct struct = props.getStruct().get(1);
+
+		Assert.assertNotNull(struct);
+		Assert.assertNotNull(struct.getSimpleSequence());
+		Assert.assertEquals(1, struct.getSimpleSequence().size());
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -144,6 +163,8 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertNull(getFixture().getProperty(null));
 		// BEGIN GENERATED CODE
 	}
+
+	// END GENERATED CODE
 
 	public void test_parse() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();

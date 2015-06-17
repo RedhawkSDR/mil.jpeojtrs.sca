@@ -11,7 +11,10 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.tests;
 
+import java.io.IOException;
+
 import org.junit.Assert;
+
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.Properties;
@@ -19,6 +22,7 @@ import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
 import mil.jpeojtrs.sca.prf.StructSequence;
 import mil.jpeojtrs.sca.prf.StructValue;
 import mil.jpeojtrs.sca.prf.Values;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -104,9 +108,11 @@ public class StructValueTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
+		// END GENERATED CODE
 		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
 			true));
 		setFixture(props.getStructSequence().get(0).getStructValue().get(0));
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -117,33 +123,47 @@ public class StructValueTest extends TestCase {
 	 */
 	@Override
 	protected void tearDown() throws Exception {
+		// END GENERATED CODE
 		setFixture(null);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleRef() <em>Simple Ref</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws IOException
 	 * @see mil.jpeojtrs.sca.prf.StructValue#getSimpleRef()
-	 * @generated
+	 * @generated NOT
 	 */
-	public void testGetSimpleRef() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+	public void testGetSimpleRef() throws IOException {
+		// END GENERATED CODE
+		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
+			true));
+		StructValue structVal = props.getStructSequence().get(0).getStructValue().get(0);
+
+		Assert.assertNotNull(structVal.getSimpleRef());
+		Assert.assertEquals(1, structVal.getSimpleRef().size());
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @throws IOException
 	 * @see mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef()
 	 * @generated
 	 */
-	public void testGetSimpleSequenceRef() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+	public void testGetSimpleSequenceRef() throws IOException {
+		// END GENERATED CODE
+		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
+			true));
+		StructValue structVal = props.getStructSequence().get(1).getStructValue().get(1);
+
+		Assert.assertNotNull(structVal.getSimpleSequenceRef());
+		Assert.assertEquals(1, structVal.getSimpleSequenceRef().size());
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -211,6 +231,8 @@ public class StructValueTest extends TestCase {
 		Assert.assertNotNull(getFixture().getPropertyContainer());
 		// BEGIN GENERATED CODE
 	}
+
+	// END GENERATED CODE
 
 	public void test_parse() throws Exception {
 		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
