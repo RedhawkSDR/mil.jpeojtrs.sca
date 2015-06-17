@@ -13,7 +13,6 @@ package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
@@ -25,11 +24,9 @@ import mil.jpeojtrs.sca.prf.Values;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptorDecorator;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -55,59 +52,71 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 * <!-- begin-user-doc -->
 	 * @since 3.0
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuesPropertyDescriptorGen(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SimpleSequenceRef_values_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequenceRef_values_feature", "_UI_SimpleSequenceRef_type"),
+			PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, true, false, false, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Values feature.
 	 * @generated NOT
 	 * @since 3.0
 	 */
 	protected void addValuesPropertyDescriptor(Object object) {
-		// END GENERATED CODE
-		final ItemPropertyDescriptor defaultDescriptor = createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(), getString("_UI_SimpleSequenceRef_values_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_SimpleSequenceRef_values_feature", "_UI_SimpleSequenceRef_type"),
-			PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, false, false, false, null, null, null);
-
-		this.itemPropertyDescriptors.add(new ValuesDecorator(object, defaultDescriptor));
-		// BEGIN GENERATED CODE
+		// Use the generated method to create the default descriptor, then replace it with a decorated version that
+		// adds additional functionality
+		addValuesPropertyDescriptorGen(object);
+		final IItemPropertyDescriptor defaultDescriptor = getPropertyDescriptor(object, PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES);
+		itemPropertyDescriptors.remove(defaultDescriptor);
+		itemPropertyDescriptors.add(new ValuesDecorator(object, defaultDescriptor));
 	}
 
 	private class ValuesDecorator extends ItemPropertyDescriptorDecorator {
+		private IItemLabelProvider labelProvider = null;
+
 		public ValuesDecorator(Object object, IItemPropertyDescriptor itemPropertyDescriptor) {
 			super(object, itemPropertyDescriptor);
 		}
 
 		@Override
-		public IItemLabelProvider getLabelProvider(final Object thisObject) {
-			final SimpleSequenceRef property = (SimpleSequenceRef) thisObject;
-
-			final IItemLabelProvider lp = super.getLabelProvider(thisObject);
-			return new IItemLabelProvider() {
-
-				@Override
-				@SuppressWarnings("unchecked")
-				public String getText(Object object) {
-					List<String> value = null;
-					if (object instanceof Values) {
-						value = ((Values) object).getValue();
-					} else if (object != null && object.getClass().isArray()) {
-						value = Arrays.asList((String[]) object);
-					} else if (object instanceof List< ? >) {
-						value = (List<String>) object;
-					}
-					return getValueText(property, value);
-				}
-
-				@Override
-				public Object getImage(Object object) {
-					return lp.getImage(object);
-				}
-			};
+		public Object getPropertyValue(Object thisObject) {
+			final List<String> value = ((SimpleSequenceRef) thisObject).getValues().getValue();
+			return value.toArray(new String[value.size()]);
 		}
 
 		@Override
-		public boolean canSetProperty(Object thisObject) {
-			if (thisObject instanceof SimpleSequenceRef) {
-				return true;
+		public void setPropertyValue(Object thisObject, Object value) {
+			// Create a new Values instance with the new values, then defer to the wrapped property descriptor to
+			// ensure that the set is able to execute correctly
+			final Values values = PrfFactory.eINSTANCE.createValues();
+			values.getValue().addAll(Arrays.asList((String[]) value));
+			itemPropertyDescriptor.setPropertyValue(thisObject, values);
+		}
+
+		@Override
+		public IItemLabelProvider getLabelProvider(Object thisObject) {
+			if (labelProvider == null) {
+				labelProvider = new IItemLabelProvider() {
+
+					@Override
+					public String getText(Object object) {
+						String[] values = (String[]) object;
+						final SimpleSequenceRef simpleSequenceRef = (SimpleSequenceRef) ValuesDecorator.this.object;
+						return SimpleSequenceRefItemProvider.getValueText(simpleSequenceRef, Arrays.asList(values));
+					}
+
+					@Override
+					public Object getImage(Object object) {
+						final Values values = ((SimpleSequenceRef) ValuesDecorator.this.object).getValues();
+						return itemPropertyDescriptor.getLabelProvider(values).getImage(values);
+					}
+				};
 			}
-			return super.canSetProperty(thisObject);
+			return labelProvider;
 		}
 
 	}
@@ -116,7 +125,7 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
@@ -126,47 +135,6 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 			addValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns SimpleSequenceRef.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return super.getImage(object);
 	}
 
 	/**
@@ -193,7 +161,7 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 
 		switch (notification.getFeatureID(SimpleSequenceRef.class)) {
 		case PrfPackage.SIMPLE_SEQUENCE_REF__VALUES:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -209,8 +177,6 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.SIMPLE_SEQUENCE_REF__VALUES, PrfFactory.eINSTANCE.createValues()));
 	}
 
 	@Override
@@ -220,24 +186,12 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	}
 
 	public static String getValueText(SimpleSequenceRef ref, List<String> value) {
-		String retVal = null;
-		if (value == null || value.isEmpty()) {
-			retVal = Collections.emptyList().toString();
-		} else {
-			retVal = value.toString();
-		}
-
 		SimpleSequence property = ref.getProperty();
 		if (property == null) {
 			return (value == null) ? "" : value.toString();
 		}
 
-		final String units = property.getUnits();
-		if (units != null) {
-			return retVal + " " + units;
-		} else {
-			return retVal;
-		}
+		return SimpleSequenceItemProvider.getValueText(property, value);
 	}
 
 }

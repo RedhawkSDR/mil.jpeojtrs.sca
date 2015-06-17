@@ -21,13 +21,13 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- *   <li>{@link mil.jpeojtrs.sca.prf.Struct#getContents <em>Contents</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.Struct#getFields <em>Fields</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Struct#getSimple <em>Simple</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Struct#getSimpleSequence <em>Simple Sequence</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Struct#getConfigurationKind <em>Configuration Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct()
  * @model extendedMetaData="name='struct' kind='elementOnly'"
@@ -36,22 +36,22 @@ import org.eclipse.emf.ecore.util.FeatureMap;
 public interface Struct extends AbstractProperty, PropertyContainer {
 
 	/**
-	 * Returns the value of the '<em><b>Contents</b></em>' attribute list.
+	 * Returns the value of the '<em><b>Fields</b></em>' attribute list.
 	 * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Contents</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Fields</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * @since 5.0
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contents</em>' attribute list.
-	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_Contents()
+	 * @return the value of the '<em>Fields</em>' attribute list.
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_Fields()
 	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
-	 *        extendedMetaData="kind='group' name='contents:0'"
+	 *        extendedMetaData="kind='group' name='fields:0'"
 	 * @generated
 	 */
-	FeatureMap getContents();
+	FeatureMap getFields();
 
 	/**
 	 * Returns the value of the '<em><b>Simple</b></em>' containment reference list.
@@ -65,7 +65,7 @@ public interface Struct extends AbstractProperty, PropertyContainer {
 	 * @return the value of the '<em>Simple</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_Simple()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='simple' group='#contents:0'"
+	 *        extendedMetaData="kind='element' name='simple' group='#fields:0'"
 	 * @generated
 	 */
 	EList<Simple> getSimple();
@@ -83,7 +83,7 @@ public interface Struct extends AbstractProperty, PropertyContainer {
 	 * @return the value of the '<em>Simple Sequence</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_SimpleSequence()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
-	 *        extendedMetaData="kind='element' name='simplesequence' group='#contents:0'"
+	 *        extendedMetaData="kind='element' name='simplesequence' group='#fields:0'"
 	 * @generated
 	 */
 	EList<SimpleSequence> getSimpleSequence();

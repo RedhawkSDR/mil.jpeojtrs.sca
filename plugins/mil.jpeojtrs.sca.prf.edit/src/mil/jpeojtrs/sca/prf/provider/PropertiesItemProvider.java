@@ -41,8 +41,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertiesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+public class PropertiesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -95,11 +95,7 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PrfPackage.Literals.PROPERTIES__SIMPLE);
-			childrenFeatures.add(PrfPackage.Literals.PROPERTIES__SIMPLE_SEQUENCE);
-			childrenFeatures.add(PrfPackage.Literals.PROPERTIES__TEST);
-			childrenFeatures.add(PrfPackage.Literals.PROPERTIES__STRUCT);
-			childrenFeatures.add(PrfPackage.Literals.PROPERTIES__STRUCT_SEQUENCE);
+			childrenFeatures.add(PrfPackage.Literals.PROPERTIES__PROPERTIES);
 		}
 		return childrenFeatures;
 	}
@@ -153,14 +149,14 @@ public class PropertiesItemProvider extends ItemProviderAdapter implements IEdit
 
 		switch (notification.getFeatureID(Properties.class)) {
 		case PrfPackage.PROPERTIES__DESCRIPTION:
-		case PrfPackage.PROPERTIES__PROPERTIES:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
 		case PrfPackage.PROPERTIES__SIMPLE:
 		case PrfPackage.PROPERTIES__SIMPLE_SEQUENCE:
 		case PrfPackage.PROPERTIES__TEST:
 		case PrfPackage.PROPERTIES__STRUCT:
 		case PrfPackage.PROPERTIES__STRUCT_SEQUENCE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PrfPackage.PROPERTIES__PROPERTIES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}

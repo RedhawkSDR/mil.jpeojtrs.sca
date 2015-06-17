@@ -45,6 +45,7 @@
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/test"/>
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/event"/>
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/message"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyConfigurationType/property"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="prf.ecore#//PropertyValueType">
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/string"/>
@@ -124,12 +125,12 @@
     </genClasses>
     <genClasses ecoreClass="prf.ecore#//Properties">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Properties/description"/>
-      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Properties/properties"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/simple"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/simpleSequence"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/test"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/struct"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/structSequence"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Properties/properties"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/simple"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/simpleSequence"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/test"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/struct"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Properties/structSequence"/>
     </genClasses>
     <genClasses ecoreClass="prf.ecore#//Range">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Range/max"/>
@@ -159,13 +160,15 @@
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequence/action"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//SimpleSequence/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//SimpleSequence/complex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//SimpleSequence/optional"/>
       <genOperations ecoreOperation="prf.ecore#//SimpleSequence/isComplex"/>
+      <genOperations ecoreOperation="prf.ecore#//SimpleSequence/isOptional"/>
     </genClasses>
     <genClasses provider="Stateful" ecoreClass="prf.ecore#//Struct">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//Struct/contents"/>
-      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Struct/simple"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Struct/simpleSequence"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//Struct/configurationKind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//Struct/fields"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Struct/simple"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Struct/simpleSequence"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Struct/configurationKind"/>
     </genClasses>
     <genClasses provider="Stateful" ecoreClass="prf.ecore#//StructSequence">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructSequence/struct"/>
@@ -174,8 +177,8 @@
     </genClasses>
     <genClasses image="false" ecoreClass="prf.ecore#//StructValue">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//StructValue/refs"/>
-      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructValue/simpleRef"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructValue/simpleSequenceRef"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//StructValue/simpleRef"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//StructValue/simpleSequenceRef"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference prf.ecore#//StructValue/struct"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//StructValue/index"/>
@@ -225,7 +228,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//SimpleRef/value"/>
     </genClasses>
     <genClasses image="false" ecoreClass="prf.ecore#//SimpleSequenceRef">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequenceRef/values"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequenceRef/values"/>
     </genClasses>
     <genClasses image="false" ecoreClass="prf.ecore#//StructRef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//StructRef/refs"/>

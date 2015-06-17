@@ -20,7 +20,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -52,21 +51,8 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSimplePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Simple feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSimplePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_Struct_simple_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Struct_simple_feature", "_UI_Struct_type"),
-			PrfPackage.Literals.STRUCT__SIMPLE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -75,14 +61,13 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT 
+	 * @generated
 	 */
 	@Override
 	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PrfPackage.Literals.STRUCT__SIMPLE);
-			childrenFeatures.add(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE);
+			childrenFeatures.add(PrfPackage.Literals.STRUCT__FIELDS);
 		}
 		return childrenFeatures;
 	}
@@ -144,10 +129,12 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Struct.class)) {
-		case PrfPackage.STRUCT__CONTENTS:
 		case PrfPackage.STRUCT__SIMPLE:
 		case PrfPackage.STRUCT__SIMPLE_SEQUENCE:
 		case PrfPackage.STRUCT__CONFIGURATION_KIND:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PrfPackage.STRUCT__FIELDS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -165,17 +152,11 @@ public class StructItemProvider extends AbstractPropertyItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONTENTS,
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__FIELDS,
 			FeatureMapUtil.createEntry(PrfPackage.Literals.STRUCT__SIMPLE, PrfFactory.eINSTANCE.createSimple())));
 
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONTENTS,
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__FIELDS,
 			FeatureMapUtil.createEntry(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE, PrfFactory.eINSTANCE.createSimpleSequence())));
-
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__SIMPLE, PrfFactory.eINSTANCE.createSimple()));
-
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__SIMPLE_SEQUENCE, PrfFactory.eINSTANCE.createSimpleSequence()));
-
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT__CONFIGURATION_KIND, PrfFactory.eINSTANCE.createConfigurationKind()));
 	}
 
 	/**

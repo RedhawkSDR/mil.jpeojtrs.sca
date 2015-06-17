@@ -583,7 +583,8 @@ public class PrfValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validateDceUUID_Pattern
 	 */
-	public static final PatternMatcher[][] DCE_UUID__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] { XMLTypeUtil.createPatternMatcher("DCE:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}(:\\d+(.\\d+)?)?") } };
+	public static final PatternMatcher[][] DCE_UUID__PATTERN__VALUES = new PatternMatcher[][] { new PatternMatcher[] {
+		XMLTypeUtil.createPatternMatcher("DCE:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}(:\\d+(.\\d+)?)?") } };
 
 	/**
 	 * Validates the Pattern constraint of '<em>Dce UUID</em>'.

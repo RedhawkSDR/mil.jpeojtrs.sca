@@ -14,7 +14,6 @@ package mil.jpeojtrs.sca.prf.provider;
 import java.util.Collection;
 import java.util.List;
 import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
-import mil.jpeojtrs.sca.prf.Enumeration;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.Simple;
 import mil.jpeojtrs.sca.prf.SimpleRef;
@@ -130,7 +129,6 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider {
 	}
 
 	public static String getValueText(SimpleRef ref, String value) {
-		String retVal = null;
 		if (value == null || value.toString().length() == 0) {
 			return "";
 		}
@@ -139,25 +137,7 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider {
 			return value;
 		}
 
-		if (property.getEnumerations() != null) {
-			for (Enumeration e : property.getEnumerations().getEnumeration()) {
-				if (e.getValue().equals(value.toString())) {
-					retVal = e.getLabel();
-					break;
-				}
-			}
-		}
-
-		if (retVal == null) {
-			retVal = value.toString();
-		}
-
-		final String units = property.getUnits();
-		if (units != null) {
-			return retVal + " " + units;
-		} else {
-			return retVal;
-		}
+		return SimpleItemProvider.getValueText(property, value);
 	}
 
 }
