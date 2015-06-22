@@ -204,12 +204,8 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 		if (id == null) {
 			return null;
 		}
-		for (SimpleRef ref : getSimpleRef()) {
-			if (id.equals(ref.getRefID())) {
-				return ref;
-			}
-		}
-		for (SimpleSequenceRef ref : getSimpleSequenceRef()) {
+		for (FeatureMap.Entry entry : getRefs()) {
+			AbstractPropertyRef< ? > ref = (AbstractPropertyRef< ? >) entry.getValue();
 			if (id.equals(ref.getRefID())) {
 				return ref;
 			}
