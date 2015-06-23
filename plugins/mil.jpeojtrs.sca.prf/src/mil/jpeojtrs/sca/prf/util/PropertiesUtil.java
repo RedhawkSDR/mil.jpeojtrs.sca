@@ -59,7 +59,7 @@ public final class PropertiesUtil {
 			return false;
 		}
 		if (property.getMode() != AccessType.READONLY) {
-			return property.isKind(PropertyConfigurationType.CONFIGURE);
+			return property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE);
 		}
 		return false;
 	}
@@ -71,7 +71,7 @@ public final class PropertiesUtil {
 		// Per D.6.1.3.3 configure, factoryparam, and/or execparam
 		// with mode "readwrite" or "writeonly" can be overridden
 		if (property.getMode() != AccessType.READONLY) {
-			return property.isKind(PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM);
+			return property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM);
 		}
 		return false;
 	}
