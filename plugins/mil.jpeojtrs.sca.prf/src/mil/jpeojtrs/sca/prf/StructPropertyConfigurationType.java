@@ -374,6 +374,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 			return StructPropertyConfigurationType.FACTORYPARAM;
 		case MESSAGE:
 			return StructPropertyConfigurationType.MESSAGE;
+		case PROPERTY:
+			return StructPropertyConfigurationType.PROPERTY;
 		case TEST:
 			return StructPropertyConfigurationType.TEST;
 		case EXECPARAM:
