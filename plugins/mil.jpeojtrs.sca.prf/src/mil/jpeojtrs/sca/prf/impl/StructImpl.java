@@ -329,8 +329,9 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 	@Override
 	public Any toAny() {
 		Any retVal = JacorbUtil.init().create_any();
-		List<DataType> fields = new ArrayList<DataType>(getSimple().size());
-		for (Simple prop : getSimple()) {
+		List<DataType> fields = new ArrayList<DataType>();
+		for (FeatureMap.Entry propEntry : getFields()) {
+			AbstractProperty prop = (AbstractProperty) propEntry.getValue();
 			fields.add(new DataType(prop.getId(), prop.toAny()));
 		}
 		PropertiesHelper.insert(retVal, fields.toArray(new DataType[fields.size()]));

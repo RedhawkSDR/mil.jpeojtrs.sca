@@ -14,6 +14,7 @@ package mil.jpeojtrs.sca.prf.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
 import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.PropertyContainer;
@@ -24,6 +25,7 @@ import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructSequence;
 import mil.jpeojtrs.sca.prf.StructSequenceRef;
 import mil.jpeojtrs.sca.prf.StructValue;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
+
 import CF.DataType;
 import CF.PropertiesHelper;
 
@@ -182,9 +185,10 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	public Any toAny() {
 		// END GENERATED CODE
 		Any retVal = JacorbUtil.init().create_any();
-		List<DataType> fields = new ArrayList<DataType>(getSimpleRef().size());
-		for (SimpleRef prop : getSimpleRef()) {
-			fields.add(new DataType(prop.getRefID(), prop.toAny()));
+		List<DataType> fields = new ArrayList<DataType>();
+		for (FeatureMap.Entry propRefEntry : getRefs()) {
+			AbstractPropertyRef< ? > propRef = (AbstractPropertyRef< ? >) propRefEntry.getValue();
+			fields.add(new DataType(propRef.getRefID(), propRef.toAny()));
 		}
 		PropertiesHelper.insert(retVal, fields.toArray(new DataType[fields.size()]));
 		return retVal;
