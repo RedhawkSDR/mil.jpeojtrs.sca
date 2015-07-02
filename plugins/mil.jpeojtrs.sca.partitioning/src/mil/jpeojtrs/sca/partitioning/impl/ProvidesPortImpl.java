@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ProvidesPortImpl#getProvidesIdentifier <em>Provides Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ProvidesPortImpl#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
@@ -40,11 +41,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ProvidesPortImpl#getDeviceUsedByApplication <em>Device Used By Application</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ProvidesPortImpl#getFindBy <em>Find By</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >> extends EObjectImpl implements ProvidesPort<P> {
+public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? > > extends EObjectImpl implements ProvidesPort<P> {
 
 	/**
 	 * The default value of the '{@link #getProvidesIdentifier() <em>Provides Identifier</em>}' attribute.
@@ -193,11 +193,11 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 		if (newComponentInstantiationRef != componentInstantiationRef) {
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
-				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.PROVIDES_PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.PROVIDES_PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
 			if (newComponentInstantiationRef != null)
-				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.PROVIDES_PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.PROVIDES_PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
 			msgs = basicSetComponentInstantiationRef(newComponentInstantiationRef, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -247,11 +247,11 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 		if (newDeviceThatLoadedThisComponentRef != deviceThatLoadedThisComponentRef) {
 			NotificationChain msgs = null;
 			if (deviceThatLoadedThisComponentRef != null)
-				msgs = ((InternalEObject) deviceThatLoadedThisComponentRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.PROVIDES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) deviceThatLoadedThisComponentRef).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.PROVIDES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
 			if (newDeviceThatLoadedThisComponentRef != null)
-				msgs = ((InternalEObject) newDeviceThatLoadedThisComponentRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.PROVIDES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) newDeviceThatLoadedThisComponentRef).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.PROVIDES_PORT__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
 			msgs = basicSetDeviceThatLoadedThisComponentRef(newDeviceThatLoadedThisComponentRef, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -279,8 +279,8 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 		DeviceUsedByThisComponentRef oldDeviceUsedByThisComponentRef = deviceUsedByThisComponentRef;
 		deviceUsedByThisComponentRef = newDeviceUsedByThisComponentRef;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-				PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, oldDeviceUsedByThisComponentRef, newDeviceUsedByThisComponentRef);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF,
+				oldDeviceUsedByThisComponentRef, newDeviceUsedByThisComponentRef);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -299,11 +299,11 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 		if (newDeviceUsedByThisComponentRef != deviceUsedByThisComponentRef) {
 			NotificationChain msgs = null;
 			if (deviceUsedByThisComponentRef != null)
-				msgs = ((InternalEObject) deviceUsedByThisComponentRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) deviceUsedByThisComponentRef).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
 			if (newDeviceUsedByThisComponentRef != null)
-				msgs = ((InternalEObject) newDeviceUsedByThisComponentRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) newDeviceUsedByThisComponentRef).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
 			msgs = basicSetDeviceUsedByThisComponentRef(newDeviceUsedByThisComponentRef, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -352,11 +352,11 @@ public abstract class ProvidesPortImpl< P extends ComponentInstantiationRef< ? >
 		if (newDeviceUsedByApplication != deviceUsedByApplication) {
 			NotificationChain msgs = null;
 			if (deviceUsedByApplication != null)
-				msgs = ((InternalEObject) deviceUsedByApplication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION, null, msgs);
+				msgs = ((InternalEObject) deviceUsedByApplication).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION, null, msgs);
 			if (newDeviceUsedByApplication != null)
-				msgs = ((InternalEObject) newDeviceUsedByApplication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION, null, msgs);
+				msgs = ((InternalEObject) newDeviceUsedByApplication).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION, null, msgs);
 			msgs = basicSetDeviceUsedByApplication(newDeviceUsedByApplication, msgs);
 			if (msgs != null)
 				msgs.dispatch();

@@ -195,10 +195,12 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * @generated
 	 */
 	public static DcdPackage initGen() {
-		if (isInited) return (DcdPackage)EPackage.Registry.INSTANCE.getEPackage(DcdPackage.eNS_URI);
+		if (isInited)
+			return (DcdPackage) EPackage.Registry.INSTANCE.getEPackage(DcdPackage.eNS_URI);
 
 		// Obtain or create and register package
-		DcdPackageImpl theDcdPackage = (DcdPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DcdPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DcdPackageImpl());
+		DcdPackageImpl theDcdPackage = (DcdPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DcdPackageImpl
+			? EPackage.Registry.INSTANCE.get(eNS_URI) : new DcdPackageImpl());
 
 		isInited = true;
 
@@ -216,7 +218,6 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		// Mark meta-data to indicate it can't be changed
 		theDcdPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(DcdPackage.eNS_URI, theDcdPackage);
 		return theDcdPackage;
@@ -229,6 +230,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
 			private final AdvancedEObjectValidator validator = new AdvancedEObjectValidator();
+
 			@Override
 			public EValidator getEValidator() {
 				return this.validator;
@@ -256,7 +258,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDcdComponentPlacement_DeployDevice() {
-		return (EReference)dcdComponentPlacementEClass.getEStructuralFeatures().get(0);
+		return (EReference) dcdComponentPlacementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -266,7 +268,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDcdComponentPlacement_CompositePartOfDevice() {
-		return (EReference)dcdComponentPlacementEClass.getEStructuralFeatures().get(1);
+		return (EReference) dcdComponentPlacementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -276,7 +278,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDcdComponentPlacement_DevicePkgFile() {
-		return (EReference)dcdComponentPlacementEClass.getEStructuralFeatures().get(2);
+		return (EReference) dcdComponentPlacementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -286,7 +288,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDcdComponentPlacement_ParentDevice() {
-		return (EReference)dcdComponentPlacementEClass.getEStructuralFeatures().get(3);
+		return (EReference) dcdComponentPlacementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -376,7 +378,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getCompositePartOfDevice_Component() {
-		return (EReference)compositePartOfDeviceEClass.getEStructuralFeatures().get(0);
+		return (EReference) compositePartOfDeviceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -386,7 +388,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EAttribute getCompositePartOfDevice_RefID() {
-		return (EAttribute)compositePartOfDeviceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) compositePartOfDeviceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -406,7 +408,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EAttribute getDcdDocumentRoot_Mixed() {
-		return (EAttribute)dcdDocumentRootEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) dcdDocumentRootEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -416,7 +418,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDcdDocumentRoot_XMLNSPrefixMap() {
-		return (EReference)dcdDocumentRootEClass.getEStructuralFeatures().get(1);
+		return (EReference) dcdDocumentRootEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -426,7 +428,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDcdDocumentRoot_XSISchemaLocation() {
-		return (EReference)dcdDocumentRootEClass.getEStructuralFeatures().get(2);
+		return (EReference) dcdDocumentRootEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -436,7 +438,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDcdDocumentRoot_Deviceconfiguration() {
-		return (EReference)dcdDocumentRootEClass.getEStructuralFeatures().get(3);
+		return (EReference) dcdDocumentRootEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -456,7 +458,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDeployOnDevice_Component() {
-		return (EReference)deployOnDeviceEClass.getEStructuralFeatures().get(0);
+		return (EReference) deployOnDeviceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -466,7 +468,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EAttribute getDeployOnDevice_RefID() {
-		return (EAttribute)deployOnDeviceEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) deployOnDeviceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -486,7 +488,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EAttribute getDeviceConfiguration_Description() {
-		return (EAttribute)deviceConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) deviceConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -496,7 +498,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDeviceConfiguration_DeviceManagerSoftPkg() {
-		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(1);
+		return (EReference) deviceConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -506,7 +508,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDeviceConfiguration_ComponentFiles() {
-		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(2);
+		return (EReference) deviceConfigurationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -516,7 +518,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDeviceConfiguration_Partitioning() {
-		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(3);
+		return (EReference) deviceConfigurationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -526,7 +528,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDeviceConfiguration_Connections() {
-		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(4);
+		return (EReference) deviceConfigurationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -536,7 +538,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDeviceConfiguration_DomainManager() {
-		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(5);
+		return (EReference) deviceConfigurationEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -546,7 +548,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDeviceConfiguration_FileSystemNames() {
-		return (EReference)deviceConfigurationEClass.getEStructuralFeatures().get(6);
+		return (EReference) deviceConfigurationEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -556,7 +558,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EAttribute getDeviceConfiguration_Id() {
-		return (EAttribute)deviceConfigurationEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) deviceConfigurationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -566,7 +568,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EAttribute getDeviceConfiguration_Name() {
-		return (EAttribute)deviceConfigurationEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) deviceConfigurationEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -586,7 +588,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDeviceManagerSoftPkg_LocalFile() {
-		return (EReference)deviceManagerSoftPkgEClass.getEStructuralFeatures().get(0);
+		return (EReference) deviceManagerSoftPkgEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -596,7 +598,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDeviceManagerSoftPkg_SoftPkg() {
-		return (EReference)deviceManagerSoftPkgEClass.getEStructuralFeatures().get(1);
+		return (EReference) deviceManagerSoftPkgEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -616,7 +618,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDevicePkgFile_LocalFile() {
-		return (EReference)devicePkgFileEClass.getEStructuralFeatures().get(0);
+		return (EReference) devicePkgFileEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -626,7 +628,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EAttribute getDevicePkgFile_Type() {
-		return (EAttribute)devicePkgFileEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) devicePkgFileEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -636,7 +638,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDevicePkgFile_DevicePkg() {
-		return (EReference)devicePkgFileEClass.getEStructuralFeatures().get(2);
+		return (EReference) devicePkgFileEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -656,7 +658,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getDomainManager_NamingService() {
-		return (EReference)domainManagerEClass.getEStructuralFeatures().get(0);
+		return (EReference) domainManagerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -666,7 +668,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EAttribute getDomainManager_StringifiedObjectRef() {
-		return (EAttribute)domainManagerEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) domainManagerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -686,7 +688,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EAttribute getFileSystemName_DeviceID() {
-		return (EAttribute)fileSystemNameEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) fileSystemNameEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -696,7 +698,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EAttribute getFileSystemName_MountName() {
-		return (EAttribute)fileSystemNameEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) fileSystemNameEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -716,7 +718,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public EReference getFileSystemNames_FileSystemName() {
-		return (EReference)fileSystemNamesEClass.getEStructuralFeatures().get(0);
+		return (EReference) fileSystemNamesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -726,7 +728,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 */
 	@Override
 	public DcdFactory getDcdFactory() {
-		return (DcdFactory)getEFactoryInstance();
+		return (DcdFactory) getEFactoryInstance();
 	}
 
 	/**
@@ -744,7 +746,8 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -829,7 +832,8 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -838,12 +842,12 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		PartitioningPackage thePartitioningPackage = (PartitioningPackage)EPackage.Registry.INSTANCE.getEPackage(PartitioningPackage.eNS_URI);
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
-		PrfPackage thePrfPackage = (PrfPackage)EPackage.Registry.INSTANCE.getEPackage(PrfPackage.eNS_URI);
-		SpdPackage theSpdPackage = (SpdPackage)EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
-		DpdPackage theDpdPackage = (DpdPackage)EPackage.Registry.INSTANCE.getEPackage(DpdPackage.eNS_URI);
+		PartitioningPackage thePartitioningPackage = (PartitioningPackage) EPackage.Registry.INSTANCE.getEPackage(PartitioningPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
+		PrfPackage thePrfPackage = (PrfPackage) EPackage.Registry.INSTANCE.getEPackage(PrfPackage.eNS_URI);
+		SpdPackage theSpdPackage = (SpdPackage) EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
+		DpdPackage theDpdPackage = (DpdPackage) EPackage.Registry.INSTANCE.getEPackage(DpdPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -886,16 +890,24 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(dcdComponentPlacementEClass, DcdComponentPlacement.class, "DcdComponentPlacement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDcdComponentPlacement_DeployDevice(), this.getDeployOnDevice(), null, "deployDevice", null, 0, 1, DcdComponentPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDcdComponentPlacement_CompositePartOfDevice(), this.getCompositePartOfDevice(), null, "compositePartOfDevice", null, 0, 1, DcdComponentPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDcdComponentPlacement_DevicePkgFile(), this.getDevicePkgFile(), null, "devicePkgFile", null, 0, 1, DcdComponentPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDcdComponentPlacement_ParentDevice(), this.getDcdComponentInstantiation(), null, "parentDevice", null, 0, 1, DcdComponentPlacement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDcdComponentPlacement_DeployDevice(), this.getDeployOnDevice(), null, "deployDevice", null, 0, 1, DcdComponentPlacement.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDcdComponentPlacement_CompositePartOfDevice(), this.getCompositePartOfDevice(), null, "compositePartOfDevice", null, 0, 1,
+			DcdComponentPlacement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+			IS_ORDERED);
+		initEReference(getDcdComponentPlacement_DevicePkgFile(), this.getDevicePkgFile(), null, "devicePkgFile", null, 0, 1, DcdComponentPlacement.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDcdComponentPlacement_ParentDevice(), this.getDcdComponentInstantiation(), null, "parentDevice", null, 0, 1,
+			DcdComponentPlacement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+			IS_ORDERED);
 
-		initEClass(dcdComponentInstantiationEClass, DcdComponentInstantiation.class, "DcdComponentInstantiation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(dcdComponentInstantiationEClass, DcdComponentInstantiation.class, "DcdComponentInstantiation", !IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(dcdPartitioningEClass, DcdPartitioning.class, "DcdPartitioning", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(dcdComponentInstantiationRefEClass, DcdComponentInstantiationRef.class, "DcdComponentInstantiationRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(dcdComponentInstantiationRefEClass, DcdComponentInstantiationRef.class, "DcdComponentInstantiationRef", !IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(dcdConnectInterfaceEClass, DcdConnectInterface.class, "DcdConnectInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -906,49 +918,78 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		initEClass(dcdConnectionsEClass, DcdConnections.class, "DcdConnections", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(compositePartOfDeviceEClass, CompositePartOfDevice.class, "CompositePartOfDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCompositePartOfDevice_Component(), this.getDcdComponentInstantiation(), null, "component", null, 0, 1, CompositePartOfDevice.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCompositePartOfDevice_RefID(), theEcorePackage.getEString(), "refID", null, 1, 1, CompositePartOfDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompositePartOfDevice_Component(), this.getDcdComponentInstantiation(), null, "component", null, 0, 1, CompositePartOfDevice.class,
+			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCompositePartOfDevice_RefID(), theEcorePackage.getEString(), "refID", null, 1, 1, CompositePartOfDevice.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dcdDocumentRootEClass, DcdDocumentRoot.class, "DcdDocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDcdDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDcdDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDcdDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDcdDocumentRoot_Deviceconfiguration(), this.getDeviceConfiguration(), null, "deviceconfiguration", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDcdDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDcdDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDcdDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null,
+			IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDcdDocumentRoot_Deviceconfiguration(), this.getDeviceConfiguration(), null, "deviceconfiguration", null, 0, -2, null, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(deployOnDeviceEClass, DeployOnDevice.class, "DeployOnDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDeployOnDevice_Component(), this.getDcdComponentInstantiation(), null, "component", null, 0, 1, DeployOnDevice.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDeployOnDevice_RefID(), theEcorePackage.getEString(), "refID", null, 1, 1, DeployOnDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeployOnDevice_Component(), this.getDcdComponentInstantiation(), null, "component", null, 0, 1, DeployOnDevice.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeployOnDevice_RefID(), theEcorePackage.getEString(), "refID", null, 1, 1, DeployOnDevice.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deviceConfigurationEClass, DeviceConfiguration.class, "DeviceConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDeviceConfiguration_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceConfiguration_DeviceManagerSoftPkg(), this.getDeviceManagerSoftPkg(), null, "deviceManagerSoftPkg", null, 1, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceConfiguration_ComponentFiles(), thePartitioningPackage.getComponentFiles(), null, "componentFiles", null, 0, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceConfiguration_Partitioning(), this.getDcdPartitioning(), null, "partitioning", null, 0, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceConfiguration_Connections(), this.getDcdConnections(), null, "connections", null, 0, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceConfiguration_DomainManager(), this.getDomainManager(), null, "domainManager", null, 1, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceConfiguration_FileSystemNames(), this.getFileSystemNames(), null, "fileSystemNames", null, 0, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDeviceConfiguration_Id(), thePrfPackage.getDceUUID(), "id", null, 1, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDeviceConfiguration_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeviceConfiguration_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, DeviceConfiguration.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceConfiguration_DeviceManagerSoftPkg(), this.getDeviceManagerSoftPkg(), null, "deviceManagerSoftPkg", null, 1, 1,
+			DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+			IS_ORDERED);
+		initEReference(getDeviceConfiguration_ComponentFiles(), thePartitioningPackage.getComponentFiles(), null, "componentFiles", null, 0, 1,
+			DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+			IS_ORDERED);
+		initEReference(getDeviceConfiguration_Partitioning(), this.getDcdPartitioning(), null, "partitioning", null, 0, 1, DeviceConfiguration.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceConfiguration_Connections(), this.getDcdConnections(), null, "connections", null, 0, 1, DeviceConfiguration.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceConfiguration_DomainManager(), this.getDomainManager(), null, "domainManager", null, 1, 1, DeviceConfiguration.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceConfiguration_FileSystemNames(), this.getFileSystemNames(), null, "fileSystemNames", null, 0, 1, DeviceConfiguration.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeviceConfiguration_Id(), thePrfPackage.getDceUUID(), "id", null, 1, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDeviceConfiguration_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deviceManagerSoftPkgEClass, DeviceManagerSoftPkg.class, "DeviceManagerSoftPkg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDeviceManagerSoftPkg_LocalFile(), thePartitioningPackage.getLocalFile(), null, "localFile", null, 1, 1, DeviceManagerSoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDeviceManagerSoftPkg_SoftPkg(), theSpdPackage.getSoftPkg(), null, "softPkg", null, 0, 1, DeviceManagerSoftPkg.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceManagerSoftPkg_LocalFile(), thePartitioningPackage.getLocalFile(), null, "localFile", null, 1, 1, DeviceManagerSoftPkg.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeviceManagerSoftPkg_SoftPkg(), theSpdPackage.getSoftPkg(), null, "softPkg", null, 0, 1, DeviceManagerSoftPkg.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(devicePkgFileEClass, DevicePkgFile.class, "DevicePkgFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDevicePkgFile_LocalFile(), thePartitioningPackage.getLocalFile(), null, "localFile", null, 1, 1, DevicePkgFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDevicePkgFile_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, DevicePkgFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDevicePkgFile_DevicePkg(), theDpdPackage.getDevicePkg(), null, "devicePkg", null, 0, 1, DevicePkgFile.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDevicePkgFile_LocalFile(), thePartitioningPackage.getLocalFile(), null, "localFile", null, 1, 1, DevicePkgFile.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDevicePkgFile_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, DevicePkgFile.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDevicePkgFile_DevicePkg(), theDpdPackage.getDevicePkg(), null, "devicePkg", null, 0, 1, DevicePkgFile.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(domainManagerEClass, DomainManager.class, "DomainManager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDomainManager_NamingService(), thePartitioningPackage.getNamingService(), null, "namingService", null, 0, 1, DomainManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDomainManager_StringifiedObjectRef(), theXMLTypePackage.getString(), "stringifiedObjectRef", null, 0, 1, DomainManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDomainManager_NamingService(), thePartitioningPackage.getNamingService(), null, "namingService", null, 0, 1, DomainManager.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDomainManager_StringifiedObjectRef(), theXMLTypePackage.getString(), "stringifiedObjectRef", null, 0, 1, DomainManager.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fileSystemNameEClass, FileSystemName.class, "FileSystemName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFileSystemName_DeviceID(), theXMLTypePackage.getString(), "deviceID", null, 1, 1, FileSystemName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFileSystemName_MountName(), theXMLTypePackage.getString(), "mountName", null, 1, 1, FileSystemName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFileSystemName_DeviceID(), theXMLTypePackage.getString(), "deviceID", null, 1, 1, FileSystemName.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFileSystemName_MountName(), theXMLTypePackage.getString(), "mountName", null, 1, 1, FileSystemName.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fileSystemNamesEClass, FileSystemNames.class, "FileSystemNames", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFileSystemNames_FileSystemName(), this.getFileSystemName(), null, "fileSystemName", null, 1, -1, FileSystemNames.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFileSystemNames_FileSystemName(), this.getFileSystemName(), null, "fileSystemName", null, 1, -1, FileSystemNames.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -965,386 +1006,55 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";		
-		addAnnotation
-		  (dcdComponentPlacementEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "componentplacement",
-			 "kind", "elementOnly"
-		   });			
-		addAnnotation
-		  (getDcdComponentPlacement_DeployDevice(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "deployondevice"
-		   });			
-		addAnnotation
-		  (getDcdComponentPlacement_CompositePartOfDevice(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "compositepartofdevice"
-		   });			
-		addAnnotation
-		  (getDcdComponentPlacement_DevicePkgFile(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "devicepkgfile"
-		   });		
-		addAnnotation
-		  (getDcdComponentPlacement_ParentDevice(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "parentDevice"
-		   });		
-		addAnnotation
-		  (dcdComponentInstantiationEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "componentinstantiation",
-			 "kind", "elementOnly",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (dcdPartitioningEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "partitioning",
-			 "kind", "elementOnly",
-			 "qualified", "false"
-		   });		
-		addAnnotation
-		  (dcdComponentInstantiationRefEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "componentinstantiationref",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (dcdConnectInterfaceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "connectinterface",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (dcdUsesPortEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "usesport",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (dcdProvidesPortEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "providesport",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (dcdConnectionsEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "connections",
-			 "kind", "elementOnly"
-		   });			
-		addAnnotation
-		  (compositePartOfDeviceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "compositepartofdevice",
-			 "kind", "empty"
-		   });		
-		addAnnotation
-		  (getCompositePartOfDevice_Component(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "component"
-		   });		
-		addAnnotation
-		  (getCompositePartOfDevice_RefID(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "refid"
-		   });		
-		addAnnotation
-		  (dcdDocumentRootEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "",
-			 "kind", "mixed"
-		   });		
-		addAnnotation
-		  (getDcdDocumentRoot_Mixed(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "elementWildcard",
-			 "name", ":mixed"
-		   });		
-		addAnnotation
-		  (getDcdDocumentRoot_XMLNSPrefixMap(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "xmlns:prefix"
-		   });		
-		addAnnotation
-		  (getDcdDocumentRoot_XSISchemaLocation(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "xsi:schemaLocation"
-		   });		
-		addAnnotation
-		  (getDcdDocumentRoot_Deviceconfiguration(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "deviceconfiguration",
-			 "namespace", "##targetNamespace"
-		   });			
-		addAnnotation
-		  (deployOnDeviceEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "deployondevice",
-			 "kind", "empty"
-		   });		
-		addAnnotation
-		  (getDeployOnDevice_Component(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "component"
-		   });		
-		addAnnotation
-		  (getDeployOnDevice_RefID(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "refid"
-		   });			
-		addAnnotation
-		  (deviceConfigurationEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "deviceconfiguration",
-			 "kind", "elementOnly"
-		   });			
-		addAnnotation
-		  (getDeviceConfiguration_Description(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "description"
-		   });			
-		addAnnotation
-		  (getDeviceConfiguration_DeviceManagerSoftPkg(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "devicemanagersoftpkg"
-		   });			
-		addAnnotation
-		  (getDeviceConfiguration_ComponentFiles(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "componentfiles"
-		   });			
-		addAnnotation
-		  (getDeviceConfiguration_Partitioning(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "partitioning"
-		   });		
-		addAnnotation
-		  (getDeviceConfiguration_Connections(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "connections"
-		   });		
-		addAnnotation
-		  (getDeviceConfiguration_DomainManager(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "domainmanager"
-		   });		
-		addAnnotation
-		  (getDeviceConfiguration_FileSystemNames(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "filesystemnames"
-		   });			
-		addAnnotation
-		  (getDeviceConfiguration_Id(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "id"
-		   });			
-		addAnnotation
-		  (getDeviceConfiguration_Name(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "name"
-		   });		
-		addAnnotation
-		  (deviceManagerSoftPkgEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "devicemanagersoftpkg",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getDeviceManagerSoftPkg_LocalFile(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "localfile"
-		   });		
-		addAnnotation
-		  (getDeviceManagerSoftPkg_SoftPkg(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "softPkg"
-		   });			
-		addAnnotation
-		  (devicePkgFileEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "devicepkgfile",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getDevicePkgFile_LocalFile(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "localfile"
-		   });		
-		addAnnotation
-		  (getDevicePkgFile_Type(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "type"
-		   });			
-		addAnnotation
-		  (domainManagerEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "domainmanager",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getDomainManager_NamingService(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "namingservice"
-		   });		
-		addAnnotation
-		  (getDomainManager_StringifiedObjectRef(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "stringifiedobjectref"
-		   });		
-		addAnnotation
-		  (fileSystemNameEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "filesystemname",
-			 "kind", "empty"
-		   });		
-		addAnnotation
-		  (getFileSystemName_DeviceID(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "deviceid"
-		   });		
-		addAnnotation
-		  (getFileSystemName_MountName(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "attribute",
-			 "name", "mountname"
-		   });			
-		addAnnotation
-		  (fileSystemNamesEClass, 
-		   source, 
-		   new String[] 
-		   {
-			 "name", "filesystemnames",
-			 "kind", "elementOnly"
-		   });		
-		addAnnotation
-		  (getFileSystemNames_FileSystemName(), 
-		   source, 
-		   new String[] 
-		   {
-			 "kind", "element",
-			 "name", "filesystemname"
-		   });
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation(dcdComponentPlacementEClass, source, new String[] { "name", "componentplacement", "kind", "elementOnly" });
+		addAnnotation(getDcdComponentPlacement_DeployDevice(), source, new String[] { "kind", "element", "name", "deployondevice" });
+		addAnnotation(getDcdComponentPlacement_CompositePartOfDevice(), source, new String[] { "kind", "element", "name", "compositepartofdevice" });
+		addAnnotation(getDcdComponentPlacement_DevicePkgFile(), source, new String[] { "kind", "element", "name", "devicepkgfile" });
+		addAnnotation(getDcdComponentPlacement_ParentDevice(), source, new String[] { "kind", "attribute", "name", "parentDevice" });
+		addAnnotation(dcdComponentInstantiationEClass, source, new String[] { "name", "componentinstantiation", "kind", "elementOnly", "qualified", "false" });
+		addAnnotation(dcdPartitioningEClass, source, new String[] { "name", "partitioning", "kind", "elementOnly", "qualified", "false" });
+		addAnnotation(dcdComponentInstantiationRefEClass, source, new String[] { "name", "componentinstantiationref", "kind", "elementOnly" });
+		addAnnotation(dcdConnectInterfaceEClass, source, new String[] { "name", "connectinterface", "kind", "elementOnly" });
+		addAnnotation(dcdUsesPortEClass, source, new String[] { "name", "usesport", "kind", "elementOnly" });
+		addAnnotation(dcdProvidesPortEClass, source, new String[] { "name", "providesport", "kind", "elementOnly" });
+		addAnnotation(dcdConnectionsEClass, source, new String[] { "name", "connections", "kind", "elementOnly" });
+		addAnnotation(compositePartOfDeviceEClass, source, new String[] { "name", "compositepartofdevice", "kind", "empty" });
+		addAnnotation(getCompositePartOfDevice_Component(), source, new String[] { "kind", "attribute", "name", "component" });
+		addAnnotation(getCompositePartOfDevice_RefID(), source, new String[] { "kind", "attribute", "name", "refid" });
+		addAnnotation(dcdDocumentRootEClass, source, new String[] { "name", "", "kind", "mixed" });
+		addAnnotation(getDcdDocumentRoot_Mixed(), source, new String[] { "kind", "elementWildcard", "name", ":mixed" });
+		addAnnotation(getDcdDocumentRoot_XMLNSPrefixMap(), source, new String[] { "kind", "attribute", "name", "xmlns:prefix" });
+		addAnnotation(getDcdDocumentRoot_XSISchemaLocation(), source, new String[] { "kind", "attribute", "name", "xsi:schemaLocation" });
+		addAnnotation(getDcdDocumentRoot_Deviceconfiguration(), source,
+			new String[] { "kind", "element", "name", "deviceconfiguration", "namespace", "##targetNamespace" });
+		addAnnotation(deployOnDeviceEClass, source, new String[] { "name", "deployondevice", "kind", "empty" });
+		addAnnotation(getDeployOnDevice_Component(), source, new String[] { "kind", "attribute", "name", "component" });
+		addAnnotation(getDeployOnDevice_RefID(), source, new String[] { "kind", "attribute", "name", "refid" });
+		addAnnotation(deviceConfigurationEClass, source, new String[] { "name", "deviceconfiguration", "kind", "elementOnly" });
+		addAnnotation(getDeviceConfiguration_Description(), source, new String[] { "kind", "element", "name", "description" });
+		addAnnotation(getDeviceConfiguration_DeviceManagerSoftPkg(), source, new String[] { "kind", "element", "name", "devicemanagersoftpkg" });
+		addAnnotation(getDeviceConfiguration_ComponentFiles(), source, new String[] { "kind", "element", "name", "componentfiles" });
+		addAnnotation(getDeviceConfiguration_Partitioning(), source, new String[] { "kind", "element", "name", "partitioning" });
+		addAnnotation(getDeviceConfiguration_Connections(), source, new String[] { "kind", "element", "name", "connections" });
+		addAnnotation(getDeviceConfiguration_DomainManager(), source, new String[] { "kind", "element", "name", "domainmanager" });
+		addAnnotation(getDeviceConfiguration_FileSystemNames(), source, new String[] { "kind", "element", "name", "filesystemnames" });
+		addAnnotation(getDeviceConfiguration_Id(), source, new String[] { "kind", "attribute", "name", "id" });
+		addAnnotation(getDeviceConfiguration_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(deviceManagerSoftPkgEClass, source, new String[] { "name", "devicemanagersoftpkg", "kind", "elementOnly" });
+		addAnnotation(getDeviceManagerSoftPkg_LocalFile(), source, new String[] { "kind", "element", "name", "localfile" });
+		addAnnotation(getDeviceManagerSoftPkg_SoftPkg(), source, new String[] { "kind", "attribute", "name", "softPkg" });
+		addAnnotation(devicePkgFileEClass, source, new String[] { "name", "devicepkgfile", "kind", "elementOnly" });
+		addAnnotation(getDevicePkgFile_LocalFile(), source, new String[] { "kind", "element", "name", "localfile" });
+		addAnnotation(getDevicePkgFile_Type(), source, new String[] { "kind", "attribute", "name", "type" });
+		addAnnotation(domainManagerEClass, source, new String[] { "name", "domainmanager", "kind", "elementOnly" });
+		addAnnotation(getDomainManager_NamingService(), source, new String[] { "kind", "element", "name", "namingservice" });
+		addAnnotation(getDomainManager_StringifiedObjectRef(), source, new String[] { "kind", "element", "name", "stringifiedobjectref" });
+		addAnnotation(fileSystemNameEClass, source, new String[] { "name", "filesystemname", "kind", "empty" });
+		addAnnotation(getFileSystemName_DeviceID(), source, new String[] { "kind", "attribute", "name", "deviceid" });
+		addAnnotation(getFileSystemName_MountName(), source, new String[] { "kind", "attribute", "name", "mountname" });
+		addAnnotation(fileSystemNamesEClass, source, new String[] { "name", "filesystemnames", "kind", "elementOnly" });
+		addAnnotation(getFileSystemNames_FileSystemName(), source, new String[] { "kind", "element", "name", "filesystemname" });
 	}
 
 } //DcdPackageImpl

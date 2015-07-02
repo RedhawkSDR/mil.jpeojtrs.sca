@@ -86,9 +86,9 @@ public class DcdProvidesPortTest extends ProvidesPortTest {
 	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
-	
+
 	public void testStub() {
-		
+
 	}
 
 } //DcdProvidesPortTest

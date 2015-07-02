@@ -31,10 +31,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.FileSystemNamesImpl#getFileSystemName <em>File System Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -76,8 +76,7 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	 */
 	@Override
 	public EList<FileSystemName> getFileSystemName() {
-		if (fileSystemName == null)
-		{
+		if (fileSystemName == null) {
 			fileSystemName = new EObjectContainmentEList<FileSystemName>(FileSystemName.class, this, DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME);
 		}
 		return fileSystemName;
@@ -90,10 +89,9 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
-				return ((InternalEList<?>)getFileSystemName()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
+			return ((InternalEList< ? >) getFileSystemName()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -105,10 +103,9 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
-				return getFileSystemName();
+		switch (featureID) {
+		case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
+			return getFileSystemName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,12 +118,11 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
-				getFileSystemName().clear();
-				getFileSystemName().addAll((Collection<? extends FileSystemName>)newValue);
-				return;
+		switch (featureID) {
+		case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
+			getFileSystemName().clear();
+			getFileSystemName().addAll((Collection< ? extends FileSystemName>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -138,11 +134,10 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
-				getFileSystemName().clear();
-				return;
+		switch (featureID) {
+		case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
+			getFileSystemName().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -154,10 +149,9 @@ public class FileSystemNamesImpl extends EObjectImpl implements FileSystemNames 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
-				return fileSystemName != null && !fileSystemName.isEmpty();
+		switch (featureID) {
+		case DcdPackage.FILE_SYSTEM_NAMES__FILE_SYSTEM_NAME:
+			return fileSystemName != null && !fileSystemName.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

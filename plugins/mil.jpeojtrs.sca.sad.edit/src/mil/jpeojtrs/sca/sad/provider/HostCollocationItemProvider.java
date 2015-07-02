@@ -183,8 +183,8 @@ public class HostCollocationItemProvider extends ItemProviderAdapter implements 
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SadPackage.Literals.HOST_COLLOCATION__COMPONENT_PLACEMENT,
-			SadFactory.eINSTANCE.createSadComponentPlacement()));
+		newChildDescriptors.add(
+			createChildParameter(SadPackage.Literals.HOST_COLLOCATION__COMPONENT_PLACEMENT, SadFactory.eINSTANCE.createSadComponentPlacement()));
 	}
 
 	/**

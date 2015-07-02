@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getDeviceManagerSoftPkg <em>Device Manager Soft Pkg</em>}</li>
@@ -49,7 +50,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.dcd.DcdPackage#getDeviceConfiguration()
  * @model extendedMetaData="name='deviceconfiguration' kind='elementOnly'"
@@ -72,6 +72,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	String getDescription();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -81,6 +82,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	void setDescription(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Device Manager Soft Pkg</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -99,6 +101,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	DeviceManagerSoftPkg getDeviceManagerSoftPkg();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getDeviceManagerSoftPkg <em>Device Manager Soft Pkg</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -108,6 +111,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	void setDeviceManagerSoftPkg(DeviceManagerSoftPkg value);
+
 	/**
 	 * Returns the value of the '<em><b>Component Files</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -126,6 +130,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	ComponentFiles getComponentFiles();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getComponentFiles <em>Component Files</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -135,6 +140,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	void setComponentFiles(ComponentFiles value);
+
 	/**
 	 * Returns the value of the '<em><b>Partitioning</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -151,6 +157,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	DcdPartitioning getPartitioning();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getPartitioning <em>Partitioning</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -160,6 +167,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	void setPartitioning(DcdPartitioning value);
+
 	/**
 	 * Returns the value of the '<em><b>Connections</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -176,6 +184,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	DcdConnections getConnections();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getConnections <em>Connections</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -185,6 +194,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	void setConnections(DcdConnections value);
+
 	/**
 	 * Returns the value of the '<em><b>Domain Manager</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -201,6 +211,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	DomainManager getDomainManager();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getDomainManager <em>Domain Manager</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -210,6 +221,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	void setDomainManager(DomainManager value);
+
 	/**
 	 * Returns the value of the '<em><b>File System Names</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -226,6 +238,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	FileSystemNames getFileSystemNames();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getFileSystemNames <em>File System Names</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -235,6 +248,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	void setFileSystemNames(FileSystemNames value);
+
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -251,6 +265,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	String getId();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -260,6 +275,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	void setId(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -275,6 +291,7 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	String getName();
+
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.dcd.DeviceConfiguration#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -284,12 +301,15 @@ public interface DeviceConfiguration extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
 	public static final String EOBJECT_PATH = "/";
+
 	public static class Util {
 		// END GENERATED CODE
 		private Util() {
-			
+
 		}
+
 		public static DeviceConfiguration getDeviceConfiguration(Resource resource) {
 			EObject obj = resource.getEObject(DeviceConfiguration.EOBJECT_PATH);
 			if (obj instanceof DcdDocumentRoot) {
@@ -300,14 +320,14 @@ public interface DeviceConfiguration extends EObject {
 				return null;
 			}
 		}
-		
+
 		public static String createDeviceUsageName(DeviceConfiguration dcd, String deviceName) {
 			String baseName = deviceName;
 			if (baseName.contains(".")) {
 				int baseNameIndex = baseName.lastIndexOf(".");
 				baseName = baseName.substring(baseNameIndex + 1);
 			}
-			
+
 			// Make up a unique new name here.
 			final StringBuilder usageName = new StringBuilder();
 			final Pattern p = Pattern.compile(baseName + "_([0-9]+)");
@@ -320,7 +340,7 @@ public interface DeviceConfiguration extends EObject {
 					if (impl.getComponentInstantiation().isEmpty()) {
 						continue;
 					}
-					
+
 					final String name = impl.getComponentInstantiation().get(0).getUsageName();
 					if (name != null) {
 						final Matcher m = p.matcher(name);
@@ -341,7 +361,7 @@ public interface DeviceConfiguration extends EObject {
 					index++;
 				}
 			}
-			
+
 			return usageName.append("_").append(index).toString();
 		}
 

@@ -116,7 +116,7 @@ public class ExternalPropertyTest extends TestCase {
 
 		String externalPropID = fixture.getExternalPropID();
 		assertEquals("set/get ExternalPropID", TEST_ID, externalPropID);
-		
+
 		String externalId = fixture.resolveExternalID();
 		assertEquals("resolveExternalID", TEST_ID, externalId);
 	}

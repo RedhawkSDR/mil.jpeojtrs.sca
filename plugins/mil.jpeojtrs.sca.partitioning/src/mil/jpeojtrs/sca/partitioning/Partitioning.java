@@ -22,18 +22,18 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.Partitioning#getParts <em>Parts</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.Partitioning#getComponentPlacement <em>Component Placement</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getPartitioning()
  * @model abstract="true"
  *        extendedMetaData="kind='elementOnly' name='partitioning' qualified='false'"
  * @generated
  */
-public interface Partitioning< C extends ComponentPlacement< ? >> extends EObject {
+public interface Partitioning< C extends ComponentPlacement< ? > > extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Parts</b></em>' attribute list.

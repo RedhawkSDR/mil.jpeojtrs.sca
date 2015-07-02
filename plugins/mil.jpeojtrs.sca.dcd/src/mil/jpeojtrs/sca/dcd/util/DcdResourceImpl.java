@@ -50,29 +50,28 @@ public class DcdResourceImpl extends XMLResourceImpl {
 	 * The DTD system identifier.
 	 */
 	public static final String DOC_TYPE_SYSTEM = "deviceconfiguration.dtd";
-	
+
 	/**
 	 * The DTD formal public identifier (FPI).
-	 *
-	 * @since 2.4
+	 * @since 3.0
 	 */
 	public static final String DOC_TYPE_PUBLIC = "-//JTRS//DTD SCA V2.2.2 DCD//EN";
 
 	protected static class DcdXMLHelper extends XMLHelperImpl {
 
 		public DcdXMLHelper() {
-	        super();
-        }
+			super();
+		}
 
 		public DcdXMLHelper(XMLResource resource) {
-	        super(resource);
-        }
-		
+			super(resource);
+		}
+
 		@Override
 		public EObject createObject(EFactory eFactory, EClassifier type) {
 			if (type == PartitioningPackage.eINSTANCE.getComponentFile()) {
 				type = PartitioningPackage.eINSTANCE.getDevComponentFile();
-			} else if ( type == PartitioningPackage.eINSTANCE.getComponentInstantiation()) {
+			} else if (type == PartitioningPackage.eINSTANCE.getComponentInstantiation()) {
 				eFactory = DcdFactory.eINSTANCE;
 				type = DcdPackage.eINSTANCE.getDcdComponentInstantiation();
 			} else if (type == PartitioningPackage.eINSTANCE.getPartitioning()) {
@@ -97,8 +96,9 @@ public class DcdResourceImpl extends XMLResourceImpl {
 				eFactory = DcdFactory.eINSTANCE;
 				type = DcdPackage.eINSTANCE.getDcdConnections();
 			}
-		    return super.createObject(eFactory, type);
+			return super.createObject(eFactory, type);
 		}
+
 		@Override
 		protected String getPrefix(EPackage ePackage, boolean mustHavePrefix) {
 			return "";
@@ -109,7 +109,7 @@ public class DcdResourceImpl extends XMLResourceImpl {
 	protected XMLHelper createXMLHelper() {
 		return new DcdXMLHelper(this);
 	}
-	
+
 	@Override
 	protected XMLSave createXMLSave() {
 		return new DTDSaveImpl(createXMLHelper());

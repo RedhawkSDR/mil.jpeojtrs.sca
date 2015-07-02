@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -38,14 +37,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FileSystemNameItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class FileSystemNameItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -65,8 +58,7 @@ public class FileSystemNameItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addDeviceIDPropertyDescriptor(object);
@@ -82,19 +74,10 @@ public class FileSystemNameItemProvider
 	 * @generated
 	 */
 	protected void addDeviceIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FileSystemName_deviceID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FileSystemName_deviceID_feature", "_UI_FileSystemName_type"),
-				 DcdPackage.Literals.FILE_SYSTEM_NAME__DEVICE_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_FileSystemName_deviceID_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_FileSystemName_deviceID_feature", "_UI_FileSystemName_type"),
+			DcdPackage.Literals.FILE_SYSTEM_NAME__DEVICE_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -104,19 +87,10 @@ public class FileSystemNameItemProvider
 	 * @generated
 	 */
 	protected void addMountNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FileSystemName_mountName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FileSystemName_mountName_feature", "_UI_FileSystemName_type"),
-				 DcdPackage.Literals.FILE_SYSTEM_NAME__MOUNT_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_FileSystemName_mountName_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_FileSystemName_mountName_feature", "_UI_FileSystemName_type"),
+			DcdPackage.Literals.FILE_SYSTEM_NAME__MOUNT_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -138,10 +112,8 @@ public class FileSystemNameItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FileSystemName)object).getMountName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_FileSystemName_type") :
-			getString("_UI_FileSystemName_type") + " " + label;
+		String label = ((FileSystemName) object).getMountName();
+		return label == null || label.length() == 0 ? getString("_UI_FileSystemName_type") : getString("_UI_FileSystemName_type") + " " + label;
 	}
 
 	/**
@@ -155,12 +127,11 @@ public class FileSystemNameItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(FileSystemName.class))
-		{
-			case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
-			case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(FileSystemName.class)) {
+		case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
+		case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

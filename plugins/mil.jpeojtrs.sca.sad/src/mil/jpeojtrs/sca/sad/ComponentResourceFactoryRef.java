@@ -20,12 +20,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef#getResourceFactoryProperties <em>Resource Factory Properties</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef#getRefid <em>Refid</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef#getComponent <em>Component</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getComponentResourceFactoryRef()
  * @model extendedMetaData="name='componentresourcefactoryref' kind='elementOnly' qualified='false'"

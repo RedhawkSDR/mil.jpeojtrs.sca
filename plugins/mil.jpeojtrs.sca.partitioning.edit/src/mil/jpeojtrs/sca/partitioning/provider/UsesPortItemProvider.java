@@ -40,8 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UsesPortItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+public class UsesPortItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -64,22 +64,23 @@ public class UsesPortItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addUsesIndentifierPropertyDescriptor(object);
+			addUsesIdentifierPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Uses Indentifier feature.
+	 * This adds a property descriptor for the Uses Identifier feature.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUsesIndentifierPropertyDescriptor(Object object) {
+	protected void addUsesIdentifierPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_UsesPort_usesIndentifier_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_UsesPort_usesIndentifier_feature", "_UI_UsesPort_type"),
-			PartitioningPackage.Literals.USES_PORT__USES_INDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+			getString("_UI_UsesPort_usesIdentifier_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_UsesPort_usesIdentifier_feature", "_UI_UsesPort_type"),
+			PartitioningPackage.Literals.USES_PORT__USES_IDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -135,7 +136,7 @@ public class UsesPortItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UsesPort< ? >) object).getUsesIndentifier();
+		String label = ((UsesPort< ? >) object).getUsesIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_UsesPort_type") : getString("_UI_UsesPort_type") + " " + label;
 	}
 
@@ -151,7 +152,7 @@ public class UsesPortItemProvider extends ItemProviderAdapter implements IEditin
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UsesPort.class)) {
-		case PartitioningPackage.USES_PORT__USES_INDENTIFIER:
+		case PartitioningPackage.USES_PORT__USES_IDENTIFIER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case PartitioningPackage.USES_PORT__COMPONENT_INSTANTIATION_REF:

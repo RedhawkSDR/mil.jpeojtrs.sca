@@ -174,12 +174,12 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	}
 
 	/**
-	 * @since 2.4
+	 * @since 3.0
 	 */
 	@Override
 	public SadUsesPort createSadUsesPort(String usesIdentifier, String componentRefId) {
 		SadUsesPort usesPort = createSadUsesPort();
-		usesPort.setUsesIndentifier(usesIdentifier);
+		usesPort.setUsesIdentifier(usesIdentifier);
 		SadComponentInstantiationRef compInstanceRef = createSadComponentInstantiationRef();
 		compInstanceRef.setRefid(componentRefId);
 		usesPort.setComponentInstantiationRef(compInstanceRef);
@@ -355,9 +355,9 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 2.4
 	 */
 	public UsesDeviceDependencies createUsesDeviceDependencies() {
 		UsesDeviceDependenciesImpl usesDeviceDependencies = new UsesDeviceDependenciesImpl();

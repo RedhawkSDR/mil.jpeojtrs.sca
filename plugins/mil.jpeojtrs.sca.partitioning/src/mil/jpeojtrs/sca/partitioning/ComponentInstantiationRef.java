@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiationRef#getInstantiation <em>Instantiation</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiationRef#getRefid <em>Refid</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiationRef()
  * @model abstract="true"

@@ -93,7 +93,8 @@ public class ComponentResourceFactoryRefTest extends TestCase {
 	@Override
 	protected void setUp() throws Exception {
 		this.sad = SadTests.getSoftwareAssembly();
-		this.setFixture(this.sad.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getFindComponent().getComponentResourceFactoryRef());
+		this.setFixture(
+			this.sad.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getFindComponent().getComponentResourceFactoryRef());
 	}
 
 	/**

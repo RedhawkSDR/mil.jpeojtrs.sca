@@ -23,12 +23,10 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Provides Port</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class DcdProvidesPortImpl extends ProvidesPortImpl<DcdComponentInstantiationRef> implements DcdProvidesPort {
+public class DcdProvidesPortImpl extends ProvidesPortImpl<DcdComponentInstantiationRef>implements DcdProvidesPort {
 
 	/**
 	 * <!-- begin-user-doc -->

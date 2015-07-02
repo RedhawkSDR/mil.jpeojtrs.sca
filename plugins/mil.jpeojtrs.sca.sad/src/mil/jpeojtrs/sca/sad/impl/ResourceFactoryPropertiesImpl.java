@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.ResourceFactoryPropertiesImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.ResourceFactoryPropertiesImpl#getSimpleRef <em>Simple Ref</em>}</li>
@@ -52,7 +53,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.ResourceFactoryPropertiesImpl#getStructSequenceRef <em>Struct Sequence Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.ResourceFactoryPropertiesImpl#getFactoryRef <em>Factory Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

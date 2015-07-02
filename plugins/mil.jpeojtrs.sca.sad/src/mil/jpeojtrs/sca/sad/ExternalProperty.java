@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.ExternalProperty#getCompRefID <em>Comp Ref ID</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.ExternalProperty#getPropID <em>Prop ID</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.ExternalProperty#getExternalPropID <em>External Prop ID</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getExternalProperty()
  * @model extendedMetaData="name='externalproperty' kind='elementOnly' qualified='false'"

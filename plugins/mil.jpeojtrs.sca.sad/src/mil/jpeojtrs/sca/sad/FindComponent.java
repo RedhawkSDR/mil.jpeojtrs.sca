@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.FindComponent#getComponentResourceFactoryRef <em>Component Resource Factory Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.FindComponent#getNamingService <em>Naming Service</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getFindComponent()
  * @model extendedMetaData="name='findcomponent' kind='elementOnly' qualified='false'"

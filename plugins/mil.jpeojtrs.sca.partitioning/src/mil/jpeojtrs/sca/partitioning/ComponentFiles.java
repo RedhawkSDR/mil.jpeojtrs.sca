@@ -21,10 +21,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentFiles#getComponentFile <em>Component File</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentFiles()
  * @model extendedMetaData="kind='elementOnly' name='componentfiles' qualified='false'"

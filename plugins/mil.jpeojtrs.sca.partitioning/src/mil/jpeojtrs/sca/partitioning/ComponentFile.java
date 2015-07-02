@@ -21,13 +21,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentFile#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentFile#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentFile#getSoftPkg <em>Soft Pkg</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentFile#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentFile()
  * @model abstract="true"

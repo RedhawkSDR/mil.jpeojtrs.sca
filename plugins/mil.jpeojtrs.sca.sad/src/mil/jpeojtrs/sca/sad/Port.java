@@ -21,15 +21,15 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.Port#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.Port#getUsesIdentifier <em>Uses Identifier</em>}</li>
- *   <li>{@link mil.jpeojtrs.sca.sad.Port#getProvidesIndentifier <em>Provides Indentifier</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.Port#getProvidesIdentifier <em>Provides Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.Port#getSupportedIdentifier <em>Supported Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.Port#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.Port#getExternalName <em>External Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getPort()
  * @model extendedMetaData="name='port' kind='elementOnly' qualified='false'"
@@ -93,31 +93,33 @@ public interface Port extends EObject {
 	void setUsesIdentifier(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Provides Indentifier</b></em>' attribute.
+	 * Returns the value of the '<em><b>Provides Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Provides Indentifier</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Provides Identifier</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 3.0
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Provides Indentifier</em>' attribute.
-	 * @see #setProvidesIndentifier(String)
-	 * @see mil.jpeojtrs.sca.sad.SadPackage#getPort_ProvidesIndentifier()
+	 * @return the value of the '<em>Provides Identifier</em>' attribute.
+	 * @see #setProvidesIdentifier(String)
+	 * @see mil.jpeojtrs.sca.sad.SadPackage#getPort_ProvidesIdentifier()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
 	 *        extendedMetaData="kind='element' name='providesidentifier' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	String getProvidesIndentifier();
+	String getProvidesIdentifier();
 
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.Port#getProvidesIndentifier <em>Provides Indentifier</em>}' attribute.
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.Port#getProvidesIdentifier <em>Provides Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Provides Indentifier</em>' attribute.
-	 * @see #getProvidesIndentifier()
+	 * @param value the new value of the '<em>Provides Identifier</em>' attribute.
+	 * @see #getProvidesIdentifier()
 	 * @generated
 	 */
-	void setProvidesIndentifier(String value);
+	void setProvidesIdentifier(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Supported Identifier</b></em>' attribute.

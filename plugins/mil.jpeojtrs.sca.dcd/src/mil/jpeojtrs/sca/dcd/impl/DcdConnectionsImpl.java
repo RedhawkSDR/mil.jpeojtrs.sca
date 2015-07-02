@@ -24,12 +24,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Connections</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class DcdConnectionsImpl extends ConnectionsImpl<DcdConnectInterface> implements DcdConnections {
+public class DcdConnectionsImpl extends ConnectionsImpl<DcdConnectInterface>implements DcdConnections {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -58,8 +56,7 @@ public class DcdConnectionsImpl extends ConnectionsImpl<DcdConnectInterface> imp
 	 */
 	@Override
 	public EList<DcdConnectInterface> getConnectInterface() {
-		if (connectInterface == null)
-		{
+		if (connectInterface == null) {
 			connectInterface = new EObjectContainmentEList<DcdConnectInterface>(DcdConnectInterface.class, this, DcdPackage.DCD_CONNECTIONS__CONNECT_INTERFACE);
 		}
 		return connectInterface;

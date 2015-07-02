@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentPropertiesImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentPropertiesImpl#getSimpleRef <em>Simple Ref</em>}</li>
@@ -49,7 +50,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentPropertiesImpl#getStructRef <em>Struct Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentPropertiesImpl#getStructSequenceRef <em>Struct Sequence Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

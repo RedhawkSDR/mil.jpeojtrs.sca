@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.HostCollocation#getComponentPlacement <em>Component Placement</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.HostCollocation#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.HostCollocation#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getHostCollocation()
  * @model extendedMetaData="name='hostcollocation' kind='elementOnly' qualified='false'"

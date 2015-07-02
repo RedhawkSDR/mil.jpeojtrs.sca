@@ -11,14 +11,14 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning;
 
-import mil.jpeojtrs.sca.prf.PrfPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import mil.jpeojtrs.sca.prf.PrfPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -1126,13 +1126,14 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int USES_PORT = 26;
 	/**
-	 * The feature id for the '<em><b>Uses Indentifier</b></em>' attribute.
+	 * The feature id for the '<em><b>Uses Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USES_PORT__USES_INDENTIFIER = 0;
+	int USES_PORT__USES_IDENTIFIER = 0;
 	/**
 	 * The feature id for the '<em><b>Component Instantiation Ref</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -2313,15 +2314,16 @@ public interface PartitioningPackage extends EPackage {
 	EClass getUsesPort();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.UsesPort#getUsesIndentifier <em>Uses Indentifier</em>}'.
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.UsesPort#getUsesIdentifier <em>Uses Identifier</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Uses Indentifier</em>'.
-	 * @see mil.jpeojtrs.sca.partitioning.UsesPort#getUsesIndentifier()
+	 * @return the meta object for the attribute '<em>Uses Identifier</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.UsesPort#getUsesIdentifier()
 	 * @see #getUsesPort()
 	 * @generated
 	 */
-	EAttribute getUsesPort_UsesIndentifier();
+	EAttribute getUsesPort_UsesIdentifier();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.UsesPort#getComponentInstantiationRef <em>Component Instantiation Ref</em>}'.
@@ -3248,12 +3250,13 @@ public interface PartitioningPackage extends EPackage {
 		 */
 		EClass USES_PORT = eINSTANCE.getUsesPort();
 		/**
-		 * The meta object literal for the '<em><b>Uses Indentifier</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Uses Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute USES_PORT__USES_INDENTIFIER = eINSTANCE.getUsesPort_UsesIndentifier();
+		EAttribute USES_PORT__USES_IDENTIFIER = eINSTANCE.getUsesPort_UsesIdentifier();
 		/**
 		 * The meta object literal for the '<em><b>Component Instantiation Ref</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->

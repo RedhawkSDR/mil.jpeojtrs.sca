@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getSupportedIdentifier <em>Supported Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
@@ -51,7 +52,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getFindBy <em>Find By</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentSupportedInterfaceImpl#getInterface <em>Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -218,11 +218,11 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 		if (newComponentInstantiationRef != componentInstantiationRef) {
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
-				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, null, msgs);
 			if (newComponentInstantiationRef != null)
-				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__COMPONENT_INSTANTIATION_REF, null, msgs);
 			msgs = basicSetComponentInstantiationRef(newComponentInstantiationRef, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -273,11 +273,11 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 		if (newDeviceThatLoadedThisComponentRef != deviceThatLoadedThisComponentRef) {
 			NotificationChain msgs = null;
 			if (deviceThatLoadedThisComponentRef != null)
-				msgs = ((InternalEObject) deviceThatLoadedThisComponentRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) deviceThatLoadedThisComponentRef).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
 			if (newDeviceThatLoadedThisComponentRef != null)
-				msgs = ((InternalEObject) newDeviceThatLoadedThisComponentRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) newDeviceThatLoadedThisComponentRef).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_THAT_LOADED_THIS_COMPONENT_REF, null, msgs);
 			msgs = basicSetDeviceThatLoadedThisComponentRef(newDeviceThatLoadedThisComponentRef, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -327,11 +327,11 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 		if (newDeviceUsedByThisComponentRef != deviceUsedByThisComponentRef) {
 			NotificationChain msgs = null;
 			if (deviceUsedByThisComponentRef != null)
-				msgs = ((InternalEObject) deviceUsedByThisComponentRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) deviceUsedByThisComponentRef).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
 			if (newDeviceUsedByThisComponentRef != null)
-				msgs = ((InternalEObject) newDeviceUsedByThisComponentRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
+				msgs = ((InternalEObject) newDeviceUsedByThisComponentRef).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_THIS_COMPONENT_REF, null, msgs);
 			msgs = basicSetDeviceUsedByThisComponentRef(newDeviceUsedByThisComponentRef, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -380,11 +380,11 @@ public class ComponentSupportedInterfaceImpl extends EObjectImpl implements Comp
 		if (newDeviceUsedByApplication != deviceUsedByApplication) {
 			NotificationChain msgs = null;
 			if (deviceUsedByApplication != null)
-				msgs = ((InternalEObject) deviceUsedByApplication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION, null, msgs);
+				msgs = ((InternalEObject) deviceUsedByApplication).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION, null, msgs);
 			if (newDeviceUsedByApplication != null)
-				msgs = ((InternalEObject) newDeviceUsedByApplication).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION, null, msgs);
+				msgs = ((InternalEObject) newDeviceUsedByApplication).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION, null, msgs);
 			msgs = basicSetDeviceUsedByApplication(newDeviceUsedByApplication, msgs);
 			if (msgs != null)
 				msgs.dispatch();

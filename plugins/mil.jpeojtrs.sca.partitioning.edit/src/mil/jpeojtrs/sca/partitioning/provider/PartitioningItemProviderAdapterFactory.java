@@ -47,8 +47,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable,
-		IChildCreationExtender {
+public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
@@ -334,9 +334,9 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication} instances.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 1.2
 	 */
 	protected DeviceUsedByApplicationItemProvider deviceUsedByApplicationItemProvider;
 
@@ -518,7 +518,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub} instances.
 	 * <!-- begin-user-doc -->
-	 * @since 1.2
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

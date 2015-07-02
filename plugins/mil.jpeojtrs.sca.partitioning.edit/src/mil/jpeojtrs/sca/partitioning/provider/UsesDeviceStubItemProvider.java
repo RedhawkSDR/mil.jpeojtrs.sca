@@ -39,12 +39,12 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub} object.
  * <!-- begin-user-doc -->
- * @since 1.2
+ * @since 2.0
  * <!-- end-user-doc -->
  * @generated
  */
-public class UsesDeviceStubItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class UsesDeviceStubItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -170,11 +170,11 @@ public class UsesDeviceStubItemProvider extends ItemProviderAdapter implements I
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.USES_DEVICE_STUB__PROVIDES_PORT_STUBS,
-			PartitioningFactory.eINSTANCE.createProvidesPortStub()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.USES_DEVICE_STUB__PROVIDES_PORT_STUBS, PartitioningFactory.eINSTANCE.createProvidesPortStub()));
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.USES_DEVICE_STUB__USES_PORT_STUBS,
-			PartitioningFactory.eINSTANCE.createUsesPortStub()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.USES_DEVICE_STUB__USES_PORT_STUBS, PartitioningFactory.eINSTANCE.createUsesPortStub()));
 
 		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.USES_DEVICE_STUB__INTERFACE,
 			PartitioningFactory.eINSTANCE.createComponentSupportedInterfaceStub()));

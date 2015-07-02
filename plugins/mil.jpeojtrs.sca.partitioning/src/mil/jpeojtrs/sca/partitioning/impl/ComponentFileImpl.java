@@ -35,13 +35,13 @@ import org.eclipse.emf.ecore.util.EContentAdapter;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentFileImpl#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentFileImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentFileImpl#getSoftPkg <em>Soft Pkg</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentFileImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

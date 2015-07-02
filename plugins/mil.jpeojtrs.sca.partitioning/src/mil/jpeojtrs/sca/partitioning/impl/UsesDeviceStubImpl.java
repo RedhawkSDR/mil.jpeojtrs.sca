@@ -37,13 +37,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesDeviceStubImpl#getUsesDevice <em>Uses Device</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesDeviceStubImpl#getProvidesPortStubs <em>Provides Port Stubs</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesDeviceStubImpl#getUsesPortStubs <em>Uses Port Stubs</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesDeviceStubImpl#getInterface <em>Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -207,7 +207,8 @@ public class UsesDeviceStubImpl extends EObjectImpl implements UsesDeviceStub {
 		if (newInterface != interface_) {
 			NotificationChain msgs = null;
 			if (interface_ != null)
-				msgs = ((InternalEObject) interface_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_DEVICE_STUB__INTERFACE, null, msgs);
+				msgs = ((InternalEObject) interface_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_DEVICE_STUB__INTERFACE, null,
+					msgs);
 			if (newInterface != null)
 				msgs = ((InternalEObject) newInterface).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.USES_DEVICE_STUB__INTERFACE, null, msgs);
 			msgs = basicSetInterface(newInterface, msgs);

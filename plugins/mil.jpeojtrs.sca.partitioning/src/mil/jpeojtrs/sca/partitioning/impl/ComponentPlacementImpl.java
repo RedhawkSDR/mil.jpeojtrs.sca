@@ -36,12 +36,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentPlacementImpl#getComponentFileRef <em>Component File Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentPlacementImpl#getComponentInstantiation <em>Component Instantiation</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentPlacementImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -132,11 +132,11 @@ public abstract class ComponentPlacementImpl< I extends ComponentInstantiation >
 		if (newComponentFileRef != componentFileRef) {
 			NotificationChain msgs = null;
 			if (componentFileRef != null)
-				msgs = ((InternalEObject) componentFileRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, null, msgs);
+				msgs = ((InternalEObject) componentFileRef).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, null, msgs);
 			if (newComponentFileRef != null)
-				msgs = ((InternalEObject) newComponentFileRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentFileRef).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, null, msgs);
 			msgs = basicSetComponentFileRef(newComponentFileRef, msgs);
 			if (msgs != null)
 				msgs.dispatch();

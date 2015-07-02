@@ -53,8 +53,7 @@ public class SadResourceImpl extends XMLResourceImpl {
 
 	/**
 	 * The DTD formal public identifier (FPI).
-	 *
-	 * @since 2.4
+	 * @since 3.0
 	 */
 	public static final String DOC_TYPE_PUBLIC = "-//JTRS//DTD SCA V2.2.2 SAD//EN";
 

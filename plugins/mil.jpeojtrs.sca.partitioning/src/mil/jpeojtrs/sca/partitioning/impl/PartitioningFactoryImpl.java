@@ -279,7 +279,6 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 2.0
 	 */
 	public DeviceUsedByApplication createDeviceUsedByApplication() {
 		DeviceUsedByApplicationImpl deviceUsedByApplication = new DeviceUsedByApplicationImpl();

@@ -222,8 +222,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			return (SadPackage) EPackage.Registry.INSTANCE.getEPackage(SadPackage.eNS_URI);
 
 		// Obtain or create and register package
-		SadPackageImpl theSadPackage = (SadPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SadPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-			: new SadPackageImpl());
+		SadPackageImpl theSadPackage = (SadPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SadPackageImpl
+			? EPackage.Registry.INSTANCE.get(eNS_URI) : new SadPackageImpl());
 
 		isInited = true;
 
@@ -599,11 +599,11 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EAttribute getPort_ProvidesIndentifier() {
+	public EAttribute getPort_ProvidesIdentifier() {
 		return (EAttribute) portEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -901,7 +901,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.4
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -911,7 +911,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.4
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -921,7 +921,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.4
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1004,7 +1004,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__DESCRIPTION);
 		createEAttribute(portEClass, PORT__USES_IDENTIFIER);
-		createEAttribute(portEClass, PORT__PROVIDES_INDENTIFIER);
+		createEAttribute(portEClass, PORT__PROVIDES_IDENTIFIER);
 		createEAttribute(portEClass, PORT__SUPPORTED_IDENTIFIER);
 		createEReference(portEClass, PORT__COMPONENT_INSTANTIATION_REF);
 		createEAttribute(portEClass, PORT__EXTERNAL_NAME);
@@ -1118,8 +1118,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(assemblyControllerEClass, AssemblyController.class, "AssemblyController", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAssemblyController_ComponentInstantiationRef(), this.getSadComponentInstantiationRef(), null, "componentInstantiationRef", null, 1,
-			1, AssemblyController.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+		initEReference(getAssemblyController_ComponentInstantiationRef(), this.getSadComponentInstantiationRef(), null, "componentInstantiationRef", null, 1, 1,
+			AssemblyController.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 			IS_ORDERED);
 
 		initEClass(sadComponentInstantiationEClass, SadComponentInstantiation.class, "SadComponentInstantiation", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1157,8 +1157,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalPropertiesEClass, ExternalProperties.class, "ExternalProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExternalProperties_Properties(), this.getExternalProperty(), null, "properties", null, 0, -1, ExternalProperties.class,
-			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExternalProperties_Properties(), this.getExternalProperty(), null, "properties", null, 0, -1, ExternalProperties.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalPropertyEClass, ExternalProperty.class, "ExternalProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExternalProperty_CompRefID(), theEcorePackage.getEString(), "compRefID", null, 1, 1, ExternalProperty.class, !IS_TRANSIENT,
@@ -1178,9 +1178,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hostCollocationEClass, HostCollocation.class, "HostCollocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHostCollocation_ComponentPlacement(), this.getSadComponentPlacement(), null, "componentPlacement", null, 1, -1,
-			HostCollocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-			IS_ORDERED);
+		initEReference(getHostCollocation_ComponentPlacement(), this.getSadComponentPlacement(), null, "componentPlacement", null, 1, -1, HostCollocation.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHostCollocation_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, HostCollocation.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHostCollocation_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, HostCollocation.class, !IS_TRANSIENT, !IS_VOLATILE,
@@ -1191,14 +1190,14 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_UsesIdentifier(), theXMLTypePackage.getString(), "usesIdentifier", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_ProvidesIndentifier(), theXMLTypePackage.getString(), "providesIndentifier", null, 0, 1, Port.class, !IS_TRANSIENT,
-			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_SupportedIdentifier(), theXMLTypePackage.getString(), "supportedIdentifier", null, 0, 1, Port.class, !IS_TRANSIENT,
-			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_ProvidesIdentifier(), theXMLTypePackage.getString(), "providesIdentifier", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_SupportedIdentifier(), theXMLTypePackage.getString(), "supportedIdentifier", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_ComponentInstantiationRef(), this.getSadComponentInstantiationRef(), null, "componentInstantiationRef", null, 1, 1, Port.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_ExternalName(), theEcorePackage.getEString(), "externalName", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE,
-			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_ExternalName(), theEcorePackage.getEString(), "externalName", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sadPartitioningEClass, SadPartitioning.class, "SadPartitioning", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSadPartitioning_HostCollocation(), this.getHostCollocation(), null, "hostCollocation", null, 0, -1, SadPartitioning.class,
@@ -1213,13 +1212,13 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		initEReference(getResourceFactoryProperties_SimpleRef(), thePrfPackage.getSimpleRef(), null, "simpleRef", null, 0, -1, ResourceFactoryProperties.class,
 			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getResourceFactoryProperties_SimpleSequenceRef(), thePrfPackage.getSimpleSequenceRef(), null, "simpleSequenceRef", null, 0, -1,
-			ResourceFactoryProperties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-			IS_DERIVED, IS_ORDERED);
+			ResourceFactoryProperties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+			IS_ORDERED);
 		initEReference(getResourceFactoryProperties_StructRef(), thePrfPackage.getStructRef(), null, "structRef", null, 0, -1, ResourceFactoryProperties.class,
 			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getResourceFactoryProperties_StructSequenceRef(), thePrfPackage.getStructSequenceRef(), null, "structSequenceRef", null, 0, -1,
-			ResourceFactoryProperties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
-			IS_DERIVED, IS_ORDERED);
+			ResourceFactoryProperties.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+			IS_ORDERED);
 		initEReference(getResourceFactoryProperties_FactoryRef(), this.getComponentResourceFactoryRef(),
 			this.getComponentResourceFactoryRef_ResourceFactoryProperties(), "factoryRef", null, 1, 1, ResourceFactoryProperties.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1254,8 +1253,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftwareAssembly_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSoftwareAssembly_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT,
-			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSoftwareAssembly_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSoftwareAssembly_UsesDeviceDependencies(), this.getUsesDeviceDependencies(), null, "usesDeviceDependencies", null, 0, 1,
 			SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 			IS_ORDERED);
@@ -1291,23 +1290,23 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation(assemblyControllerEClass, source, new String[] { "name", "assemblycontroller", "kind", "elementOnly", "qualified", "false" });
-		addAnnotation(getAssemblyController_ComponentInstantiationRef(), source, new String[] { "kind", "element", "name", "componentinstantiationref",
-			"namespace", "##targetNamespace" });
+		addAnnotation(getAssemblyController_ComponentInstantiationRef(), source,
+			new String[] { "kind", "element", "name", "componentinstantiationref", "namespace", "##targetNamespace" });
 		addAnnotation(sadComponentInstantiationEClass, source, new String[] { "name", "componentinstantiation", "kind", "elementOnly", "qualified", "false" });
-		addAnnotation(getSadComponentInstantiation_FindComponent(), source, new String[] { "kind", "element", "name", "findcomponent", "namespace",
-			"##targetNamespace" });
-		addAnnotation(getSadComponentInstantiation_StartOrder(), source, new String[] { "kind", "attribute", "name", "startorder", "namespace",
-			"##targetNamespace" });
-		addAnnotation(sadComponentInstantiationRefEClass, source, new String[] { "name", "componentinstantiationref", "kind", "elementOnly", "qualified",
-			"false" });
+		addAnnotation(getSadComponentInstantiation_FindComponent(), source,
+			new String[] { "kind", "element", "name", "findcomponent", "namespace", "##targetNamespace" });
+		addAnnotation(getSadComponentInstantiation_StartOrder(), source,
+			new String[] { "kind", "attribute", "name", "startorder", "namespace", "##targetNamespace" });
+		addAnnotation(sadComponentInstantiationRefEClass, source,
+			new String[] { "name", "componentinstantiationref", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(sadUsesPortEClass, source, new String[] { "name", "usesport", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(sadProvidesPortEClass, source, new String[] { "name", "providesport", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(sadConnectInterfaceEClass, source, new String[] { "name", "connectinterface", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(sadConnectionsEClass, source, new String[] { "name", "connections", "kind", "elementOnly", "qualified", "false" });
-		addAnnotation(componentResourceFactoryRefEClass, source, new String[] { "name", "componentresourcefactoryref", "kind", "elementOnly", "qualified",
-			"false" });
-		addAnnotation(getComponentResourceFactoryRef_ResourceFactoryProperties(), source, new String[] { "kind", "element", "name",
-			"resourcefactoryproperties", "namespace", "##targetNamespace" });
+		addAnnotation(componentResourceFactoryRefEClass, source,
+			new String[] { "name", "componentresourcefactoryref", "kind", "elementOnly", "qualified", "false" });
+		addAnnotation(getComponentResourceFactoryRef_ResourceFactoryProperties(), source,
+			new String[] { "kind", "element", "name", "resourcefactoryproperties", "namespace", "##targetNamespace" });
 		addAnnotation(getComponentResourceFactoryRef_Refid(), source, new String[] { "kind", "attribute", "name", "refid" });
 		addAnnotation(externalPortsEClass, source, new String[] { "name", "externalports", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getExternalPorts_Port(), source, new String[] { "kind", "element", "name", "port", "namespace", "##targetNamespace" });
@@ -1318,22 +1317,22 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation(getExternalProperty_PropID(), source, new String[] { "kind", "attribute", "name", "propid" });
 		addAnnotation(getExternalProperty_ExternalPropID(), source, new String[] { "kind", "attribute", "name", "externalpropid" });
 		addAnnotation(findComponentEClass, source, new String[] { "name", "findcomponent", "kind", "elementOnly", "qualified", "false" });
-		addAnnotation(getFindComponent_ComponentResourceFactoryRef(), source, new String[] { "kind", "element", "name", "componentresourcefactoryref",
-			"namespace", "##targetNamespace" });
+		addAnnotation(getFindComponent_ComponentResourceFactoryRef(), source,
+			new String[] { "kind", "element", "name", "componentresourcefactoryref", "namespace", "##targetNamespace" });
 		addAnnotation(getFindComponent_NamingService(), source, new String[] { "kind", "element", "name", "namingservice", "namespace", "##targetNamespace" });
 		addAnnotation(hostCollocationEClass, source, new String[] { "name", "hostcollocation", "kind", "elementOnly", "qualified", "false" });
-		addAnnotation(getHostCollocation_ComponentPlacement(), source, new String[] { "kind", "element", "name", "componentplacement", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getHostCollocation_ComponentPlacement(), source,
+			new String[] { "kind", "element", "name", "componentplacement", "namespace", "##targetNamespace" });
 		addAnnotation(getHostCollocation_Id(), source, new String[] { "kind", "attribute", "name", "id" });
 		addAnnotation(getHostCollocation_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(portEClass, source, new String[] { "name", "port", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getPort_Description(), source, new String[] { "kind", "element", "name", "description", "namespace", "##targetNamespace" });
 		addAnnotation(getPort_UsesIdentifier(), source, new String[] { "kind", "element", "name", "usesidentifier", "namespace", "##targetNamespace" });
-		addAnnotation(getPort_ProvidesIndentifier(), source, new String[] { "kind", "element", "name", "providesidentifier", "namespace", "##targetNamespace" });
+		addAnnotation(getPort_ProvidesIdentifier(), source, new String[] { "kind", "element", "name", "providesidentifier", "namespace", "##targetNamespace" });
 		addAnnotation(getPort_SupportedIdentifier(), source,
 			new String[] { "kind", "element", "name", "supportedidentifier", "namespace", "##targetNamespace" });
-		addAnnotation(getPort_ComponentInstantiationRef(), source, new String[] { "kind", "element", "name", "componentinstantiationref", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getPort_ComponentInstantiationRef(), source,
+			new String[] { "kind", "element", "name", "componentinstantiationref", "namespace", "##targetNamespace" });
 		addAnnotation(getPort_ExternalName(), source, new String[] { "kind", "attribute", "name", "externalname" });
 		addAnnotation(sadPartitioningEClass, source, new String[] { "name", "partitioning", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getSadPartitioning_HostCollocation(), source, new String[] { "kind", "element", "name", "hostcollocation", "group", "#parts:0" });
@@ -1341,37 +1340,37 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation(resourceFactoryPropertiesEClass, source,
 			new String[] { "name", "resourcefactoryproperties", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getResourceFactoryProperties_Group(), source, new String[] { "kind", "group", "name", "group:0" });
-		addAnnotation(getResourceFactoryProperties_SimpleRef(), source, new String[] { "kind", "element", "name", "simpleref", "namespace",
-			"##targetNamespace", "group", "#group:0" });
-		addAnnotation(getResourceFactoryProperties_SimpleSequenceRef(), source, new String[] { "kind", "element", "name", "simplesequenceref", "namespace",
-			"##targetNamespace", "group", "#group:0" });
-		addAnnotation(getResourceFactoryProperties_StructRef(), source, new String[] { "kind", "element", "name", "structref", "namespace",
-			"##targetNamespace", "group", "#group:0" });
-		addAnnotation(getResourceFactoryProperties_StructSequenceRef(), source, new String[] { "kind", "element", "name", "structsequenceref", "namespace",
-			"##targetNamespace", "group", "#group:0" });
+		addAnnotation(getResourceFactoryProperties_SimpleRef(), source,
+			new String[] { "kind", "element", "name", "simpleref", "namespace", "##targetNamespace", "group", "#group:0" });
+		addAnnotation(getResourceFactoryProperties_SimpleSequenceRef(), source,
+			new String[] { "kind", "element", "name", "simplesequenceref", "namespace", "##targetNamespace", "group", "#group:0" });
+		addAnnotation(getResourceFactoryProperties_StructRef(), source,
+			new String[] { "kind", "element", "name", "structref", "namespace", "##targetNamespace", "group", "#group:0" });
+		addAnnotation(getResourceFactoryProperties_StructSequenceRef(), source,
+			new String[] { "kind", "element", "name", "structsequenceref", "namespace", "##targetNamespace", "group", "#group:0" });
 		addAnnotation(sadDocumentRootEClass, source, new String[] { "name", "", "kind", "mixed" });
 		addAnnotation(getSadDocumentRoot_Mixed(), source, new String[] { "kind", "elementWildcard", "name", ":mixed" });
 		addAnnotation(getSadDocumentRoot_XMLNSPrefixMap(), source, new String[] { "kind", "attribute", "name", "xmlns:prefix" });
 		addAnnotation(getSadDocumentRoot_XSISchemaLocation(), source, new String[] { "kind", "attribute", "name", "xsi:schemaLocation" });
-		addAnnotation(getSadDocumentRoot_Softwareassembly(), source, new String[] { "kind", "element", "name", "softwareassembly", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getSadDocumentRoot_Softwareassembly(), source,
+			new String[] { "kind", "element", "name", "softwareassembly", "namespace", "##targetNamespace" });
 		addAnnotation(softwareAssemblyEClass, source, new String[] { "name", "softwareassembly", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getSoftwareAssembly_Description(), source, new String[] { "kind", "element", "name", "description", "namespace", "##targetNamespace" });
-		addAnnotation(getSoftwareAssembly_ComponentFiles(), source, new String[] { "kind", "element", "name", "componentfiles", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getSoftwareAssembly_ComponentFiles(), source,
+			new String[] { "kind", "element", "name", "componentfiles", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareAssembly_Partitioning(), source, new String[] { "kind", "element", "name", "partitioning", "namespace", "##targetNamespace" });
-		addAnnotation(getSoftwareAssembly_AssemblyController(), source, new String[] { "kind", "element", "name", "assemblycontroller", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getSoftwareAssembly_AssemblyController(), source,
+			new String[] { "kind", "element", "name", "assemblycontroller", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareAssembly_Connections(), source, new String[] { "kind", "element", "name", "connections", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareAssembly_ExternalPorts(), source,
 			new String[] { "kind", "element", "name", "externalports", "namespace", "##targetNamespace" });
-		addAnnotation(getSoftwareAssembly_ExternalProperties(), source, new String[] { "kind", "element", "name", "externalproperties", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getSoftwareAssembly_ExternalProperties(), source,
+			new String[] { "kind", "element", "name", "externalproperties", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareAssembly_Id(), source, new String[] { "kind", "attribute", "name", "id" });
 		addAnnotation(getSoftwareAssembly_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(getSoftwareAssembly_Version(), source, new String[] { "kind", "attribute", "name", "version" });
-		addAnnotation(getSoftwareAssembly_UsesDeviceDependencies(), source, new String[] { "kind", "element", "name", "usesdevicedependencies", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getSoftwareAssembly_UsesDeviceDependencies(), source,
+			new String[] { "kind", "element", "name", "usesdevicedependencies", "namespace", "##targetNamespace" });
 		addAnnotation(usesDeviceDependenciesEClass, source, new String[] { "name", "usesdevicedependencies", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getUsesDeviceDependencies_Usesdevice(), source,
 			new String[] { "kind", "element", "name", "usesdevice", "namespace", "##targetNamespace" });

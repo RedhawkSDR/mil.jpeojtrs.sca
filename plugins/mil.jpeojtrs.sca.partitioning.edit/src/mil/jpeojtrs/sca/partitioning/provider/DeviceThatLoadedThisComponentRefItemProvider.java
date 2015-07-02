@@ -38,8 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DeviceThatLoadedThisComponentRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class DeviceThatLoadedThisComponentRefItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -74,11 +74,13 @@ public class DeviceThatLoadedThisComponentRefItemProvider extends ItemProviderAd
 	 * @generated
 	 */
 	protected void addRefidPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_DeviceThatLoadedThisComponentRef_refid_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_DeviceThatLoadedThisComponentRef_refid_feature", "_UI_DeviceThatLoadedThisComponentRef_type"),
-			PartitioningPackage.Literals.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-			null));
+		itemPropertyDescriptors.add(
+			createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_DeviceThatLoadedThisComponentRef_refid_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_DeviceThatLoadedThisComponentRef_refid_feature",
+					"_UI_DeviceThatLoadedThisComponentRef_type"),
+				PartitioningPackage.Literals.DEVICE_THAT_LOADED_THIS_COMPONENT_REF__REFID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**

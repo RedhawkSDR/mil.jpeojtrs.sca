@@ -32,15 +32,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.PartitioningImpl#getParts <em>Parts</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.PartitioningImpl#getComponentPlacement <em>Component Placement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public abstract class PartitioningImpl< C extends ComponentPlacement< ? >> extends EObjectImpl implements Partitioning<C> {
+public abstract class PartitioningImpl< C extends ComponentPlacement< ? > > extends EObjectImpl implements Partitioning<C> {
 
 	/**
 	 * The cached value of the '{@link #getParts() <em>Parts</em>}' attribute list.

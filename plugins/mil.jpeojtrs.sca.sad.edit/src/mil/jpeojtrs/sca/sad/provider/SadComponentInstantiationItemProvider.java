@@ -147,8 +147,8 @@ public class SadComponentInstantiationItemProvider extends ComponentInstantiatio
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT,
-			SadFactory.eINSTANCE.createFindComponent()));
+		newChildDescriptors.add(
+			createChildParameter(SadPackage.Literals.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT, SadFactory.eINSTANCE.createFindComponent()));
 	}
 
 	/**

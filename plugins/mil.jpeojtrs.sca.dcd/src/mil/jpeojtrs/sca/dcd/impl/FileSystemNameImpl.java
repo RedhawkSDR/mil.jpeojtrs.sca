@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.FileSystemNameImpl#getDeviceID <em>Device ID</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.FileSystemNameImpl#getMountName <em>Mount Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -144,12 +144,11 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
-				return getDeviceID();
-			case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
-				return getMountName();
+		switch (featureID) {
+		case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
+			return getDeviceID();
+		case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
+			return getMountName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,14 +160,13 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
-				setDeviceID((String)newValue);
-				return;
-			case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
-				setMountName((String)newValue);
-				return;
+		switch (featureID) {
+		case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
+			setDeviceID((String) newValue);
+			return;
+		case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
+			setMountName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,14 +178,13 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
-				setDeviceID(DEVICE_ID_EDEFAULT);
-				return;
-			case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
-				setMountName(MOUNT_NAME_EDEFAULT);
-				return;
+		switch (featureID) {
+		case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
+			setDeviceID(DEVICE_ID_EDEFAULT);
+			return;
+		case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
+			setMountName(MOUNT_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,12 +196,11 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
-				return DEVICE_ID_EDEFAULT == null ? deviceID != null : !DEVICE_ID_EDEFAULT.equals(deviceID);
-			case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
-				return MOUNT_NAME_EDEFAULT == null ? mountName != null : !MOUNT_NAME_EDEFAULT.equals(mountName);
+		switch (featureID) {
+		case DcdPackage.FILE_SYSTEM_NAME__DEVICE_ID:
+			return DEVICE_ID_EDEFAULT == null ? deviceID != null : !DEVICE_ID_EDEFAULT.equals(deviceID);
+		case DcdPackage.FILE_SYSTEM_NAME__MOUNT_NAME:
+			return MOUNT_NAME_EDEFAULT == null ? mountName != null : !MOUNT_NAME_EDEFAULT.equals(mountName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,7 +212,8 @@ public class FileSystemNameImpl extends EObjectImpl implements FileSystemName {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (deviceID: ");

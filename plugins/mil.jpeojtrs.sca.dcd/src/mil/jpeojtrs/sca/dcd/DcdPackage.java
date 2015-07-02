@@ -374,13 +374,14 @@ public interface DcdPackage extends EPackage {
 	 */
 	int DCD_USES_PORT = 5;
 	/**
-	 * The feature id for the '<em><b>Uses Indentifier</b></em>' attribute.
+	 * The feature id for the '<em><b>Uses Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DCD_USES_PORT__USES_INDENTIFIER = PartitioningPackage.USES_PORT__USES_INDENTIFIER;
+	int DCD_USES_PORT__USES_IDENTIFIER = PartitioningPackage.USES_PORT__USES_IDENTIFIER;
 	/**
 	 * The feature id for the '<em><b>Component Instantiation Ref</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -405,6 +406,15 @@ public interface DcdPackage extends EPackage {
 	 * @ordered
 	 */
 	int DCD_USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF = PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF;
+	/**
+	 * The feature id for the '<em><b>Device Used By Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DCD_USES_PORT__DEVICE_USED_BY_APPLICATION = PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION;
 	/**
 	 * The feature id for the '<em><b>Find By</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -462,6 +472,15 @@ public interface DcdPackage extends EPackage {
 	 * @ordered
 	 */
 	int DCD_PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF = PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF;
+	/**
+	 * The feature id for the '<em><b>Device Used By Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DCD_PROVIDES_PORT__DEVICE_USED_BY_APPLICATION = PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION;
 	/**
 	 * The feature id for the '<em><b>Find By</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

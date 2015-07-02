@@ -44,8 +44,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentPlacementItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ComponentPlacementItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -197,8 +197,8 @@ public class ComponentPlacementItemProvider extends ItemProviderAdapter implemen
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
-			PartitioningFactory.eINSTANCE.createComponentFileRef()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, PartitioningFactory.eINSTANCE.createComponentFileRef()));
 	}
 
 	/**

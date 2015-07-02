@@ -38,8 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FindByStubContainerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class FindByStubContainerItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -137,8 +137,8 @@ public class FindByStubContainerItemProvider extends ItemProviderAdapter impleme
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.FIND_BY_STUB_CONTAINER__STUBS,
-			PartitioningFactory.eINSTANCE.createFindByStub()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.FIND_BY_STUB_CONTAINER__STUBS, PartitioningFactory.eINSTANCE.createFindByStub()));
 	}
 
 	/**

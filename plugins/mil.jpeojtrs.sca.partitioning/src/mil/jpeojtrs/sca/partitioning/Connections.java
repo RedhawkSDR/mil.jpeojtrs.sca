@@ -21,17 +21,17 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.Connections#getConnectInterface <em>Connect Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getConnections()
  * @model abstract="true"
  *        extendedMetaData="kind='elementOnly' name='connections' qualified='false'"
  * @generated
  */
-public interface Connections< CI extends ConnectInterface< ? , ? , ? >> extends EObject {
+public interface Connections< CI extends ConnectInterface< ? , ? , ? > > extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Connect Interface</b></em>' containment reference list.

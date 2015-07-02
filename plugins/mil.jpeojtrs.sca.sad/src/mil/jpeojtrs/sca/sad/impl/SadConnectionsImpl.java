@@ -24,12 +24,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Connections</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class SadConnectionsImpl extends ConnectionsImpl<SadConnectInterface> implements SadConnections {
+public class SadConnectionsImpl extends ConnectionsImpl<SadConnectInterface>implements SadConnections {
 
 	/**
 	 * <!-- begin-user-doc -->

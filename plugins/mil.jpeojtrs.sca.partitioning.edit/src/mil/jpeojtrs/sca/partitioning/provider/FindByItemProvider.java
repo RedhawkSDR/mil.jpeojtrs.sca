@@ -38,8 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FindByItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+public class FindByItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -150,7 +150,8 @@ public class FindByItemProvider extends ItemProviderAdapter implements IEditingD
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.FIND_BY__NAMING_SERVICE, PartitioningFactory.eINSTANCE.createNamingService()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.FIND_BY__NAMING_SERVICE, PartitioningFactory.eINSTANCE.createNamingService()));
 
 		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.FIND_BY__DOMAIN_FINDER, PartitioningFactory.eINSTANCE.createDomainFinder()));
 	}

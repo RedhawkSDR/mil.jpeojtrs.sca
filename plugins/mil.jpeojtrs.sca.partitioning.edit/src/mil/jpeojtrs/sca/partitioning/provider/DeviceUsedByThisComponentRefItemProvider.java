@@ -38,8 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DeviceUsedByThisComponentRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class DeviceUsedByThisComponentRefItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -78,7 +78,8 @@ public class DeviceUsedByThisComponentRefItemProvider extends ItemProviderAdapte
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 			getString("_UI_DeviceUsedByThisComponentRef_refId_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_DeviceUsedByThisComponentRef_refId_feature", "_UI_DeviceUsedByThisComponentRef_type"),
-			PartitioningPackage.Literals.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+			PartitioningPackage.Literals.DEVICE_USED_BY_THIS_COMPONENT_REF__REF_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+			null));
 	}
 
 	/**
@@ -115,8 +116,8 @@ public class DeviceUsedByThisComponentRefItemProvider extends ItemProviderAdapte
 	@Override
 	public String getText(Object object) {
 		String label = ((DeviceUsedByThisComponentRef) object).getRefId();
-		return label == null || label.length() == 0 ? getString("_UI_DeviceUsedByThisComponentRef_type") : getString("_UI_DeviceUsedByThisComponentRef_type")
-			+ " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_DeviceUsedByThisComponentRef_type")
+			: getString("_UI_DeviceUsedByThisComponentRef_type") + " " + label;
 	}
 
 	/**

@@ -38,8 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentInstantiationRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ComponentInstantiationRefItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -114,8 +114,8 @@ public class ComponentInstantiationRefItemProvider extends ItemProviderAdapter i
 	@Override
 	public String getText(Object object) {
 		String label = ((ComponentInstantiationRef< ? >) object).getRefid();
-		return label == null || label.length() == 0 ? getString("_UI_ComponentInstantiationRef_type") : getString("_UI_ComponentInstantiationRef_type") + " "
-			+ label;
+		return label == null || label.length() == 0 ? getString("_UI_ComponentInstantiationRef_type")
+			: getString("_UI_ComponentInstantiationRef_type") + " " + label;
 	}
 
 	/**

@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <em><b>Software Assembly</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getComponentFiles <em>Component Files</em>}</li>
@@ -57,7 +58,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -193,11 +193,11 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	/**
 	 * The cached value of the '{@link #getUsesDeviceDependencies() <em>Uses Device Dependencies</em>}' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see #getUsesDeviceDependencies()
 	 * @generated
 	 * @ordered
-	 * @since 2.4
 	 */
 	protected UsesDeviceDependencies usesDeviceDependencies;
 
@@ -391,8 +391,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER, newAssemblyController,
-				newAssemblyController));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER, newAssemblyController, newAssemblyController));
 	}
 
 	/**
@@ -483,9 +483,11 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 		if (newExternalPorts != externalPorts) {
 			NotificationChain msgs = null;
 			if (externalPorts != null)
-				msgs = ((InternalEObject) externalPorts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, null, msgs);
+				msgs = ((InternalEObject) externalPorts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, null,
+					msgs);
 			if (newExternalPorts != null)
-				msgs = ((InternalEObject) newExternalPorts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, null, msgs);
+				msgs = ((InternalEObject) newExternalPorts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, null,
+					msgs);
 			msgs = basicSetExternalPorts(newExternalPorts, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -544,8 +546,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, newExternalProperties,
-				newExternalProperties));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, newExternalProperties, newExternalProperties));
 	}
 
 	/**
@@ -627,9 +629,9 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 2.4
 	 */
 	public UsesDeviceDependencies getUsesDeviceDependencies() {
 		return usesDeviceDependencies;
@@ -637,9 +639,9 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 2.4
 	 */
 	public NotificationChain basicSetUsesDeviceDependencies(UsesDeviceDependencies newUsesDeviceDependencies, NotificationChain msgs) {
 		UsesDeviceDependencies oldUsesDeviceDependencies = usesDeviceDependencies;
@@ -657,19 +659,19 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 2.4
 	 */
 	public void setUsesDeviceDependencies(UsesDeviceDependencies newUsesDeviceDependencies) {
 		if (newUsesDeviceDependencies != usesDeviceDependencies) {
 			NotificationChain msgs = null;
 			if (usesDeviceDependencies != null)
-				msgs = ((InternalEObject) usesDeviceDependencies).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES, null, msgs);
+				msgs = ((InternalEObject) usesDeviceDependencies).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES, null, msgs);
 			if (newUsesDeviceDependencies != null)
-				msgs = ((InternalEObject) newUsesDeviceDependencies).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES, null, msgs);
+				msgs = ((InternalEObject) newUsesDeviceDependencies).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES, null, msgs);
 			msgs = basicSetUsesDeviceDependencies(newUsesDeviceDependencies, msgs);
 			if (msgs != null)
 				msgs.dispatch();

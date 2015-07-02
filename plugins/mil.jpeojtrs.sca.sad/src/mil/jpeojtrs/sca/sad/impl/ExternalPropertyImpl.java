@@ -26,12 +26,12 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.ExternalPropertyImpl#getCompRefID <em>Comp Ref ID</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.ExternalPropertyImpl#getPropID <em>Prop ID</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.ExternalPropertyImpl#getExternalPropID <em>External Prop ID</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

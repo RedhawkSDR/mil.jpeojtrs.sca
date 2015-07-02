@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties#getGroup <em>Group</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties#getSimpleRef <em>Simple Ref</em>}</li>
@@ -35,7 +36,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties#getStructSequenceRef <em>Struct Sequence Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties#getFactoryRef <em>Factory Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getResourceFactoryProperties()
  * @model extendedMetaData="name='resourcefactoryproperties' kind='elementOnly' qualified='false'"

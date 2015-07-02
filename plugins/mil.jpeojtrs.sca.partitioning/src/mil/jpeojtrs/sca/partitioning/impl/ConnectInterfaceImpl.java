@@ -11,6 +11,16 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EContentAdapter;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiationRef;
 import mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface;
@@ -28,22 +38,13 @@ import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EContentAdapter;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Connect Interface</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ConnectInterfaceImpl#getUsesPort <em>Uses Port</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ConnectInterfaceImpl#getProvidesPort <em>Provides Port</em>}</li>
@@ -53,12 +54,11 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ConnectInterfaceImpl#getSource <em>Source</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ConnectInterfaceImpl#getTarget <em>Target</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> extends
-		EObjectImpl implements ConnectInterface<CIR, UP, PP> {
+public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR> >
+		extends EObjectImpl implements ConnectInterface<CIR, UP, PP> {
 	/**
 	 * The cached value of the '{@link #getUsesPort() <em>Uses Port</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -252,8 +252,8 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 		ComponentSupportedInterface oldComponentSupportedInterface = componentSupportedInterface;
 		componentSupportedInterface = newComponentSupportedInterface;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-				PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, oldComponentSupportedInterface, newComponentSupportedInterface);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE,
+				oldComponentSupportedInterface, newComponentSupportedInterface);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -272,11 +272,11 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 		if (newComponentSupportedInterface != componentSupportedInterface) {
 			NotificationChain msgs = null;
 			if (componentSupportedInterface != null)
-				msgs = ((InternalEObject) componentSupportedInterface).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, null, msgs);
+				msgs = ((InternalEObject) componentSupportedInterface).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, null, msgs);
 			if (newComponentSupportedInterface != null)
-				msgs = ((InternalEObject) newComponentSupportedInterface).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, null, msgs);
+				msgs = ((InternalEObject) newComponentSupportedInterface).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.CONNECT_INTERFACE__COMPONENT_SUPPORTED_INTERFACE, null, msgs);
 			msgs = basicSetComponentSupportedInterface(newComponentSupportedInterface, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -304,7 +304,8 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 		FindBy oldFindBy = findBy;
 		findBy = newFindBy;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__FIND_BY, oldFindBy, newFindBy);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.CONNECT_INTERFACE__FIND_BY, oldFindBy,
+				newFindBy);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -817,7 +818,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 		}
 		final EObject container = stub.eContainer();
 		final UP newUsesPort = createUsesPort();
-		newUsesPort.setUsesIndentifier(stub.getName());
+		newUsesPort.setUsesIdentifier(stub.getName());
 		if (container == null) {
 			return null;
 		} else if (container instanceof ComponentInstantiation) {
@@ -895,7 +896,7 @@ public abstract class ConnectInterfaceImpl< CIR extends ComponentInstantiationRe
 	}
 
 	private String getIdentifier(final UsesPort< ? > port) {
-		return (port != null) ? port.getUsesIndentifier() : null;
+		return (port != null) ? port.getUsesIdentifier() : null;
 	}
 
 	private String getIdentifier(final ComponentSupportedInterface csi) {

@@ -237,13 +237,14 @@ public interface SadPackage extends EPackage {
 	 */
 	int SAD_USES_PORT = 3;
 	/**
-	 * The feature id for the '<em><b>Uses Indentifier</b></em>' attribute.
+	 * The feature id for the '<em><b>Uses Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SAD_USES_PORT__USES_INDENTIFIER = PartitioningPackage.USES_PORT__USES_INDENTIFIER;
+	int SAD_USES_PORT__USES_IDENTIFIER = PartitioningPackage.USES_PORT__USES_IDENTIFIER;
 	/**
 	 * The feature id for the '<em><b>Component Instantiation Ref</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -268,6 +269,15 @@ public interface SadPackage extends EPackage {
 	 * @ordered
 	 */
 	int SAD_USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF = PartitioningPackage.USES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF;
+	/**
+	 * The feature id for the '<em><b>Device Used By Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAD_USES_PORT__DEVICE_USED_BY_APPLICATION = PartitioningPackage.USES_PORT__DEVICE_USED_BY_APPLICATION;
 	/**
 	 * The feature id for the '<em><b>Find By</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -325,6 +335,15 @@ public interface SadPackage extends EPackage {
 	 * @ordered
 	 */
 	int SAD_PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF = PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_THIS_COMPONENT_REF;
+	/**
+	 * The feature id for the '<em><b>Device Used By Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAD_PROVIDES_PORT__DEVICE_USED_BY_APPLICATION = PartitioningPackage.PROVIDES_PORT__DEVICE_USED_BY_APPLICATION;
 	/**
 	 * The feature id for the '<em><b>Find By</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -682,13 +701,14 @@ public interface SadPackage extends EPackage {
 	 */
 	int PORT__USES_IDENTIFIER = 1;
 	/**
-	 * The feature id for the '<em><b>Provides Indentifier</b></em>' attribute.
+	 * The feature id for the '<em><b>Provides Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PROVIDES_INDENTIFIER = 2;
+	int PORT__PROVIDES_IDENTIFIER = 2;
 	/**
 	 * The feature id for the '<em><b>Supported Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1011,10 +1031,10 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Uses Device Dependencies</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 2.4
 	 */
 	int SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES = 10;
 	/**
@@ -1028,29 +1048,29 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl <em>Uses Device Dependencies</em>}' class.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceDependencies()
 	 * @generated
-	 * @since 2.4
 	 */
 	int USES_DEVICE_DEPENDENCIES = 19;
 	/**
 	 * The feature id for the '<em><b>Usesdevice</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 2.4
 	 */
 	int USES_DEVICE_DEPENDENCIES__USESDEVICE = 0;
 	/**
 	 * The number of structural features of the '<em>Uses Device Dependencies</em>' class.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
-	 * @since 2.4
 	 */
 	int USES_DEVICE_DEPENDENCIES_FEATURE_COUNT = 1;
 
@@ -1399,15 +1419,16 @@ public interface SadPackage extends EPackage {
 	EAttribute getPort_UsesIdentifier();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Port#getProvidesIndentifier <em>Provides Indentifier</em>}'.
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Port#getProvidesIdentifier <em>Provides Identifier</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Provides Indentifier</em>'.
-	 * @see mil.jpeojtrs.sca.sad.Port#getProvidesIndentifier()
+	 * @return the meta object for the attribute '<em>Provides Identifier</em>'.
+	 * @see mil.jpeojtrs.sca.sad.Port#getProvidesIdentifier()
 	 * @see #getPort()
 	 * @generated
 	 */
-	EAttribute getPort_ProvidesIndentifier();
+	EAttribute getPort_ProvidesIdentifier();
 
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Port#getSupportedIdentifier <em>Supported Identifier</em>}'.
@@ -1728,35 +1749,35 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Uses Device Dependencies</em>'.
 	 * @see mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies()
 	 * @see #getSoftwareAssembly()
 	 * @generated
-	 * @since 2.4
 	 */
 	EReference getSoftwareAssembly_UsesDeviceDependencies();
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.UsesDeviceDependencies <em>Uses Device Dependencies</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Uses Device Dependencies</em>'.
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceDependencies
 	 * @generated
-	 * @since 2.4
 	 */
 	EClass getUsesDeviceDependencies();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.UsesDeviceDependencies#getUsesdevice <em>Usesdevice</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Usesdevice</em>'.
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceDependencies#getUsesdevice()
 	 * @see #getUsesDeviceDependencies()
 	 * @generated
-	 * @since 2.4
 	 */
 	EReference getUsesDeviceDependencies_Usesdevice();
 
@@ -2044,12 +2065,13 @@ public interface SadPackage extends EPackage {
 		 */
 		EAttribute PORT__USES_IDENTIFIER = eINSTANCE.getPort_UsesIdentifier();
 		/**
-		 * The meta object literal for the '<em><b>Provides Indentifier</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Provides Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PORT__PROVIDES_INDENTIFIER = eINSTANCE.getPort_ProvidesIndentifier();
+		EAttribute PORT__PROVIDES_IDENTIFIER = eINSTANCE.getPort_ProvidesIdentifier();
 		/**
 		 * The meta object literal for the '<em><b>Supported Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -2268,27 +2290,27 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Uses Device Dependencies</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @generated
-		 * @since 2.4
 		 */
 		EReference SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES = eINSTANCE.getSoftwareAssembly_UsesDeviceDependencies();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl <em>Uses Device Dependencies</em>}' class.
 		 * <!-- begin-user-doc -->
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl
 		 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceDependencies()
 		 * @generated
-		 * @since 2.4
 		 */
 		EClass USES_DEVICE_DEPENDENCIES = eINSTANCE.getUsesDeviceDependencies();
 		/**
 		 * The meta object literal for the '<em><b>Usesdevice</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @generated
-		 * @since 2.4
 		 */
 		EReference USES_DEVICE_DEPENDENCIES__USESDEVICE = eINSTANCE.getUsesDeviceDependencies_Usesdevice();
 

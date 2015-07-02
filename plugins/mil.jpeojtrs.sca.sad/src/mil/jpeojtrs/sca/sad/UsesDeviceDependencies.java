@@ -19,19 +19,19 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Uses Device Dependencies</b></em>'.
+ * @since 3.0
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.UsesDeviceDependencies#getUsesdevice <em>Usesdevice</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getUsesDeviceDependencies()
  * @model extendedMetaData="name='usesdevicedependencies' kind='elementOnly' qualified='false'"
  * @generated
- * @since 2.4
  */
 public interface UsesDeviceDependencies extends EObject {
 	/**

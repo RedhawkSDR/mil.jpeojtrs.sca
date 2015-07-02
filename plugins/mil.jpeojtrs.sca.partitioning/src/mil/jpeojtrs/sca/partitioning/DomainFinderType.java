@@ -209,6 +209,8 @@ public enum DomainFinderType implements Enumerator {
 	 * Returns the '<em><b>Domain Finder Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static DomainFinderType get(String literal) {
@@ -225,6 +227,8 @@ public enum DomainFinderType implements Enumerator {
 	 * Returns the '<em><b>Domain Finder Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static DomainFinderType getByName(String name) {
@@ -241,6 +245,8 @@ public enum DomainFinderType implements Enumerator {
 	 * Returns the '<em><b>Domain Finder Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static DomainFinderType get(int value) {

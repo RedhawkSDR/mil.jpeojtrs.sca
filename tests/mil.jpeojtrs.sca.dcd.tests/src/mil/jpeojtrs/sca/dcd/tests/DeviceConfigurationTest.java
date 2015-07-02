@@ -110,24 +110,24 @@ public class DeviceConfigurationTest extends TestCase {
 	}
 
 	public void testSet() throws Exception {
-		getFixture().setComponentFiles(null);		
+		getFixture().setComponentFiles(null);
 		Assert.assertNull(this.fixture.getComponentFiles());
 
 		getFixture().setConnections(null);
 		Assert.assertNull(this.fixture.getConnections());
-		
+
 		getFixture().setDescription(null);
 		Assert.assertNull(this.fixture.getDescription());
-		
+
 		getFixture().setFileSystemNames(null);
 		Assert.assertNull(this.fixture.getFileSystemNames());
-		
+
 		getFixture().setPartitioning(null);
 		Assert.assertNull(this.fixture.getPartitioning());
-		
+
 		getFixture().setDomainManager(null);
 		Assert.assertNull(this.fixture.getDomainManager());
-		
+
 		getFixture().setDeviceManagerSoftPkg(null);
 		Assert.assertNull(this.fixture.getDeviceManagerSoftPkg());
 	}

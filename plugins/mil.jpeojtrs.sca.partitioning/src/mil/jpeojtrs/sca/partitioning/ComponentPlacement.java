@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentPlacement#getComponentFileRef <em>Component File Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentPlacement#getComponentInstantiation <em>Component Instantiation</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentPlacement#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentPlacement()
  * @model abstract="true"

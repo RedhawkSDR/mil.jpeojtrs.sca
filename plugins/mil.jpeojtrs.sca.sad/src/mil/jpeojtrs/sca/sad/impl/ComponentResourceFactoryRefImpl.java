@@ -34,12 +34,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.ComponentResourceFactoryRefImpl#getResourceFactoryProperties <em>Resource Factory Properties</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.ComponentResourceFactoryRefImpl#getRefid <em>Refid</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.ComponentResourceFactoryRefImpl#getComponent <em>Component</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -237,8 +237,8 @@ public class ComponentResourceFactoryRefImpl extends EObjectImpl implements Comp
 		switch (featureID) {
 		case SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES:
 			if (resourceFactoryProperties != null)
-				msgs = ((InternalEObject) resourceFactoryProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES, null, msgs);
+				msgs = ((InternalEObject) resourceFactoryProperties).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - SadPackage.COMPONENT_RESOURCE_FACTORY_REF__RESOURCE_FACTORY_PROPERTIES, null, msgs);
 			return basicSetResourceFactoryProperties((ResourceFactoryProperties) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);

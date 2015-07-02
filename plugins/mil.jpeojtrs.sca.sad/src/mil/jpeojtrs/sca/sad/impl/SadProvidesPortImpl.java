@@ -23,12 +23,10 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Provides Port</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class SadProvidesPortImpl extends ProvidesPortImpl<SadComponentInstantiationRef> implements SadProvidesPort {
+public class SadProvidesPortImpl extends ProvidesPortImpl<SadComponentInstantiationRef>implements SadProvidesPort {
 
 	/**
 	 * <!-- begin-user-doc -->

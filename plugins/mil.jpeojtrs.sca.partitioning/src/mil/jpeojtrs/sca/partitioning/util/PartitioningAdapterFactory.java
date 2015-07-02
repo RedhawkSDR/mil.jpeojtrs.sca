@@ -159,13 +159,13 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public < CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(
+		public < CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR> > Adapter caseConnectInterface(
 			ConnectInterface<CIR, UP, PP> object) {
 			return createConnectInterfaceAdapter();
 		}
 
 		@Override
-		public < CI extends ConnectInterface< ? , ? , ? >> Adapter caseConnections(Connections<CI> object) {
+		public < CI extends ConnectInterface< ? , ? , ? > > Adapter caseConnections(Connections<CI> object) {
 			return createConnectionsAdapter();
 		}
 
@@ -220,12 +220,12 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public < C extends ComponentPlacement< ? >> Adapter casePartitioning(Partitioning<C> object) {
+		public < C extends ComponentPlacement< ? > > Adapter casePartitioning(Partitioning<C> object) {
 			return createPartitioningAdapter();
 		}
 
 		@Override
-		public < P extends ComponentInstantiationRef< ? >> Adapter caseProvidesPort(ProvidesPort<P> object) {
+		public < P extends ComponentInstantiationRef< ? > > Adapter caseProvidesPort(ProvidesPort<P> object) {
 			return createProvidesPortAdapter();
 		}
 
@@ -235,7 +235,7 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public < U extends ComponentInstantiationRef< ? >> Adapter caseUsesPort(UsesPort<U> object) {
+		public < U extends ComponentInstantiationRef< ? > > Adapter caseUsesPort(UsesPort<U> object) {
 			return createUsesPortAdapter();
 		}
 

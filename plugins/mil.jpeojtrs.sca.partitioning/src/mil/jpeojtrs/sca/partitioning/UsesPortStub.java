@@ -22,12 +22,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesPortStub#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesPortStub#getUses <em>Uses</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesPortStub#getSupportedIdentifier <em>Supported Identifier</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getUsesPortStub()
  * @model

@@ -22,10 +22,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.SadPartitioning#getHostCollocation <em>Host Collocation</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getSadPartitioning()
  * @model extendedMetaData="name='partitioning' kind='elementOnly' qualified='false'"

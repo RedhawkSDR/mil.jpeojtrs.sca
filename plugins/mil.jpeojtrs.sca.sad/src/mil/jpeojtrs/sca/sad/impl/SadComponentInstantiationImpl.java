@@ -30,11 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SadComponentInstantiationImpl#getFindComponent <em>Find Component</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SadComponentInstantiationImpl#getStartOrder <em>Start Order</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

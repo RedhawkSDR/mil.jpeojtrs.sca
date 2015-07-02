@@ -27,11 +27,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DomainManager#getNamingService <em>Naming Service</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DomainManager#getStringifiedObjectRef <em>Stringified Object Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.dcd.DcdPackage#getDomainManager()
  * @model extendedMetaData="name='domainmanager' kind='elementOnly'"

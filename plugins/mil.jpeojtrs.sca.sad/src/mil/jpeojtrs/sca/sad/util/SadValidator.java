@@ -344,11 +344,11 @@ public class SadValidator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (port.getComponentInstantiationRef() == null && port.getProvidesIndentifier() == null && port.getSupportedIdentifier() == null
+		if (port.getComponentInstantiationRef() == null && port.getProvidesIdentifier() == null && port.getSupportedIdentifier() == null
 			&& port.getUsesIdentifier() == null) {
 			if (diagnostics != null) {
-				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic", new Object[] { "NonEmptyPort",
-					getObjectLabel(port, context) }, new Object[] { port }, context));
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
+					new Object[] { "NonEmptyPort", getObjectLabel(port, context) }, new Object[] { port }, context));
 			}
 			return false;
 		}
@@ -403,9 +403,9 @@ public class SadValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 2.4
 	 */
 	public boolean validateUsesDeviceDependencies(UsesDeviceDependencies usesDeviceDependencies, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(usesDeviceDependencies, diagnostics, context);

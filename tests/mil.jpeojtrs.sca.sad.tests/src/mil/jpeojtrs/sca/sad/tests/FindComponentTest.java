@@ -115,13 +115,15 @@ public class FindComponentTest extends TestCase {
 	}
 
 	public void test_getNamingService() throws Exception {
-		this.setFixture(this.sad.getPartitioning().getHostCollocation().get(0).getComponentPlacement().get(0).getComponentInstantiation().get(0).getFindComponent());
+		this.setFixture(
+			this.sad.getPartitioning().getHostCollocation().get(0).getComponentPlacement().get(0).getComponentInstantiation().get(0).getFindComponent());
 
 		Assert.assertEquals("FrequencyShift_1", this.fixture.getNamingService().getName());
 	}
 
 	public void test_setNamingService() throws Exception {
-		this.setFixture(this.sad.getPartitioning().getHostCollocation().get(0).getComponentPlacement().get(0).getComponentInstantiation().get(0).getFindComponent());
+		this.setFixture(
+			this.sad.getPartitioning().getHostCollocation().get(0).getComponentPlacement().get(0).getComponentInstantiation().get(0).getFindComponent());
 
 		final NamingService name = this.fixture.getNamingService();
 		name.setName("New name");

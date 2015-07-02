@@ -151,8 +151,8 @@ public class FindComponentItemProvider extends ItemProviderAdapter implements IE
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SadPackage.Literals.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF,
-			SadFactory.eINSTANCE.createComponentResourceFactoryRef()));
+		newChildDescriptors.add(
+			createChildParameter(SadPackage.Literals.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, SadFactory.eINSTANCE.createComponentResourceFactoryRef()));
 
 		newChildDescriptors.add(createChildParameter(SadPackage.Literals.FIND_COMPONENT__NAMING_SERVICE, PartitioningFactory.eINSTANCE.createNamingService()));
 	}

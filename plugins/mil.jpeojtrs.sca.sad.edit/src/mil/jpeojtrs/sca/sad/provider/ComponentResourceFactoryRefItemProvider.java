@@ -146,8 +146,8 @@ public class ComponentResourceFactoryRefItemProvider extends ItemProviderAdapter
 	@Override
 	public String getText(Object object) {
 		String label = ((ComponentResourceFactoryRef) object).getRefid();
-		return label == null || label.length() == 0 ? getString("_UI_ComponentResourceFactoryRef_type") : getString("_UI_ComponentResourceFactoryRef_type")
-			+ " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_ComponentResourceFactoryRef_type")
+			: getString("_UI_ComponentResourceFactoryRef_type") + " " + label;
 	}
 
 	/**

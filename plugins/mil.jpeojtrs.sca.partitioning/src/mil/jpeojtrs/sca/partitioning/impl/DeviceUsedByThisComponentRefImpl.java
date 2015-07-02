@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByThisComponentRefImpl#getRefId <em>Ref Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByThisComponentRefImpl#getUsesRefId <em>Uses Ref Id</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

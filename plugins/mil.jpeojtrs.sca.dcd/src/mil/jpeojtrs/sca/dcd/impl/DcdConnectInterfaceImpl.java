@@ -28,12 +28,10 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Connect Interface</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class DcdConnectInterfaceImpl extends ConnectInterfaceImpl<DcdComponentInstantiationRef, DcdUsesPort, DcdProvidesPort> implements DcdConnectInterface {
+public class DcdConnectInterfaceImpl extends ConnectInterfaceImpl<DcdComponentInstantiationRef, DcdUsesPort, DcdProvidesPort>implements DcdConnectInterface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,20 +76,20 @@ public class DcdConnectInterfaceImpl extends ConnectInterfaceImpl<DcdComponentIn
 	}
 
 	@Override
-    protected DcdUsesPort createUsesPort() {
-	    return DcdFactory.eINSTANCE.createDcdUsesPort();
-    }
+	protected DcdUsesPort createUsesPort() {
+		return DcdFactory.eINSTANCE.createDcdUsesPort();
+	}
 
 	@Override
-    protected DcdProvidesPort createProvidesPort() {
-	    return DcdFactory.eINSTANCE.createDcdProvidesPort();
-    }
+	protected DcdProvidesPort createProvidesPort() {
+		return DcdFactory.eINSTANCE.createDcdProvidesPort();
+	}
 
 	@Override
-    protected DcdComponentInstantiationRef createComponentInstantiationRef(ComponentInstantiation container) {
+	protected DcdComponentInstantiationRef createComponentInstantiationRef(ComponentInstantiation container) {
 		DcdComponentInstantiationRef retVal = DcdFactory.eINSTANCE.createDcdComponentInstantiationRef();
 		retVal.setInstantiation((DcdComponentInstantiation) container);
-	    return retVal;
-    }
+		return retVal;
+	}
 
 } //DcdConnectInterfaceImpl

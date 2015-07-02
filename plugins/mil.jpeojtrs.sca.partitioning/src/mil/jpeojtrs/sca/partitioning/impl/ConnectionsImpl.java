@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ConnectionsImpl#getConnectInterface <em>Connect Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public abstract class ConnectionsImpl< CI extends ConnectInterface< ? , ? , ? >> extends EObjectImpl implements Connections<CI> {
+public abstract class ConnectionsImpl< CI extends ConnectInterface< ? , ? , ? > > extends EObjectImpl implements Connections<CI> {
 
 	/**
 	 * The cached value of the '{@link #getConnectInterface() <em>Connect Interface</em>}' containment reference list.

@@ -49,7 +49,7 @@ public class DcdResourceFactoryImpl extends ResourceFactoryImpl {
 		// END GENERATED CODE
 		super();
 		this.extendedMetaData = new ScaExtendedMetaData() {
-			
+
 			@Override
 			public java.util.List<org.eclipse.emf.ecore.EStructuralFeature> getAllElements(org.eclipse.emf.ecore.EClass eClass) {
 				List<EStructuralFeature> retVal = super.getAllElements(eClass);
@@ -67,8 +67,8 @@ public class DcdResourceFactoryImpl extends ResourceFactoryImpl {
 							if (o2 == PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_INSTANTIATION) {
 								return -1;
 							}
-	                        return 0;
-                        }
+							return 0;
+						}
 					};
 					if (retVal instanceof EList) {
 						ECollections.sort((EList<EStructuralFeature>) retVal, comparator);
@@ -93,10 +93,10 @@ public class DcdResourceFactoryImpl extends ResourceFactoryImpl {
 	public Resource createResource(final URI uri) {
 		// END GENERATED CODE
 		final XMLResource result = new DcdResourceImpl(uri);
-		
+
 		ScaResourceFactoryUtil.setDefaultLoadOptions(result.getDefaultLoadOptions());
 		ScaResourceFactoryUtil.setDefaultSaveOptions(result.getDefaultSaveOptions());
-		
+
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, this.extendedMetaData);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, true);

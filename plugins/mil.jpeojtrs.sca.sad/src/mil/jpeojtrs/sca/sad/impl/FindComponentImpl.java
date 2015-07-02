@@ -29,11 +29,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.FindComponentImpl#getComponentResourceFactoryRef <em>Component Resource Factory Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.FindComponentImpl#getNamingService <em>Naming Service</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -116,11 +116,11 @@ public class FindComponentImpl extends EObjectImpl implements FindComponent {
 		if (newComponentResourceFactoryRef != componentResourceFactoryRef) {
 			NotificationChain msgs = null;
 			if (componentResourceFactoryRef != null)
-				msgs = ((InternalEObject) componentResourceFactoryRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, null, msgs);
+				msgs = ((InternalEObject) componentResourceFactoryRef).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, null, msgs);
 			if (newComponentResourceFactoryRef != null)
-				msgs = ((InternalEObject) newComponentResourceFactoryRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentResourceFactoryRef).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - SadPackage.FIND_COMPONENT__COMPONENT_RESOURCE_FACTORY_REF, null, msgs);
 			msgs = basicSetComponentResourceFactoryRef(newComponentResourceFactoryRef, msgs);
 			if (msgs != null)
 				msgs.dispatch();

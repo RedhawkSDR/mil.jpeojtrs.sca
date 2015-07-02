@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getUsageName <em>Usage Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getComponentProperties <em>Component Properties</em>}</li>
@@ -36,7 +37,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getPlacement <em>Placement</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getImplID <em>Impl ID</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation()
  * @model

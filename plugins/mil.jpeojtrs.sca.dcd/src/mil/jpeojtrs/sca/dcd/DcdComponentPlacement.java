@@ -25,35 +25,35 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DcdComponentPlacement#getDeployDevice <em>Deploy Device</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DcdComponentPlacement#getCompositePartOfDevice <em>Composite Part Of Device</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DcdComponentPlacement#getDevicePkgFile <em>Device Pkg File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DcdComponentPlacement#getParentDevice <em>Parent Device</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.dcd.DcdPackage#getDcdComponentPlacement()
  * @model extendedMetaData="name='componentplacement' kind='elementOnly'"
  * @generated
  */
 public interface DcdComponentPlacement extends ComponentPlacement<DcdComponentInstantiation> {
-	
-	 /**
-	 * Returns the value of the '<em><b>Deploy Device</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The optional deployondevice element indicates the device on which the componentinstantiation
-	 * element is deployed.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Deploy Device</em>' containment reference.
-	 * @see #setDeployDevice(DeployOnDevice)
-	 * @see mil.jpeojtrs.sca.dcd.DcdPackage#getDcdComponentPlacement_DeployDevice()
-	 * @model containment="true"
-	 *        extendedMetaData="kind='element' name='deployondevice'"
-	 * @generated
-	 */
+
+	/**
+	* Returns the value of the '<em><b>Deploy Device</b></em>' containment reference.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* <!-- begin-model-doc -->
+	* The optional deployondevice element indicates the device on which the componentinstantiation
+	* element is deployed.
+	* <!-- end-model-doc -->
+	* @return the value of the '<em>Deploy Device</em>' containment reference.
+	* @see #setDeployDevice(DeployOnDevice)
+	* @see mil.jpeojtrs.sca.dcd.DcdPackage#getDcdComponentPlacement_DeployDevice()
+	* @model containment="true"
+	*        extendedMetaData="kind='element' name='deployondevice'"
+	* @generated
+	*/
 	DeployOnDevice getDeployDevice();
 
 	/**
@@ -148,20 +148,17 @@ public interface DcdComponentPlacement extends ComponentPlacement<DcdComponentIn
 	 */
 	void setParentDevice(DcdComponentInstantiation value);
 
-		public static final class Util {
-         private Util() {
+	public static final class Util {
+		private Util() {
 
-         }
-         
-         private static final EStructuralFeature [] PATH = new EStructuralFeature[] {
-        	 PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
-        	 PartitioningPackage.Literals.COMPONENT_FILE_REF__FILE,
-        	 PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG
-         };
+		}
 
-         public static boolean isAggregateDevice(DcdComponentPlacement cp) {
-                 return SoftPkg.Util.isAggregateDevice((SoftPkg) ScaEcoreUtils.getFeature(cp, PATH));
-         }
-	 }
+		private static final EStructuralFeature[] PATH = new EStructuralFeature[] { PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF,
+			PartitioningPackage.Literals.COMPONENT_FILE_REF__FILE, PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG };
+
+		public static boolean isAggregateDevice(DcdComponentPlacement cp) {
+			return SoftPkg.Util.isAggregateDevice((SoftPkg) ScaEcoreUtils.getFeature(cp, PATH));
+		}
+	}
 
 } // DcdComponentPlacement

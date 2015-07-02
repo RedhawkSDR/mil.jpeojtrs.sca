@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.FindBy#getNamingService <em>Naming Service</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.FindBy#getDomainFinder <em>Domain Finder</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getFindBy()
  * @model extendedMetaData="kind='elementOnly' name='findby' qualified='false'"

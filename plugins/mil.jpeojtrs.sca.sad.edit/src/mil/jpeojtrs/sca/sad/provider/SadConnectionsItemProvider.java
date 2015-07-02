@@ -89,8 +89,8 @@ public class SadConnectionsItemProvider extends ConnectionsItemProvider implemen
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.CONNECTIONS__CONNECT_INTERFACE,
-			SadFactory.eINSTANCE.createSadConnectInterface()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.CONNECTIONS__CONNECT_INTERFACE, SadFactory.eINSTANCE.createSadConnectInterface()));
 	}
 
 	/**

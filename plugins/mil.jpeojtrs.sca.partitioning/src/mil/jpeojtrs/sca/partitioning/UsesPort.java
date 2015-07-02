@@ -20,49 +20,51 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
- *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesPort#getUsesIndentifier <em>Uses Indentifier</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesPort#getUsesIdentifier <em>Uses Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesPort#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesPort#getDeviceThatLoadedThisComponentRef <em>Device That Loaded This Component Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesPort#getDeviceUsedByThisComponentRef <em>Device Used By This Component Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesPort#getDeviceUsedByApplication <em>Device Used By Application</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesPort#getFindBy <em>Find By</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getUsesPort()
  * @model abstract="true"
  *        extendedMetaData="kind='elementOnly' name='usesport' qualified='false'"
  * @generated
  */
-public interface UsesPort< U extends ComponentInstantiationRef< ? >> extends EObject {
+public interface UsesPort< U extends ComponentInstantiationRef< ? > > extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Uses Indentifier</b></em>' attribute.
+	 * Returns the value of the '<em><b>Uses Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Uses Indentifier</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Uses Identifier</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 2.0
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Uses Indentifier</em>' attribute.
-	 * @see #setUsesIndentifier(String)
-	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getUsesPort_UsesIndentifier()
+	 * @return the value of the '<em>Uses Identifier</em>' attribute.
+	 * @see #setUsesIdentifier(String)
+	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getUsesPort_UsesIdentifier()
 	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
 	 *        extendedMetaData="kind='element' name='usesidentifier'"
 	 * @generated
 	 */
-	String getUsesIndentifier();
+	String getUsesIdentifier();
 
 	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.UsesPort#getUsesIndentifier <em>Uses Indentifier</em>}' attribute.
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.UsesPort#getUsesIdentifier <em>Uses Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Uses Indentifier</em>' attribute.
-	 * @see #getUsesIndentifier()
+	 * @param value the new value of the '<em>Uses Identifier</em>' attribute.
+	 * @see #getUsesIdentifier()
 	 * @generated
 	 */
-	void setUsesIndentifier(String value);
+	void setUsesIdentifier(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Component Instantiation Ref</b></em>' containment reference.
@@ -152,6 +154,7 @@ public interface UsesPort< U extends ComponentInstantiationRef< ? >> extends EOb
 	 * If the meaning of the '<em>Device Used By Application</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Device Used By Application</em>' containment reference.
 	 * @see #setDeviceUsedByApplication(DeviceUsedByApplication)
@@ -159,18 +162,17 @@ public interface UsesPort< U extends ComponentInstantiationRef< ? >> extends EOb
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='deviceusedbyapplication'"
 	 * @generated
-	 * @since 2.0
 	 */
 	DeviceUsedByApplication getDeviceUsedByApplication();
 
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.UsesPort#getDeviceUsedByApplication <em>Device Used By Application</em>}' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Device Used By Application</em>' containment reference.
 	 * @see #getDeviceUsedByApplication()
 	 * @generated
-	 * @since 2.0
 	 */
 	void setDeviceUsedByApplication(DeviceUsedByApplication value);
 

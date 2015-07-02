@@ -50,16 +50,8 @@ public final class DcdEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public DcdEditPlugin() {
-		super
-		  (new ResourceLocator [] 
-		   {
-		     EcoreEditPlugin.INSTANCE,
-		     DpdEditPlugin.INSTANCE,
-		     PrfEditPlugin.INSTANCE,
-		     ScdEditPlugin.INSTANCE,
-		     SpdEditPlugin.INSTANCE,
-		     PartitioningEditPlugin.INSTANCE,
-		   });
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, DpdEditPlugin.INSTANCE, PrfEditPlugin.INSTANCE, ScdEditPlugin.INSTANCE, SpdEditPlugin.INSTANCE,
+			PartitioningEditPlugin.INSTANCE, });
 	}
 
 	/**

@@ -28,12 +28,10 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Connect Interface</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class SadConnectInterfaceImpl extends ConnectInterfaceImpl<SadComponentInstantiationRef, SadUsesPort, SadProvidesPort> implements SadConnectInterface {
+public class SadConnectInterfaceImpl extends ConnectInterfaceImpl<SadComponentInstantiationRef, SadUsesPort, SadProvidesPort>implements SadConnectInterface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

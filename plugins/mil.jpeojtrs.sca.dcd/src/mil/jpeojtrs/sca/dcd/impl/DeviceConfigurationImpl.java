@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DeviceConfigurationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DeviceConfigurationImpl#getDeviceManagerSoftPkg <em>Device Manager Soft Pkg</em>}</li>
@@ -44,7 +45,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DeviceConfigurationImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DeviceConfigurationImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -219,10 +219,13 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetDeviceManagerSoftPkg(DeviceManagerSoftPkg newDeviceManagerSoftPkg, NotificationChain msgs) {
 		DeviceManagerSoftPkg oldDeviceManagerSoftPkg = deviceManagerSoftPkg;
 		deviceManagerSoftPkg = newDeviceManagerSoftPkg;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG, oldDeviceManagerSoftPkg, newDeviceManagerSoftPkg);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG,
+				oldDeviceManagerSoftPkg, newDeviceManagerSoftPkg);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -234,18 +237,20 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public void setDeviceManagerSoftPkg(DeviceManagerSoftPkg newDeviceManagerSoftPkg) {
-		if (newDeviceManagerSoftPkg != deviceManagerSoftPkg)
-		{
+		if (newDeviceManagerSoftPkg != deviceManagerSoftPkg) {
 			NotificationChain msgs = null;
 			if (deviceManagerSoftPkg != null)
-				msgs = ((InternalEObject)deviceManagerSoftPkg).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG, null, msgs);
+				msgs = ((InternalEObject) deviceManagerSoftPkg).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG, null, msgs);
 			if (newDeviceManagerSoftPkg != null)
-				msgs = ((InternalEObject)newDeviceManagerSoftPkg).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG, null, msgs);
+				msgs = ((InternalEObject) newDeviceManagerSoftPkg).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG, null, msgs);
 			msgs = basicSetDeviceManagerSoftPkg(newDeviceManagerSoftPkg, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG, newDeviceManagerSoftPkg, newDeviceManagerSoftPkg));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG, newDeviceManagerSoftPkg,
+				newDeviceManagerSoftPkg));
 	}
 
 	/**
@@ -266,10 +271,13 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetComponentFiles(ComponentFiles newComponentFiles, NotificationChain msgs) {
 		ComponentFiles oldComponentFiles = componentFiles;
 		componentFiles = newComponentFiles;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES, oldComponentFiles, newComponentFiles);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES, oldComponentFiles,
+				newComponentFiles);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -281,17 +289,18 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public void setComponentFiles(ComponentFiles newComponentFiles) {
-		if (newComponentFiles != componentFiles)
-		{
+		if (newComponentFiles != componentFiles) {
 			NotificationChain msgs = null;
 			if (componentFiles != null)
-				msgs = ((InternalEObject)componentFiles).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES, null, msgs);
+				msgs = ((InternalEObject) componentFiles).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES, null,
+					msgs);
 			if (newComponentFiles != null)
-				msgs = ((InternalEObject)newComponentFiles).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES, null, msgs);
+				msgs = ((InternalEObject) newComponentFiles).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES, null,
+					msgs);
 			msgs = basicSetComponentFiles(newComponentFiles, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES, newComponentFiles, newComponentFiles));
 	}
 
@@ -313,10 +322,13 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetPartitioning(DcdPartitioning newPartitioning, NotificationChain msgs) {
 		DcdPartitioning oldPartitioning = partitioning;
 		partitioning = newPartitioning;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__PARTITIONING, oldPartitioning, newPartitioning);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__PARTITIONING, oldPartitioning,
+				newPartitioning);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -328,17 +340,18 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public void setPartitioning(DcdPartitioning newPartitioning) {
-		if (newPartitioning != partitioning)
-		{
+		if (newPartitioning != partitioning) {
 			NotificationChain msgs = null;
 			if (partitioning != null)
-				msgs = ((InternalEObject)partitioning).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__PARTITIONING, null, msgs);
+				msgs = ((InternalEObject) partitioning).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__PARTITIONING, null,
+					msgs);
 			if (newPartitioning != null)
-				msgs = ((InternalEObject)newPartitioning).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__PARTITIONING, null, msgs);
+				msgs = ((InternalEObject) newPartitioning).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__PARTITIONING, null,
+					msgs);
 			msgs = basicSetPartitioning(newPartitioning, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__PARTITIONING, newPartitioning, newPartitioning));
 	}
 
@@ -360,10 +373,13 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetConnections(DcdConnections newConnections, NotificationChain msgs) {
 		DcdConnections oldConnections = connections;
 		connections = newConnections;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS, oldConnections, newConnections);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS, oldConnections,
+				newConnections);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -375,17 +391,16 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public void setConnections(DcdConnections newConnections) {
-		if (newConnections != connections)
-		{
+		if (newConnections != connections) {
 			NotificationChain msgs = null;
 			if (connections != null)
-				msgs = ((InternalEObject)connections).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS, null, msgs);
+				msgs = ((InternalEObject) connections).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS, null, msgs);
 			if (newConnections != null)
-				msgs = ((InternalEObject)newConnections).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS, null, msgs);
+				msgs = ((InternalEObject) newConnections).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS, null, msgs);
 			msgs = basicSetConnections(newConnections, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS, newConnections, newConnections));
 	}
 
@@ -407,10 +422,13 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetDomainManager(DomainManager newDomainManager, NotificationChain msgs) {
 		DomainManager oldDomainManager = domainManager;
 		domainManager = newDomainManager;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER, oldDomainManager, newDomainManager);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER, oldDomainManager,
+				newDomainManager);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -422,17 +440,18 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public void setDomainManager(DomainManager newDomainManager) {
-		if (newDomainManager != domainManager)
-		{
+		if (newDomainManager != domainManager) {
 			NotificationChain msgs = null;
 			if (domainManager != null)
-				msgs = ((InternalEObject)domainManager).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER, null, msgs);
+				msgs = ((InternalEObject) domainManager).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER, null,
+					msgs);
 			if (newDomainManager != null)
-				msgs = ((InternalEObject)newDomainManager).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER, null, msgs);
+				msgs = ((InternalEObject) newDomainManager).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER, null,
+					msgs);
 			msgs = basicSetDomainManager(newDomainManager, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER, newDomainManager, newDomainManager));
 	}
 
@@ -454,10 +473,13 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	public NotificationChain basicSetFileSystemNames(FileSystemNames newFileSystemNames, NotificationChain msgs) {
 		FileSystemNames oldFileSystemNames = fileSystemNames;
 		fileSystemNames = newFileSystemNames;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES, oldFileSystemNames, newFileSystemNames);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES,
+				oldFileSystemNames, newFileSystemNames);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -469,17 +491,18 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public void setFileSystemNames(FileSystemNames newFileSystemNames) {
-		if (newFileSystemNames != fileSystemNames)
-		{
+		if (newFileSystemNames != fileSystemNames) {
 			NotificationChain msgs = null;
 			if (fileSystemNames != null)
-				msgs = ((InternalEObject)fileSystemNames).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES, null, msgs);
+				msgs = ((InternalEObject) fileSystemNames).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES,
+					null, msgs);
 			if (newFileSystemNames != null)
-				msgs = ((InternalEObject)newFileSystemNames).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES, null, msgs);
+				msgs = ((InternalEObject) newFileSystemNames).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES,
+					null, msgs);
 			msgs = basicSetFileSystemNames(newFileSystemNames, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES, newFileSystemNames, newFileSystemNames));
 	}
 
@@ -536,20 +559,19 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
-				return basicSetDeviceManagerSoftPkg(null, msgs);
-			case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
-				return basicSetComponentFiles(null, msgs);
-			case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
-				return basicSetPartitioning(null, msgs);
-			case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
-				return basicSetConnections(null, msgs);
-			case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
-				return basicSetDomainManager(null, msgs);
-			case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
-				return basicSetFileSystemNames(null, msgs);
+		switch (featureID) {
+		case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
+			return basicSetDeviceManagerSoftPkg(null, msgs);
+		case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
+			return basicSetComponentFiles(null, msgs);
+		case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
+			return basicSetPartitioning(null, msgs);
+		case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
+			return basicSetConnections(null, msgs);
+		case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
+			return basicSetDomainManager(null, msgs);
+		case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
+			return basicSetFileSystemNames(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -561,26 +583,25 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
-				return getDescription();
-			case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
-				return getDeviceManagerSoftPkg();
-			case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
-				return getComponentFiles();
-			case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
-				return getPartitioning();
-			case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
-				return getConnections();
-			case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
-				return getDomainManager();
-			case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
-				return getFileSystemNames();
-			case DcdPackage.DEVICE_CONFIGURATION__ID:
-				return getId();
-			case DcdPackage.DEVICE_CONFIGURATION__NAME:
-				return getName();
+		switch (featureID) {
+		case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
+			return getDescription();
+		case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
+			return getDeviceManagerSoftPkg();
+		case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
+			return getComponentFiles();
+		case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
+			return getPartitioning();
+		case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
+			return getConnections();
+		case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
+			return getDomainManager();
+		case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
+			return getFileSystemNames();
+		case DcdPackage.DEVICE_CONFIGURATION__ID:
+			return getId();
+		case DcdPackage.DEVICE_CONFIGURATION__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -592,35 +613,34 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
-				setDeviceManagerSoftPkg((DeviceManagerSoftPkg)newValue);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
-				setComponentFiles((ComponentFiles)newValue);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
-				setPartitioning((DcdPartitioning)newValue);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
-				setConnections((DcdConnections)newValue);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
-				setDomainManager((DomainManager)newValue);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
-				setFileSystemNames((FileSystemNames)newValue);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__ID:
-				setId((String)newValue);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__NAME:
-				setName((String)newValue);
-				return;
+		switch (featureID) {
+		case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
+			setDeviceManagerSoftPkg((DeviceManagerSoftPkg) newValue);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
+			setComponentFiles((ComponentFiles) newValue);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
+			setPartitioning((DcdPartitioning) newValue);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
+			setConnections((DcdConnections) newValue);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
+			setDomainManager((DomainManager) newValue);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
+			setFileSystemNames((FileSystemNames) newValue);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__ID:
+			setId((String) newValue);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -632,35 +652,34 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
-				setDeviceManagerSoftPkg((DeviceManagerSoftPkg)null);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
-				setComponentFiles((ComponentFiles)null);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
-				setPartitioning((DcdPartitioning)null);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
-				setConnections((DcdConnections)null);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
-				setDomainManager((DomainManager)null);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
-				setFileSystemNames((FileSystemNames)null);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		switch (featureID) {
+		case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
+			setDeviceManagerSoftPkg((DeviceManagerSoftPkg) null);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
+			setComponentFiles((ComponentFiles) null);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
+			setPartitioning((DcdPartitioning) null);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
+			setConnections((DcdConnections) null);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
+			setDomainManager((DomainManager) null);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
+			setFileSystemNames((FileSystemNames) null);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -672,26 +691,25 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
-				return deviceManagerSoftPkg != null;
-			case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
-				return componentFiles != null;
-			case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
-				return partitioning != null;
-			case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
-				return connections != null;
-			case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
-				return domainManager != null;
-			case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
-				return fileSystemNames != null;
-			case DcdPackage.DEVICE_CONFIGURATION__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case DcdPackage.DEVICE_CONFIGURATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		switch (featureID) {
+		case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
+			return deviceManagerSoftPkg != null;
+		case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
+			return componentFiles != null;
+		case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
+			return partitioning != null;
+		case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
+			return connections != null;
+		case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
+			return domainManager != null;
+		case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
+			return fileSystemNames != null;
+		case DcdPackage.DEVICE_CONFIGURATION__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case DcdPackage.DEVICE_CONFIGURATION__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -703,7 +721,8 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");

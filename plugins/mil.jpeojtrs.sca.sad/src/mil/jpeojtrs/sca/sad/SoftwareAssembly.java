@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getComponentFiles <em>Component Files</em>}</li>
@@ -44,7 +45,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getVersion <em>Version</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getSoftwareAssembly()
  * @model extendedMetaData="name='softwareassembly' kind='elementOnly' qualified='false'"
@@ -331,6 +331,7 @@ public interface SoftwareAssembly extends EObject {
 	 * If the meaning of the '<em>Uses Device Dependencies</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Uses Device Dependencies</em>' containment reference.
 	 * @see #setUsesDeviceDependencies(UsesDeviceDependencies)
@@ -338,18 +339,17 @@ public interface SoftwareAssembly extends EObject {
 	 * @model containment="true"
 	 *        extendedMetaData="kind='element' name='usesdevicedependencies' namespace='##targetNamespace'"
 	 * @generated
-	 * @since 2.4
 	 */
 	UsesDeviceDependencies getUsesDeviceDependencies();
 
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Uses Device Dependencies</em>' containment reference.
 	 * @see #getUsesDeviceDependencies()
 	 * @generated
-	 * @since 2.4
 	 */
 	void setUsesDeviceDependencies(UsesDeviceDependencies value);
 
@@ -442,7 +442,7 @@ public interface SoftwareAssembly extends EObject {
 			if (baseNameIndex != -1) {
 				baseName = baseName.substring(baseNameIndex + 1);
 			}
-			
+
 			// Make up a unique new name here.
 			final StringBuilder usageName = new StringBuilder();
 			final Pattern p = Pattern.compile(baseName + "_([0-9]+)");

@@ -28,16 +28,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Uses Device Dependencies</b></em>'.
+ * @since 3.0
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl#getUsesdevice <em>Usesdevice</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
- * @since 2.4
  */
 public class UsesDeviceDependenciesImpl extends EObjectImpl implements UsesDeviceDependencies {
 	/**

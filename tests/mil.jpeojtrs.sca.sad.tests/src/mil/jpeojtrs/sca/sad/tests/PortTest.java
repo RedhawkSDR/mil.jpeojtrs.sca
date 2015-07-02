@@ -131,13 +131,13 @@ public class PortTest extends TestCase {
 
 	public void test_getProvidesIdentifier() throws Exception {
 		this.setFixture(this.sad.getExternalPorts().getPort().get(1));
-		Assert.assertEquals("anotherExternalPort", this.fixture.getProvidesIndentifier());
+		Assert.assertEquals("anotherExternalPort", this.fixture.getProvidesIdentifier());
 	}
 
 	public void test_setProvidesIdentifier() throws Exception {
-		getFixture().setProvidesIndentifier("New Provides Identifier");
-		Assert.assertNotNull(this.fixture.getProvidesIndentifier());
-		Assert.assertEquals("New Provides Identifier", this.fixture.getProvidesIndentifier());
+		getFixture().setProvidesIdentifier("New Provides Identifier");
+		Assert.assertNotNull(this.fixture.getProvidesIdentifier());
+		Assert.assertEquals("New Provides Identifier", this.fixture.getProvidesIdentifier());
 	}
 
 	public void test_getSupportedIdentifier() throws Exception {

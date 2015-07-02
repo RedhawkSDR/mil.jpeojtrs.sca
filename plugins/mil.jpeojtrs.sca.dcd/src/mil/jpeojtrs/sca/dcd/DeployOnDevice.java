@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DeployOnDevice#getComponent <em>Component</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DeployOnDevice#getRefID <em>Ref ID</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.dcd.DcdPackage#getDeployOnDevice()
  * @model extendedMetaData="name='deployondevice' kind='empty'"

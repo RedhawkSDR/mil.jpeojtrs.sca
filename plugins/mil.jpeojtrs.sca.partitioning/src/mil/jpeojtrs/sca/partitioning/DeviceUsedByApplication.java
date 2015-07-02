@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getRefId <em>Ref Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getUsesRefId <em>Uses Ref Id</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getDeviceUsedByApplication()
  * @model extendedMetaData="kind='elementOnly' name='deviceusedbyapplication' qualified='false'"

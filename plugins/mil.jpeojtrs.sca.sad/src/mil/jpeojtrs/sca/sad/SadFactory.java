@@ -75,7 +75,7 @@ public interface SadFactory extends EFactory {
 	 * @param usesIdentifier The identifier of the uses port
 	 * @param componentRefId The component's reference ID in the SoftwareAssembly
 	 * @return The SadUsesPort instance
-	 * @since 2.4
+	 * @since 3.0
 	 */
 	SadUsesPort createSadUsesPort(String usesIdentifier, String componentRefId);
 
@@ -219,10 +219,10 @@ public interface SadFactory extends EFactory {
 	/**
 	 * Returns a new object of class '<em>Uses Device Dependencies</em>'.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Uses Device Dependencies</em>'.
 	 * @generated
-	 * @since 2.4
 	 */
 	UsesDeviceDependencies createUsesDeviceDependencies();
 

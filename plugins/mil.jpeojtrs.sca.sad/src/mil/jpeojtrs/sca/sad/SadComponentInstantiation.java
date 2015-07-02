@@ -22,11 +22,11 @@ import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.SadComponentInstantiation#getFindComponent <em>Find Component</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SadComponentInstantiation#getStartOrder <em>Start Order</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getSadComponentInstantiation()
  * @model extendedMetaData="name='componentinstantiation' kind='elementOnly' qualified='false'"

@@ -20,11 +20,11 @@ import mil.jpeojtrs.sca.scd.Provides;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ProvidesPortStub#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ProvidesPortStub#getProvides <em>Provides</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getProvidesPortStub()
  * @model extendedMetaData="kind='elementOnly' name='providesportstub' qualified='false'"

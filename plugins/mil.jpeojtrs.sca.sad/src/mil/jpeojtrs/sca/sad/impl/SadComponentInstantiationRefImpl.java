@@ -22,12 +22,10 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Component Instantiation Ref</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
-public class SadComponentInstantiationRefImpl extends ComponentInstantiationRefImpl<SadComponentInstantiation> implements SadComponentInstantiationRef {
+public class SadComponentInstantiationRefImpl extends ComponentInstantiationRefImpl<SadComponentInstantiation>implements SadComponentInstantiationRef {
 
 	/**
 	 * <!-- begin-user-doc -->

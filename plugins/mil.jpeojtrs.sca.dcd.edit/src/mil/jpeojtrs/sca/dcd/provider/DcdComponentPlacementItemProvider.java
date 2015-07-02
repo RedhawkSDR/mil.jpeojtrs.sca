@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -25,12 +24,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -39,14 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DcdComponentPlacementItemProvider
-	extends ComponentPlacementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class DcdComponentPlacementItemProvider extends ComponentPlacementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -65,8 +52,7 @@ public class DcdComponentPlacementItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addParentDevicePropertyDescriptor(object);
@@ -81,19 +67,10 @@ public class DcdComponentPlacementItemProvider
 	 * @generated
 	 */
 	protected void addParentDevicePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DcdComponentPlacement_parentDevice_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DcdComponentPlacement_parentDevice_feature", "_UI_DcdComponentPlacement_type"),
-				 DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__PARENT_DEVICE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_DcdComponentPlacement_parentDevice_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DcdComponentPlacement_parentDevice_feature", "_UI_DcdComponentPlacement_type"),
+			DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__PARENT_DEVICE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -105,9 +82,8 @@ public class DcdComponentPlacementItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE);
 			childrenFeatures.add(DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE);
@@ -151,13 +127,12 @@ public class DcdComponentPlacementItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DcdComponentPlacement.class))
-		{
-			case DcdPackage.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE:
-			case DcdPackage.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE:
-			case DcdPackage.DCD_COMPONENT_PLACEMENT__DEVICE_PKG_FILE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(DcdComponentPlacement.class)) {
+		case DcdPackage.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE:
+		case DcdPackage.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE:
+		case DcdPackage.DCD_COMPONENT_PLACEMENT__DEVICE_PKG_FILE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -173,20 +148,12 @@ public class DcdComponentPlacementItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE,
-				 DcdFactory.eINSTANCE.createDeployOnDevice()));
+		newChildDescriptors.add(createChildParameter(DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__DEPLOY_DEVICE, DcdFactory.eINSTANCE.createDeployOnDevice()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE,
-				 DcdFactory.eINSTANCE.createCompositePartOfDevice()));
+		newChildDescriptors.add(
+			createChildParameter(DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__COMPOSITE_PART_OF_DEVICE, DcdFactory.eINSTANCE.createCompositePartOfDevice()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__DEVICE_PKG_FILE,
-				 DcdFactory.eINSTANCE.createDevicePkgFile()));
+		newChildDescriptors.add(createChildParameter(DcdPackage.Literals.DCD_COMPONENT_PLACEMENT__DEVICE_PKG_FILE, DcdFactory.eINSTANCE.createDevicePkgFile()));
 	}
 
 	/**

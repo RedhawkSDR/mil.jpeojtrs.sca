@@ -97,8 +97,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDcdComponentPlacementAdapter() {
-		if (dcdComponentPlacementItemProvider == null)
-		{
+		if (dcdComponentPlacementItemProvider == null) {
 			dcdComponentPlacementItemProvider = new DcdComponentPlacementItemProvider(this);
 		}
 
@@ -121,8 +120,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDcdComponentInstantiationAdapter() {
-		if (dcdComponentInstantiationItemProvider == null)
-		{
+		if (dcdComponentInstantiationItemProvider == null) {
 			dcdComponentInstantiationItemProvider = new DcdComponentInstantiationItemProvider(this);
 		}
 
@@ -145,8 +143,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDcdPartitioningAdapter() {
-		if (dcdPartitioningItemProvider == null)
-		{
+		if (dcdPartitioningItemProvider == null) {
 			dcdPartitioningItemProvider = new DcdPartitioningItemProvider(this);
 		}
 
@@ -169,8 +166,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDcdComponentInstantiationRefAdapter() {
-		if (dcdComponentInstantiationRefItemProvider == null)
-		{
+		if (dcdComponentInstantiationRefItemProvider == null) {
 			dcdComponentInstantiationRefItemProvider = new DcdComponentInstantiationRefItemProvider(this);
 		}
 
@@ -193,8 +189,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDcdConnectInterfaceAdapter() {
-		if (dcdConnectInterfaceItemProvider == null)
-		{
+		if (dcdConnectInterfaceItemProvider == null) {
 			dcdConnectInterfaceItemProvider = new DcdConnectInterfaceItemProvider(this);
 		}
 
@@ -217,8 +212,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDcdUsesPortAdapter() {
-		if (dcdUsesPortItemProvider == null)
-		{
+		if (dcdUsesPortItemProvider == null) {
 			dcdUsesPortItemProvider = new DcdUsesPortItemProvider(this);
 		}
 
@@ -241,8 +235,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDcdProvidesPortAdapter() {
-		if (dcdProvidesPortItemProvider == null)
-		{
+		if (dcdProvidesPortItemProvider == null) {
 			dcdProvidesPortItemProvider = new DcdProvidesPortItemProvider(this);
 		}
 
@@ -265,8 +258,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDcdConnectionsAdapter() {
-		if (dcdConnectionsItemProvider == null)
-		{
+		if (dcdConnectionsItemProvider == null) {
 			dcdConnectionsItemProvider = new DcdConnectionsItemProvider(this);
 		}
 
@@ -289,8 +281,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createCompositePartOfDeviceAdapter() {
-		if (compositePartOfDeviceItemProvider == null)
-		{
+		if (compositePartOfDeviceItemProvider == null) {
 			compositePartOfDeviceItemProvider = new CompositePartOfDeviceItemProvider(this);
 		}
 
@@ -313,8 +304,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDcdDocumentRootAdapter() {
-		if (dcdDocumentRootItemProvider == null)
-		{
+		if (dcdDocumentRootItemProvider == null) {
 			dcdDocumentRootItemProvider = new DcdDocumentRootItemProvider(this);
 		}
 
@@ -337,8 +327,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDeployOnDeviceAdapter() {
-		if (deployOnDeviceItemProvider == null)
-		{
+		if (deployOnDeviceItemProvider == null) {
 			deployOnDeviceItemProvider = new DeployOnDeviceItemProvider(this);
 		}
 
@@ -361,8 +350,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDeviceConfigurationAdapter() {
-		if (deviceConfigurationItemProvider == null)
-		{
+		if (deviceConfigurationItemProvider == null) {
 			deviceConfigurationItemProvider = new DeviceConfigurationItemProvider(this);
 		}
 
@@ -385,8 +373,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDeviceManagerSoftPkgAdapter() {
-		if (deviceManagerSoftPkgItemProvider == null)
-		{
+		if (deviceManagerSoftPkgItemProvider == null) {
 			deviceManagerSoftPkgItemProvider = new DeviceManagerSoftPkgItemProvider(this);
 		}
 
@@ -409,8 +396,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDevicePkgFileAdapter() {
-		if (devicePkgFileItemProvider == null)
-		{
+		if (devicePkgFileItemProvider == null) {
 			devicePkgFileItemProvider = new DevicePkgFileItemProvider(this);
 		}
 
@@ -433,8 +419,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDomainManagerAdapter() {
-		if (domainManagerItemProvider == null)
-		{
+		if (domainManagerItemProvider == null) {
 			domainManagerItemProvider = new DomainManagerItemProvider(this);
 		}
 
@@ -457,8 +442,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createFileSystemNameAdapter() {
-		if (fileSystemNameItemProvider == null)
-		{
+		if (fileSystemNameItemProvider == null) {
 			fileSystemNameItemProvider = new FileSystemNameItemProvider(this);
 		}
 
@@ -481,8 +465,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createFileSystemNamesAdapter() {
-		if (fileSystemNamesItemProvider == null)
-		{
+		if (fileSystemNamesItemProvider == null) {
 			fileSystemNamesItemProvider = new FileSystemNamesItemProvider(this);
 		}
 
@@ -539,11 +522,9 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type))
-		{
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class< ? >) || (((Class< ? >) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -583,8 +564,7 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -597,23 +577,40 @@ public class DcdItemProviderAdapterFactory extends DcdAdapterFactory implements 
 	 */
 	@Override
 	public void dispose() {
-		if (dcdComponentPlacementItemProvider != null) dcdComponentPlacementItemProvider.dispose();
-		if (dcdComponentInstantiationItemProvider != null) dcdComponentInstantiationItemProvider.dispose();
-		if (dcdPartitioningItemProvider != null) dcdPartitioningItemProvider.dispose();
-		if (dcdComponentInstantiationRefItemProvider != null) dcdComponentInstantiationRefItemProvider.dispose();
-		if (dcdConnectInterfaceItemProvider != null) dcdConnectInterfaceItemProvider.dispose();
-		if (dcdUsesPortItemProvider != null) dcdUsesPortItemProvider.dispose();
-		if (dcdProvidesPortItemProvider != null) dcdProvidesPortItemProvider.dispose();
-		if (dcdConnectionsItemProvider != null) dcdConnectionsItemProvider.dispose();
-		if (compositePartOfDeviceItemProvider != null) compositePartOfDeviceItemProvider.dispose();
-		if (dcdDocumentRootItemProvider != null) dcdDocumentRootItemProvider.dispose();
-		if (deployOnDeviceItemProvider != null) deployOnDeviceItemProvider.dispose();
-		if (deviceConfigurationItemProvider != null) deviceConfigurationItemProvider.dispose();
-		if (deviceManagerSoftPkgItemProvider != null) deviceManagerSoftPkgItemProvider.dispose();
-		if (devicePkgFileItemProvider != null) devicePkgFileItemProvider.dispose();
-		if (domainManagerItemProvider != null) domainManagerItemProvider.dispose();
-		if (fileSystemNameItemProvider != null) fileSystemNameItemProvider.dispose();
-		if (fileSystemNamesItemProvider != null) fileSystemNamesItemProvider.dispose();
+		if (dcdComponentPlacementItemProvider != null)
+			dcdComponentPlacementItemProvider.dispose();
+		if (dcdComponentInstantiationItemProvider != null)
+			dcdComponentInstantiationItemProvider.dispose();
+		if (dcdPartitioningItemProvider != null)
+			dcdPartitioningItemProvider.dispose();
+		if (dcdComponentInstantiationRefItemProvider != null)
+			dcdComponentInstantiationRefItemProvider.dispose();
+		if (dcdConnectInterfaceItemProvider != null)
+			dcdConnectInterfaceItemProvider.dispose();
+		if (dcdUsesPortItemProvider != null)
+			dcdUsesPortItemProvider.dispose();
+		if (dcdProvidesPortItemProvider != null)
+			dcdProvidesPortItemProvider.dispose();
+		if (dcdConnectionsItemProvider != null)
+			dcdConnectionsItemProvider.dispose();
+		if (compositePartOfDeviceItemProvider != null)
+			compositePartOfDeviceItemProvider.dispose();
+		if (dcdDocumentRootItemProvider != null)
+			dcdDocumentRootItemProvider.dispose();
+		if (deployOnDeviceItemProvider != null)
+			deployOnDeviceItemProvider.dispose();
+		if (deviceConfigurationItemProvider != null)
+			deviceConfigurationItemProvider.dispose();
+		if (deviceManagerSoftPkgItemProvider != null)
+			deviceManagerSoftPkgItemProvider.dispose();
+		if (devicePkgFileItemProvider != null)
+			devicePkgFileItemProvider.dispose();
+		if (domainManagerItemProvider != null)
+			domainManagerItemProvider.dispose();
+		if (fileSystemNameItemProvider != null)
+			fileSystemNameItemProvider.dispose();
+		if (fileSystemNamesItemProvider != null)
+			fileSystemNamesItemProvider.dispose();
 	}
 
 }

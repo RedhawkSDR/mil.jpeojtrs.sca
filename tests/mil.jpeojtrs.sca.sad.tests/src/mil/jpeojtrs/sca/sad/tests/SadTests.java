@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * <!-- end-user-doc -->
  * @generated NOT
  */
-public class SadTests extends TestSuite{
+public class SadTests extends TestSuite {
 
 	private static ResourceSet createResourceSet() throws URISyntaxException {
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -49,7 +49,7 @@ public class SadTests extends TestSuite{
 		Resource resource = resourceSet.getResource(uri, true);
 		return SoftwareAssembly.Util.getSoftwareAssembly(resource);
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,7 +58,7 @@ public class SadTests extends TestSuite{
 	public SadTests(String name) {
 		super(name);
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

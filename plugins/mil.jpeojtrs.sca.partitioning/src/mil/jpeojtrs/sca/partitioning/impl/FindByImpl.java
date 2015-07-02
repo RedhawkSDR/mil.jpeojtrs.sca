@@ -29,11 +29,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.FindByImpl#getNamingService <em>Naming Service</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.FindByImpl#getDomainFinder <em>Domain Finder</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

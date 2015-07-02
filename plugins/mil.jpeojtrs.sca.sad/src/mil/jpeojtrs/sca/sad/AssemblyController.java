@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.AssemblyController#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getAssemblyController()
  * @model extendedMetaData="name='assemblycontroller' kind='elementOnly' qualified='false'"

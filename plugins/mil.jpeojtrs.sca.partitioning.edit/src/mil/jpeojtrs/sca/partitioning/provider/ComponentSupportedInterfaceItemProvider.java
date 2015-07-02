@@ -40,8 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -76,13 +76,12 @@ public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter
 	 * @generated
 	 */
 	protected void addSupportedIdentifierPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-			((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 			getString("_UI_ComponentSupportedInterface_supportedIdentifier_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_ComponentSupportedInterface_supportedIdentifier_feature",
-				"_UI_ComponentSupportedInterface_type"), PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER, true, false, false,
-			ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+				"_UI_ComponentSupportedInterface_type"),
+			PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__SUPPORTED_IDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+			null, null));
 	}
 
 	/**
@@ -201,8 +200,8 @@ public class ComponentSupportedInterfaceItemProvider extends ItemProviderAdapter
 		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__DEVICE_USED_BY_APPLICATION,
 			PartitioningFactory.eINSTANCE.createDeviceUsedByApplication()));
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__FIND_BY,
-			PartitioningFactory.eINSTANCE.createFindBy()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.COMPONENT_SUPPORTED_INTERFACE__FIND_BY, PartitioningFactory.eINSTANCE.createFindBy()));
 	}
 
 	/**

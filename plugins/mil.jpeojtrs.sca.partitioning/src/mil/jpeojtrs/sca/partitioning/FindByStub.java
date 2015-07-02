@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.FindByStub#getNamingService <em>Naming Service</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.FindByStub#getDomainFinder <em>Domain Finder</em>}</li>
@@ -27,7 +28,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.FindByStub#getUses <em>Uses</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.FindByStub#getInterface <em>Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getFindByStub()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidFindByStub'"

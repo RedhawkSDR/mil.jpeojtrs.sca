@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.DomainFinder#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.DomainFinder#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getDomainFinder()
  * @model extendedMetaData="kind='elementOnly' name='domainfinder' qualified='false'"

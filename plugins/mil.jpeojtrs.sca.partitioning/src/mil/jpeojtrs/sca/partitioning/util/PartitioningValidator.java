@@ -332,8 +332,8 @@ public class PartitioningValidator extends EObjectValidator {
 		if (connectInterface.getUsesPort() != null && connectInterface.getUsesPort().getComponentInstantiationRef() != null
 			&& connectInterface.getSource() == null) {
 			if (diagnostics != null) {
-				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic", new Object[] {
-					"ValidSourceReference", getObjectLabel(connectInterface, context) }, new Object[] { connectInterface }, context));
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
+					new Object[] { "ValidSourceReference", getObjectLabel(connectInterface, context) }, new Object[] { connectInterface }, context));
 			}
 			return false;
 		}
@@ -354,8 +354,8 @@ public class PartitioningValidator extends EObjectValidator {
 		if (connectInterface.getProvidesPort() != null && connectInterface.getProvidesPort().getComponentInstantiationRef() != null
 			&& connectInterface.getTarget() == null) {
 			if (diagnostics != null) {
-				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic", new Object[] {
-					"ValidTargetReference", getObjectLabel(connectInterface, context) }, new Object[] { connectInterface }, context));
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
+					new Object[] { "ValidTargetReference", getObjectLabel(connectInterface, context) }, new Object[] { connectInterface }, context));
 			}
 			return false;
 		}
@@ -469,8 +469,8 @@ public class PartitioningValidator extends EObjectValidator {
 		if ((findByStub.getDomainFinder() == null && findByStub.getNamingService() == null)
 			|| (findByStub.getDomainFinder() != null && findByStub.getNamingService() != null)) {
 			if (diagnostics != null) {
-				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic", new Object[] { "ValidFindByStub",
-					getObjectLabel(findByStub, context) }, new Object[] { findByStub }, context));
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
+					new Object[] { "ValidFindByStub", getObjectLabel(findByStub, context) }, new Object[] { findByStub }, context));
 			}
 			return false;
 		}

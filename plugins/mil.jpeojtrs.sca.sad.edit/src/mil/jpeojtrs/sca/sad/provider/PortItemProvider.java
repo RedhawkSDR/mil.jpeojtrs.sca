@@ -65,7 +65,7 @@ public class PortItemProvider extends ItemProviderAdapter implements IEditingDom
 
 			addDescriptionPropertyDescriptor(object);
 			addUsesIdentifierPropertyDescriptor(object);
-			addProvidesIndentifierPropertyDescriptor(object);
+			addProvidesIdentifierPropertyDescriptor(object);
 			addSupportedIdentifierPropertyDescriptor(object);
 			addExternalNamePropertyDescriptor(object);
 		}
@@ -97,16 +97,17 @@ public class PortItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	/**
-	 * This adds a property descriptor for the Provides Indentifier feature.
+	 * This adds a property descriptor for the Provides Identifier feature.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addProvidesIndentifierPropertyDescriptor(Object object) {
+	protected void addProvidesIdentifierPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_Port_providesIndentifier_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Port_providesIndentifier_feature", "_UI_Port_type"),
-			SadPackage.Literals.PORT__PROVIDES_INDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+			getString("_UI_Port_providesIdentifier_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Port_providesIdentifier_feature", "_UI_Port_type"),
+			SadPackage.Literals.PORT__PROVIDES_IDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -174,7 +175,7 @@ public class PortItemProvider extends ItemProviderAdapter implements IEditingDom
 	@Override
 	public Object getImage(Object object) {
 		Port port = (Port) object;
-		if (port.getProvidesIndentifier() != null) {
+		if (port.getProvidesIdentifier() != null) {
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/ProvidesPort"));
 		} else if (port.getSupportedIdentifier() != null) {
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentSupportedInterface"));
@@ -210,7 +211,7 @@ public class PortItemProvider extends ItemProviderAdapter implements IEditingDom
 		switch (notification.getFeatureID(Port.class)) {
 		case SadPackage.PORT__DESCRIPTION:
 		case SadPackage.PORT__USES_IDENTIFIER:
-		case SadPackage.PORT__PROVIDES_INDENTIFIER:
+		case SadPackage.PORT__PROVIDES_IDENTIFIER:
 		case SadPackage.PORT__SUPPORTED_IDENTIFIER:
 		case SadPackage.PORT__EXTERNAL_NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -233,8 +234,8 @@ public class PortItemProvider extends ItemProviderAdapter implements IEditingDom
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF,
-			SadFactory.eINSTANCE.createSadComponentInstantiationRef()));
+		newChildDescriptors.add(
+			createChildParameter(SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF, SadFactory.eINSTANCE.createSadComponentInstantiationRef()));
 	}
 
 	/**
@@ -263,7 +264,7 @@ public class PortItemProvider extends ItemProviderAdapter implements IEditingDom
 		if (object.getSupportedIdentifier() != null) {
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentSupportedInterface"));
 		}
-		if (object.getProvidesIndentifier() != null) {
+		if (object.getProvidesIdentifier() != null) {
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/ProvidesPort"));
 		}
 		if (object.getUsesIdentifier() != null) {
@@ -295,8 +296,8 @@ public class PortItemProvider extends ItemProviderAdapter implements IEditingDom
 
 	private String getPortName(Port port) {
 		String portLabel = "<Port>";
-		if (port.getProvidesIndentifier() != null) {
-			portLabel = port.getProvidesIndentifier();
+		if (port.getProvidesIdentifier() != null) {
+			portLabel = port.getProvidesIdentifier();
 		} else if (port.getSupportedIdentifier() != null) {
 			portLabel = port.getSupportedIdentifier();
 		} else if (port.getUsesIdentifier() != null) {

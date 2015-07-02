@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -41,14 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DeviceConfigurationItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class DeviceConfigurationItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -67,8 +60,7 @@ public class DeviceConfigurationItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -85,19 +77,10 @@ public class DeviceConfigurationItemProvider
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DeviceConfiguration_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeviceConfiguration_description_feature", "_UI_DeviceConfiguration_type"),
-				 DcdPackage.Literals.DEVICE_CONFIGURATION__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_DeviceConfiguration_description_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DeviceConfiguration_description_feature", "_UI_DeviceConfiguration_type"),
+			DcdPackage.Literals.DEVICE_CONFIGURATION__DESCRIPTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -107,19 +90,10 @@ public class DeviceConfigurationItemProvider
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DeviceConfiguration_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeviceConfiguration_id_feature", "_UI_DeviceConfiguration_type"),
-				 DcdPackage.Literals.DEVICE_CONFIGURATION__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_DeviceConfiguration_id_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DeviceConfiguration_id_feature", "_UI_DeviceConfiguration_type"),
+			DcdPackage.Literals.DEVICE_CONFIGURATION__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -129,19 +103,10 @@ public class DeviceConfigurationItemProvider
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DeviceConfiguration_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DeviceConfiguration_name_feature", "_UI_DeviceConfiguration_type"),
-				 DcdPackage.Literals.DEVICE_CONFIGURATION__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_DeviceConfiguration_name_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DeviceConfiguration_name_feature", "_UI_DeviceConfiguration_type"),
+			DcdPackage.Literals.DEVICE_CONFIGURATION__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -153,9 +118,8 @@ public class DeviceConfigurationItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DcdPackage.Literals.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG);
 			childrenFeatures.add(DcdPackage.Literals.DEVICE_CONFIGURATION__COMPONENT_FILES);
@@ -219,21 +183,20 @@ public class DeviceConfigurationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DeviceConfiguration.class))
-		{
-			case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
-			case DcdPackage.DEVICE_CONFIGURATION__ID:
-			case DcdPackage.DEVICE_CONFIGURATION__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
-			case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
-			case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
-			case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
-			case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
-			case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(DeviceConfiguration.class)) {
+		case DcdPackage.DEVICE_CONFIGURATION__DESCRIPTION:
+		case DcdPackage.DEVICE_CONFIGURATION__ID:
+		case DcdPackage.DEVICE_CONFIGURATION__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case DcdPackage.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG:
+		case DcdPackage.DEVICE_CONFIGURATION__COMPONENT_FILES:
+		case DcdPackage.DEVICE_CONFIGURATION__PARTITIONING:
+		case DcdPackage.DEVICE_CONFIGURATION__CONNECTIONS:
+		case DcdPackage.DEVICE_CONFIGURATION__DOMAIN_MANAGER:
+		case DcdPackage.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -249,30 +212,18 @@ public class DeviceConfigurationItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(DcdPackage.Literals.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG,
-				 DcdFactory.eINSTANCE.createDeviceManagerSoftPkg()));
+		newChildDescriptors.add(
+			createChildParameter(DcdPackage.Literals.DEVICE_CONFIGURATION__DEVICE_MANAGER_SOFT_PKG, DcdFactory.eINSTANCE.createDeviceManagerSoftPkg()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(DcdPackage.Literals.DEVICE_CONFIGURATION__COMPONENT_FILES,
-				 PartitioningFactory.eINSTANCE.createComponentFiles()));
+		newChildDescriptors.add(
+			createChildParameter(DcdPackage.Literals.DEVICE_CONFIGURATION__COMPONENT_FILES, PartitioningFactory.eINSTANCE.createComponentFiles()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(DcdPackage.Literals.DEVICE_CONFIGURATION__CONNECTIONS,
-				 DcdFactory.eINSTANCE.createDcdConnections()));
+		newChildDescriptors.add(createChildParameter(DcdPackage.Literals.DEVICE_CONFIGURATION__CONNECTIONS, DcdFactory.eINSTANCE.createDcdConnections()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(DcdPackage.Literals.DEVICE_CONFIGURATION__DOMAIN_MANAGER,
-				 DcdFactory.eINSTANCE.createDomainManager()));
+		newChildDescriptors.add(createChildParameter(DcdPackage.Literals.DEVICE_CONFIGURATION__DOMAIN_MANAGER, DcdFactory.eINSTANCE.createDomainManager()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(DcdPackage.Literals.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES,
-				 DcdFactory.eINSTANCE.createFileSystemNames()));
+		newChildDescriptors.add(
+			createChildParameter(DcdPackage.Literals.DEVICE_CONFIGURATION__FILE_SYSTEM_NAMES, DcdFactory.eINSTANCE.createFileSystemNames()));
 	}
 
 	/**

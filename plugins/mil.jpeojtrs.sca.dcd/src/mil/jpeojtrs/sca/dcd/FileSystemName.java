@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.FileSystemName#getDeviceID <em>Device ID</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.FileSystemName#getMountName <em>Mount Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.dcd.DcdPackage#getFileSystemName()
  * @model extendedMetaData="name='filesystemname' kind='empty'"

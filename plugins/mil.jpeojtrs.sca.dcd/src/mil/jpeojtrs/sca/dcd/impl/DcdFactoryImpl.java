@@ -52,16 +52,12 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 * @generated
 	 */
 	public static DcdFactory init() {
-		try
-		{
-			DcdFactory theDcdFactory = (DcdFactory)EPackage.Registry.INSTANCE.getEFactory(DcdPackage.eNS_URI);
-			if (theDcdFactory != null)
-			{
+		try {
+			DcdFactory theDcdFactory = (DcdFactory) EPackage.Registry.INSTANCE.getEFactory(DcdPackage.eNS_URI);
+			if (theDcdFactory != null) {
 				return theDcdFactory;
 			}
-		}
-		catch (Exception exception)
-		{
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DcdFactoryImpl();
@@ -84,27 +80,43 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID())
-		{
-			case DcdPackage.DCD_COMPONENT_PLACEMENT: return createDcdComponentPlacement();
-			case DcdPackage.DCD_COMPONENT_INSTANTIATION: return createDcdComponentInstantiation();
-			case DcdPackage.DCD_PARTITIONING: return createDcdPartitioning();
-			case DcdPackage.DCD_COMPONENT_INSTANTIATION_REF: return createDcdComponentInstantiationRef();
-			case DcdPackage.DCD_CONNECT_INTERFACE: return createDcdConnectInterface();
-			case DcdPackage.DCD_USES_PORT: return createDcdUsesPort();
-			case DcdPackage.DCD_PROVIDES_PORT: return createDcdProvidesPort();
-			case DcdPackage.DCD_CONNECTIONS: return createDcdConnections();
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE: return createCompositePartOfDevice();
-			case DcdPackage.DCD_DOCUMENT_ROOT: return createDcdDocumentRoot();
-			case DcdPackage.DEPLOY_ON_DEVICE: return createDeployOnDevice();
-			case DcdPackage.DEVICE_CONFIGURATION: return createDeviceConfiguration();
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG: return createDeviceManagerSoftPkg();
-			case DcdPackage.DEVICE_PKG_FILE: return createDevicePkgFile();
-			case DcdPackage.DOMAIN_MANAGER: return createDomainManager();
-			case DcdPackage.FILE_SYSTEM_NAME: return createFileSystemName();
-			case DcdPackage.FILE_SYSTEM_NAMES: return createFileSystemNames();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+		case DcdPackage.DCD_COMPONENT_PLACEMENT:
+			return createDcdComponentPlacement();
+		case DcdPackage.DCD_COMPONENT_INSTANTIATION:
+			return createDcdComponentInstantiation();
+		case DcdPackage.DCD_PARTITIONING:
+			return createDcdPartitioning();
+		case DcdPackage.DCD_COMPONENT_INSTANTIATION_REF:
+			return createDcdComponentInstantiationRef();
+		case DcdPackage.DCD_CONNECT_INTERFACE:
+			return createDcdConnectInterface();
+		case DcdPackage.DCD_USES_PORT:
+			return createDcdUsesPort();
+		case DcdPackage.DCD_PROVIDES_PORT:
+			return createDcdProvidesPort();
+		case DcdPackage.DCD_CONNECTIONS:
+			return createDcdConnections();
+		case DcdPackage.COMPOSITE_PART_OF_DEVICE:
+			return createCompositePartOfDevice();
+		case DcdPackage.DCD_DOCUMENT_ROOT:
+			return createDcdDocumentRoot();
+		case DcdPackage.DEPLOY_ON_DEVICE:
+			return createDeployOnDevice();
+		case DcdPackage.DEVICE_CONFIGURATION:
+			return createDeviceConfiguration();
+		case DcdPackage.DEVICE_MANAGER_SOFT_PKG:
+			return createDeviceManagerSoftPkg();
+		case DcdPackage.DEVICE_PKG_FILE:
+			return createDevicePkgFile();
+		case DcdPackage.DOMAIN_MANAGER:
+			return createDomainManager();
+		case DcdPackage.FILE_SYSTEM_NAME:
+			return createFileSystemName();
+		case DcdPackage.FILE_SYSTEM_NAMES:
+			return createFileSystemNames();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -302,7 +314,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	 */
 	@Override
 	public DcdPackage getDcdPackage() {
-		return (DcdPackage)getEPackage();
+		return (DcdPackage) getEPackage();
 	}
 
 	/**
@@ -318,7 +330,7 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 
 	@Override
 	public DevComponentFile createComponentFile() {
-	    return PartitioningFactory.eINSTANCE.createDevComponentFile();
-    }
+		return PartitioningFactory.eINSTANCE.createDevComponentFile();
+	}
 
 } //DcdFactoryImpl

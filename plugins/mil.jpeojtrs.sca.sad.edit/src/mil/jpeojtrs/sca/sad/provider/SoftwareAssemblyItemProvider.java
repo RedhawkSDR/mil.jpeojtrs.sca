@@ -230,21 +230,21 @@ public class SoftwareAssemblyItemProvider extends ItemProviderAdapter implements
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__COMPONENT_FILES,
-			PartitioningFactory.eINSTANCE.createComponentFiles()));
+		newChildDescriptors.add(
+			createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__COMPONENT_FILES, PartitioningFactory.eINSTANCE.createComponentFiles()));
 
 		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__PARTITIONING, SadFactory.eINSTANCE.createSadPartitioning()));
 
-		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER,
-			SadFactory.eINSTANCE.createAssemblyController()));
+		newChildDescriptors.add(
+			createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER, SadFactory.eINSTANCE.createAssemblyController()));
 
 		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS, SadFactory.eINSTANCE.createExternalPorts()));
 
-		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES,
-			SadFactory.eINSTANCE.createExternalProperties()));
+		newChildDescriptors.add(
+			createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, SadFactory.eINSTANCE.createExternalProperties()));
 
-		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES,
-			SadFactory.eINSTANCE.createUsesDeviceDependencies()));
+		newChildDescriptors.add(
+			createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES, SadFactory.eINSTANCE.createUsesDeviceDependencies()));
 	}
 
 	/**

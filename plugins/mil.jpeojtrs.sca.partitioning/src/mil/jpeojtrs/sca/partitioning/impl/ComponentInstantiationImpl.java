@@ -48,6 +48,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getUsageName <em>Usage Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getComponentProperties <em>Component Properties</em>}</li>
@@ -58,7 +59,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getPlacement <em>Placement</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getImplID <em>Impl ID</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -238,11 +238,11 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 		if (newComponentProperties != componentProperties) {
 			NotificationChain msgs = null;
 			if (componentProperties != null)
-				msgs = ((InternalEObject) componentProperties).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES, null, msgs);
+				msgs = ((InternalEObject) componentProperties).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES, null, msgs);
 			if (newComponentProperties != null)
-				msgs = ((InternalEObject) newComponentProperties).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES, null, msgs);
+				msgs = ((InternalEObject) newComponentProperties).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES, null, msgs);
 			msgs = basicSetComponentProperties(newComponentProperties, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -316,17 +316,17 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 		if (newInterfaceStub != interfaceStub) {
 			NotificationChain msgs = null;
 			if (interfaceStub != null)
-				msgs = ((InternalEObject) interfaceStub).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB, null, msgs);
+				msgs = ((InternalEObject) interfaceStub).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB, null, msgs);
 			if (newInterfaceStub != null)
-				msgs = ((InternalEObject) newInterfaceStub).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB, null, msgs);
+				msgs = ((InternalEObject) newInterfaceStub).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB, null, msgs);
 			msgs = basicSetInterfaceStub(newInterfaceStub, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB, newInterfaceStub,
-				newInterfaceStub));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB, newInterfaceStub, newInterfaceStub));
 	}
 
 	/**
@@ -644,6 +644,7 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 			}
 		}
 	};
+
 	{
 		eAdapters().add(this.adapter);
 	}

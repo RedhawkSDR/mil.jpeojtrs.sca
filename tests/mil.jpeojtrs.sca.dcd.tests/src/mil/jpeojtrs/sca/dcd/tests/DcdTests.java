@@ -33,8 +33,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  */
 public class DcdTests {
 
-	
-	public static DeviceConfiguration getDeviceConfiguration()  throws Exception {
+	public static DeviceConfiguration getDeviceConfiguration() throws Exception {
 		URI uri = URI.createURI(ScaFileSystemConstants.SCHEME_TARGET_SDR_DEV + ":///nodes/defaultNode/defaultNode.dcd.xml");
 		ResourceSet resourceSet = new ResourceSetImpl();
 		URL url = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.dcd.tests"), new Path("sdr"), null);
@@ -43,6 +42,5 @@ public class DcdTests {
 		Resource resource = resourceSet.getResource(uri, true);
 		return DeviceConfiguration.Util.getDeviceConfiguration(resource);
 	}
-
 
 } //DcdTests

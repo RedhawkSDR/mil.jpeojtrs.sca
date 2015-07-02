@@ -143,7 +143,6 @@ public class CompositePartOfDeviceTest extends TestCase {
 
 		final DcdComponentPlacement place = DcdFactory.eINSTANCE.createDcdComponentPlacement();
 		place.setComponentFileRef(CompositePartOfDeviceTest.this.conf.getPartitioning().getComponentPlacement().get(0).getComponentFileRef());
-		
 
 		final DcdComponentInstantiation inst = DcdFactory.eINSTANCE.createDcdComponentInstantiation();
 		inst.setId("TestCompInstRefID");

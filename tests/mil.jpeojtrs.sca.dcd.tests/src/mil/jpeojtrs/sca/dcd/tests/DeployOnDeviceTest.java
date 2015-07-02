@@ -140,7 +140,6 @@ public class DeployOnDeviceTest extends TestCase {
 		final DcdComponentInstantiation tempComp = this.getFixture().getComponent();
 		Assert.assertNotNull(tempComp);
 
-
 		tempComp.setId("DCE:3b5527f5-8488-4b09-bfff-2ec49a90bbbb");
 		getFixture().setComponent(tempComp);
 

@@ -27,12 +27,12 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortStubImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortStubImpl#getUses <em>Uses</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortStubImpl#getSupportedIdentifier <em>Supported Identifier</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

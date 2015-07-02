@@ -39,9 +39,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link mil.jpeojtrs.sca.sad.UsesDeviceDependencies} object.
  * <!-- begin-user-doc -->
+ * @since 3.0
  * <!-- end-user-doc -->
  * @generated
- * @since 2.4
  */
 public class UsesDeviceDependenciesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {

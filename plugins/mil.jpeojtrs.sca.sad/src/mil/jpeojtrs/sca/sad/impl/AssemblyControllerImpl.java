@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.AssemblyControllerImpl#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -105,11 +105,11 @@ public class AssemblyControllerImpl extends EObjectImpl implements AssemblyContr
 		if (newComponentInstantiationRef != componentInstantiationRef) {
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
-				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-					- SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, null, msgs);
 			if (newComponentInstantiationRef != null)
-				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-					- SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - SadPackage.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, null, msgs);
 			msgs = basicSetComponentInstantiationRef(newComponentInstantiationRef, msgs);
 			if (msgs != null)
 				msgs.dispatch();

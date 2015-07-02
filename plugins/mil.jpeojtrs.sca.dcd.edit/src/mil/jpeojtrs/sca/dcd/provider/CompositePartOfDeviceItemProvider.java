@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -38,14 +37,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CompositePartOfDeviceItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class CompositePartOfDeviceItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -65,8 +58,7 @@ public class CompositePartOfDeviceItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addComponentPropertyDescriptor(object);
@@ -82,19 +74,10 @@ public class CompositePartOfDeviceItemProvider
 	 * @generated
 	 */
 	protected void addComponentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CompositePartOfDevice_component_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CompositePartOfDevice_component_feature", "_UI_CompositePartOfDevice_type"),
-				 DcdPackage.Literals.COMPOSITE_PART_OF_DEVICE__COMPONENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_CompositePartOfDevice_component_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CompositePartOfDevice_component_feature", "_UI_CompositePartOfDevice_type"),
+			DcdPackage.Literals.COMPOSITE_PART_OF_DEVICE__COMPONENT, true, false, true, null, null, null));
 	}
 
 	/**
@@ -104,19 +87,10 @@ public class CompositePartOfDeviceItemProvider
 	 * @generated
 	 */
 	protected void addRefIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CompositePartOfDevice_refID_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CompositePartOfDevice_refID_feature", "_UI_CompositePartOfDevice_type"),
-				 DcdPackage.Literals.COMPOSITE_PART_OF_DEVICE__REF_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_CompositePartOfDevice_refID_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_CompositePartOfDevice_refID_feature", "_UI_CompositePartOfDevice_type"),
+			DcdPackage.Literals.COMPOSITE_PART_OF_DEVICE__REF_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -138,10 +112,8 @@ public class CompositePartOfDeviceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CompositePartOfDevice)object).getRefID();
-		return label == null || label.length() == 0 ?
-			getString("_UI_CompositePartOfDevice_type") :
-			getString("_UI_CompositePartOfDevice_type") + " " + label;
+		String label = ((CompositePartOfDevice) object).getRefID();
+		return label == null || label.length() == 0 ? getString("_UI_CompositePartOfDevice_type") : getString("_UI_CompositePartOfDevice_type") + " " + label;
 	}
 
 	/**
@@ -155,11 +127,10 @@ public class CompositePartOfDeviceItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(CompositePartOfDevice.class))
-		{
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(CompositePartOfDevice.class)) {
+		case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

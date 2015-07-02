@@ -29,12 +29,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
  * This is the item provider adapter for a {@link mil.jpeojtrs.sca.dcd.DcdPartitioning} object.
@@ -42,8 +37,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DcdPartitioningItemProvider extends PartitioningItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-        ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class DcdPartitioningItemProvider extends PartitioningItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -62,8 +56,7 @@ public class DcdPartitioningItemProvider extends PartitioningItemProvider implem
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -105,12 +98,8 @@ public class DcdPartitioningItemProvider extends PartitioningItemProvider implem
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(PartitioningPackage.Literals.PARTITIONING__PARTS,
-				 FeatureMapUtil.createEntry
-					(PartitioningPackage.Literals.PARTITIONING__COMPONENT_PLACEMENT,
-					 DcdFactory.eINSTANCE.createDcdComponentPlacement())));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.PARTITIONING__PARTS,
+			FeatureMapUtil.createEntry(PartitioningPackage.Literals.PARTITIONING__COMPONENT_PLACEMENT, DcdFactory.eINSTANCE.createDcdComponentPlacement())));
 	}
 
 	/**
@@ -147,8 +136,7 @@ public class DcdPartitioningItemProvider extends PartitioningItemProvider implem
 		for (final Object obj : part.getComponentPlacement()) {
 			final DcdComponentPlacement cp = (DcdComponentPlacement) obj;
 
-			if (cp.getCompositePartOfDevice() != null && 
-					cp.getCompositePartOfDevice().getRefID().equals(comp.getComponentInstantiation().get(0).getId())) {
+			if (cp.getCompositePartOfDevice() != null && cp.getCompositePartOfDevice().getRefID().equals(comp.getComponentInstantiation().get(0).getId())) {
 				children.add(cp);
 			}
 		}

@@ -33,12 +33,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.HostCollocationImpl#getComponentPlacement <em>Component Placement</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.HostCollocationImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.HostCollocationImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

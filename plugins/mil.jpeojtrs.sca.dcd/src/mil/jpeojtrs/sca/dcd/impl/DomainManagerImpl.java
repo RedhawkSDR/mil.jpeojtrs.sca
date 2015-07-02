@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DomainManagerImpl#getNamingService <em>Naming Service</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DomainManagerImpl#getStringifiedObjectRef <em>Stringified Object Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -103,10 +103,13 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	public NotificationChain basicSetNamingService(NamingService newNamingService, NotificationChain msgs) {
 		NamingService oldNamingService = namingService;
 		namingService = newNamingService;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE, oldNamingService, newNamingService);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE, oldNamingService,
+				newNamingService);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -118,17 +121,16 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public void setNamingService(NamingService newNamingService) {
-		if (newNamingService != namingService)
-		{
+		if (newNamingService != namingService) {
 			NotificationChain msgs = null;
 			if (namingService != null)
-				msgs = ((InternalEObject)namingService).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE, null, msgs);
+				msgs = ((InternalEObject) namingService).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE, null, msgs);
 			if (newNamingService != null)
-				msgs = ((InternalEObject)newNamingService).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE, null, msgs);
+				msgs = ((InternalEObject) newNamingService).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE, null, msgs);
 			msgs = basicSetNamingService(newNamingService, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE, newNamingService, newNamingService));
 	}
 
@@ -152,7 +154,8 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 		String oldStringifiedObjectRef = stringifiedObjectRef;
 		stringifiedObjectRef = newStringifiedObjectRef;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF, oldStringifiedObjectRef, stringifiedObjectRef));
+			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF, oldStringifiedObjectRef,
+				stringifiedObjectRef));
 	}
 
 	/**
@@ -162,10 +165,9 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
-				return basicSetNamingService(null, msgs);
+		switch (featureID) {
+		case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
+			return basicSetNamingService(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -177,12 +179,11 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
-				return getNamingService();
-			case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
-				return getStringifiedObjectRef();
+		switch (featureID) {
+		case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
+			return getNamingService();
+		case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
+			return getStringifiedObjectRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -194,14 +195,13 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
-				setNamingService((NamingService)newValue);
-				return;
-			case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
-				setStringifiedObjectRef((String)newValue);
-				return;
+		switch (featureID) {
+		case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
+			setNamingService((NamingService) newValue);
+			return;
+		case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
+			setStringifiedObjectRef((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -213,14 +213,13 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
-				setNamingService((NamingService)null);
-				return;
-			case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
-				setStringifiedObjectRef(STRINGIFIED_OBJECT_REF_EDEFAULT);
-				return;
+		switch (featureID) {
+		case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
+			setNamingService((NamingService) null);
+			return;
+		case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
+			setStringifiedObjectRef(STRINGIFIED_OBJECT_REF_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -232,12 +231,11 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
-				return namingService != null;
-			case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
-				return STRINGIFIED_OBJECT_REF_EDEFAULT == null ? stringifiedObjectRef != null : !STRINGIFIED_OBJECT_REF_EDEFAULT.equals(stringifiedObjectRef);
+		switch (featureID) {
+		case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
+			return namingService != null;
+		case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
+			return STRINGIFIED_OBJECT_REF_EDEFAULT == null ? stringifiedObjectRef != null : !STRINGIFIED_OBJECT_REF_EDEFAULT.equals(stringifiedObjectRef);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -249,7 +247,8 @@ public class DomainManagerImpl extends EObjectImpl implements DomainManager {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (stringifiedObjectRef: ");

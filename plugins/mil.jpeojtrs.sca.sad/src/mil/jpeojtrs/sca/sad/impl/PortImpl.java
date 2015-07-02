@@ -28,15 +28,15 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getUsesIdentifier <em>Uses Identifier</em>}</li>
- *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getProvidesIndentifier <em>Provides Indentifier</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getProvidesIdentifier <em>Provides Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getSupportedIdentifier <em>Supported Identifier</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getComponentInstantiationRef <em>Component Instantiation Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.PortImpl#getExternalName <em>External Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -79,23 +79,25 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	protected String usesIdentifier = USES_IDENTIFIER_EDEFAULT;
 	/**
-	 * The default value of the '{@link #getProvidesIndentifier() <em>Provides Indentifier</em>}' attribute.
+	 * The default value of the '{@link #getProvidesIdentifier() <em>Provides Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
-	 * @see #getProvidesIndentifier()
+	 * @see #getProvidesIdentifier()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String PROVIDES_INDENTIFIER_EDEFAULT = null;
+	protected static final String PROVIDES_IDENTIFIER_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getProvidesIndentifier() <em>Provides Indentifier</em>}' attribute.
+	 * The cached value of the '{@link #getProvidesIdentifier() <em>Provides Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
-	 * @see #getProvidesIndentifier()
+	 * @see #getProvidesIdentifier()
 	 * @generated
 	 * @ordered
 	 */
-	protected String providesIndentifier = PROVIDES_INDENTIFIER_EDEFAULT;
+	protected String providesIdentifier = PROVIDES_IDENTIFIER_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getSupportedIdentifier() <em>Supported Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -212,25 +214,25 @@ public class PortImpl extends EObjectImpl implements Port {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public String getProvidesIndentifier() {
-		return providesIndentifier;
+	public String getProvidesIdentifier() {
+		return providesIdentifier;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setProvidesIndentifier(String newProvidesIndentifier) {
-		String oldProvidesIndentifier = providesIndentifier;
-		providesIndentifier = newProvidesIndentifier;
+	public void setProvidesIdentifier(String newProvidesIdentifier) {
+		String oldProvidesIdentifier = providesIdentifier;
+		providesIdentifier = newProvidesIdentifier;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.PORT__PROVIDES_INDENTIFIER, oldProvidesIndentifier, providesIndentifier));
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.PORT__PROVIDES_IDENTIFIER, oldProvidesIdentifier, providesIdentifier));
 	}
 
 	/**
@@ -295,11 +297,11 @@ public class PortImpl extends EObjectImpl implements Port {
 		if (newComponentInstantiationRef != componentInstantiationRef) {
 			NotificationChain msgs = null;
 			if (componentInstantiationRef != null)
-				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this,
-					EOPPOSITE_FEATURE_BASE - SadPackage.PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) componentInstantiationRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.PORT__COMPONENT_INSTANTIATION_REF,
+					null, msgs);
 			if (newComponentInstantiationRef != null)
-				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this,
-					EOPPOSITE_FEATURE_BASE - SadPackage.PORT__COMPONENT_INSTANTIATION_REF, null, msgs);
+				msgs = ((InternalEObject) newComponentInstantiationRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.PORT__COMPONENT_INSTANTIATION_REF,
+					null, msgs);
 			msgs = basicSetComponentInstantiationRef(newComponentInstantiationRef, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -359,8 +361,8 @@ public class PortImpl extends EObjectImpl implements Port {
 			return getDescription();
 		case SadPackage.PORT__USES_IDENTIFIER:
 			return getUsesIdentifier();
-		case SadPackage.PORT__PROVIDES_INDENTIFIER:
-			return getProvidesIndentifier();
+		case SadPackage.PORT__PROVIDES_IDENTIFIER:
+			return getProvidesIdentifier();
 		case SadPackage.PORT__SUPPORTED_IDENTIFIER:
 			return getSupportedIdentifier();
 		case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
@@ -385,8 +387,8 @@ public class PortImpl extends EObjectImpl implements Port {
 		case SadPackage.PORT__USES_IDENTIFIER:
 			setUsesIdentifier((String) newValue);
 			return;
-		case SadPackage.PORT__PROVIDES_INDENTIFIER:
-			setProvidesIndentifier((String) newValue);
+		case SadPackage.PORT__PROVIDES_IDENTIFIER:
+			setProvidesIdentifier((String) newValue);
 			return;
 		case SadPackage.PORT__SUPPORTED_IDENTIFIER:
 			setSupportedIdentifier((String) newValue);
@@ -415,8 +417,8 @@ public class PortImpl extends EObjectImpl implements Port {
 		case SadPackage.PORT__USES_IDENTIFIER:
 			setUsesIdentifier(USES_IDENTIFIER_EDEFAULT);
 			return;
-		case SadPackage.PORT__PROVIDES_INDENTIFIER:
-			setProvidesIndentifier(PROVIDES_INDENTIFIER_EDEFAULT);
+		case SadPackage.PORT__PROVIDES_IDENTIFIER:
+			setProvidesIdentifier(PROVIDES_IDENTIFIER_EDEFAULT);
 			return;
 		case SadPackage.PORT__SUPPORTED_IDENTIFIER:
 			setSupportedIdentifier(SUPPORTED_IDENTIFIER_EDEFAULT);
@@ -443,8 +445,8 @@ public class PortImpl extends EObjectImpl implements Port {
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case SadPackage.PORT__USES_IDENTIFIER:
 			return USES_IDENTIFIER_EDEFAULT == null ? usesIdentifier != null : !USES_IDENTIFIER_EDEFAULT.equals(usesIdentifier);
-		case SadPackage.PORT__PROVIDES_INDENTIFIER:
-			return PROVIDES_INDENTIFIER_EDEFAULT == null ? providesIndentifier != null : !PROVIDES_INDENTIFIER_EDEFAULT.equals(providesIndentifier);
+		case SadPackage.PORT__PROVIDES_IDENTIFIER:
+			return PROVIDES_IDENTIFIER_EDEFAULT == null ? providesIdentifier != null : !PROVIDES_IDENTIFIER_EDEFAULT.equals(providesIdentifier);
 		case SadPackage.PORT__SUPPORTED_IDENTIFIER:
 			return SUPPORTED_IDENTIFIER_EDEFAULT == null ? supportedIdentifier != null : !SUPPORTED_IDENTIFIER_EDEFAULT.equals(supportedIdentifier);
 		case SadPackage.PORT__COMPONENT_INSTANTIATION_REF:
@@ -470,8 +472,8 @@ public class PortImpl extends EObjectImpl implements Port {
 		result.append(description);
 		result.append(", usesIdentifier: ");
 		result.append(usesIdentifier);
-		result.append(", providesIndentifier: ");
-		result.append(providesIndentifier);
+		result.append(", providesIdentifier: ");
+		result.append(providesIdentifier);
 		result.append(", supportedIdentifier: ");
 		result.append(supportedIdentifier);
 		result.append(", externalName: ");

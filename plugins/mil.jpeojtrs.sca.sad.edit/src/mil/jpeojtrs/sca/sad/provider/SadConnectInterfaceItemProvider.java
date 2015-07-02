@@ -91,8 +91,8 @@ public class SadConnectInterfaceItemProvider extends ConnectInterfaceItemProvide
 
 		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.CONNECT_INTERFACE__USES_PORT, SadFactory.eINSTANCE.createSadUsesPort()));
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.CONNECT_INTERFACE__PROVIDES_PORT,
-			SadFactory.eINSTANCE.createSadProvidesPort()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.CONNECT_INTERFACE__PROVIDES_PORT, SadFactory.eINSTANCE.createSadProvidesPort()));
 	}
 
 	/**

@@ -32,11 +32,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DeviceManagerSoftPkgImpl#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DeviceManagerSoftPkgImpl#getSoftPkg <em>Soft Pkg</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -88,14 +88,17 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	public NotificationChain basicSetLocalFileGen(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE, oldLocalFile, newLocalFile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE, oldLocalFile,
+				newLocalFile);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,7 +109,10 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 		msgs = basicSetLocalFileGen(newLocalFile, msgs);
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG, oldSpd, getSoftPkg());
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -118,17 +124,16 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public void setLocalFile(LocalFile newLocalFile) {
-		if (newLocalFile != localFile)
-		{
+		if (newLocalFile != localFile) {
 			NotificationChain msgs = null;
 			if (localFile != null)
-				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE, null, msgs);
 			if (newLocalFile != null)
-				msgs = ((InternalEObject)newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE, null, msgs);
 			msgs = basicSetLocalFile(newLocalFile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE, newLocalFile, newLocalFile));
 	}
 
@@ -140,7 +145,7 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	@Override
 	public SoftPkg getSoftPkg() {
 		SoftPkg softPkg = basicGetSoftPkg();
-		return softPkg != null && softPkg.eIsProxy() ? (SoftPkg)eResolveProxy((InternalEObject)softPkg) : softPkg;
+		return softPkg != null && softPkg.eIsProxy() ? (SoftPkg) eResolveProxy((InternalEObject) softPkg) : softPkg;
 	}
 
 	/**
@@ -152,8 +157,9 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 		// END GENERATED CODE
 		if (this.getLocalFile() == null) {
 			return null;
-		}	
-		return (SoftPkg) ScaUriHelpers.getLocalFileEObject(this.getLocalFile().getName(), this, SoftPkg.EOBJECT_PATH, ScaFileSystemConstants.SCHEME_TARGET_SDR_DEV);
+		}
+		return (SoftPkg) ScaUriHelpers.getLocalFileEObject(this.getLocalFile().getName(), this, SoftPkg.EOBJECT_PATH,
+			ScaFileSystemConstants.SCHEME_TARGET_SDR_DEV);
 		// BEGIN GENERATED CODE
 	}
 
@@ -182,10 +188,9 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
-				return basicSetLocalFile(null, msgs);
+		switch (featureID) {
+		case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
+			return basicSetLocalFile(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -197,13 +202,13 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
-				return getLocalFile();
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG:
-				if (resolve) return getSoftPkg();
-				return basicGetSoftPkg();
+		switch (featureID) {
+		case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
+			return getLocalFile();
+		case DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG:
+			if (resolve)
+				return getSoftPkg();
+			return basicGetSoftPkg();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -215,14 +220,13 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
-				setLocalFile((LocalFile)newValue);
-				return;
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG:
-				setSoftPkg((SoftPkg)newValue);
-				return;
+		switch (featureID) {
+		case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
+			setLocalFile((LocalFile) newValue);
+			return;
+		case DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG:
+			setSoftPkg((SoftPkg) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -234,14 +238,13 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
-				setLocalFile((LocalFile)null);
-				return;
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG:
-				setSoftPkg((SoftPkg)null);
-				return;
+		switch (featureID) {
+		case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
+			setLocalFile((LocalFile) null);
+			return;
+		case DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG:
+			setSoftPkg((SoftPkg) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -253,12 +256,11 @@ public class DeviceManagerSoftPkgImpl extends EObjectImpl implements DeviceManag
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
-				return localFile != null;
-			case DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG:
-				return basicGetSoftPkg() != null;
+		switch (featureID) {
+		case DcdPackage.DEVICE_MANAGER_SOFT_PKG__LOCAL_FILE:
+			return localFile != null;
+		case DcdPackage.DEVICE_MANAGER_SOFT_PKG__SOFT_PKG:
+			return basicGetSoftPkg() != null;
 		}
 		return super.eIsSet(featureID);
 	}

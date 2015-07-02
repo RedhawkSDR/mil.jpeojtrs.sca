@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.CompositePartOfDeviceImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.CompositePartOfDeviceImpl#getRefID <em>Ref ID</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -70,7 +70,8 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 				switch (msg.getFeatureID(CompositePartOfDevice.class)) {
 				case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
 					if (msg.getEventType() == Notification.SET && eNotificationRequired()) {
-						eNotify(new ENotificationImpl(CompositePartOfDeviceImpl.this, Notification.SET, DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT, null, getComponent()));
+						eNotify(new ENotificationImpl(CompositePartOfDeviceImpl.this, Notification.SET, DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT, null,
+							getComponent()));
 					}
 					break;
 				default:
@@ -99,7 +100,7 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	@Override
 	public DcdComponentInstantiation getComponent() {
 		DcdComponentInstantiation component = basicGetComponent();
-		return component != null && component.eIsProxy() ? (DcdComponentInstantiation)eResolveProxy((InternalEObject)component) : component;
+		return component != null && component.eIsProxy() ? (DcdComponentInstantiation) eResolveProxy((InternalEObject) component) : component;
 	}
 
 	/**
@@ -162,13 +163,13 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
-				if (resolve) return getComponent();
-				return basicGetComponent();
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
-				return getRefID();
+		switch (featureID) {
+		case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
+			if (resolve)
+				return getComponent();
+			return basicGetComponent();
+		case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
+			return getRefID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,14 +181,13 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
-				setComponent((DcdComponentInstantiation)newValue);
-				return;
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
-				setRefID((String)newValue);
-				return;
+		switch (featureID) {
+		case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
+			setComponent((DcdComponentInstantiation) newValue);
+			return;
+		case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
+			setRefID((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -199,14 +199,13 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
-				setComponent((DcdComponentInstantiation)null);
-				return;
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
-				setRefID(REF_ID_EDEFAULT);
-				return;
+		switch (featureID) {
+		case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
+			setComponent((DcdComponentInstantiation) null);
+			return;
+		case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
+			setRefID(REF_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,12 +217,11 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
-				return basicGetComponent() != null;
-			case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
-				return REF_ID_EDEFAULT == null ? refID != null : !REF_ID_EDEFAULT.equals(refID);
+		switch (featureID) {
+		case DcdPackage.COMPOSITE_PART_OF_DEVICE__COMPONENT:
+			return basicGetComponent() != null;
+		case DcdPackage.COMPOSITE_PART_OF_DEVICE__REF_ID:
+			return REF_ID_EDEFAULT == null ? refID != null : !REF_ID_EDEFAULT.equals(refID);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -235,7 +233,8 @@ public class CompositePartOfDeviceImpl extends EObjectImpl implements CompositeP
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (refID: ");

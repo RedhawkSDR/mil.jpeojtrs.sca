@@ -34,13 +34,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DcdDocumentRootImpl#getMixed <em>Mixed</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DcdDocumentRootImpl#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DcdDocumentRootImpl#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.impl.DcdDocumentRootImpl#getDeviceconfiguration <em>Deviceconfiguration</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -100,8 +100,7 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public FeatureMap getMixed() {
-		if (mixed == null)
-		{
+		if (mixed == null) {
 			mixed = new BasicFeatureMap(this, DcdPackage.DCD_DOCUMENT_ROOT__MIXED);
 		}
 		return mixed;
@@ -114,9 +113,9 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
-		if (xMLNSPrefixMap == null)
-		{
-			xMLNSPrefixMap = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+		if (xMLNSPrefixMap == null) {
+			xMLNSPrefixMap = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
 		}
 		return xMLNSPrefixMap;
 	}
@@ -128,9 +127,9 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public EMap<String, String> getXSISchemaLocation() {
-		if (xSISchemaLocation == null)
-		{
-			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+		if (xSISchemaLocation == null) {
+			xSISchemaLocation = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
 	}
@@ -142,7 +141,7 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public DeviceConfiguration getDeviceconfiguration() {
-		return (DeviceConfiguration)getMixed().get(DcdPackage.Literals.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION, true);
+		return (DeviceConfiguration) getMixed().get(DcdPackage.Literals.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION, true);
 	}
 
 	/**
@@ -151,7 +150,7 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 * @generated
 	 */
 	public NotificationChain basicSetDeviceconfiguration(DeviceConfiguration newDeviceconfiguration, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(DcdPackage.Literals.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION, newDeviceconfiguration, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(DcdPackage.Literals.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION, newDeviceconfiguration, msgs);
 	}
 
 	/**
@@ -161,7 +160,7 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public void setDeviceconfiguration(DeviceConfiguration newDeviceconfiguration) {
-		((FeatureMap.Internal)getMixed()).set(DcdPackage.Literals.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION, newDeviceconfiguration);
+		((FeatureMap.Internal) getMixed()).set(DcdPackage.Literals.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION, newDeviceconfiguration);
 	}
 
 	/**
@@ -171,16 +170,15 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case DcdPackage.DCD_DOCUMENT_ROOT__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
-			case DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return ((InternalEList<?>)getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
-			case DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return ((InternalEList<?>)getXSISchemaLocation()).basicRemove(otherEnd, msgs);
-			case DcdPackage.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION:
-				return basicSetDeviceconfiguration(null, msgs);
+		switch (featureID) {
+		case DcdPackage.DCD_DOCUMENT_ROOT__MIXED:
+			return ((InternalEList< ? >) getMixed()).basicRemove(otherEnd, msgs);
+		case DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return ((InternalEList< ? >) getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
+		case DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return ((InternalEList< ? >) getXSISchemaLocation()).basicRemove(otherEnd, msgs);
+		case DcdPackage.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION:
+			return basicSetDeviceconfiguration(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -192,19 +190,23 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case DcdPackage.DCD_DOCUMENT_ROOT__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
-			case DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				if (coreType) return getXMLNSPrefixMap();
-				else return getXMLNSPrefixMap().map();
-			case DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				if (coreType) return getXSISchemaLocation();
-				else return getXSISchemaLocation().map();
-			case DcdPackage.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION:
-				return getDeviceconfiguration();
+		switch (featureID) {
+		case DcdPackage.DCD_DOCUMENT_ROOT__MIXED:
+			if (coreType)
+				return getMixed();
+			return ((FeatureMap.Internal) getMixed()).getWrapper();
+		case DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			if (coreType)
+				return getXMLNSPrefixMap();
+			else
+				return getXMLNSPrefixMap().map();
+		case DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			if (coreType)
+				return getXSISchemaLocation();
+			else
+				return getXSISchemaLocation().map();
+		case DcdPackage.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION:
+			return getDeviceconfiguration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,20 +218,19 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case DcdPackage.DCD_DOCUMENT_ROOT__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
-				return;
-			case DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				((EStructuralFeature.Setting)getXMLNSPrefixMap()).set(newValue);
-				return;
-			case DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				((EStructuralFeature.Setting)getXSISchemaLocation()).set(newValue);
-				return;
-			case DcdPackage.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION:
-				setDeviceconfiguration((DeviceConfiguration)newValue);
-				return;
+		switch (featureID) {
+		case DcdPackage.DCD_DOCUMENT_ROOT__MIXED:
+			((FeatureMap.Internal) getMixed()).set(newValue);
+			return;
+		case DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			((EStructuralFeature.Setting) getXMLNSPrefixMap()).set(newValue);
+			return;
+		case DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			((EStructuralFeature.Setting) getXSISchemaLocation()).set(newValue);
+			return;
+		case DcdPackage.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION:
+			setDeviceconfiguration((DeviceConfiguration) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -241,20 +242,19 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.DCD_DOCUMENT_ROOT__MIXED:
-				getMixed().clear();
-				return;
-			case DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				getXMLNSPrefixMap().clear();
-				return;
-			case DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				getXSISchemaLocation().clear();
-				return;
-			case DcdPackage.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION:
-				setDeviceconfiguration((DeviceConfiguration)null);
-				return;
+		switch (featureID) {
+		case DcdPackage.DCD_DOCUMENT_ROOT__MIXED:
+			getMixed().clear();
+			return;
+		case DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			getXMLNSPrefixMap().clear();
+			return;
+		case DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			getXSISchemaLocation().clear();
+			return;
+		case DcdPackage.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION:
+			setDeviceconfiguration((DeviceConfiguration) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,16 +266,15 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case DcdPackage.DCD_DOCUMENT_ROOT__MIXED:
-				return mixed != null && !mixed.isEmpty();
-			case DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
-			case DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
-			case DcdPackage.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION:
-				return getDeviceconfiguration() != null;
+		switch (featureID) {
+		case DcdPackage.DCD_DOCUMENT_ROOT__MIXED:
+			return mixed != null && !mixed.isEmpty();
+		case DcdPackage.DCD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
+		case DcdPackage.DCD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
+		case DcdPackage.DCD_DOCUMENT_ROOT__DEVICECONFIGURATION:
+			return getDeviceconfiguration() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -287,7 +286,8 @@ public class DcdDocumentRootImpl extends EObjectImpl implements DcdDocumentRoot 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");

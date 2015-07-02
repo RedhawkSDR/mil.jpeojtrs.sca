@@ -124,10 +124,10 @@ public interface PartitioningFactory extends EFactory {
 	/**
 	 * Returns a new object of class '<em>Device Used By Application</em>'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Device Used By Application</em>'.
 	 * @generated
-	 * @since 2.0
 	 */
 	DeviceUsedByApplication createDeviceUsedByApplication();
 

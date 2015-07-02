@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SadPartitioningImpl#getHostCollocation <em>Host Collocation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement> implements SadPartitioning {
+public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>implements SadPartitioning {
 
 	/**
 	 * <!-- begin-user-doc -->

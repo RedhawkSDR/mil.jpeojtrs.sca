@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DeviceManagerSoftPkg#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DeviceManagerSoftPkg#getSoftPkg <em>Soft Pkg</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.dcd.DcdPackage#getDeviceManagerSoftPkg()
  * @model extendedMetaData="name='devicemanagersoftpkg' kind='elementOnly'"

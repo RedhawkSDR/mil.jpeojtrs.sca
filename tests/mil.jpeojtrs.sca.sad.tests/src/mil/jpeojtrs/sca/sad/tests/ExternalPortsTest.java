@@ -108,7 +108,7 @@ public class ExternalPortsTest extends TestCase {
 		}
 
 		Assert.assertEquals("externalPort", this.fixture.getPort().get(0).getUsesIdentifier());
-		Assert.assertEquals("anotherExternalPort", this.fixture.getPort().get(1).getProvidesIndentifier());
+		Assert.assertEquals("anotherExternalPort", this.fixture.getPort().get(1).getProvidesIdentifier());
 		Assert.assertEquals("IDL:BULKIO/dataFloat:1.0", this.fixture.getPort().get(2).getSupportedIdentifier());
 	}
 

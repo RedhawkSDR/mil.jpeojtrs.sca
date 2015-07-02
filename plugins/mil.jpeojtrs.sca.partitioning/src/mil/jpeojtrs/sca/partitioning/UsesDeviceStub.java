@@ -23,13 +23,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getUsesDevice <em>Uses Device</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getProvidesPortStubs <em>Provides Port Stubs</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getUsesPortStubs <em>Uses Port Stubs</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.UsesDeviceStub#getInterface <em>Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getUsesDeviceStub()
  * @model extendedMetaData="kind='elementOnly' name='deviceportstub' qualified='false'"

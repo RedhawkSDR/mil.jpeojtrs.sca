@@ -167,7 +167,7 @@ public class DevicePkgFileTest extends TestCase {
 
 		getFixture().setLocalFile(null);
 		Assert.assertNull(this.getFixture().getDevicePkg());
-		
+
 		getFixture().setDevicePkg(oldDP);
 		Assert.assertNotNull(this.getFixture().getDevicePkg());
 		Assert.assertTrue(this.getFixture().getLocalFile().getName(), this.getFixture().getLocalFile().getName().endsWith("devPkg2.dpd.xml"));

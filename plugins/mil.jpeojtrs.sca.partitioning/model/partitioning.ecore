@@ -720,7 +720,7 @@
         <eTypeArguments/>
       </eBounds>
     </eTypeParameters>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usesIndentifier" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usesIdentifier" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>

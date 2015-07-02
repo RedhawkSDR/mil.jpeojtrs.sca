@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.FindByStubImpl#getNamingService <em>Naming Service</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.FindByStubImpl#getDomainFinder <em>Domain Finder</em>}</li>
@@ -44,7 +45,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.FindByStubImpl#getUses <em>Uses</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.FindByStubImpl#getInterface <em>Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

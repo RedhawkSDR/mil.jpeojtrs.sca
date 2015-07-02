@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -40,14 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DomainManagerItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class DomainManagerItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -67,8 +60,7 @@ public class DomainManagerItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addStringifiedObjectRefPropertyDescriptor(object);
@@ -83,19 +75,10 @@ public class DomainManagerItemProvider
 	 * @generated
 	 */
 	protected void addStringifiedObjectRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DomainManager_stringifiedObjectRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DomainManager_stringifiedObjectRef_feature", "_UI_DomainManager_type"),
-				 DcdPackage.Literals.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_DomainManager_stringifiedObjectRef_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DomainManager_stringifiedObjectRef_feature", "_UI_DomainManager_type"),
+			DcdPackage.Literals.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -107,9 +90,8 @@ public class DomainManagerItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DcdPackage.Literals.DOMAIN_MANAGER__NAMING_SERVICE);
 		}
@@ -148,10 +130,8 @@ public class DomainManagerItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DomainManager)object).getStringifiedObjectRef();
-		return label == null || label.length() == 0 ?
-			getString("_UI_DomainManager_type") :
-			getString("_UI_DomainManager_type") + " " + label;
+		String label = ((DomainManager) object).getStringifiedObjectRef();
+		return label == null || label.length() == 0 ? getString("_UI_DomainManager_type") : getString("_UI_DomainManager_type") + " " + label;
 	}
 
 	/**
@@ -165,14 +145,13 @@ public class DomainManagerItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DomainManager.class))
-		{
-			case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(DomainManager.class)) {
+		case DcdPackage.DOMAIN_MANAGER__STRINGIFIED_OBJECT_REF:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case DcdPackage.DOMAIN_MANAGER__NAMING_SERVICE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -188,10 +167,7 @@ public class DomainManagerItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(DcdPackage.Literals.DOMAIN_MANAGER__NAMING_SERVICE,
-				 PartitioningFactory.eINSTANCE.createNamingService()));
+		newChildDescriptors.add(createChildParameter(DcdPackage.Literals.DOMAIN_MANAGER__NAMING_SERVICE, PartitioningFactory.eINSTANCE.createNamingService()));
 	}
 
 	/**

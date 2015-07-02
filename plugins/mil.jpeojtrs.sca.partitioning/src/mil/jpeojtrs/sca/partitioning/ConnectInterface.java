@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ConnectInterface#getUsesPort <em>Uses Port</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ConnectInterface#getProvidesPort <em>Provides Port</em>}</li>
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ConnectInterface#getSource <em>Source</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ConnectInterface#getTarget <em>Target</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getConnectInterface()
  * @model abstract="true"
@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.EObject;
  *        extendedMetaData="kind='elementOnly' name='connectinterface' qualified='false'"
  * @generated
  */
-public interface ConnectInterface< CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> extends EObject {
+public interface ConnectInterface< CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR> > extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Uses Port</b></em>' containment reference.

@@ -38,8 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FindByStubItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class FindByStubItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -144,14 +144,14 @@ public class FindByStubItemProvider extends ItemProviderAdapter implements IEdit
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.FIND_BY_STUB__NAMING_SERVICE,
-			PartitioningFactory.eINSTANCE.createNamingService()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.FIND_BY_STUB__NAMING_SERVICE, PartitioningFactory.eINSTANCE.createNamingService()));
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.FIND_BY_STUB__DOMAIN_FINDER,
-			PartitioningFactory.eINSTANCE.createDomainFinder()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.FIND_BY_STUB__DOMAIN_FINDER, PartitioningFactory.eINSTANCE.createDomainFinder()));
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.FIND_BY_STUB__INTERFACE,
-			PartitioningFactory.eINSTANCE.createComponentSupportedInterfaceStub()));
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.FIND_BY_STUB__INTERFACE, PartitioningFactory.eINSTANCE.createComponentSupportedInterfaceStub()));
 	}
 
 	/**

@@ -39,8 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentPropertiesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ComponentPropertiesItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -152,14 +152,14 @@ public class ComponentPropertiesItemProvider extends ItemProviderAdapter impleme
 		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_PROPERTIES__PROPERTIES,
 			FeatureMapUtil.createEntry(PartitioningPackage.Literals.COMPONENT_PROPERTIES__SIMPLE_REF, PrfFactory.eINSTANCE.createSimpleRef())));
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_PROPERTIES__PROPERTIES,
-			FeatureMapUtil.createEntry(PartitioningPackage.Literals.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF, PrfFactory.eINSTANCE.createSimpleSequenceRef())));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_PROPERTIES__PROPERTIES, FeatureMapUtil.createEntry(
+			PartitioningPackage.Literals.COMPONENT_PROPERTIES__SIMPLE_SEQUENCE_REF, PrfFactory.eINSTANCE.createSimpleSequenceRef())));
 
 		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_PROPERTIES__PROPERTIES,
 			FeatureMapUtil.createEntry(PartitioningPackage.Literals.COMPONENT_PROPERTIES__STRUCT_REF, PrfFactory.eINSTANCE.createStructRef())));
 
-		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_PROPERTIES__PROPERTIES,
-			FeatureMapUtil.createEntry(PartitioningPackage.Literals.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF, PrfFactory.eINSTANCE.createStructSequenceRef())));
+		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_PROPERTIES__PROPERTIES, FeatureMapUtil.createEntry(
+			PartitioningPackage.Literals.COMPONENT_PROPERTIES__STRUCT_SEQUENCE_REF, PrfFactory.eINSTANCE.createStructSequenceRef())));
 	}
 
 	/**

@@ -28,12 +28,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DevicePkgFile#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DevicePkgFile#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.dcd.DevicePkgFile#getDevicePkg <em>Device Pkg</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.dcd.DcdPackage#getDevicePkgFile()
  * @model extendedMetaData="name='devicepkgfile' kind='elementOnly'"

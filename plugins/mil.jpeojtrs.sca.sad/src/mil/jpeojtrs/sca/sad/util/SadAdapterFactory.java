@@ -213,28 +213,28 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public < U extends ComponentInstantiationRef< ? >> Adapter caseUsesPort(UsesPort<U> object) {
+		public < U extends ComponentInstantiationRef< ? > > Adapter caseUsesPort(UsesPort<U> object) {
 			return createUsesPortAdapter();
 		}
 
 		@Override
-		public < P extends ComponentInstantiationRef< ? >> Adapter caseProvidesPort(ProvidesPort<P> object) {
+		public < P extends ComponentInstantiationRef< ? > > Adapter caseProvidesPort(ProvidesPort<P> object) {
 			return createProvidesPortAdapter();
 		}
 
 		@Override
-		public < CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR>> Adapter caseConnectInterface(
+		public < CIR extends ComponentInstantiationRef< ? >, UP extends UsesPort<CIR>, PP extends ProvidesPort<CIR> > Adapter caseConnectInterface(
 			ConnectInterface<CIR, UP, PP> object) {
 			return createConnectInterfaceAdapter();
 		}
 
 		@Override
-		public < CI extends ConnectInterface< ? , ? , ? >> Adapter caseConnections(Connections<CI> object) {
+		public < CI extends ConnectInterface< ? , ? , ? > > Adapter caseConnections(Connections<CI> object) {
 			return createConnectionsAdapter();
 		}
 
 		@Override
-		public < C extends ComponentPlacement< ? >> Adapter casePartitioning(Partitioning<C> object) {
+		public < C extends ComponentPlacement< ? > > Adapter casePartitioning(Partitioning<C> object) {
 			return createPartitioningAdapter();
 		}
 
@@ -540,11 +540,11 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceDependencies
 	 * @generated
-	 * @since 2.4
 	 */
 	public Adapter createUsesDeviceDependenciesAdapter() {
 		return null;
