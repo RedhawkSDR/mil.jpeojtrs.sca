@@ -49,6 +49,7 @@ public abstract class UsesPortImpl< U extends ComponentInstantiationRef< ? > > e
 	/**
 	 * The default value of the '{@link #getUsesIdentifier() <em>Uses Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @see #getUsesIdentifier()
 	 * @generated
@@ -58,6 +59,7 @@ public abstract class UsesPortImpl< U extends ComponentInstantiationRef< ? > > e
 	/**
 	 * The cached value of the '{@link #getUsesIdentifier() <em>Uses Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @see #getUsesIdentifier()
 	 * @generated
@@ -132,6 +134,7 @@ public abstract class UsesPortImpl< U extends ComponentInstantiationRef< ? > > e
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -141,6 +144,7 @@ public abstract class UsesPortImpl< U extends ComponentInstantiationRef< ? > > e
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

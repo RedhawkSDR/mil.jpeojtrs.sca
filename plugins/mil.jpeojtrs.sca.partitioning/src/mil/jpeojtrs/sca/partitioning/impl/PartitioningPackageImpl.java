@@ -1272,6 +1272,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

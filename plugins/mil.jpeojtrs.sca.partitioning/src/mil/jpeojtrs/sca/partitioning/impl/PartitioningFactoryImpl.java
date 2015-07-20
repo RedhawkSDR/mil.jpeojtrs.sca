@@ -277,6 +277,7 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
