@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file is protected by Copyright.
+    Please refer to the COPYRIGHT file distributed with this source distribution.
+
+    This file is part of REDHAWK IDE.
+
+    All rights reserved.  This program and the accompanying materials are made available under
+    the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html.
+--><!DOCTYPE deviceconfiguration PUBLIC "-//JTRS//DTD SCA V2.2.2 DCD//EN" "deviceconfiguration.dtd">
+<deviceconfiguration id="DCE:7659215c-f4ef-4f42-abba-3c6968531150" name="LoggingConfig">
+  <devicemanagersoftpkg>
+    <localfile name="/mgr/DeviceManager.spd.xml"/>
+  </devicemanagersoftpkg>
+  <componentfiles>
+    <componentfile id="GPP_d3749087-6502-4310-b023-42fa6514d42e" type="SPD">
+      <localfile name="/devices/GPP/GPP.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="GPP_d3749087-6502-4310-b023-42fa6514d42e"/>
+      <componentinstantiation id="DCE:e44d01ad-6752-4a13-ab74-7b1aa1ce59f3">
+        <usagename>GPP_1</usagename>
+        <loggingconfig/>
+      </componentinstantiation>
+    </componentplacement>
+    <componentplacement>
+      <componentfileref refid="GPP_d3749087-6502-4310-b023-42fa6514d42e"/>
+      <componentinstantiation id="GPP_2">
+        <usagename>GPP_2</usagename>
+        <loggingconfig level="level_value"></loggingconfig>
+      </componentinstantiation>
+    </componentplacement>
+    <componentplacement>
+      <componentfileref refid="GPP_d3749087-6502-4310-b023-42fa6514d42e"/>
+      <componentinstantiation id="GPP_3">
+        <usagename>GPP_3</usagename>
+        <loggingconfig level="">uri_value</loggingconfig>
+      </componentinstantiation>
+    </componentplacement>
+    <componentplacement>
+      <componentfileref refid="GPP_d3749087-6502-4310-b023-42fa6514d42e"/>
+      <componentinstantiation id="GPP_4">
+        <usagename>GPP_4</usagename>
+        <loggingconfig level="level_value">uri_value</loggingconfig>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <domainmanager>
+    <namingservice name="REDHAWK_DEV/REDHAWK_DEV"/>
+  </domainmanager>
+</deviceconfiguration>

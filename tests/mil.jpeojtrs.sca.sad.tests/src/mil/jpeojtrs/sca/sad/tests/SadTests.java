@@ -14,11 +14,6 @@ package mil.jpeojtrs.sca.sad.tests;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
-import mil.jpeojtrs.sca.sad.SoftwareAssembly;
-import mil.jpeojtrs.sca.util.SdrURIHandler;
-
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
@@ -26,6 +21,12 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import junit.framework.Test;
+import junit.framework.TestSuite;
+import mil.jpeojtrs.sca.sad.SoftwareAssembly;
+import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
+import mil.jpeojtrs.sca.util.SdrURIHandler;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,11 +44,26 @@ public class SadTests extends TestSuite {
 		return resourceSet;
 	}
 
-	public static SoftwareAssembly getSoftwareAssembly() throws Exception {
-		URI uri = URI.createURI("sdrDom:///waveforms/GenericWaveform/GenericSadFile.sad.xml");
+	/**
+	 * Loads a SAD file from the specified dom file system path.
+	 * @param domPath
+	 * @return
+	 * @throws URISyntaxException
+	 */
+	public static SoftwareAssembly loadSADFromDomPath(String domPath) throws URISyntaxException {
+		URI uri = URI.createURI(ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM + "://" + domPath);
 		ResourceSet resourceSet = createResourceSet();
 		Resource resource = resourceSet.getResource(uri, true);
 		return SoftwareAssembly.Util.getSoftwareAssembly(resource);
+	}
+
+	/**
+	 * Gets the default SAD used by most tests.
+	 * @return
+	 * @throws URISyntaxException
+	 */
+	public static SoftwareAssembly getSoftwareAssembly() throws URISyntaxException {
+		return loadSADFromDomPath("/waveforms/GenericWaveform/GenericSadFile.sad.xml");
 	}
 
 	/**
@@ -77,4 +93,4 @@ public class SadTests extends TestSuite {
 		return suite;
 	}
 
-} //SadTests
+} // SadTests
