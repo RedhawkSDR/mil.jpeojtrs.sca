@@ -169,6 +169,24 @@ public interface DcdPackage extends EPackage {
 	 */
 	int DCD_COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES = PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES;
 	/**
+	 * The feature id for the '<em><b>Affinity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DCD_COMPONENT_INSTANTIATION__AFFINITY = PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY;
+	/**
+	 * The feature id for the '<em><b>Logging Config</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DCD_COMPONENT_INSTANTIATION__LOGGING_CONFIG = PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG;
+	/**
 	 * The feature id for the '<em><b>Provides</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

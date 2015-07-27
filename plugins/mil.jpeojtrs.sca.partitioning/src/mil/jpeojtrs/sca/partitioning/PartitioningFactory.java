@@ -68,15 +68,6 @@ public interface PartitioningFactory extends EFactory {
 	ComponentFiles createComponentFiles();
 
 	/**
-	 * Returns a new object of class '<em>Component Instantiation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component Instantiation</em>'.
-	 * @generated
-	 */
-	ComponentInstantiation createComponentInstantiation();
-
-	/**
 	 * Returns a new object of class '<em>Component Properties</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,6 +213,16 @@ public interface PartitioningFactory extends EFactory {
 	 * @generated
 	 */
 	LocalFile createLocalFile();
+
+	/**
+	 * Returns a new object of class '<em>Logging Config</em>'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logging Config</em>'.
+	 * @generated
+	 */
+	LoggingConfig createLoggingConfig();
 
 	/**
 	 * Returns a new object of class '<em>Naming Service</em>'.

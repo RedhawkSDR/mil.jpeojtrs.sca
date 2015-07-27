@@ -30,6 +30,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getUsageName <em>Usage Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getComponentProperties <em>Component Properties</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getAffinity <em>Affinity</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getLoggingConfig <em>Logging Config</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getProvides <em>Provides</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getUses <em>Uses</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getInterfaceStub <em>Interface Stub</em>}</li>
@@ -39,7 +41,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface ComponentInstantiation extends EObject {
@@ -100,6 +102,64 @@ public interface ComponentInstantiation extends EObject {
 	 * @generated
 	 */
 	void setComponentProperties(ComponentProperties value);
+
+	/**
+	 * Returns the value of the '<em><b>Affinity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Affinity</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Affinity</em>' containment reference.
+	 * @see #setAffinity(ComponentProperties)
+	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation_Affinity()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='affinity'"
+	 * @generated
+	 */
+	ComponentProperties getAffinity();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getAffinity <em>Affinity</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Affinity</em>' containment reference.
+	 * @see #getAffinity()
+	 * @generated
+	 */
+	void setAffinity(ComponentProperties value);
+
+	/**
+	 * Returns the value of the '<em><b>Logging Config</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Logging Config</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Logging Config</em>' containment reference.
+	 * @see #setLoggingConfig(LoggingConfig)
+	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation_LoggingConfig()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='loggingconfig'"
+	 * @generated
+	 */
+	LoggingConfig getLoggingConfig();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getLoggingConfig <em>Logging Config</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Logging Config</em>' containment reference.
+	 * @see #getLoggingConfig()
+	 * @generated
+	 */
+	void setLoggingConfig(LoggingConfig value);
 
 	/**
 	 * Returns the value of the '<em><b>Provides</b></em>' containment reference list.

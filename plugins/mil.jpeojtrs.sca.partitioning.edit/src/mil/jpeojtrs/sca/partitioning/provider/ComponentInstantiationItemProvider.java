@@ -108,6 +108,8 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES);
+			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__AFFINITY);
+			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__LOGGING_CONFIG);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__PROVIDES);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__USES);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__INTERFACE_STUB);
@@ -169,6 +171,8 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
+		case PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY:
+		case PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG:
 		case PartitioningPackage.COMPONENT_INSTANTIATION__PROVIDES:
 		case PartitioningPackage.COMPONENT_INSTANTIATION__USES:
 		case PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB:
@@ -192,8 +196,34 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter
 		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES,
 			PartitioningFactory.eINSTANCE.createComponentProperties()));
 
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__AFFINITY, PartitioningFactory.eINSTANCE.createComponentProperties()));
+
+		newChildDescriptors.add(
+			createChildParameter(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__LOGGING_CONFIG, PartitioningFactory.eINSTANCE.createLoggingConfig()));
+
 		newChildDescriptors.add(createChildParameter(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__INTERFACE_STUB,
 			PartitioningFactory.eINSTANCE.createComponentSupportedInterfaceStub()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection< ? > selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == PartitioningPackage.Literals.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES
+			|| childFeature == PartitioningPackage.Literals.COMPONENT_INSTANTIATION__AFFINITY;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

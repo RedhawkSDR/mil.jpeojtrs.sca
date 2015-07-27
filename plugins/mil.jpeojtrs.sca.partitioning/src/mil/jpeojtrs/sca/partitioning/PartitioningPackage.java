@@ -296,13 +296,31 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES = 1;
 	/**
+	 * The feature id for the '<em><b>Affinity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANTIATION__AFFINITY = 2;
+	/**
+	 * The feature id for the '<em><b>Logging Config</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANTIATION__LOGGING_CONFIG = 3;
+	/**
 	 * The feature id for the '<em><b>Provides</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANTIATION__PROVIDES = 2;
+	int COMPONENT_INSTANTIATION__PROVIDES = 4;
 	/**
 	 * The feature id for the '<em><b>Uses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -310,7 +328,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANTIATION__USES = 3;
+	int COMPONENT_INSTANTIATION__USES = 5;
 	/**
 	 * The feature id for the '<em><b>Interface Stub</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -318,7 +336,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANTIATION__INTERFACE_STUB = 4;
+	int COMPONENT_INSTANTIATION__INTERFACE_STUB = 6;
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -326,7 +344,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANTIATION__ID = 5;
+	int COMPONENT_INSTANTIATION__ID = 7;
 	/**
 	 * The feature id for the '<em><b>Placement</b></em>' container reference.
 	 * <!-- begin-user-doc -->
@@ -334,7 +352,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANTIATION__PLACEMENT = 6;
+	int COMPONENT_INSTANTIATION__PLACEMENT = 8;
 	/**
 	 * The feature id for the '<em><b>Impl ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -343,7 +361,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANTIATION__IMPL_ID = 7;
+	int COMPONENT_INSTANTIATION__IMPL_ID = 9;
 	/**
 	 * The number of structural features of the '<em>Component Instantiation</em>' class.
 	 * <!-- begin-user-doc -->
@@ -351,7 +369,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANTIATION_FEATURE_COUNT = 8;
+	int COMPONENT_INSTANTIATION_FEATURE_COUNT = 10;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationRefImpl <em>Component Instantiation Ref</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -960,6 +978,43 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int LOCAL_FILE_FEATURE_COUNT = 1;
 	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.LoggingConfigImpl <em>Logging Config</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.partitioning.impl.LoggingConfigImpl
+	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getLoggingConfig()
+	 * @generated
+	 */
+	int LOGGING_CONFIG = 22;
+	/**
+	 * The feature id for the '<em><b>Uri</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIG__URI = 0;
+	/**
+	 * The feature id for the '<em><b>Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIG__LEVEL = 1;
+	/**
+	 * The number of structural features of the '<em>Logging Config</em>' class.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGGING_CONFIG_FEATURE_COUNT = 2;
+	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.NamingServiceImpl <em>Naming Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -967,7 +1022,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getNamingService()
 	 * @generated
 	 */
-	int NAMING_SERVICE = 22;
+	int NAMING_SERVICE = 23;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -992,7 +1047,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getPartitioning()
 	 * @generated
 	 */
-	int PARTITIONING = 23;
+	int PARTITIONING = 24;
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
@@ -1025,7 +1080,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getProvidesPort()
 	 * @generated
 	 */
-	int PROVIDES_PORT = 24;
+	int PROVIDES_PORT = 25;
 	/**
 	 * The feature id for the '<em><b>Provides Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1091,7 +1146,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getProvidesPortStub()
 	 * @generated
 	 */
-	int PROVIDES_PORT_STUB = 25;
+	int PROVIDES_PORT_STUB = 26;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1124,7 +1179,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getUsesPort()
 	 * @generated
 	 */
-	int USES_PORT = 26;
+	int USES_PORT = 27;
 	/**
 	 * The feature id for the '<em><b>Uses Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1191,7 +1246,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getUsesPortStub()
 	 * @generated
 	 */
-	int USES_PORT_STUB = 27;
+	int USES_PORT_STUB = 28;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1233,7 +1288,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getUsesDeviceStub()
 	 * @generated
 	 */
-	int USES_DEVICE_STUB = 28;
+	int USES_DEVICE_STUB = 29;
 	/**
 	 * The feature id for the '<em><b>Uses Device</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -1287,7 +1342,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDomainFinderType()
 	 * @generated
 	 */
-	int DOMAIN_FINDER_TYPE = 29;
+	int DOMAIN_FINDER_TYPE = 30;
 	/**
 	 * The meta object id for the '<em>Domain Finder Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1296,7 +1351,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDomainFinderTypeObject()
 	 * @generated
 	 */
-	int DOMAIN_FINDER_TYPE_OBJECT = 30;
+	int DOMAIN_FINDER_TYPE_OBJECT = 31;
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.ComponentFile <em>Component File</em>}'.
@@ -1456,6 +1511,30 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentInstantiation_ComponentProperties();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getAffinity <em>Affinity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Affinity</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getAffinity()
+	 * @see #getComponentInstantiation()
+	 * @generated
+	 */
+	EReference getComponentInstantiation_Affinity();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getLoggingConfig <em>Logging Config</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Logging Config</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getLoggingConfig()
+	 * @see #getComponentInstantiation()
+	 * @generated
+	 */
+	EReference getComponentInstantiation_LoggingConfig();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getProvides <em>Provides</em>}'.
@@ -2142,6 +2221,41 @@ public interface PartitioningPackage extends EPackage {
 	EAttribute getLocalFile_Name();
 
 	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.LoggingConfig <em>Logging Config</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Logging Config</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.LoggingConfig
+	 * @generated
+	 */
+	EClass getLoggingConfig();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.LoggingConfig#getUri <em>Uri</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.LoggingConfig#getUri()
+	 * @see #getLoggingConfig()
+	 * @generated
+	 */
+	EAttribute getLoggingConfig_Uri();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.LoggingConfig#getLevel <em>Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Level</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.LoggingConfig#getLevel()
+	 * @see #getLoggingConfig()
+	 * @generated
+	 */
+	EAttribute getLoggingConfig_Level();
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.NamingService <em>Naming Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2647,6 +2761,22 @@ public interface PartitioningPackage extends EPackage {
 		 */
 		EReference COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES = eINSTANCE.getComponentInstantiation_ComponentProperties();
 		/**
+		 * The meta object literal for the '<em><b>Affinity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		* @since 2.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANTIATION__AFFINITY = eINSTANCE.getComponentInstantiation_Affinity();
+		/**
+		 * The meta object literal for the '<em><b>Logging Config</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		* @since 2.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANTIATION__LOGGING_CONFIG = eINSTANCE.getComponentInstantiation_LoggingConfig();
+		/**
 		 * The meta object literal for the '<em><b>Provides</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3126,6 +3256,32 @@ public interface PartitioningPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LOCAL_FILE__NAME = eINSTANCE.getLocalFile_Name();
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.LoggingConfigImpl <em>Logging Config</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * @since 2.0
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.partitioning.impl.LoggingConfigImpl
+		 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getLoggingConfig()
+		 * @generated
+		 */
+		EClass LOGGING_CONFIG = eINSTANCE.getLoggingConfig();
+		/**
+		 * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 2.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGGING_CONFIG__URI = eINSTANCE.getLoggingConfig_Uri();
+		/**
+		 * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 2.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGGING_CONFIG__LEVEL = eINSTANCE.getLoggingConfig_Level();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.NamingServiceImpl <em>Naming Service</em>}' class.
 		 * <!-- begin-user-doc -->

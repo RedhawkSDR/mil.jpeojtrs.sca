@@ -12,9 +12,7 @@
 package mil.jpeojtrs.sca.partitioning.tests;
 
 import junit.framework.TestCase;
-import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
-import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.scd.Ports;
 import mil.jpeojtrs.sca.scd.ScdPackage;
@@ -37,7 +35,7 @@ import org.junit.Assert;
  * </p>
  * @generated
  */
-public class ComponentInstantiationTest extends TestCase {
+public abstract class ComponentInstantiationTest extends TestCase {
 
 	/**
 	 * The fixture for this Component Instantiation test case.
@@ -46,15 +44,6 @@ public class ComponentInstantiationTest extends TestCase {
 	 * @generated
 	 */
 	protected ComponentInstantiation fixture = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(ComponentInstantiationTest.class);
-	}
 
 	/**
 	 * Constructs a new Component Instantiation test case with the given name.
@@ -84,28 +73,6 @@ public class ComponentInstantiationTest extends TestCase {
 	 */
 	protected ComponentInstantiation getFixture() {
 		return fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(PartitioningFactory.eINSTANCE.createComponentInstantiation());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 	private static final EStructuralFeature[] PORTS_PATH = { PartitioningPackage.Literals.COMPONENT_INSTANTIATION__PLACEMENT,

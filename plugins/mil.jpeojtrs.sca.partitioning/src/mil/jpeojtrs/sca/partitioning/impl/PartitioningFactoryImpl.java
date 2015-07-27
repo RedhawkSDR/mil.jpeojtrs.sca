@@ -11,9 +11,15 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
 import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
 import mil.jpeojtrs.sca.partitioning.ComponentFiles;
-import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
 import mil.jpeojtrs.sca.partitioning.ComponentProperties;
 import mil.jpeojtrs.sca.partitioning.ComponentSupportedInterface;
 import mil.jpeojtrs.sca.partitioning.ComponentSupportedInterfaceStub;
@@ -28,19 +34,13 @@ import mil.jpeojtrs.sca.partitioning.FindBy;
 import mil.jpeojtrs.sca.partitioning.FindByStub;
 import mil.jpeojtrs.sca.partitioning.FindByStubContainer;
 import mil.jpeojtrs.sca.partitioning.LocalFile;
+import mil.jpeojtrs.sca.partitioning.LoggingConfig;
 import mil.jpeojtrs.sca.partitioning.NamingService;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
 import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,8 +94,6 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 			return createComponentFileRef();
 		case PartitioningPackage.COMPONENT_FILES:
 			return createComponentFiles();
-		case PartitioningPackage.COMPONENT_INSTANTIATION:
-			return createComponentInstantiation();
 		case PartitioningPackage.COMPONENT_PROPERTIES:
 			return createComponentProperties();
 		case PartitioningPackage.COMPONENT_SUPPORTED_INTERFACE:
@@ -118,6 +116,8 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 			return createFindByStubContainer();
 		case PartitioningPackage.LOCAL_FILE:
 			return createLocalFile();
+		case PartitioningPackage.LOGGING_CONFIG:
+			return createLoggingConfig();
 		case PartitioningPackage.NAMING_SERVICE:
 			return createNamingService();
 		case PartitioningPackage.PROVIDES_PORT_STUB:
@@ -207,17 +207,6 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	public ComponentFiles createComponentFiles() {
 		ComponentFilesImpl componentFiles = new ComponentFilesImpl();
 		return componentFiles;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ComponentInstantiation createComponentInstantiation() {
-		ComponentInstantiationImpl componentInstantiation = new ComponentInstantiationImpl();
-		return componentInstantiation;
 	}
 
 	/**
@@ -412,6 +401,17 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	public LocalFile createLocalFile() {
 		LocalFileImpl localFile = new LocalFileImpl();
 		return localFile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LoggingConfig createLoggingConfig() {
+		LoggingConfigImpl loggingConfig = new LoggingConfigImpl();
+		return loggingConfig;
 	}
 
 	/**

@@ -11,24 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
-import mil.jpeojtrs.sca.partitioning.ComponentFile;
-import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
-import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
-import mil.jpeojtrs.sca.partitioning.ComponentPlacement;
-import mil.jpeojtrs.sca.partitioning.ComponentProperties;
-import mil.jpeojtrs.sca.partitioning.ComponentSupportedInterfaceStub;
-import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
-import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
-import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
-import mil.jpeojtrs.sca.partitioning.UsesPortStub;
-import mil.jpeojtrs.sca.scd.ComponentFeatures;
-import mil.jpeojtrs.sca.scd.Ports;
-import mil.jpeojtrs.sca.scd.Provides;
-import mil.jpeojtrs.sca.scd.SoftwareComponent;
-import mil.jpeojtrs.sca.scd.Uses;
-import mil.jpeojtrs.sca.spd.Descriptor;
-import mil.jpeojtrs.sca.spd.SoftPkg;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -42,6 +24,25 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import mil.jpeojtrs.sca.partitioning.ComponentFile;
+import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
+import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
+import mil.jpeojtrs.sca.partitioning.ComponentPlacement;
+import mil.jpeojtrs.sca.partitioning.ComponentProperties;
+import mil.jpeojtrs.sca.partitioning.ComponentSupportedInterfaceStub;
+import mil.jpeojtrs.sca.partitioning.LoggingConfig;
+import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
+import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
+import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
+import mil.jpeojtrs.sca.partitioning.UsesPortStub;
+import mil.jpeojtrs.sca.scd.ComponentFeatures;
+import mil.jpeojtrs.sca.scd.Ports;
+import mil.jpeojtrs.sca.scd.Provides;
+import mil.jpeojtrs.sca.scd.SoftwareComponent;
+import mil.jpeojtrs.sca.scd.Uses;
+import mil.jpeojtrs.sca.spd.Descriptor;
+import mil.jpeojtrs.sca.spd.SoftPkg;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Component Instantiation</b></em>'.
@@ -52,6 +53,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getUsageName <em>Usage Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getComponentProperties <em>Component Properties</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getAffinity <em>Affinity</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getLoggingConfig <em>Logging Config</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getProvides <em>Provides</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getUses <em>Uses</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getInterfaceStub <em>Interface Stub</em>}</li>
@@ -62,7 +65,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ComponentInstantiationImpl extends EObjectImpl implements ComponentInstantiation {
+public abstract class ComponentInstantiationImpl extends EObjectImpl implements ComponentInstantiation {
 	/**
 	 * The default value of the '{@link #getUsageName() <em>Usage Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,6 +93,26 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 	 * @ordered
 	 */
 	protected ComponentProperties componentProperties;
+	/**
+	 * The cached value of the '{@link #getAffinity() <em>Affinity</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @see #getAffinity()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentProperties affinity;
+	/**
+	 * The cached value of the '{@link #getLoggingConfig() <em>Logging Config</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @see #getLoggingConfig()
+	 * @generated
+	 * @ordered
+	 */
+	protected LoggingConfig loggingConfig;
 	/**
 	 * The cached value of the '{@link #getProvides() <em>Provides</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -249,6 +272,111 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES, newComponentProperties,
 				newComponentProperties));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentProperties getAffinity() {
+		return affinity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAffinity(ComponentProperties newAffinity, NotificationChain msgs) {
+		ComponentProperties oldAffinity = affinity;
+		affinity = newAffinity;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY, oldAffinity,
+				newAffinity);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAffinity(ComponentProperties newAffinity) {
+		if (newAffinity != affinity) {
+			NotificationChain msgs = null;
+			if (affinity != null)
+				msgs = ((InternalEObject) affinity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY, null,
+					msgs);
+			if (newAffinity != null)
+				msgs = ((InternalEObject) newAffinity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY, null,
+					msgs);
+			msgs = basicSetAffinity(newAffinity, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY, newAffinity, newAffinity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LoggingConfig getLoggingConfig() {
+		return loggingConfig;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLoggingConfig(LoggingConfig newLoggingConfig, NotificationChain msgs) {
+		LoggingConfig oldLoggingConfig = loggingConfig;
+		loggingConfig = newLoggingConfig;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG,
+				oldLoggingConfig, newLoggingConfig);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLoggingConfig(LoggingConfig newLoggingConfig) {
+		if (newLoggingConfig != loggingConfig) {
+			NotificationChain msgs = null;
+			if (loggingConfig != null)
+				msgs = ((InternalEObject) loggingConfig).eInverseRemove(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG, null, msgs);
+			if (newLoggingConfig != null)
+				msgs = ((InternalEObject) newLoggingConfig).eInverseAdd(this,
+					EOPPOSITE_FEATURE_BASE - PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG, null, msgs);
+			msgs = basicSetLoggingConfig(newLoggingConfig, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG, newLoggingConfig, newLoggingConfig));
 	}
 
 	/**
@@ -448,6 +576,10 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 		switch (featureID) {
 		case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
 			return basicSetComponentProperties(null, msgs);
+		case PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY:
+			return basicSetAffinity(null, msgs);
+		case PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG:
+			return basicSetLoggingConfig(null, msgs);
 		case PartitioningPackage.COMPONENT_INSTANTIATION__PROVIDES:
 			return ((InternalEList< ? >) getProvides()).basicRemove(otherEnd, msgs);
 		case PartitioningPackage.COMPONENT_INSTANTIATION__USES:
@@ -486,6 +618,10 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 			return getUsageName();
 		case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
 			return getComponentProperties();
+		case PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY:
+			return getAffinity();
+		case PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG:
+			return getLoggingConfig();
 		case PartitioningPackage.COMPONENT_INSTANTIATION__PROVIDES:
 			return getProvides();
 		case PartitioningPackage.COMPONENT_INSTANTIATION__USES:
@@ -515,6 +651,12 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 			return;
 		case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
 			setComponentProperties((ComponentProperties) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY:
+			setAffinity((ComponentProperties) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG:
+			setLoggingConfig((LoggingConfig) newValue);
 			return;
 		case PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB:
 			setInterfaceStub((ComponentSupportedInterfaceStub) newValue);
@@ -546,6 +688,12 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 		case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
 			setComponentProperties((ComponentProperties) null);
 			return;
+		case PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY:
+			setAffinity((ComponentProperties) null);
+			return;
+		case PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG:
+			setLoggingConfig((LoggingConfig) null);
+			return;
 		case PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB:
 			setInterfaceStub((ComponentSupportedInterfaceStub) null);
 			return;
@@ -574,6 +722,10 @@ public class ComponentInstantiationImpl extends EObjectImpl implements Component
 			return USAGE_NAME_EDEFAULT == null ? usageName != null : !USAGE_NAME_EDEFAULT.equals(usageName);
 		case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
 			return componentProperties != null;
+		case PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY:
+			return affinity != null;
+		case PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG:
+			return loggingConfig != null;
 		case PartitioningPackage.COMPONENT_INSTANTIATION__PROVIDES:
 			return provides != null && !provides.isEmpty();
 		case PartitioningPackage.COMPONENT_INSTANTIATION__USES:

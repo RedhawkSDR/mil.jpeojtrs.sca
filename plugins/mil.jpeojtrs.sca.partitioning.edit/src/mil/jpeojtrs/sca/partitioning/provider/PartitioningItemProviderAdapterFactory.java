@@ -194,29 +194,6 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComponentInstantiationItemProvider componentInstantiationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createComponentInstantiationAdapter() {
-		if (componentInstantiationItemProvider == null) {
-			componentInstantiationItemProvider = new ComponentInstantiationItemProvider(this);
-		}
-
-		return componentInstantiationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.ComponentProperties} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -468,6 +445,30 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 		}
 
 		return localFileItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.LoggingConfig} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LoggingConfigItemProvider loggingConfigItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.partitioning.LoggingConfig}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLoggingConfigAdapter() {
+		if (loggingConfigItemProvider == null) {
+			loggingConfigItemProvider = new LoggingConfigItemProvider(this);
+		}
+
+		return loggingConfigItemProvider;
 	}
 
 	/**

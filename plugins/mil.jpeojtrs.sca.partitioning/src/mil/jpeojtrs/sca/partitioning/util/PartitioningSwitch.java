@@ -11,6 +11,10 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.util;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
+
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
 import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
 import mil.jpeojtrs.sca.partitioning.ComponentFiles;
@@ -33,6 +37,7 @@ import mil.jpeojtrs.sca.partitioning.FindBy;
 import mil.jpeojtrs.sca.partitioning.FindByStub;
 import mil.jpeojtrs.sca.partitioning.FindByStubContainer;
 import mil.jpeojtrs.sca.partitioning.LocalFile;
+import mil.jpeojtrs.sca.partitioning.LoggingConfig;
 import mil.jpeojtrs.sca.partitioning.NamingService;
 import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
@@ -42,9 +47,6 @@ import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
 import mil.jpeojtrs.sca.prf.PropertyRefContainer;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -264,6 +266,13 @@ public class PartitioningSwitch< T > extends Switch<T> {
 		case PartitioningPackage.LOCAL_FILE: {
 			LocalFile localFile = (LocalFile) theEObject;
 			T result = caseLocalFile(localFile);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PartitioningPackage.LOGGING_CONFIG: {
+			LoggingConfig loggingConfig = (LoggingConfig) theEObject;
+			T result = caseLoggingConfig(loggingConfig);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -653,6 +662,22 @@ public class PartitioningSwitch< T > extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLocalFile(LocalFile object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Logging Config</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Logging Config</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLoggingConfig(LoggingConfig object) {
 		return null;
 	}
 

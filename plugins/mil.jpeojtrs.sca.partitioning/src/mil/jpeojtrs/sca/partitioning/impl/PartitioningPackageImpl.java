@@ -11,6 +11,19 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.ETypeParameter;
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
+
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
 import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
 import mil.jpeojtrs.sca.partitioning.ComponentFiles;
@@ -34,6 +47,7 @@ import mil.jpeojtrs.sca.partitioning.FindBy;
 import mil.jpeojtrs.sca.partitioning.FindByStub;
 import mil.jpeojtrs.sca.partitioning.FindByStubContainer;
 import mil.jpeojtrs.sca.partitioning.LocalFile;
+import mil.jpeojtrs.sca.partitioning.LoggingConfig;
 import mil.jpeojtrs.sca.partitioning.NamingService;
 import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
@@ -47,19 +61,6 @@ import mil.jpeojtrs.sca.partitioning.util.PartitioningValidator;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.spd.SpdPackage;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.ETypeParameter;
-import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -201,6 +202,12 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * @generated
 	 */
 	private EClass localFileEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass loggingConfigEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -481,21 +488,21 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getComponentInstantiation_Provides() {
+	public EReference getComponentInstantiation_Affinity() {
 		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getComponentInstantiation_Uses() {
+	public EReference getComponentInstantiation_LoggingConfig() {
 		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -505,7 +512,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * @generated
 	 */
 	@Override
-	public EReference getComponentInstantiation_InterfaceStub() {
+	public EReference getComponentInstantiation_Provides() {
 		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -515,8 +522,28 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * @generated
 	 */
 	@Override
+	public EReference getComponentInstantiation_Uses() {
+		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponentInstantiation_InterfaceStub() {
+		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getComponentInstantiation_Id() {
-		return (EAttribute) componentInstantiationEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) componentInstantiationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -526,7 +553,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EReference getComponentInstantiation_Placement() {
-		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(6);
+		return (EReference) componentInstantiationEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -537,7 +564,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 */
 	@Override
 	public EAttribute getComponentInstantiation_ImplID() {
-		return (EAttribute) componentInstantiationEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) componentInstantiationEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1112,6 +1139,36 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLoggingConfig() {
+		return loggingConfigEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLoggingConfig_Uri() {
+		return (EAttribute) loggingConfigEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLoggingConfig_Level() {
+		return (EAttribute) loggingConfigEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1490,6 +1547,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		componentInstantiationEClass = createEClass(COMPONENT_INSTANTIATION);
 		createEAttribute(componentInstantiationEClass, COMPONENT_INSTANTIATION__USAGE_NAME);
 		createEReference(componentInstantiationEClass, COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES);
+		createEReference(componentInstantiationEClass, COMPONENT_INSTANTIATION__AFFINITY);
+		createEReference(componentInstantiationEClass, COMPONENT_INSTANTIATION__LOGGING_CONFIG);
 		createEReference(componentInstantiationEClass, COMPONENT_INSTANTIATION__PROVIDES);
 		createEReference(componentInstantiationEClass, COMPONENT_INSTANTIATION__USES);
 		createEReference(componentInstantiationEClass, COMPONENT_INSTANTIATION__INTERFACE_STUB);
@@ -1569,6 +1628,10 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 		localFileEClass = createEClass(LOCAL_FILE);
 		createEAttribute(localFileEClass, LOCAL_FILE__NAME);
+
+		loggingConfigEClass = createEClass(LOGGING_CONFIG);
+		createEAttribute(loggingConfigEClass, LOGGING_CONFIG__URI);
+		createEAttribute(loggingConfigEClass, LOGGING_CONFIG__LEVEL);
 
 		namingServiceEClass = createEClass(NAMING_SERVICE);
 		createEAttribute(namingServiceEClass, NAMING_SERVICE__NAME);
@@ -1729,13 +1792,17 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		initEReference(getComponentFiles_ComponentFile(), this.getComponentFile(), null, "componentFile", null, 1, -1, ComponentFiles.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentInstantiationEClass, ComponentInstantiation.class, "ComponentInstantiation", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(componentInstantiationEClass, ComponentInstantiation.class, "ComponentInstantiation", IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponentInstantiation_UsageName(), theXMLTypePackage.getString(), "usageName", null, 0, 1, ComponentInstantiation.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstantiation_ComponentProperties(), this.getComponentProperties(), null, "componentProperties", null, 0, 1,
 			ComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 			IS_ORDERED);
+		initEReference(getComponentInstantiation_Affinity(), this.getComponentProperties(), null, "affinity", null, 0, 1, ComponentInstantiation.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentInstantiation_LoggingConfig(), this.getLoggingConfig(), null, "loggingConfig", null, 0, 1, ComponentInstantiation.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstantiation_Provides(), this.getProvidesPortStub(), null, "provides", null, 0, -1, ComponentInstantiation.class,
 			IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentInstantiation_Uses(), this.getUsesPortStub(), null, "uses", null, 0, -1, ComponentInstantiation.class, IS_TRANSIENT,
@@ -1891,6 +1958,12 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		initEAttribute(getLocalFile_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, LocalFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(loggingConfigEClass, LoggingConfig.class, "LoggingConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLoggingConfig_Uri(), theXMLTypePackage.getString(), "uri", null, 0, 1, LoggingConfig.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLoggingConfig_Level(), theXMLTypePackage.getString(), "level", null, 0, 1, LoggingConfig.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(namingServiceEClass, NamingService.class, "NamingService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamingService_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, NamingService.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2005,6 +2078,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation(getComponentFiles_ComponentFile(), source, new String[] { "kind", "element", "name", "componentfile" });
 		addAnnotation(getComponentInstantiation_UsageName(), source, new String[] { "kind", "element", "name", "usagename" });
 		addAnnotation(getComponentInstantiation_ComponentProperties(), source, new String[] { "kind", "element", "name", "componentproperties" });
+		addAnnotation(getComponentInstantiation_Affinity(), source, new String[] { "kind", "element", "name", "affinity" });
+		addAnnotation(getComponentInstantiation_LoggingConfig(), source, new String[] { "kind", "element", "name", "loggingconfig" });
 		addAnnotation(getComponentInstantiation_Provides(), source, new String[] { "kind", "element", "name", "provides" });
 		addAnnotation(getComponentInstantiation_Uses(), source, new String[] { "kind", "element", "name", "uses" });
 		addAnnotation(getComponentInstantiation_InterfaceStub(), source, new String[] { "kind", "element", "name", "interfaceports" });
@@ -2074,6 +2149,9 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation(getFindByStubContainer_Stubs(), source, new String[] { "kind", "element", "name", "stubs" });
 		addAnnotation(localFileEClass, source, new String[] { "kind", "elementOnly", "name", "localfile", "qualified", "false" });
 		addAnnotation(getLocalFile_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(loggingConfigEClass, source, new String[] { "kind", "simple", "name", "loggingconfig" });
+		addAnnotation(getLoggingConfig_Uri(), source, new String[] { "kind", "simple", "name", ":0" });
+		addAnnotation(getLoggingConfig_Level(), source, new String[] { "kind", "attribute", "name", "level" });
 		addAnnotation(namingServiceEClass, source, new String[] { "kind", "elementOnly", "name", "namingservice", "qualified", "false" });
 		addAnnotation(getNamingService_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(partitioningEClass, source, new String[] { "kind", "elementOnly", "name", "partitioning", "qualified", "false" });

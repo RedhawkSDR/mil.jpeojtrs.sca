@@ -12,6 +12,12 @@
 package mil.jpeojtrs.sca.partitioning.util;
 
 import java.util.Map;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
 import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
 import mil.jpeojtrs.sca.partitioning.ComponentFiles;
@@ -35,6 +41,7 @@ import mil.jpeojtrs.sca.partitioning.FindBy;
 import mil.jpeojtrs.sca.partitioning.FindByStub;
 import mil.jpeojtrs.sca.partitioning.FindByStubContainer;
 import mil.jpeojtrs.sca.partitioning.LocalFile;
+import mil.jpeojtrs.sca.partitioning.LoggingConfig;
 import mil.jpeojtrs.sca.partitioning.NamingService;
 import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
@@ -44,11 +51,6 @@ import mil.jpeojtrs.sca.partitioning.ScaPartitioningActivator;
 import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -163,6 +165,8 @@ public class PartitioningValidator extends EObjectValidator {
 			return validateFindByStubContainer((FindByStubContainer) value, diagnostics, context);
 		case PartitioningPackage.LOCAL_FILE:
 			return validateLocalFile((LocalFile) value, diagnostics, context);
+		case PartitioningPackage.LOGGING_CONFIG:
+			return validateLoggingConfig((LoggingConfig) value, diagnostics, context);
 		case PartitioningPackage.NAMING_SERVICE:
 			return validateNamingService((NamingService) value, diagnostics, context);
 		case PartitioningPackage.PARTITIONING:
@@ -493,6 +497,16 @@ public class PartitioningValidator extends EObjectValidator {
 	 */
 	public boolean validateLocalFile(LocalFile localFile, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(localFile, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLoggingConfig(LoggingConfig loggingConfig, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(loggingConfig, diagnostics, context);
 	}
 
 	/**

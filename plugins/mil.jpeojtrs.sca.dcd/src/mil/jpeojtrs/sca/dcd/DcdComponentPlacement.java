@@ -40,20 +40,20 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 public interface DcdComponentPlacement extends ComponentPlacement<DcdComponentInstantiation> {
 
 	/**
-	* Returns the value of the '<em><b>Deploy Device</b></em>' containment reference.
-	* <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Deploy Device</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* <!-- begin-model-doc -->
-	* The optional deployondevice element indicates the device on which the componentinstantiation
-	* element is deployed.
-	* <!-- end-model-doc -->
-	* @return the value of the '<em>Deploy Device</em>' containment reference.
-	* @see #setDeployDevice(DeployOnDevice)
-	* @see mil.jpeojtrs.sca.dcd.DcdPackage#getDcdComponentPlacement_DeployDevice()
-	* @model containment="true"
-	*        extendedMetaData="kind='element' name='deployondevice'"
-	* @generated
-	*/
+	 * <!-- begin-model-doc -->
+	 * The optional deployondevice element indicates the device on which the componentinstantiation
+	 * element is deployed.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Deploy Device</em>' containment reference.
+	 * @see #setDeployDevice(DeployOnDevice)
+	 * @see mil.jpeojtrs.sca.dcd.DcdPackage#getDcdComponentPlacement_DeployDevice()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='deployondevice'"
+	 * @generated
+	 */
 	DeployOnDevice getDeployDevice();
 
 	/**
