@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file is protected by Copyright.
+    Please refer to the COPYRIGHT file distributed with this source distribution.
+
+    This file is part of REDHAWK IDE.
+
+    All rights reserved.  This program and the accompanying materials are made available under
+    the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html.
+--><!DOCTYPE deviceconfiguration PUBLIC "-//JTRS//DTD SCA V2.2.2 DCD//EN" "deviceconfiguration.dtd">
+<deviceconfiguration id="DCE:0644f7b6-f2ec-4ca3-838d-2136b0a3da3c" name="LoggingConfig">
+  <devicemanagersoftpkg>
+    <localfile name="/mgr/DeviceManager.spd.xml"/>
+  </devicemanagersoftpkg>
+  <componentfiles>
+    <componentfile id="GPP_a832b300-280f-46bb-8b23-da72041fcc51" type="SPD">
+      <localfile name="/devices/GPP/GPP.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="GPP_a832b300-280f-46bb-8b23-da72041fcc51"/>
+      <componentinstantiation id="DCE:e44d01ad-6752-4a13-ab74-7b1aa1ce59f3">
+        <usagename>GPP_1</usagename>
+      </componentinstantiation>
+    </componentplacement>
+    <componentplacement>
+      <componentfileref refid="GPP_a832b300-280f-46bb-8b23-da72041fcc51"/>
+      <componentinstantiation id="GPP_2">
+        <usagename>GPP_2</usagename>
+        <affinity>
+          <simpleref refid="simple_id" value="simple_value"/>
+          <simplesequenceref refid="simpleSequence_id">
+            <values>
+              <value>simpleSequence_value</value>
+            </values>
+          </simplesequenceref>
+          <structref refid="struct_id">
+            <simpleref refid="simple_id2" value="struct_value"/>
+          </structref>
+          <structsequenceref refid="structSequence_id">
+            <structvalue>
+              <simpleref refid="simple_id3" value="structSequence_value"/>
+            </structvalue>
+          </structsequenceref>
+        </affinity>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <domainmanager>
+    <namingservice name="REDHAWK_DEV/REDHAWK_DEV"/>
+  </domainmanager>
+</deviceconfiguration>

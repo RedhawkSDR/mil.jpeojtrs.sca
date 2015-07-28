@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file is protected by Copyright.
+    Please refer to the COPYRIGHT file distributed with this source distribution.
+
+    This file is part of REDHAWK IDE.
+
+    All rights reserved.  This program and the accompanying materials are made available under
+    the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html.
+-->
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
+<softwareassembly id="DCE:d0929c3f-499a-407b-ad6e-731b9117e664" name="Affinity">
+  <componentfiles>
+    <componentfile id="SigGen_bc19af66-5f48-4372-be7f-696183118a3d" type="SPD">
+      <localfile name="/components/rh/SigGen/SigGen.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="SigGen_bc19af66-5f48-4372-be7f-696183118a3d"/>
+      <componentinstantiation id="SigGen_1" startorder="0">
+        <usagename>SigGen_1</usagename>
+        <findcomponent>
+          <namingservice name="SigGen_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+    <componentplacement>
+      <componentfileref refid="SigGen_bc19af66-5f48-4372-be7f-696183118a3d"/>
+      <componentinstantiation id="SigGen_2" startorder="1">
+        <usagename>SigGen_2</usagename>
+        <affinity>
+          <simpleref refid="simple_id" value="simple_value"/>
+          <simplesequenceref refid="simpleSequence_id">
+            <values>
+              <value>simpleSequence_value</value>
+            </values>
+          </simplesequenceref>
+          <structref refid="struct_id">
+            <simpleref refid="simple_id2" value="struct_value"/>
+          </structref>
+          <structsequenceref refid="structSequence_id">
+            <structvalue>
+              <simpleref refid="simple_id3" value="structSequence_value"/>
+            </structvalue>
+          </structsequenceref>
+        </affinity>
+        <findcomponent>
+          <namingservice name="SigGen_2"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <assemblycontroller>
+    <componentinstantiationref refid="SigGen_1"/>
+  </assemblycontroller>
+</softwareassembly>
