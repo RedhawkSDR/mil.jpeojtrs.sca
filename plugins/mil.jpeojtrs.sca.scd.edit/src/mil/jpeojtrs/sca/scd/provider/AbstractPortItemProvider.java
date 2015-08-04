@@ -11,10 +11,13 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.provider;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import mil.jpeojtrs.sca.scd.AbstractPort;
+import mil.jpeojtrs.sca.scd.PortType;
+import mil.jpeojtrs.sca.scd.PortTypeContainer;
 import mil.jpeojtrs.sca.scd.ScdFactory;
 import mil.jpeojtrs.sca.scd.ScdPackage;
 
@@ -25,6 +28,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -214,6 +218,97 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 			}
 		}
 		return super.createSetCommand(domain, owner, feature, value, index);
+	}
+
+	@Override
+	protected Command createAddCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Collection< ? > collection, int index) {
+		if (feature == ScdPackage.Literals.ABSTRACT_PORT__PORT_TYPE) {
+			AbstractPort port = (AbstractPort) owner;
+
+			// Filter out values that are already set and create PortTypeContainer instances for raw PortType values
+			collection = toPortTypeContainers(port, collection);
+			if (port.isBiDirectional()) {
+				// Create a compound command to do the add on both the target port and the sibling, using the method
+				// from the superclass to avoid infinite recursion.
+				CompoundCommand command = new CompoundCommand();
+				command.append(super.createAddCommand(domain, port, feature, collection, index));
+
+				// Create copies of the PortTypeContainers, otherwise they will just be moved to the sibling. 
+				collection = EcoreUtil.copyAll(collection);
+				command.append(super.createAddCommand(domain, port.getSibling(), feature, collection, index));
+				return command;
+			}
+		}
+		return super.createAddCommand(domain, owner, feature, collection, index);
+	}
+
+	private Collection<PortTypeContainer> toPortTypeContainers(AbstractPort port, Collection< ? > types) {
+		Collection<PortTypeContainer> collection = new ArrayList<PortTypeContainer>();
+		for (Object type : types) {
+			if (type instanceof PortTypeContainer) {
+				// Extract the enumeration value--the container instances aren't important, just the value
+				type = ((PortTypeContainer) type).getType();
+			}
+
+			if (type instanceof PortType) {
+				// Only add the new type if it's not already set on the port or in the current collection
+				PortType portType = (PortType) type;
+				if (findPortType(port.getPortType(), portType) == null && findPortType(collection, portType) == null) {
+					collection.add(ScdFactory.eINSTANCE.createPortTypeContainer(portType));
+				}
+			}
+		}
+		return collection;
+	}
+
+	@Override
+	protected Command createRemoveCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Collection< ? > collection) {
+		if (feature == ScdPackage.Literals.ABSTRACT_PORT__PORT_TYPE) {
+			AbstractPort port =(AbstractPort) owner;
+
+			if (port.isBiDirectional()) {
+				// Create a compound command to do the remove on both the target port and the sibling, using the
+				// method from the superclass to avoid infinite recursion.
+				CompoundCommand command = new CompoundCommand();
+
+				// Find PortTypeContainer instances that contain the PortType enumerated values, if necessary,
+				Collection<PortTypeContainer> removed = findPortTypeContainers(port, collection);
+				command.append(super.createRemoveCommand(domain, port, feature, removed));
+
+				// Find the matching containers in the sibling port and remove those as well
+				AbstractPort sibling = port.getSibling();
+				removed = findPortTypeContainers(sibling, collection);
+				command.append(super.createRemoveCommand(domain, sibling, feature, removed));
+				return command;
+			} else {
+				collection = findPortTypeContainers(port, collection);
+			}
+		}
+		return super.createRemoveCommand(domain, owner, feature, collection);
+	}
+
+	private Collection<PortTypeContainer> findPortTypeContainers(AbstractPort port, Collection< ? > types) {
+		Collection<PortTypeContainer> collection = new ArrayList<PortTypeContainer>();
+		for (Object type : types) {
+			if (type instanceof PortTypeContainer) {
+				collection.add((PortTypeContainer) type);
+			} else if (type instanceof PortType) {
+				PortTypeContainer container = findPortType(port.getPortType(), (PortType) type);
+				if (container != null) {
+					collection.add(container);
+				}
+			}
+		}
+		return collection;
+	}
+
+	private PortTypeContainer findPortType(Collection<PortTypeContainer> collection, PortType type) {
+		for (PortTypeContainer container : collection) {
+			if (container.getType().equals(type)) {
+				return container;
+			}
+		}
+		return null;
 	}
 
 	/**
