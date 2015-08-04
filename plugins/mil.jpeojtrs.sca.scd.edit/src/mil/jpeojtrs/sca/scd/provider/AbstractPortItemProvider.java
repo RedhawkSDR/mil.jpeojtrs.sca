@@ -18,10 +18,14 @@ import mil.jpeojtrs.sca.scd.AbstractPort;
 import mil.jpeojtrs.sca.scd.ScdFactory;
 import mil.jpeojtrs.sca.scd.ScdPackage;
 
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -189,6 +193,27 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 			return;
 		}
 		super.notifyChanged(notification);
+	}
+
+	@Override
+	protected Command createSetCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Object value, int index) {
+		AbstractPort port = (AbstractPort) owner;
+		if (port.isBiDirectional()) {
+			switch (feature.getFeatureID()) {
+			case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
+			case ScdPackage.ABSTRACT_PORT__NAME:
+			case ScdPackage.ABSTRACT_PORT__REP_ID:
+				// Create a compound command to do the set on both the target port and the sibling, using the method
+				// from the superclass to avoid infinite recursion.
+				CompoundCommand command = new CompoundCommand();
+				command.append(super.createSetCommand(domain, port, feature, value, index));
+				command.append(super.createSetCommand(domain, port.getSibling(), feature, value, index));
+				return command;
+			default:
+				break;
+			}
+		}
+		return super.createSetCommand(domain, owner, feature, value, index);
 	}
 
 	/**
