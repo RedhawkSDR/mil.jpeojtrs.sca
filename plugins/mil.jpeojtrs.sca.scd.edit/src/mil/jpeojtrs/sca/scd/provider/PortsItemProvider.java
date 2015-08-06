@@ -26,6 +26,7 @@ import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
@@ -203,4 +204,42 @@ public class PortsItemProvider extends ItemProviderAdapter implements IEditingDo
 		return createRemoveCommand(domain, owner, ScdPackage.Literals.PORTS__GROUP, children);
 	}
 
+	@Override
+	protected Command createReplaceCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Object value, Collection< ? > collection) {
+		// Using a replace command with the feature map preserves order, which is useful; however, feature maps break
+		// a lot of the built-in feature deduction, so we need to explicitly set the feature and create feature map
+		// entries for the input collection. As above, we are only concerned with the "group" feature, since it's the
+		// one that maintains the overall order and ownership of the AbstractPorts.
+		if (feature == null) {
+			feature = ScdPackage.Literals.PORTS__GROUP;
+		} else if (feature != ScdPackage.Literals.PORTS__GROUP) {
+			return UnexecutableCommand.INSTANCE;
+		}
+
+		value = getEntryForValue(((Ports) owner).getGroup(), value);
+		if (value == null) {
+			return UnexecutableCommand.INSTANCE;
+		}
+
+		collection = createFeatureMapEntries(owner, collection);
+		return super.createReplaceCommand(domain, owner, feature, value, collection);
+	}
+
+	private List<FeatureMap.Entry> createFeatureMapEntries(EObject owner, Collection< ? > collection) {
+		List<FeatureMap.Entry> entries = new ArrayList<FeatureMap.Entry>(collection.size());
+		for (Object child : collection) {
+			EStructuralFeature childFeature = getChildFeature(owner, child);
+			entries.add(FeatureMapUtil.createEntry(childFeature, child));
+		}
+		return entries;
+	}
+
+	private FeatureMap.Entry getEntryForValue(FeatureMap map, Object value) {
+		for (FeatureMap.Entry entry : map) {
+			if (entry == value|| entry.getValue() == value) {
+				return entry;
+			}
+		}
+		return null;
+	}
 }
