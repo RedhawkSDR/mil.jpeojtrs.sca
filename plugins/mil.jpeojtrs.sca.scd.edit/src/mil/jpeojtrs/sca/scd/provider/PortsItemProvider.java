@@ -15,8 +15,10 @@ import java.util.Collection;
 import java.util.List;
 
 import mil.jpeojtrs.sca.scd.Ports;
+import mil.jpeojtrs.sca.scd.Provides;
 import mil.jpeojtrs.sca.scd.ScdFactory;
 import mil.jpeojtrs.sca.scd.ScdPackage;
+import mil.jpeojtrs.sca.scd.Uses;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -87,13 +89,17 @@ public class PortsItemProvider extends ItemProviderAdapter implements IEditingDo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
-
+		if (child instanceof Uses) {
+			return ScdPackage.Literals.PORTS__USES;
+		} else if (child instanceof Provides) {
+			return ScdPackage.Literals.PORTS__PROVIDES;
+		}
 		return super.getChildFeature(object, child);
 	}
 
