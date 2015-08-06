@@ -134,36 +134,6 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ScdPackage.Literals.ABSTRACT_PORT__PORT_TYPE);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -188,12 +158,10 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 
 		switch (notification.getFeatureID(AbstractPort.class)) {
 		case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
+		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
 		case ScdPackage.ABSTRACT_PORT__NAME:
 		case ScdPackage.ABSTRACT_PORT__REP_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case ScdPackage.ABSTRACT_PORT__PORT_TYPE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -264,7 +232,7 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 	@Override
 	protected Command createRemoveCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Collection< ? > collection) {
 		if (feature == ScdPackage.Literals.ABSTRACT_PORT__PORT_TYPE) {
-			AbstractPort port =(AbstractPort) owner;
+			AbstractPort port = (AbstractPort) owner;
 
 			if (port.isBiDirectional()) {
 				// Create a compound command to do the remove on both the target port and the sibling, using the
@@ -321,8 +289,6 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.ABSTRACT_PORT__PORT_TYPE, ScdFactory.eINSTANCE.createPortTypeContainer()));
 	}
 
 	/**
