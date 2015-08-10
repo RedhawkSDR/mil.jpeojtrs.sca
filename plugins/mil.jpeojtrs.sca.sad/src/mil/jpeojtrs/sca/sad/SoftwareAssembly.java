@@ -18,6 +18,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import mil.jpeojtrs.sca.partitioning.ComponentFiles;
+import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
+import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -402,17 +404,14 @@ public interface SoftwareAssembly extends EObject {
 			}
 		}
 
+		/**
+		 * Gets the component instantiation for the assembly controller
+		 * @param sa
+		 * @return The assembly controler's component instantiation, or null if not found
+		 */
 		public static SadComponentInstantiation getAssemblyControllerInstantiation(SoftwareAssembly sa) {
-			if ((sa.getAssemblyController() != null) && (sa.getAssemblyController().getComponentInstantiationRef() != null)
-				&& (sa.getAssemblyController().getComponentInstantiationRef().getRefid() != null)) {
-				final String acrefId = sa.getAssemblyController().getComponentInstantiationRef().getRefid();
-				for (final SadComponentInstantiation ci : sa.getAllComponentInstantiations()) {
-					if (acrefId.equals(ci.getId())) {
-						return ci;
-					}
-				}
-			}
-			return null;
+			return ScaEcoreUtils.getFeature(sa, SadPackage.Literals.SOFTWARE_ASSEMBLY__ASSEMBLY_CONTROLLER,
+				SadPackage.Literals.ASSEMBLY_CONTROLLER__COMPONENT_INSTANTIATION_REF, PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__INSTANTIATION);
 		}
 
 		public static int getLastStartOrder(SoftwareAssembly sa) {
@@ -425,15 +424,18 @@ public interface SoftwareAssembly extends EObject {
 			return lastStartOrder;
 		}
 
+		/**
+		 * Determine if the given component instantiation is the assembly controller
+		 * @param ci
+		 * @return
+		 */
 		public static boolean isAssemblyController(SadComponentInstantiation ci) {
 			final SoftwareAssembly sa = getSoftwareAssembly(ci.eResource());
-			if (sa != null) {
-				final SadComponentInstantiation asmCi = getAssemblyControllerInstantiation(sa);
-				if (asmCi != null) {
-					return (asmCi.getId().equals(ci.getId()));
-				}
+			if (sa == null) {
+				return false;
 			}
-			return false;
+			final SadComponentInstantiation asmCi = getAssemblyControllerInstantiation(sa);
+			return asmCi != null && asmCi.equals(ci);
 		}
 
 		public static String createComponentUsageName(SoftwareAssembly sa, String componentName) {
