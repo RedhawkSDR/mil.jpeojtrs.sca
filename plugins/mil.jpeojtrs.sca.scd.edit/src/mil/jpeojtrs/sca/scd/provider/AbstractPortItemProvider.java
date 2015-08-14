@@ -25,6 +25,7 @@ import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.scd.Uses;
 
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.CommandWrapper;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -206,8 +207,7 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 			}
 			break;
 		case ScdPackage.ABSTRACT_PORT__DIRECTION:
-			Command command = createChangePortDirectionCommand(domain, port, (PortDirection) value);
-			return command;
+			return createChangePortDirectionCommand(domain, port, (PortDirection) value);
 		default:
 			break;
 		}
@@ -218,22 +218,74 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 	 * @since 2.4
 	 */
 	protected Command createChangePortDirectionCommand(EditingDomain domain, AbstractPort port, PortDirection direction) {
-		if (!port.getDirection().equals(direction)) {
-			if (port.isBiDirectional()) {
-				if (direction == getBaseDirection(port)) {
-					port = port.getSibling();
-				}
-				return RemoveCommand.create(domain, port);
+		if (port.getDirection().equals(direction)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+
+		// Track the new port (and possibly its sibling) for reporting the affected objects on execute
+		final Collection<Object> newObjects = new ArrayList<Object>();
+
+		// Track the original port (and again, possibly its sibling) for reporting the affected objects on undo
+		final Collection<Object> originalObjects = new ArrayList<Object>();
+		originalObjects.add(port);
+
+		Command command;
+		if (port.isBiDirectional()) {
+			// Add the sibling, so that both ports are considered the original set
+			originalObjects.add(port.getSibling());
+
+			// Determine which port to remove based on the desired direction, and add the remaining port to the set of
+			// new objects
+			if (direction == getBaseDirection(port)) {
+				port = port.getSibling();
+			}
+			newObjects.add(port.getSibling());
+			command = RemoveCommand.create(domain, port);
+		} else {
+			// Create a new sibling of the opposite type
+			AbstractPort sibling = createSibling(port);
+			newObjects.add(sibling);
+			if (direction == PortDirection.BIDIR) {
+				// Include the new sibling as part of the set of new objects
+				newObjects.add(port);
+				command = AddCommand.create(domain, port.eContainer(), null, sibling);
 			} else {
-				AbstractPort sibling = createSibling(port);
-				if (direction == PortDirection.BIDIR) {
-					return AddCommand.create(domain, port.eContainer(), null, sibling);
-				} else {
-					return ReplaceCommand.create(domain, port, Collections.singleton(sibling));
-				}
+				command = ReplaceCommand.create(domain, port, Collections.singleton(sibling));
 			}
 		}
-		return UnexecutableCommand.INSTANCE;
+
+		return new CommandWrapper(command) {
+
+			private Collection<Object> affectedObjects = null;
+
+			@Override
+			public String getLabel() {
+				return "Change Direction";
+			}
+
+			@Override
+			public void execute() {
+				super.execute();
+				affectedObjects = newObjects;
+			}
+
+			@Override
+			public void undo() {
+				super.undo();
+				affectedObjects = originalObjects;
+			}
+
+			@Override
+			public void redo() {
+				super.redo();
+				affectedObjects = newObjects;
+			}
+
+			@Override
+			public Collection< ? > getAffectedObjects() {
+				return affectedObjects;
+			}
+		};
 	}
 
 	private PortDirection getBaseDirection(AbstractPort port) {
