@@ -132,41 +132,4 @@ public class ProvidesItemProvider extends AbstractPortItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
-	@Override
-	public Object getColumnImage(Object object, int columnIndex) {
-		Object image = null;
-		switch (columnIndex) {
-		case 0:
-			image = getImage(object);
-			break;
-
-		default:
-			image = super.getColumnImage(object, columnIndex);
-			break;
-		}
-		return image;
-	}
-
-	@Override
-	public String getColumnText(Object object, int columnIndex) {
-		Provides provides = (Provides) object;
-		String text = null;
-		switch (columnIndex) {
-		case 0:
-			if (provides.isBiDirectional()) {
-				text = "<bi-dir> " + provides.getProvidesName();
-			} else {
-				text = "<provides> " + provides.getProvidesName();
-			}
-			break;
-		case 1:
-			text = provides.getRepID();
-			break;
-		default:
-			break;
-		}
-		return text;
-
-	}
-
 }

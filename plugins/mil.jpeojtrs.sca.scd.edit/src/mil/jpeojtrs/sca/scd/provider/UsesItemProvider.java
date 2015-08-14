@@ -142,38 +142,4 @@ public class UsesItemProvider extends AbstractPortItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
-	@Override
-	public Object getColumnImage(Object object, int columnIndex) {
-		Object image = null;
-		switch (columnIndex) {
-		case 0:
-			image = getImage(object);
-			break;
-		default:
-			image = super.getColumnImage(object, columnIndex);
-			break;
-		}
-		return image;
-	}
-
-	@Override
-	public String getColumnText(Object object, int columnIndex) {
-		Uses uses = (Uses) object;
-		String text = null;
-		switch (columnIndex) {
-		case 0:
-			if (uses.isBiDirectional()) {
-				text = "<bi-dir> " + uses.getUsesName();
-			} else {
-				text = "<uses> " + uses.getUsesName();
-			}
-			break;
-		case 1:
-			text = uses.getRepID();
-			break;
-		default:
-			break;
-		}
-		return text;
-	}
 }

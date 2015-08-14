@@ -317,4 +317,25 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 		return ScdEditPlugin.INSTANCE;
 	}
 
+	@Override
+	public Object getColumnImage(Object object, int columnIndex) {
+		if (columnIndex == 0) {
+			return getImage(object);
+		}
+		return super.getColumnImage(object, columnIndex);
+	}
+
+	@Override
+	public String getColumnText(Object object, int columnIndex) {
+		AbstractPort port = (AbstractPort) object;
+		switch (columnIndex) {
+		case 0:
+			return "<" + port.getDirection().getLiteral() + "> " + port.getName();
+		case 1:
+			return port.getRepID();
+		default:
+			return null;
+		}
+	}
+
 }
