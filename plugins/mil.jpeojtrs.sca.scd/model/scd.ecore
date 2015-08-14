@@ -249,6 +249,9 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//Interface"
         volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
+        eType="#//PortDirection" changeable="false" volatile="true" transient="true"
+        derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScdDocumentRoot">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -397,5 +400,10 @@
     <eLiterals name="EVENT_SERVICE" value="9" literal="eventservice"/>
     <eLiterals name="SERVICE" value="10" literal="service"/>
     <eLiterals name="OTHER" value="11"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PortDirection" serializable="false">
+    <eLiterals name="USES" literal="uses"/>
+    <eLiterals name="PROVIDES" value="1" literal="provides"/>
+    <eLiterals name="BIDIR" value="2" literal="bi-dir"/>
   </eClassifiers>
 </ecore:EPackage>

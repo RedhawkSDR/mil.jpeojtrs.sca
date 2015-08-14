@@ -20,6 +20,7 @@ import mil.jpeojtrs.sca.scd.InheritsInterface;
 import mil.jpeojtrs.sca.scd.Interface;
 import mil.jpeojtrs.sca.scd.Interfaces;
 import mil.jpeojtrs.sca.scd.LocalFile;
+import mil.jpeojtrs.sca.scd.PortDirection;
 import mil.jpeojtrs.sca.scd.PortType;
 import mil.jpeojtrs.sca.scd.PortTypeContainer;
 import mil.jpeojtrs.sca.scd.Ports;
@@ -138,6 +139,8 @@ public class ScdValidator extends EObjectValidator {
 			return validatePortType((PortType) value, diagnostics, context);
 		case ScdPackage.COMPONENT_TYPE:
 			return validateComponentType((ComponentType) value, diagnostics, context);
+		case ScdPackage.PORT_DIRECTION:
+			return validatePortDirection((PortDirection) value, diagnostics, context);
 		case ScdPackage.PORT_TYPE_OBJECT:
 			return validatePortTypeObject((PortType) value, diagnostics, context);
 		default:
@@ -310,6 +313,16 @@ public class ScdValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateComponentType(ComponentType componentType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePortDirection(PortDirection portDirection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

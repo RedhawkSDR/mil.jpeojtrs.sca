@@ -18,6 +18,7 @@ import mil.jpeojtrs.sca.scd.InheritsInterface;
 import mil.jpeojtrs.sca.scd.Interface;
 import mil.jpeojtrs.sca.scd.Interfaces;
 import mil.jpeojtrs.sca.scd.LocalFile;
+import mil.jpeojtrs.sca.scd.PortDirection;
 import mil.jpeojtrs.sca.scd.PortType;
 import mil.jpeojtrs.sca.scd.PortTypeContainer;
 import mil.jpeojtrs.sca.scd.Ports;
@@ -123,6 +124,8 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 			return createPortTypeFromString(eDataType, initialValue);
 		case ScdPackage.COMPONENT_TYPE:
 			return createComponentTypeFromString(eDataType, initialValue);
+		case ScdPackage.PORT_DIRECTION:
+			return createPortDirectionFromString(eDataType, initialValue);
 		case ScdPackage.PORT_TYPE_OBJECT:
 			return createPortTypeObjectFromString(eDataType, initialValue);
 		default:
@@ -142,6 +145,8 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 			return convertPortTypeToString(eDataType, instanceValue);
 		case ScdPackage.COMPONENT_TYPE:
 			return convertComponentTypeToString(eDataType, instanceValue);
+		case ScdPackage.PORT_DIRECTION:
+			return convertPortDirectionToString(eDataType, instanceValue);
 		case ScdPackage.PORT_TYPE_OBJECT:
 			return convertPortTypeObjectToString(eDataType, instanceValue);
 		default:
@@ -342,6 +347,29 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 	 * @generated
 	 */
 	public String convertComponentTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortDirection createPortDirectionFromString(EDataType eDataType, String initialValue) {
+		PortDirection result = PortDirection.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPortDirectionToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

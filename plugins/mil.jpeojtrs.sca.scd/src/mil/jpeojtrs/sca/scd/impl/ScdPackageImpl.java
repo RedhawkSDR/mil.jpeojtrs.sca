@@ -20,6 +20,7 @@ import mil.jpeojtrs.sca.scd.InheritsInterface;
 import mil.jpeojtrs.sca.scd.Interface;
 import mil.jpeojtrs.sca.scd.Interfaces;
 import mil.jpeojtrs.sca.scd.LocalFile;
+import mil.jpeojtrs.sca.scd.PortDirection;
 import mil.jpeojtrs.sca.scd.PortType;
 import mil.jpeojtrs.sca.scd.PortTypeContainer;
 import mil.jpeojtrs.sca.scd.Ports;
@@ -154,6 +155,12 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	 * @generated
 	 */
 	private EEnum componentTypeEEnum = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum portDirectionEEnum = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -601,6 +608,16 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractPort_Direction() {
+		return (EAttribute) abstractPortEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -821,6 +838,16 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getPortDirection() {
+		return portDirectionEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -904,6 +931,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		createEAttribute(abstractPortEClass, ABSTRACT_PORT__NAME);
 		createEAttribute(abstractPortEClass, ABSTRACT_PORT__REP_ID);
 		createEReference(abstractPortEClass, ABSTRACT_PORT__INTERFACE);
+		createEAttribute(abstractPortEClass, ABSTRACT_PORT__DIRECTION);
 
 		scdDocumentRootEClass = createEClass(SCD_DOCUMENT_ROOT);
 		createEAttribute(scdDocumentRootEClass, SCD_DOCUMENT_ROOT__MIXED);
@@ -932,6 +960,7 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		// Create enums
 		portTypeEEnum = createEEnum(PORT_TYPE);
 		componentTypeEEnum = createEEnum(COMPONENT_TYPE);
+		portDirectionEEnum = createEEnum(PORT_DIRECTION);
 
 		// Create data types
 		portTypeObjectEDataType = createEDataType(PORT_TYPE_OBJECT);
@@ -1047,6 +1076,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractPort_Interface(), this.getInterface(), null, "interface", null, 0, 1, AbstractPort.class, IS_TRANSIENT, IS_VOLATILE,
 			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractPort_Direction(), this.getPortDirection(), "direction", null, 1, 1, AbstractPort.class, IS_TRANSIENT, IS_VOLATILE,
+			!IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(abstractPortEClass, theEcorePackage.getEBoolean(), "isBiDirectional", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1112,6 +1143,11 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addEEnumLiteral(componentTypeEEnum, ComponentType.EVENT_SERVICE);
 		addEEnumLiteral(componentTypeEEnum, ComponentType.SERVICE);
 		addEEnumLiteral(componentTypeEEnum, ComponentType.OTHER);
+
+		initEEnum(portDirectionEEnum, PortDirection.class, "PortDirection");
+		addEEnumLiteral(portDirectionEEnum, PortDirection.USES);
+		addEEnumLiteral(portDirectionEEnum, PortDirection.PROVIDES);
+		addEEnumLiteral(portDirectionEEnum, PortDirection.BIDIR);
 
 		// Initialize data types
 		initEDataType(portTypeObjectEDataType, PortType.class, "PortTypeObject", IS_SERIALIZABLE, IS_GENERATED_INSTANCE_CLASS);

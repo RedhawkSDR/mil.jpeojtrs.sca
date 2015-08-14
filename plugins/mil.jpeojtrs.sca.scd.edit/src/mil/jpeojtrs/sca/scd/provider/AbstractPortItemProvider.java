@@ -76,6 +76,7 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 			addNamePropertyDescriptor(object);
 			addRepIDPropertyDescriptor(object);
 			addInterfacePropertyDescriptor(object);
+			addDirectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -131,6 +132,20 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 			getString("_UI_AbstractPort_interface_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_AbstractPort_interface_feature", "_UI_AbstractPort_type"),
 			ScdPackage.Literals.ABSTRACT_PORT__INTERFACE, false, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Direction feature.
+	 * <!-- begin-user-doc -->
+	 * @since 2.4
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDirectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_AbstractPort_direction_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_AbstractPort_direction_feature", "_UI_AbstractPort_type"),
+			ScdPackage.Literals.ABSTRACT_PORT__DIRECTION, false, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**

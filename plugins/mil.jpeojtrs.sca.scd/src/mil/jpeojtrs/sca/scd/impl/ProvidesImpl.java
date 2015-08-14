@@ -11,6 +11,7 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
+import mil.jpeojtrs.sca.scd.PortDirection;
 import mil.jpeojtrs.sca.scd.Provides;
 import mil.jpeojtrs.sca.scd.ScdPackage;
 
@@ -94,6 +95,11 @@ public class ProvidesImpl extends AbstractPortImpl implements Provides {
 		// END GENERATED CODE
 		setName(newProvidesName);
 		// BEGIN GENERATED CODE
+	}
+
+	@Override
+	protected PortDirection basicGetDirection() {
+		return PortDirection.PROVIDES;
 	}
 
 	/**

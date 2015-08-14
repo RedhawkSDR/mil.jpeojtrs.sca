@@ -13,6 +13,8 @@ package mil.jpeojtrs.sca.scd.tests;
 
 import junit.framework.TestCase;
 import mil.jpeojtrs.sca.scd.AbstractPort;
+import mil.jpeojtrs.sca.scd.PortDirection;
+import mil.jpeojtrs.sca.scd.ScdPackage;
 
 import org.junit.Assert;
 
@@ -24,6 +26,7 @@ import org.junit.Assert;
  * The following features are tested:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getInterface() <em>Interface</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getDirection() <em>Direction</em>}</li>
  * </ul>
  * </p>
  * <p>
@@ -102,6 +105,32 @@ public abstract class AbstractPortTest extends TestCase {
 	}
 
 	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.scd.AbstractPort#getDirection() <em>Direction</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.scd.AbstractPort#getDirection()
+	 * @generated NOT
+	 */
+	public void testGetDirection() {
+		Assert.assertEquals(getFixture().getDirection(), getExpectedDirection());
+	}
+
+	private PortDirection getExpectedDirection() {
+		if (getFixture().isBiDirectional()) {
+			return PortDirection.BIDIR;
+		}
+
+		switch (getFixture().eClass().getClassifierID()) {
+		case ScdPackage.USES:
+			return PortDirection.USES;
+		case ScdPackage.PROVIDES:
+			return PortDirection.PROVIDES;
+		default:
+			return null;
+		}
+	}
+
+	/**
 	 * Tests the '{@link mil.jpeojtrs.sca.scd.AbstractPort#isBiDirectional() <em>Is Bi Directional</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,7 +167,7 @@ public abstract class AbstractPortTest extends TestCase {
 		final String EXPECTED_DESCRIPTION = "Optional Port description.";
 		this.fixture.setDescription(EXPECTED_DESCRIPTION);
 		Assert.assertEquals("setDescription", EXPECTED_DESCRIPTION, port.getDescription());
-		
+
 		Assert.assertNotNull(port2);
 		Assert.assertEquals("port2.description", expectedDescription, port2.getDescription());
 	}

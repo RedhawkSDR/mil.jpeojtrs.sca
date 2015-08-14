@@ -15,6 +15,7 @@ import java.util.Collection;
 
 import mil.jpeojtrs.sca.scd.AbstractPort;
 import mil.jpeojtrs.sca.scd.Interface;
+import mil.jpeojtrs.sca.scd.PortDirection;
 import mil.jpeojtrs.sca.scd.PortTypeContainer;
 import mil.jpeojtrs.sca.scd.ScdPackage;
 
@@ -42,6 +43,7 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getRepID <em>Rep ID</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getInterface <em>Interface</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.scd.impl.AbstractPortImpl#getDirection <em>Direction</em>}</li>
  * </ul>
  * </p>
  *
@@ -113,6 +115,17 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 * @ordered
 	 */
 	protected String repID = REP_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @see #getDirection()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final PortDirection DIRECTION_EDEFAULT = PortDirection.USES;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,6 +269,26 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public PortDirection getDirection() {
+		if (isBiDirectional()) {
+			return PortDirection.BIDIR;
+		} else {
+			return basicGetDirection();
+		}
+	}
+
+	/**
+	 * @since 3.0
+	 * @generated NOT
+	 */
+	protected abstract PortDirection basicGetDirection();
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
@@ -326,6 +359,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 			if (resolve)
 				return getInterface();
 			return basicGetInterface();
+		case ScdPackage.ABSTRACT_PORT__DIRECTION:
+			return getDirection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -404,6 +439,8 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 			return REP_ID_EDEFAULT == null ? repID != null : !REP_ID_EDEFAULT.equals(repID);
 		case ScdPackage.ABSTRACT_PORT__INTERFACE:
 			return basicGetInterface() != null;
+		case ScdPackage.ABSTRACT_PORT__DIRECTION:
+			return getDirection() != DIRECTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

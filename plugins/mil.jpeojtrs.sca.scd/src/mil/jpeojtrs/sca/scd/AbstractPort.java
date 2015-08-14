@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getRepID <em>Rep ID</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getInterface <em>Interface</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getDirection <em>Direction</em>}</li>
  * </ul>
  * </p>
  *
@@ -159,6 +160,24 @@ public interface AbstractPort extends EObject {
 	 * @generated
 	 */
 	void setInterface(Interface value);
+
+	/**
+	 * Returns the value of the '<em><b>Direction</b></em>' attribute.
+	 * The literals are from the enumeration {@link mil.jpeojtrs.sca.scd.PortDirection}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Direction</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Direction</em>' attribute.
+	 * @see mil.jpeojtrs.sca.scd.PortDirection
+	 * @see mil.jpeojtrs.sca.scd.ScdPackage#getAbstractPort_Direction()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	PortDirection getDirection();
 
 	/**
 	 * <!-- begin-user-doc -->

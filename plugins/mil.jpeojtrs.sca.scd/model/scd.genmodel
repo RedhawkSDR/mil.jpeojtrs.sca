@@ -55,6 +55,11 @@
       <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/SERVICE"/>
       <genEnumLiterals ecoreEnumLiteral="scd.ecore#//ComponentType/OTHER"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scd.ecore#//PortDirection">
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//PortDirection/USES"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//PortDirection/PROVIDES"/>
+      <genEnumLiterals ecoreEnumLiteral="scd.ecore#//PortDirection/BIDIR"/>
+    </genEnums>
     <genDataTypes ecoreDataType="scd.ecore#//PortTypeObject"/>
     <genClasses ecoreClass="scd.ecore#//ComponentFeatures">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scd.ecore#//ComponentFeatures/supportsInterface"/>
@@ -106,6 +111,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//AbstractPort/repID"/>
       <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference scd.ecore#//AbstractPort/interface"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//AbstractPort/direction"/>
       <genOperations ecoreOperation="scd.ecore#//AbstractPort/isBiDirectional"/>
       <genOperations ecoreOperation="scd.ecore#//AbstractPort/getSibling"/>
     </genClasses>

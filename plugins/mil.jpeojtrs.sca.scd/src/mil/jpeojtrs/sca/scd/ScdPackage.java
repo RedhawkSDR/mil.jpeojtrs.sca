@@ -417,13 +417,22 @@ public interface ScdPackage extends EPackage {
 	 */
 	int ABSTRACT_PORT__INTERFACE = 4;
 	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_PORT__DIRECTION = 5;
+	/**
 	 * The number of structural features of the '<em>Abstract Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_PORT_FEATURE_COUNT = 5;
+	int ABSTRACT_PORT_FEATURE_COUNT = 6;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.scd.impl.ProvidesImpl <em>Provides</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -474,6 +483,15 @@ public interface ScdPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROVIDES__INTERFACE = ABSTRACT_PORT__INTERFACE;
+	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDES__DIRECTION = ABSTRACT_PORT__DIRECTION;
 	/**
 	 * The feature id for the '<em><b>Provides Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -712,6 +730,15 @@ public interface ScdPackage extends EPackage {
 	 */
 	int USES__INTERFACE = ABSTRACT_PORT__INTERFACE;
 	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES__DIRECTION = ABSTRACT_PORT__DIRECTION;
+	/**
 	 * The feature id for the '<em><b>Uses Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -746,6 +773,16 @@ public interface ScdPackage extends EPackage {
 	 */
 	int COMPONENT_TYPE = 16;
 	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.scd.PortDirection <em>Port Direction</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.scd.PortDirection
+	 * @see mil.jpeojtrs.sca.scd.impl.ScdPackageImpl#getPortDirection()
+	 * @generated
+	 */
+	int PORT_DIRECTION = 17;
+	/**
 	 * The meta object id for the '<em>Port Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -753,7 +790,7 @@ public interface ScdPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.scd.impl.ScdPackageImpl#getPortTypeObject()
 	 * @generated
 	 */
-	int PORT_TYPE_OBJECT = 17;
+	int PORT_TYPE_OBJECT = 18;
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.scd.ComponentFeatures <em>Component Features</em>}'.
@@ -1131,6 +1168,18 @@ public interface ScdPackage extends EPackage {
 	EReference getAbstractPort_Interface();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.scd.AbstractPort#getDirection <em>Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Direction</em>'.
+	 * @see mil.jpeojtrs.sca.scd.AbstractPort#getDirection()
+	 * @see #getAbstractPort()
+	 * @generated
+	 */
+	EAttribute getAbstractPort_Direction();
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.scd.ScdDocumentRoot <em>Document Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1365,6 +1414,17 @@ public interface ScdPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getComponentType();
+
+	/**
+	 * Returns the meta object for enum '{@link mil.jpeojtrs.sca.scd.PortDirection <em>Port Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Port Direction</em>'.
+	 * @see mil.jpeojtrs.sca.scd.PortDirection
+	 * @generated
+	 */
+	EEnum getPortDirection();
 
 	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.scd.PortType <em>Port Type Object</em>}'.
@@ -1704,6 +1764,15 @@ public interface ScdPackage extends EPackage {
 		EReference ABSTRACT_PORT__INTERFACE = eINSTANCE.getAbstractPort_Interface();
 
 		/**
+		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_PORT__DIRECTION = eINSTANCE.getAbstractPort_Direction();
+
+		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.scd.impl.ScdDocumentRootImpl <em>Document Root</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1890,6 +1959,17 @@ public interface ScdPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COMPONENT_TYPE = eINSTANCE.getComponentType();
+
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.scd.PortDirection <em>Port Direction</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * @since 3.0
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.scd.PortDirection
+		 * @see mil.jpeojtrs.sca.scd.impl.ScdPackageImpl#getPortDirection()
+		 * @generated
+		 */
+		EEnum PORT_DIRECTION = eINSTANCE.getPortDirection();
 
 		/**
 		 * The meta object literal for the '<em>Port Type Object</em>' data type.
