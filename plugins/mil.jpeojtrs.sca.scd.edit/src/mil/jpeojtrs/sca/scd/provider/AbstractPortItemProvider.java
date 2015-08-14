@@ -13,22 +13,29 @@ package mil.jpeojtrs.sca.scd.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import mil.jpeojtrs.sca.scd.AbstractPort;
+import mil.jpeojtrs.sca.scd.PortDirection;
 import mil.jpeojtrs.sca.scd.PortType;
 import mil.jpeojtrs.sca.scd.PortTypeContainer;
 import mil.jpeojtrs.sca.scd.ScdFactory;
 import mil.jpeojtrs.sca.scd.ScdPackage;
+import mil.jpeojtrs.sca.scd.Uses;
 
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CompoundCommand;
+import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
+import org.eclipse.emf.edit.command.ReplaceCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -185,22 +192,70 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 	@Override
 	protected Command createSetCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Object value, int index) {
 		AbstractPort port = (AbstractPort) owner;
-		if (port.isBiDirectional()) {
-			switch (feature.getFeatureID()) {
-			case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
-			case ScdPackage.ABSTRACT_PORT__NAME:
-			case ScdPackage.ABSTRACT_PORT__REP_ID:
+		switch (feature.getFeatureID()) {
+		case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
+		case ScdPackage.ABSTRACT_PORT__NAME:
+		case ScdPackage.ABSTRACT_PORT__REP_ID:
+			if (port.isBiDirectional()) {
 				// Create a compound command to do the set on both the target port and the sibling, using the method
 				// from the superclass to avoid infinite recursion.
 				CompoundCommand command = new CompoundCommand();
 				command.append(super.createSetCommand(domain, port, feature, value, index));
 				command.append(super.createSetCommand(domain, port.getSibling(), feature, value, index));
 				return command;
-			default:
-				break;
 			}
+			break;
+		case ScdPackage.ABSTRACT_PORT__DIRECTION:
+			Command command = createChangePortDirectionCommand(domain, port, (PortDirection) value);
+			return command;
+		default:
+			break;
 		}
 		return super.createSetCommand(domain, owner, feature, value, index);
+	}
+
+	/**
+	 * @since 2.4
+	 */
+	protected Command createChangePortDirectionCommand(EditingDomain domain, AbstractPort port, PortDirection direction) {
+		if (!port.getDirection().equals(direction)) {
+			if (port.isBiDirectional()) {
+				if (direction == getBaseDirection(port)) {
+					port = port.getSibling();
+				}
+				return RemoveCommand.create(domain, port);
+			} else {
+				AbstractPort sibling = createSibling(port);
+				if (direction == PortDirection.BIDIR) {
+					return AddCommand.create(domain, port.eContainer(), null, sibling);
+				} else {
+					return ReplaceCommand.create(domain, port, Collections.singleton(sibling));
+				}
+			}
+		}
+		return UnexecutableCommand.INSTANCE;
+	}
+
+	private PortDirection getBaseDirection(AbstractPort port) {
+		if (port instanceof Uses) {
+			return PortDirection.USES;
+		} else {
+			return PortDirection.PROVIDES;
+		}
+	}
+
+	private AbstractPort createSibling(AbstractPort port) {
+		AbstractPort sibling;
+		if (port instanceof Uses) {
+			sibling = ScdFactory.eINSTANCE.createProvides();
+		} else {
+			sibling = ScdFactory.eINSTANCE.createUses();
+		}
+		sibling.setDescription(port.getDescription());
+		sibling.setName(port.getName());
+		sibling.setRepID(port.getRepID());
+		sibling.getPortType().addAll(EcoreUtil.copyAll(port.getPortType()));
+		return sibling;
 	}
 
 	@Override
