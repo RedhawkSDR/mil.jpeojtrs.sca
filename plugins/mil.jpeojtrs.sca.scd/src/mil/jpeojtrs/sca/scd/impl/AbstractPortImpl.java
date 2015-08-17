@@ -17,19 +17,19 @@ import mil.jpeojtrs.sca.scd.AbstractPort;
 import mil.jpeojtrs.sca.scd.Interface;
 import mil.jpeojtrs.sca.scd.PortDirection;
 import mil.jpeojtrs.sca.scd.PortTypeContainer;
+import mil.jpeojtrs.sca.scd.Ports;
 import mil.jpeojtrs.sca.scd.ScdPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 
 /**
  * <!-- begin-user-doc -->
@@ -288,6 +288,24 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	protected abstract PortDirection basicGetDirection();
 
 	/**
+	 * Emits a notification that the port's direction has changed.
+	 * Exposed to the package because PortsImpl's groups feature map needs to be able to call it, since that is the
+	 * only place in which we know the full context.
+	 * @generated NOT
+	 */
+	/*package*/ void notifyDirectionChange() {
+		PortDirection newDirection = getDirection();
+		PortDirection oldDirection;
+		if (newDirection == PortDirection.BIDIR) {
+			oldDirection = basicGetDirection();
+		} else {
+			oldDirection = PortDirection.BIDIR;
+		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.ABSTRACT_PORT__DIRECTION, oldDirection, newDirection));
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -308,21 +326,32 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	public AbstractPort getSibling() {
 		// END GENERATED CODE
 		if (eContainer() != null) {
-			for (EObject obj : eContainer().eContents()) {
-				if (obj == this) {
-					continue;
-				}
-				obj = (EObject) AdapterFactoryEditingDomain.unwrap(obj);
-				if (obj.getClass() != getClass() && obj instanceof AbstractPort) {
-					AbstractPort port = (AbstractPort) obj;
-					if (port.getName().equals(getName()) && port.getRepID().equals(getRepID())) {
-						return port;
-					}
+			Ports ports = (Ports) eContainer();
+			return findSibling(ports.getGroup());
+		}
+		return null;
+		// BEGIN GENERATED CODE
+	}
+
+	/**
+	 * Finds the sibling port, if any, in the given feature map.
+	 * Exposed to the package because PortsImpl's groups feature map uses it to locate the sibling for a port that no
+	 * longer belongs to the same context. In most cases, getSibling() provides the needed context.
+	 * @generated NOT
+	 */
+	/*package*/ AbstractPort findSibling(FeatureMap ports) {
+		for (FeatureMap.Entry entry : ports) {
+			AbstractPort port = (AbstractPort) entry.getValue();
+			if (port == this) {
+				continue;
+			}
+			if (port.getClass() != getClass()) {
+				if (port.getName().equals(getName()) && port.getRepID().equals(getRepID())) {
+					return port;
 				}
 			}
 		}
 		return null;
-		// BEGIN GENERATED CODE
 	}
 
 	/**

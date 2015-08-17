@@ -78,14 +78,50 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	}
 
 	/**
+	 * Specialized subclass of feature map to track addition and removal of ports in order to provide notification
+	 * when a port changes to or from bi-directional.
+	 */
+	private static class PortsFeatureMap extends BasicFeatureMap {
+
+		private static final long serialVersionUID = 1L;
+
+		public PortsFeatureMap(InternalEObject owner, int featureID) {
+			super(owner, featureID);
+		}
+
+		@Override
+		protected void didAdd(int index, Entry newObject) {
+			super.didAdd(index, newObject);
+			notifySibling(newObject);
+		}
+
+		@Override
+		protected void didRemove(int index, Entry oldObject) {
+			super.didRemove(index, oldObject);
+			notifySibling(oldObject);
+		}
+
+		private void notifySibling(Entry object) {
+			// We cannot rely on the port's getSibling() method here, because it may not have a reference back to its
+			// container; instead, we have to provide the context in which to search.
+			AbstractPortImpl port = (AbstractPortImpl) object.getValue();
+			AbstractPortImpl sibling = (AbstractPortImpl) port.findSibling(this);
+			if (sibling != null) {
+				sibling.notifyDirectionChange();
+			}
+		}
+
+	};
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public FeatureMap getGroup() {
 		if (group == null) {
-			group = new BasicFeatureMap(this, ScdPackage.PORTS__GROUP);
+			group = new PortsFeatureMap(this, ScdPackage.PORTS__GROUP);
 		}
 		return group;
 	}
