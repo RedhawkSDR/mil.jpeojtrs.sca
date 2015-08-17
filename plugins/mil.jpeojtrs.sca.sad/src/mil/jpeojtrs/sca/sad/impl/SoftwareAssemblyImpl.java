@@ -720,8 +720,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	@Override
 	public EList<SadComponentInstantiation> getComponentInstantiationsInStartOrder() {
 		// END GENERATED CODE
-
 		final EList<SadComponentInstantiation> result = getAllComponentInstantiations();
+		final SadComponentInstantiation assemblyControllerInst = Util.getAssemblyControllerInstantiation(this);
 
 		// sort the component instantations
 		Collections.sort(result, new Comparator<SadComponentInstantiation>() {
@@ -729,7 +729,11 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 			@Override
 			public int compare(SadComponentInstantiation ci1, SadComponentInstantiation ci2) {
 				if ((ci1 != null) && (ci2 != null)) {
-					if ((ci1.getStartOrder() != null) && (ci2.getStartOrder() != null)) {
+					if (ci1.equals(assemblyControllerInst)) {
+						return -1;
+					} else if (ci2.equals(assemblyControllerInst)) {
+						return 1;
+					} else if ((ci1.getStartOrder() != null) && (ci2.getStartOrder() != null)) {
 						return ci1.getStartOrder().compareTo(ci2.getStartOrder());
 					} else if ((ci1.getStartOrder() != null) && (ci2.getStartOrder() == null)) {
 						// only ci1 has a start order
