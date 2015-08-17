@@ -365,6 +365,8 @@ public interface SoftwareAssembly extends EObject {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Gets all components in their start order. The assembly controller is always listed first, and components
+	 * without a start order are listed at the end.
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated

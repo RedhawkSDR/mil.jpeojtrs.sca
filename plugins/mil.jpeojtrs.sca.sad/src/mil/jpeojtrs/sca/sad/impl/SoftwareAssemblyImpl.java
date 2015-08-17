@@ -714,8 +714,6 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * Get's all components in their start order; components without a start order
-	 * are listed at the end.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
