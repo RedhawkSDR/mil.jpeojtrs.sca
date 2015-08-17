@@ -20,6 +20,7 @@ import mil.jpeojtrs.sca.scd.AbstractPort;
 import mil.jpeojtrs.sca.scd.PortDirection;
 import mil.jpeojtrs.sca.scd.PortType;
 import mil.jpeojtrs.sca.scd.PortTypeContainer;
+import mil.jpeojtrs.sca.scd.Ports;
 import mil.jpeojtrs.sca.scd.ScdFactory;
 import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.scd.Uses;
@@ -34,7 +35,9 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.ReplaceCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -248,7 +251,10 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 			if (direction == PortDirection.BIDIR) {
 				// Include the new sibling as part of the set of new objects
 				newObjects.add(port);
-				command = AddCommand.create(domain, port.eContainer(), null, sibling);
+				Ports ports = (Ports) port.eContainer();
+				// Insert the new port directly after the old port to keep them together
+				int index = getIndexForEntry(ports.getGroup(), port);
+				command = AddCommand.create(domain, ports, null, sibling, index + 1);
 			} else {
 				command = ReplaceCommand.create(domain, port, Collections.singleton(sibling));
 			}
@@ -286,6 +292,15 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 				return affectedObjects;
 			}
 		};
+	}
+
+	private int getIndexForEntry(FeatureMap map, Object value) {
+		for (int index = 0; index < map.size(); ++index) {
+			if (map.getValue(index) == value) {
+				return index;
+			}
+		}
+		return CommandParameter.NO_INDEX;
 	}
 
 	private PortDirection getBaseDirection(AbstractPort port) {

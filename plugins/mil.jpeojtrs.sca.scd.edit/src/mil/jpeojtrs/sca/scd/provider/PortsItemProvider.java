@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
+import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -178,6 +179,19 @@ public class PortsItemProvider extends ItemProviderAdapter implements IEditingDo
 	@Override
 	public ResourceLocator getResourceLocator() {
 		return ScdEditPlugin.INSTANCE;
+	}
+
+	@Override
+	protected Command factorAddCommand(EditingDomain domain, CommandParameter commandParameter) {
+		if (commandParameter.getIndex() != CommandParameter.NO_INDEX) {
+			// Providing an index often fails with feature maps because it tries to adjust the index for the deduced
+			// feature. Since the only feature we care about is "group", we can short-circuit the feature deduction
+			// and provide feature map entries so that the add command behaves as expected.
+			Ports owner = (Ports) commandParameter.getEOwner();
+			Collection< ? > collection = createFeatureMapEntries(owner, commandParameter.getCollection());
+			return AddCommand.create(domain, owner, ScdPackage.Literals.PORTS__GROUP, collection, commandParameter.getIndex());
+		}
+		return super.factorAddCommand(domain, commandParameter);
 	}
 
 	@Override
