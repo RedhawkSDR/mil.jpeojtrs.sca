@@ -13,33 +13,24 @@ package mil.jpeojtrs.sca.scd.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import mil.jpeojtrs.sca.scd.AbstractPort;
 import mil.jpeojtrs.sca.scd.PortDirection;
 import mil.jpeojtrs.sca.scd.PortType;
 import mil.jpeojtrs.sca.scd.PortTypeContainer;
-import mil.jpeojtrs.sca.scd.Ports;
 import mil.jpeojtrs.sca.scd.ScdFactory;
 import mil.jpeojtrs.sca.scd.ScdPackage;
-import mil.jpeojtrs.sca.scd.Uses;
+import mil.jpeojtrs.sca.scd.provider.command.ChangePortDirectionCommand;
 
 import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.command.CommandWrapper;
 import org.eclipse.emf.common.command.CompoundCommand;
-import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.FeatureMap;
-import org.eclipse.emf.edit.command.AddCommand;
-import org.eclipse.emf.edit.command.CommandParameter;
-import org.eclipse.emf.edit.command.RemoveCommand;
-import org.eclipse.emf.edit.command.ReplaceCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -221,108 +212,7 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 	 * @since 2.4
 	 */
 	protected Command createChangePortDirectionCommand(EditingDomain domain, AbstractPort port, PortDirection direction) {
-		if (port.getDirection().equals(direction)) {
-			return UnexecutableCommand.INSTANCE;
-		}
-
-		// Track the new port (and possibly its sibling) for reporting the affected objects on execute
-		final Collection<Object> newObjects = new ArrayList<Object>();
-
-		// Track the original port (and again, possibly its sibling) for reporting the affected objects on undo
-		final Collection<Object> originalObjects = new ArrayList<Object>();
-		originalObjects.add(port);
-
-		Command command;
-		if (port.isBiDirectional()) {
-			// Add the sibling, so that both ports are considered the original set
-			originalObjects.add(port.getSibling());
-
-			// Determine which port to remove based on the desired direction, and add the remaining port to the set of
-			// new objects
-			if (direction == getBaseDirection(port)) {
-				port = port.getSibling();
-			}
-			newObjects.add(port.getSibling());
-			command = RemoveCommand.create(domain, port);
-		} else {
-			// Create a new sibling of the opposite type
-			AbstractPort sibling = createSibling(port);
-			newObjects.add(sibling);
-			if (direction == PortDirection.BIDIR) {
-				// Include the new sibling as part of the set of new objects
-				newObjects.add(port);
-				Ports ports = (Ports) port.eContainer();
-				// Insert the new port directly after the old port to keep them together
-				int index = getIndexForEntry(ports.getGroup(), port);
-				command = AddCommand.create(domain, ports, null, sibling, index + 1);
-			} else {
-				command = ReplaceCommand.create(domain, port, Collections.singleton(sibling));
-			}
-		}
-
-		return new CommandWrapper(command) {
-
-			private Collection<Object> affectedObjects = null;
-
-			@Override
-			public String getLabel() {
-				return "Change Direction";
-			}
-
-			@Override
-			public void execute() {
-				super.execute();
-				affectedObjects = newObjects;
-			}
-
-			@Override
-			public void undo() {
-				super.undo();
-				affectedObjects = originalObjects;
-			}
-
-			@Override
-			public void redo() {
-				super.redo();
-				affectedObjects = newObjects;
-			}
-
-			@Override
-			public Collection< ? > getAffectedObjects() {
-				return affectedObjects;
-			}
-		};
-	}
-
-	private int getIndexForEntry(FeatureMap map, Object value) {
-		for (int index = 0; index < map.size(); ++index) {
-			if (map.getValue(index) == value) {
-				return index;
-			}
-		}
-		return CommandParameter.NO_INDEX;
-	}
-
-	private PortDirection getBaseDirection(AbstractPort port) {
-		if (port instanceof Uses) {
-			return PortDirection.USES;
-		} else {
-			return PortDirection.PROVIDES;
-		}
-	}
-
-	private AbstractPort createSibling(AbstractPort port) {
-		AbstractPort sibling;
-		if (port instanceof Uses) {
-			sibling = ScdFactory.eINSTANCE.createProvides();
-		} else {
-			sibling = ScdFactory.eINSTANCE.createUses();
-		}
-		sibling.setDescription(port.getDescription());
-		sibling.setName(port.getName());
-		sibling.setRepID(port.getRepID());
-		sibling.getPortType().addAll(EcoreUtil.copyAll(port.getPortType()));
-		return sibling;
+		return new ChangePortDirectionCommand(domain, port, direction);
 	}
 
 	@Override

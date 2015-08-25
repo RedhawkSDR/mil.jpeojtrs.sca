@@ -26,11 +26,9 @@ import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
-import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -182,19 +180,6 @@ public class PortsItemProvider extends ItemProviderAdapter implements IEditingDo
 	}
 
 	@Override
-	protected Command factorAddCommand(EditingDomain domain, CommandParameter commandParameter) {
-		if (commandParameter.getIndex() != CommandParameter.NO_INDEX) {
-			// Providing an index often fails with feature maps because it tries to adjust the index for the deduced
-			// feature. Since the only feature we care about is "group", we can short-circuit the feature deduction
-			// and provide feature map entries so that the add command behaves as expected.
-			Ports owner = (Ports) commandParameter.getEOwner();
-			Collection< ? > collection = createFeatureMapEntries(owner, commandParameter.getCollection());
-			return AddCommand.create(domain, owner, ScdPackage.Literals.PORTS__GROUP, collection, commandParameter.getIndex());
-		}
-		return super.factorAddCommand(domain, commandParameter);
-	}
-
-	@Override
 	protected Command factorRemoveCommand(EditingDomain domain, CommandParameter commandParameter) {
 		// The only features for Ports objects are some form of AbstractPort in the "group" feature map. However, the
 		// default implementation of this method returns an unexecutable command when the objects to remove are not
@@ -216,44 +201,5 @@ public class PortsItemProvider extends ItemProviderAdapter implements IEditingDo
 			return UnexecutableCommand.INSTANCE;
 		}
 		return createRemoveCommand(domain, owner, ScdPackage.Literals.PORTS__GROUP, children);
-	}
-
-	@Override
-	protected Command createReplaceCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Object value, Collection< ? > collection) {
-		// Using a replace command with the feature map preserves order, which is useful; however, feature maps break
-		// a lot of the built-in feature deduction, so we need to explicitly set the feature and create feature map
-		// entries for the input collection. As above, we are only concerned with the "group" feature, since it's the
-		// one that maintains the overall order and ownership of the AbstractPorts.
-		if (feature == null) {
-			feature = ScdPackage.Literals.PORTS__GROUP;
-		} else if (feature != ScdPackage.Literals.PORTS__GROUP) {
-			return UnexecutableCommand.INSTANCE;
-		}
-
-		value = getEntryForValue(((Ports) owner).getGroup(), value);
-		if (value == null) {
-			return UnexecutableCommand.INSTANCE;
-		}
-
-		collection = createFeatureMapEntries(owner, collection);
-		return super.createReplaceCommand(domain, owner, feature, value, collection);
-	}
-
-	private List<FeatureMap.Entry> createFeatureMapEntries(EObject owner, Collection< ? > collection) {
-		List<FeatureMap.Entry> entries = new ArrayList<FeatureMap.Entry>(collection.size());
-		for (Object child : collection) {
-			EStructuralFeature childFeature = getChildFeature(owner, child);
-			entries.add(FeatureMapUtil.createEntry(childFeature, child));
-		}
-		return entries;
-	}
-
-	private FeatureMap.Entry getEntryForValue(FeatureMap map, Object value) {
-		for (FeatureMap.Entry entry : map) {
-			if (entry == value|| entry.getValue() == value) {
-				return entry;
-			}
-		}
-		return null;
 	}
 }
