@@ -452,7 +452,7 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 		AbstractPort port = (AbstractPort) object;
 		switch (columnIndex) {
 		case 0:
-			return "<" + port.getDirection().getLiteral() + "> " + port.getName();
+			return port.getName();
 		case 1:
 			return port.getRepID();
 		default:
