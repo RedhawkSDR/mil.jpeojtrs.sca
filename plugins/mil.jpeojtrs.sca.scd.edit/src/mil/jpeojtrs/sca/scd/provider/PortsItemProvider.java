@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import mil.jpeojtrs.sca.scd.AbstractPort;
 import mil.jpeojtrs.sca.scd.Ports;
 import mil.jpeojtrs.sca.scd.Provides;
 import mil.jpeojtrs.sca.scd.ScdFactory;
@@ -22,14 +23,14 @@ import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.scd.Uses;
 
 import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.command.UnexecutableCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
-import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -180,26 +181,30 @@ public class PortsItemProvider extends ItemProviderAdapter implements IEditingDo
 	}
 
 	@Override
-	protected Command factorRemoveCommand(EditingDomain domain, CommandParameter commandParameter) {
-		// The only features for Ports objects are some form of AbstractPort in the "group" feature map. However, the
-		// default implementation of this method returns an unexecutable command when the objects to remove are not
-		// feature map entries because it doesn't consider features that do not contribute children. By finding the
-		// matching feature map entries, we can create a working remove command.
-		Ports owner = (Ports) commandParameter.getEOwner();
-		List<Object> children = new ArrayList<Object>();
-		for (Object child : commandParameter.getCollection()) {
-			for (FeatureMap.Entry entry : owner.getGroup()) {
-				if (entry == child || entry.getValue() == child) {
-					children.add(entry);
-					break;
+	protected Command createRemoveCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Collection< ? > collection) {
+		if (feature == ScdPackage.Literals.PORTS__GROUP) {
+			// For bi-directional ports, add all of the siblings to the collection of objects to remove.
+			FeatureMap groups = ((Ports) owner).getGroup();
+			List<Object> removed = new ArrayList<Object>(collection);
+			for (Object child : collection) {
+				AbstractPort port = (AbstractPort) AdapterFactoryEditingDomain.unwrap(child);
+				AbstractPort sibling = port.getSibling();
+				if (sibling != null) {
+					removed.add(getEntryForValue(groups, sibling));
 				}
 			}
+			collection = removed;
 		}
-
-		// As an extra safeguard, make sure that all children were found.
-		if (children.size() != commandParameter.getCollection().size()) {
-			return UnexecutableCommand.INSTANCE;
-		}
-		return createRemoveCommand(domain, owner, ScdPackage.Literals.PORTS__GROUP, children);
+		return super.createRemoveCommand(domain, owner, feature, collection);
 	}
+
+	private FeatureMap.Entry getEntryForValue(FeatureMap map, Object value) {
+		for (FeatureMap.Entry entry : map) {
+			if (entry.getValue() == value) {
+				return entry;
+			}
+		}
+		return null;
+	}
+
 }
