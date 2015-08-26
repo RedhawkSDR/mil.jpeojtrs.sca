@@ -23,6 +23,7 @@ import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.scd.Uses;
 
 import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -196,6 +197,29 @@ public class PortsItemProvider extends ItemProviderAdapter implements IEditingDo
 			collection = removed;
 		}
 		return super.createRemoveCommand(domain, owner, feature, collection);
+	}
+
+	@Override
+	protected Command createMoveCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Object value, int index) {
+		if (feature == ScdPackage.Literals.PORTS__GROUP) {
+			AbstractPort port = (AbstractPort) AdapterFactoryEditingDomain.unwrap(value);
+			if (port.isBiDirectional()) {
+				// Keep (or put) both sides of bi-directional ports together when moving.
+				CompoundCommand command = new CompoundCommand();
+				FeatureMap group = ((Ports) owner).getGroup();
+				// If the port is being moved up in the list, offset the sibling index so that it is placed after the
+				// selected port; otherwise, it will be inserted before.
+				int siblingIndex = index;
+				if (group.indexOf(value) > index) {
+					siblingIndex += 1;
+				}
+				FeatureMap.Entry sibling = getEntryForValue(group, port.getSibling());
+				command.append(super.createMoveCommand(domain, owner, feature, value, index));
+				command.append(super.createMoveCommand(domain, owner, feature, sibling, siblingIndex));
+				return command.unwrap();
+			}
+		}
+		return super.createMoveCommand(domain, owner, feature, value, index);
 	}
 
 	private FeatureMap.Entry getEntryForValue(FeatureMap map, Object value) {

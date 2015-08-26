@@ -186,24 +186,26 @@ public class AbstractPortItemProvider extends ItemProviderAdapter implements IEd
 
 	@Override
 	protected Command createSetCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Object value, int index) {
-		AbstractPort port = (AbstractPort) owner;
-		switch (feature.getFeatureID()) {
-		case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
-		case ScdPackage.ABSTRACT_PORT__NAME:
-		case ScdPackage.ABSTRACT_PORT__REP_ID:
-			if (port.isBiDirectional()) {
-				// Create a compound command to do the set on both the target port and the sibling, using the method
-				// from the superclass to avoid infinite recursion.
-				CompoundCommand command = new CompoundCommand();
-				command.append(super.createSetCommand(domain, port, feature, value, index));
-				command.append(super.createSetCommand(domain, port.getSibling(), feature, value, index));
-				return command;
+		if (feature != null) {
+			AbstractPort port = (AbstractPort) owner;
+			switch (feature.getFeatureID()) {
+			case ScdPackage.ABSTRACT_PORT__DESCRIPTION:
+			case ScdPackage.ABSTRACT_PORT__NAME:
+			case ScdPackage.ABSTRACT_PORT__REP_ID:
+				if (port.isBiDirectional()) {
+					// Create a compound command to do the set on both the target port and the sibling, using the method
+					// from the superclass to avoid infinite recursion.
+					CompoundCommand command = new CompoundCommand();
+					command.append(super.createSetCommand(domain, port, feature, value, index));
+					command.append(super.createSetCommand(domain, port.getSibling(), feature, value, index));
+					return command;
+				}
+				break;
+			case ScdPackage.ABSTRACT_PORT__DIRECTION:
+				return createChangePortDirectionCommand(domain, port, (PortDirection) value);
+			default:
+				break;
 			}
-			break;
-		case ScdPackage.ABSTRACT_PORT__DIRECTION:
-			return createChangePortDirectionCommand(domain, port, (PortDirection) value);
-		default:
-			break;
 		}
 		return super.createSetCommand(domain, owner, feature, value, index);
 	}
