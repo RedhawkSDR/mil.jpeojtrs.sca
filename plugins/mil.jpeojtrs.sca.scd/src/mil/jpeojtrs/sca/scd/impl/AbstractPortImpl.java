@@ -128,6 +128,13 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	protected static final PortDirection DIRECTION_EDEFAULT = PortDirection.USES;
 
 	/**
+	 * The cached sibling reference.
+	 * @since 3.0
+	 * @generated NOT
+	 */
+	protected AbstractPort sibling;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -288,24 +295,6 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	protected abstract PortDirection basicGetDirection();
 
 	/**
-	 * Emits a notification that the port's direction has changed.
-	 * Exposed to the package because PortsImpl's groups feature map needs to be able to call it, since that is the
-	 * only place in which we know the full context.
-	 * @generated NOT
-	 */
-	/*package*/ void notifyDirectionChange() {
-		PortDirection newDirection = getDirection();
-		PortDirection oldDirection;
-		if (newDirection == PortDirection.BIDIR) {
-			oldDirection = basicGetDirection();
-		} else {
-			oldDirection = PortDirection.BIDIR;
-		}
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.ABSTRACT_PORT__DIRECTION, oldDirection, newDirection));
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -324,23 +313,43 @@ public abstract class AbstractPortImpl extends EObjectImpl implements AbstractPo
 	 */
 	@Override
 	public AbstractPort getSibling() {
-		// END GENERATED CODE
-		if (eContainer() != null) {
-			Ports ports = (Ports) eContainer();
-			return findSibling(ports.getGroup());
-		}
-		return null;
-		// BEGIN GENERATED CODE
+		return sibling;
 	}
 
 	/**
-	 * Finds the sibling port, if any, in the given feature map.
-	 * Exposed to the package because PortsImpl's groups feature map uses it to locate the sibling for a port that no
-	 * longer belongs to the same context. In most cases, getSibling() provides the needed context.
+	 * Sets the sibling reference and emits a port direction change notification.
 	 * @generated NOT
 	 */
-	/*package*/ AbstractPort findSibling(FeatureMap ports) {
-		for (FeatureMap.Entry entry : ports) {
+	private void setSibling(AbstractPort newSibling) {
+		PortDirection oldDirection = getDirection();
+		sibling = newSibling;
+		PortDirection newDirection = getDirection();
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.ABSTRACT_PORT__DIRECTION, oldDirection, newDirection));
+		}
+	}
+
+	@Override
+	protected void eBasicSetContainer(InternalEObject newContainer, int newContainerFeatureID) {
+		super.eBasicSetContainer(newContainer, newContainerFeatureID);
+		if (sibling != null) {
+			((AbstractPortImpl) sibling).setSibling(null);
+		}
+		if (newContainer instanceof Ports) {
+			AbstractPort newSibling = findSibling((Ports) newContainer);
+			setSibling(newSibling);
+			if (newSibling != null) {
+				((AbstractPortImpl) newSibling).setSibling(this);
+			}
+		}
+	}
+
+	/**
+	 * Finds the sibling port, if any, in the given Ports.
+	 * @generated NOT
+	 */
+	private AbstractPort findSibling(Ports ports) {
+		for (FeatureMap.Entry entry : ports.getGroup()) {
 			AbstractPort port = (AbstractPort) entry.getValue();
 			if (port == this) {
 				continue;
