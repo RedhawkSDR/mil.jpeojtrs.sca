@@ -12,7 +12,6 @@
 package mil.jpeojtrs.sca.sad.impl;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +27,7 @@ import mil.jpeojtrs.sca.sad.SadPackage;
 import mil.jpeojtrs.sca.sad.SadPartitioning;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
+import mil.jpeojtrs.sca.sad.util.StartOrderComparator;
 import mil.jpeojtrs.sca.util.QueryParser;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -724,31 +724,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 		final SadComponentInstantiation assemblyControllerInst = Util.getAssemblyControllerInstantiation(this);
 
 		// sort the component instantations
-		Collections.sort(result, new Comparator<SadComponentInstantiation>() {
-
-			@Override
-			public int compare(SadComponentInstantiation ci1, SadComponentInstantiation ci2) {
-				if ((ci1 != null) && (ci2 != null)) {
-					if (ci1.equals(assemblyControllerInst)) {
-						return -1;
-					} else if (ci2.equals(assemblyControllerInst)) {
-						return 1;
-					} else if ((ci1.getStartOrder() != null) && (ci2.getStartOrder() != null)) {
-						return ci1.getStartOrder().compareTo(ci2.getStartOrder());
-					} else if ((ci1.getStartOrder() != null) && (ci2.getStartOrder() == null)) {
-						// only ci1 has a start order
-						return -1;
-					} else if ((ci1.getStartOrder() == null) && (ci2.getStartOrder() != null)) {
-						// only ci2 has a start order
-						return 1;
-					} else {
-						return 0;
-					}
-				}
-				return 0;
-			}
-		});
-
+		Collections.sort(result, new StartOrderComparator(assemblyControllerInst));
 		return result;
 		// BEGIN GENERATED CODE
 	}
