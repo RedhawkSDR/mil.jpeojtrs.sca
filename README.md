@@ -1,8 +1,8 @@
-# REDHAWK SCA EMF Model
+# REDHAWK XML EMF Model
  
 ## Description
 
-Contains the SCA XML EMF model used by the REDHAWK IDE and Explorer Applications.
+Contains the REDHAWK XML EMF model used by the REDHAWK IDE and Explorer Applications.
  
 ## REDHAWK Documentation
 

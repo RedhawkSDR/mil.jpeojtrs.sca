@@ -16,5 +16,5 @@
    <feature url="features/mil.jpeojtrs.sca.sdk_0.0.0.qualifier.jar" id="mil.jpeojtrs.sca.sdk">
       <category name="mil.jpeojtrs.sca"/>
    </feature>
-   <category-def name="mil.jpeojtrs.sca" label="SCA"/>
+   <category-def name="mil.jpeojtrs.sca" label="REDHAWK"/>
 </site>

@@ -37,7 +37,7 @@ public final class ScaResourceFactoryUtil {
 	}
 
 	/**
-	 * Applies all the default XMLResource Options used by all SCA Model resources
+	 * Applies all the default XMLResource Options used by all REDHAWK Model resources
 	 * @param saveOptions
 	 */
 	public static void setDefaultSaveOptions(final Map<Object, Object> saveOptions) {
@@ -62,7 +62,7 @@ public final class ScaResourceFactoryUtil {
 	}
 
 	/**
-	 * Applies all the default XMLResource Options used by all SCA Model resources
+	 * Applies all the default XMLResource Options used by all REDHAWK Model resources
 	 * @param saveOptions
 	 */
 	public static void setDefaultLoadOptions(final Map<Object, Object> loadOptions) {

@@ -965,11 +965,11 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * This compares two Any objects with the given SCA action.
+	 * This compares two Any objects with the given action.
 	 * @param a the first Any
 	 * @param b the second Any
 	 * @param action the action to use for comparison
-	 * @return the corresponding result of the SCA defined action on the two
+	 * @return the corresponding result of the defined action on the two
 	 * passed in Any objects
 	 * @since 3.0
 	 */
