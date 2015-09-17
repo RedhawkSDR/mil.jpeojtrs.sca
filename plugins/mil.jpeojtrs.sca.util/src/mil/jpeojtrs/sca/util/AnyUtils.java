@@ -262,31 +262,6 @@ public final class AnyUtils {
 
 		// Do this check because extract doesn't throw correctly
 		try {
-			// Extract Complex Types
-			if (complexBooleanHelper.type().equivalent(typeCode)) {
-				return ComplexBoolean.valueOf(theAny);
-			} else if (complexDoubleHelper.type().equivalent(typeCode)) {
-				return ComplexDouble.valueOf(theAny);
-			} else if (complexFloatHelper.type().equivalent(typeCode)) {
-				return ComplexFloat.valueOf(theAny);
-			} else if (complexLongHelper.type().equivalent(typeCode)) {
-				return ComplexLong.valueOf(theAny);
-			} else if (complexLongLongHelper.type().equivalent(typeCode)) {
-				return ComplexLongLong.valueOf(theAny);
-			} else if (complexShortHelper.type().equivalent(typeCode)) {
-				return ComplexShort.valueOf(theAny);
-			} else if (complexULongHelper.type().equivalent(typeCode)) {
-				return ComplexULong.valueOf(theAny);
-			} else if (complexULongLongHelper.type().equivalent(typeCode)) {
-				return ComplexULongLong.valueOf(theAny);
-			} else if (complexUShortHelper.type().equivalent(typeCode)) {
-				return ComplexUShort.valueOf(theAny);
-			} else if (complexOctetHelper.type().equivalent(typeCode)) {
-				return ComplexByte.valueOf(theAny);
-			} else if (complexCharHelper.type().equivalent(typeCode)) {
-				return ComplexUByte.valueOf(theAny);
-			}
-
 			final TCKind kind = typeCode.kind();
 			switch (kind.value()) {
 			case TCKind._tk_any:
@@ -347,6 +322,31 @@ public final class AnyUtils {
 					return theAny.extract_Object();
 				}
 			case TCKind._tk_struct:
+				// Extract Complex Types
+				if (complexBooleanHelper.type().equivalent(typeCode)) {
+					return ComplexBoolean.valueOf(theAny);
+				} else if (complexDoubleHelper.type().equivalent(typeCode)) {
+					return ComplexDouble.valueOf(theAny);
+				} else if (complexFloatHelper.type().equivalent(typeCode)) {
+					return ComplexFloat.valueOf(theAny);
+				} else if (complexLongHelper.type().equivalent(typeCode)) {
+					return ComplexLong.valueOf(theAny);
+				} else if (complexLongLongHelper.type().equivalent(typeCode)) {
+					return ComplexLongLong.valueOf(theAny);
+				} else if (complexShortHelper.type().equivalent(typeCode)) {
+					return ComplexShort.valueOf(theAny);
+				} else if (complexULongHelper.type().equivalent(typeCode)) {
+					return ComplexULong.valueOf(theAny);
+				} else if (complexULongLongHelper.type().equivalent(typeCode)) {
+					return ComplexULongLong.valueOf(theAny);
+				} else if (complexUShortHelper.type().equivalent(typeCode)) {
+					return ComplexUShort.valueOf(theAny);
+				} else if (complexOctetHelper.type().equivalent(typeCode)) {
+					return ComplexByte.valueOf(theAny);
+				} else if (complexCharHelper.type().equivalent(typeCode)) {
+					return ComplexUByte.valueOf(theAny);
+				}
+				throw new IllegalArgumentException("Unknown struct: " + typeCode);
 			case TCKind._tk_longdouble:
 			case TCKind._tk_array:
 			case TCKind._tk_abstract_interface:
