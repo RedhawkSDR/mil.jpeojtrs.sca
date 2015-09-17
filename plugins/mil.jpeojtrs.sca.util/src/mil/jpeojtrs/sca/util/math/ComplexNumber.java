@@ -11,6 +11,20 @@
 package mil.jpeojtrs.sca.util.math;
 
 import org.omg.CORBA.Any;
+import org.omg.CORBA.TCKind;
+import org.omg.CORBA.TypeCode;
+import org.omg.CORBA.TypeCodePackage.BadKind;
+
+import CF.complexCharSeqHelper;
+import CF.complexDoubleSeqHelper;
+import CF.complexFloatSeqHelper;
+import CF.complexLongLongSeqHelper;
+import CF.complexLongSeqHelper;
+import CF.complexOctetSeqHelper;
+import CF.complexShortSeqHelper;
+import CF.complexULongLongSeqHelper;
+import CF.complexULongSeqHelper;
+import CF.complexUShortSeqHelper;
 
 /**
  * @since 3.4
@@ -22,6 +36,87 @@ public abstract class ComplexNumber {
 	public abstract Object getValue(int index);
 
 	public abstract int getSize();
+
+	/**
+	 * Extracts the <code>Any</code> to an array of {@link ComplexNumber}.
+	 * @param any The <code>Any</code> to extract
+	 * @return An array of {@link ComplexNumber}, or null if the <code>Any</code>'s type code isn't recognized
+	 * @since 3.7
+	 */
+	public static ComplexNumber[] valueOfSequence(Any any) {
+		TypeCode tc = any.type();
+		if (tc.kind().value() != TCKind._tk_alias) {
+			return null;
+		}
+
+		int hash;
+		try {
+			hash = tc.name().hashCode();
+		} catch (BadKind e) {
+			// Should never occur (TCKind == alias should guarantee a name)
+			return null;
+		}
+
+		switch (hash) {
+		case -650662937: // "complexBooleanSeq".hashCode()
+			if (CF.complexBooleanSeqHelper.type().equivalent(tc)) {
+				return ComplexBoolean.valueOfSequence(any);
+			}
+			return null;
+		case 2102127614: // "complexDoubleSeq".hashCode()
+			if (complexDoubleSeqHelper.type().equivalent(tc)) {
+				return ComplexDouble.valueOfSequence(any);
+			}
+			return null;
+		case -944124621: // "complexFloatSeq".hashCode()
+			if (complexFloatSeqHelper.type().equivalent(tc)) {
+				return ComplexFloat.valueOfSequence(any);
+			}
+			return null;
+		case -439309965: // "complexLongSeq".hashCode()
+			if (complexLongSeqHelper.type().equivalent(tc)) {
+				return ComplexLong.valueOfSequence(any);
+			}
+			return null;
+		case 1886609239: // "complexLongLongSeq".hashCode()
+			if (complexLongLongSeqHelper.type().equivalent(tc)) {
+				return ComplexLongLong.valueOfSequence(any);
+			}
+			return null;
+		case 998225683: // "complexShortSeq".hashCode()
+			if (complexShortSeqHelper.type().equivalent(tc)) {
+				return ComplexShort.valueOfSequence(any);
+			}
+			return null;
+		case 1104498398: // "complexULongSeq".hashCode()
+			if (complexULongSeqHelper.type().equivalent(tc)) {
+				return ComplexULong.valueOfSequence(any);
+			}
+			return null;
+		case 1166104386: // "complexULongLongSeq".hashCode()
+			if (complexULongLongSeqHelper.type().equivalent(tc)) {
+				return ComplexULongLong.valueOfSequence(any);
+			}
+			return null;
+		case 1611644680: // "complexUShortSeq".hashCode()
+			if (complexUShortSeqHelper.type().equivalent(tc)) {
+				return ComplexUShort.valueOfSequence(any);
+			}
+			return null;
+		case -1689459488: // "complexOctetSeq".hashCode()
+			if (complexOctetSeqHelper.type().equivalent(tc)) {
+				return ComplexByte.valueOfSequence(any);
+			}
+			return null;
+		case -48990631: // "complexCharSeq".hashCode()
+			if (complexCharSeqHelper.type().equivalent(tc)) {
+				return ComplexUByte.valueOfSequence(any);
+			}
+			return null;
+		default:
+			return null;
+		}
+	}
 
 	/**
 	 * Converts a string to the appropriate {@link ComplexNumber} type.

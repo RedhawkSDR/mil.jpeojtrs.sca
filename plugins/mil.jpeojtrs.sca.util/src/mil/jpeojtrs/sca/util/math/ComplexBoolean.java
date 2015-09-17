@@ -23,7 +23,8 @@ import CF.complexBooleanHelper;
  * @since 3.4
  */
 public class ComplexBoolean extends ComplexNumber {
-	private final boolean[] numbers;
+
+	private boolean[] numbers;
 
 	public ComplexBoolean() {
 		this(false, false);
@@ -37,11 +38,22 @@ public class ComplexBoolean extends ComplexNumber {
 		this.numbers = numbers;
 	}
 
+	/**
+	 * @since 3.7
+	 */
+	public complexBoolean toCFType() {
+		if (numbers.length == 2) {
+			return new complexBoolean(numbers[0], numbers[1]);
+		} else {
+			throw new UnsupportedOperationException();
+		}
+	}
+
 	@Override
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (numbers.length == 2) {
-			complexBoolean value = new complexBoolean(numbers[0], numbers[1]);
+			complexBoolean value = toCFType();
 			Any any = orb.create_any();
 			complexBooleanHelper.insert(any, value);
 			return any;
@@ -70,6 +82,22 @@ public class ComplexBoolean extends ComplexNumber {
 		return super.equals(obj);
 	}
 
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public boolean[] getNumbers() {
+		return Arrays.copyOf(numbers, numbers.length);
+	}
+
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public void setNumbers(boolean[] numbers) {
+		this.numbers = Arrays.copyOf(numbers, numbers.length);
+	}
+
 	public boolean getBooleanValue(int index) throws ArrayIndexOutOfBoundsException {
 		return numbers[index];
 	}
@@ -82,6 +110,18 @@ public class ComplexBoolean extends ComplexNumber {
 	@Override
 	public int getSize() {
 		return numbers.length;
+	}
+
+	/**
+	 * @since 3.7
+	 */
+	public static ComplexBoolean[] valueOfSequence(Any any) {
+		CF.complexBoolean[] cfArray = CF.complexBooleanSeqHelper.extract(any);
+		ComplexBoolean[] array = new ComplexBoolean[cfArray.length];
+		for (int i = 0; i < cfArray.length; i++) {
+			array[i] = new ComplexBoolean(cfArray[i].real, cfArray[i].imag);
+		}
+		return array;
 	}
 
 	public static ComplexBoolean valueOf(Any any) {

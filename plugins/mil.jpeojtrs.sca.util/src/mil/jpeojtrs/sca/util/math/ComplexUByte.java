@@ -23,7 +23,8 @@ import CF.complexCharHelper;
  * @since 3.4
  */
 public class ComplexUByte extends ComplexNumber {
-	private final short[] numbers;
+
+	private short[] numbers;
 
 	public ComplexUByte() {
 		this((short) 0, (short) 0);
@@ -37,11 +38,22 @@ public class ComplexUByte extends ComplexNumber {
 		this.numbers = numbers;
 	}
 
+	/**
+	 * @since 3.7
+	 */
+	public complexChar toCFType() {
+		if (numbers.length == 2) {
+			return new complexChar((char) numbers[0], (char) numbers[1]);
+		} else {
+			throw new UnsupportedOperationException();
+		}
+	}
+
 	@Override
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (numbers.length == 2) {
-			complexChar value = new complexChar((char) numbers[0], (char) numbers[1]);
+			complexChar value = toCFType();
 			Any any = orb.create_any();
 			complexCharHelper.insert(any, value);
 			return any;
@@ -57,6 +69,22 @@ public class ComplexUByte extends ComplexNumber {
 		}
 	}
 
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public short[] getNumbers() {
+		return Arrays.copyOf(numbers, numbers.length);
+	}
+
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public void setNumbers(short[] numbers) {
+		this.numbers = Arrays.copyOf(numbers, numbers.length);
+	}
+
 	public short getUByteValue(int index) throws ArrayIndexOutOfBoundsException {
 		return numbers[index];
 	}
@@ -69,6 +97,19 @@ public class ComplexUByte extends ComplexNumber {
 	@Override
 	public int getSize() {
 		return numbers.length;
+	}
+
+	/**
+	 * @since 3.7
+	 */
+	public static ComplexUByte[] valueOfSequence(Any any) {
+		// TODO Use new Complex Unsiged byte when it becomes available.  Using char here is unsafe
+		CF.complexChar[] cfArray = CF.complexCharSeqHelper.extract(any);
+		ComplexUByte[] array = new ComplexUByte[cfArray.length];
+		for (int i = 0; i < cfArray.length; i++) {
+			array[i] = new ComplexUByte((short) cfArray[i].real, (short) cfArray[i].imag);
+		}
+		return array;
 	}
 
 	public static ComplexUByte valueOf(Any any) {

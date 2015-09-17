@@ -11,6 +11,7 @@
 package mil.jpeojtrs.sca.util;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -56,16 +57,27 @@ import CF.DataType;
 import CF.DataTypeHelper;
 import CF.PropertiesHelper;
 import CF.complexBooleanHelper;
+import CF.complexBooleanSeqHelper;
 import CF.complexCharHelper;
+import CF.complexCharSeqHelper;
 import CF.complexDoubleHelper;
+import CF.complexDoubleSeqHelper;
 import CF.complexFloatHelper;
+import CF.complexFloatSeqHelper;
 import CF.complexLongHelper;
 import CF.complexLongLongHelper;
+import CF.complexLongLongSeqHelper;
+import CF.complexLongSeqHelper;
 import CF.complexOctetHelper;
+import CF.complexOctetSeqHelper;
 import CF.complexShortHelper;
+import CF.complexShortSeqHelper;
 import CF.complexULongHelper;
 import CF.complexULongLongHelper;
+import CF.complexULongLongSeqHelper;
+import CF.complexULongSeqHelper;
 import CF.complexUShortHelper;
+import CF.complexUShortSeqHelper;
 
 public final class AnyUtils {
 
@@ -248,12 +260,14 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * Attempts to convert the any using the specified typeCode to the appropriate Java type.
+	 * Attempts to convert the Any using the specified typeCode to the appropriate Java type. May be called
+	 * recursively to resolve the Any.
 	 * 
 	 * @param theAny the Any to convert
 	 * @param typeCode the TypeCode of the desired value
 	 * @return a Java object from theAny that corresponds to the typeCode
 	 * @since 3.0
+	 * @noreference This method is not intended to be referenced by clients.
 	 */
 	public static Object convertAny(final Any theAny, final TypeCode typeCode) {
 		if (theAny == null) {
@@ -262,31 +276,6 @@ public final class AnyUtils {
 
 		// Do this check because extract doesn't throw correctly
 		try {
-			// Extract Complex Types
-			if (complexBooleanHelper.type().equivalent(typeCode)) {
-				return ComplexBoolean.valueOf(theAny);
-			} else if (complexDoubleHelper.type().equivalent(typeCode)) {
-				return ComplexDouble.valueOf(theAny);
-			} else if (complexFloatHelper.type().equivalent(typeCode)) {
-				return ComplexFloat.valueOf(theAny);
-			} else if (complexLongHelper.type().equivalent(typeCode)) {
-				return ComplexLong.valueOf(theAny);
-			} else if (complexLongLongHelper.type().equivalent(typeCode)) {
-				return ComplexLongLong.valueOf(theAny);
-			} else if (complexShortHelper.type().equivalent(typeCode)) {
-				return ComplexShort.valueOf(theAny);
-			} else if (complexULongHelper.type().equivalent(typeCode)) {
-				return ComplexULong.valueOf(theAny);
-			} else if (complexULongLongHelper.type().equivalent(typeCode)) {
-				return ComplexULongLong.valueOf(theAny);
-			} else if (complexUShortHelper.type().equivalent(typeCode)) {
-				return ComplexUShort.valueOf(theAny);
-			} else if (complexOctetHelper.type().equivalent(typeCode)) {
-				return ComplexByte.valueOf(theAny);
-			} else if (complexCharHelper.type().equivalent(typeCode)) {
-				return ComplexUByte.valueOf(theAny);
-			}
-
 			final TCKind kind = typeCode.kind();
 			switch (kind.value()) {
 			case TCKind._tk_any:
@@ -336,9 +325,12 @@ public final class AnyUtils {
 			case TCKind._tk_sequence:
 				if (PropertiesHelper.type().equivalent(typeCode)) {
 					return PropertiesHelper.extract(theAny);
-				} else {
-					return AnyUtils.extractSequence(theAny, typeCode.content_type());
 				}
+				ComplexNumber[] array = ComplexNumber.valueOfSequence(theAny);
+				if (array != null) {
+					return array;
+				}
+				return AnyUtils.extractSequence(theAny, typeCode.content_type());
 			case TCKind._tk_alias:
 				final TypeCode contentType = typeCode.content_type();
 				if (contentType.kind().value() == TCKind._tk_sequence) {
@@ -347,6 +339,31 @@ public final class AnyUtils {
 					return theAny.extract_Object();
 				}
 			case TCKind._tk_struct:
+				// Extract Complex Types
+				if (complexBooleanHelper.type().equivalent(typeCode)) {
+					return ComplexBoolean.valueOf(theAny);
+				} else if (complexDoubleHelper.type().equivalent(typeCode)) {
+					return ComplexDouble.valueOf(theAny);
+				} else if (complexFloatHelper.type().equivalent(typeCode)) {
+					return ComplexFloat.valueOf(theAny);
+				} else if (complexLongHelper.type().equivalent(typeCode)) {
+					return ComplexLong.valueOf(theAny);
+				} else if (complexLongLongHelper.type().equivalent(typeCode)) {
+					return ComplexLongLong.valueOf(theAny);
+				} else if (complexShortHelper.type().equivalent(typeCode)) {
+					return ComplexShort.valueOf(theAny);
+				} else if (complexULongHelper.type().equivalent(typeCode)) {
+					return ComplexULong.valueOf(theAny);
+				} else if (complexULongLongHelper.type().equivalent(typeCode)) {
+					return ComplexULongLong.valueOf(theAny);
+				} else if (complexUShortHelper.type().equivalent(typeCode)) {
+					return ComplexUShort.valueOf(theAny);
+				} else if (complexOctetHelper.type().equivalent(typeCode)) {
+					return ComplexByte.valueOf(theAny);
+				} else if (complexCharHelper.type().equivalent(typeCode)) {
+					return ComplexUByte.valueOf(theAny);
+				}
+				throw new IllegalArgumentException("Unknown struct: " + typeCode);
 			case TCKind._tk_longdouble:
 			case TCKind._tk_array:
 			case TCKind._tk_abstract_interface:
@@ -501,15 +518,17 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * 
-	 * @param value
-	 * @param type
-	 * @return
+	 * @deprecated Use {@link #toAny(Object, TCKind, boolean)}
 	 */
+	@Deprecated
 	public static Any toAny(final Object[] value, final TCKind type) {
 		return AnyUtils.toAny(value, type, false);
 	}
 
+	/**
+	 * @deprecated Use {@link #toAny(Object, TCKind, boolean)}
+	 */
+	@Deprecated
 	public static Any toAny(final Object value, final TCKind type) {
 		return AnyUtils.toAny(value, type, false);
 	}
@@ -522,7 +541,11 @@ public final class AnyUtils {
 			return JacorbUtil.init().create_any();
 		}
 		if (value.getClass().isArray()) {
-			return AnyUtils.toAnySequence(value, type);
+			try {
+				return AnyUtils.toAnySequence(value, convertToStringName(type), complex);
+			} catch (BadKind e) {
+				return null;
+			}
 		}
 		if (value instanceof ComplexNumber) {
 			complex = true;
@@ -625,11 +648,9 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * Assumes is not a complex type.
-	 * @param value
-	 * @param type
-	 * @return
+	 * @deprecated Use {@link #toAny(Object, String, boolean)}
 	 */
+	@Deprecated
 	public static Any toAny(final Object value, final String type) {
 		return AnyUtils.toAny(value, type, false);
 	}
@@ -652,10 +673,9 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * @param value
-	 * @param type
-	 * @return
+	 * @deprecated Use {@link #toAny(Object[], String, boolean)}
 	 */
+	@Deprecated
 	public static Any toAny(final Object[] value, final String type) {
 		return AnyUtils.toAny(value, type, false);
 	}
@@ -664,10 +684,8 @@ public final class AnyUtils {
 	 * @since 3.4
 	 */
 	public static Any toAny(final Object[] value, final String type, boolean complex) {
-		final TCKind kind = AnyUtils.convertToTCKind(type);
 		final Object[] convArray = AnyUtils.convertStringArray(value, type, complex);
-
-		return AnyUtils.toAny(convArray, kind, complex);
+		return AnyUtils.toAnySequence(convArray, type, complex);
 	}
 
 	private static Object[] convertStringArray(final Object[] value, final String type, boolean complex) {
@@ -684,11 +702,10 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * Creates an Any from the given Sequence object.
-	 * @param value array of objects to put in the Any
-	 * @param type the type code of the sequence
+	 * @deprecated Use {@link #toAnySequence(Object, String, boolean)}
 	 * @since 3.0
 	 */
+	@Deprecated
 	public static Any toAnySequence(final Object value, final TypeCode type) {
 		if (type.kind().value() != TCKind._tk_sequence) {
 			throw new IllegalArgumentException("Type is not a sequence");
@@ -702,8 +719,10 @@ public final class AnyUtils {
 	}
 
 	/**
+	 * @deprecated Use {@link #toAnySequence(Object, String, boolean)}
 	 * @since 3.0
 	 */
+	@Deprecated
 	public static Any toAnySequence(final Object value, TCKind type) {
 		final Any retVal = JacorbUtil.init().create_any();
 
@@ -815,6 +834,83 @@ public final class AnyUtils {
 		return retVal;
 	}
 
+	/**
+	 * Converts an array of values to the appropriate <code>Any</code> sequence.
+	 * @param array The <b>contents</b> of the array must be of an appropriate type (the array's type is unimportant)
+	 * @param type A REDHAWK property type
+	 * @param complex
+	 * @return
+	 * @since 3.7
+	 */
+	public static Any toAnySequence(final Object array, final String type, boolean complex) {
+		if (type == null) {
+			throw new NullPointerException("REDHAWK property type");
+		}
+
+		final Any any = JacorbUtil.init().create_any();
+
+		if (complex) {
+			if ("boolean".equals(type)) {
+				insertComplexBooleanArray(any, array);
+			} else if ("char".equals(type)) {
+				insertComplexUByteArray(any, array);
+			} else if ("double".equals(type)) {
+				insertComplexDoubleArray(any, array);
+			} else if ("float".equals(type)) {
+				insertComplexFloatArray(any, array);
+			} else if ("long".equals(type)) {
+				insertComplexLongArray(any, array);
+			} else if ("longlong".equals(type)) {
+				insertComplexLongLongArray(any, array);
+			} else if ("octet".equals(type)) {
+				insertComplexByteArray(any, array);
+			} else if ("short".equals(type)) {
+				insertComplexShortArray(any, array);
+			} else if ("ulong".equals(type)) {
+				insertComplexULongArray(any, array);
+			} else if ("ulonglong".equals(type)) {
+				insertComplexULongLongArray(any, array);
+			} else if ("ushort".equals(type)) {
+				insertComplexUShortArray(any, array);
+			} else {
+				String msg = String.format("Type %s cannot be complex", type);
+				throw new IllegalArgumentException(msg);
+			}
+			return any;
+		}
+
+		if ("boolean".equals(type)) {
+			AnyUtils.insertBooleanArray(any, array);
+		} else if ("char".equals(type)) {
+			AnyUtils.insertCharArray(any, array);
+		} else if ("double".equals(type)) {
+			AnyUtils.insertDoubleArray(any, array);
+		} else if ("float".equals(type)) {
+			AnyUtils.insertFloatArray(any, array);
+		} else if ("long".equals(type)) {
+			AnyUtils.insertLongArray(any, array);
+		} else if ("longlong".equals(type)) {
+			AnyUtils.insertLongLongArray(any, array);
+		} else if ("objref".equals(type)) {
+			throw new IllegalArgumentException("Sequences of type objref are not supported");
+		} else if ("octet".equals(type)) {
+			AnyUtils.insertOctetArray(any, array);
+		} else if ("short".equals(type)) {
+			AnyUtils.insertShortArray(any, array);
+		} else if ("string".equals(type)) {
+			StringSeqHelper.insert(any, AnyUtils.convertStringArray(array));
+		} else if ("ulong".equals(type)) {
+			AnyUtils.insertULongArray(any, array);
+		} else if ("ulonglong".equals(type)) {
+			AnyUtils.insertULongLongArray(any, array);
+		} else if ("ushort".equals(type)) {
+			AnyUtils.insertUShortArray(any, array);
+		} else {
+			throw new IllegalArgumentException("Unknown REDHAWK property type: " + type);
+		}
+		return any;
+	}
+
 	private static TCKind deriveArrayType(final Object array) {
 		if (array instanceof Any[]) {
 			return TCKind.tk_any;
@@ -863,6 +959,314 @@ public final class AnyUtils {
 			}
 			return retVal;
 		}
+	}
+
+	/**
+	 * Insert an array containing <code>short</code>, <code>Short</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA unsigned short sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertUShortArray(final Any any, final Object array) {
+		final short[] primValue = PrimitiveArrayUtils.convertToShortArray(array);
+		if (primValue != null) {
+			UShortSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>long</code>, <code>Long</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA unsigned long long sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertULongLongArray(final Any any, final Object array) {
+		final long[] primValue = PrimitiveArrayUtils.convertToLongArray(array);
+		if (primValue != null) {
+			ULongLongSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>int</code>, <code>Integer</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA unsigned long sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertULongArray(final Any any, final Object array) {
+		final int[] primValue = PrimitiveArrayUtils.convertToIntArray(array);
+		if (primValue != null) {
+			ULongSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>short</code>, <code>Short</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA short sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertShortArray(final Any any, final Object array) {
+		final short[] primValue = PrimitiveArrayUtils.convertToShortArray(array);
+		if (primValue != null) {
+			ShortSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>byte</code>, <code>Byte</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA octet sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertOctetArray(final Any any, final Object array) {
+		final byte[] primValue = PrimitiveArrayUtils.convertToByteArray(array);
+		if (primValue != null) {
+			OctetSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>long</code>, <code>Long</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA long sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertLongLongArray(final Any any, final Object array) {
+		final long[] primValue = PrimitiveArrayUtils.convertToLongArray(array);
+		if (primValue != null) {
+			LongLongSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>int</code>, <code>Integer</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA long sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertLongArray(final Any any, final Object array) {
+		final int[] primValue = PrimitiveArrayUtils.convertToIntArray(array);
+		if (primValue != null) {
+			LongSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>float</code>, <code>Float</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA float sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertFloatArray(final Any any, final Object array) {
+		final float[] primValue = PrimitiveArrayUtils.convertToFloatArray(array);
+		if (primValue != null) {
+			FloatSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>double</code>, <code>Double</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA double sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertDoubleArray(final Any any, final Object array) {
+		final double[] primValue = PrimitiveArrayUtils.convertToDoubleArray(array);
+		if (primValue != null) {
+			DoubleSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>char</code>, <code>Character</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA character sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertCharArray(final Any any, final Object array) {
+		final char[] primValue = PrimitiveArrayUtils.convertToCharArray(array);
+		if (primValue != null) {
+			CharSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>bool</code>, <code>Boolean</code>, or <code>Number</code> into an
+	 * <code>Any</code> as a CORBA boolean sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertBooleanArray(final Any any, final Object array) {
+		final boolean[] primValue = PrimitiveArrayUtils.convertToBooleanArray(array);
+		if (primValue != null) {
+			BooleanSeqHelper.insert(any, primValue);
+		}
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexBoolean</code> into an <code>Any</code> as a CORBA complexBoolean
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexBooleanArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexBoolean[] newArray = new CF.complexBoolean[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexBoolean) Array.get(array, i)).toCFType();
+		}
+		complexBooleanSeqHelper.insert(any, newArray);
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexByte</code> into an <code>Any</code> as a CORBA complexOctet
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexByteArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexOctet[] newArray = new CF.complexOctet[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexByte) Array.get(array, i)).toCFType();
+		}
+		complexOctetSeqHelper.insert(any, newArray);
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexDouble</code> into an <code>Any</code> as a CORBA complexDouble
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexDoubleArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexDouble[] newArray = new CF.complexDouble[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexDouble) Array.get(array, i)).toCFType();
+		}
+		complexDoubleSeqHelper.insert(any, newArray);
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexFloat</code> into an <code>Any</code> as a CORBA complexFloat
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexFloatArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexFloat[] newArray = new CF.complexFloat[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexFloat) Array.get(array, i)).toCFType();
+		}
+		complexFloatSeqHelper.insert(any, newArray);
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexLong</code> into an <code>Any</code> as a CORBA complexLong
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexLongArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexLong[] newArray = new CF.complexLong[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexLong) Array.get(array, i)).toCFType();
+		}
+		complexLongSeqHelper.insert(any, newArray);
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexLongLong</code> into an <code>Any</code> as a CORBA complexLongLong
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexLongLongArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexLongLong[] newArray = new CF.complexLongLong[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexLongLong) Array.get(array, i)).toCFType();
+		}
+		complexLongLongSeqHelper.insert(any, newArray);
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexShort</code> into an <code>Any</code> as a CORBA complexShort
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexShortArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexShort[] newArray = new CF.complexShort[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexShort) Array.get(array, i)).toCFType();
+		}
+		complexShortSeqHelper.insert(any, newArray);
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexUByte</code> into an <code>Any</code> as a CORBA complexChar
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexUByteArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexChar[] newArray = new CF.complexChar[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexUByte) Array.get(array, i)).toCFType();
+		}
+		complexCharSeqHelper.insert(any, newArray);
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexULong</code> into an <code>Any</code> as a CORBA complexULong
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexULongArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexULong[] newArray = new CF.complexULong[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexULong) Array.get(array, i)).toCFType();
+		}
+		complexULongSeqHelper.insert(any, newArray);
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexULongLong</code> into an <code>Any</code> as a CORBA complexULongLong
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexULongLongArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexULongLong[] newArray = new CF.complexULongLong[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexULongLong) Array.get(array, i)).toCFType();
+		}
+		complexULongLongSeqHelper.insert(any, newArray);
+	}
+
+	/**
+	 * Insert an array containing <code>ComplexUShort</code> into an <code>Any</code> as a CORBA complexUShort
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertComplexUShortArray(final Any any, final Object array) {
+		final int len = Array.getLength(array);
+		final CF.complexUShort[] newArray = new CF.complexUShort[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((ComplexUShort) Array.get(array, i)).toCFType();
+		}
+		complexUShortSeqHelper.insert(any, newArray);
 	}
 
 	private static void handleWChar(final Any retVal, final Object value) {
@@ -951,7 +1355,9 @@ public final class AnyUtils {
 
 	/**
 	 * @since 3.3
+	 * @deprecated Use {@link #stringToAny(String, String, boolean)}
 	 */
+	@Deprecated
 	public static Any stringToAny(final String value, final String type) {
 		return AnyUtils.stringToAny(value, type, false);
 	}
@@ -972,7 +1378,9 @@ public final class AnyUtils {
 	 * @return the corresponding result of the SCA defined action on the two
 	 * passed in Any objects
 	 * @since 3.0
+	 * @deprecated Do not use this function
 	 */
+	@Deprecated
 	public static boolean compareAnys(final Any a, final Any b, final String action) {
 		final int kindA = a.type().kind().value();
 		final int kindB = b.type().kind().value();
@@ -1125,11 +1533,33 @@ public final class AnyUtils {
 			final TCKind kind = typeCode.kind();
 			switch (kind.value()) {
 			case TCKind._tk_sequence:
-				if (PropertiesHelper.type().equivalent(typeCode)) {
-					return false;
-				} else {
+				return !PropertiesHelper.type().equivalent(typeCode);
+			case TCKind._tk_alias:
+				// Check Complex Sequence Types
+				if (complexBooleanSeqHelper.type().equivalent(typeCode)) {
+					return true;
+				} else if (complexDoubleSeqHelper.type().equivalent(typeCode)) {
+					return true;
+				} else if (complexFloatSeqHelper.type().equivalent(typeCode)) {
+					return true;
+				} else if (complexLongSeqHelper.type().equivalent(typeCode)) {
+					return true;
+				} else if (complexLongLongSeqHelper.type().equivalent(typeCode)) {
+					return true;
+				} else if (complexShortSeqHelper.type().equivalent(typeCode)) {
+					return true;
+				} else if (complexULongSeqHelper.type().equivalent(typeCode)) {
+					return true;
+				} else if (complexULongLongSeqHelper.type().equivalent(typeCode)) {
+					return true;
+				} else if (complexUShortSeqHelper.type().equivalent(typeCode)) {
+					return true;
+				} else if (complexOctetSeqHelper.type().equivalent(typeCode)) {
+					return true;
+				} else if (complexCharSeqHelper.type().equivalent(typeCode)) {
 					return true;
 				}
+				return false;
 			default:
 				return false;
 			}
@@ -1159,7 +1589,7 @@ public final class AnyUtils {
 		TypeCode typeCode = dt.value.type();
 		// Do this check because extract doesn't throw correctly
 		try {
-			// Extract Complex Types
+			// Check Complex Types
 			if (complexBooleanHelper.type().equivalent(typeCode)) {
 				return true;
 			} else if (complexDoubleHelper.type().equivalent(typeCode)) {

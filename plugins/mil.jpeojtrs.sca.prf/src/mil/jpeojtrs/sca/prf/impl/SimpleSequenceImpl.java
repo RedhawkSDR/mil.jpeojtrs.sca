@@ -631,7 +631,9 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 
 	@Override
 	public Any toAny() {
-		return AnyUtils.toAny(getValues().getValue().toArray(), getType().getLiteral(), isComplex());
+		// END GENERATED CODE
+		return AnyUtils.toAnySequence(getValues().getValue().toArray(), getType().getLiteral(), isComplex());
+		// BEGIN GENERATED CODE
 	}
 
 } //SimpleSequenceImpl

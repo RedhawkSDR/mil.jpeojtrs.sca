@@ -13,20 +13,20 @@ package mil.jpeojtrs.sca.util.math;
 import java.math.BigInteger;
 import java.util.Arrays;
 
-import mil.jpeojtrs.sca.util.UnsignedUtils;
-
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
 
 import CF.complexULongLong;
 import CF.complexULongLongHelper;
+import mil.jpeojtrs.sca.util.UnsignedUtils;
 
 /**
  * @since 3.4
  */
 public class ComplexULongLong extends ComplexNumber {
-	private final BigInteger[] numbers;
+
+	private BigInteger[] numbers;
 
 	public ComplexULongLong() {
 		this(BigInteger.ZERO, BigInteger.ZERO);
@@ -40,11 +40,22 @@ public class ComplexULongLong extends ComplexNumber {
 		this.numbers = numbers;
 	}
 
+	/**
+	 * @since 3.7
+	 */
+	public complexULongLong toCFType() {
+		if (numbers.length == 2) {
+			return new complexULongLong(UnsignedUtils.toUnsigned(numbers[0]), UnsignedUtils.toUnsigned(numbers[1]));
+		} else {
+			throw new UnsupportedOperationException();
+		}
+	}
+
 	@Override
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (numbers.length == 2) {
-			complexULongLong value = new complexULongLong(UnsignedUtils.toUnsigned(numbers[0]), UnsignedUtils.toUnsigned(numbers[1]));
+			complexULongLong value = toCFType();
 			Any any = orb.create_any();
 			complexULongLongHelper.insert(any, value);
 			return any;
@@ -60,6 +71,29 @@ public class ComplexULongLong extends ComplexNumber {
 		}
 	}
 
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public BigInteger[] getNumbers() {
+		BigInteger[] arrayCopy = new BigInteger[numbers.length];
+		for (int i = 0; i < numbers.length; i++) {
+			arrayCopy[i] = new BigInteger(numbers[i].toByteArray());
+		}
+		return arrayCopy;
+	}
+
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public void setNumbers(BigInteger[] numbers) {
+		this.numbers = new BigInteger[numbers.length];
+		for (int i = 0; i < numbers.length; i++) {
+			this.numbers[i] = new BigInteger(numbers[i].toByteArray());
+		}
+	}
+
 	public BigInteger getULongLongValue(int index) throws ArrayIndexOutOfBoundsException {
 		return numbers[index];
 	}
@@ -72,6 +106,18 @@ public class ComplexULongLong extends ComplexNumber {
 	@Override
 	public int getSize() {
 		return numbers.length;
+	}
+
+	/**
+	 * @since 3.7
+	 */
+	public static ComplexULongLong[] valueOfSequence(Any any) {
+		CF.complexULongLong[] cfArray = CF.complexULongLongSeqHelper.extract(any);
+		ComplexULongLong[] array = new ComplexULongLong[cfArray.length];
+		for (int i = 0; i < cfArray.length; i++) {
+			array[i] = new ComplexULongLong(UnsignedUtils.toSigned(cfArray[i].real), UnsignedUtils.toSigned(cfArray[i].imag));
+		}
+		return array;
 	}
 
 	public static ComplexULongLong valueOf(Any any) {
