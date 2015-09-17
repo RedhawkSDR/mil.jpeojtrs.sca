@@ -39,7 +39,7 @@ public class ComplexLong extends ComplexNumber {
 	}
 
 	/**
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public complexLong toCFType() {
 		if (numbers.length == 2) {
@@ -71,7 +71,7 @@ public class ComplexLong extends ComplexNumber {
 
 	/**
 	 * Intended for JavaBean serialization only.
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public int[] getNumbers() {
 		return Arrays.copyOf(numbers, numbers.length);
@@ -79,7 +79,7 @@ public class ComplexLong extends ComplexNumber {
 
 	/**
 	 * Intended for JavaBean serialization only.
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public void setNumbers(int[] numbers) {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
@@ -100,7 +100,7 @@ public class ComplexLong extends ComplexNumber {
 	}
 
 	/**
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public static ComplexLong[] valueOfSequence(Any any) {
 		CF.complexLong[] cfArray = CF.complexLongSeqHelper.extract(any);

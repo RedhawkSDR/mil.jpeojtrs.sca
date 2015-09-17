@@ -39,7 +39,7 @@ public class ComplexByte extends ComplexNumber {
 	}
 
 	/**
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public complexOctet toCFType() {
 		if (bytes.length == 2) {
@@ -71,7 +71,7 @@ public class ComplexByte extends ComplexNumber {
 
 	/**
 	 * Intended for JavaBean serialization only.
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public byte[] getBytes() {
 		return Arrays.copyOf(bytes, bytes.length);
@@ -79,7 +79,7 @@ public class ComplexByte extends ComplexNumber {
 
 	/**
 	 * Intended for JavaBean serialization only.
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public void setBytes(byte[] numbers) {
 		this.bytes = Arrays.copyOf(bytes, numbers.length);
@@ -100,7 +100,7 @@ public class ComplexByte extends ComplexNumber {
 	}
 
 	/**
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public static ComplexByte[] valueOfSequence(Any any) {
 		CF.complexOctet[] cfArray = CF.complexOctetSeqHelper.extract(any);

@@ -39,7 +39,7 @@ public class ComplexFloat extends ComplexNumber {
 	}
 
 	/**
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public complexFloat toCFType() {
 		if (numbers.length == 2) {
@@ -71,7 +71,7 @@ public class ComplexFloat extends ComplexNumber {
 
 	/**
 	 * Intended for JavaBean serialization only.
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public float[] getNumbers() {
 		return numbers;
@@ -79,7 +79,7 @@ public class ComplexFloat extends ComplexNumber {
 
 	/**
 	 * Intended for JavaBean serialization only.
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public void setNumbers(float[] numbers) {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
@@ -100,7 +100,7 @@ public class ComplexFloat extends ComplexNumber {
 	}
 
 	/**
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public static ComplexFloat[] valueOfSequence(Any any) {
 		CF.complexFloat[] cfArray = CF.complexFloatSeqHelper.extract(any);

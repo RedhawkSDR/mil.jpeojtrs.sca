@@ -41,7 +41,7 @@ public abstract class ComplexNumber {
 	 * Extracts the <code>Any</code> to an array of {@link ComplexNumber}.
 	 * @param any The <code>Any</code> to extract
 	 * @return An array of {@link ComplexNumber}, or null if the <code>Any</code>'s type code isn't recognized
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public static ComplexNumber[] valueOfSequence(Any any) {
 		TypeCode tc = any.type();

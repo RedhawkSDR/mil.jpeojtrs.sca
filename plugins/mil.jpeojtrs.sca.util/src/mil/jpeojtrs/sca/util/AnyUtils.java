@@ -17,19 +17,6 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
-import mil.jpeojtrs.sca.util.math.ComplexBoolean;
-import mil.jpeojtrs.sca.util.math.ComplexByte;
-import mil.jpeojtrs.sca.util.math.ComplexDouble;
-import mil.jpeojtrs.sca.util.math.ComplexFloat;
-import mil.jpeojtrs.sca.util.math.ComplexLong;
-import mil.jpeojtrs.sca.util.math.ComplexLongLong;
-import mil.jpeojtrs.sca.util.math.ComplexNumber;
-import mil.jpeojtrs.sca.util.math.ComplexShort;
-import mil.jpeojtrs.sca.util.math.ComplexUByte;
-import mil.jpeojtrs.sca.util.math.ComplexULong;
-import mil.jpeojtrs.sca.util.math.ComplexULongLong;
-import mil.jpeojtrs.sca.util.math.ComplexUShort;
-
 import org.apache.commons.lang.ArrayUtils;
 import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
@@ -78,6 +65,18 @@ import CF.complexULongLongSeqHelper;
 import CF.complexULongSeqHelper;
 import CF.complexUShortHelper;
 import CF.complexUShortSeqHelper;
+import mil.jpeojtrs.sca.util.math.ComplexBoolean;
+import mil.jpeojtrs.sca.util.math.ComplexByte;
+import mil.jpeojtrs.sca.util.math.ComplexDouble;
+import mil.jpeojtrs.sca.util.math.ComplexFloat;
+import mil.jpeojtrs.sca.util.math.ComplexLong;
+import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexNumber;
+import mil.jpeojtrs.sca.util.math.ComplexShort;
+import mil.jpeojtrs.sca.util.math.ComplexUByte;
+import mil.jpeojtrs.sca.util.math.ComplexULong;
+import mil.jpeojtrs.sca.util.math.ComplexULongLong;
+import mil.jpeojtrs.sca.util.math.ComplexUShort;
 
 public final class AnyUtils {
 
@@ -267,9 +266,8 @@ public final class AnyUtils {
 	 * @param typeCode the TypeCode of the desired value
 	 * @return a Java object from theAny that corresponds to the typeCode
 	 * @since 3.0
-	 * @noreference This method is not intended to be referenced by clients.
 	 */
-	public static Object convertAny(final Any theAny, final TypeCode typeCode) {
+	private static Object convertAny(final Any theAny, final TypeCode typeCode) {
 		if (theAny == null) {
 			return null;
 		}
@@ -518,22 +516,6 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * @deprecated Use {@link #toAny(Object, TCKind, boolean)}
-	 */
-	@Deprecated
-	public static Any toAny(final Object[] value, final TCKind type) {
-		return AnyUtils.toAny(value, type, false);
-	}
-
-	/**
-	 * @deprecated Use {@link #toAny(Object, TCKind, boolean)}
-	 */
-	@Deprecated
-	public static Any toAny(final Object value, final TCKind type) {
-		return AnyUtils.toAny(value, type, false);
-	}
-
-	/**
 	 * @since 3.4
 	 */
 	public static Any toAny(final Object value, final TCKind type, boolean complex) {
@@ -648,14 +630,6 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * @deprecated Use {@link #toAny(Object, String, boolean)}
-	 */
-	@Deprecated
-	public static Any toAny(final Object value, final String type) {
-		return AnyUtils.toAny(value, type, false);
-	}
-
-	/**
 	 * @since 3.4
 	 */
 	public static Any toAny(final Object value, final String type, boolean complex) {
@@ -673,18 +647,10 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * @deprecated Use {@link #toAny(Object[], String, boolean)}
-	 */
-	@Deprecated
-	public static Any toAny(final Object[] value, final String type) {
-		return AnyUtils.toAny(value, type, false);
-	}
-
-	/**
 	 * @since 3.4
 	 */
-	public static Any toAny(final Object[] value, final String type, boolean complex) {
-		final Object[] convArray = AnyUtils.convertStringArray(value, type, complex);
+	public static Any toAny(final Object[] array, final String type, boolean complex) {
+		final Object[] convArray = AnyUtils.convertStringArray(array, type, complex);
 		return AnyUtils.toAnySequence(convArray, type, complex);
 	}
 
@@ -702,145 +668,12 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * @deprecated Use {@link #toAnySequence(Object, String, boolean)}
-	 * @since 3.0
-	 */
-	@Deprecated
-	public static Any toAnySequence(final Object value, final TypeCode type) {
-		if (type.kind().value() != TCKind._tk_sequence) {
-			throw new IllegalArgumentException("Type is not a sequence");
-		}
-
-		try {
-			return AnyUtils.toAnySequence(value, type.content_type().kind());
-		} catch (final BadKind e) {
-			throw new IllegalArgumentException("Bad Kind for type: " + type);
-		}
-	}
-
-	/**
-	 * @deprecated Use {@link #toAnySequence(Object, String, boolean)}
-	 * @since 3.0
-	 */
-	@Deprecated
-	public static Any toAnySequence(final Object value, TCKind type) {
-		final Any retVal = JacorbUtil.init().create_any();
-
-		if (value instanceof Object[]) {
-			Object[] cArray = (Object[]) value;
-			if (cArray.length > 0 && cArray[0] instanceof ComplexNumber) {
-				Any[] anys = new Any[cArray.length];
-				for (int i = 0; i < cArray.length; i++) {
-					anys[i] = ((ComplexNumber) cArray[i]).toAny();
-				}
-				AnySeqHelper.insert(retVal, anys);
-				return retVal;
-			}
-		}
-
-		if (type == null) {
-			type = AnyUtils.deriveArrayType(value);
-		}
-
-		if (value == null || type == null) {
-			return retVal;
-		}
-
-		switch (type.value()) {
-		case TCKind._tk_any:
-			org.omg.DynamicAny.AnySeqHelper.insert(retVal, (Any[]) value);
-			break;
-		case TCKind._tk_boolean:
-			AnyUtils.handleBoolean(retVal, value);
-			break;
-		case TCKind._tk_char:
-			AnyUtils.handleChar(retVal, value);
-			break;
-		case TCKind._tk_double:
-			AnyUtils.handleDouble(retVal, value);
-			break;
-		case TCKind._tk_float:
-			AnyUtils.handleFloat(retVal, value);
-			break;
-		case TCKind._tk_long:
-			AnyUtils.handleLong(retVal, value);
-			break;
-		case TCKind._tk_longlong:
-			AnyUtils.handleLongLong(retVal, value);
-			break;
-		case TCKind._tk_octet:
-			AnyUtils.handleOctet(retVal, value);
-			break;
-		case TCKind._tk_short:
-			AnyUtils.handleShort(retVal, value);
-			break;
-		case TCKind._tk_string:
-			StringSeqHelper.insert(retVal, AnyUtils.convertStringArray(value));
-			break;
-		case TCKind._tk_ulong:
-			AnyUtils.handleULong(retVal, value);
-			break;
-		case TCKind._tk_ulonglong:
-			AnyUtils.handleULongLong(retVal, value);
-			break;
-		case TCKind._tk_ushort:
-			AnyUtils.handleUShort(retVal, value);
-			break;
-		case TCKind._tk_wchar:
-			AnyUtils.handleWChar(retVal, value);
-			break;
-		case TCKind._tk_wstring:
-			WStringSeqHelper.insert(retVal, AnyUtils.convertStringArray(value));
-			break;
-		case TCKind._tk_abstract_interface:
-			throw new IllegalArgumentException("Unhandled target type: _tk_abstract_interface");
-		case TCKind._tk_alias:
-			throw new IllegalArgumentException("Unhandled target type: _tk_alias");
-		case TCKind._tk_array:
-			throw new IllegalArgumentException("Unhandled target type: _tk_array");
-		case TCKind._tk_enum:
-			throw new IllegalArgumentException("Unhandled target type: _tk_enum");
-		case TCKind._tk_except:
-			throw new IllegalArgumentException("Unhandled target type: _tk_enum");
-		case TCKind._tk_fixed:
-			throw new IllegalArgumentException("Unhandled target type: _tk_fixed");
-		case TCKind._tk_longdouble:
-			throw new IllegalArgumentException("Unhandled target type: _tk_longdouble");
-		case TCKind._tk_native:
-			throw new IllegalArgumentException("Unhandled target type: _tk_longdouble");
-		case TCKind._tk_null:
-			return retVal;
-		case TCKind._tk_objref:
-			throw new IllegalArgumentException("Unhandled target type: _tk_objref");
-		case TCKind._tk_Principal:
-			throw new IllegalArgumentException("Unhandled target type: _tk_Principal");
-		case TCKind._tk_sequence:
-			throw new IllegalArgumentException("Unhandled target type: _tk_sequence");
-		case TCKind._tk_struct:
-			throw new IllegalArgumentException("Unhandled target type: _tk_struct");
-		case TCKind._tk_TypeCode:
-			throw new IllegalArgumentException("Unhandled target type: _tk_TypeCode");
-		case TCKind._tk_union:
-			throw new IllegalArgumentException("Unhandled target type: _tk_union");
-		case TCKind._tk_value:
-			throw new IllegalArgumentException("Unhandled target type: _tk_value");
-		case TCKind._tk_value_box:
-			throw new IllegalArgumentException("Unhandled target type: _tk_value_box");
-		case TCKind._tk_void:
-			throw new IllegalArgumentException("Unhandled target type: _tk_void");
-		default:
-			throw new IllegalArgumentException("Unknown target type: " + type.value());
-		}
-		return retVal;
-	}
-
-	/**
 	 * Converts an array of values to the appropriate <code>Any</code> sequence.
 	 * @param array The <b>contents</b> of the array must be of an appropriate type (the array's type is unimportant)
 	 * @param type A REDHAWK property type
 	 * @param complex
 	 * @return
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public static Any toAnySequence(final Object array, final String type, boolean complex) {
 		if (type == null) {
@@ -909,31 +742,6 @@ public final class AnyUtils {
 			throw new IllegalArgumentException("Unknown REDHAWK property type: " + type);
 		}
 		return any;
-	}
-
-	private static TCKind deriveArrayType(final Object array) {
-		if (array instanceof Any[]) {
-			return TCKind.tk_any;
-		} else if (array instanceof Boolean[] || array instanceof boolean[]) {
-			return TCKind.tk_boolean;
-		} else if (array instanceof Character[] || array instanceof char[]) {
-			return TCKind.tk_char;
-		} else if (array instanceof Double[] || array instanceof double[]) {
-			return TCKind.tk_double;
-		} else if (array instanceof Float[] || array instanceof float[]) {
-			return TCKind.tk_float;
-		} else if (array instanceof Integer[] || array instanceof int[]) {
-			return TCKind.tk_long;
-		} else if (array instanceof Long[] || array instanceof long[]) {
-			return TCKind.tk_longlong;
-		} else if (array instanceof Byte[] || array instanceof byte[]) {
-			return TCKind.tk_octet;
-		} else if (array instanceof Short[] || array instanceof short[]) {
-			return TCKind.tk_short;
-		} else if (array instanceof String[]) {
-			return TCKind.tk_string;
-		}
-		return null;
 	}
 
 	private static String[] convertStringArray(final Object value) {
@@ -1269,258 +1077,12 @@ public final class AnyUtils {
 		complexUShortSeqHelper.insert(any, newArray);
 	}
 
-	private static void handleWChar(final Any retVal, final Object value) {
-		final char[] primValue = PrimitiveArrayUtils.convertToCharArray(value);
-		if (primValue != null) {
-			WCharSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleUShort(final Any retVal, final Object value) {
-		final short[] primValue = PrimitiveArrayUtils.convertToShortArray(value);
-		if (primValue != null) {
-			UShortSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleULongLong(final Any retVal, final Object value) {
-		final long[] primValue = PrimitiveArrayUtils.convertToLongArray(value);
-		if (primValue != null) {
-			ULongLongSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleULong(final Any retVal, final Object value) {
-		final int[] primValue = PrimitiveArrayUtils.convertToIntArray(value);
-		if (primValue != null) {
-			ULongSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleShort(final Any retVal, final Object value) {
-		final short[] primValue = PrimitiveArrayUtils.convertToShortArray(value);
-		if (primValue != null) {
-			ShortSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleOctet(final Any retVal, final Object value) {
-		final byte[] primValue = PrimitiveArrayUtils.convertToByteArray(value);
-		if (primValue != null) {
-			OctetSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleLongLong(final Any retVal, final Object value) {
-		final long[] primValue = PrimitiveArrayUtils.convertToLongArray(value);
-		if (primValue != null) {
-			LongLongSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleLong(final Any retVal, final Object value) {
-		final int[] primValue = PrimitiveArrayUtils.convertToIntArray(value);
-		if (primValue != null) {
-			LongSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleFloat(final Any retVal, final Object value) {
-		final float[] primValue = PrimitiveArrayUtils.convertToFloatArray(value);
-		if (primValue != null) {
-			FloatSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleDouble(final Any retVal, final Object value) {
-		final double[] primValue = PrimitiveArrayUtils.convertToDoubleArray(value);
-		if (primValue != null) {
-			DoubleSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleChar(final Any retVal, final Object value) {
-		final char[] primValue = PrimitiveArrayUtils.convertToCharArray(value);
-		if (primValue != null) {
-			CharSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	private static void handleBoolean(final Any retVal, final Object value) {
-		final boolean[] primValue = PrimitiveArrayUtils.convertToBooleanArray(value);
-		if (primValue != null) {
-			BooleanSeqHelper.insert(retVal, primValue);
-		}
-	}
-
-	/**
-	 * @since 3.3
-	 * @deprecated Use {@link #stringToAny(String, String, boolean)}
-	 */
-	@Deprecated
-	public static Any stringToAny(final String value, final String type) {
-		return AnyUtils.stringToAny(value, type, false);
-	}
-
 	/**
 	 * @since 3.4
 	 */
 	public static Any stringToAny(final String value, final String type, boolean complex) {
 		final Object newValue = AnyUtils.convertString(value, type, complex);
 		return AnyUtils.toAny(newValue, AnyUtils.convertToTCKind(type), complex);
-	}
-
-	/**
-	 * This compares two Any objects with the given action.
-	 * @param a the first Any
-	 * @param b the second Any
-	 * @param action the action to use for comparison
-	 * @return the corresponding result of the defined action on the two
-	 * passed in Any objects
-	 * @since 3.0
-	 * @deprecated Do not use this function
-	 */
-	@Deprecated
-	public static boolean compareAnys(final Any a, final Any b, final String action) {
-		final int kindA = a.type().kind().value();
-		final int kindB = b.type().kind().value();
-
-		// If the types don't match, the comparison will always be false
-		if (kindA != kindB) {
-			return false;
-		}
-		boolean result = false;
-		switch (kindA) {
-		case TCKind._tk_boolean:
-			result = AnyUtils.performAction(a.extract_boolean(), b.extract_boolean(), action, kindA);
-			break;
-		case TCKind._tk_char:
-			result = AnyUtils.performAction(a.extract_char(), b.extract_char(), action, kindA);
-			break;
-		case TCKind._tk_wchar:
-			result = AnyUtils.performAction(a.extract_wchar(), b.extract_wchar(), action, kindA);
-			break;
-		case TCKind._tk_octet:
-			result = AnyUtils.performAction(a.extract_octet(), b.extract_octet(), action, kindA);
-			break;
-		case TCKind._tk_ushort:
-			result = AnyUtils.performAction(a.extract_ushort(), b.extract_ushort(), action, kindA);
-			break;
-		case TCKind._tk_short:
-			result = AnyUtils.performAction(a.extract_short(), b.extract_short(), action, kindA);
-			break;
-		case TCKind._tk_float:
-			result = AnyUtils.performAction(a.extract_float(), b.extract_float(), action, kindA);
-			break;
-		case TCKind._tk_double:
-			result = AnyUtils.performAction(a.extract_double(), b.extract_double(), action, kindA);
-			break;
-		case TCKind._tk_ulong:
-			result = AnyUtils.performAction(a.extract_ulong(), b.extract_ulong(), action, kindA);
-			break;
-		case TCKind._tk_long:
-			result = AnyUtils.performAction(a.extract_long(), b.extract_long(), action, kindA);
-			break;
-		case TCKind._tk_ulonglong:
-			result = AnyUtils.performAction(a.extract_ulonglong(), b.extract_ulonglong(), action, kindA);
-			break;
-		case TCKind._tk_longlong:
-			result = AnyUtils.performAction(a.extract_longlong(), b.extract_longlong(), action, kindA);
-			break;
-		case TCKind._tk_string:
-			result = AnyUtils.performAction(a.extract_string(), b.extract_string(), action, kindA);
-			break;
-		case TCKind._tk_wstring:
-			result = AnyUtils.performAction(a.extract_wstring(), b.extract_wstring(), action, kindA);
-			break;
-		case TCKind._tk_fixed:
-			result = AnyUtils.performAction(a.extract_fixed(), b.extract_fixed(), action, kindA);
-			break;
-		case TCKind._tk_objref:
-			result = false;
-			break;
-		default:
-			result = false;
-		}
-		return result;
-	}
-
-	private static boolean performAction(final Object val1, final Object val2, final String action, final int kindValue) {
-		// TODO need to account for null val1 or val2
-		final boolean eq = val1.equals(val2);
-
-		if ("eq".equals(action)) {
-			return eq;
-		} else if ("ne".equals(action)) {
-			return !eq;
-		}
-
-		boolean gt = false;
-		boolean lt = false;
-		int comp = 0;
-		switch (kindValue) {
-		case TCKind._tk_boolean:
-			gt = (Boolean) val1 && !(Boolean) val2;
-			lt = !(Boolean) val1 && (Boolean) val2;
-			break;
-		case TCKind._tk_char:
-		case TCKind._tk_wchar:
-			comp = ((Character) val1).compareTo((Character) val2);
-			gt = comp > 0;
-			lt = comp < 0;
-			break;
-		case TCKind._tk_octet:
-			gt = (Byte) val1 > (Byte) val2;
-			lt = (Byte) val1 < (Byte) val2;
-			break;
-		case TCKind._tk_ushort:
-		case TCKind._tk_short:
-			gt = (Short) val1 > (Short) val2;
-			lt = (Short) val1 < (Short) val2;
-			break;
-		case TCKind._tk_float:
-			gt = (Float) val1 > (Float) val2;
-			lt = (Float) val1 < (Float) val2;
-			break;
-		case TCKind._tk_double:
-			gt = (Double) val1 > (Double) val2;
-			lt = (Double) val1 < (Double) val2;
-			break;
-		case TCKind._tk_ulong:
-		case TCKind._tk_long:
-			gt = (Integer) val1 > (Integer) val2;
-			lt = (Integer) val1 < (Integer) val2;
-			break;
-		case TCKind._tk_ulonglong:
-		case TCKind._tk_longlong:
-			gt = (Long) val1 > (Long) val2;
-			lt = (Long) val1 < (Long) val2;
-			break;
-		case TCKind._tk_string:
-		case TCKind._tk_wstring:
-			comp = ((String) val1).compareTo((String) val2);
-			gt = comp > 0;
-			lt = comp < 0;
-			break;
-		case TCKind._tk_fixed:
-			final int compare = ((BigDecimal) val1).compareTo((BigDecimal) val2);
-			gt = compare == 1;
-			lt = compare == -1;
-			break;
-		default:
-			break;
-		}
-
-		if ("gt".equals(action)) {
-			return gt;
-		} else if ("lt".equals(action)) {
-			return lt;
-		} else if ("ge".equals(action)) {
-			return gt || eq;
-		} else if ("le".equals(action)) {
-			return lt || eq;
-		}
-		return false;
 	}
 
 	/**

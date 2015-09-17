@@ -40,7 +40,7 @@ public class ComplexUShort extends ComplexNumber {
 	}
 
 	/**
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public complexUShort toCFType() {
 		if (numbers.length == 2) {
@@ -72,7 +72,7 @@ public class ComplexUShort extends ComplexNumber {
 
 	/**
 	 * Intended for JavaBean serialization only.
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public int[] getNumbers() {
 		return Arrays.copyOf(numbers, numbers.length);
@@ -80,7 +80,7 @@ public class ComplexUShort extends ComplexNumber {
 
 	/**
 	 * Intended for JavaBean serialization only.
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public void setNumbers(int[] numbers) {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
@@ -101,7 +101,7 @@ public class ComplexUShort extends ComplexNumber {
 	}
 
 	/**
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public static ComplexUShort[] valueOfSequence(Any any) {
 		CF.complexUShort[] cfArray = CF.complexUShortSeqHelper.extract(any);

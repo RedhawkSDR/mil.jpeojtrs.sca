@@ -39,7 +39,7 @@ public class ComplexUByte extends ComplexNumber {
 	}
 
 	/**
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public complexChar toCFType() {
 		if (numbers.length == 2) {
@@ -71,7 +71,7 @@ public class ComplexUByte extends ComplexNumber {
 
 	/**
 	 * Intended for JavaBean serialization only.
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public short[] getNumbers() {
 		return Arrays.copyOf(numbers, numbers.length);
@@ -79,7 +79,7 @@ public class ComplexUByte extends ComplexNumber {
 
 	/**
 	 * Intended for JavaBean serialization only.
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public void setNumbers(short[] numbers) {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
@@ -100,7 +100,7 @@ public class ComplexUByte extends ComplexNumber {
 	}
 
 	/**
-	 * @since 3.7
+	 * @since 4.0
 	 */
 	public static ComplexUByte[] valueOfSequence(Any any) {
 		// TODO Use new Complex Unsiged byte when it becomes available.  Using char here is unsafe
