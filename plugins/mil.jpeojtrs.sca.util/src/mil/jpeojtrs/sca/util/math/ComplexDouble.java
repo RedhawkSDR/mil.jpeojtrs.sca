@@ -23,7 +23,8 @@ import CF.complexDoubleHelper;
  * @since 3.4
  */
 public class ComplexDouble extends ComplexNumber {
-	private final double[] numbers;
+
+	private double[] numbers;
 
 	public ComplexDouble() {
 		this(0, 0);
@@ -37,11 +38,22 @@ public class ComplexDouble extends ComplexNumber {
 		this.numbers = numbers;
 	}
 
+	/**
+	 * @since 3.5
+	 */
+	public complexDouble toCFType() {
+		if (numbers.length == 2) {
+			return new complexDouble(numbers[0], numbers[1]);
+		} else {
+			throw new UnsupportedOperationException();
+		}
+	}
+
 	@Override
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (numbers.length == 2) {
-			complexDouble value = new complexDouble(numbers[0], numbers[1]);
+			complexDouble value = toCFType();
 			Any any = orb.create_any();
 			complexDoubleHelper.insert(any, value);
 			return any;
@@ -57,6 +69,22 @@ public class ComplexDouble extends ComplexNumber {
 		}
 	}
 
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.5
+	 */
+	public double[] getNumbers() {
+		return Arrays.copyOf(numbers, numbers.length);
+	}
+
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.5
+	 */
+	public void setNumbers(double[] numbers) {
+		this.numbers = Arrays.copyOf(numbers, numbers.length);
+	}
+
 	public double getDoubleValue(int index) throws ArrayIndexOutOfBoundsException {
 		return numbers[index];
 	}
@@ -69,6 +97,18 @@ public class ComplexDouble extends ComplexNumber {
 	@Override
 	public int getSize() {
 		return numbers.length;
+	}
+
+	/**
+	 * @since 3.5
+	 */
+	public static ComplexDouble[] valueOfSequence(Any any) {
+		CF.complexDouble[] cfArray = CF.complexDoubleSeqHelper.extract(any);
+		ComplexDouble[] array = new ComplexDouble[cfArray.length];
+		for (int i = 0; i < cfArray.length; i++) {
+			array[i] = new ComplexDouble(cfArray[i].real, cfArray[i].imag);
+		}
+		return array;
 	}
 
 	public static ComplexDouble valueOf(Any any) {

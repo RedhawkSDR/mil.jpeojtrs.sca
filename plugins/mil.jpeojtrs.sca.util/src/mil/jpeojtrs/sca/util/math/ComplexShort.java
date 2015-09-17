@@ -23,7 +23,8 @@ import CF.complexShortHelper;
  * @since 3.4
  */
 public class ComplexShort extends ComplexNumber {
-	private final short[] numbers;
+
+	private short[] numbers;
 
 	public ComplexShort() {
 		this((short) 0, (short) 0);
@@ -37,11 +38,22 @@ public class ComplexShort extends ComplexNumber {
 		this.numbers = numbers;
 	}
 
+	/**
+	 * @since 3.5
+	 */
+	public complexShort toCFType() {
+		if (numbers.length == 2) {
+			return new complexShort(numbers[0], numbers[1]);
+		} else {
+			throw new UnsupportedOperationException();
+		}
+	}
+
 	@Override
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (numbers.length == 2) {
-			complexShort value = new complexShort(numbers[0], numbers[1]);
+			complexShort value = toCFType();
 			Any any = orb.create_any();
 			complexShortHelper.insert(any, value);
 			return any;
@@ -57,6 +69,22 @@ public class ComplexShort extends ComplexNumber {
 		}
 	}
 
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.5
+	 */
+	public short[] getNumbers() {
+		return Arrays.copyOf(numbers, numbers.length);
+	}
+
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.5
+	 */
+	public void setNumbers(short[] numbers) {
+		this.numbers = Arrays.copyOf(numbers, numbers.length);
+	}
+
 	public short getShortValue(int index) throws ArrayIndexOutOfBoundsException {
 		return numbers[index];
 	}
@@ -69,6 +97,18 @@ public class ComplexShort extends ComplexNumber {
 	@Override
 	public int getSize() {
 		return numbers.length;
+	}
+
+	/**
+	 * @since 3.5
+	 */
+	public static ComplexShort[] valueOfSequence(Any any) {
+		CF.complexShort[] cfArray = CF.complexShortSeqHelper.extract(any);
+		ComplexShort[] array = new ComplexShort[cfArray.length];
+		for (int i = 0; i < cfArray.length; i++) {
+			array[i] = new ComplexShort(cfArray[i].real, cfArray[i].imag);
+		}
+		return array;
 	}
 
 	public static ComplexShort valueOf(Any any) {
