@@ -24,7 +24,7 @@ import CF.complexOctetHelper;
  */
 public class ComplexByte extends ComplexNumber {
 
-	private final byte[] bytes;
+	private byte[] bytes;
 
 	public ComplexByte() {
 		this((byte) 0, (byte) 0);
@@ -38,11 +38,22 @@ public class ComplexByte extends ComplexNumber {
 		this.bytes = bytes;
 	}
 
+	/**
+	 * @since 3.7
+	 */
+	public complexOctet toCFType() {
+		if (bytes.length == 2) {
+			return new complexOctet(bytes[0], bytes[1]);
+		} else {
+			throw new UnsupportedOperationException();
+		}
+	}
+
 	@Override
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (bytes.length == 2) {
-			complexOctet value = new complexOctet(bytes[0], bytes[1]);
+			complexOctet value = toCFType();
 			Any any = orb.create_any();
 			complexOctetHelper.insert(any, value);
 			return any;
@@ -58,6 +69,22 @@ public class ComplexByte extends ComplexNumber {
 		}
 	}
 
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public byte[] getBytes() {
+		return Arrays.copyOf(bytes, bytes.length);
+	}
+
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public void setBytes(byte[] numbers) {
+		this.bytes = Arrays.copyOf(bytes, numbers.length);
+	}
+
 	public byte getByteValue(int index) throws ArrayIndexOutOfBoundsException {
 		return bytes[index];
 	}
@@ -70,6 +97,18 @@ public class ComplexByte extends ComplexNumber {
 	@Override
 	public int getSize() {
 		return bytes.length;
+	}
+
+	/**
+	 * @since 3.7
+	 */
+	public static ComplexByte[] valueOfSequence(Any any) {
+		CF.complexOctet[] cfArray = CF.complexOctetSeqHelper.extract(any);
+		ComplexByte[] array = new ComplexByte[cfArray.length];
+		for (int i = 0; i < cfArray.length; i++) {
+			array[i] = new ComplexByte(cfArray[i].real, cfArray[i].imag);
+		}
+		return array;
 	}
 
 	public static ComplexByte valueOf(Any any) {

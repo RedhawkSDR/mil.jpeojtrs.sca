@@ -12,20 +12,20 @@ package mil.jpeojtrs.sca.util.math;
 
 import java.util.Arrays;
 
-import mil.jpeojtrs.sca.util.UnsignedUtils;
-
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
 
 import CF.complexULong;
 import CF.complexULongHelper;
+import mil.jpeojtrs.sca.util.UnsignedUtils;
 
 /**
  * @since 3.4
  */
 public class ComplexULong extends ComplexNumber {
-	private final long[] numbers;
+
+	private long[] numbers;
 
 	public ComplexULong() {
 		this(0, 0);
@@ -39,11 +39,22 @@ public class ComplexULong extends ComplexNumber {
 		this.numbers = numbers;
 	}
 
+	/**
+	 * @since 3.7
+	 */
+	public complexULong toCFType() {
+		if (numbers.length == 2) {
+			return new complexULong((int) numbers[0], (int) numbers[1]);
+		} else {
+			throw new UnsupportedOperationException();
+		}
+	}
+
 	@Override
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (numbers.length == 2) {
-			complexULong value = new complexULong((int) numbers[0], (int) numbers[1]);
+			complexULong value = toCFType();
 			Any any = orb.create_any();
 			complexULongHelper.insert(any, value);
 			return any;
@@ -59,6 +70,22 @@ public class ComplexULong extends ComplexNumber {
 		}
 	}
 
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public long[] getNumbers() {
+		return Arrays.copyOf(numbers, numbers.length);
+	}
+
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public void setNumbers(long[] numbers) {
+		this.numbers = Arrays.copyOf(numbers, numbers.length);
+	}
+
 	public long getULongValue(int index) throws ArrayIndexOutOfBoundsException {
 		return numbers[index];
 	}
@@ -71,6 +98,18 @@ public class ComplexULong extends ComplexNumber {
 	@Override
 	public int getSize() {
 		return numbers.length;
+	}
+
+	/**
+	 * @since 3.7
+	 */
+	public static ComplexULong[] valueOfSequence(Any any) {
+		CF.complexULong[] cfArray = CF.complexULongSeqHelper.extract(any);
+		ComplexULong[] array = new ComplexULong[cfArray.length];
+		for (int i = 0; i < cfArray.length; i++) {
+			array[i] = new ComplexULong(UnsignedUtils.toSigned(cfArray[i].real), UnsignedUtils.toSigned(cfArray[i].imag));
+		}
+		return array;
 	}
 
 	public static ComplexULong valueOf(Any any) {

@@ -23,7 +23,8 @@ import CF.complexLongLongHelper;
  * @since 3.4
  */
 public class ComplexLongLong extends ComplexNumber {
-	private final long[] numbers;
+
+	private long[] numbers;
 
 	public ComplexLongLong() {
 		this(0, 0);
@@ -37,11 +38,22 @@ public class ComplexLongLong extends ComplexNumber {
 		this.numbers = numbers;
 	}
 
+	/**
+	 * @since 3.7
+	 */
+	public complexLongLong toCFType() {
+		if (numbers.length == 2) {
+			return new complexLongLong(numbers[0], numbers[1]);
+		} else {
+			throw new UnsupportedOperationException();
+		}
+	}
+
 	@Override
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (numbers.length == 2) {
-			complexLongLong value = new complexLongLong(numbers[0], numbers[1]);
+			complexLongLong value = toCFType();
 			Any any = orb.create_any();
 			complexLongLongHelper.insert(any, value);
 			return any;
@@ -57,6 +69,22 @@ public class ComplexLongLong extends ComplexNumber {
 		}
 	}
 
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public long[] getNumbers() {
+		return Arrays.copyOf(numbers, numbers.length);
+	}
+
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public void setNumbers(long[] numbers) {
+		this.numbers = Arrays.copyOf(numbers, numbers.length);
+	}
+
 	public long getLongValue(int index) throws ArrayIndexOutOfBoundsException {
 		return numbers[index];
 	}
@@ -69,6 +97,18 @@ public class ComplexLongLong extends ComplexNumber {
 	@Override
 	public int getSize() {
 		return numbers.length;
+	}
+
+	/**
+	 * @since 3.7
+	 */
+	public static ComplexLongLong[] valueOfSequence(Any any) {
+		CF.complexLongLong[] cfArray = CF.complexLongLongSeqHelper.extract(any);
+		ComplexLongLong[] array = new ComplexLongLong[cfArray.length];
+		for (int i = 0; i < cfArray.length; i++) {
+			array[i] = new ComplexLongLong(cfArray[i].real, cfArray[i].imag);
+		}
+		return array;
 	}
 
 	public static ComplexLongLong valueOf(Any any) {

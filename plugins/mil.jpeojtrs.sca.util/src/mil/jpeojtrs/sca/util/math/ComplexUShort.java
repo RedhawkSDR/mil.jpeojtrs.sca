@@ -12,20 +12,20 @@ package mil.jpeojtrs.sca.util.math;
 
 import java.util.Arrays;
 
-import mil.jpeojtrs.sca.util.UnsignedUtils;
-
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
 
 import CF.complexUShort;
 import CF.complexUShortHelper;
+import mil.jpeojtrs.sca.util.UnsignedUtils;
 
 /**
  * @since 3.4
  */
 public class ComplexUShort extends ComplexNumber {
-	private final int[] numbers;
+
+	private int[] numbers;
 
 	public ComplexUShort() {
 		this(0, 0);
@@ -39,11 +39,22 @@ public class ComplexUShort extends ComplexNumber {
 		this.numbers = numbers;
 	}
 
+	/**
+	 * @since 3.7
+	 */
+	public complexUShort toCFType() {
+		if (numbers.length == 2) {
+			return new complexUShort((short) numbers[0], (short) numbers[1]);
+		} else {
+			throw new UnsupportedOperationException();
+		}
+	}
+
 	@Override
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (numbers.length == 2) {
-			complexUShort value = new complexUShort((short) numbers[0], (short) numbers[1]);
+			complexUShort value = toCFType();
 			Any any = orb.create_any();
 			complexUShortHelper.insert(any, value);
 			return any;
@@ -59,6 +70,22 @@ public class ComplexUShort extends ComplexNumber {
 		}
 	}
 
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public int[] getNumbers() {
+		return Arrays.copyOf(numbers, numbers.length);
+	}
+
+	/**
+	 * Intended for JavaBean serialization only.
+	 * @since 3.7
+	 */
+	public void setNumbers(int[] numbers) {
+		this.numbers = Arrays.copyOf(numbers, numbers.length);
+	}
+
 	public int getUShortValue(int index) throws ArrayIndexOutOfBoundsException {
 		return numbers[index];
 	}
@@ -71,6 +98,18 @@ public class ComplexUShort extends ComplexNumber {
 	@Override
 	public int getSize() {
 		return numbers.length;
+	}
+
+	/**
+	 * @since 3.7
+	 */
+	public static ComplexUShort[] valueOfSequence(Any any) {
+		CF.complexUShort[] cfArray = CF.complexUShortSeqHelper.extract(any);
+		ComplexUShort[] array = new ComplexUShort[cfArray.length];
+		for (int i = 0; i < cfArray.length; i++) {
+			array[i] = new ComplexUShort(UnsignedUtils.toSigned(cfArray[i].real), UnsignedUtils.toSigned(cfArray[i].imag));
+		}
+		return array;
 	}
 
 	public static ComplexUShort valueOf(Any any) {
