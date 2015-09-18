@@ -75,10 +75,10 @@ public class ComplexULongLong extends ComplexNumber {
 	 * Intended for JavaBean serialization only.
 	 * @since 3.5
 	 */
-	public BigInteger[] getNumbers() {
-		BigInteger[] arrayCopy = new BigInteger[numbers.length];
+	public String[] getNumbers() {
+		String[] arrayCopy = new String[numbers.length];
 		for (int i = 0; i < numbers.length; i++) {
-			arrayCopy[i] = new BigInteger(numbers[i].toByteArray());
+			arrayCopy[i] = numbers[i].toString();
 		}
 		return arrayCopy;
 	}
@@ -87,10 +87,10 @@ public class ComplexULongLong extends ComplexNumber {
 	 * Intended for JavaBean serialization only.
 	 * @since 3.5
 	 */
-	public void setNumbers(BigInteger[] numbers) {
+	public void setNumbers(String[] numbers) {
 		this.numbers = new BigInteger[numbers.length];
 		for (int i = 0; i < numbers.length; i++) {
-			this.numbers[i] = new BigInteger(numbers[i].toByteArray());
+			this.numbers[i] = new BigInteger(numbers[i]);
 		}
 	}
 
