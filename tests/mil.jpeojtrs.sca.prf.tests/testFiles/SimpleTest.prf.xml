@@ -20,7 +20,7 @@
     <kind kindtype="configure"/>
     <action type="external"/>
   </simple>
-  <simple id="DCE:753b3ef5-fa23-4c51-9711-c1183ab23cbd" mode="readwrite" type="string"  name="Name" complex="true" optional="false">
+  <simple id="DCE:753b3ef5-fa23-4c51-9711-c1183ab23cbd" mode="readwrite" type="long"  name="Name" complex="true" optional="false">
     <kind kindtype="configure"/>
     <action type="eq"/>
   </simple>
@@ -43,5 +43,10 @@
   <simple id="DCE:2aaac878-1416-4199-af3f-bafdde245091" mode="readwrite" type="string">
     <kind kindtype="configure"/>
     <action type="ne"/>
+  </simple>
+  <simple id="commandline" mode="readwrite" type="string" commandline="true">
+    <description>A property passed to the resource via command-line</description>
+    <kind kindtype="property"/>
+    <action type="external"/>
   </simple>
 </properties>

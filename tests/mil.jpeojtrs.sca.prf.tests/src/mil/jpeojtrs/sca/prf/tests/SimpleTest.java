@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
  * The following operations are tested:
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#isComplex() <em>Is Complex</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.Simple#isCommandLine() <em>Is Command Line</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#isOptional() <em>Is Optional</em>}</li>
  * </ul>
  * </p>
@@ -109,6 +110,17 @@ public class SimpleTest extends AbstractPropertyTest {
 	}
 
 	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.Simple#isCommandLine() <em>Is Command Line</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.Simple#isCommandLine()
+	 * @generated
+	 */
+	public void testIsCommandLine() {
+		Assert.assertFalse(getFixture().isCommandLine());
+	}
+
+	/**
 	 * Tests the '{@link mil.jpeojtrs.sca.prf.Simple#isOptional() <em>Is Optional</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -153,7 +165,7 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertNull(simple.getValue());
 		Assert.assertNull(simple.getUnits());
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
-		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
+		Assert.assertEquals(PropertyValueType.LONG, simple.getType());
 		Assert.assertEquals(1, simple.getKind().size());
 		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.EQ, simple.getAction().getType());
@@ -220,6 +232,12 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(1, simple.getKind().size());
 		Assert.assertEquals(PropertyConfigurationType.CONFIGURE, simple.getKind().get(0).getType());
 		Assert.assertEquals(ActionType.NE, simple.getAction().getType());
+
+		simple = (Simple) props.getProperty("commandline");
+		Assert.assertNotNull(simple);
+		Assert.assertNotNull(simple.getCommandline());
+		Assert.assertTrue(simple.getCommandline());
+		Assert.assertTrue(simple.isCommandLine());
 	}
 
 	public void testExtra() throws Exception {

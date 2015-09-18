@@ -70,7 +70,8 @@ public class StructSequenceRefTest extends AbstractPropertyRefTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		final Properties props = Properties.Util.getProperties(new ResourceSetImpl().getResource(PrfTests.getURI("testFiles/StructSequenceTest.prf.xml"), true));
+		final Properties props = Properties.Util.getProperties(
+			new ResourceSetImpl().getResource(PrfTests.getURI("testFiles/StructSequenceTest.prf.xml"), true));
 		StructSequenceRef ssRef = PrfFactory.eINSTANCE.createStructSequenceRef();
 		props.eResource().getContents().add(ssRef);
 		ssRef.setProperty(props.getStructSequence().get(0));

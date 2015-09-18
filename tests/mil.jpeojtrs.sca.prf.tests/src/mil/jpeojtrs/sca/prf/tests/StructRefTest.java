@@ -11,12 +11,13 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.tests;
 
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.junit.Assert;
+
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.Properties;
 import mil.jpeojtrs.sca.prf.StructRef;
-
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -96,6 +97,28 @@ public class StructRefTest extends AbstractPropertyRefTest {
 	}
 
 	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleRef() <em>Simple Ref</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.StructRef#getSimpleRef()
+	 * @generated NOT
+	 */
+	public void testGetSimpleRef() {
+		// PASS - Doesn't make sense to test here
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef()
+	 * @generated NOT
+	 */
+	public void testGetSimpleSequenceRef() {
+		// PASS - Doesn't make sense to test here
+	}
+
+	/**
 	 * Tests the '{@link mil.jpeojtrs.sca.prf.PropertyRefContainer#getPropertyContainer() <em>Get Property Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,7 +127,7 @@ public class StructRefTest extends AbstractPropertyRefTest {
 	 */
 	public void testGetPropertyContainer() {
 		// END GENERATED CODE
-		getFixture().getPropertyContainer();
+		Assert.assertNotNull(getFixture().getPropertyContainer());
 		// BEGIN GENERATED CODE
 	}
 

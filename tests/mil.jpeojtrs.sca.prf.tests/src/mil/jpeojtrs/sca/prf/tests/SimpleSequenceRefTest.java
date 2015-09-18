@@ -64,7 +64,8 @@ public class SimpleSequenceRefTest extends AbstractPropertyRefTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		final Properties props = Properties.Util.getProperties(new ResourceSetImpl().getResource(PrfTests.getURI("testFiles/SimpleSequenceTest.prf.xml"), true));
+		final Properties props = Properties.Util.getProperties(
+			new ResourceSetImpl().getResource(PrfTests.getURI("testFiles/SimpleSequenceTest.prf.xml"), true));
 		SimpleSequenceRef ssRef = PrfFactory.eINSTANCE.createSimpleSequenceRef();
 		props.eResource().getContents().add(ssRef);
 		ssRef.setProperty(props.getSimpleSequence().get(0));

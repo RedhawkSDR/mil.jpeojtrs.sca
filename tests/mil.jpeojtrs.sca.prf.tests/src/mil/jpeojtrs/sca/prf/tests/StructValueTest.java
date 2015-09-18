@@ -109,8 +109,8 @@ public class StructValueTest extends TestCase {
 	@Override
 	protected void setUp() throws Exception {
 		// END GENERATED CODE
-		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
-			true));
+		final Properties props = Properties.Util.getProperties(
+			StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"), true));
 		setFixture(props.getStructSequence().get(0).getStructValue().get(0));
 		// BEGIN GENERATED CODE
 	}
@@ -138,8 +138,8 @@ public class StructValueTest extends TestCase {
 	 */
 	public void testGetSimpleRef() throws IOException {
 		// END GENERATED CODE
-		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
-			true));
+		final Properties props = Properties.Util.getProperties(
+			StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"), true));
 		StructValue structVal = props.getStructSequence().get(0).getStructValue().get(0);
 
 		Assert.assertNotNull(structVal.getSimpleRef());
@@ -151,14 +151,13 @@ public class StructValueTest extends TestCase {
 	 * Tests the '{@link mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef() <em>Simple Sequence Ref</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @throws IOException
 	 * @see mil.jpeojtrs.sca.prf.StructValue#getSimpleSequenceRef()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetSimpleSequenceRef() throws IOException {
 		// END GENERATED CODE
-		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
-			true));
+		final Properties props = Properties.Util.getProperties(
+			StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"), true));
 		StructValue structVal = props.getStructSequence().get(1).getStructValue().get(1);
 
 		Assert.assertNotNull(structVal.getSimpleSequenceRef());
@@ -235,8 +234,8 @@ public class StructValueTest extends TestCase {
 	// END GENERATED CODE
 
 	public void test_parse() throws Exception {
-		final Properties props = Properties.Util.getProperties(StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"),
-			true));
+		final Properties props = Properties.Util.getProperties(
+			StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"), true));
 		EList<StructSequence> structSequenceList = props.getStructSequence();
 		Assert.assertNotNull(structSequenceList);
 		Assert.assertEquals(2, structSequenceList.size());
