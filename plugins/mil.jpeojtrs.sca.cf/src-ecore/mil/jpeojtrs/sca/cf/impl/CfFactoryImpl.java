@@ -233,6 +233,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createOccupiedPortFromString(eDataType, initialValue);
 		case CfPackage.UNKNOWN_PORT:
 			return createUnknownPortFromString(eDataType, initialValue);
+		case CfPackage.ALREADY_INITIALIZED:
+			return createAlreadyInitializedFromString(eDataType, initialValue);
 		case CfPackage.INVALID_CONFIGURATION:
 			return createInvalidConfigurationFromString(eDataType, initialValue);
 		case CfPackage.PARTIAL_CONFIGURATION:
@@ -366,6 +368,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertOccupiedPortToString(eDataType, instanceValue);
 		case CfPackage.UNKNOWN_PORT:
 			return convertUnknownPortToString(eDataType, instanceValue);
+		case CfPackage.ALREADY_INITIALIZED:
+			return convertAlreadyInitializedToString(eDataType, instanceValue);
 		case CfPackage.INVALID_CONFIGURATION:
 			return convertInvalidConfigurationToString(eDataType, instanceValue);
 		case CfPackage.PARTIAL_CONFIGURATION:
@@ -739,9 +743,9 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 4.0
 	 */
 	public InvalidIdentifier createInvalidDomMgrIdentifierFromString(EDataType eDataType, String initialValue) {
 		return (InvalidIdentifier) super.createFromString(eDataType, initialValue);
@@ -749,9 +753,9 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 4.0
 	 */
 	public String convertInvalidDomMgrIdentifierToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
@@ -759,9 +763,9 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 4.0
 	 */
 	public CF.InvalidIdentifier createInvalidIdentifierFromString(EDataType eDataType, String initialValue) {
 		return (CF.InvalidIdentifier) super.createFromString(eDataType, initialValue);
@@ -1282,6 +1286,26 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CF.PropertyEmitterPackage.AlreadyInitialized createAlreadyInitializedFromString(EDataType eDataType, String initialValue) {
+		return (CF.PropertyEmitterPackage.AlreadyInitialized) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertAlreadyInitializedToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1444,9 +1468,9 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 4.0
 	 */
 	public UnknownIdentifier createUnknownIdentifierFromString(EDataType eDataType, String initialValue) {
 		return (UnknownIdentifier) super.createFromString(eDataType, initialValue);
@@ -1454,9 +1478,9 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 4.0
 	 */
 	public String convertUnknownIdentifierToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
@@ -1464,9 +1488,9 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 4.0
 	 */
 	public LogEvent[] createLogEventArrayFromString(EDataType eDataType, String initialValue) {
 		return (LogEvent[]) super.createFromString(initialValue);
@@ -1474,9 +1498,9 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 4.0
 	 */
 	public String convertLogEventArrayToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(instanceValue);

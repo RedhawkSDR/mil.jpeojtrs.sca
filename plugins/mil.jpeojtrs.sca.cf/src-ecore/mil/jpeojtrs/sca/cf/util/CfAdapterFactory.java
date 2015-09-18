@@ -59,6 +59,8 @@ import CF.Port;
 import CF.PortOperations;
 import CF.PortSupplier;
 import CF.PortSupplierOperations;
+import CF.PropertyEmitter;
+import CF.PropertyEmitterOperations;
 import CF.PropertySet;
 import CF.PropertySetOperations;
 import CF.Resource;
@@ -332,6 +334,16 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter casePortSupplierOperations(PortSupplierOperations object) {
 			return createPortSupplierOperationsAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyEmitter(PropertyEmitter object) {
+			return createPropertyEmitterAdapter();
+		}
+
+		@Override
+		public Adapter casePropertyEmitterOperations(PropertyEmitterOperations object) {
+			return createPropertyEmitterOperationsAdapter();
 		}
 
 		@Override
@@ -984,6 +996,34 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPortSupplierOperationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.PropertyEmitter <em>Property Emitter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.PropertyEmitter
+	 * @generated
+	 */
+	public Adapter createPropertyEmitterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.PropertyEmitterOperations <em>Property Emitter Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.PropertyEmitterOperations
+	 * @generated
+	 */
+	public Adapter createPropertyEmitterOperationsAdapter() {
 		return null;
 	}
 

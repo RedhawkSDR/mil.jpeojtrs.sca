@@ -101,14 +101,14 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 			return (ExtendedPackage) EPackage.Registry.INSTANCE.getEPackage(ExtendedPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ExtendedPackageImpl theExtendedPackage = (ExtendedPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExtendedPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-			: new ExtendedPackageImpl());
+		ExtendedPackageImpl theExtendedPackage = (ExtendedPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExtendedPackageImpl
+			? EPackage.Registry.INSTANCE.get(eNS_URI) : new ExtendedPackageImpl());
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		CfPackageImpl theCfPackage = (CfPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(CfPackage.eNS_URI) instanceof CfPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CfPackage.eNS_URI)
-			: CfPackage.eINSTANCE);
+		CfPackageImpl theCfPackage = (CfPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(CfPackage.eNS_URI) instanceof CfPackageImpl
+			? EPackage.Registry.INSTANCE.getEPackage(CfPackage.eNS_URI) : CfPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theExtendedPackage.createPackageContents();

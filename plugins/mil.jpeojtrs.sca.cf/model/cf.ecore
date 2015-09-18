@@ -66,9 +66,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Device" instanceClassName="CF.Device"
       abstract="true" interface="true" eSuperTypes="#//DeviceOperations #//Resource #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="DeviceManager" instanceClassName="CF.DeviceManager"
-      abstract="true" interface="true" eSuperTypes="#//DeviceManagerOperations #//PropertySet #//PortSupplier"/>
+      abstract="true" interface="true" eSuperTypes="#//DeviceManagerOperations #//PropertyEmitter #//PortSupplier"/>
   <eClassifiers xsi:type="ecore:EClass" name="DeviceManagerOperations" instanceClassName="CF.DeviceManagerOperations"
-      abstract="true" interface="true" eSuperTypes="#//PropertySetOperations #//PortSupplierOperations">
+      abstract="true" interface="true" eSuperTypes="#//PropertyEmitterOperations #//PortSupplierOperations">
     <eOperations name="registerDevice" eExceptions="#//InvalidObjectReference">
       <eParameters name="registeringDevice" eType="#//Device"/>
     </eOperations>
@@ -99,9 +99,9 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DomainManager" instanceClassName="CF.DomainManager"
-      abstract="true" interface="true" eSuperTypes="#//DomainManagerOperations #//PropertySet #//IDLEntity"/>
+      abstract="true" interface="true" eSuperTypes="#//DomainManagerOperations #//PropertyEmitter #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="DomainManagerOperations" instanceClassName="CF.DomainManagerOperations"
-      abstract="true" interface="true" eSuperTypes="#//PropertySetOperations">
+      abstract="true" interface="true" eSuperTypes="#//PropertyEmitterOperations">
     <eOperations name="registerDevice" eExceptions="#//InvalidObjectReference #//InvalidProfile #//DeviceManagerNotRegistered #//RegisterError">
       <eParameters name="registeringDevice" eType="#//Device"/>
       <eParameters name="registeredDeviceMgr" eType="#//DeviceManager"/>
@@ -315,15 +315,12 @@
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertySet" instanceClassName="CF.PropertySet"
-      abstract="true" interface="true" eSuperTypes="#//PropertySetOperations #//Object #//IDLEntity"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertySetOperations" instanceClassName="CF.PropertySetOperations"
-      abstract="true" interface="true">
-    <eOperations name="configure" eExceptions="#//InvalidConfiguration #//PartialConfiguration">
-      <eParameters name="configProperties" eType="#//DataTypeArray"/>
-    </eOperations>
-    <eOperations name="query" eExceptions="#//UnknownProperties">
-      <eParameters name="configProperties" eType="#//PropertiesHolder"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyEmitter" instanceClassName="CF.PropertyEmitter"
+      abstract="true" interface="true" eSuperTypes="#//PropertyEmitterOperations #//Object #//IDLEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyEmitterOperations" instanceClassName="CF.PropertyEmitterOperations"
+      abstract="true" interface="true" eSuperTypes="#//PropertySetOperations">
+    <eOperations name="initializeProperties" eExceptions="#//AlreadyInitialized #//InvalidConfiguration #//PartialConfiguration">
+      <eParameters name="initialProperties" eType="#//DataTypeArray"/>
     </eOperations>
     <eOperations name="registerPropertyListener" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         eExceptions="#//UnknownProperties #//InvalidObjectReference">
@@ -335,8 +332,19 @@
       <eParameters name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertySet" instanceClassName="CF.PropertySet"
+      abstract="true" interface="true" eSuperTypes="#//PropertySetOperations #//Object #//IDLEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertySetOperations" instanceClassName="CF.PropertySetOperations"
+      abstract="true" interface="true">
+    <eOperations name="configure" eExceptions="#//InvalidConfiguration #//PartialConfiguration">
+      <eParameters name="configProperties" eType="#//DataTypeArray"/>
+    </eOperations>
+    <eOperations name="query" eExceptions="#//UnknownProperties">
+      <eParameters name="configProperties" eType="#//PropertiesHolder"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Resource" instanceClassName="CF.Resource"
-      abstract="true" interface="true" eSuperTypes="#//ResourceOperations #//LifeCycle #//TestableObject #//PropertySet #//PortSupplier #//Logging"/>
+      abstract="true" interface="true" eSuperTypes="#//ResourceOperations #//LifeCycle #//TestableObject #//PropertyEmitter #//PortSupplier #//Logging"/>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceFactory" instanceClassName="CF.ResourceFactory"
       abstract="true" interface="true" eSuperTypes="#//ResourceFactoryOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceFactoryOperations" instanceClassName="CF.ResourceFactoryOperations"
@@ -351,7 +359,7 @@
     <eOperations name="shutdown" eExceptions="#//ShutdownFailure"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceOperations" instanceClassName="CF.ResourceOperations"
-      abstract="true" interface="true" eSuperTypes="#//LifeCycleOperations #//TestableObjectOperations #//PropertySetOperations #//PortSupplierOperations">
+      abstract="true" interface="true" eSuperTypes="#//LifeCycleOperations #//TestableObjectOperations #//PropertyEmitterOperations #//PortSupplierOperations">
     <eOperations name="start" eExceptions="#//StartError"/>
     <eOperations name="stop" eExceptions="#//StopError"/>
   </eClassifiers>
@@ -411,6 +419,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidPort" instanceClassName="CF.PortPackage.InvalidPort"/>
   <eClassifiers xsi:type="ecore:EDataType" name="OccupiedPort" instanceClassName="CF.PortPackage.OccupiedPort"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownPort" instanceClassName="CF.PortSupplierPackage.UnknownPort"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="AlreadyInitialized" instanceClassName="CF.PropertyEmitterPackage.AlreadyInitialized"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidConfiguration" instanceClassName="CF.PropertySetPackage.InvalidConfiguration"/>
   <eClassifiers xsi:type="ecore:EDataType" name="PartialConfiguration" instanceClassName="CF.PropertySetPackage.PartialConfiguration"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownProperties" instanceClassName="CF.UnknownProperties"/>
