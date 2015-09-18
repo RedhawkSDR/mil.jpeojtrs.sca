@@ -43,6 +43,7 @@ import org.omg.CORBA.Any;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getValue <em>Value</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getUnits <em>Units</em>}</li>
@@ -52,9 +53,9 @@ import org.omg.CORBA.Any;
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getAction <em>Action</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getComplex <em>Complex</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getCommandline <em>Commandline</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleImpl#getOptional <em>Optional</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -179,6 +180,26 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	protected Boolean complex = COMPLEX_EDEFAULT;
 
+	/**
+	 * The default value of the '{@link #getCommandline() <em>Commandline</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @see #getCommandline()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Boolean COMMANDLINE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getCommandline() <em>Commandline</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @see #getCommandline()
+	 * @generated
+	 * @ordered
+	 */
+	protected Boolean commandline = COMMANDLINE_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getOptional() <em>Optional</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -503,6 +524,29 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Boolean getCommandline() {
+		return commandline;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCommandline(Boolean newCommandline) {
+		Boolean oldCommandline = commandline;
+		commandline = newCommandline;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE__COMMANDLINE, oldCommandline, commandline));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Boolean getOptional() {
 		return optional;
 	}
@@ -529,6 +573,16 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	@Override
 	public boolean isComplex() {
 		return (complex != null && complex);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean isCommandLine() {
+		return (commandline != null && commandline) || isKind(PropertyConfigurationType.EXECPARAM);
 	}
 
 	/**
@@ -585,6 +639,8 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 			return getType();
 		case PrfPackage.SIMPLE__COMPLEX:
 			return getComplex();
+		case PrfPackage.SIMPLE__COMMANDLINE:
+			return getCommandline();
 		case PrfPackage.SIMPLE__OPTIONAL:
 			return getOptional();
 		}
@@ -625,6 +681,9 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 		case PrfPackage.SIMPLE__COMPLEX:
 			setComplex((Boolean) newValue);
 			return;
+		case PrfPackage.SIMPLE__COMMANDLINE:
+			setCommandline((Boolean) newValue);
+			return;
 		case PrfPackage.SIMPLE__OPTIONAL:
 			setOptional((Boolean) newValue);
 			return;
@@ -664,6 +723,9 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 		case PrfPackage.SIMPLE__COMPLEX:
 			setComplex(COMPLEX_EDEFAULT);
 			return;
+		case PrfPackage.SIMPLE__COMMANDLINE:
+			setCommandline(COMMANDLINE_EDEFAULT);
+			return;
 		case PrfPackage.SIMPLE__OPTIONAL:
 			setOptional(OPTIONAL_EDEFAULT);
 			return;
@@ -695,6 +757,8 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 			return isSetType();
 		case PrfPackage.SIMPLE__COMPLEX:
 			return COMPLEX_EDEFAULT == null ? complex != null : !COMPLEX_EDEFAULT.equals(complex);
+		case PrfPackage.SIMPLE__COMMANDLINE:
+			return COMMANDLINE_EDEFAULT == null ? commandline != null : !COMMANDLINE_EDEFAULT.equals(commandline);
 		case PrfPackage.SIMPLE__OPTIONAL:
 			return OPTIONAL_EDEFAULT == null ? optional != null : !OPTIONAL_EDEFAULT.equals(optional);
 		}
@@ -723,6 +787,8 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 			result.append("<unset>");
 		result.append(", complex: ");
 		result.append(complex);
+		result.append(", commandline: ");
+		result.append(commandline);
 		result.append(", optional: ");
 		result.append(optional);
 		result.append(')');

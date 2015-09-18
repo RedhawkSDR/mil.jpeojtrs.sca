@@ -44,6 +44,7 @@ import org.omg.CORBA.Any;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getValues <em>Values</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getUnits <em>Units</em>}</li>
@@ -54,7 +55,6 @@ import org.omg.CORBA.Any;
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getComplex <em>Complex</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl#getOptional <em>Optional</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

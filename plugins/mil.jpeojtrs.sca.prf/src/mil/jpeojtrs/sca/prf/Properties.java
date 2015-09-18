@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.Properties#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Properties#getProperties <em>Properties</em>}</li>
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link mil.jpeojtrs.sca.prf.Properties#getStruct <em>Struct</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Properties#getStructSequence <em>Struct Sequence</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getProperties()
  * @model extendedMetaData="name='properties' kind='elementOnly'"

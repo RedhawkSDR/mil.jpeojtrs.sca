@@ -30,11 +30,11 @@ import org.omg.CORBA.Any;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.AbstractPropertyRefImpl#getRefID <em>Ref ID</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.AbstractPropertyRefImpl#getProperty <em>Property</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

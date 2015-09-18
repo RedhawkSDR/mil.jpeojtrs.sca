@@ -28,6 +28,7 @@ import org.omg.CORBA.Any;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.AbstractPropertyImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.AbstractPropertyImpl#getId <em>Id</em>}</li>
@@ -35,7 +36,6 @@ import org.omg.CORBA.Any;
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.AbstractPropertyImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.AbstractPropertyImpl#getMode <em>Mode</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -232,8 +232,8 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 		localMode = LOCAL_MODE_EDEFAULT;
 		localModeESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE, oldLocalMode, LOCAL_MODE_EDEFAULT,
-				oldLocalModeESet));
+			eNotify(
+				new ENotificationImpl(this, Notification.UNSET, PrfPackage.ABSTRACT_PROPERTY__LOCAL_MODE, oldLocalMode, LOCAL_MODE_EDEFAULT, oldLocalModeESet));
 	}
 
 	/**

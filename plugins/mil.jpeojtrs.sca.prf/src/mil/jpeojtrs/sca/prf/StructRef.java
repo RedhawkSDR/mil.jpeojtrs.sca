@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructRef#getRefs <em>Refs</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleRef <em>Simple Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructRef#getSimpleSequenceRef <em>Simple Sequence Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructRef()
  * @model extendedMetaData="kind='elementOnly' name='structref' qualified='false'"

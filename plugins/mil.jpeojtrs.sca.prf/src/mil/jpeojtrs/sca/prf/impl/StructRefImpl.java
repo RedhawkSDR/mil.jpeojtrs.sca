@@ -42,16 +42,16 @@ import CF.PropertiesHelper;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructRefImpl#getRefs <em>Refs</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructRefImpl#getSimpleRef <em>Simple Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructRefImpl#getSimpleSequenceRef <em>Simple Sequence Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements StructRef {
+public class StructRefImpl extends AbstractPropertyRefImpl<Struct>implements StructRef {
 	/**
 	 * The cached value of the '{@link #getRefs() <em>Refs</em>}' attribute list.
 	 * <!-- begin-user-doc -->

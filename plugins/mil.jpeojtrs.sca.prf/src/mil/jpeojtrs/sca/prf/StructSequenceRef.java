@@ -20,10 +20,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.StructSequenceRef#getStructValue <em>Struct Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getStructSequenceRef()
  * @model extendedMetaData="kind='elementOnly' name='structsequenceref' qualified='false'"

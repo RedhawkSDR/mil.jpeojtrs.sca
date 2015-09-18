@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.Range#getMax <em>Max</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Range#getMin <em>Min</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getRange()
  * @model extendedMetaData="name='range' kind='empty'"

@@ -211,6 +211,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * Returns the '<em><b>Struct Property Configuration Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static StructPropertyConfigurationType get(String literal) {
@@ -227,6 +229,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * Returns the '<em><b>Struct Property Configuration Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static StructPropertyConfigurationType getByName(String name) {
@@ -243,6 +247,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 	 * Returns the '<em><b>Struct Property Configuration Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static StructPropertyConfigurationType get(int value) {

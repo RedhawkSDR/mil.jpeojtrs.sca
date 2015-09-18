@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.PropertyRefSetImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.PropertyRefSetImpl#getSimpleRef <em>Simple Ref</em>}</li>
@@ -40,7 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.PropertyRefSetImpl#getStructRef <em>Struct Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.PropertyRefSetImpl#getStructSequenceRef <em>Struct Sequence Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

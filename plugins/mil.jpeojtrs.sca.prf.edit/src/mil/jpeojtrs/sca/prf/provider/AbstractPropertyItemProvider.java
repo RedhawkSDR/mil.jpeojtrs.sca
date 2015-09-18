@@ -128,8 +128,8 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 			showMode = ((EObject) object).eContainer() instanceof Properties;
 		}
 		if (showMode) {
-			itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_AbstractProperty_mode_feature"),
+			itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_AbstractProperty_mode_feature"),
 				getString("_UI_PropertyDescriptor_description", "_UI_AbstractProperty_mode_feature", "_UI_AbstractProperty_type"),
 				PrfPackage.Literals.ABSTRACT_PROPERTY__MODE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 		}

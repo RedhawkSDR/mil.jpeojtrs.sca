@@ -32,14 +32,14 @@ import org.omg.CORBA.Any;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceRefImpl#getValues <em>Values</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequence> implements SimpleSequenceRef {
+public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequence>implements SimpleSequenceRef {
 	/**
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference.
 	 * <!-- begin-user-doc -->

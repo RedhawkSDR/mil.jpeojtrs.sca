@@ -27,14 +27,14 @@ import org.omg.CORBA.Any;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.SimpleRefImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements SimpleRef {
+public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple>implements SimpleRef {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->

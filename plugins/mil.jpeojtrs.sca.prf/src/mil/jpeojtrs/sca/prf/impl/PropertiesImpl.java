@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.PropertiesImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.PropertiesImpl#getProperties <em>Properties</em>}</li>
@@ -49,7 +50,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.PropertiesImpl#getStruct <em>Struct</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.PropertiesImpl#getStructSequence <em>Struct Sequence</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

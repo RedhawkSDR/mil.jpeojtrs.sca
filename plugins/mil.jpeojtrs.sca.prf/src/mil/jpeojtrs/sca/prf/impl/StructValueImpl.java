@@ -46,6 +46,7 @@ import CF.PropertiesHelper;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getRefs <em>Refs</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getSimpleRef <em>Simple Ref</em>}</li>
@@ -53,7 +54,6 @@ import CF.PropertiesHelper;
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getStruct <em>Struct</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructValueImpl#getIndex <em>Index</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

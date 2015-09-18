@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.Enumeration#getLabel <em>Label</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Enumeration#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getEnumeration()
  * @model extendedMetaData="name='enumeration' kind='empty'"

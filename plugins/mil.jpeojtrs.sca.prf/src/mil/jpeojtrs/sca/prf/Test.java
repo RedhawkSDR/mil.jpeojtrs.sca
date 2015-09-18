@@ -20,13 +20,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.Test#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Test#getInputValue <em>Input Value</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Test#getResultValue <em>Result Value</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Test#getId <em>Id</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getTest()
  * @model extendedMetaData="name='test' kind='elementOnly'"

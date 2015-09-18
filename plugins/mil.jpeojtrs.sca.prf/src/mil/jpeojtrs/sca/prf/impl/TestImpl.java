@@ -29,13 +29,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.TestImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.TestImpl#getInputValue <em>Input Value</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.TestImpl#getResultValue <em>Result Value</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.TestImpl#getId <em>Id</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

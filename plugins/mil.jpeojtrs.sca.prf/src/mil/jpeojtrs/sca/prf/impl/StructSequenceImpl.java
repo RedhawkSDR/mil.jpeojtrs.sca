@@ -51,12 +51,12 @@ import org.omg.CORBA.AnySeqHelper;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructSequenceImpl#getStruct <em>Struct</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructSequenceImpl#getStructValue <em>Struct Value</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructSequenceImpl#getConfigurationKind <em>Configuration Kind</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

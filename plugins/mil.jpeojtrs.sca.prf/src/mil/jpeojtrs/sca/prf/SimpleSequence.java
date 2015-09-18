@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequence#getValues <em>Values</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequence#getUnits <em>Units</em>}</li>
@@ -31,7 +32,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequence#getComplex <em>Complex</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequence#getOptional <em>Optional</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimpleSequence()
  * @model extendedMetaData="name='simplesequence' kind='elementOnly'"

@@ -21,6 +21,7 @@ import org.omg.CORBA.Any;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.AbstractProperty#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.AbstractProperty#getId <em>Id</em>}</li>
@@ -28,7 +29,6 @@ import org.omg.CORBA.Any;
  *   <li>{@link mil.jpeojtrs.sca.prf.AbstractProperty#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.AbstractProperty#getMode <em>Mode</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getAbstractProperty()
  * @model abstract="true"

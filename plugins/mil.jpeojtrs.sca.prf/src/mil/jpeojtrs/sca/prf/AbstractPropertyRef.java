@@ -21,11 +21,11 @@ import org.omg.CORBA.Any;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.AbstractPropertyRef#getRefID <em>Ref ID</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.AbstractPropertyRef#getProperty <em>Property</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getAbstractPropertyRef()
  * @model abstract="true"

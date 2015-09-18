@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.PropertyRefSet#getProperties <em>Properties</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.PropertyRefSet#getSimpleRef <em>Simple Ref</em>}</li>
@@ -27,7 +28,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link mil.jpeojtrs.sca.prf.PropertyRefSet#getStructRef <em>Struct Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.PropertyRefSet#getStructSequenceRef <em>Struct Sequence Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getPropertyRefSet()
  * @model abstract="true"

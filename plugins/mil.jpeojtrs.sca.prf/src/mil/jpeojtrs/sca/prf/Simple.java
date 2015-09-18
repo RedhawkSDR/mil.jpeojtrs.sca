@@ -38,6 +38,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getValue <em>Value</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getUnits <em>Units</em>}</li>
@@ -47,9 +48,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getAction <em>Action</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getComplex <em>Complex</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getCommandline <em>Commandline</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.Simple#getOptional <em>Optional</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimple()
  * @model extendedMetaData="name='simple' kind='elementOnly'"
@@ -292,6 +293,34 @@ public interface Simple extends AbstractProperty {
 	void setComplex(Boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Commandline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Commandline</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Commandline</em>' attribute.
+	 * @see #setCommandline(Boolean)
+	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimple_Commandline()
+	 * @model extendedMetaData="kind='attribute' name='commandline'"
+	 * @generated
+	 */
+	Boolean getCommandline();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.prf.Simple#getCommandline <em>Commandline</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Commandline</em>' attribute.
+	 * @see #getCommandline()
+	 * @generated
+	 */
+	void setCommandline(Boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Optional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -327,6 +356,15 @@ public interface Simple extends AbstractProperty {
 	 * @generated
 	 */
 	boolean isComplex();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	boolean isCommandLine();
 
 	/**
 	 * <!-- begin-user-doc -->

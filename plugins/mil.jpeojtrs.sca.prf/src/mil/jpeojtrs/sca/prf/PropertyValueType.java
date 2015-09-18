@@ -337,8 +337,8 @@ public enum PropertyValueType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final PropertyValueType[] VALUES_ARRAY = new PropertyValueType[] { STRING, BOOLEAN, ULONG, OBJREF, SHORT, FLOAT, OCTET, CHAR, USHORT,
-		DOUBLE, LONG, LONGLONG, ULONGLONG, };
+	private static final PropertyValueType[] VALUES_ARRAY = new PropertyValueType[] { STRING, BOOLEAN, ULONG, OBJREF, SHORT, FLOAT, OCTET, CHAR, USHORT, DOUBLE,
+		LONG, LONGLONG, ULONGLONG, };
 	/**
 	 * A public read-only list of all the '<em><b>Property Value Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
@@ -351,6 +351,8 @@ public enum PropertyValueType implements Enumerator {
 	 * Returns the '<em><b>Property Value Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PropertyValueType get(String literal) {
@@ -367,6 +369,8 @@ public enum PropertyValueType implements Enumerator {
 	 * Returns the '<em><b>Property Value Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PropertyValueType getByName(String name) {
@@ -383,6 +387,8 @@ public enum PropertyValueType implements Enumerator {
 	 * Returns the '<em><b>Property Value Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PropertyValueType get(int value) {

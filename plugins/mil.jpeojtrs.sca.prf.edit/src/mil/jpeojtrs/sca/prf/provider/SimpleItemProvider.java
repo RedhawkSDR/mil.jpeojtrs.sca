@@ -61,6 +61,7 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 			addUnitsPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addComplexPropertyDescriptor(object);
+			addCommandlinePropertyDescriptor(object);
 			addOptionalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -172,6 +173,18 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Commandline feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommandlinePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Simple_commandline_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Simple_commandline_feature", "_UI_Simple_type"),
+			PrfPackage.Literals.SIMPLE__COMMANDLINE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Optional feature.
 	 * <!-- begin-user-doc -->
 	 * @since 3.0
@@ -236,6 +249,7 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 		case PrfPackage.SIMPLE__ACTION:
 		case PrfPackage.SIMPLE__TYPE:
 		case PrfPackage.SIMPLE__COMPLEX:
+		case PrfPackage.SIMPLE__COMMANDLINE:
 		case PrfPackage.SIMPLE__OPTIONAL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

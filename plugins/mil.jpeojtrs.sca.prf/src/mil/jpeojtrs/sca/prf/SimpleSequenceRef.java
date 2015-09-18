@@ -18,10 +18,10 @@ package mil.jpeojtrs.sca.prf;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.SimpleSequenceRef#getValues <em>Values</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getSimpleSequenceRef()
  * @model extendedMetaData="kind='elementOnly' name='simplesequenceref' qualified='false'"

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.PropertyRefGroup#getProperties <em>Properties</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.PropertyRefGroup#getSimpleRef <em>Simple Ref</em>}</li>
@@ -28,7 +29,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link mil.jpeojtrs.sca.prf.PropertyRefGroup#getStructRef <em>Struct Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.PropertyRefGroup#getStructSequenceRef <em>Struct Sequence Ref</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.prf.PrfPackage#getPropertyRefGroup()
  * @model abstract="true"

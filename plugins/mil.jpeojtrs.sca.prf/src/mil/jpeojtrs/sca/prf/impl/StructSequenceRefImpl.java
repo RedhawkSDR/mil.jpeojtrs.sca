@@ -37,14 +37,14 @@ import org.omg.CORBA.AnySeqHelper;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.StructSequenceRefImpl#getStructValue <em>Struct Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequence> implements StructSequenceRef {
+public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequence>implements StructSequenceRef {
 	/**
 	 * The cached value of the '{@link #getStructValue() <em>Struct Value</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

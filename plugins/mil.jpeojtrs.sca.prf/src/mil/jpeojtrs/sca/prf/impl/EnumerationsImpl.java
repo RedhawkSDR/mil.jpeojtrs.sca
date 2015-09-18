@@ -31,10 +31,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.EnumerationsImpl#getEnumeration <em>Enumeration</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

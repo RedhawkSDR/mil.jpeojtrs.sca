@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.RangeImpl#getMax <em>Max</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.prf.impl.RangeImpl#getMin <em>Min</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -607,6 +607,14 @@ public interface PrfPackage extends EPackage {
 	 */
 	int SIMPLE__COMPLEX = ABSTRACT_PROPERTY_FEATURE_COUNT + 7;
 	/**
+	 * The feature id for the '<em><b>Commandline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE__COMMANDLINE = ABSTRACT_PROPERTY_FEATURE_COUNT + 8;
+	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * @since 5.0
@@ -614,7 +622,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE__OPTIONAL = ABSTRACT_PROPERTY_FEATURE_COUNT + 8;
+	int SIMPLE__OPTIONAL = ABSTRACT_PROPERTY_FEATURE_COUNT + 9;
 	/**
 	 * The number of structural features of the '<em>Simple</em>' class.
 	 * <!-- begin-user-doc -->
@@ -623,7 +631,7 @@ public interface PrfPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 9;
+	int SIMPLE_FEATURE_COUNT = ABSTRACT_PROPERTY_FEATURE_COUNT + 10;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.prf.impl.SimpleSequenceImpl <em>Simple Sequence</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -2132,6 +2140,17 @@ public interface PrfPackage extends EPackage {
 	EAttribute getSimple_Complex();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.Simple#getCommandline <em>Commandline</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Commandline</em>'.
+	 * @see mil.jpeojtrs.sca.prf.Simple#getCommandline()
+	 * @see #getSimple()
+	 * @generated
+	 */
+	EAttribute getSimple_Commandline();
+
+	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.Simple#getOptional <em>Optional</em>}'.
 	 * <!-- begin-user-doc -->
 	 * @since 5.0
@@ -3499,6 +3518,14 @@ public interface PrfPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SIMPLE__COMPLEX = eINSTANCE.getSimple_Complex();
+
+		/**
+		 * The meta object literal for the '<em><b>Commandline</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIMPLE__COMMANDLINE = eINSTANCE.getSimple_Commandline();
 
 		/**
 		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.
