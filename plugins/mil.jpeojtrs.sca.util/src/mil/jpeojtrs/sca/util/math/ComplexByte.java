@@ -81,8 +81,8 @@ public class ComplexByte extends ComplexNumber {
 	 * Intended for JavaBean serialization only.
 	 * @since 4.0
 	 */
-	public void setBytes(byte[] numbers) {
-		this.bytes = Arrays.copyOf(bytes, numbers.length);
+	public void setBytes(byte[] bytes) {
+		this.bytes = Arrays.copyOf(bytes, bytes.length);
 	}
 
 	public byte getByteValue(int index) throws ArrayIndexOutOfBoundsException {
