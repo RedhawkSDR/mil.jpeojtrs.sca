@@ -11,16 +11,8 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.scd.impl;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-
-import mil.jpeojtrs.sca.scd.AbstractPort;
-import mil.jpeojtrs.sca.scd.Ports;
-import mil.jpeojtrs.sca.scd.Provides;
-import mil.jpeojtrs.sca.scd.ScdPackage;
-import mil.jpeojtrs.sca.scd.Uses;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -31,18 +23,25 @@ import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import mil.jpeojtrs.sca.scd.AbstractPort;
+import mil.jpeojtrs.sca.scd.Ports;
+import mil.jpeojtrs.sca.scd.Provides;
+import mil.jpeojtrs.sca.scd.ScdPackage;
+import mil.jpeojtrs.sca.scd.Uses;
+import mil.jpeojtrs.sca.util.collections.FeatureMapList;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Ports</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.PortsImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.PortsImpl#getProvides <em>Provides</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.PortsImpl#getUses <em>Uses</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -108,6 +107,21 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	@Override
 	public EList<Uses> getUses() {
 		return getGroup().list(ScdPackage.Literals.PORTS__USES);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public AbstractPort getPort(String name) {
+		for (AbstractPort port : new FeatureMapList<AbstractPort>(getGroup(), AbstractPort.class)) {
+			if (name.equals(port.getName())) {
+				return port;
+			}
+		}
+		return null;
 	}
 
 	/**

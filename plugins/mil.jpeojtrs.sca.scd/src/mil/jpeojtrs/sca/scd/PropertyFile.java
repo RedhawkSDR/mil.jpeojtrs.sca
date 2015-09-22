@@ -22,12 +22,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.PropertyFile#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.PropertyFile#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.PropertyFile#getProperties <em>Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.scd.ScdPackage#getPropertyFile()
  * @model extendedMetaData="name='propertyFile' kind='elementOnly'"

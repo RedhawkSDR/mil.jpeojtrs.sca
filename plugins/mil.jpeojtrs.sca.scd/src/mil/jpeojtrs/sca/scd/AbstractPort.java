@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getPortType <em>Port Type</em>}</li>
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getInterface <em>Interface</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.AbstractPort#getDirection <em>Direction</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.scd.ScdPackage#getAbstractPort()
  * @model abstract="true"

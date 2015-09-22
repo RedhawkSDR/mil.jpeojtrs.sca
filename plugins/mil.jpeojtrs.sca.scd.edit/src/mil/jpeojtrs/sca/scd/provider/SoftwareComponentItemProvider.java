@@ -197,7 +197,8 @@ public class SoftwareComponentItemProvider extends ItemProviderAdapter implement
 
 		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_REP_ID, ScdFactory.eINSTANCE.createComponentRepId()));
 
-		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_FEATURES, ScdFactory.eINSTANCE.createComponentFeatures()));
+		newChildDescriptors.add(
+			createChildParameter(ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_FEATURES, ScdFactory.eINSTANCE.createComponentFeatures()));
 
 		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.SOFTWARE_COMPONENT__INTERFACES, ScdFactory.eINSTANCE.createInterfaces()));
 

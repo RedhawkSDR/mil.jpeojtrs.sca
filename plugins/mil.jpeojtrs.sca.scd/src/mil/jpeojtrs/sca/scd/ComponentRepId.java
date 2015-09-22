@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.ComponentRepId#getRepid <em>Repid</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.ComponentRepId#getInterface <em>Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.scd.ScdPackage#getComponentRepId()
  * @model extendedMetaData="name='componentRepId' kind='empty'"

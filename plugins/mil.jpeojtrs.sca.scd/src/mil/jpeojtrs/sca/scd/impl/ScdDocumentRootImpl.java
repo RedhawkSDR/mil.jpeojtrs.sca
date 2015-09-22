@@ -34,13 +34,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.ScdDocumentRootImpl#getMixed <em>Mixed</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.ScdDocumentRootImpl#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.ScdDocumentRootImpl#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.ScdDocumentRootImpl#getSoftwarecomponent <em>Softwarecomponent</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

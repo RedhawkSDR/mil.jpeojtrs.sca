@@ -34,11 +34,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.ComponentFeaturesImpl#getSupportsInterface <em>Supports Interface</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.ComponentFeaturesImpl#getPorts <em>Ports</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -90,7 +90,8 @@ public class ComponentFeaturesImpl extends EObjectImpl implements ComponentFeatu
 	@Override
 	public EList<SupportsInterface> getSupportsInterface() {
 		if (supportsInterface == null) {
-			supportsInterface = new EObjectContainmentEList<SupportsInterface>(SupportsInterface.class, this, ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE);
+			supportsInterface = new EObjectContainmentEList<SupportsInterface>(SupportsInterface.class, this,
+				ScdPackage.COMPONENT_FEATURES__SUPPORTS_INTERFACE);
 		}
 		return supportsInterface;
 	}

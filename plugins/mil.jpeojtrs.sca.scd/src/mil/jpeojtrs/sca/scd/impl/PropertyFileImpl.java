@@ -31,12 +31,12 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <em><b>Property File</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.PropertyFileImpl#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.PropertyFileImpl#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.PropertyFileImpl#getProperties <em>Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

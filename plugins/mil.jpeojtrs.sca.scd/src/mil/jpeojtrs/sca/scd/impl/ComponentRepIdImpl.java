@@ -27,11 +27,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.ComponentRepIdImpl#getRepid <em>Repid</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.ComponentRepIdImpl#getInterface <em>Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

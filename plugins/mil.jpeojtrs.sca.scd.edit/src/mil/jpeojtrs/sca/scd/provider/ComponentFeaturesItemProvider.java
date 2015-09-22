@@ -150,7 +150,8 @@ public class ComponentFeaturesItemProvider extends ItemProviderAdapter implement
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.COMPONENT_FEATURES__SUPPORTS_INTERFACE, ScdFactory.eINSTANCE.createSupportsInterface()));
+		newChildDescriptors.add(
+			createChildParameter(ScdPackage.Literals.COMPONENT_FEATURES__SUPPORTS_INTERFACE, ScdFactory.eINSTANCE.createSupportsInterface()));
 
 		newChildDescriptors.add(createChildParameter(ScdPackage.Literals.COMPONENT_FEATURES__PORTS, ScdFactory.eINSTANCE.createPorts()));
 	}

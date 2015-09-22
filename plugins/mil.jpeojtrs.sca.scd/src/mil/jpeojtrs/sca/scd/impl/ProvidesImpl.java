@@ -25,10 +25,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.ProvidesImpl#getProvidesName <em>Provides Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

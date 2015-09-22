@@ -210,8 +210,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 			return (ScdPackage) EPackage.Registry.INSTANCE.getEPackage(ScdPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ScdPackageImpl theScdPackage = (ScdPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ScdPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-			: new ScdPackageImpl());
+		ScdPackageImpl theScdPackage = (ScdPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ScdPackageImpl
+			? EPackage.Registry.INSTANCE.get(eNS_URI) : new ScdPackageImpl());
 
 		isInited = true;
 
@@ -1019,8 +1019,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		initEClass(inheritsInterfaceEClass, InheritsInterface.class, "InheritsInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInheritsInterface_Repid(), theXMLTypePackage.getString(), "repid", null, 1, 1, InheritsInterface.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInheritsInterface_Interface(), this.getInterface(), null, "interface", null, 0, 1, InheritsInterface.class, IS_TRANSIENT,
-			IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInheritsInterface_Interface(), this.getInterface(), null, "interface", null, 0, 1, InheritsInterface.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterface_InheritsInterfaces(), this.getInheritsInterface(), null, "inheritsInterfaces", null, 0, -1, Interface.class, !IS_TRANSIENT,
@@ -1049,6 +1049,9 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		initEReference(getPorts_Uses(), this.getUses(), null, "uses", null, 0, -1, Ports.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 			!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
+		op = addEOperation(portsEClass, this.getAbstractPort(), "getPort", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theXMLTypePackage.getString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(portTypeContainerEClass, PortTypeContainer.class, "PortTypeContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPortTypeContainer_Type(), this.getPortType(), "type", "control", 1, 1, PortTypeContainer.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1066,12 +1069,12 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(abstractPortEClass, AbstractPort.class, "AbstractPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbstractPort_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, AbstractPort.class, !IS_TRANSIENT,
-			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractPort_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, AbstractPort.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractPort_PortType(), this.getPortTypeContainer(), null, "portType", null, 0, -1, AbstractPort.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractPort_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, AbstractPort.class, IS_TRANSIENT, !IS_VOLATILE,
-			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractPort_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, AbstractPort.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractPort_RepID(), theXMLTypePackage.getString(), "repID", null, 1, 1, AbstractPort.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractPort_Interface(), this.getInterface(), null, "interface", null, 0, 1, AbstractPort.class, IS_TRANSIENT, IS_VOLATILE,
@@ -1098,8 +1101,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSoftwareComponent_ComponentRepID(), this.getComponentRepId(), null, "componentRepID", null, 1, 1, SoftwareComponent.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSoftwareComponent_ComponentType(), theXMLTypePackage.getString(), "componentType", null, 1, 1, SoftwareComponent.class,
-			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSoftwareComponent_ComponentType(), theXMLTypePackage.getString(), "componentType", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSoftwareComponent_ComponentFeatures(), this.getComponentFeatures(), null, "componentFeatures", null, 1, 1, SoftwareComponent.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSoftwareComponent_Interfaces(), this.getInterfaces(), null, "interfaces", null, 1, 1, SoftwareComponent.class, !IS_TRANSIENT,
@@ -1116,8 +1119,8 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSupportsInterface_Id(), theEcorePackage.getEString(), "id", null, 0, 1, SupportsInterface.class, IS_TRANSIENT, IS_VOLATILE,
 			!IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getSupportsInterface_Interface(), this.getInterface(), null, "interface", null, 0, 1, SupportsInterface.class, IS_TRANSIENT,
-			IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getSupportsInterface_Interface(), this.getInterface(), null, "interface", null, 0, 1, SupportsInterface.class, IS_TRANSIENT, IS_VOLATILE,
+			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(usesEClass, Uses.class, "Uses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUses_UsesName(), theXMLTypePackage.getString(), "usesName", null, 1, 1, Uses.class, !IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
@@ -1171,16 +1174,16 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation(componentFeaturesEClass, source, new String[] { "name", "componentFeatures", "kind", "elementOnly" });
-		addAnnotation(getComponentFeatures_SupportsInterface(), source, new String[] { "kind", "element", "name", "supportsinterface", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getComponentFeatures_SupportsInterface(), source,
+			new String[] { "kind", "element", "name", "supportsinterface", "namespace", "##targetNamespace" });
 		addAnnotation(getComponentFeatures_Ports(), source, new String[] { "kind", "element", "name", "ports", "namespace", "##targetNamespace" });
 		addAnnotation(componentRepIdEClass, source, new String[] { "name", "componentRepId", "kind", "empty" });
 		addAnnotation(getComponentRepId_Repid(), source, new String[] { "kind", "attribute", "name", "repid" });
 		addAnnotation(inheritsInterfaceEClass, source, new String[] { "name", "inheritsInterface", "kind", "empty" });
 		addAnnotation(getInheritsInterface_Repid(), source, new String[] { "kind", "attribute", "name", "repid" });
 		addAnnotation(interfaceEClass, source, new String[] { "name", "interface", "kind", "elementOnly" });
-		addAnnotation(getInterface_InheritsInterfaces(), source, new String[] { "kind", "element", "name", "inheritsinterface", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getInterface_InheritsInterfaces(), source,
+			new String[] { "kind", "element", "name", "inheritsinterface", "namespace", "##targetNamespace" });
 		addAnnotation(getInterface_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(getInterface_Repid(), source, new String[] { "kind", "attribute", "name", "repid" });
 		addAnnotation(interfacesEClass, source, new String[] { "name", "interfaces", "kind", "elementOnly" });
@@ -1208,18 +1211,20 @@ public class ScdPackageImpl extends EPackageImpl implements ScdPackage {
 		addAnnotation(getScdDocumentRoot_Mixed(), source, new String[] { "kind", "elementWildcard", "name", ":mixed" });
 		addAnnotation(getScdDocumentRoot_XMLNSPrefixMap(), source, new String[] { "kind", "attribute", "name", "xmlns:prefix" });
 		addAnnotation(getScdDocumentRoot_XSISchemaLocation(), source, new String[] { "kind", "attribute", "name", "xsi:schemaLocation" });
-		addAnnotation(getScdDocumentRoot_Softwarecomponent(), source, new String[] { "kind", "element", "name", "softwarecomponent", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getScdDocumentRoot_Softwarecomponent(), source,
+			new String[] { "kind", "element", "name", "softwarecomponent", "namespace", "##targetNamespace" });
 		addAnnotation(softwareComponentEClass, source, new String[] { "name", "softwareComponent", "kind", "elementOnly" });
-		addAnnotation(getSoftwareComponent_CorbaVersion(), source, new String[] { "kind", "element", "name", "corbaversion", "namespace", "##targetNamespace" });
-		addAnnotation(getSoftwareComponent_ComponentRepID(), source, new String[] { "kind", "element", "name", "componentrepid", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getSoftwareComponent_CorbaVersion(), source,
+			new String[] { "kind", "element", "name", "corbaversion", "namespace", "##targetNamespace" });
+		addAnnotation(getSoftwareComponent_ComponentRepID(), source,
+			new String[] { "kind", "element", "name", "componentrepid", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareComponent_ComponentType(), source,
 			new String[] { "kind", "element", "name", "componenttype", "namespace", "##targetNamespace" });
-		addAnnotation(getSoftwareComponent_ComponentFeatures(), source, new String[] { "kind", "element", "name", "componentfeatures", "namespace",
-			"##targetNamespace" });
+		addAnnotation(getSoftwareComponent_ComponentFeatures(), source,
+			new String[] { "kind", "element", "name", "componentfeatures", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareComponent_Interfaces(), source, new String[] { "kind", "element", "name", "interfaces", "namespace", "##targetNamespace" });
-		addAnnotation(getSoftwareComponent_PropertyFile(), source, new String[] { "kind", "element", "name", "propertyfile", "namespace", "##targetNamespace" });
+		addAnnotation(getSoftwareComponent_PropertyFile(), source,
+			new String[] { "kind", "element", "name", "propertyfile", "namespace", "##targetNamespace" });
 		addAnnotation(supportsInterfaceEClass, source, new String[] { "name", "supportsInterface", "kind", "empty" });
 		addAnnotation(getSupportsInterface_RepId(), source, new String[] { "kind", "attribute", "name", "repid" });
 		addAnnotation(getSupportsInterface_SupportsName(), source, new String[] { "kind", "attribute", "name", "supportsname" });

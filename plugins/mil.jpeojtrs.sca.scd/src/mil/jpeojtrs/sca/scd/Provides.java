@@ -18,10 +18,10 @@ package mil.jpeojtrs.sca.scd;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.Provides#getProvidesName <em>Provides Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.scd.ScdPackage#getProvides()
  * @model extendedMetaData="name='provides' kind='elementOnly'"

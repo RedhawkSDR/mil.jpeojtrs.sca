@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getCorbaVersion <em>Corba Version</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getComponentRepID <em>Component Rep ID</em>}</li>
@@ -32,7 +33,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getPropertyFile <em>Property File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.SoftwareComponent#getRepId <em>Rep Id</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.scd.ScdPackage#getSoftwareComponent()
  * @model extendedMetaData="name='softwareComponent' kind='elementOnly'"

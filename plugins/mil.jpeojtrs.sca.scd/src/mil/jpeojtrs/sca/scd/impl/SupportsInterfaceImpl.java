@@ -27,13 +27,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.SupportsInterfaceImpl#getRepId <em>Rep Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.SupportsInterfaceImpl#getSupportsName <em>Supports Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.SupportsInterfaceImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.SupportsInterfaceImpl#getInterface <em>Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

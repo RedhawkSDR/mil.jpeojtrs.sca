@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <em><b>Software Component</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.SoftwareComponentImpl#getCorbaVersion <em>Corba Version</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.SoftwareComponentImpl#getComponentRepID <em>Component Rep ID</em>}</li>
@@ -40,7 +41,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.SoftwareComponentImpl#getPropertyFile <em>Property File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.SoftwareComponentImpl#getRepId <em>Rep Id</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -291,7 +291,8 @@ public class SoftwareComponentImpl extends EObjectImpl implements SoftwareCompon
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES, newComponentFeatures, newComponentFeatures));
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, ScdPackage.SOFTWARE_COMPONENT__COMPONENT_FEATURES, newComponentFeatures, newComponentFeatures));
 	}
 
 	/**

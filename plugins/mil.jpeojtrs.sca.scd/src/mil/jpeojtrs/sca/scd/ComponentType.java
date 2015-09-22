@@ -310,34 +310,22 @@ public enum ComponentType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ComponentType[] VALUES_ARRAY =
-		new ComponentType[]
-		{
-			RESOURCE,
-			DEVICE,
-			RESOURCE_FACTORY,
-			DOMAIN_MANAGER,
-			LOG,
-			FILE_SYSTEM,
-			FILE_MANAGER,
-			DEVICE_MANAGER,
-			NAMING_SERVICE,
-			EVENT_SERVICE,
-			SERVICE,
-			OTHER,
-		};
-/**
-	 * A public read-only list of all the '<em><b>Component Type</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	private static final ComponentType[] VALUES_ARRAY = new ComponentType[] { RESOURCE, DEVICE, RESOURCE_FACTORY, DOMAIN_MANAGER, LOG, FILE_SYSTEM,
+		FILE_MANAGER, DEVICE_MANAGER, NAMING_SERVICE, EVENT_SERVICE, SERVICE, OTHER, };
+	/**
+		 * A public read-only list of all the '<em><b>Component Type</b></em>' enumerators.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
 	public static final List<ComponentType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Component Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ComponentType get(String literal) {
@@ -354,6 +342,8 @@ public enum ComponentType implements Enumerator {
 	 * Returns the '<em><b>Component Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ComponentType getByName(String name) {
@@ -370,6 +360,8 @@ public enum ComponentType implements Enumerator {
 	 * Returns the '<em><b>Component Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static ComponentType get(int value) {

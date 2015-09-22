@@ -124,6 +124,9 @@
       <details key="name" value="ports"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
+    <eOperations name="getPort" eType="#//AbstractPort">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

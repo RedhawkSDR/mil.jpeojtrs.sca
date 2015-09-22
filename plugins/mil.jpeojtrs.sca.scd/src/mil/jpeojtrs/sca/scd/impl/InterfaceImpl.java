@@ -33,12 +33,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.InterfaceImpl#getInheritsInterfaces <em>Inherits Interfaces</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.InterfaceImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.impl.InterfaceImpl#getRepid <em>Repid</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

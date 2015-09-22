@@ -35,6 +35,12 @@ import org.junit.Test;
  *   <li>{@link mil.jpeojtrs.sca.scd.Ports#getUses() <em>Uses</em>}</li>
  * </ul>
  * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.scd.Ports#getPort(java.lang.String) <em>Get Port</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class PortsTest extends TestCase {
@@ -166,6 +172,18 @@ public class PortsTest extends TestCase {
 		Assert.assertTrue(hasPort);
 
 		// BEGIN GENERATED CODE
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.scd.Ports#getPort(java.lang.String) <em>Get Port</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.scd.Ports#getPort(java.lang.String)
+	 * @generated NOT
+	 */
+	public void testGetPort__String() {
+		Assert.assertNotNull(fixture.getPort("uses_port_virtual"));
+		Assert.assertNotNull(fixture.getPort("provides_port2"));
 	}
 
 	@Test

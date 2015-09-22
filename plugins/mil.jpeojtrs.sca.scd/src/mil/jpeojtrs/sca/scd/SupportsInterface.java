@@ -20,13 +20,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.SupportsInterface#getRepId <em>Rep Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.SupportsInterface#getSupportsName <em>Supports Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.SupportsInterface#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.SupportsInterface#getInterface <em>Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.scd.ScdPackage#getSupportsInterface()
  * @model extendedMetaData="name='supportsInterface' kind='empty'"

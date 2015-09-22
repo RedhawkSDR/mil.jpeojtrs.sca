@@ -24,12 +24,12 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.Ports#getGroup <em>Group</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.Ports#getProvides <em>Provides</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.Ports#getUses <em>Uses</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.scd.ScdPackage#getPorts()
  * @model extendedMetaData="name='ports' kind='elementOnly'"
@@ -86,6 +86,16 @@ public interface Ports extends EObject {
 	 * @generated
 	 */
 	EList<Uses> getUses();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Gets the {@link AbstractPort} of the specified name.
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @model nameDataType="org.eclipse.emf.ecore.xml.type.String"
+	 * @generated
+	 */
+	AbstractPort getPort(String name);
 
 	/**
 	 * @since 3.0

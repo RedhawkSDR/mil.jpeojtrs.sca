@@ -18,10 +18,10 @@ package mil.jpeojtrs.sca.scd;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.Uses#getUsesName <em>Uses Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.scd.ScdPackage#getUses()
  * @model extendedMetaData="name='uses' kind='elementOnly'"

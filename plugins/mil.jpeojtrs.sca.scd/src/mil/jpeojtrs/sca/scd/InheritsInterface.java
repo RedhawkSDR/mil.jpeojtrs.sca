@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.scd.InheritsInterface#getRepid <em>Repid</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.scd.InheritsInterface#getInterface <em>Interface</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.scd.ScdPackage#getInheritsInterface()
  * @model extendedMetaData="name='inheritsInterface' kind='empty'"

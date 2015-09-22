@@ -126,26 +126,21 @@ public enum PortType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final PortType[] VALUES_ARRAY =
-		new PortType[]
-		{
-			DATA,
-			RESPONSES,
-			CONTROL,
-			TEST,
-		};
-/**
-	 * A public read-only list of all the '<em><b>Port Type</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	private static final PortType[] VALUES_ARRAY = new PortType[] { DATA, RESPONSES, CONTROL, TEST, };
+	/**
+		 * A public read-only list of all the '<em><b>Port Type</b></em>' enumerators.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
 	public static final List<PortType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Port Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PortType get(String literal) {
@@ -162,6 +157,8 @@ public enum PortType implements Enumerator {
 	 * Returns the '<em><b>Port Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PortType getByName(String name) {
@@ -178,6 +175,8 @@ public enum PortType implements Enumerator {
 	 * Returns the '<em><b>Port Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PortType get(int value) {
