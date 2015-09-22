@@ -609,6 +609,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Commandline</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -2142,6 +2143,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.prf.Simple#getCommandline <em>Commandline</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Commandline</em>'.
 	 * @see mil.jpeojtrs.sca.prf.Simple#getCommandline()
@@ -3522,6 +3524,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Commandline</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 5.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
