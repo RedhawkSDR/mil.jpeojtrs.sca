@@ -247,10 +247,7 @@ public class PortsImpl extends EObjectImpl implements Ports {
 	 */
 	@Override
 	public List<AbstractPort> getAllPorts() {
-		List<AbstractPort> retVal = new ArrayList<AbstractPort>();
-		retVal.addAll(getProvides());
-		retVal.addAll(getUses());
-		return Collections.unmodifiableList(retVal);
+		return new FeatureMapList<AbstractPort>(getGroup(), AbstractPort.class);
 	}
 
 } //PortsImpl
