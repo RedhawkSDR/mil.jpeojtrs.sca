@@ -175,6 +175,7 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 	/**
 	 * This adds a property descriptor for the Commandline feature.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
