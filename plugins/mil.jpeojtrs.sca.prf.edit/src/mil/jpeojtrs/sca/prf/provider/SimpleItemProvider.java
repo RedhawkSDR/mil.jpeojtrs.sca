@@ -17,10 +17,18 @@ import java.util.List;
 import mil.jpeojtrs.sca.prf.AbstractProperty;
 import mil.jpeojtrs.sca.prf.Enumeration;
 import mil.jpeojtrs.sca.prf.Enumerations;
+import mil.jpeojtrs.sca.prf.Kind;
 import mil.jpeojtrs.sca.prf.PrfPackage;
+import mil.jpeojtrs.sca.prf.PropertyConfigurationType;
 import mil.jpeojtrs.sca.prf.Simple;
+
+import org.eclipse.emf.common.command.Command;
+import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -303,4 +311,25 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 		}
 	}
 
+	@Override
+	protected Command createRemoveCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Collection< ? > collection) {
+		if (feature == PrfPackage.Literals.SIMPLE__KIND && containsKindProperty(collection)) {
+			// If the "property" kind is being unset, also clear the commandline attribute. 
+			CompoundCommand command = new CompoundCommand(0);
+			command.append(super.createRemoveCommand(domain, owner, feature, collection));
+			command.append(super.createSetCommand(domain, owner, PrfPackage.Literals.SIMPLE__COMMANDLINE, null));
+			return command;
+		}
+		return super.createRemoveCommand(domain, owner, feature, collection);
+	}
+
+	protected boolean containsKindProperty(Collection< ? > collection) {
+		for (Object object : collection) {
+			Kind kind = (Kind) object;
+			if (kind.getType().equals(PropertyConfigurationType.PROPERTY)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
