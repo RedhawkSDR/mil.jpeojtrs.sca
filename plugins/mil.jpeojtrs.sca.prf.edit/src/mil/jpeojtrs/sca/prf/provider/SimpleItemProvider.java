@@ -323,6 +323,9 @@ public class SimpleItemProvider extends AbstractPropertyItemProvider {
 		return super.createRemoveCommand(domain, owner, feature, collection);
 	}
 
+	/**
+	 * @since 3.0
+	 */
 	protected boolean containsKindProperty(Collection< ? > collection) {
 		for (Object object : collection) {
 			Kind kind = (Kind) object;
