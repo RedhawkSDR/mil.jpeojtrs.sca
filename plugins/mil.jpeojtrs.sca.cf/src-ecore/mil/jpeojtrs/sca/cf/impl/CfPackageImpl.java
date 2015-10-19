@@ -68,6 +68,7 @@ import CF.PortSupplierOperations;
 import CF.PropertiesHolder;
 import CF.PropertyEmitter;
 import CF.PropertyEmitterOperations;
+import CF.PropertyEmitterPackage.AlreadyInitialized;
 import CF.PropertySet;
 import CF.PropertySetOperations;
 import CF.Resource;
@@ -121,6 +122,9 @@ import CF.Logging;
 import CF.LoggingOperations;
 import CF.PortPackage.InvalidPort;
 import CF.PortPackage.OccupiedPort;
+import CF.PortSet;
+import CF.PortSetOperations;
+import CF.PortSetPackage.PortInfoType;
 import CF.PortSupplierPackage.UnknownPort;
 import CF.PropertySetPackage.InvalidConfiguration;
 import CF.PropertySetPackage.PartialConfiguration;
@@ -380,6 +384,18 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EClass portOperationsEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass portSetEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass portSetOperationsEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -746,6 +762,12 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EDataType occupiedPortEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType portInfoTypeEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1259,6 +1281,26 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 */
 	public EClass getPortOperations() {
 		return portOperationsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPortSet() {
+		return portSetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPortSetOperations() {
+		return portSetOperationsEClass;
 	}
 
 	/**
@@ -1815,6 +1857,16 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getPortInfoType() {
+		return portInfoTypeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -2042,6 +2094,10 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 		portOperationsEClass = createEClass(PORT_OPERATIONS);
 
+		portSetEClass = createEClass(PORT_SET);
+
+		portSetOperationsEClass = createEClass(PORT_SET_OPERATIONS);
+
 		portSupplierEClass = createEClass(PORT_SUPPLIER);
 
 		portSupplierOperationsEClass = createEClass(PORT_SUPPLIER_OPERATIONS);
@@ -2115,6 +2171,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		loadFailEDataType = createEDataType(LOAD_FAIL);
 		invalidPortEDataType = createEDataType(INVALID_PORT);
 		occupiedPortEDataType = createEDataType(OCCUPIED_PORT);
+		portInfoTypeEDataType = createEDataType(PORT_INFO_TYPE);
 		unknownPortEDataType = createEDataType(UNKNOWN_PORT);
 		alreadyInitializedEDataType = createEDataType(ALREADY_INITIALIZED);
 		invalidConfigurationEDataType = createEDataType(INVALID_CONFIGURATION);
@@ -2190,9 +2247,9 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		deviceEClass.getESuperTypes().add(this.getIDLEntity());
 		deviceManagerEClass.getESuperTypes().add(this.getDeviceManagerOperations());
 		deviceManagerEClass.getESuperTypes().add(this.getPropertyEmitter());
-		deviceManagerEClass.getESuperTypes().add(this.getPortSupplier());
+		deviceManagerEClass.getESuperTypes().add(this.getPortSet());
 		deviceManagerOperationsEClass.getESuperTypes().add(this.getPropertyEmitterOperations());
-		deviceManagerOperationsEClass.getESuperTypes().add(this.getPortSupplierOperations());
+		deviceManagerOperationsEClass.getESuperTypes().add(this.getPortSetOperations());
 		deviceOperationsEClass.getESuperTypes().add(this.getResourceOperations());
 		domainManagerEClass.getESuperTypes().add(this.getDomainManagerOperations());
 		domainManagerEClass.getESuperTypes().add(this.getPropertyEmitter());
@@ -2233,6 +2290,10 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		portEClass.getESuperTypes().add(this.getPortOperations());
 		portEClass.getESuperTypes().add(this.getObject());
 		portEClass.getESuperTypes().add(this.getIDLEntity());
+		portSetEClass.getESuperTypes().add(this.getPortSetOperations());
+		portSetEClass.getESuperTypes().add(this.getPortSupplier());
+		portSetEClass.getESuperTypes().add(this.getObject());
+		portSetEClass.getESuperTypes().add(this.getIDLEntity());
 		portSupplierEClass.getESuperTypes().add(this.getPortSupplierOperations());
 		portSupplierEClass.getESuperTypes().add(this.getObject());
 		portSupplierEClass.getESuperTypes().add(this.getIDLEntity());
@@ -2247,7 +2308,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		resourceEClass.getESuperTypes().add(this.getLifeCycle());
 		resourceEClass.getESuperTypes().add(this.getTestableObject());
 		resourceEClass.getESuperTypes().add(this.getPropertyEmitter());
-		resourceEClass.getESuperTypes().add(this.getPortSupplier());
+		resourceEClass.getESuperTypes().add(this.getPortSet());
 		resourceEClass.getESuperTypes().add(this.getLogging());
 		resourceFactoryEClass.getESuperTypes().add(this.getResourceFactoryOperations());
 		resourceFactoryEClass.getESuperTypes().add(this.getObject());
@@ -2649,6 +2710,12 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		addEParameter(op, ecorePackage.getEString(), "connectionId", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getInvalidPort());
 
+		initEClass(portSetEClass, PortSet.class, "PortSet", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(portSetOperationsEClass, PortSetOperations.class, "PortSetOperations", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(portSetOperationsEClass, this.getPortInfoType(), "getPortSet", 0, -1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(portSupplierEClass, PortSupplier.class, "PortSupplier", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(portSupplierOperationsEClass, PortSupplierOperations.class, "PortSupplierOperations", IS_ABSTRACT, IS_INTERFACE,
@@ -2792,9 +2859,9 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEDataType(loadFailEDataType, LoadFail.class, "LoadFail", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidPortEDataType, InvalidPort.class, "InvalidPort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(occupiedPortEDataType, OccupiedPort.class, "OccupiedPort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(portInfoTypeEDataType, PortInfoType.class, "PortInfoType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownPortEDataType, UnknownPort.class, "UnknownPort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(alreadyInitializedEDataType, CF.PropertyEmitterPackage.AlreadyInitialized.class, "AlreadyInitialized", IS_SERIALIZABLE,
-			!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(alreadyInitializedEDataType, AlreadyInitialized.class, "AlreadyInitialized", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidConfigurationEDataType, InvalidConfiguration.class, "InvalidConfiguration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(partialConfigurationEDataType, PartialConfiguration.class, "PartialConfiguration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownPropertiesEDataType, UnknownProperties.class, "UnknownProperties", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

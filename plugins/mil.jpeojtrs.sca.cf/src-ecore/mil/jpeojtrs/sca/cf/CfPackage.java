@@ -154,7 +154,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getResourceOperations()
 	 * @generated
 	 */
-	int RESOURCE_OPERATIONS = 49;
+	int RESOURCE_OPERATIONS = 51;
 	/**
 	 * The number of structural features of the '<em>Resource Operations</em>' class.
 	 * <!-- begin-user-doc -->
@@ -410,7 +410,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPropertySetOperations()
 	 * @generated
 	 */
-	int PROPERTY_SET_OPERATIONS = 45;
+	int PROPERTY_SET_OPERATIONS = 47;
 	/**
 	 * The number of structural features of the '<em>Property Set Operations</em>' class.
 	 * <!-- begin-user-doc -->
@@ -428,7 +428,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPropertyEmitterOperations()
 	 * @generated
 	 */
-	int PROPERTY_EMITTER_OPERATIONS = 43;
+	int PROPERTY_EMITTER_OPERATIONS = 45;
 	/**
 	 * The number of structural features of the '<em>Property Emitter Operations</em>' class.
 	 * <!-- begin-user-doc -->
@@ -808,6 +808,44 @@ public interface CfPackage extends EPackage {
 	 */
 	int PORT_FEATURE_COUNT = PORT_OPERATIONS_FEATURE_COUNT + 0;
 	/**
+	 * The meta object id for the '{@link CF.PortSetOperations <em>Port Set Operations</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @see CF.PortSetOperations
+	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPortSetOperations()
+	 * @generated
+	 */
+	int PORT_SET_OPERATIONS = 41;
+	/**
+	 * The number of structural features of the '<em>Port Set Operations</em>' class.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_SET_OPERATIONS_FEATURE_COUNT = 0;
+	/**
+	 * The meta object id for the '{@link CF.PortSet <em>Port Set</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @see CF.PortSet
+	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPortSet()
+	 * @generated
+	 */
+	int PORT_SET = 40;
+	/**
+	 * The number of structural features of the '<em>Port Set</em>' class.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_SET_FEATURE_COUNT = PORT_SET_OPERATIONS_FEATURE_COUNT + 0;
+	/**
 	 * The meta object id for the '{@link CF.PortSupplierOperations <em>Port Supplier Operations</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -815,7 +853,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPortSupplierOperations()
 	 * @generated
 	 */
-	int PORT_SUPPLIER_OPERATIONS = 41;
+	int PORT_SUPPLIER_OPERATIONS = 43;
 	/**
 	 * The number of structural features of the '<em>Port Supplier Operations</em>' class.
 	 * <!-- begin-user-doc -->
@@ -832,7 +870,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPortSupplier()
 	 * @generated
 	 */
-	int PORT_SUPPLIER = 40;
+	int PORT_SUPPLIER = 42;
 	/**
 	 * The number of structural features of the '<em>Port Supplier</em>' class.
 	 * <!-- begin-user-doc -->
@@ -850,7 +888,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPropertyEmitter()
 	 * @generated
 	 */
-	int PROPERTY_EMITTER = 42;
+	int PROPERTY_EMITTER = 44;
 	/**
 	 * The number of structural features of the '<em>Property Emitter</em>' class.
 	 * <!-- begin-user-doc -->
@@ -868,7 +906,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPropertySet()
 	 * @generated
 	 */
-	int PROPERTY_SET = 44;
+	int PROPERTY_SET = 46;
 	/**
 	 * The number of structural features of the '<em>Property Set</em>' class.
 	 * <!-- begin-user-doc -->
@@ -885,7 +923,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 46;
+	int RESOURCE = 48;
 	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
 	 * <!-- begin-user-doc -->
@@ -902,7 +940,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getResourceFactoryOperations()
 	 * @generated
 	 */
-	int RESOURCE_FACTORY_OPERATIONS = 48;
+	int RESOURCE_FACTORY_OPERATIONS = 50;
 	/**
 	 * The number of structural features of the '<em>Resource Factory Operations</em>' class.
 	 * <!-- begin-user-doc -->
@@ -919,7 +957,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getResourceFactory()
 	 * @generated
 	 */
-	int RESOURCE_FACTORY = 47;
+	int RESOURCE_FACTORY = 49;
 	/**
 	 * The number of structural features of the '<em>Resource Factory</em>' class.
 	 * <!-- begin-user-doc -->
@@ -936,7 +974,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getTestableObjectOperations()
 	 * @generated
 	 */
-	int TESTABLE_OBJECT_OPERATIONS = 51;
+	int TESTABLE_OBJECT_OPERATIONS = 53;
 	/**
 	 * The number of structural features of the '<em>Testable Object Operations</em>' class.
 	 * <!-- begin-user-doc -->
@@ -953,7 +991,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getTestableObject()
 	 * @generated
 	 */
-	int TESTABLE_OBJECT = 50;
+	int TESTABLE_OBJECT = 52;
 	/**
 	 * The number of structural features of the '<em>Testable Object</em>' class.
 	 * <!-- begin-user-doc -->
@@ -970,7 +1008,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 52;
+	int DATA_TYPE = 54;
 	/**
 	 * The meta object id for the '<em>Data Type Array</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -978,7 +1016,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getDataTypeArray()
 	 * @generated
 	 */
-	int DATA_TYPE_ARRAY = 53;
+	int DATA_TYPE_ARRAY = 55;
 	/**
 	 * The meta object id for the '<em>Naming Context Ext</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -987,7 +1025,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getNamingContextExt()
 	 * @generated
 	 */
-	int NAMING_CONTEXT_EXT = 54;
+	int NAMING_CONTEXT_EXT = 56;
 	/**
 	 * The meta object id for the '<em>ORB</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -996,7 +1034,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getORB()
 	 * @generated
 	 */
-	int ORB = 55;
+	int ORB = 57;
 	/**
 	 * The meta object id for the '<em>Invalid Object Reference</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1005,7 +1043,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidObjectReference()
 	 * @generated
 	 */
-	int INVALID_OBJECT_REFERENCE = 56;
+	int INVALID_OBJECT_REFERENCE = 58;
 	/**
 	 * The meta object id for the '<em>Create Application Insufficient Capacity Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1014,7 +1052,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getCreateApplicationInsufficientCapacityError()
 	 * @generated
 	 */
-	int CREATE_APPLICATION_INSUFFICIENT_CAPACITY_ERROR = 57;
+	int CREATE_APPLICATION_INSUFFICIENT_CAPACITY_ERROR = 59;
 	/**
 	 * The meta object id for the '<em>Device Assignment Type Array</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1022,7 +1060,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getDeviceAssignmentTypeArray()
 	 * @generated
 	 */
-	int DEVICE_ASSIGNMENT_TYPE_ARRAY = 58;
+	int DEVICE_ASSIGNMENT_TYPE_ARRAY = 60;
 	/**
 	 * The meta object id for the '<em>Create Application Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1031,7 +1069,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getCreateApplicationError()
 	 * @generated
 	 */
-	int CREATE_APPLICATION_ERROR = 59;
+	int CREATE_APPLICATION_ERROR = 61;
 	/**
 	 * The meta object id for the '<em>Create Application Request Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1040,7 +1078,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getCreateApplicationRequestError()
 	 * @generated
 	 */
-	int CREATE_APPLICATION_REQUEST_ERROR = 60;
+	int CREATE_APPLICATION_REQUEST_ERROR = 62;
 	/**
 	 * The meta object id for the '<em>Invalid Init Configuration</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1049,7 +1087,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidInitConfiguration()
 	 * @generated
 	 */
-	int INVALID_INIT_CONFIGURATION = 61;
+	int INVALID_INIT_CONFIGURATION = 63;
 	/**
 	 * The meta object id for the '<em>Invalid Capacity</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1058,7 +1096,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidCapacity()
 	 * @generated
 	 */
-	int INVALID_CAPACITY = 62;
+	int INVALID_CAPACITY = 64;
 	/**
 	 * The meta object id for the '<em>Invalid State</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1067,7 +1105,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidState()
 	 * @generated
 	 */
-	int INVALID_STATE = 63;
+	int INVALID_STATE = 65;
 	/**
 	 * The meta object id for the '<em>Invalid Profile</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1076,7 +1114,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidProfile()
 	 * @generated
 	 */
-	int INVALID_PROFILE = 64;
+	int INVALID_PROFILE = 66;
 	/**
 	 * The meta object id for the '<em>Device Manager Not Registered</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1085,7 +1123,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getDeviceManagerNotRegistered()
 	 * @generated
 	 */
-	int DEVICE_MANAGER_NOT_REGISTERED = 65;
+	int DEVICE_MANAGER_NOT_REGISTERED = 67;
 	/**
 	 * The meta object id for the '<em>Register Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1094,7 +1132,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getRegisterError()
 	 * @generated
 	 */
-	int REGISTER_ERROR = 66;
+	int REGISTER_ERROR = 68;
 	/**
 	 * The meta object id for the '<em>Unregister Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1103,7 +1141,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUnregisterError()
 	 * @generated
 	 */
-	int UNREGISTER_ERROR = 67;
+	int UNREGISTER_ERROR = 69;
 	/**
 	 * The meta object id for the '<em>Invalid File Name</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1112,7 +1150,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidFileName()
 	 * @generated
 	 */
-	int INVALID_FILE_NAME = 68;
+	int INVALID_FILE_NAME = 70;
 	/**
 	 * The meta object id for the '<em>Application Installation Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1121,7 +1159,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getApplicationInstallationError()
 	 * @generated
 	 */
-	int APPLICATION_INSTALLATION_ERROR = 69;
+	int APPLICATION_INSTALLATION_ERROR = 71;
 	/**
 	 * The meta object id for the '<em>Application Already Installed</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1130,7 +1168,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getApplicationAlreadyInstalled()
 	 * @generated
 	 */
-	int APPLICATION_ALREADY_INSTALLED = 70;
+	int APPLICATION_ALREADY_INSTALLED = 72;
 	/**
 	 * The meta object id for the '<em>Invalid Dom Mgr Identifier</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1140,7 +1178,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidDomMgrIdentifier()
 	 * @generated
 	 */
-	int INVALID_DOM_MGR_IDENTIFIER = 71;
+	int INVALID_DOM_MGR_IDENTIFIER = 73;
 	/**
 	 * The meta object id for the '<em>Invalid Identifier</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1149,7 +1187,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidIdentifier()
 	 * @generated
 	 */
-	int INVALID_IDENTIFIER = 113;
+	int INVALID_IDENTIFIER = 116;
 	/**
 	 * The meta object id for the '<em>Application Uninstallation Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1158,7 +1196,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getApplicationUninstallationError()
 	 * @generated
 	 */
-	int APPLICATION_UNINSTALLATION_ERROR = 72;
+	int APPLICATION_UNINSTALLATION_ERROR = 74;
 	/**
 	 * The meta object id for the '<em>Insufficient Capacity</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1167,7 +1205,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInsufficientCapacity()
 	 * @generated
 	 */
-	int INSUFFICIENT_CAPACITY = 73;
+	int INSUFFICIENT_CAPACITY = 75;
 	/**
 	 * The meta object id for the '<em>Invalid Event Channel Name</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1176,7 +1214,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidEventChannelName()
 	 * @generated
 	 */
-	int INVALID_EVENT_CHANNEL_NAME = 74;
+	int INVALID_EVENT_CHANNEL_NAME = 76;
 	/**
 	 * The meta object id for the '<em>Already Connected</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1185,7 +1223,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getAlreadyConnected()
 	 * @generated
 	 */
-	int ALREADY_CONNECTED = 75;
+	int ALREADY_CONNECTED = 77;
 	/**
 	 * The meta object id for the '<em>Not Connected</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1194,7 +1232,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getNotConnected()
 	 * @generated
 	 */
-	int NOT_CONNECTED = 76;
+	int NOT_CONNECTED = 78;
 	/**
 	 * The meta object id for the '<em>Invalid Process</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1203,7 +1241,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidProcess()
 	 * @generated
 	 */
-	int INVALID_PROCESS = 77;
+	int INVALID_PROCESS = 79;
 	/**
 	 * The meta object id for the '<em>Invalid Function</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1212,7 +1250,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidFunction()
 	 * @generated
 	 */
-	int INVALID_FUNCTION = 78;
+	int INVALID_FUNCTION = 80;
 	/**
 	 * The meta object id for the '<em>Invalid Parameters</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1221,7 +1259,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidParameters()
 	 * @generated
 	 */
-	int INVALID_PARAMETERS = 79;
+	int INVALID_PARAMETERS = 81;
 	/**
 	 * The meta object id for the '<em>Invalid Options</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1230,7 +1268,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidOptions()
 	 * @generated
 	 */
-	int INVALID_OPTIONS = 80;
+	int INVALID_OPTIONS = 82;
 	/**
 	 * The meta object id for the '<em>Execute Fail</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1239,7 +1277,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getExecuteFail()
 	 * @generated
 	 */
-	int EXECUTE_FAIL = 81;
+	int EXECUTE_FAIL = 83;
 	/**
 	 * The meta object id for the '<em>Invalid File System</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1248,7 +1286,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidFileSystem()
 	 * @generated
 	 */
-	int INVALID_FILE_SYSTEM = 82;
+	int INVALID_FILE_SYSTEM = 84;
 	/**
 	 * The meta object id for the '<em>Mount Point Already Exists</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1257,7 +1295,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getMountPointAlreadyExists()
 	 * @generated
 	 */
-	int MOUNT_POINT_ALREADY_EXISTS = 83;
+	int MOUNT_POINT_ALREADY_EXISTS = 85;
 	/**
 	 * The meta object id for the '<em>Non Existent Mount</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1266,7 +1304,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getNonExistentMount()
 	 * @generated
 	 */
-	int NON_EXISTENT_MOUNT = 84;
+	int NON_EXISTENT_MOUNT = 86;
 	/**
 	 * The meta object id for the '<em>Mount Type Array</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1274,7 +1312,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getMountTypeArray()
 	 * @generated
 	 */
-	int MOUNT_TYPE_ARRAY = 85;
+	int MOUNT_TYPE_ARRAY = 87;
 	/**
 	 * The meta object id for the '<em>Octet Sequence Holder</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1283,7 +1321,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getOctetSequenceHolder()
 	 * @generated
 	 */
-	int OCTET_SEQUENCE_HOLDER = 86;
+	int OCTET_SEQUENCE_HOLDER = 88;
 	/**
 	 * The meta object id for the '<em>IO Exception</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1292,7 +1330,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getIOException()
 	 * @generated
 	 */
-	int IO_EXCEPTION = 87;
+	int IO_EXCEPTION = 89;
 	/**
 	 * The meta object id for the '<em>File Exception</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1301,7 +1339,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getFileException()
 	 * @generated
 	 */
-	int FILE_EXCEPTION = 88;
+	int FILE_EXCEPTION = 90;
 	/**
 	 * The meta object id for the '<em>Invalid File Pointer</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1310,7 +1348,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidFilePointer()
 	 * @generated
 	 */
-	int INVALID_FILE_POINTER = 89;
+	int INVALID_FILE_POINTER = 91;
 	/**
 	 * The meta object id for the '<em>File Information Type Array</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1318,7 +1356,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getFileInformationTypeArray()
 	 * @generated
 	 */
-	int FILE_INFORMATION_TYPE_ARRAY = 90;
+	int FILE_INFORMATION_TYPE_ARRAY = 92;
 	/**
 	 * The meta object id for the '<em>Properties Holder</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1327,7 +1365,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPropertiesHolder()
 	 * @generated
 	 */
-	int PROPERTIES_HOLDER = 91;
+	int PROPERTIES_HOLDER = 93;
 	/**
 	 * The meta object id for the '<em>Unknown File System Properties</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1336,7 +1374,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUnknownFileSystemProperties()
 	 * @generated
 	 */
-	int UNKNOWN_FILE_SYSTEM_PROPERTIES = 92;
+	int UNKNOWN_FILE_SYSTEM_PROPERTIES = 94;
 	/**
 	 * The meta object id for the '<em>Initialize Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1345,7 +1383,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInitializeError()
 	 * @generated
 	 */
-	int INITIALIZE_ERROR = 93;
+	int INITIALIZE_ERROR = 95;
 	/**
 	 * The meta object id for the '<em>Release Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1354,7 +1392,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getReleaseError()
 	 * @generated
 	 */
-	int RELEASE_ERROR = 94;
+	int RELEASE_ERROR = 96;
 	/**
 	 * The meta object id for the '<em>Load Type</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1363,7 +1401,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getLoadType()
 	 * @generated
 	 */
-	int LOAD_TYPE = 95;
+	int LOAD_TYPE = 97;
 	/**
 	 * The meta object id for the '<em>Invalid Load Kind</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1372,7 +1410,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidLoadKind()
 	 * @generated
 	 */
-	int INVALID_LOAD_KIND = 96;
+	int INVALID_LOAD_KIND = 98;
 	/**
 	 * The meta object id for the '<em>Load Fail</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1381,7 +1419,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getLoadFail()
 	 * @generated
 	 */
-	int LOAD_FAIL = 97;
+	int LOAD_FAIL = 99;
 	/**
 	 * The meta object id for the '<em>Invalid Port</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1390,7 +1428,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidPort()
 	 * @generated
 	 */
-	int INVALID_PORT = 98;
+	int INVALID_PORT = 100;
 	/**
 	 * The meta object id for the '<em>Occupied Port</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1399,7 +1437,17 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getOccupiedPort()
 	 * @generated
 	 */
-	int OCCUPIED_PORT = 99;
+	int OCCUPIED_PORT = 101;
+	/**
+	 * The meta object id for the '<em>Port Info Type</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @see CF.PortSetPackage.PortInfoType
+	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPortInfoType()
+	 * @generated
+	 */
+	int PORT_INFO_TYPE = 102;
 	/**
 	 * The meta object id for the '<em>Unknown Port</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1408,7 +1456,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUnknownPort()
 	 * @generated
 	 */
-	int UNKNOWN_PORT = 100;
+	int UNKNOWN_PORT = 103;
 	/**
 	 * The meta object id for the '<em>Already Initialized</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1418,7 +1466,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getAlreadyInitialized()
 	 * @generated
 	 */
-	int ALREADY_INITIALIZED = 101;
+	int ALREADY_INITIALIZED = 104;
 	/**
 	 * The meta object id for the '<em>Invalid Configuration</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1427,7 +1475,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidConfiguration()
 	 * @generated
 	 */
-	int INVALID_CONFIGURATION = 102;
+	int INVALID_CONFIGURATION = 105;
 	/**
 	 * The meta object id for the '<em>Partial Configuration</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1436,7 +1484,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPartialConfiguration()
 	 * @generated
 	 */
-	int PARTIAL_CONFIGURATION = 103;
+	int PARTIAL_CONFIGURATION = 106;
 	/**
 	 * The meta object id for the '<em>Unknown Properties</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1445,7 +1493,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUnknownProperties()
 	 * @generated
 	 */
-	int UNKNOWN_PROPERTIES = 104;
+	int UNKNOWN_PROPERTIES = 107;
 	/**
 	 * The meta object id for the '<em>Create Resource Failure</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1454,7 +1502,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getCreateResourceFailure()
 	 * @generated
 	 */
-	int CREATE_RESOURCE_FAILURE = 105;
+	int CREATE_RESOURCE_FAILURE = 108;
 	/**
 	 * The meta object id for the '<em>Invalid Resource Id</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1463,7 +1511,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidResourceId()
 	 * @generated
 	 */
-	int INVALID_RESOURCE_ID = 106;
+	int INVALID_RESOURCE_ID = 109;
 	/**
 	 * The meta object id for the '<em>Shutdown Failure</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1472,7 +1520,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getShutdownFailure()
 	 * @generated
 	 */
-	int SHUTDOWN_FAILURE = 107;
+	int SHUTDOWN_FAILURE = 110;
 	/**
 	 * The meta object id for the '<em>Start Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1481,7 +1529,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getStartError()
 	 * @generated
 	 */
-	int START_ERROR = 108;
+	int START_ERROR = 111;
 	/**
 	 * The meta object id for the '<em>Stop Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1490,7 +1538,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getStopError()
 	 * @generated
 	 */
-	int STOP_ERROR = 109;
+	int STOP_ERROR = 112;
 	/**
 	 * The meta object id for the '<em>Unknown Test</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1499,7 +1547,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUnknownTest()
 	 * @generated
 	 */
-	int UNKNOWN_TEST = 110;
+	int UNKNOWN_TEST = 113;
 
 	/**
 	 * The meta object id for the '<em>Unknown Identifier</em>' data type.
@@ -1510,7 +1558,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUnknownIdentifier()
 	 * @generated
 	 */
-	int UNKNOWN_IDENTIFIER = 111;
+	int UNKNOWN_IDENTIFIER = 114;
 	/**
 	 * The meta object id for the '<em>Log Event Array</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1519,7 +1567,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getLogEventArray()
 	 * @generated
 	 */
-	int LOG_EVENT_ARRAY = 112;
+	int LOG_EVENT_ARRAY = 115;
 
 	/**
 	 * Returns the meta object for class '{@link org.omg.CORBA.Object <em>Object</em>}'.
@@ -1692,7 +1740,7 @@ public interface CfPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Device Manager</em>'.
 	 * @see CF.DeviceManager
-	 * @model instanceClass="CF.DeviceManager" superTypes="mil.jpeojtrs.sca.cf.DeviceManagerOperations mil.jpeojtrs.sca.cf.PropertyEmitter mil.jpeojtrs.sca.cf.PortSupplier"
+	 * @model instanceClass="CF.DeviceManager" superTypes="mil.jpeojtrs.sca.cf.DeviceManagerOperations mil.jpeojtrs.sca.cf.PropertyEmitter mil.jpeojtrs.sca.cf.PortSet"
 	 * @generated
 	 */
 	EClass getDeviceManager();
@@ -1703,7 +1751,7 @@ public interface CfPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Device Manager Operations</em>'.
 	 * @see CF.DeviceManagerOperations
-	 * @model instanceClass="CF.DeviceManagerOperations" superTypes="mil.jpeojtrs.sca.cf.PropertyEmitterOperations mil.jpeojtrs.sca.cf.PortSupplierOperations"
+	 * @model instanceClass="CF.DeviceManagerOperations" superTypes="mil.jpeojtrs.sca.cf.PropertyEmitterOperations mil.jpeojtrs.sca.cf.PortSetOperations"
 	 * @generated
 	 */
 	EClass getDeviceManagerOperations();
@@ -1968,6 +2016,30 @@ public interface CfPackage extends EPackage {
 	EClass getPortOperations();
 
 	/**
+	 * Returns the meta object for class '{@link CF.PortSet <em>Port Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Port Set</em>'.
+	 * @see CF.PortSet
+	 * @model instanceClass="CF.PortSet" superTypes="mil.jpeojtrs.sca.cf.PortSetOperations mil.jpeojtrs.sca.cf.PortSupplier mil.jpeojtrs.sca.cf.Object mil.jpeojtrs.sca.cf.IDLEntity"
+	 * @generated
+	 */
+	EClass getPortSet();
+
+	/**
+	 * Returns the meta object for class '{@link CF.PortSetOperations <em>Port Set Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Port Set Operations</em>'.
+	 * @see CF.PortSetOperations
+	 * @model instanceClass="CF.PortSetOperations"
+	 * @generated
+	 */
+	EClass getPortSetOperations();
+
+	/**
 	 * Returns the meta object for class '{@link CF.PortSupplier <em>Port Supplier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2041,7 +2113,7 @@ public interface CfPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Resource</em>'.
 	 * @see CF.Resource
-	 * @model instanceClass="CF.Resource" superTypes="mil.jpeojtrs.sca.cf.ResourceOperations mil.jpeojtrs.sca.cf.LifeCycle mil.jpeojtrs.sca.cf.TestableObject mil.jpeojtrs.sca.cf.PropertyEmitter mil.jpeojtrs.sca.cf.PortSupplier mil.jpeojtrs.sca.cf.Logging"
+	 * @model instanceClass="CF.Resource" superTypes="mil.jpeojtrs.sca.cf.ResourceOperations mil.jpeojtrs.sca.cf.LifeCycle mil.jpeojtrs.sca.cf.TestableObject mil.jpeojtrs.sca.cf.PropertyEmitter mil.jpeojtrs.sca.cf.PortSet mil.jpeojtrs.sca.cf.Logging"
 	 * @generated
 	 */
 	EClass getResource();
@@ -2640,6 +2712,18 @@ public interface CfPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getOccupiedPort();
+
+	/**
+	 * Returns the meta object for data type '{@link CF.PortSetPackage.PortInfoType <em>Port Info Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Port Info Type</em>'.
+	 * @see CF.PortSetPackage.PortInfoType
+	 * @model instanceClass="CF.PortSetPackage.PortInfoType"
+	 * @generated
+	 */
+	EDataType getPortInfoType();
 
 	/**
 	 * Returns the meta object for data type '{@link CF.PortSupplierPackage.UnknownPort <em>Unknown Port</em>}'.

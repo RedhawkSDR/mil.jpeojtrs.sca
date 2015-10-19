@@ -57,6 +57,8 @@ import CF.Logging;
 import CF.LoggingOperations;
 import CF.Port;
 import CF.PortOperations;
+import CF.PortSet;
+import CF.PortSetOperations;
 import CF.PortSupplier;
 import CF.PortSupplierOperations;
 import CF.PropertyEmitter;
@@ -324,6 +326,16 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter casePortOperations(PortOperations object) {
 			return createPortOperationsAdapter();
+		}
+
+		@Override
+		public Adapter casePortSet(PortSet object) {
+			return createPortSetAdapter();
+		}
+
+		@Override
+		public Adapter casePortSetOperations(PortSetOperations object) {
+			return createPortSetOperationsAdapter();
 		}
 
 		@Override
@@ -968,6 +980,36 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPortOperationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.PortSet <em>Port Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.PortSet
+	 * @generated
+	 */
+	public Adapter createPortSetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.PortSetOperations <em>Port Set Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.PortSetOperations
+	 * @generated
+	 */
+	public Adapter createPortSetOperationsAdapter() {
 		return null;
 	}
 

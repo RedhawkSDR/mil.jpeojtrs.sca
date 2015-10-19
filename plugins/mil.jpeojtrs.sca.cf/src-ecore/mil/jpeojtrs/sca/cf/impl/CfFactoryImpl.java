@@ -31,6 +31,7 @@ import CF.InvalidObjectReference;
 import CF.InvalidProfile;
 import CF.OctetSequenceHolder;
 import CF.PropertiesHolder;
+import CF.PropertyEmitterPackage.AlreadyInitialized;
 import CF.UnknownProperties;
 import CF.ApplicationFactoryPackage.CreateApplicationError;
 import CF.ApplicationFactoryPackage.CreateApplicationInsufficientCapacityError;
@@ -69,6 +70,7 @@ import CF.LoadableDevicePackage.LoadType;
 import CF.LogEvent;
 import CF.PortPackage.InvalidPort;
 import CF.PortPackage.OccupiedPort;
+import CF.PortSetPackage.PortInfoType;
 import CF.PortSupplierPackage.UnknownPort;
 import CF.PropertySetPackage.InvalidConfiguration;
 import CF.PropertySetPackage.PartialConfiguration;
@@ -231,6 +233,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createInvalidPortFromString(eDataType, initialValue);
 		case CfPackage.OCCUPIED_PORT:
 			return createOccupiedPortFromString(eDataType, initialValue);
+		case CfPackage.PORT_INFO_TYPE:
+			return createPortInfoTypeFromString(eDataType, initialValue);
 		case CfPackage.UNKNOWN_PORT:
 			return createUnknownPortFromString(eDataType, initialValue);
 		case CfPackage.ALREADY_INITIALIZED:
@@ -366,6 +370,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertInvalidPortToString(eDataType, instanceValue);
 		case CfPackage.OCCUPIED_PORT:
 			return convertOccupiedPortToString(eDataType, instanceValue);
+		case CfPackage.PORT_INFO_TYPE:
+			return convertPortInfoTypeToString(eDataType, instanceValue);
 		case CfPackage.UNKNOWN_PORT:
 			return convertUnknownPortToString(eDataType, instanceValue);
 		case CfPackage.ALREADY_INITIALIZED:
@@ -1268,6 +1274,26 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortInfoType createPortInfoTypeFromString(EDataType eDataType, String initialValue) {
+		return (PortInfoType) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPortInfoTypeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1290,8 +1316,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CF.PropertyEmitterPackage.AlreadyInitialized createAlreadyInitializedFromString(EDataType eDataType, String initialValue) {
-		return (CF.PropertyEmitterPackage.AlreadyInitialized) super.createFromString(eDataType, initialValue);
+	public AlreadyInitialized createAlreadyInitializedFromString(EDataType eDataType, String initialValue) {
+		return (AlreadyInitialized) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
