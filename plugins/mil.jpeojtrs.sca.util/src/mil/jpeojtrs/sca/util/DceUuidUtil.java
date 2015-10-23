@@ -22,7 +22,7 @@ public final class DceUuidUtil {
 	 * @deprecated Use {@link #DCE_UUID_LENGTH} instead
 	 */
 	@Deprecated
-	public static final int LENGTH = DceUuidUtil.DCE_UUID_LENGTH;
+	public static final int LENGTH = DceUuidUtil.createDceUUID().length();
 
 	/**
 	 * @since 3.0
