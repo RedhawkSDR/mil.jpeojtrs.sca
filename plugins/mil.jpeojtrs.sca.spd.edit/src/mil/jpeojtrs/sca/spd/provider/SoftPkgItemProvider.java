@@ -305,10 +305,19 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	public String getText(final Object object) {
 		// END GENERATED CODE
 		String label = ((SoftPkg) object).getName();
-		while (label.contains(".")) {
-			label = label.substring(label.indexOf('.') + 1);
+		if (label == null) {
+			return "";
 		}
-		return label;
+		int lastIndex = label.lastIndexOf('.');
+		if (lastIndex == -1) {
+			return label;
+		} else {
+			if ((lastIndex + 1) < label.length()) {
+				return label.substring(lastIndex + 1);
+			} else {
+				return label;
+			}
+		}
 		// BEGIN GENERATED CODE
 	}
 
