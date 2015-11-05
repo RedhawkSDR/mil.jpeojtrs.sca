@@ -12,11 +12,16 @@
 package mil.jpeojtrs.sca.prf.tests;
 
 import junit.textui.TestRunner;
-import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.Properties;
 import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
+import mil.jpeojtrs.sca.prf.StructSequence;
+import mil.jpeojtrs.sca.prf.StructValue;
 
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.junit.Assert;
+import org.omg.CORBA.Any;
+import org.omg.CORBA.FloatSeqHelper;
+import org.omg.CORBA.ORB;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,11 +70,10 @@ public class SimpleSequenceRefTest extends AbstractPropertyRefTest {
 	@Override
 	protected void setUp() throws Exception {
 		final Properties props = Properties.Util.getProperties(
-			new ResourceSetImpl().getResource(PrfTests.getURI("testFiles/SimpleSequenceTest.prf.xml"), true));
-		SimpleSequenceRef ssRef = PrfFactory.eINSTANCE.createSimpleSequenceRef();
-		props.eResource().getContents().add(ssRef);
-		ssRef.setProperty(props.getSimpleSequence().get(0));
-		setFixture(ssRef);
+			new ResourceSetImpl().getResource(PrfTests.getURI("testFiles/SimpleSequenceRefTest.prf.xml"), true));
+		StructSequence structSeq = (StructSequence) props.getProperties().get(0).getValue();
+		StructValue structVal = structSeq.getStructValue().get(0);
+		setFixture(structVal.getSimpleSequenceRef().get(0));
 	}
 
 	/**
@@ -81,6 +85,15 @@ public class SimpleSequenceRefTest extends AbstractPropertyRefTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	@Override
+	public void testToAny() {
+		super.testToAny();
+		Any actualAny = getFixture().toAny();
+		Any expectedAny = ORB.init().create_any();
+		FloatSeqHelper.insert(expectedAny, new float[] { 1.2f, 3.4f });
+		Assert.assertEquals(expectedAny, actualAny);
 	}
 
 } //SimpleSequenceRefTest

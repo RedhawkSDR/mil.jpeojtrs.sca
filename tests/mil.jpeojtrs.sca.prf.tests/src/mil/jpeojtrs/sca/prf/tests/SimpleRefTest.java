@@ -12,6 +12,9 @@
 package mil.jpeojtrs.sca.prf.tests;
 
 import org.junit.Assert;
+import org.omg.CORBA.Any;
+import org.omg.CORBA.ORB;
+
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.Properties;
 import mil.jpeojtrs.sca.prf.SimpleRef;
@@ -79,10 +82,17 @@ public class SimpleRefTest extends AbstractPropertyRefTest {
 		setFixture(null);
 	}
 
+	@Override
+	public void testToAny() {
+		super.testToAny();
+		Any actualAny = getFixture().toAny();
+		Any expectedAny = ORB.init().create_any();
+		expectedAny.insert_double(2.4);
+		Assert.assertEquals(expectedAny, actualAny);
+	}
+
 	public void test_parse() throws Exception {
-		final Properties props = Properties.Util.getProperties(new ResourceSetImpl().getResource(PrfTests.getURI("testFiles/SimpleRefTest.prf.xml"), true));
-		final SimpleRef ref = props.getStructSequence().get(0).getStructValue().get(0).getSimpleRef().get(0);
-		Assert.assertEquals("DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d", ref.getRefID());
-		Assert.assertEquals("t1", ref.getValue());
+		Assert.assertEquals("DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d", getFixture().getRefID());
+		Assert.assertEquals("2.4", getFixture().getValue());
 	}
 } //SimpleRefTest

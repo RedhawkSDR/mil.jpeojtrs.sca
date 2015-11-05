@@ -13,17 +13,17 @@
 <properties>
   <structsequence id="DCE:8ab14a5d-00a0-4468-9ab3-7298f7025470" mode="readwrite" name="structSequence">
     <struct id="DCE:c87bfb04-88ea-4e91-bc53-f9fce3b7eb6e" mode="readwrite" name="testStruct">
-      <simple id="DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d" mode="readwrite" name="testString" type="string">
+      <simple id="DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d" mode="readwrite" name="testString" type="double">
         <kind kindtype="configure"/>
         <action type="external"/>
       </simple>
       <configurationkind kindtype="configure"/>
     </struct>
     <structvalue>
-      <simpleref refid="DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d" value="t1"/>
+      <simpleref refid="DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d" value="2.4"/>
     </structvalue>
     <structvalue>
-      <simpleref refid="DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d" value="t2"/>
+      <simpleref refid="DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d" value="6.8"/>
     </structvalue>
     <configurationkind kindtype="configure"/>
   </structsequence>
