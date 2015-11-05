@@ -211,7 +211,7 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	public Any toAny() {
 		// END GENERATED CODE
 		if (getValues() != null) {
-			return AnyUtils.toAnySequence(getValues().getValue().toArray(), getProperty().getType().getLiteral(), getProperty().isComplex());
+			return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral(), getProperty().isComplex());
 		} else {
 			return JacorbUtil.init().create_any();
 		}
