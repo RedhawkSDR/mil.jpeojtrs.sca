@@ -18,6 +18,7 @@ import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SoftPkgRef;
 import mil.jpeojtrs.sca.spd.SpdFactory;
 import mil.jpeojtrs.sca.spd.SpdPackage;
+import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
 import mil.jpeojtrs.sca.util.ScaUriHelpers;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -229,7 +230,7 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 			return null;
 		}
 		return (SoftPkg) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, SoftPkg.EOBJECT_PATH,
-				SoftPkg.Util.getFileSystem(SoftPkg.Util.getSoftPkg(eResource())));
+			ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM);
 		// BEGIN GENERATED CODE
 	}
 
