@@ -11,6 +11,7 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.util;
 
+import CF.DataType;
 import mil.jpeojtrs.sca.prf.AbstractProperty;
 import mil.jpeojtrs.sca.prf.AccessType;
 import mil.jpeojtrs.sca.prf.PrfFactory;
@@ -28,6 +29,25 @@ public final class PropertiesUtil {
 	private PropertiesUtil() {
 	}
 
+	/**
+	 * Determines if calling {@link CF.PropertyEmitter#initializeProperties(DataType[])} is allowed for this property.
+	 * @since 6.0
+	 */
+	public static boolean canInitialize(AbstractProperty property) {
+		if ((property == null) || !property.isKind(PropertyConfigurationType.PROPERTY) || property.isKind(PropertyConfigurationType.EXECPARAM)) {
+			return false;
+		}
+		if ((property instanceof Simple) && ((Simple) property).isCommandLine()) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Determines if calling {@link CF.PropertySet#configure(DataType[])} is allowed for this property.
+	 * @param property
+	 * @return
+	 */
 	public static boolean canConfigure(final AbstractProperty property) {
 		return (property != null) && (property.getMode() != AccessType.READONLY)
 			&& property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE);
