@@ -12,25 +12,13 @@
 package mil.jpeojtrs.sca.prf.util;
 
 import mil.jpeojtrs.sca.prf.AbstractProperty;
-import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
 import mil.jpeojtrs.sca.prf.AccessType;
 import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.PropertyConfigurationType;
-import mil.jpeojtrs.sca.prf.PropertyRefContainer;
 import mil.jpeojtrs.sca.prf.PropertyValueType;
 import mil.jpeojtrs.sca.prf.Simple;
-import mil.jpeojtrs.sca.prf.SimpleRef;
 import mil.jpeojtrs.sca.prf.SimpleSequence;
-import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
-import mil.jpeojtrs.sca.prf.Struct;
-import mil.jpeojtrs.sca.prf.StructRef;
-import mil.jpeojtrs.sca.prf.StructSequence;
-import mil.jpeojtrs.sca.prf.StructSequenceRef;
-import mil.jpeojtrs.sca.prf.StructValue;
 import mil.jpeojtrs.sca.prf.Values;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * @since 3.0
@@ -39,19 +27,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 public final class PropertiesUtil {
 	private PropertiesUtil() {
 
-	}
 
-	/**
-	 * Evaluates the {@link AbstractProperty} to determine if it can be edited.
-	 * 
-	 * @param property the {@link AbstractProperty} to evaluate
-	 * @return <code> true </code> if the property is editable; <code> false </code> otherwise
-	 * @since 4.0
-	 * @deprecated Use {@link #canOverride(AbstractProperty)} instead.
-	 */
-	@Deprecated
-	public static boolean canEdit(final AbstractProperty property) {
-		return canOverride(property);
 	}
 
 	public static boolean canConfigure(final AbstractProperty property) {
@@ -74,50 +50,6 @@ public final class PropertiesUtil {
 			return property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM);
 		}
 		return false;
-	}
-
-	public static SimpleRef createRef(Simple simple) {
-		SimpleRef ref = PrfFactory.eINSTANCE.createSimpleRef();
-		ref.setRefID(simple.getId());
-		ref.setValue(simple.getValue());
-		return ref;
-	}
-
-	public static SimpleSequenceRef createRef(SimpleSequence property) {
-		SimpleSequenceRef ref = PrfFactory.eINSTANCE.createSimpleSequenceRef();
-		ref.setRefID(property.getId());
-		ref.setValues(EcoreUtil.copy(property.getValues()));
-		return ref;
-	}
-
-	public static StructRef createRef(Struct property) {
-		StructRef ref = PrfFactory.eINSTANCE.createStructRef();
-		ref.setRefID(property.getId());
-		for (Simple s : property.getSimple()) {
-			ref.getSimpleRef().add(createRef(s));
-		}
-		return ref;
-	}
-
-	public static StructValue createStructValue(StructSequence property) {
-		StructValue retVal = PrfFactory.eINSTANCE.createStructValue();
-		for (Simple s : property.getStruct().getSimple()) {
-			SimpleRef ref = createRef(s);
-			if (ref.getValue() == null) {
-				ref.setValue(getDefaultValue(s));
-			}
-			retVal.getSimpleRef().add(ref);
-		}
-		return retVal;
-	}
-
-	public static StructSequenceRef createRef(StructSequence structSequence) {
-		StructSequenceRef ref = PrfFactory.eINSTANCE.createStructSequenceRef();
-		ref.setRefID(structSequence.getId());
-		for (StructValue value : structSequence.getStructValue()) {
-			ref.getStructValue().add(EcoreUtil.copy(value));
-		}
-		return ref;
 	}
 
 	public static String getDefaultValue(PropertyValueType type) {
@@ -184,57 +116,5 @@ public final class PropertiesUtil {
 		} else {
 			return PrfFactory.eINSTANCE.createValues();
 		}
-	}
-
-	/**
-	 * @since 4.0
-	 */
-	public static AbstractPropertyRef< ? > getPropertyRef(final SimpleRef property, final PropertyRefContainer props) {
-		if (property == null) {
-			return null;
-		}
-		return getPropertyRef(property.getRefID(), props);
-	}
-
-	/**
-	 * @since 4.0
-	 */
-	public static AbstractPropertyRef< ? > getPropertyRef(final String propertyID, final PropertyRefContainer props) {
-		if (props == null || propertyID == null) {
-			return null;
-		}
-		for (final EObject obj : props.eContents()) {
-			if (obj instanceof AbstractPropertyRef< ? >) {
-				final AbstractPropertyRef< ? > ref = (AbstractPropertyRef< ? >) obj;
-				if (propertyID.equals(ref.getRefID())) {
-					return ref;
-				}
-			}
-		}
-		return null;
-	}
-
-	public static AbstractPropertyRef< ? > getPropertyRef(final Simple property, final PropertyRefContainer props) {
-		if (property.eContainer() instanceof Struct) {
-			Struct struct = (Struct) property.eContainer();
-			StructRef structRef = (StructRef) getPropertyRef(struct, props);
-			return getPropertyRef(property, structRef);
-		} else {
-			return getPropertyRef((AbstractProperty) property, (PropertyRefContainer) props);
-		}
-	}
-
-	public static AbstractPropertyRef< ? > getPropertyRef(final Simple property, final StructRef props) {
-		return getPropertyRef((AbstractProperty) property, (PropertyRefContainer) props);
-	}
-
-	/**
-	 * @since 4.0
-	 */
-	public static AbstractPropertyRef< ? > getPropertyRef(final AbstractProperty property, final PropertyRefContainer props) {
-		if (property == null) {
-			return null;
-		}
-		return getPropertyRef(property.getId(), props);
 	}
 }
