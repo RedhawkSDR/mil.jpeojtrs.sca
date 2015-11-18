@@ -22,34 +22,22 @@ import mil.jpeojtrs.sca.prf.Values;
 
 /**
  * @since 3.0
- * 
  */
 public final class PropertiesUtil {
+
 	private PropertiesUtil() {
-
-
 	}
 
 	public static boolean canConfigure(final AbstractProperty property) {
-		if (property == null) {
-			return false;
-		}
-		if (property.getMode() != AccessType.READONLY) {
-			return property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE);
-		}
-		return false;
+		return (property != null) && (property.getMode() != AccessType.READONLY)
+			&& property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE);
 	}
 
 	public static boolean canOverride(final AbstractProperty property) {
-		if (property == null) {
-			return false;
-		}
 		// Per D.6.1.3.3 configure, factoryparam, and/or execparam
 		// with mode "readwrite" or "writeonly" can be overridden
-		if (property.getMode() != AccessType.READONLY) {
-			return property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM);
-		}
-		return false;
+		return (property != null) && (property.getMode() != AccessType.READONLY) && property.isKind(PropertyConfigurationType.PROPERTY,
+			PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM);
 	}
 
 	public static String getDefaultValue(PropertyValueType type) {
