@@ -11,7 +11,10 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd;
 
+import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
 import mil.jpeojtrs.sca.partitioning.DevComponentFile;
+
+import java.util.Collection;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -41,6 +44,15 @@ public interface DcdFactory extends EFactory {
 	 * @generated
 	 */
 	DcdComponentPlacement createDcdComponentPlacement();
+
+	/**
+	 * Creates a new component placement.
+	 * @param componentFileRef
+	 * @param instances
+	 * @return
+	 * @since 3.1
+	 */
+	DcdComponentPlacement createDcdComponentPlacement(ComponentFileRef componentFileRef, Collection<DcdComponentInstantiation> instances);
 
 	/**
 	 * Returns a new object of class '<em>Component Instantiation</em>'.

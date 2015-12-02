@@ -30,10 +30,12 @@ import mil.jpeojtrs.sca.dcd.DevicePkgFile;
 import mil.jpeojtrs.sca.dcd.DomainManager;
 import mil.jpeojtrs.sca.dcd.FileSystemName;
 import mil.jpeojtrs.sca.dcd.FileSystemNames;
+import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
 import mil.jpeojtrs.sca.partitioning.DevComponentFile;
 import mil.jpeojtrs.sca.partitioning.LocalFile;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 
+import java.util.Collection;
 import java.util.UUID;
 
 import org.eclipse.emf.ecore.EClass;
@@ -132,6 +134,17 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	@Override
 	public DcdComponentPlacement createDcdComponentPlacement() {
 		DcdComponentPlacementImpl dcdComponentPlacement = new DcdComponentPlacementImpl();
+		return dcdComponentPlacement;
+	}
+
+	/**
+	 * @since 3.1
+	 */
+	@Override
+	public DcdComponentPlacement createDcdComponentPlacement(ComponentFileRef componentFileRef, Collection<DcdComponentInstantiation> instances) {
+		DcdComponentPlacement dcdComponentPlacement = createDcdComponentPlacement();
+		dcdComponentPlacement.setComponentFileRef(componentFileRef);
+		dcdComponentPlacement.getComponentInstantiation().addAll(instances);
 		return dcdComponentPlacement;
 	}
 
