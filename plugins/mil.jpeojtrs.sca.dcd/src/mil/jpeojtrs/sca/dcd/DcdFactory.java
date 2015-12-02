@@ -100,6 +100,19 @@ public interface DcdFactory extends EFactory {
 	DcdConnectInterface createDcdConnectInterface();
 
 	/**
+	 * Creates a DCD connect interface between ports of two device/service instances.
+	 * @param connectionId
+	 * @param usesPortName
+	 * @param usesComponentInstanceId
+	 * @param providesPortName
+	 * @param providesComponentInstanceId
+	 * @return
+	 * @since 3.1
+	 */
+	DcdConnectInterface createDcdConnectInterface(String connectionId, String usesPortName, String usesComponentInstanceId, String providesPortName,
+		String providesComponentInstanceId);
+
+	/**
 	 * Returns a new object of class '<em>Uses Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -109,6 +122,15 @@ public interface DcdFactory extends EFactory {
 	DcdUsesPort createDcdUsesPort();
 
 	/**
+	 * A utility method that returns a new DcdUsesPort for a specific device/service's port.
+	 * @param usesIdentifier The identifier of the uses port
+	 * @param componentRefId The device/service instance's ID in the DeviceConfiguration
+	 * @return
+	 * @since 3.1
+	 */
+	DcdUsesPort createDcdUsesPort(String usesIdentifier, String componentRefId);
+
+	/**
 	 * Returns a new object of class '<em>Provides Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,6 +138,15 @@ public interface DcdFactory extends EFactory {
 	 * @generated
 	 */
 	DcdProvidesPort createDcdProvidesPort();
+
+	/**
+	 * A utility method that returns a new DcdUsesPort for a specific device/service's port.
+	 * @param providesIdentifier The identifier of the provides port
+	 * @param componentRefId The device/service instance's ID in the DeviceConfiguration
+	 * @return
+	 * @since 3.1
+	 */
+	DcdProvidesPort createDcdProvidesPort(String providesIdentifier, String componentRefId);
 
 	/**
 	 * Returns a new object of class '<em>Connections</em>'.

@@ -88,8 +88,8 @@ public interface SadFactory extends EFactory {
 	/**
 	 * A utility method that returns a new SadUsesPort for a specific component's port.
 	 * @param usesIdentifier The identifier of the uses port
-	 * @param componentRefId The component's reference ID in the SoftwareAssembly
-	 * @return The SadUsesPort instance
+	 * @param componentRefId The component instance's ID in the SoftwareAssembly
+	 * @return
 	 * @since 3.0
 	 */
 	SadUsesPort createSadUsesPort(String usesIdentifier, String componentRefId);
@@ -104,6 +104,15 @@ public interface SadFactory extends EFactory {
 	SadProvidesPort createSadProvidesPort();
 
 	/**
+	 * A utility method that returns a new SadUsesPort for a specific component's port.
+	 * @param providesIdentifier The identifier of the provides port
+	 * @param componentRefId The component instance's ID in the SoftwareAssembly
+	 * @return
+	 * @since 3.1
+	 */
+	SadProvidesPort createSadProvidesPort(String providesIdentifier, String componentRefId);
+
+	/**
 	 * Returns a new object of class '<em>Connect Interface</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,6 +120,19 @@ public interface SadFactory extends EFactory {
 	 * @generated
 	 */
 	SadConnectInterface createSadConnectInterface();
+
+	/**
+	 * Creates a SAD connect interface between ports of two component instances.
+	 * @param connectionId
+	 * @param usesPortName
+	 * @param usesComponentInstanceId
+	 * @param providesPortName
+	 * @param providesComponentInstanceId
+	 * @return
+	 * @since 3.1
+	 */
+	SadConnectInterface createSadConnectInterface(String connectionId, String usesPortName, String usesComponentInstanceId, String providesPortName,
+		String providesComponentInstanceId);
 
 	/**
 	 * Returns a new object of class '<em>Connections</em>'.

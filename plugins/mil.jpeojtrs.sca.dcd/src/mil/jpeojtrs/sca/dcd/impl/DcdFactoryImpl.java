@@ -204,6 +204,20 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	}
 
 	/**
+	 * @since 3.1
+	 */
+	@Override
+	public DcdConnectInterface createDcdConnectInterface(String connectionId, String usesPortName, String usesComponentInstanceId, String providesPortName,
+		String providesComponentInstanceId) {
+		DcdConnectInterface dcdConnectInterface = createDcdConnectInterface();
+		DcdUsesPort usesPort = createDcdUsesPort(usesPortName, usesComponentInstanceId);
+		dcdConnectInterface.setUsesPort(usesPort);
+		DcdProvidesPort providesPort = createDcdProvidesPort(providesPortName, providesComponentInstanceId);
+		dcdConnectInterface.setProvidesPort(providesPort);
+		return dcdConnectInterface;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -215,6 +229,19 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	}
 
 	/**
+	 * @since 3.1
+	 */
+	@Override
+	public DcdUsesPort createDcdUsesPort(String usesIdentifier, String componentRefId) {
+		DcdUsesPort usesPort = createDcdUsesPort();
+		usesPort.setUsesIdentifier(usesIdentifier);
+		DcdComponentInstantiationRef compInstanceRef = createDcdComponentInstantiationRef();
+		compInstanceRef.setRefid(componentRefId);
+		usesPort.setComponentInstantiationRef(compInstanceRef);
+		return usesPort;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -223,6 +250,19 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	public DcdProvidesPort createDcdProvidesPort() {
 		DcdProvidesPortImpl dcdProvidesPort = new DcdProvidesPortImpl();
 		return dcdProvidesPort;
+	}
+
+	/**
+	 * @since 3.1
+	 */
+	@Override
+	public DcdProvidesPort createDcdProvidesPort(String providesIdentifier, String componentRefId) {
+		DcdProvidesPort providesPort = createDcdProvidesPort();
+		providesPort.setProvidesIdentifier(providesIdentifier);
+		DcdComponentInstantiationRef compInstanceRef = createDcdComponentInstantiationRef();
+		compInstanceRef.setRefid(componentRefId);
+		providesPort.setComponentInstantiationRef(compInstanceRef);
+		return providesPort;
 	}
 
 	/**

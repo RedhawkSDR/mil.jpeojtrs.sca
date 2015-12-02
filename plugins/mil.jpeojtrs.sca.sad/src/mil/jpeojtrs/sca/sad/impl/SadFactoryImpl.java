@@ -223,6 +223,19 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	}
 
 	/**
+	 * @since 3.1
+	 */
+	@Override
+	public SadProvidesPort createSadProvidesPort(String providesIdentifier, String componentRefId) {
+		SadProvidesPort providesPort = createSadProvidesPort();
+		providesPort.setProvidesIdentifier(providesIdentifier);
+		SadComponentInstantiationRef compInstanceRef = createSadComponentInstantiationRef();
+		compInstanceRef.setRefid(componentRefId);
+		providesPort.setComponentInstantiationRef(compInstanceRef);
+		return providesPort;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -230,6 +243,20 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	@Override
 	public SadConnectInterface createSadConnectInterface() {
 		SadConnectInterfaceImpl sadConnectInterface = new SadConnectInterfaceImpl();
+		return sadConnectInterface;
+	}
+
+	/**
+	 * @since 3.1
+	 */
+	@Override
+	public SadConnectInterface createSadConnectInterface(String connectionId, String usesPortName, String usesComponentInstanceId, String providesPortName,
+		String providesComponentInstanceId) {
+		SadConnectInterface sadConnectInterface = createSadConnectInterface();
+		SadUsesPort usesPort = createSadUsesPort(usesPortName, usesComponentInstanceId);
+		sadConnectInterface.setUsesPort(usesPort);
+		SadProvidesPort providesPort = createSadProvidesPort(providesPortName, providesComponentInstanceId);
+		sadConnectInterface.setProvidesPort(providesPort);
 		return sadConnectInterface;
 	}
 
