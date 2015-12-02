@@ -11,7 +11,10 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.impl;
 
+import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
 import mil.jpeojtrs.sca.partitioning.DomComponentFile;
+import mil.jpeojtrs.sca.partitioning.LocalFile;
+import mil.jpeojtrs.sca.partitioning.NamingService;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
@@ -35,6 +38,11 @@ import mil.jpeojtrs.sca.sad.SadPartitioning;
 import mil.jpeojtrs.sca.sad.SadProvidesPort;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
+
+import java.math.BigInteger;
+import java.util.Collection;
+import java.util.UUID;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -148,6 +156,23 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	@Override
 	public SadComponentInstantiation createSadComponentInstantiation() {
 		SadComponentInstantiationImpl sadComponentInstantiation = new SadComponentInstantiationImpl();
+		return sadComponentInstantiation;
+	}
+
+	/**
+	 * @since 3.1
+	 */
+	@Override
+	public SadComponentInstantiation createSadComponentInstantiation(String id, BigInteger startOrder, String usageName, String namingServiceName) {
+		SadComponentInstantiation sadComponentInstantiation = createSadComponentInstantiation();
+		sadComponentInstantiation.setId(id);
+		sadComponentInstantiation.setStartOrder(startOrder);
+		sadComponentInstantiation.setUsageName(usageName);
+		FindComponent findComponent = createFindComponent();
+		sadComponentInstantiation.setFindComponent(findComponent);
+		NamingService namingSerivce = PartitioningFactory.eINSTANCE.createNamingService();
+		findComponent.setNamingService(namingSerivce);
+		namingSerivce.setName(namingServiceName);
 		return sadComponentInstantiation;
 	}
 
@@ -321,6 +346,17 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	}
 
 	/**
+	 * @since 3.1
+	 */
+	@Override
+	public SadComponentPlacement createSadComponentPlacement(ComponentFileRef componentFileRef, Collection<SadComponentInstantiation> instances) {
+		SadComponentPlacement sadComponentPlacement = createSadComponentPlacement();
+		sadComponentPlacement.setComponentFileRef(componentFileRef);
+		sadComponentPlacement.getComponentInstantiation().addAll(instances);
+		return sadComponentPlacement;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -388,6 +424,20 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	@Override
 	public DomComponentFile createComponentFile() {
 		return PartitioningFactory.eINSTANCE.createDomComponentFile();
+	}
+
+	/**
+	 * @since 3.1
+	 */
+	@Override
+	public DomComponentFile createComponentFile(String idPrefix, String localFileName) {
+		DomComponentFile componentFile = createComponentFile();
+		componentFile.setId(idPrefix + "_" + UUID.randomUUID().toString());
+		componentFile.setType("SPD");
+		LocalFile localFile = PartitioningFactory.eINSTANCE.createLocalFile();
+		componentFile.setLocalFile(localFile);
+		localFile.setName(localFileName);
+		return componentFile;
 	}
 
 } //SadFactoryImpl

@@ -59,6 +59,14 @@ public interface PartitioningFactory extends EFactory {
 	ComponentFileRef createComponentFileRef();
 
 	/**
+	 * Creates a new component file ref.
+	 * @param refId
+	 * @return
+	 * @since 2.1
+	 */
+	ComponentFileRef createComponentFileRef(String refId);
+
+	/**
 	 * Returns a new object of class '<em>Component Files</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

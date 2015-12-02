@@ -199,6 +199,16 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	}
 
 	/**
+	 * @since 2.1
+	 */
+	@Override
+	public ComponentFileRef createComponentFileRef(String refId) {
+		ComponentFileRef componentFileRef = createComponentFileRef();
+		componentFileRef.setRefid(refId);
+		return componentFileRef;
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

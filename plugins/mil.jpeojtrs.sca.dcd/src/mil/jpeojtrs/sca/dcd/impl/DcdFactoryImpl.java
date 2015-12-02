@@ -31,7 +31,11 @@ import mil.jpeojtrs.sca.dcd.DomainManager;
 import mil.jpeojtrs.sca.dcd.FileSystemName;
 import mil.jpeojtrs.sca.dcd.FileSystemNames;
 import mil.jpeojtrs.sca.partitioning.DevComponentFile;
+import mil.jpeojtrs.sca.partitioning.LocalFile;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
+
+import java.util.UUID;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -139,6 +143,17 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	@Override
 	public DcdComponentInstantiation createDcdComponentInstantiation() {
 		DcdComponentInstantiationImpl dcdComponentInstantiation = new DcdComponentInstantiationImpl();
+		return dcdComponentInstantiation;
+	}
+
+	/**
+	 * @since 3.1
+	 */
+	@Override
+	public DcdComponentInstantiation createDcdComponentInstantiation(String id, String usageName) {
+		DcdComponentInstantiation dcdComponentInstantiation = createDcdComponentInstantiation();
+		dcdComponentInstantiation.setId(id);
+		dcdComponentInstantiation.setUsageName(usageName);
 		return dcdComponentInstantiation;
 	}
 
@@ -331,6 +346,20 @@ public class DcdFactoryImpl extends EFactoryImpl implements DcdFactory {
 	@Override
 	public DevComponentFile createComponentFile() {
 		return PartitioningFactory.eINSTANCE.createDevComponentFile();
+	}
+
+	/**
+	 * @since 3.1
+	 */
+	@Override
+	public DevComponentFile createComponentFile(String idPrefix, String localFileName) {
+		DevComponentFile componentFile = createComponentFile();
+		componentFile.setId(idPrefix + "_" + UUID.randomUUID().toString());
+		componentFile.setType("SPD");
+		LocalFile localFile = PartitioningFactory.eINSTANCE.createLocalFile();
+		componentFile.setLocalFile(localFile);
+		localFile.setName(localFileName);
+		return componentFile;
 	}
 
 } //DcdFactoryImpl

@@ -11,7 +11,11 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad;
 
+import mil.jpeojtrs.sca.partitioning.ComponentFileRef;
 import mil.jpeojtrs.sca.partitioning.DomComponentFile;
+
+import java.math.BigInteger;
+import java.util.Collection;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -51,6 +55,17 @@ public interface SadFactory extends EFactory {
 	 * @generated
 	 */
 	SadComponentInstantiation createSadComponentInstantiation();
+
+	/**
+	 * Creates a new component instantiation.
+	 * @param id
+	 * @param startOrder
+	 * @param usageName
+	 * @param namingServiceName
+	 * @return
+	 * @since 3.1
+	 */
+	SadComponentInstantiation createSadComponentInstantiation(String id, BigInteger startOrder, String usageName, String namingServiceName);
 
 	/**
 	 * Returns a new object of class '<em>Component Instantiation Ref</em>'.
@@ -190,6 +205,15 @@ public interface SadFactory extends EFactory {
 	SadComponentPlacement createSadComponentPlacement();
 
 	/**
+	 * Creates a new component placement.
+	 * @param componentFileRef
+	 * @param instances
+	 * @return
+	 * @since 3.1
+	 */
+	SadComponentPlacement createSadComponentPlacement(ComponentFileRef componentFileRef, Collection<SadComponentInstantiation> instances);
+
+	/**
 	 * Returns a new object of class '<em>Resource Factory Properties</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,9 +260,18 @@ public interface SadFactory extends EFactory {
 	SadPackage getSadPackage();
 
 	/**
-	 * Helper method to create compentfile files that are to be referenced from an SAD
-	 * @return DomComponentFile
+	 * Create a new component file.
+	 * @return
 	 */
 	DomComponentFile createComponentFile();
+
+	/**
+	 * Create a new component file.
+	 * @param idPrefix The prefix to the ID (will be suffixed with a UUID)
+	 * @param localFileName
+	 * @return
+	 * @since 3.1
+	 */
+	DomComponentFile createComponentFile(String idPrefix, String localFileName);
 
 } //SadFactory
