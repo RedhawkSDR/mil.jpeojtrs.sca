@@ -180,11 +180,11 @@ public class SoftwareAssemblyItemProvider extends ItemProviderAdapter implements
 	@Override
 	public String getText(Object object) {
 		// END GENERATED CODE
-		String label = ((SoftwareAssembly) object).getName();
-		while (label.contains(".")) {
-			label = label.substring(label.indexOf('.') + 1);
+		String name = ((SoftwareAssembly) object).getName();
+		if (name == null) {
+			return ((SoftwareAssembly) object).getId();
 		}
-		return label;
+		return name.substring(name.lastIndexOf('.') + 1);
 		// BEGIN GENERATED CODE
 	}
 

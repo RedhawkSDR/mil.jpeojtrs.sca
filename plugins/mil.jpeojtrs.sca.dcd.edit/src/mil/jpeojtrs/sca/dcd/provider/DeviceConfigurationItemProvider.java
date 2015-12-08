@@ -164,11 +164,11 @@ public class DeviceConfigurationItemProvider extends ItemProviderAdapter
 	@Override
 	public String getText(Object object) {
 		// END GENERATED CODE
-		String label = ((DeviceConfiguration) object).getName();
-		while (label.contains(".")) {
-			label = label.substring(label.indexOf('.') + 1);
+		String name = ((DeviceConfiguration) object).getName();
+		if (name == null) {
+			return ((DeviceConfiguration) object).getId();
 		}
-		return label;
+		return name.substring(name.lastIndexOf('.') + 1);
 		// BEGIN GENERATED CODE
 	}
 
