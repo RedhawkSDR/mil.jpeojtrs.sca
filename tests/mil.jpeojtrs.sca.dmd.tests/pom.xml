@@ -30,7 +30,6 @@
     <sonar.sources></sonar.sources>
     <sonar.tests>src</sonar.tests>
   </properties>
-
   <profiles>
     <profile>
       <id>code-analysis</id>
