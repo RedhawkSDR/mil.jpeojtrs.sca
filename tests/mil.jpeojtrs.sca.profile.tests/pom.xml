@@ -29,9 +29,6 @@
     <pmd.skip>true</pmd.skip>
     <cpd.skip>true</cpd.skip>
   </properties>
-    <sonar.sources></sonar.sources>
-    <sonar.tests>src</sonar.tests>
-  </properties>
 
   <profiles>
     <profile>
