@@ -29,7 +29,7 @@
     <pmd.skip>true</pmd.skip>
     <cpd.skip>true</cpd.skip>
   </properties>
-  
+
   <profiles>
     <profile>
       <id>code-analysis</id>
