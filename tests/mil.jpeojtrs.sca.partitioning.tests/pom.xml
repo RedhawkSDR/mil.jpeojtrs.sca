@@ -14,7 +14,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<relativePath>../../releng</relativePath>
+		<relativePath>../..</relativePath>
 		<groupId>mil.jpeojtrs.sca</groupId>
 		<artifactId>mil.jpeojtrs.sca.parent</artifactId>
 		<version>1.8.10-SNAPSHOT</version>

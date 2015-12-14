@@ -18,7 +18,6 @@
     <packaging>pom</packaging>
 
     <parent>
-      <relativePath>parent</relativePath>
       <groupId>gov.redhawk.development.configuration</groupId>
       <artifactId>parent</artifactId>
       <version>0.0.1-SNAPSHOT</version>
@@ -33,42 +32,42 @@
     </properties>
 
     <modules>
-        <module>../features/mil.jpeojtrs.sca.feature</module>
-        <module>../features/mil.jpeojtrs.sca.sdk</module>
-        <module>../plugins/mil.jpeojtrs.sca.cf</module>
-        <module>../plugins/mil.jpeojtrs.sca.cf.edit</module>
-        <module>../plugins/mil.jpeojtrs.sca.dcd</module>
-        <module>../plugins/mil.jpeojtrs.sca.dcd.edit</module>
-        <module>../plugins/mil.jpeojtrs.sca.dmd</module>
-        <module>../plugins/mil.jpeojtrs.sca.dmd.edit</module>
-        <module>../plugins/mil.jpeojtrs.sca.dpd</module>
-        <module>../plugins/mil.jpeojtrs.sca.dpd.edit</module>
-        <module>../plugins/mil.jpeojtrs.sca.partitioning</module>
-        <module>../plugins/mil.jpeojtrs.sca.partitioning.edit</module>
-        <module>../plugins/mil.jpeojtrs.sca.prf</module>
-        <module>../plugins/mil.jpeojtrs.sca.prf.edit</module>
-        <module>../plugins/mil.jpeojtrs.sca.profile</module>
-        <module>../plugins/mil.jpeojtrs.sca.profile.edit</module>
-        <module>../plugins/mil.jpeojtrs.sca.sad</module>
-        <module>../plugins/mil.jpeojtrs.sca.sad.edit</module>
-        <module>../plugins/mil.jpeojtrs.sca.scd</module>
-        <module>../plugins/mil.jpeojtrs.sca.scd.edit</module>
-        <module>../plugins/mil.jpeojtrs.sca.spd</module>
-        <module>../plugins/mil.jpeojtrs.sca.spd.edit</module>
-        <module>../plugins/mil.jpeojtrs.sca.util</module>
-        <module>../plugins/mil.jpeojtrs.sca.validator</module>
-        <module>../tests/mil.jpeojtrs.sca.dcd.tests</module>
-        <module>../tests/mil.jpeojtrs.sca.dmd.tests</module>
-        <module>../tests/mil.jpeojtrs.sca.dpd.tests</module>
-        <module>../tests/mil.jpeojtrs.sca.partitioning.tests</module>
-        <module>../tests/mil.jpeojtrs.sca.prf.tests</module>
-        <module>../tests/mil.jpeojtrs.sca.profile.tests</module>
-        <module>../tests/mil.jpeojtrs.sca.sad.tests</module>
-        <module>../tests/mil.jpeojtrs.sca.scd.tests</module>
-        <module>../tests/mil.jpeojtrs.sca.spd.tests</module>
-        <module>../tests/mil.jpeojtrs.sca.testSuite</module>
-        <module>../tests/mil.jpeojtrs.sca.util.tests</module>
-        <module>p2</module>
+        <module>features/mil.jpeojtrs.sca.feature</module>
+        <module>features/mil.jpeojtrs.sca.sdk</module>
+        <module>plugins/mil.jpeojtrs.sca.cf</module>
+        <module>plugins/mil.jpeojtrs.sca.cf.edit</module>
+        <module>plugins/mil.jpeojtrs.sca.dcd</module>
+        <module>plugins/mil.jpeojtrs.sca.dcd.edit</module>
+        <module>plugins/mil.jpeojtrs.sca.dmd</module>
+        <module>plugins/mil.jpeojtrs.sca.dmd.edit</module>
+        <module>plugins/mil.jpeojtrs.sca.dpd</module>
+        <module>plugins/mil.jpeojtrs.sca.dpd.edit</module>
+        <module>plugins/mil.jpeojtrs.sca.partitioning</module>
+        <module>plugins/mil.jpeojtrs.sca.partitioning.edit</module>
+        <module>plugins/mil.jpeojtrs.sca.prf</module>
+        <module>plugins/mil.jpeojtrs.sca.prf.edit</module>
+        <module>plugins/mil.jpeojtrs.sca.profile</module>
+        <module>plugins/mil.jpeojtrs.sca.profile.edit</module>
+        <module>plugins/mil.jpeojtrs.sca.sad</module>
+        <module>plugins/mil.jpeojtrs.sca.sad.edit</module>
+        <module>plugins/mil.jpeojtrs.sca.scd</module>
+        <module>plugins/mil.jpeojtrs.sca.scd.edit</module>
+        <module>plugins/mil.jpeojtrs.sca.spd</module>
+        <module>plugins/mil.jpeojtrs.sca.spd.edit</module>
+        <module>plugins/mil.jpeojtrs.sca.util</module>
+        <module>plugins/mil.jpeojtrs.sca.validator</module>
+        <module>tests/mil.jpeojtrs.sca.dcd.tests</module>
+        <module>tests/mil.jpeojtrs.sca.dmd.tests</module>
+        <module>tests/mil.jpeojtrs.sca.dpd.tests</module>
+        <module>tests/mil.jpeojtrs.sca.partitioning.tests</module>
+        <module>tests/mil.jpeojtrs.sca.prf.tests</module>
+        <module>tests/mil.jpeojtrs.sca.profile.tests</module>
+        <module>tests/mil.jpeojtrs.sca.sad.tests</module>
+        <module>tests/mil.jpeojtrs.sca.scd.tests</module>
+        <module>tests/mil.jpeojtrs.sca.spd.tests</module>
+        <module>tests/mil.jpeojtrs.sca.testSuite</module>
+        <module>tests/mil.jpeojtrs.sca.util.tests</module>
+        <module>releng/p2</module>
     </modules>
 
     <repositories>
