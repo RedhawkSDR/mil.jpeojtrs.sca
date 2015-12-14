@@ -27,8 +27,10 @@
 	<properties>
 		<pmd.skip>true</pmd.skip>
 		<cpd.skip>true</cpd.skip>
+    <sonar.sources></sonar.sources>
+    <sonar.tests>src</sonar.tests>
 	</properties>
-	
+
   <profiles>
     <profile>
       <id>code-analysis</id>

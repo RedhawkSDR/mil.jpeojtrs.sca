@@ -29,6 +29,11 @@
         <redhawk-core-framework>http://download.redhawksdr.org/redhawk-core-framework/releases/1.8</redhawk-core-framework>
         <jacorb>http://download.redhawksdr.org/jacorb/updates/stable</jacorb>
         <orbit>http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository</orbit>
+        <!-- Sonar -->
+        <sonar.language>java</sonar.language>
+        <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+        <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+        <sonar.jacoco.reportPath>${project.basedir}/../../target/jacoco.exec</sonar.jacoco.reportPath>
     </properties>
 
     <modules>
