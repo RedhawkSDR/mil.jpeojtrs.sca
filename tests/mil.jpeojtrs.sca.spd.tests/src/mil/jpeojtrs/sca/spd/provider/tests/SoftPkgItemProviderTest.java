@@ -22,6 +22,9 @@ public class SoftPkgItemProviderTest {
 
 	private SoftPkgItemProvider itemProvider = new SoftPkgItemProvider(null);
 
+	/**
+	 * IDE-1482
+	 */
 	@Test
 	public void getText_null() {
 		SoftPkg spd = SpdFactory.eINSTANCE.createSoftPkg();

@@ -22,6 +22,9 @@ public class DeviceConfigurationItemProviderTest {
 
 	private DeviceConfigurationItemProvider itemProvider = new DeviceConfigurationItemProvider(null);
 
+	/**
+	 * IDE-1482
+	 */
 	@Test
 	public void getText_null() {
 		DeviceConfiguration dcd = DcdFactory.eINSTANCE.createDeviceConfiguration();

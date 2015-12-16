@@ -22,6 +22,9 @@ public class SoftwareAssemblyItemProviderTest {
 
 	private SoftwareAssemblyItemProvider itemProvider = new SoftwareAssemblyItemProvider(null);
 
+	/**
+	 * IDE-1482
+	 */
 	@Test
 	public void getText_null() {
 		SoftwareAssembly sad = SadFactory.eINSTANCE.createSoftwareAssembly();

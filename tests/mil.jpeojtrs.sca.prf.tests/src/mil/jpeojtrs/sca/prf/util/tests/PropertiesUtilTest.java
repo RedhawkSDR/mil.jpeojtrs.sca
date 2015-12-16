@@ -35,6 +35,9 @@ public class PropertiesUtilTest {
 		props = Properties.Util.getProperties(resource);
 	}
 
+	/**
+	 * IDE-1391
+	 */
 	@Test
 	public void canInitialize() {
 		Assert.assertFalse(PropertiesUtil.canInitialize(null));
