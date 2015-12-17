@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Frontendinterfaces
 Bundle-SymbolicName: idl.frontend
-Bundle-Version: 1.10.2.qualifier
+Bundle-Version: 1.10.3.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: idl.bulkio;bundle-version="1.10.2",
  idl.cf;bundle-version="3.0.0"
-Export-Package: FRONTEND;version="1.10.2"
+Export-Package: FRONTEND;version="1.10.3"
