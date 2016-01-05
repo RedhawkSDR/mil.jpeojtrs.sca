@@ -440,7 +440,11 @@ public interface SoftwareAssembly extends EObject {
 			return asmCi != null && asmCi.equals(ci);
 		}
 
-		public static String createComponentUsageName(SoftwareAssembly sa, String componentName) {
+		public static String createComponentUsageName(SoftwareAssembly sa, String componentId) {
+			return componentId;
+		}
+
+		public static String createComponentIdentifier(SoftwareAssembly sa, String componentName) {
 			String baseName = componentName;
 			int baseNameIndex = baseName.lastIndexOf('.');
 			if (baseNameIndex != -1) {
@@ -448,15 +452,15 @@ public interface SoftwareAssembly extends EObject {
 			}
 
 			// Make up a unique new name here.
-			final StringBuilder usageName = new StringBuilder();
+			final StringBuilder compId = new StringBuilder();
 			final Pattern p = Pattern.compile(baseName + "_([0-9]+)");
 			final List<Integer> usedIndexes = new ArrayList<Integer>();
 
-			usageName.append(baseName);
+			compId.append(baseName);
 
 			if (sa.getPartitioning() != null) {
 				for (final SadComponentInstantiation impl : sa.getAllComponentInstantiations()) {
-					final String name = impl.getUsageName();
+					final String name = impl.getId();
 					if (name != null) {
 						final Matcher m = p.matcher(name);
 						if (m.matches()) {
@@ -477,11 +481,7 @@ public interface SoftwareAssembly extends EObject {
 				}
 			}
 
-			return usageName.append("_").append(index).toString();
-		}
-
-		public static String createComponentIdentifier(SoftwareAssembly sa, String usageName) {
-			return usageName;
+			return compId.append("_").append(index).toString();
 		}
 		// BEGIN GENERATED CODE
 	}
