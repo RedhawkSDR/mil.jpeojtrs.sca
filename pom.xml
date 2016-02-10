@@ -71,7 +71,6 @@
     <module>tests/mil.jpeojtrs.sca.sad.tests</module>
     <module>tests/mil.jpeojtrs.sca.scd.tests</module>
     <module>tests/mil.jpeojtrs.sca.spd.tests</module>
-    <module>tests/mil.jpeojtrs.sca.testSuite</module>
     <module>tests/mil.jpeojtrs.sca.util.tests</module>
     <module>releng/p2</module>
   </modules>
