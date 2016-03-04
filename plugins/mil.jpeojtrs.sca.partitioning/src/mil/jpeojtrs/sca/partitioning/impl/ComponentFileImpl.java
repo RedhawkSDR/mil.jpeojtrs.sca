@@ -13,13 +13,6 @@ package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.util.UUID;
 
-import mil.jpeojtrs.sca.partitioning.ComponentFile;
-import mil.jpeojtrs.sca.partitioning.LocalFile;
-import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
-import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
-import mil.jpeojtrs.sca.spd.SoftPkg;
-import mil.jpeojtrs.sca.util.ScaUriHelpers;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.URI;
@@ -28,6 +21,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EContentAdapter;
+
+import mil.jpeojtrs.sca.partitioning.ComponentFile;
+import mil.jpeojtrs.sca.partitioning.LocalFile;
+import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
+import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
+import mil.jpeojtrs.sca.spd.SoftPkg;
+import mil.jpeojtrs.sca.util.ScaUriHelpers;
 
 /**
  * <!-- begin-user-doc -->
@@ -249,6 +249,15 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	@Override
 	public void setSoftPkg(final SoftPkg newSoftPkg) {
 		// END GENERATED CODE
+		setSoftPkg(newSoftPkg, null);
+		// BEGIN GENERATED CODE
+	}
+	
+	/**
+	 * @since 2.1
+	 */
+	@Override
+	public void setSoftPkg(final SoftPkg newSoftPkg, final String containerName) {
 		if (newSoftPkg == null) {
 			this.setLocalFile(null);
 			return;
@@ -258,12 +267,17 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 		}
 		final URI spdURI = newSoftPkg.eResource().getURI();
 		final String spdPath = ScaUriHelpers.getLocalFilePath(this, newSoftPkg);
+		
 		String newId = UUID.randomUUID().toString();
 		String name = spdURI.lastSegment();
 		if (name != null) {
 			int index = name.indexOf('.');
 			if (index > 0) {
 				name = name.substring(0, index);
+			}
+			if (containerName != null) {
+				newId = containerName + ":" + name;
+			} else {
 				newId = name + "_" + UUID.randomUUID().toString();
 			}
 		}
@@ -271,7 +285,6 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 		setType("SPD");
 		this.localFile.setName(spdPath);
 		this.spd = newSoftPkg;
-		// BEGIN GENERATED CODE
 	}
 
 	/**
