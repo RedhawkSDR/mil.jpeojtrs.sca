@@ -249,15 +249,6 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 	@Override
 	public void setSoftPkg(final SoftPkg newSoftPkg) {
 		// END GENERATED CODE
-		setSoftPkg(newSoftPkg, null);
-		// BEGIN GENERATED CODE
-	}
-	
-	/**
-	 * @since 2.1
-	 */
-	@Override
-	public void setSoftPkg(final SoftPkg newSoftPkg, final String containerName) {
 		if (newSoftPkg == null) {
 			this.setLocalFile(null);
 			return;
@@ -274,10 +265,6 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 			int index = name.indexOf('.');
 			if (index > 0) {
 				name = name.substring(0, index);
-			}
-			if (containerName != null) {
-				newId = containerName + ":" + name;
-			} else {
 				newId = name + "_" + UUID.randomUUID().toString();
 			}
 		}
@@ -285,6 +272,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 		setType("SPD");
 		this.localFile.setName(spdPath);
 		this.spd = newSoftPkg;
+		// BEGIN GENERATED CODE
 	}
 
 	/**

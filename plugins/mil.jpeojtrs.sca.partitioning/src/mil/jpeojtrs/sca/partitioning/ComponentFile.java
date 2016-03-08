@@ -118,19 +118,6 @@ public interface ComponentFile extends EObject {
 	 * @generated
 	 */
 	void setSoftPkg(SoftPkg value);
-	
-	/**
-	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentFile#getSoftPkg <em>Soft Pkg</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * Use this method to set a unique instantiation ID based on the containing element. 
-	 * Follows naming convention of <em>Container:Resource</em> </br> For example: <em>TestDeviceNode:TestDevice"</em>
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Soft Pkg</em>' reference.
-	 * @param containerName name of the containing resource (usually a DeviceConfiguration or SoftwareAssembly file)
-	 * @see #getSoftPkg()
-	 * @since 2.1
-	 */
-	void setSoftPkg(SoftPkg value, String containerName);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
