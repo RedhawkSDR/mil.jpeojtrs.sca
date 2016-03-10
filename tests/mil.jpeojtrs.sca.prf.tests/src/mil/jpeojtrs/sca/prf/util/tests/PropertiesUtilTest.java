@@ -42,7 +42,7 @@ public class PropertiesUtilTest {
 	public void canInitialize() {
 		Assert.assertFalse(PropertiesUtil.canInitialize(null));
 
-		String[] initializeTrue = new String[] { "simple_property", "simple_readonly_commandline_property", "simplesequence_property", "struct_property",
+		String[] initializeTrue = new String[] { "simple_property", "simplesequence_property", "struct_property",
 			"structsequence_property", "simple_empty", "simple_configure_property", "simple_readonly_property", "simplesequence_readonly_property",
 			"struct_readonly_property", "structsequence_readonly_property" };
 
