@@ -83,10 +83,7 @@
 			<arg line="com.sun.tools.corba.se.idl.toJavaPortable.Compile" />
 			<arg line="-verbose" />
 			<arg line="-fallTie" />
-			<!-- <arg line="-i ${env.OSSIEHOME}/share/idl" /> -->
 			<arg line="-i idl" />
-			<arg line="-i idl/ossie" />
-			<arg line="-i idl/ossie/CF" />
 			<arg line="-i /usr/share/idl/omniORB" />
 			<arg line="-i /usr/share/idl/omniORB/COS" />
 			<arg line="-td src/" />
