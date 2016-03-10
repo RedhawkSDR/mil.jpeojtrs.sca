@@ -83,6 +83,9 @@
 			<arg line="com.sun.tools.corba.se.idl.toJavaPortable.Compile" />
 			<arg line="-verbose" />
 			<arg line="-fallTie" />
+			<arg line="-pkgPrefix CosEventChannelAdmin org.omg" />
+			<arg line="-pkgPrefix CosEventComm org.omg" />
+			<arg line="-pkgPrefix CosNaming org.omg" />
 			<arg line="-i idl" />
 			<arg line="-i /usr/share/idl/omniORB" />
 			<arg line="-i /usr/share/idl/omniORB/COS" />
