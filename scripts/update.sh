@@ -59,11 +59,11 @@ cp ${cfdir}/src/xml/dtd/devicepkg.dtd ${rootdir}/plugins/mil.jpeojtrs.sca.dpd/dt
 cp ${cfdir}/src/xml/dtd/properties.dtd ${rootdir}/plugins/mil.jpeojtrs.sca.prf/dtd
 
 # Update IDL files
-rm -rf ${rootdir}/plugins/idl.cf/idl/ossie
-rm -rf ${rootdir}/plugins/idl.bulkio/idl/ossie
-rm -f ${rootdir}/plugins/idl.frontend/idl/redhawk/FRONTEND/*
+rm -rf ${rootdir}/plugins/idl.cf/idl/*
+rm -rf ${rootdir}/plugins/idl.bulkio/idl/*
+rm -rf ${rootdir}/plugins/idl.frontend/idl/*
 
 cp -r ${cfdir}/src/idl/ossie ${rootdir}/plugins/idl.cf/idl
 cp -r ${bulkiodir}/idl/ossie ${rootdir}/plugins/idl.bulkio/idl
-cp ${frontenddir}/*.idl ${rootdir}/plugins/idl.frontend/idl/redhawk/FRONTEND
+cp -r ${frontenddir}/idl/redhawk ${rootdir}/plugins/idl.frontend/idl
 
