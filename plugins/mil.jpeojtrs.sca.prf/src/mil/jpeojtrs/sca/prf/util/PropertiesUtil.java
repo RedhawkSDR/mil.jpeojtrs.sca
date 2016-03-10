@@ -56,8 +56,16 @@ public final class PropertiesUtil {
 	public static boolean canOverride(final AbstractProperty property) {
 		// Per D.6.1.3.3 configure, factoryparam, and/or execparam
 		// with mode "readwrite" or "writeonly" can be overridden
-		return (property != null) && (property.getMode() != AccessType.READONLY) && property.isKind(PropertyConfigurationType.PROPERTY,
-			PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM);
+		
+		boolean isCommandLine = false;
+		if (property instanceof Simple) {
+			Simple simpProperty = (Simple)property;
+			isCommandLine = simpProperty.getCommandline() != null && simpProperty.getCommandline();
+		}
+		
+		return (property != null) 
+				&& (property.getMode() != AccessType.READONLY || isCommandLine)
+				&& property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM);
 	}
 
 	public static String getDefaultValue(PropertyValueType type) {

@@ -42,11 +42,11 @@ public class PropertiesUtilTest {
 	public void canInitialize() {
 		Assert.assertFalse(PropertiesUtil.canInitialize(null));
 
-		String[] initializeTrue = new String[] { "simple_property", "simplesequence_property", "struct_property", "structsequence_property", "simple_empty",
-			"simple_configure_property", "simple_readonly_property", "simplesequence_readonly_property", "struct_readonly_property",
-			"structsequence_readonly_property" };
+		String[] initializeTrue = new String[] { "simple_property", "simple_readonly_commandline_property", "simplesequence_property", "struct_property",
+			"structsequence_property", "simple_empty", "simple_configure_property", "simple_readonly_property", "simplesequence_readonly_property",
+			"struct_readonly_property", "structsequence_readonly_property" };
 
-		String[] initializeFalse = new String[] { "simple_configure", "simple_execparam_property", "simple_execparam", "simple_commandline_property" };
+		String[] initializeFalse = new String[] { "simple_configure", "simple_execparam_property", "simple_execparam", "simple_commandline_property", "simple_readonly_commandline_property"};
 
 		for (String property : initializeTrue) {
 			AbstractProperty prop = props.getProperty(property);
@@ -60,6 +60,30 @@ public class PropertiesUtilTest {
 		}
 	}
 
+	/**
+	 * IDE-1531 - The IDE should allow property value overrides for read-only command line properties
+	 */
+	@Test
+	public void canOverride() {
+		String[] overrideTrue = new String[] { "simple_property", "simple_readonly_commandline_property", "simple_configure", "simple_execparam_property",
+			"simple_execparam", "simplesequence_property", "struct_property", "structsequence_property", "simple_empty", "simple_configure_property",
+			"simple_commandline_property" };
+
+		String[] overrideFalse = new String[] { "simple_readonly_property", "simplesequence_readonly_property", "struct_readonly_property",
+			"structsequence_readonly_property" };
+
+		for (String property : overrideTrue) {
+			AbstractProperty prop = props.getProperty(property);
+			Assert.assertNotNull("Property not found in PRF: " + property, prop);
+			Assert.assertTrue("Should be able to override " + property, PropertiesUtil.canOverride(prop));
+		}
+		for (String property : overrideFalse) {
+			AbstractProperty prop = props.getProperty(property);
+			Assert.assertNotNull("Property not found in PRF: " + property, prop);
+			Assert.assertFalse("Should NOT be able to override " + property, PropertiesUtil.canOverride(prop));
+		}
+	}
+
 	@Test
 	public void canConfigure() {
 		Assert.assertFalse(PropertiesUtil.canConfigure(null));
@@ -67,8 +91,8 @@ public class PropertiesUtilTest {
 		String[] configureTrue = new String[] { "simple_property", "simplesequence_property", "struct_property", "structsequence_property", "simple_empty",
 			"simple_configure_property", "simple_configure", "simple_execparam_property", "simple_commandline_property" };
 
-		String[] configureFalse = new String[] { "simple_execparam", "simple_readonly_property", "simplesequence_readonly_property", "struct_readonly_property",
-			"structsequence_readonly_property" };
+		String[] configureFalse = new String[] { "simple_execparam", "simple_readonly_commandline_property", "simple_readonly_property",
+			"simplesequence_readonly_property", "struct_readonly_property", "structsequence_readonly_property" };
 
 		for (String property : configureTrue) {
 			AbstractProperty prop = props.getProperty(property);
