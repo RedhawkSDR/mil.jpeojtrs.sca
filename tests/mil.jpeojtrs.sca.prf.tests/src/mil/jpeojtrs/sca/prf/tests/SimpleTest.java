@@ -114,7 +114,7 @@ public class SimpleTest extends AbstractPropertyTest {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.prf.Simple#isCommandLine()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testIsCommandLine() {
 		Assert.assertFalse(getFixture().isCommandLine());
