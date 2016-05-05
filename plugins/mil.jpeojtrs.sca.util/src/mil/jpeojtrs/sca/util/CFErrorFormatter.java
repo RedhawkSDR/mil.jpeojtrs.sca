@@ -35,7 +35,7 @@ import CF.ResourcePackage.StopError;
 /**
  * Utility methods for formatting CF exceptions for display to the user. Since they're CORBA exceptions,
  * <code>toString()</code> doesn't produce a message with the error's details.
- * @since 4.1
+ * @since 4.2
  */
 public class CFErrorFormatter {
 
