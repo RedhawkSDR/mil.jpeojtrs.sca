@@ -27,6 +27,7 @@ import CF.FilePackage.InvalidFilePointer;
 import CF.LifeCyclePackage.InitializeError;
 import CF.LifeCyclePackage.ReleaseError;
 import CF.PortPackage.InvalidPort;
+import CF.PropertyEmitterPackage.AlreadyInitialized;
 import CF.PropertySetPackage.InvalidConfiguration;
 import CF.PropertySetPackage.PartialConfiguration;
 import CF.ResourcePackage.StartError;
@@ -51,6 +52,7 @@ public class CFErrorFormatter {
 
 	// Property-related error messages
 	private static final String FORMAT_ERRNAME_PROPLIST = "%s. Properties: %s";
+	private static final String FORMAT_ERRNAME_RESNAME = "%s for %s.";
 	private static final String FORMAT_ERRNAME_RESNAME_PROPLIST = "%s for %s. Properties: %s";
 	private static final String FORMAT_ERRNAME_ERRMSG_PROPLIST = "%s: %s. Properties: %s";
 	private static final String FORMAT_ERRNAME_RESNAME_ERRMSG_PROPLIST = "%s for %s: %s. Properties: %s";
@@ -95,6 +97,10 @@ public class CFErrorFormatter {
 	}
 
 	private CFErrorFormatter() {
+	}
+
+	public static String format(AlreadyInitialized e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
 	}
 
 	public static String format(FileException e, FileOperation op, String path) {

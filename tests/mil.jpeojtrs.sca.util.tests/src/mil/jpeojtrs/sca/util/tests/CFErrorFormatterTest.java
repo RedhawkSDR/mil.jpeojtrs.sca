@@ -22,6 +22,7 @@ import CF.FilePackage.InvalidFilePointer;
 import CF.LifeCyclePackage.InitializeError;
 import CF.LifeCyclePackage.ReleaseError;
 import CF.PortPackage.InvalidPort;
+import CF.PropertyEmitterPackage.AlreadyInitialized;
 import CF.PropertySetPackage.InvalidConfiguration;
 import CF.PropertySetPackage.PartialConfiguration;
 import CF.ResourcePackage.StartError;
@@ -34,6 +35,12 @@ import mil.jpeojtrs.sca.util.CFErrorFormatter.FileOperation2;
  * Tests some of the error messages we generate with {@link CFErrorFormatter}.
  */
 public class CFErrorFormatterTest {
+
+	@Test
+	public void format_AlreadyInitialized_resName() {
+		String msg = CFErrorFormatter.format(new AlreadyInitialized(), "foo");
+		Assert.assertEquals("CF.PropertyEmitterPackage.AlreadyInitialized for foo.", msg);
+	}
 
 	@Test
 	public void format_FileException_onePath() {
