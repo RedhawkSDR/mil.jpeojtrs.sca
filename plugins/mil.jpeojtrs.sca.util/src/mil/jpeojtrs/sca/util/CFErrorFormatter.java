@@ -57,7 +57,6 @@ public class CFErrorFormatter {
 
 	// Property-related error messages
 	private static final String FORMAT_ERRNAME_PROPLIST = "%s. Properties: %s";
-	private static final String FORMAT_ERRNAME_RESNAME = "%s for %s.";
 	private static final String FORMAT_ERRNAME_RESNAME_PROPLIST = "%s for %s. Properties: %s";
 	private static final String FORMAT_ERRNAME_ERRMSG_PROPLIST = "%s: %s. Properties: %s";
 	private static final String FORMAT_ERRNAME_RESNAME_ERRMSG_PROPLIST = "%s for %s: %s. Properties: %s";

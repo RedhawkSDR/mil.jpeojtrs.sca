@@ -43,7 +43,7 @@ public class CFErrorFormatterTest {
 	@Test
 	public void format_AlreadyInitialized_resName() {
 		String msg = CFErrorFormatter.format(new AlreadyInitialized(), "foo");
-		Assert.assertEquals("CF.PropertyEmitterPackage.AlreadyInitialized for foo.", msg);
+		Assert.assertEquals("CF.PropertyEmitterPackage.AlreadyInitialized for foo", msg);
 	}
 
 	@Test
