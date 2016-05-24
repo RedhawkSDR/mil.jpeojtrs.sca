@@ -23,14 +23,18 @@ import CF.ErrorNumberTypeHelper;
 import CF.FileException;
 import CF.InvalidFileName;
 import CF.UnknownProperties;
+import CF.ExecutableDevicePackage.ExecuteFail;
 import CF.FilePackage.InvalidFilePointer;
 import CF.LifeCyclePackage.InitializeError;
 import CF.LifeCyclePackage.ReleaseError;
 import CF.PortPackage.InvalidPort;
+import CF.PortPackage.OccupiedPort;
+import CF.PortSupplierPackage.UnknownPort;
 import CF.PropertySetPackage.InvalidConfiguration;
 import CF.PropertySetPackage.PartialConfiguration;
 import CF.ResourcePackage.StartError;
 import CF.ResourcePackage.StopError;
+import CF.TestableObjectPackage.UnknownTest;
 
 /**
  * Utility methods for formatting CF exceptions for display to the user. Since they're CORBA exceptions,
@@ -45,8 +49,9 @@ public class CFErrorFormatter {
 	private static final String EMPTY_ERROR_LIST = "(no error details)";
 
 	// Generic error messages
-	private static final String FORMAT_ERRNAME_PATH = "%s for %s";
+	private static final String FORMAT_ERRNAME_RESNAME = "%s for %s";
 	private static final String FORMAT_ERRNAME_RESNAME_ERRMSG = "%s for %s: %s";
+	private static final String FORMAT_ERRNAME_RESNAME_ERRMSG_ERRNUM = "%s for %s: %s (error number %s)";
 	private static final String FORMAT_ERRNAME_RESNAME_ERRMSG_ERRCODE = "%s for %s: %s (error code %d)";
 
 	// Property-related error messages
@@ -97,6 +102,10 @@ public class CFErrorFormatter {
 	private CFErrorFormatter() {
 	}
 
+	public static String format(ExecuteFail e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG_ERRNUM, e.getClass().getName(), resourceDesc, e.msg, toName(e.errorNumber));
+	}
+
 	public static String format(FileException e, FileOperation op, String path) {
 		return String.format(op.getFormat(), e.getClass().getName(), path, e.msg, toName(e.errorNumber));
 	}
@@ -126,11 +135,15 @@ public class CFErrorFormatter {
 	}
 
 	public static String format(InvalidFilePointer e, String path) {
-		return String.format(FORMAT_ERRNAME_PATH, e.getClass().getName(), path);
+		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), path);
 	}
 
 	public static String format(InvalidPort e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG_ERRCODE, e.getClass().getName(), resourceDesc, e.msg, e.errorCode);
+	}
+
+	public static String format(OccupiedPort e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
 	}
 
 	public static String format(PartialConfiguration e) {
@@ -153,8 +166,16 @@ public class CFErrorFormatter {
 		return String.format(FORMAT_STOPERR_RESNAME_ERRNAME_ERRMSG_ERRNUM, resourceDesc, e.getClass().getName(), e.msg, toName(e.errorNumber));
 	}
 
+	public static String format(UnknownPort e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
+	}
+
 	public static String format(UnknownProperties e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_PROPLIST, e.getClass().getName(), resourceDesc, formatProperties(e.invalidProperties));
+	}
+
+	public static String format(UnknownTest e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
 	}
 
 	/**
