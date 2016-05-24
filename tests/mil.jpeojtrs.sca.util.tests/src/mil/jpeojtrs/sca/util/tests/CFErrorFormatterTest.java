@@ -18,14 +18,18 @@ import CF.ErrorNumberType;
 import CF.FileException;
 import CF.InvalidFileName;
 import CF.UnknownProperties;
+import CF.ExecutableDevicePackage.ExecuteFail;
 import CF.FilePackage.InvalidFilePointer;
 import CF.LifeCyclePackage.InitializeError;
 import CF.LifeCyclePackage.ReleaseError;
 import CF.PortPackage.InvalidPort;
+import CF.PortPackage.OccupiedPort;
+import CF.PortSupplierPackage.UnknownPort;
 import CF.PropertySetPackage.InvalidConfiguration;
 import CF.PropertySetPackage.PartialConfiguration;
 import CF.ResourcePackage.StartError;
 import CF.ResourcePackage.StopError;
+import CF.TestableObjectPackage.UnknownTest;
 import mil.jpeojtrs.sca.util.CFErrorFormatter;
 import mil.jpeojtrs.sca.util.CFErrorFormatter.FileOperation;
 import mil.jpeojtrs.sca.util.CFErrorFormatter.FileOperation2;
@@ -34,6 +38,12 @@ import mil.jpeojtrs.sca.util.CFErrorFormatter.FileOperation2;
  * Tests some of the error messages we generate with {@link CFErrorFormatter}.
  */
 public class CFErrorFormatterTest {
+
+	@Test
+	public void format_ExecuteFail() {
+		String msg = CFErrorFormatter.format(new ExecuteFail(ErrorNumberType.CF_EDOM, "abc"), "def");
+		Assert.assertEquals("CF.ExecutableDevicePackage.ExecuteFail for def: abc (error number CF_EDOM)", msg);
+	}
 
 	@Test
 	public void format_FileException_onePath() {
@@ -122,6 +132,12 @@ public class CFErrorFormatterTest {
 	}
 
 	@Test
+	public void format_OccupiedPort() {
+		String msg = CFErrorFormatter.format(new OccupiedPort(), "abc");
+		Assert.assertEquals("CF.PortPackage.OccupiedPort for abc", msg);
+	}
+
+	@Test
 	public void format_ParitialConfiguraiton() {
 		String msg = CFErrorFormatter.format(new PartialConfiguration(new DataType[] { new DataType("c", null) }));
 		Assert.assertEquals("CF.PropertySetPackage.PartialConfiguration. Properties: c", msg);
@@ -156,11 +172,23 @@ public class CFErrorFormatterTest {
 	}
 
 	@Test
+	public void format_UnknownPort() {
+		String msg = CFErrorFormatter.format(new UnknownPort(), "abc");
+		Assert.assertEquals("CF.PortSupplierPackage.UnknownPort for abc", msg);
+	}
+
+	@Test
 	public void format_UnknownProperties() {
 		String msg = CFErrorFormatter.format(new UnknownProperties(new DataType[] { new DataType("a", null) }), "abc");
 		Assert.assertEquals("CF.UnknownProperties for abc. Properties: a", msg);
 		msg = CFErrorFormatter.format(new UnknownProperties(new DataType[] {}), "def");
 		Assert.assertEquals("CF.UnknownProperties for def. Properties: (no properties)", msg);
+	}
+
+	@Test
+	public void format_UnknownTest() {
+		String msg = CFErrorFormatter.format(new UnknownTest(), "abc");
+		Assert.assertEquals("CF.TestableObjectPackage.UnknownTest for abc", msg);
 	}
 
 	@Test
