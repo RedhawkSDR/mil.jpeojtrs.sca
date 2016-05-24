@@ -697,7 +697,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 				return true;
 			}
 		}
-		if (getKind().isEmpty() && types.contains(PropertyConfigurationType.PROPERTY)) {
+		if (getKind().isEmpty() && types.contains(PropertyConfigurationType.CONFIGURE)) {
 			return true;
 		}
 		return false;

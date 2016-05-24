@@ -294,7 +294,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 				return true;
 			}
 		}
-		if (getConfigurationKind().isEmpty() && types.contains(StructPropertyConfigurationType.PROPERTY)) {
+		if (getConfigurationKind().isEmpty() && types.contains(StructPropertyConfigurationType.CONFIGURE)) {
 			return true;
 		}
 		return false;
