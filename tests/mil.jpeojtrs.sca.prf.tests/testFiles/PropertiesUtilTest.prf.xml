@@ -32,6 +32,17 @@
   <simple id="simple_empty" mode="readwrite" type="string">
     <action type="external"/>
   </simple>
+  <simplesequence id="simplesequence_empty" mode="readwrite" type="string">
+    <action type="external"/>
+  </simplesequence>
+  <struct id="struct_empty" mode="readwrite">
+    <simple id="structSimp" type="string"/>
+  </struct>
+  <structsequence id="structsequence_empty" mode="readwrite">
+    <struct id="innerstruct">
+      <simple id="innerstring" type="string"/>
+    </struct>
+  </structsequence>
   <simple id="simple_configure_property" mode="readwrite" type="string">
     <kind kindtype="configure"/>
     <kind kindtype="property"/>

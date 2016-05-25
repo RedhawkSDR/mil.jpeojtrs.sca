@@ -42,12 +42,14 @@ public class PropertiesUtilTest {
 	public void canInitialize() {
 		Assert.assertFalse(PropertiesUtil.canInitialize(null));
 
-		String[] initializeTrue = new String[] { "simple_property", "simplesequence_property", "struct_property",
-			"structsequence_property", "simple_empty", "simple_configure_property", "simple_readonly_property", "simplesequence_readonly_property",
-			"struct_readonly_property", "structsequence_readonly_property" };
+		String[] initializeTrue = new String[] { "simple_property", "simplesequence_property", "struct_property", "structsequence_property",
+			"simple_configure_property", "simple_readonly_property", "simplesequence_readonly_property", "struct_readonly_property",
+			"structsequence_readonly_property" };
 
-		String[] initializeFalse = new String[] { "simple_configure", "simple_execparam_property", "simple_execparam", "simple_commandline_property", "simple_readonly_commandline_property"};
+		String[] initializeFalse = new String[] { "simple_configure", "simple_empty", "simplesequence_empty", "struct_empty", "structsequence_empty",
+			"simple_execparam_property", "simple_execparam", "simple_commandline_property", "simple_readonly_commandline_property" };
 
+		Assert.assertEquals(initializeTrue.length + initializeFalse.length, props.getProperties().size());
 		for (String property : initializeTrue) {
 			AbstractProperty prop = props.getProperty(property);
 			Assert.assertNotNull("Property not found in PRF: " + property, prop);
@@ -66,12 +68,13 @@ public class PropertiesUtilTest {
 	@Test
 	public void canOverride() {
 		String[] overrideTrue = new String[] { "simple_property", "simple_readonly_commandline_property", "simple_configure", "simple_execparam_property",
-			"simple_execparam", "simplesequence_property", "struct_property", "structsequence_property", "simple_empty", "simple_configure_property",
-			"simple_commandline_property" };
+			"simple_execparam", "simplesequence_property", "struct_property", "structsequence_property", "simple_empty", "simplesequence_empty", "struct_empty",
+			"structsequence_empty", "simple_configure_property", "simple_commandline_property" };
 
 		String[] overrideFalse = new String[] { "simple_readonly_property", "simplesequence_readonly_property", "struct_readonly_property",
 			"structsequence_readonly_property" };
 
+		Assert.assertEquals(overrideTrue.length + overrideFalse.length, props.getProperties().size());
 		for (String property : overrideTrue) {
 			AbstractProperty prop = props.getProperty(property);
 			Assert.assertNotNull("Property not found in PRF: " + property, prop);
@@ -89,11 +92,13 @@ public class PropertiesUtilTest {
 		Assert.assertFalse(PropertiesUtil.canConfigure(null));
 
 		String[] configureTrue = new String[] { "simple_property", "simplesequence_property", "struct_property", "structsequence_property", "simple_empty",
-			"simple_configure_property", "simple_configure", "simple_execparam_property", "simple_commandline_property" };
+			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_configure_property", "simple_configure", "simple_execparam_property",
+			"simple_commandline_property" };
 
 		String[] configureFalse = new String[] { "simple_execparam", "simple_readonly_commandline_property", "simple_readonly_property",
 			"simplesequence_readonly_property", "struct_readonly_property", "structsequence_readonly_property" };
 
+		Assert.assertEquals(configureTrue.length + configureFalse.length, props.getProperties().size());
 		for (String property : configureTrue) {
 			AbstractProperty prop = props.getProperty(property);
 			Assert.assertNotNull("Property not found in PRF: " + property, prop);
