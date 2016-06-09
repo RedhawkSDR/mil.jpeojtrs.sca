@@ -77,7 +77,8 @@ public class ChangePortDirectionCommand extends AbstractOverrideableCommand {
 			toAdd = FeatureMapUtil.createEntry(getFeature(sibling), sibling);
 			newObjects.add(toAdd);
 
-			removeIndex = addIndex = owner.indexOf(entry);
+			addIndex = owner.indexOf(entry);
+			removeIndex = addIndex;
 			if (direction == PortDirection.BIDIR) {
 				// Insert the new port directly after the old port to keep them together
 				newObjects.add(entry);
