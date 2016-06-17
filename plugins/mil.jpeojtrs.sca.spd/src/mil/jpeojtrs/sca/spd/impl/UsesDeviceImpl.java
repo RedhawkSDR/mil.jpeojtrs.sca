@@ -33,12 +33,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.UsesDeviceImpl#getPropertyRef <em>Property Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.UsesDeviceImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.UsesDeviceImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -157,10 +157,9 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.USES_DEVICE__PROPERTY_REF:
-				return ((InternalEList<?>)getPropertyRef()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case SpdPackage.USES_DEVICE__PROPERTY_REF:
+			return ((InternalEList< ? >) getPropertyRef()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -172,14 +171,13 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.USES_DEVICE__PROPERTY_REF:
-				return getPropertyRef();
-			case SpdPackage.USES_DEVICE__ID:
-				return getId();
-			case SpdPackage.USES_DEVICE__TYPE:
-				return getType();
+		switch (featureID) {
+		case SpdPackage.USES_DEVICE__PROPERTY_REF:
+			return getPropertyRef();
+		case SpdPackage.USES_DEVICE__ID:
+			return getId();
+		case SpdPackage.USES_DEVICE__TYPE:
+			return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -192,18 +190,17 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.USES_DEVICE__PROPERTY_REF:
-				getPropertyRef().clear();
-				getPropertyRef().addAll((Collection<? extends PropertyRef>)newValue);
-				return;
-			case SpdPackage.USES_DEVICE__ID:
-				setId((String)newValue);
-				return;
-			case SpdPackage.USES_DEVICE__TYPE:
-				setType((String)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.USES_DEVICE__PROPERTY_REF:
+			getPropertyRef().clear();
+			getPropertyRef().addAll((Collection< ? extends PropertyRef>) newValue);
+			return;
+		case SpdPackage.USES_DEVICE__ID:
+			setId((String) newValue);
+			return;
+		case SpdPackage.USES_DEVICE__TYPE:
+			setType((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -215,17 +212,16 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.USES_DEVICE__PROPERTY_REF:
-				getPropertyRef().clear();
-				return;
-			case SpdPackage.USES_DEVICE__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case SpdPackage.USES_DEVICE__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SpdPackage.USES_DEVICE__PROPERTY_REF:
+			getPropertyRef().clear();
+			return;
+		case SpdPackage.USES_DEVICE__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case SpdPackage.USES_DEVICE__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -237,14 +233,13 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.USES_DEVICE__PROPERTY_REF:
-				return !getPropertyRef().isEmpty();
-			case SpdPackage.USES_DEVICE__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case SpdPackage.USES_DEVICE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		switch (featureID) {
+		case SpdPackage.USES_DEVICE__PROPERTY_REF:
+			return !getPropertyRef().isEmpty();
+		case SpdPackage.USES_DEVICE__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case SpdPackage.USES_DEVICE__TYPE:
+			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -256,7 +251,8 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
@@ -268,9 +264,9 @@ public class UsesDeviceImpl extends PropertyRefGroupImpl implements UsesDevice {
 	}
 
 	@Override
-    public PropertyContainer getPropertyContainer() {
-	    // TODO How do we return a "global" property container
-	    return null;
-    }
+	public PropertyContainer getPropertyContainer() {
+		// TODO How do we return a "global" property container
+		return null;
+	}
 
 } //UsesDeviceImpl

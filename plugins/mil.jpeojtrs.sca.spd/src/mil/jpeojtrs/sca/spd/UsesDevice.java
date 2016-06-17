@@ -22,12 +22,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.UsesDevice#getPropertyRef <em>Property Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.UsesDevice#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.UsesDevice#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getUsesDevice()
  * @model extendedMetaData="name='usesDevice' kind='elementOnly'"
@@ -90,7 +90,7 @@ public interface UsesDevice extends PropertyRefGroup {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see mil.jpeojtrs.sca.spd.SpdPackage#getUsesDevice_Type()
-	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
 	 *        extendedMetaData="kind='attribute' name='type'"
 	 * @generated
 	 */
