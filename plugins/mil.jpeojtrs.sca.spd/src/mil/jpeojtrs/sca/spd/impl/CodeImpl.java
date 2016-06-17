@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.CodeImpl#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.CodeImpl#getEntryPoint <em>Entry Point</em>}</li>
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.CodeImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.CodeImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -170,10 +170,12 @@ public class CodeImpl extends EObjectImpl implements Code {
 	public NotificationChain basicSetLocalFile(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.CODE__LOCAL_FILE, oldLocalFile, newLocalFile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -184,17 +186,16 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 * @generated
 	 */
 	public void setLocalFile(LocalFile newLocalFile) {
-		if (newLocalFile != localFile)
-		{
+		if (newLocalFile != localFile) {
 			NotificationChain msgs = null;
 			if (localFile != null)
-				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.CODE__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.CODE__LOCAL_FILE, null, msgs);
 			if (newLocalFile != null)
-				msgs = ((InternalEObject)newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.CODE__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.CODE__LOCAL_FILE, null, msgs);
 			msgs = basicSetLocalFile(newLocalFile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.CODE__LOCAL_FILE, newLocalFile, newLocalFile));
 	}
 
@@ -314,10 +315,9 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.CODE__LOCAL_FILE:
-				return basicSetLocalFile(null, msgs);
+		switch (featureID) {
+		case SpdPackage.CODE__LOCAL_FILE:
+			return basicSetLocalFile(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -329,18 +329,17 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.CODE__LOCAL_FILE:
-				return getLocalFile();
-			case SpdPackage.CODE__ENTRY_POINT:
-				return getEntryPoint();
-			case SpdPackage.CODE__STACK_SIZE:
-				return getStackSize();
-			case SpdPackage.CODE__PRIORITY:
-				return getPriority();
-			case SpdPackage.CODE__TYPE:
-				return getType();
+		switch (featureID) {
+		case SpdPackage.CODE__LOCAL_FILE:
+			return getLocalFile();
+		case SpdPackage.CODE__ENTRY_POINT:
+			return getEntryPoint();
+		case SpdPackage.CODE__STACK_SIZE:
+			return getStackSize();
+		case SpdPackage.CODE__PRIORITY:
+			return getPriority();
+		case SpdPackage.CODE__TYPE:
+			return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -352,23 +351,22 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.CODE__LOCAL_FILE:
-				setLocalFile((LocalFile)newValue);
-				return;
-			case SpdPackage.CODE__ENTRY_POINT:
-				setEntryPoint((String)newValue);
-				return;
-			case SpdPackage.CODE__STACK_SIZE:
-				setStackSize((BigInteger)newValue);
-				return;
-			case SpdPackage.CODE__PRIORITY:
-				setPriority((BigInteger)newValue);
-				return;
-			case SpdPackage.CODE__TYPE:
-				setType((CodeFileType)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.CODE__LOCAL_FILE:
+			setLocalFile((LocalFile) newValue);
+			return;
+		case SpdPackage.CODE__ENTRY_POINT:
+			setEntryPoint((String) newValue);
+			return;
+		case SpdPackage.CODE__STACK_SIZE:
+			setStackSize((BigInteger) newValue);
+			return;
+		case SpdPackage.CODE__PRIORITY:
+			setPriority((BigInteger) newValue);
+			return;
+		case SpdPackage.CODE__TYPE:
+			setType((CodeFileType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -380,23 +378,22 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.CODE__LOCAL_FILE:
-				setLocalFile((LocalFile)null);
-				return;
-			case SpdPackage.CODE__ENTRY_POINT:
-				setEntryPoint(ENTRY_POINT_EDEFAULT);
-				return;
-			case SpdPackage.CODE__STACK_SIZE:
-				setStackSize(STACK_SIZE_EDEFAULT);
-				return;
-			case SpdPackage.CODE__PRIORITY:
-				setPriority(PRIORITY_EDEFAULT);
-				return;
-			case SpdPackage.CODE__TYPE:
-				unsetType();
-				return;
+		switch (featureID) {
+		case SpdPackage.CODE__LOCAL_FILE:
+			setLocalFile((LocalFile) null);
+			return;
+		case SpdPackage.CODE__ENTRY_POINT:
+			setEntryPoint(ENTRY_POINT_EDEFAULT);
+			return;
+		case SpdPackage.CODE__STACK_SIZE:
+			setStackSize(STACK_SIZE_EDEFAULT);
+			return;
+		case SpdPackage.CODE__PRIORITY:
+			setPriority(PRIORITY_EDEFAULT);
+			return;
+		case SpdPackage.CODE__TYPE:
+			unsetType();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -408,18 +405,17 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.CODE__LOCAL_FILE:
-				return localFile != null;
-			case SpdPackage.CODE__ENTRY_POINT:
-				return ENTRY_POINT_EDEFAULT == null ? entryPoint != null : !ENTRY_POINT_EDEFAULT.equals(entryPoint);
-			case SpdPackage.CODE__STACK_SIZE:
-				return STACK_SIZE_EDEFAULT == null ? stackSize != null : !STACK_SIZE_EDEFAULT.equals(stackSize);
-			case SpdPackage.CODE__PRIORITY:
-				return PRIORITY_EDEFAULT == null ? priority != null : !PRIORITY_EDEFAULT.equals(priority);
-			case SpdPackage.CODE__TYPE:
-				return isSetType();
+		switch (featureID) {
+		case SpdPackage.CODE__LOCAL_FILE:
+			return localFile != null;
+		case SpdPackage.CODE__ENTRY_POINT:
+			return ENTRY_POINT_EDEFAULT == null ? entryPoint != null : !ENTRY_POINT_EDEFAULT.equals(entryPoint);
+		case SpdPackage.CODE__STACK_SIZE:
+			return STACK_SIZE_EDEFAULT == null ? stackSize != null : !STACK_SIZE_EDEFAULT.equals(stackSize);
+		case SpdPackage.CODE__PRIORITY:
+			return PRIORITY_EDEFAULT == null ? priority != null : !PRIORITY_EDEFAULT.equals(priority);
+		case SpdPackage.CODE__TYPE:
+			return isSetType();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -431,7 +427,8 @@ public class CodeImpl extends EObjectImpl implements Code {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (entryPoint: ");
@@ -441,7 +438,10 @@ public class CodeImpl extends EObjectImpl implements Code {
 		result.append(", priority: ");
 		result.append(priority);
 		result.append(", type: ");
-		if (typeESet) result.append(type); else result.append("<unset>");
+		if (typeESet)
+			result.append(type);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

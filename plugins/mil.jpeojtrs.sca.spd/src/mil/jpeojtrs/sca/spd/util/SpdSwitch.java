@@ -49,7 +49,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * @see mil.jpeojtrs.sca.spd.SpdPackage
  * @generated
  */
-public class SpdSwitch<T> extends Switch<T> {
+public class SpdSwitch< T > extends Switch<T> {
 
 	/**
 	 * The cached model package
@@ -66,8 +66,7 @@ public class SpdSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public SpdSwitch() {
-		if (modelPackage == null)
-		{
+		if (modelPackage == null) {
 			modelPackage = SpdPackage.eINSTANCE;
 		}
 	}
@@ -76,13 +75,12 @@ public class SpdSwitch<T> extends Switch<T> {
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
 	@Override
-	protected boolean isSwitchFor(EPackage ePackage)
-	{
+	protected boolean isSwitchFor(EPackage ePackage) {
 		return ePackage == modelPackage;
 	}
 
@@ -95,146 +93,150 @@ public class SpdSwitch<T> extends Switch<T> {
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID)
-		{
-			case SpdPackage.AUTHOR:
-			{
-				Author author = (Author)theEObject;
-				T result = caseAuthor(author);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.CODE:
-			{
-				Code code = (Code)theEObject;
-				T result = caseCode(code);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.COMPILER:
-			{
-				mil.jpeojtrs.sca.spd.Compiler compiler = (mil.jpeojtrs.sca.spd.Compiler)theEObject;
-				T result = caseCompiler(compiler);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.DEPENDENCY:
-			{
-				Dependency dependency = (Dependency)theEObject;
-				T result = caseDependency(dependency);
-				if (result == null) result = casePropertyRefSet(dependency);
-				if (result == null) result = casePropertyRefContainer(dependency);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.DESCRIPTOR:
-			{
-				Descriptor descriptor = (Descriptor)theEObject;
-				T result = caseDescriptor(descriptor);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.HUMAN_LANGUAGE:
-			{
-				HumanLanguage humanLanguage = (HumanLanguage)theEObject;
-				T result = caseHumanLanguage(humanLanguage);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.IMPLEMENTATION:
-			{
-				Implementation implementation = (Implementation)theEObject;
-				T result = caseImplementation(implementation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.IMPL_REF:
-			{
-				ImplRef implRef = (ImplRef)theEObject;
-				T result = caseImplRef(implRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.LOCAL_FILE:
-			{
-				LocalFile localFile = (LocalFile)theEObject;
-				T result = caseLocalFile(localFile);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.OS:
-			{
-				Os os = (Os)theEObject;
-				T result = caseOs(os);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.PROCESSOR:
-			{
-				Processor processor = (Processor)theEObject;
-				T result = caseProcessor(processor);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.PROGRAMMING_LANGUAGE:
-			{
-				ProgrammingLanguage programmingLanguage = (ProgrammingLanguage)theEObject;
-				T result = caseProgrammingLanguage(programmingLanguage);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.PROPERTY_FILE:
-			{
-				PropertyFile propertyFile = (PropertyFile)theEObject;
-				T result = casePropertyFile(propertyFile);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.PROPERTY_REF:
-			{
-				PropertyRef propertyRef = (PropertyRef)theEObject;
-				T result = casePropertyRef(propertyRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.RUNTIME:
-			{
-				mil.jpeojtrs.sca.spd.Runtime runtime = (mil.jpeojtrs.sca.spd.Runtime)theEObject;
-				T result = caseRuntime(runtime);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.SOFT_PKG:
-			{
-				SoftPkg softPkg = (SoftPkg)theEObject;
-				T result = caseSoftPkg(softPkg);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.SOFT_PKG_REF:
-			{
-				SoftPkgRef softPkgRef = (SoftPkgRef)theEObject;
-				T result = caseSoftPkgRef(softPkgRef);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.SPD_DOCUMENT_ROOT:
-			{
-				SpdDocumentRoot spdDocumentRoot = (SpdDocumentRoot)theEObject;
-				T result = caseSpdDocumentRoot(spdDocumentRoot);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SpdPackage.USES_DEVICE:
-			{
-				UsesDevice usesDevice = (UsesDevice)theEObject;
-				T result = caseUsesDevice(usesDevice);
-				if (result == null) result = casePropertyRefGroup(usesDevice);
-				if (result == null) result = casePropertyRefContainer(usesDevice);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			default: return defaultCase(theEObject);
+		switch (classifierID) {
+		case SpdPackage.AUTHOR: {
+			Author author = (Author) theEObject;
+			T result = caseAuthor(author);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.CODE: {
+			Code code = (Code) theEObject;
+			T result = caseCode(code);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.COMPILER: {
+			mil.jpeojtrs.sca.spd.Compiler compiler = (mil.jpeojtrs.sca.spd.Compiler) theEObject;
+			T result = caseCompiler(compiler);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.DEPENDENCY: {
+			Dependency dependency = (Dependency) theEObject;
+			T result = caseDependency(dependency);
+			if (result == null)
+				result = casePropertyRefSet(dependency);
+			if (result == null)
+				result = casePropertyRefContainer(dependency);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.DESCRIPTOR: {
+			Descriptor descriptor = (Descriptor) theEObject;
+			T result = caseDescriptor(descriptor);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.HUMAN_LANGUAGE: {
+			HumanLanguage humanLanguage = (HumanLanguage) theEObject;
+			T result = caseHumanLanguage(humanLanguage);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.IMPLEMENTATION: {
+			Implementation implementation = (Implementation) theEObject;
+			T result = caseImplementation(implementation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.IMPL_REF: {
+			ImplRef implRef = (ImplRef) theEObject;
+			T result = caseImplRef(implRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.LOCAL_FILE: {
+			LocalFile localFile = (LocalFile) theEObject;
+			T result = caseLocalFile(localFile);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.OS: {
+			Os os = (Os) theEObject;
+			T result = caseOs(os);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.PROCESSOR: {
+			Processor processor = (Processor) theEObject;
+			T result = caseProcessor(processor);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.PROGRAMMING_LANGUAGE: {
+			ProgrammingLanguage programmingLanguage = (ProgrammingLanguage) theEObject;
+			T result = caseProgrammingLanguage(programmingLanguage);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.PROPERTY_FILE: {
+			PropertyFile propertyFile = (PropertyFile) theEObject;
+			T result = casePropertyFile(propertyFile);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.PROPERTY_REF: {
+			PropertyRef propertyRef = (PropertyRef) theEObject;
+			T result = casePropertyRef(propertyRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.RUNTIME: {
+			mil.jpeojtrs.sca.spd.Runtime runtime = (mil.jpeojtrs.sca.spd.Runtime) theEObject;
+			T result = caseRuntime(runtime);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.SOFT_PKG: {
+			SoftPkg softPkg = (SoftPkg) theEObject;
+			T result = caseSoftPkg(softPkg);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.SOFT_PKG_REF: {
+			SoftPkgRef softPkgRef = (SoftPkgRef) theEObject;
+			T result = caseSoftPkgRef(softPkgRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.SPD_DOCUMENT_ROOT: {
+			SpdDocumentRoot spdDocumentRoot = (SpdDocumentRoot) theEObject;
+			T result = caseSpdDocumentRoot(spdDocumentRoot);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.USES_DEVICE: {
+			UsesDevice usesDevice = (UsesDevice) theEObject;
+			T result = caseUsesDevice(usesDevice);
+			if (result == null)
+				result = casePropertyRefGroup(usesDevice);
+			if (result == null)
+				result = casePropertyRefContainer(usesDevice);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 

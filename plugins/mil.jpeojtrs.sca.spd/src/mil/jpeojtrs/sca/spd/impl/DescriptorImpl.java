@@ -30,12 +30,12 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <em><b>Descriptor</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.DescriptorImpl#getLocalfile <em>Localfile</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.DescriptorImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.DescriptorImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -103,10 +103,12 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	public NotificationChain basicSetLocalfileGen(LocalFile newLocalfile, NotificationChain msgs) {
 		LocalFile oldLocalfile = localfile;
 		localfile = newLocalfile;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.DESCRIPTOR__LOCALFILE, oldLocalfile, newLocalfile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -134,17 +136,16 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 * @generated
 	 */
 	public void setLocalfile(LocalFile newLocalfile) {
-		if (newLocalfile != localfile)
-		{
+		if (newLocalfile != localfile) {
 			NotificationChain msgs = null;
 			if (localfile != null)
-				msgs = ((InternalEObject)localfile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.DESCRIPTOR__LOCALFILE, null, msgs);
+				msgs = ((InternalEObject) localfile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.DESCRIPTOR__LOCALFILE, null, msgs);
 			if (newLocalfile != null)
-				msgs = ((InternalEObject)newLocalfile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.DESCRIPTOR__LOCALFILE, null, msgs);
+				msgs = ((InternalEObject) newLocalfile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.DESCRIPTOR__LOCALFILE, null, msgs);
 			msgs = basicSetLocalfile(newLocalfile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.DESCRIPTOR__LOCALFILE, newLocalfile, newLocalfile));
 	}
 
@@ -155,7 +156,7 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	public SoftwareComponent getComponent() {
 		SoftwareComponent component = basicGetComponent();
-		return component != null && component.eIsProxy() ? (SoftwareComponent)eResolveProxy((InternalEObject)component) : component;
+		return component != null && component.eIsProxy() ? (SoftwareComponent) eResolveProxy((InternalEObject) component) : component;
 	}
 
 	/**
@@ -217,10 +218,9 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.DESCRIPTOR__LOCALFILE:
-				return basicSetLocalfile(null, msgs);
+		switch (featureID) {
+		case SpdPackage.DESCRIPTOR__LOCALFILE:
+			return basicSetLocalfile(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -232,15 +232,15 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.DESCRIPTOR__LOCALFILE:
-				return getLocalfile();
-			case SpdPackage.DESCRIPTOR__COMPONENT:
-				if (resolve) return getComponent();
-				return basicGetComponent();
-			case SpdPackage.DESCRIPTOR__NAME:
-				return getName();
+		switch (featureID) {
+		case SpdPackage.DESCRIPTOR__LOCALFILE:
+			return getLocalfile();
+		case SpdPackage.DESCRIPTOR__COMPONENT:
+			if (resolve)
+				return getComponent();
+			return basicGetComponent();
+		case SpdPackage.DESCRIPTOR__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,17 +252,16 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.DESCRIPTOR__LOCALFILE:
-				setLocalfile((LocalFile)newValue);
-				return;
-			case SpdPackage.DESCRIPTOR__COMPONENT:
-				setComponent((SoftwareComponent)newValue);
-				return;
-			case SpdPackage.DESCRIPTOR__NAME:
-				setName((String)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.DESCRIPTOR__LOCALFILE:
+			setLocalfile((LocalFile) newValue);
+			return;
+		case SpdPackage.DESCRIPTOR__COMPONENT:
+			setComponent((SoftwareComponent) newValue);
+			return;
+		case SpdPackage.DESCRIPTOR__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -274,17 +273,16 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.DESCRIPTOR__LOCALFILE:
-				setLocalfile((LocalFile)null);
-				return;
-			case SpdPackage.DESCRIPTOR__COMPONENT:
-				setComponent((SoftwareComponent)null);
-				return;
-			case SpdPackage.DESCRIPTOR__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SpdPackage.DESCRIPTOR__LOCALFILE:
+			setLocalfile((LocalFile) null);
+			return;
+		case SpdPackage.DESCRIPTOR__COMPONENT:
+			setComponent((SoftwareComponent) null);
+			return;
+		case SpdPackage.DESCRIPTOR__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -296,14 +294,13 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.DESCRIPTOR__LOCALFILE:
-				return localfile != null;
-			case SpdPackage.DESCRIPTOR__COMPONENT:
-				return basicGetComponent() != null;
-			case SpdPackage.DESCRIPTOR__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		switch (featureID) {
+		case SpdPackage.DESCRIPTOR__LOCALFILE:
+			return localfile != null;
+		case SpdPackage.DESCRIPTOR__COMPONENT:
+			return basicGetComponent() != null;
+		case SpdPackage.DESCRIPTOR__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -315,7 +312,8 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

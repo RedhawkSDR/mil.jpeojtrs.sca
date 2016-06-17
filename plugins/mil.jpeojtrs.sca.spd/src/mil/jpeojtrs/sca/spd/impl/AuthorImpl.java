@@ -29,12 +29,12 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.AuthorImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.AuthorImpl#getCompany <em>Company</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.AuthorImpl#getWebpage <em>Webpage</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -111,8 +111,7 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 * @generated
 	 */
 	public EList<String> getName() {
-		if (name == null)
-		{
+		if (name == null) {
 			name = new EDataTypeEList<String>(String.class, this, SpdPackage.AUTHOR__NAME);
 		}
 		return name;
@@ -167,14 +166,13 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.AUTHOR__NAME:
-				return getName();
-			case SpdPackage.AUTHOR__COMPANY:
-				return getCompany();
-			case SpdPackage.AUTHOR__WEBPAGE:
-				return getWebpage();
+		switch (featureID) {
+		case SpdPackage.AUTHOR__NAME:
+			return getName();
+		case SpdPackage.AUTHOR__COMPANY:
+			return getCompany();
+		case SpdPackage.AUTHOR__WEBPAGE:
+			return getWebpage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -187,18 +185,17 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.AUTHOR__NAME:
-				getName().clear();
-				getName().addAll((Collection<? extends String>)newValue);
-				return;
-			case SpdPackage.AUTHOR__COMPANY:
-				setCompany((String)newValue);
-				return;
-			case SpdPackage.AUTHOR__WEBPAGE:
-				setWebpage((String)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.AUTHOR__NAME:
+			getName().clear();
+			getName().addAll((Collection< ? extends String>) newValue);
+			return;
+		case SpdPackage.AUTHOR__COMPANY:
+			setCompany((String) newValue);
+			return;
+		case SpdPackage.AUTHOR__WEBPAGE:
+			setWebpage((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -210,17 +207,16 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.AUTHOR__NAME:
-				getName().clear();
-				return;
-			case SpdPackage.AUTHOR__COMPANY:
-				setCompany(COMPANY_EDEFAULT);
-				return;
-			case SpdPackage.AUTHOR__WEBPAGE:
-				setWebpage(WEBPAGE_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SpdPackage.AUTHOR__NAME:
+			getName().clear();
+			return;
+		case SpdPackage.AUTHOR__COMPANY:
+			setCompany(COMPANY_EDEFAULT);
+			return;
+		case SpdPackage.AUTHOR__WEBPAGE:
+			setWebpage(WEBPAGE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -232,14 +228,13 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.AUTHOR__NAME:
-				return name != null && !name.isEmpty();
-			case SpdPackage.AUTHOR__COMPANY:
-				return COMPANY_EDEFAULT == null ? company != null : !COMPANY_EDEFAULT.equals(company);
-			case SpdPackage.AUTHOR__WEBPAGE:
-				return WEBPAGE_EDEFAULT == null ? webpage != null : !WEBPAGE_EDEFAULT.equals(webpage);
+		switch (featureID) {
+		case SpdPackage.AUTHOR__NAME:
+			return name != null && !name.isEmpty();
+		case SpdPackage.AUTHOR__COMPANY:
+			return COMPANY_EDEFAULT == null ? company != null : !COMPANY_EDEFAULT.equals(company);
+		case SpdPackage.AUTHOR__WEBPAGE:
+			return WEBPAGE_EDEFAULT == null ? webpage != null : !WEBPAGE_EDEFAULT.equals(webpage);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -251,7 +246,8 @@ public class AuthorImpl extends EObjectImpl implements Author {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

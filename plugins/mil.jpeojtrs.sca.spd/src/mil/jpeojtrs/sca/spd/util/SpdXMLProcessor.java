@@ -46,8 +46,7 @@ public class SpdXMLProcessor extends XMLProcessor {
 	 */
 	@Override
 	protected Map<String, Resource.Factory> getRegistrations() {
-		if (registrations == null)
-		{
+		if (registrations == null) {
 			super.getRegistrations();
 			registrations.put(XML_EXTENSION, new SpdResourceFactoryImpl());
 			registrations.put(STAR_EXTENSION, new SpdResourceFactoryImpl());

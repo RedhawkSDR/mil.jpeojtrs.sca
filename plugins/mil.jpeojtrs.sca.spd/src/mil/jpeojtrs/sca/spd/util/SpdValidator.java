@@ -95,7 +95,7 @@ public class SpdValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return SpdPackage.eINSTANCE;
+		return SpdPackage.eINSTANCE;
 	}
 
 	/**
@@ -106,58 +106,57 @@ public class SpdValidator extends EObjectValidator {
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		switch (classifierID)
-		{
-			case SpdPackage.AUTHOR:
-				return validateAuthor((Author)value, diagnostics, context);
-			case SpdPackage.CODE:
-				return validateCode((Code)value, diagnostics, context);
-			case SpdPackage.COMPILER:
-				return validateCompiler((mil.jpeojtrs.sca.spd.Compiler)value, diagnostics, context);
-			case SpdPackage.DEPENDENCY:
-				return validateDependency((Dependency)value, diagnostics, context);
-			case SpdPackage.DESCRIPTOR:
-				return validateDescriptor((mil.jpeojtrs.sca.spd.Descriptor)value, diagnostics, context);
-			case SpdPackage.HUMAN_LANGUAGE:
-				return validateHumanLanguage((HumanLanguage)value, diagnostics, context);
-			case SpdPackage.IMPLEMENTATION:
-				return validateImplementation((Implementation)value, diagnostics, context);
-			case SpdPackage.IMPL_REF:
-				return validateImplRef((ImplRef)value, diagnostics, context);
-			case SpdPackage.LOCAL_FILE:
-				return validateLocalFile((LocalFile)value, diagnostics, context);
-			case SpdPackage.OS:
-				return validateOs((Os)value, diagnostics, context);
-			case SpdPackage.PROCESSOR:
-				return validateProcessor((Processor)value, diagnostics, context);
-			case SpdPackage.PROGRAMMING_LANGUAGE:
-				return validateProgrammingLanguage((ProgrammingLanguage)value, diagnostics, context);
-			case SpdPackage.PROPERTY_FILE:
-				return validatePropertyFile((PropertyFile)value, diagnostics, context);
-			case SpdPackage.PROPERTY_REF:
-				return validatePropertyRef((PropertyRef)value, diagnostics, context);
-			case SpdPackage.RUNTIME:
-				return validateRuntime((mil.jpeojtrs.sca.spd.Runtime)value, diagnostics, context);
-			case SpdPackage.SOFT_PKG:
-				return validateSoftPkg((SoftPkg)value, diagnostics, context);
-			case SpdPackage.SOFT_PKG_REF:
-				return validateSoftPkgRef((SoftPkgRef)value, diagnostics, context);
-			case SpdPackage.SPD_DOCUMENT_ROOT:
-				return validateSpdDocumentRoot((SpdDocumentRoot)value, diagnostics, context);
-			case SpdPackage.USES_DEVICE:
-				return validateUsesDevice((UsesDevice)value, diagnostics, context);
-			case SpdPackage.AEP_COMPLIANCE_TYPE:
-				return validateAEPComplianceType((AEPComplianceType)value, diagnostics, context);
-			case SpdPackage.CODE_FILE_TYPE:
-				return validateCodeFileType((CodeFileType)value, diagnostics, context);
-			case SpdPackage.AEP_COMPLIANCE_TYPE_OBJECT:
-				return validateAEPComplianceTypeObject((AEPComplianceType)value, diagnostics, context);
-			case SpdPackage.CODE_FILE_TYPE_OBJECT:
-				return validateCodeFileTypeObject((CodeFileType)value, diagnostics, context);
-			case SpdPackage.URI:
-				return validateURI((URI)value, diagnostics, context);
-			default:
-				return true;
+		switch (classifierID) {
+		case SpdPackage.AUTHOR:
+			return validateAuthor((Author) value, diagnostics, context);
+		case SpdPackage.CODE:
+			return validateCode((Code) value, diagnostics, context);
+		case SpdPackage.COMPILER:
+			return validateCompiler((mil.jpeojtrs.sca.spd.Compiler) value, diagnostics, context);
+		case SpdPackage.DEPENDENCY:
+			return validateDependency((Dependency) value, diagnostics, context);
+		case SpdPackage.DESCRIPTOR:
+			return validateDescriptor((mil.jpeojtrs.sca.spd.Descriptor) value, diagnostics, context);
+		case SpdPackage.HUMAN_LANGUAGE:
+			return validateHumanLanguage((HumanLanguage) value, diagnostics, context);
+		case SpdPackage.IMPLEMENTATION:
+			return validateImplementation((Implementation) value, diagnostics, context);
+		case SpdPackage.IMPL_REF:
+			return validateImplRef((ImplRef) value, diagnostics, context);
+		case SpdPackage.LOCAL_FILE:
+			return validateLocalFile((LocalFile) value, diagnostics, context);
+		case SpdPackage.OS:
+			return validateOs((Os) value, diagnostics, context);
+		case SpdPackage.PROCESSOR:
+			return validateProcessor((Processor) value, diagnostics, context);
+		case SpdPackage.PROGRAMMING_LANGUAGE:
+			return validateProgrammingLanguage((ProgrammingLanguage) value, diagnostics, context);
+		case SpdPackage.PROPERTY_FILE:
+			return validatePropertyFile((PropertyFile) value, diagnostics, context);
+		case SpdPackage.PROPERTY_REF:
+			return validatePropertyRef((PropertyRef) value, diagnostics, context);
+		case SpdPackage.RUNTIME:
+			return validateRuntime((mil.jpeojtrs.sca.spd.Runtime) value, diagnostics, context);
+		case SpdPackage.SOFT_PKG:
+			return validateSoftPkg((SoftPkg) value, diagnostics, context);
+		case SpdPackage.SOFT_PKG_REF:
+			return validateSoftPkgRef((SoftPkgRef) value, diagnostics, context);
+		case SpdPackage.SPD_DOCUMENT_ROOT:
+			return validateSpdDocumentRoot((SpdDocumentRoot) value, diagnostics, context);
+		case SpdPackage.USES_DEVICE:
+			return validateUsesDevice((UsesDevice) value, diagnostics, context);
+		case SpdPackage.AEP_COMPLIANCE_TYPE:
+			return validateAEPComplianceType((AEPComplianceType) value, diagnostics, context);
+		case SpdPackage.CODE_FILE_TYPE:
+			return validateCodeFileType((CodeFileType) value, diagnostics, context);
+		case SpdPackage.AEP_COMPLIANCE_TYPE_OBJECT:
+			return validateAEPComplianceTypeObject((AEPComplianceType) value, diagnostics, context);
+		case SpdPackage.CODE_FILE_TYPE_OBJECT:
+			return validateCodeFileTypeObject((CodeFileType) value, diagnostics, context);
+		case SpdPackage.URI:
+			return validateURI((URI) value, diagnostics, context);
+		default:
+			return true;
 		}
 	}
 
@@ -194,16 +193,25 @@ public class SpdValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDependency(Dependency dependency, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(dependency, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(dependency, diagnostics, context))
+			return false;
 		boolean result = validate_EveryMultiplicityConforms(dependency, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(dependency, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(dependency, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(dependency, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(dependency, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(dependency, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(dependency, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(dependency, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDependency_NonEmptyDependency(dependency, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(dependency, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(dependency, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(dependency, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(dependency, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(dependency, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(dependency, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(dependency, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateDependency_NonEmptyDependency(dependency, diagnostics, context);
 		return result;
 	}
 
@@ -220,13 +228,8 @@ public class SpdValidator extends EObjectValidator {
 		// Ensure that you remove @generated or mark it @generated NOT
 		if (dependency.getProperties().isEmpty() && dependency.getSoftPkgRef() == null) {
 			if (diagnostics != null) {
-				diagnostics.add(createDiagnostic(Diagnostic.ERROR,
-								SpdValidator.DIAGNOSTIC_SOURCE,
-								0,
-								"_UI_GenericConstraint_diagnostic",
-								new Object[] { "NonEmptyDependency", EObjectValidator.getObjectLabel(dependency, context) },
-								new Object[] { dependency },
-								context));
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, SpdValidator.DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
+					new Object[] { "NonEmptyDependency", EObjectValidator.getObjectLabel(dependency, context) }, new Object[] { dependency }, context));
 			}
 			return false;
 		}
@@ -339,16 +342,25 @@ public class SpdValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSoftPkg(SoftPkg softPkg, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(softPkg, diagnostics, context)) return false;
+		if (!validate_NoCircularContainment(softPkg, diagnostics, context))
+			return false;
 		boolean result = validate_EveryMultiplicityConforms(softPkg, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(softPkg, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(softPkg, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(softPkg, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(softPkg, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(softPkg, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(softPkg, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(softPkg, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSoftPkg_isValueConsistent(softPkg, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(softPkg, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(softPkg, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(softPkg, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(softPkg, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(softPkg, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(softPkg, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(softPkg, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateSoftPkg_isValueConsistent(softPkg, diagnostics, context);
 		return result;
 	}
 

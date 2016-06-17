@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.resource.Resource;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getTitle <em>Title</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getAuthor <em>Author</em>}</li>
@@ -42,7 +43,6 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getVersion <em>Version</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getSoftPkg()
  * @model extendedMetaData="name='softPkg' kind='elementOnly'"
@@ -361,12 +361,9 @@ public interface SoftPkg extends EObject {
 
 	public static final class Util {
 		// END GENERATED CODE
-		private static final EStructuralFeature [] SUPPORT_PATH = new EStructuralFeature[] {
-			SpdPackage.Literals.SOFT_PKG__DESCRIPTOR,
-			SpdPackage.Literals.DESCRIPTOR__COMPONENT,
-			ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_FEATURES,
-			ScdPackage.Literals.COMPONENT_FEATURES__SUPPORTS_INTERFACE
-		};
+		private static final EStructuralFeature[] SUPPORT_PATH = new EStructuralFeature[] { SpdPackage.Literals.SOFT_PKG__DESCRIPTOR,
+			SpdPackage.Literals.DESCRIPTOR__COMPONENT, ScdPackage.Literals.SOFTWARE_COMPONENT__COMPONENT_FEATURES,
+			ScdPackage.Literals.COMPONENT_FEATURES__SUPPORTS_INTERFACE };
 
 		private Util() {
 
@@ -403,7 +400,7 @@ public interface SoftPkg extends EObject {
 				if (interfaces == null) {
 					return false;
 				}
-				
+
 				for (SupportsInterface i : interfaces) {
 					if (i.getRepId() != null && i.getRepId().matches("IDL:CF/PortSupplier:.*")) {
 						return true;

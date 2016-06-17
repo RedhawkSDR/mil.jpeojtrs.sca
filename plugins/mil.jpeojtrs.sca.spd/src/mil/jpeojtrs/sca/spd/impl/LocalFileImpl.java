@@ -25,10 +25,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.LocalFileImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -100,10 +100,9 @@ public class LocalFileImpl extends EObjectImpl implements LocalFile {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.LOCAL_FILE__NAME:
-				return getName();
+		switch (featureID) {
+		case SpdPackage.LOCAL_FILE__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,11 +114,10 @@ public class LocalFileImpl extends EObjectImpl implements LocalFile {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.LOCAL_FILE__NAME:
-				setName((String)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.LOCAL_FILE__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,11 +129,10 @@ public class LocalFileImpl extends EObjectImpl implements LocalFile {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.LOCAL_FILE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SpdPackage.LOCAL_FILE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -147,10 +144,9 @@ public class LocalFileImpl extends EObjectImpl implements LocalFile {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.LOCAL_FILE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		switch (featureID) {
+		case SpdPackage.LOCAL_FILE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -162,7 +158,8 @@ public class LocalFileImpl extends EObjectImpl implements LocalFile {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

@@ -31,12 +31,12 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <em><b>Property File</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.PropertyFileImpl#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.PropertyFileImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.PropertyFileImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -104,10 +104,12 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	public NotificationChain basicSetLocalFileGen(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.PROPERTY_FILE__LOCAL_FILE, oldLocalFile, newLocalFile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -120,7 +122,8 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 		Properties oldProperties = getProperties();
 		msgs = basicSetLocalFileGen(newLocalFile, msgs);
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.PROPERTY_FILE__PROPERTIES, oldProperties, getProperties());
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.PROPERTY_FILE__PROPERTIES, oldProperties,
+				getProperties());
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -135,17 +138,16 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 * @generated
 	 */
 	public void setLocalFile(LocalFile newLocalFile) {
-		if (newLocalFile != localFile)
-		{
+		if (newLocalFile != localFile) {
 			NotificationChain msgs = null;
 			if (localFile != null)
-				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.PROPERTY_FILE__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.PROPERTY_FILE__LOCAL_FILE, null, msgs);
 			if (newLocalFile != null)
-				msgs = ((InternalEObject)newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.PROPERTY_FILE__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.PROPERTY_FILE__LOCAL_FILE, null, msgs);
 			msgs = basicSetLocalFile(newLocalFile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.PROPERTY_FILE__LOCAL_FILE, newLocalFile, newLocalFile));
 	}
 
@@ -156,7 +158,7 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	public Properties getProperties() {
 		Properties properties = basicGetProperties();
-		return properties != null && properties.eIsProxy() ? (Properties)eResolveProxy((InternalEObject)properties) : properties;
+		return properties != null && properties.eIsProxy() ? (Properties) eResolveProxy((InternalEObject) properties) : properties;
 	}
 
 	/**
@@ -168,8 +170,8 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 		if (getLocalFile() == null) {
 			return null;
 		}
-		return (Properties) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, Properties.EOBJECT_PATH, 
-				SoftPkg.Util.getFileSystem(SoftPkg.Util.getSoftPkg(eResource())));
+		return (Properties) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, Properties.EOBJECT_PATH,
+			SoftPkg.Util.getFileSystem(SoftPkg.Util.getSoftPkg(eResource())));
 		// BEGIN GENERATED CODE
 	}
 
@@ -217,10 +219,9 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
-				return basicSetLocalFile(null, msgs);
+		switch (featureID) {
+		case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
+			return basicSetLocalFile(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -232,15 +233,15 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
-				return getLocalFile();
-			case SpdPackage.PROPERTY_FILE__PROPERTIES:
-				if (resolve) return getProperties();
-				return basicGetProperties();
-			case SpdPackage.PROPERTY_FILE__TYPE:
-				return getType();
+		switch (featureID) {
+		case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
+			return getLocalFile();
+		case SpdPackage.PROPERTY_FILE__PROPERTIES:
+			if (resolve)
+				return getProperties();
+			return basicGetProperties();
+		case SpdPackage.PROPERTY_FILE__TYPE:
+			return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,17 +253,16 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
-				setLocalFile((LocalFile)newValue);
-				return;
-			case SpdPackage.PROPERTY_FILE__PROPERTIES:
-				setProperties((Properties)newValue);
-				return;
-			case SpdPackage.PROPERTY_FILE__TYPE:
-				setType((String)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
+			setLocalFile((LocalFile) newValue);
+			return;
+		case SpdPackage.PROPERTY_FILE__PROPERTIES:
+			setProperties((Properties) newValue);
+			return;
+		case SpdPackage.PROPERTY_FILE__TYPE:
+			setType((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -274,17 +274,16 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
-				setLocalFile((LocalFile)null);
-				return;
-			case SpdPackage.PROPERTY_FILE__PROPERTIES:
-				setProperties((Properties)null);
-				return;
-			case SpdPackage.PROPERTY_FILE__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
+			setLocalFile((LocalFile) null);
+			return;
+		case SpdPackage.PROPERTY_FILE__PROPERTIES:
+			setProperties((Properties) null);
+			return;
+		case SpdPackage.PROPERTY_FILE__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -296,14 +295,13 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
-				return localFile != null;
-			case SpdPackage.PROPERTY_FILE__PROPERTIES:
-				return basicGetProperties() != null;
-			case SpdPackage.PROPERTY_FILE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		switch (featureID) {
+		case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
+			return localFile != null;
+		case SpdPackage.PROPERTY_FILE__PROPERTIES:
+			return basicGetProperties() != null;
+		case SpdPackage.PROPERTY_FILE__TYPE:
+			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -315,7 +313,8 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (type: ");

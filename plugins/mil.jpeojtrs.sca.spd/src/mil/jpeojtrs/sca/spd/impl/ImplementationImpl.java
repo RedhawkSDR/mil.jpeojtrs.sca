@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <em><b>Implementation</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.ImplementationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.ImplementationImpl#getPropertyFile <em>Property File</em>}</li>
@@ -61,7 +62,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.ImplementationImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.ImplementationImpl#getSoftPkg <em>Soft Pkg</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -258,10 +258,13 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetPropertyFile(PropertyFile newPropertyFile, NotificationChain msgs) {
 		PropertyFile oldPropertyFile = propertyFile;
 		propertyFile = newPropertyFile;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__PROPERTY_FILE, oldPropertyFile, newPropertyFile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__PROPERTY_FILE, oldPropertyFile,
+				newPropertyFile);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -272,17 +275,16 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setPropertyFile(PropertyFile newPropertyFile) {
-		if (newPropertyFile != propertyFile)
-		{
+		if (newPropertyFile != propertyFile) {
 			NotificationChain msgs = null;
 			if (propertyFile != null)
-				msgs = ((InternalEObject)propertyFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__PROPERTY_FILE, null, msgs);
+				msgs = ((InternalEObject) propertyFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__PROPERTY_FILE, null, msgs);
 			if (newPropertyFile != null)
-				msgs = ((InternalEObject)newPropertyFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__PROPERTY_FILE, null, msgs);
+				msgs = ((InternalEObject) newPropertyFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__PROPERTY_FILE, null, msgs);
 			msgs = basicSetPropertyFile(newPropertyFile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__PROPERTY_FILE, newPropertyFile, newPropertyFile));
 	}
 
@@ -303,10 +305,12 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetCode(Code newCode, NotificationChain msgs) {
 		Code oldCode = code;
 		code = newCode;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__CODE, oldCode, newCode);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -317,17 +321,16 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setCode(Code newCode) {
-		if (newCode != code)
-		{
+		if (newCode != code) {
 			NotificationChain msgs = null;
 			if (code != null)
-				msgs = ((InternalEObject)code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__CODE, null, msgs);
+				msgs = ((InternalEObject) code).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__CODE, null, msgs);
 			if (newCode != null)
-				msgs = ((InternalEObject)newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__CODE, null, msgs);
+				msgs = ((InternalEObject) newCode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__CODE, null, msgs);
 			msgs = basicSetCode(newCode, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__CODE, newCode, newCode));
 	}
 
@@ -348,10 +351,12 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetCompiler(mil.jpeojtrs.sca.spd.Compiler newCompiler, NotificationChain msgs) {
 		mil.jpeojtrs.sca.spd.Compiler oldCompiler = compiler;
 		compiler = newCompiler;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__COMPILER, oldCompiler, newCompiler);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -362,17 +367,16 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setCompiler(mil.jpeojtrs.sca.spd.Compiler newCompiler) {
-		if (newCompiler != compiler)
-		{
+		if (newCompiler != compiler) {
 			NotificationChain msgs = null;
 			if (compiler != null)
-				msgs = ((InternalEObject)compiler).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__COMPILER, null, msgs);
+				msgs = ((InternalEObject) compiler).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__COMPILER, null, msgs);
 			if (newCompiler != null)
-				msgs = ((InternalEObject)newCompiler).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__COMPILER, null, msgs);
+				msgs = ((InternalEObject) newCompiler).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__COMPILER, null, msgs);
 			msgs = basicSetCompiler(newCompiler, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__COMPILER, newCompiler, newCompiler));
 	}
 
@@ -393,10 +397,13 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetProgrammingLanguage(ProgrammingLanguage newProgrammingLanguage, NotificationChain msgs) {
 		ProgrammingLanguage oldProgrammingLanguage = programmingLanguage;
 		programmingLanguage = newProgrammingLanguage;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE, oldProgrammingLanguage, newProgrammingLanguage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE,
+				oldProgrammingLanguage, newProgrammingLanguage);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -407,18 +414,20 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setProgrammingLanguage(ProgrammingLanguage newProgrammingLanguage) {
-		if (newProgrammingLanguage != programmingLanguage)
-		{
+		if (newProgrammingLanguage != programmingLanguage) {
 			NotificationChain msgs = null;
 			if (programmingLanguage != null)
-				msgs = ((InternalEObject)programmingLanguage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE, null, msgs);
+				msgs = ((InternalEObject) programmingLanguage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE,
+					null, msgs);
 			if (newProgrammingLanguage != null)
-				msgs = ((InternalEObject)newProgrammingLanguage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE, null, msgs);
+				msgs = ((InternalEObject) newProgrammingLanguage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE,
+					null, msgs);
 			msgs = basicSetProgrammingLanguage(newProgrammingLanguage, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE, newProgrammingLanguage, newProgrammingLanguage));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE, newProgrammingLanguage, newProgrammingLanguage));
 	}
 
 	/**
@@ -438,10 +447,13 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetHumanLanguage(HumanLanguage newHumanLanguage, NotificationChain msgs) {
 		HumanLanguage oldHumanLanguage = humanLanguage;
 		humanLanguage = newHumanLanguage;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE, oldHumanLanguage, newHumanLanguage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE, oldHumanLanguage,
+				newHumanLanguage);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -452,17 +464,16 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setHumanLanguage(HumanLanguage newHumanLanguage) {
-		if (newHumanLanguage != humanLanguage)
-		{
+		if (newHumanLanguage != humanLanguage) {
 			NotificationChain msgs = null;
 			if (humanLanguage != null)
-				msgs = ((InternalEObject)humanLanguage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE, null, msgs);
+				msgs = ((InternalEObject) humanLanguage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE, null, msgs);
 			if (newHumanLanguage != null)
-				msgs = ((InternalEObject)newHumanLanguage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE, null, msgs);
+				msgs = ((InternalEObject) newHumanLanguage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE, null, msgs);
 			msgs = basicSetHumanLanguage(newHumanLanguage, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE, newHumanLanguage, newHumanLanguage));
 	}
 
@@ -483,10 +494,12 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	public NotificationChain basicSetRuntime(mil.jpeojtrs.sca.spd.Runtime newRuntime, NotificationChain msgs) {
 		mil.jpeojtrs.sca.spd.Runtime oldRuntime = runtime;
 		runtime = newRuntime;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__RUNTIME, oldRuntime, newRuntime);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -497,17 +510,16 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setRuntime(mil.jpeojtrs.sca.spd.Runtime newRuntime) {
-		if (newRuntime != runtime)
-		{
+		if (newRuntime != runtime) {
 			NotificationChain msgs = null;
 			if (runtime != null)
-				msgs = ((InternalEObject)runtime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__RUNTIME, null, msgs);
+				msgs = ((InternalEObject) runtime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__RUNTIME, null, msgs);
 			if (newRuntime != null)
-				msgs = ((InternalEObject)newRuntime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__RUNTIME, null, msgs);
+				msgs = ((InternalEObject) newRuntime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.IMPLEMENTATION__RUNTIME, null, msgs);
 			msgs = basicSetRuntime(newRuntime, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__RUNTIME, newRuntime, newRuntime));
 	}
 
@@ -517,8 +529,7 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public FeatureMap getDependencyMap() {
-		if (dependencyMap == null)
-		{
+		if (dependencyMap == null) {
 			dependencyMap = new BasicFeatureMap(this, SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP);
 		}
 		return dependencyMap;
@@ -557,8 +568,7 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public EList<UsesDevice> getUsesDevice() {
-		if (usesDevice == null)
-		{
+		if (usesDevice == null) {
 			usesDevice = new EObjectContainmentEList<UsesDevice>(UsesDevice.class, this, SpdPackage.IMPLEMENTATION__USES_DEVICE);
 		}
 		return usesDevice;
@@ -584,7 +594,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 		boolean oldAepComplianceESet = aepComplianceESet;
 		aepComplianceESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE, oldAepCompliance, aepCompliance, !oldAepComplianceESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE, oldAepCompliance, aepCompliance,
+				!oldAepComplianceESet));
 	}
 
 	/**
@@ -598,7 +609,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 		aepCompliance = AEP_COMPLIANCE_EDEFAULT;
 		aepComplianceESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE, oldAepCompliance, AEP_COMPLIANCE_EDEFAULT, oldAepComplianceESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE, oldAepCompliance, AEP_COMPLIANCE_EDEFAULT,
+				oldAepComplianceESet));
 	}
 
 	/**
@@ -637,8 +649,9 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public SoftPkg getSoftPkg() {
-		if (eContainerFeatureID() != SpdPackage.IMPLEMENTATION__SOFT_PKG) return null;
-		return (SoftPkg)eContainer();
+		if (eContainerFeatureID() != SpdPackage.IMPLEMENTATION__SOFT_PKG)
+			return null;
+		return (SoftPkg) eContainer();
 	}
 
 	/**
@@ -647,8 +660,9 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public SoftPkg basicGetSoftPkg() {
-		if (eContainerFeatureID() != SpdPackage.IMPLEMENTATION__SOFT_PKG) return null;
-		return (SoftPkg)eInternalContainer();
+		if (eContainerFeatureID() != SpdPackage.IMPLEMENTATION__SOFT_PKG)
+			return null;
+		return (SoftPkg) eInternalContainer();
 	}
 
 	/**
@@ -657,7 +671,7 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public NotificationChain basicSetSoftPkg(SoftPkg newSoftPkg, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newSoftPkg, SpdPackage.IMPLEMENTATION__SOFT_PKG, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newSoftPkg, SpdPackage.IMPLEMENTATION__SOFT_PKG, msgs);
 		return msgs;
 	}
 
@@ -667,19 +681,18 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @generated
 	 */
 	public void setSoftPkg(SoftPkg newSoftPkg) {
-		if (newSoftPkg != eInternalContainer() || (eContainerFeatureID() != SpdPackage.IMPLEMENTATION__SOFT_PKG && newSoftPkg != null))
-		{
+		if (newSoftPkg != eInternalContainer() || (eContainerFeatureID() != SpdPackage.IMPLEMENTATION__SOFT_PKG && newSoftPkg != null)) {
 			if (EcoreUtil.isAncestor(this, newSoftPkg))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newSoftPkg != null)
-				msgs = ((InternalEObject)newSoftPkg).eInverseAdd(this, SpdPackage.SOFT_PKG__IMPLEMENTATION, SoftPkg.class, msgs);
+				msgs = ((InternalEObject) newSoftPkg).eInverseAdd(this, SpdPackage.SOFT_PKG__IMPLEMENTATION, SoftPkg.class, msgs);
 			msgs = basicSetSoftPkg(newSoftPkg, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__SOFT_PKG, newSoftPkg, newSoftPkg));
 	}
 
@@ -690,12 +703,11 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.IMPLEMENTATION__SOFT_PKG:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetSoftPkg((SoftPkg)otherEnd, msgs);
+		switch (featureID) {
+		case SpdPackage.IMPLEMENTATION__SOFT_PKG:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetSoftPkg((SoftPkg) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -707,32 +719,31 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
-				return basicSetPropertyFile(null, msgs);
-			case SpdPackage.IMPLEMENTATION__CODE:
-				return basicSetCode(null, msgs);
-			case SpdPackage.IMPLEMENTATION__COMPILER:
-				return basicSetCompiler(null, msgs);
-			case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
-				return basicSetProgrammingLanguage(null, msgs);
-			case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
-				return basicSetHumanLanguage(null, msgs);
-			case SpdPackage.IMPLEMENTATION__RUNTIME:
-				return basicSetRuntime(null, msgs);
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP:
-				return ((InternalEList<?>)getDependencyMap()).basicRemove(otherEnd, msgs);
-			case SpdPackage.IMPLEMENTATION__OS:
-				return ((InternalEList<?>)getOs()).basicRemove(otherEnd, msgs);
-			case SpdPackage.IMPLEMENTATION__PROCESSOR:
-				return ((InternalEList<?>)getProcessor()).basicRemove(otherEnd, msgs);
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY:
-				return ((InternalEList<?>)getDependency()).basicRemove(otherEnd, msgs);
-			case SpdPackage.IMPLEMENTATION__USES_DEVICE:
-				return ((InternalEList<?>)getUsesDevice()).basicRemove(otherEnd, msgs);
-			case SpdPackage.IMPLEMENTATION__SOFT_PKG:
-				return basicSetSoftPkg(null, msgs);
+		switch (featureID) {
+		case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
+			return basicSetPropertyFile(null, msgs);
+		case SpdPackage.IMPLEMENTATION__CODE:
+			return basicSetCode(null, msgs);
+		case SpdPackage.IMPLEMENTATION__COMPILER:
+			return basicSetCompiler(null, msgs);
+		case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
+			return basicSetProgrammingLanguage(null, msgs);
+		case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
+			return basicSetHumanLanguage(null, msgs);
+		case SpdPackage.IMPLEMENTATION__RUNTIME:
+			return basicSetRuntime(null, msgs);
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP:
+			return ((InternalEList< ? >) getDependencyMap()).basicRemove(otherEnd, msgs);
+		case SpdPackage.IMPLEMENTATION__OS:
+			return ((InternalEList< ? >) getOs()).basicRemove(otherEnd, msgs);
+		case SpdPackage.IMPLEMENTATION__PROCESSOR:
+			return ((InternalEList< ? >) getProcessor()).basicRemove(otherEnd, msgs);
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY:
+			return ((InternalEList< ? >) getDependency()).basicRemove(otherEnd, msgs);
+		case SpdPackage.IMPLEMENTATION__USES_DEVICE:
+			return ((InternalEList< ? >) getUsesDevice()).basicRemove(otherEnd, msgs);
+		case SpdPackage.IMPLEMENTATION__SOFT_PKG:
+			return basicSetSoftPkg(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -744,10 +755,9 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID())
-		{
-			case SpdPackage.IMPLEMENTATION__SOFT_PKG:
-				return eInternalContainer().eInverseRemove(this, SpdPackage.SOFT_PKG__IMPLEMENTATION, SoftPkg.class, msgs);
+		switch (eContainerFeatureID()) {
+		case SpdPackage.IMPLEMENTATION__SOFT_PKG:
+			return eInternalContainer().eInverseRemove(this, SpdPackage.SOFT_PKG__IMPLEMENTATION, SoftPkg.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -759,40 +769,41 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.IMPLEMENTATION__DESCRIPTION:
-				return getDescription();
-			case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
-				return getPropertyFile();
-			case SpdPackage.IMPLEMENTATION__CODE:
-				return getCode();
-			case SpdPackage.IMPLEMENTATION__COMPILER:
-				return getCompiler();
-			case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
-				return getProgrammingLanguage();
-			case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
-				return getHumanLanguage();
-			case SpdPackage.IMPLEMENTATION__RUNTIME:
-				return getRuntime();
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP:
-				if (coreType) return getDependencyMap();
-				return ((FeatureMap.Internal)getDependencyMap()).getWrapper();
-			case SpdPackage.IMPLEMENTATION__OS:
-				return getOs();
-			case SpdPackage.IMPLEMENTATION__PROCESSOR:
-				return getProcessor();
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY:
-				return getDependency();
-			case SpdPackage.IMPLEMENTATION__USES_DEVICE:
-				return getUsesDevice();
-			case SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE:
-				return getAepCompliance();
-			case SpdPackage.IMPLEMENTATION__ID:
-				return getId();
-			case SpdPackage.IMPLEMENTATION__SOFT_PKG:
-				if (resolve) return getSoftPkg();
-				return basicGetSoftPkg();
+		switch (featureID) {
+		case SpdPackage.IMPLEMENTATION__DESCRIPTION:
+			return getDescription();
+		case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
+			return getPropertyFile();
+		case SpdPackage.IMPLEMENTATION__CODE:
+			return getCode();
+		case SpdPackage.IMPLEMENTATION__COMPILER:
+			return getCompiler();
+		case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
+			return getProgrammingLanguage();
+		case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
+			return getHumanLanguage();
+		case SpdPackage.IMPLEMENTATION__RUNTIME:
+			return getRuntime();
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP:
+			if (coreType)
+				return getDependencyMap();
+			return ((FeatureMap.Internal) getDependencyMap()).getWrapper();
+		case SpdPackage.IMPLEMENTATION__OS:
+			return getOs();
+		case SpdPackage.IMPLEMENTATION__PROCESSOR:
+			return getProcessor();
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY:
+			return getDependency();
+		case SpdPackage.IMPLEMENTATION__USES_DEVICE:
+			return getUsesDevice();
+		case SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE:
+			return getAepCompliance();
+		case SpdPackage.IMPLEMENTATION__ID:
+			return getId();
+		case SpdPackage.IMPLEMENTATION__SOFT_PKG:
+			if (resolve)
+				return getSoftPkg();
+			return basicGetSoftPkg();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -805,57 +816,56 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.IMPLEMENTATION__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
-				setPropertyFile((PropertyFile)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__CODE:
-				setCode((Code)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__COMPILER:
-				setCompiler((mil.jpeojtrs.sca.spd.Compiler)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
-				setProgrammingLanguage((ProgrammingLanguage)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
-				setHumanLanguage((HumanLanguage)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__RUNTIME:
-				setRuntime((mil.jpeojtrs.sca.spd.Runtime)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP:
-				((FeatureMap.Internal)getDependencyMap()).set(newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__OS:
-				getOs().clear();
-				getOs().addAll((Collection<? extends Os>)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__PROCESSOR:
-				getProcessor().clear();
-				getProcessor().addAll((Collection<? extends Processor>)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY:
-				getDependency().clear();
-				getDependency().addAll((Collection<? extends Dependency>)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__USES_DEVICE:
-				getUsesDevice().clear();
-				getUsesDevice().addAll((Collection<? extends UsesDevice>)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE:
-				setAepCompliance((AEPComplianceType)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__ID:
-				setId((String)newValue);
-				return;
-			case SpdPackage.IMPLEMENTATION__SOFT_PKG:
-				setSoftPkg((SoftPkg)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.IMPLEMENTATION__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
+			setPropertyFile((PropertyFile) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__CODE:
+			setCode((Code) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__COMPILER:
+			setCompiler((mil.jpeojtrs.sca.spd.Compiler) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
+			setProgrammingLanguage((ProgrammingLanguage) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
+			setHumanLanguage((HumanLanguage) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__RUNTIME:
+			setRuntime((mil.jpeojtrs.sca.spd.Runtime) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP:
+			((FeatureMap.Internal) getDependencyMap()).set(newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__OS:
+			getOs().clear();
+			getOs().addAll((Collection< ? extends Os>) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__PROCESSOR:
+			getProcessor().clear();
+			getProcessor().addAll((Collection< ? extends Processor>) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY:
+			getDependency().clear();
+			getDependency().addAll((Collection< ? extends Dependency>) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__USES_DEVICE:
+			getUsesDevice().clear();
+			getUsesDevice().addAll((Collection< ? extends UsesDevice>) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE:
+			setAepCompliance((AEPComplianceType) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__ID:
+			setId((String) newValue);
+			return;
+		case SpdPackage.IMPLEMENTATION__SOFT_PKG:
+			setSoftPkg((SoftPkg) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -867,53 +877,52 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.IMPLEMENTATION__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
-				setPropertyFile((PropertyFile)null);
-				return;
-			case SpdPackage.IMPLEMENTATION__CODE:
-				setCode((Code)null);
-				return;
-			case SpdPackage.IMPLEMENTATION__COMPILER:
-				setCompiler((mil.jpeojtrs.sca.spd.Compiler)null);
-				return;
-			case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
-				setProgrammingLanguage((ProgrammingLanguage)null);
-				return;
-			case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
-				setHumanLanguage((HumanLanguage)null);
-				return;
-			case SpdPackage.IMPLEMENTATION__RUNTIME:
-				setRuntime((mil.jpeojtrs.sca.spd.Runtime)null);
-				return;
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP:
-				getDependencyMap().clear();
-				return;
-			case SpdPackage.IMPLEMENTATION__OS:
-				getOs().clear();
-				return;
-			case SpdPackage.IMPLEMENTATION__PROCESSOR:
-				getProcessor().clear();
-				return;
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY:
-				getDependency().clear();
-				return;
-			case SpdPackage.IMPLEMENTATION__USES_DEVICE:
-				getUsesDevice().clear();
-				return;
-			case SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE:
-				unsetAepCompliance();
-				return;
-			case SpdPackage.IMPLEMENTATION__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case SpdPackage.IMPLEMENTATION__SOFT_PKG:
-				setSoftPkg((SoftPkg)null);
-				return;
+		switch (featureID) {
+		case SpdPackage.IMPLEMENTATION__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
+			setPropertyFile((PropertyFile) null);
+			return;
+		case SpdPackage.IMPLEMENTATION__CODE:
+			setCode((Code) null);
+			return;
+		case SpdPackage.IMPLEMENTATION__COMPILER:
+			setCompiler((mil.jpeojtrs.sca.spd.Compiler) null);
+			return;
+		case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
+			setProgrammingLanguage((ProgrammingLanguage) null);
+			return;
+		case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
+			setHumanLanguage((HumanLanguage) null);
+			return;
+		case SpdPackage.IMPLEMENTATION__RUNTIME:
+			setRuntime((mil.jpeojtrs.sca.spd.Runtime) null);
+			return;
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP:
+			getDependencyMap().clear();
+			return;
+		case SpdPackage.IMPLEMENTATION__OS:
+			getOs().clear();
+			return;
+		case SpdPackage.IMPLEMENTATION__PROCESSOR:
+			getProcessor().clear();
+			return;
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY:
+			getDependency().clear();
+			return;
+		case SpdPackage.IMPLEMENTATION__USES_DEVICE:
+			getUsesDevice().clear();
+			return;
+		case SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE:
+			unsetAepCompliance();
+			return;
+		case SpdPackage.IMPLEMENTATION__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case SpdPackage.IMPLEMENTATION__SOFT_PKG:
+			setSoftPkg((SoftPkg) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -925,38 +934,37 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.IMPLEMENTATION__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
-				return propertyFile != null;
-			case SpdPackage.IMPLEMENTATION__CODE:
-				return code != null;
-			case SpdPackage.IMPLEMENTATION__COMPILER:
-				return compiler != null;
-			case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
-				return programmingLanguage != null;
-			case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
-				return humanLanguage != null;
-			case SpdPackage.IMPLEMENTATION__RUNTIME:
-				return runtime != null;
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP:
-				return dependencyMap != null && !dependencyMap.isEmpty();
-			case SpdPackage.IMPLEMENTATION__OS:
-				return !getOs().isEmpty();
-			case SpdPackage.IMPLEMENTATION__PROCESSOR:
-				return !getProcessor().isEmpty();
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY:
-				return !getDependency().isEmpty();
-			case SpdPackage.IMPLEMENTATION__USES_DEVICE:
-				return usesDevice != null && !usesDevice.isEmpty();
-			case SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE:
-				return isSetAepCompliance();
-			case SpdPackage.IMPLEMENTATION__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case SpdPackage.IMPLEMENTATION__SOFT_PKG:
-				return basicGetSoftPkg() != null;
+		switch (featureID) {
+		case SpdPackage.IMPLEMENTATION__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
+			return propertyFile != null;
+		case SpdPackage.IMPLEMENTATION__CODE:
+			return code != null;
+		case SpdPackage.IMPLEMENTATION__COMPILER:
+			return compiler != null;
+		case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
+			return programmingLanguage != null;
+		case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
+			return humanLanguage != null;
+		case SpdPackage.IMPLEMENTATION__RUNTIME:
+			return runtime != null;
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY_MAP:
+			return dependencyMap != null && !dependencyMap.isEmpty();
+		case SpdPackage.IMPLEMENTATION__OS:
+			return !getOs().isEmpty();
+		case SpdPackage.IMPLEMENTATION__PROCESSOR:
+			return !getProcessor().isEmpty();
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY:
+			return !getDependency().isEmpty();
+		case SpdPackage.IMPLEMENTATION__USES_DEVICE:
+			return usesDevice != null && !usesDevice.isEmpty();
+		case SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE:
+			return isSetAepCompliance();
+		case SpdPackage.IMPLEMENTATION__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case SpdPackage.IMPLEMENTATION__SOFT_PKG:
+			return basicGetSoftPkg() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -968,7 +976,8 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
@@ -976,7 +985,10 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 		result.append(", dependencyMap: ");
 		result.append(dependencyMap);
 		result.append(", aepCompliance: ");
-		if (aepComplianceESet) result.append(aepCompliance); else result.append("<unset>");
+		if (aepComplianceESet)
+			result.append(aepCompliance);
+		else
+			result.append("<unset>");
 		result.append(", id: ");
 		result.append(id);
 		result.append(')');

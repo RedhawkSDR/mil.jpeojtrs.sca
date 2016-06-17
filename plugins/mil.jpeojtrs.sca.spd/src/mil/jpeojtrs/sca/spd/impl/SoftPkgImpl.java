@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <em><b>Soft Pkg</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getAuthor <em>Author</em>}</li>
@@ -48,7 +49,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getType <em>Type</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getVersion <em>Version</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -261,8 +261,7 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public EList<Author> getAuthor() {
-		if (author == null)
-		{
+		if (author == null) {
 			author = new EObjectContainmentEList<Author>(Author.class, this, SpdPackage.SOFT_PKG__AUTHOR);
 		}
 		return author;
@@ -306,10 +305,13 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	public NotificationChain basicSetPropertyFile(PropertyFile newPropertyFile, NotificationChain msgs) {
 		PropertyFile oldPropertyFile = propertyFile;
 		propertyFile = newPropertyFile;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG__PROPERTY_FILE, oldPropertyFile, newPropertyFile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG__PROPERTY_FILE, oldPropertyFile,
+				newPropertyFile);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -320,17 +322,16 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public void setPropertyFile(PropertyFile newPropertyFile) {
-		if (newPropertyFile != propertyFile)
-		{
+		if (newPropertyFile != propertyFile) {
 			NotificationChain msgs = null;
 			if (propertyFile != null)
-				msgs = ((InternalEObject)propertyFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG__PROPERTY_FILE, null, msgs);
+				msgs = ((InternalEObject) propertyFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG__PROPERTY_FILE, null, msgs);
 			if (newPropertyFile != null)
-				msgs = ((InternalEObject)newPropertyFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG__PROPERTY_FILE, null, msgs);
+				msgs = ((InternalEObject) newPropertyFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG__PROPERTY_FILE, null, msgs);
 			msgs = basicSetPropertyFile(newPropertyFile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG__PROPERTY_FILE, newPropertyFile, newPropertyFile));
 	}
 
@@ -351,10 +352,12 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	public NotificationChain basicSetDescriptor(Descriptor newDescriptor, NotificationChain msgs) {
 		Descriptor oldDescriptor = descriptor;
 		descriptor = newDescriptor;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG__DESCRIPTOR, oldDescriptor, newDescriptor);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -365,17 +368,16 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public void setDescriptor(Descriptor newDescriptor) {
-		if (newDescriptor != descriptor)
-		{
+		if (newDescriptor != descriptor) {
 			NotificationChain msgs = null;
 			if (descriptor != null)
-				msgs = ((InternalEObject)descriptor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG__DESCRIPTOR, null, msgs);
+				msgs = ((InternalEObject) descriptor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG__DESCRIPTOR, null, msgs);
 			if (newDescriptor != null)
-				msgs = ((InternalEObject)newDescriptor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG__DESCRIPTOR, null, msgs);
+				msgs = ((InternalEObject) newDescriptor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG__DESCRIPTOR, null, msgs);
 			msgs = basicSetDescriptor(newDescriptor, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG__DESCRIPTOR, newDescriptor, newDescriptor));
 	}
 
@@ -385,9 +387,9 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public EList<Implementation> getImplementation() {
-		if (implementation == null)
-		{
-			implementation = new EObjectContainmentWithInverseEList<Implementation>(Implementation.class, this, SpdPackage.SOFT_PKG__IMPLEMENTATION, SpdPackage.IMPLEMENTATION__SOFT_PKG);
+		if (implementation == null) {
+			implementation = new EObjectContainmentWithInverseEList<Implementation>(Implementation.class, this, SpdPackage.SOFT_PKG__IMPLEMENTATION,
+				SpdPackage.IMPLEMENTATION__SOFT_PKG);
 		}
 		return implementation;
 	}
@@ -398,8 +400,7 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public EList<UsesDevice> getUsesDevice() {
-		if (usesDevice == null)
-		{
+		if (usesDevice == null) {
 			usesDevice = new EObjectContainmentEList<UsesDevice>(UsesDevice.class, this, SpdPackage.SOFT_PKG__USES_DEVICE);
 		}
 		return usesDevice;
@@ -456,7 +457,7 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	public String getType() {
 		return type;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * @since 3.0
@@ -469,8 +470,6 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 		}
 		setTypeGen(newType);
 	}
-	
-	
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -479,15 +478,12 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @generated
 	 */
 	public void setTypeGen(String newType) {
-		// END GENERATED CODE
 		String oldType = type;
 		type = newType;
 		boolean oldTypeESet = typeESet;
 		typeESet = true;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG__TYPE, oldType, type, !oldTypeESet));
-		}
-		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -561,10 +557,9 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG__IMPLEMENTATION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getImplementation()).basicAdd(otherEnd, msgs);
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG__IMPLEMENTATION:
+			return ((InternalEList<InternalEObject>) (InternalEList< ? >) getImplementation()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -576,18 +571,17 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG__AUTHOR:
-				return ((InternalEList<?>)getAuthor()).basicRemove(otherEnd, msgs);
-			case SpdPackage.SOFT_PKG__PROPERTY_FILE:
-				return basicSetPropertyFile(null, msgs);
-			case SpdPackage.SOFT_PKG__DESCRIPTOR:
-				return basicSetDescriptor(null, msgs);
-			case SpdPackage.SOFT_PKG__IMPLEMENTATION:
-				return ((InternalEList<?>)getImplementation()).basicRemove(otherEnd, msgs);
-			case SpdPackage.SOFT_PKG__USES_DEVICE:
-				return ((InternalEList<?>)getUsesDevice()).basicRemove(otherEnd, msgs);
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG__AUTHOR:
+			return ((InternalEList< ? >) getAuthor()).basicRemove(otherEnd, msgs);
+		case SpdPackage.SOFT_PKG__PROPERTY_FILE:
+			return basicSetPropertyFile(null, msgs);
+		case SpdPackage.SOFT_PKG__DESCRIPTOR:
+			return basicSetDescriptor(null, msgs);
+		case SpdPackage.SOFT_PKG__IMPLEMENTATION:
+			return ((InternalEList< ? >) getImplementation()).basicRemove(otherEnd, msgs);
+		case SpdPackage.SOFT_PKG__USES_DEVICE:
+			return ((InternalEList< ? >) getUsesDevice()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -599,30 +593,29 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG__TITLE:
-				return getTitle();
-			case SpdPackage.SOFT_PKG__AUTHOR:
-				return getAuthor();
-			case SpdPackage.SOFT_PKG__DESCRIPTION:
-				return getDescription();
-			case SpdPackage.SOFT_PKG__PROPERTY_FILE:
-				return getPropertyFile();
-			case SpdPackage.SOFT_PKG__DESCRIPTOR:
-				return getDescriptor();
-			case SpdPackage.SOFT_PKG__IMPLEMENTATION:
-				return getImplementation();
-			case SpdPackage.SOFT_PKG__USES_DEVICE:
-				return getUsesDevice();
-			case SpdPackage.SOFT_PKG__ID:
-				return getId();
-			case SpdPackage.SOFT_PKG__NAME:
-				return getName();
-			case SpdPackage.SOFT_PKG__TYPE:
-				return getType();
-			case SpdPackage.SOFT_PKG__VERSION:
-				return getVersion();
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG__TITLE:
+			return getTitle();
+		case SpdPackage.SOFT_PKG__AUTHOR:
+			return getAuthor();
+		case SpdPackage.SOFT_PKG__DESCRIPTION:
+			return getDescription();
+		case SpdPackage.SOFT_PKG__PROPERTY_FILE:
+			return getPropertyFile();
+		case SpdPackage.SOFT_PKG__DESCRIPTOR:
+			return getDescriptor();
+		case SpdPackage.SOFT_PKG__IMPLEMENTATION:
+			return getImplementation();
+		case SpdPackage.SOFT_PKG__USES_DEVICE:
+			return getUsesDevice();
+		case SpdPackage.SOFT_PKG__ID:
+			return getId();
+		case SpdPackage.SOFT_PKG__NAME:
+			return getName();
+		case SpdPackage.SOFT_PKG__TYPE:
+			return getType();
+		case SpdPackage.SOFT_PKG__VERSION:
+			return getVersion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -635,44 +628,43 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG__TITLE:
-				setTitle((String)newValue);
-				return;
-			case SpdPackage.SOFT_PKG__AUTHOR:
-				getAuthor().clear();
-				getAuthor().addAll((Collection<? extends Author>)newValue);
-				return;
-			case SpdPackage.SOFT_PKG__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case SpdPackage.SOFT_PKG__PROPERTY_FILE:
-				setPropertyFile((PropertyFile)newValue);
-				return;
-			case SpdPackage.SOFT_PKG__DESCRIPTOR:
-				setDescriptor((Descriptor)newValue);
-				return;
-			case SpdPackage.SOFT_PKG__IMPLEMENTATION:
-				getImplementation().clear();
-				getImplementation().addAll((Collection<? extends Implementation>)newValue);
-				return;
-			case SpdPackage.SOFT_PKG__USES_DEVICE:
-				getUsesDevice().clear();
-				getUsesDevice().addAll((Collection<? extends UsesDevice>)newValue);
-				return;
-			case SpdPackage.SOFT_PKG__ID:
-				setId((String)newValue);
-				return;
-			case SpdPackage.SOFT_PKG__NAME:
-				setName((String)newValue);
-				return;
-			case SpdPackage.SOFT_PKG__TYPE:
-				setType((String)newValue);
-				return;
-			case SpdPackage.SOFT_PKG__VERSION:
-				setVersion((String)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG__TITLE:
+			setTitle((String) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__AUTHOR:
+			getAuthor().clear();
+			getAuthor().addAll((Collection< ? extends Author>) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__PROPERTY_FILE:
+			setPropertyFile((PropertyFile) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__DESCRIPTOR:
+			setDescriptor((Descriptor) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__IMPLEMENTATION:
+			getImplementation().clear();
+			getImplementation().addAll((Collection< ? extends Implementation>) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__USES_DEVICE:
+			getUsesDevice().clear();
+			getUsesDevice().addAll((Collection< ? extends UsesDevice>) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__ID:
+			setId((String) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__NAME:
+			setName((String) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__TYPE:
+			setType((String) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__VERSION:
+			setVersion((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -684,41 +676,40 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG__TITLE:
-				setTitle(TITLE_EDEFAULT);
-				return;
-			case SpdPackage.SOFT_PKG__AUTHOR:
-				getAuthor().clear();
-				return;
-			case SpdPackage.SOFT_PKG__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case SpdPackage.SOFT_PKG__PROPERTY_FILE:
-				setPropertyFile((PropertyFile)null);
-				return;
-			case SpdPackage.SOFT_PKG__DESCRIPTOR:
-				setDescriptor((Descriptor)null);
-				return;
-			case SpdPackage.SOFT_PKG__IMPLEMENTATION:
-				getImplementation().clear();
-				return;
-			case SpdPackage.SOFT_PKG__USES_DEVICE:
-				getUsesDevice().clear();
-				return;
-			case SpdPackage.SOFT_PKG__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case SpdPackage.SOFT_PKG__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case SpdPackage.SOFT_PKG__TYPE:
-				unsetType();
-				return;
-			case SpdPackage.SOFT_PKG__VERSION:
-				setVersion(VERSION_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG__TITLE:
+			setTitle(TITLE_EDEFAULT);
+			return;
+		case SpdPackage.SOFT_PKG__AUTHOR:
+			getAuthor().clear();
+			return;
+		case SpdPackage.SOFT_PKG__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case SpdPackage.SOFT_PKG__PROPERTY_FILE:
+			setPropertyFile((PropertyFile) null);
+			return;
+		case SpdPackage.SOFT_PKG__DESCRIPTOR:
+			setDescriptor((Descriptor) null);
+			return;
+		case SpdPackage.SOFT_PKG__IMPLEMENTATION:
+			getImplementation().clear();
+			return;
+		case SpdPackage.SOFT_PKG__USES_DEVICE:
+			getUsesDevice().clear();
+			return;
+		case SpdPackage.SOFT_PKG__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case SpdPackage.SOFT_PKG__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case SpdPackage.SOFT_PKG__TYPE:
+			unsetType();
+			return;
+		case SpdPackage.SOFT_PKG__VERSION:
+			setVersion(VERSION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -730,30 +721,29 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case SpdPackage.SOFT_PKG__AUTHOR:
-				return author != null && !author.isEmpty();
-			case SpdPackage.SOFT_PKG__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case SpdPackage.SOFT_PKG__PROPERTY_FILE:
-				return propertyFile != null;
-			case SpdPackage.SOFT_PKG__DESCRIPTOR:
-				return descriptor != null;
-			case SpdPackage.SOFT_PKG__IMPLEMENTATION:
-				return implementation != null && !implementation.isEmpty();
-			case SpdPackage.SOFT_PKG__USES_DEVICE:
-				return usesDevice != null && !usesDevice.isEmpty();
-			case SpdPackage.SOFT_PKG__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case SpdPackage.SOFT_PKG__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SpdPackage.SOFT_PKG__TYPE:
-				return isSetType();
-			case SpdPackage.SOFT_PKG__VERSION:
-				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG__TITLE:
+			return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+		case SpdPackage.SOFT_PKG__AUTHOR:
+			return author != null && !author.isEmpty();
+		case SpdPackage.SOFT_PKG__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case SpdPackage.SOFT_PKG__PROPERTY_FILE:
+			return propertyFile != null;
+		case SpdPackage.SOFT_PKG__DESCRIPTOR:
+			return descriptor != null;
+		case SpdPackage.SOFT_PKG__IMPLEMENTATION:
+			return implementation != null && !implementation.isEmpty();
+		case SpdPackage.SOFT_PKG__USES_DEVICE:
+			return usesDevice != null && !usesDevice.isEmpty();
+		case SpdPackage.SOFT_PKG__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case SpdPackage.SOFT_PKG__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case SpdPackage.SOFT_PKG__TYPE:
+			return isSetType();
+		case SpdPackage.SOFT_PKG__VERSION:
+			return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -765,7 +755,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (title: ");
@@ -777,7 +768,10 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 		result.append(", name: ");
 		result.append(name);
 		result.append(", type: ");
-		if (typeESet) result.append(type); else result.append("<unset>");
+		if (typeESet)
+			result.append(type);
+		else
+			result.append("<unset>");
 		result.append(", version: ");
 		result.append(version);
 		result.append(')');

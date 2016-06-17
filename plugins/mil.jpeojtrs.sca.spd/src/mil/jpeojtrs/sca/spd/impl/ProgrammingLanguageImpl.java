@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.ProgrammingLanguageImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.ProgrammingLanguageImpl#getVersion <em>Version</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -140,12 +140,11 @@ public class ProgrammingLanguageImpl extends EObjectImpl implements ProgrammingL
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
-				return getName();
-			case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
-				return getVersion();
+		switch (featureID) {
+		case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
+			return getName();
+		case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
+			return getVersion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,14 +156,13 @@ public class ProgrammingLanguageImpl extends EObjectImpl implements ProgrammingL
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
-				setName((String)newValue);
-				return;
-			case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
-				setVersion((String)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
+			setName((String) newValue);
+			return;
+		case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
+			setVersion((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -176,14 +174,13 @@ public class ProgrammingLanguageImpl extends EObjectImpl implements ProgrammingL
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
-				setVersion(VERSION_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
+			setVersion(VERSION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -195,12 +192,11 @@ public class ProgrammingLanguageImpl extends EObjectImpl implements ProgrammingL
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
-				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+		switch (featureID) {
+		case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
+			return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -212,7 +208,8 @@ public class ProgrammingLanguageImpl extends EObjectImpl implements ProgrammingL
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");

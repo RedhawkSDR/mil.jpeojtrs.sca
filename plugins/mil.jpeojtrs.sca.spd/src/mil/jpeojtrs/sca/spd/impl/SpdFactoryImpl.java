@@ -54,16 +54,12 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 * @generated
 	 */
 	public static SpdFactory init() {
-		try
-		{
-			SpdFactory theSpdFactory = (SpdFactory)EPackage.Registry.INSTANCE.getEFactory(SpdPackage.eNS_URI);
-			if (theSpdFactory != null)
-			{
+		try {
+			SpdFactory theSpdFactory = (SpdFactory) EPackage.Registry.INSTANCE.getEFactory(SpdPackage.eNS_URI);
+			if (theSpdFactory != null) {
 				return theSpdFactory;
 			}
-		}
-		catch (Exception exception)
-		{
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new SpdFactoryImpl();
@@ -86,29 +82,47 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID())
-		{
-			case SpdPackage.AUTHOR: return createAuthor();
-			case SpdPackage.CODE: return createCode();
-			case SpdPackage.COMPILER: return createCompiler();
-			case SpdPackage.DEPENDENCY: return createDependency();
-			case SpdPackage.DESCRIPTOR: return createDescriptor();
-			case SpdPackage.HUMAN_LANGUAGE: return createHumanLanguage();
-			case SpdPackage.IMPLEMENTATION: return createImplementation();
-			case SpdPackage.IMPL_REF: return createImplRef();
-			case SpdPackage.LOCAL_FILE: return createLocalFile();
-			case SpdPackage.OS: return createOs();
-			case SpdPackage.PROCESSOR: return createProcessor();
-			case SpdPackage.PROGRAMMING_LANGUAGE: return createProgrammingLanguage();
-			case SpdPackage.PROPERTY_FILE: return createPropertyFile();
-			case SpdPackage.PROPERTY_REF: return createPropertyRef();
-			case SpdPackage.RUNTIME: return createRuntime();
-			case SpdPackage.SOFT_PKG: return createSoftPkg();
-			case SpdPackage.SOFT_PKG_REF: return createSoftPkgRef();
-			case SpdPackage.SPD_DOCUMENT_ROOT: return createSpdDocumentRoot();
-			case SpdPackage.USES_DEVICE: return createUsesDevice();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID()) {
+		case SpdPackage.AUTHOR:
+			return createAuthor();
+		case SpdPackage.CODE:
+			return createCode();
+		case SpdPackage.COMPILER:
+			return createCompiler();
+		case SpdPackage.DEPENDENCY:
+			return createDependency();
+		case SpdPackage.DESCRIPTOR:
+			return createDescriptor();
+		case SpdPackage.HUMAN_LANGUAGE:
+			return createHumanLanguage();
+		case SpdPackage.IMPLEMENTATION:
+			return createImplementation();
+		case SpdPackage.IMPL_REF:
+			return createImplRef();
+		case SpdPackage.LOCAL_FILE:
+			return createLocalFile();
+		case SpdPackage.OS:
+			return createOs();
+		case SpdPackage.PROCESSOR:
+			return createProcessor();
+		case SpdPackage.PROGRAMMING_LANGUAGE:
+			return createProgrammingLanguage();
+		case SpdPackage.PROPERTY_FILE:
+			return createPropertyFile();
+		case SpdPackage.PROPERTY_REF:
+			return createPropertyRef();
+		case SpdPackage.RUNTIME:
+			return createRuntime();
+		case SpdPackage.SOFT_PKG:
+			return createSoftPkg();
+		case SpdPackage.SOFT_PKG_REF:
+			return createSoftPkgRef();
+		case SpdPackage.SPD_DOCUMENT_ROOT:
+			return createSpdDocumentRoot();
+		case SpdPackage.USES_DEVICE:
+			return createUsesDevice();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -119,20 +133,19 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID())
-		{
-			case SpdPackage.AEP_COMPLIANCE_TYPE:
-				return createAEPComplianceTypeFromString(eDataType, initialValue);
-			case SpdPackage.CODE_FILE_TYPE:
-				return createCodeFileTypeFromString(eDataType, initialValue);
-			case SpdPackage.AEP_COMPLIANCE_TYPE_OBJECT:
-				return createAEPComplianceTypeObjectFromString(eDataType, initialValue);
-			case SpdPackage.CODE_FILE_TYPE_OBJECT:
-				return createCodeFileTypeObjectFromString(eDataType, initialValue);
-			case SpdPackage.URI:
-				return createURIFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+		case SpdPackage.AEP_COMPLIANCE_TYPE:
+			return createAEPComplianceTypeFromString(eDataType, initialValue);
+		case SpdPackage.CODE_FILE_TYPE:
+			return createCodeFileTypeFromString(eDataType, initialValue);
+		case SpdPackage.AEP_COMPLIANCE_TYPE_OBJECT:
+			return createAEPComplianceTypeObjectFromString(eDataType, initialValue);
+		case SpdPackage.CODE_FILE_TYPE_OBJECT:
+			return createCodeFileTypeObjectFromString(eDataType, initialValue);
+		case SpdPackage.URI:
+			return createURIFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -143,20 +156,19 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID())
-		{
-			case SpdPackage.AEP_COMPLIANCE_TYPE:
-				return convertAEPComplianceTypeToString(eDataType, instanceValue);
-			case SpdPackage.CODE_FILE_TYPE:
-				return convertCodeFileTypeToString(eDataType, instanceValue);
-			case SpdPackage.AEP_COMPLIANCE_TYPE_OBJECT:
-				return convertAEPComplianceTypeObjectToString(eDataType, instanceValue);
-			case SpdPackage.CODE_FILE_TYPE_OBJECT:
-				return convertCodeFileTypeObjectToString(eDataType, instanceValue);
-			case SpdPackage.URI:
-				return convertURIToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID()) {
+		case SpdPackage.AEP_COMPLIANCE_TYPE:
+			return convertAEPComplianceTypeToString(eDataType, instanceValue);
+		case SpdPackage.CODE_FILE_TYPE:
+			return convertCodeFileTypeToString(eDataType, instanceValue);
+		case SpdPackage.AEP_COMPLIANCE_TYPE_OBJECT:
+			return convertAEPComplianceTypeObjectToString(eDataType, instanceValue);
+		case SpdPackage.CODE_FILE_TYPE_OBJECT:
+			return convertCodeFileTypeObjectToString(eDataType, instanceValue);
+		case SpdPackage.URI:
+			return convertURIToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -357,7 +369,8 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 */
 	public AEPComplianceType createAEPComplianceTypeFromString(EDataType eDataType, String initialValue) {
 		AEPComplianceType result = AEPComplianceType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -377,7 +390,8 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 */
 	public CodeFileType createCodeFileTypeFromString(EDataType eDataType, String initialValue) {
 		CodeFileType result = CodeFileType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -450,7 +464,7 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	 * @generated
 	 */
 	public SpdPackage getSpdPackage() {
-		return (SpdPackage)getEPackage();
+		return (SpdPackage) getEPackage();
 	}
 
 	/**

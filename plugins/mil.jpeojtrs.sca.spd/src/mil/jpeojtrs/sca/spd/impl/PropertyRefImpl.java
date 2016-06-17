@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.PropertyRefImpl#getRefId <em>Ref Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.PropertyRefImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -140,12 +140,11 @@ public class PropertyRefImpl extends EObjectImpl implements PropertyRef {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.PROPERTY_REF__REF_ID:
-				return getRefId();
-			case SpdPackage.PROPERTY_REF__VALUE:
-				return getValue();
+		switch (featureID) {
+		case SpdPackage.PROPERTY_REF__REF_ID:
+			return getRefId();
+		case SpdPackage.PROPERTY_REF__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,14 +156,13 @@ public class PropertyRefImpl extends EObjectImpl implements PropertyRef {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.PROPERTY_REF__REF_ID:
-				setRefId((String)newValue);
-				return;
-			case SpdPackage.PROPERTY_REF__VALUE:
-				setValue((String)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.PROPERTY_REF__REF_ID:
+			setRefId((String) newValue);
+			return;
+		case SpdPackage.PROPERTY_REF__VALUE:
+			setValue((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -176,14 +174,13 @@ public class PropertyRefImpl extends EObjectImpl implements PropertyRef {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.PROPERTY_REF__REF_ID:
-				setRefId(REF_ID_EDEFAULT);
-				return;
-			case SpdPackage.PROPERTY_REF__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SpdPackage.PROPERTY_REF__REF_ID:
+			setRefId(REF_ID_EDEFAULT);
+			return;
+		case SpdPackage.PROPERTY_REF__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -195,12 +192,11 @@ public class PropertyRefImpl extends EObjectImpl implements PropertyRef {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.PROPERTY_REF__REF_ID:
-				return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
-			case SpdPackage.PROPERTY_REF__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		switch (featureID) {
+		case SpdPackage.PROPERTY_REF__REF_ID:
+			return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
+		case SpdPackage.PROPERTY_REF__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -212,7 +208,8 @@ public class PropertyRefImpl extends EObjectImpl implements PropertyRef {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (refId: ");

@@ -31,12 +31,12 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.DependencyImpl#getSoftPkgRef <em>Soft Pkg Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.DependencyImpl#getPropertyRef <em>Property Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.DependencyImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -105,10 +105,12 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	public NotificationChain basicSetSoftPkgRef(SoftPkgRef newSoftPkgRef, NotificationChain msgs) {
 		SoftPkgRef oldSoftPkgRef = softPkgRef;
 		softPkgRef = newSoftPkgRef;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.DEPENDENCY__SOFT_PKG_REF, oldSoftPkgRef, newSoftPkgRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -119,17 +121,16 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 * @generated
 	 */
 	public void setSoftPkgRef(SoftPkgRef newSoftPkgRef) {
-		if (newSoftPkgRef != softPkgRef)
-		{
+		if (newSoftPkgRef != softPkgRef) {
 			NotificationChain msgs = null;
 			if (softPkgRef != null)
-				msgs = ((InternalEObject)softPkgRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.DEPENDENCY__SOFT_PKG_REF, null, msgs);
+				msgs = ((InternalEObject) softPkgRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.DEPENDENCY__SOFT_PKG_REF, null, msgs);
 			if (newSoftPkgRef != null)
-				msgs = ((InternalEObject)newSoftPkgRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.DEPENDENCY__SOFT_PKG_REF, null, msgs);
+				msgs = ((InternalEObject) newSoftPkgRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.DEPENDENCY__SOFT_PKG_REF, null, msgs);
 			msgs = basicSetSoftPkgRef(newSoftPkgRef, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.DEPENDENCY__SOFT_PKG_REF, newSoftPkgRef, newSoftPkgRef));
 	}
 
@@ -139,7 +140,7 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 * @generated
 	 */
 	public PropertyRef getPropertyRef() {
-		return (PropertyRef)getProperties().get(SpdPackage.Literals.DEPENDENCY__PROPERTY_REF, true);
+		return (PropertyRef) getProperties().get(SpdPackage.Literals.DEPENDENCY__PROPERTY_REF, true);
 	}
 
 	/**
@@ -148,7 +149,7 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 * @generated
 	 */
 	public NotificationChain basicSetPropertyRef(PropertyRef newPropertyRef, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getProperties()).basicAdd(SpdPackage.Literals.DEPENDENCY__PROPERTY_REF, newPropertyRef, msgs);
+		return ((FeatureMap.Internal) getProperties()).basicAdd(SpdPackage.Literals.DEPENDENCY__PROPERTY_REF, newPropertyRef, msgs);
 	}
 
 	/**
@@ -157,7 +158,7 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 * @generated
 	 */
 	public void setPropertyRef(PropertyRef newPropertyRef) {
-		((FeatureMap.Internal)getProperties()).set(SpdPackage.Literals.DEPENDENCY__PROPERTY_REF, newPropertyRef);
+		((FeatureMap.Internal) getProperties()).set(SpdPackage.Literals.DEPENDENCY__PROPERTY_REF, newPropertyRef);
 	}
 
 	/**
@@ -188,12 +189,11 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
-				return basicSetSoftPkgRef(null, msgs);
-			case SpdPackage.DEPENDENCY__PROPERTY_REF:
-				return basicSetPropertyRef(null, msgs);
+		switch (featureID) {
+		case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
+			return basicSetSoftPkgRef(null, msgs);
+		case SpdPackage.DEPENDENCY__PROPERTY_REF:
+			return basicSetPropertyRef(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -205,14 +205,13 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
-				return getSoftPkgRef();
-			case SpdPackage.DEPENDENCY__PROPERTY_REF:
-				return getPropertyRef();
-			case SpdPackage.DEPENDENCY__TYPE:
-				return getType();
+		switch (featureID) {
+		case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
+			return getSoftPkgRef();
+		case SpdPackage.DEPENDENCY__PROPERTY_REF:
+			return getPropertyRef();
+		case SpdPackage.DEPENDENCY__TYPE:
+			return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -224,17 +223,16 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
-				setSoftPkgRef((SoftPkgRef)newValue);
-				return;
-			case SpdPackage.DEPENDENCY__PROPERTY_REF:
-				setPropertyRef((PropertyRef)newValue);
-				return;
-			case SpdPackage.DEPENDENCY__TYPE:
-				setType((String)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
+			setSoftPkgRef((SoftPkgRef) newValue);
+			return;
+		case SpdPackage.DEPENDENCY__PROPERTY_REF:
+			setPropertyRef((PropertyRef) newValue);
+			return;
+		case SpdPackage.DEPENDENCY__TYPE:
+			setType((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -246,17 +244,16 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
-				setSoftPkgRef((SoftPkgRef)null);
-				return;
-			case SpdPackage.DEPENDENCY__PROPERTY_REF:
-				setPropertyRef((PropertyRef)null);
-				return;
-			case SpdPackage.DEPENDENCY__TYPE:
-				setType(TYPE_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
+			setSoftPkgRef((SoftPkgRef) null);
+			return;
+		case SpdPackage.DEPENDENCY__PROPERTY_REF:
+			setPropertyRef((PropertyRef) null);
+			return;
+		case SpdPackage.DEPENDENCY__TYPE:
+			setType(TYPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -268,14 +265,13 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
-				return softPkgRef != null;
-			case SpdPackage.DEPENDENCY__PROPERTY_REF:
-				return getPropertyRef() != null;
-			case SpdPackage.DEPENDENCY__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+		switch (featureID) {
+		case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
+			return softPkgRef != null;
+		case SpdPackage.DEPENDENCY__PROPERTY_REF:
+			return getPropertyRef() != null;
+		case SpdPackage.DEPENDENCY__TYPE:
+			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -287,7 +283,8 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (type: ");
@@ -297,9 +294,9 @@ public class DependencyImpl extends PropertyRefSetImpl implements Dependency {
 	}
 
 	@Override
-    public PropertyContainer getPropertyContainer() {
-	    // TODO How do we return a "global" property container
-	    return null;
-    }
+	public PropertyContainer getPropertyContainer() {
+		// TODO How do we return a "global" property container
+		return null;
+	}
 
 } //DependencyImpl

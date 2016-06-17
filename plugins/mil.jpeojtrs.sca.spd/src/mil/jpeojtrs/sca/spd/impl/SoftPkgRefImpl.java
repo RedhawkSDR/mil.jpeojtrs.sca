@@ -33,13 +33,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <em><b>Soft Pkg Ref</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgRefImpl#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgRefImpl#getImplRef <em>Impl Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgRefImpl#getImplementation <em>Implementation</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgRefImpl#getSoftPkg <em>Soft Pkg</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -98,10 +98,12 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	public NotificationChain basicSetLocalFileGen(LocalFile newLocalFile, NotificationChain msgs) {
 		LocalFile oldLocalFile = localFile;
 		localFile = newLocalFile;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG_REF__LOCAL_FILE, oldLocalFile, newLocalFile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -121,7 +123,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 			} else {
 				msgs.add(notificationSpd);
 			}
-			ENotificationImpl notificationImpl = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG_REF__IMPLEMENTATION, oldImpl, getImplementation());
+			ENotificationImpl notificationImpl = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG_REF__IMPLEMENTATION, oldImpl,
+				getImplementation());
 			msgs.add(notificationImpl);
 		}
 		return msgs;
@@ -133,17 +136,16 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 * @generated
 	 */
 	public void setLocalFile(LocalFile newLocalFile) {
-		if (newLocalFile != localFile)
-		{
+		if (newLocalFile != localFile) {
 			NotificationChain msgs = null;
 			if (localFile != null)
-				msgs = ((InternalEObject)localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG_REF__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) localFile).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG_REF__LOCAL_FILE, null, msgs);
 			if (newLocalFile != null)
-				msgs = ((InternalEObject)newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG_REF__LOCAL_FILE, null, msgs);
+				msgs = ((InternalEObject) newLocalFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG_REF__LOCAL_FILE, null, msgs);
 			msgs = basicSetLocalFile(newLocalFile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG_REF__LOCAL_FILE, newLocalFile, newLocalFile));
 	}
 
@@ -163,14 +165,16 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	public NotificationChain basicSetImplRefGen(ImplRef newImplRef, NotificationChain msgs) {
 		ImplRef oldImplRef = implRef;
 		implRef = newImplRef;
-		if (eNotificationRequired())
-		{
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG_REF__IMPL_REF, oldImplRef, newImplRef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated NOT
@@ -179,7 +183,8 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 		Implementation oldImpl = getImplementation();
 		msgs = basicSetImplRefGen(newImplRef, msgs);
 		if (eNotificationRequired()) {
-			ENotificationImpl notificationImpl = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG_REF__IMPLEMENTATION, oldImpl, getImplementation());
+			ENotificationImpl notificationImpl = new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG_REF__IMPLEMENTATION, oldImpl,
+				getImplementation());
 			if (msgs == null) {
 				msgs = notificationImpl;
 			} else {
@@ -195,17 +200,16 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 * @generated
 	 */
 	public void setImplRef(ImplRef newImplRef) {
-		if (newImplRef != implRef)
-		{
+		if (newImplRef != implRef) {
 			NotificationChain msgs = null;
 			if (implRef != null)
-				msgs = ((InternalEObject)implRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG_REF__IMPL_REF, null, msgs);
+				msgs = ((InternalEObject) implRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG_REF__IMPL_REF, null, msgs);
 			if (newImplRef != null)
-				msgs = ((InternalEObject)newImplRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG_REF__IMPL_REF, null, msgs);
+				msgs = ((InternalEObject) newImplRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SOFT_PKG_REF__IMPL_REF, null, msgs);
 			msgs = basicSetImplRef(newImplRef, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.SOFT_PKG_REF__IMPL_REF, newImplRef, newImplRef));
 	}
 
@@ -216,7 +220,7 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	public Implementation getImplementation() {
 		Implementation implementation = basicGetImplementation();
-		return implementation != null && implementation.eIsProxy() ? (Implementation)eResolveProxy((InternalEObject)implementation) : implementation;
+		return implementation != null && implementation.eIsProxy() ? (Implementation) eResolveProxy((InternalEObject) implementation) : implementation;
 	}
 
 	/**
@@ -229,8 +233,7 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 		if (getLocalFile() == null) {
 			return null;
 		}
-		return (SoftPkg) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, SoftPkg.EOBJECT_PATH,
-			ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM);
+		return (SoftPkg) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, SoftPkg.EOBJECT_PATH, ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM);
 		// BEGIN GENERATED CODE
 	}
 
@@ -243,7 +246,7 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 		basicSetSoftPkg(newSoftPkg);
 		setImplRef(null);
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -251,12 +254,11 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
-				return basicSetLocalFile(null, msgs);
-			case SpdPackage.SOFT_PKG_REF__IMPL_REF:
-				return basicSetImplRef(null, msgs);
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
+			return basicSetLocalFile(null, msgs);
+		case SpdPackage.SOFT_PKG_REF__IMPL_REF:
+			return basicSetImplRef(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -268,18 +270,19 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
-				return getLocalFile();
-			case SpdPackage.SOFT_PKG_REF__IMPL_REF:
-				return getImplRef();
-			case SpdPackage.SOFT_PKG_REF__IMPLEMENTATION:
-				if (resolve) return getImplementation();
-				return basicGetImplementation();
-			case SpdPackage.SOFT_PKG_REF__SOFT_PKG:
-				if (resolve) return getSoftPkg();
-				return basicGetSoftPkg();
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
+			return getLocalFile();
+		case SpdPackage.SOFT_PKG_REF__IMPL_REF:
+			return getImplRef();
+		case SpdPackage.SOFT_PKG_REF__IMPLEMENTATION:
+			if (resolve)
+				return getImplementation();
+			return basicGetImplementation();
+		case SpdPackage.SOFT_PKG_REF__SOFT_PKG:
+			if (resolve)
+				return getSoftPkg();
+			return basicGetSoftPkg();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -291,20 +294,19 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
-				setLocalFile((LocalFile)newValue);
-				return;
-			case SpdPackage.SOFT_PKG_REF__IMPL_REF:
-				setImplRef((ImplRef)newValue);
-				return;
-			case SpdPackage.SOFT_PKG_REF__IMPLEMENTATION:
-				setImplementation((Implementation)newValue);
-				return;
-			case SpdPackage.SOFT_PKG_REF__SOFT_PKG:
-				setSoftPkg((SoftPkg)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
+			setLocalFile((LocalFile) newValue);
+			return;
+		case SpdPackage.SOFT_PKG_REF__IMPL_REF:
+			setImplRef((ImplRef) newValue);
+			return;
+		case SpdPackage.SOFT_PKG_REF__IMPLEMENTATION:
+			setImplementation((Implementation) newValue);
+			return;
+		case SpdPackage.SOFT_PKG_REF__SOFT_PKG:
+			setSoftPkg((SoftPkg) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -316,20 +318,19 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
-				setLocalFile((LocalFile)null);
-				return;
-			case SpdPackage.SOFT_PKG_REF__IMPL_REF:
-				setImplRef((ImplRef)null);
-				return;
-			case SpdPackage.SOFT_PKG_REF__IMPLEMENTATION:
-				setImplementation((Implementation)null);
-				return;
-			case SpdPackage.SOFT_PKG_REF__SOFT_PKG:
-				setSoftPkg((SoftPkg)null);
-				return;
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
+			setLocalFile((LocalFile) null);
+			return;
+		case SpdPackage.SOFT_PKG_REF__IMPL_REF:
+			setImplRef((ImplRef) null);
+			return;
+		case SpdPackage.SOFT_PKG_REF__IMPLEMENTATION:
+			setImplementation((Implementation) null);
+			return;
+		case SpdPackage.SOFT_PKG_REF__SOFT_PKG:
+			setSoftPkg((SoftPkg) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -341,16 +342,15 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
-				return localFile != null;
-			case SpdPackage.SOFT_PKG_REF__IMPL_REF:
-				return implRef != null;
-			case SpdPackage.SOFT_PKG_REF__IMPLEMENTATION:
-				return basicGetImplementation() != null;
-			case SpdPackage.SOFT_PKG_REF__SOFT_PKG:
-				return basicGetSoftPkg() != null;
+		switch (featureID) {
+		case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
+			return localFile != null;
+		case SpdPackage.SOFT_PKG_REF__IMPL_REF:
+			return implRef != null;
+		case SpdPackage.SOFT_PKG_REF__IMPLEMENTATION:
+			return basicGetImplementation() != null;
+		case SpdPackage.SOFT_PKG_REF__SOFT_PKG:
+			return basicGetSoftPkg() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -412,7 +412,7 @@ public class SoftPkgRefImpl extends EObjectImpl implements SoftPkgRef {
 	 */
 	public SoftPkg getSoftPkg() {
 		SoftPkg softPkg = basicGetSoftPkg();
-		return softPkg != null && softPkg.eIsProxy() ? (SoftPkg)eResolveProxy((InternalEObject)softPkg) : softPkg;
+		return softPkg != null && softPkg.eIsProxy() ? (SoftPkg) eResolveProxy((InternalEObject) softPkg) : softPkg;
 	}
 
 } // SoftPkgRefImpl

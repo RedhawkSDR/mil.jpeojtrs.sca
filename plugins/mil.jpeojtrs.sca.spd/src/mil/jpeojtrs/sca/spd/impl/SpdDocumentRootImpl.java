@@ -34,13 +34,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SpdDocumentRootImpl#getMixed <em>Mixed</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SpdDocumentRootImpl#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SpdDocumentRootImpl#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SpdDocumentRootImpl#getSoftpkg <em>Softpkg</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -99,8 +99,7 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 * @generated
 	 */
 	public FeatureMap getMixed() {
-		if (mixed == null)
-		{
+		if (mixed == null) {
 			mixed = new BasicFeatureMap(this, SpdPackage.SPD_DOCUMENT_ROOT__MIXED);
 		}
 		return mixed;
@@ -112,9 +111,9 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 * @generated
 	 */
 	public EMap<String, String> getXMLNSPrefixMap() {
-		if (xMLNSPrefixMap == null)
-		{
-			xMLNSPrefixMap = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+		if (xMLNSPrefixMap == null) {
+			xMLNSPrefixMap = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
 		}
 		return xMLNSPrefixMap;
 	}
@@ -125,9 +124,9 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 * @generated
 	 */
 	public EMap<String, String> getXSISchemaLocation() {
-		if (xSISchemaLocation == null)
-		{
-			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+		if (xSISchemaLocation == null) {
+			xSISchemaLocation = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this,
+				SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
 	}
@@ -138,7 +137,7 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 * @generated
 	 */
 	public SoftPkg getSoftpkg() {
-		return (SoftPkg)getMixed().get(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG, true);
+		return (SoftPkg) getMixed().get(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG, true);
 	}
 
 	/**
@@ -147,7 +146,7 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 * @generated
 	 */
 	public NotificationChain basicSetSoftpkg(SoftPkg newSoftpkg, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG, newSoftpkg, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG, newSoftpkg, msgs);
 	}
 
 	/**
@@ -156,7 +155,7 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 * @generated
 	 */
 	public void setSoftpkg(SoftPkg newSoftpkg) {
-		((FeatureMap.Internal)getMixed()).set(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG, newSoftpkg);
+		((FeatureMap.Internal) getMixed()).set(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG, newSoftpkg);
 	}
 
 	/**
@@ -166,16 +165,15 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID)
-		{
-			case SpdPackage.SPD_DOCUMENT_ROOT__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
-			case SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return ((InternalEList<?>)getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
-			case SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return ((InternalEList<?>)getXSISchemaLocation()).basicRemove(otherEnd, msgs);
-			case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
-				return basicSetSoftpkg(null, msgs);
+		switch (featureID) {
+		case SpdPackage.SPD_DOCUMENT_ROOT__MIXED:
+			return ((InternalEList< ? >) getMixed()).basicRemove(otherEnd, msgs);
+		case SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return ((InternalEList< ? >) getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
+		case SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return ((InternalEList< ? >) getXSISchemaLocation()).basicRemove(otherEnd, msgs);
+		case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
+			return basicSetSoftpkg(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -187,19 +185,23 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.SPD_DOCUMENT_ROOT__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
-			case SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				if (coreType) return getXMLNSPrefixMap();
-				else return getXMLNSPrefixMap().map();
-			case SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				if (coreType) return getXSISchemaLocation();
-				else return getXSISchemaLocation().map();
-			case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
-				return getSoftpkg();
+		switch (featureID) {
+		case SpdPackage.SPD_DOCUMENT_ROOT__MIXED:
+			if (coreType)
+				return getMixed();
+			return ((FeatureMap.Internal) getMixed()).getWrapper();
+		case SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			if (coreType)
+				return getXMLNSPrefixMap();
+			else
+				return getXMLNSPrefixMap().map();
+		case SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			if (coreType)
+				return getXSISchemaLocation();
+			else
+				return getXSISchemaLocation().map();
+		case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
+			return getSoftpkg();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,20 +213,19 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.SPD_DOCUMENT_ROOT__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
-				return;
-			case SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				((EStructuralFeature.Setting)getXMLNSPrefixMap()).set(newValue);
-				return;
-			case SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				((EStructuralFeature.Setting)getXSISchemaLocation()).set(newValue);
-				return;
-			case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
-				setSoftpkg((SoftPkg)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.SPD_DOCUMENT_ROOT__MIXED:
+			((FeatureMap.Internal) getMixed()).set(newValue);
+			return;
+		case SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			((EStructuralFeature.Setting) getXMLNSPrefixMap()).set(newValue);
+			return;
+		case SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			((EStructuralFeature.Setting) getXSISchemaLocation()).set(newValue);
+			return;
+		case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
+			setSoftpkg((SoftPkg) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -236,20 +237,19 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.SPD_DOCUMENT_ROOT__MIXED:
-				getMixed().clear();
-				return;
-			case SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				getXMLNSPrefixMap().clear();
-				return;
-			case SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				getXSISchemaLocation().clear();
-				return;
-			case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
-				setSoftpkg((SoftPkg)null);
-				return;
+		switch (featureID) {
+		case SpdPackage.SPD_DOCUMENT_ROOT__MIXED:
+			getMixed().clear();
+			return;
+		case SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			getXMLNSPrefixMap().clear();
+			return;
+		case SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			getXSISchemaLocation().clear();
+			return;
+		case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
+			setSoftpkg((SoftPkg) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -261,16 +261,15 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.SPD_DOCUMENT_ROOT__MIXED:
-				return mixed != null && !mixed.isEmpty();
-			case SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
-			case SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
-			case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
-				return getSoftpkg() != null;
+		switch (featureID) {
+		case SpdPackage.SPD_DOCUMENT_ROOT__MIXED:
+			return mixed != null && !mixed.isEmpty();
+		case SpdPackage.SPD_DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
+		case SpdPackage.SPD_DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
+		case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
+			return getSoftpkg() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -282,7 +281,8 @@ public class SpdDocumentRootImpl extends EObjectImpl implements SpdDocumentRoot 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");

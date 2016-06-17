@@ -25,10 +25,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.ImplRefImpl#getRefid <em>Refid</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -100,10 +100,9 @@ public class ImplRefImpl extends EObjectImpl implements ImplRef {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID)
-		{
-			case SpdPackage.IMPL_REF__REFID:
-				return getRefid();
+		switch (featureID) {
+		case SpdPackage.IMPL_REF__REFID:
+			return getRefid();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,11 +114,10 @@ public class ImplRefImpl extends EObjectImpl implements ImplRef {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID)
-		{
-			case SpdPackage.IMPL_REF__REFID:
-				setRefid((String)newValue);
-				return;
+		switch (featureID) {
+		case SpdPackage.IMPL_REF__REFID:
+			setRefid((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,11 +129,10 @@ public class ImplRefImpl extends EObjectImpl implements ImplRef {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.IMPL_REF__REFID:
-				setRefid(REFID_EDEFAULT);
-				return;
+		switch (featureID) {
+		case SpdPackage.IMPL_REF__REFID:
+			setRefid(REFID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -147,10 +144,9 @@ public class ImplRefImpl extends EObjectImpl implements ImplRef {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID)
-		{
-			case SpdPackage.IMPL_REF__REFID:
-				return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
+		switch (featureID) {
+		case SpdPackage.IMPL_REF__REFID:
+			return REFID_EDEFAULT == null ? refid != null : !REFID_EDEFAULT.equals(refid);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -162,7 +158,8 @@ public class ImplRefImpl extends EObjectImpl implements ImplRef {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (refid: ");
