@@ -11,15 +11,19 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.tests;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreValidator;
+import org.junit.Assert;
+
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SpdFactory;
 import mil.jpeojtrs.sca.spd.UsesDevice;
-
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.junit.Assert;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +32,7 @@ import org.junit.Assert;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link mil.jpeojtrs.sca.spd.UsesDevice#getPropertyRef() <em>Property Ref</em>}</li>
+ * <li>{@link mil.jpeojtrs.sca.spd.UsesDevice#getPropertyRef() <em>Property Ref</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -129,4 +133,21 @@ public class UsesDeviceTest extends TestCase {
 		Assert.assertEquals("testType", usesDevice.getType());
 	}
 
-} //UsesDeviceTest
+	public void testNoType() throws Exception {
+		final SoftPkg softPkg = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testFiles/usesdevice_no_type.spd.xml"), true));
+		final UsesDevice usesDevice = softPkg.getImplementation().get(0).getUsesDevice().get(0);
+		Assert.assertNotNull(usesDevice);
+		Assert.assertNull("No type should be set", usesDevice.getType());
+
+		// Model validation
+		TreeIterator<EObject> allContents = usesDevice.eResource().getAllContents();
+		boolean result = false;
+		BasicDiagnostic diagnostics = new BasicDiagnostic();
+		while (allContents.hasNext()) {
+			EObject next = allContents.next();
+			result = EcoreValidator.INSTANCE.validate(next, diagnostics, null);
+			Assert.assertTrue("Ecore model validation failed: " + diagnostics.toString(), result);
+		}
+	}
+
+} // UsesDeviceTest
