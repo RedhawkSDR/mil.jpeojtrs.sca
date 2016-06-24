@@ -12,17 +12,16 @@
 package mil.jpeojtrs.sca.prf.util;
 
 import java.util.Map;
-import mil.jpeojtrs.sca.util.math.ComplexBoolean;
-import mil.jpeojtrs.sca.util.math.ComplexByte;
-import mil.jpeojtrs.sca.util.math.ComplexDouble;
-import mil.jpeojtrs.sca.util.math.ComplexFloat;
-import mil.jpeojtrs.sca.util.math.ComplexLong;
-import mil.jpeojtrs.sca.util.math.ComplexLongLong;
-import mil.jpeojtrs.sca.util.math.ComplexShort;
-import mil.jpeojtrs.sca.util.math.ComplexUByte;
-import mil.jpeojtrs.sca.util.math.ComplexULong;
-import mil.jpeojtrs.sca.util.math.ComplexULongLong;
-import mil.jpeojtrs.sca.util.math.ComplexUShort;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
+import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
+import org.omg.CORBA.Any;
+
 import mil.jpeojtrs.sca.prf.AbstractProperty;
 import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
 import mil.jpeojtrs.sca.prf.AccessType;
@@ -56,13 +55,17 @@ import mil.jpeojtrs.sca.prf.StructSequenceRef;
 import mil.jpeojtrs.sca.prf.StructValue;
 import mil.jpeojtrs.sca.prf.Test;
 import mil.jpeojtrs.sca.prf.Values;
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
-import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
-import org.omg.CORBA.Any;
+import mil.jpeojtrs.sca.util.math.ComplexBoolean;
+import mil.jpeojtrs.sca.util.math.ComplexByte;
+import mil.jpeojtrs.sca.util.math.ComplexDouble;
+import mil.jpeojtrs.sca.util.math.ComplexFloat;
+import mil.jpeojtrs.sca.util.math.ComplexLong;
+import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexShort;
+import mil.jpeojtrs.sca.util.math.ComplexUByte;
+import mil.jpeojtrs.sca.util.math.ComplexULong;
+import mil.jpeojtrs.sca.util.math.ComplexULongLong;
+import mil.jpeojtrs.sca.util.math.ComplexUShort;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,7 +83,8 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public static final PrfValidator INSTANCE = new PrfValidator();
 	/**
-	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic
+	 * {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.common.util.Diagnostic#getSource()
@@ -96,7 +100,8 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 	/**
-	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
+	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a
+	 * derived class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -369,12 +374,67 @@ public class PrfValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Added extra validation to ensure structs cannot have partially configured properties
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateStruct(Struct struct, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(struct, diagnostics, context);
+		// Custom validation for Struct properties
+		boolean hasValidStructs = validateStructConfiguration(struct, diagnostics, context);
+
+		// Generated validation for Struct properties
+		boolean hasValidDefaultConstraints = validate_EveryDefaultConstraint(struct, diagnostics, context);
+
+		return hasValidDefaultConstraints && hasValidStructs;
 	}
+
+	/**
+	 * Custom validation method.
+	 * The framework does not allow partial configuration of structures //TODO: 'unless it's an optional element'.
+	 */
+	private boolean validateStructConfiguration(Struct struct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean isValidStruct = true;
+
+		// Check the first field to see if a default is set. This is the baseline for future comparisons.
+		boolean configRequired = false;
+		if (!struct.getSimple().isEmpty()) {
+			configRequired = (struct.getSimple().get(0).getValue() != null);
+		} else if (!struct.getSimpleSequence().isEmpty()) {
+			configRequired = (struct.getSimpleSequence().get(0).getValues() != null);
+		} else {
+			isValidStruct = false;
+			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_EmptyStruct_diagnostic",
+				new Object[] { getObjectLabel(struct, context), }, new Object[] { struct }, context));
+		}
+
+		// Check to see if only some properties have defaults
+		boolean isPartialConfig = false;
+		for (Simple simple : struct.getSimple()) {
+			boolean simpDefaultFound = (simple.getValue() != null);
+
+			if (configRequired != simpDefaultFound) {
+				isPartialConfig = true;
+				isValidStruct = false;
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStruct_diagnostic",
+					new Object[] { getObjectLabel(struct, context), }, new Object[] { struct }, context));
+
+				break;
+			}
+		}
+		if (!isPartialConfig) { // Don't check simpSeq's if we already caught partial config
+			for (SimpleSequence simpleSeq : struct.getSimpleSequence()) {
+				boolean simpSeqDefaultFound = (simpleSeq.getValues() != null);
+				if (configRequired != simpSeqDefaultFound) {
+					isValidStruct = false;
+					diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStruct_diagnostic",
+						new Object[] { getObjectLabel(struct, context), }, new Object[] { struct }, context));
+				}
+			}
+		}
+
+		return isValidStruct;
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -752,19 +812,16 @@ public class PrfValidator extends EObjectValidator {
 	public boolean validateComplexUShort(ComplexUShort complexUShort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
-
+	
 	/**
 	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		// TODO
-		// Specialize this to return a resource locator for messages specific to this validator.
-		// Ensure that you remove @generated or mark it @generated NOT
-		return super.getResourceLocator();
+		return PrfPlugin.INSTANCE;
 	}
 
 	/**
@@ -781,4 +838,4 @@ public class PrfValidator extends EObjectValidator {
 		return true;
 	}
 
-} //PrfValidator
+} // PrfValidator
