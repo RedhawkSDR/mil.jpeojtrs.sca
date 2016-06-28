@@ -357,6 +357,12 @@ public class PrfValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSimple(Simple simple, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (simple.eContainer() instanceof Properties) {
+			if (simple.getOptional() != null && simple.getOptional()) {
+				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
+					new Object[] { getObjectLabel(simple, context), }, new Object[] { simple}, context));
+			}
+		}
 		return validate_EveryDefaultConstraint(simple, diagnostics, context);
 	}
 
@@ -366,6 +372,12 @@ public class PrfValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSimpleSequence(SimpleSequence simpleSequence, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (simpleSequence.eContainer() instanceof Properties) {
+			if (simpleSequence.getOptional() != null && simpleSequence.getOptional()) {
+				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
+					new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence}, context));
+			}
+		}
 		return validate_EveryDefaultConstraint(simpleSequence, diagnostics, context);
 	}
 
