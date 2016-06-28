@@ -26,4 +26,24 @@
     </simplesequence>
     <configurationkind kindtype="allocation"/>
   </struct>
+  <struct id="partialConfigStuct" mode="readwrite">
+    <simple id="simpleOne" type="string">
+      <value>simpleOneValue</value>
+    </simple>
+    <simple id="simpleTwo" type="string"/>
+    <configurationkind kindtype="property"/>
+  </struct>
+  <struct id="partialConfigStuctWithOptional" mode="readwrite">
+    <simple id="simple" type="string">
+      <value>simpleValue</value>
+    </simple>
+    <simplesequence id="simpleSequence" type="string">
+      <values>
+        <value>simpleSequenceValue</value>
+      </values>
+    </simplesequence>
+    <simple id="simpleOptional" type="string" optional="true"/>
+    <simplesequence id="simpleSequenceOptional" type="string" optional="true"/>
+    <configurationkind kindtype="property"/>
+  </struct>
 </properties>

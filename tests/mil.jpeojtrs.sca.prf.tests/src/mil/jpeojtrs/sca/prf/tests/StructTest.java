@@ -11,10 +11,14 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.tests;
 
-import org.junit.Assert;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.junit.Assert;
 
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.AccessType;
@@ -26,10 +30,7 @@ import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructPropertyConfigurationType;
 import mil.jpeojtrs.sca.prf.Values;
-
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import mil.jpeojtrs.sca.prf.util.PrfValidator;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
@@ -251,6 +252,32 @@ public class StructTest extends AbstractPropertyTest {
 		struct.eResource().save(buffer, null);
 		String xml = new String(buffer.toByteArray());
 		Assert.assertFalse("Empty configuration kind serialized wrong.", xml.contains("configurationkind=\"\""));
+	}
+	
+	public void testPartiallyConfiguredStruct() throws Exception {
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
+		Assert.assertNotNull(props);
+
+		// Validate that a partially configured struct throws an error
+		Struct struct = props.getStruct().get(2);
+		Assert.assertNotNull(struct);
+
+		BasicDiagnostic diagnostic = new BasicDiagnostic();
+		boolean isValid = PrfValidator.INSTANCE.validateStruct(struct, diagnostic, null);
+		Assert.assertFalse("Partially configured structs should not pass validation", isValid);
+
+		String errorMsg = diagnostic.getChildren().get(0).getMessage();
+		Assert.assertEquals("Unexpected error message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_PartiallyConfiguredStruct_diagnostic"),
+			errorMsg);
+
+		// Validate that properties with 'optional' attribute do not cause a validation error
+		struct = props.getStruct().get(3);
+		Assert.assertNotNull(struct);
+
+		diagnostic = new BasicDiagnostic();
+		isValid = PrfValidator.INSTANCE.validateStruct(struct, diagnostic, null);
+		Assert.assertTrue("Optional elements should not affect validation", isValid);
 	}
 
 } //StructTest
