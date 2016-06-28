@@ -24,7 +24,10 @@ import mil.jpeojtrs.sca.prf.PropertyConfigurationType;
 import mil.jpeojtrs.sca.prf.PropertyValueType;
 import mil.jpeojtrs.sca.prf.Range;
 import mil.jpeojtrs.sca.prf.Simple;
+import mil.jpeojtrs.sca.prf.util.PrfValidator;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
@@ -315,6 +318,28 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(PropertyValueType.STRING, simple.getType());
 		simple.setType(PropertyValueType.FLOAT);
 		Assert.assertEquals(PropertyValueType.FLOAT, simple.getType());
+	}
+
+	/**
+	 * IDE=-1215 Simples not inside a Struct/StructSequence should throw and EMF validation warning
+	 */
+	public void testOptionSimple() throws Exception {
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/SimpleTest.prf.xml"), true));
+		Assert.assertNotNull(props);
+		final Simple simple = props.getSimple().get(2);
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("Test case running against wrong Simple element", "DCE:a0dae7c6-1f49-4cc0-9219-2b669ca392c8", simple.getId());
+		Assert.assertTrue("optional attribute", simple.getOptional());
+		Assert.assertTrue("isOptional()", simple.isOptional());
+
+		BasicDiagnostic diagnostic = new BasicDiagnostic();
+		PrfValidator.INSTANCE.validateSimple(simple, diagnostic, null);
+
+		String errorMsg = diagnostic.getChildren().get(0).getMessage();
+		Assert.assertEquals("Unexpected warning message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_InvalidOptionalAttribute_diagnostic"),
+			errorMsg);
+		Assert.assertEquals("Optional simple elements not inside a Struct/StructSequence should throw and EMF validation warning", Diagnostic.WARNING, diagnostic.getChildren().get(0).getSeverity());
 	}
 
 } //SimpleTest

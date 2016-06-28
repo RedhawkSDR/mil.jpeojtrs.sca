@@ -16,7 +16,6 @@ import java.io.IOException;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EObjectValidator;
@@ -285,6 +284,9 @@ public class StructTest extends AbstractPropertyTest {
 		diagnostic = new BasicDiagnostic();
 		isValid = PrfValidator.INSTANCE.validateStruct(struct, diagnostic, null);
 		Assert.assertTrue("Optional elements should not affect validation", isValid);
+
+		// IDE-1215 - Optional elements should not throw EMF warnings when inside a Struct/StructSequence 
+		Assert.assertTrue("Optional elements should not affect validation", diagnostic.getChildren().isEmpty());
 	}
 
 	/**

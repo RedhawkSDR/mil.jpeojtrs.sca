@@ -23,7 +23,10 @@ import mil.jpeojtrs.sca.prf.PropertyValueType;
 import mil.jpeojtrs.sca.prf.Range;
 import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.Values;
+import mil.jpeojtrs.sca.prf.util.PrfValidator;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
@@ -227,4 +230,28 @@ public class SimpleSequenceTest extends AbstractPropertyTest {
 		simpleSequence.setType(PropertyValueType.FLOAT);
 		Assert.assertEquals(PropertyValueType.FLOAT, simpleSequence.getType());
 	}
+
+	/**
+	 * IDE=-1215 SimpleSequences not inside a Struct/StructSequence should throw and EMF validation warning
+	 */
+	public void testOptionSimpleSequence() throws Exception {
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/SimpleSequenceTest.prf.xml"), true));
+		Assert.assertNotNull(props);
+		final SimpleSequence simpleSequence = props.getSimpleSequence().get(1);
+		Assert.assertNotNull(simpleSequence);
+		Assert.assertEquals("Test case running against wrong SimpleSequence element", "DCE:37d9f294-6abb-4b7e-967f-8f7e2a838ccc", simpleSequence.getId());
+		Assert.assertTrue("optional attribute", simpleSequence.getOptional());
+		Assert.assertTrue("isOptional()", simpleSequence.isOptional());
+
+		BasicDiagnostic diagnostic = new BasicDiagnostic();
+		PrfValidator.INSTANCE.validateSimpleSequence(simpleSequence, diagnostic, null);
+
+		String errorMsg = diagnostic.getChildren().get(0).getMessage();
+		Assert.assertEquals("Unexpected warning message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_InvalidOptionalAttribute_diagnostic"),
+			errorMsg);
+		Assert.assertEquals("Optional simpleSequence elements not inside a Struct/StructSequence should throw and EMF validation warning", Diagnostic.WARNING,
+			diagnostic.getChildren().get(0).getSeverity());
+	}
+
 } //SimpleSequenceTest
