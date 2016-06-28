@@ -358,7 +358,7 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateSimple(Simple simple, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (simple.eContainer() instanceof Properties) {
-			if (simple.getOptional() != null && simple.getOptional()) {
+			if (simple.isOptional()) {
 				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
 					new Object[] { getObjectLabel(simple, context), }, new Object[] { simple}, context));
 			}
@@ -373,7 +373,7 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateSimpleSequence(SimpleSequence simpleSequence, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (simpleSequence.eContainer() instanceof Properties) {
-			if (simpleSequence.getOptional() != null && simpleSequence.getOptional()) {
+			if (simpleSequence.isOptional()) {
 				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
 					new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence}, context));
 			}
@@ -414,7 +414,7 @@ public class PrfValidator extends EObjectValidator {
 		// Check to see if only some properties have defaults
 		boolean isPartialConfig = false;
 		for (Simple simple : struct.getSimple()) {
-			if (simple.getOptional() != null && simple.getOptional()) {
+			if (simple.isOptional()) {
 				continue;
 			}
 
@@ -433,7 +433,7 @@ public class PrfValidator extends EObjectValidator {
 		}
 		if (!isPartialConfig) { // Don't check simpSeq's if we already caught partial config
 			for (SimpleSequence simpleSeq : struct.getSimpleSequence()) {
-				if (simpleSeq.getOptional() != null && simpleSeq.getOptional()) {
+				if (simpleSeq.isOptional()) {
 					continue;
 				}
 
@@ -460,14 +460,14 @@ public class PrfValidator extends EObjectValidator {
 		if (!struct.getSimple().isEmpty()) {
 			for (Simple simple : struct.getSimple()) {
 				// Ignore optional elements
-				if (simple.getOptional() == null || !simple.getOptional()) {
+				if (!simple.isOptional()) {
 					return simple.getValue() != null;
 				}
 			}
 		} else if (!struct.getSimpleSequence().isEmpty()) {
 			for (SimpleSequence simpleSeq : struct.getSimpleSequence()) {
 				// Ignore optional elements
-				if (simpleSeq.getOptional() == null || !simpleSeq.getOptional()) {
+				if (!simpleSeq.isOptional()) {
 					return simpleSeq.getValues() != null;
 				}
 			}
