@@ -390,32 +390,33 @@ public class PrfValidator extends EObjectValidator {
 
 	/**
 	 * Custom validation method.
-	 * The framework does not allow partial configuration of structures //TODO: 'unless it's an optional element'.
+	 * The framework does not allow partial configuration of structures unless it's an optional element.
+	 * Severity depends on kindtype value
+	 * @since 6.1
 	 */
-	private boolean validateStructConfiguration(Struct struct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateStructConfiguration(Struct struct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		final int severity = struct.isKind(PropertyConfigurationType.PROPERTY) ? Diagnostic.ERROR : Diagnostic.WARNING;
+
 		boolean isValidStruct = true;
 
 		// Check the first field to see if a default is set. This is the baseline for future comparisons.
-		boolean configRequired = false;
-		if (!struct.getSimple().isEmpty()) {
-			configRequired = (struct.getSimple().get(0).getValue() != null);
-		} else if (!struct.getSimpleSequence().isEmpty()) {
-			configRequired = (struct.getSimpleSequence().get(0).getValues() != null);
-		} else {
-			isValidStruct = false;
-			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_EmptyStruct_diagnostic",
-				new Object[] { getObjectLabel(struct, context), }, new Object[] { struct }, context));
-		}
+		boolean baselineConfigState = getDefaultState(struct);
 
 		// Check to see if only some properties have defaults
 		boolean isPartialConfig = false;
 		for (Simple simple : struct.getSimple()) {
-			boolean simpDefaultFound = (simple.getValue() != null);
+			if (simple.getOptional() != null && simple.getOptional()) {
+				continue;
+			}
 
-			if (configRequired != simpDefaultFound) {
+			// Check is simple has a default value
+			boolean simpleConfigState = (simple.getValue() != null);
+
+			// Compare result to the baseline.
+			if (baselineConfigState != simpleConfigState) {
 				isPartialConfig = true;
 				isValidStruct = false;
-				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStruct_diagnostic",
+				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStruct_diagnostic",
 					new Object[] { getObjectLabel(struct, context), }, new Object[] { struct }, context));
 
 				break;
@@ -423,10 +424,17 @@ public class PrfValidator extends EObjectValidator {
 		}
 		if (!isPartialConfig) { // Don't check simpSeq's if we already caught partial config
 			for (SimpleSequence simpleSeq : struct.getSimpleSequence()) {
-				boolean simpSeqDefaultFound = (simpleSeq.getValues() != null);
-				if (configRequired != simpSeqDefaultFound) {
+				if (simpleSeq.getOptional() != null && simpleSeq.getOptional()) {
+					continue;
+				}
+
+				// Check is simple has a default value
+				boolean simpleSeqConfigState = (simpleSeq.getValues() != null);
+
+				// Compare result to the baseline.
+				if (baselineConfigState != simpleSeqConfigState) {
 					isValidStruct = false;
-					diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStruct_diagnostic",
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStruct_diagnostic",
 						new Object[] { getObjectLabel(struct, context), }, new Object[] { struct }, context));
 				}
 			}
@@ -435,6 +443,29 @@ public class PrfValidator extends EObjectValidator {
 		return isValidStruct;
 	}
 
+	/**
+	 * @return True if non-optional properties MUST have a default value, or False if they must NOT have a default
+	 * value.
+	 */
+	private boolean getDefaultState(Struct struct) {
+		if (!struct.getSimple().isEmpty()) {
+			for (Simple simple : struct.getSimple()) {
+				// Ignore optional elements
+				if (simple.getOptional() == null || !simple.getOptional()) {
+					return simple.getValue() != null;
+				}
+			}
+		} else if (!struct.getSimpleSequence().isEmpty()) {
+			for (SimpleSequence simpleSeq : struct.getSimpleSequence()) {
+				// Ignore optional elements
+				if (simpleSeq.getOptional() == null || !simpleSeq.getOptional()) {
+					return simpleSeq.getValues() != null;
+				}
+			}
+		}
+
+		return false;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
