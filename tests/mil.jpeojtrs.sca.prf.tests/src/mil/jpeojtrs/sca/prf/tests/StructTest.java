@@ -16,8 +16,10 @@ import java.io.IOException;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.junit.Assert;
 
 import junit.textui.TestRunner;
@@ -262,9 +264,10 @@ public class StructTest extends AbstractPropertyTest {
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
 		Assert.assertNotNull(props);
 
-		// Validate that a partially configured struct throws an error
+		// Assert that a partially configured Struct fails EMF validation
 		Struct struct = props.getStruct().get(2);
 		Assert.assertNotNull(struct);
+		Assert.assertEquals("Test case running against wrong Struct element", "partialConfigStuct", struct.getId());
 
 		BasicDiagnostic diagnostic = new BasicDiagnostic();
 		boolean isValid = PrfValidator.INSTANCE.validateStruct(struct, diagnostic, null);
@@ -274,13 +277,36 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertEquals("Unexpected error message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_PartiallyConfiguredStruct_diagnostic"),
 			errorMsg);
 
-		// Validate that properties with 'optional' attribute do not cause a validation error
+		// Assert that properties with 'optional' attribute do not cause a validation error
 		struct = props.getStruct().get(3);
 		Assert.assertNotNull(struct);
+		Assert.assertEquals("Test case running against wrong Struct element", "partialConfigStuctWithOptional", struct.getId());
 
 		diagnostic = new BasicDiagnostic();
 		isValid = PrfValidator.INSTANCE.validateStruct(struct, diagnostic, null);
 		Assert.assertTrue("Optional elements should not affect validation", isValid);
+	}
+
+	/**
+	 * IDE-1638 - Structs without child elements should throw an EMF validation error
+	 */
+	public void testEmptyStruct() throws Exception {
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
+		Assert.assertNotNull(props);
+
+		// Assert that an Struct fails EMF validation
+		Struct struct = props.getStruct().get(4);
+		Assert.assertNotNull(struct);
+		Assert.assertEquals("Test case running against wrong Struct element", "emptyStruct", struct.getId());
+
+		BasicDiagnostic diagnostic = new BasicDiagnostic();
+		boolean isValid = PrfValidator.INSTANCE.validateStruct(struct, diagnostic, null);
+		Assert.assertFalse("Empty structs should not pass validation", isValid);
+
+		String errorMsg = diagnostic.getChildren().get(0).getMessage();
+		Assert.assertTrue("Unexpected error message", errorMsg.matches(".*" + "must have at least 1 values"));
+		Assert.assertEquals("Unexpected error code", EObjectValidator.EOBJECT__EVERY_MULTIPCITY_CONFORMS, diagnostic.getChildren().get(0).getCode());
 	}
 
 } //StructTest

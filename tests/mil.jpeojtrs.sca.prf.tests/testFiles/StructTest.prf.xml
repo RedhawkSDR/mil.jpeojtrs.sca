@@ -46,4 +46,7 @@
     <simplesequence id="simpleSequenceOptional" type="string" optional="true"/>
     <configurationkind kindtype="property"/>
   </struct>
+    <struct id="emptyStruct" mode="readwrite">
+    <configurationkind kindtype="property"/>
+  </struct>
 </properties>
