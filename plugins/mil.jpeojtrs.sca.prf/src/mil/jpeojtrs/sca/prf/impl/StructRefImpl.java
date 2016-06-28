@@ -51,7 +51,7 @@ import CF.PropertiesHelper;
  *
  * @generated
  */
-public class StructRefImpl extends AbstractPropertyRefImpl<Struct>implements StructRef {
+public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements StructRef {
 	/**
 	 * The cached value of the '{@link #getRefs() <em>Refs</em>}' attribute list.
 	 * <!-- begin-user-doc -->

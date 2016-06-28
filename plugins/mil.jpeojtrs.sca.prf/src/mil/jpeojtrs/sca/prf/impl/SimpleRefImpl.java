@@ -34,7 +34,7 @@ import org.omg.CORBA.Any;
  *
  * @generated
  */
-public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple>implements SimpleRef {
+public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements SimpleRef {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->

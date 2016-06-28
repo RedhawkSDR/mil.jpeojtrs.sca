@@ -2195,7 +2195,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addEOperation(simpleSequenceEClass, theEcorePackage.getEBoolean(), "isOptional", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(structEClass, Struct.class, "Struct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStruct_Fields(), ecorePackage.getEFeatureMapEntry(), "fields", null, 0, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEAttribute(getStruct_Fields(), ecorePackage.getEFeatureMapEntry(), "fields", null, 1, -1, Struct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			!IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStruct_Simple(), this.getSimple(), null, "simple", null, 0, -1, Struct.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 			!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);

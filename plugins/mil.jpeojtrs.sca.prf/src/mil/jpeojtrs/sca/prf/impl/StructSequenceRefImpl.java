@@ -44,7 +44,7 @@ import org.omg.CORBA.AnySeqHelper;
  *
  * @generated
  */
-public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequence>implements StructSequenceRef {
+public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequence> implements StructSequenceRef {
 	/**
 	 * The cached value of the '{@link #getStructValue() <em>Struct Value</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

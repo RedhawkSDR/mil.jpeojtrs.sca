@@ -47,7 +47,7 @@ public interface Struct extends AbstractProperty, PropertyContainer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fields</em>' attribute list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getStruct_Fields()
-	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" required="true" many="true"
 	 *        extendedMetaData="kind='group' name='fields:0'"
 	 * @generated
 	 */

@@ -12,7 +12,6 @@
 package mil.jpeojtrs.sca.prf.util;
 
 import java.util.Map;
-
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -83,8 +82,7 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public static final PrfValidator INSTANCE = new PrfValidator();
 	/**
-	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic
-	 * {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.common.util.Diagnostic#getSource()
@@ -100,8 +98,7 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 	/**
-	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a
-	 * derived class.
+	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -843,7 +840,7 @@ public class PrfValidator extends EObjectValidator {
 	public boolean validateComplexUShort(ComplexUShort complexUShort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
-	
+
 	/**
 	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
 	 * <!-- begin-user-doc -->

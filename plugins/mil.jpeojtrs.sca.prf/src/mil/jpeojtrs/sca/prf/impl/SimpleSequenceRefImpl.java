@@ -39,7 +39,7 @@ import org.omg.CORBA.Any;
  *
  * @generated
  */
-public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequence>implements SimpleSequenceRef {
+public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequence> implements SimpleSequenceRef {
 	/**
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference.
 	 * <!-- begin-user-doc -->
