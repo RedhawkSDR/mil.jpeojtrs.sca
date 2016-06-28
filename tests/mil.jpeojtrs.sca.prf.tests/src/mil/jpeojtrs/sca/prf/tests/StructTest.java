@@ -254,6 +254,9 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertFalse("Empty configuration kind serialized wrong.", xml.contains("configurationkind=\"\""));
 	}
 	
+	/**
+	 * IDE-1304 - The framework does not allow partial configuration of structures (unless it's an optional element)
+	 */
 	public void testPartiallyConfiguredStruct() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
