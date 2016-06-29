@@ -360,8 +360,11 @@ public class PrfValidator extends EObjectValidator {
 		if (simple.eContainer() instanceof Properties) {
 			if (simple.isOptional()) {
 				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
-					new Object[] { getObjectLabel(simple, context), }, new Object[] { simple}, context));
+					new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
 			}
+		} else if (simple.getKind() != null && !simple.getKind().isEmpty()) {
+			diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
+				new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
 		}
 		return validate_EveryDefaultConstraint(simple, diagnostics, context);
 	}
@@ -375,8 +378,11 @@ public class PrfValidator extends EObjectValidator {
 		if (simpleSequence.eContainer() instanceof Properties) {
 			if (simpleSequence.isOptional()) {
 				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
-					new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence}, context));
+					new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
 			}
+		} else if (simpleSequence.getKind() != null && !simpleSequence.getKind().isEmpty()) {
+			diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
+				new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
 		}
 		return validate_EveryDefaultConstraint(simpleSequence, diagnostics, context);
 	}
@@ -388,6 +394,13 @@ public class PrfValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateStruct(Struct struct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (struct.eContainer() instanceof StructSequence) {
+			if (struct.getConfigurationKind() != null && !struct.getConfigurationKind().isEmpty()) {
+				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
+					new Object[] { getObjectLabel(struct, context), }, new Object[] { struct }, context));
+			}
+		}
+
 		// Custom validation for Struct properties
 		boolean hasValidStructs = validateStructConfiguration(struct, diagnostics, context);
 
