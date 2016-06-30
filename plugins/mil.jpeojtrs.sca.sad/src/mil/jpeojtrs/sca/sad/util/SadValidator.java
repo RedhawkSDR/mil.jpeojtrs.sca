@@ -11,9 +11,16 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.util;
 
+import java.util.HashMap;
 import java.util.Map;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+
 import mil.jpeojtrs.sca.partitioning.util.PartitioningValidator;
-import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
@@ -35,11 +42,7 @@ import mil.jpeojtrs.sca.sad.SadPluginActivator;
 import mil.jpeojtrs.sca.sad.SadProvidesPort;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
+import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +60,8 @@ public class SadValidator extends EObjectValidator {
 	 */
 	public static final SadValidator INSTANCE = new SadValidator();
 	/**
-	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic
+	 * {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.common.util.Diagnostic#getSource()
@@ -73,7 +77,8 @@ public class SadValidator extends EObjectValidator {
 	 */
 	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 	/**
-	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
+	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a
+	 * derived class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -265,7 +270,29 @@ public class SadValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExternalPorts(ExternalPorts externalPorts, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(externalPorts, diagnostics, context);
+		Map<String, Port> externalPortMap = new HashMap<String, Port>();
+		boolean validExternalPorts = true;
+
+		for (Port port : externalPorts.getPort()) {
+			// Find external port name
+			String externalName = port.getExternalName() != null ? port.getExternalName()
+				: port.getProvidesIdentifier() != null ? port.getProvidesIdentifier() : port.getUsesIdentifier();
+
+			// Check for duplicate names. If found, add an EMF.ERROR diagnostic
+			if (externalPortMap.containsKey(externalName)) {
+				validExternalPorts = false;
+
+				Port duplicatePort = externalPortMap.get(externalName);
+				Object[] messageSubstitutions = new Object[] { port.getComponentInstantiationRef().getRefid(),
+					duplicatePort.getComponentInstantiationRef().getRefid(), externalName };
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_DuplicateExternalPortName_diagnostic", messageSubstitutions,
+					new Object[] { port, duplicatePort }, context));
+			} else {
+				externalPortMap.put(externalName, port);
+			}
+		}
+
+		return validate_EveryDefaultConstraint(externalPorts, diagnostics, context) && validExternalPorts;
 	}
 
 	/**
@@ -422,4 +449,5 @@ public class SadValidator extends EObjectValidator {
 		return SadPluginActivator.INSTANCE;
 	}
 
-} //SadValidator
+} // SadValidator
+
