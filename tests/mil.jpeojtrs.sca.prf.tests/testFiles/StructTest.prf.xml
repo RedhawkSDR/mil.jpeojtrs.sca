@@ -35,9 +35,11 @@
   </struct>
   <struct id="partialConfigStuctWithOptional" mode="readwrite">
     <simple id="simple" type="string">
+      <kind kindtype="property"/>
       <value>simpleValue</value>
     </simple>
     <simplesequence id="simpleSequence" type="string">
+      <kind kindtype="property"/>
       <values>
         <value>simpleSequenceValue</value>
       </values>
@@ -46,7 +48,7 @@
     <simplesequence id="simpleSequenceOptional" type="string" optional="true"/>
     <configurationkind kindtype="property"/>
   </struct>
-    <struct id="emptyStruct" mode="readwrite">
+  <struct id="emptyStruct" mode="readwrite">
     <configurationkind kindtype="property"/>
   </struct>
 </properties>

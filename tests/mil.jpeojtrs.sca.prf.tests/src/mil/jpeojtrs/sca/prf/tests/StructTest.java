@@ -15,6 +15,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -26,7 +27,9 @@ import mil.jpeojtrs.sca.prf.AccessType;
 import mil.jpeojtrs.sca.prf.ConfigurationKind;
 import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.Properties;
+import mil.jpeojtrs.sca.prf.PropertyConfigurationType;
 import mil.jpeojtrs.sca.prf.PropertyValueType;
+import mil.jpeojtrs.sca.prf.Simple;
 import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructPropertyConfigurationType;
@@ -258,7 +261,7 @@ public class StructTest extends AbstractPropertyTest {
 	/**
 	 * IDE-1304 - The framework does not allow partial configuration of structures (unless it's an optional element)
 	 */
-	public void testPartiallyConfiguredStruct() throws Exception {
+	public void testPartiallyConfiguredStruct_IDE_1304() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
 		Assert.assertNotNull(props);
@@ -292,7 +295,7 @@ public class StructTest extends AbstractPropertyTest {
 	/**
 	 * IDE-1638 - Structs without child elements should throw an EMF validation error
 	 */
-	public void testEmptyStruct() throws Exception {
+	public void testEmptyStruct_IDE_1638() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
 		Assert.assertNotNull(props);
@@ -311,4 +314,43 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertEquals("Unexpected error code", EObjectValidator.EOBJECT__EVERY_MULTIPCITY_CONFORMS, diagnostic.getChildren().get(0).getCode());
 	}
 
+	/**
+	 * IDE-1344 - Provide validation warning for kind elements on members of a struct/struct seq
+	 */
+	public void testRedundantConfigurationKind_IDE_1344() throws Exception {
+		final ResourceSet resourceSet = new ResourceSetImpl();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
+		Assert.assertNotNull(props);
+
+		// Assert that an Struct fails EMF validation
+		Struct struct = props.getStruct().get(3);
+		Assert.assertNotNull(struct);
+		Assert.assertEquals("Test case running against wrong Struct element", "partialConfigStuctWithOptional", struct.getId());
+
+		// Assert that EMF Warning is thrown if a simple contained in a struct has a declared kind type
+		Simple simple = struct.getSimple().get(0);
+		Assert.assertEquals("Test case running against wrong Simple element", "simple", simple.getId());
+		Assert.assertEquals("Simple Kind type is not set", PropertyConfigurationType.PROPERTY, simple.getKind().get(0).getType());
+
+		BasicDiagnostic diagnostic = new BasicDiagnostic();
+		Assert.assertTrue(PrfValidator.INSTANCE.validateSimple(simple, diagnostic, null));
+		Assert.assertFalse(diagnostic.getChildren().isEmpty());
+		Diagnostic diagResult = diagnostic.getChildren().get(0);
+		Assert.assertEquals("Validation should result in a warning", Diagnostic.WARNING, diagResult.getSeverity());
+		Assert.assertEquals("Unexpected error message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_RedundantKind_diagnostic"),
+			diagResult.getMessage());
+
+		// Assert that EMF Warning is thrown if a simpleSequence contained in a struct has a declared kind type
+		SimpleSequence simpleSequence = struct.getSimpleSequence().get(0);
+		Assert.assertEquals("Test case running against wrong SimpleSequence element", "simpleSequence", simpleSequence.getId());
+		Assert.assertEquals("SimpleSequence Kind type is not set", PropertyConfigurationType.PROPERTY, simpleSequence.getKind().get(0).getType());
+
+		diagnostic = new BasicDiagnostic();
+		Assert.assertTrue(PrfValidator.INSTANCE.validateSimpleSequence(simpleSequence, diagnostic, null));
+		Assert.assertFalse(diagnostic.getChildren().isEmpty());
+		diagResult = diagnostic.getChildren().get(0);
+		Assert.assertEquals("Validation should result in a warning", Diagnostic.WARNING, diagResult.getSeverity());
+		Assert.assertEquals("Unexpected error message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_RedundantKind_diagnostic"),
+			diagResult.getMessage());
+	}
 } //StructTest
