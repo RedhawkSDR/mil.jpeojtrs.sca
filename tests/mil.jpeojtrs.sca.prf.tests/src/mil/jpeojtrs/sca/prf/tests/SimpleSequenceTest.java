@@ -250,7 +250,7 @@ public class SimpleSequenceTest extends AbstractPropertyTest {
 		String errorMsg = diagnostic.getChildren().get(0).getMessage();
 		Assert.assertEquals("Unexpected warning message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_InvalidOptionalAttribute_diagnostic"),
 			errorMsg);
-		Assert.assertEquals("Optional simpleSequence elements not inside a Struct/StructSequence should throw and EMF validation warning", Diagnostic.WARNING,
+		Assert.assertEquals("Optional simpleSequence elements not inside a Struct/StructSequence should throw an EMF validation warning", Diagnostic.WARNING,
 			diagnostic.getChildren().get(0).getSeverity());
 	}
 

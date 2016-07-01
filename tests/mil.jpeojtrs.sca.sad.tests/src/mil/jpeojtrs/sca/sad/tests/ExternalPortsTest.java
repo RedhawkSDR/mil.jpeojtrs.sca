@@ -11,12 +11,17 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.tests;
 
+import java.net.URISyntaxException;
+
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.junit.Assert;
+
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
 import mil.jpeojtrs.sca.sad.Port;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
+import mil.jpeojtrs.sca.sad.util.SadValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,6 +115,32 @@ public class ExternalPortsTest extends TestCase {
 		Assert.assertEquals("externalPort", this.fixture.getPort().get(0).getUsesIdentifier());
 		Assert.assertEquals("anotherExternalPort", this.fixture.getPort().get(1).getProvidesIdentifier());
 		Assert.assertEquals("IDL:BULKIO/dataFloat:1.0", this.fixture.getPort().get(2).getSupportedIdentifier());
+	}
+
+	public void test_externalPortNameCollision_IDE_1223() throws URISyntaxException {
+		// Test for validation errors on external ports with matching ExternalNames
+		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/ExternalPorts/ExternalPorts.sad.xml");
+		Assert.assertEquals("Test is using an incorrect sad.xml", "externalPorts", sad.getName());
+		Assert.assertEquals("Wrong number of external ports found", 2, sad.getExternalPorts().getPort().size());
+		for (Port port : sad.getExternalPorts().getPort()) {
+			Assert.assertEquals("External port names are incorrect", "siggen_external", port.getExternalName());
+		}
+
+		BasicDiagnostic diagnostics = new BasicDiagnostic();
+		Assert.assertFalse("Validation should fail", SadValidator.INSTANCE.validateExternalPorts(sad.getExternalPorts(), diagnostics, null));
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(".*" + "Duplicate external port names:" + ".*"));
+
+		// Test for validation errors on external ports with matching default names (should just be the port name)
+		sad = SadTests.loadSADFromDomPath("/waveforms/ExternalPorts/ExternalPortsDefault.sad.xml");
+		Assert.assertEquals("Test is using an incorrect sad.xml", "externalPortsWithDefault", sad.getName());
+		Assert.assertEquals("Wrong number of external ports found", 2, sad.getExternalPorts().getPort().size());
+		for (Port port : sad.getExternalPorts().getPort()) {
+			Assert.assertNull("No external name should be declared", port.getExternalName());
+		}
+
+		diagnostics = new BasicDiagnostic();
+		Assert.assertFalse("Validation should fail", SadValidator.INSTANCE.validateExternalPorts(sad.getExternalPorts(), diagnostics, null));
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(".*" + "Duplicate external port names:" + ".*"));
 	}
 
 } //ExternalPortsTest
