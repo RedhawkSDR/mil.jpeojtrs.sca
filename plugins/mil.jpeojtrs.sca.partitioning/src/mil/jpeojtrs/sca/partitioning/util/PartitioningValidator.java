@@ -522,32 +522,28 @@ public class PartitioningValidator extends EObjectValidator {
 
 		// Validate that loggingConfig has a validly formatted URI
 		String uriString = loggingConfig.getUri();
-
-		// Check for a schema
-		int colonIndex = uriString.indexOf(':');
-		if (colonIndex == -1) {
-			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_NoUriProtocol_diagnostic", new Object[] { compId },
-				new Object[] { loggingConfig }, context));
-			return false;
-		}
-
 		List<String> acceptedProtocols = new ArrayList<String>(Arrays.asList(new String[] { "file", "sca", "http" }));
-		String protocol = uriString.substring(0, colonIndex);
-		if (!acceptedProtocols.contains(protocol)) {
-			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidProtocol_diagnostic", new Object[] { protocol, compId },
-				new Object[] { loggingConfig }, context));
-			return false;
-		}
 
 		// Catch malformed URI's
 		try {
-			new URI(uriString);
+			URI uri = new URI(uriString);
+			String scheme = uri.getScheme();
+			if (scheme == null) {
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_NoUriProtocol_diagnostic", new Object[] { compId },
+					new Object[] { loggingConfig }, context));
+				return false;
+			}
+			if (!acceptedProtocols.contains(scheme)) {
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidProtocol_diagnostic", new Object[] { scheme, compId },
+					new Object[] { loggingConfig }, context));
+				return false;
+			}
 		} catch (URISyntaxException e) {
 			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_UriSyntaxException_diagnostic", new Object[] { e.getMessage() },
 				new Object[] { loggingConfig }, context));
 			return false;
 		}
-
+		
 		return true;
 	}
 
