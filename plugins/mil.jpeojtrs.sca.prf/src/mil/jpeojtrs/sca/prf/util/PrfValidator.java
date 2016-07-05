@@ -401,13 +401,9 @@ public class PrfValidator extends EObjectValidator {
 			}
 		}
 
-		// Custom validation for Struct properties
 		boolean hasValidStructs = validateStructConfiguration(struct, diagnostics, context);
 
-		// Generated validation for Struct properties
-		boolean hasValidDefaultConstraints = validate_EveryDefaultConstraint(struct, diagnostics, context);
-
-		return hasValidDefaultConstraints && hasValidStructs;
+		return validate_EveryDefaultConstraint(struct, diagnostics, context) && hasValidStructs;
 	}
 
 	/**
