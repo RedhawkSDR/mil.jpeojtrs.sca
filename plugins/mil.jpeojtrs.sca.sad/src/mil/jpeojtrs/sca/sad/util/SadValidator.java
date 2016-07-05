@@ -43,6 +43,7 @@ import mil.jpeojtrs.sca.sad.SadProvidesPort;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
+import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
 /**
  * <!-- begin-user-doc -->
@@ -312,7 +313,24 @@ public class SadValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateExternalProperty(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(externalProperty, diagnostics, context);
+		boolean validRefId = validateExternalPropertyRefId(externalProperty, diagnostics, context);
+
+		return validate_EveryDefaultConstraint(externalProperty, diagnostics, context) && validRefId;
+	}
+
+	private boolean validateExternalPropertyRefId(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		String compRefId = externalProperty.getCompRefID();
+
+		SoftwareAssembly sad = ScaEcoreUtils.getEContainerOfType(externalProperty, SoftwareAssembly.class);
+		for (SadComponentInstantiation comp : sad.getAllComponentInstantiations()) {
+			if (compRefId.equals(comp.getId())) {
+				return true;
+			}
+		}
+
+		diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_UnkownCompRefId_diagnostic",
+			new Object[] { externalProperty.getExternalPropID() }, new Object[] { externalProperty }, context));
+		return false;
 	}
 
 	/**
