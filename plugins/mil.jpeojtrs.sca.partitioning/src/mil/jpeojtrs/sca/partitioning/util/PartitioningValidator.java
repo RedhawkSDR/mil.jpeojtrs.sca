@@ -11,7 +11,13 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.util;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -506,7 +512,43 @@ public class PartitioningValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLoggingConfig(LoggingConfig loggingConfig, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(loggingConfig, diagnostics, context);
+		boolean validLoggingConfigUri = validateLoggingConfigUri(loggingConfig, diagnostics, context);
+
+		return validate_EveryDefaultConstraint(loggingConfig, diagnostics, context) && validLoggingConfigUri;
+	}
+
+	private boolean validateLoggingConfigUri(LoggingConfig loggingConfig, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		String compId = ((ComponentInstantiation) loggingConfig.eContainer()).getId();
+
+		// Validate that loggingConfig has a validly formatted URI
+		String uriString = loggingConfig.getUri();
+
+		// Check for a schema
+		int colonIndex = uriString.indexOf(':');
+		if (colonIndex == -1) {
+			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_NoUriProtocol_diagnostic", new Object[] { compId },
+				new Object[] { loggingConfig }, context));
+			return false;
+		}
+
+		List<String> acceptedProtocols = new ArrayList<String>(Arrays.asList(new String[] { "file", "sca", "http" }));
+		String protocol = uriString.substring(0, colonIndex);
+		if (!acceptedProtocols.contains(protocol)) {
+			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidProtocol_diagnostic", new Object[] { protocol, compId },
+				new Object[] { loggingConfig }, context));
+			return false;
+		}
+
+		// Catch malformed URI's
+		try {
+			new URI(uriString);
+		} catch (URISyntaxException e) {
+			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_UriSyntaxException_diagnostic", new Object[] { e.getMessage() },
+				new Object[] { loggingConfig }, context));
+			return false;
+		}
+
+		return true;
 	}
 
 	/**
