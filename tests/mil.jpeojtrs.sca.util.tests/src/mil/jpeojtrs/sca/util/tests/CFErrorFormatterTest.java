@@ -18,6 +18,8 @@ import CF.ErrorNumberType;
 import CF.FileException;
 import CF.InvalidFileName;
 import CF.UnknownProperties;
+import CF.DevicePackage.InvalidCapacity;
+import CF.DevicePackage.InvalidState;
 import CF.ExecutableDevicePackage.ExecuteFail;
 import CF.FilePackage.InvalidFilePointer;
 import CF.LifeCyclePackage.InitializeError;
@@ -87,6 +89,20 @@ public class CFErrorFormatterTest {
 	}
 
 	@Test
+	public void format_InvalidCapacity() {
+		String msg = CFErrorFormatter.format(new InvalidCapacity("STU", new DataType[] { new DataType("a", null), new DataType("b", null) }));
+		Assert.assertEquals("CF.DevicePackage.InvalidCapacity: STU. Properties: a, b", msg);
+	}
+
+	@Test
+	public void format_InvalidCapacity_resName() {
+		String msg = CFErrorFormatter.format(new InvalidCapacity("VWX", new DataType[] { new DataType("d", null), new DataType("e", null) }), "foo");
+		Assert.assertEquals("CF.DevicePackage.InvalidCapacity for foo: VWX. Properties: d, e", msg);
+		msg = CFErrorFormatter.format(new InvalidCapacity("YZ", new DataType[] {}), "foo");
+		Assert.assertEquals("CF.DevicePackage.InvalidCapacity for foo: YZ. Properties: (no properties)", msg);
+	}
+
+	@Test
 	public void format_InvalidConfiguraiton() {
 		String msg = CFErrorFormatter.format(new InvalidConfiguration("JKL", new DataType[] { new DataType("a", null), new DataType("b", null) }));
 		Assert.assertEquals("CF.PropertySetPackage.InvalidConfiguration: JKL. Properties: a, b", msg);
@@ -136,6 +152,12 @@ public class CFErrorFormatterTest {
 	public void format_InvalidPort() {
 		String msg = CFErrorFormatter.format(new InvalidPort((short) 123, "abc"), "def");
 		Assert.assertEquals("CF.PortPackage.InvalidPort for def: abc (error code 123)", msg);
+	}
+
+	@Test
+	public void format_InvalidState() {
+		String msg = CFErrorFormatter.format(new InvalidState("abc"), "def");
+		Assert.assertEquals("CF.DevicePackage.InvalidState for def: abc", msg);
 	}
 
 	@Test

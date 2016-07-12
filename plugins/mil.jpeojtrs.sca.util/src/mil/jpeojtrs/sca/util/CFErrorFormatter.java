@@ -23,6 +23,8 @@ import CF.ErrorNumberTypeHelper;
 import CF.FileException;
 import CF.InvalidFileName;
 import CF.UnknownProperties;
+import CF.DevicePackage.InvalidCapacity;
+import CF.DevicePackage.InvalidState;
 import CF.ExecutableDevicePackage.ExecuteFail;
 import CF.FilePackage.InvalidFilePointer;
 import CF.LifeCyclePackage.InitializeError;
@@ -123,6 +125,14 @@ public class CFErrorFormatter {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG, e.getClass().getName(), resourceDesc, formatToSentences(e.errorMessages));
 	}
 
+	public static String format(InvalidCapacity e) {
+		return String.format(FORMAT_ERRNAME_ERRMSG_PROPLIST, e.getClass().getName(), e.msg, formatProperties(e.capacities));
+	}
+
+	public static String format(InvalidCapacity e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG_PROPLIST, e.getClass().getName(), resourceDesc, e.msg, formatProperties(e.capacities));
+	}
+
 	public static String format(InvalidConfiguration e) {
 		return String.format(FORMAT_ERRNAME_ERRMSG_PROPLIST, e.getClass().getName(), e.msg, formatProperties(e.invalidProperties));
 	}
@@ -145,6 +155,10 @@ public class CFErrorFormatter {
 
 	public static String format(InvalidPort e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG_ERRCODE, e.getClass().getName(), resourceDesc, e.msg, e.errorCode);
+	}
+
+	public static String format(InvalidState e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG, e.getClass().getName(), resourceDesc, e.msg);
 	}
 
 	public static String format(OccupiedPort e, String resourceDesc) {
