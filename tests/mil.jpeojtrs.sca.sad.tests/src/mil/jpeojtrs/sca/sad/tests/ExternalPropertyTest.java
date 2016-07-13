@@ -11,12 +11,19 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.tests;
 
+import java.net.URISyntaxException;
+
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.junit.Assert;
 import org.junit.Test;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.sad.ExternalProperty;
 import mil.jpeojtrs.sca.sad.SadFactory;
+import mil.jpeojtrs.sca.sad.SadPluginActivator;
+import mil.jpeojtrs.sca.sad.SoftwareAssembly;
+import mil.jpeojtrs.sca.sad.util.SadValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,6 +126,26 @@ public class ExternalPropertyTest extends TestCase {
 
 		String externalId = fixture.resolveExternalID();
 		assertEquals("resolveExternalID", TEST_ID, externalId);
+	}
+
+	/**
+	 * IDE-1511 - Validate that external properties match a component instantiation
+	 * @throws URISyntaxException
+	 */
+	public void testExternalPropertyRefId_IDE_1511() throws URISyntaxException {
+		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/ExternalProperties/ExternalProperties.sad.xml");
+		Assert.assertEquals("Test is using an incorrect sad.xml", "ExternalProperties", sad.getName());
+		Assert.assertEquals("Wrong number of external properties found", 3, sad.getExternalProperties().getProperties().size());
+		for (ExternalProperty prop : sad.getExternalProperties().getProperties()) {
+			BasicDiagnostic diagnostics = new BasicDiagnostic();
+			if (prop.getExternalPropID().matches(".*" + "invalid" + ".*")) {
+				Assert.assertFalse("Validation should fail", SadValidator.INSTANCE.validateExternalProperty(prop, diagnostics, null));
+				String errorMsg = SadPluginActivator.INSTANCE.getString("_UI_UnkownCompRefId_diagnostic", new Object[] { prop.getExternalPropID() });
+				Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().equals(errorMsg));
+			} else {
+				Assert.assertTrue("Validation should pass", SadValidator.INSTANCE.validateExternalProperty(prop, diagnostics, null));
+			}
+		}
 	}
 
 } //ExternalPropertyTest

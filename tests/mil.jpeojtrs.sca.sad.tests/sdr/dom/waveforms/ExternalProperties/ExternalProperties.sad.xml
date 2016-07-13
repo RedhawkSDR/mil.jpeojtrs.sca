@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
+<softwareassembly id="DCE:98a88f62-3aa8-43f4-95b3-9b4e36a935b5" name="ExternalProperties">
+  <componentfiles>
+    <componentfile id="SigGen_ef57297b-a66c-4d52-8a89-9c8275c9bd62" type="SPD">
+      <localfile name="/components/rh/SigGen/SigGen.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="SigGen_ef57297b-a66c-4d52-8a89-9c8275c9bd62"/>
+      <componentinstantiation id="SigGen_3" startorder="0">
+        <usagename>SigGen_3</usagename>
+        <componentproperties>
+          <simpleref refid="frequency" value="999"/>
+          <simpleref refid="sample_rate" value="999"/>
+          <simpleref refid="magnitude" value="1"/>
+        </componentproperties>
+        <loggingconfig level="level_value">sca://l!#@@ogconfig.log4j</loggingconfig>
+        <findcomponent>
+          <namingservice name="SigGen_3"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+    <componentplacement>
+      <componentfileref refid="SigGen_ef57297b-a66c-4d52-8a89-9c8275c9bd62"/>
+      <componentinstantiation id="SigGen_2" startorder="1">
+        <usagename>SigGen_2</usagename>
+        <componentproperties>
+          <simpleref refid="frequency" value="499"/>
+          <simpleref refid="sample_rate" value="499"/>
+        </componentproperties>
+        <findcomponent>
+          <namingservice name="SigGen_2"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <assemblycontroller>
+    <componentinstantiationref refid="SigGen_3"/>
+  </assemblycontroller>
+  <connections/>
+  <externalproperties>
+    <property comprefid="SigGen_2" propid="frequency" externalpropid="validProp"/>
+    <property comprefid="SigGen_3" propid="sample_rate" externalpropid="validProp2"/>
+    <property comprefid="SigGen_1" propid="magnitude" externalpropid="invalidProp"/>
+  </externalproperties>
+</softwareassembly>
