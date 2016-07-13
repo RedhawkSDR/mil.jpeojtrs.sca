@@ -11,12 +11,18 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.tests;
 
+import java.net.URISyntaxException;
+
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.junit.Assert;
+
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
-
 import mil.jpeojtrs.sca.partitioning.LoggingConfig;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
+import mil.jpeojtrs.sca.partitioning.util.PartitioningValidator;
+import mil.jpeojtrs.sca.sad.SadComponentInstantiation;
+import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,7 +101,32 @@ public class LoggingConfigTest extends TestCase {
 		setFixture(null);
 	}
 
-	public void test() {
+	public void testLoggingConfig_IDE_1336() throws URISyntaxException {
+		BasicDiagnostic diagnostics = new BasicDiagnostic();
+
+		SoftwareAssembly sad = PartitioningTests.loadSADFromDomPath("/waveforms/GenericWaveform/GenericSadFile.sad.xml");
+		Assert.assertEquals("Test is using an incorrect sad.xml", "GenericSadFile", sad.getName());
+		SadComponentInstantiation comp = sad.getComponentInstantiation("DCE:75fb00d8-48c7-4e74-a98b-2e2465a29f6c");
+		Assert.assertNull(comp.getLoggingConfig());
+		LoggingConfig loggingConfig = PartitioningFactory.eINSTANCE.createLoggingConfig();
+		comp.setLoggingConfig(loggingConfig);
+
+		// Valid logging config
+		loggingConfig.setLevel("Debug");
+		loggingConfig.setUri("http://example.com");
+		Assert.assertTrue("Logging Config should be valid", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
+
+		// Invalid logging config error
+		loggingConfig.setUri("http://ex am ple.com");
+		Assert.assertFalse("Logging Config should fail validation", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
+		String errorMsg = ".*" + "Illegal character" + ".*";
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(errorMsg));
+
+		// Invalid protocol error
+		loggingConfig.setUri("ftp://example.com");
+		Assert.assertFalse("Logging Config should fail validation", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
+		errorMsg = ".*" + "is not a valid protocol" + ".*";
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(1).getMessage().matches(errorMsg));
 	}
 
 } //LoggingConfigTest

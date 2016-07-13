@@ -19,6 +19,13 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import mil.jpeojtrs.sca.sad.SoftwareAssembly;
+import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
+import mil.jpeojtrs.sca.util.SdrURIHandler;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,6 +48,27 @@ public class PartitioningTests {
 			ex.initCause(e);
 			throw ex;
 		}
+	}
+	
+	/**
+	 * Loads a SAD file from the specified dom file system path.
+	 * @param domPath
+	 * @return
+	 * @throws URISyntaxException
+	 */
+	public static SoftwareAssembly loadSADFromDomPath(String domPath) throws URISyntaxException {
+		URI uri = URI.createURI(ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM + "://" + domPath);
+		ResourceSet resourceSet = createResourceSet();
+		Resource resource = resourceSet.getResource(uri, true);
+		return SoftwareAssembly.Util.getSoftwareAssembly(resource);
+	}
+	
+	private static ResourceSet createResourceSet() throws URISyntaxException {
+		ResourceSet resourceSet = new ResourceSetImpl();
+		URL url = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.partitioning.tests"), new Path("sdr"), null);
+		SdrURIHandler handler = new SdrURIHandler(URI.createURI(url.toURI().toString()));
+		resourceSet.getURIConverter().getURIHandlers().add(0, handler);
+		return resourceSet;
 	}
 
 } //PartitioningTests
