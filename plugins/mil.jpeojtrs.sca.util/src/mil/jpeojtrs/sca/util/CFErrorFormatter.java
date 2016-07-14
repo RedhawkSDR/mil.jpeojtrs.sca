@@ -125,10 +125,16 @@ public class CFErrorFormatter {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG, e.getClass().getName(), resourceDesc, formatToSentences(e.errorMessages));
 	}
 
+	/**
+	 * @since 4.3
+	 */
 	public static String format(InvalidCapacity e) {
 		return String.format(FORMAT_ERRNAME_ERRMSG_PROPLIST, e.getClass().getName(), e.msg, formatProperties(e.capacities));
 	}
 
+	/**
+	 * @since 4.3
+	 */
 	public static String format(InvalidCapacity e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG_PROPLIST, e.getClass().getName(), resourceDesc, e.msg, formatProperties(e.capacities));
 	}
@@ -157,6 +163,9 @@ public class CFErrorFormatter {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG_ERRCODE, e.getClass().getName(), resourceDesc, e.msg, e.errorCode);
 	}
 
+	/**
+	 * @since 4.3
+	 */
 	public static String format(InvalidState e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG, e.getClass().getName(), resourceDesc, e.msg);
 	}
