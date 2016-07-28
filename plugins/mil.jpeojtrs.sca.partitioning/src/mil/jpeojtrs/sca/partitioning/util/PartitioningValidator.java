@@ -534,7 +534,7 @@ public class PartitioningValidator extends EObjectValidator {
 
 		if (loggingConfig.getLevel() != null) {
 			for (LogLevels logLevel : LogLevels.values()) {
-				if (logLevel.equals(loggingConfig.getLevel())) {
+				if (logLevel.name().equals(loggingConfig.getLevel())) {
 					return true;
 				}
 			}

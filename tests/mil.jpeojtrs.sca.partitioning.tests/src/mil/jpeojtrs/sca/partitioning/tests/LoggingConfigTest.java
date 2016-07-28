@@ -101,7 +101,7 @@ public class LoggingConfigTest extends TestCase {
 		setFixture(null);
 	}
 
-	public void testLoggingConfig_IDE_1336() throws URISyntaxException {
+	public void testLoggingConfig_IDE_1336_IDE_1660() throws URISyntaxException {
 		BasicDiagnostic diagnostics = new BasicDiagnostic();
 
 		SoftwareAssembly sad = PartitioningTests.loadSADFromDomPath("/waveforms/GenericWaveform/GenericSadFile.sad.xml");
@@ -112,21 +112,28 @@ public class LoggingConfigTest extends TestCase {
 		comp.setLoggingConfig(loggingConfig);
 
 		// Valid logging config
-		loggingConfig.setLevel("Debug");
+		loggingConfig.setLevel("DEBUG");
 		loggingConfig.setUri("http://example.com");
 		Assert.assertTrue("Logging Config should be valid", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
+
+		// Invalid logging level
+		loggingConfig.setLevel("BadValue");
+		Assert.assertFalse("Logging Config should fail validation", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
+		String errorMsg = ".*" + "is not a valid log level" + ".*";
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(errorMsg));
+		loggingConfig.setLevel("DEBUG");
 
 		// Invalid logging config error
 		loggingConfig.setUri("http://ex am ple.com");
 		Assert.assertFalse("Logging Config should fail validation", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
-		String errorMsg = ".*" + "Illegal character" + ".*";
-		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(errorMsg));
+		errorMsg = ".*" + "Illegal character" + ".*";
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(1).getMessage().matches(errorMsg));
 
 		// Invalid protocol error
 		loggingConfig.setUri("ftp://example.com");
 		Assert.assertFalse("Logging Config should fail validation", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
 		errorMsg = ".*" + "is not a valid protocol" + ".*";
-		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(1).getMessage().matches(errorMsg));
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(2).getMessage().matches(errorMsg));
 	}
 
 } //LoggingConfigTest
