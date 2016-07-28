@@ -512,9 +512,37 @@ public class PartitioningValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLoggingConfig(LoggingConfig loggingConfig, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean validLoggingConfigLevel = validateLoggingConfigLevel(loggingConfig, diagnostics, context);
 		boolean validLoggingConfigUri = validateLoggingConfigUri(loggingConfig, diagnostics, context);
 
-		return validate_EveryDefaultConstraint(loggingConfig, diagnostics, context) && validLoggingConfigUri;
+		return validate_EveryDefaultConstraint(loggingConfig, diagnostics, context) && validLoggingConfigLevel && validLoggingConfigUri;
+	}
+
+	private enum LogLevels {
+		OFF,
+		DEBUG,
+		ERROR,
+		FATAL,
+		INFO,
+		TRACE,
+		WARN,
+		ALL;
+	}
+
+	private boolean validateLoggingConfigLevel(LoggingConfig loggingConfig, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		String compId = ((ComponentInstantiation) loggingConfig.eContainer()).getId();
+
+		if (loggingConfig.getLevel() != null) {
+			for (LogLevels logLevel : LogLevels.values()) {
+				if (logLevel.equals(loggingConfig.getLevel())) {
+					return true;
+				}
+			}
+			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidLogLevel_diagnostic",
+				new Object[] { loggingConfig.getLevel(), compId }, new Object[] { loggingConfig, compId }, context));
+			return false;
+		}
+		return true;
 	}
 
 	private boolean validateLoggingConfigUri(LoggingConfig loggingConfig, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -543,7 +571,7 @@ public class PartitioningValidator extends EObjectValidator {
 				new Object[] { loggingConfig }, context));
 			return false;
 		}
-		
+
 		return true;
 	}
 
