@@ -538,7 +538,7 @@ public class PartitioningValidator extends EObjectValidator {
 					return true;
 				}
 			}
-			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidLogLevel_diagnostic",
+			diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidLogLevel_diagnostic",
 				new Object[] { loggingConfig.getLevel(), compId }, new Object[] { loggingConfig, compId }, context));
 			return false;
 		}
