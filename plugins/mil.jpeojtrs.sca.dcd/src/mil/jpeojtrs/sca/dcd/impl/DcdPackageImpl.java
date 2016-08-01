@@ -30,6 +30,7 @@ import mil.jpeojtrs.sca.dcd.DevicePkgFile;
 import mil.jpeojtrs.sca.dcd.DomainManager;
 import mil.jpeojtrs.sca.dcd.FileSystemName;
 import mil.jpeojtrs.sca.dcd.FileSystemNames;
+import mil.jpeojtrs.sca.dcd.util.DcdValidator;
 import mil.jpeojtrs.sca.dpd.DpdPackage;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.prf.PrfPackage;
@@ -229,7 +230,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put(retVal, new EValidator.Descriptor() {
-			private final AdvancedEObjectValidator validator = new AdvancedEObjectValidator();
+			private final AdvancedEObjectValidator validator = new AdvancedEObjectValidator(DcdValidator.INSTANCE);
 
 			@Override
 			public EValidator getEValidator() {
