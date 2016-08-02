@@ -11,11 +11,15 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.tests;
 
+import java.net.URISyntaxException;
+
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.junit.Assert;
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.dcd.DeviceConfiguration;
 import mil.jpeojtrs.sca.dcd.DomainManager;
+import mil.jpeojtrs.sca.dcd.util.DcdValidator;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
@@ -117,6 +121,14 @@ public class DomainManagerTest extends TestCase {
 		getFixture().setNamingService(null);
 
 		Assert.assertNull(this.getFixture().getNamingService());
+	}
+
+	public void testEmptyDomainManager_IDE_1633() throws URISyntaxException {
+		BasicDiagnostic diagnostics = new BasicDiagnostic();
+		DeviceConfiguration dcd = DcdTests.loadDCDFromDevPath("/nodes/invalidDomMgrNode/invalidDomMgrNode.dcd.xml");
+		Assert.assertFalse("Domain Manager should fail validation", DcdValidator.INSTANCE.validateDomainManager(dcd.getDomainManager(), diagnostics, null));
+		String errorMsg = ".*" +  "domainmanager element is incomplete" + ".*";
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(errorMsg));
 	}
 
 } //DomainManagerTest
