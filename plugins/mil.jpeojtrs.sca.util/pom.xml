@@ -20,6 +20,10 @@
     <version>2.0.3-SNAPSHOT</version>
   </parent>
 
+  <properties>
+    <sonar.exclusions>src-jj/**/*</sonar.exclusions>
+  </properties>
+
   <artifactId>mil.jpeojtrs.sca.util</artifactId>
   <packaging>eclipse-plugin</packaging>
   <version>4.3.0-SNAPSHOT</version>
