@@ -9,6 +9,7 @@ mvn:
     paths:
       - releng/p2/target/*.zip
       - releng/p2/target/repository/**/*
+      - releng/p2/target/repository/*.jar
     expire_in: 5 days
 deploy:
   image: redhawkci/deploy
