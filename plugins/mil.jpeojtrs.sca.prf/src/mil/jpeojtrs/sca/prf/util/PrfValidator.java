@@ -12,9 +12,12 @@
 package mil.jpeojtrs.sca.prf.util;
 
 import java.util.Map;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
@@ -366,7 +369,8 @@ public class PrfValidator extends EObjectValidator {
 			diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
 				new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
 		}
-		return validate_EveryDefaultConstraint(simple, diagnostics, context);
+
+		return validate_EveryDefaultConstraint(simple, diagnostics, context) && validate_unsupportedMessageKindType(simple, diagnostics, context);
 	}
 
 	/**
@@ -384,7 +388,7 @@ public class PrfValidator extends EObjectValidator {
 			diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
 				new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
 		}
-		return validate_EveryDefaultConstraint(simpleSequence, diagnostics, context);
+		return validate_EveryDefaultConstraint(simpleSequence, diagnostics, context) && validate_unsupportedMessageKindType(simpleSequence, diagnostics, context);
 	}
 
 	/**
@@ -491,7 +495,7 @@ public class PrfValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateStructSequence(StructSequence structSequence, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(structSequence, diagnostics, context);
+		return validate_EveryDefaultConstraint(structSequence, diagnostics, context) && validate_unsupportedMessageKindType(structSequence, diagnostics, context);
 	}
 
 	/**
@@ -872,6 +876,41 @@ public class PrfValidator extends EObjectValidator {
 	public ResourceLocator getResourceLocator() {
 		return PrfPlugin.INSTANCE;
 	}
+	
+
+	private boolean validate_unsupportedMessageKindType(EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (eObject instanceof Simple) {
+			EList<Kind> kindList = ((Simple) eObject).getKind();
+			for (Kind kind : kindList) {
+				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
+						new Object[] { getObjectLabel(eObject, context), }, new Object[] { eObject }, context));
+					return false;
+				}
+			}
+		} else if (eObject instanceof SimpleSequence) {
+			EList<Kind> kindList = ((SimpleSequence) eObject).getKind();
+			for (Kind kind : kindList) {
+				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
+						new Object[] { getObjectLabel(eObject, context), }, new Object[] { eObject }, context));
+					return false;
+				}
+			}
+		} else if (eObject instanceof StructSequence) {
+			EList<ConfigurationKind> kindList = ((StructSequence) eObject).getConfigurationKind();
+			for (ConfigurationKind kind : kindList) {
+				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
+						new Object[] { getObjectLabel(eObject, context), }, new Object[] { eObject }, context));
+					return false;
+				}
+			}
+		}
+
+		return true;
+	}
+
 
 	/**
 	 * Validates the isValueConsistent constraint of '<em>Properties</em>'.

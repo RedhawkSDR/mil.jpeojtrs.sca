@@ -16,7 +16,11 @@ import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.Properties;
+import mil.jpeojtrs.sca.prf.util.PrfValidator;
 
+import java.io.IOException;
+
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
@@ -206,6 +210,43 @@ public class PropertiesTest extends TestCase {
 		// END GENERATED CODE
 		Assert.assertNotNull(this.props.getProperty(this.props.getStructSequence().get(0).getId()));
 		// BEGIN GENERATED CODE
+	}
+	
+	public void testPropertiesWithMessageType_IDE_1675() throws IOException {
+		final Properties props = Properties.Util.getProperties(this.resourceSet.getResource(PrfTests.getURI("testFiles/MessageKindTest.prf.xml"), true));
+
+		// Ensure simple/simpleSequence/structSequence all throw warnings when they are assigned the 'message' kind type
+		BasicDiagnostic diagnostic;
+		String errorMsg = "";
+		String expectedErrorMsg = ".*Redhawk only supports sending structs as messages.*";
+		boolean isValid = true;
+
+		// Simple test
+		diagnostic = new BasicDiagnostic();
+		isValid = PrfValidator.INSTANCE.validateSimple(props.getSimple().get(0), diagnostic, null);
+		Assert.assertFalse("Simple with message kind should not pass validation", isValid);
+		errorMsg = diagnostic.getChildren().get(0).getMessage();
+		Assert.assertTrue("Unexpected error message", errorMsg.matches(expectedErrorMsg));
+
+		// Simple Sequence test
+		diagnostic = new BasicDiagnostic();
+		isValid = PrfValidator.INSTANCE.validateSimpleSequence(props.getSimpleSequence().get(0), diagnostic, null);
+		Assert.assertFalse("Simple Sequence with message kind should not pass validation", isValid);
+		errorMsg = diagnostic.getChildren().get(0).getMessage();
+		Assert.assertTrue("Unexpected error message", errorMsg.matches(expectedErrorMsg));
+
+		// Struct test
+		diagnostic = new BasicDiagnostic();
+		isValid = PrfValidator.INSTANCE.validateStruct(props.getStruct().get(0), diagnostic, null);
+		Assert.assertTrue("Struct with message kind should pass validation", isValid);
+		Assert.assertTrue("Struct with message kind should not throw an error message", diagnostic.getChildren().isEmpty());
+
+		// Struct sequence test
+		diagnostic = new BasicDiagnostic();
+		isValid = PrfValidator.INSTANCE.validateStructSequence(props.getStructSequence().get(0), diagnostic, null);
+		Assert.assertFalse("Struct Sequence with message kind should not pass validation", isValid);
+		errorMsg = diagnostic.getChildren().get(0).getMessage();
+		Assert.assertTrue("Unexpected error message", errorMsg.matches(expectedErrorMsg));
 	}
 
 } //PropertiesTest
