@@ -30,6 +30,23 @@ public final class PropertiesUtil {
 	}
 
 	/**
+	 * Determines if property should be set at launch
+	 * @since 6.1
+	 */
+	public static boolean isCommandLine(AbstractProperty property) {
+		if (!(property instanceof Simple)) {
+			return false;
+		}
+		if (property.isKind(PropertyConfigurationType.EXECPARAM)) {
+			return true;
+		}
+		if (property.isKind(PropertyConfigurationType.PROPERTY) && ((Simple) property).isCommandLine()) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Determines if calling {@link CF.PropertyEmitter#initializeProperties(DataType[])} is allowed for this property.
 	 * @since 6.0
 	 */
@@ -49,6 +66,12 @@ public final class PropertiesUtil {
 	 * @return
 	 */
 	public static boolean canConfigure(final AbstractProperty property) {
+		if (property instanceof Simple) {
+			if (((Simple) property).isCommandLine()) {
+				return false;
+			}
+		}
+
 		return (property != null) && (property.getMode() != AccessType.READONLY)
 			&& property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE);
 	}
@@ -56,16 +79,15 @@ public final class PropertiesUtil {
 	public static boolean canOverride(final AbstractProperty property) {
 		// Per D.6.1.3.3 configure, factoryparam, and/or execparam
 		// with mode "readwrite" or "writeonly" can be overridden
-		
+
 		boolean isCommandLine = false;
 		if (property instanceof Simple) {
-			Simple simpProperty = (Simple)property;
+			Simple simpProperty = (Simple) property;
 			isCommandLine = simpProperty.getCommandline() != null && simpProperty.getCommandline();
 		}
-		
-		return (property != null) 
-				&& (property.getMode() != AccessType.READONLY || isCommandLine)
-				&& property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM);
+
+		return (property != null) && (property.getMode() != AccessType.READONLY || isCommandLine) && property.isKind(PropertyConfigurationType.PROPERTY,
+			PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM);
 	}
 
 	public static String getDefaultValue(PropertyValueType type) {
