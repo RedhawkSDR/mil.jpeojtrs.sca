@@ -34,6 +34,31 @@ public class PropertiesUtilTest {
 		Resource resource = resourceSet.getResource(PrfTests.getURI("testFiles/PropertiesUtilTest.prf.xml"), true);
 		props = Properties.Util.getProperties(resource);
 	}
+	
+	/**
+	 * IDE-1654
+	 */
+	@Test
+	public void isCommandLine() {
+		String[] isCmdLnTrue = new String[] { "simple_execparam_property", "simple_execparam", "simple_commandline_property",
+			"simple_readonly_commandline_property", };
+
+		String[] isCmdLnFalse = new String[] { "simple_property", "simplesequence_property", "struct_property", "structsequence_property", "simple_empty",
+			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_configure", "simple_configure_property", "simple_readonly_property",
+			"simplesequence_readonly_property", "struct_readonly_property", "structsequence_readonly_property" };
+
+		Assert.assertEquals(isCmdLnTrue.length + isCmdLnFalse.length, props.getProperties().size());
+		for (String property : isCmdLnTrue) {
+			AbstractProperty prop = props.getProperty(property);
+			Assert.assertNotNull("Property not found in PRF: " + property, prop);
+			Assert.assertTrue(property + " should be a valid command-line property", PropertiesUtil.isCommandLine(prop));
+		}
+		for (String property : isCmdLnFalse) {
+			AbstractProperty prop = props.getProperty(property);
+			Assert.assertNotNull("Property not found in PRF: " + property, prop);
+			Assert.assertFalse(property + " should NOT be a valid command-line property", PropertiesUtil.isCommandLine(prop));
+		}
+	}
 
 	/**
 	 * IDE-1391
@@ -92,10 +117,9 @@ public class PropertiesUtilTest {
 		Assert.assertFalse(PropertiesUtil.canConfigure(null));
 
 		String[] configureTrue = new String[] { "simple_property", "simplesequence_property", "struct_property", "structsequence_property", "simple_empty",
-			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_configure_property", "simple_configure", "simple_execparam_property",
-			"simple_commandline_property" };
+			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_configure_property", "simple_configure" };
 
-		String[] configureFalse = new String[] { "simple_execparam", "simple_readonly_commandline_property", "simple_readonly_property",
+		String[] configureFalse = new String[] { "simple_execparam", "simple_execparam_property", "simple_commandline_property", "simple_readonly_commandline_property", "simple_readonly_property",
 			"simplesequence_readonly_property", "struct_readonly_property", "structsequence_readonly_property" };
 
 		Assert.assertEquals(configureTrue.length + configureFalse.length, props.getProperties().size());
