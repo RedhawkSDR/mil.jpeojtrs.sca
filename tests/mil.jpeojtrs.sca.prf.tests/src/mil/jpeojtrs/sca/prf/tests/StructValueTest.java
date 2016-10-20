@@ -22,7 +22,9 @@ import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
 import mil.jpeojtrs.sca.prf.StructSequence;
 import mil.jpeojtrs.sca.prf.StructValue;
 import mil.jpeojtrs.sca.prf.Values;
+import mil.jpeojtrs.sca.prf.util.PrfValidator;
 
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -231,8 +233,8 @@ public class StructValueTest extends TestCase {
 		// BEGIN GENERATED CODE
 	}
 
-	// END GENERATED CODE
 
+	// END GENERATED CODE
 	public void test_parse() throws Exception {
 		final Properties props = Properties.Util.getProperties(
 			StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"), true));
@@ -263,6 +265,32 @@ public class StructValueTest extends TestCase {
 		EList<String> valueList = values.getValue();
 		Assert.assertNotNull(valueList);
 		Assert.assertEquals(3, valueList.size());
+	}
+	
+	/**
+	 * IDE-1304 - The framework does not allow partial configuration of structures (unless it's an optional element)
+	 */
+	public void testPartiallyConfiguredStructValue_IDE_1304() throws Exception {
+		final Properties props = Properties.Util.getProperties(
+			StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"), true));
+		Assert.assertNotNull(props);
+
+		// Assert that a partially configured structvalue fails EMF validation
+		StructSequence structSeq = props.getStructSequence().get(1);
+		Assert.assertEquals("Wrong structsequence is being tested", "structSequence2", structSeq.getId());
+
+		boolean isValid = true;
+		BasicDiagnostic diagnostics = new BasicDiagnostic();
+		for (StructValue structValue : structSeq.getStructValue()) {
+			isValid = isValid && PrfValidator.INSTANCE.validateStructValue(structValue, diagnostics, null);
+		}
+
+		Assert.assertFalse("Validation logic did not catch invalid structvalue", isValid);
+
+		String errorMsg = diagnostics.getChildren().get(0).getMessage();
+		String expectedError = PrfValidator.INSTANCE.getResourceLocator().getString("_UI_PartiallyConfiguredStructValue_diagnostic");
+		expectedError = expectedError.substring(0, expectedError.indexOf("{"));
+		Assert.assertTrue("Unexpected error message", errorMsg.matches(".*" + expectedError + ".*"));
 	}
 
 } //StructValueTest

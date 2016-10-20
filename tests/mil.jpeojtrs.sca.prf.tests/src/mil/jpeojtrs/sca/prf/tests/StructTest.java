@@ -276,8 +276,9 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertFalse("Partially configured structs should not pass validation", isValid);
 
 		String errorMsg = diagnostic.getChildren().get(0).getMessage();
-		Assert.assertEquals("Unexpected error message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_PartiallyConfiguredStruct_diagnostic"),
-			errorMsg);
+		String expectedError = PrfValidator.INSTANCE.getResourceLocator().getString("_UI_PartiallyConfiguredStruct_diagnostic");
+		expectedError = expectedError.substring(0, expectedError.indexOf("{"));
+		Assert.assertTrue("Unexpected error message", errorMsg.matches(".*" + expectedError + ".*"));
 
 		// Assert that properties with 'optional' attribute do not cause a validation error
 		struct = props.getStruct().get(3);

@@ -9,34 +9,30 @@
     the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
     http://www.eclipse.org/legal/epl-v10.html.
 -->
-<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA PRF V2.2.2//EN" "properties.dtd">
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
 <properties>
-  <structsequence id="DCE:8ab14a5d-00a0-4468-9ab3-7298f7025470" mode="readwrite" name="structSequence">
-    <struct id="DCE:c87bfb04-88ea-4e91-bc53-f9fce3b7eb6e" mode="readwrite" name="testStruct">
-      <simple id="DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d" mode="readwrite" name="testString" type="string">
-        <kind kindtype="configure"/>
+  <structsequence id="structSequence" mode="readwrite" name="structSequence">
+    <struct id="testStruct" mode="readwrite" name="testStruct">
+      <simple id="testString" mode="readwrite" name="testString" type="string">
         <action type="external"/>
       </simple>
-      <configurationkind kindtype="configure"/>
     </struct>
     <structvalue>
-      <simpleref refid="DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d" value="t1"/>
+      <simpleref refid="testString" value="t1"/>
     </structvalue>
     <structvalue>
-      <simpleref refid="DCE:37d9f294-6abb-4b7e-967f-8f7e2a83806d" value="t2"/>
+      <simpleref refid="testString" value="t2"/>
     </structvalue>
-    <configurationkind kindtype="configure"/>
+    <configurationkind kindtype="property"/>
   </structsequence>
-  <structsequence id="ce21bc58-ee87-4380-a15d-c541e4576c70" mode="readwrite" name="structSequence2">
-    <struct id="1298c312-0714-4a35-9b5b-920b732ce162" mode="readwrite" name="testStruct2">
-      <simple id="75e35fc2-6e2d-4d42-8496-48eb900bc896" mode="readwrite" name="testShort2" type="short">
-        <kind kindtype="configure"/>
+  <structsequence id="structSequence2" mode="readwrite" name="structSequence2">
+    <struct id="testStruct2" mode="readwrite" name="testStruct2">
+      <simple id="testShort2" mode="readwrite" name="testShort2" type="short">
         <action type="external"/>
       </simple>
-      <configurationkind kindtype="configure"/>
     </struct>
     <structvalue>
-      <simpleref refid="75e35fc2-6e2d-4d42-8496-48eb900bc896" value="t1"/>
+      <simpleref refid="testShort2" value="1"/>
     </structvalue>
     <structvalue>
       <simplesequenceref refid="DCE:8ab14a5d-00a0-4468-9ab3-7298f7025470">
@@ -46,6 +42,8 @@
           <value>3</value>
         </values>
       </simplesequenceref>
-    </structvalue>    <configurationkind kindtype="configure"/>
+    </structvalue>
+    <configurationkind kindtype="property"/>
   </structsequence>
 </properties>
+
