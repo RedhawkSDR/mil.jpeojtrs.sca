@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: FrontEnd Interfaces IDL
 Bundle-SymbolicName: idl.frontend
-Bundle-Version: 2.0.5.qualifier
+Bundle-Version: 2.1.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: idl.bulkio;bundle-version="2.0.0",
  idl.cf;bundle-version="2.0.0"
-Export-Package: FRONTEND;version="2.0.5"
+Export-Package: FRONTEND;version="2.1.0"
 Bundle-Vendor: REDHAWK
