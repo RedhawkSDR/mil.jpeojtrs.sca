@@ -38,9 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * --> <!-- end-user-doc -->
  * @generated
  */
-public class ProgrammingLanguageItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class ProgrammingLanguageItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,8 +58,7 @@ public class ProgrammingLanguageItemProvider extends ItemProviderAdapter impleme
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -76,19 +74,10 @@ public class ProgrammingLanguageItemProvider extends ItemProviderAdapter impleme
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ProgrammingLanguage_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ProgrammingLanguage_name_feature", "_UI_ProgrammingLanguage_type"),
-				 SpdPackage.Literals.PROGRAMMING_LANGUAGE__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ProgrammingLanguage_name_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ProgrammingLanguage_name_feature", "_UI_ProgrammingLanguage_type"),
+			SpdPackage.Literals.PROGRAMMING_LANGUAGE__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -98,19 +87,10 @@ public class ProgrammingLanguageItemProvider extends ItemProviderAdapter impleme
 	 * @generated
 	 */
 	protected void addVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ProgrammingLanguage_version_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ProgrammingLanguage_version_feature", "_UI_ProgrammingLanguage_type"),
-				 SpdPackage.Literals.PROGRAMMING_LANGUAGE__VERSION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ProgrammingLanguage_version_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ProgrammingLanguage_version_feature", "_UI_ProgrammingLanguage_type"),
+			SpdPackage.Literals.PROGRAMMING_LANGUAGE__VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -132,10 +112,8 @@ public class ProgrammingLanguageItemProvider extends ItemProviderAdapter impleme
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ProgrammingLanguage)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ProgrammingLanguage_type") :
-			getString("_UI_ProgrammingLanguage_type") + " " + label;
+		String label = ((ProgrammingLanguage) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ProgrammingLanguage_type") : getString("_UI_ProgrammingLanguage_type") + " " + label;
 	}
 
 	/**
@@ -149,12 +127,11 @@ public class ProgrammingLanguageItemProvider extends ItemProviderAdapter impleme
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ProgrammingLanguage.class))
-		{
-			case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
-			case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(ProgrammingLanguage.class)) {
+		case SpdPackage.PROGRAMMING_LANGUAGE__NAME:
+		case SpdPackage.PROGRAMMING_LANGUAGE__VERSION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

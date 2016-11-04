@@ -114,21 +114,21 @@ public class CodeTest extends TestCase {
 		Assert.assertEquals(1024, code.getStackSize().longValue());
 		Assert.assertEquals(1, code.getPriority().longValue());
 	}
-	
+
 	public void testExtra() throws IOException {
 		final SoftPkg softPkg = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testFiles/defaultCpp.spd.xml"), true));
 		final Code code = softPkg.getImplementation().get(0).getCode();
 
 		code.setType(CodeFileType.SHARED_LIBRARY);
 		Assert.assertEquals(CodeFileType.SHARED_LIBRARY_VALUE, code.getType().getValue());
-		
+
 		code.setType(null);
 		Assert.assertEquals(CodeFileType.EXECUTABLE, code.getType());
-		
+
 		code.unsetType();
 		Assert.assertEquals(CodeFileType.EXECUTABLE, code.getType());
 		Assert.assertFalse(code.isSetType());
-		
+
 		final LocalFile lf = SpdFactory.eINSTANCE.createLocalFile();
 		lf.setName("testFiles/usesdevice.spd.xml");
 		code.setLocalFile(lf);

@@ -22,12 +22,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.Descriptor#getLocalfile <em>Localfile</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Descriptor#getComponent <em>Component</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Descriptor#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getDescriptor()
  * @model extendedMetaData="name='descriptor' kind='elementOnly'"

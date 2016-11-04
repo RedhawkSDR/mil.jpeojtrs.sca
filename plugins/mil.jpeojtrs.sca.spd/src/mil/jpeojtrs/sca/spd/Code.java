@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.Code#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Code#getEntryPoint <em>Entry Point</em>}</li>
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link mil.jpeojtrs.sca.spd.Code#getPriority <em>Priority</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Code#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getCode()
  * @model extendedMetaData="name='code' kind='elementOnly'"

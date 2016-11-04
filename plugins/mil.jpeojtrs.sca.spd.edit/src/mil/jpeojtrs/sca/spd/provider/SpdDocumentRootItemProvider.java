@@ -11,7 +11,6 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -39,15 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SpdDocumentRootItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		ITableItemLabelProvider {
+public class SpdDocumentRootItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -67,8 +59,7 @@ public class SpdDocumentRootItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -84,9 +75,8 @@ public class SpdDocumentRootItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG);
 		}
@@ -139,11 +129,10 @@ public class SpdDocumentRootItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SpdDocumentRoot.class))
-		{
-			case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(SpdDocumentRoot.class)) {
+		case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -159,10 +148,7 @@ public class SpdDocumentRootItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG,
-				 SpdFactory.eINSTANCE.createSoftPkg()));
+		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG, SpdFactory.eINSTANCE.createSoftPkg()));
 	}
 
 	/**

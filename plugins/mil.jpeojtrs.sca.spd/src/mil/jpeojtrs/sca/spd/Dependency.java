@@ -20,12 +20,12 @@ import mil.jpeojtrs.sca.prf.PropertyRefSet;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.Dependency#getSoftPkgRef <em>Soft Pkg Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Dependency#getPropertyRef <em>Property Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Dependency#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getDependency()
  * @model extendedMetaData="name='dependency' kind='elementOnly'"

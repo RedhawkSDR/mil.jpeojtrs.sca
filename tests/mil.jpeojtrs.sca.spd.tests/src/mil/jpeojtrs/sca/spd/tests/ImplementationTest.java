@@ -300,12 +300,13 @@ public class ImplementationTest extends TestCase {
 		Assert.assertFalse(impl.hashCode() == impl3.hashCode());
 		// BEGIN GENERATED CODE
 	}
-	
+
 	public void testParse() {
 		Assert.assertNotNull(this.implementation);
 		Assert.assertEquals("DCE:9c4257a0-4281-45c7-85f6-a66adc018c7e", this.implementation.getId());
 		Assert.assertEquals("aep_compliant", this.implementation.getAepCompliance().getLiteral());
-		Assert.assertEquals("The implementation contains descriptive information about the template for a software component.", this.implementation.getDescription());
+		Assert.assertEquals("The implementation contains descriptive information about the template for a software component.",
+			this.implementation.getDescription());
 		Assert.assertNotNull(this.implementation.getCode());
 		Assert.assertEquals("Executable", this.implementation.getCode().getType().getName());
 		Assert.assertNotNull(this.implementation.getCompiler());
@@ -321,7 +322,7 @@ public class ImplementationTest extends TestCase {
 	public void testExtra() {
 		Assert.assertNotNull(this.implementation);
 		Assert.assertEquals("aep_compliant", this.implementation.getAepCompliance().getLiteral());
-		
+
 		this.implementation.unsetAepCompliance();
 		Assert.assertEquals("aep_compliant", this.implementation.getAepCompliance().getLiteral());
 		Assert.assertFalse(this.implementation.isSetAepCompliance());
@@ -329,7 +330,7 @@ public class ImplementationTest extends TestCase {
 		this.implementation.setAepCompliance(null);
 		Assert.assertEquals("aep_compliant", this.implementation.getAepCompliance().getLiteral());
 		Assert.assertTrue(this.implementation.isSetAepCompliance());
-		
+
 		mil.jpeojtrs.sca.spd.Runtime runtime = SpdFactory.eINSTANCE.createRuntime();
 		runtime.setName("OutRun");
 		runtime.setVersion("1986");
@@ -338,7 +339,7 @@ public class ImplementationTest extends TestCase {
 		Assert.assertEquals("OutRun", this.implementation.getRuntime().getName());
 		this.implementation.setRuntime(runtime);
 		Assert.assertEquals("OutRun", this.implementation.getRuntime().getName());
-		
+
 		HumanLanguage hl = SpdFactory.eINSTANCE.createHumanLanguage();
 		hl.setName("Latin");
 		this.implementation.setHumanLanguage(hl);
@@ -346,7 +347,7 @@ public class ImplementationTest extends TestCase {
 		Assert.assertEquals("Latin", this.implementation.getHumanLanguage().getName());
 		this.implementation.setHumanLanguage(hl);
 		Assert.assertEquals("Latin", this.implementation.getHumanLanguage().getName());
-		
+
 		ProgrammingLanguage pl = SpdFactory.eINSTANCE.createProgrammingLanguage();
 		pl.setName("Ruby");
 		this.implementation.setProgrammingLanguage(pl);
@@ -354,7 +355,7 @@ public class ImplementationTest extends TestCase {
 		Assert.assertEquals("Ruby", this.implementation.getProgrammingLanguage().getName());
 		this.implementation.setProgrammingLanguage(pl);
 		Assert.assertEquals("Ruby", this.implementation.getProgrammingLanguage().getName());
-		
+
 		Compiler cplr = SpdFactory.eINSTANCE.createCompiler();
 		cplr.setName("/usr/bin/elf90");
 		cplr.setVersion("90");
@@ -372,7 +373,7 @@ public class ImplementationTest extends TestCase {
 		Assert.assertEquals("my/entrypoint", this.implementation.getCode().getEntryPoint());
 		this.implementation.setCode(code);
 		Assert.assertEquals("my/entrypoint", this.implementation.getCode().getEntryPoint());
-		
+
 		PropertyFile pf = SpdFactory.eINSTANCE.createPropertyFile();
 		LocalFile lf = SpdFactory.eINSTANCE.createLocalFile();
 		lf.setName("defaultCpp.prf.xml");

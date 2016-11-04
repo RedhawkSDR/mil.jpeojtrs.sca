@@ -38,9 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * end-user-doc -->
  * @generated
  */
-public class PropertyRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class PropertyRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,8 +58,7 @@ public class PropertyRefItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addRefIdPropertyDescriptor(object);
@@ -76,19 +74,10 @@ public class PropertyRefItemProvider extends ItemProviderAdapter implements IEdi
 	 * @generated
 	 */
 	protected void addRefIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyRef_refId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyRef_refId_feature", "_UI_PropertyRef_type"),
-				 SpdPackage.Literals.PROPERTY_REF__REF_ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_PropertyRef_refId_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_PropertyRef_refId_feature", "_UI_PropertyRef_type"), SpdPackage.Literals.PROPERTY_REF__REF_ID,
+			true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -98,19 +87,10 @@ public class PropertyRefItemProvider extends ItemProviderAdapter implements IEdi
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyRef_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyRef_value_feature", "_UI_PropertyRef_type"),
-				 SpdPackage.Literals.PROPERTY_REF__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_PropertyRef_value_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_PropertyRef_value_feature", "_UI_PropertyRef_type"), SpdPackage.Literals.PROPERTY_REF__VALUE,
+			true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -132,10 +112,8 @@ public class PropertyRefItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PropertyRef)object).getRefId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_PropertyRef_type") :
-			getString("_UI_PropertyRef_type") + " " + label;
+		String label = ((PropertyRef) object).getRefId();
+		return label == null || label.length() == 0 ? getString("_UI_PropertyRef_type") : getString("_UI_PropertyRef_type") + " " + label;
 	}
 
 	/**
@@ -149,12 +127,11 @@ public class PropertyRefItemProvider extends ItemProviderAdapter implements IEdi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PropertyRef.class))
-		{
-			case SpdPackage.PROPERTY_REF__REF_ID:
-			case SpdPackage.PROPERTY_REF__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(PropertyRef.class)) {
+		case SpdPackage.PROPERTY_REF__REF_ID:
+		case SpdPackage.PROPERTY_REF__VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

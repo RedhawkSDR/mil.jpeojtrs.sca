@@ -38,9 +38,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * end-user-doc -->
  * @generated
  */
-public class ProcessorItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class ProcessorItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,8 +58,7 @@ public class ProcessorItemProvider extends ItemProviderAdapter implements IEditi
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -75,19 +73,9 @@ public class ProcessorItemProvider extends ItemProviderAdapter implements IEditi
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Processor_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Processor_name_feature", "_UI_Processor_type"),
-				 SpdPackage.Literals.PROCESSOR__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Processor_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Processor_name_feature", "_UI_Processor_type"),
+			SpdPackage.Literals.PROCESSOR__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -109,10 +97,8 @@ public class ProcessorItemProvider extends ItemProviderAdapter implements IEditi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Processor)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Processor_type") :
-			getString("_UI_Processor_type") + " " + label;
+		String label = ((Processor) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Processor_type") : getString("_UI_Processor_type") + " " + label;
 	}
 
 	/**
@@ -126,11 +112,10 @@ public class ProcessorItemProvider extends ItemProviderAdapter implements IEditi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Processor.class))
-		{
-			case SpdPackage.PROCESSOR__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(Processor.class)) {
+		case SpdPackage.PROCESSOR__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

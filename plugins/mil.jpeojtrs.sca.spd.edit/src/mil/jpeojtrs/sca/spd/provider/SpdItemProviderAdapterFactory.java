@@ -96,8 +96,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createAuthorAdapter() {
-		if (authorItemProvider == null)
-		{
+		if (authorItemProvider == null) {
 			authorItemProvider = new AuthorItemProvider(this);
 		}
 
@@ -120,8 +119,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createCodeAdapter() {
-		if (codeItemProvider == null)
-		{
+		if (codeItemProvider == null) {
 			codeItemProvider = new CodeItemProvider(this);
 		}
 
@@ -144,8 +142,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createCompilerAdapter() {
-		if (compilerItemProvider == null)
-		{
+		if (compilerItemProvider == null) {
 			compilerItemProvider = new CompilerItemProvider(this);
 		}
 
@@ -168,8 +165,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDependencyAdapter() {
-		if (dependencyItemProvider == null)
-		{
+		if (dependencyItemProvider == null) {
 			dependencyItemProvider = new DependencyItemProvider(this);
 		}
 
@@ -192,8 +188,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createDescriptorAdapter() {
-		if (descriptorItemProvider == null)
-		{
+		if (descriptorItemProvider == null) {
 			descriptorItemProvider = new DescriptorItemProvider(this);
 		}
 
@@ -216,8 +211,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createHumanLanguageAdapter() {
-		if (humanLanguageItemProvider == null)
-		{
+		if (humanLanguageItemProvider == null) {
 			humanLanguageItemProvider = new HumanLanguageItemProvider(this);
 		}
 
@@ -240,8 +234,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createImplementationAdapter() {
-		if (implementationItemProvider == null)
-		{
+		if (implementationItemProvider == null) {
 			implementationItemProvider = new ImplementationItemProvider(this);
 		}
 
@@ -264,8 +257,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createImplRefAdapter() {
-		if (implRefItemProvider == null)
-		{
+		if (implRefItemProvider == null) {
 			implRefItemProvider = new ImplRefItemProvider(this);
 		}
 
@@ -288,8 +280,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createLocalFileAdapter() {
-		if (localFileItemProvider == null)
-		{
+		if (localFileItemProvider == null) {
 			localFileItemProvider = new LocalFileItemProvider(this);
 		}
 
@@ -312,8 +303,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createOsAdapter() {
-		if (osItemProvider == null)
-		{
+		if (osItemProvider == null) {
 			osItemProvider = new OsItemProvider(this);
 		}
 
@@ -336,8 +326,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createProcessorAdapter() {
-		if (processorItemProvider == null)
-		{
+		if (processorItemProvider == null) {
 			processorItemProvider = new ProcessorItemProvider(this);
 		}
 
@@ -360,8 +349,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createProgrammingLanguageAdapter() {
-		if (programmingLanguageItemProvider == null)
-		{
+		if (programmingLanguageItemProvider == null) {
 			programmingLanguageItemProvider = new ProgrammingLanguageItemProvider(this);
 		}
 
@@ -384,8 +372,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createPropertyFileAdapter() {
-		if (propertyFileItemProvider == null)
-		{
+		if (propertyFileItemProvider == null) {
 			propertyFileItemProvider = new PropertyFileItemProvider(this);
 		}
 
@@ -408,8 +395,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createPropertyRefAdapter() {
-		if (propertyRefItemProvider == null)
-		{
+		if (propertyRefItemProvider == null) {
 			propertyRefItemProvider = new PropertyRefItemProvider(this);
 		}
 
@@ -432,8 +418,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createRuntimeAdapter() {
-		if (runtimeItemProvider == null)
-		{
+		if (runtimeItemProvider == null) {
 			runtimeItemProvider = new RuntimeItemProvider(this);
 		}
 
@@ -456,8 +441,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSoftPkgAdapter() {
-		if (softPkgItemProvider == null)
-		{
+		if (softPkgItemProvider == null) {
 			softPkgItemProvider = new SoftPkgItemProvider(this);
 		}
 
@@ -480,8 +464,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSoftPkgRefAdapter() {
-		if (softPkgRefItemProvider == null)
-		{
+		if (softPkgRefItemProvider == null) {
 			softPkgRefItemProvider = new SoftPkgRefItemProvider(this);
 		}
 
@@ -504,8 +487,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSpdDocumentRootAdapter() {
-		if (spdDocumentRootItemProvider == null)
-		{
+		if (spdDocumentRootItemProvider == null) {
 			spdDocumentRootItemProvider = new SpdDocumentRootItemProvider(this);
 		}
 
@@ -528,8 +510,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createUsesDeviceAdapter() {
-		if (usesDeviceItemProvider == null)
-		{
+		if (usesDeviceItemProvider == null) {
 			usesDeviceItemProvider = new UsesDeviceItemProvider(this);
 		}
 
@@ -586,11 +567,9 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type))
-		{
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class< ? >) || (((Class< ? >) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -630,8 +609,7 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -644,25 +622,44 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	 */
 	@Override
 	public void dispose() {
-		if (authorItemProvider != null) authorItemProvider.dispose();
-		if (codeItemProvider != null) codeItemProvider.dispose();
-		if (compilerItemProvider != null) compilerItemProvider.dispose();
-		if (dependencyItemProvider != null) dependencyItemProvider.dispose();
-		if (descriptorItemProvider != null) descriptorItemProvider.dispose();
-		if (humanLanguageItemProvider != null) humanLanguageItemProvider.dispose();
-		if (implementationItemProvider != null) implementationItemProvider.dispose();
-		if (implRefItemProvider != null) implRefItemProvider.dispose();
-		if (localFileItemProvider != null) localFileItemProvider.dispose();
-		if (osItemProvider != null) osItemProvider.dispose();
-		if (processorItemProvider != null) processorItemProvider.dispose();
-		if (programmingLanguageItemProvider != null) programmingLanguageItemProvider.dispose();
-		if (propertyFileItemProvider != null) propertyFileItemProvider.dispose();
-		if (propertyRefItemProvider != null) propertyRefItemProvider.dispose();
-		if (runtimeItemProvider != null) runtimeItemProvider.dispose();
-		if (softPkgItemProvider != null) softPkgItemProvider.dispose();
-		if (softPkgRefItemProvider != null) softPkgRefItemProvider.dispose();
-		if (spdDocumentRootItemProvider != null) spdDocumentRootItemProvider.dispose();
-		if (usesDeviceItemProvider != null) usesDeviceItemProvider.dispose();
+		if (authorItemProvider != null)
+			authorItemProvider.dispose();
+		if (codeItemProvider != null)
+			codeItemProvider.dispose();
+		if (compilerItemProvider != null)
+			compilerItemProvider.dispose();
+		if (dependencyItemProvider != null)
+			dependencyItemProvider.dispose();
+		if (descriptorItemProvider != null)
+			descriptorItemProvider.dispose();
+		if (humanLanguageItemProvider != null)
+			humanLanguageItemProvider.dispose();
+		if (implementationItemProvider != null)
+			implementationItemProvider.dispose();
+		if (implRefItemProvider != null)
+			implRefItemProvider.dispose();
+		if (localFileItemProvider != null)
+			localFileItemProvider.dispose();
+		if (osItemProvider != null)
+			osItemProvider.dispose();
+		if (processorItemProvider != null)
+			processorItemProvider.dispose();
+		if (programmingLanguageItemProvider != null)
+			programmingLanguageItemProvider.dispose();
+		if (propertyFileItemProvider != null)
+			propertyFileItemProvider.dispose();
+		if (propertyRefItemProvider != null)
+			propertyRefItemProvider.dispose();
+		if (runtimeItemProvider != null)
+			runtimeItemProvider.dispose();
+		if (softPkgItemProvider != null)
+			softPkgItemProvider.dispose();
+		if (softPkgRefItemProvider != null)
+			softPkgRefItemProvider.dispose();
+		if (spdDocumentRootItemProvider != null)
+			spdDocumentRootItemProvider.dispose();
+		if (usesDeviceItemProvider != null)
+			usesDeviceItemProvider.dispose();
 	}
 
 }

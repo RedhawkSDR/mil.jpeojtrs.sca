@@ -39,9 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,8 +59,7 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addTitlePropertyDescriptor(object);
@@ -82,19 +80,9 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 * @generated
 	 */
 	protected void addTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkg_title_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_title_feature", "_UI_SoftPkg_type"),
-				 SpdPackage.Literals.SOFT_PKG__TITLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkg_title_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_title_feature", "_UI_SoftPkg_type"),
+			SpdPackage.Literals.SOFT_PKG__TITLE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -104,19 +92,9 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 * @generated
 	 */
 	protected void addAuthorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkg_author_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_author_feature", "_UI_SoftPkg_type"),
-				 SpdPackage.Literals.SOFT_PKG__AUTHOR,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkg_author_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_author_feature", "_UI_SoftPkg_type"),
+			SpdPackage.Literals.SOFT_PKG__AUTHOR, false, false, false, null, null, null));
 	}
 
 	/**
@@ -126,19 +104,10 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkg_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_description_feature", "_UI_SoftPkg_type"),
-				 SpdPackage.Literals.SOFT_PKG__DESCRIPTION,
-				 true,
-				 true,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkg_description_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_description_feature", "_UI_SoftPkg_type"), SpdPackage.Literals.SOFT_PKG__DESCRIPTION,
+			true, true, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -148,19 +117,9 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkg_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_id_feature", "_UI_SoftPkg_type"),
-				 SpdPackage.Literals.SOFT_PKG__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkg_id_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_id_feature", "_UI_SoftPkg_type"),
+			SpdPackage.Literals.SOFT_PKG__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -170,19 +129,9 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkg_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_name_feature", "_UI_SoftPkg_type"),
-				 SpdPackage.Literals.SOFT_PKG__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkg_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_name_feature", "_UI_SoftPkg_type"),
+			SpdPackage.Literals.SOFT_PKG__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -192,19 +141,9 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkg_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_type_feature", "_UI_SoftPkg_type"),
-				 SpdPackage.Literals.SOFT_PKG__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkg_type_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_type_feature", "_UI_SoftPkg_type"),
+			SpdPackage.Literals.SOFT_PKG__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -214,19 +153,9 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 * @generated
 	 */
 	protected void addVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkg_version_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_version_feature", "_UI_SoftPkg_type"),
-				 SpdPackage.Literals.SOFT_PKG__VERSION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkg_version_feature"), getString("_UI_PropertyDescriptor_description", "_UI_SoftPkg_version_feature", "_UI_SoftPkg_type"),
+			SpdPackage.Literals.SOFT_PKG__VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -238,9 +167,8 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SpdPackage.Literals.SOFT_PKG__AUTHOR);
 			childrenFeatures.add(SpdPackage.Literals.SOFT_PKG__IMPLEMENTATION);
@@ -323,23 +251,22 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SoftPkg.class))
-		{
-			case SpdPackage.SOFT_PKG__TITLE:
-			case SpdPackage.SOFT_PKG__DESCRIPTION:
-			case SpdPackage.SOFT_PKG__PROPERTY_FILE:
-			case SpdPackage.SOFT_PKG__DESCRIPTOR:
-			case SpdPackage.SOFT_PKG__ID:
-			case SpdPackage.SOFT_PKG__NAME:
-			case SpdPackage.SOFT_PKG__TYPE:
-			case SpdPackage.SOFT_PKG__VERSION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SpdPackage.SOFT_PKG__AUTHOR:
-			case SpdPackage.SOFT_PKG__IMPLEMENTATION:
-			case SpdPackage.SOFT_PKG__USES_DEVICE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(SoftPkg.class)) {
+		case SpdPackage.SOFT_PKG__TITLE:
+		case SpdPackage.SOFT_PKG__DESCRIPTION:
+		case SpdPackage.SOFT_PKG__PROPERTY_FILE:
+		case SpdPackage.SOFT_PKG__DESCRIPTOR:
+		case SpdPackage.SOFT_PKG__ID:
+		case SpdPackage.SOFT_PKG__NAME:
+		case SpdPackage.SOFT_PKG__TYPE:
+		case SpdPackage.SOFT_PKG__VERSION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case SpdPackage.SOFT_PKG__AUTHOR:
+		case SpdPackage.SOFT_PKG__IMPLEMENTATION:
+		case SpdPackage.SOFT_PKG__USES_DEVICE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -355,10 +282,7 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SpdPackage.Literals.SOFT_PKG__USES_DEVICE,
-				 SpdFactory.eINSTANCE.createUsesDevice()));
+		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.SOFT_PKG__USES_DEVICE, SpdFactory.eINSTANCE.createUsesDevice()));
 	}
 
 	/**

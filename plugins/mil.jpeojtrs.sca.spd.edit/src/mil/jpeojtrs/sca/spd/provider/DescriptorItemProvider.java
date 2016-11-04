@@ -39,9 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * end-user-doc -->
  * @generated
  */
-public class DescriptorItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class DescriptorItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,8 +59,7 @@ public class DescriptorItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addLocalfilePropertyDescriptor(object);
@@ -78,19 +76,10 @@ public class DescriptorItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	protected void addLocalfilePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Descriptor_localfile_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Descriptor_localfile_feature", "_UI_Descriptor_type"),
-				 SpdPackage.Literals.DESCRIPTOR__LOCALFILE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Descriptor_localfile_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Descriptor_localfile_feature", "_UI_Descriptor_type"),
+			SpdPackage.Literals.DESCRIPTOR__LOCALFILE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -100,19 +89,10 @@ public class DescriptorItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	protected void addComponentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Descriptor_component_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Descriptor_component_feature", "_UI_Descriptor_type"),
-				 SpdPackage.Literals.DESCRIPTOR__COMPONENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Descriptor_component_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Descriptor_component_feature", "_UI_Descriptor_type"),
+			SpdPackage.Literals.DESCRIPTOR__COMPONENT, true, false, true, null, null, null));
 	}
 
 	/**
@@ -122,19 +102,9 @@ public class DescriptorItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Descriptor_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Descriptor_name_feature", "_UI_Descriptor_type"),
-				 SpdPackage.Literals.DESCRIPTOR__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Descriptor_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Descriptor_name_feature", "_UI_Descriptor_type"),
+			SpdPackage.Literals.DESCRIPTOR__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -146,9 +116,8 @@ public class DescriptorItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SpdPackage.Literals.DESCRIPTOR__COMPONENT);
 		}
@@ -187,10 +156,8 @@ public class DescriptorItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Descriptor)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Descriptor_type") :
-			getString("_UI_Descriptor_type") + " " + label;
+		String label = ((Descriptor) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Descriptor_type") : getString("_UI_Descriptor_type") + " " + label;
 	}
 
 	/**
@@ -204,12 +171,11 @@ public class DescriptorItemProvider extends ItemProviderAdapter implements IEdit
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Descriptor.class))
-		{
-			case SpdPackage.DESCRIPTOR__LOCALFILE:
-			case SpdPackage.DESCRIPTOR__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(Descriptor.class)) {
+		case SpdPackage.DESCRIPTOR__LOCALFILE:
+		case SpdPackage.DESCRIPTOR__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

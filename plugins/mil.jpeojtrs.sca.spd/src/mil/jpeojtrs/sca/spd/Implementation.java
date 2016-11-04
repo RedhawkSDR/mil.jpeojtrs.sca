@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#getPropertyFile <em>Property File</em>}</li>
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#getSoftPkg <em>Soft Pkg</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getImplementation()
  * @model extendedMetaData="name='implementation' kind='elementOnly'"

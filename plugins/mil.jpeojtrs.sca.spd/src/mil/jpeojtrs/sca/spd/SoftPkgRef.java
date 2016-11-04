@@ -20,13 +20,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkgRef#getLocalFile <em>Local File</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkgRef#getImplRef <em>Impl Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkgRef#getImplementation <em>Implementation</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkgRef#getSoftPkg <em>Soft Pkg</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getSoftPkgRef()
  * @model extendedMetaData="name='softPkgRef' kind='elementOnly'"
