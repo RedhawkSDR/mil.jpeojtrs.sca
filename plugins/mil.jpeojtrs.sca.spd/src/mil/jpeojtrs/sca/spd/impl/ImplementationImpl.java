@@ -15,6 +15,7 @@ import java.util.Collection;
 
 import mil.jpeojtrs.sca.spd.AEPComplianceType;
 import mil.jpeojtrs.sca.spd.Code;
+import mil.jpeojtrs.sca.spd.CodeFileType;
 import mil.jpeojtrs.sca.spd.Dependency;
 import mil.jpeojtrs.sca.spd.HumanLanguage;
 import mil.jpeojtrs.sca.spd.Implementation;
@@ -694,6 +695,28 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.IMPLEMENTATION__SOFT_PKG, newSoftPkg, newSoftPkg));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @since 4.0
+	 */
+	public boolean isExecutable() {
+		// Must have an entry point and be of type executable
+		return this.code != null && code.getEntryPoint() != null && code.getType() == CodeFileType.EXECUTABLE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @since 4.0
+	 */
+	public boolean isSharedLibrary() {
+		// Must have no entry point, and be of type shared library
+		return this.code != null && code.getEntryPoint() == null && code.getType() == CodeFileType.SHARED_LIBRARY;
 	}
 
 	/**

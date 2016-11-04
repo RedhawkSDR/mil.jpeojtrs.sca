@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#getDescription <em>Description</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#getPropertyFile <em>Property File</em>}</li>
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#getSoftPkg <em>Soft Pkg</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getImplementation()
  * @model extendedMetaData="name='implementation' kind='elementOnly'"
@@ -434,5 +434,29 @@ public interface Implementation extends EObject {
 	 * @generated
 	 */
 	void setSoftPkg(SoftPkg value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Returns true if the implementation can be executed (as a component, device, etc).
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
+	 * @generated
+	 * @since 4.0
+	 */
+	boolean isExecutable();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Returns true if the implementation is a shared library (i.e. intended to be used by other components, devices, etc).
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
+	 * @generated
+	 * @since 4.0
+	 */
+	boolean isSharedLibrary();
 
 } // Implementation

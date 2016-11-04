@@ -22,13 +22,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -38,9 +32,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * end-user-doc -->
  * @generated
  */
-public class DependencyItemProvider extends PropertyRefSetItemProvider implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class DependencyItemProvider extends PropertyRefSetItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,8 +51,7 @@ public class DependencyItemProvider extends PropertyRefSetItemProvider implement
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
@@ -75,19 +66,9 @@ public class DependencyItemProvider extends PropertyRefSetItemProvider implement
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Dependency_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Dependency_type_feature", "_UI_Dependency_type"),
-				 SpdPackage.Literals.DEPENDENCY__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Dependency_type_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Dependency_type_feature", "_UI_Dependency_type"),
+			SpdPackage.Literals.DEPENDENCY__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -109,10 +90,8 @@ public class DependencyItemProvider extends PropertyRefSetItemProvider implement
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Dependency)object).getType();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Dependency_type") :
-			getString("_UI_Dependency_type") + " " + label;
+		String label = ((Dependency) object).getType();
+		return label == null || label.length() == 0 ? getString("_UI_Dependency_type") : getString("_UI_Dependency_type") + " " + label;
 	}
 
 	/**
@@ -126,13 +105,12 @@ public class DependencyItemProvider extends PropertyRefSetItemProvider implement
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Dependency.class))
-		{
-			case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
-			case SpdPackage.DEPENDENCY__PROPERTY_REF:
-			case SpdPackage.DEPENDENCY__TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(Dependency.class)) {
+		case SpdPackage.DEPENDENCY__SOFT_PKG_REF:
+		case SpdPackage.DEPENDENCY__PROPERTY_REF:
+		case SpdPackage.DEPENDENCY__TYPE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

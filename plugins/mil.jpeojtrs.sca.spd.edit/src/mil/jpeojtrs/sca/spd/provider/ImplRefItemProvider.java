@@ -37,9 +37,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class ImplRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class ImplRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -58,8 +57,7 @@ public class ImplRefItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addRefidPropertyDescriptor(object);
@@ -74,19 +72,9 @@ public class ImplRefItemProvider extends ItemProviderAdapter implements IEditing
 	 * @generated
 	 */
 	protected void addRefidPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ImplRef_refid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ImplRef_refid_feature", "_UI_ImplRef_type"),
-				 SpdPackage.Literals.IMPL_REF__REFID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ImplRef_refid_feature"), getString("_UI_PropertyDescriptor_description", "_UI_ImplRef_refid_feature", "_UI_ImplRef_type"),
+			SpdPackage.Literals.IMPL_REF__REFID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -108,10 +96,8 @@ public class ImplRefItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ImplRef)object).getRefid();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ImplRef_type") :
-			getString("_UI_ImplRef_type") + " " + label;
+		String label = ((ImplRef) object).getRefid();
+		return label == null || label.length() == 0 ? getString("_UI_ImplRef_type") : getString("_UI_ImplRef_type") + " " + label;
 	}
 
 	/**
@@ -125,11 +111,10 @@ public class ImplRefItemProvider extends ItemProviderAdapter implements IEditing
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ImplRef.class))
-		{
-			case SpdPackage.IMPL_REF__REFID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(ImplRef.class)) {
+		case SpdPackage.IMPL_REF__REFID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

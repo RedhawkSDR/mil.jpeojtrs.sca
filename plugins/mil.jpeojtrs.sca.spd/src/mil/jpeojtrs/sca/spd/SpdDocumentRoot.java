@@ -22,13 +22,13 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.SpdDocumentRoot#getMixed <em>Mixed</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SpdDocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SpdDocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SpdDocumentRoot#getSoftpkg <em>Softpkg</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getSpdDocumentRoot()
  * @model extendedMetaData="name='' kind='mixed'"

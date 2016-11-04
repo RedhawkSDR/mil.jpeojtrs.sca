@@ -24,13 +24,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -40,9 +34,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * end-user-doc -->
  * @generated
  */
-public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,8 +53,7 @@ public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider impleme
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addIdPropertyDescriptor(object);
@@ -78,19 +69,9 @@ public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider impleme
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UsesDevice_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UsesDevice_id_feature", "_UI_UsesDevice_type"),
-				 SpdPackage.Literals.USES_DEVICE__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_UsesDevice_id_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UsesDevice_id_feature", "_UI_UsesDevice_type"),
+			SpdPackage.Literals.USES_DEVICE__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -100,19 +81,9 @@ public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider impleme
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UsesDevice_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UsesDevice_type_feature", "_UI_UsesDevice_type"),
-				 SpdPackage.Literals.USES_DEVICE__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_UsesDevice_type_feature"), getString("_UI_PropertyDescriptor_description", "_UI_UsesDevice_type_feature", "_UI_UsesDevice_type"),
+			SpdPackage.Literals.USES_DEVICE__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -124,9 +95,8 @@ public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider impleme
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SpdPackage.Literals.USES_DEVICE__PROPERTY_REF);
 		}
@@ -165,10 +135,8 @@ public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider impleme
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UsesDevice)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_UsesDevice_type") :
-			getString("_UI_UsesDevice_type") + " " + label;
+		String label = ((UsesDevice) object).getId();
+		return label == null || label.length() == 0 ? getString("_UI_UsesDevice_type") : getString("_UI_UsesDevice_type") + " " + label;
 	}
 
 	/**
@@ -182,15 +150,14 @@ public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider impleme
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(UsesDevice.class))
-		{
-			case SpdPackage.USES_DEVICE__ID:
-			case SpdPackage.USES_DEVICE__TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SpdPackage.USES_DEVICE__PROPERTY_REF:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(UsesDevice.class)) {
+		case SpdPackage.USES_DEVICE__ID:
+		case SpdPackage.USES_DEVICE__TYPE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case SpdPackage.USES_DEVICE__PROPERTY_REF:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -206,11 +173,8 @@ public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider impleme
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		//Don't call superclass method (I'm not really a PropertyRefGroup, so only PropertyRefs should be created under me)
 		//super.collectNewChildDescriptors(newChildDescriptors, object);
-		
-		newChildDescriptors.add
-			(createChildParameter
-				(SpdPackage.Literals.USES_DEVICE__PROPERTY_REF,
-				 SpdFactory.eINSTANCE.createPropertyRef()));
+
+		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.USES_DEVICE__PROPERTY_REF, SpdFactory.eINSTANCE.createPropertyRef()));
 	}
 
 	/**

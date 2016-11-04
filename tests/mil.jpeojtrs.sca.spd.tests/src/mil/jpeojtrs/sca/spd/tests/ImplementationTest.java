@@ -40,6 +40,13 @@ import org.junit.Assert;
  *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#getDependency() <em>Dependency</em>}</li>
  * </ul>
  * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#isExecutable() <em>Is Executable</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#isSharedLibrary() <em>Is Shared Library</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class ImplementationTest extends TestCase {
@@ -166,6 +173,63 @@ public class ImplementationTest extends TestCase {
 	}
 
 	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.spd.Implementation#isExecutable() <em>Is Executable</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.spd.Implementation#isExecutable()
+	 * @generated NOT
+	 */
+	public void testIsExecutable() {
+		// END GENERATED CODE
+		Assert.assertTrue(this.implementation.isExecutable());
+
+		Assert.assertFalse(getFixture().isExecutable());
+
+		getFixture().setCode(SpdFactory.eINSTANCE.createCode());
+		Assert.assertFalse(getFixture().isExecutable());
+
+		getFixture().getCode().setType(CodeFileType.EXECUTABLE);
+		getFixture().getCode().setEntryPoint("entrypoint");
+		Assert.assertTrue(getFixture().isExecutable());
+
+		getFixture().getCode().setType(CodeFileType.SHARED_LIBRARY);
+		Assert.assertFalse(getFixture().isExecutable());
+
+		getFixture().getCode().setEntryPoint(null);
+		Assert.assertFalse(getFixture().isExecutable());
+
+		getFixture().getCode().setType(CodeFileType.EXECUTABLE);
+		Assert.assertFalse(getFixture().isExecutable());
+		// BEGIN GENERATED CODE
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.spd.Implementation#isSharedLibrary() <em>Is Shared Library</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.spd.Implementation#isSharedLibrary()
+	 * @generated NOT
+	 */
+	public void testIsSharedLibrary() {
+		// END GENERATED CODE
+		Assert.assertFalse(this.implementation.isSharedLibrary());
+
+		Assert.assertFalse(getFixture().isSharedLibrary());
+
+		getFixture().setCode(SpdFactory.eINSTANCE.createCode());
+		getFixture().getCode().setType(CodeFileType.EXECUTABLE);
+		Assert.assertFalse(getFixture().isSharedLibrary());
+
+		getFixture().getCode().setEntryPoint("entrypoint");
+		getFixture().getCode().setType(CodeFileType.SHARED_LIBRARY);
+		Assert.assertFalse(getFixture().isSharedLibrary());
+
+		getFixture().getCode().setEntryPoint(null);
+		Assert.assertTrue(getFixture().isSharedLibrary());
+		// BEGIN GENERATED CODE
+	}
+
+	/**
 	 * @generated NOT
 	 */
 	public void testEqualsReflexivity() throws Exception {
@@ -236,12 +300,13 @@ public class ImplementationTest extends TestCase {
 		Assert.assertFalse(impl.hashCode() == impl3.hashCode());
 		// BEGIN GENERATED CODE
 	}
-	
+
 	public void testParse() {
 		Assert.assertNotNull(this.implementation);
 		Assert.assertEquals("DCE:9c4257a0-4281-45c7-85f6-a66adc018c7e", this.implementation.getId());
 		Assert.assertEquals("aep_compliant", this.implementation.getAepCompliance().getLiteral());
-		Assert.assertEquals("The implementation contains descriptive information about the template for a software component.", this.implementation.getDescription());
+		Assert.assertEquals("The implementation contains descriptive information about the template for a software component.",
+			this.implementation.getDescription());
 		Assert.assertNotNull(this.implementation.getCode());
 		Assert.assertEquals("Executable", this.implementation.getCode().getType().getName());
 		Assert.assertNotNull(this.implementation.getCompiler());
@@ -257,7 +322,7 @@ public class ImplementationTest extends TestCase {
 	public void testExtra() {
 		Assert.assertNotNull(this.implementation);
 		Assert.assertEquals("aep_compliant", this.implementation.getAepCompliance().getLiteral());
-		
+
 		this.implementation.unsetAepCompliance();
 		Assert.assertEquals("aep_compliant", this.implementation.getAepCompliance().getLiteral());
 		Assert.assertFalse(this.implementation.isSetAepCompliance());
@@ -265,7 +330,7 @@ public class ImplementationTest extends TestCase {
 		this.implementation.setAepCompliance(null);
 		Assert.assertEquals("aep_compliant", this.implementation.getAepCompliance().getLiteral());
 		Assert.assertTrue(this.implementation.isSetAepCompliance());
-		
+
 		mil.jpeojtrs.sca.spd.Runtime runtime = SpdFactory.eINSTANCE.createRuntime();
 		runtime.setName("OutRun");
 		runtime.setVersion("1986");
@@ -274,7 +339,7 @@ public class ImplementationTest extends TestCase {
 		Assert.assertEquals("OutRun", this.implementation.getRuntime().getName());
 		this.implementation.setRuntime(runtime);
 		Assert.assertEquals("OutRun", this.implementation.getRuntime().getName());
-		
+
 		HumanLanguage hl = SpdFactory.eINSTANCE.createHumanLanguage();
 		hl.setName("Latin");
 		this.implementation.setHumanLanguage(hl);
@@ -282,7 +347,7 @@ public class ImplementationTest extends TestCase {
 		Assert.assertEquals("Latin", this.implementation.getHumanLanguage().getName());
 		this.implementation.setHumanLanguage(hl);
 		Assert.assertEquals("Latin", this.implementation.getHumanLanguage().getName());
-		
+
 		ProgrammingLanguage pl = SpdFactory.eINSTANCE.createProgrammingLanguage();
 		pl.setName("Ruby");
 		this.implementation.setProgrammingLanguage(pl);
@@ -290,7 +355,7 @@ public class ImplementationTest extends TestCase {
 		Assert.assertEquals("Ruby", this.implementation.getProgrammingLanguage().getName());
 		this.implementation.setProgrammingLanguage(pl);
 		Assert.assertEquals("Ruby", this.implementation.getProgrammingLanguage().getName());
-		
+
 		Compiler cplr = SpdFactory.eINSTANCE.createCompiler();
 		cplr.setName("/usr/bin/elf90");
 		cplr.setVersion("90");
@@ -308,7 +373,7 @@ public class ImplementationTest extends TestCase {
 		Assert.assertEquals("my/entrypoint", this.implementation.getCode().getEntryPoint());
 		this.implementation.setCode(code);
 		Assert.assertEquals("my/entrypoint", this.implementation.getCode().getEntryPoint());
-		
+
 		PropertyFile pf = SpdFactory.eINSTANCE.createPropertyFile();
 		LocalFile lf = SpdFactory.eINSTANCE.createLocalFile();
 		lf.setName("defaultCpp.prf.xml");

@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.Author#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Author#getCompany <em>Company</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Author#getWebpage <em>Webpage</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getAuthor()
  * @model extendedMetaData="name='author' kind='elementOnly'"

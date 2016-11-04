@@ -37,9 +37,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class OsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-ITableItemLabelProvider {
+public class OsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -58,8 +57,7 @@ ITableItemLabelProvider {
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -75,19 +73,9 @@ ITableItemLabelProvider {
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Os_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Os_name_feature", "_UI_Os_type"),
-				 SpdPackage.Literals.OS__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Os_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Os_name_feature", "_UI_Os_type"),
+			SpdPackage.Literals.OS__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -97,19 +85,9 @@ ITableItemLabelProvider {
 	 * @generated
 	 */
 	protected void addVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Os_version_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Os_version_feature", "_UI_Os_type"),
-				 SpdPackage.Literals.OS__VERSION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Os_version_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Os_version_feature", "_UI_Os_type"),
+			SpdPackage.Literals.OS__VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -152,10 +130,8 @@ ITableItemLabelProvider {
 	 * @generated
 	 */
 	public String getTextGen(Object object) {
-		String label = ((Os)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Os_type") :
-			getString("_UI_Os_type") + " " + label;
+		String label = ((Os) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Os_type") : getString("_UI_Os_type") + " " + label;
 	}
 
 	/**
@@ -184,12 +160,11 @@ ITableItemLabelProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Os.class))
-		{
-			case SpdPackage.OS__NAME:
-			case SpdPackage.OS__VERSION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(Os.class)) {
+		case SpdPackage.OS__NAME:
+		case SpdPackage.OS__VERSION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

@@ -97,8 +97,8 @@ public class DescriptorTest extends TestCase {
 		this.resourceSet = new ResourceSetImpl();
 		final SoftPkg softPkg = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testFiles/defaultCpp.spd.xml"), true));
 		this.descriptor = softPkg.getDescriptor();
-		this.component = SoftwareComponent.Util.getSoftwareComponent(this.resourceSet.getResource(SpdTests.getURI("testFiles/SoftwareComponentTest.scd.xml"),
-		        true));
+		this.component = SoftwareComponent.Util.getSoftwareComponent(
+			this.resourceSet.getResource(SpdTests.getURI("testFiles/SoftwareComponentTest.scd.xml"), true));
 	}
 
 	/**

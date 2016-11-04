@@ -39,9 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * end-user-doc -->
  * @generated
  */
-public class SoftPkgRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class SoftPkgRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,8 +59,7 @@ public class SoftPkgRefItemProvider extends ItemProviderAdapter implements IEdit
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addLocalFilePropertyDescriptor(object);
@@ -79,19 +77,10 @@ public class SoftPkgRefItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	protected void addLocalFilePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkgRef_localFile_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkgRef_localFile_feature", "_UI_SoftPkgRef_type"),
-				 SpdPackage.Literals.SOFT_PKG_REF__LOCAL_FILE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkgRef_localFile_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftPkgRef_localFile_feature", "_UI_SoftPkgRef_type"),
+			SpdPackage.Literals.SOFT_PKG_REF__LOCAL_FILE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -101,19 +90,10 @@ public class SoftPkgRefItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	protected void addImplRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkgRef_implRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkgRef_implRef_feature", "_UI_SoftPkgRef_type"),
-				 SpdPackage.Literals.SOFT_PKG_REF__IMPL_REF,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkgRef_implRef_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftPkgRef_implRef_feature", "_UI_SoftPkgRef_type"),
+			SpdPackage.Literals.SOFT_PKG_REF__IMPL_REF, false, false, false, null, null, null));
 	}
 
 	/**
@@ -123,19 +103,10 @@ public class SoftPkgRefItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	protected void addImplementationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkgRef_implementation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkgRef_implementation_feature", "_UI_SoftPkgRef_type"),
-				 SpdPackage.Literals.SOFT_PKG_REF__IMPLEMENTATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkgRef_implementation_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftPkgRef_implementation_feature", "_UI_SoftPkgRef_type"),
+			SpdPackage.Literals.SOFT_PKG_REF__IMPLEMENTATION, true, false, true, null, null, null));
 	}
 
 	/**
@@ -145,19 +116,10 @@ public class SoftPkgRefItemProvider extends ItemProviderAdapter implements IEdit
 	 * @generated
 	 */
 	protected void addSoftPkgPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SoftPkgRef_softPkg_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SoftPkgRef_softPkg_feature", "_UI_SoftPkgRef_type"),
-				 SpdPackage.Literals.SOFT_PKG_REF__SOFT_PKG,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SoftPkgRef_softPkg_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SoftPkgRef_softPkg_feature", "_UI_SoftPkgRef_type"),
+			SpdPackage.Literals.SOFT_PKG_REF__SOFT_PKG, true, false, true, null, null, null));
 	}
 
 	/**
@@ -234,12 +196,11 @@ public class SoftPkgRefItemProvider extends ItemProviderAdapter implements IEdit
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SoftPkgRef.class))
-		{
-			case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
-			case SpdPackage.SOFT_PKG_REF__IMPL_REF:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(SoftPkgRef.class)) {
+		case SpdPackage.SOFT_PKG_REF__LOCAL_FILE:
+		case SpdPackage.SOFT_PKG_REF__IMPL_REF:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

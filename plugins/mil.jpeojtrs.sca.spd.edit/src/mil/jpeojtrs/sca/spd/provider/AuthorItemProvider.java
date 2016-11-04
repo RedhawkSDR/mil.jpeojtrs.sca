@@ -37,9 +37,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class AuthorItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class AuthorItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -58,8 +57,7 @@ public class AuthorItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -76,19 +74,9 @@ public class AuthorItemProvider extends ItemProviderAdapter implements IEditingD
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Author_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Author_name_feature", "_UI_Author_type"),
-				 SpdPackage.Literals.AUTHOR__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Author_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Author_name_feature", "_UI_Author_type"),
+			SpdPackage.Literals.AUTHOR__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -98,19 +86,9 @@ public class AuthorItemProvider extends ItemProviderAdapter implements IEditingD
 	 * @generated
 	 */
 	protected void addCompanyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Author_company_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Author_company_feature", "_UI_Author_type"),
-				 SpdPackage.Literals.AUTHOR__COMPANY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Author_company_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Author_company_feature", "_UI_Author_type"),
+			SpdPackage.Literals.AUTHOR__COMPANY, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -120,19 +98,9 @@ public class AuthorItemProvider extends ItemProviderAdapter implements IEditingD
 	 * @generated
 	 */
 	protected void addWebpagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Author_webpage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Author_webpage_feature", "_UI_Author_type"),
-				 SpdPackage.Literals.AUTHOR__WEBPAGE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Author_webpage_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Author_webpage_feature", "_UI_Author_type"),
+			SpdPackage.Literals.AUTHOR__WEBPAGE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -196,7 +164,7 @@ public class AuthorItemProvider extends ItemProviderAdapter implements IEditingD
 		if (webpage != null && !"".equals(webpage)) {
 			label.append("; Webpage: " + webpage);
 		}
-		return label.toString();	
+		return label.toString();
 		// BEGIN GENERATED CODE
 	}
 
@@ -211,13 +179,12 @@ public class AuthorItemProvider extends ItemProviderAdapter implements IEditingD
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Author.class))
-		{
-			case SpdPackage.AUTHOR__NAME:
-			case SpdPackage.AUTHOR__COMPANY:
-			case SpdPackage.AUTHOR__WEBPAGE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(Author.class)) {
+		case SpdPackage.AUTHOR__NAME:
+		case SpdPackage.AUTHOR__COMPANY:
+		case SpdPackage.AUTHOR__WEBPAGE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

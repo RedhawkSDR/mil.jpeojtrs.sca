@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.spd.Os#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.Os#getVersion <em>Version</em>}</li>
  * </ul>
- * </p>
  *
  * @see mil.jpeojtrs.sca.spd.SpdPackage#getOs()
  * @model extendedMetaData="name='os' kind='empty'"

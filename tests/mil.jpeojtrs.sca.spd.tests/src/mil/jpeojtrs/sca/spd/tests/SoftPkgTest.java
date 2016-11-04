@@ -152,11 +152,11 @@ public class SoftPkgTest extends TestCase {
 
 	public void testUtilIsAggregateDevice() throws Exception {
 		Assert.assertEquals(Boolean.TRUE,
-		        SoftPkg.Util.isAggregateDevice(SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testDevice/testDevice.spd.xml"), true))));
+			SoftPkg.Util.isAggregateDevice(SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testDevice/testDevice.spd.xml"), true))));
 		Assert.assertEquals(Boolean.FALSE, SoftPkg.Util.isAggregateDevice(this.fixture));
 		Assert.assertEquals(Boolean.FALSE, SoftPkg.Util.isAggregateDevice(null));
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public void testExtra() {
 		final PropertyFile pf = SpdFactory.eINSTANCE.createPropertyFile();
@@ -183,7 +183,7 @@ public class SoftPkgTest extends TestCase {
 		Assert.assertEquals("TestDescriptor", this.fixture.getDescriptor().getName());
 		this.fixture.setDescriptor(null);
 		Assert.assertNull(this.fixture.getDescriptor());
-		
+
 		this.fixture.unsetType();
 		Assert.assertEquals(SCAComplianceType.SCA_COMPLIANT.getLiteral(), this.fixture.getType());
 		Assert.assertFalse(this.fixture.isSetType());

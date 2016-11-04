@@ -40,9 +40,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ImplementationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class ImplementationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,8 +60,7 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addDescriptionPropertyDescriptor(object);
@@ -87,19 +85,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_description_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__DESCRIPTION,
-				 true,
-				 true,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_description_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_description_feature", "_UI_Implementation_type"),
+			SpdPackage.Literals.IMPLEMENTATION__DESCRIPTION, true, true, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -109,19 +98,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addPropertyFilePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_propertyFile_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_propertyFile_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__PROPERTY_FILE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_propertyFile_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_propertyFile_feature", "_UI_Implementation_type"),
+			SpdPackage.Literals.IMPLEMENTATION__PROPERTY_FILE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -131,19 +111,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addCodePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_code_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_code_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__CODE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_code_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_code_feature", "_UI_Implementation_type"),
+			SpdPackage.Literals.IMPLEMENTATION__CODE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -153,19 +124,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addCompilerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_compiler_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_compiler_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__COMPILER,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_compiler_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_compiler_feature", "_UI_Implementation_type"),
+			SpdPackage.Literals.IMPLEMENTATION__COMPILER, false, false, false, null, null, null));
 	}
 
 	/**
@@ -175,19 +137,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addProgrammingLanguagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_programmingLanguage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_programmingLanguage_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__PROGRAMMING_LANGUAGE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_programmingLanguage_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_programmingLanguage_feature", "_UI_Implementation_type"),
+			SpdPackage.Literals.IMPLEMENTATION__PROGRAMMING_LANGUAGE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -197,19 +150,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addHumanLanguagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_humanLanguage_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_humanLanguage_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__HUMAN_LANGUAGE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_humanLanguage_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_humanLanguage_feature", "_UI_Implementation_type"),
+			SpdPackage.Literals.IMPLEMENTATION__HUMAN_LANGUAGE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -219,19 +163,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addRuntimePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_runtime_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_runtime_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__RUNTIME,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_runtime_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_runtime_feature", "_UI_Implementation_type"),
+			SpdPackage.Literals.IMPLEMENTATION__RUNTIME, false, false, false, null, null, null));
 	}
 
 	/**
@@ -241,19 +176,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addOsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_os_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_os_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__OS,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_os_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_os_feature", "_UI_Implementation_type"), SpdPackage.Literals.IMPLEMENTATION__OS,
+			false, false, false, null, null, null));
 	}
 
 	/**
@@ -263,19 +189,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addProcessorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_processor_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_processor_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__PROCESSOR,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_processor_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_processor_feature", "_UI_Implementation_type"),
+			SpdPackage.Literals.IMPLEMENTATION__PROCESSOR, false, false, false, null, null, null));
 	}
 
 	/**
@@ -285,19 +202,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addAepCompliancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_aepCompliance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_aepCompliance_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__AEP_COMPLIANCE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_aepCompliance_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_aepCompliance_feature", "_UI_Implementation_type"),
+			SpdPackage.Literals.IMPLEMENTATION__AEP_COMPLIANCE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -307,19 +215,10 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Implementation_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Implementation_id_feature", "_UI_Implementation_type"),
-				 SpdPackage.Literals.IMPLEMENTATION__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Implementation_id_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_Implementation_id_feature", "_UI_Implementation_type"), SpdPackage.Literals.IMPLEMENTATION__ID,
+			true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -331,9 +230,8 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SpdPackage.Literals.IMPLEMENTATION__USES_DEVICE);
 		}
@@ -372,10 +270,8 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Implementation)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Implementation_type") :
-			getString("_UI_Implementation_type") + " " + label;
+		String label = ((Implementation) object).getId();
+		return label == null || label.length() == 0 ? getString("_UI_Implementation_type") : getString("_UI_Implementation_type") + " " + label;
 	}
 
 	/**
@@ -389,25 +285,24 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Implementation.class))
-		{
-			case SpdPackage.IMPLEMENTATION__DESCRIPTION:
-			case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
-			case SpdPackage.IMPLEMENTATION__CODE:
-			case SpdPackage.IMPLEMENTATION__COMPILER:
-			case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
-			case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
-			case SpdPackage.IMPLEMENTATION__RUNTIME:
-			case SpdPackage.IMPLEMENTATION__OS:
-			case SpdPackage.IMPLEMENTATION__PROCESSOR:
-			case SpdPackage.IMPLEMENTATION__DEPENDENCY:
-			case SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE:
-			case SpdPackage.IMPLEMENTATION__ID:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SpdPackage.IMPLEMENTATION__USES_DEVICE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(Implementation.class)) {
+		case SpdPackage.IMPLEMENTATION__DESCRIPTION:
+		case SpdPackage.IMPLEMENTATION__PROPERTY_FILE:
+		case SpdPackage.IMPLEMENTATION__CODE:
+		case SpdPackage.IMPLEMENTATION__COMPILER:
+		case SpdPackage.IMPLEMENTATION__PROGRAMMING_LANGUAGE:
+		case SpdPackage.IMPLEMENTATION__HUMAN_LANGUAGE:
+		case SpdPackage.IMPLEMENTATION__RUNTIME:
+		case SpdPackage.IMPLEMENTATION__OS:
+		case SpdPackage.IMPLEMENTATION__PROCESSOR:
+		case SpdPackage.IMPLEMENTATION__DEPENDENCY:
+		case SpdPackage.IMPLEMENTATION__AEP_COMPLIANCE:
+		case SpdPackage.IMPLEMENTATION__ID:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case SpdPackage.IMPLEMENTATION__USES_DEVICE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -423,10 +318,7 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SpdPackage.Literals.IMPLEMENTATION__USES_DEVICE,
-				 SpdFactory.eINSTANCE.createUsesDevice()));
+		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.IMPLEMENTATION__USES_DEVICE, SpdFactory.eINSTANCE.createUsesDevice()));
 	}
 
 	/**

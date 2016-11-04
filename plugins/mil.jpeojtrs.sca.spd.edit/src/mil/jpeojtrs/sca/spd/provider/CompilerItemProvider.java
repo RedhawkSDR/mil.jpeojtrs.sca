@@ -36,9 +36,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class CompilerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class CompilerItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -57,8 +56,7 @@ public class CompilerItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -74,19 +72,9 @@ public class CompilerItemProvider extends ItemProviderAdapter implements IEditin
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Compiler_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Compiler_name_feature", "_UI_Compiler_type"),
-				 SpdPackage.Literals.COMPILER__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Compiler_name_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Compiler_name_feature", "_UI_Compiler_type"),
+			SpdPackage.Literals.COMPILER__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -96,19 +84,9 @@ public class CompilerItemProvider extends ItemProviderAdapter implements IEditin
 	 * @generated
 	 */
 	protected void addVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Compiler_version_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Compiler_version_feature", "_UI_Compiler_type"),
-				 SpdPackage.Literals.COMPILER__VERSION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Compiler_version_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Compiler_version_feature", "_UI_Compiler_type"),
+			SpdPackage.Literals.COMPILER__VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -130,10 +108,8 @@ public class CompilerItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((mil.jpeojtrs.sca.spd.Compiler)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Compiler_type") :
-			getString("_UI_Compiler_type") + " " + label;
+		String label = ((mil.jpeojtrs.sca.spd.Compiler) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Compiler_type") : getString("_UI_Compiler_type") + " " + label;
 	}
 
 	/**
@@ -147,12 +123,11 @@ public class CompilerItemProvider extends ItemProviderAdapter implements IEditin
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(mil.jpeojtrs.sca.spd.Compiler.class))
-		{
-			case SpdPackage.COMPILER__NAME:
-			case SpdPackage.COMPILER__VERSION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(mil.jpeojtrs.sca.spd.Compiler.class)) {
+		case SpdPackage.COMPILER__NAME:
+		case SpdPackage.COMPILER__VERSION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

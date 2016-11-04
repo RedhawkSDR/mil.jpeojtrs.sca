@@ -47,13 +47,7 @@ public final class SpdEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public SpdEditPlugin() {
-		super
-		  (new ResourceLocator [] 
-		   {
-		     EcoreEditPlugin.INSTANCE,
-		     PrfEditPlugin.INSTANCE,
-		     ScdEditPlugin.INSTANCE,
-		   });
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, PrfEditPlugin.INSTANCE, ScdEditPlugin.INSTANCE, });
 	}
 
 	/**

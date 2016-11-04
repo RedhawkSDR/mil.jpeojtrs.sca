@@ -1384,6 +1384,10 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		initEReference(getImplementation_SoftPkg(), this.getSoftPkg(), this.getSoftPkg_Implementation(), "softPkg", null, 0, 1, Implementation.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		addEOperation(implementationEClass, theXMLTypePackage.getBoolean(), "isExecutable", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(implementationEClass, theXMLTypePackage.getBoolean(), "isSharedLibrary", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(implRefEClass, ImplRef.class, "ImplRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImplRef_Refid(), theXMLTypePackage.getString(), "refid", null, 1, 1, ImplRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

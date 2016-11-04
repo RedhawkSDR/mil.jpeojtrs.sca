@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.URI;
  * <!-- end-user-doc -->
  * @generated NOT
  */
-public class SpdTests  {
+public class SpdTests {
 
 	public static URI getURI(final String filePath) throws IOException {
 		final URL url = FileLocator.toFileURL(FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.spd.tests"), new Path(filePath), null));

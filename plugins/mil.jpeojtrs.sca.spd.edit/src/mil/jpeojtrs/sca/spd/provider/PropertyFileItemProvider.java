@@ -39,9 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertyFileItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class PropertyFileItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,8 +59,7 @@ public class PropertyFileItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addLocalFilePropertyDescriptor(object);
@@ -78,19 +76,10 @@ public class PropertyFileItemProvider extends ItemProviderAdapter implements IEd
 	 * @generated
 	 */
 	protected void addLocalFilePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyFile_localFile_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyFile_localFile_feature", "_UI_PropertyFile_type"),
-				 SpdPackage.Literals.PROPERTY_FILE__LOCAL_FILE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_PropertyFile_localFile_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_PropertyFile_localFile_feature", "_UI_PropertyFile_type"),
+			SpdPackage.Literals.PROPERTY_FILE__LOCAL_FILE, false, false, false, null, null, null));
 	}
 
 	/**
@@ -100,19 +89,10 @@ public class PropertyFileItemProvider extends ItemProviderAdapter implements IEd
 	 * @generated
 	 */
 	protected void addPropertiesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyFile_properties_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyFile_properties_feature", "_UI_PropertyFile_type"),
-				 SpdPackage.Literals.PROPERTY_FILE__PROPERTIES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_PropertyFile_properties_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_PropertyFile_properties_feature", "_UI_PropertyFile_type"),
+			SpdPackage.Literals.PROPERTY_FILE__PROPERTIES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -122,19 +102,10 @@ public class PropertyFileItemProvider extends ItemProviderAdapter implements IEd
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyFile_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyFile_type_feature", "_UI_PropertyFile_type"),
-				 SpdPackage.Literals.PROPERTY_FILE__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_PropertyFile_type_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_PropertyFile_type_feature", "_UI_PropertyFile_type"), SpdPackage.Literals.PROPERTY_FILE__TYPE,
+			true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -146,9 +117,8 @@ public class PropertyFileItemProvider extends ItemProviderAdapter implements IEd
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SpdPackage.Literals.PROPERTY_FILE__PROPERTIES);
 		}
@@ -187,10 +157,8 @@ public class PropertyFileItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PropertyFile)object).getType();
-		return label == null || label.length() == 0 ?
-			getString("_UI_PropertyFile_type") :
-			getString("_UI_PropertyFile_type") + " " + label;
+		String label = ((PropertyFile) object).getType();
+		return label == null || label.length() == 0 ? getString("_UI_PropertyFile_type") : getString("_UI_PropertyFile_type") + " " + label;
 	}
 
 	/**
@@ -204,12 +172,11 @@ public class PropertyFileItemProvider extends ItemProviderAdapter implements IEd
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PropertyFile.class))
-		{
-			case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
-			case SpdPackage.PROPERTY_FILE__TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		switch (notification.getFeatureID(PropertyFile.class)) {
+		case SpdPackage.PROPERTY_FILE__LOCAL_FILE:
+		case SpdPackage.PROPERTY_FILE__TYPE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}

@@ -39,9 +39,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class CodeItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-        IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
-        ITableItemLabelProvider {
+public class CodeItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,8 +59,7 @@ public class CodeItemProvider extends ItemProviderAdapter implements IEditingDom
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addEntryPointPropertyDescriptor(object);
@@ -79,19 +77,9 @@ public class CodeItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * @generated
 	 */
 	protected void addEntryPointPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Code_entryPoint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Code_entryPoint_feature", "_UI_Code_type"),
-				 SpdPackage.Literals.CODE__ENTRY_POINT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Code_entryPoint_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Code_entryPoint_feature", "_UI_Code_type"),
+			SpdPackage.Literals.CODE__ENTRY_POINT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -101,19 +89,9 @@ public class CodeItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * @generated
 	 */
 	protected void addStackSizePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Code_stackSize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Code_stackSize_feature", "_UI_Code_type"),
-				 SpdPackage.Literals.CODE__STACK_SIZE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Code_stackSize_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Code_stackSize_feature", "_UI_Code_type"),
+			SpdPackage.Literals.CODE__STACK_SIZE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -123,19 +101,9 @@ public class CodeItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * @generated
 	 */
 	protected void addPriorityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Code_priority_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Code_priority_feature", "_UI_Code_type"),
-				 SpdPackage.Literals.CODE__PRIORITY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Code_priority_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Code_priority_feature", "_UI_Code_type"),
+			SpdPackage.Literals.CODE__PRIORITY, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -145,19 +113,9 @@ public class CodeItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * @generated
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Code_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Code_type_feature", "_UI_Code_type"),
-				 SpdPackage.Literals.CODE__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Code_type_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Code_type_feature", "_UI_Code_type"),
+			SpdPackage.Literals.CODE__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -169,9 +127,8 @@ public class CodeItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SpdPackage.Literals.CODE__LOCAL_FILE);
 		}
@@ -210,10 +167,8 @@ public class CodeItemProvider extends ItemProviderAdapter implements IEditingDom
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Code)object).getEntryPoint();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Code_type") :
-			getString("_UI_Code_type") + " " + label;
+		String label = ((Code) object).getEntryPoint();
+		return label == null || label.length() == 0 ? getString("_UI_Code_type") : getString("_UI_Code_type") + " " + label;
 	}
 
 	/**
@@ -227,17 +182,16 @@ public class CodeItemProvider extends ItemProviderAdapter implements IEditingDom
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Code.class))
-		{
-			case SpdPackage.CODE__ENTRY_POINT:
-			case SpdPackage.CODE__STACK_SIZE:
-			case SpdPackage.CODE__PRIORITY:
-			case SpdPackage.CODE__TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SpdPackage.CODE__LOCAL_FILE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		switch (notification.getFeatureID(Code.class)) {
+		case SpdPackage.CODE__ENTRY_POINT:
+		case SpdPackage.CODE__STACK_SIZE:
+		case SpdPackage.CODE__PRIORITY:
+		case SpdPackage.CODE__TYPE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case SpdPackage.CODE__LOCAL_FILE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -253,10 +207,7 @@ public class CodeItemProvider extends ItemProviderAdapter implements IEditingDom
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(SpdPackage.Literals.CODE__LOCAL_FILE,
-				 SpdFactory.eINSTANCE.createLocalFile()));
+		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.CODE__LOCAL_FILE, SpdFactory.eINSTANCE.createLocalFile()));
 	}
 
 	/**

@@ -37,135 +37,135 @@ public enum CodeFileType implements Enumerator {
 	 */
 	EXECUTABLE(0, "Executable", "Executable"),
 	/**
-	* The '<em><b>Kernel Module</b></em>' literal object.
-	* <!-- begin-user-doc -->
+	 * The '<em><b>Kernel Module</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #KERNEL_MODULE_VALUE
-	* @generated
-	* @ordered
-	*/
+	 * @see #KERNEL_MODULE_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	KERNEL_MODULE(1, "KernelModule", "KernelModule"),
 	/**
-	* The '<em><b>Shared Library</b></em>' literal object.
-	* <!-- begin-user-doc -->
+	 * The '<em><b>Shared Library</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #SHARED_LIBRARY_VALUE
-	* @generated
-	* @ordered
-	*/
+	 * @see #SHARED_LIBRARY_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	SHARED_LIBRARY(2, "SharedLibrary", "SharedLibrary"),
 	/**
-	* The '<em><b>Driver</b></em>' literal object.
-	* <!-- begin-user-doc -->
+	 * The '<em><b>Driver</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #DRIVER_VALUE
-	* @generated
-	* @ordered
-	*/
+	 * @see #DRIVER_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	DRIVER(3, "Driver", "Driver"),
 	/**
-	* The '<em><b>Node Booter</b></em>' literal object.
-	* <!-- begin-user-doc -->
+	 * The '<em><b>Node Booter</b></em>' literal object.
+	 * <!-- begin-user-doc -->
 	* <!-- end-user-doc -->
-	* @see #NODE_BOOTER_VALUE
-	* @generated
-	* @ordered
-	*/
+	 * @see #NODE_BOOTER_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	NODE_BOOTER(4, "NodeBooter", "NodeBooter");
 
 	/**
-		 * The '<em><b>Executable</b></em>' literal value.
-		 * <!-- begin-user-doc -->
+	 * The '<em><b>Executable</b></em>' literal value.
+	 * <!-- begin-user-doc -->
 		 * <p>
 		 * If the meaning of '<em><b>Executable</b></em>' literal object isn't clear,
 		 * there really should be more of a description here...
 		 * </p>
 		 * <!-- end-user-doc -->
-		 * @see #EXECUTABLE
-		 * @model name="Executable"
-		 * @generated
-		 * @ordered
-		 */
+	 * @see #EXECUTABLE
+	 * @model name="Executable"
+	 * @generated
+	 * @ordered
+	 */
 	public static final int EXECUTABLE_VALUE = 0;
 	/**
-		 * The '<em><b>Kernel Module</b></em>' literal value.
-		 * <!-- begin-user-doc -->
+	 * The '<em><b>Kernel Module</b></em>' literal value.
+	 * <!-- begin-user-doc -->
 		 * <p>
 		 * If the meaning of '<em><b>Kernel Module</b></em>' literal object isn't clear,
 		 * there really should be more of a description here...
 		 * </p>
 		 * <!-- end-user-doc -->
-		 * @see #KERNEL_MODULE
-		 * @model name="KernelModule"
-		 * @generated
-		 * @ordered
-		 */
+	 * @see #KERNEL_MODULE
+	 * @model name="KernelModule"
+	 * @generated
+	 * @ordered
+	 */
 	public static final int KERNEL_MODULE_VALUE = 1;
 	/**
-		 * The '<em><b>Shared Library</b></em>' literal value.
-		 * <!-- begin-user-doc -->
+	 * The '<em><b>Shared Library</b></em>' literal value.
+	 * <!-- begin-user-doc -->
 		 * <p>
 		 * If the meaning of '<em><b>Shared Library</b></em>' literal object isn't clear,
 		 * there really should be more of a description here...
 		 * </p>
 		 * <!-- end-user-doc -->
-		 * @see #SHARED_LIBRARY
-		 * @model name="SharedLibrary"
-		 * @generated
-		 * @ordered
-		 */
+	 * @see #SHARED_LIBRARY
+	 * @model name="SharedLibrary"
+	 * @generated
+	 * @ordered
+	 */
 	public static final int SHARED_LIBRARY_VALUE = 2;
 	/**
-		 * The '<em><b>Driver</b></em>' literal value.
-		 * <!-- begin-user-doc -->
+	 * The '<em><b>Driver</b></em>' literal value.
+	 * <!-- begin-user-doc -->
 		 * <p>
 		 * If the meaning of '<em><b>Driver</b></em>' literal object isn't clear,
 		 * there really should be more of a description here...
 		 * </p>
 		 * <!-- end-user-doc -->
-		 * @see #DRIVER
-		 * @model name="Driver"
-		 * @generated
-		 * @ordered
-		 */
+	 * @see #DRIVER
+	 * @model name="Driver"
+	 * @generated
+	 * @ordered
+	 */
 	public static final int DRIVER_VALUE = 3;
 	/**
-		 * The '<em><b>Node Booter</b></em>' literal value.
-		 * <!-- begin-user-doc -->
+	 * The '<em><b>Node Booter</b></em>' literal value.
+	 * <!-- begin-user-doc -->
 		 * <p>
 		 * If the meaning of '<em><b>Node Booter</b></em>' literal object isn't clear,
 		 * there really should be more of a description here...
 		 * </p>
 		 * <!-- end-user-doc -->
-		 * @see #NODE_BOOTER
-		 * @model name="NodeBooter"
-		 * @generated
-		 * @ordered
-		 */
+	 * @see #NODE_BOOTER
+	 * @model name="NodeBooter"
+	 * @generated
+	 * @ordered
+	 */
 	public static final int NODE_BOOTER_VALUE = 4;
 	/**
-		 * An array of all the '<em><b>Code File Type</b></em>' enumerators.
-		 * <!-- begin-user-doc -->
+	 * An array of all the '<em><b>Code File Type</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+	 * @generated
+	 */
 	private static final CodeFileType[] VALUES_ARRAY = new CodeFileType[] { EXECUTABLE, KERNEL_MODULE, SHARED_LIBRARY, DRIVER, NODE_BOOTER, };
 	/**
-		 * A public read-only list of all the '<em><b>Code File Type</b></em>' enumerators.
-		 * <!-- begin-user-doc -->
+	 * A public read-only list of all the '<em><b>Code File Type</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+	 * @generated
+	 */
 	public static final List<CodeFileType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-		 * Returns the '<em><b>Code File Type</b></em>' literal with the specified literal value.
-		 * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Code File Type</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @param literal the literal.
-		 * @return the matching enumerator or <code>null</code>.
-		 * @generated
-		 */
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
 	public static CodeFileType get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			CodeFileType result = VALUES_ARRAY[i];
@@ -177,13 +177,13 @@ public enum CodeFileType implements Enumerator {
 	}
 
 	/**
-		 * Returns the '<em><b>Code File Type</b></em>' literal with the specified name.
-		 * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Code File Type</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @param name the name.
-		 * @return the matching enumerator or <code>null</code>.
-		 * @generated
-		 */
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
 	public static CodeFileType getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			CodeFileType result = VALUES_ARRAY[i];
@@ -195,13 +195,13 @@ public enum CodeFileType implements Enumerator {
 	}
 
 	/**
-		 * Returns the '<em><b>Code File Type</b></em>' literal with the specified integer value.
-		 * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Code File Type</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @param value the integer value.
-		 * @return the matching enumerator or <code>null</code>.
-		 * @generated
-		 */
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
 	public static CodeFileType get(int value) {
 		switch (value) {
 		case EXECUTABLE_VALUE:
@@ -219,30 +219,30 @@ public enum CodeFileType implements Enumerator {
 	}
 
 	/**
-		 * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+	 * @generated
+	 */
 	private final int value;
 	/**
-		 * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+	 * @generated
+	 */
 	private final String name;
 	/**
-		 * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+	 * @generated
+	 */
 	private final String literal;
 
 	/**
-		 * Only this class can construct instances.
-		 * <!-- begin-user-doc -->
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+	 * @generated
+	 */
 	private CodeFileType(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
@@ -250,38 +250,38 @@ public enum CodeFileType implements Enumerator {
 	}
 
 	/**
-		 * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+	 * @generated
+	 */
 	public int getValue() {
 		return value;
 	}
 
 	/**
-		 * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+	 * @generated
+	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-		 * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+	 * @generated
+	 */
 	public String getLiteral() {
 		return literal;
 	}
 
 	/**
-		 * Returns the literal value of the enumerator, which is its string representation.
-		 * <!-- begin-user-doc -->
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
+	 * @generated
+	 */
 	@Override
 	public String toString() {
 		return literal;
