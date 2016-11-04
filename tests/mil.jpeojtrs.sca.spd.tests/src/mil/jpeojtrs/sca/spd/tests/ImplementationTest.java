@@ -193,7 +193,7 @@ public class ImplementationTest extends TestCase {
 		Assert.assertTrue(getFixture().isExecutable());
 
 		getFixture().getCode().setType(CodeFileType.SHARED_LIBRARY);
-		Assert.assertFalse(getFixture().isExecutable());
+		Assert.assertTrue(getFixture().isExecutable());
 
 		getFixture().getCode().setEntryPoint(null);
 		Assert.assertFalse(getFixture().isExecutable());

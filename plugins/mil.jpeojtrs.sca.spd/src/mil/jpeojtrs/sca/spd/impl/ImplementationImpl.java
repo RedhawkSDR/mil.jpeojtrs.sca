@@ -704,8 +704,9 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 	 * @since 4.0
 	 */
 	public boolean isExecutable() {
-		// Must have an entry point and be of type executable
-		return this.code != null && code.getEntryPoint() != null && code.getType() == CodeFileType.EXECUTABLE;
+		// Must have an entry point and be of type executable or shared library
+		return this.code != null && code.getEntryPoint() != null
+			&& (code.getType() == CodeFileType.EXECUTABLE || code.getType() == CodeFileType.SHARED_LIBRARY);
 	}
 
 	/**
