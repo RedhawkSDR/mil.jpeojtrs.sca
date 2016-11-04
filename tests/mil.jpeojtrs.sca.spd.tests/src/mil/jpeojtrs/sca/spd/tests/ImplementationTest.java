@@ -40,6 +40,13 @@ import org.junit.Assert;
  *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#getDependency() <em>Dependency</em>}</li>
  * </ul>
  * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#isExecutable() <em>Is Executable</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.spd.Implementation#isSharedLibrary() <em>Is Shared Library</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class ImplementationTest extends TestCase {
@@ -162,6 +169,63 @@ public class ImplementationTest extends TestCase {
 		// END GENERATED CODE
 		Assert.assertNotNull(this.implementation.getDependency().get(0));
 		Assert.assertEquals("400000", this.implementation.getDependency().get(0).getPropertyRef().getValue());
+		// BEGIN GENERATED CODE
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.spd.Implementation#isExecutable() <em>Is Executable</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.spd.Implementation#isExecutable()
+	 * @generated NOT
+	 */
+	public void testIsExecutable() {
+		// END GENERATED CODE
+		Assert.assertTrue(this.implementation.isExecutable());
+
+		Assert.assertFalse(getFixture().isExecutable());
+
+		getFixture().setCode(SpdFactory.eINSTANCE.createCode());
+		Assert.assertFalse(getFixture().isExecutable());
+
+		getFixture().getCode().setType(CodeFileType.EXECUTABLE);
+		getFixture().getCode().setEntryPoint("entrypoint");
+		Assert.assertTrue(getFixture().isExecutable());
+
+		getFixture().getCode().setType(CodeFileType.SHARED_LIBRARY);
+		Assert.assertFalse(getFixture().isExecutable());
+
+		getFixture().getCode().setEntryPoint(null);
+		Assert.assertFalse(getFixture().isExecutable());
+
+		getFixture().getCode().setType(CodeFileType.EXECUTABLE);
+		Assert.assertFalse(getFixture().isExecutable());
+		// BEGIN GENERATED CODE
+	}
+
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.spd.Implementation#isSharedLibrary() <em>Is Shared Library</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.spd.Implementation#isSharedLibrary()
+	 * @generated NOT
+	 */
+	public void testIsSharedLibrary() {
+		// END GENERATED CODE
+		Assert.assertFalse(this.implementation.isSharedLibrary());
+
+		Assert.assertFalse(getFixture().isSharedLibrary());
+
+		getFixture().setCode(SpdFactory.eINSTANCE.createCode());
+		getFixture().getCode().setType(CodeFileType.EXECUTABLE);
+		Assert.assertFalse(getFixture().isSharedLibrary());
+
+		getFixture().getCode().setEntryPoint("entrypoint");
+		getFixture().getCode().setType(CodeFileType.SHARED_LIBRARY);
+		Assert.assertFalse(getFixture().isSharedLibrary());
+
+		getFixture().getCode().setEntryPoint(null);
+		Assert.assertTrue(getFixture().isSharedLibrary());
 		// BEGIN GENERATED CODE
 	}
 

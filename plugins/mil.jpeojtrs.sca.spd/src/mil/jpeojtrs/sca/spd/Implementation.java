@@ -435,4 +435,28 @@ public interface Implementation extends EObject {
 	 */
 	void setSoftPkg(SoftPkg value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Returns true if the implementation can be executed (as a component, device, etc).
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
+	 * @generated
+	 * @since 4.0
+	 */
+	boolean isExecutable();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Returns true if the implementation is a shared library (i.e. intended to be used by other components, devices, etc).
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" dataType="org.eclipse.emf.ecore.xml.type.Boolean"
+	 * @generated
+	 * @since 4.0
+	 */
+	boolean isSharedLibrary();
+
 } // Implementation
