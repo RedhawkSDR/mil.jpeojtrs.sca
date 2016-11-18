@@ -14,9 +14,11 @@ package mil.jpeojtrs.sca.sad.provider;
 import java.util.Collection;
 import java.util.List;
 
+import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.sad.Port;
 import mil.jpeojtrs.sca.sad.SadFactory;
 import mil.jpeojtrs.sca.sad.SadPackage;
+import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -295,25 +297,30 @@ public class PortItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	private String getPortName(Port port) {
-		String portLabel = "<Port>";
-		if (port.getProvidesIdentifier() != null) {
-			portLabel = port.getProvidesIdentifier();
-		} else if (port.getSupportedIdentifier() != null) {
-			portLabel = port.getSupportedIdentifier();
-		} else if (port.getUsesIdentifier() != null) {
-			portLabel = port.getUsesIdentifier();
+		String portLabel = port.getProvidesIdentifier();
+		if (portLabel != null) {
+			return portLabel;
 		}
-		return portLabel;
+		portLabel = port.getSupportedIdentifier();
+		if (portLabel != null) {
+			return portLabel;
+		}
+		portLabel = port.getUsesIdentifier();
+		if (portLabel != null) {
+			return portLabel;
+		}
+		return "(Unknown port)";
 	}
 
 	private String getComponentName(Port port) {
-		String componentName = "<Component>";
-		if (port.getComponentInstantiationRef() != null) {
-			componentName = port.getComponentInstantiationRef().getInstantiation().getUsageName();
-			if (componentName == null) {
-				componentName = port.getComponentInstantiationRef().getRefid();
-			}
+		String componentName = ScaEcoreUtils.getFeature(port, SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF, PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__INSTANTIATION, PartitioningPackage.Literals.COMPONENT_INSTANTIATION__USAGE_NAME);
+		if (componentName != null) {
+			return componentName;
 		}
-		return componentName;
+		componentName = ScaEcoreUtils.getFeature(port, SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF, PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__REFID);
+		if (componentName != null) {
+			return componentName;
+		}
+		return "(Unknown component)";
 	}
 }
