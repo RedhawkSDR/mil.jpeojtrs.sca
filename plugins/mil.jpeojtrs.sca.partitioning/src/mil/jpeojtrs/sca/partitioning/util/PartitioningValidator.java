@@ -509,7 +509,7 @@ public class PartitioningValidator extends EObjectValidator {
 	 * <!-- begin-user-doc -->
 	 * @since 2.0
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateLoggingConfig(LoggingConfig loggingConfig, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean validLoggingConfigLevel = validateLoggingConfigLevel(loggingConfig, diagnostics, context);
