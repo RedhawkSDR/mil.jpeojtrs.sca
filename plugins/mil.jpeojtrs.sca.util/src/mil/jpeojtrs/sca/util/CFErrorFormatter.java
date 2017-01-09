@@ -74,6 +74,9 @@ public class CFErrorFormatter {
 		Exists("%s while checking existence of %s: %s (error number %s)"),
 		List("%s while listing file path %s: %s (error number %s)"),
 		Mkdir("%s while making directory %s: %s (error number %s)"),
+		/**
+		 * @since 4.4
+		 */
 		Mount("%s while mounting a file system at %s: %s (error number %s)"),
 		Open("%s while opening %s: %s (error number %s)"),
 		Seek("%s while adjusting file position in %s: %s (error number %s)");
@@ -172,6 +175,9 @@ public class CFErrorFormatter {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG, e.getClass().getName(), resourceDesc, e.msg);
 	}
 
+	/**
+	 * @since 4.4
+	 */
 	public static String format(NonExistentMount e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
 	}
