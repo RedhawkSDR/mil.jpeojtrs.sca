@@ -21,6 +21,7 @@ import CF.UnknownProperties;
 import CF.DevicePackage.InvalidCapacity;
 import CF.DevicePackage.InvalidState;
 import CF.ExecutableDevicePackage.ExecuteFail;
+import CF.FileManagerPackage.NonExistentMount;
 import CF.FilePackage.InvalidFilePointer;
 import CF.LifeCyclePackage.InitializeError;
 import CF.LifeCyclePackage.ReleaseError;
@@ -128,18 +129,20 @@ public class CFErrorFormatterTest {
 		Assert.assertEquals("CF.InvalidFileName while listing file path /d: DEF (error number CF_EBADF)", msg);
 		msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_EBADMSG, "EFG"), FileOperation.Mkdir, "/e");
 		Assert.assertEquals("CF.InvalidFileName while making directory /e: EFG (error number CF_EBADMSG)", msg);
-		msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_EBUSY, "FGH"), FileOperation.Open, "/f");
-		Assert.assertEquals("CF.InvalidFileName while opening /f: FGH (error number CF_EBUSY)", msg);
-		msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_ECANCELED, "GHI"), FileOperation.Seek, "/g");
-		Assert.assertEquals("CF.InvalidFileName while adjusting file position in /g: GHI (error number CF_ECANCELED)", msg);
+		msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_EBUSY, "FGH"), FileOperation.Mount, "/f");
+		Assert.assertEquals("CF.InvalidFileName while mounting a file system at /f: FGH (error number CF_EBUSY)", msg);
+		msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_ECANCELED, "GHI"), FileOperation.Open, "/g");
+		Assert.assertEquals("CF.InvalidFileName while opening /g: GHI (error number CF_ECANCELED)", msg);
+		msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_ECHILD, "HIJ"), FileOperation.Seek, "/h");
+		Assert.assertEquals("CF.InvalidFileName while adjusting file position in /h: HIJ (error number CF_ECHILD)", msg);
 	}
 
 	@Test
 	public void format_InvalidFileName_twoPaths() {
-		String msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_ECHILD, "HIJ"), FileOperation2.Copy, "/h", "/i");
-		Assert.assertEquals("CF.InvalidFileName while copying /h to /i: HIJ (error number CF_ECHILD)", msg);
-		msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_EDEADLK, "IJK"), FileOperation2.Move, "/j", "/k");
-		Assert.assertEquals("CF.InvalidFileName while moving /j to /k: IJK (error number CF_EDEADLK)", msg);
+		String msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_EDEADLK, "IJK"), FileOperation2.Copy, "/i", "/j");
+		Assert.assertEquals("CF.InvalidFileName while copying /i to /j: IJK (error number CF_EDEADLK)", msg);
+		msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_EDOM, "JKL"), FileOperation2.Move, "/k", "/l");
+		Assert.assertEquals("CF.InvalidFileName while moving /k to /l: JKL (error number CF_EDOM)", msg);
 	}
 
 	@Test
@@ -158,6 +161,12 @@ public class CFErrorFormatterTest {
 	public void format_InvalidState() {
 		String msg = CFErrorFormatter.format(new InvalidState("abc"), "def");
 		Assert.assertEquals("CF.DevicePackage.InvalidState for def: abc", msg);
+	}
+
+	@Test
+	public void format_NonExistentMount() {
+		String msg = CFErrorFormatter.format(new NonExistentMount(), "abc");
+		Assert.assertEquals("CF.FileManagerPackage.NonExistentMount for abc", msg);
 	}
 
 	@Test
