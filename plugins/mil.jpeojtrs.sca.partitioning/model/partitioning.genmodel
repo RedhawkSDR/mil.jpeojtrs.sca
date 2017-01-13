@@ -56,8 +56,10 @@
     <genClasses ecoreClass="partitioning.ecore#//ComponentInstantiation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentInstantiation/usageName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/componentProperties"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/provides"/>
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/uses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/affinity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/loggingConfig"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/provides"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/uses"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/interfaceStub"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentInstantiation/id"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/placement"/>
@@ -140,6 +142,10 @@
     <genClasses ecoreClass="partitioning.ecore#//LocalFile">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//LocalFile/name"/>
     </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//LoggingConfig">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//LoggingConfig/uri"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//LoggingConfig/level"/>
+    </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//NamingService">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//NamingService/name"/>
     </genClasses>
@@ -164,7 +170,7 @@
     </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//UsesPort">
       <genTypeParameters ecoreTypeParameter="partitioning.ecore#//UsesPort/U"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//UsesPort/usesIndentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//UsesPort/usesIdentifier"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/componentInstantiationRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/deviceThatLoadedThisComponentRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//UsesPort/deviceUsedByThisComponentRef"/>

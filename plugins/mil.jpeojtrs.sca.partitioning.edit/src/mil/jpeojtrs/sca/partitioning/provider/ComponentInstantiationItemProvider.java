@@ -110,8 +110,6 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__AFFINITY);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__LOGGING_CONFIG);
-			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__PROVIDES);
-			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__USES);
 			childrenFeatures.add(PartitioningPackage.Literals.COMPONENT_INSTANTIATION__INTERFACE_STUB);
 		}
 		return childrenFeatures;
@@ -166,6 +164,8 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter
 
 		switch (notification.getFeatureID(ComponentInstantiation.class)) {
 		case PartitioningPackage.COMPONENT_INSTANTIATION__USAGE_NAME:
+		case PartitioningPackage.COMPONENT_INSTANTIATION__PROVIDES:
+		case PartitioningPackage.COMPONENT_INSTANTIATION__USES:
 		case PartitioningPackage.COMPONENT_INSTANTIATION__ID:
 		case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -173,8 +173,6 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter
 		case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
 		case PartitioningPackage.COMPONENT_INSTANTIATION__AFFINITY:
 		case PartitioningPackage.COMPONENT_INSTANTIATION__LOGGING_CONFIG:
-		case PartitioningPackage.COMPONENT_INSTANTIATION__PROVIDES:
-		case PartitioningPackage.COMPONENT_INSTANTIATION__USES:
 		case PartitioningPackage.COMPONENT_INSTANTIATION__INTERFACE_STUB:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
