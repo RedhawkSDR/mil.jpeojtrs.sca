@@ -13,10 +13,12 @@ package mil.jpeojtrs.sca.sad.tests;
 import java.net.URISyntaxException;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Assert;
 import org.junit.Test;
 
 import mil.jpeojtrs.sca.partitioning.ComponentProperties;
+import mil.jpeojtrs.sca.partitioning.tests.AbstractAffinityTest;
 import mil.jpeojtrs.sca.prf.SimpleRef;
 import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
 import mil.jpeojtrs.sca.prf.StructRef;
@@ -25,20 +27,20 @@ import mil.jpeojtrs.sca.sad.SadComponentInstantiation;
 import mil.jpeojtrs.sca.sad.SadComponentPlacement;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 
-public class AffinityTest {
+public class AffinityTest extends AbstractAffinityTest {
 
 	/**
 	 * Test usage of the affinity element
 	 * @throws URISyntaxException
 	 */
 	@Test
-	public void testLoad() throws URISyntaxException {
+	public void load() throws URISyntaxException {
 		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/Affinity/Affinity.sad.xml");
 		List<SadComponentPlacement> placements = sad.getPartitioning().getComponentPlacement();
 
 		SadComponentInstantiation compInst = placements.get(0).getComponentInstantiation().get(0);
 		Assert.assertNull(compInst.getAffinity());
-		
+
 		compInst = placements.get(1).getComponentInstantiation().get(0);
 		ComponentProperties properties = compInst.getAffinity();
 		Assert.assertNotNull(properties);
@@ -60,4 +62,9 @@ public class AffinityTest {
 		Assert.assertEquals("structSequence_value", structSequence.getStructValue().get(0).getSimpleRef().get(0).getValue());
 	}
 
+	@Override
+	protected EObject getEmptyAffinity() throws URISyntaxException {
+		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/waveEmptyComponentProperties/waveEmptyComponentProperties.sad.xml");
+		return sad.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getAffinity();
+	}
 }

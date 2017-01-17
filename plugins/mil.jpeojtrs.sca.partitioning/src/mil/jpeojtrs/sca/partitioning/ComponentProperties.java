@@ -53,7 +53,7 @@ public interface ComponentProperties extends PropertyRefContainer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Properties</em>' attribute list.
 	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentProperties_Properties()
-	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" required="true" many="true"
 	 *        extendedMetaData="kind='group' name='properties:0'"
 	 * @generated
 	 */
