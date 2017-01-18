@@ -1,18 +1,19 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 package mil.jpeojtrs.sca.dcd.tests;
 
 import java.net.URISyntaxException;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -20,25 +21,26 @@ import mil.jpeojtrs.sca.dcd.DcdComponentInstantiation;
 import mil.jpeojtrs.sca.dcd.DcdComponentPlacement;
 import mil.jpeojtrs.sca.dcd.DeviceConfiguration;
 import mil.jpeojtrs.sca.partitioning.ComponentProperties;
+import mil.jpeojtrs.sca.partitioning.tests.AbstractAffinityTest;
 import mil.jpeojtrs.sca.prf.SimpleRef;
 import mil.jpeojtrs.sca.prf.SimpleSequenceRef;
 import mil.jpeojtrs.sca.prf.StructRef;
 import mil.jpeojtrs.sca.prf.StructSequenceRef;
 
-public class AffinityTest {
+public class AffinityTest extends AbstractAffinityTest {
 
 	/**
 	 * Test usage of the affinity element
 	 * @throws URISyntaxException
 	 */
 	@Test
-	public void testLoad() throws URISyntaxException {
+	public void load() throws URISyntaxException {
 		DeviceConfiguration dcd = DcdTests.loadDCDFromDevPath("/nodes/Affinity/DeviceManager.dcd.xml");
 		List<DcdComponentPlacement> placements = dcd.getPartitioning().getComponentPlacement();
 
 		DcdComponentInstantiation compInst = placements.get(0).getComponentInstantiation().get(0);
 		Assert.assertNull(compInst.getAffinity());
-		
+
 		compInst = placements.get(1).getComponentInstantiation().get(0);
 		ComponentProperties properties = compInst.getAffinity();
 		Assert.assertNotNull(properties);
@@ -60,4 +62,9 @@ public class AffinityTest {
 		Assert.assertEquals("structSequence_value", structSequence.getStructValue().get(0).getSimpleRef().get(0).getValue());
 	}
 
+	@Override
+	protected EObject getEmptyAffinity() throws URISyntaxException {
+		DeviceConfiguration dcd = DcdTests.loadDCDFromDevPath("/nodes/nodeEmptyComponentProperties/DeviceManager.dcd.xml");
+		return dcd.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getAffinity();
+	}
 }

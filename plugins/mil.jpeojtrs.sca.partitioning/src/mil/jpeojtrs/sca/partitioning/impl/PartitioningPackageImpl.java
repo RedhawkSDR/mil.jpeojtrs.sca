@@ -1840,7 +1840,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 			!IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentPropertiesEClass, ComponentProperties.class, "ComponentProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentProperties_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 0, -1, ComponentProperties.class,
+		initEAttribute(getComponentProperties_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 1, -1, ComponentProperties.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentProperties_SimpleRef(), thePrfPackage.getSimpleRef(), null, "simpleRef", null, 0, -1, ComponentProperties.class,
 			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
+<softwareassembly id="DCE:3f688050-d45c-4357-b9ea-51f53487cae6" name="waveEmptyComponentProperties">
+  <componentfiles>
+    <componentfile id="SigGen_c78dfa8c-3bd7-4371-b102-bef39fbbca2a" type="SPD">
+      <localfile name="/components/rh/SigGen/SigGen.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="SigGen_c78dfa8c-3bd7-4371-b102-bef39fbbca2a"/>
+      <componentinstantiation id="SigGen_1" startorder="0">
+        <usagename>SigGen_1</usagename>
+        <componentproperties></componentproperties>
+        <affinity></affinity>
+        <findcomponent>
+          <namingservice name="SigGen_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <assemblycontroller>
+    <componentinstantiationref refid="SigGen_1"/>
+  </assemblycontroller>
+</softwareassembly>

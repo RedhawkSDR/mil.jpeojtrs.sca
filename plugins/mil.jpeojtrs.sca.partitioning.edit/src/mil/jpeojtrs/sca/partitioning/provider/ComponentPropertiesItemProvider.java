@@ -111,12 +111,14 @@ public class ComponentPropertiesItemProvider extends ItemProviderAdapter
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
+	 * We return the containing feature's name since {@link ComponentProperties} is used by multiple elements.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOTE
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ComponentProperties_type");
+		ComponentProperties compProps = (ComponentProperties) object;
+		return compProps.eContainingFeature().getName();
 	}
 
 	/**
