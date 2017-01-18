@@ -53,6 +53,14 @@
       <details key="kind" value="elementOnly"/>
       <details key="qualified" value="false"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deployerRequires" eType="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//Requirements"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="deployerrequires"/>
+        <details key="kind" value="element"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DcdPartitioning">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
