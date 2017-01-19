@@ -54,6 +54,8 @@ import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
+import mil.jpeojtrs.sca.partitioning.Requirements;
+import mil.jpeojtrs.sca.partitioning.Requires;
 import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
@@ -232,6 +234,18 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * @generated
 	 */
 	private EClass providesPortStubEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass requirementsEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass requiresEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1319,6 +1333,56 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRequirements() {
+		return requirementsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequirements_Requires() {
+		return (EReference) requirementsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRequires() {
+		return requiresEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequires_Id() {
+		return (EAttribute) requiresEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRequires_Value() {
+		return (EAttribute) requiresEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1651,6 +1715,13 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		providesPortStubEClass = createEClass(PROVIDES_PORT_STUB);
 		createEAttribute(providesPortStubEClass, PROVIDES_PORT_STUB__NAME);
 		createEReference(providesPortStubEClass, PROVIDES_PORT_STUB__PROVIDES);
+
+		requirementsEClass = createEClass(REQUIREMENTS);
+		createEReference(requirementsEClass, REQUIREMENTS__REQUIRES);
+
+		requiresEClass = createEClass(REQUIRES);
+		createEAttribute(requiresEClass, REQUIRES__ID);
+		createEAttribute(requiresEClass, REQUIRES__VALUE);
 
 		usesPortEClass = createEClass(USES_PORT);
 		createEAttribute(usesPortEClass, USES_PORT__USES_IDENTIFIER);
@@ -1999,6 +2070,16 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		initEReference(getProvidesPortStub_Provides(), theScdPackage.getProvides(), null, "provides", null, 0, 1, ProvidesPortStub.class, IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(requirementsEClass, Requirements.class, "Requirements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRequirements_Requires(), this.getRequires(), null, "requires", null, 1, -1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(requiresEClass, Requires.class, "Requires", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRequires_Id(), ecorePackage.getEString(), "id", null, 0, 1, Requires.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequires_Value(), ecorePackage.getEString(), "value", null, 0, 1, Requires.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(usesPortEClass, UsesPort.class, "UsesPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUsesPort_UsesIdentifier(), theXMLTypePackage.getString(), "usesIdentifier", null, 1, 1, UsesPort.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2168,6 +2249,9 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation(providesPortStubEClass, source, new String[] { "kind", "elementOnly", "name", "providesportstub", "qualified", "false" });
 		addAnnotation(getProvidesPortStub_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(getProvidesPortStub_Provides(), source, new String[] { "kind", "attribute", "name", "provides" });
+		addAnnotation(requiresEClass, source, new String[] { "name", "requires", "kind", "elementOnly" });
+		addAnnotation(getRequires_Id(), source, new String[] { "kind", "attribute", "name", "id" });
+		addAnnotation(getRequires_Value(), source, new String[] { "kind", "attribute", "name", "value" });
 		addAnnotation(usesPortEClass, source, new String[] { "kind", "elementOnly", "name", "usesport", "qualified", "false" });
 		addAnnotation(getUsesPort_UsesIdentifier(), source, new String[] { "kind", "element", "name", "usesidentifier" });
 		addAnnotation(getUsesPort_ComponentInstantiationRef(), source, new String[] { "kind", "element", "name", "componentinstantiationref" });

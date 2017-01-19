@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SadComponentInstantiationRefImpl extends ComponentInstantiationRefImpl<SadComponentInstantiation>implements SadComponentInstantiationRef {
+public class SadComponentInstantiationRefImpl extends ComponentInstantiationRefImpl<SadComponentInstantiation> implements SadComponentInstantiationRef {
 
 	/**
 	 * <!-- begin-user-doc -->

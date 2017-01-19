@@ -313,11 +313,13 @@ public class PortItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	private String getComponentName(Port port) {
-		String componentName = ScaEcoreUtils.getFeature(port, SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF, PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__INSTANTIATION, PartitioningPackage.Literals.COMPONENT_INSTANTIATION__USAGE_NAME);
+		String componentName = ScaEcoreUtils.getFeature(port, SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF,
+			PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__INSTANTIATION, PartitioningPackage.Literals.COMPONENT_INSTANTIATION__USAGE_NAME);
 		if (componentName != null) {
 			return componentName;
 		}
-		componentName = ScaEcoreUtils.getFeature(port, SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF, PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__REFID);
+		componentName = ScaEcoreUtils.getFeature(port, SadPackage.Literals.PORT__COMPONENT_INSTANTIATION_REF,
+			PartitioningPackage.Literals.COMPONENT_INSTANTIATION_REF__REFID);
 		if (componentName != null) {
 			return componentName;
 		}

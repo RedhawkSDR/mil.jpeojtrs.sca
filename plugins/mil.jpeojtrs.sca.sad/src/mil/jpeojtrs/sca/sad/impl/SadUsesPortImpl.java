@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SadUsesPortImpl extends UsesPortImpl<SadComponentInstantiationRef>implements SadUsesPort {
+public class SadUsesPortImpl extends UsesPortImpl<SadComponentInstantiationRef> implements SadUsesPort {
 
 	/**
 	 * <!-- begin-user-doc -->

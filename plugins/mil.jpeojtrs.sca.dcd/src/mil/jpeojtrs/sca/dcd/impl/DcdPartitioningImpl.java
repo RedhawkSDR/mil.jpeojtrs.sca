@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.EContentAdapter;
  *
  * @generated
  */
-public class DcdPartitioningImpl extends PartitioningImpl<DcdComponentPlacement>implements DcdPartitioning {
+public class DcdPartitioningImpl extends PartitioningImpl<DcdComponentPlacement> implements DcdPartitioning {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

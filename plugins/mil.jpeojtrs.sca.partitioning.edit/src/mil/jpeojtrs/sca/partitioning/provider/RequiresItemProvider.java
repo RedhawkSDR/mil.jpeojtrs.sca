@@ -9,36 +9,47 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
 // BEGIN GENERATED CODE
-package mil.jpeojtrs.sca.dcd.provider;
+package mil.jpeojtrs.sca.partitioning.provider;
 
 import java.util.Collection;
 import java.util.List;
-import mil.jpeojtrs.sca.dcd.DcdComponentInstantiation;
-import mil.jpeojtrs.sca.dcd.DcdPackage;
-import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
+
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
-import mil.jpeojtrs.sca.partitioning.provider.ComponentInstantiationItemProvider;
+import mil.jpeojtrs.sca.partitioning.Requires;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link mil.jpeojtrs.sca.dcd.DcdComponentInstantiation} object.
+ * This is the item provider adapter for a {@link mil.jpeojtrs.sca.partitioning.Requires} object.
  * <!-- begin-user-doc -->
+ * @since 2.1
  * <!-- end-user-doc -->
  * @generated
  */
-public class DcdComponentInstantiationItemProvider extends ComponentInstantiationItemProvider {
+public class RequiresItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DcdComponentInstantiationItemProvider(AdapterFactory adapterFactory) {
+	public RequiresItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,49 +64,57 @@ public class DcdComponentInstantiationItemProvider extends ComponentInstantiatio
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIdPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(DcdPackage.Literals.DCD_COMPONENT_INSTANTIATION__DEPLOYER_REQUIRES);
-		}
-		return childrenFeatures;
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Requires_id_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Requires_id_feature", "_UI_Requires_type"),
+			PartitioningPackage.Literals.REQUIRES__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_Requires_value_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Requires_value_feature", "_UI_Requires_type"),
+			PartitioningPackage.Literals.REQUIRES__VALUE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This returns Requires.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Requires"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		return super.getText(object);
+		String label = ((Requires) object).getId();
+		return label == null || label.length() == 0 ? getString("_UI_Requires_type") : getString("_UI_Requires_type") + " " + label;
 	}
 
 	/**
@@ -109,9 +128,10 @@ public class DcdComponentInstantiationItemProvider extends ComponentInstantiatio
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DcdComponentInstantiation.class)) {
-		case DcdPackage.DCD_COMPONENT_INSTANTIATION__DEPLOYER_REQUIRES:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+		switch (notification.getFeatureID(Requires.class)) {
+		case PartitioningPackage.REQUIRES__ID:
+		case PartitioningPackage.REQUIRES__VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -127,29 +147,6 @@ public class DcdComponentInstantiationItemProvider extends ComponentInstantiatio
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(
-			createChildParameter(DcdPackage.Literals.DCD_COMPONENT_INSTANTIATION__DEPLOYER_REQUIRES, PartitioningFactory.eINSTANCE.createRequirements()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection< ? > selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == PartitioningPackage.Literals.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES
-			|| childFeature == PartitioningPackage.Literals.COMPONENT_INSTANTIATION__AFFINITY;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**
@@ -160,7 +157,7 @@ public class DcdComponentInstantiationItemProvider extends ComponentInstantiatio
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return DcdEditPlugin.INSTANCE;
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

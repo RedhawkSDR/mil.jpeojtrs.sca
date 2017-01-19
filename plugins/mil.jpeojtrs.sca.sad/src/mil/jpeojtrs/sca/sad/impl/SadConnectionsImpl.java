@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
  *
  * @generated
  */
-public class SadConnectionsImpl extends ConnectionsImpl<SadConnectInterface>implements SadConnections {
+public class SadConnectionsImpl extends ConnectionsImpl<SadConnectInterface> implements SadConnections {
 
 	/**
 	 * <!-- begin-user-doc -->

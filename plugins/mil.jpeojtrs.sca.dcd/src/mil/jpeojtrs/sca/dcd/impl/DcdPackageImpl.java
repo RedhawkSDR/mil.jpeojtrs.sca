@@ -304,6 +304,16 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDcdComponentInstantiation_DeployerRequires() {
+		return (EReference) dcdComponentInstantiationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -759,6 +769,7 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		createEReference(dcdComponentPlacementEClass, DCD_COMPONENT_PLACEMENT__PARENT_DEVICE);
 
 		dcdComponentInstantiationEClass = createEClass(DCD_COMPONENT_INSTANTIATION);
+		createEReference(dcdComponentInstantiationEClass, DCD_COMPONENT_INSTANTIATION__DEPLOYER_REQUIRES);
 
 		dcdPartitioningEClass = createEClass(DCD_PARTITIONING);
 
@@ -904,6 +915,9 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 
 		initEClass(dcdComponentInstantiationEClass, DcdComponentInstantiation.class, "DcdComponentInstantiation", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDcdComponentInstantiation_DeployerRequires(), thePartitioningPackage.getRequirements(), null, "deployerRequires", null, 0, 1,
+			DcdComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+			!IS_DERIVED, IS_ORDERED);
 
 		initEClass(dcdPartitioningEClass, DcdPartitioning.class, "DcdPartitioning", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1014,6 +1028,8 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 		addAnnotation(getDcdComponentPlacement_DevicePkgFile(), source, new String[] { "kind", "element", "name", "devicepkgfile" });
 		addAnnotation(getDcdComponentPlacement_ParentDevice(), source, new String[] { "kind", "attribute", "name", "parentDevice" });
 		addAnnotation(dcdComponentInstantiationEClass, source, new String[] { "name", "componentinstantiation", "kind", "elementOnly", "qualified", "false" });
+		addAnnotation(getDcdComponentInstantiation_DeployerRequires(), source,
+			new String[] { "name", "deployerrequires", "kind", "element", "namespace", "##targetNamespace" });
 		addAnnotation(dcdPartitioningEClass, source, new String[] { "name", "partitioning", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(dcdComponentInstantiationRefEClass, source, new String[] { "name", "componentinstantiationref", "kind", "elementOnly" });
 		addAnnotation(dcdConnectInterfaceEClass, source, new String[] { "name", "connectinterface", "kind", "elementOnly" });

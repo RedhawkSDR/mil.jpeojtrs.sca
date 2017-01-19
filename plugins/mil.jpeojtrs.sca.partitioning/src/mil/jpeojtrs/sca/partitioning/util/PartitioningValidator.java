@@ -53,6 +53,8 @@ import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
+import mil.jpeojtrs.sca.partitioning.Requirements;
+import mil.jpeojtrs.sca.partitioning.Requires;
 import mil.jpeojtrs.sca.partitioning.ScaPartitioningActivator;
 import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
@@ -181,6 +183,10 @@ public class PartitioningValidator extends EObjectValidator {
 			return validateProvidesPort((ProvidesPort< ? >) value, diagnostics, context);
 		case PartitioningPackage.PROVIDES_PORT_STUB:
 			return validateProvidesPortStub((ProvidesPortStub) value, diagnostics, context);
+		case PartitioningPackage.REQUIREMENTS:
+			return validateRequirements((Requirements) value, diagnostics, context);
+		case PartitioningPackage.REQUIRES:
+			return validateRequires((Requires) value, diagnostics, context);
 		case PartitioningPackage.USES_PORT:
 			return validateUsesPort((UsesPort< ? >) value, diagnostics, context);
 		case PartitioningPackage.USES_PORT_STUB:
@@ -609,6 +615,26 @@ public class PartitioningValidator extends EObjectValidator {
 	 */
 	public boolean validateProvidesPortStub(ProvidesPortStub providesPortStub, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(providesPortStub, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRequirements(Requirements requirements, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(requirements, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRequires(Requires requires, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(requires, diagnostics, context);
 	}
 
 	/**

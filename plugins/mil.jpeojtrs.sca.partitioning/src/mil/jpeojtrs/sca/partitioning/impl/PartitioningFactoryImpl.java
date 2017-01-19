@@ -39,6 +39,8 @@ import mil.jpeojtrs.sca.partitioning.NamingService;
 import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
+import mil.jpeojtrs.sca.partitioning.Requirements;
+import mil.jpeojtrs.sca.partitioning.Requires;
 import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
 
@@ -122,6 +124,10 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 			return createNamingService();
 		case PartitioningPackage.PROVIDES_PORT_STUB:
 			return createProvidesPortStub();
+		case PartitioningPackage.REQUIREMENTS:
+			return createRequirements();
+		case PartitioningPackage.REQUIRES:
+			return createRequires();
 		case PartitioningPackage.USES_PORT_STUB:
 			return createUsesPortStub();
 		case PartitioningPackage.USES_DEVICE_STUB:
@@ -444,6 +450,28 @@ public class PartitioningFactoryImpl extends EFactoryImpl implements Partitionin
 	public ProvidesPortStub createProvidesPortStub() {
 		ProvidesPortStubImpl providesPortStub = new ProvidesPortStubImpl();
 		return providesPortStub;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Requirements createRequirements() {
+		RequirementsImpl requirements = new RequirementsImpl();
+		return requirements;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Requires createRequires() {
+		RequiresImpl requires = new RequiresImpl();
+		return requires;
 	}
 
 	/**

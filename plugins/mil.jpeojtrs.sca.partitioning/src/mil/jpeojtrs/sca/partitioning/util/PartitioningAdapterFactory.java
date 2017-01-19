@@ -44,6 +44,8 @@ import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
+import mil.jpeojtrs.sca.partitioning.Requirements;
+import mil.jpeojtrs.sca.partitioning.Requires;
 import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
@@ -239,6 +241,16 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseProvidesPortStub(ProvidesPortStub object) {
 			return createProvidesPortStubAdapter();
+		}
+
+		@Override
+		public Adapter caseRequirements(Requirements object) {
+			return createRequirementsAdapter();
+		}
+
+		@Override
+		public Adapter caseRequires(Requires object) {
+			return createRequiresAdapter();
 		}
 
 		@Override
@@ -657,6 +669,36 @@ public class PartitioningAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProvidesPortStubAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.partitioning.Requirements <em>Requirements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.partitioning.Requirements
+	 * @generated
+	 */
+	public Adapter createRequirementsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.partitioning.Requires <em>Requires</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.partitioning.Requires
+	 * @generated
+	 */
+	public Adapter createRequiresAdapter() {
 		return null;
 	}
 

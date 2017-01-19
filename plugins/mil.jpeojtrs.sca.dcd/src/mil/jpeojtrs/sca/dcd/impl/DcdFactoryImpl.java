@@ -37,7 +37,6 @@ import mil.jpeojtrs.sca.partitioning.PartitioningFactory;
 
 import java.util.Collection;
 import java.util.UUID;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;

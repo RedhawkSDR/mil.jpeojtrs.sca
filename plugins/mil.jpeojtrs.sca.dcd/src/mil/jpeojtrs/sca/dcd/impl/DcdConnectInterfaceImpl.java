@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DcdConnectInterfaceImpl extends ConnectInterfaceImpl<DcdComponentInstantiationRef, DcdUsesPort, DcdProvidesPort>implements DcdConnectInterface {
+public class DcdConnectInterfaceImpl extends ConnectInterfaceImpl<DcdComponentInstantiationRef, DcdUsesPort, DcdProvidesPort> implements DcdConnectInterface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

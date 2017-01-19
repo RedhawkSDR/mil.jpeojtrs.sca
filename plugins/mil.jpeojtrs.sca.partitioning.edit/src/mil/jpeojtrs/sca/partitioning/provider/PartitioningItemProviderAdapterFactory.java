@@ -506,6 +506,56 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.Requirements} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 2.1
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RequirementsItemProvider requirementsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.partitioning.Requirements}.
+	 * <!-- begin-user-doc -->
+	 * @since 2.1
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRequirementsAdapter() {
+		if (requirementsItemProvider == null) {
+			requirementsItemProvider = new RequirementsItemProvider(this);
+		}
+
+		return requirementsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.Requires} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 2.1
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RequiresItemProvider requiresItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.partitioning.Requires}.
+	 * <!-- begin-user-doc -->
+	 * @since 2.1
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRequiresAdapter() {
+		if (requiresItemProvider == null) {
+			requiresItemProvider = new RequiresItemProvider(this);
+		}
+
+		return requiresItemProvider;
+	}
+
+	/**
 	 * This creates an adapter for a {@link mil.jpeojtrs.sca.partitioning.UsesPortStub}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DcdUsesPortImpl extends UsesPortImpl<DcdComponentInstantiationRef>implements DcdUsesPort {
+public class DcdUsesPortImpl extends UsesPortImpl<DcdComponentInstantiationRef> implements DcdUsesPort {
 
 	/**
 	 * <!-- begin-user-doc -->

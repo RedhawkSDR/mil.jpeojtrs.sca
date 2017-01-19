@@ -61,8 +61,7 @@ public class SadValidator extends EObjectValidator {
 	 */
 	public static final SadValidator INSTANCE = new SadValidator();
 	/**
-	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic
-	 * {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.common.util.Diagnostic#getSource()
@@ -78,8 +77,7 @@ public class SadValidator extends EObjectValidator {
 	 */
 	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 	/**
-	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a
-	 * derived class.
+	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -268,16 +266,22 @@ public class SadValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateExternalPorts(ExternalPorts externalPorts, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// END GENERATED CODE
 		Map<String, Port> externalPortMap = new HashMap<String, Port>();
 		boolean validExternalPorts = true;
 
 		for (Port port : externalPorts.getPort()) {
 			// Find external port name
-			String externalName = port.getExternalName() != null ? port.getExternalName()
-				: port.getProvidesIdentifier() != null ? port.getProvidesIdentifier() : port.getUsesIdentifier();
+			String externalName = port.getExternalName();
+			if (externalName == null) {
+				externalName = port.getProvidesIdentifier();
+			}
+			if (externalName == null) {
+				externalName = port.getUsesIdentifier();
+			}
 
 			// Check for duplicate names. If found, add an EMF.ERROR diagnostic
 			if (externalPortMap.containsKey(externalName)) {
@@ -294,6 +298,7 @@ public class SadValidator extends EObjectValidator {
 		}
 
 		return validate_EveryDefaultConstraint(externalPorts, diagnostics, context) && validExternalPorts;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -310,13 +315,17 @@ public class SadValidator extends EObjectValidator {
 	 * <!-- begin-user-doc -->
 	 * @since 2.3
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateExternalProperty(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// END GENERATED CODE
 		boolean validRefId = validateExternalPropertyRefId(externalProperty, diagnostics, context);
 
 		return validate_EveryDefaultConstraint(externalProperty, diagnostics, context) && validRefId;
+		// BEGIN GENERATED CODE
 	}
+
+	// END GENERATED CODE
 
 	private boolean validateExternalPropertyRefId(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		String compRefId = externalProperty.getCompRefID();
@@ -332,6 +341,8 @@ public class SadValidator extends EObjectValidator {
 			new Object[] { externalProperty.getExternalPropID() }, new Object[] { externalProperty }, context));
 		return false;
 	}
+
+	// BEGIN GENERATED CODE
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -386,6 +397,7 @@ public class SadValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validatePort_NonEmptyPort(Port port, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// END GENERATED CODE
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -398,6 +410,7 @@ public class SadValidator extends EObjectValidator {
 			return false;
 		}
 		return true;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -468,4 +481,3 @@ public class SadValidator extends EObjectValidator {
 	}
 
 } // SadValidator
-

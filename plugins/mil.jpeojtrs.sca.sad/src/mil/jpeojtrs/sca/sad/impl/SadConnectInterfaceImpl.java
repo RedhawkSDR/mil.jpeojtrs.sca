@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SadConnectInterfaceImpl extends ConnectInterfaceImpl<SadComponentInstantiationRef, SadUsesPort, SadProvidesPort>implements SadConnectInterface {
+public class SadConnectInterfaceImpl extends ConnectInterfaceImpl<SadComponentInstantiationRef, SadUsesPort, SadProvidesPort> implements SadConnectInterface {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

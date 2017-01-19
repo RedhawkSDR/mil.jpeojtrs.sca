@@ -1172,6 +1172,71 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int PROVIDES_PORT_STUB_FEATURE_COUNT = CONNECTION_TARGET_FEATURE_COUNT + 2;
 	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.RequirementsImpl <em>Requirements</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.partitioning.impl.RequirementsImpl
+	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getRequirements()
+	 * @generated
+	 */
+	int REQUIREMENTS = 27;
+	/**
+	 * The feature id for the '<em><b>Requires</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENTS__REQUIRES = 0;
+	/**
+	 * The number of structural features of the '<em>Requirements</em>' class.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENTS_FEATURE_COUNT = 1;
+	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.RequiresImpl <em>Requires</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.partitioning.impl.RequiresImpl
+	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getRequires()
+	 * @generated
+	 */
+	int REQUIRES = 28;
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRES__ID = 0;
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRES__VALUE = 1;
+	/**
+	 * The number of structural features of the '<em>Requires</em>' class.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRES_FEATURE_COUNT = 2;
+	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortImpl <em>Uses Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1179,7 +1244,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getUsesPort()
 	 * @generated
 	 */
-	int USES_PORT = 27;
+	int USES_PORT = 29;
 	/**
 	 * The feature id for the '<em><b>Uses Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1246,7 +1311,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getUsesPortStub()
 	 * @generated
 	 */
-	int USES_PORT_STUB = 28;
+	int USES_PORT_STUB = 30;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1288,7 +1353,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getUsesDeviceStub()
 	 * @generated
 	 */
-	int USES_DEVICE_STUB = 29;
+	int USES_DEVICE_STUB = 31;
 	/**
 	 * The feature id for the '<em><b>Uses Device</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -1342,7 +1407,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDomainFinderType()
 	 * @generated
 	 */
-	int DOMAIN_FINDER_TYPE = 30;
+	int DOMAIN_FINDER_TYPE = 32;
 	/**
 	 * The meta object id for the '<em>Domain Finder Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1351,7 +1416,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getDomainFinderTypeObject()
 	 * @generated
 	 */
-	int DOMAIN_FINDER_TYPE_OBJECT = 31;
+	int DOMAIN_FINDER_TYPE_OBJECT = 33;
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.ComponentFile <em>Component File</em>}'.
@@ -2418,6 +2483,64 @@ public interface PartitioningPackage extends EPackage {
 	EReference getProvidesPortStub_Provides();
 
 	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.Requirements <em>Requirements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Requirements</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.Requirements
+	 * @generated
+	 */
+	EClass getRequirements();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.partitioning.Requirements#getRequires <em>Requires</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Requires</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.Requirements#getRequires()
+	 * @see #getRequirements()
+	 * @generated
+	 */
+	EReference getRequirements_Requires();
+
+	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.Requires <em>Requires</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Requires</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.Requires
+	 * @generated
+	 */
+	EClass getRequires();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.Requires#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.Requires#getId()
+	 * @see #getRequires()
+	 * @generated
+	 */
+	EAttribute getRequires_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.Requires#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.Requires#getValue()
+	 * @see #getRequires()
+	 * @generated
+	 */
+	EAttribute getRequires_Value();
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.UsesPort <em>Uses Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3396,6 +3519,50 @@ public interface PartitioningPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROVIDES_PORT_STUB__PROVIDES = eINSTANCE.getProvidesPortStub_Provides();
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.RequirementsImpl <em>Requirements</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * @since 2.2
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.partitioning.impl.RequirementsImpl
+		 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getRequirements()
+		 * @generated
+		 */
+		EClass REQUIREMENTS = eINSTANCE.getRequirements();
+		/**
+		 * The meta object literal for the '<em><b>Requires</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * @since 2.2
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENTS__REQUIRES = eINSTANCE.getRequirements_Requires();
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.RequiresImpl <em>Requires</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * @since 2.2
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.partitioning.impl.RequiresImpl
+		 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getRequires()
+		 * @generated
+		 */
+		EClass REQUIRES = eINSTANCE.getRequires();
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 2.2
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REQUIRES__ID = eINSTANCE.getRequires_Id();
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 2.2
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REQUIRES__VALUE = eINSTANCE.getRequires_Value();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.UsesPortImpl <em>Uses Port</em>}' class.
 		 * <!-- begin-user-doc -->

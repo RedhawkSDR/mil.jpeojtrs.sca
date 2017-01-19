@@ -127,7 +127,7 @@ public class DomainManagerTest extends TestCase {
 		BasicDiagnostic diagnostics = new BasicDiagnostic();
 		DeviceConfiguration dcd = DcdTests.loadDCDFromDevPath("/nodes/invalidDomMgrNode/invalidDomMgrNode.dcd.xml");
 		Assert.assertFalse("Domain Manager should fail validation", DcdValidator.INSTANCE.validateDomainManager(dcd.getDomainManager(), diagnostics, null));
-		String errorMsg = ".*" +  "domainmanager element is incomplete" + ".*";
+		String errorMsg = ".*" + "domainmanager element is incomplete" + ".*";
 		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(errorMsg));
 	}
 

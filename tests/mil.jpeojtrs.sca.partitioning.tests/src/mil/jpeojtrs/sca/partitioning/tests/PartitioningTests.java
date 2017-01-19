@@ -49,7 +49,7 @@ public class PartitioningTests {
 			throw ex;
 		}
 	}
-	
+
 	/**
 	 * Loads a SAD file from the specified dom file system path.
 	 * @param domPath
@@ -62,7 +62,7 @@ public class PartitioningTests {
 		Resource resource = resourceSet.getResource(uri, true);
 		return SoftwareAssembly.Util.getSoftwareAssembly(resource);
 	}
-	
+
 	private static ResourceSet createResourceSet() throws URISyntaxException {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		URL url = FileLocator.find(Platform.getBundle("mil.jpeojtrs.sca.partitioning.tests"), new Path("sdr"), null);

@@ -251,6 +251,26 @@ public interface PartitioningFactory extends EFactory {
 	ProvidesPortStub createProvidesPortStub();
 
 	/**
+	 * Returns a new object of class '<em>Requirements</em>'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Requirements</em>'.
+	 * @generated
+	 */
+	Requirements createRequirements();
+
+	/**
+	 * Returns a new object of class '<em>Requires</em>'.
+	 * <!-- begin-user-doc -->
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Requires</em>'.
+	 * @generated
+	 */
+	Requires createRequires();
+
+	/**
 	 * Returns a new object of class '<em>Uses Port Stub</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

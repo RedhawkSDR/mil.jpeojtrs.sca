@@ -14,6 +14,7 @@ package mil.jpeojtrs.sca.sad;
 import java.math.BigInteger;
 
 import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
+import mil.jpeojtrs.sca.partitioning.Requirements;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +26,7 @@ import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
  * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.SadComponentInstantiation#getFindComponent <em>Find Component</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.SadComponentInstantiation#getDeviceRequires <em>Device Requires</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SadComponentInstantiation#getStartOrder <em>Start Order</em>}</li>
  * </ul>
  *
@@ -60,6 +62,35 @@ public interface SadComponentInstantiation extends ComponentInstantiation {
 	 * @generated
 	 */
 	void setFindComponent(FindComponent value);
+
+	/**
+	 * Returns the value of the '<em><b>Device Requires</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * Gets the {@link Requirements} that an executable device must have for this component instance to be executed on
+	 * it.
+	 * </p>
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Device Requires</em>' containment reference.
+	 * @see #setDeviceRequires(Requirements)
+	 * @see mil.jpeojtrs.sca.sad.SadPackage#getSadComponentInstantiation_DeviceRequires()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='devicerequires' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	Requirements getDeviceRequires();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SadComponentInstantiation#getDeviceRequires <em>Device Requires</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Device Requires</em>' containment reference.
+	 * @see #getDeviceRequires()
+	 * @generated
+	 */
+	void setDeviceRequires(Requirements value);
 
 	/**
 	 * Returns the value of the '<em><b>Start Order</b></em>' attribute.

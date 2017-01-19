@@ -236,13 +236,22 @@ public interface DcdPackage extends EPackage {
 	 */
 	int DCD_COMPONENT_INSTANTIATION__IMPL_ID = PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID;
 	/**
+	 * The feature id for the '<em><b>Deployer Requires</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DCD_COMPONENT_INSTANTIATION__DEPLOYER_REQUIRES = PartitioningPackage.COMPONENT_INSTANTIATION_FEATURE_COUNT + 0;
+	/**
 	 * The number of structural features of the '<em>Component Instantiation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DCD_COMPONENT_INSTANTIATION_FEATURE_COUNT = PartitioningPackage.COMPONENT_INSTANTIATION_FEATURE_COUNT + 0;
+	int DCD_COMPONENT_INSTANTIATION_FEATURE_COUNT = PartitioningPackage.COMPONENT_INSTANTIATION_FEATURE_COUNT + 1;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.dcd.impl.DcdPartitioningImpl <em>Partitioning</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -975,6 +984,18 @@ public interface DcdPackage extends EPackage {
 	EClass getDcdComponentInstantiation();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.dcd.DcdComponentInstantiation#getDeployerRequires <em>Deployer Requires</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Deployer Requires</em>'.
+	 * @see mil.jpeojtrs.sca.dcd.DcdComponentInstantiation#getDeployerRequires()
+	 * @see #getDcdComponentInstantiation()
+	 * @generated
+	 */
+	EReference getDcdComponentInstantiation_DeployerRequires();
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.dcd.DcdPartitioning <em>Partitioning</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1491,6 +1512,14 @@ public interface DcdPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DCD_COMPONENT_INSTANTIATION = eINSTANCE.getDcdComponentInstantiation();
+		/**
+		 * The meta object literal for the '<em><b>Deployer Requires</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DCD_COMPONENT_INSTANTIATION__DEPLOYER_REQUIRES = eINSTANCE.getDcdComponentInstantiation_DeployerRequires();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.dcd.impl.DcdPartitioningImpl <em>Partitioning</em>}' class.
 		 * <!-- begin-user-doc -->

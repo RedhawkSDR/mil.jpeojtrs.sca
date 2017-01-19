@@ -43,6 +43,8 @@ import mil.jpeojtrs.sca.partitioning.Partitioning;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.partitioning.ProvidesPort;
 import mil.jpeojtrs.sca.partitioning.ProvidesPortStub;
+import mil.jpeojtrs.sca.partitioning.Requirements;
+import mil.jpeojtrs.sca.partitioning.Requires;
 import mil.jpeojtrs.sca.partitioning.UsesDeviceStub;
 import mil.jpeojtrs.sca.partitioning.UsesPort;
 import mil.jpeojtrs.sca.partitioning.UsesPortStub;
@@ -303,6 +305,20 @@ public class PartitioningSwitch< T > extends Switch<T> {
 			T result = caseProvidesPortStub(providesPortStub);
 			if (result == null)
 				result = caseConnectionTarget(providesPortStub);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PartitioningPackage.REQUIREMENTS: {
+			Requirements requirements = (Requirements) theEObject;
+			T result = caseRequirements(requirements);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case PartitioningPackage.REQUIRES: {
+			Requires requires = (Requires) theEObject;
+			T result = caseRequires(requires);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -738,6 +754,38 @@ public class PartitioningSwitch< T > extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProvidesPortStub(ProvidesPortStub object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Requirements</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Requirements</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRequirements(Requirements object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Requires</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * @since 2.2
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Requires</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRequires(Requires object) {
 		return null;
 	}
 

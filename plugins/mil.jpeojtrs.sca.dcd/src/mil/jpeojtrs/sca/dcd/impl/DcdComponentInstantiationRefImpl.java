@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DcdComponentInstantiationRefImpl extends ComponentInstantiationRefImpl<DcdComponentInstantiation>implements DcdComponentInstantiationRef {
+public class DcdComponentInstantiationRefImpl extends ComponentInstantiationRefImpl<DcdComponentInstantiation> implements DcdComponentInstantiationRef {
 
 	/**
 	 * <!-- begin-user-doc -->

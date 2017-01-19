@@ -46,7 +46,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
  *
  * @generated
  */
-public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdComponentInstantiation>implements DcdComponentPlacement {
+public class DcdComponentPlacementImpl extends ComponentPlacementImpl<DcdComponentInstantiation> implements DcdComponentPlacement {
 	/**
 	 * The cached value of the '{@link #getDeployDevice() <em>Deploy Device</em>}' containment reference.
 	 * <!-- begin-user-doc -->

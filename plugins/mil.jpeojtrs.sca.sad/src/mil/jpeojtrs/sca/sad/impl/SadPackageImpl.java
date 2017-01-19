@@ -313,12 +313,22 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSadComponentInstantiation_DeviceRequires() {
+		return (EReference) sadComponentInstantiationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EAttribute getSadComponentInstantiation_StartOrder() {
-		return (EAttribute) sadComponentInstantiationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) sadComponentInstantiationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -964,6 +974,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 		sadComponentInstantiationEClass = createEClass(SAD_COMPONENT_INSTANTIATION);
 		createEReference(sadComponentInstantiationEClass, SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT);
+		createEReference(sadComponentInstantiationEClass, SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES);
 		createEAttribute(sadComponentInstantiationEClass, SAD_COMPONENT_INSTANTIATION__START_ORDER);
 
 		sadComponentInstantiationRefEClass = createEClass(SAD_COMPONENT_INSTANTIATION_REF);
@@ -1125,6 +1136,9 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		initEClass(sadComponentInstantiationEClass, SadComponentInstantiation.class, "SadComponentInstantiation", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSadComponentInstantiation_FindComponent(), this.getFindComponent(), null, "findComponent", null, 0, 1,
+			SadComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+			!IS_DERIVED, IS_ORDERED);
+		initEReference(getSadComponentInstantiation_DeviceRequires(), thePartitioningPackage.getRequirements(), null, "deviceRequires", null, 0, 1,
 			SadComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 			!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSadComponentInstantiation_StartOrder(), theXMLTypePackage.getNonNegativeInteger(), "startOrder", null, 0, 1,
@@ -1295,6 +1309,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation(sadComponentInstantiationEClass, source, new String[] { "name", "componentinstantiation", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getSadComponentInstantiation_FindComponent(), source,
 			new String[] { "kind", "element", "name", "findcomponent", "namespace", "##targetNamespace" });
+		addAnnotation(getSadComponentInstantiation_DeviceRequires(), source,
+			new String[] { "kind", "element", "name", "devicerequires", "namespace", "##targetNamespace" });
 		addAnnotation(getSadComponentInstantiation_StartOrder(), source,
 			new String[] { "kind", "attribute", "name", "startorder", "namespace", "##targetNamespace" });
 		addAnnotation(sadComponentInstantiationRefEClass, source,

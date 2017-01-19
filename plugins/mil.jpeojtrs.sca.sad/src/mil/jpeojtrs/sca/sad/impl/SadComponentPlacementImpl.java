@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
  *
  * @generated
  */
-public class SadComponentPlacementImpl extends ComponentPlacementImpl<SadComponentInstantiation>implements SadComponentPlacement {
+public class SadComponentPlacementImpl extends ComponentPlacementImpl<SadComponentInstantiation> implements SadComponentPlacement {
 
 	/**
 	 * <!-- begin-user-doc -->

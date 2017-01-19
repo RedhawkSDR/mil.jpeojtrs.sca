@@ -1,51 +1,61 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
-package mil.jpeojtrs.sca.sad.impl;
+package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.util.Collection;
-
-import mil.jpeojtrs.sca.partitioning.impl.PartitioningImpl;
-import mil.jpeojtrs.sca.sad.HostCollocation;
-import mil.jpeojtrs.sca.sad.SadComponentPlacement;
-import mil.jpeojtrs.sca.sad.SadPackage;
-import mil.jpeojtrs.sca.sad.SadPartitioning;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
+import mil.jpeojtrs.sca.partitioning.Requirements;
+import mil.jpeojtrs.sca.partitioning.Requires;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Partitioning</b></em>'.
+ * An implementation of the model object '<em><b>Requirements</b></em>'.
+ * @since 2.2
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link mil.jpeojtrs.sca.sad.impl.SadPartitioningImpl#getHostCollocation <em>Host Collocation</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.RequirementsImpl#getRequires <em>Requires</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement> implements SadPartitioning {
+public class RequirementsImpl extends EObjectImpl implements Requirements {
+	/**
+	 * The cached value of the '{@link #getRequires() <em>Requires</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequires()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Requires> requires;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SadPartitioningImpl() {
+	protected RequirementsImpl() {
 		super();
 	}
 
@@ -56,7 +66,7 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SadPackage.Literals.SAD_PARTITIONING;
+		return PartitioningPackage.Literals.REQUIREMENTS;
 	}
 
 	/**
@@ -64,9 +74,11 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EList<HostCollocation> getHostCollocation() {
-		return getParts().list(SadPackage.Literals.SAD_PARTITIONING__HOST_COLLOCATION);
+	public EList<Requires> getRequires() {
+		if (requires == null) {
+			requires = new EObjectContainmentEList<Requires>(Requires.class, this, PartitioningPackage.REQUIREMENTS__REQUIRES);
+		}
+		return requires;
 	}
 
 	/**
@@ -77,8 +89,8 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
-			return ((InternalEList< ? >) getHostCollocation()).basicRemove(otherEnd, msgs);
+		case PartitioningPackage.REQUIREMENTS__REQUIRES:
+			return ((InternalEList< ? >) getRequires()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -91,8 +103,8 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
-			return getHostCollocation();
+		case PartitioningPackage.REQUIREMENTS__REQUIRES:
+			return getRequires();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,9 +118,9 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
-			getHostCollocation().clear();
-			getHostCollocation().addAll((Collection< ? extends HostCollocation>) newValue);
+		case PartitioningPackage.REQUIREMENTS__REQUIRES:
+			getRequires().clear();
+			getRequires().addAll((Collection< ? extends Requires>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +134,8 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
-			getHostCollocation().clear();
+		case PartitioningPackage.REQUIREMENTS__REQUIRES:
+			getRequires().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -137,10 +149,10 @@ public class SadPartitioningImpl extends PartitioningImpl<SadComponentPlacement>
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SadPackage.SAD_PARTITIONING__HOST_COLLOCATION:
-			return !getHostCollocation().isEmpty();
+		case PartitioningPackage.REQUIREMENTS__REQUIRES:
+			return requires != null && !requires.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PartitioningImpl
+} //RequirementsImpl

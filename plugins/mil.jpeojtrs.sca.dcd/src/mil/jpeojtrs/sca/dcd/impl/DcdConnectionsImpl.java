@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
  *
  * @generated
  */
-public class DcdConnectionsImpl extends ConnectionsImpl<DcdConnectInterface>implements DcdConnections {
+public class DcdConnectionsImpl extends ConnectionsImpl<DcdConnectInterface> implements DcdConnections {
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -13,6 +13,7 @@ package mil.jpeojtrs.sca.sad.impl;
 
 import java.math.BigInteger;
 
+import mil.jpeojtrs.sca.partitioning.Requirements;
 import mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl;
 import mil.jpeojtrs.sca.sad.FindComponent;
 import mil.jpeojtrs.sca.sad.SadComponentInstantiation;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SadComponentInstantiationImpl#getFindComponent <em>Find Component</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.impl.SadComponentInstantiationImpl#getDeviceRequires <em>Device Requires</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SadComponentInstantiationImpl#getStartOrder <em>Start Order</em>}</li>
  * </ul>
  *
@@ -49,6 +51,16 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 	 * @ordered
 	 */
 	protected FindComponent findComponent;
+	/**
+	 * The cached value of the '{@link #getDeviceRequires() <em>Device Requires</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @see #getDeviceRequires()
+	 * @generated
+	 * @ordered
+	 */
+	protected Requirements deviceRequires;
 	/**
 	 * The default value of the '{@link #getStartOrder() <em>Start Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -140,6 +152,59 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Requirements getDeviceRequires() {
+		return deviceRequires;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDeviceRequires(Requirements newDeviceRequires, NotificationChain msgs) {
+		Requirements oldDeviceRequires = deviceRequires;
+		deviceRequires = newDeviceRequires;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES,
+				oldDeviceRequires, newDeviceRequires);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDeviceRequires(Requirements newDeviceRequires) {
+		if (newDeviceRequires != deviceRequires) {
+			NotificationChain msgs = null;
+			if (deviceRequires != null)
+				msgs = ((InternalEObject) deviceRequires).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES,
+					null, msgs);
+			if (newDeviceRequires != null)
+				msgs = ((InternalEObject) newDeviceRequires).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES,
+					null, msgs);
+			msgs = basicSetDeviceRequires(newDeviceRequires, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, SadPackage.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES, newDeviceRequires, newDeviceRequires));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -171,6 +236,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 		switch (featureID) {
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 			return basicSetFindComponent(null, msgs);
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES:
+			return basicSetDeviceRequires(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -185,6 +252,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 		switch (featureID) {
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 			return getFindComponent();
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES:
+			return getDeviceRequires();
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
 			return getStartOrder();
 		}
@@ -201,6 +270,9 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 		switch (featureID) {
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 			setFindComponent((FindComponent) newValue);
+			return;
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES:
+			setDeviceRequires((Requirements) newValue);
 			return;
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
 			setStartOrder((BigInteger) newValue);
@@ -220,6 +292,9 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 			setFindComponent((FindComponent) null);
 			return;
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES:
+			setDeviceRequires((Requirements) null);
+			return;
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
 			setStartOrder(START_ORDER_EDEFAULT);
 			return;
@@ -237,6 +312,8 @@ public class SadComponentInstantiationImpl extends ComponentInstantiationImpl im
 		switch (featureID) {
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 			return findComponent != null;
+		case SadPackage.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES:
+			return deviceRequires != null;
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
 			return START_ORDER_EDEFAULT == null ? startOrder != null : !START_ORDER_EDEFAULT.equals(startOrder);
 		}
