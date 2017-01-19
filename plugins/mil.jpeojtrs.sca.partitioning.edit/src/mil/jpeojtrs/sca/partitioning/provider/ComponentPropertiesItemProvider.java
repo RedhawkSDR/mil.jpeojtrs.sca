@@ -21,6 +21,7 @@ import mil.jpeojtrs.sca.prf.PrfFactory;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
@@ -113,12 +114,15 @@ public class ComponentPropertiesItemProvider extends ItemProviderAdapter
 	 * <!-- begin-user-doc -->
 	 * We return the containing feature's name since {@link ComponentProperties} is used by multiple elements.
 	 * <!-- end-user-doc -->
-	 * @generated NOTE
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
+		// END GENERATED CODE
 		ComponentProperties compProps = (ComponentProperties) object;
-		return compProps.eContainingFeature().getName();
+		ENamedElement containingFeature = compProps.eContainingFeature();
+		return (containingFeature != null) ? containingFeature.getName() : getString("_UI_ComponentProperties_type");
+		// BEGIN GENERATED CODE
 	}
 
 	/**
