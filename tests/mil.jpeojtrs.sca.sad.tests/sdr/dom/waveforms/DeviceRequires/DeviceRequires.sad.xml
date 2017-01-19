@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
+<softwareassembly id="DCE:93bf12c7-e703-4607-93da-fb92e12275ef" name="DeviceRequires">
+  <componentfiles>
+    <componentfile id="SigGen_5d798085-3421-4b91-a485-4f248b6decf2" type="SPD">
+      <localfile name="/components/rh/SigGen/SigGen.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="SigGen_5d798085-3421-4b91-a485-4f248b6decf2"/>
+      <componentinstantiation id="SigGen_1">
+        <usagename>SigGen_1</usagename>
+        <findcomponent>
+          <namingservice name="SigGen_1"/>
+        </findcomponent>
+        <devicerequires>
+          <requires id="abc" value="def"/>
+          <requires id="ghi" value="jkl"/>
+        </devicerequires>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <assemblycontroller>
+    <componentinstantiationref refid="SigGen_1"/>
+  </assemblycontroller>
+</softwareassembly>
