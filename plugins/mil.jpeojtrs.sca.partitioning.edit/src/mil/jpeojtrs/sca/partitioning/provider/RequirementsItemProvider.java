@@ -22,7 +22,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
@@ -113,12 +113,17 @@ public class RequirementsItemProvider extends ItemProviderAdapter
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
+	 * We return the containing feature's name since {@link Requirements} is used by multiple elements.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Requirements_type");
+		// END GENERATED CODE
+		Requirements requirements = (Requirements) object;
+		ENamedElement containingFeature = requirements.eContainingFeature();
+		return (containingFeature != null) ? containingFeature.getName() : getString("_UI_Requirements_type");
+		// BEGIN GENERATED CODE
 	}
 
 	/**
