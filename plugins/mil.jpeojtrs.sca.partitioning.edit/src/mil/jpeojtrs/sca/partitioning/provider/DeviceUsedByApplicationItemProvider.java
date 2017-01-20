@@ -64,23 +64,9 @@ public class DeviceUsedByApplicationItemProvider extends ItemProviderAdapter
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRefIdPropertyDescriptor(object);
 			addUsesRefIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Ref Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRefIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_DeviceUsedByApplication_refId_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_DeviceUsedByApplication_refId_feature", "_UI_DeviceUsedByApplication_type"),
-			PartitioningPackage.Literals.DEVICE_USED_BY_APPLICATION__REF_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -115,7 +101,7 @@ public class DeviceUsedByApplicationItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DeviceUsedByApplication) object).getRefId();
+		String label = ((DeviceUsedByApplication) object).getUsesRefId();
 		return label == null || label.length() == 0 ? getString("_UI_DeviceUsedByApplication_type")
 			: getString("_UI_DeviceUsedByApplication_type") + " " + label;
 	}
@@ -132,7 +118,6 @@ public class DeviceUsedByApplicationItemProvider extends ItemProviderAdapter
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DeviceUsedByApplication.class)) {
-		case PartitioningPackage.DEVICE_USED_BY_APPLICATION__REF_ID:
 		case PartitioningPackage.DEVICE_USED_BY_APPLICATION__USES_REF_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
