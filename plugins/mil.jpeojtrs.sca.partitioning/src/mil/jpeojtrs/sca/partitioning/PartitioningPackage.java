@@ -778,15 +778,6 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int DEVICE_USED_BY_APPLICATION = 16;
 	/**
-	 * The feature id for the '<em><b>Ref Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * @since 2.0
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_USED_BY_APPLICATION__REF_ID = 0;
-	/**
 	 * The feature id for the '<em><b>Uses Ref Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * @since 2.0
@@ -794,7 +785,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_USED_BY_APPLICATION__USES_REF_ID = 1;
+	int DEVICE_USED_BY_APPLICATION__USES_REF_ID = 0;
 	/**
 	 * The number of structural features of the '<em>Device Used By Application</em>' class.
 	 * <!-- begin-user-doc -->
@@ -803,7 +794,7 @@ public interface PartitioningPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEVICE_USED_BY_APPLICATION_FEATURE_COUNT = 2;
+	int DEVICE_USED_BY_APPLICATION_FEATURE_COUNT = 1;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.DomainFinderImpl <em>Domain Finder</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -2026,18 +2017,6 @@ public interface PartitioningPackage extends EPackage {
 	EClass getDeviceUsedByApplication();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getRefId <em>Ref Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * @since 2.0
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ref Id</em>'.
-	 * @see mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getRefId()
-	 * @see #getDeviceUsedByApplication()
-	 * @generated
-	 */
-	EAttribute getDeviceUsedByApplication_RefId();
-
-	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.DeviceUsedByApplication#getUsesRefId <em>Uses Ref Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * @since 2.0
@@ -3118,14 +3097,6 @@ public interface PartitioningPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DEVICE_USED_BY_APPLICATION = eINSTANCE.getDeviceUsedByApplication();
-		/**
-		 * The meta object literal for the '<em><b>Ref Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * @since 2.0
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DEVICE_USED_BY_APPLICATION__REF_ID = eINSTANCE.getDeviceUsedByApplication_RefId();
 		/**
 		 * The meta object literal for the '<em><b>Uses Ref Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->

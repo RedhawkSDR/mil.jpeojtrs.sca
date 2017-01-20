@@ -258,7 +258,7 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 		}
 		final URI spdURI = newSoftPkg.eResource().getURI();
 		final String spdPath = ScaUriHelpers.getLocalFilePath(this, newSoftPkg);
-		
+
 		String newId = UUID.randomUUID().toString();
 		String name = spdURI.lastSegment();
 		if (name != null) {

@@ -1,13 +1,13 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
@@ -963,18 +963,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDeviceUsedByApplication_RefId() {
-		return (EAttribute) deviceUsedByApplicationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * @since 2.0
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getDeviceUsedByApplication_UsesRefId() {
-		return (EAttribute) deviceUsedByApplicationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) deviceUsedByApplicationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1605,7 +1595,6 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		createEAttribute(deviceUsedByThisComponentRefEClass, DEVICE_USED_BY_THIS_COMPONENT_REF__USES_REF_ID);
 
 		deviceUsedByApplicationEClass = createEClass(DEVICE_USED_BY_APPLICATION);
-		createEAttribute(deviceUsedByApplicationEClass, DEVICE_USED_BY_APPLICATION__REF_ID);
 		createEAttribute(deviceUsedByApplicationEClass, DEVICE_USED_BY_APPLICATION__USES_REF_ID);
 
 		domainFinderEClass = createEClass(DOMAIN_FINDER);
@@ -1921,8 +1910,6 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 		initEClass(deviceUsedByApplicationEClass, DeviceUsedByApplication.class, "DeviceUsedByApplication", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDeviceUsedByApplication_RefId(), theXMLTypePackage.getString(), "refId", null, 1, 1, DeviceUsedByApplication.class, !IS_TRANSIENT,
-			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeviceUsedByApplication_UsesRefId(), theXMLTypePackage.getString(), "usesRefId", null, 1, 1, DeviceUsedByApplication.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2130,7 +2117,6 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation(getDeviceUsedByThisComponentRef_RefId(), source, new String[] { "kind", "attribute", "name", "refid" });
 		addAnnotation(getDeviceUsedByThisComponentRef_UsesRefId(), source, new String[] { "kind", "attribute", "name", "usesrefid" });
 		addAnnotation(deviceUsedByApplicationEClass, source, new String[] { "kind", "elementOnly", "name", "deviceusedbyapplication", "qualified", "false" });
-		addAnnotation(getDeviceUsedByApplication_RefId(), source, new String[] { "kind", "attribute", "name", "refid" });
 		addAnnotation(getDeviceUsedByApplication_UsesRefId(), source, new String[] { "kind", "attribute", "name", "usesrefid" });
 		addAnnotation(domainFinderEClass, source, new String[] { "kind", "elementOnly", "name", "domainfinder", "qualified", "false" });
 		addAnnotation(getDomainFinder_Name(), source, new String[] { "kind", "attribute", "name", "name" });

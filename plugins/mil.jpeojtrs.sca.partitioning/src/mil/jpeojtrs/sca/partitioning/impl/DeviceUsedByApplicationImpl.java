@@ -28,33 +28,12 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByApplicationImpl#getRefId <em>Ref Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.DeviceUsedByApplicationImpl#getUsesRefId <em>Uses Ref Id</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class DeviceUsedByApplicationImpl extends EObjectImpl implements DeviceUsedByApplication {
-	/**
-	 * The default value of the '{@link #getRefId() <em>Ref Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRefId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REF_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getRefId() <em>Ref Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRefId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String refId = REF_ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getUsesRefId() <em>Uses Ref Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -99,27 +78,6 @@ public class DeviceUsedByApplicationImpl extends EObjectImpl implements DeviceUs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getRefId() {
-		return refId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRefId(String newRefId) {
-		String oldRefId = refId;
-		refId = newRefId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.DEVICE_USED_BY_APPLICATION__REF_ID, oldRefId, refId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getUsesRefId() {
 		return usesRefId;
 	}
@@ -144,8 +102,6 @@ public class DeviceUsedByApplicationImpl extends EObjectImpl implements DeviceUs
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PartitioningPackage.DEVICE_USED_BY_APPLICATION__REF_ID:
-			return getRefId();
 		case PartitioningPackage.DEVICE_USED_BY_APPLICATION__USES_REF_ID:
 			return getUsesRefId();
 		}
@@ -160,9 +116,6 @@ public class DeviceUsedByApplicationImpl extends EObjectImpl implements DeviceUs
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PartitioningPackage.DEVICE_USED_BY_APPLICATION__REF_ID:
-			setRefId((String) newValue);
-			return;
 		case PartitioningPackage.DEVICE_USED_BY_APPLICATION__USES_REF_ID:
 			setUsesRefId((String) newValue);
 			return;
@@ -178,9 +131,6 @@ public class DeviceUsedByApplicationImpl extends EObjectImpl implements DeviceUs
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PartitioningPackage.DEVICE_USED_BY_APPLICATION__REF_ID:
-			setRefId(REF_ID_EDEFAULT);
-			return;
 		case PartitioningPackage.DEVICE_USED_BY_APPLICATION__USES_REF_ID:
 			setUsesRefId(USES_REF_ID_EDEFAULT);
 			return;
@@ -196,8 +146,6 @@ public class DeviceUsedByApplicationImpl extends EObjectImpl implements DeviceUs
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PartitioningPackage.DEVICE_USED_BY_APPLICATION__REF_ID:
-			return REF_ID_EDEFAULT == null ? refId != null : !REF_ID_EDEFAULT.equals(refId);
 		case PartitioningPackage.DEVICE_USED_BY_APPLICATION__USES_REF_ID:
 			return USES_REF_ID_EDEFAULT == null ? usesRefId != null : !USES_REF_ID_EDEFAULT.equals(usesRefId);
 		}
@@ -215,9 +163,7 @@ public class DeviceUsedByApplicationImpl extends EObjectImpl implements DeviceUs
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (refId: ");
-		result.append(refId);
-		result.append(", usesRefId: ");
+		result.append(" (usesRefId: ");
 		result.append(usesRefId);
 		result.append(')');
 		return result.toString();
