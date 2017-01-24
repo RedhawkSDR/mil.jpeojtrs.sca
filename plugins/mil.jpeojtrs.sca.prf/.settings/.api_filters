@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="mil.jpeojtrs.sca.prf" version="2">
+    <resource path="src/mil/jpeojtrs/sca/prf/util/PrfValidator.java" type="mil.jpeojtrs.sca.prf.util.PrfValidator">
+        <filter comment="Unused validation method - possibly from older EMF version" id="338792546">
+            <message_arguments>
+                <message_argument value="mil.jpeojtrs.sca.prf.util.PrfValidator"/>
+                <message_argument value="validateProperties_isValueConsistent(Properties, DiagnosticChain, Map&lt;Object,Object&gt;)"/>
+            </message_arguments>
+        </filter>
+    </resource>
+</component>

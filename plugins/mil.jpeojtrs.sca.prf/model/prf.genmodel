@@ -69,6 +69,7 @@
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/test"/>
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/event"/>
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/message"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/property"/>
     </genEnums>
     <genDataTypes ecoreDataType="prf.ecore#//AccessTypeObject"/>
     <genDataTypes ecoreDataType="prf.ecore#//ActionTypeObject"/>
@@ -148,8 +149,10 @@
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Simple/action"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/complex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/commandline"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/optional"/>
       <genOperations ecoreOperation="prf.ecore#//Simple/isComplex"/>
+      <genOperations ecoreOperation="prf.ecore#//Simple/isCommandLine"/>
       <genOperations ecoreOperation="prf.ecore#//Simple/isOptional"/>
     </genClasses>
     <genClasses provider="Stateful" ecoreClass="prf.ecore#//SimpleSequence">

@@ -18,9 +18,9 @@ import org.eclipse.emf.common.util.ResourceLocator;
 /**
  * This is the central singleton for the Dcd model plugin.
  * <!-- begin-user-doc -->
+ * @since 3.2
  * <!-- end-user-doc -->
  * @generated
- * @since 3.2
  */
 public final class DcdPluginActivator extends EMFPlugin {
 	/**

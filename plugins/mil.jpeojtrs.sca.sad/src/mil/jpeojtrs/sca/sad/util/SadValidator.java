@@ -268,32 +268,46 @@ public class SadValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateExternalPorts(ExternalPorts externalPorts, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// END GENERATED CODE
 		Map<String, Port> externalPortMap = new HashMap<String, Port>();
-		boolean validExternalPorts = true;
+		boolean result = true;
 
 		for (Port port : externalPorts.getPort()) {
 			// Find external port name
-			String externalName = port.getExternalName() != null ? port.getExternalName()
-				: port.getProvidesIdentifier() != null ? port.getProvidesIdentifier() : port.getUsesIdentifier();
+			String externalName = port.getExternalName();
+			if (externalName == null) {
+				externalName = port.getProvidesIdentifier();
+			}
+			if (externalName == null) {
+				externalName = port.getUsesIdentifier();
+			}
 
 			// Check for duplicate names. If found, add an EMF.ERROR diagnostic
 			if (externalPortMap.containsKey(externalName)) {
-				validExternalPorts = false;
+				result = false;
 
 				Port duplicatePort = externalPortMap.get(externalName);
 				Object[] messageSubstitutions = new Object[] { port.getComponentInstantiationRef().getRefid(),
 					duplicatePort.getComponentInstantiationRef().getRefid(), externalName };
-				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_DuplicateExternalPortName_diagnostic", messageSubstitutions,
-					new Object[] { port, duplicatePort }, context));
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_DuplicateExternalPortName_diagnostic", messageSubstitutions,
+						new Object[] { port, duplicatePort }, context));
+				} else {
+					break;
+				}
 			} else {
 				externalPortMap.put(externalName, port);
 			}
 		}
 
-		return validate_EveryDefaultConstraint(externalPorts, diagnostics, context) && validExternalPorts;
+		if (result || diagnostics != null) {
+			result &= validate_EveryDefaultConstraint(externalPorts, diagnostics, context);
+		}
+		return result;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -310,13 +324,19 @@ public class SadValidator extends EObjectValidator {
 	 * <!-- begin-user-doc -->
 	 * @since 2.3
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateExternalProperty(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean validRefId = validateExternalPropertyRefId(externalProperty, diagnostics, context);
-
-		return validate_EveryDefaultConstraint(externalProperty, diagnostics, context) && validRefId;
+		// END GENERATED CODE
+		boolean result = validate_EveryDefaultConstraint(externalProperty, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validateExternalPropertyRefId(externalProperty, diagnostics, context);
+		}
+		return result;
+		// BEGIN GENERATED CODE
 	}
+
+	// END GENERATED CODE
 
 	private boolean validateExternalPropertyRefId(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		String compRefId = externalProperty.getCompRefID();
@@ -332,6 +352,8 @@ public class SadValidator extends EObjectValidator {
 			new Object[] { externalProperty.getExternalPropID() }, new Object[] { externalProperty }, context));
 		return false;
 	}
+
+	// BEGIN GENERATED CODE
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -386,9 +408,6 @@ public class SadValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validatePort_NonEmptyPort(Port port, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
 		if (port.getComponentInstantiationRef() == null && port.getProvidesIdentifier() == null && port.getSupportedIdentifier() == null
 			&& port.getUsesIdentifier() == null) {
 			if (diagnostics != null) {
