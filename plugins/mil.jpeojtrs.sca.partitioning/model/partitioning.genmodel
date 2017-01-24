@@ -168,6 +168,13 @@
       <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference partitioning.ecore#//ProvidesPortStub/provides"/>
     </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//Requirements">
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//Requirements/requires"/>
+    </genClasses>
+    <genClasses ecoreClass="partitioning.ecore#//Requires">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//Requires/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//Requires/value"/>
+    </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//UsesPort">
       <genTypeParameters ecoreTypeParameter="partitioning.ecore#//UsesPort/U"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//UsesPort/usesIdentifier"/>

@@ -42,7 +42,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DcdComponentPlacement/devicePkgFile"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dcd.ecore#//DcdComponentPlacement/parentDevice"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="dcd.ecore#//DcdComponentInstantiation"/>
+    <genClasses image="false" ecoreClass="dcd.ecore#//DcdComponentInstantiation">
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference dcd.ecore#//DcdComponentInstantiation/deployerRequires"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="dcd.ecore#//DcdPartitioning"/>
     <genClasses image="false" ecoreClass="dcd.ecore#//DcdComponentInstantiationRef"/>
     <genClasses image="false" ecoreClass="dcd.ecore#//DcdConnectInterface"/>

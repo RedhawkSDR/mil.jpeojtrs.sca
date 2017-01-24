@@ -30,6 +30,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="sad.ecore#//SadComponentInstantiation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//SadComponentInstantiation/findComponent"/>
+      <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference sad.ecore#//SadComponentInstantiation/deviceRequires"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sad.ecore#//SadComponentInstantiation/startOrder"/>
     </genClasses>
     <genClasses image="false" ecoreClass="sad.ecore#//SadComponentInstantiationRef"/>
