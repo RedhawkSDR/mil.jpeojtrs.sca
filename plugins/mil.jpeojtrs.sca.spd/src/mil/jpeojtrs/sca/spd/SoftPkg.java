@@ -18,6 +18,7 @@ import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -377,6 +378,34 @@ public interface SoftPkg extends EObject {
 				}
 			}
 			return ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM;
+		}
+
+		/**
+		 * @since 4.0
+		 */
+		public static final String COMPONENT_HOST_URI = "/var/redhawk/sdr/dom/mgr/rh/ComponentHost/ComponentHost.spd.xml";
+
+		/**
+		 * @since 4.0
+		 */
+		public static boolean isComponentHost(URI spdURI) {
+			if (COMPONENT_HOST_URI.equals(spdURI.toFileString())) {
+				return true;
+			}
+			return false;
+		}
+
+		/**
+		 * @since 4.0
+		 */
+		public static boolean isContainedComponent(SoftPkg spd) {
+			Implementation impl = spd.getImplementation().get(0);
+			CodeFileType type = ScaEcoreUtils.getFeature(impl, SpdPackage.Literals.IMPLEMENTATION__CODE, SpdPackage.Literals.CODE__TYPE);
+
+			if (CodeFileType.SHARED_LIBRARY.equals(type)) {
+				return true;
+			}
+			return false;
 		}
 
 		public static boolean isAggregateDevice(SoftPkg spd) {
