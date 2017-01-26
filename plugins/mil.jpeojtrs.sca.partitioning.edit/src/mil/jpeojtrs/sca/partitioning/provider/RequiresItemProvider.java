@@ -109,12 +109,17 @@ public class RequiresItemProvider extends ItemProviderAdapter
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Requires) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_Requires_type") : getString("_UI_Requires_type") + " " + label;
+		// END GENERATED CODE
+		Requires requires = (Requires) object;
+		if (requires.getId() == null || requires.getValue() == null) {
+			return getString("_UI_Requires_type");
+		}
+		return requires.getId() + " = " + requires.getValue();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
