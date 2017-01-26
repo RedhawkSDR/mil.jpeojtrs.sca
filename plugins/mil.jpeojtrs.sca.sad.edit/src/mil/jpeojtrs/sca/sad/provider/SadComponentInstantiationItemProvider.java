@@ -1,13 +1,13 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.provider;
 
@@ -57,9 +57,24 @@ public class SadComponentInstantiationItemProvider extends ComponentInstantiatio
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDeviceRequiresPropertyDescriptor(object);
 			addStartOrderPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Device Requires feature.
+	 * <!-- begin-user-doc -->
+	 * @since 3.1
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDeviceRequiresPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_SadComponentInstantiation_deviceRequires_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_SadComponentInstantiation_deviceRequires_feature", "_UI_SadComponentInstantiation_type"),
+			SadPackage.Literals.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES, false, false, false, null, null, null));
 	}
 
 	/**

@@ -1,13 +1,13 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.provider;
 
@@ -22,6 +22,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -53,8 +54,23 @@ public class DcdComponentInstantiationItemProvider extends ComponentInstantiatio
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDeployerRequiresPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Deployer Requires feature.
+	 * <!-- begin-user-doc -->
+	 * @since 2.4
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDeployerRequiresPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_DcdComponentInstantiation_deployerRequires_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_DcdComponentInstantiation_deployerRequires_feature", "_UI_DcdComponentInstantiation_type"),
+			DcdPackage.Literals.DCD_COMPONENT_INSTANTIATION__DEPLOYER_REQUIRES, false, false, false, null, null, null));
 	}
 
 	/**
