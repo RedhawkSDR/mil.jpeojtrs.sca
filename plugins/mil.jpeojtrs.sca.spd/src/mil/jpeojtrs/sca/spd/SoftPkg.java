@@ -398,8 +398,7 @@ public interface SoftPkg extends EObject {
 		/**
 		 * @since 4.0
 		 */
-		public static boolean isContainedComponent(SoftPkg spd) {
-			Implementation impl = spd.getImplementation().get(0);
+		public static boolean isContainedComponent(Implementation impl) {
 			CodeFileType type = ScaEcoreUtils.getFeature(impl, SpdPackage.Literals.IMPLEMENTATION__CODE, SpdPackage.Literals.CODE__TYPE);
 
 			if (CodeFileType.SHARED_LIBRARY.equals(type)) {
