@@ -381,12 +381,12 @@ public interface SoftPkg extends EObject {
 		}
 
 		/**
-		 * @since 4.0
+		 * @since 4.1
 		 */
 		public static final String COMPONENT_HOST_URI = "/var/redhawk/sdr/dom/mgr/rh/ComponentHost/ComponentHost.spd.xml";
 
 		/**
-		 * @since 4.0
+		 * @since 4.1
 		 */
 		public static boolean isComponentHost(URI spdURI) {
 			if (COMPONENT_HOST_URI.equals(spdURI.toFileString())) {
@@ -396,7 +396,7 @@ public interface SoftPkg extends EObject {
 		}
 
 		/**
-		 * @since 4.0
+		 * @since 4.1
 		 */
 		public static boolean isContainedComponent(Implementation impl) {
 			CodeFileType type = ScaEcoreUtils.getFeature(impl, SpdPackage.Literals.IMPLEMENTATION__CODE, SpdPackage.Literals.CODE__TYPE);
