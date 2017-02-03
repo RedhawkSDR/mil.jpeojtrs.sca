@@ -11,6 +11,13 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.tests;
 
+import java.io.IOException;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.junit.Assert;
+
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.spd.Descriptor;
@@ -20,10 +27,6 @@ import mil.jpeojtrs.sca.spd.PropertyFile;
 import mil.jpeojtrs.sca.spd.SCAComplianceType;
 import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SpdFactory;
-
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.junit.Assert;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
@@ -155,6 +158,23 @@ public class SoftPkgTest extends TestCase {
 			SoftPkg.Util.isAggregateDevice(SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testDevice/testDevice.spd.xml"), true))));
 		Assert.assertEquals(Boolean.FALSE, SoftPkg.Util.isAggregateDevice(this.fixture));
 		Assert.assertEquals(Boolean.FALSE, SoftPkg.Util.isAggregateDevice(null));
+	}
+
+	public void testUtilIsComponentHost() throws IOException {
+		URI uri = this.resourceSet.getResource(SpdTests.getURI("testComponentHost/ComponentHost.spd.xml"), true).getURI();
+		Assert.assertTrue(SoftPkg.Util.isComponentHost(uri));
+		uri = this.resourceSet.getResource(SpdTests.getURI("testSharedAddressComponent/SharedAddyComp.spd.xml"), true).getURI();
+		Assert.assertFalse(SoftPkg.Util.isComponentHost(uri));
+	}
+
+	public void testUtilIsContainedComponent() throws IOException {
+		Implementation impl = SoftPkg.Util.getSoftPkg(
+			this.resourceSet.getResource(SpdTests.getURI("testSharedAddressComponent/SharedAddyComp.spd.xml"), true)).getImplementation("cpp");
+		Assert.assertTrue(SoftPkg.Util.isContainedComponent(impl));
+		impl = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testComponent/testJavaComponent.spd.xml"), true)).getImplementation("java");
+		Assert.assertFalse(SoftPkg.Util.isContainedComponent(impl));
+		impl = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testSharedLib/testSharedLib.spd.xml"), true)).getImplementation("cpp");
+		Assert.assertFalse(SoftPkg.Util.isContainedComponent(impl));
 	}
 
 	@SuppressWarnings("deprecation")
