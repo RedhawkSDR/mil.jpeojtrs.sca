@@ -11,17 +11,22 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd;
 
-import mil.jpeojtrs.sca.scd.ScdPackage;
-import mil.jpeojtrs.sca.scd.SoftwareComponent;
-import mil.jpeojtrs.sca.scd.SupportsInterface;
-import mil.jpeojtrs.sca.util.ScaEcoreUtils;
-import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
-
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.variables.IStringVariableManager;
+import org.eclipse.core.variables.VariablesPlugin;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+
+import mil.jpeojtrs.sca.scd.ScdPackage;
+import mil.jpeojtrs.sca.scd.SoftwareComponent;
+import mil.jpeojtrs.sca.scd.SupportsInterface;
+import mil.jpeojtrs.sca.util.ScaEcoreUtils;
+import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
+import mil.jpeojtrs.sca.util.ScaResourceFactoryUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -381,27 +386,39 @@ public interface SoftPkg extends EObject {
 		}
 
 		/**
+		 * @throws CoreException 
 		 * @since 4.1
 		 */
-		public static final String COMPONENT_HOST_URI = "/var/redhawk/sdr/dom/mgr/rh/ComponentHost/ComponentHost.spd.xml";
+		public static URI getComponentHostURI() throws CoreException {
+			IStringVariableManager manager = VariablesPlugin.getDefault().getStringVariableManager();
+			return URI.createFileURI(manager.performStringSubstitution("${SdrRoot}") + "/dom/mgr/rh/ComponentHost/ComponentHost.spd.xml");
+		}
 
+		private static final String COMPONENT_HOST_ID = "DCE:fd3ba3dc-f68c-4419-96fa-333062329bfd"; 
+		
 		/**
+		 * Utility method used to determine if the supplied URI points to the special ComponentHost resource
 		 * @since 4.1
 		 */
 		public static boolean isComponentHost(URI spdURI) {
-			if (COMPONENT_HOST_URI.equals(spdURI.toFileString())) {
+			final ResourceSet resourceSet = ScaResourceFactoryUtil.createResourceSet();
+			SoftPkg spd = SoftPkg.Util.getSoftPkg(resourceSet.getResource(spdURI, true));
+			
+			if (COMPONENT_HOST_ID.equals(spd.getId())) {
 				return true;
 			}
+			
 			return false;
 		}
 
 		/**
+		 * Utility method used to determine if the supplied implementation belongs to a component that is a child of a ComponentHost
 		 * @since 4.1
 		 */
 		public static boolean isContainedComponent(Implementation impl) {
 			CodeFileType type = ScaEcoreUtils.getFeature(impl, SpdPackage.Literals.IMPLEMENTATION__CODE, SpdPackage.Literals.CODE__TYPE);
 
-			if (CodeFileType.SHARED_LIBRARY.equals(type)) {
+			if (CodeFileType.SHARED_LIBRARY.equals(type) && impl.isExecutable()) {
 				return true;
 			}
 			return false;
