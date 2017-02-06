@@ -271,7 +271,7 @@ public class SadValidator extends EObjectValidator {
 	public boolean validateExternalPorts(ExternalPorts externalPorts, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
 		Map<String, Port> externalPortMap = new HashMap<String, Port>();
-		boolean validExternalPorts = true;
+		boolean result = true;
 
 		for (Port port : externalPorts.getPort()) {
 			// Find external port name
@@ -285,19 +285,26 @@ public class SadValidator extends EObjectValidator {
 
 			// Check for duplicate names. If found, add an EMF.ERROR diagnostic
 			if (externalPortMap.containsKey(externalName)) {
-				validExternalPorts = false;
+				result = false;
 
 				Port duplicatePort = externalPortMap.get(externalName);
 				Object[] messageSubstitutions = new Object[] { port.getComponentInstantiationRef().getRefid(),
 					duplicatePort.getComponentInstantiationRef().getRefid(), externalName };
-				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_DuplicateExternalPortName_diagnostic", messageSubstitutions,
-					new Object[] { port, duplicatePort }, context));
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_DuplicateExternalPortName_diagnostic", messageSubstitutions,
+						new Object[] { port, duplicatePort }, context));
+				} else {
+					break;
+				}
 			} else {
 				externalPortMap.put(externalName, port);
 			}
 		}
 
-		return validate_EveryDefaultConstraint(externalPorts, diagnostics, context) && validExternalPorts;
+		if (result || diagnostics != null) {
+			result &= validate_EveryDefaultConstraint(externalPorts, diagnostics, context);
+		}
+		return result;
 		// BEGIN GENERATED CODE
 	}
 
@@ -319,9 +326,11 @@ public class SadValidator extends EObjectValidator {
 	 */
 	public boolean validateExternalProperty(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		boolean validRefId = validateExternalPropertyRefId(externalProperty, diagnostics, context);
-
-		return validate_EveryDefaultConstraint(externalProperty, diagnostics, context) && validRefId;
+		boolean result = validate_EveryDefaultConstraint(externalProperty, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validateExternalPropertyRefId(externalProperty, diagnostics, context);
+		}
+		return result;
 		// BEGIN GENERATED CODE
 	}
 
@@ -398,9 +407,6 @@ public class SadValidator extends EObjectValidator {
 	 */
 	public boolean validatePort_NonEmptyPort(Port port, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
 		if (port.getComponentInstantiationRef() == null && port.getProvidesIdentifier() == null && port.getSupportedIdentifier() == null
 			&& port.getUsesIdentifier() == null) {
 			if (diagnostics != null) {

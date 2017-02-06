@@ -37,7 +37,7 @@
     <genDataTypes ecoreDataType="cf.ecore#//InvalidFileName"/>
     <genDataTypes ecoreDataType="cf.ecore#//ApplicationInstallationError"/>
     <genDataTypes ecoreDataType="cf.ecore#//ApplicationAlreadyInstalled"/>
-    <genDataTypes ecoreDataType="cf.ecore#//InvalidIdentifier"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidDomMgrIdentifier"/>
     <genDataTypes ecoreDataType="cf.ecore#//ApplicationUninstallationError"/>
     <genDataTypes ecoreDataType="cf.ecore#//InsufficientCapacity"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidEventChannelName"/>
@@ -66,7 +66,9 @@
     <genDataTypes ecoreDataType="cf.ecore#//LoadFail"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidPort"/>
     <genDataTypes ecoreDataType="cf.ecore#//OccupiedPort"/>
+    <genDataTypes ecoreDataType="cf.ecore#//PortInfoType"/>
     <genDataTypes ecoreDataType="cf.ecore#//UnknownPort"/>
+    <genDataTypes ecoreDataType="cf.ecore#//AlreadyInitialized"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidConfiguration"/>
     <genDataTypes ecoreDataType="cf.ecore#//PartialConfiguration"/>
     <genDataTypes ecoreDataType="cf.ecore#//UnknownProperties"/>
@@ -76,6 +78,9 @@
     <genDataTypes ecoreDataType="cf.ecore#//StartError"/>
     <genDataTypes ecoreDataType="cf.ecore#//StopError"/>
     <genDataTypes ecoreDataType="cf.ecore#//UnknownTest"/>
+    <genDataTypes ecoreDataType="cf.ecore#//UnknownIdentifier"/>
+    <genDataTypes ecoreDataType="cf.ecore#//LogEventArray"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidIdentifier"/>
     <genClasses image="false" ecoreClass="cf.ecore#//Object"/>
     <genClasses image="false" ecoreClass="cf.ecore#//IDLEntity"/>
     <genClasses image="false" ecoreClass="cf.ecore#//AggregateDevice"/>
@@ -148,6 +153,12 @@
       <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/unregisterDevice">
         <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterDevice/unregisteringDevice"/>
       </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/createApplication">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/createApplication/profileFileName"/>
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/createApplication/name"/>
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/createApplication/initConfiguration"/>
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/createApplication/deviceAssignments"/>
+      </genOperations>
       <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/installApplication">
         <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/installApplication/profileFileName"/>
       </genOperations>
@@ -172,6 +183,12 @@
         <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterFromEventChannel/unregisteringId"/>
         <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterFromEventChannel/eventChannelName"/>
       </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/registerRemoteDomainManager">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/registerRemoteDomainManager/registeringDomainManager"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/unregisterRemoteDomainManager">
+        <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterRemoteDomainManager/unregisteringDomainManager"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="cf.ecore#//ExecutableDevice"/>
     <genClasses image="false" ecoreClass="cf.ecore#//ExecutableDeviceOperations">
@@ -182,6 +199,12 @@
         <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/execute/name"/>
         <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/execute/options"/>
         <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/execute/parameters"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//ExecutableDeviceOperations/executeLinked">
+        <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/executeLinked/name"/>
+        <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/executeLinked/options"/>
+        <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/executeLinked/parameters"/>
+        <genParameters ecoreParameter="cf.ecore#//ExecutableDeviceOperations/executeLinked/deps"/>
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="cf.ecore#//File"/>
@@ -258,6 +281,37 @@
         <genParameters ecoreParameter="cf.ecore#//LoadableDeviceOperations/unload/fileName"/>
       </genOperations>
     </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//Logging"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//LoggingOperations"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//LogEventConsumer"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//LogEventConsumerOperations">
+      <genOperations ecoreOperation="cf.ecore#//LogEventConsumerOperations/retrieve_records">
+        <genParameters ecoreParameter="cf.ecore#//LogEventConsumerOperations/retrieve_records/howMany"/>
+        <genParameters ecoreParameter="cf.ecore#//LogEventConsumerOperations/retrieve_records/startingRecord"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//LogEventConsumerOperations/retrieve_records_by_date">
+        <genParameters ecoreParameter="cf.ecore#//LogEventConsumerOperations/retrieve_records_by_date/howMany"/>
+        <genParameters ecoreParameter="cf.ecore#//LogEventConsumerOperations/retrieve_records_by_date/to_timeStamp"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//LogEventConsumerOperations/retrieve_records_from_date">
+        <genParameters ecoreParameter="cf.ecore#//LogEventConsumerOperations/retrieve_records_from_date/howMany"/>
+        <genParameters ecoreParameter="cf.ecore#//LogEventConsumerOperations/retrieve_records_from_date/from_timeStamp"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//LogConfiguration"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//LogConfigurationOperations">
+      <genOperations ecoreOperation="cf.ecore#//LogConfigurationOperations/setLogLevel">
+        <genParameters ecoreParameter="cf.ecore#//LogConfigurationOperations/setLogLevel/logger_id"/>
+        <genParameters ecoreParameter="cf.ecore#//LogConfigurationOperations/setLogLevel/newLevel"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//LogConfigurationOperations/getLogConfig"/>
+      <genOperations ecoreOperation="cf.ecore#//LogConfigurationOperations/setLogConfig">
+        <genParameters ecoreParameter="cf.ecore#//LogConfigurationOperations/setLogConfig/config_contents"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//LogConfigurationOperations/setLogConfigURL">
+        <genParameters ecoreParameter="cf.ecore#//LogConfigurationOperations/setLogConfigURL/config_url"/>
+      </genOperations>
+    </genClasses>
     <genClasses image="false" ecoreClass="cf.ecore#//Port"/>
     <genClasses image="false" ecoreClass="cf.ecore#//PortOperations">
       <genOperations ecoreOperation="cf.ecore#//PortOperations/connectPort">
@@ -268,10 +322,28 @@
         <genParameters ecoreParameter="cf.ecore#//PortOperations/disconnectPort/connectionId"/>
       </genOperations>
     </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//PortSet"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//PortSetOperations">
+      <genOperations ecoreOperation="cf.ecore#//PortSetOperations/getPortSet"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="cf.ecore#//PortSupplier"/>
     <genClasses image="false" ecoreClass="cf.ecore#//PortSupplierOperations">
       <genOperations ecoreOperation="cf.ecore#//PortSupplierOperations/getPort">
         <genParameters ecoreParameter="cf.ecore#//PortSupplierOperations/getPort/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//PropertyEmitter"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//PropertyEmitterOperations">
+      <genOperations ecoreOperation="cf.ecore#//PropertyEmitterOperations/initializeProperties">
+        <genParameters ecoreParameter="cf.ecore#//PropertyEmitterOperations/initializeProperties/initialProperties"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//PropertyEmitterOperations/registerPropertyListener">
+        <genParameters ecoreParameter="cf.ecore#//PropertyEmitterOperations/registerPropertyListener/obj"/>
+        <genParameters ecoreParameter="cf.ecore#//PropertyEmitterOperations/registerPropertyListener/prop_ids"/>
+        <genParameters ecoreParameter="cf.ecore#//PropertyEmitterOperations/registerPropertyListener/interval"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//PropertyEmitterOperations/unregisterPropertyListener">
+        <genParameters ecoreParameter="cf.ecore#//PropertyEmitterOperations/unregisterPropertyListener/id"/>
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="cf.ecore#//PropertySet"/>

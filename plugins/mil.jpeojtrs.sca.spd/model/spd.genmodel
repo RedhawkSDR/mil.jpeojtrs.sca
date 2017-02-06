@@ -46,13 +46,8 @@
       <genEnumLiterals ecoreEnumLiteral="spd.ecore#//CodeFileType/Driver"/>
       <genEnumLiterals ecoreEnumLiteral="spd.ecore#//CodeFileType/NodeBooter"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spd.ecore#//SCAComplianceType">
-      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//SCAComplianceType/scaCompliant"/>
-      <genEnumLiterals ecoreEnumLiteral="spd.ecore#//SCAComplianceType/scaNonCompliant"/>
-    </genEnums>
     <genDataTypes ecoreDataType="spd.ecore#//AEPComplianceTypeObject"/>
     <genDataTypes ecoreDataType="spd.ecore#//CodeFileTypeObject"/>
-    <genDataTypes ecoreDataType="spd.ecore#//SCAComplianceTypeObject"/>
     <genDataTypes ecoreDataType="spd.ecore#//URI"/>
     <genClasses ecoreClass="spd.ecore#//Author">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Author/name"/>
@@ -100,6 +95,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Implementation/aepCompliance"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//Implementation/id"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//Implementation/softPkg"/>
+      <genOperations ecoreOperation="spd.ecore#//Implementation/isExecutable"/>
+      <genOperations ecoreOperation="spd.ecore#//Implementation/isSharedLibrary"/>
     </genClasses>
     <genClasses ecoreClass="spd.ecore#//ImplRef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//ImplRef/refid"/>

@@ -699,9 +699,9 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public boolean isExecutable() {
 		// Must have an entry point and be of type executable or shared library
@@ -711,9 +711,9 @@ public class ImplementationImpl extends EObjectImpl implements Implementation {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public boolean isSharedLibrary() {
 		// Must have no entry point, and be of type shared library

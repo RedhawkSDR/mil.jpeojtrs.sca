@@ -359,28 +359,35 @@ public class PrfValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateSimple(Simple simple, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// END GENERATED CODE
 		if (simple.eContainer() instanceof Properties) {
-			if (simple.isOptional()) {
+			if (simple.isOptional() && diagnostics != null) {
 				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
 					new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
 			}
-		} else if (simple.getKind() != null && !simple.getKind().isEmpty()) {
+		} else if (simple.getKind() != null && !simple.getKind().isEmpty() && diagnostics != null) {
 			diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
 				new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
 		}
 
-		return validate_EveryDefaultConstraint(simple, diagnostics, context) && validate_unsupportedMessageKindType(simple, diagnostics, context);
+		boolean result = validate_EveryDefaultConstraint(simple, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_unsupportedMessageKindType(simple, diagnostics, context);
+		}
+		return result;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateSimpleSequence(SimpleSequence simpleSequence, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// END GENERATED CODE
 		if (simpleSequence.eContainer() instanceof Properties) {
 			if (simpleSequence.isOptional()) {
 				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
@@ -390,7 +397,13 @@ public class PrfValidator extends EObjectValidator {
 			diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
 				new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
 		}
-		return validate_EveryDefaultConstraint(simpleSequence, diagnostics, context) && validate_unsupportedMessageKindType(simpleSequence, diagnostics, context);
+
+		boolean result = validate_EveryDefaultConstraint(simpleSequence, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_unsupportedMessageKindType(simpleSequence, diagnostics, context);
+		}
+		return result;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -400,6 +413,7 @@ public class PrfValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateStruct(Struct struct, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// END GENERATED CODE
 		if (struct.eContainer() instanceof StructSequence) {
 			if (struct.getConfigurationKind() != null && !struct.getConfigurationKind().isEmpty()) {
 				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
@@ -407,10 +421,15 @@ public class PrfValidator extends EObjectValidator {
 			}
 		}
 
-		boolean hasValidStructs = validateStructConfiguration(struct, diagnostics, context);
-
-		return validate_EveryDefaultConstraint(struct, diagnostics, context) && hasValidStructs;
+		boolean result = validate_EveryDefaultConstraint(struct, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validateStructConfiguration(struct, diagnostics, context);
+		}
+		return result;
+		// BEGIN GENERATED CODE
 	}
+
+	// END GENERATED CODE
 
 	/**
 	 * Custom validation method.
@@ -503,22 +522,31 @@ public class PrfValidator extends EObjectValidator {
 		return false;
 	}
 
+	// BEGIN GENERATED CODE
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateStructSequence(StructSequence structSequence, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(structSequence, diagnostics, context) && validate_unsupportedMessageKindType(structSequence, diagnostics, context);
+		// END GENERATED CODE
+		boolean result = validate_EveryDefaultConstraint(structSequence, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_unsupportedMessageKindType(structSequence, diagnostics, context);
+		}
+		return result;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * Check for partially configured StructValues
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateStructValue(StructValue structValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// END GENERATED CODE
 		boolean isValidStructValue = true;
 		Struct struct = structValue.getStruct();
 		String structValueId = struct.getId() + "[" + structValue.getIndex() + "]";
@@ -588,6 +616,7 @@ public class PrfValidator extends EObjectValidator {
 		}
 
 		return validate_EveryDefaultConstraint(structValue, diagnostics, context) && isValidStructValue;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -959,7 +988,8 @@ public class PrfValidator extends EObjectValidator {
 	public ResourceLocator getResourceLocator() {
 		return PrfPlugin.INSTANCE;
 	}
-	
+
+	// END GENERATED CODE
 
 	private boolean validate_unsupportedMessageKindType(EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (eObject instanceof Simple) {
@@ -994,19 +1024,6 @@ public class PrfValidator extends EObjectValidator {
 		return true;
 	}
 
-
-	/**
-	 * Validates the isValueConsistent constraint of '<em>Properties</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean validateProperties_isValueConsistent(Properties properties, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		return true;
-	}
+	// BEGIN GENERATED CODE
 
 } // PrfValidator

@@ -91,6 +91,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute scd.ecore#//Ports/group"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference scd.ecore#//Ports/provides"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference scd.ecore#//Ports/uses"/>
+      <genOperations ecoreOperation="scd.ecore#//Ports/getPort">
+        <genParameters ecoreParameter="scd.ecore#//Ports/getPort/name"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="scd.ecore#//PortTypeContainer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scd.ecore#//PortTypeContainer/type"/>

@@ -118,7 +118,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DeviceUsedByThisComponentRef/usesRefId"/>
     </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//DeviceUsedByApplication">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DeviceUsedByApplication/refId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//DeviceUsedByApplication/usesRefId"/>
     </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//DomainFinder">
