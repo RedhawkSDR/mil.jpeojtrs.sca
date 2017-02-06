@@ -5,21 +5,14 @@
       abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="IDLEntity" instanceClassName="org.omg.CORBA.portable.IDLEntity"
       abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="DataType" instanceClassName="CF.DataType">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="DataType"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="DataTypeArray" instanceClassName="CF.DataType[]">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="DataTypeArray"/>
-    </eAnnotations>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="EventChannel" instanceClassName="org.omg.CosEventChannelAdmin.EventChannel"/>
   <eClassifiers xsi:type="ecore:EDataType" name="NamingContextExt" instanceClassName="org.omg.CosNaming.NamingContextExt">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="NamingContextExt"/>
     </eAnnotations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PushConsumer" instanceClassName="org.omg.CosEventComm.PushConsumer"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="PushSupplier" instanceClassName="org.omg.CosEventComm.PushSupplier"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ORB" instanceClassName="org.omg.CORBA.ORB">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="ORB"/>
@@ -150,6 +143,54 @@
     </eOperations>
     <eOperations name="unregisterRemoteDomainManager" eExceptions="#//InvalidObjectReference #//UnregisterError">
       <eParameters name="unregisteringDomainManager" eType="#//DomainManager"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventChannelManager" instanceClassName="CF.EventChannelManager"
+      abstract="true" interface="true" eSuperTypes="#//EventChannelManagerOperations #//Object #//IDLEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EventChannelManagerOperations" instanceClassName="CF.EventChannelManagerOperations"
+      abstract="true" interface="true">
+    <eOperations name="create" eType="#//EventChannel" eExceptions="#//ChannelAlreadyExists #//OperationNotAllowed #//OperationFailed #//ServiceUnavailable">
+      <eParameters name="channel_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="get" eType="#//EventChannel" eExceptions="#//ChannelDoesNotExist #//OperationNotAllowed #//OperationFailed #//ServiceUnavailable">
+      <eParameters name="channel_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="createForRegistrations" eType="#//EventChannel" eExceptions="#//ChannelAlreadyExists #//OperationNotAllowed #//OperationFailed #//ServiceUnavailable">
+      <eParameters name="channel_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="markForRegistrations" eExceptions="#//ChannelDoesNotExist #//OperationNotAllowed #//OperationFailed #//ServiceUnavailable">
+      <eParameters name="channel_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="release" eExceptions="#//ChannelDoesNotExist #//RegistrationsExists #//OperationNotAllowed #//OperationFailed #//ServiceUnavailable">
+      <eParameters name="channel_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="forceRelease" eExceptions="#//ChannelDoesNotExist #//OperationNotAllowed #//OperationFailed #//ServiceUnavailable">
+      <eParameters name="channel_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="registerConsumer" eType="#//EventChannelReg" eExceptions="#//InvalidChannelName #//RegistrationAlreadyExists #//OperationFailed #//OperationNotAllowed #//ServiceUnavailable">
+      <eParameters name="consumer" eType="#//PushConsumer"/>
+      <eParameters name="req" eType="#//EventRegistration"/>
+    </eOperations>
+    <eOperations name="registerPublisher" eType="#//PublisherReg" eExceptions="#//InvalidChannelName #//RegistrationAlreadyExists #//OperationFailed #//OperationNotAllowed #//ServiceUnavailable">
+      <eParameters name="req" eType="#//EventRegistration"/>
+      <eParameters name="disconnectReceiver" eType="#//PushSupplier"/>
+    </eOperations>
+    <eOperations name="registerResource" eType="#//EventChannelReg" eExceptions="#//InvalidChannelName #//RegistrationAlreadyExists #//OperationFailed #//OperationNotAllowed #//ServiceUnavailable">
+      <eParameters name="req" eType="#//EventRegistration"/>
+    </eOperations>
+    <eOperations name="unregister" eExceptions="#//ChannelDoesNotExist #//RegistrationDoesNotExist #//ServiceUnavailable">
+      <eParameters name="reg" eType="#//EventRegistration"/>
+    </eOperations>
+    <eOperations name="listChannels">
+      <eParameters name="how_many" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="elist" eType="#//EventChannelInfoListHolder"/>
+      <eParameters name="eiter" eType="#//EventChannelInfoIteratorHolder"/>
+    </eOperations>
+    <eOperations name="listRegistrants">
+      <eParameters name="channel_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="how_many" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="rlist" eType="#//EventRegistrantListHolder"/>
+      <eParameters name="riter" eType="#//EventRegistrantIteratorHolder"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutableDevice" instanceClassName="CF.ExecutableDevice"
@@ -385,6 +426,16 @@
   <eClassifiers xsi:type="ecore:EDataType" name="CreateApplicationError" instanceClassName="CF.ApplicationFactoryPackage.CreateApplicationError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="CreateApplicationRequestError" instanceClassName="CF.ApplicationFactoryPackage.CreateApplicationRequestError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidInitConfiguration" instanceClassName="CF.ApplicationFactoryPackage.InvalidInitConfiguration"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="DataType" instanceClassName="CF.DataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DataType"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="DataTypeArray" instanceClassName="CF.DataType[]">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DataTypeArray"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidCapacity" instanceClassName="CF.DevicePackage.InvalidCapacity"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidState" instanceClassName="CF.DevicePackage.InvalidState"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidProfile" instanceClassName="CF.InvalidProfile"/>
@@ -401,6 +452,22 @@
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidEventChannelName" instanceClassName="CF.DomainManagerPackage.InvalidEventChannelName"/>
   <eClassifiers xsi:type="ecore:EDataType" name="AlreadyConnected" instanceClassName="CF.DomainManagerPackage.AlreadyConnected"/>
   <eClassifiers xsi:type="ecore:EDataType" name="NotConnected" instanceClassName="CF.DomainManagerPackage.NotConnected"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EventChannelInfoIteratorHolder" instanceClassName="CF.EventChannelInfoIteratorHolder"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ChannelAlreadyExists" instanceClassName="CF.EventChannelManagerPackage.ChannelAlreadyExists"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ChannelDoesNotExist" instanceClassName="CF.EventChannelManagerPackage.ChannelDoesNotExist"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EventChannelInfoListHolder" instanceClassName="CF.EventChannelManagerPackage.EventChannelInfoListHolder"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EventChannelReg" instanceClassName="CF.EventChannelManagerPackage.EventChannelReg"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EventRegistration" instanceClassName="CF.EventChannelManagerPackage.EventRegistration"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EventRegistrantListHolder" instanceClassName="CF.EventChannelManagerPackage.EventRegistrantListHolder"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="InvalidChannelName" instanceClassName="CF.EventChannelManagerPackage.InvalidChannelName"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="OperationFailed" instanceClassName="CF.EventChannelManagerPackage.OperationFailed"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="OperationNotAllowed" instanceClassName="CF.EventChannelManagerPackage.OperationNotAllowed"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="PublisherReg" instanceClassName="CF.EventChannelManagerPackage.PublisherReg"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="RegistrationAlreadyExists" instanceClassName="CF.EventChannelManagerPackage.RegistrationAlreadyExists"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="RegistrationDoesNotExist" instanceClassName="CF.EventChannelManagerPackage.RegistrationDoesNotExist"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="RegistrationsExists" instanceClassName="CF.EventChannelManagerPackage.RegistrationsExists"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ServiceUnavailable" instanceClassName="CF.EventChannelManagerPackage.ServiceUnavailable"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EventRegistrantIteratorHolder" instanceClassName="CF.EventRegistrantIteratorHolder"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidProcess" instanceClassName="CF.ExecutableDevicePackage.InvalidProcess"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidFunction" instanceClassName="CF.ExecutableDevicePackage.InvalidFunction"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidParameters" instanceClassName="CF.ExecutableDevicePackage.InvalidParameters"/>

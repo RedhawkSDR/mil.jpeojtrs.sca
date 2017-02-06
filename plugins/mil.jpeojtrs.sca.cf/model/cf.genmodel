@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    This file is protected by Copyright.
-    Please refer to the COPYRIGHT file distributed with this source distribution.
-
-    This file is part of REDHAWK IDE.
-
-    All rights reserved.  This program and the accompanying materials are made available under
-    the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
-    http://www.eclipse.org/legal/epl-v10.html.
--->
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
     modelDirectory="/mil.jpeojtrs.sca.cf/src-ecore" editorDirectory=""
     modelPluginID="mil.jpeojtrs.sca.cf" templateDirectory="/mil.jpeojtrs.sca.cf/templates"
@@ -18,9 +8,10 @@
   <foreignModel>@model</foreignModel>
   <genPackages prefix="Cf" basePackage="mil.jpeojtrs.sca" disposableProviderFactory="true"
       literalsInterface="false" contentTypeIdentifier="" ecorePackage="cf.ecore#/">
-    <genDataTypes ecoreDataType="cf.ecore#//DataType"/>
-    <genDataTypes ecoreDataType="cf.ecore#//DataTypeArray"/>
+    <genDataTypes ecoreDataType="cf.ecore#//EventChannel"/>
     <genDataTypes ecoreDataType="cf.ecore#//NamingContextExt"/>
+    <genDataTypes ecoreDataType="cf.ecore#//PushConsumer"/>
+    <genDataTypes ecoreDataType="cf.ecore#//PushSupplier"/>
     <genDataTypes ecoreDataType="cf.ecore#//ORB"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidObjectReference"/>
     <genDataTypes ecoreDataType="cf.ecore#//CreateApplicationInsufficientCapacityError"/>
@@ -28,6 +19,8 @@
     <genDataTypes ecoreDataType="cf.ecore#//CreateApplicationError"/>
     <genDataTypes ecoreDataType="cf.ecore#//CreateApplicationRequestError"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidInitConfiguration"/>
+    <genDataTypes ecoreDataType="cf.ecore#//DataType"/>
+    <genDataTypes ecoreDataType="cf.ecore#//DataTypeArray"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidCapacity"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidState"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidProfile"/>
@@ -43,6 +36,22 @@
     <genDataTypes ecoreDataType="cf.ecore#//InvalidEventChannelName"/>
     <genDataTypes ecoreDataType="cf.ecore#//AlreadyConnected"/>
     <genDataTypes ecoreDataType="cf.ecore#//NotConnected"/>
+    <genDataTypes ecoreDataType="cf.ecore#//EventChannelInfoIteratorHolder"/>
+    <genDataTypes ecoreDataType="cf.ecore#//ChannelAlreadyExists"/>
+    <genDataTypes ecoreDataType="cf.ecore#//ChannelDoesNotExist"/>
+    <genDataTypes ecoreDataType="cf.ecore#//EventChannelInfoListHolder"/>
+    <genDataTypes ecoreDataType="cf.ecore#//EventChannelReg"/>
+    <genDataTypes ecoreDataType="cf.ecore#//EventRegistration"/>
+    <genDataTypes ecoreDataType="cf.ecore#//EventRegistrantListHolder"/>
+    <genDataTypes ecoreDataType="cf.ecore#//InvalidChannelName"/>
+    <genDataTypes ecoreDataType="cf.ecore#//OperationFailed"/>
+    <genDataTypes ecoreDataType="cf.ecore#//OperationNotAllowed"/>
+    <genDataTypes ecoreDataType="cf.ecore#//PublisherReg"/>
+    <genDataTypes ecoreDataType="cf.ecore#//RegistrationAlreadyExists"/>
+    <genDataTypes ecoreDataType="cf.ecore#//RegistrationDoesNotExist"/>
+    <genDataTypes ecoreDataType="cf.ecore#//RegistrationsExists"/>
+    <genDataTypes ecoreDataType="cf.ecore#//ServiceUnavailable"/>
+    <genDataTypes ecoreDataType="cf.ecore#//EventRegistrantIteratorHolder"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidProcess"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidFunction"/>
     <genDataTypes ecoreDataType="cf.ecore#//InvalidParameters"/>
@@ -188,6 +197,52 @@
       </genOperations>
       <genOperations ecoreOperation="cf.ecore#//DomainManagerOperations/unregisterRemoteDomainManager">
         <genParameters ecoreParameter="cf.ecore#//DomainManagerOperations/unregisterRemoteDomainManager/unregisteringDomainManager"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cf.ecore#//EventChannelManager"/>
+    <genClasses image="false" ecoreClass="cf.ecore#//EventChannelManagerOperations">
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/create">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/create/channel_name"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/get">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/get/channel_name"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/createForRegistrations">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/createForRegistrations/channel_name"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/markForRegistrations">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/markForRegistrations/channel_name"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/release">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/release/channel_name"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/forceRelease">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/forceRelease/channel_name"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/registerConsumer">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/registerConsumer/consumer"/>
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/registerConsumer/req"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/registerPublisher">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/registerPublisher/req"/>
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/registerPublisher/disconnectReceiver"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/registerResource">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/registerResource/req"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/unregister">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/unregister/reg"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/listChannels">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/listChannels/how_many"/>
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/listChannels/elist"/>
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/listChannels/eiter"/>
+      </genOperations>
+      <genOperations ecoreOperation="cf.ecore#//EventChannelManagerOperations/listRegistrants">
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/listRegistrants/channel_name"/>
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/listRegistrants/how_many"/>
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/listRegistrants/rlist"/>
+        <genParameters ecoreParameter="cf.ecore#//EventChannelManagerOperations/listRegistrants/riter"/>
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="cf.ecore#//ExecutableDevice"/>
