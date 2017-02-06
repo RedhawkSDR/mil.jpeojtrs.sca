@@ -2812,6 +2812,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		addEParameter(op, this.getDataTypeArray(), "initConfiguration", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDeviceAssignmentTypeArray(), "deviceAssignments", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getInvalidFileName());
+		addEException(op, this.getApplicationInstallationError());
 		addEException(op, this.getCreateApplicationError());
 		addEException(op, this.getCreateApplicationRequestError());
 		addEException(op, this.getCreateApplicationInsufficientCapacityError());
