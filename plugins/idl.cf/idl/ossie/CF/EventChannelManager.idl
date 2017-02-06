@@ -1,3 +1,22 @@
+/*
+ * This file is protected by Copyright. Please refer to the COPYRIGHT file
+ * distributed with this source distribution.
+ *
+ * This file is part of REDHAWK core.
+ *
+ * REDHAWK core is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by the
+ * Free Software Foundation, either version 3 of the License, or (at your
+ * option) any later version.
+ *
+ * REDHAWK core is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License
+ * for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see http://www.gnu.org/licenses/.
+ */
 
 #ifndef CF_EVT_CH_MGR_IDL
 #define CF_EVT_CH_MGR_IDL
@@ -77,7 +96,7 @@ module CF {
   typedef CosEventChannelAdmin::EventChannel        EventChannel;
   typedef CosEventChannelAdmin::ProxyPushConsumer   EventPublisher;
   typedef CosEventChannelAdmin::ProxyPushSupplier   EventSubscriber;
-
+  
   /**
      EventChannelManager Interface
   */
@@ -106,7 +125,13 @@ module CF {
     struct EventChannelReg {
       EventRegistration                        reg;
       CosEventChannelAdmin::EventChannel       channel;
-    };    
+    };
+
+    struct PublisherReg {
+      EventRegistration                         reg;
+      CosEventChannelAdmin::EventChannel        channel;
+      CF::EventPublisher                        proxy_consumer;
+    };
 
 
     /**
@@ -135,6 +160,23 @@ module CF {
     */
     EventChannel  create( in string channel_name  )  
       raises ( ChannelAlreadyExists, 
+               OperationNotAllowed, 
+               OperationFailed,
+               ServiceUnavailable );
+
+    /**
+       create
+       
+       Creates an Event Channel construct with the contents of the parameter channel_name 
+       in the Domain associate with this Manager.  Event channel names must be unique across the entire domain.
+       Event Channels created with this manager's interface will remain available for use during the entire duration the Domain
+       Manager's execution.  Event channels can be removed with the release method.
+       
+       @param  channel_name   name of channel to create
+       @return EventChannel   returns an EventChannel
+    */
+    EventChannel  get( in string channel_name  )  
+      raises ( ChannelDoesNotExist, 
                OperationNotAllowed, 
                OperationFailed,
                ServiceUnavailable );
@@ -170,12 +212,46 @@ module CF {
                OperationFailed,
                ServiceUnavailable );
 
+    /**
+       Force the release of the event channel from the domain.
+    */
+    void forceRelease( in string  channel_name  ) 
+      raises ( ChannelDoesNotExist, 
+               OperationNotAllowed, 
+               OperationFailed,
+               ServiceUnavailable );
+
+    /**
+       Attach a consumer to the event channel
+        - a registration is created automatically (use an empty string for automatic registration id)
+    */
+    EventChannelReg registerConsumer( in CosEventComm::PushConsumer consumer, in EventRegistration req)
+          raises ( InvalidChannelName, 
+                   RegistrationAlreadyExists,
+               OperationFailed,
+               OperationNotAllowed,
+               ServiceUnavailable );
+
+    /**
+      Attach a publisher (supplier) to the event channel
+        - a registration is created automatically (use an empty string for automatic registration id)
+        - disconnectReceiver is to receive the notification that the de-registration of the supplier was 
+          successful. This argument is optional. Use a nil reference to void the argument.
+    */
+    PublisherReg registerPublisher( in EventRegistration req, in CosEventComm::PushSupplier disconnectReceiver)
+          raises ( InvalidChannelName, 
+                   RegistrationAlreadyExists,
+               OperationFailed,
+               OperationNotAllowed,
+               ServiceUnavailable );         
 
     /**
        Register an association  with an Event Channel.  
   
        Look up the registration against the current list for a match, if one exists then 
        throw RegistrationAlreadyExists
+       
+       To generate a new unique registration id, pass an empty string in the registration request
   
        Look for an existing Event Channel object being managed. If the Event Channel
        is not found then add a new Event Channel object 
@@ -190,6 +266,8 @@ module CF {
 
     /**
        Unregister a from an event channel and invalidates the context
+       - if attachConsumer or attachProducer to create the registration,
+          the consumer or producer is automatically disconnected
     */
     void unregister( in EventRegistration reg ) 
       raises ( ChannelDoesNotExist,
