@@ -108,7 +108,7 @@
     <eOperations name="unregisterDevice" eExceptions="#//InvalidObjectReference #//UnregisterError">
       <eParameters name="unregisteringDevice" eType="#//Device"/>
     </eOperations>
-    <eOperations name="createApplication" eExceptions="#//InvalidFileName #//CreateApplicationError #//CreateApplicationRequestError #//CreateApplicationInsufficientCapacityError #//InvalidInitConfiguration">
+    <eOperations name="createApplication" eExceptions="#//InvalidFileName #//ApplicationInstallationError #//CreateApplicationError #//CreateApplicationRequestError #//CreateApplicationInsufficientCapacityError #//InvalidInitConfiguration">
       <eParameters name="profileFileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eParameters name="initConfiguration" eType="#//DataTypeArray"/>
