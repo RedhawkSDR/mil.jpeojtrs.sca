@@ -214,9 +214,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentPlacement" lowerBound="1"
         upperBound="-1" eType="#//SadComponentPlacement" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
         <details key="name" value="componentplacement"/>
-        <details key="namespace" value="##targetNamespace"/>
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usesDeviceRef" upperBound="-1"
+        eType="#//UsesDeviceRef" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="usesdeviceref"/>
+        <details key="kind" value="element"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
@@ -306,11 +312,6 @@
     </eGenericSuperTypes>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SadComponentPlacement">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="componentplacement"/>
-      <details key="kind" value="elementOnly"/>
-      <details key="qualified" value="false"/>
-    </eAnnotations>
     <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentPlacement">
       <eTypeArguments eClassifier="#//SadComponentInstantiation"/>
     </eGenericSuperTypes>
@@ -519,5 +520,15 @@
         <details key="namespace" value="##targetNamespace"/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UsesDeviceRef">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refid" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="refid"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usesDevice" eType="ecore:EClass ../../mil.jpeojtrs.sca.spd/model/spd.ecore#//UsesDevice"
+        volatile="true" transient="true" derived="true"/>
   </eClassifiers>
 </ecore:EPackage>
