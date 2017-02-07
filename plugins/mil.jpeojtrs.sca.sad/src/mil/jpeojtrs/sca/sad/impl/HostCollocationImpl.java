@@ -17,6 +17,7 @@ import mil.jpeojtrs.sca.sad.HostCollocation;
 import mil.jpeojtrs.sca.sad.SadComponentPlacement;
 import mil.jpeojtrs.sca.sad.SadPackage;
 
+import mil.jpeojtrs.sca.sad.UsesDeviceRef;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -36,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.HostCollocationImpl#getComponentPlacement <em>Component Placement</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.impl.HostCollocationImpl#getUsesDeviceRef <em>Uses Device Ref</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.HostCollocationImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.HostCollocationImpl#getName <em>Name</em>}</li>
  * </ul>
@@ -53,6 +55,15 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 * @ordered
 	 */
 	protected EList<SadComponentPlacement> componentPlacement;
+	/**
+	 * The cached value of the '{@link #getUsesDeviceRef() <em>Uses Device Ref</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUsesDeviceRef()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<UsesDeviceRef> usesDeviceRef;
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -128,6 +139,18 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<UsesDeviceRef> getUsesDeviceRef() {
+		if (usesDeviceRef == null) {
+			usesDeviceRef = new EObjectContainmentEList<UsesDeviceRef>(UsesDeviceRef.class, this, SadPackage.HOST_COLLOCATION__USES_DEVICE_REF);
+		}
+		return usesDeviceRef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public String getId() {
 		return id;
@@ -179,6 +202,8 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 		switch (featureID) {
 		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
 			return ((InternalEList< ? >) getComponentPlacement()).basicRemove(otherEnd, msgs);
+		case SadPackage.HOST_COLLOCATION__USES_DEVICE_REF:
+			return ((InternalEList< ? >) getUsesDeviceRef()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -193,6 +218,8 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 		switch (featureID) {
 		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
 			return getComponentPlacement();
+		case SadPackage.HOST_COLLOCATION__USES_DEVICE_REF:
+			return getUsesDeviceRef();
 		case SadPackage.HOST_COLLOCATION__ID:
 			return getId();
 		case SadPackage.HOST_COLLOCATION__NAME:
@@ -213,6 +240,10 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
 			getComponentPlacement().clear();
 			getComponentPlacement().addAll((Collection< ? extends SadComponentPlacement>) newValue);
+			return;
+		case SadPackage.HOST_COLLOCATION__USES_DEVICE_REF:
+			getUsesDeviceRef().clear();
+			getUsesDeviceRef().addAll((Collection< ? extends UsesDeviceRef>) newValue);
 			return;
 		case SadPackage.HOST_COLLOCATION__ID:
 			setId((String) newValue);
@@ -235,6 +266,9 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
 			getComponentPlacement().clear();
 			return;
+		case SadPackage.HOST_COLLOCATION__USES_DEVICE_REF:
+			getUsesDeviceRef().clear();
+			return;
 		case SadPackage.HOST_COLLOCATION__ID:
 			setId(ID_EDEFAULT);
 			return;
@@ -255,6 +289,8 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 		switch (featureID) {
 		case SadPackage.HOST_COLLOCATION__COMPONENT_PLACEMENT:
 			return componentPlacement != null && !componentPlacement.isEmpty();
+		case SadPackage.HOST_COLLOCATION__USES_DEVICE_REF:
+			return usesDeviceRef != null && !usesDeviceRef.isEmpty();
 		case SadPackage.HOST_COLLOCATION__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case SadPackage.HOST_COLLOCATION__NAME:

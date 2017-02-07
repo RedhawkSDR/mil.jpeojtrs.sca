@@ -115,6 +115,19 @@ public class HostCollocationTest extends TestCase {
 		// BEGIN GENERATED CODE
 	}
 
+	/**
+	 * Tests the '{@link mil.jpeojtrs.sca.sad.HostCollocation#getUsesDeviceRef() <em>Uses Device Ref</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.sad.HostCollocation#getUsesDeviceRef()
+	 * @generated
+	 */
+	public void testGetUsesDeviceRef() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
 	public void test_getId() throws Exception {
 		Assert.assertEquals("DCE:46da4d56-44ac-48a8-bae8-56632da98a87", this.fixture.getId());
 	}

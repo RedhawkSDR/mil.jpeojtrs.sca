@@ -14,12 +14,14 @@ package mil.jpeojtrs.sca.sad.provider;
 import java.util.Collection;
 import java.util.List;
 
-import mil.jpeojtrs.sca.sad.HostCollocation;
 import mil.jpeojtrs.sca.sad.SadPackage;
+import mil.jpeojtrs.sca.sad.UsesDeviceRef;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -33,21 +35,20 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link mil.jpeojtrs.sca.sad.HostCollocation} object.
+ * This is the item provider adapter for a {@link mil.jpeojtrs.sca.sad.UsesDeviceRef} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class HostCollocationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+public class UsesDeviceRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
-
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HostCollocationItemProvider(AdapterFactory adapterFactory) {
+	public UsesDeviceRefItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,47 +63,47 @@ public class HostCollocationItemProvider extends ItemProviderAdapter implements 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
+			addRefidPropertyDescriptor(object);
+			addUsesDevicePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
+	 * This adds a property descriptor for the Refid feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
+	protected void addRefidPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_HostCollocation_id_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_HostCollocation_id_feature", "_UI_HostCollocation_type"),
-			SadPackage.Literals.HOST_COLLOCATION__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+			getString("_UI_UsesDeviceRef_refid_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_UsesDeviceRef_refid_feature", "_UI_UsesDeviceRef_type"),
+			SadPackage.Literals.USES_DEVICE_REF__REFID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Uses Device feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addUsesDevicePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_HostCollocation_name_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_HostCollocation_name_feature", "_UI_HostCollocation_type"),
-			SadPackage.Literals.HOST_COLLOCATION__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+			getString("_UI_UsesDeviceRef_usesDevice_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_UsesDeviceRef_usesDevice_feature", "_UI_UsesDeviceRef_type"),
+			SadPackage.Literals.USES_DEVICE_REF__USES_DEVICE, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This returns HostCollocation.gif.
+	 * This returns UsesDeviceRef.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/HostCollocation"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/UsesDeviceRef"));
 	}
 
 	/**
@@ -113,8 +114,8 @@ public class HostCollocationItemProvider extends ItemProviderAdapter implements 
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((HostCollocation) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_HostCollocation_type") : getString("_UI_HostCollocation_type") + " " + label;
+		String label = ((UsesDeviceRef) object).getRefid();
+		return label == null || label.length() == 0 ? getString("_UI_UsesDeviceRef_type") : getString("_UI_UsesDeviceRef_type") + " " + label;
 	}
 
 	/**
@@ -128,9 +129,8 @@ public class HostCollocationItemProvider extends ItemProviderAdapter implements 
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(HostCollocation.class)) {
-		case SadPackage.HOST_COLLOCATION__ID:
-		case SadPackage.HOST_COLLOCATION__NAME:
+		switch (notification.getFeatureID(UsesDeviceRef.class)) {
+		case SadPackage.USES_DEVICE_REF__REFID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

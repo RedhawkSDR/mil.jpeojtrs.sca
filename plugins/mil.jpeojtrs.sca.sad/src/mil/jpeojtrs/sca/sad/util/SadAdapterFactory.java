@@ -203,6 +203,11 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseUsesDeviceRef(UsesDeviceRef object) {
+			return createUsesDeviceRefAdapter();
+		}
+
+		@Override
 		public Adapter caseComponentInstantiation(ComponentInstantiation object) {
 			return createComponentInstantiationAdapter();
 		}
@@ -547,6 +552,20 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUsesDeviceDependenciesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.sad.UsesDeviceRef <em>Uses Device Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.sad.UsesDeviceRef
+	 * @generated
+	 */
+	public Adapter createUsesDeviceRefAdapter() {
 		return null;
 	}
 

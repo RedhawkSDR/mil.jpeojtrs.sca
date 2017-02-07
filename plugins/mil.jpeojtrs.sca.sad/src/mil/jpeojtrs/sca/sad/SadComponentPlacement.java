@@ -20,7 +20,7 @@ import mil.jpeojtrs.sca.partitioning.ComponentPlacement;
  *
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getSadComponentPlacement()
- * @model extendedMetaData="name='componentplacement' kind='elementOnly' qualified='false'"
+ * @model
  * @generated
  */
 public interface SadComponentPlacement extends ComponentPlacement<SadComponentInstantiation> {

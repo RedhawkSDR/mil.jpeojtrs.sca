@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import mil.jpeojtrs.sca.partitioning.util.PartitioningValidator;
+import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
@@ -162,6 +163,8 @@ public class SadValidator extends EObjectValidator {
 			return validateSoftwareAssembly((SoftwareAssembly) value, diagnostics, context);
 		case SadPackage.USES_DEVICE_DEPENDENCIES:
 			return validateUsesDeviceDependencies((UsesDeviceDependencies) value, diagnostics, context);
+		case SadPackage.USES_DEVICE_REF:
+			return validateUsesDeviceRef((UsesDeviceRef) value, diagnostics, context);
 		default:
 			return true;
 		}
@@ -473,6 +476,15 @@ public class SadValidator extends EObjectValidator {
 	 */
 	public boolean validateUsesDeviceDependencies(UsesDeviceDependencies usesDeviceDependencies, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(usesDeviceDependencies, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUsesDeviceRef(UsesDeviceRef usesDeviceRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(usesDeviceRef, diagnostics, context);
 	}
 
 	/**

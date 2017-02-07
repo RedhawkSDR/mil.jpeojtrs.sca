@@ -678,13 +678,21 @@ public interface SadPackage extends EPackage {
 	 */
 	int HOST_COLLOCATION__COMPONENT_PLACEMENT = 0;
 	/**
+	 * The feature id for the '<em><b>Uses Device Ref</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOST_COLLOCATION__USES_DEVICE_REF = 1;
+	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOST_COLLOCATION__ID = 1;
+	int HOST_COLLOCATION__ID = 2;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -692,7 +700,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOST_COLLOCATION__NAME = 2;
+	int HOST_COLLOCATION__NAME = 3;
 	/**
 	 * The number of structural features of the '<em>Host Collocation</em>' class.
 	 * <!-- begin-user-doc -->
@@ -700,7 +708,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOST_COLLOCATION_FEATURE_COUNT = 3;
+	int HOST_COLLOCATION_FEATURE_COUNT = 4;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.PortImpl <em>Port</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1102,6 +1110,40 @@ public interface SadPackage extends EPackage {
 	int USES_DEVICE_DEPENDENCIES_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceRefImpl <em>Uses Device Ref</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.sad.impl.UsesDeviceRefImpl
+	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceRef()
+	 * @generated
+	 */
+	int USES_DEVICE_REF = 20;
+	/**
+	 * The feature id for the '<em><b>Refid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_DEVICE_REF__REFID = 0;
+	/**
+	 * The feature id for the '<em><b>Uses Device</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_DEVICE_REF__USES_DEVICE = 1;
+	/**
+	 * The number of structural features of the '<em>Uses Device Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USES_DEVICE_REF_FEATURE_COUNT = 2;
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.AssemblyController <em>Assembly Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1402,6 +1444,17 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getHostCollocation_ComponentPlacement();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.HostCollocation#getUsesDeviceRef <em>Uses Device Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Uses Device Ref</em>'.
+	 * @see mil.jpeojtrs.sca.sad.HostCollocation#getUsesDeviceRef()
+	 * @see #getHostCollocation()
+	 * @generated
+	 */
+	EReference getHostCollocation_UsesDeviceRef();
 
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.HostCollocation#getId <em>Id</em>}'.
@@ -1821,6 +1874,38 @@ public interface SadPackage extends EPackage {
 	EReference getUsesDeviceDependencies_Usesdevice();
 
 	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.UsesDeviceRef <em>Uses Device Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Uses Device Ref</em>'.
+	 * @see mil.jpeojtrs.sca.sad.UsesDeviceRef
+	 * @generated
+	 */
+	EClass getUsesDeviceRef();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.UsesDeviceRef#getRefid <em>Refid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Refid</em>'.
+	 * @see mil.jpeojtrs.sca.sad.UsesDeviceRef#getRefid()
+	 * @see #getUsesDeviceRef()
+	 * @generated
+	 */
+	EAttribute getUsesDeviceRef_Refid();
+
+	/**
+	 * Returns the meta object for the reference '{@link mil.jpeojtrs.sca.sad.UsesDeviceRef#getUsesDevice <em>Uses Device</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Uses Device</em>'.
+	 * @see mil.jpeojtrs.sca.sad.UsesDeviceRef#getUsesDevice()
+	 * @see #getUsesDeviceRef()
+	 * @generated
+	 */
+	EReference getUsesDeviceRef_UsesDevice();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2074,6 +2159,13 @@ public interface SadPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HOST_COLLOCATION__COMPONENT_PLACEMENT = eINSTANCE.getHostCollocation_ComponentPlacement();
+		/**
+		 * The meta object literal for the '<em><b>Uses Device Ref</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOST_COLLOCATION__USES_DEVICE_REF = eINSTANCE.getHostCollocation_UsesDeviceRef();
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -2360,6 +2452,29 @@ public interface SadPackage extends EPackage {
 		 * @generated
 		 */
 		EReference USES_DEVICE_DEPENDENCIES__USESDEVICE = eINSTANCE.getUsesDeviceDependencies_Usesdevice();
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceRefImpl <em>Uses Device Ref</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.sad.impl.UsesDeviceRefImpl
+		 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceRef()
+		 * @generated
+		 */
+		EClass USES_DEVICE_REF = eINSTANCE.getUsesDeviceRef();
+		/**
+		 * The meta object literal for the '<em><b>Refid</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute USES_DEVICE_REF__REFID = eINSTANCE.getUsesDeviceRef_Refid();
+		/**
+		 * The meta object literal for the '<em><b>Uses Device</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USES_DEVICE_REF__USES_DEVICE = eINSTANCE.getUsesDeviceRef_UsesDevice();
 
 	}
 

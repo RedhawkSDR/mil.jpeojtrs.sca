@@ -273,6 +273,15 @@ public interface SadFactory extends EFactory {
 	UsesDeviceDependencies createUsesDeviceDependencies();
 
 	/**
+	 * Returns a new object of class '<em>Uses Device Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Uses Device Ref</em>'.
+	 * @generated
+	 */
+	UsesDeviceRef createUsesDeviceRef();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

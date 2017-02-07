@@ -544,6 +544,29 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.sad.UsesDeviceRef} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UsesDeviceRefItemProvider usesDeviceRefItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.sad.UsesDeviceRef}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUsesDeviceRefAdapter() {
+		if (usesDeviceRefItemProvider == null) {
+			usesDeviceRefItemProvider = new UsesDeviceRefItemProvider(this);
+		}
+
+		return usesDeviceRefItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -688,6 +711,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 			softwareAssemblyItemProvider.dispose();
 		if (usesDeviceDependenciesItemProvider != null)
 			usesDeviceDependenciesItemProvider.dispose();
+		if (usesDeviceRefItemProvider != null)
+			usesDeviceRefItemProvider.dispose();
 	}
 
 }

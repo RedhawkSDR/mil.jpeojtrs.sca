@@ -132,6 +132,8 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 			return createSoftwareAssembly();
 		case SadPackage.USES_DEVICE_DEPENDENCIES:
 			return createUsesDeviceDependencies();
+		case SadPackage.USES_DEVICE_REF:
+			return createUsesDeviceRef();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -425,6 +427,16 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	public UsesDeviceDependencies createUsesDeviceDependencies() {
 		UsesDeviceDependenciesImpl usesDeviceDependencies = new UsesDeviceDependenciesImpl();
 		return usesDeviceDependencies;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UsesDeviceRef createUsesDeviceRef() {
+		UsesDeviceRefImpl usesDeviceRef = new UsesDeviceRefImpl();
+		return usesDeviceRef;
 	}
 
 	/**

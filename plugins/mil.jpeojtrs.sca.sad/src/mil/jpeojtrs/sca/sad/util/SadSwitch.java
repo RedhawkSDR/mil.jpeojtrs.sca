@@ -261,6 +261,13 @@ public class SadSwitch< T > extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case SadPackage.USES_DEVICE_REF: {
+			UsesDeviceRef usesDeviceRef = (UsesDeviceRef) theEObject;
+			T result = caseUsesDeviceRef(usesDeviceRef);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -566,6 +573,21 @@ public class SadSwitch< T > extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUsesDeviceDependencies(UsesDeviceDependencies object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Uses Device Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Uses Device Ref</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUsesDeviceRef(UsesDeviceRef object) {
 		return null;
 	}
 

@@ -35,6 +35,7 @@ import mil.jpeojtrs.sca.sad.SadProvidesPort;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
+import mil.jpeojtrs.sca.sad.UsesDeviceRef;
 import mil.jpeojtrs.sca.sad.util.SadValidator;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.validator.AdvancedEObjectValidator;
@@ -178,6 +179,13 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * @generated
 	 */
 	private EClass usesDeviceDependenciesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass usesDeviceRefEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -562,9 +570,18 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getHostCollocation_UsesDeviceRef() {
+		return (EReference) hostCollocationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EAttribute getHostCollocation_Id() {
-		return (EAttribute) hostCollocationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) hostCollocationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -574,7 +591,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 */
 	@Override
 	public EAttribute getHostCollocation_Name() {
-		return (EAttribute) hostCollocationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) hostCollocationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -944,6 +961,33 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getUsesDeviceRef() {
+		return usesDeviceRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUsesDeviceRef_Refid() {
+		return (EAttribute) usesDeviceRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUsesDeviceRef_UsesDevice() {
+		return (EReference) usesDeviceRefEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public SadFactory getSadFactory() {
 		return (SadFactory) getEFactoryInstance();
@@ -1009,6 +1053,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 		hostCollocationEClass = createEClass(HOST_COLLOCATION);
 		createEReference(hostCollocationEClass, HOST_COLLOCATION__COMPONENT_PLACEMENT);
+		createEReference(hostCollocationEClass, HOST_COLLOCATION__USES_DEVICE_REF);
 		createEAttribute(hostCollocationEClass, HOST_COLLOCATION__ID);
 		createEAttribute(hostCollocationEClass, HOST_COLLOCATION__NAME);
 
@@ -1054,6 +1099,10 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 		usesDeviceDependenciesEClass = createEClass(USES_DEVICE_DEPENDENCIES);
 		createEReference(usesDeviceDependenciesEClass, USES_DEVICE_DEPENDENCIES__USESDEVICE);
+
+		usesDeviceRefEClass = createEClass(USES_DEVICE_REF);
+		createEAttribute(usesDeviceRefEClass, USES_DEVICE_REF__REFID);
+		createEReference(usesDeviceRefEClass, USES_DEVICE_REF__USES_DEVICE);
 	}
 
 	/**
@@ -1194,6 +1243,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		initEClass(hostCollocationEClass, HostCollocation.class, "HostCollocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHostCollocation_ComponentPlacement(), this.getSadComponentPlacement(), null, "componentPlacement", null, 1, -1, HostCollocation.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHostCollocation_UsesDeviceRef(), this.getUsesDeviceRef(), null, "usesDeviceRef", null, 0, -1, HostCollocation.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHostCollocation_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, HostCollocation.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHostCollocation_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, HostCollocation.class, !IS_TRANSIENT, !IS_VOLATILE,
@@ -1285,6 +1336,12 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		initEReference(getUsesDeviceDependencies_Usesdevice(), theSpdPackage.getUsesDevice(), null, "usesdevice", null, 1, -1, UsesDeviceDependencies.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(usesDeviceRefEClass, UsesDeviceRef.class, "UsesDeviceRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUsesDeviceRef_Refid(), theXMLTypePackage.getString(), "refid", null, 1, 1, UsesDeviceRef.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUsesDeviceRef_UsesDevice(), theSpdPackage.getUsesDevice(), null, "usesDevice", null, 0, 1, UsesDeviceRef.class, IS_TRANSIENT,
+			IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -1337,8 +1394,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			new String[] { "kind", "element", "name", "componentresourcefactoryref", "namespace", "##targetNamespace" });
 		addAnnotation(getFindComponent_NamingService(), source, new String[] { "kind", "element", "name", "namingservice", "namespace", "##targetNamespace" });
 		addAnnotation(hostCollocationEClass, source, new String[] { "name", "hostcollocation", "kind", "elementOnly", "qualified", "false" });
-		addAnnotation(getHostCollocation_ComponentPlacement(), source,
-			new String[] { "kind", "element", "name", "componentplacement", "namespace", "##targetNamespace" });
+		addAnnotation(getHostCollocation_ComponentPlacement(), source, new String[] { "name", "componentplacement", "kind", "element" });
+		addAnnotation(getHostCollocation_UsesDeviceRef(), source, new String[] { "name", "usesdeviceref", "kind", "element" });
 		addAnnotation(getHostCollocation_Id(), source, new String[] { "kind", "attribute", "name", "id" });
 		addAnnotation(getHostCollocation_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(portEClass, source, new String[] { "name", "port", "kind", "elementOnly", "qualified", "false" });
@@ -1352,7 +1409,6 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation(getPort_ExternalName(), source, new String[] { "kind", "attribute", "name", "externalname" });
 		addAnnotation(sadPartitioningEClass, source, new String[] { "name", "partitioning", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getSadPartitioning_HostCollocation(), source, new String[] { "kind", "element", "name", "hostcollocation", "group", "#parts:0" });
-		addAnnotation(sadComponentPlacementEClass, source, new String[] { "name", "componentplacement", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(resourceFactoryPropertiesEClass, source,
 			new String[] { "name", "resourcefactoryproperties", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getResourceFactoryProperties_Group(), source, new String[] { "kind", "group", "name", "group:0" });
@@ -1390,6 +1446,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation(usesDeviceDependenciesEClass, source, new String[] { "name", "usesdevicedependencies", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getUsesDeviceDependencies_Usesdevice(), source,
 			new String[] { "kind", "element", "name", "usesdevice", "namespace", "##targetNamespace" });
+		addAnnotation(getUsesDeviceRef_Refid(), source, new String[] { "kind", "attribute", "name", "refid" });
 	}
 
 	/**
