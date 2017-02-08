@@ -504,6 +504,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="StopError" instanceClassName="CF.ResourcePackage.StopError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownTest" instanceClassName="CF.TestableObjectPackage.UnknownTest"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownIdentifier" instanceClassName="CF.UnknownIdentifier"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="UTCTime" instanceClassName="CF.UTCTime"/>
   <eClassifiers xsi:type="ecore:EDataType" name="LogEventArray" instanceClassName="CF.LogEvent[]"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidIdentifier" instanceClassName="CF.InvalidIdentifier"/>
 </ecore:EPackage>

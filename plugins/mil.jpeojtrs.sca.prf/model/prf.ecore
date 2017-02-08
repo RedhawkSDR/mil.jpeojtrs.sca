@@ -320,6 +320,7 @@
     <eLiterals name="long" value="10" literal="long"/>
     <eLiterals name="longlong" value="11" literal="longlong"/>
     <eLiterals name="ulonglong" value="12" literal="ulonglong"/>
+    <eLiterals name="utctime" value="13"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="PropertyValueTypeObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
