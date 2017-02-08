@@ -111,24 +111,30 @@ public class UsesDeviceRefImpl extends EObjectImpl implements UsesDeviceRef {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public UsesDevice basicGetUsesDevice() {
-		// TODO: implement this method to return the 'Uses Device' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// END GENERATED CODE
+		if (eResource() == null) {
+			return null;
+		}
+		String localRefId = getRefid();
+		if (localRefId == null) {
+			return null;
+		}
+		return (UsesDevice) eResource().getEObject(localRefId);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setUsesDevice(UsesDevice newUsesDevice) {
-		// TODO: implement this method to set the 'Uses Device' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// END GENERATED CODE
+		setRefid((newUsesDevice == null) ? null : newUsesDevice.getId());
+		// BEGIN GENERATED CODE
 	}
 
 	/**
