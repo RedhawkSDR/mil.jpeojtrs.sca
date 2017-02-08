@@ -155,6 +155,7 @@ import CF.ResourceFactoryPackage.ShutdownFailure;
 import CF.ResourcePackage.StartError;
 import CF.ResourcePackage.StopError;
 import CF.TestableObjectPackage.UnknownTest;
+import CF.UTCTime;
 import CF.UnknownIdentifier;
 
 /**
@@ -988,6 +989,12 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EDataType unknownIdentifierEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType utcTimeEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2313,6 +2320,15 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getUTCTime() {
+		return utcTimeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2543,6 +2559,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		stopErrorEDataType = createEDataType(STOP_ERROR);
 		unknownTestEDataType = createEDataType(UNKNOWN_TEST);
 		unknownIdentifierEDataType = createEDataType(UNKNOWN_IDENTIFIER);
+		utcTimeEDataType = createEDataType(UTC_TIME);
 		logEventArrayEDataType = createEDataType(LOG_EVENT_ARRAY);
 		invalidIdentifierEDataType = createEDataType(INVALID_IDENTIFIER);
 	}
@@ -3351,6 +3368,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEDataType(stopErrorEDataType, StopError.class, "StopError", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownTestEDataType, UnknownTest.class, "UnknownTest", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownIdentifierEDataType, UnknownIdentifier.class, "UnknownIdentifier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(utcTimeEDataType, UTCTime.class, "UTCTime", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(logEventArrayEDataType, LogEvent[].class, "LogEventArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidIdentifierEDataType, CF.InvalidIdentifier.class, "InvalidIdentifier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 

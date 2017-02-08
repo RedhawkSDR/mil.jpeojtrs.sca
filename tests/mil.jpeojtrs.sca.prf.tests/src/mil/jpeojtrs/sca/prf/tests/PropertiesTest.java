@@ -211,7 +211,7 @@ public class PropertiesTest extends TestCase {
 		Assert.assertNotNull(this.props.getProperty(this.props.getStructSequence().get(0).getId()));
 		// BEGIN GENERATED CODE
 	}
-	
+
 	public void testPropertiesWithMessageType_IDE_1675() throws IOException {
 		final Properties props = Properties.Util.getProperties(this.resourceSet.getResource(PrfTests.getURI("testFiles/MessageKindTest.prf.xml"), true));
 

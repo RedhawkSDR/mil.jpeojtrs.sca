@@ -99,6 +99,7 @@ import CF.ResourceFactoryPackage.ShutdownFailure;
 import CF.ResourcePackage.StartError;
 import CF.ResourcePackage.StopError;
 import CF.TestableObjectPackage.UnknownTest;
+import CF.UTCTime;
 import CF.UnknownIdentifier;
 
 /**
@@ -316,6 +317,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createUnknownTestFromString(eDataType, initialValue);
 		case CfPackage.UNKNOWN_IDENTIFIER:
 			return createUnknownIdentifierFromString(eDataType, initialValue);
+		case CfPackage.UTC_TIME:
+			return createUTCTimeFromString(eDataType, initialValue);
 		case CfPackage.LOG_EVENT_ARRAY:
 			return createLogEventArrayFromString(eDataType, initialValue);
 		case CfPackage.INVALID_IDENTIFIER:
@@ -491,6 +494,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertUnknownTestToString(eDataType, instanceValue);
 		case CfPackage.UNKNOWN_IDENTIFIER:
 			return convertUnknownIdentifierToString(eDataType, instanceValue);
+		case CfPackage.UTC_TIME:
+			return convertUTCTimeToString(eDataType, instanceValue);
 		case CfPackage.LOG_EVENT_ARRAY:
 			return convertLogEventArrayToString(eDataType, instanceValue);
 		case CfPackage.INVALID_IDENTIFIER:
@@ -1946,6 +1951,24 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	 * @generated
 	 */
 	public String convertUnknownIdentifierToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UTCTime createUTCTimeFromString(EDataType eDataType, String initialValue) {
+		return (UTCTime) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertUTCTimeToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

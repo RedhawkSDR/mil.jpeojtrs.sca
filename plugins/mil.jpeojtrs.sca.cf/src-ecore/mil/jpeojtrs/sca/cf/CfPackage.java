@@ -1248,7 +1248,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidIdentifier()
 	 * @generated
 	 */
-	int INVALID_IDENTIFIER = 137;
+	int INVALID_IDENTIFIER = 138;
 	/**
 	 * The meta object id for the '<em>Application Uninstallation Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1765,6 +1765,15 @@ public interface CfPackage extends EPackage {
 	 */
 	int UNKNOWN_IDENTIFIER = 135;
 	/**
+	 * The meta object id for the '<em>UTC Time</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see CF.UTCTime
+	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUTCTime()
+	 * @generated
+	 */
+	int UTC_TIME = 136;
+	/**
 	 * The meta object id for the '<em>Log Event Array</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * @since 4.0
@@ -1772,7 +1781,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getLogEventArray()
 	 * @generated
 	 */
-	int LOG_EVENT_ARRAY = 136;
+	int LOG_EVENT_ARRAY = 137;
 
 	/**
 	 * Returns the meta object for class '{@link org.omg.CORBA.Object <em>Object</em>}'.
@@ -3294,6 +3303,17 @@ public interface CfPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getUnknownIdentifier();
+
+	/**
+	 * Returns the meta object for data type '{@link CF.UTCTime <em>UTC Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>UTC Time</em>'.
+	 * @see CF.UTCTime
+	 * @model instanceClass="CF.UTCTime"
+	 * @generated
+	 */
+	EDataType getUTCTime();
 
 	/**
 	 * Returns the meta object for data type '<em>Log Event Array</em>'.

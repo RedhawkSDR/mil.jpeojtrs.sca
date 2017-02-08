@@ -147,7 +147,16 @@ public enum PropertyValueType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ULONGLONG(12, "ulonglong", "ulonglong");
+	ULONGLONG(12, "ulonglong", "ulonglong"),
+	/**
+	* The '<em><b>Utctime</b></em>' literal object.
+	* <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	* @see #UTCTIME_VALUE
+	* @generated
+	* @ordered
+	*/
+	UTCTIME(13, "utctime", "utctime");
 
 	/**
 	 * The '<em><b>String</b></em>' literal value.
@@ -332,13 +341,27 @@ public enum PropertyValueType implements Enumerator {
 	 */
 	public static final int ULONGLONG_VALUE = 12;
 	/**
+	 * The '<em><b>Utctime</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Utctime</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #UTCTIME
+	 * @model name="utctime"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UTCTIME_VALUE = 13;
+	/**
 	 * An array of all the '<em><b>Property Value Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private static final PropertyValueType[] VALUES_ARRAY = new PropertyValueType[] { STRING, BOOLEAN, ULONG, OBJREF, SHORT, FLOAT, OCTET, CHAR, USHORT, DOUBLE,
-		LONG, LONGLONG, ULONGLONG, };
+		LONG, LONGLONG, ULONGLONG, UTCTIME, };
 	/**
 	 * A public read-only list of all the '<em><b>Property Value Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
@@ -419,6 +442,8 @@ public enum PropertyValueType implements Enumerator {
 			return LONGLONG;
 		case ULONGLONG_VALUE:
 			return ULONGLONG;
+		case UTCTIME_VALUE:
+			return UTCTIME;
 		}
 		return null;
 	}

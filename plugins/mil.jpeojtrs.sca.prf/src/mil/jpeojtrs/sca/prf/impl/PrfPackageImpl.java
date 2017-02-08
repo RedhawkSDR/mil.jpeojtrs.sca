@@ -2348,6 +2348,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addEEnumLiteral(propertyValueTypeEEnum, PropertyValueType.LONG);
 		addEEnumLiteral(propertyValueTypeEEnum, PropertyValueType.LONGLONG);
 		addEEnumLiteral(propertyValueTypeEEnum, PropertyValueType.ULONGLONG);
+		addEEnumLiteral(propertyValueTypeEEnum, PropertyValueType.UTCTIME);
 
 		initEEnum(structPropertyConfigurationTypeEEnum, StructPropertyConfigurationType.class, "StructPropertyConfigurationType");
 		addEEnumLiteral(structPropertyConfigurationTypeEEnum, StructPropertyConfigurationType.CONFIGURE);
