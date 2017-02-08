@@ -11,12 +11,16 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.tests;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
-
-import mil.jpeojtrs.sca.sad.SadFactory;
+import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 import mil.jpeojtrs.sca.sad.UsesDeviceRef;
+import mil.jpeojtrs.sca.spd.UsesDevice;
+import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,11 +87,14 @@ public class UsesDeviceRefTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(SadFactory.eINSTANCE.createUsesDeviceRef());
+		// END GENERATED CODE
+		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/HostCollocation_UsesDeviceRef/HostCollocation_UsesDeviceRef.sad.xml");
+		setFixture(sad.getPartitioning().getHostCollocation().get(0).getUsesDeviceRef().get(0));
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -106,12 +113,15 @@ public class UsesDeviceRefTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceRef#getUsesDevice()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetUsesDevice() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// END GENERATED CODE
+		UsesDevice ud = getFixture().getUsesDevice();
+		Assert.assertNotNull(ud);
+		Assert.assertEquals("FrontEndTuner_1", ud.getId());
+		Assert.assertEquals(true, ud.getProperties().size() > 0);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -119,12 +129,24 @@ public class UsesDeviceRefTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceRef#setUsesDevice(mil.jpeojtrs.sca.spd.UsesDevice)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testSetUsesDevice() {
-		// TODO: implement this feature setter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// END GENERATED CODE
+		SoftwareAssembly sad = ScaEcoreUtils.getEContainerOfType(getFixture(), SoftwareAssembly.class);
+		UsesDevice ud = sad.getUsesDeviceDependencies().getUsesdevice().get(1);
+		getFixture().setUsesDevice(ud);
+		Assert.assertEquals("FrontEndTuner_2", getFixture().getRefid());
+		// BEGIN GENERATED CODE
 	}
+
+	// END GENERATED CODE
+
+	@Test
+	public void id() {
+		Assert.assertEquals("FrontEndTuner_1", getFixture().getRefid());
+	}
+
+	// BEGIN GENERATED CODE
 
 } // UsesDeviceRefTest

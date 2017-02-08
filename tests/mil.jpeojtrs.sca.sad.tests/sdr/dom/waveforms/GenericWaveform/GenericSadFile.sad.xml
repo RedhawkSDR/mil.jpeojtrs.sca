@@ -9,7 +9,7 @@
     the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
     http://www.eclipse.org/legal/epl-v10.html.
 -->
-<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA SAD V2.2.2//EN" "softwareassembly.dtd">
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
 <softwareassembly id="DCE:df4f0e1c-a242-4b76-ae1d-bef1b63cedfe"
 	name="GenericSadFile" version="Alpha">
 	<description>A simple waveform, at least it started as one</description>
@@ -107,6 +107,7 @@
 					</findcomponent>
 				</componentinstantiation>
 			</componentplacement>
+			<usesdeviceref refid="ud_1"/>
 		</hostcollocation>
 	</partitioning>
 	<assemblycontroller>
@@ -234,4 +235,9 @@
 			<componentinstantiationref refid="DCE:4fd1d425-e772-4eb4-8acc-416deda4b1aa" />
 		</port>
 	</externalports>
+	<usesdevicedependencies>
+		<usesdevice id="ud_1">
+			<propertyref refid="someprop" value="somevalue"/>
+		</usesdevice>
+	</usesdevicedependencies>
 </softwareassembly>

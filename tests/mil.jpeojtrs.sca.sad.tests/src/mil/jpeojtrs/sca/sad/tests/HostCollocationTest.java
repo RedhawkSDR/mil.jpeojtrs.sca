@@ -120,13 +120,16 @@ public class HostCollocationTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.HostCollocation#getUsesDeviceRef()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetUsesDeviceRef() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		// END GENERATED CODE
+		Assert.assertEquals(1, getFixture().getUsesDeviceRef().size());
+		Assert.assertEquals("ud_1", getFixture().getUsesDeviceRef().get(0).getRefid());
+		// BEGIN GENERATED CODE
 	}
+
+	// END GENERATED CODE
 
 	public void test_getId() throws Exception {
 		Assert.assertEquals("DCE:46da4d56-44ac-48a8-bae8-56632da98a87", this.fixture.getId());
@@ -151,5 +154,7 @@ public class HostCollocationTest extends TestCase {
 	public void test_toString() throws Exception {
 		Assert.assertNotNull(this.fixture.toString());
 	}
+
+	// BEGIN GENERATED CODE
 
 } //HostCollocationTest
