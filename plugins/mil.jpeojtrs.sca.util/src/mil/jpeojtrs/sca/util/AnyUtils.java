@@ -14,8 +14,12 @@ import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Date;
+import java.util.TimeZone;
 
 import org.apache.commons.lang.ArrayUtils;
 import org.jacorb.JacorbUtil;
@@ -28,6 +32,7 @@ import org.omg.CORBA.DoubleSeqHelper;
 import org.omg.CORBA.FloatSeqHelper;
 import org.omg.CORBA.LongLongSeqHelper;
 import org.omg.CORBA.LongSeqHelper;
+import org.omg.CORBA.ORB;
 import org.omg.CORBA.OctetSeqHelper;
 import org.omg.CORBA.ShortSeqHelper;
 import org.omg.CORBA.StringSeqHelper;
@@ -43,6 +48,9 @@ import org.omg.CORBA.TypeCodePackage.BadKind;
 import CF.DataType;
 import CF.DataTypeHelper;
 import CF.PropertiesHelper;
+import CF.UTCTime;
+import CF.UTCTimeHelper;
+import CF.UTCTimeSequenceHelper;
 import CF.complexBooleanHelper;
 import CF.complexBooleanSeqHelper;
 import CF.complexCharHelper;
@@ -84,51 +92,65 @@ public final class AnyUtils {
 	private static final int RADIX_HEX = 16;
 	private static final int RADIX_OCTAL = 8;
 
+	private static final ORB ORB = JacorbUtil.init();
+
 	private AnyUtils() {
 	}
 
 	/**
-	 * Attempts to convert the string value to the appropriate Java type.
+	 * Attempts to parse the string value to the appropriate Java type.
 	 * 
 	 * @param stringValue the string form of the value
-	 * @param type the string form of the TypeCode
-	 * @param complex If the value should be interrupted as a complex number, pass null if it is not a number
-	 * @return A Java object of theString corresponding to the typecode
+	 * @param type the property value type (e.g. "long")
+	 * @param complex If the value should be interrupted as a complex number
+	 * @return The Java object
 	 * @since 3.4
 	 */
 	public static Object convertString(final String stringValue, final String type, boolean complex) {
-		if (!complex) {
+		if (complex) {
+			return ComplexNumber.valueOf(type, stringValue);
+		} else {
 			return AnyUtils.primitiveConvertString(stringValue, type);
 		}
-		return ComplexNumber.valueOf(type, stringValue);
-	}
-
-	public static Object convertString(final String stringValue, final String type) {
-		return AnyUtils.convertString(stringValue, type, false);
-
 	}
 
 	/**
-	 * Attempts to convert the string value to the appropriate Java type.
+	 * @deprecated Use {@link #convertString(String, String, boolean)}
+	 */
+	@Deprecated
+	public static Object convertString(final String stringValue, final String type) {
+		return AnyUtils.convertString(stringValue, type, false);
+	}
+
+	/**
+	 * Attempts to parse the string value for a simple to the appropriate Java type. Complex numbers are not handled.
 	 * 
 	 * @param stringValue the string form of the value
-	 * @param type the string form of the TypeCode
-	 * @return A Java object of theString corresponding to the typecode
+	 * @param type the property value type (e.g. "long")
+	 * @return A Java object
 	 */
 	private static Object primitiveConvertString(final String stringValue, final String type) {
 		if (stringValue == null) {
 			return null;
 		}
-		if ("string".equals(type)) {
+		if (type == null) {
+			throw new IllegalArgumentException("null property type");
+		}
+
+		switch (type) {
+		case "string":
 			return stringValue;
-		} else if ("wstring".equals(type)) {
+		case "wstring":
 			return stringValue;
-		} else if ("boolean".equals(type)) {
-			if ("true".equalsIgnoreCase(stringValue) || "false".equalsIgnoreCase(stringValue)) {
-				return Boolean.parseBoolean(stringValue);
+		case "boolean":
+			if ("true".equalsIgnoreCase(stringValue)) {
+				return true;
+			}
+			if ("false".equalsIgnoreCase(stringValue)) {
+				return false;
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid boolean value");
-		} else if ("char".equals(type)) {
+		case "char":
 			switch (stringValue.length()) {
 			case 1:
 				return stringValue.charAt(0);
@@ -137,51 +159,50 @@ public final class AnyUtils {
 			default:
 				throw new IllegalArgumentException(stringValue + " is not a valid char value");
 			}
-		} else if ("wchar".equals(type)) {
+		case "wchar":
 			return stringValue.charAt(0);
-		} else if ("double".equals(type)) {
+		case "double":
 			return Double.parseDouble(stringValue);
-		} else if ("float".equals(type)) {
+		case "float":
 			return Float.parseFloat(stringValue);
-		} else if ("short".equals(type)) {
+		case "short":
 			return Short.decode(stringValue);
-		} else if ("long".equals(type)) {
+		case "long":
 			return Integer.decode(stringValue);
-		} else if ("longlong".equals(type)) {
+		case "longlong":
 			return Long.decode(stringValue);
-		} else if ("ulong".equals(type)) {
+		case "ulong":
 			final long MAX_UINT = 2L * Integer.MAX_VALUE + 1L;
-			final Long retVal = Long.decode(stringValue);
-			if (retVal < 0 || retVal > MAX_UINT) {
+			final Long ulong = Long.decode(stringValue);
+			if (ulong < 0 || ulong > MAX_UINT) {
 				throw new IllegalArgumentException("ulong value must be greater than '0' and less than " + MAX_UINT);
 			}
-			return retVal;
-		} else if ("ushort".equals(type)) {
+			return ulong;
+		case "ushort":
 			final int MAX_USHORT = 2 * Short.MAX_VALUE + 1;
-			final Integer retVal = Integer.decode(stringValue);
-			if (retVal < 0 || retVal > MAX_USHORT) {
+			final Integer ushort = Integer.decode(stringValue);
+			if (ushort < 0 || ushort > MAX_USHORT) {
 				throw new IllegalArgumentException("ushort value must be greater than '0' and less than " + MAX_USHORT);
 			}
-			return retVal;
-		} else if ("ulonglong".equals(type)) {
+			return ushort;
+		case "ulonglong":
 			final BigInteger MAX_ULONG_LONG = BigInteger.valueOf(Long.MAX_VALUE).multiply(BigInteger.valueOf(2)).add(BigInteger.ONE);
-			final BigInteger retVal = AnyUtils.bigIntegerDecode(stringValue);
-			if (retVal.compareTo(BigInteger.ZERO) < 0 || retVal.compareTo(MAX_ULONG_LONG) > 0) {
+			final BigInteger ulonglong = AnyUtils.bigIntegerDecode(stringValue);
+			if (ulonglong.compareTo(BigInteger.ZERO) < 0 || ulonglong.compareTo(MAX_ULONG_LONG) > 0) {
 				throw new IllegalArgumentException("ulonglong value must be greater than '0' and less than " + MAX_ULONG_LONG.toString());
 			}
-			return retVal;
-		} else if ("objref".equals(type)) {
+			return ulonglong;
+		case "objref":
 			if ("".equals(stringValue)) {
 				return null;
 			}
-			final List<String> objrefPrefix = Arrays.asList("IOR:", "corbaname:", "corbaloc:");
-			for (final String prefix : objrefPrefix) {
+			for (final String prefix : new String[] { "IOR:", "corbaname:", "corbaloc:" }) {
 				if (stringValue.startsWith(prefix)) {
 					return stringValue;
 				}
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid objref value");
-		} else if ("octet".equals(type)) {
+		case "octet":
 			final short MIN_OCTET = 0;
 			final short MAX_OCTET = 0xFF;
 			final short val = Short.decode(stringValue);
@@ -189,12 +210,33 @@ public final class AnyUtils {
 				return Short.valueOf(val);
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid octet value");
-		} else {
+		case "utctime":
+			int period = stringValue.indexOf('.');
+			double tfsec = 0.0;
+			if (period != -1) {
+				tfsec = Double.parseDouble(stringValue.substring(period));
+			} else {
+				period = stringValue.length();
+			}
+			Date date;
+			try {
+				SimpleDateFormat dateFormat = (SimpleDateFormat) DateFormat.getDateTimeInstance();
+				dateFormat.applyPattern("yyyy:MM:dd::HH:mm:ss");
+				dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+				date = dateFormat.parse(stringValue.substring(0, period));
+			} catch (ParseException e) {
+				throw new IllegalArgumentException("Unable to parse date/time", e);
+			}
+			return new UTCTime((short) 1, date.getTime() / 1000, tfsec);
+		default:
 			throw new IllegalArgumentException("Unknown CORBA Type: " + type);
 		}
 	}
 
 	/**
+	 * Attempts to parse the string value to a {@link BigInteger}.
+	 *
+	 * @param nm the string form of the number
 	 * @since 3.0
 	 * @throws NumberFormatException
 	 */
@@ -247,7 +289,7 @@ public final class AnyUtils {
 
 	/**
 	 * Attempts to convert the any to the appropriate Java type.
-	 * 
+	 *
 	 * @param theAny the Any to convert
 	 * @return a Java object that corresponds to theAny's type
 	 */
@@ -261,11 +303,10 @@ public final class AnyUtils {
 	/**
 	 * Attempts to convert the Any using the specified typeCode to the appropriate Java type. May be called
 	 * recursively to resolve the Any.
-	 * 
+	 *
 	 * @param theAny the Any to convert
 	 * @param typeCode the TypeCode of the desired value
 	 * @return a Java object from theAny that corresponds to the typeCode
-	 * @since 3.0
 	 */
 	private static Object convertAny(final Any theAny, final TypeCode typeCode) {
 		if (theAny == null) {
@@ -307,10 +348,10 @@ public final class AnyUtils {
 				// return Integer.valueOf(Integer.toBinaryString(theAny.extract_ulong()), 2);
 				return UnsignedUtils.toSigned(theAny.extract_ulong());
 			case TCKind._tk_ulonglong:
-				//				return Long.toBinaryString(theAny.extract_ulonglong()), 2);
+				// return Long.toBinaryString(theAny.extract_ulonglong()), 2);
 				return UnsignedUtils.toSigned(theAny.extract_ulonglong());
 			case TCKind._tk_ushort:
-				//				return (short) (theAny.extract_ushort() & AnyUtils.MAX_SHORT);
+				// return (short) (theAny.extract_ushort() & AnyUtils.MAX_SHORT);
 				return UnsignedUtils.toSigned(theAny.extract_ushort());
 			case TCKind._tk_value:
 				return theAny.extract_Value();
@@ -323,6 +364,8 @@ public final class AnyUtils {
 			case TCKind._tk_sequence:
 				if (PropertiesHelper.type().equivalent(typeCode)) {
 					return PropertiesHelper.extract(theAny);
+				} else if (UTCTimeSequenceHelper.type().equivalent(typeCode)) {
+					return UTCTimeSequenceHelper.extract(theAny);
 				}
 				ComplexNumber[] array = ComplexNumber.valueOfSequence(theAny);
 				if (array != null) {
@@ -338,29 +381,71 @@ public final class AnyUtils {
 				}
 			case TCKind._tk_struct:
 				// Extract Complex Types
-				if (complexBooleanHelper.type().equivalent(typeCode)) {
-					return ComplexBoolean.valueOf(theAny);
-				} else if (complexDoubleHelper.type().equivalent(typeCode)) {
-					return ComplexDouble.valueOf(theAny);
-				} else if (complexFloatHelper.type().equivalent(typeCode)) {
-					return ComplexFloat.valueOf(theAny);
-				} else if (complexLongHelper.type().equivalent(typeCode)) {
-					return ComplexLong.valueOf(theAny);
-				} else if (complexLongLongHelper.type().equivalent(typeCode)) {
-					return ComplexLongLong.valueOf(theAny);
-				} else if (complexShortHelper.type().equivalent(typeCode)) {
-					return ComplexShort.valueOf(theAny);
-				} else if (complexULongHelper.type().equivalent(typeCode)) {
-					return ComplexULong.valueOf(theAny);
-				} else if (complexULongLongHelper.type().equivalent(typeCode)) {
-					return ComplexULongLong.valueOf(theAny);
-				} else if (complexUShortHelper.type().equivalent(typeCode)) {
-					return ComplexUShort.valueOf(theAny);
-				} else if (complexOctetHelper.type().equivalent(typeCode)) {
-					return ComplexByte.valueOf(theAny);
-				} else if (complexCharHelper.type().equivalent(typeCode)) {
-					return ComplexUByte.valueOf(theAny);
+				switch (typeCode.id()) {
+				case "IDL:CF/complexBoolean:1.0":
+					if (complexBooleanHelper.type().equivalent(typeCode)) {
+						return ComplexBoolean.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/complexDouble:1.0":
+					if (complexDoubleHelper.type().equivalent(typeCode)) {
+						return ComplexDouble.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/complexFloat:1.0":
+					if (complexFloatHelper.type().equivalent(typeCode)) {
+						return ComplexFloat.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/complexLong:1.0":
+					if (complexLongHelper.type().equivalent(typeCode)) {
+						return ComplexLong.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/complexLongLong:1.0":
+					if (complexLongLongHelper.type().equivalent(typeCode)) {
+						return ComplexLongLong.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/complexShort:1.0":
+					if (complexShortHelper.type().equivalent(typeCode)) {
+						return ComplexShort.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/complexULong:1.0":
+					if (complexULongHelper.type().equivalent(typeCode)) {
+						return ComplexULong.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/complexULongLong:1.0":
+					if (complexULongLongHelper.type().equivalent(typeCode)) {
+						return ComplexULongLong.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/complexUShort:1.0":
+					if (complexUShortHelper.type().equivalent(typeCode)) {
+						return ComplexUShort.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/complexOctet:1.0":
+					if (complexOctetHelper.type().equivalent(typeCode)) {
+						return ComplexByte.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/complexChar:1.0":
+					if (complexCharHelper.type().equivalent(typeCode)) {
+						return ComplexUByte.valueOf(theAny);
+					}
+					break;
+				case "IDL:CF/UTCTime:1.0":
+					if (UTCTimeHelper.type().equivalent(typeCode)) {
+						return UTCTimeHelper.extract(theAny);
+					}
+					break;
+				default:
+					break;
 				}
+
 				throw new IllegalArgumentException("Unknown struct: " + typeCode);
 			case TCKind._tk_longdouble:
 			case TCKind._tk_array:
@@ -464,74 +549,240 @@ public final class AnyUtils {
 		}
 	}
 
+	/**
+	 * @deprecated Do not use.
+	 */
+	@Deprecated
 	public static String convertToStringName(final TCKind type) throws BadKind {
 		if (type == null) {
 			throw new NullPointerException();
 		}
-		return JacorbUtil.init().get_primitive_tc(type).name();
+
+		switch (type.value()) {
+		case TCKind._tk_any: // Note: Not a Redhawk property type
+			return "any";
+		case TCKind._tk_boolean:
+			return "boolean";
+		case TCKind._tk_char:
+			return "char";
+		case TCKind._tk_double:
+			return "double";
+		case TCKind._tk_fixed: // Note: Not a Redhawk property type
+			return "fixed";
+		case TCKind._tk_float:
+			return "float";
+		case TCKind._tk_long:
+			return "long";
+		case TCKind._tk_longlong:
+			return "longlong";
+		case TCKind._tk_objref:
+			return "objref";
+		case TCKind._tk_octet:
+			return "octet";
+		case TCKind._tk_short:
+			return "short";
+		case TCKind._tk_string:
+			return "string";
+		case TCKind._tk_TypeCode: // Note: Not a Redhawk property type
+			return "typecode";
+		case TCKind._tk_ulong:
+			return "ulong";
+		case TCKind._tk_ulonglong:
+			return "ulonglong";
+		case TCKind._tk_ushort:
+			return "ushort";
+		case TCKind._tk_value: // Note: Not a Redhawk property type
+			return "value";
+		case TCKind._tk_wchar: // Note: Not a Redhawk property type
+			return "wchar";
+		case TCKind._tk_wstring: // Note: Not a Redhawk property type
+			return "wstring";
+		default:
+			return ORB.get_primitive_tc(type).name();
+		}
 	}
 
+	/**
+	 * @deprecated Do not use.
+	 */
+	@Deprecated
 	public static TCKind convertToTCKind(final String type) {
 		if (type == null || "".equals(type)) {
 			return TCKind.tk_null;
-		} else if ("boolean".equals(type)) {
+		}
+
+		switch (type) {
+		case "boolean":
 			return TCKind.tk_boolean;
-		} else if ("char".equals(type)) {
+		case "char":
 			return TCKind.tk_char;
-		} else if ("double".equals(type)) {
+		case "double":
 			return TCKind.tk_double;
-		} else if ("fixed".equals(type)) {
+		case "fixed":
 			return TCKind.tk_fixed;
-		} else if ("float".equals(type)) {
+		case "float":
 			return TCKind.tk_float;
-		} else if ("long".equals(type)) {
+		case "long":
 			return TCKind.tk_long;
-		} else if ("longlong".equals(type)) {
+		case "longlong":
 			return TCKind.tk_longlong;
-		} else if ("objref".equals(type)) {
+		case "objref":
 			return TCKind.tk_objref;
-		} else if ("octet".equals(type)) {
+		case "octet":
 			return TCKind.tk_octet;
-		} else if ("short".equals(type)) {
+		case "short":
 			return TCKind.tk_short;
-		} else if ("string".equals(type)) {
+		case "string":
 			return TCKind.tk_string;
-		} else if ("typecode".equals(type)) {
+		case "typecode":
 			return TCKind.tk_TypeCode;
-		} else if ("ulong".equals(type)) {
+		case "ulong":
 			return TCKind.tk_ulong;
-		} else if ("ulonglong".equals(type)) {
+		case "ulonglong":
 			return TCKind.tk_ulonglong;
-		} else if ("ushort".equals(type)) {
+		case "ushort":
 			return TCKind.tk_ushort;
-		} else if ("value".equals(type)) {
+		case "value":
 			return TCKind.tk_value;
-		} else if ("wchar".equals(type)) {
+		case "wchar":
 			return TCKind.tk_wchar;
-		} else if ("wstring".equals(type)) {
+		case "wstring":
 			return TCKind.tk_wstring;
-		} else {
+		default:
 			throw new IllegalArgumentException("Unknown type: " + type);
 		}
 	}
 
 	/**
 	 * @since 3.4
+	 * @deprecated Use {@link #toAny(Object, String, boolean)}
 	 */
+	@Deprecated
 	public static Any toAny(final Object value, final TCKind type, boolean complex) {
+		if (type == null || type.value() == TCKind._tk_null) {
+			return ORB.create_any();
+		}
+
+		try {
+			return toAny(value, convertToStringName(type), complex);
+		} catch (BadKind e) {
+			return null;
+		}
+	}
+
+	/**
+	 * @since 3.0
+	 * @deprecated Do not use.
+	 */
+	@Deprecated
+	public static Any insertInto(final Any retVal, final Object value, final TCKind type) {
+		if (retVal == null) {
+			return null;
+		}
+		return AnyUtils.toAny(value, type, false);
+	}
+
+	private static Any primitiveToAny(final Object value, final String type) {
+		final Any retVal = ORB.create_any();
+
+		// Null yields null
 		if (value == null) {
-			return JacorbUtil.init().create_any();
+			return retVal;
 		}
-		if (value.getClass().isArray()) {
-			try {
-				return AnyUtils.toAnySequence(value, convertToStringName(type), complex);
-			} catch (BadKind e) {
-				return null;
+
+		switch (type) {
+		case "any": // Note: Not a Redhawk property type
+			retVal.insert_any((Any) value);
+			return retVal;
+		case "boolean":
+			retVal.insert_boolean((Boolean) value);
+			return retVal;
+		case "char":
+			retVal.insert_char((Character) value);
+			return retVal;
+		case "double":
+			retVal.insert_double(((Number) value).doubleValue());
+			return retVal;
+		case "fixed": // Note: Not a Redhawk property type
+			retVal.insert_fixed((BigDecimal) value);
+			return retVal;
+		case "float":
+			retVal.insert_float(((Number) value).floatValue());
+			return retVal;
+		case "long":
+			retVal.insert_long(((Number) value).intValue());
+			return retVal;
+		case "longlong":
+			retVal.insert_longlong(((Number) value).longValue());
+			return retVal;
+		case "objref":
+			if (value instanceof org.omg.CORBA.Object) {
+				retVal.insert_Object((org.omg.CORBA.Object) value);
 			}
+			return retVal;
+		case "octet":
+			retVal.insert_octet(UnsignedUtils.toUnsigned(((Number) value).shortValue()));
+			return retVal;
+		case "short":
+			retVal.insert_short(((Number) value).shortValue());
+			return retVal;
+		case "string":
+			retVal.insert_string(value.toString());
+			return retVal;
+		case "TypeCode": // Note: Not a Redhawk property type
+			retVal.insert_TypeCode((TypeCode) value);
+			return retVal;
+		case "ulong":
+			retVal.insert_ulong(((Number) value).intValue());
+			return retVal;
+		case "ulonglong":
+			retVal.insert_ulonglong(((Number) value).longValue());
+			return retVal;
+		case "ushort":
+			retVal.insert_ushort(((Number) value).shortValue());
+			return retVal;
+		case "value": // Note: Not a Redhawk property type
+			retVal.insert_Value((Serializable) value);
+			return retVal;
+		case "wchar": // Note: Not a Redhawk property type
+			retVal.insert_wchar((Character) value);
+			return retVal;
+		case "wstring": // Note: Not a Redhawk property type
+			retVal.insert_wstring(value.toString());
+			return retVal;
+		case "utctime":
+			UTCTimeHelper.insert(retVal, (UTCTime) value);
+			return retVal;
+		default:
+			throw new IllegalArgumentException("Unknown target type: " + type);
 		}
-		if (value instanceof ComplexNumber) {
-			complex = true;
+	}
+
+	/**
+	 * Inserts a Java value into an Any using the specified type and complex flag.
+	 * @param value the Java value (e.g. {@link Boolean}, {@link Float}, {@link ComplexNumber})
+	 * @param type the property type (e.g. "boolean", "float", "ulong")
+	 * @param complex true if the type is complex
+	 * @since 3.4
+	 * @see #stringToAny(String, String, boolean)
+	 */
+	public static Any toAny(Object value, final String type, boolean complex) {
+		// Null yields null
+		if (value == null || type == null) {
+			return ORB.create_any();
 		}
+
+		// If the value is a string, but the requested type isn't, parse the string to the requested Java type
+		if ((value instanceof String) && !"string".equals(type)) {
+			value = AnyUtils.convertString((String) value, type, complex);
+		}
+
+		// Sequences
+		if (value.getClass().isArray()) {
+			return AnyUtils.toAnySequence(value, type, complex);
+		}
+
+		// Simples
 		if (!complex) {
 			return AnyUtils.primitiveToAny(value, type);
 		} else {
@@ -541,109 +792,6 @@ public final class AnyUtils {
 				throw new IllegalArgumentException("Complex numbers must be of type: " + ComplexNumber.class.getName());
 			}
 		}
-	}
-
-	/**
-	 * @since 3.0
-	 */
-	public static Any insertInto(final Any retVal, final Object value, final TCKind type) {
-		if (retVal == null) {
-			return null;
-		}
-		return AnyUtils.toAny(value, type, false);
-	}
-
-	/**
-	 * @since 3.0
-	 */
-	private static Any primitiveToAny(final Object value, final TCKind type) {
-		final Any retVal = JacorbUtil.init().create_any();
-		if (value == null) {
-			return retVal;
-		}
-		switch (type.value()) {
-		case TCKind._tk_null:
-			break;
-		case TCKind._tk_any:
-			retVal.insert_any((Any) value);
-			break;
-		case TCKind._tk_boolean:
-			retVal.insert_boolean((Boolean) value);
-			break;
-		case TCKind._tk_char:
-			retVal.insert_char((Character) value);
-			break;
-		case TCKind._tk_double:
-			retVal.insert_double(((Number) value).doubleValue());
-			break;
-		case TCKind._tk_fixed:
-			retVal.insert_fixed((BigDecimal) value);
-			break;
-		case TCKind._tk_float:
-			retVal.insert_float(((Number) value).floatValue());
-			break;
-		case TCKind._tk_long:
-			retVal.insert_long(((Number) value).intValue());
-			break;
-		case TCKind._tk_longlong:
-			retVal.insert_longlong(((Number) value).longValue());
-			break;
-		case TCKind._tk_objref:
-			if (value instanceof org.omg.CORBA.Object) {
-				retVal.insert_Object((org.omg.CORBA.Object) value);
-			}
-			break;
-		case TCKind._tk_octet:
-			retVal.insert_octet(UnsignedUtils.toUnsigned(((Number) value).shortValue()));
-			break;
-		case TCKind._tk_short:
-			retVal.insert_short(((Number) value).shortValue());
-			break;
-		case TCKind._tk_string:
-			retVal.insert_string(value.toString());
-			break;
-		case TCKind._tk_TypeCode:
-			retVal.insert_TypeCode((TypeCode) value);
-			break;
-		case TCKind._tk_ulong:
-			retVal.insert_ulong(((Number) value).intValue());
-			break;
-		case TCKind._tk_ulonglong:
-			retVal.insert_ulonglong(((Number) value).longValue());
-			break;
-		case TCKind._tk_ushort:
-			retVal.insert_ushort(((Number) value).shortValue());
-			break;
-		case TCKind._tk_value:
-			retVal.insert_Value((Serializable) value);
-			break;
-		case TCKind._tk_wchar:
-			retVal.insert_wchar((Character) value);
-			break;
-		case TCKind._tk_wstring:
-			retVal.insert_wstring(value.toString());
-			break;
-		default:
-			throw new IllegalArgumentException("Unknown target type: TCKind value " + type.value());
-		}
-		return retVal;
-	}
-
-	/**
-	 * @since 3.4
-	 */
-	public static Any toAny(final Object value, final String type, boolean complex) {
-		final TCKind kind = AnyUtils.convertToTCKind(type);
-		if (value instanceof ComplexNumber) {
-			complex = true;
-		}
-
-		if ((value instanceof String) && (kind != TCKind.tk_string)) {
-
-			return AnyUtils.stringToAny((String) value, type, complex);
-		}
-
-		return AnyUtils.toAny(value, kind, complex);
 	}
 
 	/**
@@ -680,68 +828,94 @@ public final class AnyUtils {
 			throw new NullPointerException("REDHAWK property type");
 		}
 
-		final Any any = JacorbUtil.init().create_any();
+		final Any any = ORB.create_any();
 
 		if (complex) {
-			if ("boolean".equals(type)) {
+			switch (type) {
+			case "boolean":
 				insertComplexBooleanArray(any, array);
-			} else if ("char".equals(type)) {
+				return any;
+			case "char":
 				insertComplexUByteArray(any, array);
-			} else if ("double".equals(type)) {
+				return any;
+			case "double":
 				insertComplexDoubleArray(any, array);
-			} else if ("float".equals(type)) {
+				return any;
+			case "float":
 				insertComplexFloatArray(any, array);
-			} else if ("long".equals(type)) {
+				return any;
+			case "long":
 				insertComplexLongArray(any, array);
-			} else if ("longlong".equals(type)) {
+				return any;
+			case "longlong":
 				insertComplexLongLongArray(any, array);
-			} else if ("octet".equals(type)) {
+				return any;
+			case "octet":
 				insertComplexByteArray(any, array);
-			} else if ("short".equals(type)) {
+				return any;
+			case "short":
 				insertComplexShortArray(any, array);
-			} else if ("ulong".equals(type)) {
+				return any;
+			case "ulong":
 				insertComplexULongArray(any, array);
-			} else if ("ulonglong".equals(type)) {
+				return any;
+			case "ulonglong":
 				insertComplexULongLongArray(any, array);
-			} else if ("ushort".equals(type)) {
+				return any;
+			case "ushort":
 				insertComplexUShortArray(any, array);
-			} else {
+				return any;
+			default:
 				String msg = String.format("Type %s cannot be complex", type);
 				throw new IllegalArgumentException(msg);
 			}
-			return any;
 		}
 
-		if ("boolean".equals(type)) {
+		switch (type) {
+		case "boolean":
 			AnyUtils.insertBooleanArray(any, array);
-		} else if ("char".equals(type)) {
+			return any;
+		case "char":
 			AnyUtils.insertCharArray(any, array);
-		} else if ("double".equals(type)) {
+			return any;
+		case "double":
 			AnyUtils.insertDoubleArray(any, array);
-		} else if ("float".equals(type)) {
+			return any;
+		case "float":
 			AnyUtils.insertFloatArray(any, array);
-		} else if ("long".equals(type)) {
+			return any;
+		case "long":
 			AnyUtils.insertLongArray(any, array);
-		} else if ("longlong".equals(type)) {
+			return any;
+		case "longlong":
 			AnyUtils.insertLongLongArray(any, array);
-		} else if ("objref".equals(type)) {
+			return any;
+		case "objref":
 			throw new IllegalArgumentException("Sequences of type objref are not supported");
-		} else if ("octet".equals(type)) {
+		case "octet":
 			AnyUtils.insertOctetArray(any, array);
-		} else if ("short".equals(type)) {
+			return any;
+		case "short":
 			AnyUtils.insertShortArray(any, array);
-		} else if ("string".equals(type)) {
+			return any;
+		case "string":
 			StringSeqHelper.insert(any, AnyUtils.convertStringArray(array));
-		} else if ("ulong".equals(type)) {
+			return any;
+		case "ulong":
 			AnyUtils.insertULongArray(any, array);
-		} else if ("ulonglong".equals(type)) {
+			return any;
+		case "ulonglong":
 			AnyUtils.insertULongLongArray(any, array);
-		} else if ("ushort".equals(type)) {
+			return any;
+		case "ushort":
 			AnyUtils.insertUShortArray(any, array);
-		} else {
+			return any;
+		case "utctime":
+			UTCTimeSequenceHelper.insert(any, (UTCTime[]) array);
+			return any;
+		default:
 			throw new IllegalArgumentException("Unknown REDHAWK property type: " + type);
 		}
-		return any;
 	}
 
 	private static String[] convertStringArray(final Object value) {
@@ -1078,11 +1252,16 @@ public final class AnyUtils {
 	}
 
 	/**
+	 * Attempts to parse the string value to the appropriate Java type, and then insert it into an {@link Any}.
+	 * 
+	 * @param value the string form of the value
+	 * @param type the property value type (e.g. "long")
+	 * @param complex If the value should be interrupted as a complex number
 	 * @since 3.4
 	 */
 	public static Any stringToAny(final String value, final String type, boolean complex) {
 		final Object newValue = AnyUtils.convertString(value, type, complex);
-		return AnyUtils.toAny(newValue, AnyUtils.convertToTCKind(type), complex);
+		return AnyUtils.toAny(newValue, type, complex);
 	}
 
 	/**
@@ -1098,27 +1277,12 @@ public final class AnyUtils {
 				return !PropertiesHelper.type().equivalent(typeCode);
 			case TCKind._tk_alias:
 				// Check Complex Sequence Types
-				if (complexBooleanSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexDoubleSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexFloatSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexLongSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexLongLongSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexShortSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexULongSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexULongLongSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexUShortSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexOctetSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexCharSeqHelper.type().equivalent(typeCode)) {
+				if (complexBooleanSeqHelper.type().equivalent(typeCode) || complexDoubleSeqHelper.type().equivalent(typeCode)
+					|| complexFloatSeqHelper.type().equivalent(typeCode) || complexLongSeqHelper.type().equivalent(typeCode)
+					|| complexLongLongSeqHelper.type().equivalent(typeCode) || complexShortSeqHelper.type().equivalent(typeCode)
+					|| complexULongSeqHelper.type().equivalent(typeCode) || complexULongLongSeqHelper.type().equivalent(typeCode)
+					|| complexUShortSeqHelper.type().equivalent(typeCode) || complexOctetSeqHelper.type().equivalent(typeCode)
+					|| complexCharSeqHelper.type().equivalent(typeCode) || UTCTimeSequenceHelper.type().equal(typeCode)) {
 					return true;
 				}
 				return false;
@@ -1152,27 +1316,12 @@ public final class AnyUtils {
 		// Do this check because extract doesn't throw correctly
 		try {
 			// Check Complex Types
-			if (complexBooleanHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexDoubleHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexFloatHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexLongHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexLongLongHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexShortHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexULongHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexULongLongHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexUShortHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexOctetHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexCharHelper.type().equivalent(typeCode)) {
+			if (complexBooleanHelper.type().equivalent(typeCode) || complexDoubleHelper.type().equivalent(typeCode)
+				|| complexFloatHelper.type().equivalent(typeCode) || complexLongHelper.type().equivalent(typeCode)
+				|| complexLongLongHelper.type().equivalent(typeCode) || complexShortHelper.type().equivalent(typeCode)
+				|| complexULongHelper.type().equivalent(typeCode) || complexULongLongHelper.type().equivalent(typeCode)
+				|| complexUShortHelper.type().equivalent(typeCode) || complexOctetHelper.type().equivalent(typeCode)
+				|| complexCharHelper.type().equivalent(typeCode) || UTCTimeHelper.type().equivalent(typeCode)) {
 				return true;
 			}
 

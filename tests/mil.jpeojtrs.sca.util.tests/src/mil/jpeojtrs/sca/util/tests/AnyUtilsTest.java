@@ -16,18 +16,29 @@ import java.util.Arrays;
 
 import org.apache.commons.lang.ArrayUtils;
 import org.jacorb.JacorbUtil;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.BAD_OPERATION;
+import org.omg.CORBA.BooleanSeqHelper;
+import org.omg.CORBA.CharSeqHelper;
 import org.omg.CORBA.DoubleSeqHelper;
+import org.omg.CORBA.FloatSeqHelper;
+import org.omg.CORBA.LongLongSeqHelper;
 import org.omg.CORBA.LongSeqHelper;
+import org.omg.CORBA.ORB;
+import org.omg.CORBA.OctetSeqHelper;
+import org.omg.CORBA.ShortSeqHelper;
 import org.omg.CORBA.StringSeqHelper;
 import org.omg.CORBA.TCKind;
+import org.omg.CORBA.ULongLongSeqHelper;
+import org.omg.CORBA.ULongSeqHelper;
+import org.omg.CORBA.UShortSeqHelper;
 
+import CF.UTCTime;
+import CF.UTCTimeHelper;
+import CF.UTCTimeSequenceHelper;
 import mil.jpeojtrs.sca.util.AnyUtils;
 import mil.jpeojtrs.sca.util.math.ComplexBoolean;
 import mil.jpeojtrs.sca.util.math.ComplexByte;
@@ -44,142 +55,421 @@ import mil.jpeojtrs.sca.util.math.ComplexUShort;
 
 public class AnyUtilsTest {
 
-	private String value;
-	private String type;
-	private Any any;
+	private static final boolean[] BOOL_ARRAY = new boolean[] { true, false, true };
+	private static final char[] CHAR_ARRAY = new char[] { 'a', 'b', 'c' };
+	private static final double[] DOUBLE_ARRAY = new double[] { 1.1, 2.2, 3.3 };
+	private static final float[] FLOAT_ARRAY = new float[] { 4.4f, 5.5f, 6.6f };
+	private static final int[] LONG_ARRAY = new int[] { 7, 8, 9 };
+	private static final long[] LONG_LONG_ARRAY = new long[] { 10, 11, 12 };
+	private static final byte[] OCTET_ARRAY = new byte[] { 13, 14, 15 };
+	private static final short[] SHORT_ARRAY = new short[] { 13, 14, 15 };
+	private static final String[] STRING_ARRAY = new String[] { "abc", "def", "ghi" };
+	private static final int[] ULONG_ARRAY = new int[] { 16, 17, 18 };
+	private static final long[] ULONG_LONG_ARRAY = new long[] { 19, 20, 21 };
+	private static final short[] USHORT_ARRAY = new short[] { 22, 23, 24 };
+	private static final UTCTime[] UTC_TIME_ARRAY = new UTCTime[] { new UTCTime((short) 1, 2, 0.3), new UTCTime((short) 4, 5, 0.6) };
 
-	@Before
-	public void setUp() throws Exception {
-		this.any = AnyUtils.toAny("true", "boolean", false);
-	}
+	private final ORB orb = JacorbUtil.init();
 
-	@After
-	public void tearDown() throws Exception {
-		this.value = null;
-		this.type = null;
+	/**
+	 * @deprecated Target method should not be used.
+	 */
+	@Deprecated
+	@Test
+	public void toAny_objectTCKindBoolean() throws Exception {
+		// Nulls value or type should yield an Any with null type
+		final Object value = null;
+		final TCKind type = null;
+		Assert.assertEquals(orb.create_any(), AnyUtils.toAny("abc", type, false));
+		Assert.assertEquals(orb.create_any(), AnyUtils.toAny(value, TCKind.tk_string, false));
+
+		Any expectedAny = orb.create_any();
+		Any nestedAny = orb.create_any();
+		nestedAny.insert_double(1.0);
+		expectedAny.insert_any(nestedAny);
+		Any ourAny = AnyUtils.toAny(nestedAny, TCKind.tk_any, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_boolean(true);
+		ourAny = AnyUtils.toAny(true, TCKind.tk_boolean, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_char('a');
+		ourAny = AnyUtils.toAny('a', TCKind.tk_char, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_double(1.2);
+		ourAny = AnyUtils.toAny(1.2, TCKind.tk_double, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		// We don't test "fixed"
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_float(3.4f);
+		ourAny = AnyUtils.toAny(3.4, TCKind.tk_float, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_long(5);
+		ourAny = AnyUtils.toAny(5, TCKind.tk_long, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_longlong(6L);
+		ourAny = AnyUtils.toAny(6L, TCKind.tk_longlong, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		// We don't test "objref"
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_octet((byte) 7);
+		ourAny = AnyUtils.toAny((byte) 7, TCKind.tk_octet, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_short((short) 8);
+		ourAny = AnyUtils.toAny((short) 8, TCKind.tk_short, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_string("abc");
+		ourAny = AnyUtils.toAny("abc", TCKind.tk_string, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		// We don't test "TypeCode"
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_ulong(9);
+		ourAny = AnyUtils.toAny(9, TCKind.tk_ulong, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_ulonglong(10L);
+		ourAny = AnyUtils.toAny(10L, TCKind.tk_ulonglong, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_ushort((short) 11);
+		ourAny = AnyUtils.toAny((short) 11, TCKind.tk_ushort, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		// We don't test "Value"
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_wchar('b');
+		ourAny = AnyUtils.toAny('b', TCKind.tk_wchar, false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_wstring("def");
+		ourAny = AnyUtils.toAny("def", TCKind.tk_wstring, false);
+		Assert.assertEquals(expectedAny, ourAny);
 	}
 
 	@Test
-	public void test_toAny() throws Exception {
-		this.any = AnyUtils.toAny("Typecode Value", TCKind.tk_string, false);
-		Assert.assertNotNull(this.any);
-		Assert.assertTrue(this.any instanceof Any);
-		Assert.assertEquals(TCKind.tk_string, this.any.type().kind());
-		Assert.assertEquals("Typecode Value", this.any.extract_string());
-		
-		this.any = AnyUtils.toAny(null, TCKind.tk_null, false);
-		Assert.assertNotNull(this.any);
-		Assert.assertTrue(this.any instanceof Any);
-		Assert.assertEquals(TCKind.tk_null, this.any.type().kind());
-		
-		this.any = AnyUtils.toAny(8.8, TCKind.tk_null, false);
-		Assert.assertNotNull(this.any);
-		Assert.assertTrue(this.any instanceof Any);
-		Assert.assertEquals(TCKind.tk_null, this.any.type().kind());
+	public void toAny_objectStringBoolean_simples() throws Exception {
+		// Nulls value or type should yield an Any with null type
+		final Object value = null;
+		final String type = null;
+		Assert.assertEquals(orb.create_any(), AnyUtils.toAny("abc", type, false));
+		Assert.assertEquals(orb.create_any(), AnyUtils.toAny(value, "string", false));
+
+		Any expectedAny = orb.create_any();
+		Any nestedAny = orb.create_any();
+		nestedAny.insert_double(1.0);
+		expectedAny.insert_any(nestedAny);
+		Any ourAny = AnyUtils.toAny(nestedAny, "any", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_boolean(true);
+		ourAny = AnyUtils.toAny(true, "boolean", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_char('a');
+		ourAny = AnyUtils.toAny('a', "char", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_double(1.2);
+		ourAny = AnyUtils.toAny(1.2, "double", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		// We don't test "fixed"
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_float(3.4f);
+		ourAny = AnyUtils.toAny(3.4, "float", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_long(5);
+		ourAny = AnyUtils.toAny(5, "long", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_longlong(6L);
+		ourAny = AnyUtils.toAny(6L, "longlong", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		// We don't test "objref"
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_octet((byte) 7);
+		ourAny = AnyUtils.toAny((byte) 7, "octet", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_short((short) 8);
+		ourAny = AnyUtils.toAny((short) 8, "short", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_string("abc");
+		ourAny = AnyUtils.toAny("abc", "string", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		// We don't test "TypeCode"
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_ulong(9);
+		ourAny = AnyUtils.toAny(9, "ulong", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_ulonglong(10L);
+		ourAny = AnyUtils.toAny(10L, "ulonglong", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_ushort((short) 11);
+		ourAny = AnyUtils.toAny((short) 11, "ushort", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		// We don't test "Value"
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_wchar('b');
+		ourAny = AnyUtils.toAny('b', "wchar", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		expectedAny.insert_wstring("def");
+		ourAny = AnyUtils.toAny("def", "wstring", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		UTCTime time = new UTCTime((short) 1, 2, 0.345678);
+		expectedAny = orb.create_any();
+		UTCTimeHelper.insert(expectedAny, time);
+		ourAny = AnyUtils.toAny(time, "utctime", false);
+		Assert.assertEquals(expectedAny, ourAny);
 	}
 
 	@Test
-	public void test_convertString() throws Exception {
-		this.value = "true";
-		this.type = "boolean";
+	public void toAny_objectStringBoolean_sequences() {
+		Any expectedAny = orb.create_any();
+		BooleanSeqHelper.insert(expectedAny, BOOL_ARRAY);
+		Any ourAny = AnyUtils.toAny(BOOL_ARRAY, "boolean", false);
+		Assert.assertEquals(expectedAny, ourAny);
 
-		final Boolean result = (Boolean) AnyUtils.convertString(this.value, this.type);
-		Assert.assertTrue(result);
+		expectedAny = orb.create_any();
+		CharSeqHelper.insert(expectedAny, CHAR_ARRAY);
+		ourAny = AnyUtils.toAny(CHAR_ARRAY, "char", false);
+		Assert.assertEquals(expectedAny, ourAny);
 
-		Assert.assertNull(AnyUtils.convertString(null, this.type));
-		Object val = AnyUtils.convertString("REDHAWK", "string");
+		expectedAny = orb.create_any();
+		DoubleSeqHelper.insert(expectedAny, DOUBLE_ARRAY);
+		ourAny = AnyUtils.toAny(DOUBLE_ARRAY, "double", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		FloatSeqHelper.insert(expectedAny, FLOAT_ARRAY);
+		ourAny = AnyUtils.toAny(FLOAT_ARRAY, "float", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		LongSeqHelper.insert(expectedAny, LONG_ARRAY);
+		ourAny = AnyUtils.toAny(LONG_ARRAY, "long", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		LongLongSeqHelper.insert(expectedAny, LONG_LONG_ARRAY);
+		ourAny = AnyUtils.toAny(LONG_LONG_ARRAY, "longlong", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		try {
+			AnyUtils.toAny(new Object[0], "objref", false);
+			Assert.fail("Sequences of objref are not supported - change the test if this has been implemented");
+		} catch (IllegalArgumentException e) {
+			// PASS
+		}
+
+		expectedAny = orb.create_any();
+		OctetSeqHelper.insert(expectedAny, OCTET_ARRAY);
+		ourAny = AnyUtils.toAny(OCTET_ARRAY, "octet", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		ShortSeqHelper.insert(expectedAny, SHORT_ARRAY);
+		ourAny = AnyUtils.toAny(SHORT_ARRAY, "short", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		StringSeqHelper.insert(expectedAny, STRING_ARRAY);
+		ourAny = AnyUtils.toAny(STRING_ARRAY, "string", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		ULongSeqHelper.insert(expectedAny, ULONG_ARRAY);
+		ourAny = AnyUtils.toAny(ULONG_ARRAY, "ulong", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		ULongLongSeqHelper.insert(expectedAny, ULONG_LONG_ARRAY);
+		ourAny = AnyUtils.toAny(ULONG_LONG_ARRAY, "ulonglong", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		UShortSeqHelper.insert(expectedAny, USHORT_ARRAY);
+		ourAny = AnyUtils.toAny(USHORT_ARRAY, "ushort", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		UTCTimeSequenceHelper.insert(expectedAny, UTC_TIME_ARRAY);
+		ourAny = AnyUtils.toAny(UTC_TIME_ARRAY, "utctime", false);
+		Assert.assertEquals(expectedAny, ourAny);
+	}
+
+	@Test
+	public void convertString() throws Exception {
+		Object val = AnyUtils.convertString("true", "boolean", false);
+		Assert.assertTrue(val instanceof Boolean);
+		Assert.assertTrue((Boolean) val);
+		Assert.assertNull(AnyUtils.convertString(null, "boolean", false));
+
+		val = AnyUtils.convertString("REDHAWK", "string", false);
 		Assert.assertTrue(val instanceof String);
 		Assert.assertEquals("REDHAWK", (String) val);
-		val = AnyUtils.convertString("KWAHDER", "wstring");
+		val = AnyUtils.convertString("KWAHDER", "wstring", false);
 		Assert.assertTrue(val instanceof String);
 		Assert.assertEquals("KWAHDER", (String) val);
-		val = AnyUtils.convertString("K", "char");
+
+		val = AnyUtils.convertString("K", "char", false);
 		Assert.assertTrue(val instanceof Character);
 		Assert.assertEquals('K', ((Character) val).charValue());
-		val = AnyUtils.convertString("H", "wchar");
+		val = AnyUtils.convertString("H", "wchar", false);
 		Assert.assertTrue(val instanceof Character);
 		Assert.assertEquals('H', ((Character) val).charValue());
-		val = AnyUtils.convertString("1.0", "double");
+
+		val = AnyUtils.convertString("1.0", "double", false);
 		Assert.assertTrue(val instanceof Double);
 		Assert.assertEquals(1.0, val);
-		val = AnyUtils.convertString("1.0", "float");
+		val = AnyUtils.convertString("1.0", "float", false);
 		Assert.assertTrue(val instanceof Float);
 		Assert.assertEquals(1.0F, val);
-		val = AnyUtils.convertString("2", "short");
+
+		val = AnyUtils.convertString("2", "short", false);
 		Assert.assertTrue(val instanceof Short);
 		Assert.assertEquals((short) 2, ((Short) val).shortValue());
-		val = AnyUtils.convertString("4", "ushort");
+		val = AnyUtils.convertString("4", "ushort", false);
 		Assert.assertTrue(val instanceof Integer);
 		Assert.assertEquals(4, ((Integer) val).intValue());
-		val = AnyUtils.convertString(Integer.MAX_VALUE + "", "long");
+
+		val = AnyUtils.convertString(Integer.MAX_VALUE + "", "long", false);
 		Assert.assertTrue(val instanceof Integer);
 		Assert.assertEquals(Integer.MAX_VALUE, ((Integer) val).intValue());
-		val = AnyUtils.convertString(Long.valueOf(2L * Integer.MAX_VALUE + 1L).toString(), "ulong");
+		val = AnyUtils.convertString(Long.valueOf(2L * Integer.MAX_VALUE + 1L).toString(), "ulong", false);
 		Assert.assertTrue(val instanceof Long);
 		Assert.assertEquals(2L * Integer.MAX_VALUE + 1L, ((Long) val).longValue());
-		val = AnyUtils.convertString(Long.MAX_VALUE + "", "longlong");
+
+		val = AnyUtils.convertString(Long.MAX_VALUE + "", "longlong", false);
 		Assert.assertTrue(val instanceof Long);
 		Assert.assertEquals(Long.MAX_VALUE, ((Long) val).longValue());
-		val = AnyUtils.convertString(Long.MAX_VALUE + "", "ulonglong");
+		val = AnyUtils.convertString(Long.MAX_VALUE + "", "ulonglong", false);
 		Assert.assertTrue(val instanceof BigInteger);
 		Assert.assertEquals(Long.MAX_VALUE, ((BigInteger) val).longValue());
-		val = AnyUtils.convertString(Byte.MAX_VALUE + "", "octet");
+
+		val = AnyUtils.convertString(Byte.MAX_VALUE + "", "octet", false);
 		Assert.assertTrue(val instanceof Short);
 		Assert.assertEquals(Byte.MAX_VALUE, ((Short) val).byteValue());
+
+		val = AnyUtils.convertString("1970:01:02::03:04:05.678901", "utctime", false);
+		Assert.assertTrue(val instanceof UTCTime);
+		Assert.assertEquals((1 * 24 * 60 * 60) + (3 * 60 * 60) + (4 * 60) + 5, ((UTCTime) val).twsec, 0.0);
+		Assert.assertEquals(0.678901, ((UTCTime) val).tfsec, 0.0);
 	}
 
-	
 	/**
-	 * @deprecated Test deprecated
+	 * @deprecated Target method should not be used.
 	 */
 	@Test
 	@Deprecated
-	public void test_insertInto() {
+	public void insertInto() {
 		Assert.assertNull(AnyUtils.insertInto(null, null, TCKind.tk_boolean));
 		Assert.assertNotNull(AnyUtils.insertInto(JacorbUtil.init().create_any(), null, TCKind.tk_boolean));
 	}
 
 	@Test
-	public void test_convertAny() throws Exception {
-		final Boolean result = (Boolean) AnyUtils.convertAny(this.any);
+	public void convertAny_simples() throws Exception {
+		Any any = AnyUtils.toAny("true", "boolean", false);
+		final Boolean result = (Boolean) AnyUtils.convertAny(any);
 
 		Assert.assertTrue(result);
 
 		Assert.assertNull(AnyUtils.convertAny(null));
 
-		String str = (String) AnyUtils.convertAny(AnyUtils.toAny("2", TCKind.tk_string, false));
+		any = JacorbUtil.init().create_any();
+		any.insert_string("2");
+		String str = (String) AnyUtils.convertAny(AnyUtils.toAny("2", "string", false));
 		Assert.assertEquals("2", str);
-		str = (String) AnyUtils.convertAny(AnyUtils.toAny("3", TCKind.tk_wstring, false));
+		str = (String) AnyUtils.convertAny(AnyUtils.toAny("3", "wstring", false));
 		Assert.assertEquals("3", str);
-		final short b = (Short) AnyUtils.convertAny(AnyUtils.toAny(Byte.MAX_VALUE, TCKind.tk_octet, false));
+
+		final short b = (Short) AnyUtils.convertAny(AnyUtils.toAny(Byte.MAX_VALUE, "octet", false));
 		Assert.assertEquals(Byte.MAX_VALUE, b);
-		char c = (Character) AnyUtils.convertAny(AnyUtils.toAny(Character.MAX_VALUE, TCKind.tk_char, false));
+		char c = (Character) AnyUtils.convertAny(AnyUtils.toAny(Character.MAX_VALUE, "char", false));
 		Assert.assertEquals(Character.MAX_VALUE, c);
-		c = (Character) AnyUtils.convertAny(AnyUtils.toAny(new Character('2'), TCKind.tk_wchar, false));
+		c = (Character) AnyUtils.convertAny(AnyUtils.toAny(new Character('2'), "wchar", false));
 		Assert.assertEquals('2', c);
-		final short s = (Short) AnyUtils.convertAny(AnyUtils.toAny(Short.MAX_VALUE, TCKind.tk_short, false));
+
+		final short s = (Short) AnyUtils.convertAny(AnyUtils.toAny(Short.MAX_VALUE, "short", false));
 		Assert.assertEquals(Short.MAX_VALUE, s);
-		final int i = (Integer) AnyUtils.convertAny(AnyUtils.toAny(Integer.MAX_VALUE, TCKind.tk_long, false));
+		final int i = (Integer) AnyUtils.convertAny(AnyUtils.toAny(Integer.MAX_VALUE, "long", false));
 		Assert.assertEquals(Integer.MAX_VALUE, i);
-		final long l = (Long) AnyUtils.convertAny(AnyUtils.toAny(Long.MAX_VALUE, TCKind.tk_longlong, false));
+		final long l = (Long) AnyUtils.convertAny(AnyUtils.toAny(Long.MAX_VALUE, "longlong", false));
 		Assert.assertEquals(Long.MAX_VALUE, l);
-		final float f = (Float) AnyUtils.convertAny(AnyUtils.toAny(Float.MAX_VALUE, TCKind.tk_float, false));
+
+		final float f = (Float) AnyUtils.convertAny(AnyUtils.toAny(Float.MAX_VALUE, "float", false));
 		Assert.assertEquals(Float.MAX_VALUE, f, 0.00001);
-		final double d = (Double) AnyUtils.convertAny(AnyUtils.toAny(Double.MAX_VALUE, TCKind.tk_double, false));
+		final double d = (Double) AnyUtils.convertAny(AnyUtils.toAny(Double.MAX_VALUE, "double", false));
 		Assert.assertEquals(Double.MAX_VALUE, d, 0.00001);
-		final int us = (Integer) AnyUtils.convertAny(AnyUtils.toAny(Short.MAX_VALUE, TCKind.tk_ushort, false));
+
+		final int us = (Integer) AnyUtils.convertAny(AnyUtils.toAny(Short.MAX_VALUE, "ushort", false));
 		Assert.assertEquals(Short.MAX_VALUE, us);
-		final long ui = (Long) AnyUtils.convertAny(AnyUtils.toAny(Integer.MAX_VALUE, TCKind.tk_ulong, false));
+		final long ui = (Long) AnyUtils.convertAny(AnyUtils.toAny(Integer.MAX_VALUE, "ulong", false));
 		Assert.assertEquals(Integer.MAX_VALUE, ui);
-		final BigInteger ul = (BigInteger) AnyUtils.convertAny(AnyUtils.toAny(Long.MAX_VALUE, TCKind.tk_ulonglong, false));
+		final BigInteger ul = (BigInteger) AnyUtils.convertAny(AnyUtils.toAny(Long.MAX_VALUE, "ulonglong", false));
 		Assert.assertEquals(Long.MAX_VALUE, ul.longValue());
-		
-		/** TODO Big Decimal not supported
-		final BigDecimal fix = (BigDecimal) AnyUtils.convertAny(AnyUtils.toAny(new BigDecimal(1.0), TCKind.tk_fixed));
-		Assert.assertEquals(1.0, fix.doubleValue(), 0.00001);
-		*/
-		
-		Any tmpAny = (Any) AnyUtils.convertAny(AnyUtils.toAny(AnyUtils.toAny(1, TCKind.tk_long, false), TCKind.tk_any, false));
+
+		Object obj = AnyUtils.convertAny(AnyUtils.toAny(UTC_TIME_ARRAY[0], "utctime", false));
+		Assert.assertTrue(obj instanceof UTCTime);
+		UTCTime utcTime = (UTCTime) obj;
+		Assert.assertEquals(UTC_TIME_ARRAY[0].tcstatus, utcTime.tcstatus);
+		Assert.assertEquals(UTC_TIME_ARRAY[0].twsec, utcTime.twsec, 0.0);
+		Assert.assertEquals(UTC_TIME_ARRAY[0].tfsec, utcTime.tfsec, 0.0);
+
+		/**
+		 * TODO Big Decimal not supported
+		 * final BigDecimal fix = (BigDecimal) AnyUtils.convertAny(AnyUtils.toAny(new BigDecimal(1.0),
+		 * TCKind.tk_fixed));
+		 * Assert.assertEquals(1.0, fix.doubleValue(), 0.00001);
+		 */
+
+		Any tmpAny = (Any) AnyUtils.convertAny(AnyUtils.toAny(AnyUtils.toAny(1, "long", false), "any", false));
 		Assert.assertNotNull(tmpAny);
 		Assert.assertEquals(1, tmpAny.extract_long());
 		/** TODO Why do these not work in Jacorb? **/
@@ -193,8 +483,12 @@ public class AnyUtilsTest {
 //		Assert.assertNull(obj);
 	}
 
+	/**
+	 * @deprecated Target method should not be used.
+	 */
 	@Test
-	public void test_convertToStringName() throws Exception {
+	@Deprecated
+	public void convertToStringName() throws Exception {
 		final TCKind tcKind = AnyUtils.convertToTCKind("value");
 
 		Assert.assertEquals(TCKind.tk_value, tcKind);
@@ -204,8 +498,12 @@ public class AnyUtilsTest {
 		Assert.assertNotNull(result);
 	}
 
+	/**
+	 * @deprecated Target method should not be used.
+	 */
 	@Test
-	public void test_convertToTCKind() throws Exception {
+	@Deprecated
+	public void convertToTCKind() throws Exception {
 		TCKind tcKind = AnyUtils.convertToTCKind("typecode");
 		Assert.assertEquals(TCKind.tk_TypeCode, tcKind);
 		tcKind = AnyUtils.convertToTCKind("boolean");
@@ -245,41 +543,45 @@ public class AnyUtilsTest {
 	}
 
 	@Test
-	public void test_toAnyWithObjectandString() throws Exception {
-		this.any = AnyUtils.toAny("some value", "string", false);
+	public void toAnyWithObjectandString() throws Exception {
+		Any any = AnyUtils.toAny("some value", "string", false);
 
-		Assert.assertNotNull(this.any);
-		Assert.assertTrue(this.any instanceof Any);
-		Assert.assertEquals("some value", this.any.extract_string());
+		Assert.assertNotNull(any);
+		Assert.assertEquals("some value", any.extract_string());
 	}
 
 	@Test
-	public void test_stringToAny() throws Exception {
-		this.any = AnyUtils.stringToAny("some value", "string", false);
+	public void stringToAny() throws Exception {
+		Any any = AnyUtils.stringToAny("some value", "string", false);
 
-		Assert.assertNotNull(this.any);
-		Assert.assertTrue(this.any instanceof Any);
-		Assert.assertEquals("some value", this.any.extract_string());
+		Assert.assertNotNull(any);
+		Assert.assertEquals("some value", any.extract_string());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void test_convertStringBAD() throws Exception {
-		this.value = "true";
-		this.type = "computer";
-		AnyUtils.convertString(this.value, this.type);
+	public void convertString_badType() throws Exception {
+		AnyUtils.convertString("true", "computer", false);
 	}
 
-	public void test_convertAnyBAD() throws Exception {
-		AnyUtils.convertAny(null);
+	public void convertAny_null() {
+		Assert.assertNull(AnyUtils.convertAny(null));
 	}
 
+	/**
+	 * @deprecated Target method should not be used.
+	 */
+	@Deprecated
 	@Test(expected = NullPointerException.class)
-	public void test_convertToStringNameBAD() throws Exception {
+	public void convertToStringName_bad() throws Exception {
 		AnyUtils.convertToStringName(null);
 	}
 
+	/**
+	 * @deprecated Target method should not be used.
+	 */
+	@Deprecated
 	@Test
-	public void test_convertToTCKindBAD() throws Exception {
+	public void convertToTCKind_bad() throws Exception {
 		try {
 			AnyUtils.convertToTCKind(null);
 		} catch (final NullPointerException e) {
@@ -293,20 +595,24 @@ public class AnyUtilsTest {
 		}
 	}
 
+	/**
+	 * @deprecated Target method should not be used.
+	 */
+	@Deprecated
 	@Test(expected = BAD_OPERATION.class)
-	public void test_toAnyBAD() throws Exception {
+	public void toAnyBAD() throws Exception {
 		final TCKind tcKind = null;
 		final Any tmpAny = AnyUtils.toAny(null, tcKind, false);
-		Assert.assertEquals(TCKind.tk_null, tmpAny.extract_TypeCode().kind());
+		tmpAny.extract_TypeCode();
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void test_toAnyWithObjectandStringv() throws Exception {
+	public void toAny_badType() throws Exception {
 		AnyUtils.toAny("some value", "strings", false);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void test_stringToAnyBAD() throws Exception {
+	public void stringToAny_badType() throws Exception {
 		AnyUtils.stringToAny("some value", "strings", false);
 	}
 
@@ -607,7 +913,8 @@ public class AnyUtilsTest {
 
 	@Test
 	public void complexULongLong_sequence() throws Exception {
-		Object[] cValue = new ComplexULongLong[] { new ComplexULongLong(new BigInteger("1"), new BigInteger("2")), new ComplexULongLong(new BigInteger("3"), new BigInteger("4")) };
+		Object[] cValue = new ComplexULongLong[] { new ComplexULongLong(new BigInteger("1"), new BigInteger("2")),
+			new ComplexULongLong(new BigInteger("3"), new BigInteger("4")) };
 		Any ourAny = AnyUtils.toAny(cValue, "ulonglong", true);
 
 		CF.complexULongLong[] complexULongLong = new CF.complexULongLong[] { new CF.complexULongLong(1, 2), new CF.complexULongLong(3, 4) };
@@ -652,7 +959,7 @@ public class AnyUtilsTest {
 	}
 
 	@Test
-	public void test_complex() throws Exception {
+	public void complex() throws Exception {
 		ComplexNumber cValue = new ComplexBoolean();
 		Any tmpAny = cValue.toAny();
 		Object newValue = AnyUtils.convertAny(tmpAny);
@@ -710,7 +1017,82 @@ public class AnyUtilsTest {
 	}
 
 	@Test
-	public void test_convertAnySequences() throws Exception {
+	public void toAnySequence() {
+		Any expectedAny = orb.create_any();
+		BooleanSeqHelper.insert(expectedAny, BOOL_ARRAY);
+		Any ourAny = AnyUtils.toAnySequence(BOOL_ARRAY, "boolean", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		CharSeqHelper.insert(expectedAny, CHAR_ARRAY);
+		ourAny = AnyUtils.toAnySequence(CHAR_ARRAY, "char", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		DoubleSeqHelper.insert(expectedAny, DOUBLE_ARRAY);
+		ourAny = AnyUtils.toAnySequence(DOUBLE_ARRAY, "double", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		FloatSeqHelper.insert(expectedAny, FLOAT_ARRAY);
+		ourAny = AnyUtils.toAnySequence(FLOAT_ARRAY, "float", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		LongSeqHelper.insert(expectedAny, LONG_ARRAY);
+		ourAny = AnyUtils.toAnySequence(LONG_ARRAY, "long", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		LongLongSeqHelper.insert(expectedAny, LONG_LONG_ARRAY);
+		ourAny = AnyUtils.toAnySequence(LONG_LONG_ARRAY, "longlong", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		try {
+			AnyUtils.toAnySequence(new Object[0], "objref", false);
+			Assert.fail("Sequences of objref are not supported - change the test if this has been implemented");
+		} catch (IllegalArgumentException e) {
+			// PASS
+		}
+
+		expectedAny = orb.create_any();
+		OctetSeqHelper.insert(expectedAny, OCTET_ARRAY);
+		ourAny = AnyUtils.toAnySequence(OCTET_ARRAY, "octet", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		ShortSeqHelper.insert(expectedAny, SHORT_ARRAY);
+		ourAny = AnyUtils.toAnySequence(SHORT_ARRAY, "short", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		StringSeqHelper.insert(expectedAny, STRING_ARRAY);
+		ourAny = AnyUtils.toAnySequence(STRING_ARRAY, "string", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		ULongSeqHelper.insert(expectedAny, ULONG_ARRAY);
+		ourAny = AnyUtils.toAnySequence(ULONG_ARRAY, "ulong", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		ULongLongSeqHelper.insert(expectedAny, ULONG_LONG_ARRAY);
+		ourAny = AnyUtils.toAnySequence(ULONG_LONG_ARRAY, "ulonglong", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		UShortSeqHelper.insert(expectedAny, USHORT_ARRAY);
+		ourAny = AnyUtils.toAnySequence(USHORT_ARRAY, "ushort", false);
+		Assert.assertEquals(expectedAny, ourAny);
+
+		expectedAny = orb.create_any();
+		UTCTimeSequenceHelper.insert(expectedAny, UTC_TIME_ARRAY);
+		ourAny = AnyUtils.toAnySequence(UTC_TIME_ARRAY, "utctime", false);
+		Assert.assertEquals(expectedAny, ourAny);
+	}
+
+	@Test
+	public void convertAny_sequences() throws Exception {
 		// Test Strings
 		Object obj = null;
 		Any theAny = JacorbUtil.init().create_any();
@@ -796,9 +1178,19 @@ public class AnyUtilsTest {
 		Assert.assertEquals(Short.MAX_VALUE, us[1].intValue());
 		final Long[] ui = (Long[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new int[] { Integer.MIN_VALUE, Integer.MAX_VALUE }, "ulong", false));
 		Assert.assertEquals(Integer.MAX_VALUE, ui[1].longValue());
-		final BigInteger[] ul = (BigInteger[]) AnyUtils.convertAny(AnyUtils.toAnySequence(new BigInteger[] { new BigInteger("2"), new BigInteger("3") },
-			"ulonglong", false));
+		final BigInteger[] ul = (BigInteger[]) AnyUtils.convertAny(
+			AnyUtils.toAnySequence(new BigInteger[] { new BigInteger("2"), new BigInteger("3") }, "ulonglong", false));
 		Assert.assertEquals(3L, ul[1].longValue());
+
+		obj = AnyUtils.convertAny(AnyUtils.toAny(UTC_TIME_ARRAY, "utctime", false));
+		Assert.assertTrue(obj instanceof UTCTime[]);
+		UTCTime[] utcTimeArray = (UTCTime[]) obj;
+		Assert.assertEquals(UTC_TIME_ARRAY.length, utcTimeArray.length);
+		for (int index = 0; index < UTC_TIME_ARRAY.length; index++) {
+			Assert.assertEquals(UTC_TIME_ARRAY[index].tcstatus, utcTimeArray[index].tcstatus);
+			Assert.assertEquals(UTC_TIME_ARRAY[index].twsec, utcTimeArray[index].twsec, 0.0);
+			Assert.assertEquals(UTC_TIME_ARRAY[index].tfsec, utcTimeArray[index].tfsec, 0.0);
+		}
 	}
 
 }
