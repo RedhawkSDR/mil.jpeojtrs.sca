@@ -162,4 +162,11 @@ public class PropertyValueTypeTest extends TestCase {
 		Assert.assertEquals(MAX_USHORT + 1 + " is not a valid ushort value", false, this.type.isValueOfType(String.valueOf(MAX_USHORT + 1)));
 	}
 
+	public void testUtcTime() {
+		this.type = PropertyValueType.UTCTIME;
+		Assert.assertFalse("null is not a valid utctime value", this.type.isValueOfType(null));
+		Assert.assertFalse("0 is not a valid utctime value", this.type.isValueOfType("0"));
+		Assert.assertTrue("utctime without fractional seconds should be valid", this.type.isValueOfType("2001:02:03::04:05:06"));
+		Assert.assertTrue("utctime with fractional seconds should be valid", this.type.isValueOfType("2017:02:09::17:05:00.123456"));
+	}
 }
