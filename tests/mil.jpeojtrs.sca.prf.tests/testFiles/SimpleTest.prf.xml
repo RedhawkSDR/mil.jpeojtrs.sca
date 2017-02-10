@@ -107,4 +107,9 @@
     <kind kindtype="property"/>
     <action type="external"/>
   </simple>
+  <simple id="utctime" mode="readwrite" type="utctime">
+    <value>2017:02:10::18:37:42.123456</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
 </properties>

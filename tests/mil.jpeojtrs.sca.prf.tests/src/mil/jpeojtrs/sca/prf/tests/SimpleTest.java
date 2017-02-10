@@ -273,6 +273,9 @@ public class SimpleTest extends AbstractPropertyTest {
 		simple = (Simple) props.getProperty("ushort");
 		Assert.assertNotNull(simple);
 		Assert.assertEquals("8", simple.getValue());
+		simple = (Simple) props.getProperty("utctime");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("2017:02:10::18:37:42.123456", simple.getValue());
 	}
 
 	public void testExtra() throws Exception {
