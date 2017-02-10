@@ -758,7 +758,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexBoolean createComplexBooleanFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexBoolean.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -768,10 +770,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexBooleanToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return ((ComplexNumber) instanceValue).toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -781,7 +785,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexByte createComplexByteFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexByte.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -791,10 +797,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexByteToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return ((ComplexByte) instanceValue).toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -804,7 +812,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexDouble createComplexDoubleFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexDouble.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -814,10 +824,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexDoubleToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return ((ComplexDouble) instanceValue).toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -827,7 +839,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexFloat createComplexFloatFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexFloat.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -837,10 +851,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexFloatToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return ((ComplexFloat) instanceValue).toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -850,7 +866,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexLong createComplexLongFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexLong.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -860,10 +878,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexLongToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return ((ComplexLong) instanceValue).toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -873,7 +893,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexLongLong createComplexLongLongFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexLongLong.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -883,10 +905,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexLongLongToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return instanceValue.toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -896,7 +920,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexShort createComplexShortFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexShort.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -906,10 +932,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexShortToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return instanceValue.toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -919,7 +947,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexUByte createComplexUByteFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexUByte.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -929,10 +959,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexUByteToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return instanceValue.toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -942,7 +974,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexULong createComplexULongFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexULong.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -952,10 +986,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexULongToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return instanceValue.toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -965,7 +1001,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexULongLong createComplexULongLongFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexULongLong.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -975,10 +1013,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexULongLongToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return instanceValue.toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -988,7 +1028,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public ComplexUShort createComplexUShortFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
 		return ComplexUShort.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -998,10 +1040,12 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @generated NOT
 	 */
 	public String convertComplexUShortToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
 		if (instanceValue == null) {
 			return null;
 		}
 		return instanceValue.toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**

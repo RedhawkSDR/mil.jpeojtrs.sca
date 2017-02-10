@@ -78,7 +78,9 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public void setProperty(SimpleSequence newProperty) {
+		// END GENERATED CODE
 		super.setProperty(newProperty);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -94,13 +96,13 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public NotificationChain basicSetValues(Values newValues, NotificationChain msgs) {
 		Values oldValues = values;
 		values = newValues;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, oldValues, values);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, oldValues, newValues);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -116,10 +118,12 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 	 */
 	@Override
 	public void setValues(Values newValues) {
+		// END GENERATED CODE
 		if (newValues != values) {
 			NotificationChain msgs = null;
-			if (values != null)
+			if (values != null) {
 				msgs = ((InternalEObject) values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
+			}
 			if (newValues != null) {
 				if (newValues.eContainer() != null) {
 					Values realNewValues = PrfFactory.eINSTANCE.createValues();
@@ -129,10 +133,13 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 				msgs = ((InternalEObject) newValues).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, null, msgs);
 			}
 			msgs = basicSetValues(newValues, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE_REF__VALUES, newValues, newValues));
+		}
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -207,21 +214,22 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 		return super.eIsSet(featureID);
 	}
 
+	// END GENERATED CODE
+
 	@Override
 	public Any toAny() {
-		// END GENERATED CODE
 		if (getValues() != null) {
 			return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral(), getProperty().isComplex());
 		} else {
 			return JacorbUtil.init().create_any();
 		}
-		// BEGIN GENERATED CODE
 	}
 
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
@@ -231,5 +239,7 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 		result.append(')');
 		return result.toString();
 	}
+
+	// BEGIN GENERATED CODE
 
 } //SimpleSequenceRefImpl

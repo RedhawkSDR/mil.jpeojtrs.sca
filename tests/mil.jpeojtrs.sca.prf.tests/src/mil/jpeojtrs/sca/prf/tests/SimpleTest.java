@@ -25,6 +25,7 @@ import mil.jpeojtrs.sca.prf.PropertyValueType;
 import mil.jpeojtrs.sca.prf.Range;
 import mil.jpeojtrs.sca.prf.Simple;
 import mil.jpeojtrs.sca.prf.util.PrfValidator;
+import mil.jpeojtrs.sca.util.ScaResourceFactoryUtil;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -135,12 +136,12 @@ public class SimpleTest extends AbstractPropertyTest {
 	}
 
 	public void test_parse() throws Exception {
-		final ResourceSet resourceSet = new ResourceSetImpl();
+		final ResourceSet resourceSet = ScaResourceFactoryUtil.createResourceSet();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/SimpleTest.prf.xml"), true));
 		Assert.assertNotNull(props);
 		Simple simple = props.getSimple().get(0);
 		Assert.assertNotNull(simple);
-		Assert.assertEquals("Name", simple.getName());
+		Assert.assertEquals("sample", simple.getName());
 		Assert.assertEquals("My Value", simple.getValue());
 		Assert.assertEquals("The units", simple.getUnits());
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
@@ -153,8 +154,8 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals("my min", simple.getRange().getMin());
 		Assert.assertEquals("my max", simple.getRange().getMax());
 
-		Assert.assertEquals(1, simple.getEnumerations().getEnumeration().size());
-		Assert.assertEquals("enuLabel", simple.getEnumerations().getEnumeration().get(0).getLabel());
+		Assert.assertEquals(2, simple.getEnumerations().getEnumeration().size());
+		Assert.assertEquals("enumLabel", simple.getEnumerations().getEnumeration().get(0).getLabel());
 		Assert.assertEquals("enumValue", simple.getEnumerations().getEnumeration().get(0).getValue());
 
 		Assert.assertEquals(1, simple.getKind().size());
@@ -164,7 +165,7 @@ public class SimpleTest extends AbstractPropertyTest {
 
 		simple = props.getSimple().get(1);
 		Assert.assertNotNull(simple);
-		Assert.assertEquals("Name", simple.getName());
+		Assert.assertEquals("complex", simple.getName());
 		Assert.assertNull(simple.getValue());
 		Assert.assertNull(simple.getUnits());
 		Assert.assertEquals(AccessType.READWRITE, simple.getMode());
@@ -174,7 +175,6 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(ActionType.EQ, simple.getAction().getType());
 		Assert.assertTrue("complex attribute", simple.getComplex());
 		Assert.assertTrue("isComplex()", simple.isComplex());
-		Assert.assertFalse("optional attribute", simple.getOptional());
 		Assert.assertFalse("isOptional()", simple.isOptional());
 
 		simple = props.getSimple().get(2);
@@ -189,8 +189,6 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertEquals(ActionType.GE, simple.getAction().getType());
 		Assert.assertFalse("complex attribute", simple.getComplex());
 		Assert.assertFalse("isComplex()", simple.isComplex());
-		Assert.assertTrue("optional attribute", simple.getOptional());
-		Assert.assertTrue("isOptional()", simple.isOptional());
 
 		simple = props.getSimple().get(3);
 		Assert.assertNotNull(simple);
@@ -241,6 +239,40 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertNotNull(simple.getCommandline());
 		Assert.assertTrue(simple.getCommandline());
 		Assert.assertTrue(simple.isCommandLine());
+
+		simple = (Simple) props.getProperty("boolean");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("true", simple.getValue());
+		simple = (Simple) props.getProperty("char");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("a", simple.getValue());
+		simple = (Simple) props.getProperty("double");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("1.0", simple.getValue());
+		simple = (Simple) props.getProperty("float");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("2.0", simple.getValue());
+		simple = (Simple) props.getProperty("short");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("3", simple.getValue());
+		simple = (Simple) props.getProperty("long");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("4", simple.getValue());
+		simple = (Simple) props.getProperty("octet");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("5", simple.getValue());
+		simple = (Simple) props.getProperty("string");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("abc", simple.getValue());
+		simple = (Simple) props.getProperty("ulong");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("6", simple.getValue());
+		simple = (Simple) props.getProperty("ulonglong");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("7", simple.getValue());
+		simple = (Simple) props.getProperty("ushort");
+		Assert.assertNotNull(simple);
+		Assert.assertEquals("8", simple.getValue());
 	}
 
 	public void testExtra() throws Exception {
@@ -321,15 +353,14 @@ public class SimpleTest extends AbstractPropertyTest {
 	}
 
 	/**
-	 * IDE=-1215 Simples not inside a Struct/StructSequence should throw and EMF validation warning
+	 * IDE-1215 Simples not inside a Struct/StructSequence should throw and EMF validation warning
 	 */
 	public void testOptionSimple() throws Exception {
-		final ResourceSet resourceSet = new ResourceSetImpl();
-		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/SimpleTest.prf.xml"), true));
+		final ResourceSet resourceSet = ScaResourceFactoryUtil.createResourceSet();
+		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/SimpleTest_BadOptional.prf.xml"), true));
 		Assert.assertNotNull(props);
-		final Simple simple = props.getSimple().get(2);
+		final Simple simple = (Simple) props.getProperty("bad_optional");
 		Assert.assertNotNull(simple);
-		Assert.assertEquals("Test case running against wrong Simple element", "DCE:a0dae7c6-1f49-4cc0-9219-2b669ca392c8", simple.getId());
 		Assert.assertTrue("optional attribute", simple.getOptional());
 		Assert.assertTrue("isOptional()", simple.isOptional());
 

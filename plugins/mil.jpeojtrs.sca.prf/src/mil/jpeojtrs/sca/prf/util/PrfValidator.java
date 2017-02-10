@@ -986,7 +986,9 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
+		// END GENERATED CODE
 		return PrfPlugin.INSTANCE;
+		// BEGIN GENERATED CODE
 	}
 
 	// END GENERATED CODE

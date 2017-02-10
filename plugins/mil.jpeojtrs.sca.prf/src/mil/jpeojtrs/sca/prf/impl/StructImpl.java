@@ -25,6 +25,7 @@ import mil.jpeojtrs.sca.prf.Simple;
 import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructPropertyConfigurationType;
+import mil.jpeojtrs.sca.util.collections.FeatureMapList;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -141,32 +142,6 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 			configurationKind = new EObjectContainmentEList<ConfigurationKind>(ConfigurationKind.class, this, PrfPackage.STRUCT__CONFIGURATION_KIND);
 		}
 		return configurationKind;
-	}
-
-	@Override
-	public boolean isKind(PropertyConfigurationType... type) {
-		// END GENERATED CODE
-		if (type == null) {
-			return false;
-		}
-		if (eContainer() instanceof AbstractProperty) {
-			return ((AbstractProperty) eContainer()).isKind(type);
-		}
-
-		Set<StructPropertyConfigurationType> types = new HashSet<StructPropertyConfigurationType>(type.length);
-		for (PropertyConfigurationType t : type) {
-			types.add(StructPropertyConfigurationType.getStructPropertyConfigurationType(t));
-		}
-		for (ConfigurationKind k : getConfigurationKind()) {
-			if (types.contains(k.getType())) {
-				return true;
-			}
-		}
-		if (getConfigurationKind().isEmpty() && types.contains(StructPropertyConfigurationType.CONFIGURE)) {
-			return true;
-		}
-		return false;
-		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -321,16 +296,45 @@ public class StructImpl extends AbstractPropertyImpl implements Struct {
 		return result.toString();
 	}
 
+	// END GENERATED CODE
+
+	@Override
+	public boolean isKind(PropertyConfigurationType... type) {
+		if (type == null) {
+			return false;
+		}
+		if (eContainer() instanceof AbstractProperty) {
+			return ((AbstractProperty) eContainer()).isKind(type);
+		}
+
+		Set<StructPropertyConfigurationType> types = new HashSet<StructPropertyConfigurationType>(type.length);
+		for (PropertyConfigurationType t : type) {
+			types.add(StructPropertyConfigurationType.getStructPropertyConfigurationType(t));
+		}
+		for (ConfigurationKind k : getConfigurationKind()) {
+			if (types.contains(k.getType())) {
+				return true;
+			}
+		}
+		if (getConfigurationKind().isEmpty() && types.contains(StructPropertyConfigurationType.CONFIGURE)) {
+			return true;
+		}
+		return false;
+	}
+
 	@Override
 	public Any toAny() {
-		Any retVal = JacorbUtil.init().create_any();
-		List<DataType> fields = new ArrayList<DataType>();
-		for (FeatureMap.Entry propEntry : getFields()) {
-			AbstractProperty prop = (AbstractProperty) propEntry.getValue();
-			fields.add(new DataType(prop.getId(), prop.toAny()));
+		List<DataType> structFields = new ArrayList<DataType>();
+		List<AbstractProperty> propList = new FeatureMapList<AbstractProperty>(getFields(), AbstractProperty.class);
+		for (AbstractProperty prop : propList) {
+			structFields.add(new DataType(prop.getId(), prop.toAny()));
 		}
-		PropertiesHelper.insert(retVal, fields.toArray(new DataType[fields.size()]));
+
+		Any retVal = JacorbUtil.init().create_any();
+		PropertiesHelper.insert(retVal, structFields.toArray(new DataType[structFields.size()]));
 		return retVal;
 	}
+
+	// BEGIN GENERATED CODE
 
 } //StructImpl

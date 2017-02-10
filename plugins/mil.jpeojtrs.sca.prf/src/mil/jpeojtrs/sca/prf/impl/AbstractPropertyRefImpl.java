@@ -119,6 +119,7 @@ public abstract class AbstractPropertyRefImpl< P extends AbstractProperty > exte
 	 */
 	@SuppressWarnings("unchecked")
 	public P basicGetProperty() {
+		// END GENERATED CODE
 		if (getRefID() == null) {
 			return null;
 		}
@@ -133,6 +134,7 @@ public abstract class AbstractPropertyRefImpl< P extends AbstractProperty > exte
 			return (P) eResource().getEObject(getRefID());
 		}
 		return null;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -142,11 +144,13 @@ public abstract class AbstractPropertyRefImpl< P extends AbstractProperty > exte
 	 */
 	@Override
 	public void setProperty(P newProperty) {
+		// END GENERATED CODE
 		if (newProperty != null) {
 			setRefID(newProperty.getId());
 		} else {
 			setRefID(null);
 		}
+		// BEGIN GENERATED CODE
 	}
 
 	/**

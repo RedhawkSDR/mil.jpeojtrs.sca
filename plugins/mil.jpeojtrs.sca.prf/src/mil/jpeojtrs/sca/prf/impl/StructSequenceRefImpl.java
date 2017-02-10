@@ -185,6 +185,8 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 		return super.eIsSet(featureID);
 	}
 
+	// END GENERATED CODE
+
 	@Override
 	public Any toAny() {
 		Any retVal = JacorbUtil.init().create_any();
@@ -195,5 +197,7 @@ public class StructSequenceRefImpl extends AbstractPropertyRefImpl<StructSequenc
 		AnySeqHelper.insert(retVal, structVals.toArray(new Any[structVals.size()]));
 		return retVal;
 	}
+
+	// BEGIN GENERATED CODE
 
 } //StructSequenceRefImpl

@@ -239,11 +239,15 @@ public interface AbstractProperty extends EObject {
 	 */
 	Any toAny();
 
+	// END GENERATED CODE
+
 	/**
 	 * Is this property one of the given type.  Performs an 'or' operations on the list of types. 
 	 * @param types
 	 * @return True if any of the given types is in this property
 	 */
 	boolean isKind(PropertyConfigurationType... types);
+
+	// BEGIN GENERATED CODE
 
 } // AbstractProperty

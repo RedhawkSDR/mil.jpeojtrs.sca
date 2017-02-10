@@ -183,8 +183,13 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 		return result.toString();
 	}
 
+	// END GENERATED CODE
+
 	@Override
 	public Any toAny() {
 		return AnyUtils.toAny(getValue(), getProperty().getType().getLiteral(), getProperty().isComplex());
 	}
+
+	// BEGIN GENERATED CODE
+
 } //SimpleRefImpl

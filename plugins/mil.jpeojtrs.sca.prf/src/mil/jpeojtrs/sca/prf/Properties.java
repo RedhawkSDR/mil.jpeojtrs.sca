@@ -175,12 +175,13 @@ public interface Properties extends PropertyContainer {
 	 */
 	EList<StructSequence> getStructSequence();
 
+	// END GENERATED CODE
+
 	public static final String EOBJECT_PATH = "/";
 
 	public static class Util {
-		// END GENERATED CODE
-		private Util() {
 
+		private Util() {
 		}
 
 		public static Properties getProperties(Resource resource) {
@@ -196,7 +197,8 @@ public interface Properties extends PropertyContainer {
 				throw new IllegalArgumentException(resource + " is not a valid prf resource.");
 			}
 		}
-		// BEGIN GENERATED CODE
 	}
+
+	// BEGIN GENERATED CODE
 
 } // Properties

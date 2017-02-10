@@ -9,22 +9,25 @@
     the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
     http://www.eclipse.org/legal/epl-v10.html.
 -->
-<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA PRF V2.2.2//EN" "properties.dtd">
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
 <properties>
-  <simple id="DCE:949af1fc-87ec-49a9-92fc-488fce348a0e" mode="readwrite" type="string" name="Name">
+  <simple id="DCE:949af1fc-87ec-49a9-92fc-488fce348a0e" mode="readwrite" type="string" name="sample">
   	<description>Sample description</description>
   	<value>My Value</value>
   	<units>The units</units>
   	<range min="my min" max="my max"></range>
-  	<enumerations><enumeration label="enuLabel" value="enumValue"></enumeration></enumerations>
+    <enumerations>
+      <enumeration label="enumLabel" value="enumValue"/>
+      <enumeration label="My Value" value="My Value"/>
+    </enumerations>
     <kind kindtype="configure"/>
     <action type="external"/>
   </simple>
-  <simple id="DCE:753b3ef5-fa23-4c51-9711-c1183ab23cbd" mode="readwrite" type="long"  name="Name" complex="true" optional="false">
+  <simple id="DCE:753b3ef5-fa23-4c51-9711-c1183ab23cbd" mode="readwrite" type="long"  name="complex" complex="true">
     <kind kindtype="configure"/>
     <action type="eq"/>
   </simple>
-  <simple id="DCE:a0dae7c6-1f49-4cc0-9219-2b669ca392c8" mode="readwrite" type="string" complex="false" optional="true">
+  <simple id="DCE:a0dae7c6-1f49-4cc0-9219-2b669ca392c8" mode="readwrite" type="string" complex="false">
     <kind kindtype="configure"/>
     <action type="ge"/>
   </simple>
@@ -46,6 +49,61 @@
   </simple>
   <simple id="commandline" mode="readwrite" type="string" commandline="true">
     <description>A property passed to the resource via command-line</description>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="boolean" mode="readwrite" type="boolean" commandline="true">
+    <value>true</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="char" mode="readwrite" type="char" commandline="true">
+    <value>a</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="double" mode="readwrite" type="double" commandline="true">
+    <value>1.0</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="float" mode="readwrite" type="float" commandline="true">
+    <value>2.0</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="short" mode="readwrite" type="short" commandline="true">
+    <value>3</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="long" mode="readwrite" type="long" commandline="true">
+    <value>4</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="octet" mode="readwrite" type="octet" commandline="true">
+    <value>5</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="string" mode="readwrite" type="string" commandline="true">
+    <value>abc</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="ulong" mode="readwrite" type="ulong" commandline="true">
+    <value>6</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="ulonglong" mode="readwrite" type="ulonglong" commandline="true">
+    <value>7</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="ushort" mode="readwrite" type="ushort" commandline="true">
+    <value>8</value>
     <kind kindtype="property"/>
     <action type="external"/>
   </simple>

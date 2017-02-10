@@ -214,7 +214,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public NotificationChain basicSetValues(Values newValues, NotificationChain msgs) {
 		Values oldValues = values;
@@ -236,10 +236,12 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 */
 	@Override
 	public void setValues(Values newValues) {
+		// END GENERATED CODE
 		if (newValues != values) {
 			NotificationChain msgs = null;
-			if (values != null)
+			if (values != null) {
 				msgs = ((InternalEObject) values).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE__VALUES, null, msgs);
+			}
 			if (newValues != null) {
 				if (newValues.eContainer() != null) {
 					Values realNewValues = PrfFactory.eINSTANCE.createValues();
@@ -249,10 +251,13 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 				msgs = ((InternalEObject) newValues).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PrfPackage.SIMPLE_SEQUENCE__VALUES, null, msgs);
 			}
 			msgs = basicSetValues(newValues, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.SIMPLE_SEQUENCE__VALUES, newValues, newValues));
+		}
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -493,7 +498,9 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 */
 	@Override
 	public boolean isComplex() {
+		// END GENERATED CODE
 		return (complex != null && complex);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -503,7 +510,9 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 	 * @generated NOT
 	 */
 	public boolean isOptional() {
+		// END GENERATED CODE
 		return (optional != null && optional);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -682,9 +691,10 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 		return result.toString();
 	}
 
+	// END GENERATED CODE
+
 	@Override
 	public boolean isKind(PropertyConfigurationType... type) {
-		// END GENERATED CODE
 		if (type == null) {
 			return false;
 		}
@@ -701,14 +711,13 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 			return true;
 		}
 		return false;
-		// BEGIN GENERATED CODE
 	}
 
 	@Override
 	public Any toAny() {
-		// END GENERATED CODE
 		return AnyUtils.toAnySequence(getValues().getValue().toArray(), getType().getLiteral(), isComplex());
-		// BEGIN GENERATED CODE
 	}
+
+	// BEGIN GENERATED CODE
 
 } //SimpleSequenceImpl

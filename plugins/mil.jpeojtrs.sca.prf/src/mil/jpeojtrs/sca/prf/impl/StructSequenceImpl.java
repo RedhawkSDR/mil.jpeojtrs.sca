@@ -125,8 +125,10 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	 * @generated NOT
 	 */
 	protected StructSequenceImpl() {
+		// END GENERATED CODE
 		super();
 		eAdapters().add(this.simpleListener);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -275,32 +277,6 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 
 	}
 
-	@Override
-	public boolean isKind(PropertyConfigurationType... type) {
-		// END GENERATED CODE
-		if (type == null) {
-			return false;
-		}
-		if (eContainer() instanceof AbstractProperty) {
-			return ((AbstractProperty) eContainer()).isKind(type);
-		}
-
-		Set<StructPropertyConfigurationType> types = new HashSet<StructPropertyConfigurationType>(type.length);
-		for (PropertyConfigurationType t : type) {
-			types.add(StructPropertyConfigurationType.getStructPropertyConfigurationType(t));
-		}
-		for (ConfigurationKind k : getConfigurationKind()) {
-			if (types.contains(k.getType())) {
-				return true;
-			}
-		}
-		if (getConfigurationKind().isEmpty() && types.contains(StructPropertyConfigurationType.CONFIGURE)) {
-			return true;
-		}
-		return false;
-		// BEGIN GENERATED CODE
-	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -412,9 +388,35 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 		return super.eIsSet(featureID);
 	}
 
+	// END GENERATED CODE
+
 	@Override
 	public EList<StructValue> getStructvalue() {
 		return getStructValue();
+	}
+
+	@Override
+	public boolean isKind(PropertyConfigurationType... type) {
+		if (type == null) {
+			return false;
+		}
+		if (eContainer() instanceof AbstractProperty) {
+			return ((AbstractProperty) eContainer()).isKind(type);
+		}
+
+		Set<StructPropertyConfigurationType> types = new HashSet<StructPropertyConfigurationType>(type.length);
+		for (PropertyConfigurationType t : type) {
+			types.add(StructPropertyConfigurationType.getStructPropertyConfigurationType(t));
+		}
+		for (ConfigurationKind k : getConfigurationKind()) {
+			if (types.contains(k.getType())) {
+				return true;
+			}
+		}
+		if (getConfigurationKind().isEmpty() && types.contains(StructPropertyConfigurationType.CONFIGURE)) {
+			return true;
+		}
+		return false;
 	}
 
 	@Override
@@ -427,5 +429,7 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 		AnySeqHelper.insert(retVal, structVals.toArray(new Any[structVals.size()]));
 		return retVal;
 	}
+
+	// BEGIN GENERATED CODE
 
 } //StructSequenceImpl
