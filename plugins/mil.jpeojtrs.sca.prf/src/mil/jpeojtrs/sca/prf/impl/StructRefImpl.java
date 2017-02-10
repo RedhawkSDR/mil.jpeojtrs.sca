@@ -257,6 +257,8 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 		return result.toString();
 	}
 
+	// END GENERATED CODE
+
 	@Override
 	public Any toAny() {
 		Any retVal = JacorbUtil.init().create_any();
@@ -268,5 +270,7 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 		PropertiesHelper.insert(retVal, fields.toArray(new DataType[fields.size()]));
 		return retVal;
 	}
+
+	// BEGIN GENERATED CODE
 
 } //StructRefImpl

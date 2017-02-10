@@ -300,15 +300,6 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 		// BEGIN GENERATED CODE
 	}
 
-	@Override
-	public void eNotify(Notification notification) {
-		super.eNotify(notification);
-		if (notification.getFeature() == PrfPackage.Literals.ABSTRACT_PROPERTY__LOCAL_MODE) {
-			super.eNotify(new ENotificationImpl(this, notification.getEventType(), PrfPackage.ABSTRACT_PROPERTY__MODE, notification.getOldValue(),
-				notification.getNewValue(), notification.wasSet()));
-		}
-	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -474,5 +465,18 @@ public abstract class AbstractPropertyImpl extends EObjectImpl implements Abstra
 		result.append(')');
 		return result.toString();
 	}
+
+	// END GENERATED CODE
+
+	@Override
+	public void eNotify(Notification notification) {
+		super.eNotify(notification);
+		if (notification.getFeature() == PrfPackage.Literals.ABSTRACT_PROPERTY__LOCAL_MODE) {
+			super.eNotify(new ENotificationImpl(this, notification.getEventType(), PrfPackage.ABSTRACT_PROPERTY__MODE, notification.getOldValue(),
+				notification.getNewValue(), notification.wasSet()));
+		}
+	}
+
+	// BEGIN GENERATED CODE
 
 } //AbstractPropertyImpl

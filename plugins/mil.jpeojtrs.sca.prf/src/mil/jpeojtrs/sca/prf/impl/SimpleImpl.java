@@ -572,7 +572,9 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 */
 	@Override
 	public boolean isComplex() {
+		// END GENERATED CODE
 		return (complex != null && complex);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -582,7 +584,9 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 * @generated NOT
 	 */
 	public boolean isCommandLine() {
+		// END GENERATED CODE
 		return (commandline != null && commandline) || isKind(PropertyConfigurationType.EXECPARAM);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -592,7 +596,9 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 	 * @generated NOT
 	 */
 	public boolean isOptional() {
+		// END GENERATED CODE
 		return (optional != null && optional);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -795,9 +801,10 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 		return result.toString();
 	}
 
+	// END GENERATED CODE
+
 	@Override
 	public boolean isKind(PropertyConfigurationType... type) {
-		// END GENERATED CODE
 		if (type == null) {
 			return false;
 		}
@@ -814,12 +821,13 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 			return true;
 		}
 		return false;
-		// BEGIN GENERATED CODE
 	}
 
 	@Override
 	public Any toAny() {
 		return AnyUtils.toAny(getValue(), getType().getLiteral(), isComplex());
 	}
+
+	// BEGIN GENERATED CODE
 
 } //SimpleImpl

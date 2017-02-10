@@ -495,6 +495,8 @@ public enum PropertyValueType implements Enumerator {
 		return literal;
 	}
 
+	// END GENERATED CODE
+
 	/**
 	 * With introduction of complex type use the {@link #isValueOfType(String, Boolean)} instead
 	 * @param value the String value to check
@@ -513,14 +515,13 @@ public enum PropertyValueType implements Enumerator {
 	 * @return <code> true </code> if the value is valid for this PropertyValueType; <code> false </code> otherwise
 	 */
 	public boolean isValueOfType(String value, boolean complex) {
-		//END GENERATED CODE
 		if (value == null) {
 			return false;
 		}
 		try {
 			AnyUtils.convertString(value, getLiteral(), complex);
 			return true;
-		} catch (Exception e) { // SUPPRESS CHECKSTYLE Return false
+		} catch (Exception e) {
 			return false;
 		}
 	}
@@ -542,7 +543,6 @@ public enum PropertyValueType implements Enumerator {
 	 * @since 3.0
 	 */
 	public EDataType toEDataType(boolean complex) {
-		// END GENERATED CODE
 		if (complex) {
 			switch (this) {
 			case BOOLEAN:
@@ -604,7 +604,8 @@ public enum PropertyValueType implements Enumerator {
 				return null;
 			}
 		}
-		// BEGIN GENERATED CODE
 	}
+
+	// BEGIN GENERATED CODE
 
 } //PropertyValueType

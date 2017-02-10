@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 import org.eclipse.emf.ecore.util.ExtendedMetaData;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 
-// TODO: Auto-generated Javadoc
 /**
  * <!-- begin-user-doc --> The <b>Resource Factory</b> associated with the
  * package. <!-- end-user-doc -->

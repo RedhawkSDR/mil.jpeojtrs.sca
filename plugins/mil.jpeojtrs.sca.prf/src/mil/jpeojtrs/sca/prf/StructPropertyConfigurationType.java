@@ -343,6 +343,8 @@ public enum StructPropertyConfigurationType implements Enumerator {
 		return literal;
 	}
 
+	// END GENERATED CODE
+
 	public PropertyConfigurationType getPropertyConfigurationType() {
 		switch (this) {
 		case ALLOCATION:
@@ -390,5 +392,7 @@ public enum StructPropertyConfigurationType implements Enumerator {
 			throw new UnsupportedOperationException("Unknown type conversion: " + type);
 		}
 	}
+
+	// BEGIN GENERATED CODE
 
 } //StructPropertyConfigurationType

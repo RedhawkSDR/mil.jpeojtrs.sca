@@ -14,7 +14,6 @@ package mil.jpeojtrs.sca.prf.util;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
 
-// TODO: Auto-generated Javadoc
 /**
  * <!-- begin-user-doc -->
  * The <b>Resource </b> associated with the package.
@@ -35,6 +34,8 @@ public class PrfResourceImpl extends XMLResourceImpl {
 		super(uri);
 	}
 
+	// END GENERATED CODE
+
 	/**
 	 * The DTD system identifier.
 	 */
@@ -46,5 +47,7 @@ public class PrfResourceImpl extends XMLResourceImpl {
 	 * @since 5.0
 	 */
 	public static final String DOC_TYPE_PUBLIC = "-//JTRS//DTD SCA V2.2.2 PRF//EN";
+
+	// BEGIN GENERATED CODE
 
 } //PrfResourceImpl

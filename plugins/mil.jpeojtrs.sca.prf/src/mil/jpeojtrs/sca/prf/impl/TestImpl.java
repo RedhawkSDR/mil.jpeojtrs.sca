@@ -379,9 +379,17 @@ public class TestImpl extends EObjectImpl implements Test {
 		return result.toString();
 	}
 
+	// END GENERATED CODE
+
+	/**
+	 * @deprecated Switch to using {@link #getInputValue()}
+	 */
+	@Deprecated
 	@Override
 	public InputValue getInputvalue() {
 		return getInputValue();
 	}
+
+	// BEGIN GENERATED CODE
 
 } //TestImpl
