@@ -14,6 +14,8 @@ package mil.jpeojtrs.sca.prf.util;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
@@ -983,10 +985,21 @@ public class PrfValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateUTCTime(UTCTime utcTime, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
+		// END GENERATED CODE
+		double tfsec = utcTime.getFractionalSeconds();
+		if (tfsec < 0.0 || tfsec >= 1.0) {
+			if (diagnostics != null) {
+				diagnostics.add(
+					createDiagnostic(IStatus.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidFractionalSeconds_diagnostic", null, new Object[] { utcTime }, context));
+			}
+			return false;
+		} else {
+			return true;
+		}
+		// BEGIN GENERATED CODE
 	}
 
 	/**

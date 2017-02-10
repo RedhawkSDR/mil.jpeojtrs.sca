@@ -1056,19 +1056,23 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public UTCTime createUTCTimeFromString(EDataType eDataType, String initialValue) {
-		return (UTCTime) super.createFromString(eDataType, initialValue);
+		// END GENERATED CODE
+		return UTCTime.valueOf(initialValue);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String convertUTCTimeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+		// END GENERATED CODE
+		return (instanceValue == null) ? null : instanceValue.toString();
+		// BEGIN GENERATED CODE
 	}
 
 	/**

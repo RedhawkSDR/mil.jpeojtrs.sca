@@ -625,6 +625,8 @@ public enum PropertyValueType implements Enumerator {
 				return EcorePackage.Literals.EINTEGER_OBJECT;
 			case ULONGLONG:
 				return EcorePackage.Literals.EBIG_INTEGER;
+			case UTCTIME:
+				return PrfPackage.Literals.UTC_TIME;
 			default:
 				return null;
 			}
