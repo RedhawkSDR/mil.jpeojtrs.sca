@@ -23,6 +23,7 @@ import mil.jpeojtrs.sca.util.math.ComplexUByte;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
 import mil.jpeojtrs.sca.util.math.ComplexULongLong;
 import mil.jpeojtrs.sca.util.math.ComplexUShort;
+import mil.jpeojtrs.sca.util.time.UTCTime;
 import mil.jpeojtrs.sca.prf.AccessType;
 import mil.jpeojtrs.sca.prf.Action;
 import mil.jpeojtrs.sca.prf.ActionType;
@@ -205,6 +206,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 			return createComplexULongLongFromString(eDataType, initialValue);
 		case PrfPackage.COMPLEX_USHORT:
 			return createComplexUShortFromString(eDataType, initialValue);
+		case PrfPackage.UTC_TIME:
+			return createUTCTimeFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -266,6 +269,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 			return convertComplexULongLongToString(eDataType, instanceValue);
 		case PrfPackage.COMPLEX_USHORT:
 			return convertComplexUShortToString(eDataType, instanceValue);
+		case PrfPackage.UTC_TIME:
+			return convertUTCTimeToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -1046,6 +1051,24 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 		}
 		return instanceValue.toString();
 		// BEGIN GENERATED CODE
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UTCTime createUTCTimeFromString(EDataType eDataType, String initialValue) {
+		return (UTCTime) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertUTCTimeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

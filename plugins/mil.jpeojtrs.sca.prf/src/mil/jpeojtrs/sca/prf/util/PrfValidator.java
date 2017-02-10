@@ -69,6 +69,7 @@ import mil.jpeojtrs.sca.util.math.ComplexUByte;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
 import mil.jpeojtrs.sca.util.math.ComplexULongLong;
 import mil.jpeojtrs.sca.util.math.ComplexUShort;
+import mil.jpeojtrs.sca.util.time.UTCTime;
 
 /**
  * <!-- begin-user-doc -->
@@ -251,6 +252,8 @@ public class PrfValidator extends EObjectValidator {
 			return validateComplexULongLong((ComplexULongLong) value, diagnostics, context);
 		case PrfPackage.COMPLEX_USHORT:
 			return validateComplexUShort((ComplexUShort) value, diagnostics, context);
+		case PrfPackage.UTC_TIME:
+			return validateUTCTime((UTCTime) value, diagnostics, context);
 		default:
 			return true;
 		}
@@ -974,6 +977,15 @@ public class PrfValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateComplexUShort(ComplexUShort complexUShort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUTCTime(UTCTime utcTime, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

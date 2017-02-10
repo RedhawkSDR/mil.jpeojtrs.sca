@@ -57,6 +57,7 @@ import mil.jpeojtrs.sca.util.math.ComplexUByte;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
 import mil.jpeojtrs.sca.util.math.ComplexULongLong;
 import mil.jpeojtrs.sca.util.math.ComplexUShort;
+import mil.jpeojtrs.sca.util.time.UTCTime;
 import mil.jpeojtrs.sca.validator.AdvancedEObjectValidator;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -394,6 +395,13 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * @generated
 	 */
 	private EDataType complexUShortEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType utcTimeEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1812,6 +1820,15 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getUTCTime() {
+		return utcTimeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public PrfFactory getPrfFactory() {
 		return (PrfFactory) getEFactoryInstance();
@@ -1998,6 +2015,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		complexULongEDataType = createEDataType(COMPLEX_ULONG);
 		complexULongLongEDataType = createEDataType(COMPLEX_ULONG_LONG);
 		complexUShortEDataType = createEDataType(COMPLEX_USHORT);
+		utcTimeEDataType = createEDataType(UTC_TIME);
 	}
 
 	/**
@@ -2382,6 +2400,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		initEDataType(complexULongEDataType, ComplexULong.class, "ComplexULong", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(complexULongLongEDataType, ComplexULongLong.class, "ComplexULongLong", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(complexUShortEDataType, ComplexUShort.class, "ComplexUShort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(utcTimeEDataType, UTCTime.class, "UTCTime", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

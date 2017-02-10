@@ -1646,6 +1646,16 @@ public interface PrfPackage extends EPackage {
 	int COMPLEX_USHORT = 51;
 
 	/**
+	 * The meta object id for the '<em>UTC Time</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.util.time.UTCTime
+	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getUTCTime()
+	 * @generated
+	 */
+	int UTC_TIME = 52;
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.prf.AbstractProperty <em>Abstract Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3085,6 +3095,17 @@ public interface PrfPackage extends EPackage {
 	EDataType getComplexUShort();
 
 	/**
+	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.time.UTCTime <em>UTC Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>UTC Time</em>'.
+	 * @see mil.jpeojtrs.sca.util.time.UTCTime
+	 * @model instanceClass="mil.jpeojtrs.sca.util.time.UTCTime"
+	 * @generated
+	 */
+	EDataType getUTCTime();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4301,6 +4322,16 @@ public interface PrfPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType COMPLEX_USHORT = eINSTANCE.getComplexUShort();
+
+		/**
+		 * The meta object literal for the '<em>UTC Time</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.util.time.UTCTime
+		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getUTCTime()
+		 * @generated
+		 */
+		EDataType UTC_TIME = eINSTANCE.getUTCTime();
 
 		/**
 		 * <!-- begin-user-doc -->
