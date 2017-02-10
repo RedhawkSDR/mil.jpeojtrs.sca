@@ -36,7 +36,6 @@ import org.omg.CORBA.ULongLongSeqHelper;
 import org.omg.CORBA.ULongSeqHelper;
 import org.omg.CORBA.UShortSeqHelper;
 
-import CF.UTCTime;
 import CF.UTCTimeHelper;
 import CF.UTCTimeSequenceHelper;
 import mil.jpeojtrs.sca.util.AnyUtils;
@@ -52,6 +51,7 @@ import mil.jpeojtrs.sca.util.math.ComplexUByte;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
 import mil.jpeojtrs.sca.util.math.ComplexULongLong;
 import mil.jpeojtrs.sca.util.math.ComplexUShort;
+import mil.jpeojtrs.sca.util.time.UTCTime;
 
 public class AnyUtilsTest {
 
@@ -67,6 +67,7 @@ public class AnyUtilsTest {
 	private static final int[] ULONG_ARRAY = new int[] { 16, 17, 18 };
 	private static final long[] ULONG_LONG_ARRAY = new long[] { 19, 20, 21 };
 	private static final short[] USHORT_ARRAY = new short[] { 22, 23, 24 };
+	private static final CF.UTCTime[] CORBA_UTC_TIME_ARRAY = new CF.UTCTime[] { new CF.UTCTime((short) 1, 2, 0.3), new CF.UTCTime((short) 4, 5, 0.6) };
 	private static final UTCTime[] UTC_TIME_ARRAY = new UTCTime[] { new UTCTime((short) 1, 2, 0.3), new UTCTime((short) 4, 5, 0.6) };
 
 	private final ORB orb = JacorbUtil.init();
@@ -262,9 +263,10 @@ public class AnyUtilsTest {
 		ourAny = AnyUtils.toAny("def", "wstring", false);
 		Assert.assertEquals(expectedAny, ourAny);
 
-		UTCTime time = new UTCTime((short) 1, 2, 0.345678);
+		CF.UTCTime cfTime = new CF.UTCTime((short) 1, 2, 0.345678);
 		expectedAny = orb.create_any();
-		UTCTimeHelper.insert(expectedAny, time);
+		UTCTimeHelper.insert(expectedAny, cfTime);
+		UTCTime time = new UTCTime((short) 1, 2, 0.345678);
 		ourAny = AnyUtils.toAny(time, "utctime", false);
 		Assert.assertEquals(expectedAny, ourAny);
 	}
@@ -339,7 +341,7 @@ public class AnyUtilsTest {
 		Assert.assertEquals(expectedAny, ourAny);
 
 		expectedAny = orb.create_any();
-		UTCTimeSequenceHelper.insert(expectedAny, UTC_TIME_ARRAY);
+		UTCTimeSequenceHelper.insert(expectedAny, CORBA_UTC_TIME_ARRAY);
 		ourAny = AnyUtils.toAny(UTC_TIME_ARRAY, "utctime", false);
 		Assert.assertEquals(expectedAny, ourAny);
 	}
@@ -399,8 +401,8 @@ public class AnyUtilsTest {
 
 		val = AnyUtils.convertString("1970:01:02::03:04:05.678901", "utctime", false);
 		Assert.assertTrue(val instanceof UTCTime);
-		Assert.assertEquals((1 * 24 * 60 * 60) + (3 * 60 * 60) + (4 * 60) + 5, ((UTCTime) val).twsec, 0.0);
-		Assert.assertEquals(0.678901, ((UTCTime) val).tfsec, 0.0);
+		Assert.assertEquals((1 * 24 * 60 * 60) + (3 * 60 * 60) + (4 * 60) + 5, ((UTCTime) val).getWholeSeconds(), 0.0);
+		Assert.assertEquals(0.678901, ((UTCTime) val).getFractionalSeconds(), 0.0);
 	}
 
 	/**
@@ -458,9 +460,7 @@ public class AnyUtilsTest {
 		Object obj = AnyUtils.convertAny(AnyUtils.toAny(UTC_TIME_ARRAY[0], "utctime", false));
 		Assert.assertTrue(obj instanceof UTCTime);
 		UTCTime utcTime = (UTCTime) obj;
-		Assert.assertEquals(UTC_TIME_ARRAY[0].tcstatus, utcTime.tcstatus);
-		Assert.assertEquals(UTC_TIME_ARRAY[0].twsec, utcTime.twsec, 0.0);
-		Assert.assertEquals(UTC_TIME_ARRAY[0].tfsec, utcTime.tfsec, 0.0);
+		Assert.assertEquals(UTC_TIME_ARRAY[0], utcTime);
 
 		/**
 		 * TODO Big Decimal not supported
@@ -1086,7 +1086,7 @@ public class AnyUtilsTest {
 		Assert.assertEquals(expectedAny, ourAny);
 
 		expectedAny = orb.create_any();
-		UTCTimeSequenceHelper.insert(expectedAny, UTC_TIME_ARRAY);
+		UTCTimeSequenceHelper.insert(expectedAny, CORBA_UTC_TIME_ARRAY);
 		ourAny = AnyUtils.toAnySequence(UTC_TIME_ARRAY, "utctime", false);
 		Assert.assertEquals(expectedAny, ourAny);
 	}
@@ -1187,9 +1187,7 @@ public class AnyUtilsTest {
 		UTCTime[] utcTimeArray = (UTCTime[]) obj;
 		Assert.assertEquals(UTC_TIME_ARRAY.length, utcTimeArray.length);
 		for (int index = 0; index < UTC_TIME_ARRAY.length; index++) {
-			Assert.assertEquals(UTC_TIME_ARRAY[index].tcstatus, utcTimeArray[index].tcstatus);
-			Assert.assertEquals(UTC_TIME_ARRAY[index].twsec, utcTimeArray[index].twsec, 0.0);
-			Assert.assertEquals(UTC_TIME_ARRAY[index].tfsec, utcTimeArray[index].tfsec, 0.0);
+			Assert.assertEquals(UTC_TIME_ARRAY[index], utcTimeArray[index]);
 		}
 	}
 

@@ -14,12 +14,7 @@ import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Date;
-import java.util.TimeZone;
 
 import org.apache.commons.lang.ArrayUtils;
 import org.jacorb.JacorbUtil;
@@ -48,7 +43,6 @@ import org.omg.CORBA.TypeCodePackage.BadKind;
 import CF.DataType;
 import CF.DataTypeHelper;
 import CF.PropertiesHelper;
-import CF.UTCTime;
 import CF.UTCTimeHelper;
 import CF.UTCTimeSequenceHelper;
 import CF.complexBooleanHelper;
@@ -85,6 +79,7 @@ import mil.jpeojtrs.sca.util.math.ComplexUByte;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
 import mil.jpeojtrs.sca.util.math.ComplexULongLong;
 import mil.jpeojtrs.sca.util.math.ComplexUShort;
+import mil.jpeojtrs.sca.util.time.UTCTime;
 
 public final class AnyUtils {
 
@@ -211,23 +206,7 @@ public final class AnyUtils {
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid octet value");
 		case "utctime":
-			int period = stringValue.indexOf('.');
-			double tfsec = 0.0;
-			if (period != -1) {
-				tfsec = Double.parseDouble(stringValue.substring(period));
-			} else {
-				period = stringValue.length();
-			}
-			Date date;
-			try {
-				SimpleDateFormat dateFormat = (SimpleDateFormat) DateFormat.getDateTimeInstance();
-				dateFormat.applyPattern("yyyy:MM:dd::HH:mm:ss");
-				dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-				date = dateFormat.parse(stringValue.substring(0, period));
-			} catch (ParseException e) {
-				throw new IllegalArgumentException("Unable to parse date/time", e);
-			}
-			return new UTCTime((short) 1, date.getTime() / 1000, tfsec);
+			return UTCTime.valueOf(stringValue);
 		default:
 			throw new IllegalArgumentException("Unknown CORBA Type: " + type);
 		}
@@ -365,7 +344,7 @@ public final class AnyUtils {
 				if (PropertiesHelper.type().equivalent(typeCode)) {
 					return PropertiesHelper.extract(theAny);
 				} else if (UTCTimeSequenceHelper.type().equivalent(typeCode)) {
-					return UTCTimeSequenceHelper.extract(theAny);
+					return UTCTime.valueOfSequence(theAny);
 				}
 				ComplexNumber[] array = ComplexNumber.valueOfSequence(theAny);
 				if (array != null) {
@@ -439,7 +418,7 @@ public final class AnyUtils {
 					break;
 				case "IDL:CF/UTCTime:1.0":
 					if (UTCTimeHelper.type().equivalent(typeCode)) {
-						return UTCTimeHelper.extract(theAny);
+						return UTCTime.valueOf(theAny);
 					}
 					break;
 				default:
@@ -751,8 +730,7 @@ public final class AnyUtils {
 			retVal.insert_wstring(value.toString());
 			return retVal;
 		case "utctime":
-			UTCTimeHelper.insert(retVal, (UTCTime) value);
-			return retVal;
+			return ((UTCTime) value).toAny();
 		default:
 			throw new IllegalArgumentException("Unknown target type: " + type);
 		}
@@ -911,7 +889,7 @@ public final class AnyUtils {
 			AnyUtils.insertUShortArray(any, array);
 			return any;
 		case "utctime":
-			UTCTimeSequenceHelper.insert(any, (UTCTime[]) array);
+			insertUTCTimeArray(any, array);
 			return any;
 		default:
 			throw new IllegalArgumentException("Unknown REDHAWK property type: " + type);
@@ -941,6 +919,21 @@ public final class AnyUtils {
 			}
 			return retVal;
 		}
+	}
+
+	/**
+	 * Insert an array containing <code>UTCTime</code> into an <code>Any</code> as a CORBA CF.UTCTime
+	 * sequence.
+	 * @param any
+	 * @param array
+	 */
+	private static void insertUTCTimeArray(Any any, Object array) {
+		final int len = Array.getLength(array);
+		final CF.UTCTime[] newArray = new CF.UTCTime[len];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = ((UTCTime) Array.get(array, i)).getWrappedTime();
+		}
+		UTCTimeSequenceHelper.insert(any, newArray);
 	}
 
 	/**
