@@ -898,4 +898,5 @@
   <eClassifiers xsi:type="ecore:EDataType" name="ComplexULong" instanceClassName="mil.jpeojtrs.sca.util.math.ComplexULong"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ComplexULongLong" instanceClassName="mil.jpeojtrs.sca.util.math.ComplexULongLong"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ComplexUShort" instanceClassName="mil.jpeojtrs.sca.util.math.ComplexUShort"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="UTCTime" instanceClassName="mil.jpeojtrs.sca.util.time.UTCTime"/>
 </ecore:EPackage>
