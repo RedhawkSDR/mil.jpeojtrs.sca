@@ -12,7 +12,6 @@
 package mil.jpeojtrs.sca.sad.tests;
 
 import org.junit.Assert;
-import org.junit.Test;
 
 import junit.framework.TestCase;
 
@@ -142,8 +141,7 @@ public class UsesDeviceRefTest extends TestCase {
 
 	// END GENERATED CODE
 
-	@Test
-	public void id() {
+	public void testId() {
 		Assert.assertEquals("FrontEndTuner_1", getFixture().getRefid());
 	}
 
