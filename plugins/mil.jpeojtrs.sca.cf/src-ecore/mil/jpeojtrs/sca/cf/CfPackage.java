@@ -1248,7 +1248,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidIdentifier()
 	 * @generated
 	 */
-	int INVALID_IDENTIFIER = 138;
+	int INVALID_IDENTIFIER = 139;
 	/**
 	 * The meta object id for the '<em>Application Uninstallation Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1663,6 +1663,15 @@ public interface CfPackage extends EPackage {
 	 */
 	int UNKNOWN_PORT = 124;
 	/**
+	 * The meta object id for the '<em>Property Change Event</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see CF.PropertyChangeListenerPackage.PropertyChangeEvent
+	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPropertyChangeEvent()
+	 * @generated
+	 */
+	int PROPERTY_CHANGE_EVENT = 125;
+	/**
 	 * The meta object id for the '<em>Already Initialized</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * @since 4.0
@@ -1671,7 +1680,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getAlreadyInitialized()
 	 * @generated
 	 */
-	int ALREADY_INITIALIZED = 125;
+	int ALREADY_INITIALIZED = 126;
 	/**
 	 * The meta object id for the '<em>Invalid Configuration</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1680,7 +1689,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidConfiguration()
 	 * @generated
 	 */
-	int INVALID_CONFIGURATION = 126;
+	int INVALID_CONFIGURATION = 127;
 	/**
 	 * The meta object id for the '<em>Partial Configuration</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1689,7 +1698,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getPartialConfiguration()
 	 * @generated
 	 */
-	int PARTIAL_CONFIGURATION = 127;
+	int PARTIAL_CONFIGURATION = 128;
 	/**
 	 * The meta object id for the '<em>Unknown Properties</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1698,7 +1707,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUnknownProperties()
 	 * @generated
 	 */
-	int UNKNOWN_PROPERTIES = 128;
+	int UNKNOWN_PROPERTIES = 129;
 	/**
 	 * The meta object id for the '<em>Create Resource Failure</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1707,7 +1716,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getCreateResourceFailure()
 	 * @generated
 	 */
-	int CREATE_RESOURCE_FAILURE = 129;
+	int CREATE_RESOURCE_FAILURE = 130;
 	/**
 	 * The meta object id for the '<em>Invalid Resource Id</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1716,7 +1725,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getInvalidResourceId()
 	 * @generated
 	 */
-	int INVALID_RESOURCE_ID = 130;
+	int INVALID_RESOURCE_ID = 131;
 	/**
 	 * The meta object id for the '<em>Shutdown Failure</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1725,7 +1734,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getShutdownFailure()
 	 * @generated
 	 */
-	int SHUTDOWN_FAILURE = 131;
+	int SHUTDOWN_FAILURE = 132;
 	/**
 	 * The meta object id for the '<em>Start Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1734,7 +1743,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getStartError()
 	 * @generated
 	 */
-	int START_ERROR = 132;
+	int START_ERROR = 133;
 	/**
 	 * The meta object id for the '<em>Stop Error</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1743,7 +1752,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getStopError()
 	 * @generated
 	 */
-	int STOP_ERROR = 133;
+	int STOP_ERROR = 134;
 	/**
 	 * The meta object id for the '<em>Unknown Test</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1752,7 +1761,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUnknownTest()
 	 * @generated
 	 */
-	int UNKNOWN_TEST = 134;
+	int UNKNOWN_TEST = 135;
 
 	/**
 	 * The meta object id for the '<em>Unknown Identifier</em>' data type.
@@ -1763,7 +1772,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUnknownIdentifier()
 	 * @generated
 	 */
-	int UNKNOWN_IDENTIFIER = 135;
+	int UNKNOWN_IDENTIFIER = 136;
 	/**
 	 * The meta object id for the '<em>UTC Time</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1772,7 +1781,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getUTCTime()
 	 * @generated
 	 */
-	int UTC_TIME = 136;
+	int UTC_TIME = 137;
 	/**
 	 * The meta object id for the '<em>Log Event Array</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1781,7 +1790,7 @@ public interface CfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.cf.impl.CfPackageImpl#getLogEventArray()
 	 * @generated
 	 */
-	int LOG_EVENT_ARRAY = 137;
+	int LOG_EVENT_ARRAY = 138;
 
 	/**
 	 * Returns the meta object for class '{@link org.omg.CORBA.Object <em>Object</em>}'.
@@ -3180,6 +3189,17 @@ public interface CfPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getUnknownPort();
+
+	/**
+	 * Returns the meta object for data type '{@link CF.PropertyChangeListenerPackage.PropertyChangeEvent <em>Property Change Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Property Change Event</em>'.
+	 * @see CF.PropertyChangeListenerPackage.PropertyChangeEvent
+	 * @model instanceClass="CF.PropertyChangeListenerPackage.PropertyChangeEvent"
+	 * @generated
+	 */
+	EDataType getPropertyChangeEvent();
 
 	/**
 	 * Returns the meta object for data type '{@link CF.PropertyEmitterPackage.AlreadyInitialized <em>Already Initialized</em>}'.

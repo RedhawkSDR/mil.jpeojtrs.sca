@@ -34,6 +34,7 @@ import CF.InvalidObjectReference;
 import CF.InvalidProfile;
 import CF.OctetSequenceHolder;
 import CF.PropertiesHolder;
+import CF.PropertyChangeListenerPackage.PropertyChangeEvent;
 import CF.PropertyEmitterPackage.AlreadyInitialized;
 import CF.UnknownProperties;
 import CF.ApplicationFactoryPackage.CreateApplicationError;
@@ -295,6 +296,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createPortInfoTypeFromString(eDataType, initialValue);
 		case CfPackage.UNKNOWN_PORT:
 			return createUnknownPortFromString(eDataType, initialValue);
+		case CfPackage.PROPERTY_CHANGE_EVENT:
+			return createPropertyChangeEventFromString(eDataType, initialValue);
 		case CfPackage.ALREADY_INITIALIZED:
 			return createAlreadyInitializedFromString(eDataType, initialValue);
 		case CfPackage.INVALID_CONFIGURATION:
@@ -472,6 +475,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertPortInfoTypeToString(eDataType, instanceValue);
 		case CfPackage.UNKNOWN_PORT:
 			return convertUnknownPortToString(eDataType, instanceValue);
+		case CfPackage.PROPERTY_CHANGE_EVENT:
+			return convertPropertyChangeEventToString(eDataType, instanceValue);
 		case CfPackage.ALREADY_INITIALIZED:
 			return convertAlreadyInitializedToString(eDataType, instanceValue);
 		case CfPackage.INVALID_CONFIGURATION:
@@ -1749,6 +1754,24 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	 * @generated
 	 */
 	public String convertUnknownPortToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PropertyChangeEvent createPropertyChangeEventFromString(EDataType eDataType, String initialValue) {
+		return (PropertyChangeEvent) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPropertyChangeEventToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

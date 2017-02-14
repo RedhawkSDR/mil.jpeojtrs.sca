@@ -69,6 +69,7 @@ import CF.PortOperations;
 import CF.PortSupplier;
 import CF.PortSupplierOperations;
 import CF.PropertiesHolder;
+import CF.PropertyChangeListenerPackage.PropertyChangeEvent;
 import CF.PropertyEmitter;
 import CF.PropertyEmitterOperations;
 import CF.PropertyEmitterPackage.AlreadyInitialized;
@@ -922,6 +923,12 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EDataType unknownPortEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType propertyChangeEventEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2219,6 +2226,15 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getPropertyChangeEvent() {
+		return propertyChangeEventEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2548,6 +2564,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		occupiedPortEDataType = createEDataType(OCCUPIED_PORT);
 		portInfoTypeEDataType = createEDataType(PORT_INFO_TYPE);
 		unknownPortEDataType = createEDataType(UNKNOWN_PORT);
+		propertyChangeEventEDataType = createEDataType(PROPERTY_CHANGE_EVENT);
 		alreadyInitializedEDataType = createEDataType(ALREADY_INITIALIZED);
 		invalidConfigurationEDataType = createEDataType(INVALID_CONFIGURATION);
 		partialConfigurationEDataType = createEDataType(PARTIAL_CONFIGURATION);
@@ -3357,6 +3374,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEDataType(occupiedPortEDataType, OccupiedPort.class, "OccupiedPort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(portInfoTypeEDataType, PortInfoType.class, "PortInfoType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownPortEDataType, UnknownPort.class, "UnknownPort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(propertyChangeEventEDataType, PropertyChangeEvent.class, "PropertyChangeEvent", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(alreadyInitializedEDataType, AlreadyInitialized.class, "AlreadyInitialized", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidConfigurationEDataType, InvalidConfiguration.class, "InvalidConfiguration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(partialConfigurationEDataType, PartialConfiguration.class, "PartialConfiguration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

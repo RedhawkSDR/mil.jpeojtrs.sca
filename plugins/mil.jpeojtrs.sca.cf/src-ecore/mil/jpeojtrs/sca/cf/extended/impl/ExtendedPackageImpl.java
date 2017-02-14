@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import ExtendedCF.QueryablePort;
 import ExtendedCF.QueryablePortOperations;
 import ExtendedCF.UsesConnection;
+import ExtendedEvent.PropertySetChangeEventType;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,6 +58,13 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 	 * @generated
 	 */
 	private EDataType usesConnectionArrayEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType propertySetChangeEventTypeEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -167,6 +175,15 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getPropertySetChangeEventType() {
+		return propertySetChangeEventTypeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ExtendedFactory getExtendedFactory() {
 		return (ExtendedFactory) getEFactoryInstance();
 	}
@@ -198,6 +215,7 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 		// Create data types
 		usesConnectionEDataType = createEDataType(USES_CONNECTION);
 		usesConnectionArrayEDataType = createEDataType(USES_CONNECTION_ARRAY);
+		propertySetChangeEventTypeEDataType = createEDataType(PROPERTY_SET_CHANGE_EVENT_TYPE);
 	}
 
 	/**
@@ -248,6 +266,8 @@ public class ExtendedPackageImpl extends EPackageImpl implements ExtendedPackage
 		// Initialize data types
 		initEDataType(usesConnectionEDataType, UsesConnection.class, "UsesConnection", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(usesConnectionArrayEDataType, UsesConnection[].class, "UsesConnectionArray", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(propertySetChangeEventTypeEDataType, PropertySetChangeEventType.class, "PropertySetChangeEventType", IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -114,6 +114,16 @@ public interface ExtendedPackage extends EPackage {
 	int USES_CONNECTION_ARRAY = 3;
 
 	/**
+	 * The meta object id for the '<em>Property Set Change Event Type</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ExtendedEvent.PropertySetChangeEventType
+	 * @see mil.jpeojtrs.sca.cf.extended.impl.ExtendedPackageImpl#getPropertySetChangeEventType()
+	 * @generated
+	 */
+	int PROPERTY_SET_CHANGE_EVENT_TYPE = 4;
+
+	/**
 	 * Returns the meta object for class '{@link ExtendedCF.QueryablePort <em>Queryable Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,6 +165,17 @@ public interface ExtendedPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getUsesConnectionArray();
+
+	/**
+	 * Returns the meta object for data type '{@link ExtendedEvent.PropertySetChangeEventType <em>Property Set Change Event Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Property Set Change Event Type</em>'.
+	 * @see ExtendedEvent.PropertySetChangeEventType
+	 * @model instanceClass="ExtendedEvent.PropertySetChangeEventType"
+	 * @generated
+	 */
+	EDataType getPropertySetChangeEventType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -214,6 +235,15 @@ public interface ExtendedPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType USES_CONNECTION_ARRAY = eINSTANCE.getUsesConnectionArray();
+		/**
+		 * The meta object literal for the '<em>Property Set Change Event Type</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ExtendedEvent.PropertySetChangeEventType
+		 * @see mil.jpeojtrs.sca.cf.extended.impl.ExtendedPackageImpl#getPropertySetChangeEventType()
+		 * @generated
+		 */
+		EDataType PROPERTY_SET_CHANGE_EVENT_TYPE = eINSTANCE.getPropertySetChangeEventType();
 
 	}
 
