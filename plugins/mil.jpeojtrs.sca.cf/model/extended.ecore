@@ -12,4 +12,5 @@
       serializable="false"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UsesConnectionArray" instanceClassName="ExtendedCF.UsesConnection[]"
       serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="PropertySetChangeEventType" instanceClassName="ExtendedEvent.PropertySetChangeEventType"/>
 </ecore:EPackage>

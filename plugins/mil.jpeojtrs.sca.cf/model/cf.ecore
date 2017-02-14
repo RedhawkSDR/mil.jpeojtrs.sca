@@ -493,6 +493,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="OccupiedPort" instanceClassName="CF.PortPackage.OccupiedPort"/>
   <eClassifiers xsi:type="ecore:EDataType" name="PortInfoType" instanceClassName="CF.PortSetPackage.PortInfoType"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownPort" instanceClassName="CF.PortSupplierPackage.UnknownPort"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="PropertyChangeEvent" instanceClassName="CF.PropertyChangeListenerPackage.PropertyChangeEvent"/>
   <eClassifiers xsi:type="ecore:EDataType" name="AlreadyInitialized" instanceClassName="CF.PropertyEmitterPackage.AlreadyInitialized"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidConfiguration" instanceClassName="CF.PropertySetPackage.InvalidConfiguration"/>
   <eClassifiers xsi:type="ecore:EDataType" name="PartialConfiguration" instanceClassName="CF.PropertySetPackage.PartialConfiguration"/>
