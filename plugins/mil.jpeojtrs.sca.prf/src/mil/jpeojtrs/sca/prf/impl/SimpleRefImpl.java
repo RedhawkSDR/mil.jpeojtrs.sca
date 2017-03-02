@@ -11,15 +11,15 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf.impl;
 
-import mil.jpeojtrs.sca.prf.PrfPackage;
-import mil.jpeojtrs.sca.prf.Simple;
-import mil.jpeojtrs.sca.prf.SimpleRef;
-import mil.jpeojtrs.sca.util.AnyUtils;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.omg.CORBA.Any;
+
+import mil.jpeojtrs.sca.prf.PrfPackage;
+import mil.jpeojtrs.sca.prf.Simple;
+import mil.jpeojtrs.sca.prf.SimpleRef;
+import mil.jpeojtrs.sca.util.AnyUtils;
 
 /**
  * <!-- begin-user-doc -->
@@ -187,6 +187,9 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 
 	@Override
 	public Any toAny() {
+		if (getProperty() == null) {
+			return null;
+		}
 		return AnyUtils.toAny(getValue(), getProperty().getType().getLiteral(), getProperty().isComplex());
 	}
 

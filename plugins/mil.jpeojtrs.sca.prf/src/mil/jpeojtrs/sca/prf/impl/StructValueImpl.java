@@ -188,7 +188,10 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 		List<DataType> fields = new ArrayList<DataType>();
 		for (FeatureMap.Entry propRefEntry : getRefs()) {
 			AbstractPropertyRef< ? > propRef = (AbstractPropertyRef< ? >) propRefEntry.getValue();
-			fields.add(new DataType(propRef.getRefID(), propRef.toAny()));
+			Any propAny = propRef.toAny();
+			if (propAny != null) {
+				fields.add(new DataType(propRef.getRefID(), propRef.toAny()));
+			}
 		}
 		PropertiesHelper.insert(retVal, fields.toArray(new DataType[fields.size()]));
 		return retVal;
