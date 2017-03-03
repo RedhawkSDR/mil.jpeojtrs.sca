@@ -265,7 +265,10 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 		List<DataType> fields = new ArrayList<DataType>();
 		for (FeatureMap.Entry propRefEntry : getRefs()) {
 			AbstractPropertyRef< ? > propRef = (AbstractPropertyRef< ? >) propRefEntry.getValue();
-			fields.add(new DataType(propRef.getRefID(), propRef.toAny()));
+			Any propAny = propRef.toAny();
+			if (propAny != null) {
+				fields.add(new DataType(propRef.getRefID(), propAny));
+			}
 		}
 		PropertiesHelper.insert(retVal, fields.toArray(new DataType[fields.size()]));
 		return retVal;

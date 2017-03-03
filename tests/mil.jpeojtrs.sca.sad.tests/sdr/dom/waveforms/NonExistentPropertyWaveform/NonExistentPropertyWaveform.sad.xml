@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
+<softwareassembly id="DCE:920f3c19-173b-4fe5-b17c-80950f268c1a" name="w">
+  <componentfiles>
+    <componentfile id="DataConverter_6ac0020d-ffc4-4e29-8def-ae22ae7e5780" type="SPD">
+      <localfile name="/components/rh/DataConverter/DataConverter.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="Reader_6430020d-ffc4-4e29-8def-ae22ae7e5780"/>
+      <componentinstantiation id="Reader_1" startorder="0">
+        <usagename>Reader_1</usagename>
+        <componentproperties>
+        	<structref refid="DCE:9c3b2f8f-c0fa-4200-a8f9-e03418e46033">
+        		<simpleref refid="idonotexist" value="fail"/>
+        	</structref>
+        </componentproperties>
+        <findcomponent>
+          <namingservice name="Reader_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <assemblycontroller>
+    <componentinstantiationref refid="Reader_1"/>
+  </assemblycontroller>
+</softwareassembly>
