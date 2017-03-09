@@ -311,7 +311,7 @@ public interface ComponentInstantiation extends EObject {
 	void setImplID(String value);
 
 	/**
-	 * @since 2.1
+	 * @since 2.2
 	 */
 	public static final class Util {
 
