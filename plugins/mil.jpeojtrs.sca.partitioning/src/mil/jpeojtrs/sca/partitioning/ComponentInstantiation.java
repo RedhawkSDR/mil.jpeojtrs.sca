@@ -13,6 +13,12 @@ package mil.jpeojtrs.sca.partitioning;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+
+import mil.jpeojtrs.sca.scd.SoftwareComponent;
+import mil.jpeojtrs.sca.spd.SoftPkg;
+import mil.jpeojtrs.sca.spd.SpdPackage;
+import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
 /**
  * <!-- begin-user-doc -->
@@ -303,5 +309,31 @@ public interface ComponentInstantiation extends EObject {
 	 * @generated
 	 */
 	void setImplID(String value);
+
+	/**
+	 * @since 2.2
+	 */
+	public static final class Util {
+
+		private static final EStructuralFeature[] SPD_PATH = new EStructuralFeature[] { PartitioningPackage.Literals.COMPONENT_INSTANTIATION__PLACEMENT,
+			PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, PartitioningPackage.Literals.COMPONENT_FILE_REF__FILE,
+			PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG };
+
+		private static final EStructuralFeature[] SCD_PATH = new EStructuralFeature[] { PartitioningPackage.Literals.COMPONENT_INSTANTIATION__PLACEMENT,
+			PartitioningPackage.Literals.COMPONENT_PLACEMENT__COMPONENT_FILE_REF, PartitioningPackage.Literals.COMPONENT_FILE_REF__FILE,
+			PartitioningPackage.Literals.COMPONENT_FILE__SOFT_PKG, SpdPackage.Literals.SOFT_PKG__DESCRIPTOR, SpdPackage.Literals.DESCRIPTOR__COMPONENT };
+
+		private Util() {
+
+		}
+
+		public static SoftPkg getSpd(ComponentInstantiation compInst) {
+			return ScaEcoreUtils.getFeature(compInst, SPD_PATH);
+		}
+
+		public static SoftwareComponent getScd(ComponentInstantiation compInst) {
+			return ScaEcoreUtils.getFeature(compInst, SCD_PATH);
+		}
+	}
 
 } // ComponentInstantiation

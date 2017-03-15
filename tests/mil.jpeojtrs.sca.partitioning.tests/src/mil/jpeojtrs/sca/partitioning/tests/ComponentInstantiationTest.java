@@ -16,6 +16,8 @@ import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.scd.Ports;
 import mil.jpeojtrs.sca.scd.ScdPackage;
+import mil.jpeojtrs.sca.scd.SoftwareComponent;
+import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
@@ -114,6 +116,16 @@ public abstract class ComponentInstantiationTest extends TestCase {
 		}
 		Assert.assertEquals(size, getFixture().getUses().size());
 		// BEGIN GENERATED CODE
+	}
+
+	public void testUtilGetSpd() {
+		SoftPkg spd = ComponentInstantiation.Util.getSpd(getFixture());
+		Assert.assertNotNull(spd);
+	}
+
+	public void testUtilGetScd() {
+		SoftwareComponent scd = ComponentInstantiation.Util.getScd(getFixture());
+		Assert.assertNotNull(scd);
 	}
 
 } //ComponentInstantiationTest
