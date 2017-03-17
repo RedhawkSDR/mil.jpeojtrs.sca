@@ -567,6 +567,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -958,6 +959,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -967,6 +969,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -976,6 +979,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

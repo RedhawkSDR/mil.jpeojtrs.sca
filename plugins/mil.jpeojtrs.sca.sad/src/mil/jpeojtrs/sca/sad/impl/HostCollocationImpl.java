@@ -58,6 +58,7 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 	/**
 	 * The cached value of the '{@link #getUsesDeviceRef() <em>Uses Device Ref</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @see #getUsesDeviceRef()
 	 * @generated
@@ -136,6 +137,7 @@ public class HostCollocationImpl extends EObjectImpl implements HostCollocation 
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

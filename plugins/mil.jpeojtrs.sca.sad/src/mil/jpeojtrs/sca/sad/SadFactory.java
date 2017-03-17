@@ -275,6 +275,7 @@ public interface SadFactory extends EFactory {
 	/**
 	 * Returns a new object of class '<em>Uses Device Ref</em>'.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Uses Device Ref</em>'.
 	 * @generated

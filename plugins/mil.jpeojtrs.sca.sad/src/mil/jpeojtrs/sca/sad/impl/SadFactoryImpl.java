@@ -431,6 +431,7 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

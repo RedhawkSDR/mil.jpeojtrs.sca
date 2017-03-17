@@ -680,6 +680,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Uses Device Ref</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1112,6 +1113,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceRefImpl <em>Uses Device Ref</em>}' class.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.sad.impl.UsesDeviceRefImpl
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceRef()
@@ -1121,6 +1123,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Refid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1129,6 +1132,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Uses Device</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1137,6 +1141,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Uses Device Ref</em>' class.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1448,6 +1453,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.HostCollocation#getUsesDeviceRef <em>Uses Device Ref</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Uses Device Ref</em>'.
 	 * @see mil.jpeojtrs.sca.sad.HostCollocation#getUsesDeviceRef()
@@ -1876,6 +1882,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.UsesDeviceRef <em>Uses Device Ref</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Uses Device Ref</em>'.
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceRef
@@ -1886,6 +1893,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.UsesDeviceRef#getRefid <em>Refid</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Refid</em>'.
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceRef#getRefid()
@@ -1897,6 +1905,7 @@ public interface SadPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link mil.jpeojtrs.sca.sad.UsesDeviceRef#getUsesDevice <em>Uses Device</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Uses Device</em>'.
 	 * @see mil.jpeojtrs.sca.sad.UsesDeviceRef#getUsesDevice()
@@ -2162,6 +2171,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Uses Device Ref</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
+		 * @since 4.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -2455,6 +2465,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceRefImpl <em>Uses Device Ref</em>}' class.
 		 * <!-- begin-user-doc -->
+		 * @since 4.0
 		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.sad.impl.UsesDeviceRefImpl
 		 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceRef()
@@ -2464,6 +2475,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Refid</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 4.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -2471,6 +2483,7 @@ public interface SadPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Uses Device</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
+		 * @since 4.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */

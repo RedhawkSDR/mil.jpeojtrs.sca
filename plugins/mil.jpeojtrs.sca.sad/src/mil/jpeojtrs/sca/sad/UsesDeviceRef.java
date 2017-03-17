@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Uses Device Ref</b></em>'.
+ * @since 4.0
  * <!-- end-user-doc -->
  *
  * <p>

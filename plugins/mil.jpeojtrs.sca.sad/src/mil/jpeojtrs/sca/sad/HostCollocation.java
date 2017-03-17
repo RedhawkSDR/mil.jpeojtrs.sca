@@ -60,6 +60,7 @@ public interface HostCollocation extends EObject {
 	 * If the meaning of the '<em>Uses Device Ref</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Uses Device Ref</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.sad.SadPackage#getHostCollocation_UsesDeviceRef()
