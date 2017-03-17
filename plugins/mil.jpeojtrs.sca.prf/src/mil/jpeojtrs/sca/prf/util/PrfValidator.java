@@ -984,6 +984,7 @@ public class PrfValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 6.2
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
