@@ -149,13 +149,14 @@ public enum PropertyValueType implements Enumerator {
 	 */
 	ULONGLONG(12, "ulonglong", "ulonglong"),
 	/**
-	* The '<em><b>Utctime</b></em>' literal object.
-	* <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
-	* @see #UTCTIME_VALUE
-	* @generated
-	* @ordered
-	*/
+	 * The '<em><b>Utctime</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * @since 6.2
+	 * <!-- end-user-doc -->
+	 * @see #UTCTIME_VALUE
+	 * @generated
+	 * @ordered
+	 */
 	UTCTIME(13, "utctime", "utctime");
 
 	/**
@@ -347,6 +348,7 @@ public enum PropertyValueType implements Enumerator {
 	 * If the meaning of '<em><b>Utctime</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 6.2
 	 * <!-- end-user-doc -->
 	 * @see #UTCTIME
 	 * @model name="utctime"
