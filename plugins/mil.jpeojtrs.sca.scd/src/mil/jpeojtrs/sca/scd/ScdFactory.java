@@ -64,6 +64,16 @@ public interface ScdFactory extends EFactory {
 	 */
 	Interface createInterface();
 
+	// END GENERATED CODE
+
+	/**
+	 * Returns a new object of class '<em>Interface</em>' initialized with the specified repid.
+	 * @since 3.1
+	 */
+	Interface createInterface(String repid);
+
+	// BEGIN GENERATED CODE
+
 	/**
 	 * Returns a new object of class '<em>Interfaces</em>'.
 	 * <!-- begin-user-doc -->

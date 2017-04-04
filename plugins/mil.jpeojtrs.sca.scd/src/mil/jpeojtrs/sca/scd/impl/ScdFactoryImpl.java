@@ -198,6 +198,20 @@ public class ScdFactoryImpl extends EFactoryImpl implements ScdFactory {
 		return interface_;
 	}
 
+	// END GENERATED CODE
+
+	/**
+	 * @since 3.1
+	 */
+	@Override
+	public Interface createInterface(String repid) {
+		Interface intf = createInterface();
+		intf.setRepid(repid);
+		return intf;
+	}
+
+	// BEGIN GENERATED CODE
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="mil.jpeojtrs.sca.scd" version="2">
+    <resource path="src/mil/jpeojtrs/sca/scd/ScdFactory.java" type="mil.jpeojtrs.sca.scd.ScdFactory">
+        <filter comment="Interface not intended to be implemented outside this bundle" id="403804204">
+            <message_arguments>
+                <message_argument value="mil.jpeojtrs.sca.scd.ScdFactory"/>
+                <message_argument value="createInterface(String)"/>
+            </message_arguments>
+        </filter>
+    </resource>
+</component>
