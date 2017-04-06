@@ -161,6 +161,8 @@ public class SoftPkgTest extends TestCase {
 	}
 
 	public void testUtilIsComponentHost() throws IOException {
+		Assert.assertFalse(SoftPkg.Util.isComponentHost(null));
+		
 		URI uri = this.resourceSet.getResource(SpdTests.getURI("testComponentHost/ComponentHost.spd.xml"), true).getURI();
 		Assert.assertTrue(SoftPkg.Util.isComponentHost(uri));
 		uri = this.resourceSet.getResource(SpdTests.getURI("testSharedAddressComponent/SharedAddyComp.spd.xml"), true).getURI();
