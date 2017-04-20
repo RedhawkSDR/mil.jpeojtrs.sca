@@ -52,12 +52,28 @@
     <kind kindtype="configure"/>
     <action type="external"/>
   </simple>
+  <simple id="simple_configure_readonly" mode="readonly" type="string">
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+  <simple id="simple_configure_writeonly" mode="writeonly" type="string">
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
   <simple id="simple_execparam_property" mode="readwrite" type="string">
     <kind kindtype="execparam"/>
     <kind kindtype="property"/>
     <action type="external"/>
   </simple>
   <simple id="simple_execparam" mode="readwrite" type="string">
+    <kind kindtype="execparam"/>
+    <action type="external"/>
+  </simple>
+  <simple id="simple_execparam_readonly" mode="readonly" type="string">
+    <kind kindtype="execparam"/>
+    <action type="external"/>
+  </simple>
+  <simple id="simple_execparam_writeonly" mode="writeonly" type="string">
     <kind kindtype="execparam"/>
     <action type="external"/>
   </simple>

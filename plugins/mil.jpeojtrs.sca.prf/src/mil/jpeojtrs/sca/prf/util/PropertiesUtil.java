@@ -29,20 +29,14 @@ public final class PropertiesUtil {
 	}
 
 	/**
-	 * Determines if property should be set at launch
+	 * Determines if property should be set at launch via the command line.
 	 * @since 6.1
 	 */
 	public static boolean isCommandLine(AbstractProperty property) {
 		if (!(property instanceof Simple)) {
 			return false;
 		}
-		if (property.isKind(PropertyConfigurationType.EXECPARAM)) {
-			return true;
-		}
-		if (property.isKind(PropertyConfigurationType.PROPERTY) && ((Simple) property).isCommandLine()) {
-			return true;
-		}
-		return false;
+		return ((Simple) property).isCommandLine();
 	}
 
 	/**
@@ -50,7 +44,7 @@ public final class PropertiesUtil {
 	 * @since 6.0
 	 */
 	public static boolean canInitialize(AbstractProperty property) {
-		if ((property == null) || !property.isKind(PropertyConfigurationType.PROPERTY) || property.isKind(PropertyConfigurationType.EXECPARAM)) {
+		if ((property == null) || !property.isKind(PropertyConfigurationType.PROPERTY)) {
 			return false;
 		}
 		if ((property instanceof Simple) && ((Simple) property).isCommandLine()) {
@@ -65,28 +59,36 @@ public final class PropertiesUtil {
 	 * @return
 	 */
 	public static boolean canConfigure(final AbstractProperty property) {
-		if (property instanceof Simple) {
-			if (((Simple) property).isCommandLine()) {
-				return false;
-			}
+		if (property instanceof Simple && ((Simple) property).isCommandLine()) {
+			return false;
 		}
-
 		return (property != null) && (property.getMode() != AccessType.READONLY)
 			&& property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE);
 	}
 
+	/**
+	 * Determines if the property's default value can be overridden in the SAD file, or when the waveform is launched.
+	 * @param property
+	 * @return
+	 */
 	public static boolean canOverride(final AbstractProperty property) {
-		// Per D.6.1.3.3 configure, factoryparam, and/or execparam
-		// with mode "readwrite" or "writeonly" can be overridden
-
-		boolean isCommandLine = false;
-		if (property instanceof Simple) {
-			Simple simpProperty = (Simple) property;
-			isCommandLine = simpProperty.getCommandline() != null && simpProperty.getCommandline();
+		if (property == null) {
+			return false;
 		}
 
-		return (property != null) && (property.getMode() != AccessType.READONLY || isCommandLine) && property.isKind(PropertyConfigurationType.PROPERTY,
-			PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM);
+		// Per D.6.1.3.3 configure, factoryparam, and/or execparam
+		// with mode "readwrite" or "writeonly" can be overridden
+		boolean readonly = (property.getMode() == AccessType.READONLY);
+		if (property.isKind(PropertyConfigurationType.CONFIGURE, PropertyConfigurationType.EXECPARAM, PropertyConfigurationType.FACTORYPARAM) && !readonly) {
+			return true;
+		}
+
+		// Since 2.0.4, 'property' type can always be overridden
+		if (property.isKind(PropertyConfigurationType.PROPERTY)) {
+			return true;
+		}
+
+		return false;
 	}
 
 	public static String getDefaultValue(PropertyValueType type) {
