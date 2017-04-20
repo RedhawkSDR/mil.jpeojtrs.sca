@@ -486,6 +486,7 @@ public class SadValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateUsesDeviceRef(UsesDeviceRef usesDeviceRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// END GENERATED CODE
 		SoftwareAssembly sad = ScaEcoreUtils.getEContainerOfType(usesDeviceRef, SoftwareAssembly.class);
 		if (sad.getUsesDeviceDependencies() != null) {
 			for (UsesDevice usesDevice : sad.getUsesDeviceDependencies().getUsesdevice()) {
@@ -499,6 +500,7 @@ public class SadValidator extends EObjectValidator {
 		diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_Invalid_UsesDeviceRefId_diagnostic",
 			new Object[] { usesDeviceRef.getRefid(), hostCol.getName() }, new Object[] { usesDeviceRef }, context));
 		return false;
+		// BEGIN GENERATED CODE
 	}
 
 	/**

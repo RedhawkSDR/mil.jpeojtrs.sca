@@ -30,6 +30,7 @@
         </componentinstantiation>
       </componentplacement>
       <usesdeviceref refid="FrontEndTuner_1"/>
+      <usesdeviceref refid="I_Do_Not_Exist"/>
     </hostcollocation>
   </partitioning>
   <assemblycontroller>

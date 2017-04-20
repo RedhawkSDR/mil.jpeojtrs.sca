@@ -11,13 +11,18 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.sad.tests;
 
+import java.net.URISyntaxException;
+
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.junit.Assert;
 
 import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
+import mil.jpeojtrs.sca.sad.HostCollocation;
+import mil.jpeojtrs.sca.sad.SadPluginActivator;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 import mil.jpeojtrs.sca.sad.UsesDeviceRef;
+import mil.jpeojtrs.sca.sad.util.SadValidator;
 import mil.jpeojtrs.sca.spd.UsesDevice;
 import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
@@ -143,6 +148,27 @@ public class UsesDeviceRefTest extends TestCase {
 
 	public void testId() {
 		Assert.assertEquals("FrontEndTuner_1", getFixture().getRefid());
+	}
+
+	/**
+	 * Validate that a usesDeviceRef refID references a valid usesDevice declared in the sad.xml
+	 */
+	public void testUsesDeviceRef_RefId() throws URISyntaxException {
+		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/HostCollocation_UsesDeviceRef/HostCollocation_UsesDeviceRef.sad.xml");
+		Assert.assertEquals("Test is using an incorrect sad.xml", "HostCollocation_UsesDeviceRef", sad.getName());
+		HostCollocation hostCol = sad.getPartitioning().getHostCollocation().get(0);
+
+		// Valid usesDeviceRef
+		UsesDeviceRef usesDeviceRef = hostCol.getUsesDeviceRef().get(0);
+		BasicDiagnostic diagnostics = new BasicDiagnostic();
+		Assert.assertTrue("Validation should pass", SadValidator.INSTANCE.validateUsesDeviceRef(usesDeviceRef, diagnostics, null));
+
+		// Invalid usesDeviceRef
+		usesDeviceRef = hostCol.getUsesDeviceRef().get(1);
+		Assert.assertFalse("Validation should fail", SadValidator.INSTANCE.validateUsesDeviceRef(usesDeviceRef, diagnostics, null));
+		String errorMsg = SadPluginActivator.INSTANCE.getString("_UI_Invalid_UsesDeviceRefId_diagnostic",
+			new Object[] { usesDeviceRef.getRefid(), hostCol.getName() });
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().equals(errorMsg));
 	}
 
 	// BEGIN GENERATED CODE
