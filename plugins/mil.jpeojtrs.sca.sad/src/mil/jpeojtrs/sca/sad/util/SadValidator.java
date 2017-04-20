@@ -44,6 +44,7 @@ import mil.jpeojtrs.sca.sad.SadProvidesPort;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
+import mil.jpeojtrs.sca.spd.UsesDevice;
 import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
 /**
@@ -341,7 +342,6 @@ public class SadValidator extends EObjectValidator {
 
 	private boolean validateExternalPropertyRefId(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		String compRefId = externalProperty.getCompRefID();
-
 		SoftwareAssembly sad = ScaEcoreUtils.getEContainerOfType(externalProperty, SoftwareAssembly.class);
 		for (SadComponentInstantiation comp : sad.getAllComponentInstantiations()) {
 			if (compRefId.equals(comp.getId())) {
@@ -480,12 +480,25 @@ public class SadValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Validate that refId of usesDeviceRef references a valid usesDevice in the SAD file
 	 * @since 4.0
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateUsesDeviceRef(UsesDeviceRef usesDeviceRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(usesDeviceRef, diagnostics, context);
+		SoftwareAssembly sad = ScaEcoreUtils.getEContainerOfType(usesDeviceRef, SoftwareAssembly.class);
+		if (sad.getUsesDeviceDependencies() != null) {
+			for (UsesDevice usesDevice : sad.getUsesDeviceDependencies().getUsesdevice()) {
+				if (usesDeviceRef.getRefid().equals(usesDevice.getId())) {
+					return validate_EveryDefaultConstraint(usesDeviceRef, diagnostics, context);
+				}
+			}
+		}
+
+		HostCollocation hostCol = ScaEcoreUtils.getEContainerOfType(usesDeviceRef, HostCollocation.class);
+		diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_Invalid_UsesDeviceRefId_diagnostic",
+			new Object[] { usesDeviceRef.getRefid(), hostCol.getName() }, new Object[] { usesDeviceRef }, context));
+		return false;
 	}
 
 	/**
