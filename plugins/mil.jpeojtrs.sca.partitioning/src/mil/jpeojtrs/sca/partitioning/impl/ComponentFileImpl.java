@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 
 import mil.jpeojtrs.sca.partitioning.ComponentFile;
@@ -236,7 +237,8 @@ public abstract class ComponentFileImpl extends EObjectImpl implements Component
 			return null;
 		}
 		if (this.spd == null) {
-			spd = (SoftPkg) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, SoftPkg.EOBJECT_PATH, getFileSystem());
+			Resource resource = ScaUriHelpers.getLocalFileResource(getLocalFile().getName(), this, getFileSystem());
+			spd = SoftPkg.Util.getSoftPkg(resource);
 		}
 		return spd;
 		// BEGIN GENERATED CODE

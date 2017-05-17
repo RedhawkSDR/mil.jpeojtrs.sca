@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -167,7 +168,8 @@ public class DescriptorImpl extends EObjectImpl implements Descriptor {
 		// END GENERATED CODE
 		if (getLocalfile() != null) {
 			// TODO How do we find the appropriate File system without knowing the software component type?
-			return (SoftwareComponent) ScaUriHelpers.getLocalFileEObject(getLocalfile().getName(), this, SoftwareComponent.EOBJECT_PATH, null);
+			Resource resource = ScaUriHelpers.getLocalFileResource(getLocalfile().getName(), this, null);
+			return SoftwareComponent.Util.getSoftwareComponent(resource);
 		} else {
 			return null;
 		}

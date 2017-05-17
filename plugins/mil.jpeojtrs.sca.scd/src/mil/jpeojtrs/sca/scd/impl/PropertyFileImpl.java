@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -196,8 +197,9 @@ public class PropertyFileImpl extends EObjectImpl implements PropertyFile {
 		if (this.getLocalFile() == null) {
 			return null;
 		}
-		return (Properties) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, Properties.EOBJECT_PATH,
+		Resource resource = ScaUriHelpers.getLocalFileResource(getLocalFile().getName(), this,
 			SoftwareComponent.Util.getFileSystem(SoftwareComponent.Util.getSoftwareComponent(eResource())));
+		return Properties.Util.getProperties(resource);
 		// BEGIN GENERATED CODE
 	}
 

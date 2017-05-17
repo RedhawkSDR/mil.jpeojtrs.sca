@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -200,8 +201,8 @@ public class DevicePkgFileImpl extends EObjectImpl implements DevicePkgFile {
 		if (this.getLocalFile() == null) {
 			return null;
 		}
-		return (DevicePkg) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, DevicePkg.EOBJECT_PATH,
-			ScaFileSystemConstants.SCHEME_TARGET_SDR_DEV);
+		Resource resource = ScaUriHelpers.getLocalFileResource(getLocalFile().getName(), this, ScaFileSystemConstants.SCHEME_TARGET_SDR_DEV);
+		return DevicePkg.Util.getDevicePkg(resource);
 		// BEGIN GENERATED CODE
 	}
 

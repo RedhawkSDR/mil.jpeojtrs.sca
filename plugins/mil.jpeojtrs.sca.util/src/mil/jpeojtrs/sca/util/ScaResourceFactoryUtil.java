@@ -70,9 +70,6 @@ public final class ScaResourceFactoryUtil {
 		loadOptions.put(XMLResource.OPTION_USE_LEXICAL_HANDLER, Boolean.TRUE);
 		loadOptions.put(XMLResource.OPTION_SAVE_DOCTYPE, Boolean.TRUE);
 
-		// Suppress The Document Root
-		loadOptions.put(XMLResource.OPTION_SUPPRESS_DOCUMENT_ROOT, Boolean.TRUE);
-
 		final Map<String, Object> parserFeatures = new HashMap<String, Object>();
 		parserFeatures.put("http://xml.org/sax/features/namespaces", false);
 		parserFeatures.put("http://xml.org/sax/features/validation", false);

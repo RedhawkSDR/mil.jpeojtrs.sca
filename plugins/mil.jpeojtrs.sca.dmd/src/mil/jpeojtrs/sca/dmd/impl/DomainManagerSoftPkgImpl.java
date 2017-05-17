@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * <!-- begin-user-doc -->
@@ -153,7 +154,8 @@ public class DomainManagerSoftPkgImpl extends EObjectImpl implements DomainManag
 		if (getLocalFile() == null) {
 			return null;
 		}
-		return (SoftPkg) ScaUriHelpers.getLocalFileEObject(getLocalFile().getName(), this, SoftPkg.EOBJECT_PATH, ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM);
+		Resource resource = ScaUriHelpers.getLocalFileResource(getLocalFile().getName(), this, ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM);
+		return SoftPkg.Util.getSoftPkg(resource);
 		// BEGIN GENERATED CODE
 	}
 
