@@ -264,7 +264,6 @@ public class DcdValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDcdDocumentRoot(DcdDocumentRoot dcdDocumentRoot, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		System.out.println("validateDcdDocumentRoot");
 		return validate_EveryDefaultConstraint(dcdDocumentRoot, diagnostics, context);
 	}
 
