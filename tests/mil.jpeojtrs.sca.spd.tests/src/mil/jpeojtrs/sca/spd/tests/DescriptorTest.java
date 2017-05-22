@@ -81,7 +81,6 @@ public class DescriptorTest extends TestCase {
 		return fixture;
 	}
 
-	private Descriptor descriptor;
 	private ResourceSetImpl resourceSet;
 	private SoftwareComponent component;
 
@@ -96,7 +95,7 @@ public class DescriptorTest extends TestCase {
 		setFixture(SpdFactory.eINSTANCE.createDescriptor());
 		this.resourceSet = new ResourceSetImpl();
 		final SoftPkg softPkg = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testFiles/defaultCpp.spd.xml"), true));
-		this.descriptor = softPkg.getDescriptor();
+		setFixture(softPkg.getDescriptor());
 		this.component = SoftwareComponent.Util.getSoftwareComponent(
 			this.resourceSet.getResource(SpdTests.getURI("testFiles/SoftwareComponentTest.scd.xml"), true));
 	}
@@ -110,13 +109,12 @@ public class DescriptorTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-		this.descriptor = null;
 		this.resourceSet = null;
 		this.component = null;
 	}
 
 	public void testParse() {
-		Assert.assertEquals("cppDescriptor", this.descriptor.getName());
+		Assert.assertEquals("cppDescriptor", getFixture().getName());
 	}
 
 	/**
@@ -129,8 +127,8 @@ public class DescriptorTest extends TestCase {
 	 */
 	public void testGetComponent() {
 		// END GENERATED CODE
-		Assert.assertNotNull(this.descriptor.getComponent());
-		Assert.assertEquals("IDL:CF/Resource:1.0", this.descriptor.getComponent().getRepId());
+		Assert.assertNotNull(getFixture().getComponent());
+		Assert.assertEquals("IDL:CF/Resource:1.0", getFixture().getComponent().getRepId());
 		// BEGIN GENERATED CODE
 	}
 
@@ -145,11 +143,11 @@ public class DescriptorTest extends TestCase {
 	 */
 	public void testSetComponent() {
 		// END GENERATED CODE
-		this.descriptor.setComponent(this.component);
-		Assert.assertEquals("IDL:CF/Resource:1.1", this.descriptor.getComponent().getRepId());
+		getFixture().setComponent(this.component);
+		Assert.assertEquals("IDL:CF/Resource:1.1", getFixture().getComponent().getRepId());
 
-		this.descriptor.setComponent(this.component);
-		Assert.assertEquals("2.2", this.descriptor.getComponent().getCorbaVersion());
+		getFixture().setComponent(this.component);
+		Assert.assertEquals("2.2", getFixture().getComponent().getCorbaVersion());
 		// END GENERATED CODE
 	}
 

@@ -11,9 +11,19 @@
 package mil.jpeojtrs.sca.util.tests;
 
 import org.junit.Assert;
+
+import mil.jpeojtrs.sca.spd.SoftPkg;
+import mil.jpeojtrs.sca.spd.SpdFactory;
+import mil.jpeojtrs.sca.util.ScaResourceFactoryUtil;
 import mil.jpeojtrs.sca.util.ScaUriHelpers;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,7 +45,25 @@ public class ScaUriHelpersTest {
 	}
 
 	@Test
-	public void test_createFileSystemURI() throws Exception {
+	public void getLocalFileResource() throws IOException {
+		// Create a ResourceSet, Resource, SPD; it's unimportant that the SPD doesn't exist
+		ResourceSet resourceSet = ScaResourceFactoryUtil.createResourceSet();
+		Path tempDir = Files.createTempDirectory(ScaUriHelpersTest.class.getSimpleName());
+		Resource resource = resourceSet.createResource(URI.createFileURI(tempDir.resolve("NonExistentReference.spd.xml").toString()));
+		SoftPkg spd = SpdFactory.eINSTANCE.createSoftPkg();
+		resource.getContents().add(spd);
+
+		// Resolve a non-existent path
+		Resource localFileResource = ScaUriHelpers.getLocalFileResource("NonExistentSibling.prf.xml", spd, null);
+		Assert.assertNull("A Resource should not be returned for non-existent file", localFileResource);
+
+		// Re-resolve the same non-existent path; should *not* return an empty resource with errors
+		localFileResource = ScaUriHelpers.getLocalFileResource("NonExistentSibling.prf.xml", spd, null);
+		Assert.assertNull("An empty resource with errors should not be returned for a non-existent file", localFileResource);
+	}
+
+	@Test
+	public void createFileSystemURI() throws Exception {
 		URI localURI = ScaUriHelpers.createFileSystemURI(this.localFileName, this.uri, null);
 
 		Assert.assertNotNull(localURI);
@@ -43,10 +71,6 @@ public class ScaUriHelpersTest {
 
 		// path is null
 		localURI = ScaUriHelpers.createFileSystemURI(null, this.uri, null);
-		Assert.assertNull(localURI);
-
-		// referenceURI is null
-		localURI = ScaUriHelpers.createFileSystemURI(this.localFileName, null, null);
 		Assert.assertNull(localURI);
 
 		// target FS is null, no query params

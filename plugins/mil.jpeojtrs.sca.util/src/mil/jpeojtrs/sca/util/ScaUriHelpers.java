@@ -12,18 +12,24 @@ package mil.jpeojtrs.sca.util;
 
 import java.util.Map;
 
+import org.eclipse.core.runtime.ILog;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 public class ScaUriHelpers {
-	private static final boolean DEBUG = Boolean.valueOf(Platform.getDebugOption("mil.jpeojtrs.sca.util/debug"));
-	private static final boolean EXCEPTION = Boolean.valueOf(Platform.getDebugOption("mil.jpeojtrs.sca.util/debug/exception"));
+
+	private static final String PLUGIN_ID = "mil.jpeojtrs.sca.util";
 
 	private ScaUriHelpers() {
-
 	}
 
 	/**
@@ -31,38 +37,25 @@ public class ScaUriHelpers {
 	 */
 	public static String getLocalFilePath(final EObject reference, final EObject target) {
 		if (reference == null || target == null) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("getLocalFileEObject: Returning null, no reference or target");
-			}
 			return null;
 		}
-		
-		final Resource targetResource = target.eResource();
-		if (targetResource == null) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("getLocalFileEObject: Returning null, no target resource");
-			}
-			return null;
-		}
-		final URI targetUri = targetResource.getURI();
-
+		final URI targetUri = EcoreUtil.getURI(target);
 		if (targetUri == null) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("getLocalFileEObject: Returning null, no target URI.");
-			}
 			return null;
 		}
 
-		if (targetUri.scheme() != null
-		        && !(targetUri.scheme().startsWith(ScaFileSystemConstants.SCHEME_TARGET_SDR) || targetUri.scheme().equals(ScaFileSystemConstants.SCHEME))) {
+		// Allow sdr, sca* and file schemes
+		String targetScheme = targetUri.scheme();
+		if (targetScheme != null
+			&& !(targetScheme.startsWith(ScaFileSystemConstants.SCHEME_TARGET_SDR) || ScaFileSystemConstants.SCHEME.equals(targetScheme) || targetUri.isFile())) {
 			return targetUri.toString();
 		}
-		
+
 		final Resource referenceResource = reference.eResource();
 		if (referenceResource == null) {
 			return targetUri.path();
 		}
-		
+
 		final URI referenceUri = referenceResource.getURI();
 		final URI resolved = targetUri.deresolve(referenceUri);
 		String path = resolved.path();
@@ -73,133 +66,112 @@ public class ScaUriHelpers {
 	}
 
 	/**
+	 * Loads a {@link Resource} based on a path and a reference {@link EObject}.
+	 * @param localFilePath The absolute path in the file system, or a path relative to the <code>reference</code>
+	 * @param reference The reference to use when locating the file path
+	 * @param targetFileSystem The target file system, or null to use the <code>reference</code> file system
+	 * @return The {@link Resource} if it was loaded without error, otherwise null
 	 * @since 3.0
 	 */
 	public static Resource getLocalFileResource(final String localFilePath, final EObject reference, final String targetFileSystem) {
-		if (localFilePath == null || localFilePath.length() == 0) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("getLocalFileEObject: Returning null, no local path");
-			}
-			return null;
-		}
-		if (reference == null) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("getLocalFileEObject: Returning null, no reference");
-			}
-			return null;
-		}
-		final Resource resource = reference.eResource();
-		if (resource == null) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("getLocalFileEObject: Returning null, no resource");
-			}
-			return null;
-		}
-		final ResourceSet resourceSet = resource.getResourceSet();
-		if (resourceSet == null) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("getLocalFileEObject: Returning null, no resource set");
-			}
-			return null;
-		}
-
 		final URI newUri = ScaUriHelpers.getLocalFileURI(localFilePath, reference, targetFileSystem);
-		if (newUri != null) {
-			try {
-				return resourceSet.getResource(newUri, true);
-			} catch (final Exception e) { // SUPPRESS CHECKSTYLE Trace statement
-				if (ScaUriHelpers.DEBUG) {
-					ScaUriHelpers.debug("getLocalFileEObject: Suppressing exception " + e.getMessage());
-					if (ScaUriHelpers.EXCEPTION) {
-						e.printStackTrace(); // SUPPRESS CHECKSTYLE Trace statement
-					}
-				}
-			}
+		final Resource refResource = reference.eResource();
+
+		// Refuse to proceed if we couldn't create a URI, or the reference doesn't belong to a Resource
+		if (newUri == null || refResource == null) {
+			return null;
 		}
 
-		return null;
+		final ResourceSet resourceSet = refResource.getResourceSet();
+		try {
+			// Demand-load the resource
+			Resource resource = resourceSet.getResource(newUri, true);
+
+			// If the resource was requested *previously* from the ResourceSet, then it's already in the ResourceSet
+			// *even if it had problems loading*. We detect this and still return null.
+			if (!resource.getErrors().isEmpty() && resource.getContents().isEmpty()) {
+				return null;
+			}
+			return resource;
+		} catch (WrappedException e) {
+			// Resource failed to load
+			return null;
+		} catch (final Exception e) {
+			// TODO: We should be able to remove this catch block
+			log(new Status(IStatus.ERROR, PLUGIN_ID, "Unexpected error while loading an XML resource", e));
+			return null;
+		}
 	}
 
 	/**
+	 * Helper method. Calls {@link #createFileSystemURI(String, URI, String)}.
+	 * @param localFilePath
+	 * @param reference An object whose URI will be used as a reference
+	 * @param targetFileSystem
 	 * @since 3.0
 	 */
 	public static URI getLocalFileURI(final String localFilePath, final EObject reference, final String targetFileSystem) {
-		if (localFilePath == null || localFilePath.length() == 0) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("getLocalFileEObject: Returning null, no local path");
-			}
+		// The URI will be null if the reference doesn't belong to a Resource
+		final URI resourceURI = EcoreUtil.getURI(reference);
+		if (resourceURI == null) {
 			return null;
-		}
-		if (reference == null) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("getLocalFileEObject: Returning null, no reference");
-			}
-			return null;
-		}
-		final Resource resource = reference.eResource();
-		if (resource == null) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("getLocalFileEObject: Returning null, no resource");
-			}
-			return null;
-		}
-		final URI pathURI = URI.createURI(localFilePath);
-		if (pathURI.scheme() != null) {
-			return pathURI;
-		}
-		final URI resourceURI = resource.getURI();
-		final URI fileSystemURI = ScaUriHelpers.createFileSystemURI(localFilePath, resourceURI, targetFileSystem);
-		if (fileSystemURI != null) {
-			return fileSystemURI;
 		}
 
-		if (ScaUriHelpers.DEBUG) {
-			ScaUriHelpers.debug("getLocalFileEObject: Returning null, no file system URI.");
-		}
-		return null;
+		final URI fileSystemURI = ScaUriHelpers.createFileSystemURI(localFilePath, resourceURI, targetFileSystem);
+		return fileSystemURI;
 	}
 
 	/**
-	 * Given the path stored in a LocalFile object and the relative EObject attempts to create the reference Root EObject type
+	 * Given the path stored in a LocalFile object and the relative EObject attempts to create the reference Root
+	 * EObject type
 	 * @since 3.0
 	 */
 	public static EObject getLocalFileEObject(final String localFilePath, final EObject reference, String fragment, final String targetFileSystem) {
 		if (fragment == null) {
 			fragment = "/";
 		}
+
 		final Resource resource = ScaUriHelpers.getLocalFileResource(localFilePath, reference, targetFileSystem);
-		if (resource != null) {
-			try {
-				return resource.getEObject(fragment);
-			} catch (final Exception e) { // SUPPRESS CHECKSTYLE Trace statement
-				if (ScaUriHelpers.DEBUG) {
-					ScaUriHelpers.debug("getLocalFileEObject: Suppressing exception " + e.getMessage());
-					if (ScaUriHelpers.EXCEPTION) {
-						e.printStackTrace(); // SUPPRESS CHECKSTYLE Trace statement
-					}
-				}
-			}
+		if (resource == null) {
+			return null;
 		}
-		return null;
+
+		try {
+			return resource.getEObject(fragment);
+		} catch (WrappedException e) {
+			// Failure to locate object
+			return null;
+		} catch (final Exception e) {
+			// TODO: We should be able to remove this catch block
+			log(new Status(IStatus.ERROR, PLUGIN_ID, "Unexpected error while loading an XML resource", e));
+			return null;
+		}
 	}
 
 	/**
-	 * @param path Path within the target file system 
-	 * @param referenceURI the uri of the caller of this function
-	 * @param targetFileSystem if the URI does not contain a File system query, this will be used to reference the target file system instead
-
+	 * Creates a URI based on a path and a reference URI.
+	 * @param path The absolute path in the file system, or a path relative to the <code>reference</code>
+	 * @param referenceURI The reference to use when creating the URI
+	 * @param targetFileSystem if the URI does not contain a file system query string, this will be used to reference
+	 * the target file system instead
 	 * @since 3.0
 	 * @return Absolute URI to resource
 	 */
 	public static URI createFileSystemURI(final String path, final URI referenceURI, String targetFileSystem) {
-		if (path == null || referenceURI == null) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("createFileSystemURI: Returning null, Path and reference URI is null.");
-			}
+		// Path may be null for malformed XML, or XML that is being constructed
+		if (path == null || path.isEmpty()) {
 			return null;
 		}
+
+		// Handle relative path requests
 		if (path.charAt(0) != '/') {
-			return ScaUriHelpers.getRelativeFileURI(path, referenceURI);
+			URI uri = ScaUriHelpers.getRelativeFileURI(path, referenceURI);
+			if (uri == null) {
+				String msg = String.format("Unable to construct URI for relative path '%s' with reference URI '%s' for target file system '%s'", path,
+					referenceURI, targetFileSystem);
+				log(new Status(IStatus.ERROR, PLUGIN_ID, msg));
+			}
+			return uri;
 		}
 
 		final String queryStr = referenceURI.query();
@@ -208,17 +180,11 @@ public class ScaUriHelpers {
 			targetFileSystem = ScaFileSystemConstants.SCHEME;
 		}
 		if (targetFileSystem == null) {
-			if (ScaUriHelpers.DEBUG) {
-				ScaUriHelpers.debug("createFileSystemURI: Returning null, targetFileSystem and QUERY_PARAM_FS are null.");
-			}
+			String msg = "createFileSystemURI: Returning null, targetFileSystem and QUERY_PARAM_FS are null.";
+			log(new Status(IStatus.ERROR, PLUGIN_ID, msg));
 			return null;
-		} else {
-			return URI.createHierarchicalURI(targetFileSystem, referenceURI.authority(), referenceURI.device(), URI.createURI(path).segments(), queryStr, null);
 		}
-	}
-
-	private static void debug(final String string) {
-		System.out.println("DEBUG (mil.jpeojtrs.sca.util.ScaUriHelpers): " + string); // SUPPRESS CHECKSTYLE Trace statement
+		return URI.createHierarchicalURI(targetFileSystem, referenceURI.authority(), referenceURI.device(), URI.createURI(path).segments(), queryStr, null);
 	}
 
 	/**
@@ -234,6 +200,12 @@ public class ScaUriHelpers {
 		}
 		final URI uri = root.appendSegments(relativeURI.segments());
 		return uri;
+	}
+
+	private static void log(IStatus status) {
+		Bundle bundle = FrameworkUtil.getBundle(ScaUriHelpers.class);
+		ILog log = Platform.getLog(bundle);
+		log.log(status);
 	}
 
 }
