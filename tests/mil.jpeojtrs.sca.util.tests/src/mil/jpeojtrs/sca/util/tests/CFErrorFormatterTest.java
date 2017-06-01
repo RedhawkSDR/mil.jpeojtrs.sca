@@ -21,6 +21,9 @@ import CF.UnknownProperties;
 import CF.DevicePackage.InvalidCapacity;
 import CF.DevicePackage.InvalidState;
 import CF.ExecutableDevicePackage.ExecuteFail;
+import CF.ExecutableDevicePackage.InvalidFunction;
+import CF.ExecutableDevicePackage.InvalidOptions;
+import CF.ExecutableDevicePackage.InvalidParameters;
 import CF.FileManagerPackage.NonExistentMount;
 import CF.FilePackage.InvalidFilePointer;
 import CF.LifeCyclePackage.InitializeError;
@@ -149,6 +152,28 @@ public class CFErrorFormatterTest {
 	public void format_InvalidFilePointer() {
 		String msg = CFErrorFormatter.format(new InvalidFilePointer(), "/foo");
 		Assert.assertEquals("CF.FilePackage.InvalidFilePointer for /foo", msg);
+	}
+
+	@Test
+	public void format_InvalidFunction() {
+		String msg = CFErrorFormatter.format(new InvalidFunction(), "ghi");
+		Assert.assertEquals("CF.ExecutableDevicePackage.InvalidFunction for ghi", msg);
+	}
+
+	@Test
+	public void format_InvalidOptions() {
+		String msg = CFErrorFormatter.format(new InvalidOptions(new DataType[] { new DataType("g", null) }), "baz");
+		Assert.assertEquals("CF.ExecutableDevicePackage.InvalidOptions for baz. Properties: g", msg);
+		msg = CFErrorFormatter.format(new InvalidOptions(new DataType[] {}), "baz");
+		Assert.assertEquals("CF.ExecutableDevicePackage.InvalidOptions for baz. Properties: (no properties)", msg);
+	}
+
+	@Test
+	public void format_InvalidParameters() {
+		String msg = CFErrorFormatter.format(new InvalidParameters(new DataType[] { new DataType("h", null) }), "baz");
+		Assert.assertEquals("CF.ExecutableDevicePackage.InvalidParameters for baz. Properties: h", msg);
+		msg = CFErrorFormatter.format(new InvalidParameters(new DataType[] {}), "baz");
+		Assert.assertEquals("CF.ExecutableDevicePackage.InvalidParameters for baz. Properties: (no properties)", msg);
 	}
 
 	@Test
