@@ -26,6 +26,9 @@ import CF.UnknownProperties;
 import CF.DevicePackage.InvalidCapacity;
 import CF.DevicePackage.InvalidState;
 import CF.ExecutableDevicePackage.ExecuteFail;
+import CF.ExecutableDevicePackage.InvalidFunction;
+import CF.ExecutableDevicePackage.InvalidOptions;
+import CF.ExecutableDevicePackage.InvalidParameters;
 import CF.FileManagerPackage.NonExistentMount;
 import CF.FilePackage.InvalidFilePointer;
 import CF.LifeCyclePackage.InitializeError;
@@ -162,6 +165,27 @@ public class CFErrorFormatter {
 
 	public static String format(InvalidFilePointer e, String path) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), path);
+	}
+
+	/**
+	 * @since 4.5
+	 */
+	public static String format(InvalidFunction e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
+	}
+
+	/**
+	 * @since 4.5
+	 */
+	public static String format(InvalidOptions e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME_PROPLIST, e.getClass().getName(), resourceDesc, formatProperties(e.invalidOpts));
+	}
+
+	/**
+	 * @since 4.5
+	 */
+	public static String format(InvalidParameters e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME_PROPLIST, e.getClass().getName(), resourceDesc, formatProperties(e.invalidParms));
 	}
 
 	public static String format(InvalidPort e, String resourceDesc) {
