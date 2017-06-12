@@ -37,6 +37,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link mil.jpeojtrs.sca.sad.Reservation} object.
  * <!-- begin-user-doc -->
+ * @since 3.1
  * <!-- end-user-doc -->
  * @generated
  */

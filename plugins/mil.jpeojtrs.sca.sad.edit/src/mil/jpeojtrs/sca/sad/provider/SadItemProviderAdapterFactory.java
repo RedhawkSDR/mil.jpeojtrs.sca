@@ -453,6 +453,7 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.sad.Reservation} instances.
 	 * <!-- begin-user-doc -->
+	 * @since 3.1
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
