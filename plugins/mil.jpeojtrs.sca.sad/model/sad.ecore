@@ -235,6 +235,13 @@
         <details key="kind" value="element"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reservation" upperBound="-1"
+        eType="#//Reservation" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="reservation"/>
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
         iD="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -325,6 +332,10 @@
     <eGenericSuperTypes eClassifier="ecore:EClass ../../mil.jpeojtrs.sca.partitioning/model/partitioning.ecore#//ComponentPlacement">
       <eTypeArguments eClassifier="#//SadComponentInstantiation"/>
     </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reservation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceFactoryProperties" eSuperTypes="../../mil.jpeojtrs.sca.prf/model/prf.ecore#//PropertyRefContainer">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
