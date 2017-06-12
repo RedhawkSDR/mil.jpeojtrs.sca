@@ -21,6 +21,7 @@ import mil.jpeojtrs.sca.sad.ExternalProperty;
 import mil.jpeojtrs.sca.sad.FindComponent;
 import mil.jpeojtrs.sca.sad.HostCollocation;
 import mil.jpeojtrs.sca.sad.Port;
+import mil.jpeojtrs.sca.sad.Reservation;
 import mil.jpeojtrs.sca.sad.ResourceFactoryProperties;
 import mil.jpeojtrs.sca.sad.SadComponentInstantiation;
 import mil.jpeojtrs.sca.sad.SadComponentInstantiationRef;
@@ -154,6 +155,12 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * @generated
 	 */
 	private EClass sadComponentPlacementEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reservationEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -577,12 +584,22 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHostCollocation_Reservation() {
+		return (EReference) hostCollocationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EAttribute getHostCollocation_Id() {
-		return (EAttribute) hostCollocationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) hostCollocationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -592,7 +609,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 */
 	@Override
 	public EAttribute getHostCollocation_Name() {
-		return (EAttribute) hostCollocationEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) hostCollocationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -694,6 +711,36 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	@Override
 	public EClass getSadComponentPlacement() {
 		return sadComponentPlacementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReservation() {
+		return reservationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReservation_Kind() {
+		return (EAttribute) reservationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReservation_Value() {
+		return (EAttribute) reservationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1058,6 +1105,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		hostCollocationEClass = createEClass(HOST_COLLOCATION);
 		createEReference(hostCollocationEClass, HOST_COLLOCATION__COMPONENT_PLACEMENT);
 		createEReference(hostCollocationEClass, HOST_COLLOCATION__USES_DEVICE_REF);
+		createEReference(hostCollocationEClass, HOST_COLLOCATION__RESERVATION);
 		createEAttribute(hostCollocationEClass, HOST_COLLOCATION__ID);
 		createEAttribute(hostCollocationEClass, HOST_COLLOCATION__NAME);
 
@@ -1073,6 +1121,10 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		createEReference(sadPartitioningEClass, SAD_PARTITIONING__HOST_COLLOCATION);
 
 		sadComponentPlacementEClass = createEClass(SAD_COMPONENT_PLACEMENT);
+
+		reservationEClass = createEClass(RESERVATION);
+		createEAttribute(reservationEClass, RESERVATION__KIND);
+		createEAttribute(reservationEClass, RESERVATION__VALUE);
 
 		resourceFactoryPropertiesEClass = createEClass(RESOURCE_FACTORY_PROPERTIES);
 		createEAttribute(resourceFactoryPropertiesEClass, RESOURCE_FACTORY_PROPERTIES__GROUP);
@@ -1249,6 +1301,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHostCollocation_UsesDeviceRef(), this.getUsesDeviceRef(), null, "usesDeviceRef", null, 0, -1, HostCollocation.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHostCollocation_Reservation(), this.getReservation(), null, "reservation", null, 0, -1, HostCollocation.class, !IS_TRANSIENT,
+			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHostCollocation_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, HostCollocation.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHostCollocation_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, HostCollocation.class, !IS_TRANSIENT, !IS_VOLATILE,
@@ -1273,6 +1327,12 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(sadComponentPlacementEClass, SadComponentPlacement.class, "SadComponentPlacement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(reservationEClass, Reservation.class, "Reservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getReservation_Kind(), theXMLTypePackage.getString(), "kind", null, 0, 1, Reservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReservation_Value(), theXMLTypePackage.getString(), "value", null, 0, 1, Reservation.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceFactoryPropertiesEClass, ResourceFactoryProperties.class, "ResourceFactoryProperties", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
@@ -1400,6 +1460,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation(hostCollocationEClass, source, new String[] { "name", "hostcollocation", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getHostCollocation_ComponentPlacement(), source, new String[] { "name", "componentplacement", "kind", "element" });
 		addAnnotation(getHostCollocation_UsesDeviceRef(), source, new String[] { "name", "usesdeviceref", "kind", "element" });
+		addAnnotation(getHostCollocation_Reservation(), source, new String[] { "name", "reservation", "kind", "element" });
 		addAnnotation(getHostCollocation_Id(), source, new String[] { "kind", "attribute", "name", "id" });
 		addAnnotation(getHostCollocation_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(portEClass, source, new String[] { "name", "port", "kind", "elementOnly", "qualified", "false" });

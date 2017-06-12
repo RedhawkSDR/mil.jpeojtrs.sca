@@ -183,6 +183,11 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseReservation(Reservation object) {
+			return createReservationAdapter();
+		}
+
+		@Override
 		public Adapter caseResourceFactoryProperties(ResourceFactoryProperties object) {
 			return createResourceFactoryPropertiesAdapter();
 		}
@@ -495,6 +500,21 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSadComponentPlacementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.sad.Reservation <em>Reservation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.sad.Reservation
+	 * @generated
+	 */
+	public Adapter createReservationAdapter() {
 		return null;
 	}
 

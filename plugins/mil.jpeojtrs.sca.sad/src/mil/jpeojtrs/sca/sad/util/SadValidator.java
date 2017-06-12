@@ -156,6 +156,8 @@ public class SadValidator extends EObjectValidator {
 			return validateSadPartitioning((SadPartitioning) value, diagnostics, context);
 		case SadPackage.SAD_COMPONENT_PLACEMENT:
 			return validateSadComponentPlacement((SadComponentPlacement) value, diagnostics, context);
+		case SadPackage.RESERVATION:
+			return validateReservation((Reservation) value, diagnostics, context);
 		case SadPackage.RESOURCE_FACTORY_PROPERTIES:
 			return validateResourceFactoryProperties((ResourceFactoryProperties) value, diagnostics, context);
 		case SadPackage.SAD_DOCUMENT_ROOT:
@@ -438,6 +440,16 @@ public class SadValidator extends EObjectValidator {
 	 */
 	public boolean validateSadComponentPlacement(SadComponentPlacement sadComponentPlacement, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(sadComponentPlacement, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReservation(Reservation reservation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(reservation, diagnostics, context);
 	}
 
 	/**

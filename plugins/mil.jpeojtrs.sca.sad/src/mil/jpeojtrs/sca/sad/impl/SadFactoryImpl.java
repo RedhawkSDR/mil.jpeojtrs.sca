@@ -124,6 +124,8 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 			return createSadPartitioning();
 		case SadPackage.SAD_COMPONENT_PLACEMENT:
 			return createSadComponentPlacement();
+		case SadPackage.RESERVATION:
+			return createReservation();
 		case SadPackage.RESOURCE_FACTORY_PROPERTIES:
 			return createResourceFactoryProperties();
 		case SadPackage.SAD_DOCUMENT_ROOT:
@@ -372,6 +374,17 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	public SadComponentPlacement createSadComponentPlacement() {
 		SadComponentPlacementImpl sadComponentPlacement = new SadComponentPlacementImpl();
 		return sadComponentPlacement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Reservation createReservation() {
+		ReservationImpl reservation = new ReservationImpl();
+		return reservation;
 	}
 
 	/**

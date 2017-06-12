@@ -687,13 +687,22 @@ public interface SadPackage extends EPackage {
 	 */
 	int HOST_COLLOCATION__USES_DEVICE_REF = 1;
 	/**
+	 * The feature id for the '<em><b>Reservation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOST_COLLOCATION__RESERVATION = 2;
+	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HOST_COLLOCATION__ID = 2;
+	int HOST_COLLOCATION__ID = 3;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -701,7 +710,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOST_COLLOCATION__NAME = 3;
+	int HOST_COLLOCATION__NAME = 4;
 	/**
 	 * The number of structural features of the '<em>Host Collocation</em>' class.
 	 * <!-- begin-user-doc -->
@@ -709,7 +718,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HOST_COLLOCATION_FEATURE_COUNT = 4;
+	int HOST_COLLOCATION_FEATURE_COUNT = 5;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.PortImpl <em>Port</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -861,6 +870,43 @@ public interface SadPackage extends EPackage {
 	 */
 	int SAD_COMPONENT_PLACEMENT_FEATURE_COUNT = PartitioningPackage.COMPONENT_PLACEMENT_FEATURE_COUNT + 0;
 	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.ReservationImpl <em>Reservation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.sad.impl.ReservationImpl
+	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getReservation()
+	 * @generated
+	 */
+	int RESERVATION = 16;
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESERVATION__KIND = 0;
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESERVATION__VALUE = 1;
+	/**
+	 * The number of structural features of the '<em>Reservation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESERVATION_FEATURE_COUNT = 2;
+	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.ResourceFactoryPropertiesImpl <em>Resource Factory Properties</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -868,7 +914,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getResourceFactoryProperties()
 	 * @generated
 	 */
-	int RESOURCE_FACTORY_PROPERTIES = 16;
+	int RESOURCE_FACTORY_PROPERTIES = 17;
 	/**
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
@@ -933,7 +979,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getSadDocumentRoot()
 	 * @generated
 	 */
-	int SAD_DOCUMENT_ROOT = 17;
+	int SAD_DOCUMENT_ROOT = 18;
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
@@ -982,7 +1028,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getSoftwareAssembly()
 	 * @generated
 	 */
-	int SOFTWARE_ASSEMBLY = 18;
+	int SOFTWARE_ASSEMBLY = 19;
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1090,7 +1136,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceDependencies()
 	 * @generated
 	 */
-	int USES_DEVICE_DEPENDENCIES = 19;
+	int USES_DEVICE_DEPENDENCIES = 20;
 	/**
 	 * The feature id for the '<em><b>Usesdevice</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -1119,7 +1165,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceRef()
 	 * @generated
 	 */
-	int USES_DEVICE_REF = 20;
+	int USES_DEVICE_REF = 21;
 	/**
 	 * The feature id for the '<em><b>Refid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1463,6 +1509,18 @@ public interface SadPackage extends EPackage {
 	EReference getHostCollocation_UsesDeviceRef();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.HostCollocation#getReservation <em>Reservation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Reservation</em>'.
+	 * @see mil.jpeojtrs.sca.sad.HostCollocation#getReservation()
+	 * @see #getHostCollocation()
+	 * @generated
+	 */
+	EReference getHostCollocation_Reservation();
+
+	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.HostCollocation#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1592,6 +1650,41 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSadComponentPlacement();
+
+	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.Reservation <em>Reservation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Reservation</em>'.
+	 * @see mil.jpeojtrs.sca.sad.Reservation
+	 * @generated
+	 */
+	EClass getReservation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Reservation#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see mil.jpeojtrs.sca.sad.Reservation#getKind()
+	 * @see #getReservation()
+	 * @generated
+	 */
+	EAttribute getReservation_Kind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Reservation#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see mil.jpeojtrs.sca.sad.Reservation#getValue()
+	 * @see #getReservation()
+	 * @generated
+	 */
+	EAttribute getReservation_Value();
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties <em>Resource Factory Properties</em>}'.
@@ -2177,6 +2270,14 @@ public interface SadPackage extends EPackage {
 		 */
 		EReference HOST_COLLOCATION__USES_DEVICE_REF = eINSTANCE.getHostCollocation_UsesDeviceRef();
 		/**
+		 * The meta object literal for the '<em><b>Reservation</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOST_COLLOCATION__RESERVATION = eINSTANCE.getHostCollocation_Reservation();
+		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2268,6 +2369,32 @@ public interface SadPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SAD_COMPONENT_PLACEMENT = eINSTANCE.getSadComponentPlacement();
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.ReservationImpl <em>Reservation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.sad.impl.ReservationImpl
+		 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getReservation()
+		 * @generated
+		 */
+		EClass RESERVATION = eINSTANCE.getReservation();
+		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESERVATION__KIND = eINSTANCE.getReservation_Kind();
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESERVATION__VALUE = eINSTANCE.getReservation_Value();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.ResourceFactoryPropertiesImpl <em>Resource Factory Properties</em>}' class.
 		 * <!-- begin-user-doc -->

@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link mil.jpeojtrs.sca.sad.HostCollocation#getComponentPlacement <em>Component Placement</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.HostCollocation#getUsesDeviceRef <em>Uses Device Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.HostCollocation#getReservation <em>Reservation</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.HostCollocation#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.HostCollocation#getName <em>Name</em>}</li>
  * </ul>
@@ -69,6 +70,24 @@ public interface HostCollocation extends EObject {
 	 * @generated
 	 */
 	EList<UsesDeviceRef> getUsesDeviceRef();
+
+	/**
+	 * Returns the value of the '<em><b>Reservation</b></em>' containment reference list.
+	 * The list contents are of type {@link mil.jpeojtrs.sca.sad.Reservation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reservation</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reservation</em>' containment reference list.
+	 * @see mil.jpeojtrs.sca.sad.SadPackage#getHostCollocation_Reservation()
+	 * @model containment="true"
+	 *        extendedMetaData="name='reservation' kind='element'"
+	 * @generated
+	 */
+	EList<Reservation> getReservation();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

@@ -227,6 +227,16 @@ public interface SadFactory extends EFactory {
 	SadComponentPlacement createSadComponentPlacement();
 
 	/**
+	 * Returns a new object of class '<em>Reservation</em>'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Reservation</em>'.
+	 * @generated
+	 */
+	Reservation createReservation();
+
+	/**
 	 * Creates a new component placement.
 	 * @param componentFileRef
 	 * @param instances

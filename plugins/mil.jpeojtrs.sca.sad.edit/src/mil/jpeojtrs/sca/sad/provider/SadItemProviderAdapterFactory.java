@@ -451,6 +451,29 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.sad.Reservation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReservationItemProvider reservationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.sad.Reservation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReservationAdapter() {
+		if (reservationItemProvider == null) {
+			reservationItemProvider = new ReservationItemProvider(this);
+		}
+
+		return reservationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.sad.ResourceFactoryProperties} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -704,6 +727,8 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 			sadPartitioningItemProvider.dispose();
 		if (sadComponentPlacementItemProvider != null)
 			sadComponentPlacementItemProvider.dispose();
+		if (reservationItemProvider != null)
+			reservationItemProvider.dispose();
 		if (resourceFactoryPropertiesItemProvider != null)
 			resourceFactoryPropertiesItemProvider.dispose();
 		if (sadDocumentRootItemProvider != null)
