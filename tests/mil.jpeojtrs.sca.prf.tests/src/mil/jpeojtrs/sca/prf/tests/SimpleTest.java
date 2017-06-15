@@ -31,6 +31,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
@@ -368,7 +369,7 @@ public class SimpleTest extends AbstractPropertyTest {
 		Assert.assertTrue("isOptional()", simple.isOptional());
 
 		BasicDiagnostic diagnostic = new BasicDiagnostic();
-		PrfValidator.INSTANCE.validateSimple(simple, diagnostic, null);
+		Diagnostician.INSTANCE.validate(simple, diagnostic);
 
 		String errorMsg = diagnostic.getChildren().get(0).getMessage();
 		Assert.assertEquals("Unexpected warning message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_InvalidOptionalAttribute_diagnostic"),

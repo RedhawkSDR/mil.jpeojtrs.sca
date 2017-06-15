@@ -14,7 +14,6 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
@@ -72,27 +71,24 @@ public class AdvancedEObjectValidator extends EObjectValidator {
 		batchValidator.setReportSuccesses(false);
 
 		// first, do whatever the basic EcoreValidator does
-		this.parentValidator.validate(eClass, eObject, diagnostics, context);
-
-		IStatus status = Status.OK_STATUS;
+		boolean result = this.parentValidator.validate(eClass, eObject, diagnostics, context);
 
 		// no point in validating if we can't report results
-		if (diagnostics != null) {
+		if (result || diagnostics != null) {
 			// if EMF Mode Validation Service already covered the sub-tree,
 			// which it does for efficient computation and error reporting,
 			// then don't repeat (the Diagnostician does the recursion
 			// externally). If there is no context map, then we can't
 			// help it
 			if (!hasProcessed(eObject, context)) {
-				status = batchValidator.validate(eObject, new NullProgressMonitor());
-
+				IStatus status = batchValidator.validate(eObject, new NullProgressMonitor());
 				processed(eObject, context, status);
-
 				appendDiagnostics(status, diagnostics);
+				result &= status.isOK();
 			}
 		}
 
-		return status.isOK();
+		return result;
 	}
 
 	/**

@@ -14,6 +14,7 @@ package mil.jpeojtrs.sca.sad.tests;
 import java.net.URISyntaxException;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Assert;
 
 import junit.framework.TestCase;
@@ -21,7 +22,6 @@ import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
 import mil.jpeojtrs.sca.sad.Port;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
-import mil.jpeojtrs.sca.sad.util.SadValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,7 +117,10 @@ public class ExternalPortsTest extends TestCase {
 		Assert.assertEquals("IDL:BULKIO/dataFloat:1.0", this.fixture.getPort().get(2).getSupportedIdentifier());
 	}
 
-	public void test_externalPortNameCollision_IDE_1223() throws URISyntaxException {
+	/**
+	 * IDE-1223 Duplicate external port names should be flagged as errors
+	 */
+	public void test_externalPortNameCollision() throws URISyntaxException {
 		// Test for validation errors on external ports with matching ExternalNames
 		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/ExternalPorts/ExternalPorts.sad.xml");
 		Assert.assertEquals("Test is using an incorrect sad.xml", "externalPorts", sad.getName());
@@ -127,7 +130,7 @@ public class ExternalPortsTest extends TestCase {
 		}
 
 		BasicDiagnostic diagnostics = new BasicDiagnostic();
-		Assert.assertFalse("Validation should fail", SadValidator.INSTANCE.validateExternalPorts(sad.getExternalPorts(), diagnostics, null));
+		Assert.assertFalse("Validation should fail", Diagnostician.INSTANCE.validate(sad.getExternalPorts(), diagnostics));
 		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(".*" + "Duplicate external port names:" + ".*"));
 
 		// Test for validation errors on external ports with matching default names (should just be the port name)
@@ -139,7 +142,7 @@ public class ExternalPortsTest extends TestCase {
 		}
 
 		diagnostics = new BasicDiagnostic();
-		Assert.assertFalse("Validation should fail", SadValidator.INSTANCE.validateExternalPorts(sad.getExternalPorts(), diagnostics, null));
+		Assert.assertFalse("Validation should fail", Diagnostician.INSTANCE.validate(sad.getExternalPorts(), diagnostics));
 		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(".*" + "Duplicate external port names:" + ".*"));
 	}
 

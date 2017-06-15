@@ -31,7 +31,8 @@ public class PrfValidatorTest {
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/SimpleTest.prf.xml"), true));
 
 		BasicDiagnostic diagnostic = new BasicDiagnostic("mil.jpeojtrs.sca.prf.tests", 0, "Validation problems", null);
-		Diagnostician.INSTANCE.validate(props, diagnostic);
+		boolean result = Diagnostician.INSTANCE.validate(props, diagnostic);
+		Assert.assertTrue(result);
 		Assert.assertEquals(IStatus.OK, diagnostic.getSeverity());
 	}
 }
