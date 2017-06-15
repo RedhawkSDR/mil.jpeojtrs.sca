@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.junit.Assert;
 
@@ -242,7 +243,10 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, struct.getConfigurationKind().get(0).getType());
 	}
 
-	public void testEmptyConfigurationKind_IDE_917() throws Exception {
+	/**
+	 * IDE-917
+	 */
+	public void testEmptyConfigurationKind() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
 		Assert.assertNotNull(props);
@@ -259,20 +263,20 @@ public class StructTest extends AbstractPropertyTest {
 	}
 	
 	/**
+	 * IDE-1215 Optional elements should not create diagnostics due to partial config. when inside struct / struct seq
 	 * IDE-1304 - The framework does not allow partial configuration of structures (unless it's an optional element)
 	 */
-	public void testPartiallyConfiguredStruct_IDE_1304() throws Exception {
+	public void testPartiallyConfiguredStruct() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
 		Assert.assertNotNull(props);
 
 		// Assert that a partially configured Struct fails EMF validation
-		Struct struct = props.getStruct().get(2);
+		Struct struct = (Struct) props.getProperty("partialConfigStuct");
 		Assert.assertNotNull(struct);
-		Assert.assertEquals("Test case running against wrong Struct element", "partialConfigStuct", struct.getId());
 
 		BasicDiagnostic diagnostic = new BasicDiagnostic();
-		boolean isValid = PrfValidator.INSTANCE.validateStruct(struct, diagnostic, null);
+		boolean isValid = Diagnostician.INSTANCE.validate(struct, diagnostic);
 		Assert.assertFalse("Partially configured structs should not pass validation", isValid);
 
 		String errorMsg = diagnostic.getChildren().get(0).getMessage();
@@ -281,12 +285,11 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertTrue("Unexpected error message", errorMsg.matches(".*" + expectedError + ".*"));
 
 		// Assert that properties with 'optional' attribute do not cause a validation error
-		struct = props.getStruct().get(3);
+		struct = (Struct) props.getProperty("partialConfigStuctWithOptional");
 		Assert.assertNotNull(struct);
-		Assert.assertEquals("Test case running against wrong Struct element", "partialConfigStuctWithOptional", struct.getId());
 
 		diagnostic = new BasicDiagnostic();
-		isValid = PrfValidator.INSTANCE.validateStruct(struct, diagnostic, null);
+		isValid = Diagnostician.INSTANCE.validate(struct, diagnostic);
 		Assert.assertTrue("Optional elements should not affect validation", isValid);
 
 		// IDE-1215 - Optional elements should not throw EMF warnings when inside a Struct/StructSequence 
@@ -296,18 +299,17 @@ public class StructTest extends AbstractPropertyTest {
 	/**
 	 * IDE-1638 - Structs without child elements should throw an EMF validation error
 	 */
-	public void testEmptyStruct_IDE_1638() throws Exception {
+	public void testEmptyStruct() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
 		Assert.assertNotNull(props);
 
-		// Assert that an Struct fails EMF validation
-		Struct struct = props.getStruct().get(4);
+		// Assert that an empty struct fails EMF validation
+		Struct struct = (Struct) props.getProperty("emptyStruct");
 		Assert.assertNotNull(struct);
-		Assert.assertEquals("Test case running against wrong Struct element", "emptyStruct", struct.getId());
 
 		BasicDiagnostic diagnostic = new BasicDiagnostic();
-		boolean isValid = PrfValidator.INSTANCE.validateStruct(struct, diagnostic, null);
+		boolean isValid = Diagnostician.INSTANCE.validate(struct, diagnostic);
 		Assert.assertFalse("Empty structs should not pass validation", isValid);
 
 		String errorMsg = diagnostic.getChildren().get(0).getMessage();
@@ -318,23 +320,22 @@ public class StructTest extends AbstractPropertyTest {
 	/**
 	 * IDE-1344 - Provide validation warning for kind elements on members of a struct/struct seq
 	 */
-	public void testRedundantConfigurationKind_IDE_1344() throws Exception {
+	public void testRedundantConfigurationKind() throws Exception {
 		final ResourceSet resourceSet = new ResourceSetImpl();
 		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
 		Assert.assertNotNull(props);
 
 		// Assert that an Struct fails EMF validation
-		Struct struct = props.getStruct().get(3);
+		Struct struct = (Struct) props.getProperty("redundantConfigKind");
 		Assert.assertNotNull(struct);
-		Assert.assertEquals("Test case running against wrong Struct element", "partialConfigStuctWithOptional", struct.getId());
 
 		// Assert that EMF Warning is thrown if a simple contained in a struct has a declared kind type
-		Simple simple = struct.getSimple().get(0);
-		Assert.assertEquals("Test case running against wrong Simple element", "simple", simple.getId());
+		Simple simple = (Simple) struct.getProperty("simple");
+		Assert.assertNotNull(simple);
 		Assert.assertEquals("Simple Kind type is not set", PropertyConfigurationType.PROPERTY, simple.getKind().get(0).getType());
 
 		BasicDiagnostic diagnostic = new BasicDiagnostic();
-		Assert.assertTrue(PrfValidator.INSTANCE.validateSimple(simple, diagnostic, null));
+		Assert.assertTrue(Diagnostician.INSTANCE.validate(simple, diagnostic));
 		Assert.assertFalse(diagnostic.getChildren().isEmpty());
 		Diagnostic diagResult = diagnostic.getChildren().get(0);
 		Assert.assertEquals("Validation should result in a warning", Diagnostic.WARNING, diagResult.getSeverity());
@@ -342,12 +343,12 @@ public class StructTest extends AbstractPropertyTest {
 			diagResult.getMessage());
 
 		// Assert that EMF Warning is thrown if a simpleSequence contained in a struct has a declared kind type
-		SimpleSequence simpleSequence = struct.getSimpleSequence().get(0);
-		Assert.assertEquals("Test case running against wrong SimpleSequence element", "simpleSequence", simpleSequence.getId());
+		SimpleSequence simpleSequence = (SimpleSequence) struct.getProperty("simpleSequence");
+		Assert.assertNotNull(simpleSequence);
 		Assert.assertEquals("SimpleSequence Kind type is not set", PropertyConfigurationType.PROPERTY, simpleSequence.getKind().get(0).getType());
 
 		diagnostic = new BasicDiagnostic();
-		Assert.assertTrue(PrfValidator.INSTANCE.validateSimpleSequence(simpleSequence, diagnostic, null));
+		Assert.assertTrue(Diagnostician.INSTANCE.validate(simpleSequence, diagnostic));
 		Assert.assertFalse(diagnostic.getChildren().isEmpty());
 		diagResult = diagnostic.getChildren().get(0);
 		Assert.assertEquals("Validation should result in a warning", Diagnostic.WARNING, diagResult.getSeverity());

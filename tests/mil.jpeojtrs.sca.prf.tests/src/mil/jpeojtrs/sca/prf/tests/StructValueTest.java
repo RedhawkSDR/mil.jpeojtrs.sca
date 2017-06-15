@@ -28,6 +28,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
@@ -270,7 +271,7 @@ public class StructValueTest extends TestCase {
 	/**
 	 * IDE-1304 - The framework does not allow partial configuration of structures (unless it's an optional element)
 	 */
-	public void testPartiallyConfiguredStructValue_IDE_1304() throws Exception {
+	public void testPartiallyConfiguredStructValue() throws Exception {
 		final Properties props = Properties.Util.getProperties(
 			StructValueTest.resourceSet.getResource(PrfTests.getURI("testFiles/StructValueTest.prf.xml"), true));
 		Assert.assertNotNull(props);
@@ -282,7 +283,7 @@ public class StructValueTest extends TestCase {
 		boolean isValid = true;
 		BasicDiagnostic diagnostics = new BasicDiagnostic();
 		for (StructValue structValue : structSeq.getStructValue()) {
-			isValid = isValid && PrfValidator.INSTANCE.validateStructValue(structValue, diagnostics, null);
+			isValid = isValid && Diagnostician.INSTANCE.validate(structValue, diagnostics);
 		}
 
 		Assert.assertFalse("Validation logic did not catch invalid structvalue", isValid);
