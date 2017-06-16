@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE deviceconfiguration PUBLIC "-//JTRS//DTD SCA V2.2.2 DCD//EN" "deviceconfiguration.dtd">
+<deviceconfiguration id="DCE:b428cebc-13c0-498c-9620-66ce26b1d1bf" name="BadPropertyRefs">
+  <devicemanagersoftpkg>
+    <localfile name="/mgr/DeviceManager.spd.xml"/>
+  </devicemanagersoftpkg>
+  <componentfiles>
+    <componentfile id="AllPropTypes_59690e72-f7c6-4c0a-ab56-a254bbb19c0f" type="SPD">
+      <localfile name="/devices/AllPropTypes/AllPropTypes.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="AllPropTypes_59690e72-f7c6-4c0a-ab56-a254bbb19c0f"/>
+      <componentinstantiation id="BadPropertyRefs:AllPropTypes_1">
+        <usagename>AllPropTypes_1</usagename>
+        <componentproperties>
+          <simpleref refid="simple1" value="a"/>
+          <simpleref refid="simple2" value="b"/>
+          <simpleref refid="badSimple1" value="a"/>
+          <simplesequenceref refid="simpleSeq1">
+            <values>
+              <value>c</value>
+              <value>d</value>
+            </values>
+          </simplesequenceref>
+          <simplesequenceref refid="simpleSeq2">
+            <values>
+              <value>e</value>
+              <value>f</value>
+            </values>
+          </simplesequenceref>
+          <simplesequenceref refid="badSimpleSeq1">
+            <values>
+              <value>c</value>
+              <value>d</value>
+            </values>
+          </simplesequenceref>
+          <structref refid="struct1">
+            <simpleref refid="childSimple1" value="g"/>
+            <simplesequenceref refid="childSimpleSeq1">
+              <values>
+                <value>h</value>
+                <value>i</value>
+              </values>
+            </simplesequenceref>
+          </structref>
+          <structref refid="struct2">
+            <simpleref refid="badChildSimple2" value="j"/>
+            <simplesequenceref refid="badChildSimpleSeq2">
+              <values>
+                <value>k</value>
+                <value>l</value>
+              </values>
+            </simplesequenceref>
+          </structref>
+          <structref refid="badStruct1">
+            <simpleref refid="childSimple1" value="g"/>
+            <simplesequenceref refid="childSimpleSeq1">
+              <values>
+                <value>h</value>
+                <value>i</value>
+              </values>
+            </simplesequenceref>
+          </structref>
+          <structsequenceref refid="structSeq1">
+            <structvalue>
+              <simpleref refid="grandChildSimple1" value="m"/>
+              <simplesequenceref refid="grandChildSimpleSeq1">
+                <values>
+                  <value>n</value>
+                  <value>o</value>
+                </values>
+              </simplesequenceref>
+            </structvalue>
+          </structsequenceref>
+          <structsequenceref refid="structSeq2">
+            <structvalue>
+              <simpleref refid="badGrandChildSimple2" value="p"/>
+              <simplesequenceref refid="badGrandChildSimpleSeq2">
+                <values>
+                  <value>q</value>
+                  <value>r</value>
+                </values>
+              </simplesequenceref>
+            </structvalue>
+          </structsequenceref>
+          <structsequenceref refid="badStructSeq1">
+            <structvalue>
+              <simpleref refid="grandChildSimple1" value="m"/>
+              <simplesequenceref refid="grandChildSimpleSeq1">
+                <values>
+                  <value>n</value>
+                  <value>o</value>
+                </values>
+              </simplesequenceref>
+            </structvalue>
+          </structsequenceref>
+        </componentproperties>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <domainmanager>
+    <namingservice name="REDHAWK_DEV/REDHAWK_DEV"/>
+  </domainmanager>
+</deviceconfiguration>
