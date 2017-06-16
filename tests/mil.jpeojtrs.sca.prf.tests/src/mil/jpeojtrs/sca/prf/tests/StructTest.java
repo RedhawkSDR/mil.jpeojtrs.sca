@@ -330,7 +330,7 @@ public class StructTest extends AbstractPropertyTest {
 		Assert.assertNotNull(struct);
 
 		// Assert that EMF Warning is thrown if a simple contained in a struct has a declared kind type
-		Simple simple = (Simple) struct.getProperty("simple");
+		Simple simple = (Simple) struct.getProperty("simple2");
 		Assert.assertNotNull(simple);
 		Assert.assertEquals("Simple Kind type is not set", PropertyConfigurationType.PROPERTY, simple.getKind().get(0).getType());
 
@@ -343,7 +343,7 @@ public class StructTest extends AbstractPropertyTest {
 			diagResult.getMessage());
 
 		// Assert that EMF Warning is thrown if a simpleSequence contained in a struct has a declared kind type
-		SimpleSequence simpleSequence = (SimpleSequence) struct.getProperty("simpleSequence");
+		SimpleSequence simpleSequence = (SimpleSequence) struct.getProperty("simpleSequence2");
 		Assert.assertNotNull(simpleSequence);
 		Assert.assertEquals("SimpleSequence Kind type is not set", PropertyConfigurationType.PROPERTY, simpleSequence.getKind().get(0).getType());
 
