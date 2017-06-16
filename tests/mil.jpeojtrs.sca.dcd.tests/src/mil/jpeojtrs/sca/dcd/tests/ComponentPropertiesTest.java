@@ -25,7 +25,7 @@ public class ComponentPropertiesTest extends AbstractComponentPropertiesTest {
 	}
 
 	@Override
-	protected ComponentProperties getBadRefComponentProperties() throws URISyntaxException {
+	protected ComponentProperties getCPForPropertyRefValidation() throws URISyntaxException {
 		DeviceConfiguration dcd = DcdTests.loadDCDFromDevPath("/nodes/BadPropertyRefs/DeviceManager.dcd.xml");
 		return dcd.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getComponentProperties();
 	}

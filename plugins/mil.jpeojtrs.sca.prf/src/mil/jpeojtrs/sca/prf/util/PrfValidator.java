@@ -701,37 +701,61 @@ public class PrfValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateSimpleRef(SimpleRef simpleRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(simpleRef, diagnostics, context);
+		// END GENERATED CODE
+		boolean result = validate_ValidPropertyRefId(simpleRef, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDefaultConstraint(simpleRef, diagnostics, context);
+		}
+		return result;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateSimpleSequenceRef(SimpleSequenceRef simpleSequenceRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(simpleSequenceRef, diagnostics, context);
+		// END GENERATED CODE
+		boolean result = validate_ValidPropertyRefId(simpleSequenceRef, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDefaultConstraint(simpleSequenceRef, diagnostics, context);
+		}
+		return result;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateStructRef(StructRef structRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(structRef, diagnostics, context);
+		// END GENERATED CODE
+		boolean result = validate_ValidPropertyRefId(structRef, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDefaultConstraint(structRef, diagnostics, context);
+		}
+		return result;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateStructSequenceRef(StructSequenceRef structSequenceRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(structSequenceRef, diagnostics, context);
+		// END GENERATED CODE
+		boolean result = validate_ValidPropertyRefId(structSequenceRef, diagnostics, context);
+		if (result || diagnostics != null) {
+			result &= validate_EveryDefaultConstraint(structSequenceRef, diagnostics, context);
+		}
+		return result;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -1061,6 +1085,24 @@ public class PrfValidator extends EObjectValidator {
 		}
 
 		return true;
+	}
+
+	/**
+	 * Determines if the property reference actually references a property (refid in SAD/DCD should match id in PRF)
+	 * @param propRef
+	 * @param diagnostics
+	 * @param context
+	 * @return
+	 */
+	private boolean validate_ValidPropertyRefId(AbstractPropertyRef< ? > propRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (propRef.getProperty() != null) {
+			return true;
+		}
+		if (diagnostics != null) {
+			diagnostics.add(createDiagnostic(IStatus.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidPropertyRefId_diagnostic",
+				new Object[] { propRef.getRefID() }, new Object[] { propRef }, context));
+		}
+		return false;
 	}
 
 	// BEGIN GENERATED CODE

@@ -11,7 +11,13 @@
 package mil.jpeojtrs.sca.partitioning.tests;
 
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -23,6 +29,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import mil.jpeojtrs.sca.partitioning.ComponentProperties;
+import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
+import mil.jpeojtrs.sca.util.collections.FeatureMapList;
 
 public abstract class AbstractComponentPropertiesTest {
 
@@ -58,16 +66,52 @@ public abstract class AbstractComponentPropertiesTest {
 	protected abstract ComponentProperties getEmptyComponentProperties() throws URISyntaxException;
 
 	/**
+	 * IDE-1868 Validate references to non-existent properties in SAD/DCD
 	 * IDE-1975 NPE during validation of structvalue if no corresponding structsequence in ref'd component's PRF
-	 * @throws URISyntaxException
 	 */
 	@Test
-	public void structValueWithNoCorrespondingStructSeq() throws URISyntaxException {
-		ComponentProperties componentProperties = getBadRefComponentProperties();
-		BasicDiagnostic diagnostics = new BasicDiagnostic();
-		Diagnostician.INSTANCE.validate(componentProperties, diagnostics);
+	public void validatePropertyRefIds() throws URISyntaxException {
+		ComponentProperties props = getCPForPropertyRefValidation();
+		Set<String> badRefIds = new HashSet<String>();
+		Collections.addAll(badRefIds, "badSimple1", "badSimpleSeq1", "badStruct1", "badStructSeq1");
+		List<String> badChildRefIds = new ArrayList<String>();
+		Collections.addAll(badChildRefIds, "badChildSimple2", "badChildSimpleSeq2", "badGrandChildSimple2", "badGrandChildSimpleSeq2");
+
+		for (AbstractPropertyRef< ? > propRef : new FeatureMapList<>(props.getProperties(), AbstractPropertyRef.class)) {
+			BasicDiagnostic diagnostics = new BasicDiagnostic();
+			boolean validatorResult = Diagnostician.INSTANCE.validate(propRef, diagnostics);
+			String refId = propRef.getRefID();
+			if (badRefIds.contains(refId)) {
+				Assert.assertFalse("Incorrect validation for prop ref " + refId, validatorResult);
+				Assert.assertEquals("Incorrect severity for prop ref " + refId, IStatus.ERROR, diagnostics.getSeverity());
+				Assert.assertTrue("Unexpected error message for prop ref " + refId,
+					diagnostics.getChildren().get(0).getMessage().contains("Invalid property refid"));
+			} else if (!validatorResult) {
+				// Must have bad child property ref(s)
+				Assert.assertEquals("Incorrect severity for prop ref " + refId, IStatus.ERROR, diagnostics.getSeverity());
+				boolean foundBadChildren = false;
+				outer: for (Diagnostic diag : diagnostics.getChildren()) {
+					// We don't care about partial config messages
+					if (diag.getMessage().contains("partial configuration")) {
+						continue;
+					}
+
+					boolean testMsg = diag.getMessage().contains("Invalid property refid");
+					Assert.assertTrue("Unexpected error message for prop ref " + refId + ". Message: " + diag.getMessage(), testMsg);
+
+					for (String badRefId : badChildRefIds) {
+						if (diag.getMessage().contains(badRefId)) {
+							foundBadChildren = true;
+							break outer;
+						}
+					}
+					Assert.fail("Child error did not mention bad property refs for prop ref " + refId + ". Message: " + diag.getMessage());
+				}
+				Assert.assertTrue("Didn't find bad children for prop ref " + refId, foundBadChildren);
+			}
+		}
 	}
 
-	protected abstract ComponentProperties getBadRefComponentProperties() throws URISyntaxException;
+	protected abstract ComponentProperties getCPForPropertyRefValidation() throws URISyntaxException;
 
 }

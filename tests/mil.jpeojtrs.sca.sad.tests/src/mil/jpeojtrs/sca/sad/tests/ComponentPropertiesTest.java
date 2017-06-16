@@ -25,7 +25,7 @@ public class ComponentPropertiesTest extends AbstractComponentPropertiesTest {
 	}
 
 	@Override
-	protected ComponentProperties getBadRefComponentProperties() throws URISyntaxException {
+	protected ComponentProperties getCPForPropertyRefValidation() throws URISyntaxException {
 		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/BadPropertyRefs/BadPropertyRefs.sad.xml");
 		return sad.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getComponentProperties();
 	}
