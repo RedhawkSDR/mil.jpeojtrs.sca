@@ -47,11 +47,11 @@
     <configurationkind kindtype="property"/>
   </struct>
   <struct id="redundantConfigKind" mode="readwrite">
-    <simple id="simple" type="string">
+    <simple id="simple2" type="string">
       <kind kindtype="property"/>
       <value>simpleValue</value>
     </simple>
-    <simplesequence id="simpleSequence" type="string">
+    <simplesequence id="simpleSequence2" type="string">
       <kind kindtype="property"/>
       <values>
         <value>simpleSequenceValue</value>
