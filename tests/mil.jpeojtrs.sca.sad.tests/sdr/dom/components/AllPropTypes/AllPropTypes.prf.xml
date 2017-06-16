@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <simple id="simple1" mode="readwrite" type="string">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="simple2" mode="readwrite" type="string">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simplesequence id="simpleSeq1" mode="readwrite" type="string">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simplesequence>
+  <simplesequence id="simpleSeq2" mode="readwrite" type="string">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simplesequence>
+  <struct id="struct1" mode="readwrite">
+    <simple id="childSimple1" type="string"/>
+    <simplesequence id="childSimpleSeq1" type="string"/>
+    <configurationkind kindtype="property"/>
+  </struct>
+  <struct id="struct2" mode="readwrite">
+    <simple id="childSimple2" type="string"/>
+    <simplesequence id="childSimpleSeq2" type="string"/>
+    <configurationkind kindtype="property"/>
+  </struct>
+  <structsequence id="structSeq1" mode="readwrite">
+    <struct id="childStruct1">
+      <simple id="grandChildSimple1" type="string"/>
+      <simplesequence id="grandChildSimpleSeq1" type="string"/>
+    </struct>
+    <configurationkind kindtype="property"/>
+  </structsequence>
+  <structsequence id="structSeq2" mode="readwrite">
+    <struct id="childStruct2">
+      <simple id="grandChildSimple2" type="string"/>
+      <simplesequence id="grandChildSimpleSeq2" type="string"/>
+    </struct>
+    <configurationkind kindtype="property"/>
+  </structsequence>
+</properties>

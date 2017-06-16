@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
+<softwareassembly id="DCE:92ffa200-97ce-44b0-9f6e-4c900b3dc974" name="BadPropertyRefs">
+  <componentfiles>
+    <componentfile id="AllPropTypes_e2c35005-bbac-4be5-a785-216bb09ced22" type="SPD">
+      <localfile name="/components/AllPropTypes/AllPropTypes.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="AllPropTypes_e2c35005-bbac-4be5-a785-216bb09ced22"/>
+      <componentinstantiation id="AllPropTypes_1">
+        <usagename>AllPropTypes_1</usagename>
+        <componentproperties>
+          <simpleref refid="simple1" value="a"/>
+          <simpleref refid="simple2" value="b"/>
+          <simpleref refid="badSimple1" value="a"/>
+          <simplesequenceref refid="simpleSeq1">
+            <values>
+              <value>c</value>
+              <value>d</value>
+            </values>
+          </simplesequenceref>
+          <simplesequenceref refid="simpleSeq2">
+            <values>
+              <value>e</value>
+              <value>f</value>
+            </values>
+          </simplesequenceref>
+          <simplesequenceref refid="badSimpleSeq1">
+            <values>
+              <value>c</value>
+              <value>d</value>
+            </values>
+          </simplesequenceref>
+          <structref refid="struct1">
+            <simpleref refid="childSimple1" value="g"/>
+            <simplesequenceref refid="childSimpleSeq1">
+              <values>
+                <value>h</value>
+                <value>i</value>
+              </values>
+            </simplesequenceref>
+          </structref>
+          <structref refid="struct2">
+            <simpleref refid="badChildSimple2" value="j"/>
+            <simplesequenceref refid="badChildSimpleSeq2">
+              <values>
+                <value>k</value>
+                <value>l</value>
+              </values>
+            </simplesequenceref>
+          </structref>
+          <structref refid="badStruct1">
+            <simpleref refid="childSimple1" value="g"/>
+            <simplesequenceref refid="childSimpleSeq1">
+              <values>
+                <value>h</value>
+                <value>i</value>
+              </values>
+            </simplesequenceref>
+          </structref>
+          <structsequenceref refid="structSeq1">
+            <structvalue>
+              <simpleref refid="grandChildSimple1" value="m"/>
+              <simplesequenceref refid="grandChildSimpleSeq1">
+                <values>
+                  <value>n</value>
+                  <value>o</value>
+                </values>
+              </simplesequenceref>
+            </structvalue>
+          </structsequenceref>
+          <structsequenceref refid="structSeq2">
+            <structvalue>
+              <simpleref refid="badGrandChildSimple2" value="p"/>
+              <simplesequenceref refid="badGrandChildSimpleSeq2">
+                <values>
+                  <value>q</value>
+                  <value>r</value>
+                </values>
+              </simplesequenceref>
+            </structvalue>
+          </structsequenceref>
+          <structsequenceref refid="badStructSeq1">
+            <structvalue>
+              <simpleref refid="grandChildSimple1" value="m"/>
+              <simplesequenceref refid="grandChildSimpleSeq1">
+                <values>
+                  <value>n</value>
+                  <value>o</value>
+                </values>
+              </simplesequenceref>
+            </structvalue>
+          </structsequenceref>
+        </componentproperties>
+        <findcomponent>
+          <namingservice name="AllPropTypes_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <assemblycontroller>
+    <componentinstantiationref refid="AllPropTypes_1"/>
+  </assemblycontroller>
+</softwareassembly>

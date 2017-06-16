@@ -12,16 +12,21 @@ package mil.jpeojtrs.sca.dcd.tests;
 
 import java.net.URISyntaxException;
 
-import org.eclipse.emf.ecore.EObject;
-
 import mil.jpeojtrs.sca.dcd.DeviceConfiguration;
+import mil.jpeojtrs.sca.partitioning.ComponentProperties;
 import mil.jpeojtrs.sca.partitioning.tests.AbstractComponentPropertiesTest;
 
 public class ComponentPropertiesTest extends AbstractComponentPropertiesTest {
 
 	@Override
-	protected EObject getEmptyComponentProperties() throws URISyntaxException {
+	protected ComponentProperties getEmptyComponentProperties() throws URISyntaxException {
 		DeviceConfiguration dcd = DcdTests.loadDCDFromDevPath("/nodes/nodeEmptyComponentProperties/DeviceManager.dcd.xml");
+		return dcd.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getComponentProperties();
+	}
+
+	@Override
+	protected ComponentProperties getBadRefComponentProperties() throws URISyntaxException {
+		DeviceConfiguration dcd = DcdTests.loadDCDFromDevPath("/nodes/BadPropertyRefs/DeviceManager.dcd.xml");
 		return dcd.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getComponentProperties();
 	}
 }

@@ -547,75 +547,87 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateStructValue(StructValue structValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		boolean isValidStructValue = true;
-		Struct struct = structValue.getStruct();
-		String structValueId = struct.getId() + "[" + structValue.getIndex() + "]";
-
-		// Partially configured structValues are only an error with the new 'property' configuration type
-		int severity = Diagnostic.WARNING;
-		if (structValue.getPropertyContainer() instanceof StructSequence) {
-			StructSequence structSequence = (StructSequence) structValue.getPropertyContainer();
-			if (structSequence.isKind(PropertyConfigurationType.PROPERTY)) {
-				severity = Diagnostic.ERROR;
-			}
+		boolean result = validate_EveryDefaultConstraint(structValue, diagnostics, context);
+		if (!result && diagnostics == null) {
+			return result;
 		}
 
+		// We can't do any validation if we can't find a parent/corresponding struct & struct sequence
+		Struct struct = structValue.getStruct();
+		if (struct == null) {
+			return true;
+		}
+		StructSequence structSequence = (StructSequence) struct.eContainer();
+		if (structSequence == null) {
+			return true;
+		}
+
+		// A partially configured structvalue is only an error with the new 'property' kind
+		String structValueId = structSequence.getId() + "[" + structValue.getIndex() + "]";
+		int severity = Diagnostic.WARNING;
+		if (structSequence.isKind(PropertyConfigurationType.PROPERTY)) {
+			severity = Diagnostic.ERROR;
+		}
+
+		// We only report the first missing simple that makes the struct partially configured
 		for (Simple simple : struct.getSimple()) {
 			AbstractPropertyRef< ? > ref = structValue.getRef(simple.getId());
 
 			if (ref == null) {
-				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
-					new Object[] { structValueId }, new Object[] { structValue }, context));
-				isValidStructValue = false;
-				break;
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
+						new Object[] { structValueId }, new Object[] { structValue }, context));
+				}
+				return false;
 			}
 
 			if (!(ref instanceof SimpleRef)) {
-				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_IncompatiblePropertyRef_diagnostic",
-					new Object[] { ref.getRefID(), structValueId, simple.getId(), struct.getId() }, new Object[] { structValue }, context));
-				isValidStructValue = false;
-				continue;
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_IncompatiblePropertyRef_diagnostic",
+						new Object[] { ref.getRefID(), structValueId, simple.getId(), struct.getId() }, new Object[] { structValue }, context));
+				}
+				return false;
 			}
 
 			if (((SimpleRef) ref).getValue() == null) {
-				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
-					new Object[] { structValueId }, new Object[] { structValue }, context));
-				isValidStructValue = false;
-				break;
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
+						new Object[] { structValueId }, new Object[] { structValue }, context));
+				}
+				return false;
 			}
 		}
 
-		// Don't check simpSeq's if we already caught partial config
-		if (!isValidStructValue) {
-			return isValidStructValue;
-		}
-
+		// We only report the first missing simple sequence that makes the struct partially configured
 		for (SimpleSequence simpleSequence : struct.getSimpleSequence()) {
 			AbstractPropertyRef< ? > ref = structValue.getRef(simpleSequence.getId());
 
 			if (ref == null) {
-				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
-					new Object[] { structValueId }, new Object[] { structValue }, context));
-				isValidStructValue = false;
-				break;
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
+						new Object[] { structValueId }, new Object[] { structValue }, context));
+				}
+				return false;
 			}
 
 			if (!(ref instanceof SimpleSequenceRef)) {
-				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_IncompatiblePropertyRef_diagnostic",
-					new Object[] { ref.getRefID(), structValueId, simpleSequence.getId(), struct.getId() }, new Object[] { structValue }, context));
-				isValidStructValue = false;
-				continue;
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_IncompatiblePropertyRef_diagnostic",
+						new Object[] { ref.getRefID(), structValueId, simpleSequence.getId(), struct.getId() }, new Object[] { structValue }, context));
+				}
+				return false;
 			}
 
 			if (((SimpleSequenceRef) ref).getValues() == null) {
-				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
-					new Object[] { structValueId }, new Object[] { structValue }, context));
-				isValidStructValue = false;
-				break;
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
+						new Object[] { structValueId }, new Object[] { structValue }, context));
+				}
+				return false;
 			}
 		}
 
-		return validate_EveryDefaultConstraint(structValue, diagnostics, context) && isValidStructValue;
+		return true;
 		// BEGIN GENERATED CODE
 	}
 

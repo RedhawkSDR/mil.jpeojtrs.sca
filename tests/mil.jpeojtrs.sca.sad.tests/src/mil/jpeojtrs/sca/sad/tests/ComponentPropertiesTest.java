@@ -12,16 +12,21 @@ package mil.jpeojtrs.sca.sad.tests;
 
 import java.net.URISyntaxException;
 
-import org.eclipse.emf.ecore.EObject;
-
+import mil.jpeojtrs.sca.partitioning.ComponentProperties;
 import mil.jpeojtrs.sca.partitioning.tests.AbstractComponentPropertiesTest;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 
 public class ComponentPropertiesTest extends AbstractComponentPropertiesTest {
 
 	@Override
-	protected EObject getEmptyComponentProperties() throws URISyntaxException {
+	protected ComponentProperties getEmptyComponentProperties() throws URISyntaxException {
 		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/waveEmptyComponentProperties/waveEmptyComponentProperties.sad.xml");
+		return sad.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getComponentProperties();
+	}
+
+	@Override
+	protected ComponentProperties getBadRefComponentProperties() throws URISyntaxException {
+		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/BadPropertyRefs/BadPropertyRefs.sad.xml");
 		return sad.getPartitioning().getComponentPlacement().get(0).getComponentInstantiation().get(0).getComponentProperties();
 	}
 }

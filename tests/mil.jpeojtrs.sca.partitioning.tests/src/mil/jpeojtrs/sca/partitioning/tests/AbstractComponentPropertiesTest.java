@@ -13,6 +13,7 @@ package mil.jpeojtrs.sca.partitioning.tests;
 import java.net.URISyntaxException;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.Diagnostician;
@@ -20,6 +21,8 @@ import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.junit.Assert;
 import org.junit.Test;
+
+import mil.jpeojtrs.sca.partitioning.ComponentProperties;
 
 public abstract class AbstractComponentPropertiesTest {
 
@@ -29,7 +32,7 @@ public abstract class AbstractComponentPropertiesTest {
 	 */
 	@Test
 	public void empty() throws URISyntaxException {
-		EObject componentProperties = getEmptyComponentProperties();
+		ComponentProperties componentProperties = getEmptyComponentProperties();
 
 		final AdapterFactory adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 		final Diagnostician diagnostician = new Diagnostician() {
@@ -52,6 +55,19 @@ public abstract class AbstractComponentPropertiesTest {
 		Assert.assertEquals("The feature 'properties' of 'componentProperties' with 0 values must have at least 1 values", errorMsg);
 	}
 
-	protected abstract EObject getEmptyComponentProperties() throws URISyntaxException;
+	protected abstract ComponentProperties getEmptyComponentProperties() throws URISyntaxException;
+
+	/**
+	 * IDE-1975 NPE during validation of structvalue if no corresponding structsequence in ref'd component's PRF
+	 * @throws URISyntaxException
+	 */
+	@Test
+	public void structValueWithNoCorrespondingStructSeq() throws URISyntaxException {
+		ComponentProperties componentProperties = getBadRefComponentProperties();
+		BasicDiagnostic diagnostics = new BasicDiagnostic();
+		Diagnostician.INSTANCE.validate(componentProperties, diagnostics);
+	}
+
+	protected abstract ComponentProperties getBadRefComponentProperties() throws URISyntaxException;
 
 }
