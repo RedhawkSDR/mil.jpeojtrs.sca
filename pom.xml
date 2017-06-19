@@ -23,7 +23,7 @@
 
   <properties>
     <tycho.scmUrl>scm:git:https://github.com/RedhawkSDR/eclipse-mil.jpeojtrs.sca.git</tycho.scmUrl>
-    <eclipse>http://download.eclipse.org/releases/neon</eclipse>
+    <eclipse>http://download.eclipse.org/releases/oxygen</eclipse>
     <jacorb>http://download.redhawksdr.org/jacorb/updates/stable</jacorb>
     <!-- Sonar -->
     <sonar.language>java</sonar.language>
