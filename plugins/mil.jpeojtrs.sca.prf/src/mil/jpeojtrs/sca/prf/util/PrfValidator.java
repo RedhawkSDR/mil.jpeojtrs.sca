@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
@@ -1095,9 +1096,25 @@ public class PrfValidator extends EObjectValidator {
 	 * @return
 	 */
 	private boolean validate_ValidPropertyRefId(AbstractPropertyRef< ? > propRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// If we can find a corresponding property, everything is fine
 		if (propRef.getProperty() != null) {
 			return true;
 		}
+
+		// We only want to validate things that belong to a "componentProperties" element (refs can come from uses
+		// devices, etc). If it's not from a "componentProperties", say its okay.
+		boolean isComponentProperties = false;
+		for (EObject container = propRef.eContainer(); container != null; container = container.eContainer()) {
+			EStructuralFeature containerFeature = container.eContainingFeature();
+			if (containerFeature != null && "componentProperties".equals(containerFeature.getName())) {
+				isComponentProperties = true;
+				break;
+			}
+		}
+		if (!isComponentProperties) {
+			return true;
+		}
+
 		if (diagnostics != null) {
 			diagnostics.add(createDiagnostic(IStatus.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidPropertyRefId_diagnostic",
 				new Object[] { propRef.getRefID() }, new Object[] { propRef }, context));
