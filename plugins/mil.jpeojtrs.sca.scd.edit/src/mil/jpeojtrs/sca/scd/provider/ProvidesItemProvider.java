@@ -92,11 +92,13 @@ public class ProvidesItemProvider extends AbstractPortItemProvider {
 	@Override
 	public String getText(Object object) {
 		// END GENERATED CODE
-		String label = ((Provides) object).getProvidesName();
+		Provides provides = (Provides) object;
+		String label = provides.getProvidesName();
+		String repid = provides.getRepID();
 		if (label == null || label.length() == 0) {
 			return getString("_UI_Provides_type");
 		} else {
-			return label;
+			return label + " (" + repid + ")";
 		}
 		// BEGIN GENERATED CODE
 	}

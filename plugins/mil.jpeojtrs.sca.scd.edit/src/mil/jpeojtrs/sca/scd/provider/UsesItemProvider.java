@@ -91,23 +91,14 @@ public class UsesItemProvider extends AbstractPortItemProvider {
 	@Override
 	public String getText(Object object) {
 		// END GENERATED CODE
-		final Uses uses = (Uses) object;
-
-		StringBuilder builder = new StringBuilder();
-
-		builder.append("RepID: ");
-		builder.append(uses.getRepID());
-		builder.append(" Name: ");
-		builder.append(uses.getUsesName());
-		String label = builder.toString();
-		String ending;
+		Uses uses = (Uses) object;
+		String label = uses.getUsesName();
+		String repid = uses.getRepID();
 		if (label == null || label.length() == 0) {
-			ending = getString("_UI_Uses_type");
+			return getString("_UI_Uses_type");
 		} else {
-			ending = label;
+			return label + " (" + repid + ")";
 		}
-		return ending;
-		//			getString("_UI_Uses_type") + " " + label;
 		// BEGIN GENERATED CODE
 	}
 
