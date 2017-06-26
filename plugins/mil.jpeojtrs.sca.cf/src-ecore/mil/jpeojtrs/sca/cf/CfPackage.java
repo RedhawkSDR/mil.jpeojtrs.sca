@@ -1996,7 +1996,7 @@ public interface CfPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Domain Manager</em>'.
 	 * @see CF.DomainManager
-	 * @model instanceClass="CF.DomainManager" superTypes="mil.jpeojtrs.sca.cf.DomainManagerOperations mil.jpeojtrs.sca.cf.PropertyEmitter mil.jpeojtrs.sca.cf.IDLEntity"
+	 * @model instanceClass="CF.DomainManager" superTypes="mil.jpeojtrs.sca.cf.DomainManagerOperations mil.jpeojtrs.sca.cf.PropertyEmitter mil.jpeojtrs.sca.cf.Logging mil.jpeojtrs.sca.cf.IDLEntity"
 	 * @generated
 	 */
 	EClass getDomainManager();

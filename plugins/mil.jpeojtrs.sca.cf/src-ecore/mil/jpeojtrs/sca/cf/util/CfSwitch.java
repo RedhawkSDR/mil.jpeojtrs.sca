@@ -635,13 +635,25 @@ public class CfSwitch< T > extends Switch<T> {
 			if (result == null)
 				result = casePropertyEmitter(domainManager);
 			if (result == null)
+				result = caseLogging(domainManager);
+			if (result == null)
 				result = casePropertyEmitterOperations(domainManager);
+			if (result == null)
+				result = caseLoggingOperations(domainManager);
+			if (result == null)
+				result = caseLogEventConsumer(domainManager);
+			if (result == null)
+				result = caseLogConfiguration(domainManager);
+			if (result == null)
+				result = casePropertySetOperations(domainManager);
 			if (result == null)
 				result = caseObject(domainManager);
 			if (result == null)
 				result = caseIDLEntity(domainManager);
 			if (result == null)
-				result = casePropertySetOperations(domainManager);
+				result = caseLogEventConsumerOperations(domainManager);
+			if (result == null)
+				result = caseLogConfigurationOperations(domainManager);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;

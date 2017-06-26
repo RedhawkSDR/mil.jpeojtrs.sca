@@ -102,7 +102,7 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DomainManager" instanceClassName="CF.DomainManager"
-      abstract="true" interface="true" eSuperTypes="#//DomainManagerOperations #//PropertyEmitter #//IDLEntity"/>
+      abstract="true" interface="true" eSuperTypes="#//DomainManagerOperations #//PropertyEmitter #//Logging #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="DomainManagerOperations" instanceClassName="CF.DomainManagerOperations"
       abstract="true" interface="true" eSuperTypes="#//PropertyEmitterOperations">
     <eOperations name="registerDevice" eExceptions="#//InvalidObjectReference #//InvalidProfile #//DeviceManagerNotRegistered #//RegisterError">

@@ -2646,6 +2646,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		deviceOperationsEClass.getESuperTypes().add(this.getResourceOperations());
 		domainManagerEClass.getESuperTypes().add(this.getDomainManagerOperations());
 		domainManagerEClass.getESuperTypes().add(this.getPropertyEmitter());
+		domainManagerEClass.getESuperTypes().add(this.getLogging());
 		domainManagerEClass.getESuperTypes().add(this.getIDLEntity());
 		domainManagerOperationsEClass.getESuperTypes().add(this.getPropertyEmitterOperations());
 		eventChannelManagerEClass.getESuperTypes().add(this.getEventChannelManagerOperations());
