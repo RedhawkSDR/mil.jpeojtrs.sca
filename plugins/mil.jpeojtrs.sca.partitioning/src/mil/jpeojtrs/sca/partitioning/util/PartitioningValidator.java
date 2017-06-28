@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -557,6 +558,18 @@ public class PartitioningValidator extends EObjectValidator {
 		String uriString = loggingConfig.getUri();
 		List<String> acceptedProtocols = new ArrayList<String>(Arrays.asList(new String[] { "file", "sca", "http" }));
 
+		// If there is no URI and there IS a log level, then this is valid
+		// If BOTH fields are blank, than mark invalid
+		if (uriString == null || uriString.isEmpty()) {
+			if (loggingConfig.getLevel() != null) {
+				return true;
+			} else {
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_LogConfigNotPopulated", new Object[] { compId },
+					new Object[] { loggingConfig }, context));
+				return false;
+			}
+		}
+
 		// Catch malformed URI's
 		try {
 			URI uri = new URI(uriString);
@@ -572,7 +585,7 @@ public class PartitioningValidator extends EObjectValidator {
 				return false;
 			}
 		} catch (URISyntaxException e) {
-			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_UriSyntaxException_diagnostic", new Object[] { e.getMessage() },
+			diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_UriSyntaxException_diagnostic", new Object[] { compId, e.getMessage() },
 				new Object[] { loggingConfig }, context));
 			return false;
 		}
