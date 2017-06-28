@@ -101,7 +101,7 @@ public class LoggingConfigTest extends TestCase {
 		setFixture(null);
 	}
 
-	public void testLoggingConfig_IDE_1336_IDE_1660() throws URISyntaxException {
+	public void testLoggingConfig() throws URISyntaxException {
 		BasicDiagnostic diagnostics = new BasicDiagnostic();
 
 		SoftwareAssembly sad = PartitioningTests.loadSADFromDomPath("/waveforms/GenericWaveform/GenericSadFile.sad.xml");
@@ -116,24 +116,39 @@ public class LoggingConfigTest extends TestCase {
 		loggingConfig.setUri("http://example.com");
 		Assert.assertTrue("Logging Config should be valid", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
 
+		// Remove the logging uri, should still be valid
+		loggingConfig.setUri("");
+		Assert.assertTrue("Logging Config should be valid", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
+
+		// Remove log level, should be invalid now that both fields are empty
+		loggingConfig.setLevel(null);
+		Assert.assertFalse("Logging Config should fail validation", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
+		String errorMsg = ".*" + "loggingconfig requires either a Logging URI or a Log Level" + ".*";
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(errorMsg));
+		loggingConfig.setLevel("DEBUG");
+		Assert.assertTrue("Logging Config should be valid", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
+
 		// Invalid logging level
 		loggingConfig.setLevel("BadValue");
 		Assert.assertFalse("Logging Config should fail validation", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
-		String errorMsg = ".*" + "is not a valid log level" + ".*";
-		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().matches(errorMsg));
+		errorMsg = ".*" + "is not a valid log level" + ".*";
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(1).getMessage().matches(errorMsg));
 		loggingConfig.setLevel("DEBUG");
+		Assert.assertTrue("Logging Config should be valid", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
 
 		// Invalid logging config error
 		loggingConfig.setUri("http://ex am ple.com");
 		Assert.assertFalse("Logging Config should fail validation", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
 		errorMsg = ".*" + "Illegal character" + ".*";
-		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(1).getMessage().matches(errorMsg));
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(2).getMessage().matches(errorMsg));
+		loggingConfig.setUri("http://example.com");
+		Assert.assertTrue("Logging Config should be valid", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
 
 		// Invalid protocol error
 		loggingConfig.setUri("ftp://example.com");
 		Assert.assertFalse("Logging Config should fail validation", PartitioningValidator.INSTANCE.validateLoggingConfig(loggingConfig, diagnostics, null));
-		errorMsg = ".*" + "is not a valid protocol" + ".*";
-		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(2).getMessage().matches(errorMsg));
+		errorMsg = ".*" + "is not a valid URI protocol" + ".*";
+		Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(3).getMessage().matches(errorMsg));
 	}
 
-} //LoggingConfigTest
+} // LoggingConfigTest
