@@ -400,19 +400,8 @@ public interface SoftPkg extends EObject {
 		 * Utility method used to determine if the supplied URI points to the special ComponentHost resource
 		 * @since 4.1
 		 */
-		public static boolean isComponentHost(URI spdURI) {
-			if (spdURI == null) {
-				return false;
-			}
-
-			final ResourceSet resourceSet = ScaResourceFactoryUtil.createResourceSet();
-			SoftPkg spd = SoftPkg.Util.getSoftPkg(resourceSet.getResource(spdURI, true));
-
-			if (COMPONENT_HOST_ID.equals(spd.getId())) {
-				return true;
-			}
-
-			return false;
+		public static boolean isComponentHost(SoftPkg spd) {
+			return spd != null && COMPONENT_HOST_ID.equals(spd.getId());
 		}
 
 		/**

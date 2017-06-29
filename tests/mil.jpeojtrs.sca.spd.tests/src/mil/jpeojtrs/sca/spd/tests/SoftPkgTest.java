@@ -27,6 +27,7 @@ import mil.jpeojtrs.sca.spd.PropertyFile;
 import mil.jpeojtrs.sca.spd.SCAComplianceType;
 import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SpdFactory;
+import mil.jpeojtrs.sca.util.DceUuidUtil;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
@@ -162,11 +163,13 @@ public class SoftPkgTest extends TestCase {
 
 	public void testUtilIsComponentHost() throws IOException {
 		Assert.assertFalse(SoftPkg.Util.isComponentHost(null));
-		
-		URI uri = this.resourceSet.getResource(SpdTests.getURI("testComponentHost/ComponentHost.spd.xml"), true).getURI();
-		Assert.assertTrue(SoftPkg.Util.isComponentHost(uri));
-		uri = this.resourceSet.getResource(SpdTests.getURI("testSharedAddressComponent/SharedAddyComp.spd.xml"), true).getURI();
-		Assert.assertFalse(SoftPkg.Util.isComponentHost(uri));
+
+		SoftPkg spd = SpdFactory.eINSTANCE.createSoftPkg();
+		spd.setId("DCE:fd3ba3dc-f68c-4419-96fa-333062329bfd");
+		Assert.assertTrue(SoftPkg.Util.isComponentHost(spd));
+
+		spd.setId(DceUuidUtil.createDceUUID());
+		Assert.assertFalse(SoftPkg.Util.isComponentHost(spd));
 	}
 
 	public void testUtilIsContainedComponent() throws IOException {
