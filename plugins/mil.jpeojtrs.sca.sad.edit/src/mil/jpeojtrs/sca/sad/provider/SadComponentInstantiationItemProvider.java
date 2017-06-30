@@ -66,7 +66,7 @@ public class SadComponentInstantiationItemProvider extends ComponentInstantiatio
 	/**
 	 * This adds a property descriptor for the Device Requires feature.
 	 * <!-- begin-user-doc -->
-	 * @since 3.1
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

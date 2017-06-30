@@ -37,7 +37,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link mil.jpeojtrs.sca.sad.UsesDeviceRef} object.
  * <!-- begin-user-doc -->
- * @since 3.1
+ * @since 4.0
  * <!-- end-user-doc -->
  * @generated
  */

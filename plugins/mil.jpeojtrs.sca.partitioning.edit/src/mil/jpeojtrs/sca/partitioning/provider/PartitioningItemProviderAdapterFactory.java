@@ -508,7 +508,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.Requirements} instances.
 	 * <!-- begin-user-doc -->
-	 * @since 2.1
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -533,7 +533,7 @@ public class PartitioningItemProviderAdapterFactory extends PartitioningAdapterF
 	/**
 	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.partitioning.Requires} instances.
 	 * <!-- begin-user-doc -->
-	 * @since 2.1
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

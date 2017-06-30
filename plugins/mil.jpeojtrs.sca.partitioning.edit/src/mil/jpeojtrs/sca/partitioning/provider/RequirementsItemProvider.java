@@ -39,7 +39,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link mil.jpeojtrs.sca.partitioning.Requirements} object.
  * <!-- begin-user-doc -->
- * @since 2.1
+ * @since 3.0
  * <!-- end-user-doc -->
  * @generated
  */
