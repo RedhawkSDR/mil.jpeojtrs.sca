@@ -236,6 +236,14 @@ public interface DcdPackage extends EPackage {
 	 */
 	int DCD_COMPONENT_INSTANTIATION__IMPL_ID = PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID;
 	/**
+	 * The feature id for the '<em><b>Start Order</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DCD_COMPONENT_INSTANTIATION__START_ORDER = PartitioningPackage.COMPONENT_INSTANTIATION__START_ORDER;
+	/**
 	 * The feature id for the '<em><b>Deployer Requires</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * @since 4.0

@@ -189,6 +189,14 @@ public interface SadPackage extends EPackage {
 	 */
 	int SAD_COMPONENT_INSTANTIATION__IMPL_ID = PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID;
 	/**
+	 * The feature id for the '<em><b>Start Order</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SAD_COMPONENT_INSTANTIATION__START_ORDER = PartitioningPackage.COMPONENT_INSTANTIATION__START_ORDER;
+	/**
 	 * The feature id for the '<em><b>Find Component</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -206,21 +214,13 @@ public interface SadPackage extends EPackage {
 	 */
 	int SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES = PartitioningPackage.COMPONENT_INSTANTIATION_FEATURE_COUNT + 1;
 	/**
-	 * The feature id for the '<em><b>Start Order</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SAD_COMPONENT_INSTANTIATION__START_ORDER = PartitioningPackage.COMPONENT_INSTANTIATION_FEATURE_COUNT + 2;
-	/**
 	 * The number of structural features of the '<em>Component Instantiation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SAD_COMPONENT_INSTANTIATION_FEATURE_COUNT = PartitioningPackage.COMPONENT_INSTANTIATION_FEATURE_COUNT + 3;
+	int SAD_COMPONENT_INSTANTIATION_FEATURE_COUNT = PartitioningPackage.COMPONENT_INSTANTIATION_FEATURE_COUNT + 2;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.SadComponentInstantiationRefImpl <em>Component Instantiation Ref</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1249,17 +1249,6 @@ public interface SadPackage extends EPackage {
 	EReference getSadComponentInstantiation_DeviceRequires();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.SadComponentInstantiation#getStartOrder <em>Start Order</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Start Order</em>'.
-	 * @see mil.jpeojtrs.sca.sad.SadComponentInstantiation#getStartOrder()
-	 * @see #getSadComponentInstantiation()
-	 * @generated
-	 */
-	EAttribute getSadComponentInstantiation_StartOrder();
-
-	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.SadComponentInstantiationRef <em>Component Instantiation Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2072,13 +2061,6 @@ public interface SadPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES = eINSTANCE.getSadComponentInstantiation_DeviceRequires();
-		/**
-		 * The meta object literal for the '<em><b>Start Order</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SAD_COMPONENT_INSTANTIATION__START_ORDER = eINSTANCE.getSadComponentInstantiation_StartOrder();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.SadComponentInstantiationRefImpl <em>Component Instantiation Ref</em>}' class.
 		 * <!-- begin-user-doc -->

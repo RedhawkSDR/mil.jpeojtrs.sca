@@ -342,16 +342,6 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSadComponentInstantiation_StartOrder() {
-		return (EAttribute) sadComponentInstantiationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getSadComponentInstantiationRef() {
 		return sadComponentInstantiationRefEClass;
 	}
@@ -1070,7 +1060,6 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		sadComponentInstantiationEClass = createEClass(SAD_COMPONENT_INSTANTIATION);
 		createEReference(sadComponentInstantiationEClass, SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT);
 		createEReference(sadComponentInstantiationEClass, SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES);
-		createEAttribute(sadComponentInstantiationEClass, SAD_COMPONENT_INSTANTIATION__START_ORDER);
 
 		sadComponentInstantiationRefEClass = createEClass(SAD_COMPONENT_INSTANTIATION_REF);
 
@@ -1246,8 +1235,6 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		initEReference(getSadComponentInstantiation_DeviceRequires(), thePartitioningPackage.getRequirements(), null, "deviceRequires", null, 0, 1,
 			SadComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 			!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSadComponentInstantiation_StartOrder(), theXMLTypePackage.getNonNegativeInteger(), "startOrder", null, 0, 1,
-			SadComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sadComponentInstantiationRefEClass, SadComponentInstantiationRef.class, "SadComponentInstantiationRef", !IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
@@ -1432,8 +1419,6 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			new String[] { "kind", "element", "name", "findcomponent", "namespace", "##targetNamespace" });
 		addAnnotation(getSadComponentInstantiation_DeviceRequires(), source,
 			new String[] { "kind", "element", "name", "devicerequires", "namespace", "##targetNamespace" });
-		addAnnotation(getSadComponentInstantiation_StartOrder(), source,
-			new String[] { "kind", "attribute", "name", "startorder", "namespace", "##targetNamespace" });
 		addAnnotation(sadComponentInstantiationRefEClass, source,
 			new String[] { "name", "componentinstantiationref", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(sadUsesPortEClass, source, new String[] { "name", "usesport", "kind", "elementOnly", "qualified", "false" });

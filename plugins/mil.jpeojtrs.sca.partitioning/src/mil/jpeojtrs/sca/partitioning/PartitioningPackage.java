@@ -1,13 +1,13 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning;
 
@@ -363,13 +363,21 @@ public interface PartitioningPackage extends EPackage {
 	 */
 	int COMPONENT_INSTANTIATION__IMPL_ID = 9;
 	/**
+	 * The feature id for the '<em><b>Start Order</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANTIATION__START_ORDER = 10;
+	/**
 	 * The number of structural features of the '<em>Component Instantiation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANTIATION_FEATURE_COUNT = 10;
+	int COMPONENT_INSTANTIATION_FEATURE_COUNT = 11;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationRefImpl <em>Component Instantiation Ref</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1660,6 +1668,17 @@ public interface PartitioningPackage extends EPackage {
 	EAttribute getComponentInstantiation_ImplID();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getStartOrder <em>Start Order</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Order</em>'.
+	 * @see mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getStartOrder()
+	 * @see #getComponentInstantiation()
+	 * @generated
+	 */
+	EAttribute getComponentInstantiation_StartOrder();
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiationRef <em>Component Instantiation Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2921,6 +2940,13 @@ public interface PartitioningPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPONENT_INSTANTIATION__IMPL_ID = eINSTANCE.getComponentInstantiation_ImplID();
+		/**
+		 * The meta object literal for the '<em><b>Start Order</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_INSTANTIATION__START_ORDER = eINSTANCE.getComponentInstantiation_StartOrder();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationRefImpl <em>Component Instantiation Ref</em>}' class.
 		 * <!-- begin-user-doc -->

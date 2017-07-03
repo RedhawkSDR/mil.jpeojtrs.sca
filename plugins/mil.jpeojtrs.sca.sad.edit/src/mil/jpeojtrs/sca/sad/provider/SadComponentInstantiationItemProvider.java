@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -58,7 +57,6 @@ public class SadComponentInstantiationItemProvider extends ComponentInstantiatio
 			super.getPropertyDescriptors(object);
 
 			addDeviceRequiresPropertyDescriptor(object);
-			addStartOrderPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,19 +73,6 @@ public class SadComponentInstantiationItemProvider extends ComponentInstantiatio
 			getString("_UI_SadComponentInstantiation_deviceRequires_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_SadComponentInstantiation_deviceRequires_feature", "_UI_SadComponentInstantiation_type"),
 			SadPackage.Literals.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES, false, false, false, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Start Order feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStartOrderPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_SadComponentInstantiation_startOrder_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_SadComponentInstantiation_startOrder_feature", "_UI_SadComponentInstantiation_type"),
-			SadPackage.Literals.SAD_COMPONENT_INSTANTIATION__START_ORDER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -144,9 +129,6 @@ public class SadComponentInstantiationItemProvider extends ComponentInstantiatio
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SadComponentInstantiation.class)) {
-		case SadPackage.SAD_COMPONENT_INSTANTIATION__START_ORDER:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__FIND_COMPONENT:
 		case SadPackage.SAD_COMPONENT_INSTANTIATION__DEVICE_REQUIRES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

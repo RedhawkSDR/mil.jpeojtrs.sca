@@ -1,16 +1,17 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning;
 
+import java.math.BigInteger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -44,6 +45,7 @@ import mil.jpeojtrs.sca.util.ScaEcoreUtils;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getPlacement <em>Placement</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getImplID <em>Impl ID</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getStartOrder <em>Start Order</em>}</li>
  * </ul>
  *
  * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation()
@@ -309,6 +311,33 @@ public interface ComponentInstantiation extends EObject {
 	 * @generated
 	 */
 	void setImplID(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Start Order</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Start Order</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Start Order</em>' attribute.
+	 * @see #setStartOrder(BigInteger)
+	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getComponentInstantiation_StartOrder()
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.NonNegativeInteger"
+	 *        extendedMetaData="kind='attribute' name='startorder' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	BigInteger getStartOrder();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getStartOrder <em>Start Order</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Start Order</em>' attribute.
+	 * @see #getStartOrder()
+	 * @generated
+	 */
+	void setStartOrder(BigInteger value);
 
 	/**
 	 * @since 2.2

@@ -1,16 +1,17 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.impl;
 
+import java.math.BigInteger;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -61,6 +62,7 @@ import mil.jpeojtrs.sca.spd.SoftPkg;
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getPlacement <em>Placement</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getImplID <em>Impl ID</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.partitioning.impl.ComponentInstantiationImpl#getStartOrder <em>Start Order</em>}</li>
  * </ul>
  *
  * @generated
@@ -179,6 +181,25 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 	 * @ordered
 	 */
 	protected String implID = IMPL_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStartOrder() <em>Start Order</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartOrder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigInteger START_ORDER_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getStartOrder() <em>Start Order</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartOrder()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigInteger startOrder = START_ORDER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -555,6 +576,27 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BigInteger getStartOrder() {
+		return startOrder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStartOrder(BigInteger newStartOrder) {
+		BigInteger oldStartOrder = startOrder;
+		startOrder = newStartOrder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PartitioningPackage.COMPONENT_INSTANTIATION__START_ORDER, oldStartOrder, startOrder));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -634,6 +676,8 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 			return getPlacement();
 		case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
 			return getImplID();
+		case PartitioningPackage.COMPONENT_INSTANTIATION__START_ORDER:
+			return getStartOrder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -669,6 +713,9 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 			return;
 		case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
 			setImplID((String) newValue);
+			return;
+		case PartitioningPackage.COMPONENT_INSTANTIATION__START_ORDER:
+			setStartOrder((BigInteger) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -706,6 +753,9 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 		case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
 			setImplID(IMPL_ID_EDEFAULT);
 			return;
+		case PartitioningPackage.COMPONENT_INSTANTIATION__START_ORDER:
+			setStartOrder(START_ORDER_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -738,6 +788,8 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 			return getPlacement() != null;
 		case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
 			return IMPL_ID_EDEFAULT == null ? implID != null : !IMPL_ID_EDEFAULT.equals(implID);
+		case PartitioningPackage.COMPONENT_INSTANTIATION__START_ORDER:
+			return START_ORDER_EDEFAULT == null ? startOrder != null : !START_ORDER_EDEFAULT.equals(startOrder);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -759,6 +811,8 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 		result.append(id);
 		result.append(", implID: ");
 		result.append(implID);
+		result.append(", startOrder: ");
+		result.append(startOrder);
 		result.append(')');
 		return result.toString();
 	}

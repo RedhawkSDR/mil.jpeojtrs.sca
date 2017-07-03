@@ -586,6 +586,15 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponentInstantiation_StartOrder() {
+		return (EAttribute) componentInstantiationEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EClass getComponentInstantiationRef() {
 		return componentInstantiationRefEClass;
@@ -1609,6 +1618,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		createEAttribute(componentInstantiationEClass, COMPONENT_INSTANTIATION__ID);
 		createEReference(componentInstantiationEClass, COMPONENT_INSTANTIATION__PLACEMENT);
 		createEAttribute(componentInstantiationEClass, COMPONENT_INSTANTIATION__IMPL_ID);
+		createEAttribute(componentInstantiationEClass, COMPONENT_INSTANTIATION__START_ORDER);
 
 		componentInstantiationRefEClass = createEClass(COMPONENT_INSTANTIATION_REF);
 		createEReference(componentInstantiationRefEClass, COMPONENT_INSTANTIATION_REF__INSTANTIATION);
@@ -1880,6 +1890,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 			IS_ORDERED);
 		initEAttribute(getComponentInstantiation_ImplID(), theEcorePackage.getEString(), "implID", null, 0, 1, ComponentInstantiation.class, IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentInstantiation_StartOrder(), theXMLTypePackage.getNonNegativeInteger(), "startOrder", null, 0, 1,
+			ComponentInstantiation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentInstantiationRefEClass, ComponentInstantiationRef.class, "ComponentInstantiationRef", IS_ABSTRACT, !IS_INTERFACE,
 			IS_GENERATED_INSTANCE_CLASS);
@@ -2152,6 +2164,8 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 		addAnnotation(getComponentInstantiation_Uses(), source, new String[] { "kind", "element", "name", "uses" });
 		addAnnotation(getComponentInstantiation_InterfaceStub(), source, new String[] { "kind", "element", "name", "interfaceports" });
 		addAnnotation(getComponentInstantiation_Id(), source, new String[] { "kind", "attribute", "name", "id" });
+		addAnnotation(getComponentInstantiation_StartOrder(), source,
+			new String[] { "kind", "attribute", "name", "startorder", "namespace", "##targetNamespace" });
 		addAnnotation(componentInstantiationRefEClass, source,
 			new String[] { "kind", "elementOnly", "name", "componentinstantiationref", "qualified", "false" });
 		addAnnotation(getComponentInstantiationRef_Instantiation(), source, new String[] { "kind", "attribute", "name", "instantiation" });

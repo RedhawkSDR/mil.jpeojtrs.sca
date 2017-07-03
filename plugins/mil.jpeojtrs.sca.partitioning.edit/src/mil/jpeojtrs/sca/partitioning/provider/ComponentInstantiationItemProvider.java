@@ -1,13 +1,13 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
@@ -65,6 +65,7 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter
 
 			addUsageNamePropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
+			addStartOrderPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,6 +94,20 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter
 			getString("_UI_ComponentInstantiation_id_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstantiation_id_feature", "_UI_ComponentInstantiation_type"),
 			PartitioningPackage.Literals.COMPONENT_INSTANTIATION__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Start Order feature.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStartOrderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+			getString("_UI_ComponentInstantiation_startOrder_feature"),
+			getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstantiation_startOrder_feature", "_UI_ComponentInstantiation_type"),
+			PartitioningPackage.Literals.COMPONENT_INSTANTIATION__START_ORDER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -168,6 +183,7 @@ public class ComponentInstantiationItemProvider extends ItemProviderAdapter
 		case PartitioningPackage.COMPONENT_INSTANTIATION__USES:
 		case PartitioningPackage.COMPONENT_INSTANTIATION__ID:
 		case PartitioningPackage.COMPONENT_INSTANTIATION__IMPL_ID:
+		case PartitioningPackage.COMPONENT_INSTANTIATION__START_ORDER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case PartitioningPackage.COMPONENT_INSTANTIATION__COMPONENT_PROPERTIES:
