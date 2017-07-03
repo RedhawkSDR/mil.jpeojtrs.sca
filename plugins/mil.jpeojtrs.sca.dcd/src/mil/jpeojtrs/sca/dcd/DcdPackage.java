@@ -238,6 +238,7 @@ public interface DcdPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Start Order</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
