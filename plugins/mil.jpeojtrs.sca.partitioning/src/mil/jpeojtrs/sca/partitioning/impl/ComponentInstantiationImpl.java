@@ -12,6 +12,7 @@
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.math.BigInteger;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -185,6 +186,7 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 	/**
 	 * The default value of the '{@link #getStartOrder() <em>Start Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.2
 	 * <!-- end-user-doc -->
 	 * @see #getStartOrder()
 	 * @generated
@@ -194,6 +196,7 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 	/**
 	 * The cached value of the '{@link #getStartOrder() <em>Start Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.2
 	 * <!-- end-user-doc -->
 	 * @see #getStartOrder()
 	 * @generated
@@ -573,6 +576,7 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -582,6 +586,7 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 2.2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

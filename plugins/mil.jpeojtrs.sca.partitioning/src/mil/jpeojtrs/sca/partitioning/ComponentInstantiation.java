@@ -12,6 +12,7 @@
 package mil.jpeojtrs.sca.partitioning;
 
 import java.math.BigInteger;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -315,10 +316,7 @@ public interface ComponentInstantiation extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Start Order</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Start Order</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
+	 * @since 2.2
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Start Order</em>' attribute.
 	 * @see #setStartOrder(BigInteger)
@@ -332,6 +330,7 @@ public interface ComponentInstantiation extends EObject {
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getStartOrder <em>Start Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.2
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Start Order</em>' attribute.
 	 * @see #getStartOrder()

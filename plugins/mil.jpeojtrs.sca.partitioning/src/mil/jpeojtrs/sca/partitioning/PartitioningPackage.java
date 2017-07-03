@@ -365,6 +365,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Start Order</b></em>' attribute.
 	 * <!-- begin-user-doc -->
+	 * @since 2.2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1670,6 +1671,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getStartOrder <em>Start Order</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 2.2
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Start Order</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getStartOrder()
@@ -2943,6 +2945,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Start Order</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
+		 * @since 2.2
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
