@@ -11,11 +11,15 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.spd.tests;
 
+import java.io.IOException;
+
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreValidator;
 import org.junit.Assert;
 
@@ -32,7 +36,7 @@ import mil.jpeojtrs.sca.spd.UsesDevice;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link mil.jpeojtrs.sca.spd.UsesDevice#getPropertyRef() <em>Property Ref</em>}</li>
+ * <li>{@link mil.jpeojtrs.sca.spd.UsesDevice#getPropertyRef() <em>Property Ref</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -125,7 +129,7 @@ public class UsesDeviceTest extends TestCase {
 		// BEGIN GENERATED CODE
 	}
 
-	public void testParse() throws Exception {
+	public void testParse() throws IOException {
 		final SoftPkg softPkg = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testFiles/usesdevice.spd.xml"), true));
 		final UsesDevice usesDevice = softPkg.getImplementation().get(0).getUsesDevice().get(0);
 		Assert.assertNotNull(usesDevice);
@@ -133,7 +137,7 @@ public class UsesDeviceTest extends TestCase {
 		Assert.assertEquals("testType", usesDevice.getType());
 	}
 
-	public void testNoType() throws Exception {
+	public void testNoType() throws IOException {
 		final SoftPkg softPkg = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testFiles/usesdevice_no_type.spd.xml"), true));
 		final UsesDevice usesDevice = softPkg.getImplementation().get(0).getUsesDevice().get(0);
 		Assert.assertNotNull(usesDevice);
@@ -148,6 +152,20 @@ public class UsesDeviceTest extends TestCase {
 			result = EcoreValidator.INSTANCE.validate(next, diagnostics, null);
 			Assert.assertTrue("Ecore model validation failed: " + diagnostics.toString(), result);
 		}
+	}
+
+	// UsesDevice is valid so long as it contains ANY property, including:
+	// - propertyRef/simpleRef/simpleSequenceRef/structRef/structSequenceRef
+	public void testNoPropertyRef() throws IOException {
+		final SoftPkg softPkg = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testFiles/usesdevice_no_propref.spd.xml"), true));
+		final UsesDevice usesDevice = softPkg.getImplementation().get(0).getUsesDevice().get(0);
+		BasicDiagnostic diagnostics = new BasicDiagnostic();
+		Diagnostician.INSTANCE.validate(usesDevice, diagnostics);
+		String errMsg = "Test Failed: ";
+		if (diagnostics.getChildren().size() > 0) {
+			errMsg = diagnostics.getChildren().get(0).getMessage();
+		}
+		Assert.assertEquals(errMsg, Diagnostic.OK, diagnostics.getSeverity());
 	}
 
 } // UsesDeviceTest
