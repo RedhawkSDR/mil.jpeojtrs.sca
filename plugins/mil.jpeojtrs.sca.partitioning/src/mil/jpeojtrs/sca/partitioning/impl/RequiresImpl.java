@@ -22,7 +22,7 @@ import mil.jpeojtrs.sca.partitioning.Requires;
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Requires</b></em>'.
- * @since 2.2
+ * @since 3.0
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:

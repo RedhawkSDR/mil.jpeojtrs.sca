@@ -127,5 +127,13 @@ public abstract class ComponentInstantiationTest extends TestCase {
 		SoftwareComponent scd = ComponentInstantiation.Util.getScd(getFixture());
 		Assert.assertNotNull(scd);
 	}
+	
+	public void testStartOrder() {
+		ComponentInstantiation a = getFixture();
+		
+		System.err.println("Who wants to live forever?");
+	}
+	
+	
 
 } //ComponentInstantiationTest
