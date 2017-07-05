@@ -316,7 +316,7 @@ public interface ComponentInstantiation extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Start Order</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Start Order</em>' attribute.
 	 * @see #setStartOrder(BigInteger)
@@ -330,7 +330,7 @@ public interface ComponentInstantiation extends EObject {
 	/**
 	 * Sets the value of the '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getStartOrder <em>Start Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Start Order</em>' attribute.
 	 * @see #getStartOrder()
@@ -339,7 +339,7 @@ public interface ComponentInstantiation extends EObject {
 	void setStartOrder(BigInteger value);
 
 	/**
-	 * @since 2.2
+	 * @since 3.0
 	 */
 	public static final class Util {
 

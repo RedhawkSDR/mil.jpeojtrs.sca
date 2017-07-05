@@ -253,7 +253,7 @@ public interface PartitioningFactory extends EFactory {
 	/**
 	 * Returns a new object of class '<em>Requirements</em>'.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Requirements</em>'.
 	 * @generated
@@ -263,7 +263,7 @@ public interface PartitioningFactory extends EFactory {
 	/**
 	 * Returns a new object of class '<em>Requires</em>'.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Requires</em>'.
 	 * @generated

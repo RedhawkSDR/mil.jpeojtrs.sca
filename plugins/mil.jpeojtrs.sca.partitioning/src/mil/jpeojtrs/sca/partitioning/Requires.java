@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Requires</b></em>'.
- * @since 2.2
+ * @since 3.0
  * <!-- end-user-doc -->
  *
  * <p>

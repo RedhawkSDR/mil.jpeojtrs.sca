@@ -365,7 +365,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Start Order</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1174,7 +1174,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.RequirementsImpl <em>Requirements</em>}' class.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.partitioning.impl.RequirementsImpl
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getRequirements()
@@ -1184,7 +1184,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Requires</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1193,7 +1193,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Requirements</em>' class.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1202,7 +1202,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.partitioning.impl.RequiresImpl <em>Requires</em>}' class.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.partitioning.impl.RequiresImpl
 	 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getRequires()
@@ -1212,7 +1212,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1221,7 +1221,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1230,7 +1230,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Requires</em>' class.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1671,7 +1671,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getStartOrder <em>Start Order</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Start Order</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.ComponentInstantiation#getStartOrder()
@@ -2485,7 +2485,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.Requirements <em>Requirements</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Requirements</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.Requirements
@@ -2496,7 +2496,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.partitioning.Requirements#getRequires <em>Requires</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Requires</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.Requirements#getRequires()
@@ -2508,7 +2508,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.partitioning.Requires <em>Requires</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Requires</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.Requires
@@ -2519,7 +2519,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.Requires#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Id</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.Requires#getId()
@@ -2531,7 +2531,7 @@ public interface PartitioningPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.partitioning.Requires#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see mil.jpeojtrs.sca.partitioning.Requires#getValue()
@@ -2945,7 +2945,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Start Order</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
-		 * @since 2.2
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3522,7 +3522,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.RequirementsImpl <em>Requirements</em>}' class.
 		 * <!-- begin-user-doc -->
-		 * @since 2.2
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.partitioning.impl.RequirementsImpl
 		 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getRequirements()
@@ -3532,7 +3532,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Requires</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
-		 * @since 2.2
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3540,7 +3540,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.partitioning.impl.RequiresImpl <em>Requires</em>}' class.
 		 * <!-- begin-user-doc -->
-		 * @since 2.2
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.partitioning.impl.RequiresImpl
 		 * @see mil.jpeojtrs.sca.partitioning.impl.PartitioningPackageImpl#getRequires()
@@ -3550,7 +3550,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
-		 * @since 2.2
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
@@ -3558,7 +3558,7 @@ public interface PartitioningPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
-		 * @since 2.2
+		 * @since 3.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * Represents "requirements" that a device instance imposes which must be matched by any component instances which will
  * be executed on the device. The requirements are expressed per device instance in the DCD, and must be matched per
  * component instance in the SAD.
- * @since 2.2
+ * @since 3.0
  * <!-- end-user-doc -->
  *
  * <p>

@@ -631,7 +631,7 @@ public class PartitioningValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -641,7 +641,7 @@ public class PartitioningValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
