@@ -1480,7 +1480,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(usesDeviceEClass, UsesDevice.class, "UsesDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUsesDevice_PropertyRef(), this.getPropertyRef(), null, "propertyRef", null, 1, -1, UsesDevice.class, IS_TRANSIENT, IS_VOLATILE,
+		initEReference(getUsesDevice_PropertyRef(), this.getPropertyRef(), null, "propertyRef", null, 0, -1, UsesDevice.class, IS_TRANSIENT, IS_VOLATILE,
 			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUsesDevice_Id(), theEcorePackage.getEString(), "id", null, 1, 1, UsesDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			!IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

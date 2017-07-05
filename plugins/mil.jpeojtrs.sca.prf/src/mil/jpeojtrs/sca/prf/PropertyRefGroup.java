@@ -48,7 +48,7 @@ public interface PropertyRefGroup extends PropertyRefContainer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Properties</em>' attribute list.
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getPropertyRefGroup_Properties()
-	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" required="true" many="true"
 	 *        extendedMetaData="kind='group' name='properties:0'"
 	 * @generated
 	 */
