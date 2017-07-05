@@ -2266,7 +2266,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		addEOperation(propertyRefContainerEClass, this.getPropertyContainer(), "getPropertyContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(propertyRefGroupEClass, PropertyRefGroup.class, "PropertyRefGroup", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPropertyRefGroup_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 0, -1, PropertyRefGroup.class, !IS_TRANSIENT,
+		initEAttribute(getPropertyRefGroup_Properties(), ecorePackage.getEFeatureMapEntry(), "properties", null, 1, -1, PropertyRefGroup.class, !IS_TRANSIENT,
 			!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyRefGroup_SimpleRef(), this.getSimpleRef(), null, "simpleRef", null, 0, -1, PropertyRefGroup.class, IS_TRANSIENT, IS_VOLATILE,
 			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);

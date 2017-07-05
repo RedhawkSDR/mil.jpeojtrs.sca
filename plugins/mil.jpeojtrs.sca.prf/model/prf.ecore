@@ -710,8 +710,8 @@
       <details key="name" value="propertyrefgroup"/>
       <details key="qualified" value="false"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="properties" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="properties" lowerBound="1"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="group"/>
         <details key="name" value="properties:0"/>

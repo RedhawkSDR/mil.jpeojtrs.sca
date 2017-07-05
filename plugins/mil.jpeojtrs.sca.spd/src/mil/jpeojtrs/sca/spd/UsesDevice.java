@@ -46,7 +46,7 @@ public interface UsesDevice extends PropertyRefGroup {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Property Ref</em>' containment reference list.
 	 * @see mil.jpeojtrs.sca.spd.SpdPackage#getUsesDevice_PropertyRef()
-	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
+	 * @model containment="true" transient="true" volatile="true" derived="true"
 	 *        extendedMetaData="kind='element' name='propertyref' group='#properties:0'"
 	 * @generated
 	 */
