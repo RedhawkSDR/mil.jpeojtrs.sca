@@ -11,8 +11,16 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.tests;
 
+import java.net.URISyntaxException;
+import java.util.List;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.junit.Assert;
+
 import junit.textui.TestRunner;
 import mil.jpeojtrs.sca.dcd.DcdComponentInstantiation;
+import mil.jpeojtrs.sca.dcd.DcdComponentPlacement;
 import mil.jpeojtrs.sca.dcd.DeviceConfiguration;
 import mil.jpeojtrs.sca.partitioning.tests.ComponentInstantiationTest;
 
@@ -86,6 +94,20 @@ public class DcdComponentInstantiationTest extends ComponentInstantiationTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	public void testStartOrder() throws URISyntaxException {
+		DeviceConfiguration dcd = DcdTests.loadDCDFromDevPath("/nodes/DeployerRequires/DeviceManager.dcd.xml");
+		List<DcdComponentPlacement> placements = dcd.getPartitioning().getComponentPlacement();
+		DcdComponentInstantiation ci = placements.get(0).getComponentInstantiation().get(0);
+
+		Assert.assertNotNull(ci.getStartOrder());
+		Diagnostic diagnostics = Diagnostician.INSTANCE.validate(ci);
+		String errMsg = "Test Failed: ";
+		if (diagnostics.getChildren().size() > 0) {
+			errMsg = diagnostics.getChildren().get(0).getMessage();
+		}
+		Assert.assertEquals(errMsg, Diagnostic.OK, diagnostics.getSeverity());
 	}
 
 } //DcdComponentInstantiationTest

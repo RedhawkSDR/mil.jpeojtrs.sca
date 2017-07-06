@@ -186,7 +186,7 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 	/**
 	 * The default value of the '{@link #getStartOrder() <em>Start Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see #getStartOrder()
 	 * @generated
@@ -196,7 +196,7 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 	/**
 	 * The cached value of the '{@link #getStartOrder() <em>Start Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @see #getStartOrder()
 	 * @generated

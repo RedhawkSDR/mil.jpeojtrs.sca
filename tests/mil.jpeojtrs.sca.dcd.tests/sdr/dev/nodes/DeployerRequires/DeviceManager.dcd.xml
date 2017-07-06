@@ -12,7 +12,7 @@
   <partitioning>
     <componentplacement>
       <componentfileref refid="GPP_68cb140d-e8a3-402e-bea0-e65bb59e2059"/>
-      <componentinstantiation id="DeployerRequires:GPP_1">
+      <componentinstantiation id="DeployerRequires:GPP_1" startorder="0">
         <usagename>GPP_1</usagename>
         <deployerrequires>
           <requires id="abc" value="def"/>

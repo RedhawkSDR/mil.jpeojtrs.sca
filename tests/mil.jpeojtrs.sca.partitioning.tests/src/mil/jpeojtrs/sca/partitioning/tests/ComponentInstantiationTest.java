@@ -21,7 +21,9 @@ import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Assert;
 
 /**
@@ -126,12 +128,6 @@ public abstract class ComponentInstantiationTest extends TestCase {
 	public void testUtilGetScd() {
 		SoftwareComponent scd = ComponentInstantiation.Util.getScd(getFixture());
 		Assert.assertNotNull(scd);
-	}
-	
-	public void testStartOrder() {
-		ComponentInstantiation a = getFixture();
-		
-		System.err.println("Who wants to live forever?");
 	}
 	
 	
