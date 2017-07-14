@@ -117,6 +117,7 @@ public class ExternalPropertyTest extends TestCase {
 	 */
 	@Test
 	public void testResolveExternalID() {
+		// END GENERATED CODE
 		assertNotNull("fixture", fixture);
 		final String TEST_ID = "test_setExternalPropID";
 		fixture.setExternalPropID(TEST_ID);
@@ -126,7 +127,10 @@ public class ExternalPropertyTest extends TestCase {
 
 		String externalId = fixture.resolveExternalID();
 		assertEquals("resolveExternalID", TEST_ID, externalId);
+		// BEGIN GENERATED CODE
 	}
+
+	// END GENERATED CODE
 
 	/**
 	 * IDE-1511 - Validate that external properties match a component instantiation
@@ -147,5 +151,7 @@ public class ExternalPropertyTest extends TestCase {
 			}
 		}
 	}
+
+	// BEGIN GENERATED CODE
 
 } //ExternalPropertyTest
