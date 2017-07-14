@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softpkg PUBLIC "-//JTRS//DTD SCA V2.2.2 SPD//EN" "softpkg.dtd">
+<softpkg id="DCE:acce6d81-97fe-441e-a0a0-b5b0756b4fac" name="NoProps" type="2.1.1">
+  <title></title>
+  <author>
+    <name>null</name>
+  </author>
+  <descriptor>
+    <localfile name="NoProps.scd.xml"/>
+  </descriptor>
+  <implementation id="python">
+    <description>A component without a properties (PRF) file</description>
+    <code type="Executable">
+      <localfile name="python"/>
+      <entrypoint>python/noprops.py</entrypoint>
+    </code>
+    <programminglanguage name="Python"/>
+    <humanlanguage name="EN"/>
+    <runtime name="python" version="2.6.6"/>
+    <os name="Linux"/>
+  </implementation>
+</softpkg>
