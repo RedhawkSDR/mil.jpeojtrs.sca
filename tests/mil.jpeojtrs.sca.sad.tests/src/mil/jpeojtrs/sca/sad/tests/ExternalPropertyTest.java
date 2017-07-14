@@ -13,7 +13,9 @@ package mil.jpeojtrs.sca.sad.tests;
 
 import java.net.URISyntaxException;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -144,12 +146,40 @@ public class ExternalPropertyTest extends TestCase {
 			BasicDiagnostic diagnostics = new BasicDiagnostic();
 			if (prop.getExternalPropID().matches(".*" + "invalid" + ".*")) {
 				Assert.assertFalse("Validation should fail", SadValidator.INSTANCE.validateExternalProperty(prop, diagnostics, null));
-				String errorMsg = SadPluginActivator.INSTANCE.getString("_UI_UnkownCompRefId_diagnostic", new Object[] { prop.getExternalPropID() });
+				String errorMsg = SadPluginActivator.INSTANCE.getString("_UI_ExternalProperty_UnknownCompRefId_diagnostic", new Object[] { prop.getExternalPropID() });
 				Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().equals(errorMsg));
 			} else {
 				Assert.assertTrue("Validation should pass", SadValidator.INSTANCE.validateExternalProperty(prop, diagnostics, null));
 			}
 		}
+	}
+
+	/**
+	 * IDE-1868 Validate that an external property references a valid property
+	 * @throws URISyntaxException
+	 */
+	public void testExternalPropertyPropRefId() throws URISyntaxException {
+		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/NonExistentPropertyWaveform/NonExistentPropertyWaveform.sad.xml");
+
+		// External property for a component without any properties (no PRF)
+		BasicDiagnostic diagnostics = new BasicDiagnostic();
+		ExternalProperty prop = sad.getExternalProperties().getProperties().get(0);
+		Assert.assertEquals("badcomponentpropid", prop.getPropID());
+		boolean result = Diagnostician.INSTANCE.validate(prop, diagnostics);
+		Assert.assertFalse("Expected validation to fail", result);
+		Assert.assertEquals(IStatus.ERROR, diagnostics.getSeverity());
+		String errorMessage = "External property 'badcomponentpropid' references a component which does not have a properties file";
+		Assert.assertEquals(errorMessage, diagnostics.getChildren().get(0).getMessage());
+
+		// External property referencing a property that the component doesn't have
+		diagnostics = new BasicDiagnostic();
+		prop = sad.getExternalProperties().getProperties().get(1);
+		Assert.assertEquals("idonotexist", prop.getPropID());
+		result = Diagnostician.INSTANCE.validate(prop, diagnostics);
+		Assert.assertFalse("Expected validation to fail", result);
+		Assert.assertEquals(IStatus.ERROR, diagnostics.getSeverity());
+		errorMessage = "External property 'idonotexist' references a property which does not exist for the target component (invalid propid)";
+		Assert.assertEquals(errorMessage, diagnostics.getChildren().get(0).getMessage());
 	}
 
 	// BEGIN GENERATED CODE

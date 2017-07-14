@@ -20,7 +20,9 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import mil.jpeojtrs.sca.partitioning.ComponentInstantiation;
 import mil.jpeojtrs.sca.partitioning.util.PartitioningValidator;
+import mil.jpeojtrs.sca.prf.Properties;
 import mil.jpeojtrs.sca.sad.*;
 import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ComponentResourceFactoryRef;
@@ -44,6 +46,8 @@ import mil.jpeojtrs.sca.sad.SadProvidesPort;
 import mil.jpeojtrs.sca.sad.SadUsesPort;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
+import mil.jpeojtrs.sca.spd.PropertyFile;
+import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.UsesDevice;
 import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 
@@ -334,7 +338,7 @@ public class SadValidator extends EObjectValidator {
 		// END GENERATED CODE
 		boolean result = validate_EveryDefaultConstraint(externalProperty, diagnostics, context);
 		if (result || diagnostics != null) {
-			result &= validateExternalPropertyRefId(externalProperty, diagnostics, context);
+			result &= validateExternalPropertyRefIds(externalProperty, diagnostics, context);
 		}
 		return result;
 		// BEGIN GENERATED CODE
@@ -342,18 +346,54 @@ public class SadValidator extends EObjectValidator {
 
 	// END GENERATED CODE
 
-	private boolean validateExternalPropertyRefId(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	private boolean validateExternalPropertyRefIds(ExternalProperty externalProperty, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		String compRefId = externalProperty.getCompRefID();
 		SoftwareAssembly sad = ScaEcoreUtils.getEContainerOfType(externalProperty, SoftwareAssembly.class);
+		SadComponentInstantiation targetCompInst = null;
 		for (SadComponentInstantiation comp : sad.getAllComponentInstantiations()) {
 			if (compRefId.equals(comp.getId())) {
-				return true;
+				targetCompInst = comp;
+				break;
 			}
 		}
 
-		diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_UnkownCompRefId_diagnostic",
-			new Object[] { externalProperty.getExternalPropID() }, new Object[] { externalProperty }, context));
-		return false;
+		// If we didn't find a component instantiation, it's not valid. No further checks necessary.
+		if (targetCompInst == null) {
+			if (diagnostics != null) {
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_ExternalProperty_UnknownCompRefId_diagnostic",
+					new Object[] { externalProperty.resolveExternalID() }, new Object[] { externalProperty }, context));
+			}
+			return false;
+		}
+
+		// Find the component's properties and check that this property exists
+		SoftPkg spd = ComponentInstantiation.Util.getSpd(targetCompInst);
+		if (spd == null) {
+			// Abnormal - we can't find the SPD. Other validation will report this issue.
+			return true;
+		}
+		PropertyFile prfFile = spd.getPropertyFile();
+		if (prfFile == null) {
+			if (diagnostics != null) {
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_ExternalProperty_NoPropsForComponent_diagnostic",
+					new Object[] { externalProperty.resolveExternalID() }, new Object[] { externalProperty }, context));
+			}
+			return false;
+		}
+		Properties prf = prfFile.getProperties();
+		if (prf == null) {
+			// Abnormal - we can't find the PRF. Don't try to validate.
+			return true;
+		}
+		if (prf.getProperty(externalProperty.getPropID()) == null) {
+			if (diagnostics != null) {
+				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_ExternalProperty_InvalidPropForComponent_diagnostic",
+					new Object[] { externalProperty.resolveExternalID() }, new Object[] { externalProperty }, context));
+			}
+			return false;
+		}
+
+		return true;
 	}
 
 	// BEGIN GENERATED CODE

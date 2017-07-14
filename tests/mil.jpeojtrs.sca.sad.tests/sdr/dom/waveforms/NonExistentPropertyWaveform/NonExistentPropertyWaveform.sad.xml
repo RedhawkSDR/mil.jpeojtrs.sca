@@ -5,6 +5,12 @@
     <componentfile id="DataConverter_6ac0020d-ffc4-4e29-8def-ae22ae7e5780" type="SPD">
       <localfile name="/components/rh/DataConverter/DataConverter.spd.xml"/>
     </componentfile>
+    <componentfile id="NoProps_90de65e2-1e61-4506-bceb-37fa21419db4" type="SPD">
+      <localfile name="/components/NoProps/NoProps.spd.xml"/>
+    </componentfile>
+    <componentfile id="AllPropTypes_3f56800a-e13a-4d27-8227-b33b60fc2813" type="SPD">
+      <localfile name="/components/AllPropTypes/AllPropTypes.spd.xml"/>
+    </componentfile>
   </componentfiles>
   <partitioning>
     <componentplacement>
@@ -21,8 +27,30 @@
         </findcomponent>
       </componentinstantiation>
     </componentplacement>
+    <componentplacement>
+      <componentfileref refid="NoProps_90de65e2-1e61-4506-bceb-37fa21419db4"/>
+      <componentinstantiation id="NoProps_1" startorder="1">
+        <usagename>NoProps_1</usagename>
+        <findcomponent>
+          <namingservice name="NoProps_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+    <componentplacement>
+      <componentfileref refid="AllPropTypes_3f56800a-e13a-4d27-8227-b33b60fc2813"/>
+      <componentinstantiation id="AllPropTypes_1" startorder="2">
+        <usagename>AllPropTypes_1</usagename>
+        <findcomponent>
+          <namingservice name="AllPropTypes_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
   </partitioning>
   <assemblycontroller>
     <componentinstantiationref refid="Reader_1"/>
   </assemblycontroller>
+  <externalproperties>
+    <property propid="badcomponentpropid" comprefid="NoProps_1"/>
+    <property propid="idonotexist" comprefid="AllPropTypes_1"/>
+  </externalproperties>
 </softwareassembly>
