@@ -14,13 +14,16 @@ package mil.jpeojtrs.sca.spd.provider;
 import java.util.Collection;
 import java.util.List;
 
+import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.provider.PropertyRefGroupItemProvider;
+import mil.jpeojtrs.sca.spd.SpdFactory;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.spd.UsesDevice;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -136,6 +139,8 @@ public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider {
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.PROPERTY_REF_GROUP__PROPERTIES,
+			FeatureMapUtil.createEntry(SpdPackage.Literals.USES_DEVICE__PROPERTY_REF, SpdFactory.eINSTANCE.createPropertyRef())));
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
