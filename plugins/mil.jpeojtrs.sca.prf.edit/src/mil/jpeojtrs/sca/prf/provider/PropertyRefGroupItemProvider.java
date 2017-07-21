@@ -14,15 +14,16 @@ package mil.jpeojtrs.sca.prf.provider;
 import java.util.Collection;
 import java.util.List;
 
-import mil.jpeojtrs.sca.prf.PrfFactory;
-import mil.jpeojtrs.sca.prf.PrfPackage;
-import mil.jpeojtrs.sca.prf.PropertyRefGroup;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMap.Entry;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
+import org.eclipse.emf.edit.provider.FeatureMapEntryWrapperItemProvider;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -35,6 +36,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import mil.jpeojtrs.sca.prf.PrfFactory;
+import mil.jpeojtrs.sca.prf.PrfPackage;
+import mil.jpeojtrs.sca.prf.PropertyRefGroup;
+
 /**
  * This is the item provider adapter for a {@link mil.jpeojtrs.sca.prf.PropertyRefGroup} object.
  * <!-- begin-user-doc -->
@@ -44,6 +49,24 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 public class PropertyRefGroupItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 
+	class PropertyRefGroupWrapperItemProvider extends FeatureMapEntryWrapperItemProvider {
+
+		public PropertyRefGroupWrapperItemProvider(Entry entry, EObject owner, EAttribute attribute, int index, AdapterFactory adapterFactory,
+			ResourceLocator resourceLocator) {
+			super(entry, owner, attribute, index, adapterFactory, resourceLocator);
+		}
+
+		/**
+		 * The default implementation in {@link FeatureMapEntryWrapperItemProvider} tacks on
+		 * <EStructuralFeature.getName()>, which we want to avoid here.
+		 */
+		@Override
+		protected String addEntryFeature(String text) {
+			return text;
+		}
+
+	}
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -52,6 +75,14 @@ public class PropertyRefGroupItemProvider extends ItemProviderAdapter implements
 	 */
 	public PropertyRefGroupItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+	}
+
+	@Override
+	protected Object createWrapper(EObject object, EStructuralFeature feature, Object value, int index) {
+		PropertyRefGroupWrapperItemProvider wrapper = new PropertyRefGroupWrapperItemProvider((FeatureMap.Entry) value, object, (EAttribute) feature, index,
+			adapterFactory, getResourceLocator());
+
+		return wrapper;
 	}
 
 	/**
@@ -108,6 +139,11 @@ public class PropertyRefGroupItemProvider extends ItemProviderAdapter implements
 	@Override
 	public String getText(Object object) {
 		return getString("_UI_PropertyRefGroup_type");
+	}
+
+	@Override
+	protected Object unwrap(Object object) {
+		return super.unwrap(object);
 	}
 
 	/**
