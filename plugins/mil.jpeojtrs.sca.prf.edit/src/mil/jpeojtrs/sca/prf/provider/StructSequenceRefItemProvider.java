@@ -92,18 +92,20 @@ public class StructSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return super.getImage(object);
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/StructSequence"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		return super.getText(object);
+		String label = ((StructSequenceRef) object).getRefID();
+		return label == null || label.length() == 0 ? getString("_UI_StructSequenceRef_type") : getString("_UI_StructSequenceRef_type") + " " + label;
+
 	}
 
 	/**

@@ -108,7 +108,7 @@ public class AbstractPropertyRefItemProvider extends ItemProviderAdapter impleme
 			IItemLabelProvider lp = (IItemLabelProvider) getRootAdapterFactory().adapt(property, IItemLabelProvider.class);
 			return lp.getText(property);
 		}
-		return "";
+		return null;
 	}
 
 	/**
@@ -151,22 +151,6 @@ public class AbstractPropertyRefItemProvider extends ItemProviderAdapter impleme
 	@Override
 	public ResourceLocator getResourceLocator() {
 		return PrfEditPlugin.INSTANCE;
-	}
-
-	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Object getImage(Object object) {
-		Object property = ((AbstractPropertyRef< ? >) object).getProperty();
-		if (property != null) {
-			IItemLabelProvider lp = (IItemLabelProvider) getRootAdapterFactory().adapt(property, IItemLabelProvider.class);
-			return lp.getImage(property);
-		}
-		return null;
 	}
 
 	/**
