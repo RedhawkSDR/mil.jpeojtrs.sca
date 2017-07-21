@@ -103,7 +103,15 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 			} else if (notification.getNotifier() instanceof Struct) {
 				switch (notification.getFeatureID(Struct.class)) {
 				case PrfPackage.STRUCT__SIMPLE:
-					updateSimpleRefs(notification);
+					switch (notification.getEventType()) {
+					case Notification.ADD:
+						addSimpleRef((Simple) notification.getNewValue());
+						break;
+					case Notification.REMOVE:
+						removeSimpleRef((Simple) notification.getOldValue());
+						break;
+					default:
+					}
 					break;
 				default:
 					break;
@@ -231,50 +239,44 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 		}
 	}
 
-	protected void updateSimpleRefs(Notification notification) {
-		Simple simple = (Simple) notification.getNewValue();
-		if (simple != null) { //Add Simple Refs associated with new value
-			for (StructValue structValue : getStructValue()) {
-				SimpleRef ref = PrfFactory.eINSTANCE.createSimpleRef();
-				ref.setRefID(simple.getId());
-				ref.setValue(PropertiesUtil.getDefaultValue(simple));
-				SimpleRef oldRef = null;
-				for (SimpleRef sr : structValue.getSimpleRef()) {
-					if (sr.getRefID() != null && sr.getRefID().equals(simple.getId())) {
-						oldRef = sr;
+	private void addSimpleRef(Simple simple) {
+		for (StructValue structValue : getStructValue()) {
+			SimpleRef ref = PrfFactory.eINSTANCE.createSimpleRef();
+			ref.setRefID(simple.getId());
+			ref.setValue(PropertiesUtil.getDefaultValue(simple));
+			SimpleRef oldRef = null;
+			for (SimpleRef sr : structValue.getSimpleRef()) {
+				if (sr.getRefID() != null && sr.getRefID().equals(simple.getId())) {
+					oldRef = sr;
+					break;
+				}
+			}
+			if (oldRef != null) {
+				structValue.getSimpleRef().remove(oldRef);
+			}
+			int index = this.getStruct().getSimple().indexOf(simple);
+			structValue.getSimpleRef().add(index, ref);
+		}
+	}
+
+	private void removeSimpleRef(Simple simple) {
+		for (StructValue structValue : getStructValue()) {
+			Collection<SimpleRef> removeRefs = null;
+			for (SimpleRef ref : structValue.getSimpleRef()) {
+				if (ref.getRefID() != null && simple.getId() != null) {
+					if (ref.getRefID().equals(simple.getId())) {
+						removeRefs = Collections.singletonList(ref);
 						break;
 					}
-				}
-				if (oldRef != null) {
-					structValue.getSimpleRef().remove(oldRef);
-				}
-				int index = this.getStruct().getSimple().indexOf(simple);
-				structValue.getSimpleRef().add(index, ref);
-			}
-		} else { //Remove SimpleRefs associated with the oldValue
-			simple = (Simple) notification.getOldValue();
-			if (simple != null) {
-				for (StructValue structValue : getStructValue()) {
-					Collection<SimpleRef> removeRefs = null;
-					for (SimpleRef ref : structValue.getSimpleRef()) {
-						if (ref.getRefID() != null && simple.getId() != null) {
-							if (ref.getRefID().equals(simple.getId())) {
-								removeRefs = Collections.singletonList(ref);
-								break;
-							}
-						} else if (ref.getRefID() == null && simple.getId() == null) {
-							removeRefs = Collections.singletonList(ref);
-							break;
-						}
-					}
-					if (removeRefs != null) {
-						structValue.getSimpleRef().removeAll(removeRefs);
-					}
+				} else if (ref.getRefID() == null && simple.getId() == null) {
+					removeRefs = Collections.singletonList(ref);
+					break;
 				}
 			}
-
+			if (removeRefs != null) {
+				structValue.getSimpleRef().removeAll(removeRefs);
+			}
 		}
-
 	}
 
 	/**
