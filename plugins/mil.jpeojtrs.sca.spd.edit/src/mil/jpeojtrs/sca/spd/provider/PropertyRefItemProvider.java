@@ -108,12 +108,12 @@ public class PropertyRefItemProvider extends ItemProviderAdapter implements IEdi
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((PropertyRef) object).getRefId();
-		return label == null || label.length() == 0 ? getString("_UI_PropertyRef_type") : getString("_UI_PropertyRef_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_PropertyRef_type") : label;
 	}
 
 	/**

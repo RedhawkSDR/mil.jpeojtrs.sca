@@ -158,7 +158,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spd.ecore#//SpdDocumentRoot/softpkg"/>
     </genClasses>
     <genClasses ecoreClass="spd.ecore#//UsesDevice">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spd.ecore#//UsesDevice/propertyRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference spd.ecore#//UsesDevice/propertyRef"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//UsesDevice/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spd.ecore#//UsesDevice/type"/>
     </genClasses>

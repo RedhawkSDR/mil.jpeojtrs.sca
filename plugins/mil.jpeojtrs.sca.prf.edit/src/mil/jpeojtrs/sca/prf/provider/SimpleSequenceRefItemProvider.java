@@ -138,6 +138,17 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	}
 
 	/**
+	 * 	 * This returns SimpleSequenceRef.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/SimpleSequence"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -145,7 +156,13 @@ public class SimpleSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	 */
 	@Override
 	public String getText(Object object) {
-		return super.getText(object);
+		String text = super.getText(object);
+		if (text != null) {
+			return text;
+		}
+
+		String label = ((SimpleSequenceRef) object).getRefID();
+		return label == null || label.length() == 0 ? getString("_UI_SimpleSequenceRef_type") : label;
 	}
 
 	/**

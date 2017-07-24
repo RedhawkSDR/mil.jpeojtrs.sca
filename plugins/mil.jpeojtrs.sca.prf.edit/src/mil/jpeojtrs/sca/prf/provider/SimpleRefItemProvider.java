@@ -17,6 +17,7 @@ import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
 import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.prf.Simple;
 import mil.jpeojtrs.sca.prf.SimpleRef;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -77,7 +78,7 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return super.getImage(object);
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Simple"));
 	}
 
 	/**
@@ -88,7 +89,13 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return super.getText(object);
+		String text = super.getText(object);
+		if (text != null) {
+			return text;
+		}
+
+		String label = ((SimpleRef) object).getRefID();
+		return label == null || label.length() == 0 ? getString("_UI_SimpleRef_type") : label;
 	}
 
 	/**

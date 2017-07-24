@@ -243,11 +243,14 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 
 		// Obtain or create and register package
 		SpdPackageImpl theSpdPackage = (SpdPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SpdPackageImpl
-			? EPackage.Registry.INSTANCE.get(eNS_URI) : new SpdPackageImpl());
+			? EPackage.Registry.INSTANCE.get(eNS_URI)
+			: new SpdPackageImpl());
 
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		PrfPackage.eINSTANCE.eClass();
 		ScdPackage.eINSTANCE.eClass();
 		XMLTypePackage.eINSTANCE.eClass();
 

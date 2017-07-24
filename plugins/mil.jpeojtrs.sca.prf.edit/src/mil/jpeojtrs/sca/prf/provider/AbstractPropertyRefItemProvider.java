@@ -14,12 +14,14 @@ package mil.jpeojtrs.sca.prf.provider;
 import java.util.Collection;
 import java.util.List;
 
-import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
-import mil.jpeojtrs.sca.prf.PrfPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -34,6 +36,9 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import mil.jpeojtrs.sca.prf.AbstractPropertyRef;
+import mil.jpeojtrs.sca.prf.PrfPackage;
+
 /**
  * This is the item provider adapter for a {@link mil.jpeojtrs.sca.prf.AbstractPropertyRef} object.
  * <!-- begin-user-doc -->
@@ -42,6 +47,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  */
 public class AbstractPropertyRefItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -50,6 +56,16 @@ public class AbstractPropertyRefItemProvider extends ItemProviderAdapter impleme
 	 */
 	public AbstractPropertyRefItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+	}
+
+	@Override
+	protected Object createWrapper(EObject object, EStructuralFeature feature, Object value, int index) {
+		if (FeatureMapUtil.isFeatureMap(feature)) {
+			value = new WrapperItemProvider((FeatureMap.Entry) value, object, (EAttribute) feature, index, adapterFactory, getResourceLocator());
+		} else {
+			value = super.createWrapper(object, feature, value, index);
+		}
+		return value;
 	}
 
 	/**
@@ -108,7 +124,7 @@ public class AbstractPropertyRefItemProvider extends ItemProviderAdapter impleme
 			IItemLabelProvider lp = (IItemLabelProvider) getRootAdapterFactory().adapt(property, IItemLabelProvider.class);
 			return lp.getText(property);
 		}
-		return "";
+		return null;
 	}
 
 	/**
@@ -151,22 +167,6 @@ public class AbstractPropertyRefItemProvider extends ItemProviderAdapter impleme
 	@Override
 	public ResourceLocator getResourceLocator() {
 		return PrfEditPlugin.INSTANCE;
-	}
-
-	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Object getImage(Object object) {
-		Object property = ((AbstractPropertyRef< ? >) object).getProperty();
-		if (property != null) {
-			IItemLabelProvider lp = (IItemLabelProvider) getRootAdapterFactory().adapt(property, IItemLabelProvider.class);
-			return lp.getImage(property);
-		}
-		return null;
 	}
 
 	/**

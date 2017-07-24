@@ -14,14 +14,13 @@ package mil.jpeojtrs.sca.prf.provider;
 import java.util.Collection;
 import java.util.List;
 
-import mil.jpeojtrs.sca.prf.PrfFactory;
-import mil.jpeojtrs.sca.prf.PrfPackage;
-import mil.jpeojtrs.sca.prf.PropertyRefGroup;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -34,6 +33,10 @@ import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import mil.jpeojtrs.sca.prf.PrfFactory;
+import mil.jpeojtrs.sca.prf.PrfPackage;
+import mil.jpeojtrs.sca.prf.PropertyRefGroup;
 
 /**
  * This is the item provider adapter for a {@link mil.jpeojtrs.sca.prf.PropertyRefGroup} object.
@@ -52,6 +55,16 @@ public class PropertyRefGroupItemProvider extends ItemProviderAdapter implements
 	 */
 	public PropertyRefGroupItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+	}
+
+	@Override
+	protected Object createWrapper(EObject object, EStructuralFeature feature, Object value, int index) {
+		if (FeatureMapUtil.isFeatureMap(feature)) {
+			value = new WrapperItemProvider((FeatureMap.Entry) value, object, (EAttribute) feature, index, adapterFactory, getResourceLocator());
+		} else {
+			value = super.createWrapper(object, feature, value, index);
+		}
+		return value;
 	}
 
 	/**
@@ -108,6 +121,11 @@ public class PropertyRefGroupItemProvider extends ItemProviderAdapter implements
 	@Override
 	public String getText(Object object) {
 		return getString("_UI_PropertyRefGroup_type");
+	}
+
+	@Override
+	protected Object unwrap(Object object) {
+		return super.unwrap(object);
 	}
 
 	/**
