@@ -104,7 +104,7 @@ public class StructSequenceRefItemProvider extends AbstractPropertyRefItemProvid
 	@Override
 	public String getText(Object object) {
 		String label = ((StructSequenceRef) object).getRefID();
-		return label == null || label.length() == 0 ? getString("_UI_StructSequenceRef_type") : getString("_UI_StructSequenceRef_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_StructSequenceRef_type") : label;
 
 	}
 

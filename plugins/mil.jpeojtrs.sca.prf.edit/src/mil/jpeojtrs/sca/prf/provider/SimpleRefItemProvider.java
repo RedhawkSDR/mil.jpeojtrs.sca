@@ -95,7 +95,7 @@ public class SimpleRefItemProvider extends AbstractPropertyRefItemProvider {
 		}
 
 		String label = ((SimpleRef) object).getRefID();
-		return label == null || label.length() == 0 ? getString("_UI_SimpleRef_type") : getString("_UI_SimpleRef_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_SimpleRef_type") : label;
 	}
 
 	/**

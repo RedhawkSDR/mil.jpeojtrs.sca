@@ -13,16 +13,17 @@ package mil.jpeojtrs.sca.prf.provider;
 
 import java.util.Collection;
 import java.util.List;
-import mil.jpeojtrs.sca.prf.PrfFactory;
-import mil.jpeojtrs.sca.prf.PrfPackage;
-import mil.jpeojtrs.sca.prf.StructRef;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import mil.jpeojtrs.sca.prf.PrfFactory;
+import mil.jpeojtrs.sca.prf.PrfPackage;
+import mil.jpeojtrs.sca.prf.StructRef;
 
 /**
  * This is the item provider adapter for a {@link mil.jpeojtrs.sca.prf.StructRef} object.
@@ -69,7 +70,6 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PrfPackage.Literals.STRUCT_REF__REFS);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF);
 			childrenFeatures.add(PrfPackage.Literals.STRUCT_REF__SIMPLE_SEQUENCE_REF);
 		}
@@ -109,7 +109,7 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 	@Override
 	public String getText(Object object) {
 		String label = ((StructRef) object).getRefID();
-		return label == null || label.length() == 0 ? getString("_UI_StructRef_type") : getString("_UI_StructRef_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_StructRef_type") : label;
 	}
 
 	/**
@@ -149,10 +149,6 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_REF__REFS,
 			FeatureMapUtil.createEntry(PrfPackage.Literals.STRUCT_REF__SIMPLE_SEQUENCE_REF, PrfFactory.eINSTANCE.createSimpleSequenceRef())));
-
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF, PrfFactory.eINSTANCE.createSimpleRef()));
-
-		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_REF__SIMPLE_SEQUENCE_REF, PrfFactory.eINSTANCE.createSimpleSequenceRef()));
 	}
 
 	/**
@@ -163,20 +159,6 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 	 */
 	@Override
 	public String getCreateChildText(Object owner, Object feature, Object child, Collection< ? > selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		if (childFeature instanceof EStructuralFeature && FeatureMapUtil.isFeatureMap((EStructuralFeature) childFeature)) {
-			FeatureMap.Entry entry = (FeatureMap.Entry) childObject;
-			childFeature = entry.getEStructuralFeature();
-			childObject = entry.getValue();
-		}
-
-		boolean qualify = childFeature == PrfPackage.Literals.STRUCT_REF__SIMPLE_REF || childFeature == PrfPackage.Literals.STRUCT_REF__SIMPLE_SEQUENCE_REF;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2", new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
 		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
