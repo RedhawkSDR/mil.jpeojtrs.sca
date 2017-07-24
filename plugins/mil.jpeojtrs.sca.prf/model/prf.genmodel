@@ -235,8 +235,8 @@
     </genClasses>
     <genClasses image="false" ecoreClass="prf.ecore#//StructRef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//StructRef/refs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructRef/simpleRef"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructRef/simpleSequenceRef"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//StructRef/simpleRef"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//StructRef/simpleSequenceRef"/>
     </genClasses>
     <genClasses image="false" ecoreClass="prf.ecore#//StructSequenceRef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructSequenceRef/structValue"/>

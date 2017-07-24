@@ -70,8 +70,7 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(PrfPackage.Literals.STRUCT_REF__SIMPLE_REF);
-			childrenFeatures.add(PrfPackage.Literals.STRUCT_REF__SIMPLE_SEQUENCE_REF);
+			childrenFeatures.add(PrfPackage.Literals.STRUCT_REF__REFS);
 		}
 		return childrenFeatures;
 	}
@@ -124,9 +123,11 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StructRef.class)) {
-		case PrfPackage.STRUCT_REF__REFS:
 		case PrfPackage.STRUCT_REF__SIMPLE_REF:
 		case PrfPackage.STRUCT_REF__SIMPLE_SEQUENCE_REF:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case PrfPackage.STRUCT_REF__REFS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -149,17 +150,6 @@ public class StructRefItemProvider extends AbstractPropertyRefItemProvider {
 
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.STRUCT_REF__REFS,
 			FeatureMapUtil.createEntry(PrfPackage.Literals.STRUCT_REF__SIMPLE_SEQUENCE_REF, PrfFactory.eINSTANCE.createSimpleSequenceRef())));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection< ? > selection) {
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }
