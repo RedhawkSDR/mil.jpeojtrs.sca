@@ -17,7 +17,10 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMapUtil;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -29,6 +32,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITableItemColorProvider;
 import org.eclipse.emf.edit.provider.ITableItemLabelProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import mil.jpeojtrs.sca.prf.PrfFactory;
@@ -42,7 +46,7 @@ import mil.jpeojtrs.sca.prf.StructValue;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StructValueItemProvider extends WrapperItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+public class StructValueItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, IItemColorProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -52,6 +56,16 @@ public class StructValueItemProvider extends WrapperItemProviderAdapter implemen
 	 */
 	public StructValueItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+	}
+
+	@Override
+	protected Object createWrapper(EObject object, EStructuralFeature feature, Object value, int index) {
+		if (FeatureMapUtil.isFeatureMap(feature)) {
+			value = new WrapperItemProvider((FeatureMap.Entry) value, object, (EAttribute) feature, index, adapterFactory, getResourceLocator());
+		} else {
+			value = super.createWrapper(object, feature, value, index);
+		}
+		return value;
 	}
 
 	/**
