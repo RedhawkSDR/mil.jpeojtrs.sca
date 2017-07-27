@@ -28,7 +28,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Software Assembly</b></em>'.
- * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-user-doc -->
  *
  * <p>
