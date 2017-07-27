@@ -30,7 +30,6 @@ import mil.jpeojtrs.sca.prf.PrfPackage;
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
- * @noimplement This interface is not intended to be implemented by clients.
  * <!-- end-user-doc -->
  * @see mil.jpeojtrs.sca.partitioning.PartitioningFactory
  * @model kind="package"
@@ -2760,7 +2759,6 @@ public interface PartitioningPackage extends EPackage {
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
-	 * @noimplement This interface is not intended to be implemented by clients.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
