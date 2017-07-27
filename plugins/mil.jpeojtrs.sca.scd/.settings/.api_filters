@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <component id="mil.jpeojtrs.sca.scd" version="2">
+    <resource path="META-INF/MANIFEST.MF">
+        <filter comment="Ignore version bump - stay in step with 2.0 series" id="926941240">
+            <message_arguments>
+                <message_argument value="3.1.0"/>
+                <message_argument value="3.0.0"/>
+            </message_arguments>
+        </filter>
+    </resource>
     <resource path="src/mil/jpeojtrs/sca/scd/ScdFactory.java" type="mil.jpeojtrs.sca.scd.ScdFactory">
         <filter comment="Interface not intended to be implemented outside this bundle" id="403804204">
             <message_arguments>
