@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: mil.jpeojtrs.sca.prf.provider.PrfEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: mil.jpeojtrs.sca.prf.provider
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  mil.jpeojtrs.sca.prf;bundle-version="4.1.0";visibility:=reexport,
