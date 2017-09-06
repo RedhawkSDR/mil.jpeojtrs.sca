@@ -59,7 +59,7 @@ module FRONTEND {
 					- listener_allocation_id || FRONTEND::listener_allocation::listener_allocation_id || string || New Listener ID 
 			(4) FRONTEND::tuner_status  - a struct sequence containing the status of all tuners. There are optional and required fields for this structure. The required fields are listed below:
 					Name || ID || Type || Description
-					- tuner_type || FRONTEND::tuner_status::tuner_type || string || Example Tuner Types: TX, RX, CHANNELIZER, DDC, RX_DIGITIZER, RX_DIGTIZIER_CHANNELIZER
+					- tuner_type || FRONTEND::tuner_status::tuner_type || string || Example Tuner Types: TX, RX, CHANNELIZER, DDC, RX_DIGITIZER, RX_DIGITIZER_CHANNELIZER, RX_SCANNER_DIGITIZER
 					- allocation_id_csv || FRONTEND::tuner_status::allocation_id_csv || string || Comma seperated list of currrent allocation ids, both control and listeners.
 					- center_frequency || FRONTEND::tuner_status::center_frequency || double || Current center frequency in Hz
 					- bandwidth || FRONTEND::tuner_status::bandwidth || double || Current Bandwidth in Hz
@@ -213,21 +213,20 @@ module FRONTEND {
 
         The scan_mode property in the tuner_allocation structure is used for device allocation. If scan_mode is set to 
         "Scan" and the device has the capability, it will be allocated. The scan_rate property is also available in the 
-        tuner_allocation structure. It is used as a allocation property if the user specifies a desired rate for the scan 
+        tuner_allocation structure. It is used as an allocation property if the user specifies a desired rate for the scan 
         operation. It is an optional allocation parameter.
 
         Tuner SCAN Mode allows the tuner to internally perform a scan where the tuner itself retunes to cover the desired
         spectrum. There are two types of automated scans: Span scan and discrete frequency scan, and a single non-automated scan: Manual (the way devices normally operate).
         The scan_mode_type value determines the scan type. If the only scanning that the device allows is manual, then the device does not support scanning.
         A Span scan is created using a series of start/stop frequencies. A Discrete Frequency Scan is created from a series of discrete 
-        frequencies. Each of these are inputs are used to create a series of center tune frequencies. Based on the selected bandwidth,
+        frequencies. Each of these inputs are used to create a series of center tune frequencies. Based on the selected bandwidth,
         the tuner scan generates as a series of center frequency retunes to cover the spectrum between the start/stop frequencies or
         discrete frequencies.
 
-        If the scan_mode_enable is toggled from "OFF" to "ON", the tuner will begin to generate retunes for each center tune frequency
-        that was generated to cover the spectrum. It will then tune, dwell for a specific number of samples based on the dwell setting 
-        and then move to the next center frequency. It is imperative to guarantee accurate data that the tuner not output samples until 
-        the tuner settling time has been internally accounted for.
+        If the scan_mode_enabled reflects whether the tuner is currently scanning through a plan that was generated to cover the spectrum.
+        It will then tune, dwell for a specific number of samples based on the dwell setting and then move to the next center frequency.
+        No output samples should be generated until the tuner settling time has been internally accounted for.
 
         The start_time allows for synchronous sampling between multiple tuners. 
 
