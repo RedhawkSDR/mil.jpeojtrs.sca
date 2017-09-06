@@ -23,6 +23,7 @@ import CF.ErrorNumberTypeHelper;
 import CF.FileException;
 import CF.InvalidFileName;
 import CF.UnknownProperties;
+import CF.DevicePackage.InsufficientCapacity;
 import CF.DevicePackage.InvalidCapacity;
 import CF.DevicePackage.InvalidState;
 import CF.ExecutableDevicePackage.ExecuteFail;
@@ -131,6 +132,13 @@ public class CFErrorFormatter {
 
 	public static String format(InitializeError e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG, e.getClass().getName(), resourceDesc, formatToSentences(e.errorMessages));
+	}
+
+	/**
+	 * @since 4.6
+	 */
+	public static String format(InsufficientCapacity e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG_PROPLIST, e.getClass().getName(), resourceDesc, e.msg, formatProperties(e.insufficientCapacities));
 	}
 
 	/**
