@@ -25,7 +25,7 @@ import CF.UTCTimeSequenceHelper;
 
 /**
  * Wraps a {@link CF.UTCTime} object.
- * @since 4.5
+ * @since 4.6
  */
 public class UTCTime implements Comparable<UTCTime> {
 

@@ -176,21 +176,21 @@ public class CFErrorFormatter {
 	}
 
 	/**
-	 * @since 4.5
+	 * @since 4.6
 	 */
 	public static String format(InvalidFunction e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
 	}
 
 	/**
-	 * @since 4.5
+	 * @since 4.6
 	 */
 	public static String format(InvalidOptions e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_PROPLIST, e.getClass().getName(), resourceDesc, formatProperties(e.invalidOpts));
 	}
 
 	/**
-	 * @since 4.5
+	 * @since 4.6
 	 */
 	public static String format(InvalidParameters e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_PROPLIST, e.getClass().getName(), resourceDesc, formatProperties(e.invalidParms));
