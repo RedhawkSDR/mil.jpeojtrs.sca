@@ -18,6 +18,7 @@ import CF.ErrorNumberType;
 import CF.FileException;
 import CF.InvalidFileName;
 import CF.UnknownProperties;
+import CF.DevicePackage.InsufficientCapacity;
 import CF.DevicePackage.InvalidCapacity;
 import CF.DevicePackage.InvalidState;
 import CF.ExecutableDevicePackage.ExecuteFail;
@@ -90,6 +91,14 @@ public class CFErrorFormatterTest {
 		Assert.assertEquals("CF.LifeCyclePackage.InitializeError for ghi: abc. def.", msg);
 		msg = CFErrorFormatter.format(new InitializeError(new String[] {}), "jkl");
 		Assert.assertEquals("CF.LifeCyclePackage.InitializeError for jkl: (no error details)", msg);
+	}
+
+	@Test
+	public void format_InsufficientCapacity_resName() {
+		String msg = CFErrorFormatter.format(new InsufficientCapacity(new DataType[] { new DataType("d", null), new DataType("e", null) }, "VWX"), "foo");
+		Assert.assertEquals("CF.DevicePackage.InsufficientCapacity for foo: VWX. Properties: d, e", msg);
+		msg = CFErrorFormatter.format(new InsufficientCapacity(new DataType[] {}, "YZ"), "foo");
+		Assert.assertEquals("CF.DevicePackage.InsufficientCapacity for foo: YZ. Properties: (no properties)", msg);
 	}
 
 	@Test
