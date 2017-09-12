@@ -12,6 +12,8 @@
 package mil.jpeojtrs.sca.partitioning.impl;
 
 import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
@@ -207,10 +209,13 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected ComponentInstantiationImpl() {
+		// END GENERATED CODE
 		super();
+		setInterfaceStub(PartitioningFactory.eINSTANCE.createComponentSupportedInterfaceStub());
+		// BEGIN GENERATED CODE
 	}
 
 	/**
@@ -862,31 +867,54 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 
 	private void refreshPorts() {
 		final ComponentFeatures features = getComponentFeatures();
-		this.getUses().clear();
-		this.getProvides().clear();
-
 		if (features != null) {
 			final Ports ports = features.getPorts();
 			if (ports != null) {
+				// Update provides ports as necessary
+				Map<Provides, ProvidesPortStub> providesMap = new HashMap<Provides, ProvidesPortStub>();
+				for (ProvidesPortStub port : this.getProvides()) {
+					providesMap.put(port.getProvides(), port);
+				}
 				for (final Provides provides : ports.getProvides()) {
+					// Ignore duplicates
+					if (providesMap.containsKey(provides)) {
+						providesMap.remove(provides);
+						continue;
+					}
+					// Add new
 					final ProvidesPortStub stub = createProvidesPortStub();
 					stub.setProvides(provides);
 					this.getProvides().add(stub);
 				}
+				// Delete any unreferenced ports
+				for (ProvidesPortStub port : providesMap.values()) {
+					this.getProvides().remove(port);
+				}
+
+				// Update uses ports as necessary
+				Map<Uses, UsesPortStub> usesMap = new HashMap<Uses, UsesPortStub>();
+				for (UsesPortStub port : this.getUses()) {
+					usesMap.put(port.getUses(), port);
+				}
 				for (final Uses uses : ports.getUses()) {
+					// Ignore duplicates
+					if (usesMap.containsKey(uses)) {
+						usesMap.remove(uses);
+						continue;
+					}
+					// Add new
 					final UsesPortStub stub = createUsesPortStub();
 					stub.setUses(uses);
 					this.getUses().add(stub);
 				}
-			}
-
-			if (!features.getSupportsInterface().isEmpty()) {
-				setInterfaceStub(PartitioningFactory.eINSTANCE.createComponentSupportedInterfaceStub());
+				// Delete any unreferenced ports
+				for (UsesPortStub port : usesMap.values()) {
+					this.getUses().remove(port);
+				}
 			} else {
-				setInterfaceStub(null);
+				this.getUses().clear();
+				this.getProvides().clear();
 			}
-		} else {
-			setInterfaceStub(PartitioningFactory.eINSTANCE.createComponentSupportedInterfaceStub());
 		}
 	}
 
