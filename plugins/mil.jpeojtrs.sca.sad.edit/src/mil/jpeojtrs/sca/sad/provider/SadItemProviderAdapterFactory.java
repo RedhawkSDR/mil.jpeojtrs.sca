@@ -382,6 +382,54 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.sad.Options} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OptionsItemProvider optionsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.sad.Options}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOptionsAdapter() {
+		if (optionsItemProvider == null) {
+			optionsItemProvider = new OptionsItemProvider(this);
+		}
+
+		return optionsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.sad.Option} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OptionItemProvider optionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.sad.Option}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOptionAdapter() {
+		if (optionItemProvider == null) {
+			optionItemProvider = new OptionItemProvider(this);
+		}
+
+		return optionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.sad.Port} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -722,6 +770,10 @@ public class SadItemProviderAdapterFactory extends SadAdapterFactory implements 
 			findComponentItemProvider.dispose();
 		if (hostCollocationItemProvider != null)
 			hostCollocationItemProvider.dispose();
+		if (optionsItemProvider != null)
+			optionsItemProvider.dispose();
+		if (optionItemProvider != null)
+			optionItemProvider.dispose();
 		if (portItemProvider != null)
 			portItemProvider.dispose();
 		if (sadPartitioningItemProvider != null)

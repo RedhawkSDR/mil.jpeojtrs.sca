@@ -168,6 +168,16 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseOptions(Options object) {
+			return createOptionsAdapter();
+		}
+
+		@Override
+		public Adapter caseOption(Option object) {
+			return createOptionAdapter();
+		}
+
+		@Override
 		public Adapter casePort(Port object) {
 			return createPortAdapter();
 		}
@@ -458,6 +468,36 @@ public class SadAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createHostCollocationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.sad.Options <em>Options</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.sad.Options
+	 * @generated
+	 */
+	public Adapter createOptionsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.sad.Option <em>Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.sad.Option
+	 * @generated
+	 */
+	public Adapter createOptionAdapter() {
 		return null;
 	}
 

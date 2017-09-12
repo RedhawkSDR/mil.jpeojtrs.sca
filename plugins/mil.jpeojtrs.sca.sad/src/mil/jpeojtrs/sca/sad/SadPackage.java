@@ -719,6 +719,71 @@ public interface SadPackage extends EPackage {
 	 */
 	int HOST_COLLOCATION_FEATURE_COUNT = 5;
 	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.OptionsImpl <em>Options</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.sad.impl.OptionsImpl
+	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getOptions()
+	 * @generated
+	 */
+	int OPTIONS = 13;
+	/**
+	 * The feature id for the '<em><b>Option</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIONS__OPTION = 0;
+	/**
+	 * The number of structural features of the '<em>Options</em>' class.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIONS_FEATURE_COUNT = 1;
+	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.OptionImpl <em>Option</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.sad.impl.OptionImpl
+	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getOption()
+	 * @generated
+	 */
+	int OPTION = 14;
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTION__NAME = 0;
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTION__VALUE = 1;
+	/**
+	 * The number of structural features of the '<em>Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTION_FEATURE_COUNT = 2;
+	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.PortImpl <em>Port</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * @since 2.3
@@ -727,7 +792,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getPort()
 	 * @generated
 	 */
-	int PORT = 13;
+	int PORT = 15;
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -794,7 +859,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getSadPartitioning()
 	 * @generated
 	 */
-	int SAD_PARTITIONING = 14;
+	int SAD_PARTITIONING = 16;
 	/**
 	 * The feature id for the '<em><b>Parts</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
@@ -835,7 +900,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getSadComponentPlacement()
 	 * @generated
 	 */
-	int SAD_COMPONENT_PLACEMENT = 15;
+	int SAD_COMPONENT_PLACEMENT = 17;
 	/**
 	 * The feature id for the '<em><b>Component File Ref</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -877,7 +942,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getReservation()
 	 * @generated
 	 */
-	int RESERVATION = 16;
+	int RESERVATION = 18;
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -913,7 +978,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getResourceFactoryProperties()
 	 * @generated
 	 */
-	int RESOURCE_FACTORY_PROPERTIES = 17;
+	int RESOURCE_FACTORY_PROPERTIES = 19;
 	/**
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
@@ -978,7 +1043,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getSadDocumentRoot()
 	 * @generated
 	 */
-	int SAD_DOCUMENT_ROOT = 18;
+	int SAD_DOCUMENT_ROOT = 20;
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
@@ -1027,7 +1092,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getSoftwareAssembly()
 	 * @generated
 	 */
-	int SOFTWARE_ASSEMBLY = 19;
+	int SOFTWARE_ASSEMBLY = 21;
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1086,29 +1151,14 @@ public interface SadPackage extends EPackage {
 	 */
 	int SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES = 6;
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Options</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_ASSEMBLY__ID = 7;
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_ASSEMBLY__NAME = 8;
-	/**
-	 * The feature id for the '<em><b>Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_ASSEMBLY__VERSION = 9;
+	int SOFTWARE_ASSEMBLY__OPTIONS = 7;
 	/**
 	 * The feature id for the '<em><b>Uses Device Dependencies</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -1117,7 +1167,31 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES = 10;
+	int SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES = 8;
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_ASSEMBLY__ID = 9;
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_ASSEMBLY__NAME = 10;
+	/**
+	 * The feature id for the '<em><b>Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_ASSEMBLY__VERSION = 11;
 	/**
 	 * The number of structural features of the '<em>Software Assembly</em>' class.
 	 * <!-- begin-user-doc -->
@@ -1125,7 +1199,7 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_ASSEMBLY_FEATURE_COUNT = 11;
+	int SOFTWARE_ASSEMBLY_FEATURE_COUNT = 12;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.sad.impl.UsesDeviceDependenciesImpl <em>Uses Device Dependencies</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1135,7 +1209,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceDependencies()
 	 * @generated
 	 */
-	int USES_DEVICE_DEPENDENCIES = 20;
+	int USES_DEVICE_DEPENDENCIES = 22;
 	/**
 	 * The feature id for the '<em><b>Usesdevice</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -1164,7 +1238,7 @@ public interface SadPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getUsesDeviceRef()
 	 * @generated
 	 */
-	int USES_DEVICE_REF = 21;
+	int USES_DEVICE_REF = 23;
 	/**
 	 * The feature id for the '<em><b>Refid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -1531,6 +1605,64 @@ public interface SadPackage extends EPackage {
 	EAttribute getHostCollocation_Name();
 
 	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.Options <em>Options</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Options</em>'.
+	 * @see mil.jpeojtrs.sca.sad.Options
+	 * @generated
+	 */
+	EClass getOptions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.sad.Options#getOption <em>Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Option</em>'.
+	 * @see mil.jpeojtrs.sca.sad.Options#getOption()
+	 * @see #getOptions()
+	 * @generated
+	 */
+	EReference getOptions_Option();
+
+	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.Option <em>Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Option</em>'.
+	 * @see mil.jpeojtrs.sca.sad.Option
+	 * @generated
+	 */
+	EClass getOption();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Option#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see mil.jpeojtrs.sca.sad.Option#getName()
+	 * @see #getOption()
+	 * @generated
+	 */
+	EAttribute getOption_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.Option#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see mil.jpeojtrs.sca.sad.Option#getValue()
+	 * @see #getOption()
+	 * @generated
+	 */
+	EAttribute getOption_Value();
+
+	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.sad.Port <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1891,6 +2023,18 @@ public interface SadPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSoftwareAssembly_ExternalProperties();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getOptions <em>Options</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Options</em>'.
+	 * @see mil.jpeojtrs.sca.sad.SoftwareAssembly#getOptions()
+	 * @see #getSoftwareAssembly()
+	 * @generated
+	 */
+	EReference getSoftwareAssembly_Options();
 
 	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getId <em>Id</em>}'.
@@ -2273,6 +2417,50 @@ public interface SadPackage extends EPackage {
 		 */
 		EAttribute HOST_COLLOCATION__NAME = eINSTANCE.getHostCollocation_Name();
 		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.OptionsImpl <em>Options</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.sad.impl.OptionsImpl
+		 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getOptions()
+		 * @generated
+		 */
+		EClass OPTIONS = eINSTANCE.getOptions();
+		/**
+		 * The meta object literal for the '<em><b>Option</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTIONS__OPTION = eINSTANCE.getOptions_Option();
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.OptionImpl <em>Option</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.sad.impl.OptionImpl
+		 * @see mil.jpeojtrs.sca.sad.impl.SadPackageImpl#getOption()
+		 * @generated
+		 */
+		EClass OPTION = eINSTANCE.getOption();
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTION__NAME = eINSTANCE.getOption_Name();
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTION__VALUE = eINSTANCE.getOption_Value();
+		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.sad.impl.PortImpl <em>Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2523,6 +2711,14 @@ public interface SadPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES = eINSTANCE.getSoftwareAssembly_ExternalProperties();
+		/**
+		 * The meta object literal for the '<em><b>Options</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * @since 4.0
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOFTWARE_ASSEMBLY__OPTIONS = eINSTANCE.getSoftwareAssembly_Options();
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->

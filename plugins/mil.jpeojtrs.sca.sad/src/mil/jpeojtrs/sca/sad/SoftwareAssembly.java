@@ -41,10 +41,11 @@ import org.eclipse.emf.ecore.resource.Resource;
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getConnections <em>Connections</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalPorts <em>External Ports</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getExternalProperties <em>External Properties</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getOptions <em>Options</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getVersion <em>Version</em>}</li>
- *   <li>{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}</li>
  * </ul>
  *
  * @see mil.jpeojtrs.sca.sad.SadPackage#getSoftwareAssembly()
@@ -243,6 +244,34 @@ public interface SoftwareAssembly extends EObject {
 	 * @generated
 	 */
 	void setExternalProperties(ExternalProperties value);
+
+	/**
+	 * Returns the value of the '<em><b>Options</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Options</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Options</em>' containment reference.
+	 * @see #setOptions(Options)
+	 * @see mil.jpeojtrs.sca.sad.SadPackage#getSoftwareAssembly_Options()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Options getOptions();
+
+	/**
+	 * Sets the value of the '{@link mil.jpeojtrs.sca.sad.SoftwareAssembly#getOptions <em>Options</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Options</em>' containment reference.
+	 * @see #getOptions()
+	 * @generated
+	 */
+	void setOptions(Options value);
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

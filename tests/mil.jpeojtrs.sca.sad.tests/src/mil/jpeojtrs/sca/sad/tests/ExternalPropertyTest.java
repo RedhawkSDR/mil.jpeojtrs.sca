@@ -146,7 +146,8 @@ public class ExternalPropertyTest extends TestCase {
 			BasicDiagnostic diagnostics = new BasicDiagnostic();
 			if (prop.getExternalPropID().matches(".*" + "invalid" + ".*")) {
 				Assert.assertFalse("Validation should fail", SadValidator.INSTANCE.validateExternalProperty(prop, diagnostics, null));
-				String errorMsg = SadPluginActivator.INSTANCE.getString("_UI_ExternalProperty_UnknownCompRefId_diagnostic", new Object[] { prop.getExternalPropID() });
+				String errorMsg = SadPluginActivator.INSTANCE.getString("_UI_ExternalProperty_UnknownCompRefId_diagnostic",
+					new Object[] { prop.getExternalPropID() });
 				Assert.assertTrue("Unexpected warning message", diagnostics.getChildren().get(0).getMessage().equals(errorMsg));
 			} else {
 				Assert.assertTrue("Validation should pass", SadValidator.INSTANCE.validateExternalProperty(prop, diagnostics, null));

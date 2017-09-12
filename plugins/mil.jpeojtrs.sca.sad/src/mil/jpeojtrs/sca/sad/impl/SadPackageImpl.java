@@ -20,6 +20,8 @@ import mil.jpeojtrs.sca.sad.ExternalProperties;
 import mil.jpeojtrs.sca.sad.ExternalProperty;
 import mil.jpeojtrs.sca.sad.FindComponent;
 import mil.jpeojtrs.sca.sad.HostCollocation;
+import mil.jpeojtrs.sca.sad.Option;
+import mil.jpeojtrs.sca.sad.Options;
 import mil.jpeojtrs.sca.sad.Port;
 import mil.jpeojtrs.sca.sad.Reservation;
 import mil.jpeojtrs.sca.sad.ResourceFactoryProperties;
@@ -38,6 +40,7 @@ import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 import mil.jpeojtrs.sca.sad.UsesDeviceDependencies;
 import mil.jpeojtrs.sca.sad.UsesDeviceRef;
 import mil.jpeojtrs.sca.sad.util.SadValidator;
+import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.validator.AdvancedEObjectValidator;
 
@@ -142,6 +145,18 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass optionsEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass optionEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass portEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -238,11 +253,16 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 
 		// Obtain or create and register package
 		SadPackageImpl theSadPackage = (SadPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SadPackageImpl
-			? EPackage.Registry.INSTANCE.get(eNS_URI) : new SadPackageImpl());
+			? EPackage.Registry.INSTANCE.get(eNS_URI)
+			: new SadPackageImpl());
 
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		ScdPackage.eINSTANCE.eClass();
+		SpdPackage.eINSTANCE.eClass();
+		PrfPackage.eINSTANCE.eClass();
 		PartitioningPackage.eINSTANCE.eClass();
 		XMLTypePackage.eINSTANCE.eClass();
 
@@ -607,6 +627,51 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOptions() {
+		return optionsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOptions_Option() {
+		return (EReference) optionsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOption() {
+		return optionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOption_Name() {
+		return (EAttribute) optionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOption_Value() {
+		return (EAttribute) optionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EClass getPort() {
 		return portEClass;
@@ -939,9 +1004,18 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSoftwareAssembly_Options() {
+		return (EReference) softwareAssemblyEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EAttribute getSoftwareAssembly_Id() {
-		return (EAttribute) softwareAssemblyEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) softwareAssemblyEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -951,7 +1025,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 */
 	@Override
 	public EAttribute getSoftwareAssembly_Name() {
-		return (EAttribute) softwareAssemblyEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) softwareAssemblyEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -961,7 +1035,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 */
 	@Override
 	public EAttribute getSoftwareAssembly_Version() {
-		return (EAttribute) softwareAssemblyEClass.getEStructuralFeatures().get(9);
+		return (EAttribute) softwareAssemblyEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -971,7 +1045,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 	 * @generated
 	 */
 	public EReference getSoftwareAssembly_UsesDeviceDependencies() {
-		return (EReference) softwareAssemblyEClass.getEStructuralFeatures().get(10);
+		return (EReference) softwareAssemblyEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1098,6 +1172,13 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		createEAttribute(hostCollocationEClass, HOST_COLLOCATION__ID);
 		createEAttribute(hostCollocationEClass, HOST_COLLOCATION__NAME);
 
+		optionsEClass = createEClass(OPTIONS);
+		createEReference(optionsEClass, OPTIONS__OPTION);
+
+		optionEClass = createEClass(OPTION);
+		createEAttribute(optionEClass, OPTION__NAME);
+		createEAttribute(optionEClass, OPTION__VALUE);
+
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__DESCRIPTION);
 		createEAttribute(portEClass, PORT__USES_IDENTIFIER);
@@ -1137,10 +1218,11 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		createEReference(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__CONNECTIONS);
 		createEReference(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__EXTERNAL_PORTS);
 		createEReference(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES);
+		createEReference(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__OPTIONS);
+		createEReference(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES);
 		createEAttribute(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__ID);
 		createEAttribute(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__NAME);
 		createEAttribute(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__VERSION);
-		createEReference(softwareAssemblyEClass, SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES);
 
 		usesDeviceDependenciesEClass = createEClass(USES_DEVICE_DEPENDENCIES);
 		createEReference(usesDeviceDependenciesEClass, USES_DEVICE_DEPENDENCIES__USESDEVICE);
@@ -1295,6 +1377,16 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		initEAttribute(getHostCollocation_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, HostCollocation.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(optionsEClass, Options.class, "Options", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOptions_Option(), this.getOption(), null, "option", null, 1, -1, Options.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(optionEClass, Option.class, "Option", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOption_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Option.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOption_Value(), theXMLTypePackage.getString(), "value", null, 1, 1, Option.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1365,15 +1457,17 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSoftwareAssembly_ExternalProperties(), this.getExternalProperties(), null, "externalProperties", null, 0, 1, SoftwareAssembly.class,
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSoftwareAssembly_Options(), this.getOptions(), null, "options", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE,
+			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSoftwareAssembly_UsesDeviceDependencies(), this.getUsesDeviceDependencies(), null, "usesDeviceDependencies", null, 0, 1,
+			SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+			IS_ORDERED);
 		initEAttribute(getSoftwareAssembly_Id(), thePrfPackage.getDceUUID(), "id", null, 1, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftwareAssembly_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftwareAssembly_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSoftwareAssembly_UsesDeviceDependencies(), this.getUsesDeviceDependencies(), null, "usesDeviceDependencies", null, 0, 1,
-			SoftwareAssembly.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-			IS_ORDERED);
 
 		EOperation op = addEOperation(softwareAssemblyEClass, this.getSadComponentInstantiation(), "getComponentInstantiation", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEString(), "instantiationId", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1448,6 +1542,8 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 		addAnnotation(getHostCollocation_Reservation(), source, new String[] { "name", "reservation", "kind", "element" });
 		addAnnotation(getHostCollocation_Id(), source, new String[] { "kind", "attribute", "name", "id" });
 		addAnnotation(getHostCollocation_Name(), source, new String[] { "kind", "attribute", "name", "name" });
+		addAnnotation(optionsEClass, source, new String[] { "name", "options", "kind", "elementOnly" });
+		addAnnotation(optionEClass, source, new String[] { "name", "option", "kind", "elementOnly" });
 		addAnnotation(portEClass, source, new String[] { "name", "port", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getPort_Description(), source, new String[] { "kind", "element", "name", "description", "namespace", "##targetNamespace" });
 		addAnnotation(getPort_UsesIdentifier(), source, new String[] { "kind", "element", "name", "usesidentifier", "namespace", "##targetNamespace" });
@@ -1488,11 +1584,11 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			new String[] { "kind", "element", "name", "externalports", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareAssembly_ExternalProperties(), source,
 			new String[] { "kind", "element", "name", "externalproperties", "namespace", "##targetNamespace" });
+		addAnnotation(getSoftwareAssembly_UsesDeviceDependencies(), source,
+			new String[] { "kind", "element", "name", "usesdevicedependencies", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareAssembly_Id(), source, new String[] { "kind", "attribute", "name", "id" });
 		addAnnotation(getSoftwareAssembly_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(getSoftwareAssembly_Version(), source, new String[] { "kind", "attribute", "name", "version" });
-		addAnnotation(getSoftwareAssembly_UsesDeviceDependencies(), source,
-			new String[] { "kind", "element", "name", "usesdevicedependencies", "namespace", "##targetNamespace" });
 		addAnnotation(usesDeviceDependenciesEClass, source, new String[] { "name", "usesdevicedependencies", "kind", "elementOnly", "qualified", "false" });
 		addAnnotation(getUsesDeviceDependencies_Usesdevice(), source,
 			new String[] { "kind", "element", "name", "usesdevice", "namespace", "##targetNamespace" });

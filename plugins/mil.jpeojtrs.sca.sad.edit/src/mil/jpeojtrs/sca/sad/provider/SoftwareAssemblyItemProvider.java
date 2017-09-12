@@ -142,6 +142,7 @@ public class SoftwareAssemblyItemProvider extends ItemProviderAdapter implements
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__CONNECTIONS);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES);
+			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__OPTIONS);
 			childrenFeatures.add(SadPackage.Literals.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES);
 		}
 		return childrenFeatures;
@@ -212,6 +213,7 @@ public class SoftwareAssemblyItemProvider extends ItemProviderAdapter implements
 		case SadPackage.SOFTWARE_ASSEMBLY__CONNECTIONS:
 		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PORTS:
 		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
+		case SadPackage.SOFTWARE_ASSEMBLY__OPTIONS:
 		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -242,6 +244,8 @@ public class SoftwareAssemblyItemProvider extends ItemProviderAdapter implements
 
 		newChildDescriptors.add(
 			createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES, SadFactory.eINSTANCE.createExternalProperties()));
+
+		newChildDescriptors.add(createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__OPTIONS, SadFactory.eINSTANCE.createOptions()));
 
 		newChildDescriptors.add(
 			createChildParameter(SadPackage.Literals.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES, SadFactory.eINSTANCE.createUsesDeviceDependencies()));

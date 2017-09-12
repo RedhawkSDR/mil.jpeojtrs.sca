@@ -20,6 +20,7 @@ import mil.jpeojtrs.sca.sad.AssemblyController;
 import mil.jpeojtrs.sca.sad.ExternalPorts;
 import mil.jpeojtrs.sca.sad.ExternalProperties;
 import mil.jpeojtrs.sca.sad.HostCollocation;
+import mil.jpeojtrs.sca.sad.Options;
 import mil.jpeojtrs.sca.sad.SadComponentInstantiation;
 import mil.jpeojtrs.sca.sad.SadComponentPlacement;
 import mil.jpeojtrs.sca.sad.SadConnections;
@@ -53,10 +54,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getConnections <em>Connections</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getExternalPorts <em>External Ports</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getExternalProperties <em>External Properties</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getOptions <em>Options</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link mil.jpeojtrs.sca.sad.impl.SoftwareAssemblyImpl#getUsesDeviceDependencies <em>Uses Device Dependencies</em>}</li>
  * </ul>
  *
  * @generated
@@ -136,6 +138,26 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 */
 	protected ExternalProperties externalProperties;
 	/**
+	 * The cached value of the '{@link #getOptions() <em>Options</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @see #getOptions()
+	 * @generated
+	 * @ordered
+	 */
+	protected Options options;
+	/**
+	 * The cached value of the '{@link #getUsesDeviceDependencies() <em>Uses Device Dependencies</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @see #getUsesDeviceDependencies()
+	 * @generated
+	 * @ordered
+	 */
+	protected UsesDeviceDependencies usesDeviceDependencies;
+	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,17 +211,6 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * @ordered
 	 */
 	protected String version = VERSION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getUsesDeviceDependencies() <em>Uses Device Dependencies</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * @since 3.0
-	 * <!-- end-user-doc -->
-	 * @see #getUsesDeviceDependencies()
-	 * @generated
-	 * @ordered
-	 */
-	protected UsesDeviceDependencies usesDeviceDependencies;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -555,6 +566,53 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Options getOptions() {
+		return options;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOptions(Options newOptions, NotificationChain msgs) {
+		Options oldOptions = options;
+		options = newOptions;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__OPTIONS, oldOptions, newOptions);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOptions(Options newOptions) {
+		if (newOptions != options) {
+			NotificationChain msgs = null;
+			if (options != null)
+				msgs = ((InternalEObject) options).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__OPTIONS, null, msgs);
+			if (newOptions != null)
+				msgs = ((InternalEObject) newOptions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SadPackage.SOFTWARE_ASSEMBLY__OPTIONS, null, msgs);
+			msgs = basicSetOptions(newOptions, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SadPackage.SOFTWARE_ASSEMBLY__OPTIONS, newOptions, newOptions));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public String getId() {
 		return id;
@@ -783,6 +841,8 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 			return basicSetExternalPorts(null, msgs);
 		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
 			return basicSetExternalProperties(null, msgs);
+		case SadPackage.SOFTWARE_ASSEMBLY__OPTIONS:
+			return basicSetOptions(null, msgs);
 		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
 			return basicSetUsesDeviceDependencies(null, msgs);
 		}
@@ -811,14 +871,16 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 			return getExternalPorts();
 		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
 			return getExternalProperties();
+		case SadPackage.SOFTWARE_ASSEMBLY__OPTIONS:
+			return getOptions();
+		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
+			return getUsesDeviceDependencies();
 		case SadPackage.SOFTWARE_ASSEMBLY__ID:
 			return getId();
 		case SadPackage.SOFTWARE_ASSEMBLY__NAME:
 			return getName();
 		case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
 			return getVersion();
-		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
-			return getUsesDeviceDependencies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -852,6 +914,12 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
 			setExternalProperties((ExternalProperties) newValue);
 			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__OPTIONS:
+			setOptions((Options) newValue);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
+			setUsesDeviceDependencies((UsesDeviceDependencies) newValue);
+			return;
 		case SadPackage.SOFTWARE_ASSEMBLY__ID:
 			setId((String) newValue);
 			return;
@@ -860,9 +928,6 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 			return;
 		case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
 			setVersion((String) newValue);
-			return;
-		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
-			setUsesDeviceDependencies((UsesDeviceDependencies) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -897,6 +962,12 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
 			setExternalProperties((ExternalProperties) null);
 			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__OPTIONS:
+			setOptions((Options) null);
+			return;
+		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
+			setUsesDeviceDependencies((UsesDeviceDependencies) null);
+			return;
 		case SadPackage.SOFTWARE_ASSEMBLY__ID:
 			setId(ID_EDEFAULT);
 			return;
@@ -905,9 +976,6 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 			return;
 		case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
 			setVersion(VERSION_EDEFAULT);
-			return;
-		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
-			setUsesDeviceDependencies((UsesDeviceDependencies) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -935,14 +1003,16 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 			return externalPorts != null;
 		case SadPackage.SOFTWARE_ASSEMBLY__EXTERNAL_PROPERTIES:
 			return externalProperties != null;
+		case SadPackage.SOFTWARE_ASSEMBLY__OPTIONS:
+			return options != null;
+		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
+			return usesDeviceDependencies != null;
 		case SadPackage.SOFTWARE_ASSEMBLY__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case SadPackage.SOFTWARE_ASSEMBLY__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case SadPackage.SOFTWARE_ASSEMBLY__VERSION:
 			return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
-		case SadPackage.SOFTWARE_ASSEMBLY__USES_DEVICE_DEPENDENCIES:
-			return usesDeviceDependencies != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -206,6 +206,20 @@ public class SadSwitch< T > extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case SadPackage.OPTIONS: {
+			Options options = (Options) theEObject;
+			T result = caseOptions(options);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SadPackage.OPTION: {
+			Option option = (Option) theEObject;
+			T result = caseOption(option);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case SadPackage.PORT: {
 			Port port = (Port) theEObject;
 			T result = casePort(port);
@@ -474,6 +488,38 @@ public class SadSwitch< T > extends Switch<T> {
 	 * @generated
 	 */
 	public T caseHostCollocation(HostCollocation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Options</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Options</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOptions(Options object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOption(Option object) {
 		return null;
 	}
 

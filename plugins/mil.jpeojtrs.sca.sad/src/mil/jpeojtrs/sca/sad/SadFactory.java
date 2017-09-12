@@ -199,6 +199,26 @@ public interface SadFactory extends EFactory {
 	HostCollocation createHostCollocation();
 
 	/**
+	 * Returns a new object of class '<em>Options</em>'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Options</em>'.
+	 * @generated
+	 */
+	Options createOptions();
+
+	/**
+	 * Returns a new object of class '<em>Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Option</em>'.
+	 * @generated
+	 */
+	Option createOption();
+
+	/**
 	 * Returns a new object of class '<em>Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

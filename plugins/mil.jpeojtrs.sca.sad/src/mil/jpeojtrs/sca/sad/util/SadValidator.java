@@ -154,6 +154,10 @@ public class SadValidator extends EObjectValidator {
 			return validateFindComponent((FindComponent) value, diagnostics, context);
 		case SadPackage.HOST_COLLOCATION:
 			return validateHostCollocation((HostCollocation) value, diagnostics, context);
+		case SadPackage.OPTIONS:
+			return validateOptions((Options) value, diagnostics, context);
+		case SadPackage.OPTION:
+			return validateOption((Option) value, diagnostics, context);
 		case SadPackage.PORT:
 			return validatePort((Port) value, diagnostics, context);
 		case SadPackage.SAD_PARTITIONING:
@@ -414,6 +418,26 @@ public class SadValidator extends EObjectValidator {
 	 */
 	public boolean validateHostCollocation(HostCollocation hostCollocation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(hostCollocation, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOptions(Options options, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(options, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOption(Option option, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(option, diagnostics, context);
 	}
 
 	/**

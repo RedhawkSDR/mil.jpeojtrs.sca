@@ -118,6 +118,10 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 			return createFindComponent();
 		case SadPackage.HOST_COLLOCATION:
 			return createHostCollocation();
+		case SadPackage.OPTIONS:
+			return createOptions();
+		case SadPackage.OPTION:
+			return createOption();
 		case SadPackage.PORT:
 			return createPort();
 		case SadPackage.SAD_PARTITIONING:
@@ -341,6 +345,26 @@ public class SadFactoryImpl extends EFactoryImpl implements SadFactory {
 	public HostCollocation createHostCollocation() {
 		HostCollocationImpl hostCollocation = new HostCollocationImpl();
 		return hostCollocation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Options createOptions() {
+		OptionsImpl options = new OptionsImpl();
+		return options;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Option createOption() {
+		OptionImpl option = new OptionImpl();
+		return option;
 	}
 
 	/**
