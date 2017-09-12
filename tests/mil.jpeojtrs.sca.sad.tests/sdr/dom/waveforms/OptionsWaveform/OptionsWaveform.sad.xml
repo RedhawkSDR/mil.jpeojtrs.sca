@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE softwareassembly PUBLIC "-//JTRS//DTD SCA V2.2.2 SAD//EN" "softwareassembly.dtd">
+<softwareassembly id="DCE:44604748-5dab-4179-a319-95350edae293" name="OptionsWaveform">
+  <componentfiles>
+    <componentfile id="SigGen_23ac5fb9-cb65-41dd-8919-ba95e9db3fba" type="SPD">
+      <localfile name="/components/rh/SigGen/SigGen.spd.xml"/>
+    </componentfile>
+  </componentfiles>
+  <partitioning>
+    <componentplacement>
+      <componentfileref refid="SigGen_23ac5fb9-cb65-41dd-8919-ba95e9db3fba"/>
+      <componentinstantiation id="SigGen_1" startorder="0">
+        <usagename>SigGen_1</usagename>
+        <findcomponent>
+          <namingservice name="SigGen_1"/>
+        </findcomponent>
+      </componentinstantiation>
+    </componentplacement>
+  </partitioning>
+  <assemblycontroller>
+    <componentinstantiationref refid="SigGen_1"/>
+  </assemblycontroller>
+  <options>
+    <option name="AWARE_APPLICATION" value="True"/>
+    <option name="STOP_TIMEOUT" value="123"/>
+  </options>
+</softwareassembly>
