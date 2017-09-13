@@ -119,6 +119,30 @@ public final class CorbaUtils {
 	}
 
 	/**
+	 * Invokes the given {@link Callable} on a CORBA executor thread with the given timeout.
+	 * @param callable The CORBA operation to perform
+	 * @param timeoutMs The timeout in milliseconds
+	 * @throws InterruptedException
+	 * @throws TimeoutException The timeout was reached before the call completed
+	 * @throws CoreException Wraps any execution exception, except CoreException which are re-thrown unwrapped
+	 * @since 4.6
+	 */
+	public static < T > T invoke(Callable<T> callable, long timeoutMs) throws InterruptedException, TimeoutException, CoreException {
+		Future<T> task = CorbaUtils.EXECUTOR.submit(callable);
+		try {
+			return task.get(timeoutMs, TimeUnit.MILLISECONDS);
+		} catch (ExecutionException e) {
+			Throwable cause = e.getCause();
+			if (cause instanceof CoreException) {
+				throw (CoreException) cause;
+			} else if (cause instanceof InterruptedException) {
+				throw (InterruptedException) cause;
+			}
+			throw new CoreException(new Status(IStatus.ERROR, "mil.jpeojtrs.sca.util", "Error while executing callable. Caused by " + cause, cause));
+		}
+	}
+
+	/**
 	 * Invokes the given callable in an interruptible fashion
 	 * 
 	 * @exception CoreException exceptions are automatically wrapped in an <code>CoreException</code>
