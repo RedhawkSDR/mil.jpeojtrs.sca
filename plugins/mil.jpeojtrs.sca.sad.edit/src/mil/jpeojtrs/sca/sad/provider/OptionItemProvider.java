@@ -102,7 +102,7 @@ public class OptionItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Option"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Option.png"));
 	}
 
 	/**
