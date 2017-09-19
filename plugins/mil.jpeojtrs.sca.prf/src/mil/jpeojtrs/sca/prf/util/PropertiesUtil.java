@@ -13,6 +13,7 @@ package mil.jpeojtrs.sca.prf.util;
 import CF.DataType;
 import mil.jpeojtrs.sca.prf.AbstractProperty;
 import mil.jpeojtrs.sca.prf.AccessType;
+import mil.jpeojtrs.sca.prf.ActionType;
 import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.PropertyConfigurationType;
 import mil.jpeojtrs.sca.prf.PropertyValueType;
@@ -64,6 +65,37 @@ public final class PropertiesUtil {
 		}
 		return (property != null) && (property.getMode() != AccessType.READONLY)
 			&& property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE);
+	}
+
+	/**
+	 * Determines if this property is something the user can query or configure.
+	 * @param property
+	 * @return
+	 * @since 6.2
+	 */
+	public static boolean canConfigureOrQuery(final AbstractProperty property) {
+		if (property == null) {
+			return false;
+		}
+		if (property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE)) {
+			return true;
+		}
+		if (property.isKind(PropertyConfigurationType.EXECPARAM)) {
+			return property.getMode() != AccessType.WRITEONLY;
+		}
+		if (property.isKind(PropertyConfigurationType.ALLOCATION)) {
+			if (property.getMode() == AccessType.WRITEONLY) {
+				return false;
+			}
+			if (property instanceof Simple) {
+				return ((Simple) property).getAction().getType() == ActionType.EXTERNAL;
+			}
+			if (property instanceof SimpleSequence) {
+				return ((SimpleSequence) property).getAction().getType() == ActionType.EXTERNAL;
+			}
+			return true;
+		}
+		return false;
 	}
 
 	/**
