@@ -17,7 +17,7 @@ import java.util.Set;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import mil.jpeojtrs.sca.prf.AbstractProperty;
@@ -29,18 +29,27 @@ import mil.jpeojtrs.sca.util.collections.FeatureMapList;
 
 public class PropertiesUtilTest {
 
-	private Properties props;
-	private Set<String> propIds;
+	private static Properties props;
+	private static Set<String> propIds;
+	private static Properties props2;
+	private static Set<String> propIds2;
 
-	@Before
-	public void before() throws IOException {
+	@BeforeClass
+	public static void before() throws IOException {
 		ResourceSet resourceSet = ScaResourceFactoryUtil.createResourceSet();
+
 		Resource resource = resourceSet.getResource(PrfTests.getURI("testFiles/PropertiesUtilTest.prf.xml"), true);
 		props = Properties.Util.getProperties(resource);
-
 		propIds = new HashSet<>();
 		for (AbstractProperty prop : new FeatureMapList<AbstractProperty>(props.getProperties(), AbstractProperty.class)) {
 			propIds.add(prop.getId());
+		}
+
+		resource = resourceSet.getResource(PrfTests.getURI("testFiles/PropertiesUtilTest2.prf.xml"), true);
+		props2 = Properties.Util.getProperties(resource);
+		propIds2 = new HashSet<>();
+		for (AbstractProperty prop : new FeatureMapList<AbstractProperty>(props2.getProperties(), AbstractProperty.class)) {
+			propIds2.add(prop.getId());
 		}
 	}
 
@@ -56,7 +65,7 @@ public class PropertiesUtilTest {
 			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_configure", "simple_configure_readonly", "simple_configure_writeonly",
 			"simple_configure_property", "simple_readonly_property", "simplesequence_readonly_property", "struct_readonly_property",
 			"structsequence_readonly_property" };
-		verifyAllPropNamesPresent(isCmdLnTrue, isCmdLnFalse);
+		verifyAllPropNamesPresent(isCmdLnTrue, isCmdLnFalse, propIds);
 
 		for (String property : isCmdLnTrue) {
 			AbstractProperty prop = props.getProperty(property);
@@ -84,7 +93,7 @@ public class PropertiesUtilTest {
 		String[] initializeFalse = new String[] { "simple_configure", "simple_configure_readonly", "simple_configure_writeonly", "simple_empty",
 			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_execparam_property", "simple_execparam", "simple_execparam_readonly",
 			"simple_execparam_writeonly", "simple_commandline_property", "simple_readonly_commandline_property" };
-		verifyAllPropNamesPresent(initializeTrue, initializeFalse);
+		verifyAllPropNamesPresent(initializeTrue, initializeFalse, propIds);
 
 		for (String property : initializeTrue) {
 			AbstractProperty prop = props.getProperty(property);
@@ -110,7 +119,7 @@ public class PropertiesUtilTest {
 			"simple_commandline_property", "simple_readonly_property", "simplesequence_readonly_property", "struct_readonly_property",
 			"structsequence_readonly_property" };
 		String[] overrideFalse = new String[] { "simple_configure_readonly", "simple_execparam_readonly" };
-		verifyAllPropNamesPresent(overrideTrue, overrideFalse);
+		verifyAllPropNamesPresent(overrideTrue, overrideFalse, propIds);
 
 		for (String property : overrideTrue) {
 			AbstractProperty prop = props.getProperty(property);
@@ -134,7 +143,7 @@ public class PropertiesUtilTest {
 		String[] configureFalse = new String[] { "simple_execparam", "simple_execparam_readonly", "simple_execparam_writeonly", "simple_execparam_property",
 			"simple_commandline_property", "simple_readonly_commandline_property", "simple_readonly_property", "simplesequence_readonly_property",
 			"struct_readonly_property", "structsequence_readonly_property", "simple_configure_readonly" };
-		verifyAllPropNamesPresent(configureTrue, configureFalse);
+		verifyAllPropNamesPresent(configureTrue, configureFalse, propIds);
 
 		for (String property : configureTrue) {
 			AbstractProperty prop = props.getProperty(property);
@@ -148,8 +157,34 @@ public class PropertiesUtilTest {
 		}
 	}
 
-	private void verifyAllPropNamesPresent(String[] set1, String[] set2) {
-		Set<String> propIdsToVerify = new HashSet<>(propIds);
+	@Test
+	public void canConfigureOrQuery() {
+		Assert.assertFalse(PropertiesUtil.canConfigureOrQuery(null));
+
+		String[] configOrQueryTrue = { "prop_ro", "prop_rw", "prop_wo", "alloc_ro", "alloc_rw", "exec_ro", "exec_rw", "config_ro", "config_rw", "config_wo",
+			"commandline_ro", "commandline_rw", "commandline_wo" };
+
+		String[] configOrQueryFalse = { "alloc_wo", "exec_wo", "message_ro", "message_rw", "message_wo", "alloc_internal_ro", "alloc_internal_rw", "alloc_internal_wo" };
+		verifyAllPropNamesPresent(configOrQueryTrue, configOrQueryFalse, propIds2);
+
+		for (String property : configOrQueryTrue) {
+			AbstractProperty prop = props2.getProperty(property);
+			Assert.assertTrue("Should be able to configure/query " + property, PropertiesUtil.canConfigureOrQuery(prop));
+		}
+		for (String property : configOrQueryFalse) {
+			AbstractProperty prop = props2.getProperty(property);
+			Assert.assertFalse("Should NOT be able to configure/query " + property, PropertiesUtil.canConfigureOrQuery(prop));
+		}
+	}
+
+	/**
+	 * Ensure set 1 + set 2 is the same as the reference set
+	 * @param set1
+	 * @param set2
+	 * @param referenceSet
+	 */
+	private void verifyAllPropNamesPresent(String[] set1, String[] set2, Set<String> referenceSet) {
+		Set<String> propIdsToVerify = new HashSet<>(referenceSet);
 		for (String propId : set1) {
 			if (!propIdsToVerify.remove(propId)) {
 				Assert.fail("Sanity check failed. Property " + propId + " isn't a property in the PRF, or is used twice");
