@@ -1,16 +1,18 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
+import mil.jpeojtrs.sca.dcd.DcdComponentInstantiation;
+import mil.jpeojtrs.sca.dcd.DcdComponentPlacement;
 import mil.jpeojtrs.sca.dcd.DcdConnections;
 import mil.jpeojtrs.sca.dcd.DcdPackage;
 import mil.jpeojtrs.sca.dcd.DcdPartitioning;
@@ -18,10 +20,15 @@ import mil.jpeojtrs.sca.dcd.DeviceConfiguration;
 import mil.jpeojtrs.sca.dcd.DeviceManagerSoftPkg;
 import mil.jpeojtrs.sca.dcd.DomainManager;
 import mil.jpeojtrs.sca.dcd.FileSystemNames;
+import mil.jpeojtrs.sca.dcd.util.StartOrderComparator;
 import mil.jpeojtrs.sca.partitioning.ComponentFiles;
+
+import java.util.Collections;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -550,6 +557,66 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DcdPackage.DEVICE_CONFIGURATION__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public DcdComponentInstantiation getComponentInstantiation(String instantiationId) {
+		// END GENERATED CODE
+		DcdComponentInstantiation retVal = null;
+		out: for (DcdComponentPlacement cp : getPartitioning().getComponentPlacement()) {
+			for (DcdComponentInstantiation ci : cp.getComponentInstantiation()) {
+				if (ci.getId().equals(instantiationId)) {
+					retVal = ci;
+					break out;
+				}
+			}
+		}
+		return retVal;
+		// BEGIN GENERATED CODE
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<DcdComponentInstantiation> getComponentInstantiationsInStartOrder() {
+		// END GENERATED CODE
+		final EList<DcdComponentInstantiation> result = getAllComponentInstantiations();
+
+		// sort the component instantiations
+		Collections.sort(result, new StartOrderComparator());
+		return result;
+		// BEGIN GENERATED CODE
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<DcdComponentInstantiation> getAllComponentInstantiations() {
+		// END GENERATED CODE
+
+		final EList<DcdComponentInstantiation> result = new BasicEList<DcdComponentInstantiation>();
+		if (getPartitioning() == null) {
+			return result;
+		}
+
+		// get all the component instantiations
+		for (DcdComponentPlacement cp : getPartitioning().getComponentPlacement()) {
+			for (DcdComponentInstantiation ci : cp.getComponentInstantiation()) {
+				result.add(ci);
+			}
+		}
+
+		return result;
+
+		// BEGIN GENERATED CODE
 	}
 
 	/**

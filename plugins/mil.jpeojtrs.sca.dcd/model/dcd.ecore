@@ -219,6 +219,11 @@
       <details key="name" value="deviceconfiguration"/>
       <details key="kind" value="elementOnly"/>
     </eAnnotations>
+    <eOperations name="getComponentInstantiation" eType="#//DcdComponentInstantiation">
+      <eParameters name="instantiationId" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getComponentInstantiationsInStartOrder" upperBound="-1" eType="#//DcdComponentInstantiation"/>
+    <eOperations name="getAllComponentInstantiations" upperBound="-1" eType="#//DcdComponentInstantiation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The optional description element, of the deviceconfiguration element, may be used to provide&#xA;information about the device configuration."/>

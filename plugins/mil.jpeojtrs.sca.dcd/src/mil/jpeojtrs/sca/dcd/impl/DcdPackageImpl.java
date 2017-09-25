@@ -1,13 +1,13 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.dcd.impl;
 
@@ -34,12 +34,14 @@ import mil.jpeojtrs.sca.dcd.util.DcdValidator;
 import mil.jpeojtrs.sca.dpd.DpdPackage;
 import mil.jpeojtrs.sca.partitioning.PartitioningPackage;
 import mil.jpeojtrs.sca.prf.PrfPackage;
+import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 import mil.jpeojtrs.sca.validator.AdvancedEObjectValidator;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -201,12 +203,17 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 
 		// Obtain or create and register package
 		DcdPackageImpl theDcdPackage = (DcdPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DcdPackageImpl
-			? EPackage.Registry.INSTANCE.get(eNS_URI) : new DcdPackageImpl());
+			? EPackage.Registry.INSTANCE.get(eNS_URI)
+			: new DcdPackageImpl());
 
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 		DpdPackage.eINSTANCE.eClass();
+		PrfPackage.eINSTANCE.eClass();
+		ScdPackage.eINSTANCE.eClass();
+		SpdPackage.eINSTANCE.eClass();
 		PartitioningPackage.eINSTANCE.eClass();
 		XMLTypePackage.eINSTANCE.eClass();
 
@@ -975,6 +982,13 @@ public class DcdPackageImpl extends EPackageImpl implements DcdPackage {
 			IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDeviceConfiguration_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, DeviceConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = addEOperation(deviceConfigurationEClass, this.getDcdComponentInstantiation(), "getComponentInstantiation", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEString(), "instantiationId", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(deviceConfigurationEClass, this.getDcdComponentInstantiation(), "getComponentInstantiationsInStartOrder", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(deviceConfigurationEClass, this.getDcdComponentInstantiation(), "getAllComponentInstantiations", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceManagerSoftPkgEClass, DeviceManagerSoftPkg.class, "DeviceManagerSoftPkg", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDeviceManagerSoftPkg_LocalFile(), thePartitioningPackage.getLocalFile(), null, "localFile", null, 1, 1, DeviceManagerSoftPkg.class,

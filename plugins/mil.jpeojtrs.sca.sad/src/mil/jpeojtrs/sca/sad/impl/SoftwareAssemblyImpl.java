@@ -781,7 +781,7 @@ public class SoftwareAssemblyImpl extends EObjectImpl implements SoftwareAssembl
 		final EList<SadComponentInstantiation> result = getAllComponentInstantiations();
 		final SadComponentInstantiation assemblyControllerInst = Util.getAssemblyControllerInstantiation(this);
 
-		// sort the component instantations
+		// sort the component instantiations
 		Collections.sort(result, new StartOrderComparator(assemblyControllerInst));
 		return result;
 		// BEGIN GENERATED CODE
