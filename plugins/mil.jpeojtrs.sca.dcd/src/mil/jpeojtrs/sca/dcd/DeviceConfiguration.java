@@ -305,6 +305,7 @@ public interface DeviceConfiguration extends EObject {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
@@ -313,6 +314,7 @@ public interface DeviceConfiguration extends EObject {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated
@@ -321,6 +323,7 @@ public interface DeviceConfiguration extends EObject {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
 	 * @generated
