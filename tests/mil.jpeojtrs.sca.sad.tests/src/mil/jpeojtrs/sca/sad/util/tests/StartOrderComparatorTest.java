@@ -66,7 +66,7 @@ public class StartOrderComparatorTest {
 		Assert.assertEquals(1, comparator.compare(noStartCompInst, acCompInst));
 		Assert.assertEquals(-1, comparator.compare(acCompInst, startOrderCompInst));
 		Assert.assertEquals(1, comparator.compare(startOrderCompInst, acCompInst));
-		Assert.assertEquals(1, comparator.compare(noStartCompInst, startOrderCompInst));
-		Assert.assertEquals(-1, comparator.compare(startOrderCompInst, noStartCompInst));
+		Assert.assertEquals(-1, comparator.compare(noStartCompInst, startOrderCompInst));
+		Assert.assertEquals(1, comparator.compare(startOrderCompInst, noStartCompInst));
 	}
 }
