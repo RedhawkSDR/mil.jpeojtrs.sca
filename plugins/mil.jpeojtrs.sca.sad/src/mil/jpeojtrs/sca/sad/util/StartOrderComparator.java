@@ -66,10 +66,10 @@ public class StartOrderComparator implements Comparator<SadComponentInstantiatio
 			return so1.compareTo(so2);
 		} else if (so1 != null && so2 == null) {
 			// only o1 has a start order
-			return -1;
+			return 1;
 		} else if (so1 == null && so2 != null) {
 			// only o2 has a start order
-			return 1;
+			return -1;
 		} else {
 			return 0;
 		}
