@@ -25,6 +25,8 @@ import mil.jpeojtrs.sca.util.UnsignedUtils;
  */
 public class ComplexULong extends ComplexNumber {
 
+	private static final long MAX_ULONG = 2L * Integer.MAX_VALUE + 1L;
+
 	private long[] numbers;
 
 	public ComplexULong() {
@@ -122,6 +124,9 @@ public class ComplexULong extends ComplexNumber {
 		long[] numbers = new long[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Long.valueOf(strNum[i]);
+			if (numbers[i] < 0 || numbers[i] > MAX_ULONG) {
+				throw new NumberFormatException("Value out of range. Value:\"" + strNum[i] + "\"");
+			}
 		}
 		return new ComplexULong(numbers);
 	}

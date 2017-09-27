@@ -123,8 +123,8 @@ public class ComplexUByte extends ComplexNumber {
 		short[] numbers = new short[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Short.valueOf(strNum[i]);
-			if (numbers[i] > 255) {
-				throw new IllegalArgumentException("Number value out of range: " + strNum[i]);
+			if (numbers[i] < 0 || numbers[i] > 255) {
+				throw new NumberFormatException("Value out of range. Value:\"" + strNum[i] + "\"");
 			}
 		}
 		return new ComplexUByte(numbers);

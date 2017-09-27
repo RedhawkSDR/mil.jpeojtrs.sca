@@ -26,6 +26,8 @@ import mil.jpeojtrs.sca.util.UnsignedUtils;
  */
 public class ComplexULongLong extends ComplexNumber {
 
+	private static final BigInteger MAX_ULONG_LONG = BigInteger.valueOf(Long.MAX_VALUE).multiply(BigInteger.valueOf(2)).add(BigInteger.ONE);
+
 	private BigInteger[] numbers;
 
 	public ComplexULongLong() {
@@ -130,6 +132,9 @@ public class ComplexULongLong extends ComplexNumber {
 		BigInteger[] numbers = new BigInteger[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = new BigInteger(strNum[i]);
+			if (numbers[i].compareTo(BigInteger.ZERO) < 0 || numbers[i].compareTo(MAX_ULONG_LONG) > 0) {
+				throw new NumberFormatException("Value out of range. Value:\"" + strNum[i] + "\"");
+			}
 		}
 		return new ComplexULongLong(numbers);
 	}

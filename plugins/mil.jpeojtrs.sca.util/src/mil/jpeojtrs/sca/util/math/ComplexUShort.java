@@ -25,6 +25,8 @@ import mil.jpeojtrs.sca.util.UnsignedUtils;
  */
 public class ComplexUShort extends ComplexNumber {
 
+	private static final int MAX_USHORT = 2 * Short.MAX_VALUE + 1;
+
 	private int[] numbers;
 
 	public ComplexUShort() {
@@ -122,6 +124,9 @@ public class ComplexUShort extends ComplexNumber {
 		int[] numbers = new int[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Integer.valueOf(strNum[i]);
+			if (numbers[i] < 0 || numbers[i] > MAX_USHORT) {
+				throw new NumberFormatException("Value out of range. Value:\"" + strNum[i] + "\"");
+			}
 		}
 		return new ComplexUShort(numbers);
 	}
