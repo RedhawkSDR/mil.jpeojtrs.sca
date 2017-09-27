@@ -21,6 +21,7 @@ import org.omg.CORBA.ORB;
 import CF.complexOctet;
 import CF.complexOctetHelper;
 
+@SuppressWarnings("deprecation")
 public class ComplexByteTest extends ComplexNumberTest {
 
 	private final ComplexByte complexByte = new ComplexByte((byte) 7, (byte) 8);
