@@ -184,6 +184,16 @@ public interface PrfFactory extends EFactory {
 	 */
 	Values createValues();
 
+	// END GENERATED CODE
+
+	/**
+	 * @since 6.2
+	 * @see #createValues()
+	 */
+	Values createValues(String...initialValue);
+
+	// BEGIN GENERATED CODE
+
 	/**
 	 * Returns a new object of class '<em>Simple Ref</em>'.
 	 * <!-- begin-user-doc -->
@@ -192,6 +202,19 @@ public interface PrfFactory extends EFactory {
 	 * @generated
 	 */
 	SimpleRef createSimpleRef();
+
+	// END GENERATED CODE
+
+	/**
+	 * @param refId
+	 * @param value
+	 * @return
+	 * @see #createSimpleRef()
+	 * @since 6.2
+	 */
+	public SimpleRef createSimpleRef(String refId, String value);
+
+	// BEGIN GENERATED CODE
 
 	/**
 	 * Returns a new object of class '<em>Simple Sequence Ref</em>'.
@@ -202,6 +225,20 @@ public interface PrfFactory extends EFactory {
 	 */
 	SimpleSequenceRef createSimpleSequenceRef();
 
+	// END GENERATED CODE
+
+	/**
+	 * @param refId
+	 * @param initialValue
+	 * @return
+	 * @see #createSimpleSequenceRef()
+	 * @see #createValues()
+	 * @since 6.2
+	 */
+	SimpleSequenceRef createSimpleSequenceRef(String refId, String...initialValue);
+
+	// BEGIN GENERATED CODE
+
 	/**
 	 * Returns a new object of class '<em>Struct Ref</em>'.
 	 * <!-- begin-user-doc -->
@@ -211,6 +248,18 @@ public interface PrfFactory extends EFactory {
 	 */
 	StructRef createStructRef();
 
+	// END GENERATED CODE
+
+	/**
+	 * @param refId
+	 * @return
+	 * @see #createStructRef()
+	 * @since 6.2
+	 */
+	StructRef createStructRef(String refId);
+
+	// BEGIN GENERATED CODE
+
 	/**
 	 * Returns a new object of class '<em>Struct Sequence Ref</em>'.
 	 * <!-- begin-user-doc -->
@@ -219,6 +268,18 @@ public interface PrfFactory extends EFactory {
 	 * @generated
 	 */
 	StructSequenceRef createStructSequenceRef();
+
+	// END GENERATED CDOE
+
+	/**
+	 * @param refId
+	 * @return
+	 * @see #createStructSequenceRef()
+	 * @since 6.2
+	 */
+	StructSequenceRef createStructSequenceRef(String refId);
+
+	// BEGIN GENERATED CODE
 
 	/**
 	 * Returns the package supported by this factory.
