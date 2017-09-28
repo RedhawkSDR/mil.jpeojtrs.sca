@@ -780,12 +780,21 @@ public final class AnyUtils {
 		return AnyUtils.toAnySequence(convArray, type, complex);
 	}
 
-	private static Object[] convertStringArray(final Object[] value, final String type, boolean complex) {
-		Object[] retVal = value;
-		if (value instanceof String[] && !"string".equals(type)) {
-			retVal = new Object[value.length];
-			for (int i = 0; i < value.length; ++i) {
-				final String val = (String) value[i];
+	/**
+	 * Attempts to parse an array of strings to an array of Java values.
+	 * 
+	 * @param values the string form of the values
+	 * @param type the property values' type (e.g. "long")
+	 * @param complex If the values should be interrupted as a complex numbers
+	 * @return The Java objects in an {@link Object} array
+	 * @since 4.6
+	 */
+	public static Object[] convertStringArray(final Object[] values, final String type, boolean complex) {
+		Object[] retVal = values;
+		if (values instanceof String[] && !"string".equals(type)) {
+			retVal = new Object[values.length];
+			for (int i = 0; i < values.length; ++i) {
+				final String val = (String) values[i];
 				retVal[i] = AnyUtils.convertString(val, type, complex);
 			}
 		}
