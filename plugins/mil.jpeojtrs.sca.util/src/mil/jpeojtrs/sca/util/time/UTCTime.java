@@ -10,6 +10,7 @@
  */
 package mil.jpeojtrs.sca.util.time;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.FieldPosition;
 import java.text.ParseException;
@@ -25,9 +26,14 @@ import CF.UTCTimeSequenceHelper;
 
 /**
  * Wraps a {@link CF.UTCTime} object.
+ * <p/>
+ * This class is serializable by {@link java.beans.XMLEncoder}, which is used for loading/saving property values for
+ * launches.
  * @since 4.6
  */
-public class UTCTime implements Comparable<UTCTime> {
+public class UTCTime implements Comparable<UTCTime>, Serializable {
+
+	protected static final String NOW = "now";
 
 	private CF.UTCTime time;
 
@@ -47,24 +53,12 @@ public class UTCTime implements Comparable<UTCTime> {
 		return time.tcstatus;
 	}
 
-	public void setStatus(short status) {
-		time.tcstatus = status;
-	}
-
 	public double getWholeSeconds() {
 		return time.twsec;
 	}
 
-	public void setWholeSeconds(double wholeSeconds) {
-		time.twsec = wholeSeconds;
-	}
-
 	public double getFractionalSeconds() {
 		return time.tfsec;
-	}
-
-	public void setFractionalSeconds(double fractionalSeconds) {
-		time.tfsec = fractionalSeconds;
 	}
 
 	/**
@@ -72,6 +66,14 @@ public class UTCTime implements Comparable<UTCTime> {
 	 */
 	public CF.UTCTime getWrappedTime() {
 		return time;
+	}
+
+	/**
+	 * Sets the time object wrapped by this object.
+	 * @param time
+	 */
+	public void setWrappedTime(CF.UTCTime time) {
+		this.time = time;
 	}
 
 	public Any toAny() {
@@ -94,6 +96,10 @@ public class UTCTime implements Comparable<UTCTime> {
 	}
 
 	public static UTCTime valueOf(String value) {
+		if (NOW.equals(value)) {
+			return new UTCTimeNow();
+		}
+
 		// Parse fractional seconds, if any
 		int period = value.indexOf('.');
 		double tfsec = 0.0;
@@ -139,6 +145,11 @@ public class UTCTime implements Comparable<UTCTime> {
 
 	@Override
 	public int compareTo(UTCTime o) {
+		// If the right side is a UTCTimeNow, call getWrappedTime to force a time update
+		if (o instanceof UTCTimeNow) {
+			o.getWrappedTime();
+		}
+
 		int compare = Double.compare(time.twsec, o.time.twsec);
 		if (compare != 0) {
 			return compare;

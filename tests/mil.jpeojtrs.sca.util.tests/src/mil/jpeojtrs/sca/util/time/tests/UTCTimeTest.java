@@ -19,6 +19,7 @@ import org.omg.CORBA.ORB;
 import CF.UTCTimeHelper;
 import CF.UTCTimeSequenceHelper;
 import mil.jpeojtrs.sca.util.time.UTCTime;
+import mil.jpeojtrs.sca.util.time.UTCTimeNow;
 
 public class UTCTimeTest {
 
@@ -48,7 +49,13 @@ public class UTCTimeTest {
 
 	@Test
 	public void toAny() {
+		UTCTime time = new UTCTime((short) 1, 2.0, 3.0);
+		Any actualAny = time.toAny();
 
+		Any expectedAny = JacorbUtil.init().create_any();
+		UTCTimeHelper.insert(expectedAny, new CF.UTCTime((short) 1, 2.0, 3.0));
+
+		Assert.assertEquals(expectedAny, actualAny);
 	}
 
 	@Test
@@ -64,7 +71,7 @@ public class UTCTimeTest {
 	}
 
 	@Test
-	public void valueOfSequence() {
+	public void valueOfSequence_any() {
 		CF.UTCTime[] cfTimes = new CF.UTCTime[2];
 		cfTimes[0] = new CF.UTCTime((short) 1, 2.0, 0.3);
 		cfTimes[1] = new CF.UTCTime((short) 0, 4.0, 0.5);
@@ -100,6 +107,10 @@ public class UTCTimeTest {
 		Assert.assertEquals(0.123456, time.getWrappedTime().tfsec, 0.0);
 		Assert.assertEquals((short) 1, time.getWrappedTime().tcstatus);
 
+		time = UTCTime.valueOf("now");
+		Assert.assertEquals(System.currentTimeMillis() / 1000.0, time.getWrappedTime().twsec, 1.0);
+		Assert.assertEquals((short) 1, time.getWrappedTime().tcstatus);
+
 		try {
 			UTCTime.valueOf("1234567890");
 			Assert.fail("Expected an IllegalArgumentException");
@@ -109,16 +120,19 @@ public class UTCTimeTest {
 	}
 
 	@Test
-	public void to_String() {
+	public void utctime_toString() {
 		UTCTime time = new UTCTime((short) 1, 0.0, 0.0);
 		Assert.assertEquals("1970:01:01::00:00:00", time.toString());
 
 		time = new UTCTime((short) 1, 1486749720.0, 0.123456);
 		Assert.assertEquals("2017:02:10::18:02:00.123456", time.toString());
+
+		time = UTCTime.valueOf("now");
+		Assert.assertEquals("now", time.toString());
 	}
 
 	@Test
-	public void compare_To() {
+	public void utctime_compareTo() {
 		UTCTime time1 = new UTCTime((short) 1, 2.0, 0.3);
 		UTCTime time2 = new UTCTime((short) 1, 2.0, 0.4);
 		UTCTime time3 = new UTCTime((short) 1, 3.0, 0.1);
@@ -139,14 +153,25 @@ public class UTCTimeTest {
 		Assert.assertEquals(-1, time4Bad.compareTo(time2));
 		Assert.assertEquals(-1, time4Bad.compareTo(time3));
 		Assert.assertEquals(0, time4Bad.compareTo(time4Bad));
+
+		UTCTime timeNow1 = UTCTime.valueOf("now");
+		UTCTime timeNow2 = new UTCTimeNow();
+		Assert.assertEquals(0, timeNow1.compareTo(timeNow2));
+		Assert.assertTrue(timeNow1.compareTo(time1) > 0);
+		Assert.assertTrue(time1.compareTo(timeNow1) < 0);
 	}
 
 	@Test
-	public void equals_utcTime() {
+	public void utctime_equals() {
 		UTCTime time1 = new UTCTime((short) 1, 2.0, 0.3);
 		UTCTime time2 = new UTCTime((short) 1, 4.0, 0.5);
 		UTCTime time3 = new UTCTime((short) 1, 2.0, 0.3);
 		Assert.assertEquals(time1, time3);
 		Assert.assertNotEquals(time1, time2);
+
+		UTCTime timeNow1 = UTCTime.valueOf("now");
+		UTCTime timeNow2 = new UTCTimeNow();
+		Assert.assertEquals(timeNow1, timeNow2);
+		Assert.assertNotEquals(time1, timeNow1);
 	}
 }
