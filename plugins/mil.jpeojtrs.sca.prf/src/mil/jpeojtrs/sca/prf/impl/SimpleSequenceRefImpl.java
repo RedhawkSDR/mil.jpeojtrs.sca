@@ -218,8 +218,9 @@ public class SimpleSequenceRefImpl extends AbstractPropertyRefImpl<SimpleSequenc
 
 	@Override
 	public Any toAny() {
-		if (getValues() != null) {
-			return AnyUtils.toAny(getValues().getValue().toArray(), getProperty().getType().getLiteral(), getProperty().isComplex());
+		if (values != null) {
+			SimpleSequence simpleSeq = getProperty();
+			return AnyUtils.toAny(values.getValue().toArray(), simpleSeq.getType().getLiteral(), simpleSeq.isComplex());
 		} else {
 			return JacorbUtil.init().create_any();
 		}

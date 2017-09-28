@@ -825,7 +825,7 @@ public class SimpleImpl extends AbstractPropertyImpl implements Simple {
 
 	@Override
 	public Any toAny() {
-		return AnyUtils.toAny(getValue(), getType().getLiteral(), isComplex());
+		return AnyUtils.toAny(value, type.getLiteral(), isComplex());
 	}
 
 	// BEGIN GENERATED CODE
