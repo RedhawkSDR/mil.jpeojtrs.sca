@@ -51,6 +51,9 @@ import mil.jpeojtrs.sca.prf.StructSequenceRef;
 import mil.jpeojtrs.sca.prf.StructValue;
 import mil.jpeojtrs.sca.prf.Test;
 import mil.jpeojtrs.sca.prf.Values;
+
+import java.util.Collections;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -458,6 +461,17 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 		return values;
 	}
 
+	// END GENERATED CODE
+
+	@Override
+	public Values createValues(String...initialValue) {
+		Values values = createValues();
+		Collections.addAll(values.getValue(), initialValue);
+		return values;
+	}
+
+	// BEGIN GENERATED CODE
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -468,6 +482,18 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 		SimpleRefImpl simpleRef = new SimpleRefImpl();
 		return simpleRef;
 	}
+
+	// END GENERATED CODE
+
+	@Override
+	public SimpleRef createSimpleRef(String refId, String value) {
+		SimpleRef simpleRef = createSimpleRef();
+		simpleRef.setRefID(refId);
+		simpleRef.setValue(value);
+		return simpleRef;
+	}
+
+	// BEGIN GENERATED CODE
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -480,6 +506,19 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 		return simpleSequenceRef;
 	}
 
+	// END GENERATED CODE
+
+	@Override
+	public SimpleSequenceRef createSimpleSequenceRef(String refId, String...initialValue) {
+		SimpleSequenceRef simpleSequenceRef = createSimpleSequenceRef();
+		simpleSequenceRef.setRefID(refId);
+		Values values = createValues(initialValue);
+		simpleSequenceRef.setValues(values);
+		return simpleSequenceRef;
+	}
+
+	// BEGIN GENERATED CODE
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -491,6 +530,17 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 		return structRef;
 	}
 
+	// END GENERATED CODE
+
+	@Override
+	public StructRef createStructRef(String refId) {
+		StructRef structRef = createStructRef();
+		structRef.setRefID(refId);
+		return structRef;
+	}
+
+	// BEGIN GENERATED CODE
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -501,6 +551,17 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 		StructSequenceRefImpl structSequenceRef = new StructSequenceRefImpl();
 		return structSequenceRef;
 	}
+
+	// END GENERATED CODE
+
+	@Override
+	public StructSequenceRef createStructSequenceRef(String refId) {
+		StructSequenceRef structSequenceRef = createStructSequenceRef();
+		structSequenceRef.setRefID(refId);
+		return structSequenceRef;
+	}
+
+	// BEGIN GENERATED CODE
 
 	/**
 	 * <!-- begin-user-doc -->
