@@ -258,6 +258,7 @@ public interface SoftwareAssembly extends EObject {
 	 * @see #setOptions(Options)
 	 * @see mil.jpeojtrs.sca.sad.SadPackage#getSoftwareAssembly_Options()
 	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='options' namespace='##targetNamespace'"
 	 * @generated
 	 */
 	Options getOptions();

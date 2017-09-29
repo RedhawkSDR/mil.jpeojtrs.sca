@@ -224,5 +224,4 @@ public class OptionImpl extends EObjectImpl implements Option {
 		result.append(')');
 		return result.toString();
 	}
-
 } //OptionImpl

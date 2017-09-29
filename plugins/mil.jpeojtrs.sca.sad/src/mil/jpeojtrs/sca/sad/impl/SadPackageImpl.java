@@ -1584,6 +1584,7 @@ public class SadPackageImpl extends EPackageImpl implements SadPackage {
 			new String[] { "kind", "element", "name", "externalports", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareAssembly_ExternalProperties(), source,
 			new String[] { "kind", "element", "name", "externalproperties", "namespace", "##targetNamespace" });
+		addAnnotation(getSoftwareAssembly_Options(), source, new String[] { "kind", "element", "name", "options", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareAssembly_UsesDeviceDependencies(), source,
 			new String[] { "kind", "element", "name", "usesdevicedependencies", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftwareAssembly_Id(), source, new String[] { "kind", "attribute", "name", "id" });
