@@ -11,11 +11,22 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.prf;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import mil.jpeojtrs.sca.util.AnyUtils;
+import mil.jpeojtrs.sca.util.math.ComplexBoolean;
+import mil.jpeojtrs.sca.util.math.ComplexDouble;
+import mil.jpeojtrs.sca.util.math.ComplexFloat;
+import mil.jpeojtrs.sca.util.math.ComplexLong;
+import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexShort;
+import mil.jpeojtrs.sca.util.math.ComplexULong;
+import mil.jpeojtrs.sca.util.math.ComplexULongLong;
+import mil.jpeojtrs.sca.util.math.ComplexUShort;
+import mil.jpeojtrs.sca.util.time.UTCTime;
 
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EDataType;
@@ -633,6 +644,61 @@ public enum PropertyValueType implements Enumerator {
 				return null;
 			}
 		}
+	}
+
+	/**
+	 * Gets an object with a default value for the specified type.
+	 * @since 6.2
+	 */
+	public Object getDefaultValue(boolean isComplex) {
+		switch (this) {
+		case BOOLEAN:
+			return (isComplex) ? new ComplexBoolean() : Boolean.FALSE;
+		case CHAR:
+			if (isComplex) {
+				break;
+			}
+			return 'a';
+		case DOUBLE:
+			return (isComplex) ? new ComplexDouble() : new Double(0);
+		case FLOAT:
+			return (isComplex) ? new ComplexFloat() : new Float(0f);
+		case LONG:
+			return (isComplex) ? new ComplexLong() : new Integer(0);
+		case LONGLONG:
+			return (isComplex) ? new ComplexLongLong() : new Long(0L);
+		case OBJREF:
+			if (isComplex) {
+				break;
+			}
+			return null;
+		case OCTET:
+			if (isComplex) {
+				break;
+			}
+			return (short) 0;
+		case SHORT:
+			return (isComplex) ? new ComplexShort() : new Short((short) 0);
+		case STRING:
+			if (isComplex) {
+				break;
+			}
+			return "newString";
+		case ULONG:
+			return (isComplex) ? new ComplexULong() : new Long(0L);
+		case USHORT:
+			return (isComplex) ? new ComplexUShort() : new Integer(0);
+		case ULONGLONG:
+			return (isComplex) ? new ComplexULongLong() : BigInteger.ZERO;
+		case UTCTIME:
+			if (isComplex) {
+				break;
+			}
+			return new UTCTime();
+		default:
+			throw new IllegalArgumentException("Unhandled property type");
+		}
+		throw new IllegalArgumentException("Unhandled property type");
 	}
 
 	// BEGIN GENERATED CODE
