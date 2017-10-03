@@ -536,10 +536,9 @@ public enum PropertyValueType implements Enumerator {
 	// END GENERATED CODE
 
 	/**
-	 * With introduction of complex type use the {@link #isValueOfType(String, Boolean)} instead
-	 * @param value the String value to check
-	 * @return <code> true </code> if the value is valid for this PropertyValueType; <code> false </code> otherwise
+	 * @deprecated With introduction of complex type use the {@link #isValueOfType(String, Boolean)} instead
 	 */
+	@Deprecated
 	public boolean isValueOfType(String value) {
 		return isValueOfType(value, false);
 	}
