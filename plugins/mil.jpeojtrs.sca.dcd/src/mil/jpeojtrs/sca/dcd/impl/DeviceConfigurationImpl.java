@@ -561,6 +561,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
@@ -581,6 +582,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
@@ -596,6 +598,7 @@ public class DeviceConfigurationImpl extends EObjectImpl implements DeviceConfig
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
