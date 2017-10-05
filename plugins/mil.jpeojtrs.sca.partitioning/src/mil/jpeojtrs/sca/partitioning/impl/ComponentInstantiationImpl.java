@@ -581,7 +581,7 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -591,7 +591,7 @@ public abstract class ComponentInstantiationImpl extends EObjectImpl implements 
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

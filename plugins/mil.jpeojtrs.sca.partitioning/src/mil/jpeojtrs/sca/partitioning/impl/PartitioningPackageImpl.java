@@ -583,7 +583,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1333,7 +1333,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1343,7 +1343,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1353,7 +1353,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1363,7 +1363,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1373,7 +1373,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 2.2
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
