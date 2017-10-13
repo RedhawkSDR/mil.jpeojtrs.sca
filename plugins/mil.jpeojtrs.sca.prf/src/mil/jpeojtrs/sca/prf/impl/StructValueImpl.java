@@ -149,9 +149,9 @@ public class StructValueImpl extends EObjectImpl implements StructValue {
 	public Struct basicGetStruct() {
 		// END GENERATED CODE
 		if (eContainer instanceof StructSequenceRef) {
-			StructSequence prop = ((StructSequenceRef) eContainer).getProperty();
-			if (prop != null) {
-				return prop.getStruct();
+			StructSequenceRef structSeqRef = (StructSequenceRef) eContainer();
+			if (structSeqRef.getProperty() != null && structSeqRef.getProperty() instanceof StructSequence) {
+				return structSeqRef.getProperty().getStruct();
 			}
 		} else if (eContainer instanceof StructSequence) {
 			return ((StructSequence) eContainer).getStruct();
