@@ -125,6 +125,12 @@ public class DcdComponentInstantiationItemProvider extends ComponentInstantiatio
 		return super.getText(object);
 	}
 
+	/**
+	 * This returns the image for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	@Override
 	public Object getImage(Object object) {
 		if (object instanceof DcdComponentInstantiation) {
