@@ -706,7 +706,7 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateSimpleRef(SimpleRef simpleRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		boolean result = validate_ValidPropertyRefId(simpleRef, diagnostics, context);
+		boolean result = validate_ValidPropertyRefId(simpleRef, diagnostics, context, Simple.class);
 		if (result || diagnostics != null) {
 			result &= validate_EveryDefaultConstraint(simpleRef, diagnostics, context);
 		}
@@ -721,7 +721,7 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateSimpleSequenceRef(SimpleSequenceRef simpleSequenceRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		boolean result = validate_ValidPropertyRefId(simpleSequenceRef, diagnostics, context);
+		boolean result = validate_ValidPropertyRefId(simpleSequenceRef, diagnostics, context, SimpleSequence.class);
 		if (result || diagnostics != null) {
 			result &= validate_EveryDefaultConstraint(simpleSequenceRef, diagnostics, context);
 		}
@@ -736,7 +736,7 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateStructRef(StructRef structRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		boolean result = validate_ValidPropertyRefId(structRef, diagnostics, context);
+		boolean result = validate_ValidPropertyRefId(structRef, diagnostics, context, Struct.class);
 		if (result || diagnostics != null) {
 			result &= validate_EveryDefaultConstraint(structRef, diagnostics, context);
 		}
@@ -751,7 +751,7 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateStructSequenceRef(StructSequenceRef structSequenceRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		boolean result = validate_ValidPropertyRefId(structSequenceRef, diagnostics, context);
+		boolean result = validate_ValidPropertyRefId(structSequenceRef, diagnostics, context, StructSequence.class);
 		if (result || diagnostics != null) {
 			result &= validate_EveryDefaultConstraint(structSequenceRef, diagnostics, context);
 		}
@@ -1093,11 +1093,21 @@ public class PrfValidator extends EObjectValidator {
 	 * @param propRef
 	 * @param diagnostics
 	 * @param context
+	 * @param propType
 	 * @return
 	 */
-	private boolean validate_ValidPropertyRefId(AbstractPropertyRef< ? > propRef, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	private boolean validate_ValidPropertyRefId(AbstractPropertyRef< ? > propRef, DiagnosticChain diagnostics, Map<Object, Object> context,
+		Class< ? > propType) {
 		// If we can find a corresponding property, everything is fine
 		if (propRef.getProperty() != null) {
+			if (!propType.isInstance(propRef.getProperty())) {
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(IStatus.ERROR, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidPropertyType_diagnostic",
+						new Object[] { propRef.getRefID() }, new Object[] { propRef }, context));
+				}
+				return false;
+			}
+
 			return true;
 		}
 
