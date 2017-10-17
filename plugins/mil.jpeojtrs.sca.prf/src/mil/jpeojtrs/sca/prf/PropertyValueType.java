@@ -605,6 +605,44 @@ public enum PropertyValueType implements Enumerator {
 		}
 	}
 
+	/**
+	 * @return A user-displayable help string about how to format string values of this type. Some help strings may be
+	 * empty.
+	 * @since 6.2
+	 */
+	public String getFormattingHelp() {
+		switch (this) {
+		case BOOLEAN:
+			return "Valid values are 'true' and 'false'.";
+		case CHAR:
+			return "";
+		case DOUBLE:
+			return "";
+		case FLOAT:
+			return "";
+		case LONG:
+			return "Valid long values are between -2^31 and 2^31 - 1.";
+		case LONGLONG:
+			return "Valid longlong values are between -2^63 and 2^63 - 1.";
+		case OBJREF:
+			return "";
+		case OCTET:
+			return "";
+		case SHORT:
+			return "Valid short values are between -2^15 and 2^15 - 1.";
+		case STRING:
+			return "";
+		case ULONG:
+			return "Valid ulonglong values are between 0 and 2^32 - 1.";
+		case USHORT:
+			return "Valid ushort values are between 0 and 2^16 - 1.";
+		case ULONGLONG:
+			return "Valid ulonglong values are between 0 and 2^64 - 1.";
+		default:
+			return "";
+		}
+	}
+
 	// BEGIN GENERATED CODE
 
 } //PropertyValueType
