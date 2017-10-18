@@ -14,6 +14,7 @@ package mil.jpeojtrs.sca.prf.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.jacorb.JacorbUtil;
 import org.omg.CORBA.Any;
 
 import mil.jpeojtrs.sca.prf.PrfPackage;
@@ -187,10 +188,10 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 
 	@Override
 	public Any toAny() {
-		if (getProperty() == null) {
-			return null;
+		if (getProperty() instanceof Simple) {
+			return AnyUtils.toAny(getValue(), getProperty().getType().getLiteral(), getProperty().isComplex());
 		}
-		return AnyUtils.toAny(getValue(), getProperty().getType().getLiteral(), getProperty().isComplex());
+		return JacorbUtil.init().create_any();
 	}
 
 	// BEGIN GENERATED CODE
