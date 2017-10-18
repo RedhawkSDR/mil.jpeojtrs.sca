@@ -485,6 +485,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
 	// END GENERATED CODE
 
+	/**
+	 * @since 6.2
+	 */
 	@Override
 	public SimpleRef createSimpleRef(String refId, String value) {
 		SimpleRef simpleRef = createSimpleRef();
@@ -508,6 +511,9 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
 	// END GENERATED CODE
 
+	/**
+	 * @since 6.2
+	 */
 	@Override
 	public SimpleSequenceRef createSimpleSequenceRef(String refId, String...initialValue) {
 		SimpleSequenceRef simpleSequenceRef = createSimpleSequenceRef();
