@@ -30,7 +30,6 @@ public class SadTest {
 	 */
 	@Test
 	public void nonExistentPropertyTest() throws URISyntaxException {
-
 		SoftwareAssembly sad = SadTests.loadSADFromDomPath("/waveforms/NonExistentPropertyWaveform/NonExistentPropertyWaveform.sad.xml");
 		SadComponentPlacement placement = sad.getPartitioning().getComponentPlacement().get(0);
 		SadComponentInstantiation compInst = placement.getComponentInstantiation().get(0);
@@ -40,10 +39,9 @@ public class SadTest {
 
 		SimpleRef invalidSimple = struct.getSimpleRef().get(0);
 		Assert.assertEquals("idonotexist", invalidSimple.getRefID());
-		Assert.assertNull(invalidSimple.toAny());
+		Assert.assertNotNull(invalidSimple.toAny());
 
 		// This previously threw an NPE when the simple.toAny() returned null
 		Assert.assertNotNull(struct.toAny());
-
 	}
 }
