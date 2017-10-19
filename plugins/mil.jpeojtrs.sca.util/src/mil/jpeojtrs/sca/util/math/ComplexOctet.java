@@ -16,34 +16,37 @@ import org.omg.CORBA.Any;
 import org.omg.CORBA.AnySeqHelper;
 import org.omg.CORBA.ORB;
 
-import CF.complexChar;
-import CF.complexCharHelper;
+import CF.complexOctet;
+import CF.complexOctetHelper;
+import mil.jpeojtrs.sca.util.UnsignedUtils;
 
 /**
- * @since 3.4
+ * @since 4.6
  */
-public class ComplexUByte extends ComplexNumber {
+public class ComplexOctet extends ComplexNumber {
+
+	private static final int MAX_OCTET = 0xFF;
 
 	private short[] numbers;
 
-	public ComplexUByte() {
+	public ComplexOctet() {
 		this((short) 0, (short) 0);
 	}
 
-	public ComplexUByte(short real, short imaginary) {
+	public ComplexOctet(short real, short imaginary) {
 		this(new short[] { real, imaginary });
 	}
 
-	protected ComplexUByte(short... numbers) {
+	protected ComplexOctet(short... numbers) {
 		this.numbers = numbers;
 	}
 
 	/**
 	 * @since 4.0
 	 */
-	public complexChar toCFType() {
+	public complexOctet toCFType() {
 		if (numbers.length == 2) {
-			return new complexChar((char) numbers[0], (char) numbers[1]);
+			return new complexOctet((byte) numbers[0], (byte) numbers[1]);
 		} else {
 			throw new UnsupportedOperationException();
 		}
@@ -53,9 +56,9 @@ public class ComplexUByte extends ComplexNumber {
 	public Any toAny() {
 		ORB orb = ORB.init();
 		if (numbers.length == 2) {
-			complexChar value = toCFType();
+			complexOctet value = toCFType();
 			Any any = orb.create_any();
-			complexCharHelper.insert(any, value);
+			complexOctetHelper.insert(any, value);
 			return any;
 		} else {
 			Any retVal = orb.create_any();
@@ -85,7 +88,7 @@ public class ComplexUByte extends ComplexNumber {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
 	}
 
-	public short getUByteValue(int index) throws ArrayIndexOutOfBoundsException {
+	public short getShortValue(int index) throws ArrayIndexOutOfBoundsException {
 		return numbers[index];
 	}
 
@@ -102,32 +105,30 @@ public class ComplexUByte extends ComplexNumber {
 	/**
 	 * @since 4.0
 	 */
-	public static ComplexUByte[] valueOfSequence(Any any) {
-		// TODO Use new Complex Unsiged byte when it becomes available.  Using char here is unsafe
-		CF.complexChar[] cfArray = CF.complexCharSeqHelper.extract(any);
-		ComplexUByte[] array = new ComplexUByte[cfArray.length];
+	public static ComplexOctet[] valueOfSequence(Any any) {
+		CF.complexOctet[] cfArray = CF.complexOctetSeqHelper.extract(any);
+		ComplexOctet[] array = new ComplexOctet[cfArray.length];
 		for (int i = 0; i < cfArray.length; i++) {
-			array[i] = new ComplexUByte((short) cfArray[i].real, (short) cfArray[i].imag);
+			array[i] = new ComplexOctet(UnsignedUtils.toSigned(cfArray[i].real), UnsignedUtils.toSigned(cfArray[i].imag));
 		}
 		return array;
 	}
 
-	public static ComplexUByte valueOf(Any any) {
-		// TODO Use new Complex Unsiged byte when it becomes available.  Using char here is unsafe
-		complexChar complex = complexCharHelper.extract(any);
-		return new ComplexUByte((short) complex.real, (short) complex.imag);
+	public static ComplexOctet valueOf(Any any) {
+		complexOctet complex = complexOctetHelper.extract(any);
+		return new ComplexOctet(new short[] { UnsignedUtils.toSigned(complex.real), UnsignedUtils.toSigned(complex.imag) });
 	}
 
-	public static ComplexUByte valueOf(String value) {
+	public static ComplexOctet valueOf(String value) {
 		String[] strNum = ComplexParser.parse(value);
 		short[] numbers = new short[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Short.valueOf(strNum[i]);
-			if (numbers[i] < 0 || numbers[i] > 255) {
+			if (numbers[i] < 0 || numbers[i] > MAX_OCTET) {
 				throw new NumberFormatException("Value out of range. Value:\"" + strNum[i] + "\"");
 			}
 		}
-		return new ComplexUByte(numbers);
+		return new ComplexOctet(numbers);
 	}
 	
 	@Override
@@ -137,8 +138,8 @@ public class ComplexUByte extends ComplexNumber {
 	
 	@Override
 	public boolean equals(Object obj) {
-		if (obj instanceof ComplexUByte) {
-			return Arrays.equals(numbers, ((ComplexUByte) obj).numbers);
+		if (obj instanceof ComplexOctet) {
+			return Arrays.equals(numbers, ((ComplexOctet) obj).numbers);
 		}
 		return super.equals(obj);
 	}

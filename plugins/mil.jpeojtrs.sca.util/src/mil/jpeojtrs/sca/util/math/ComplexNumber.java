@@ -49,66 +49,66 @@ public abstract class ComplexNumber {
 			return null;
 		}
 
-		int hash;
+		String name;
 		try {
-			hash = tc.name().hashCode();
+			name = tc.name();
 		} catch (BadKind e) {
 			// Should never occur (TCKind == alias should guarantee a name)
 			return null;
 		}
 
-		switch (hash) {
-		case -650662937: // "complexBooleanSeq".hashCode()
+		switch (name) {
+		case "complexBooleanSeq":
 			if (CF.complexBooleanSeqHelper.type().equivalent(tc)) {
 				return ComplexBoolean.valueOfSequence(any);
 			}
 			return null;
-		case 2102127614: // "complexDoubleSeq".hashCode()
+		case "complexDoubleSeq":
 			if (complexDoubleSeqHelper.type().equivalent(tc)) {
 				return ComplexDouble.valueOfSequence(any);
 			}
 			return null;
-		case -944124621: // "complexFloatSeq".hashCode()
+		case "complexFloatSeq":
 			if (complexFloatSeqHelper.type().equivalent(tc)) {
 				return ComplexFloat.valueOfSequence(any);
 			}
 			return null;
-		case -439309965: // "complexLongSeq".hashCode()
+		case "complexLongSeq":
 			if (complexLongSeqHelper.type().equivalent(tc)) {
 				return ComplexLong.valueOfSequence(any);
 			}
 			return null;
-		case 1886609239: // "complexLongLongSeq".hashCode()
+		case "complexLongLongSeq":
 			if (complexLongLongSeqHelper.type().equivalent(tc)) {
 				return ComplexLongLong.valueOfSequence(any);
 			}
 			return null;
-		case 998225683: // "complexShortSeq".hashCode()
+		case "complexShortSeq":
 			if (complexShortSeqHelper.type().equivalent(tc)) {
 				return ComplexShort.valueOfSequence(any);
 			}
 			return null;
-		case 1104498398: // "complexULongSeq".hashCode()
+		case "complexULongSeq":
 			if (complexULongSeqHelper.type().equivalent(tc)) {
 				return ComplexULong.valueOfSequence(any);
 			}
 			return null;
-		case 1166104386: // "complexULongLongSeq".hashCode()
+		case "complexULongLongSeq":
 			if (complexULongLongSeqHelper.type().equivalent(tc)) {
 				return ComplexULongLong.valueOfSequence(any);
 			}
 			return null;
-		case 1611644680: // "complexUShortSeq".hashCode()
+		case "complexUShortSeq":
 			if (complexUShortSeqHelper.type().equivalent(tc)) {
 				return ComplexUShort.valueOfSequence(any);
 			}
 			return null;
-		case -1689459488: // "complexOctetSeq".hashCode()
+		case "complexOctetSeq":
 			if (complexOctetSeqHelper.type().equivalent(tc)) {
-				return ComplexByte.valueOfSequence(any);
+				return ComplexOctet.valueOfSequence(any);
 			}
 			return null;
-		case -48990631: // "complexCharSeq".hashCode()
+		case "complexCharSeq":
 			if (complexCharSeqHelper.type().equivalent(tc)) {
 				return ComplexUByte.valueOfSequence(any);
 			}
@@ -128,7 +128,9 @@ public abstract class ComplexNumber {
 		if (value == null) {
 			return null;
 		}
-		if ("double".equalsIgnoreCase(type)) {
+		if ("boolean".equalsIgnoreCase(type)) {
+			return ComplexBoolean.valueOf(value);
+		} else if ("double".equalsIgnoreCase(type)) {
 			return ComplexDouble.valueOf(value);
 		} else if ("float".equalsIgnoreCase(type)) {
 			return ComplexFloat.valueOf(value);
@@ -145,7 +147,7 @@ public abstract class ComplexNumber {
 		} else if ("ulonglong".equalsIgnoreCase(type)) {
 			return ComplexULongLong.valueOf(value);
 		} else if ("octet".equalsIgnoreCase(type)) {
-			return ComplexByte.valueOf(value);
+			return ComplexOctet.valueOf(value);
 		} else {
 			throw new IllegalArgumentException("Unknown CORBA Type: " + type);
 		}

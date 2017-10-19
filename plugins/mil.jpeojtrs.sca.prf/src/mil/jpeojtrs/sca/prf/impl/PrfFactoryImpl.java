@@ -18,6 +18,7 @@ import mil.jpeojtrs.sca.util.math.ComplexFloat;
 import mil.jpeojtrs.sca.util.math.ComplexLong;
 import mil.jpeojtrs.sca.util.math.ComplexLongLong;
 import mil.jpeojtrs.sca.util.math.ComplexNumber;
+import mil.jpeojtrs.sca.util.math.ComplexOctet;
 import mil.jpeojtrs.sca.util.math.ComplexShort;
 import mil.jpeojtrs.sca.util.math.ComplexUByte;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
@@ -54,7 +55,6 @@ import mil.jpeojtrs.sca.prf.Test;
 import mil.jpeojtrs.sca.prf.Values;
 
 import java.util.Collections;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -199,6 +199,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 			return createComplexLongFromString(eDataType, initialValue);
 		case PrfPackage.COMPLEX_LONG_LONG:
 			return createComplexLongLongFromString(eDataType, initialValue);
+		case PrfPackage.COMPLEX_OCTET:
+			return createComplexOctetFromString(eDataType, initialValue);
 		case PrfPackage.COMPLEX_SHORT:
 			return createComplexShortFromString(eDataType, initialValue);
 		case PrfPackage.COMPLEX_UBYTE:
@@ -262,6 +264,8 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 			return convertComplexLongToString(eDataType, instanceValue);
 		case PrfPackage.COMPLEX_LONG_LONG:
 			return convertComplexLongLongToString(eDataType, instanceValue);
+		case PrfPackage.COMPLEX_OCTET:
+			return convertComplexOctetToString(eDataType, instanceValue);
 		case PrfPackage.COMPLEX_SHORT:
 			return convertComplexShortToString(eDataType, instanceValue);
 		case PrfPackage.COMPLEX_UBYTE:
@@ -469,7 +473,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	// END GENERATED CODE
 
 	@Override
-	public Values createValues(String...initialValue) {
+	public Values createValues(String... initialValue) {
 		Values values = createValues();
 		Collections.addAll(values.getValue(), initialValue);
 		return values;
@@ -520,7 +524,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * @since 6.2
 	 */
 	@Override
-	public SimpleSequenceRef createSimpleSequenceRef(String refId, String...initialValue) {
+	public SimpleSequenceRef createSimpleSequenceRef(String refId, String... initialValue) {
 		SimpleSequenceRef simpleSequenceRef = createSimpleSequenceRef();
 		simpleSequenceRef.setRefID(refId);
 		Values values = createValues(initialValue);
@@ -982,6 +986,30 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 			return null;
 		}
 		return instanceValue.toString();
+		// BEGIN GENERATED CODE
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 6.2
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public ComplexOctet createComplexOctetFromString(EDataType eDataType, String initialValue) {
+		// END GENERATED CODE
+		return ComplexOctet.valueOf(initialValue);
+		// BEGIN GENERATED CODE
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 6.2
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertComplexOctetToString(EDataType eDataType, Object instanceValue) {
+		// END GENERATED CODE
+		return (instanceValue == null) ? null : instanceValue.toString();
 		// BEGIN GENERATED CODE
 	}
 

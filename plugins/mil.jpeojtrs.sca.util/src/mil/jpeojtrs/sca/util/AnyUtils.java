@@ -74,6 +74,7 @@ import mil.jpeojtrs.sca.util.math.ComplexFloat;
 import mil.jpeojtrs.sca.util.math.ComplexLong;
 import mil.jpeojtrs.sca.util.math.ComplexLongLong;
 import mil.jpeojtrs.sca.util.math.ComplexNumber;
+import mil.jpeojtrs.sca.util.math.ComplexOctet;
 import mil.jpeojtrs.sca.util.math.ComplexShort;
 import mil.jpeojtrs.sca.util.math.ComplexUByte;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
@@ -408,7 +409,7 @@ public final class AnyUtils {
 					break;
 				case "IDL:CF/complexOctet:1.0":
 					if (complexOctetHelper.type().equivalent(typeCode)) {
-						return ComplexByte.valueOf(theAny);
+						return ComplexOctet.valueOf(theAny);
 					}
 					break;
 				case "IDL:CF/complexChar:1.0":
@@ -838,7 +839,7 @@ public final class AnyUtils {
 				insertComplexLongLongArray(any, array);
 				return any;
 			case "octet":
-				insertComplexByteArray(any, array);
+				insertComplexOctetArray(any, array);
 				return any;
 			case "short":
 				insertComplexShortArray(any, array);
@@ -1104,16 +1105,27 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * Insert an array containing <code>ComplexByte</code> into an <code>Any</code> as a CORBA complexOctet
+	 * Insert an array containing <code>ComplexOctet</code> into an <code>Any</code> as a CORBA complexOctet
 	 * sequence.
+	 * <p/>
+	 * For legacy reasons, also supports {@link ComplexByte}.
 	 * @param any
 	 * @param array
 	 */
-	private static void insertComplexByteArray(final Any any, final Object array) {
+	@SuppressWarnings("deprecation")
+	private static void insertComplexOctetArray(final Any any, final Object array) {
 		final int len = Array.getLength(array);
 		final CF.complexOctet[] newArray = new CF.complexOctet[len];
-		for (int i = 0; i < len; i++) {
-			newArray[i] = ((ComplexByte) Array.get(array, i)).toCFType();
+		if (Array.getLength(array) > 0) {
+			if (Array.get(array, 0) instanceof ComplexOctet) {
+				for (int i = 0; i < len; i++) {
+					newArray[i] = ((ComplexOctet) Array.get(array, i)).toCFType();
+				}
+			} else {
+				for (int i = 0; i < len; i++) {
+					newArray[i] = ((ComplexByte) Array.get(array, i)).toCFType();
+				}
+			}
 		}
 		complexOctetSeqHelper.insert(any, newArray);
 	}

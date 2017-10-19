@@ -6,7 +6,7 @@ Bundle-Version: 6.2.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: mil.jpeojtrs.sca.prf,
  mil.jpeojtrs.sca.prf.impl,
  mil.jpeojtrs.sca.prf.util

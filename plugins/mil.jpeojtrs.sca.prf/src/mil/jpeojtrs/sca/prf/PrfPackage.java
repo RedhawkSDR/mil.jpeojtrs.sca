@@ -1595,6 +1595,16 @@ public interface PrfPackage extends EPackage {
 	 */
 	int COMPLEX_LONG_LONG = 46;
 	/**
+	 * The meta object id for the '<em>Complex Octet</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * @since 6.2
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.util.math.ComplexOctet
+	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexOctet()
+	 * @generated
+	 */
+	int COMPLEX_OCTET = 47;
+	/**
 	 * The meta object id for the '<em>Complex Short</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * @since 3.0
@@ -1603,7 +1613,7 @@ public interface PrfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexShort()
 	 * @generated
 	 */
-	int COMPLEX_SHORT = 47;
+	int COMPLEX_SHORT = 48;
 	/**
 	 * The meta object id for the '<em>Complex UByte</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1613,7 +1623,7 @@ public interface PrfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexUByte()
 	 * @generated
 	 */
-	int COMPLEX_UBYTE = 48;
+	int COMPLEX_UBYTE = 49;
 	/**
 	 * The meta object id for the '<em>Complex ULong</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1623,7 +1633,7 @@ public interface PrfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexULong()
 	 * @generated
 	 */
-	int COMPLEX_ULONG = 49;
+	int COMPLEX_ULONG = 50;
 	/**
 	 * The meta object id for the '<em>Complex ULong Long</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1633,7 +1643,7 @@ public interface PrfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexULongLong()
 	 * @generated
 	 */
-	int COMPLEX_ULONG_LONG = 50;
+	int COMPLEX_ULONG_LONG = 51;
 	/**
 	 * The meta object id for the '<em>Complex UShort</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1643,7 +1653,7 @@ public interface PrfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexUShort()
 	 * @generated
 	 */
-	int COMPLEX_USHORT = 51;
+	int COMPLEX_USHORT = 52;
 
 	/**
 	 * The meta object id for the '<em>UTC Time</em>' data type.
@@ -1654,7 +1664,7 @@ public interface PrfPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getUTCTime()
 	 * @generated
 	 */
-	int UTC_TIME = 52;
+	int UTC_TIME = 53;
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.prf.AbstractProperty <em>Abstract Property</em>}'.
@@ -3036,6 +3046,18 @@ public interface PrfPackage extends EPackage {
 	EDataType getComplexLongLong();
 
 	/**
+	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexOctet <em>Complex Octet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * @since 6.2
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Complex Octet</em>'.
+	 * @see mil.jpeojtrs.sca.util.math.ComplexOctet
+	 * @model instanceClass="mil.jpeojtrs.sca.util.math.ComplexOctet"
+	 * @generated
+	 */
+	EDataType getComplexOctet();
+
+	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexShort <em>Complex Short</em>}'.
 	 * <!-- begin-user-doc -->
 	 * @since 3.0
@@ -4269,6 +4291,17 @@ public interface PrfPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType COMPLEX_LONG_LONG = eINSTANCE.getComplexLongLong();
+
+		/**
+		 * The meta object literal for the '<em>Complex Octet</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * @since 6.2
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.util.math.ComplexOctet
+		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexOctet()
+		 * @generated
+		 */
+		EDataType COMPLEX_OCTET = eINSTANCE.getComplexOctet();
 
 		/**
 		 * The meta object literal for the '<em>Complex Short</em>' data type.

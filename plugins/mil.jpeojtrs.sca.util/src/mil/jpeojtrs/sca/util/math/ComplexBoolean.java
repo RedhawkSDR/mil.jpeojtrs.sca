@@ -133,9 +133,33 @@ public class ComplexBoolean extends ComplexNumber {
 		String[] strNum = ComplexParser.parse(value);
 		boolean[] numbers = new boolean[strNum.length];
 		for (int i = 0; i < numbers.length; i++) {
-			numbers[i] = Boolean.valueOf(strNum[i]);
+			int number = Integer.valueOf(strNum[i]);
+			if (number < 0 || number > 1) {
+				throw new NumberFormatException("Value out of range. Value:\"" + strNum[i] + "\"");
+			}
+			numbers[i] = (number == 1);
 		}
 		return new ComplexBoolean(numbers);
 	}
 
+	@Override
+	public String toString() {
+		if (getSize() == 2) {
+			if (numbers[0]) {
+				return (numbers[1]) ? "1+j" : "1";
+			} else {
+				return (numbers[1]) ? "0+j" : "0";
+			}
+		}
+		StringBuilder builder = new StringBuilder();
+		builder.append("(");
+		for (int i = 0; i < getSize(); i++) {
+			builder.append((numbers[i]) ? "1" : "0");
+			if (i + 1 < getSize()) {
+				builder.append(", ");
+			}
+		}
+		builder.append(")");
+		return builder.toString();
+	}
 }

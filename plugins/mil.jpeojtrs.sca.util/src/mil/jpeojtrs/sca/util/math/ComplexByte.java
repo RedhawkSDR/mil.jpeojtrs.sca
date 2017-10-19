@@ -21,7 +21,10 @@ import CF.complexOctetHelper;
 
 /**
  * @since 3.4
+ * @deprecated Bytes are signed, so this never accurately represented a complex octet (which is unsigned).
+ * @see ComplexOctet
  */
+@Deprecated
 public class ComplexByte extends ComplexNumber {
 
 	private byte[] bytes;

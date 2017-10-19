@@ -67,6 +67,7 @@ import mil.jpeojtrs.sca.util.math.ComplexDouble;
 import mil.jpeojtrs.sca.util.math.ComplexFloat;
 import mil.jpeojtrs.sca.util.math.ComplexLong;
 import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexOctet;
 import mil.jpeojtrs.sca.util.math.ComplexShort;
 import mil.jpeojtrs.sca.util.math.ComplexUByte;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
@@ -148,6 +149,7 @@ public class PrfValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
@@ -245,6 +247,8 @@ public class PrfValidator extends EObjectValidator {
 			return validateComplexLong((ComplexLong) value, diagnostics, context);
 		case PrfPackage.COMPLEX_LONG_LONG:
 			return validateComplexLongLong((ComplexLongLong) value, diagnostics, context);
+		case PrfPackage.COMPLEX_OCTET:
+			return validateComplexOctet((ComplexOctet) value, diagnostics, context);
 		case PrfPackage.COMPLEX_SHORT:
 			return validateComplexShort((ComplexShort) value, diagnostics, context);
 		case PrfPackage.COMPLEX_UBYTE:
@@ -925,7 +929,7 @@ public class PrfValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComplexByte(ComplexByte complexByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexByte(@SuppressWarnings("deprecation") ComplexByte complexByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -966,6 +970,16 @@ public class PrfValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateComplexLongLong(ComplexLongLong complexLongLong, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 6.2
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComplexOctet(ComplexOctet complexOctet, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

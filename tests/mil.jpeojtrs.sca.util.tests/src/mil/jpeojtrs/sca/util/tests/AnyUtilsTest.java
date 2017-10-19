@@ -46,6 +46,7 @@ import mil.jpeojtrs.sca.util.math.ComplexFloat;
 import mil.jpeojtrs.sca.util.math.ComplexLong;
 import mil.jpeojtrs.sca.util.math.ComplexLongLong;
 import mil.jpeojtrs.sca.util.math.ComplexNumber;
+import mil.jpeojtrs.sca.util.math.ComplexOctet;
 import mil.jpeojtrs.sca.util.math.ComplexShort;
 import mil.jpeojtrs.sca.util.math.ComplexUByte;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
@@ -624,6 +625,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexBooleanSeqHelper.insert(corbaAny, complexBool);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
 		Assert.assertEquals(0, Array.getLength(newValue));
@@ -641,6 +644,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexBooleanSeqHelper.insert(corbaAny, complexBool);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 		newValue = AnyUtils.convertAny(corbaAny);
@@ -655,6 +660,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexOctetSeqHelper.insert(corbaAny, complexOctet);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
 		Assert.assertEquals(0, Array.getLength(newValue));
@@ -663,14 +670,22 @@ public class AnyUtilsTest {
 		Assert.assertEquals(0, Array.getLength(newValue));
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void complexOctet_sequence() throws Exception {
-		Object[] cValue = new ComplexByte[] { new ComplexByte((byte) 1, (byte) 2), new ComplexByte((byte) 3, (byte) 4) };
+		// Test legacy code - uses ComplexByte
+		Object[] oldCValue = new ComplexByte[] { new ComplexByte((byte) 1, (byte) 2), new ComplexByte((byte) 3, (byte) 4) };
+		Any oldOurAny = AnyUtils.toAny(oldCValue, "octet", true);
+
+		Object[] cValue = new ComplexOctet[] { new ComplexOctet((short) 1, (short) 2), new ComplexOctet((short) 3, (short) 4) };
 		Any ourAny = AnyUtils.toAny(cValue, "octet", true);
 
 		CF.complexOctet[] complexOctet = new CF.complexOctet[] { new CF.complexOctet((byte) 1, (byte) 2), new CF.complexOctet((byte) 3, (byte) 4) };
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexOctetSeqHelper.insert(corbaAny, complexOctet);
+
+		Assert.assertEquals(corbaAny, oldOurAny);
+		Assert.assertEquals(corbaAny, ourAny);
 
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
@@ -685,6 +700,8 @@ public class AnyUtilsTest {
 		CF.complexDouble[] complexDouble = new CF.complexDouble[0];
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexDoubleSeqHelper.insert(corbaAny, complexDouble);
+
+		Assert.assertEquals(corbaAny, ourAny);
 
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
@@ -703,6 +720,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexDoubleSeqHelper.insert(corbaAny, complexDouble);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 		newValue = AnyUtils.convertAny(corbaAny);
@@ -716,6 +735,8 @@ public class AnyUtilsTest {
 		CF.complexFloat[] complexFloat = new CF.complexFloat[0];
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexFloatSeqHelper.insert(corbaAny, complexFloat);
+
+		Assert.assertEquals(corbaAny, ourAny);
 
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
@@ -734,6 +755,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexFloatSeqHelper.insert(corbaAny, complexFloat);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 		newValue = AnyUtils.convertAny(corbaAny);
@@ -747,6 +770,8 @@ public class AnyUtilsTest {
 		CF.complexLong[] complexLong = new CF.complexLong[0];
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexLongSeqHelper.insert(corbaAny, complexLong);
+
+		Assert.assertEquals(corbaAny, ourAny);
 
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
@@ -765,6 +790,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexLongSeqHelper.insert(corbaAny, complexLong);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 		newValue = AnyUtils.convertAny(corbaAny);
@@ -778,6 +805,8 @@ public class AnyUtilsTest {
 		CF.complexLongLong[] complexLongLong = new CF.complexLongLong[0];
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexLongLongSeqHelper.insert(corbaAny, complexLongLong);
+
+		Assert.assertEquals(corbaAny, ourAny);
 
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
@@ -796,6 +825,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexLongLongSeqHelper.insert(corbaAny, complexLongLong);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 		newValue = AnyUtils.convertAny(corbaAny);
@@ -809,6 +840,8 @@ public class AnyUtilsTest {
 		CF.complexShort[] complexShort = new CF.complexShort[0];
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexShortSeqHelper.insert(corbaAny, complexShort);
+
+		Assert.assertEquals(corbaAny, ourAny);
 
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
@@ -827,6 +860,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexShortSeqHelper.insert(corbaAny, complexShort);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 		newValue = AnyUtils.convertAny(corbaAny);
@@ -840,6 +875,8 @@ public class AnyUtilsTest {
 		CF.complexChar[] complexChar = new CF.complexChar[0];
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexCharSeqHelper.insert(corbaAny, complexChar);
+
+		Assert.assertEquals(corbaAny, ourAny);
 
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
@@ -858,6 +895,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexCharSeqHelper.insert(corbaAny, complexChar);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 		newValue = AnyUtils.convertAny(corbaAny);
@@ -871,6 +910,8 @@ public class AnyUtilsTest {
 		CF.complexULong[] complexULong = new CF.complexULong[0];
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexULongSeqHelper.insert(corbaAny, complexULong);
+
+		Assert.assertEquals(corbaAny, ourAny);
 
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
@@ -889,6 +930,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexULongSeqHelper.insert(corbaAny, complexULong);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 		newValue = AnyUtils.convertAny(corbaAny);
@@ -902,6 +945,8 @@ public class AnyUtilsTest {
 		CF.complexULongLong[] complexULongLong = new CF.complexULongLong[0];
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexULongLongSeqHelper.insert(corbaAny, complexULongLong);
+
+		Assert.assertEquals(corbaAny, ourAny);
 
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
@@ -921,6 +966,8 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexULongLongSeqHelper.insert(corbaAny, complexULongLong);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 		newValue = AnyUtils.convertAny(corbaAny);
@@ -934,6 +981,8 @@ public class AnyUtilsTest {
 		CF.complexUShort[] complexUShort = new CF.complexUShort[0];
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexUShortSeqHelper.insert(corbaAny, complexUShort);
+
+		Assert.assertEquals(corbaAny, ourAny);
 
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(newValue.getClass().isArray());
@@ -952,12 +1001,15 @@ public class AnyUtilsTest {
 		Any corbaAny = JacorbUtil.init().create_any();
 		CF.complexUShortSeqHelper.insert(corbaAny, complexUShort);
 
+		Assert.assertEquals(corbaAny, ourAny);
+
 		Object newValue = AnyUtils.convertAny(ourAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 		newValue = AnyUtils.convertAny(corbaAny);
 		Assert.assertTrue(Arrays.deepEquals(cValue, (Object[]) newValue));
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void complex() throws Exception {
 		ComplexNumber cValue = new ComplexBoolean();
@@ -965,8 +1017,15 @@ public class AnyUtilsTest {
 		Object newValue = AnyUtils.convertAny(tmpAny);
 		Assert.assertEquals(cValue, newValue);
 
-		cValue = new ComplexByte();
+		// Test both:
+		// old data structure -> Any -> new data structure
+		// new data structure -> Any -> new data structure
+		ComplexNumber oldCValue = new ComplexByte();
+		cValue = new ComplexOctet();
 		tmpAny = cValue.toAny();
+		newValue = AnyUtils.convertAny(tmpAny);
+		Assert.assertEquals(cValue, newValue);
+		tmpAny = oldCValue.toAny();
 		newValue = AnyUtils.convertAny(tmpAny);
 		Assert.assertEquals(cValue, newValue);
 

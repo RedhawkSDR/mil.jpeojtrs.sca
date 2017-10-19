@@ -893,6 +893,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="ComplexFloat" instanceClassName="mil.jpeojtrs.sca.util.math.ComplexFloat"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ComplexLong" instanceClassName="mil.jpeojtrs.sca.util.math.ComplexLong"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ComplexLongLong" instanceClassName="mil.jpeojtrs.sca.util.math.ComplexLongLong"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ComplexOctet" instanceClassName="mil.jpeojtrs.sca.util.math.ComplexOctet"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ComplexShort" instanceClassName="mil.jpeojtrs.sca.util.math.ComplexShort"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ComplexUByte" instanceClassName="mil.jpeojtrs.sca.util.math.ComplexUByte"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ComplexULong" instanceClassName="mil.jpeojtrs.sca.util.math.ComplexULong"/>
