@@ -929,7 +929,8 @@ public class PrfValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComplexByte(@SuppressWarnings("deprecation") ComplexByte complexByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	@SuppressWarnings("deprecation")
+	public boolean validateComplexByte(ComplexByte complexByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
