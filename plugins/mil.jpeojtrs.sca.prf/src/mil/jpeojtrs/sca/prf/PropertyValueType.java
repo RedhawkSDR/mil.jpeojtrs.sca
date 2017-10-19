@@ -22,6 +22,7 @@ import mil.jpeojtrs.sca.util.math.ComplexDouble;
 import mil.jpeojtrs.sca.util.math.ComplexFloat;
 import mil.jpeojtrs.sca.util.math.ComplexLong;
 import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexOctet;
 import mil.jpeojtrs.sca.util.math.ComplexShort;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
 import mil.jpeojtrs.sca.util.math.ComplexULongLong;
@@ -672,10 +673,7 @@ public enum PropertyValueType implements Enumerator {
 			}
 			return null;
 		case OCTET:
-			if (isComplex) {
-				break;
-			}
-			return (short) 0;
+			return (isComplex) ? new ComplexOctet() : new Short((short) 0);
 		case SHORT:
 			return (isComplex) ? new ComplexShort() : new Short((short) 0);
 		case STRING:
