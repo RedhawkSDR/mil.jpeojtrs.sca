@@ -13,6 +13,7 @@ package mil.jpeojtrs.sca.util.math.tests;
 import org.junit.Assert;
 import mil.jpeojtrs.sca.util.math.ComplexByte;
 import mil.jpeojtrs.sca.util.math.ComplexNumber;
+import mil.jpeojtrs.sca.util.math.ComplexOctet;
 
 import org.junit.Test;
 import org.omg.CORBA.Any;
@@ -73,11 +74,12 @@ public class ComplexByteTest extends ComplexNumberTest {
 
 	@Override
 	public void testValueOfStringString() {
+		// Because ComplexByte is deprecated, ComplexOctet is now returned
 		ComplexNumber complexNumber = ComplexNumber.valueOf("octet", "5+i6");
 
-		Assert.assertTrue("Invalid complex type", complexNumber instanceof ComplexByte);
-		Assert.assertEquals((byte) 5, ((ComplexByte) complexNumber).getByteValue(0));
-		Assert.assertEquals((byte) 6, ((ComplexByte) complexNumber).getByteValue(1));
+		Assert.assertTrue("Invalid complex type", complexNumber instanceof ComplexOctet);
+		Assert.assertEquals((short) 5, ((ComplexOctet) complexNumber).getShortValue(0));
+		Assert.assertEquals((short) 6, ((ComplexOctet) complexNumber).getShortValue(1));
 	}
 
 	@Override
