@@ -1,13 +1,13 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 package mil.jpeojtrs.sca.util.math;
 
 import java.util.Arrays;
@@ -130,12 +130,12 @@ public class ComplexOctet extends ComplexNumber {
 		}
 		return new ComplexOctet(numbers);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Arrays.hashCode(numbers);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof ComplexOctet) {

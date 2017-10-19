@@ -855,6 +855,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@SuppressWarnings("deprecation")
 	public ComplexByte createComplexByteFromString(EDataType eDataType, String initialValue) {
 		// END GENERATED CODE
 		return ComplexByte.valueOf(initialValue);
@@ -867,6 +868,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@SuppressWarnings("deprecation")
 	public String convertComplexByteToString(EDataType eDataType, Object instanceValue) {
 		// END GENERATED CODE
 		if (instanceValue == null) {
