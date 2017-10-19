@@ -261,7 +261,7 @@ public class StructTest extends AbstractPropertyTest {
 		String xml = new String(buffer.toByteArray());
 		Assert.assertFalse("Empty configuration kind serialized wrong.", xml.contains("configurationkind=\"\""));
 	}
-	
+
 	/**
 	 * IDE-1215 Optional elements should not create diagnostics due to partial config. when inside struct / struct seq
 	 * IDE-1304 - The framework does not allow partial configuration of structures (unless it's an optional element)

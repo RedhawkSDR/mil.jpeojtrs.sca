@@ -211,7 +211,7 @@ public class PropertiesTest extends TestCase {
 		Assert.assertNotNull(this.props.getProperty(this.props.getStructSequence().get(0).getId()));
 		// BEGIN GENERATED CODE
 	}
-	
+
 	/**
 	 * IDE-1675 Show a warning for non-struct properties with kind message
 	 */

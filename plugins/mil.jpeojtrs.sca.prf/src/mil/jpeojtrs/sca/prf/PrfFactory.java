@@ -190,7 +190,7 @@ public interface PrfFactory extends EFactory {
 	 * @since 6.2
 	 * @see #createValues()
 	 */
-	Values createValues(String...initialValue);
+	Values createValues(String... initialValue);
 
 	// BEGIN GENERATED CODE
 
@@ -235,7 +235,7 @@ public interface PrfFactory extends EFactory {
 	 * @see #createValues()
 	 * @since 6.2
 	 */
-	SimpleSequenceRef createSimpleSequenceRef(String refId, String...initialValue);
+	SimpleSequenceRef createSimpleSequenceRef(String refId, String... initialValue);
 
 	// BEGIN GENERATED CODE
 

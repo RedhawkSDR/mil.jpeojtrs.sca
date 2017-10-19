@@ -234,7 +234,6 @@ public class StructValueTest extends TestCase {
 		// BEGIN GENERATED CODE
 	}
 
-
 	// END GENERATED CODE
 	public void test_parse() throws Exception {
 		final Properties props = Properties.Util.getProperties(
@@ -267,7 +266,7 @@ public class StructValueTest extends TestCase {
 		Assert.assertNotNull(valueList);
 		Assert.assertEquals(3, valueList.size());
 	}
-	
+
 	/**
 	 * IDE-1304 - The framework does not allow partial configuration of structures (unless it's an optional element)
 	 */

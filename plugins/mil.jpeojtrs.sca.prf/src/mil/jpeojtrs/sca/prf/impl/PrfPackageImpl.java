@@ -52,6 +52,7 @@ import mil.jpeojtrs.sca.util.math.ComplexDouble;
 import mil.jpeojtrs.sca.util.math.ComplexFloat;
 import mil.jpeojtrs.sca.util.math.ComplexLong;
 import mil.jpeojtrs.sca.util.math.ComplexLongLong;
+import mil.jpeojtrs.sca.util.math.ComplexOctet;
 import mil.jpeojtrs.sca.util.math.ComplexShort;
 import mil.jpeojtrs.sca.util.math.ComplexUByte;
 import mil.jpeojtrs.sca.util.math.ComplexULong;
@@ -369,6 +370,12 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EDataType complexOctetEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType complexShortEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -439,7 +446,8 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 		// Obtain or create and register package
 		PrfPackageImpl thePrfPackage = (PrfPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PrfPackageImpl
-			? EPackage.Registry.INSTANCE.get(eNS_URI) : new PrfPackageImpl());
+			? EPackage.Registry.INSTANCE.get(eNS_URI)
+			: new PrfPackageImpl());
 
 		isInited = true;
 
@@ -1754,6 +1762,15 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getComplexOctet() {
+		return complexOctetEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1993,6 +2010,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		complexFloatEDataType = createEDataType(COMPLEX_FLOAT);
 		complexLongEDataType = createEDataType(COMPLEX_LONG);
 		complexLongLongEDataType = createEDataType(COMPLEX_LONG_LONG);
+		complexOctetEDataType = createEDataType(COMPLEX_OCTET);
 		complexShortEDataType = createEDataType(COMPLEX_SHORT);
 		complexUByteEDataType = createEDataType(COMPLEX_UBYTE);
 		complexULongEDataType = createEDataType(COMPLEX_ULONG);
@@ -2376,6 +2394,7 @@ public class PrfPackageImpl extends EPackageImpl implements PrfPackage {
 		initEDataType(complexFloatEDataType, ComplexFloat.class, "ComplexFloat", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(complexLongEDataType, ComplexLong.class, "ComplexLong", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(complexLongLongEDataType, ComplexLongLong.class, "ComplexLongLong", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(complexOctetEDataType, ComplexOctet.class, "ComplexOctet", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(complexShortEDataType, ComplexShort.class, "ComplexShort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(complexUByteEDataType, ComplexUByte.class, "ComplexUByte", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(complexULongEDataType, ComplexULong.class, "ComplexULong", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
