@@ -147,7 +147,7 @@ public abstract class ComplexNumber {
 		} else if ("ulonglong".equalsIgnoreCase(type)) {
 			return ComplexULongLong.valueOf(value);
 		} else if ("octet".equalsIgnoreCase(type)) {
-			return ComplexByte.valueOf(value);
+			return ComplexOctet.valueOf(value);
 		} else {
 			throw new IllegalArgumentException("Unknown CORBA Type: " + type);
 		}

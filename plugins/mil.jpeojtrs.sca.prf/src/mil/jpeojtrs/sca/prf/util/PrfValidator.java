@@ -145,6 +145,7 @@ public class PrfValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
@@ -898,7 +899,7 @@ public class PrfValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComplexByte(ComplexByte complexByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComplexByte(@SuppressWarnings("deprecation") ComplexByte complexByte, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
