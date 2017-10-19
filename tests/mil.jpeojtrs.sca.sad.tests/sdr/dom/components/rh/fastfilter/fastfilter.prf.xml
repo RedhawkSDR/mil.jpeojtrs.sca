@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This file is protected by Copyright. Please refer to the COPYRIGHT file distributed with this 
+source distribution.
+ 
+This file is part of REDHAWK Basic Components fastfilter.
+
+REDHAWK Basic Components fastfilter is free software: you can redistribute it and/or modify it under the terms of 
+the GNU General Public License as published by the Free Software Foundation, either 
+version 3 of the License, or (at your option) any later version.
+
+REDHAWK Basic Components fastfilter is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this 
+program.  If not, see http://www.gnu.org/licenses/.
+-->
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <simple id="fftSize" mode="readwrite" type="ulong">
+    <description>fftSize used in filter implementation</description>
+    <value>1024</value>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+  <simplesequence id="realFilterCoefficients" mode="readwrite" type="float">
+    <description>real Coefficients for filter taps containing the impulse response.  </description>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simplesequence>
+  <simplesequence id="complexFilterCoefficients" mode="readwrite" type="float" complex="true">
+    <description>coefficients for filter taps containing the impulse response .  This can be configured with this property, or it can be set by configuring the filterProps struct property.</description>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simplesequence>
+  <struct id="filterProps" mode="readwrite">
+    <description>Configure this property to use the internal filter designer to create your filter coefficients.</description>
+    <simple id="TransitionWidth" mode="readwrite" type="double">
+      <description>Desired transition region width</description>
+      <value>800</value>
+      <units>Hz</units>
+      <kind kindtype="configure"/>
+      <action type="external"/>
+    </simple>
+    <simple id="Type" mode="readwrite" type="string">
+      <description>Type of filter to design</description>
+      <value>highpass</value>
+      <enumerations>
+        <enumeration label="lowpass" value="lowpass"/>
+        <enumeration label="highpass" value="highpass"/>
+        <enumeration label="bandpass" value="bandpass"/>
+        <enumeration label="bandstop" value="bandstop"/>
+      </enumerations>
+      <kind kindtype="configure"/>
+      <action type="external"/>
+    </simple>
+    <simple id="Ripple" mode="readwrite" type="double">
+      <description>Maximum bound on error in pass/stop bands</description>
+      <value>0.01</value>
+      <range max="1" min="0"/>
+      <kind kindtype="configure"/>
+      <action type="external"/>
+    </simple>
+    <simple id="freq1" mode="readwrite" type="double">
+      <description>First transition frequency - used for all frequncy types.</description>
+      <value>0</value>
+      <kind kindtype="configure"/>
+      <action type="external"/>
+    </simple>
+    <simple id="freq2" mode="readwrite" type="double">
+      <description>Second transition Frquency -- used only for bandpass/bandstop filters</description>
+      <value>0</value>
+      <kind kindtype="configure"/>
+      <action type="external"/>
+    </simple>
+    <simple id="filterComplex" mode="readwrite" type="boolean">
+      <description>Does the filter being designed have real or complex taps?</description>
+      <value>False</value>
+      <kind kindtype="configure"/>
+      <action type="external"/>
+    </simple>
+  </struct>
+  <simple id="correlationMode" mode="readwrite" type="boolean">
+    <description>If this property is set to true - fastfilter runs as a corelator instead of a filter.  This is achieved by filtering with the time reveresed sequence of the filter taps.</description>
+    <value>False</value>
+    <kind kindtype="configure"/>
+    <action type="external"/>
+  </simple>
+</properties>

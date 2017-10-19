@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+This file is protected by Copyright. Please refer to the COPYRIGHT file distributed with this 
+source distribution.
+
+This file is part of REDHAWK Basic Components sinksocket.
+
+REDHAWK Basic Components sinksocket is free software: you can redistribute it and/or modify it under the terms of 
+the GNU Lesser General Public License as published by the Free Software Foundation, either 
+version 3 of the License, or (at your option) any later version.
+
+REDHAWK Basic Components sinksocket is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+PURPOSE.  See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along with this 
+program.  If not, see http://www.gnu.org/licenses/.
+-->
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <simple id="total_bytes" mode="readonly" type="double">
+    <description>total bytes sent over network</description>
+    <value>0</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="bytes_per_sec" mode="readonly" type="float">
+    <description>Bytes per second send over network</description>
+    <value>0</value>
+    <units>BpsS</units>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <structsequence id="Connections" mode="readwrite">
+    <description>A sequence of network connections.</description>
+    <struct id="Connection">
+      <description>Specify a network connection.</description>
+      <simple id="Connection::connection_type" name="connection_type" type="string">
+        <description>Is the socket a server or client?</description>
+        <value>server</value>
+        <enumerations>
+          <enumeration label="server" value="server"/>
+          <enumeration label="client" value="client"/>
+        </enumerations>
+      </simple>
+      <simple id="Connection::ip_address" name="ip_address" type="string">
+        <description>IP address to connect to in client mode.  This value is ignored in server mode.</description>
+        <value></value>
+      </simple>
+      <simplesequence id="Connection::byte_swap" name="byte_swap" type="ushort">
+        <description>Swap Bytes in data stream.  You can explicitly set the word size.  
+If you set 0 -- no swapping is done.
+If you set 1 -- swapping is done according to the data size for each port
+Otherwise data will be swapped according to this value
+        </description>
+        <values>
+          <value>0</value>
+        </values>
+      </simplesequence>
+      <simplesequence id="Connection::ports" name="ports" type="ushort">
+        <description>Ports to listen on for server mode, or ports to connect to for client mode.</description>
+        <values>
+          <value>32191</value>
+        </values>
+      </simplesequence>
+    </struct>
+    <configurationkind kindtype="property"/>
+  </structsequence>
+  <structsequence id="ConnectionStats" mode="readonly">
+    <description>A sequence of statuses describing each connection.</description>
+    <struct id="ConnectionStat">
+      <description>The status of a connection.</description>
+      <simple id="ConnectionStat::ip_address" name="ip_address" type="string">
+        <description>The IP address of the connection being described.  Will be blank for server connections.</description>
+      </simple>
+      <simple id="ConnectionStat::port" name="port" type="ushort">
+        <description>The port of the connection being described.</description>
+      </simple>
+      <simple id="ConnectionStat::status" name="status" type="string">
+        <description>The current status of the connection.</description>
+        <enumerations>
+          <enumeration label="startup" value="startup"/>
+          <enumeration label="not_connected" value="not_connected"/>
+          <enumeration label="connected" value="connected"/>
+          <enumeration label="error" value="error"/>
+        </enumerations>
+      </simple>
+      <simple id="ConnectionStat::bytes_per_second" name="bytes_per_second" type="float">
+        <description>The number of bytes per second sent over this connection.</description>
+        <units>Bps</units>
+      </simple>
+      <simple id="ConnectionStat::bytes_sent" name="bytes_sent" type="double">
+        <description>The number of bytes sent over this connection.</description>
+      </simple>
+    </struct>
+    <configurationkind kindtype="property"/>
+  </structsequence>
+</properties>
