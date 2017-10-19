@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: mil.jpeojtrs.sca.util
 Bundle-Version: 4.6.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: mil.jpeojtrs.sca.util,
  mil.jpeojtrs.sca.util.collections,
  mil.jpeojtrs.sca.util.math
