@@ -128,7 +128,9 @@ public abstract class ComplexNumber {
 		if (value == null) {
 			return null;
 		}
-		if ("double".equalsIgnoreCase(type)) {
+		if ("boolean".equalsIgnoreCase(type)) {
+			return ComplexBoolean.valueOf(value);
+		} else if ("double".equalsIgnoreCase(type)) {
 			return ComplexDouble.valueOf(value);
 		} else if ("float".equalsIgnoreCase(type)) {
 			return ComplexFloat.valueOf(value);
