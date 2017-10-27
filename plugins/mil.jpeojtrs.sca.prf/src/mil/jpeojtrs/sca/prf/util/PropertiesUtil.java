@@ -48,9 +48,6 @@ public final class PropertiesUtil {
 		if ((property == null) || !property.isKind(PropertyConfigurationType.PROPERTY)) {
 			return false;
 		}
-		if ((property instanceof Simple) && ((Simple) property).isCommandLine()) {
-			return false;
-		}
 		return true;
 	}
 
