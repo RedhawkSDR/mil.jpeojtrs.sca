@@ -81,18 +81,19 @@ public class PropertiesUtilTest {
 
 	/**
 	 * IDE-1391
+	 * IDE-2089 Properies with commandline=true should get passed to initializeProperties
 	 */
 	@Test
 	public void canInitialize() {
 		Assert.assertFalse(PropertiesUtil.canInitialize(null));
 
 		String[] initializeTrue = new String[] { "simple_property", "simple_readonly_property", "simple_writeonly_property", "simplesequence_property",
-			"struct_property", "structsequence_property", "simple_configure_property", "simplesequence_readonly_property", "struct_readonly_property",
+			"struct_property", "structsequence_property", "simple_configure_property", "simple_execparam_property", "simple_commandline_property",
+			"simple_readonly_commandline_property", "simple_writeonly_commandline_property", "simplesequence_readonly_property", "struct_readonly_property",
 			"structsequence_readonly_property" };
 
 		String[] initializeFalse = new String[] { "simple_configure", "simple_configure_readonly", "simple_configure_writeonly", "simple_empty",
-			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_execparam_property", "simple_execparam", "simple_execparam_readonly",
-			"simple_execparam_writeonly", "simple_commandline_property", "simple_readonly_commandline_property", "simple_writeonly_commandline_property" };
+			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_execparam", "simple_execparam_readonly", "simple_execparam_writeonly" };
 		verifyAllPropNamesPresent(initializeTrue, initializeFalse, propIds);
 
 		for (String property : initializeTrue) {
