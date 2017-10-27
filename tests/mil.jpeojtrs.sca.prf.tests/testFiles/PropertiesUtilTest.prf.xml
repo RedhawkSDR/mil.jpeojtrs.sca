@@ -15,6 +15,14 @@
     <kind kindtype="property"/>
     <action type="external"/>
   </simple>
+  <simple id="simple_readonly_property" mode="readonly" type="string">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="simple_writeonly_property" mode="writeonly" type="string">
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
   <simplesequence id="simplesequence_property" mode="readwrite" type="string">
     <kind kindtype="property"/>
     <action type="external"/>
@@ -81,11 +89,11 @@
     <kind kindtype="property"/>
     <action type="external"/>
   </simple>
-  <simple id="simple_readonly_property" mode="readonly" type="string">
+  <simple id="simple_readonly_commandline_property" mode="readonly" type="string" commandline="true">
     <kind kindtype="property"/>
     <action type="external"/>
   </simple>
-   <simple id="simple_readonly_commandline_property" mode="readonly" type="string" commandline="true">
+  <simple id="simple_writeonly_commandline_property" mode="writeonly" type="string" commandline="true">
     <kind kindtype="property"/>
     <action type="external"/>
   </simple>
