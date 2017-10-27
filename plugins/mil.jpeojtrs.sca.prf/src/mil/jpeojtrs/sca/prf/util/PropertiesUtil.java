@@ -60,9 +60,6 @@ public final class PropertiesUtil {
 	 * @return
 	 */
 	public static boolean canConfigure(final AbstractProperty property) {
-		if (property instanceof Simple && ((Simple) property).isCommandLine()) {
-			return false;
-		}
 		return (property != null) && (property.getMode() != AccessType.READONLY)
 			&& property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE);
 	}
