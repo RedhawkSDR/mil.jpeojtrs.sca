@@ -133,6 +133,9 @@ public class PropertiesUtilTest {
 		}
 	}
 
+	/**
+	 * IDE-2088 Properties with commandline=true should be configurable
+	 */
 	@Test
 	public void canConfigure() {
 		Assert.assertFalse(PropertiesUtil.canConfigure(null));
