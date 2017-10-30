@@ -358,6 +358,7 @@ public interface Simple extends AbstractProperty {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Indicates if this property's value is passed to the resource on the command line at launch time.
 	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"

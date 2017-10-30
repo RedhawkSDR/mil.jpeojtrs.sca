@@ -59,12 +59,12 @@ public class PropertiesUtilTest {
 	@Test
 	public void isCommandLine() {
 		String[] isCmdLnTrue = new String[] { "simple_execparam_property", "simple_execparam", "simple_execparam_readonly", "simple_execparam_writeonly",
-			"simple_commandline_property", "simple_readonly_commandline_property", };
+			"simple_commandline_property", "simple_readonly_commandline_property", "simple_writeonly_commandline_property" };
 
-		String[] isCmdLnFalse = new String[] { "simple_property", "simplesequence_property", "struct_property", "structsequence_property", "simple_empty",
-			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_configure", "simple_configure_readonly", "simple_configure_writeonly",
-			"simple_configure_property", "simple_readonly_property", "simplesequence_readonly_property", "struct_readonly_property",
-			"structsequence_readonly_property" };
+		String[] isCmdLnFalse = new String[] { "simple_property", "simple_readonly_property", "simple_writeonly_property", "simplesequence_property",
+			"struct_property", "structsequence_property", "simple_empty", "simplesequence_empty", "struct_empty", "structsequence_empty", "simple_configure",
+			"simple_configure_readonly", "simple_configure_writeonly", "simple_configure_property", "simplesequence_readonly_property",
+			"struct_readonly_property", "structsequence_readonly_property" };
 		verifyAllPropNamesPresent(isCmdLnTrue, isCmdLnFalse, propIds);
 
 		for (String property : isCmdLnTrue) {
@@ -81,18 +81,19 @@ public class PropertiesUtilTest {
 
 	/**
 	 * IDE-1391
+	 * IDE-2089 Properies with commandline=true should get passed to initializeProperties
 	 */
 	@Test
 	public void canInitialize() {
 		Assert.assertFalse(PropertiesUtil.canInitialize(null));
 
-		String[] initializeTrue = new String[] { "simple_property", "simplesequence_property", "struct_property", "structsequence_property",
-			"simple_configure_property", "simple_readonly_property", "simplesequence_readonly_property", "struct_readonly_property",
+		String[] initializeTrue = new String[] { "simple_property", "simple_readonly_property", "simple_writeonly_property", "simplesequence_property",
+			"struct_property", "structsequence_property", "simple_configure_property", "simple_execparam_property", "simple_commandline_property",
+			"simple_readonly_commandline_property", "simple_writeonly_commandline_property", "simplesequence_readonly_property", "struct_readonly_property",
 			"structsequence_readonly_property" };
 
 		String[] initializeFalse = new String[] { "simple_configure", "simple_configure_readonly", "simple_configure_writeonly", "simple_empty",
-			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_execparam_property", "simple_execparam", "simple_execparam_readonly",
-			"simple_execparam_writeonly", "simple_commandline_property", "simple_readonly_commandline_property" };
+			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_execparam", "simple_execparam_readonly", "simple_execparam_writeonly" };
 		verifyAllPropNamesPresent(initializeTrue, initializeFalse, propIds);
 
 		for (String property : initializeTrue) {
@@ -113,11 +114,11 @@ public class PropertiesUtilTest {
 	 */
 	@Test
 	public void canOverride() {
-		String[] overrideTrue = new String[] { "simple_property", "simple_readonly_commandline_property", "simple_configure", "simple_configure_writeonly",
-			"simple_execparam_property", "simple_execparam", "simple_execparam_writeonly", "simplesequence_property", "struct_property",
-			"structsequence_property", "simple_empty", "simplesequence_empty", "struct_empty", "structsequence_empty", "simple_configure_property",
-			"simple_commandline_property", "simple_readonly_property", "simplesequence_readonly_property", "struct_readonly_property",
-			"structsequence_readonly_property" };
+		String[] overrideTrue = new String[] { "simple_property", "simple_readonly_property", "simple_writeonly_property", "simple_configure",
+			"simple_configure_writeonly", "simple_execparam_property", "simple_execparam", "simple_execparam_writeonly", "simplesequence_property",
+			"struct_property", "structsequence_property", "simple_empty", "simplesequence_empty", "struct_empty", "structsequence_empty",
+			"simple_configure_property", "simple_commandline_property", "simple_readonly_commandline_property", "simple_writeonly_commandline_property",
+			"simplesequence_readonly_property", "struct_readonly_property", "structsequence_readonly_property" };
 		String[] overrideFalse = new String[] { "simple_configure_readonly", "simple_execparam_readonly" };
 		verifyAllPropNamesPresent(overrideTrue, overrideFalse, propIds);
 
@@ -133,16 +134,21 @@ public class PropertiesUtilTest {
 		}
 	}
 
+	/**
+	 * IDE-2088 Properties with commandline=true should be configurable
+	 */
 	@Test
 	public void canConfigure() {
 		Assert.assertFalse(PropertiesUtil.canConfigure(null));
 
-		String[] configureTrue = new String[] { "simple_property", "simplesequence_property", "struct_property", "structsequence_property", "simple_empty",
-			"simplesequence_empty", "struct_empty", "structsequence_empty", "simple_configure_property", "simple_configure", "simple_configure_writeonly" };
+		String[] configureTrue = new String[] { "simple_property", "simple_writeonly_property", "simplesequence_property", "struct_property",
+			"structsequence_property", "simple_empty", "simplesequence_empty", "struct_empty", "structsequence_empty", "simple_configure_property",
+			"simple_configure", "simple_configure_writeonly", "simple_execparam_property", "simple_commandline_property",
+			"simple_writeonly_commandline_property" };
 
-		String[] configureFalse = new String[] { "simple_execparam", "simple_execparam_readonly", "simple_execparam_writeonly", "simple_execparam_property",
-			"simple_commandline_property", "simple_readonly_commandline_property", "simple_readonly_property", "simplesequence_readonly_property",
-			"struct_readonly_property", "structsequence_readonly_property", "simple_configure_readonly" };
+		String[] configureFalse = new String[] { "simple_readonly_property", "simple_execparam", "simple_execparam_readonly", "simple_execparam_writeonly",
+			"simple_readonly_commandline_property", "simplesequence_readonly_property", "struct_readonly_property", "structsequence_readonly_property",
+			"simple_configure_readonly" };
 		verifyAllPropNamesPresent(configureTrue, configureFalse, propIds);
 
 		for (String property : configureTrue) {
@@ -164,7 +170,8 @@ public class PropertiesUtilTest {
 		String[] configOrQueryTrue = { "prop_ro", "prop_rw", "prop_wo", "alloc_ro", "alloc_rw", "exec_ro", "exec_rw", "config_ro", "config_rw", "config_wo",
 			"commandline_ro", "commandline_rw", "commandline_wo" };
 
-		String[] configOrQueryFalse = { "alloc_wo", "exec_wo", "message_ro", "message_rw", "message_wo", "alloc_internal_ro", "alloc_internal_rw", "alloc_internal_wo" };
+		String[] configOrQueryFalse = { "alloc_wo", "exec_wo", "message_ro", "message_rw", "message_wo", "alloc_internal_ro", "alloc_internal_rw",
+			"alloc_internal_wo" };
 		verifyAllPropNamesPresent(configOrQueryTrue, configOrQueryFalse, propIds2);
 
 		for (String property : configOrQueryTrue) {

@@ -48,9 +48,6 @@ public final class PropertiesUtil {
 		if ((property == null) || !property.isKind(PropertyConfigurationType.PROPERTY)) {
 			return false;
 		}
-		if ((property instanceof Simple) && ((Simple) property).isCommandLine()) {
-			return false;
-		}
 		return true;
 	}
 
@@ -60,9 +57,6 @@ public final class PropertiesUtil {
 	 * @return
 	 */
 	public static boolean canConfigure(final AbstractProperty property) {
-		if (property instanceof Simple && ((Simple) property).isCommandLine()) {
-			return false;
-		}
 		return (property != null) && (property.getMode() != AccessType.READONLY)
 			&& property.isKind(PropertyConfigurationType.PROPERTY, PropertyConfigurationType.CONFIGURE);
 	}
