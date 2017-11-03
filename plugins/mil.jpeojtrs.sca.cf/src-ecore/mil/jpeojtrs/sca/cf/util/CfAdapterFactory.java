@@ -27,6 +27,8 @@ import CF.AggregateLoadableDevice;
 import CF.AggregateLoadableDeviceOperations;
 import CF.AggregatePlainDevice;
 import CF.AggregatePlainDeviceOperations;
+import CF.AllocationManager;
+import CF.AllocationManagerOperations;
 import CF.Application;
 import CF.ApplicationFactory;
 import CF.ApplicationFactoryOperations;
@@ -176,6 +178,16 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseAggregatePlainDeviceOperations(AggregatePlainDeviceOperations object) {
 			return createAggregatePlainDeviceOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseAllocationManager(AllocationManager object) {
+			return createAllocationManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseAllocationManagerOperations(AllocationManagerOperations object) {
+			return createAllocationManagerOperationsAdapter();
 		}
 
 		@Override
@@ -554,6 +566,34 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAggregatePlainDeviceOperationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.AllocationManager <em>Allocation Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.AllocationManager
+	 * @generated
+	 */
+	public Adapter createAllocationManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.AllocationManagerOperations <em>Allocation Manager Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.AllocationManagerOperations
+	 * @generated
+	 */
+	public Adapter createAllocationManagerOperationsAdapter() {
 		return null;
 	}
 

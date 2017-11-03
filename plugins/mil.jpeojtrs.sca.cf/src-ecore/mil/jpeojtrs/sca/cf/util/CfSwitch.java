@@ -24,6 +24,8 @@ import CF.AggregateLoadableDevice;
 import CF.AggregateLoadableDeviceOperations;
 import CF.AggregatePlainDevice;
 import CF.AggregatePlainDeviceOperations;
+import CF.AllocationManager;
+import CF.AllocationManagerOperations;
 import CF.Application;
 import CF.ApplicationFactory;
 import CF.ApplicationFactoryOperations;
@@ -421,6 +423,26 @@ public class CfSwitch< T > extends Switch<T> {
 				result = casePortSupplierOperations(aggregatePlainDeviceOperations);
 			if (result == null)
 				result = casePropertySetOperations(aggregatePlainDeviceOperations);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CfPackage.ALLOCATION_MANAGER: {
+			AllocationManager allocationManager = (AllocationManager) theEObject;
+			T result = caseAllocationManager(allocationManager);
+			if (result == null)
+				result = caseAllocationManagerOperations(allocationManager);
+			if (result == null)
+				result = caseObject(allocationManager);
+			if (result == null)
+				result = caseIDLEntity(allocationManager);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CfPackage.ALLOCATION_MANAGER_OPERATIONS: {
+			AllocationManagerOperations allocationManagerOperations = (AllocationManagerOperations) theEObject;
+			T result = caseAllocationManagerOperations(allocationManagerOperations);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1335,6 +1357,36 @@ public class CfSwitch< T > extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAggregatePlainDeviceOperations(AggregatePlainDeviceOperations object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Allocation Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Allocation Manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAllocationManager(AllocationManager object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Allocation Manager Operations</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Allocation Manager Operations</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAllocationManagerOperations(AllocationManagerOperations object) {
 		return null;
 	}
 

@@ -11,6 +11,7 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.cf.impl;
 
+import CF.AllocationManagerPackage.AllocationStatusType;
 import mil.jpeojtrs.sca.cf.CfFactory;
 import mil.jpeojtrs.sca.cf.CfPackage;
 
@@ -147,32 +148,28 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createNamingContextExtFromString(eDataType, initialValue);
 		case CfPackage.ORB:
 			return createORBFromString(eDataType, initialValue);
-		case CfPackage.INVALID_OBJECT_REFERENCE:
-			return createInvalidObjectReferenceFromString(eDataType, initialValue);
+		case CfPackage.ALLOCATION_STATUS_TYPE:
+			return createAllocationStatusTypeFromString(eDataType, initialValue);
 		case CfPackage.CREATE_APPLICATION_INSUFFICIENT_CAPACITY_ERROR:
 			return createCreateApplicationInsufficientCapacityErrorFromString(eDataType, initialValue);
-		case CfPackage.DEVICE_ASSIGNMENT_TYPE_ARRAY:
-			return createDeviceAssignmentTypeArrayFromString(eDataType, initialValue);
 		case CfPackage.CREATE_APPLICATION_ERROR:
 			return createCreateApplicationErrorFromString(eDataType, initialValue);
 		case CfPackage.CREATE_APPLICATION_REQUEST_ERROR:
 			return createCreateApplicationRequestErrorFromString(eDataType, initialValue);
 		case CfPackage.INVALID_INIT_CONFIGURATION:
 			return createInvalidInitConfigurationFromString(eDataType, initialValue);
+		case CfPackage.DEVICE_ASSIGNMENT_TYPE_ARRAY:
+			return createDeviceAssignmentTypeArrayFromString(eDataType, initialValue);
 		case CfPackage.INVALID_CAPACITY:
 			return createInvalidCapacityFromString(eDataType, initialValue);
 		case CfPackage.INVALID_STATE:
 			return createInvalidStateFromString(eDataType, initialValue);
-		case CfPackage.INVALID_PROFILE:
-			return createInvalidProfileFromString(eDataType, initialValue);
 		case CfPackage.DEVICE_MANAGER_NOT_REGISTERED:
 			return createDeviceManagerNotRegisteredFromString(eDataType, initialValue);
 		case CfPackage.REGISTER_ERROR:
 			return createRegisterErrorFromString(eDataType, initialValue);
 		case CfPackage.UNREGISTER_ERROR:
 			return createUnregisterErrorFromString(eDataType, initialValue);
-		case CfPackage.INVALID_FILE_NAME:
-			return createInvalidFileNameFromString(eDataType, initialValue);
 		case CfPackage.APPLICATION_INSTALLATION_ERROR:
 			return createApplicationInstallationErrorFromString(eDataType, initialValue);
 		case CfPackage.APPLICATION_ALREADY_INSTALLED:
@@ -205,8 +202,6 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createNonExistentMountFromString(eDataType, initialValue);
 		case CfPackage.MOUNT_TYPE_ARRAY:
 			return createMountTypeArrayFromString(eDataType, initialValue);
-		case CfPackage.OCTET_SEQUENCE_HOLDER:
-			return createOctetSequenceHolderFromString(eDataType, initialValue);
 		case CfPackage.IO_EXCEPTION:
 			return createIOExceptionFromString(eDataType, initialValue);
 		case CfPackage.FILE_EXCEPTION:
@@ -215,10 +210,16 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createInvalidFilePointerFromString(eDataType, initialValue);
 		case CfPackage.FILE_INFORMATION_TYPE_ARRAY:
 			return createFileInformationTypeArrayFromString(eDataType, initialValue);
-		case CfPackage.PROPERTIES_HOLDER:
-			return createPropertiesHolderFromString(eDataType, initialValue);
 		case CfPackage.UNKNOWN_FILE_SYSTEM_PROPERTIES:
 			return createUnknownFileSystemPropertiesFromString(eDataType, initialValue);
+		case CfPackage.INVALID_FILE_NAME:
+			return createInvalidFileNameFromString(eDataType, initialValue);
+		case CfPackage.INVALID_IDENTIFIER:
+			return createInvalidIdentifierFromString(eDataType, initialValue);
+		case CfPackage.INVALID_OBJECT_REFERENCE:
+			return createInvalidObjectReferenceFromString(eDataType, initialValue);
+		case CfPackage.INVALID_PROFILE:
+			return createInvalidProfileFromString(eDataType, initialValue);
 		case CfPackage.INITIALIZE_ERROR:
 			return createInitializeErrorFromString(eDataType, initialValue);
 		case CfPackage.RELEASE_ERROR:
@@ -229,6 +230,10 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createInvalidLoadKindFromString(eDataType, initialValue);
 		case CfPackage.LOAD_FAIL:
 			return createLoadFailFromString(eDataType, initialValue);
+		case CfPackage.LOG_EVENT_ARRAY:
+			return createLogEventArrayFromString(eDataType, initialValue);
+		case CfPackage.OCTET_SEQUENCE_HOLDER:
+			return createOctetSequenceHolderFromString(eDataType, initialValue);
 		case CfPackage.INVALID_PORT:
 			return createInvalidPortFromString(eDataType, initialValue);
 		case CfPackage.OCCUPIED_PORT:
@@ -237,6 +242,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createPortInfoTypeFromString(eDataType, initialValue);
 		case CfPackage.UNKNOWN_PORT:
 			return createUnknownPortFromString(eDataType, initialValue);
+		case CfPackage.PROPERTIES_HOLDER:
+			return createPropertiesHolderFromString(eDataType, initialValue);
 		case CfPackage.ALREADY_INITIALIZED:
 			return createAlreadyInitializedFromString(eDataType, initialValue);
 		case CfPackage.INVALID_CONFIGURATION:
@@ -259,10 +266,6 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createUnknownTestFromString(eDataType, initialValue);
 		case CfPackage.UNKNOWN_IDENTIFIER:
 			return createUnknownIdentifierFromString(eDataType, initialValue);
-		case CfPackage.LOG_EVENT_ARRAY:
-			return createLogEventArrayFromString(eDataType, initialValue);
-		case CfPackage.INVALID_IDENTIFIER:
-			return createInvalidIdentifierFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -284,32 +287,28 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertNamingContextExtToString(eDataType, instanceValue);
 		case CfPackage.ORB:
 			return convertORBToString(eDataType, instanceValue);
-		case CfPackage.INVALID_OBJECT_REFERENCE:
-			return convertInvalidObjectReferenceToString(eDataType, instanceValue);
+		case CfPackage.ALLOCATION_STATUS_TYPE:
+			return convertAllocationStatusTypeToString(eDataType, instanceValue);
 		case CfPackage.CREATE_APPLICATION_INSUFFICIENT_CAPACITY_ERROR:
 			return convertCreateApplicationInsufficientCapacityErrorToString(eDataType, instanceValue);
-		case CfPackage.DEVICE_ASSIGNMENT_TYPE_ARRAY:
-			return convertDeviceAssignmentTypeArrayToString(eDataType, instanceValue);
 		case CfPackage.CREATE_APPLICATION_ERROR:
 			return convertCreateApplicationErrorToString(eDataType, instanceValue);
 		case CfPackage.CREATE_APPLICATION_REQUEST_ERROR:
 			return convertCreateApplicationRequestErrorToString(eDataType, instanceValue);
 		case CfPackage.INVALID_INIT_CONFIGURATION:
 			return convertInvalidInitConfigurationToString(eDataType, instanceValue);
+		case CfPackage.DEVICE_ASSIGNMENT_TYPE_ARRAY:
+			return convertDeviceAssignmentTypeArrayToString(eDataType, instanceValue);
 		case CfPackage.INVALID_CAPACITY:
 			return convertInvalidCapacityToString(eDataType, instanceValue);
 		case CfPackage.INVALID_STATE:
 			return convertInvalidStateToString(eDataType, instanceValue);
-		case CfPackage.INVALID_PROFILE:
-			return convertInvalidProfileToString(eDataType, instanceValue);
 		case CfPackage.DEVICE_MANAGER_NOT_REGISTERED:
 			return convertDeviceManagerNotRegisteredToString(eDataType, instanceValue);
 		case CfPackage.REGISTER_ERROR:
 			return convertRegisterErrorToString(eDataType, instanceValue);
 		case CfPackage.UNREGISTER_ERROR:
 			return convertUnregisterErrorToString(eDataType, instanceValue);
-		case CfPackage.INVALID_FILE_NAME:
-			return convertInvalidFileNameToString(eDataType, instanceValue);
 		case CfPackage.APPLICATION_INSTALLATION_ERROR:
 			return convertApplicationInstallationErrorToString(eDataType, instanceValue);
 		case CfPackage.APPLICATION_ALREADY_INSTALLED:
@@ -342,8 +341,6 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertNonExistentMountToString(eDataType, instanceValue);
 		case CfPackage.MOUNT_TYPE_ARRAY:
 			return convertMountTypeArrayToString(eDataType, instanceValue);
-		case CfPackage.OCTET_SEQUENCE_HOLDER:
-			return convertOctetSequenceHolderToString(eDataType, instanceValue);
 		case CfPackage.IO_EXCEPTION:
 			return convertIOExceptionToString(eDataType, instanceValue);
 		case CfPackage.FILE_EXCEPTION:
@@ -352,10 +349,16 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertInvalidFilePointerToString(eDataType, instanceValue);
 		case CfPackage.FILE_INFORMATION_TYPE_ARRAY:
 			return convertFileInformationTypeArrayToString(eDataType, instanceValue);
-		case CfPackage.PROPERTIES_HOLDER:
-			return convertPropertiesHolderToString(eDataType, instanceValue);
 		case CfPackage.UNKNOWN_FILE_SYSTEM_PROPERTIES:
 			return convertUnknownFileSystemPropertiesToString(eDataType, instanceValue);
+		case CfPackage.INVALID_FILE_NAME:
+			return convertInvalidFileNameToString(eDataType, instanceValue);
+		case CfPackage.INVALID_IDENTIFIER:
+			return convertInvalidIdentifierToString(eDataType, instanceValue);
+		case CfPackage.INVALID_OBJECT_REFERENCE:
+			return convertInvalidObjectReferenceToString(eDataType, instanceValue);
+		case CfPackage.INVALID_PROFILE:
+			return convertInvalidProfileToString(eDataType, instanceValue);
 		case CfPackage.INITIALIZE_ERROR:
 			return convertInitializeErrorToString(eDataType, instanceValue);
 		case CfPackage.RELEASE_ERROR:
@@ -366,6 +369,10 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertInvalidLoadKindToString(eDataType, instanceValue);
 		case CfPackage.LOAD_FAIL:
 			return convertLoadFailToString(eDataType, instanceValue);
+		case CfPackage.LOG_EVENT_ARRAY:
+			return convertLogEventArrayToString(eDataType, instanceValue);
+		case CfPackage.OCTET_SEQUENCE_HOLDER:
+			return convertOctetSequenceHolderToString(eDataType, instanceValue);
 		case CfPackage.INVALID_PORT:
 			return convertInvalidPortToString(eDataType, instanceValue);
 		case CfPackage.OCCUPIED_PORT:
@@ -374,6 +381,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertPortInfoTypeToString(eDataType, instanceValue);
 		case CfPackage.UNKNOWN_PORT:
 			return convertUnknownPortToString(eDataType, instanceValue);
+		case CfPackage.PROPERTIES_HOLDER:
+			return convertPropertiesHolderToString(eDataType, instanceValue);
 		case CfPackage.ALREADY_INITIALIZED:
 			return convertAlreadyInitializedToString(eDataType, instanceValue);
 		case CfPackage.INVALID_CONFIGURATION:
@@ -396,10 +405,6 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertUnknownTestToString(eDataType, instanceValue);
 		case CfPackage.UNKNOWN_IDENTIFIER:
 			return convertUnknownIdentifierToString(eDataType, instanceValue);
-		case CfPackage.LOG_EVENT_ARRAY:
-			return convertLogEventArrayToString(eDataType, instanceValue);
-		case CfPackage.INVALID_IDENTIFIER:
-			return convertInvalidIdentifierToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -474,6 +479,24 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	 * @generated
 	 */
 	public String convertORBToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AllocationStatusType createAllocationStatusTypeFromString(EDataType eDataType, String initialValue) {
+		return (AllocationStatusType) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertAllocationStatusTypeToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
