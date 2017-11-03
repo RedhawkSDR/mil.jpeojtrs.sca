@@ -39,6 +39,8 @@ import CF.DeviceManagerOperations;
 import CF.DeviceOperations;
 import CF.DomainManager;
 import CF.DomainManagerOperations;
+import CF.EventChannelManager;
+import CF.EventChannelManagerOperations;
 import CF.ExecutableDevice;
 import CF.ExecutableDeviceOperations;
 import CF.File;
@@ -238,6 +240,16 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseDomainManagerOperations(DomainManagerOperations object) {
 			return createDomainManagerOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseEventChannelManager(EventChannelManager object) {
+			return createEventChannelManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseEventChannelManagerOperations(EventChannelManagerOperations object) {
+			return createEventChannelManagerOperationsAdapter();
 		}
 
 		@Override
@@ -734,6 +746,34 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDomainManagerOperationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.EventChannelManager <em>Event Channel Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.EventChannelManager
+	 * @generated
+	 */
+	public Adapter createEventChannelManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.EventChannelManagerOperations <em>Event Channel Manager Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.EventChannelManagerOperations
+	 * @generated
+	 */
+	public Adapter createEventChannelManagerOperationsAdapter() {
 		return null;
 	}
 

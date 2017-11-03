@@ -36,6 +36,8 @@ import CF.DeviceManagerOperations;
 import CF.DeviceOperations;
 import CF.DomainManager;
 import CF.DomainManagerOperations;
+import CF.EventChannelManager;
+import CF.EventChannelManagerOperations;
 import CF.ExecutableDevice;
 import CF.ExecutableDeviceOperations;
 import CF.File;
@@ -673,6 +675,26 @@ public class CfSwitch< T > extends Switch<T> {
 				result = casePropertyEmitterOperations(domainManagerOperations);
 			if (result == null)
 				result = casePropertySetOperations(domainManagerOperations);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CfPackage.EVENT_CHANNEL_MANAGER: {
+			EventChannelManager eventChannelManager = (EventChannelManager) theEObject;
+			T result = caseEventChannelManager(eventChannelManager);
+			if (result == null)
+				result = caseEventChannelManagerOperations(eventChannelManager);
+			if (result == null)
+				result = caseObject(eventChannelManager);
+			if (result == null)
+				result = caseIDLEntity(eventChannelManager);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CfPackage.EVENT_CHANNEL_MANAGER_OPERATIONS: {
+			EventChannelManagerOperations eventChannelManagerOperations = (EventChannelManagerOperations) theEObject;
+			T result = caseEventChannelManagerOperations(eventChannelManagerOperations);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1537,6 +1559,36 @@ public class CfSwitch< T > extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDomainManagerOperations(DomainManagerOperations object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event Channel Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event Channel Manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEventChannelManager(EventChannelManager object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event Channel Manager Operations</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event Channel Manager Operations</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEventChannelManagerOperations(EventChannelManagerOperations object) {
 		return null;
 	}
 

@@ -22,6 +22,9 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.omg.CORBA.portable.IDLEntity;
+import org.omg.CosEventChannelAdmin.EventChannel;
+import org.omg.CosEventComm.PushConsumer;
+import org.omg.CosEventComm.PushSupplier;
 import org.omg.CosNaming.NamingContextExt;
 
 import CF.AggregateDevice;
@@ -69,6 +72,7 @@ import CF.PortOperations;
 import CF.PortSupplier;
 import CF.PortSupplierOperations;
 import CF.PropertiesHolder;
+import CF.PropertyChangeListenerPackage.PropertyChangeEvent;
 import CF.PropertyEmitter;
 import CF.PropertyEmitterOperations;
 import CF.PropertyEmitterPackage.AlreadyInitialized;
@@ -98,6 +102,23 @@ import CF.DomainManagerPackage.InvalidIdentifier;
 import CF.DomainManagerPackage.NotConnected;
 import CF.DomainManagerPackage.RegisterError;
 import CF.DomainManagerPackage.UnregisterError;
+import CF.EventChannelInfoIteratorHolder;
+import CF.EventChannelManager;
+import CF.EventChannelManagerOperations;
+import CF.EventChannelManagerPackage.ChannelAlreadyExists;
+import CF.EventChannelManagerPackage.ChannelDoesNotExist;
+import CF.EventChannelManagerPackage.EventChannelInfoListHolder;
+import CF.EventChannelManagerPackage.EventChannelReg;
+import CF.EventChannelManagerPackage.EventRegistrantListHolder;
+import CF.EventChannelManagerPackage.EventRegistration;
+import CF.EventChannelManagerPackage.InvalidChannelName;
+import CF.EventChannelManagerPackage.OperationFailed;
+import CF.EventChannelManagerPackage.OperationNotAllowed;
+import CF.EventChannelManagerPackage.RegistrationAlreadyExists;
+import CF.EventChannelManagerPackage.RegistrationDoesNotExist;
+import CF.EventChannelManagerPackage.RegistrationsExists;
+import CF.EventChannelManagerPackage.ServiceUnavailable;
+import CF.EventRegistrantIteratorHolder;
 import CF.ExecutableDevicePackage.ExecuteFail;
 import CF.ExecutableDevicePackage.InvalidFunction;
 import CF.ExecutableDevicePackage.InvalidOptions;
@@ -279,6 +300,18 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EClass domainManagerOperationsEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eventChannelManagerEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eventChannelManagerOperationsEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -650,6 +683,96 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EDataType eventChannelInfoIteratorHolderEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType channelAlreadyExistsEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType channelDoesNotExistEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType eventChannelInfoListHolderEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType eventChannelRegEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType eventRegistrationEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType eventRegistrantListHolderEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType invalidChannelNameEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType operationFailedEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType operationNotAllowedEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType registrationAlreadyExistsEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType registrationDoesNotExistEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType registrationsExistsEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType serviceUnavailableEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType eventRegistrantIteratorHolderEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType invalidProcessEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -735,6 +858,12 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EDataType propertiesHolderEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType propertyChangeEventEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -862,6 +991,24 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EDataType unknownIdentifierEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType eventChannelEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType pushConsumerEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType pushSupplierEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1134,6 +1281,24 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 */
 	public EClass getDomainManagerOperations() {
 		return domainManagerOperationsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEventChannelManager() {
+		return eventChannelManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEventChannelManagerOperations() {
+		return eventChannelManagerOperationsEClass;
 	}
 
 	/**
@@ -1701,6 +1866,141 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getEventChannelInfoIteratorHolder() {
+		return eventChannelInfoIteratorHolderEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getChannelAlreadyExists() {
+		return channelAlreadyExistsEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getChannelDoesNotExist() {
+		return channelDoesNotExistEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getEventChannelInfoListHolder() {
+		return eventChannelInfoListHolderEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getEventChannelReg() {
+		return eventChannelRegEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getEventRegistration() {
+		return eventRegistrationEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getEventRegistrantListHolder() {
+		return eventRegistrantListHolderEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getInvalidChannelName() {
+		return invalidChannelNameEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getOperationFailed() {
+		return operationFailedEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getOperationNotAllowed() {
+		return operationNotAllowedEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getRegistrationAlreadyExists() {
+		return registrationAlreadyExistsEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getRegistrationDoesNotExist() {
+		return registrationDoesNotExistEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getRegistrationsExists() {
+		return registrationsExistsEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getServiceUnavailable() {
+		return serviceUnavailableEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getEventRegistrantIteratorHolder() {
+		return eventRegistrantIteratorHolderEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getInvalidProcess() {
 		return invalidProcessEDataType;
 	}
@@ -1829,6 +2129,15 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 */
 	public EDataType getPropertiesHolder() {
 		return propertiesHolderEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getPropertyChangeEvent() {
+		return propertyChangeEventEDataType;
 	}
 
 	/**
@@ -2025,6 +2334,33 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getEventChannel() {
+		return eventChannelEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getPushConsumer() {
+		return pushConsumerEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getPushSupplier() {
+		return pushSupplierEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * @since 4.0
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2105,6 +2441,10 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		domainManagerEClass = createEClass(DOMAIN_MANAGER);
 
 		domainManagerOperationsEClass = createEClass(DOMAIN_MANAGER_OPERATIONS);
+
+		eventChannelManagerEClass = createEClass(EVENT_CHANNEL_MANAGER);
+
+		eventChannelManagerOperationsEClass = createEClass(EVENT_CHANNEL_MANAGER_OPERATIONS);
 
 		executableDeviceEClass = createEClass(EXECUTABLE_DEVICE);
 
@@ -2198,6 +2538,21 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		invalidEventChannelNameEDataType = createEDataType(INVALID_EVENT_CHANNEL_NAME);
 		alreadyConnectedEDataType = createEDataType(ALREADY_CONNECTED);
 		notConnectedEDataType = createEDataType(NOT_CONNECTED);
+		eventChannelInfoIteratorHolderEDataType = createEDataType(EVENT_CHANNEL_INFO_ITERATOR_HOLDER);
+		channelAlreadyExistsEDataType = createEDataType(CHANNEL_ALREADY_EXISTS);
+		channelDoesNotExistEDataType = createEDataType(CHANNEL_DOES_NOT_EXIST);
+		eventChannelInfoListHolderEDataType = createEDataType(EVENT_CHANNEL_INFO_LIST_HOLDER);
+		eventChannelRegEDataType = createEDataType(EVENT_CHANNEL_REG);
+		eventRegistrationEDataType = createEDataType(EVENT_REGISTRATION);
+		eventRegistrantListHolderEDataType = createEDataType(EVENT_REGISTRANT_LIST_HOLDER);
+		invalidChannelNameEDataType = createEDataType(INVALID_CHANNEL_NAME);
+		operationFailedEDataType = createEDataType(OPERATION_FAILED);
+		operationNotAllowedEDataType = createEDataType(OPERATION_NOT_ALLOWED);
+		registrationAlreadyExistsEDataType = createEDataType(REGISTRATION_ALREADY_EXISTS);
+		registrationDoesNotExistEDataType = createEDataType(REGISTRATION_DOES_NOT_EXIST);
+		registrationsExistsEDataType = createEDataType(REGISTRATIONS_EXISTS);
+		serviceUnavailableEDataType = createEDataType(SERVICE_UNAVAILABLE);
+		eventRegistrantIteratorHolderEDataType = createEDataType(EVENT_REGISTRANT_ITERATOR_HOLDER);
 		invalidProcessEDataType = createEDataType(INVALID_PROCESS);
 		invalidFunctionEDataType = createEDataType(INVALID_FUNCTION);
 		invalidParametersEDataType = createEDataType(INVALID_PARAMETERS);
@@ -2228,6 +2583,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		portInfoTypeEDataType = createEDataType(PORT_INFO_TYPE);
 		unknownPortEDataType = createEDataType(UNKNOWN_PORT);
 		propertiesHolderEDataType = createEDataType(PROPERTIES_HOLDER);
+		propertyChangeEventEDataType = createEDataType(PROPERTY_CHANGE_EVENT);
 		alreadyInitializedEDataType = createEDataType(ALREADY_INITIALIZED);
 		invalidConfigurationEDataType = createEDataType(INVALID_CONFIGURATION);
 		partialConfigurationEDataType = createEDataType(PARTIAL_CONFIGURATION);
@@ -2239,6 +2595,9 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		stopErrorEDataType = createEDataType(STOP_ERROR);
 		unknownTestEDataType = createEDataType(UNKNOWN_TEST);
 		unknownIdentifierEDataType = createEDataType(UNKNOWN_IDENTIFIER);
+		eventChannelEDataType = createEDataType(EVENT_CHANNEL);
+		pushConsumerEDataType = createEDataType(PUSH_CONSUMER);
+		pushSupplierEDataType = createEDataType(PUSH_SUPPLIER);
 	}
 
 	/**
@@ -2311,6 +2670,9 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		domainManagerEClass.getESuperTypes().add(this.getPropertyEmitter());
 		domainManagerEClass.getESuperTypes().add(this.getIDLEntity());
 		domainManagerOperationsEClass.getESuperTypes().add(this.getPropertyEmitterOperations());
+		eventChannelManagerEClass.getESuperTypes().add(this.getEventChannelManagerOperations());
+		eventChannelManagerEClass.getESuperTypes().add(this.getObject());
+		eventChannelManagerEClass.getESuperTypes().add(this.getIDLEntity());
 		executableDeviceEClass.getESuperTypes().add(this.getExecutableDeviceOperations());
 		executableDeviceEClass.getESuperTypes().add(this.getLoadableDevice());
 		executableDeviceEClass.getESuperTypes().add(this.getIDLEntity());
@@ -2565,6 +2927,65 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		addEParameter(op, this.getDomainManager(), "unregisteringDomainManager", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getInvalidObjectReference());
 		addEException(op, this.getUnregisterError());
+
+		initEClass(eventChannelManagerEClass, EventChannelManager.class, "EventChannelManager", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(eventChannelManagerOperationsEClass, EventChannelManagerOperations.class, "EventChannelManagerOperations", IS_ABSTRACT, IS_INTERFACE,
+			!IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(eventChannelManagerOperationsEClass, this.getEventChannel(), "create", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "channel_name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getChannelAlreadyExists());
+		addEException(op, this.getOperationNotAllowed());
+		addEException(op, this.getOperationFailed());
+		addEException(op, this.getServiceUnavailable());
+
+		op = addEOperation(eventChannelManagerOperationsEClass, this.getEventChannel(), "createForRegistrations", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "channel_name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getChannelAlreadyExists());
+		addEException(op, this.getOperationNotAllowed());
+		addEException(op, this.getOperationFailed());
+		addEException(op, this.getServiceUnavailable());
+
+		op = addEOperation(eventChannelManagerOperationsEClass, null, "markForRegistrations", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "channel_name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getChannelDoesNotExist());
+		addEException(op, this.getOperationNotAllowed());
+		addEException(op, this.getOperationFailed());
+		addEException(op, this.getServiceUnavailable());
+
+		op = addEOperation(eventChannelManagerOperationsEClass, null, "release", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "channel_name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getChannelDoesNotExist());
+		addEException(op, this.getRegistrationsExists());
+		addEException(op, this.getOperationNotAllowed());
+		addEException(op, this.getOperationFailed());
+		addEException(op, this.getServiceUnavailable());
+
+		op = addEOperation(eventChannelManagerOperationsEClass, this.getEventChannelReg(), "registerResource", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEventRegistration(), "req", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getInvalidChannelName());
+		addEException(op, this.getRegistrationAlreadyExists());
+		addEException(op, this.getOperationFailed());
+		addEException(op, this.getOperationNotAllowed());
+		addEException(op, this.getServiceUnavailable());
+
+		op = addEOperation(eventChannelManagerOperationsEClass, null, "unregister", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEventRegistration(), "reg", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getChannelDoesNotExist());
+		addEException(op, this.getRegistrationDoesNotExist());
+		addEException(op, this.getServiceUnavailable());
+
+		op = addEOperation(eventChannelManagerOperationsEClass, null, "listChannels", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "how_many", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEventChannelInfoListHolder(), "elist", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEventChannelInfoIteratorHolder(), "eiter", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(eventChannelManagerOperationsEClass, null, "listRegistrants", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "channel_name", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "how_many", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEventRegistrantListHolder(), "rlist", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEventRegistrantIteratorHolder(), "riter", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(executableDeviceEClass, ExecutableDevice.class, "ExecutableDevice", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
@@ -2892,6 +3313,27 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(alreadyConnectedEDataType, AlreadyConnected.class, "AlreadyConnected", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(notConnectedEDataType, NotConnected.class, "NotConnected", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eventChannelInfoIteratorHolderEDataType, EventChannelInfoIteratorHolder.class, "EventChannelInfoIteratorHolder", IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(channelAlreadyExistsEDataType, ChannelAlreadyExists.class, "ChannelAlreadyExists", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(channelDoesNotExistEDataType, ChannelDoesNotExist.class, "ChannelDoesNotExist", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eventChannelInfoListHolderEDataType, EventChannelInfoListHolder.class, "EventChannelInfoListHolder", IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eventChannelRegEDataType, EventChannelReg.class, "EventChannelReg", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eventRegistrationEDataType, EventRegistration.class, "EventRegistration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eventRegistrantListHolderEDataType, EventRegistrantListHolder.class, "EventRegistrantListHolder", IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(invalidChannelNameEDataType, InvalidChannelName.class, "InvalidChannelName", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(operationFailedEDataType, OperationFailed.class, "OperationFailed", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(operationNotAllowedEDataType, OperationNotAllowed.class, "OperationNotAllowed", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(registrationAlreadyExistsEDataType, RegistrationAlreadyExists.class, "RegistrationAlreadyExists", IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(registrationDoesNotExistEDataType, RegistrationDoesNotExist.class, "RegistrationDoesNotExist", IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(registrationsExistsEDataType, RegistrationsExists.class, "RegistrationsExists", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(serviceUnavailableEDataType, ServiceUnavailable.class, "ServiceUnavailable", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eventRegistrantIteratorHolderEDataType, EventRegistrantIteratorHolder.class, "EventRegistrantIteratorHolder", IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidProcessEDataType, InvalidProcess.class, "InvalidProcess", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidFunctionEDataType, InvalidFunction.class, "InvalidFunction", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidParametersEDataType, InvalidParameters.class, "InvalidParameters", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -2925,6 +3367,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEDataType(portInfoTypeEDataType, PortInfoType.class, "PortInfoType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownPortEDataType, UnknownPort.class, "UnknownPort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(propertiesHolderEDataType, PropertiesHolder.class, "PropertiesHolder", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(propertyChangeEventEDataType, PropertyChangeEvent.class, "PropertyChangeEvent", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(alreadyInitializedEDataType, AlreadyInitialized.class, "AlreadyInitialized", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidConfigurationEDataType, InvalidConfiguration.class, "InvalidConfiguration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(partialConfigurationEDataType, PartialConfiguration.class, "PartialConfiguration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -2936,6 +3379,9 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEDataType(stopErrorEDataType, StopError.class, "StopError", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownTestEDataType, UnknownTest.class, "UnknownTest", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownIdentifierEDataType, UnknownIdentifier.class, "UnknownIdentifier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eventChannelEDataType, EventChannel.class, "EventChannel", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(pushConsumerEDataType, PushConsumer.class, "PushConsumer", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(pushSupplierEDataType, PushSupplier.class, "PushSupplier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

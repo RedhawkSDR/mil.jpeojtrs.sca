@@ -22,6 +22,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.omg.CORBA.ORB;
+import org.omg.CosEventChannelAdmin.EventChannel;
+import org.omg.CosEventComm.PushConsumer;
+import org.omg.CosEventComm.PushSupplier;
 import org.omg.CosNaming.NamingContextExt;
 
 import CF.DataType;
@@ -32,6 +35,7 @@ import CF.InvalidObjectReference;
 import CF.InvalidProfile;
 import CF.OctetSequenceHolder;
 import CF.PropertiesHolder;
+import CF.PropertyChangeListenerPackage.PropertyChangeEvent;
 import CF.PropertyEmitterPackage.AlreadyInitialized;
 import CF.UnknownProperties;
 import CF.ApplicationFactoryPackage.CreateApplicationError;
@@ -50,6 +54,21 @@ import CF.DomainManagerPackage.InvalidIdentifier;
 import CF.DomainManagerPackage.NotConnected;
 import CF.DomainManagerPackage.RegisterError;
 import CF.DomainManagerPackage.UnregisterError;
+import CF.EventChannelInfoIteratorHolder;
+import CF.EventChannelManagerPackage.ChannelAlreadyExists;
+import CF.EventChannelManagerPackage.ChannelDoesNotExist;
+import CF.EventChannelManagerPackage.EventChannelInfoListHolder;
+import CF.EventChannelManagerPackage.EventChannelReg;
+import CF.EventChannelManagerPackage.EventRegistrantListHolder;
+import CF.EventChannelManagerPackage.EventRegistration;
+import CF.EventChannelManagerPackage.InvalidChannelName;
+import CF.EventChannelManagerPackage.OperationFailed;
+import CF.EventChannelManagerPackage.OperationNotAllowed;
+import CF.EventChannelManagerPackage.RegistrationAlreadyExists;
+import CF.EventChannelManagerPackage.RegistrationDoesNotExist;
+import CF.EventChannelManagerPackage.RegistrationsExists;
+import CF.EventChannelManagerPackage.ServiceUnavailable;
+import CF.EventRegistrantIteratorHolder;
 import CF.ExecutableDevicePackage.ExecuteFail;
 import CF.ExecutableDevicePackage.InvalidFunction;
 import CF.ExecutableDevicePackage.InvalidOptions;
@@ -184,6 +203,36 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createAlreadyConnectedFromString(eDataType, initialValue);
 		case CfPackage.NOT_CONNECTED:
 			return createNotConnectedFromString(eDataType, initialValue);
+		case CfPackage.EVENT_CHANNEL_INFO_ITERATOR_HOLDER:
+			return createEventChannelInfoIteratorHolderFromString(eDataType, initialValue);
+		case CfPackage.CHANNEL_ALREADY_EXISTS:
+			return createChannelAlreadyExistsFromString(eDataType, initialValue);
+		case CfPackage.CHANNEL_DOES_NOT_EXIST:
+			return createChannelDoesNotExistFromString(eDataType, initialValue);
+		case CfPackage.EVENT_CHANNEL_INFO_LIST_HOLDER:
+			return createEventChannelInfoListHolderFromString(eDataType, initialValue);
+		case CfPackage.EVENT_CHANNEL_REG:
+			return createEventChannelRegFromString(eDataType, initialValue);
+		case CfPackage.EVENT_REGISTRATION:
+			return createEventRegistrationFromString(eDataType, initialValue);
+		case CfPackage.EVENT_REGISTRANT_LIST_HOLDER:
+			return createEventRegistrantListHolderFromString(eDataType, initialValue);
+		case CfPackage.INVALID_CHANNEL_NAME:
+			return createInvalidChannelNameFromString(eDataType, initialValue);
+		case CfPackage.OPERATION_FAILED:
+			return createOperationFailedFromString(eDataType, initialValue);
+		case CfPackage.OPERATION_NOT_ALLOWED:
+			return createOperationNotAllowedFromString(eDataType, initialValue);
+		case CfPackage.REGISTRATION_ALREADY_EXISTS:
+			return createRegistrationAlreadyExistsFromString(eDataType, initialValue);
+		case CfPackage.REGISTRATION_DOES_NOT_EXIST:
+			return createRegistrationDoesNotExistFromString(eDataType, initialValue);
+		case CfPackage.REGISTRATIONS_EXISTS:
+			return createRegistrationsExistsFromString(eDataType, initialValue);
+		case CfPackage.SERVICE_UNAVAILABLE:
+			return createServiceUnavailableFromString(eDataType, initialValue);
+		case CfPackage.EVENT_REGISTRANT_ITERATOR_HOLDER:
+			return createEventRegistrantIteratorHolderFromString(eDataType, initialValue);
 		case CfPackage.INVALID_PROCESS:
 			return createInvalidProcessFromString(eDataType, initialValue);
 		case CfPackage.INVALID_FUNCTION:
@@ -244,6 +293,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createUnknownPortFromString(eDataType, initialValue);
 		case CfPackage.PROPERTIES_HOLDER:
 			return createPropertiesHolderFromString(eDataType, initialValue);
+		case CfPackage.PROPERTY_CHANGE_EVENT:
+			return createPropertyChangeEventFromString(eDataType, initialValue);
 		case CfPackage.ALREADY_INITIALIZED:
 			return createAlreadyInitializedFromString(eDataType, initialValue);
 		case CfPackage.INVALID_CONFIGURATION:
@@ -266,6 +317,12 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createUnknownTestFromString(eDataType, initialValue);
 		case CfPackage.UNKNOWN_IDENTIFIER:
 			return createUnknownIdentifierFromString(eDataType, initialValue);
+		case CfPackage.EVENT_CHANNEL:
+			return createEventChannelFromString(eDataType, initialValue);
+		case CfPackage.PUSH_CONSUMER:
+			return createPushConsumerFromString(eDataType, initialValue);
+		case CfPackage.PUSH_SUPPLIER:
+			return createPushSupplierFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -323,6 +380,36 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertAlreadyConnectedToString(eDataType, instanceValue);
 		case CfPackage.NOT_CONNECTED:
 			return convertNotConnectedToString(eDataType, instanceValue);
+		case CfPackage.EVENT_CHANNEL_INFO_ITERATOR_HOLDER:
+			return convertEventChannelInfoIteratorHolderToString(eDataType, instanceValue);
+		case CfPackage.CHANNEL_ALREADY_EXISTS:
+			return convertChannelAlreadyExistsToString(eDataType, instanceValue);
+		case CfPackage.CHANNEL_DOES_NOT_EXIST:
+			return convertChannelDoesNotExistToString(eDataType, instanceValue);
+		case CfPackage.EVENT_CHANNEL_INFO_LIST_HOLDER:
+			return convertEventChannelInfoListHolderToString(eDataType, instanceValue);
+		case CfPackage.EVENT_CHANNEL_REG:
+			return convertEventChannelRegToString(eDataType, instanceValue);
+		case CfPackage.EVENT_REGISTRATION:
+			return convertEventRegistrationToString(eDataType, instanceValue);
+		case CfPackage.EVENT_REGISTRANT_LIST_HOLDER:
+			return convertEventRegistrantListHolderToString(eDataType, instanceValue);
+		case CfPackage.INVALID_CHANNEL_NAME:
+			return convertInvalidChannelNameToString(eDataType, instanceValue);
+		case CfPackage.OPERATION_FAILED:
+			return convertOperationFailedToString(eDataType, instanceValue);
+		case CfPackage.OPERATION_NOT_ALLOWED:
+			return convertOperationNotAllowedToString(eDataType, instanceValue);
+		case CfPackage.REGISTRATION_ALREADY_EXISTS:
+			return convertRegistrationAlreadyExistsToString(eDataType, instanceValue);
+		case CfPackage.REGISTRATION_DOES_NOT_EXIST:
+			return convertRegistrationDoesNotExistToString(eDataType, instanceValue);
+		case CfPackage.REGISTRATIONS_EXISTS:
+			return convertRegistrationsExistsToString(eDataType, instanceValue);
+		case CfPackage.SERVICE_UNAVAILABLE:
+			return convertServiceUnavailableToString(eDataType, instanceValue);
+		case CfPackage.EVENT_REGISTRANT_ITERATOR_HOLDER:
+			return convertEventRegistrantIteratorHolderToString(eDataType, instanceValue);
 		case CfPackage.INVALID_PROCESS:
 			return convertInvalidProcessToString(eDataType, instanceValue);
 		case CfPackage.INVALID_FUNCTION:
@@ -383,6 +470,8 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertUnknownPortToString(eDataType, instanceValue);
 		case CfPackage.PROPERTIES_HOLDER:
 			return convertPropertiesHolderToString(eDataType, instanceValue);
+		case CfPackage.PROPERTY_CHANGE_EVENT:
+			return convertPropertyChangeEventToString(eDataType, instanceValue);
 		case CfPackage.ALREADY_INITIALIZED:
 			return convertAlreadyInitializedToString(eDataType, instanceValue);
 		case CfPackage.INVALID_CONFIGURATION:
@@ -405,6 +494,12 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertUnknownTestToString(eDataType, instanceValue);
 		case CfPackage.UNKNOWN_IDENTIFIER:
 			return convertUnknownIdentifierToString(eDataType, instanceValue);
+		case CfPackage.EVENT_CHANNEL:
+			return convertEventChannelToString(eDataType, instanceValue);
+		case CfPackage.PUSH_CONSUMER:
+			return convertPushConsumerToString(eDataType, instanceValue);
+		case CfPackage.PUSH_SUPPLIER:
+			return convertPushSupplierToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -886,6 +981,276 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EventChannelInfoIteratorHolder createEventChannelInfoIteratorHolderFromString(EDataType eDataType, String initialValue) {
+		return (EventChannelInfoIteratorHolder) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEventChannelInfoIteratorHolderToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChannelAlreadyExists createChannelAlreadyExistsFromString(EDataType eDataType, String initialValue) {
+		return (ChannelAlreadyExists) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertChannelAlreadyExistsToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChannelDoesNotExist createChannelDoesNotExistFromString(EDataType eDataType, String initialValue) {
+		return (ChannelDoesNotExist) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertChannelDoesNotExistToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventChannelInfoListHolder createEventChannelInfoListHolderFromString(EDataType eDataType, String initialValue) {
+		return (EventChannelInfoListHolder) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEventChannelInfoListHolderToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventChannelReg createEventChannelRegFromString(EDataType eDataType, String initialValue) {
+		return (EventChannelReg) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEventChannelRegToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventRegistration createEventRegistrationFromString(EDataType eDataType, String initialValue) {
+		return (EventRegistration) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEventRegistrationToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventRegistrantListHolder createEventRegistrantListHolderFromString(EDataType eDataType, String initialValue) {
+		return (EventRegistrantListHolder) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEventRegistrantListHolderToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InvalidChannelName createInvalidChannelNameFromString(EDataType eDataType, String initialValue) {
+		return (InvalidChannelName) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertInvalidChannelNameToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OperationFailed createOperationFailedFromString(EDataType eDataType, String initialValue) {
+		return (OperationFailed) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOperationFailedToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OperationNotAllowed createOperationNotAllowedFromString(EDataType eDataType, String initialValue) {
+		return (OperationNotAllowed) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOperationNotAllowedToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RegistrationAlreadyExists createRegistrationAlreadyExistsFromString(EDataType eDataType, String initialValue) {
+		return (RegistrationAlreadyExists) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRegistrationAlreadyExistsToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RegistrationDoesNotExist createRegistrationDoesNotExistFromString(EDataType eDataType, String initialValue) {
+		return (RegistrationDoesNotExist) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRegistrationDoesNotExistToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RegistrationsExists createRegistrationsExistsFromString(EDataType eDataType, String initialValue) {
+		return (RegistrationsExists) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRegistrationsExistsToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ServiceUnavailable createServiceUnavailableFromString(EDataType eDataType, String initialValue) {
+		return (ServiceUnavailable) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertServiceUnavailableToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventRegistrantIteratorHolder createEventRegistrantIteratorHolderFromString(EDataType eDataType, String initialValue) {
+		return (EventRegistrantIteratorHolder) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEventRegistrantIteratorHolderToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public InvalidProcess createInvalidProcessFromString(EDataType eDataType, String initialValue) {
 		return (InvalidProcess) super.createFromString(eDataType, initialValue);
 	}
@@ -1148,6 +1513,24 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	 * @generated
 	 */
 	public String convertPropertiesHolderToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PropertyChangeEvent createPropertyChangeEventFromString(EDataType eDataType, String initialValue) {
+		return (PropertyChangeEvent) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPropertyChangeEventToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
@@ -1532,6 +1915,60 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	 * @generated
 	 */
 	public String convertUnknownIdentifierToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventChannel createEventChannelFromString(EDataType eDataType, String initialValue) {
+		return (EventChannel) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEventChannelToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PushConsumer createPushConsumerFromString(EDataType eDataType, String initialValue) {
+		return (PushConsumer) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPushConsumerToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PushSupplier createPushSupplierFromString(EDataType eDataType, String initialValue) {
+		return (PushSupplier) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPushSupplierToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 
