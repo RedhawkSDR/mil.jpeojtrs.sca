@@ -35,6 +35,9 @@ import CF.AggregateLoadableDevice;
 import CF.AggregateLoadableDeviceOperations;
 import CF.AggregatePlainDevice;
 import CF.AggregatePlainDeviceOperations;
+import CF.AllocationManager;
+import CF.AllocationManagerOperations;
+import CF.AllocationManagerPackage.AllocationStatusType;
 import CF.Application;
 import CF.ApplicationFactory;
 import CF.ApplicationFactoryOperations;
@@ -227,6 +230,18 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EClass aggregatePlainDeviceOperationsEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass allocationManagerEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass allocationManagerOperationsEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -503,6 +518,12 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EClass testableObjectOperationsEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType allocationStatusTypeEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1173,6 +1194,24 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAllocationManager() {
+		return allocationManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAllocationManagerOperations() {
+		return allocationManagerOperationsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getApplication() {
 		return applicationEClass;
 	}
@@ -1590,6 +1629,15 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 */
 	public EClass getTestableObjectOperations() {
 		return testableObjectOperationsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getAllocationStatusType() {
+		return allocationStatusTypeEDataType;
 	}
 
 	/**
@@ -2382,10 +2430,6 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		objectEClass = createEClass(OBJECT);
-
-		idlEntityEClass = createEClass(IDL_ENTITY);
-
 		aggregateDeviceEClass = createEClass(AGGREGATE_DEVICE);
 
 		aggregateDeviceOperationsEClass = createEClass(AGGREGATE_DEVICE_OPERATIONS);
@@ -2401,6 +2445,10 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		aggregatePlainDeviceEClass = createEClass(AGGREGATE_PLAIN_DEVICE);
 
 		aggregatePlainDeviceOperationsEClass = createEClass(AGGREGATE_PLAIN_DEVICE_OPERATIONS);
+
+		allocationManagerEClass = createEClass(ALLOCATION_MANAGER);
+
+		allocationManagerOperationsEClass = createEClass(ALLOCATION_MANAGER_OPERATIONS);
 
 		applicationEClass = createEClass(APPLICATION);
 
@@ -2442,6 +2490,8 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 		fileSystemOperationsEClass = createEClass(FILE_SYSTEM_OPERATIONS);
 
+		idlEntityEClass = createEClass(IDL_ENTITY);
+
 		lifeCycleEClass = createEClass(LIFE_CYCLE);
 
 		lifeCycleOperationsEClass = createEClass(LIFE_CYCLE_OPERATIONS);
@@ -2461,6 +2511,8 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		logConfigurationEClass = createEClass(LOG_CONFIGURATION);
 
 		logConfigurationOperationsEClass = createEClass(LOG_CONFIGURATION_OPERATIONS);
+
+		objectEClass = createEClass(OBJECT);
 
 		portEClass = createEClass(PORT);
 
@@ -2495,26 +2547,19 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		testableObjectOperationsEClass = createEClass(TESTABLE_OBJECT_OPERATIONS);
 
 		// Create data types
-		eventChannelEDataType = createEDataType(EVENT_CHANNEL);
-		namingContextExtEDataType = createEDataType(NAMING_CONTEXT_EXT);
-		pushConsumerEDataType = createEDataType(PUSH_CONSUMER);
-		pushSupplierEDataType = createEDataType(PUSH_SUPPLIER);
-		orbEDataType = createEDataType(ORB);
-		invalidObjectReferenceEDataType = createEDataType(INVALID_OBJECT_REFERENCE);
+		allocationStatusTypeEDataType = createEDataType(ALLOCATION_STATUS_TYPE);
 		createApplicationInsufficientCapacityErrorEDataType = createEDataType(CREATE_APPLICATION_INSUFFICIENT_CAPACITY_ERROR);
-		deviceAssignmentTypeArrayEDataType = createEDataType(DEVICE_ASSIGNMENT_TYPE_ARRAY);
 		createApplicationErrorEDataType = createEDataType(CREATE_APPLICATION_ERROR);
 		createApplicationRequestErrorEDataType = createEDataType(CREATE_APPLICATION_REQUEST_ERROR);
 		invalidInitConfigurationEDataType = createEDataType(INVALID_INIT_CONFIGURATION);
 		dataTypeEDataType = createEDataType(DATA_TYPE);
 		dataTypeArrayEDataType = createEDataType(DATA_TYPE_ARRAY);
+		deviceAssignmentTypeArrayEDataType = createEDataType(DEVICE_ASSIGNMENT_TYPE_ARRAY);
 		invalidCapacityEDataType = createEDataType(INVALID_CAPACITY);
 		invalidStateEDataType = createEDataType(INVALID_STATE);
-		invalidProfileEDataType = createEDataType(INVALID_PROFILE);
 		deviceManagerNotRegisteredEDataType = createEDataType(DEVICE_MANAGER_NOT_REGISTERED);
 		registerErrorEDataType = createEDataType(REGISTER_ERROR);
 		unregisterErrorEDataType = createEDataType(UNREGISTER_ERROR);
-		invalidFileNameEDataType = createEDataType(INVALID_FILE_NAME);
 		applicationInstallationErrorEDataType = createEDataType(APPLICATION_INSTALLATION_ERROR);
 		applicationAlreadyInstalledEDataType = createEDataType(APPLICATION_ALREADY_INSTALLED);
 		invalidDomMgrIdentifierEDataType = createEDataType(INVALID_DOM_MGR_IDENTIFIER);
@@ -2548,22 +2593,27 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		mountPointAlreadyExistsEDataType = createEDataType(MOUNT_POINT_ALREADY_EXISTS);
 		nonExistentMountEDataType = createEDataType(NON_EXISTENT_MOUNT);
 		mountTypeArrayEDataType = createEDataType(MOUNT_TYPE_ARRAY);
-		octetSequenceHolderEDataType = createEDataType(OCTET_SEQUENCE_HOLDER);
 		ioExceptionEDataType = createEDataType(IO_EXCEPTION);
 		fileExceptionEDataType = createEDataType(FILE_EXCEPTION);
 		invalidFilePointerEDataType = createEDataType(INVALID_FILE_POINTER);
 		fileInformationTypeArrayEDataType = createEDataType(FILE_INFORMATION_TYPE_ARRAY);
-		propertiesHolderEDataType = createEDataType(PROPERTIES_HOLDER);
 		unknownFileSystemPropertiesEDataType = createEDataType(UNKNOWN_FILE_SYSTEM_PROPERTIES);
+		invalidFileNameEDataType = createEDataType(INVALID_FILE_NAME);
+		invalidIdentifierEDataType = createEDataType(INVALID_IDENTIFIER);
+		invalidObjectReferenceEDataType = createEDataType(INVALID_OBJECT_REFERENCE);
+		invalidProfileEDataType = createEDataType(INVALID_PROFILE);
 		initializeErrorEDataType = createEDataType(INITIALIZE_ERROR);
 		releaseErrorEDataType = createEDataType(RELEASE_ERROR);
 		loadTypeEDataType = createEDataType(LOAD_TYPE);
 		invalidLoadKindEDataType = createEDataType(INVALID_LOAD_KIND);
 		loadFailEDataType = createEDataType(LOAD_FAIL);
+		logEventArrayEDataType = createEDataType(LOG_EVENT_ARRAY);
+		octetSequenceHolderEDataType = createEDataType(OCTET_SEQUENCE_HOLDER);
 		invalidPortEDataType = createEDataType(INVALID_PORT);
 		occupiedPortEDataType = createEDataType(OCCUPIED_PORT);
 		portInfoTypeEDataType = createEDataType(PORT_INFO_TYPE);
 		unknownPortEDataType = createEDataType(UNKNOWN_PORT);
+		propertiesHolderEDataType = createEDataType(PROPERTIES_HOLDER);
 		propertyChangeEventEDataType = createEDataType(PROPERTY_CHANGE_EVENT);
 		alreadyInitializedEDataType = createEDataType(ALREADY_INITIALIZED);
 		invalidConfigurationEDataType = createEDataType(INVALID_CONFIGURATION);
@@ -2577,8 +2627,11 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		unknownTestEDataType = createEDataType(UNKNOWN_TEST);
 		unknownIdentifierEDataType = createEDataType(UNKNOWN_IDENTIFIER);
 		utcTimeEDataType = createEDataType(UTC_TIME);
-		logEventArrayEDataType = createEDataType(LOG_EVENT_ARRAY);
-		invalidIdentifierEDataType = createEDataType(INVALID_IDENTIFIER);
+		orbEDataType = createEDataType(ORB);
+		eventChannelEDataType = createEDataType(EVENT_CHANNEL);
+		pushConsumerEDataType = createEDataType(PUSH_CONSUMER);
+		pushSupplierEDataType = createEDataType(PUSH_SUPPLIER);
+		namingContextExtEDataType = createEDataType(NAMING_CONTEXT_EXT);
 	}
 
 	/**
@@ -2628,6 +2681,9 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		aggregatePlainDeviceEClass.getESuperTypes().add(this.getAggregateDevice());
 		aggregatePlainDeviceOperationsEClass.getESuperTypes().add(this.getDeviceOperations());
 		aggregatePlainDeviceOperationsEClass.getESuperTypes().add(this.getAggregateDeviceOperations());
+		allocationManagerEClass.getESuperTypes().add(this.getAllocationManagerOperations());
+		allocationManagerEClass.getESuperTypes().add(this.getObject());
+		allocationManagerEClass.getESuperTypes().add(this.getIDLEntity());
 		applicationEClass.getESuperTypes().add(this.getApplicationOperations());
 		applicationEClass.getESuperTypes().add(this.getResource());
 		applicationEClass.getESuperTypes().add(this.getIDLEntity());
@@ -2719,10 +2775,6 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		testableObjectEClass.getESuperTypes().add(this.getIDLEntity());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(objectEClass, org.omg.CORBA.Object.class, "Object", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(idlEntityEClass, IDLEntity.class, "IDLEntity", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(aggregateDeviceEClass, AggregateDevice.class, "AggregateDevice", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(aggregateDeviceOperationsEClass, AggregateDeviceOperations.class, "AggregateDeviceOperations", IS_ABSTRACT, IS_INTERFACE,
@@ -2751,6 +2803,11 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEClass(aggregatePlainDeviceEClass, AggregatePlainDevice.class, "AggregatePlainDevice", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(aggregatePlainDeviceOperationsEClass, AggregatePlainDeviceOperations.class, "AggregatePlainDeviceOperations", IS_ABSTRACT, IS_INTERFACE,
+			!IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(allocationManagerEClass, AllocationManager.class, "AllocationManager", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(allocationManagerOperationsEClass, AllocationManagerOperations.class, "AllocationManagerOperations", IS_ABSTRACT, IS_INTERFACE,
 			!IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(applicationEClass, Application.class, "Application", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
@@ -3117,6 +3174,8 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		addEParameter(op, this.getPropertiesHolder(), "fileSystemProperties", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEException(op, this.getUnknownFileSystemProperties());
 
+		initEClass(idlEntityEClass, IDLEntity.class, "IDLEntity", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(lifeCycleEClass, LifeCycle.class, "LifeCycle", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(lifeCycleOperationsEClass, LifeCycleOperations.class, "LifeCycleOperations", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
@@ -3184,6 +3243,8 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 		op = addEOperation(logConfigurationOperationsEClass, null, "setLogConfigURL", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "config_url", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(objectEClass, org.omg.CORBA.Object.class, "Object", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(portEClass, Port.class, "Port", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
@@ -3288,16 +3349,9 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		addEException(op, this.getUnknownProperties());
 
 		// Initialize data types
-		initEDataType(eventChannelEDataType, EventChannel.class, "EventChannel", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(namingContextExtEDataType, NamingContextExt.class, "NamingContextExt", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(pushConsumerEDataType, PushConsumer.class, "PushConsumer", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(pushSupplierEDataType, PushSupplier.class, "PushSupplier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(orbEDataType, org.omg.CORBA.ORB.class, "ORB", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(invalidObjectReferenceEDataType, InvalidObjectReference.class, "InvalidObjectReference", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(allocationStatusTypeEDataType, AllocationStatusType.class, "AllocationStatusType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(createApplicationInsufficientCapacityErrorEDataType, CreateApplicationInsufficientCapacityError.class,
 			"CreateApplicationInsufficientCapacityError", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(deviceAssignmentTypeArrayEDataType, DeviceAssignmentType[].class, "DeviceAssignmentTypeArray", IS_SERIALIZABLE,
-			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(createApplicationErrorEDataType, CreateApplicationError.class, "CreateApplicationError", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(createApplicationRequestErrorEDataType, CreateApplicationRequestError.class, "CreateApplicationRequestError", IS_SERIALIZABLE,
 			!IS_GENERATED_INSTANCE_CLASS);
@@ -3305,14 +3359,14 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(dataTypeEDataType, DataType.class, "DataType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(dataTypeArrayEDataType, DataType[].class, "DataTypeArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(deviceAssignmentTypeArrayEDataType, DeviceAssignmentType[].class, "DeviceAssignmentTypeArray", IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidCapacityEDataType, InvalidCapacity.class, "InvalidCapacity", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidStateEDataType, InvalidState.class, "InvalidState", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(invalidProfileEDataType, InvalidProfile.class, "InvalidProfile", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(deviceManagerNotRegisteredEDataType, DeviceManagerNotRegistered.class, "DeviceManagerNotRegistered", IS_SERIALIZABLE,
 			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(registerErrorEDataType, RegisterError.class, "RegisterError", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unregisterErrorEDataType, UnregisterError.class, "UnregisterError", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(invalidFileNameEDataType, InvalidFileName.class, "InvalidFileName", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(applicationInstallationErrorEDataType, ApplicationInstallationError.class, "ApplicationInstallationError", IS_SERIALIZABLE,
 			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(applicationAlreadyInstalledEDataType, ApplicationAlreadyInstalled.class, "ApplicationAlreadyInstalled", IS_SERIALIZABLE,
@@ -3357,24 +3411,29 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(nonExistentMountEDataType, NonExistentMount.class, "NonExistentMount", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(mountTypeArrayEDataType, MountType[].class, "MountTypeArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(octetSequenceHolderEDataType, OctetSequenceHolder.class, "OctetSequenceHolder", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(ioExceptionEDataType, IOException.class, "IOException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(fileExceptionEDataType, FileException.class, "FileException", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidFilePointerEDataType, InvalidFilePointer.class, "InvalidFilePointer", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(fileInformationTypeArrayEDataType, FileInformationType[].class, "FileInformationTypeArray", IS_SERIALIZABLE,
 			!IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(propertiesHolderEDataType, PropertiesHolder.class, "PropertiesHolder", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownFileSystemPropertiesEDataType, UnknownFileSystemProperties.class, "UnknownFileSystemProperties", IS_SERIALIZABLE,
 			!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(invalidFileNameEDataType, InvalidFileName.class, "InvalidFileName", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(invalidIdentifierEDataType, CF.InvalidIdentifier.class, "InvalidIdentifier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(invalidObjectReferenceEDataType, InvalidObjectReference.class, "InvalidObjectReference", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(invalidProfileEDataType, InvalidProfile.class, "InvalidProfile", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(initializeErrorEDataType, InitializeError.class, "InitializeError", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(releaseErrorEDataType, ReleaseError.class, "ReleaseError", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(loadTypeEDataType, LoadType.class, "LoadType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidLoadKindEDataType, InvalidLoadKind.class, "InvalidLoadKind", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(loadFailEDataType, LoadFail.class, "LoadFail", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(logEventArrayEDataType, LogEvent[].class, "LogEventArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(octetSequenceHolderEDataType, OctetSequenceHolder.class, "OctetSequenceHolder", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidPortEDataType, InvalidPort.class, "InvalidPort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(occupiedPortEDataType, OccupiedPort.class, "OccupiedPort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(portInfoTypeEDataType, PortInfoType.class, "PortInfoType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownPortEDataType, UnknownPort.class, "UnknownPort", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(propertiesHolderEDataType, PropertiesHolder.class, "PropertiesHolder", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(propertyChangeEventEDataType, PropertyChangeEvent.class, "PropertyChangeEvent", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(alreadyInitializedEDataType, AlreadyInitialized.class, "AlreadyInitialized", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidConfigurationEDataType, InvalidConfiguration.class, "InvalidConfiguration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -3388,8 +3447,11 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEDataType(unknownTestEDataType, UnknownTest.class, "UnknownTest", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(unknownIdentifierEDataType, UnknownIdentifier.class, "UnknownIdentifier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(utcTimeEDataType, UTCTime.class, "UTCTime", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(logEventArrayEDataType, LogEvent[].class, "LogEventArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(invalidIdentifierEDataType, CF.InvalidIdentifier.class, "InvalidIdentifier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(orbEDataType, org.omg.CORBA.ORB.class, "ORB", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eventChannelEDataType, EventChannel.class, "EventChannel", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(pushConsumerEDataType, PushConsumer.class, "PushConsumer", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(pushSupplierEDataType, PushSupplier.class, "PushSupplier", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(namingContextExtEDataType, NamingContextExt.class, "NamingContextExt", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -3407,10 +3469,10 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 */
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
-		addAnnotation(namingContextExtEDataType, source, new String[] { "name", "NamingContextExt" });
-		addAnnotation(orbEDataType, source, new String[] { "name", "ORB" });
 		addAnnotation(dataTypeEDataType, source, new String[] { "name", "DataType" });
 		addAnnotation(dataTypeArrayEDataType, source, new String[] { "name", "DataTypeArray" });
+		addAnnotation(orbEDataType, source, new String[] { "name", "ORB" });
+		addAnnotation(namingContextExtEDataType, source, new String[] { "name", "NamingContextExt" });
 	}
 
 } //CfPackageImpl

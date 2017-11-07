@@ -11,23 +11,6 @@
 -->
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cf" nsURI="http:///mil/jpeojtrs/sca/cf.ecore" nsPrefix="mil.jpeojtrs.sca.cf">
-  <eClassifiers xsi:type="ecore:EClass" name="Object" instanceClassName="org.omg.CORBA.Object"
-      abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IDLEntity" instanceClassName="org.omg.CORBA.portable.IDLEntity"
-      abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="EventChannel" instanceClassName="org.omg.CosEventChannelAdmin.EventChannel"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="NamingContextExt" instanceClassName="org.omg.CosNaming.NamingContextExt">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="NamingContextExt"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="PushConsumer" instanceClassName="org.omg.CosEventComm.PushConsumer"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="PushSupplier" instanceClassName="org.omg.CosEventComm.PushSupplier"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="ORB" instanceClassName="org.omg.CORBA.ORB">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="ORB"/>
-    </eAnnotations>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregateDevice" instanceClassName="CF.AggregateDevice"
       abstract="true" interface="true" eSuperTypes="#//AggregateDeviceOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="AggregateDeviceOperations" instanceClassName="CF.AggregateDeviceOperations"
@@ -52,6 +35,10 @@
       abstract="true" interface="true" eSuperTypes="#//AggregatePlainDeviceOperations #//Device #//AggregateDevice"/>
   <eClassifiers xsi:type="ecore:EClass" name="AggregatePlainDeviceOperations" instanceClassName="CF.AggregatePlainDeviceOperations"
       abstract="true" interface="true" eSuperTypes="#//DeviceOperations #//AggregateDeviceOperations"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AllocationManager" instanceClassName="CF.AllocationManager"
+      abstract="true" interface="true" eSuperTypes="#//AllocationManagerOperations #//Object #//IDLEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AllocationManagerOperations" instanceClassName="CF.AllocationManagerOperations"
+      abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Application" instanceClassName="CF.Application"
       abstract="true" interface="true" eSuperTypes="#//ApplicationOperations #//Resource #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationFactory" instanceClassName="CF.ApplicationFactory"
@@ -289,6 +276,8 @@
       <eParameters name="fileSystemProperties" eType="#//PropertiesHolder"/>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IDLEntity" instanceClassName="org.omg.CORBA.portable.IDLEntity"
+      abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="LifeCycle" instanceClassName="CF.LifeCycle"
       abstract="true" interface="true" eSuperTypes="#//LifeCycleOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="LifeCycleOperations" instanceClassName="CF.LifeCycleOperations"
@@ -346,6 +335,8 @@
       <eParameters name="config_url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Object" instanceClassName="org.omg.CORBA.Object"
+      abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Port" instanceClassName="CF.Port" abstract="true"
       interface="true" eSuperTypes="#//PortOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortOperations" instanceClassName="CF.PortOperations"
@@ -429,10 +420,9 @@
       <eParameters name="testValues" eType="#//PropertiesHolder"/>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="InvalidObjectReference" instanceClassName="CF.InvalidObjectReference"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="AllocationStatusType" instanceClassName="CF.AllocationManagerPackage.AllocationStatusType"/>
   <eClassifiers xsi:type="ecore:EDataType" name="CreateApplicationInsufficientCapacityError"
       instanceClassName="CF.ApplicationFactoryPackage.CreateApplicationInsufficientCapacityError"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="DeviceAssignmentTypeArray" instanceClassName="CF.DeviceAssignmentType[]"/>
   <eClassifiers xsi:type="ecore:EDataType" name="CreateApplicationError" instanceClassName="CF.ApplicationFactoryPackage.CreateApplicationError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="CreateApplicationRequestError" instanceClassName="CF.ApplicationFactoryPackage.CreateApplicationRequestError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidInitConfiguration" instanceClassName="CF.ApplicationFactoryPackage.InvalidInitConfiguration"/>
@@ -446,13 +436,12 @@
       <details key="name" value="DataTypeArray"/>
     </eAnnotations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="DeviceAssignmentTypeArray" instanceClassName="CF.DeviceAssignmentType[]"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidCapacity" instanceClassName="CF.DevicePackage.InvalidCapacity"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidState" instanceClassName="CF.DevicePackage.InvalidState"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="InvalidProfile" instanceClassName="CF.InvalidProfile"/>
   <eClassifiers xsi:type="ecore:EDataType" name="DeviceManagerNotRegistered" instanceClassName="CF.DomainManagerPackage.DeviceManagerNotRegistered"/>
   <eClassifiers xsi:type="ecore:EDataType" name="RegisterError" instanceClassName="CF.DomainManagerPackage.RegisterError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnregisterError" instanceClassName="CF.DomainManagerPackage.UnregisterError"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="InvalidFileName" instanceClassName="CF.InvalidFileName"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ApplicationInstallationError" instanceClassName="CF.DomainManagerPackage.ApplicationInstallationError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ApplicationAlreadyInstalled" instanceClassName="CF.DomainManagerPackage.ApplicationAlreadyInstalled"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidDomMgrIdentifier" instanceClassName="CF.DomainManagerPackage.InvalidIdentifier"/>
@@ -487,22 +476,27 @@
   <eClassifiers xsi:type="ecore:EDataType" name="MountPointAlreadyExists" instanceClassName="CF.FileManagerPackage.MountPointAlreadyExists"/>
   <eClassifiers xsi:type="ecore:EDataType" name="NonExistentMount" instanceClassName="CF.FileManagerPackage.NonExistentMount"/>
   <eClassifiers xsi:type="ecore:EDataType" name="MountTypeArray" instanceClassName="CF.FileManagerPackage.MountType[]"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="OctetSequenceHolder" instanceClassName="CF.OctetSequenceHolder"/>
   <eClassifiers xsi:type="ecore:EDataType" name="IOException" instanceClassName="CF.FilePackage.IOException"/>
   <eClassifiers xsi:type="ecore:EDataType" name="FileException" instanceClassName="CF.FileException"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidFilePointer" instanceClassName="CF.FilePackage.InvalidFilePointer"/>
   <eClassifiers xsi:type="ecore:EDataType" name="FileInformationTypeArray" instanceClassName="CF.FileSystemPackage.FileInformationType[]"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="PropertiesHolder" instanceClassName="CF.PropertiesHolder"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownFileSystemProperties" instanceClassName="CF.FileSystemPackage.UnknownFileSystemProperties"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="InvalidFileName" instanceClassName="CF.InvalidFileName"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="InvalidIdentifier" instanceClassName="CF.InvalidIdentifier"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="InvalidObjectReference" instanceClassName="CF.InvalidObjectReference"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="InvalidProfile" instanceClassName="CF.InvalidProfile"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InitializeError" instanceClassName="CF.LifeCyclePackage.InitializeError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="ReleaseError" instanceClassName="CF.LifeCyclePackage.ReleaseError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="LoadType" instanceClassName="CF.LoadableDevicePackage.LoadType"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidLoadKind" instanceClassName="CF.LoadableDevicePackage.InvalidLoadKind"/>
   <eClassifiers xsi:type="ecore:EDataType" name="LoadFail" instanceClassName="CF.LoadableDevicePackage.LoadFail"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="LogEventArray" instanceClassName="CF.LogEvent[]"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="OctetSequenceHolder" instanceClassName="CF.OctetSequenceHolder"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidPort" instanceClassName="CF.PortPackage.InvalidPort"/>
   <eClassifiers xsi:type="ecore:EDataType" name="OccupiedPort" instanceClassName="CF.PortPackage.OccupiedPort"/>
   <eClassifiers xsi:type="ecore:EDataType" name="PortInfoType" instanceClassName="CF.PortSetPackage.PortInfoType"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownPort" instanceClassName="CF.PortSupplierPackage.UnknownPort"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="PropertiesHolder" instanceClassName="CF.PropertiesHolder"/>
   <eClassifiers xsi:type="ecore:EDataType" name="PropertyChangeEvent" instanceClassName="CF.PropertyChangeListenerPackage.PropertyChangeEvent"/>
   <eClassifiers xsi:type="ecore:EDataType" name="AlreadyInitialized" instanceClassName="CF.PropertyEmitterPackage.AlreadyInitialized"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidConfiguration" instanceClassName="CF.PropertySetPackage.InvalidConfiguration"/>
@@ -516,6 +510,17 @@
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownTest" instanceClassName="CF.TestableObjectPackage.UnknownTest"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownIdentifier" instanceClassName="CF.UnknownIdentifier"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UTCTime" instanceClassName="CF.UTCTime"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="LogEventArray" instanceClassName="CF.LogEvent[]"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="InvalidIdentifier" instanceClassName="CF.InvalidIdentifier"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ORB" instanceClassName="org.omg.CORBA.ORB">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ORB"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="EventChannel" instanceClassName="org.omg.CosEventChannelAdmin.EventChannel"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="PushConsumer" instanceClassName="org.omg.CosEventComm.PushConsumer"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="PushSupplier" instanceClassName="org.omg.CosEventComm.PushSupplier"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NamingContextExt" instanceClassName="org.omg.CosNaming.NamingContextExt">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="NamingContextExt"/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>
