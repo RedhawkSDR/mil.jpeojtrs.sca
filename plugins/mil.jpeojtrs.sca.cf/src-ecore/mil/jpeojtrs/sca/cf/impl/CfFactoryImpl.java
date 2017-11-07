@@ -159,14 +159,6 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case CfPackage.DATA_TYPE:
-			return createDataTypeFromString(eDataType, initialValue);
-		case CfPackage.DATA_TYPE_ARRAY:
-			return createDataTypeArrayFromString(eDataType, initialValue);
-		case CfPackage.NAMING_CONTEXT_EXT:
-			return createNamingContextExtFromString(eDataType, initialValue);
-		case CfPackage.ORB:
-			return createORBFromString(eDataType, initialValue);
 		case CfPackage.ALLOCATION_STATUS_TYPE:
 			return createAllocationStatusTypeFromString(eDataType, initialValue);
 		case CfPackage.CREATE_APPLICATION_INSUFFICIENT_CAPACITY_ERROR:
@@ -177,6 +169,10 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createCreateApplicationRequestErrorFromString(eDataType, initialValue);
 		case CfPackage.INVALID_INIT_CONFIGURATION:
 			return createInvalidInitConfigurationFromString(eDataType, initialValue);
+		case CfPackage.DATA_TYPE:
+			return createDataTypeFromString(eDataType, initialValue);
+		case CfPackage.DATA_TYPE_ARRAY:
+			return createDataTypeArrayFromString(eDataType, initialValue);
 		case CfPackage.DEVICE_ASSIGNMENT_TYPE_ARRAY:
 			return createDeviceAssignmentTypeArrayFromString(eDataType, initialValue);
 		case CfPackage.INVALID_CAPACITY:
@@ -317,12 +313,16 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return createUnknownTestFromString(eDataType, initialValue);
 		case CfPackage.UNKNOWN_IDENTIFIER:
 			return createUnknownIdentifierFromString(eDataType, initialValue);
+		case CfPackage.ORB:
+			return createORBFromString(eDataType, initialValue);
 		case CfPackage.EVENT_CHANNEL:
 			return createEventChannelFromString(eDataType, initialValue);
 		case CfPackage.PUSH_CONSUMER:
 			return createPushConsumerFromString(eDataType, initialValue);
 		case CfPackage.PUSH_SUPPLIER:
 			return createPushSupplierFromString(eDataType, initialValue);
+		case CfPackage.NAMING_CONTEXT_EXT:
+			return createNamingContextExtFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -336,14 +336,6 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case CfPackage.DATA_TYPE:
-			return convertDataTypeToString(eDataType, instanceValue);
-		case CfPackage.DATA_TYPE_ARRAY:
-			return convertDataTypeArrayToString(eDataType, instanceValue);
-		case CfPackage.NAMING_CONTEXT_EXT:
-			return convertNamingContextExtToString(eDataType, instanceValue);
-		case CfPackage.ORB:
-			return convertORBToString(eDataType, instanceValue);
 		case CfPackage.ALLOCATION_STATUS_TYPE:
 			return convertAllocationStatusTypeToString(eDataType, instanceValue);
 		case CfPackage.CREATE_APPLICATION_INSUFFICIENT_CAPACITY_ERROR:
@@ -354,6 +346,10 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertCreateApplicationRequestErrorToString(eDataType, instanceValue);
 		case CfPackage.INVALID_INIT_CONFIGURATION:
 			return convertInvalidInitConfigurationToString(eDataType, instanceValue);
+		case CfPackage.DATA_TYPE:
+			return convertDataTypeToString(eDataType, instanceValue);
+		case CfPackage.DATA_TYPE_ARRAY:
+			return convertDataTypeArrayToString(eDataType, instanceValue);
 		case CfPackage.DEVICE_ASSIGNMENT_TYPE_ARRAY:
 			return convertDeviceAssignmentTypeArrayToString(eDataType, instanceValue);
 		case CfPackage.INVALID_CAPACITY:
@@ -494,12 +490,16 @@ public class CfFactoryImpl extends EFactoryImpl implements CfFactory {
 			return convertUnknownTestToString(eDataType, instanceValue);
 		case CfPackage.UNKNOWN_IDENTIFIER:
 			return convertUnknownIdentifierToString(eDataType, instanceValue);
+		case CfPackage.ORB:
+			return convertORBToString(eDataType, instanceValue);
 		case CfPackage.EVENT_CHANNEL:
 			return convertEventChannelToString(eDataType, instanceValue);
 		case CfPackage.PUSH_CONSUMER:
 			return convertPushConsumerToString(eDataType, instanceValue);
 		case CfPackage.PUSH_SUPPLIER:
 			return convertPushSupplierToString(eDataType, instanceValue);
+		case CfPackage.NAMING_CONTEXT_EXT:
+			return convertNamingContextExtToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}

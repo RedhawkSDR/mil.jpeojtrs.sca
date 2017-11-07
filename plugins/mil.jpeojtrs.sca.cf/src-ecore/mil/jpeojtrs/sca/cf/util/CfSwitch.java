@@ -131,20 +131,6 @@ public class CfSwitch< T > extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case CfPackage.OBJECT: {
-			org.omg.CORBA.Object object = (org.omg.CORBA.Object) theEObject;
-			T result = caseObject(object);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case CfPackage.IDL_ENTITY: {
-			IDLEntity idlEntity = (IDLEntity) theEObject;
-			T result = caseIDLEntity(idlEntity);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case CfPackage.AGGREGATE_DEVICE: {
 			AggregateDevice aggregateDevice = (AggregateDevice) theEObject;
 			T result = caseAggregateDevice(aggregateDevice);
@@ -847,6 +833,13 @@ public class CfSwitch< T > extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case CfPackage.IDL_ENTITY: {
+			IDLEntity idlEntity = (IDLEntity) theEObject;
+			T result = caseIDLEntity(idlEntity);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case CfPackage.LIFE_CYCLE: {
 			LifeCycle lifeCycle = (LifeCycle) theEObject;
 			T result = caseLifeCycle(lifeCycle);
@@ -1011,6 +1004,13 @@ public class CfSwitch< T > extends Switch<T> {
 		case CfPackage.LOG_CONFIGURATION_OPERATIONS: {
 			LogConfigurationOperations logConfigurationOperations = (LogConfigurationOperations) theEObject;
 			T result = caseLogConfigurationOperations(logConfigurationOperations);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CfPackage.OBJECT: {
+			org.omg.CORBA.Object object = (org.omg.CORBA.Object) theEObject;
+			T result = caseObject(object);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;

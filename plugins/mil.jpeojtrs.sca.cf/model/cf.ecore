@@ -11,30 +11,6 @@
 -->
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cf" nsURI="http:///mil/jpeojtrs/sca/cf.ecore" nsPrefix="mil.jpeojtrs.sca.cf">
-  <eClassifiers xsi:type="ecore:EClass" name="Object" instanceClassName="org.omg.CORBA.Object"
-      abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IDLEntity" instanceClassName="org.omg.CORBA.portable.IDLEntity"
-      abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="DataType" instanceClassName="CF.DataType">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="DataType"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="DataTypeArray" instanceClassName="CF.DataType[]">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="DataTypeArray"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="NamingContextExt" instanceClassName="org.omg.CosNaming.NamingContextExt">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="NamingContextExt"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="ORB" instanceClassName="org.omg.CORBA.ORB">
-    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-      <details key="name" value="ORB"/>
-    </eAnnotations>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AggregateDevice" instanceClassName="CF.AggregateDevice"
       abstract="true" interface="true" eSuperTypes="#//AggregateDeviceOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="AggregateDeviceOperations" instanceClassName="CF.AggregateDeviceOperations"
@@ -286,6 +262,8 @@
       <eParameters name="fileSystemProperties" eType="#//PropertiesHolder"/>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IDLEntity" instanceClassName="org.omg.CORBA.portable.IDLEntity"
+      abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="LifeCycle" instanceClassName="CF.LifeCycle"
       abstract="true" interface="true" eSuperTypes="#//LifeCycleOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="LifeCycleOperations" instanceClassName="CF.LifeCycleOperations"
@@ -343,6 +321,8 @@
       <eParameters name="config_url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Object" instanceClassName="org.omg.CORBA.Object"
+      abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Port" instanceClassName="CF.Port" abstract="true"
       interface="true" eSuperTypes="#//PortOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="PortOperations" instanceClassName="CF.PortOperations"
@@ -432,6 +412,16 @@
   <eClassifiers xsi:type="ecore:EDataType" name="CreateApplicationError" instanceClassName="CF.ApplicationFactoryPackage.CreateApplicationError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="CreateApplicationRequestError" instanceClassName="CF.ApplicationFactoryPackage.CreateApplicationRequestError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidInitConfiguration" instanceClassName="CF.ApplicationFactoryPackage.InvalidInitConfiguration"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="DataType" instanceClassName="CF.DataType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DataType"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="DataTypeArray" instanceClassName="CF.DataType[]">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="DataTypeArray"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="DeviceAssignmentTypeArray" instanceClassName="CF.DeviceAssignmentType[]"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidCapacity" instanceClassName="CF.DevicePackage.InvalidCapacity"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidState" instanceClassName="CF.DevicePackage.InvalidState"/>
@@ -504,7 +494,17 @@
   <eClassifiers xsi:type="ecore:EDataType" name="StopError" instanceClassName="CF.ResourcePackage.StopError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownTest" instanceClassName="CF.TestableObjectPackage.UnknownTest"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UnknownIdentifier" instanceClassName="CF.UnknownIdentifier"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ORB" instanceClassName="org.omg.CORBA.ORB">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ORB"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="EventChannel" instanceClassName="org.omg.CosEventChannelAdmin.EventChannel"/>
   <eClassifiers xsi:type="ecore:EDataType" name="PushConsumer" instanceClassName="org.omg.CosEventComm.PushConsumer"/>
   <eClassifiers xsi:type="ecore:EDataType" name="PushSupplier" instanceClassName="org.omg.CosEventComm.PushSupplier"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NamingContextExt" instanceClassName="org.omg.CosNaming.NamingContextExt">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="NamingContextExt"/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

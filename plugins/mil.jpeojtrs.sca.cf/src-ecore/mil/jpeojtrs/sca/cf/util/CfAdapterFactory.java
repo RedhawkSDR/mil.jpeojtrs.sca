@@ -133,16 +133,6 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected CfSwitch<Adapter> modelSwitch = new CfSwitch<Adapter>() {
 		@Override
-		public Adapter caseObject(org.omg.CORBA.Object object) {
-			return createObjectAdapter();
-		}
-
-		@Override
-		public Adapter caseIDLEntity(IDLEntity object) {
-			return createIDLEntityAdapter();
-		}
-
-		@Override
 		public Adapter caseAggregateDevice(AggregateDevice object) {
 			return createAggregateDeviceAdapter();
 		}
@@ -293,6 +283,11 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseIDLEntity(IDLEntity object) {
+			return createIDLEntityAdapter();
+		}
+
+		@Override
 		public Adapter caseLifeCycle(LifeCycle object) {
 			return createLifeCycleAdapter();
 		}
@@ -340,6 +335,11 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseLogConfigurationOperations(LogConfigurationOperations object) {
 			return createLogConfigurationOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseObject(org.omg.CORBA.Object object) {
+			return createObjectAdapter();
 		}
 
 		@Override
