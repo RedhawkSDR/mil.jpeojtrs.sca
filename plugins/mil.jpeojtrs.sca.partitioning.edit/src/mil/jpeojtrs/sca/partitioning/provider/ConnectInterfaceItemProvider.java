@@ -1,13 +1,13 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.partitioning.provider;
 
@@ -94,7 +94,7 @@ public class ConnectInterfaceItemProvider extends ItemProviderAdapter
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 			getString("_UI_ConnectInterface_source_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_source_feature", "_UI_ConnectInterface_type"),
-			PartitioningPackage.Literals.CONNECT_INTERFACE__SOURCE, true, false, true, null, null, null));
+			PartitioningPackage.Literals.CONNECT_INTERFACE__SOURCE, true, false, true, null, null, new String[] { "org.eclipse.ui.views.properties.expert" }));
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class ConnectInterfaceItemProvider extends ItemProviderAdapter
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 			getString("_UI_ConnectInterface_target_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_target_feature", "_UI_ConnectInterface_type"),
-			PartitioningPackage.Literals.CONNECT_INTERFACE__TARGET, true, false, true, null, null, null));
+			PartitioningPackage.Literals.CONNECT_INTERFACE__TARGET, true, false, true, null, null, new String[] { "org.eclipse.ui.views.properties.expert" }));
 	}
 
 	/**
@@ -158,12 +158,12 @@ public class ConnectInterfaceItemProvider extends ItemProviderAdapter
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((ConnectInterface< ? , ? , ? >) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_ConnectInterface_type") : getString("_UI_ConnectInterface_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_ConnectInterface_type") : label;
 	}
 
 	/**

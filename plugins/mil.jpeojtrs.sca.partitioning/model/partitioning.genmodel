@@ -64,6 +64,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentInstantiation/id"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference partitioning.ecore#//ComponentInstantiation/placement"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentInstantiation/implID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ComponentInstantiation/startOrder"/>
     </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//ComponentInstantiationRef">
       <genTypeParameters ecoreTypeParameter="partitioning.ecore#//ComponentInstantiationRef/R"/>
@@ -102,8 +103,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/componentSupportedInterface"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/findBy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute partitioning.ecore#//ConnectInterface/id"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/source">
+        <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference partitioning.ecore#//ConnectInterface/target">
+        <propertyFilterFlags>org.eclipse.ui.views.properties.expert</propertyFilterFlags>
+      </genFeatures>
     </genClasses>
     <genClasses ecoreClass="partitioning.ecore#//Connections">
       <genTypeParameters ecoreTypeParameter="partitioning.ecore#//Connections/CI"/>
