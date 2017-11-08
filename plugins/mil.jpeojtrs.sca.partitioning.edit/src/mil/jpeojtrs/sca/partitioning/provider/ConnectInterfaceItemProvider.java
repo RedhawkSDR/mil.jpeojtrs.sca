@@ -65,8 +65,6 @@ public class ConnectInterfaceItemProvider extends ItemProviderAdapter
 			super.getPropertyDescriptors(object);
 
 			addIdPropertyDescriptor(object);
-			addSourcePropertyDescriptor(object);
-			addTargetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,32 +80,6 @@ public class ConnectInterfaceItemProvider extends ItemProviderAdapter
 			getString("_UI_ConnectInterface_id_feature"),
 			getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_id_feature", "_UI_ConnectInterface_type"),
 			PartitioningPackage.Literals.CONNECT_INTERFACE__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Source feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_ConnectInterface_source_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_source_feature", "_UI_ConnectInterface_type"),
-			PartitioningPackage.Literals.CONNECT_INTERFACE__SOURCE, true, false, true, null, null, new String[] { "org.eclipse.ui.views.properties.expert" }));
-	}
-
-	/**
-	 * This adds a property descriptor for the Target feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-			getString("_UI_ConnectInterface_target_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_ConnectInterface_target_feature", "_UI_ConnectInterface_type"),
-			PartitioningPackage.Literals.CONNECT_INTERFACE__TARGET, true, false, true, null, null, new String[] { "org.eclipse.ui.views.properties.expert" }));
 	}
 
 	/**
