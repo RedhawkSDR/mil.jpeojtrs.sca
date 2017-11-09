@@ -18,6 +18,7 @@ import CF.ErrorNumberType;
 import CF.FileException;
 import CF.InvalidFileName;
 import CF.UnknownProperties;
+import CF.AllocationManagerPackage.InvalidAllocationId;
 import CF.DevicePackage.InsufficientCapacity;
 import CF.DevicePackage.InvalidCapacity;
 import CF.DevicePackage.InvalidState;
@@ -99,6 +100,12 @@ public class CFErrorFormatterTest {
 		Assert.assertEquals("CF.DevicePackage.InsufficientCapacity for foo: VWX. Properties: d, e", msg);
 		msg = CFErrorFormatter.format(new InsufficientCapacity(new DataType[] {}, "YZ"), "foo");
 		Assert.assertEquals("CF.DevicePackage.InsufficientCapacity for foo: YZ. Properties: (no properties)", msg);
+	}
+
+	@Test
+	public void format_InvalidAllocationId() {
+		String msg = CFErrorFormatter.format(new InvalidAllocationId(new String[] { "a", "b" }));
+		Assert.assertEquals("CF.AllocationManagerPackage.InvalidAllocationId for [a, b]", msg);
 	}
 
 	@Test

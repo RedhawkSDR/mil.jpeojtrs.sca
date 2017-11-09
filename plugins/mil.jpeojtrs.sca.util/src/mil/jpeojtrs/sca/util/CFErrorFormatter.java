@@ -10,6 +10,8 @@
  */
 package mil.jpeojtrs.sca.util;
 
+import java.util.Arrays;
+
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
@@ -23,6 +25,7 @@ import CF.ErrorNumberTypeHelper;
 import CF.FileException;
 import CF.InvalidFileName;
 import CF.UnknownProperties;
+import CF.AllocationManagerPackage.InvalidAllocationId;
 import CF.DevicePackage.InsufficientCapacity;
 import CF.DevicePackage.InvalidCapacity;
 import CF.DevicePackage.InvalidState;
@@ -139,6 +142,13 @@ public class CFErrorFormatter {
 	 */
 	public static String format(InsufficientCapacity e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG_PROPLIST, e.getClass().getName(), resourceDesc, e.msg, formatProperties(e.insufficientCapacities));
+	}
+
+	/**
+	 * @since 4.6
+	 */
+	public static String format(InvalidAllocationId e) {
+		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), Arrays.toString(e.invalidAllocationIds));
 	}
 
 	/**
