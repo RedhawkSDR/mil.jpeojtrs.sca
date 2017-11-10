@@ -441,14 +441,15 @@ public class PrfValidator extends EObjectValidator {
 	// END GENERATED CODE
 
 	/**
-	 * Custom validation method.
-	 * The framework does not allow partial configuration of structures unless it's an optional element.
-	 * Severity depends on kindtype value
+	 * Custom validation method.<br/>
+	 * The framework does not allow partial configuration of {@link Simple} properties in structures unless they are
+	 * marked as optional elements. Severity depends on kindtype value.
 	 * @since 6.1
 	 */
 	public boolean validateStructConfiguration(Struct struct, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean isValidStruct = true;
 
+		// Validation results in a WARNING in a StructSequence and an ERROR in a Struct
 		int severity = Diagnostic.WARNING;
 		if (struct.isKind(PropertyConfigurationType.PROPERTY) && !(struct.eContainer() instanceof StructSequence)) {
 			severity = Diagnostic.ERROR;
@@ -466,7 +467,7 @@ public class PrfValidator extends EObjectValidator {
 		// Check the first field to see if a default is set. This is the baseline for future comparisons.
 		boolean baselineConfigState = getDefaultState(struct);
 
-		// Check to see if only some properties have defaults
+		// Check to see if only some simple properties have defaults
 		for (Simple simple : struct.getSimple()) {
 			if (simple.isOptional()) {
 				continue;
@@ -481,26 +482,6 @@ public class PrfValidator extends EObjectValidator {
 				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, errorMsg, data.toArray(new Object[0]), new Object[] { struct }, context));
 
 				break;
-			}
-		}
-
-		// Don't check simpSeq's if we already caught partial config
-		if (!isValidStruct) {
-			return isValidStruct;
-		}
-
-		for (SimpleSequence simpleSeq : struct.getSimpleSequence()) {
-			if (simpleSeq.isOptional()) {
-				continue;
-			}
-
-			// Check is simple has a default value
-			boolean simpleSeqConfigState = (simpleSeq.getValues() != null);
-
-			// Compare result to the baseline.
-			if (baselineConfigState != simpleSeqConfigState) {
-				isValidStruct = false;
-				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, errorMsg, data.toArray(new Object[0]), new Object[] { struct }, context));
 			}
 		}
 
