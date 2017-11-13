@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    This file is protected by Copyright.
+         This file is protected by Copyright.
     Please refer to the COPYRIGHT file distributed with this source distribution.
 
     This file is part of REDHAWK IDE.
@@ -12,15 +12,50 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="extended" nsURI="http:///mil/jpeojtrs/sca/cf/extended.ecore"
     nsPrefix="ExtendedCF">
+  <eClassifiers xsi:type="ecore:EClass" name="NegotiablePort" instanceClassName="ExtendedCF.NegotiablePort"
+      abstract="true" interface="true" eSuperTypes="#//NegotiablePortOperations cf.ecore#//Object cf.ecore#//IDLEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NegotiablePortOperations" instanceClassName="ExtendedCF.NegotiablePortOperations"
+      abstract="true" interface="true">
+    <eOperations name="supportedTransports" eType="#//TransportInfoArray"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NegotiableProvidesPort" instanceClassName="ExtendedCF.NegotiableProvidesPort"
+      abstract="true" interface="true" eSuperTypes="#//NegotiableProvidesPortOperations #//NegotiablePort cf.ecore#//IDLEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NegotiableProvidesPortOperations" instanceClassName="ExtendedCF.NegotiableProvidesPortOperations"
+      abstract="true" interface="true" eSuperTypes="#//NegotiablePortOperations">
+    <eOperations name="negotiateTransport" eType="#//NegotiationResult" eExceptions="#//NegotiationError">
+      <eParameters name="transportType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="transportProperties" eType="ecore:EDataType cf.ecore#//DataTypeArray"/>
+    </eOperations>
+    <eOperations name="disconnectTransport" eExceptions="#//NegotiationError">
+      <eParameters name="transportId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NegotiableUsesPort" instanceClassName="ExtendedCF.NegotiableUsesPort"
+      abstract="true" interface="true" eSuperTypes="#//NegotiableUsesPortOperations #//QueryablePort #//NegotiablePort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NegotiableUsesPortOperations" instanceClassName="ExtendedCF.NegotiableUsesPortOperations"
+      abstract="true" interface="true" eSuperTypes="#//QueryablePortOperations #//NegotiablePortOperations">
+    <eOperations name="connectionStatus" eType="#//ConnectionStatusArray"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QueryablePort" instanceClassName="ExtendedCF.QueryablePort"
       abstract="true" interface="true" eSuperTypes="#//QueryablePortOperations cf.ecore#//Port cf.ecore#//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="QueryablePortOperations" instanceClassName="ExtendedCF.QueryablePortOperations"
       abstract="true" interface="true" eSuperTypes="cf.ecore#//PortOperations">
     <eOperations name="connections" eType="#//UsesConnectionArray"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ConnectionStatus" instanceClassName="ExtendedCF.ConnectionStatus"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ConnectionStatusArray" instanceClassName="ExtendedCF.ConnectionStatus[]"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NegotiationError" instanceClassName="ExtendedCF.NegotiationError"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NegotiationResult" instanceClassName="ExtendedCF.NegotiationResult"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="PropertySetChangeEventType" instanceClassName="ExtendedEvent.PropertySetChangeEventType"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UsesConnection" instanceClassName="ExtendedCF.UsesConnection"
       serializable="false"/>
   <eClassifiers xsi:type="ecore:EDataType" name="UsesConnectionArray" instanceClassName="ExtendedCF.UsesConnection[]"
       serializable="false"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="PropertySetChangeEventType" instanceClassName="ExtendedEvent.PropertySetChangeEventType"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="TransportInfo" instanceClassName="ExtendedCF.TransportInfo"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="TransportInfoArray" instanceClassName="ExtendedCF.TransportInfo[]"
+      serializable="false"/>
 </ecore:EPackage>

@@ -19,6 +19,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.omg.CORBA.portable.IDLEntity;
 import CF.Port;
 import CF.PortOperations;
+import ExtendedCF.NegotiablePort;
+import ExtendedCF.NegotiablePortOperations;
+import ExtendedCF.NegotiableProvidesPort;
+import ExtendedCF.NegotiableProvidesPortOperations;
+import ExtendedCF.NegotiableUsesPort;
+import ExtendedCF.NegotiableUsesPortOperations;
 import ExtendedCF.QueryablePort;
 import ExtendedCF.QueryablePortOperations;
 
@@ -79,6 +85,36 @@ public class ExtendedAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected ExtendedSwitch<Adapter> modelSwitch = new ExtendedSwitch<Adapter>() {
 		@Override
+		public Adapter caseNegotiablePort(NegotiablePort object) {
+			return createNegotiablePortAdapter();
+		}
+
+		@Override
+		public Adapter caseNegotiablePortOperations(NegotiablePortOperations object) {
+			return createNegotiablePortOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseNegotiableProvidesPort(NegotiableProvidesPort object) {
+			return createNegotiableProvidesPortAdapter();
+		}
+
+		@Override
+		public Adapter caseNegotiableProvidesPortOperations(NegotiableProvidesPortOperations object) {
+			return createNegotiableProvidesPortOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseNegotiableUsesPort(NegotiableUsesPort object) {
+			return createNegotiableUsesPortAdapter();
+		}
+
+		@Override
+		public Adapter caseNegotiableUsesPortOperations(NegotiableUsesPortOperations object) {
+			return createNegotiableUsesPortOperationsAdapter();
+		}
+
+		@Override
 		public Adapter caseQueryablePort(QueryablePort object) {
 			return createQueryablePortAdapter();
 		}
@@ -89,11 +125,6 @@ public class ExtendedAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter casePortOperations(PortOperations object) {
-			return createPortOperationsAdapter();
-		}
-
-		@Override
 		public Adapter caseObject(org.omg.CORBA.Object object) {
 			return createObjectAdapter();
 		}
@@ -101,6 +132,11 @@ public class ExtendedAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseIDLEntity(IDLEntity object) {
 			return createIDLEntityAdapter();
+		}
+
+		@Override
+		public Adapter casePortOperations(PortOperations object) {
+			return createPortOperationsAdapter();
 		}
 
 		@Override
@@ -125,6 +161,90 @@ public class ExtendedAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ExtendedCF.NegotiablePort <em>Negotiable Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ExtendedCF.NegotiablePort
+	 * @generated
+	 */
+	public Adapter createNegotiablePortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ExtendedCF.NegotiablePortOperations <em>Negotiable Port Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ExtendedCF.NegotiablePortOperations
+	 * @generated
+	 */
+	public Adapter createNegotiablePortOperationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ExtendedCF.NegotiableProvidesPort <em>Negotiable Provides Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ExtendedCF.NegotiableProvidesPort
+	 * @generated
+	 */
+	public Adapter createNegotiableProvidesPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ExtendedCF.NegotiableProvidesPortOperations <em>Negotiable Provides Port Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ExtendedCF.NegotiableProvidesPortOperations
+	 * @generated
+	 */
+	public Adapter createNegotiableProvidesPortOperationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ExtendedCF.NegotiableUsesPort <em>Negotiable Uses Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ExtendedCF.NegotiableUsesPort
+	 * @generated
+	 */
+	public Adapter createNegotiableUsesPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ExtendedCF.NegotiableUsesPortOperations <em>Negotiable Uses Port Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ExtendedCF.NegotiableUsesPortOperations
+	 * @generated
+	 */
+	public Adapter createNegotiableUsesPortOperationsAdapter() {
+		return null;
 	}
 
 	/**

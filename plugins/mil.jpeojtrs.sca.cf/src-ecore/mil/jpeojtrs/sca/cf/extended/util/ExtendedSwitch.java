@@ -18,8 +18,15 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.omg.CORBA.portable.IDLEntity;
 import CF.Port;
 import CF.PortOperations;
+import ExtendedCF.NegotiablePort;
+import ExtendedCF.NegotiablePortOperations;
+import ExtendedCF.NegotiableProvidesPort;
+import ExtendedCF.NegotiableProvidesPortOperations;
+import ExtendedCF.NegotiableUsesPort;
+import ExtendedCF.NegotiableUsesPortOperations;
 import ExtendedCF.QueryablePort;
 import ExtendedCF.QueryablePortOperations;
+import mil.jpeojtrs.sca.cf.extended.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,6 +86,90 @@ public class ExtendedSwitch< T > extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+		case ExtendedPackage.NEGOTIABLE_PORT: {
+			NegotiablePort negotiablePort = (NegotiablePort) theEObject;
+			T result = caseNegotiablePort(negotiablePort);
+			if (result == null)
+				result = caseNegotiablePortOperations(negotiablePort);
+			if (result == null)
+				result = caseObject(negotiablePort);
+			if (result == null)
+				result = caseIDLEntity(negotiablePort);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ExtendedPackage.NEGOTIABLE_PORT_OPERATIONS: {
+			NegotiablePortOperations negotiablePortOperations = (NegotiablePortOperations) theEObject;
+			T result = caseNegotiablePortOperations(negotiablePortOperations);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ExtendedPackage.NEGOTIABLE_PROVIDES_PORT: {
+			NegotiableProvidesPort negotiableProvidesPort = (NegotiableProvidesPort) theEObject;
+			T result = caseNegotiableProvidesPort(negotiableProvidesPort);
+			if (result == null)
+				result = caseNegotiableProvidesPortOperations(negotiableProvidesPort);
+			if (result == null)
+				result = caseNegotiablePort(negotiableProvidesPort);
+			if (result == null)
+				result = caseNegotiablePortOperations(negotiableProvidesPort);
+			if (result == null)
+				result = caseObject(negotiableProvidesPort);
+			if (result == null)
+				result = caseIDLEntity(negotiableProvidesPort);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ExtendedPackage.NEGOTIABLE_PROVIDES_PORT_OPERATIONS: {
+			NegotiableProvidesPortOperations negotiableProvidesPortOperations = (NegotiableProvidesPortOperations) theEObject;
+			T result = caseNegotiableProvidesPortOperations(negotiableProvidesPortOperations);
+			if (result == null)
+				result = caseNegotiablePortOperations(negotiableProvidesPortOperations);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ExtendedPackage.NEGOTIABLE_USES_PORT: {
+			NegotiableUsesPort negotiableUsesPort = (NegotiableUsesPort) theEObject;
+			T result = caseNegotiableUsesPort(negotiableUsesPort);
+			if (result == null)
+				result = caseNegotiableUsesPortOperations(negotiableUsesPort);
+			if (result == null)
+				result = caseQueryablePort(negotiableUsesPort);
+			if (result == null)
+				result = caseNegotiablePort(negotiableUsesPort);
+			if (result == null)
+				result = caseQueryablePortOperations(negotiableUsesPort);
+			if (result == null)
+				result = caseNegotiablePortOperations(negotiableUsesPort);
+			if (result == null)
+				result = casePort(negotiableUsesPort);
+			if (result == null)
+				result = casePortOperations(negotiableUsesPort);
+			if (result == null)
+				result = caseObject(negotiableUsesPort);
+			if (result == null)
+				result = caseIDLEntity(negotiableUsesPort);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ExtendedPackage.NEGOTIABLE_USES_PORT_OPERATIONS: {
+			NegotiableUsesPortOperations negotiableUsesPortOperations = (NegotiableUsesPortOperations) theEObject;
+			T result = caseNegotiableUsesPortOperations(negotiableUsesPortOperations);
+			if (result == null)
+				result = caseQueryablePortOperations(negotiableUsesPortOperations);
+			if (result == null)
+				result = caseNegotiablePortOperations(negotiableUsesPortOperations);
+			if (result == null)
+				result = casePortOperations(negotiableUsesPortOperations);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case ExtendedPackage.QUERYABLE_PORT: {
 			QueryablePort queryablePort = (QueryablePort) theEObject;
 			T result = caseQueryablePort(queryablePort);
@@ -108,6 +199,96 @@ public class ExtendedSwitch< T > extends Switch<T> {
 		default:
 			return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Negotiable Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Negotiable Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNegotiablePort(NegotiablePort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Negotiable Port Operations</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Negotiable Port Operations</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNegotiablePortOperations(NegotiablePortOperations object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Negotiable Provides Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Negotiable Provides Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNegotiableProvidesPort(NegotiableProvidesPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Negotiable Provides Port Operations</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Negotiable Provides Port Operations</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNegotiableProvidesPortOperations(NegotiableProvidesPortOperations object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Negotiable Uses Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Negotiable Uses Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNegotiableUsesPort(NegotiableUsesPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Negotiable Uses Port Operations</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Negotiable Uses Port Operations</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNegotiableUsesPortOperations(NegotiableUsesPortOperations object) {
+		return null;
 	}
 
 	/**

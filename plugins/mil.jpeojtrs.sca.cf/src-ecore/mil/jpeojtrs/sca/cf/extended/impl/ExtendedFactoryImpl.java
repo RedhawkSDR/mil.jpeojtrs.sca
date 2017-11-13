@@ -11,7 +11,9 @@
 // BEGIN GENERATED CODE
 package mil.jpeojtrs.sca.cf.extended.impl;
 
+import ExtendedCF.NegotiationError;
 import ExtendedEvent.PropertySetChangeEventType;
+import mil.jpeojtrs.sca.cf.extended.*;
 import mil.jpeojtrs.sca.cf.extended.ExtendedFactory;
 import mil.jpeojtrs.sca.cf.extended.ExtendedPackage;
 import org.eclipse.emf.ecore.EClass;
@@ -78,6 +80,8 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+		case ExtendedPackage.NEGOTIATION_ERROR:
+			return createNegotiationErrorFromString(eDataType, initialValue);
 		case ExtendedPackage.PROPERTY_SET_CHANGE_EVENT_TYPE:
 			return createPropertySetChangeEventTypeFromString(eDataType, initialValue);
 		default:
@@ -93,11 +97,31 @@ public class ExtendedFactoryImpl extends EFactoryImpl implements ExtendedFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+		case ExtendedPackage.NEGOTIATION_ERROR:
+			return convertNegotiationErrorToString(eDataType, instanceValue);
 		case ExtendedPackage.PROPERTY_SET_CHANGE_EVENT_TYPE:
 			return convertPropertySetChangeEventTypeToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NegotiationError createNegotiationErrorFromString(EDataType eDataType, String initialValue) {
+		return (NegotiationError) super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNegotiationErrorToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
