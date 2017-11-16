@@ -57,7 +57,8 @@
       abstract="true" interface="true" eSuperTypes="#//ConnectionManagerOperations #//Object #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectionManagerOperations" instanceClassName="CF.ConnectionManagerOperations"
       abstract="true" interface="true">
-    <eOperations name="connect" eExceptions="#//InvalidPort">
+    <eOperations name="connect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        eExceptions="#//InvalidPort">
       <eParameters name="usesEndpoint" eType="#//EndpointRequest"/>
       <eParameters name="providesEndpoint" eType="#//EndpointRequest"/>
       <eParameters name="requesterId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
