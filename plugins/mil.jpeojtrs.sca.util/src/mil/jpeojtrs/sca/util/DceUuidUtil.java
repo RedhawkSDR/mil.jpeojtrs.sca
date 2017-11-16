@@ -145,4 +145,35 @@ public final class DceUuidUtil {
 		}
 		return false;
 	}
+
+	/**
+	 * Removes a DCE prefix from the string, if any. Example:
+	 * <p/>
+	 * <code>trimPrefix("DCE:12345678-90ab-cdef-0123-456789abcdef:foo")</code>
+	 * <p/>
+	 * Would yield:
+	 * <p/>
+	 * <code>"foo"</code>
+	 * @param str The string to check
+	 * @return The string without any prefix if it was found
+	 * @since 4.6
+	 */
+	public static String trimPrefix(String str) {
+		if (str == null) {
+			return null;
+		}
+		final String[] split = str.split(":");
+		if (split.length < 3) {
+			return str;
+		}
+		if (!DCE_PREFIX.equals(split[0])) {
+			return str;
+		}
+		try {
+			UUID.fromString(split[1]);
+		} catch (IllegalArgumentException e) {
+			return str;
+		}
+		return str.substring(DCE_UUID_LENGTH + 1);
+	}
 }

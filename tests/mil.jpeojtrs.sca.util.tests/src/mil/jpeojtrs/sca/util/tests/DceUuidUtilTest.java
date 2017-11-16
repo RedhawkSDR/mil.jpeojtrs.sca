@@ -112,4 +112,11 @@ public class DceUuidUtilTest {
 		Assert.assertFalse(DceUuidUtil.isValid("DCE:12:1:2:3:1:2:3"));
 
 	}
+
+	@Test
+	public void test_trimPrefix() {
+		Assert.assertEquals("foo", DceUuidUtil.trimPrefix("DCE:12345678-90ab-cdef-0123-456789abcdef:foo"));
+		Assert.assertEquals("foo:bar", DceUuidUtil.trimPrefix("foo:bar"));
+		Assert.assertEquals(null, DceUuidUtil.trimPrefix(null));
+	}
 }
