@@ -53,6 +53,26 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationOperations" instanceClassName="CF.ApplicationOperations"
       abstract="true" interface="true" eSuperTypes="#//ResourceOperations"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionManager" instanceClassName="CF.ConnectionManager"
+      abstract="true" interface="true" eSuperTypes="#//ConnectionManagerOperations #//Object #//IDLEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionManagerOperations" instanceClassName="CF.ConnectionManagerOperations"
+      abstract="true" interface="true">
+    <eOperations name="connect" eExceptions="#//InvalidPort">
+      <eParameters name="usesEndpoint" eType="#//EndpointRequest"/>
+      <eParameters name="providesEndpoint" eType="#//EndpointRequest"/>
+      <eParameters name="requesterId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="connectionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="disconnect" eExceptions="#//InvalidPort">
+      <eParameters name="connectionRecordId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="connections" eType="#//ConnectionStatusTypeArray"/>
+    <eOperations name="listConnections">
+      <eParameters name="how_many" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="connections" eType="#//ConnectionStatusSequenceHolder"/>
+      <eParameters name="iter" eType="#//ConnectionStatusIteratorHolder"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Device" instanceClassName="CF.Device"
       abstract="true" interface="true" eSuperTypes="#//DeviceOperations #//Resource #//IDLEntity"/>
   <eClassifiers xsi:type="ecore:EClass" name="DeviceManager" instanceClassName="CF.DeviceManager"
@@ -412,6 +432,16 @@
   <eClassifiers xsi:type="ecore:EDataType" name="CreateApplicationError" instanceClassName="CF.ApplicationFactoryPackage.CreateApplicationError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="CreateApplicationRequestError" instanceClassName="CF.ApplicationFactoryPackage.CreateApplicationRequestError"/>
   <eClassifiers xsi:type="ecore:EDataType" name="InvalidInitConfiguration" instanceClassName="CF.ApplicationFactoryPackage.InvalidInitConfiguration"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ConnectionStatusSequenceHolder" instanceClassName="CF.ConnectionManagerPackage.ConnectionStatusSequenceHolder"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ConnectionStatusType" instanceClassName="CF.ConnectionManagerPackage.ConnectionStatusType"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ConnectionStatusTypeArray" instanceClassName="CF.ConnectionManagerPackage.ConnectionStatusType[]"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EndpointRequest" instanceClassName="CF.ConnectionManagerPackage.EndpointRequest"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ConnectionStatusIteratorHolder" instanceClassName="CF.ConnectionStatusIteratorHolder"
+      serializable="false"/>
   <eClassifiers xsi:type="ecore:EDataType" name="DataType" instanceClassName="CF.DataType">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="name" value="DataType"/>

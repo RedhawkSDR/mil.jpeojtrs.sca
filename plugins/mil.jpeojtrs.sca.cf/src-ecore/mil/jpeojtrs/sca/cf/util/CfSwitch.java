@@ -30,6 +30,8 @@ import CF.Application;
 import CF.ApplicationFactory;
 import CF.ApplicationFactoryOperations;
 import CF.ApplicationOperations;
+import CF.ConnectionManager;
+import CF.ConnectionManagerOperations;
 import CF.Device;
 import CF.DeviceManager;
 import CF.DeviceManagerOperations;
@@ -521,6 +523,26 @@ public class CfSwitch< T > extends Switch<T> {
 				result = casePortSupplierOperations(applicationOperations);
 			if (result == null)
 				result = casePropertySetOperations(applicationOperations);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CfPackage.CONNECTION_MANAGER: {
+			ConnectionManager connectionManager = (ConnectionManager) theEObject;
+			T result = caseConnectionManager(connectionManager);
+			if (result == null)
+				result = caseConnectionManagerOperations(connectionManager);
+			if (result == null)
+				result = caseObject(connectionManager);
+			if (result == null)
+				result = caseIDLEntity(connectionManager);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case CfPackage.CONNECTION_MANAGER_OPERATIONS: {
+			ConnectionManagerOperations connectionManagerOperations = (ConnectionManagerOperations) theEObject;
+			T result = caseConnectionManagerOperations(connectionManagerOperations);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1469,6 +1491,36 @@ public class CfSwitch< T > extends Switch<T> {
 	 * @generated
 	 */
 	public T caseApplicationOperations(ApplicationOperations object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connection Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connection Manager</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectionManager(ConnectionManager object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connection Manager Operations</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connection Manager Operations</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectionManagerOperations(ConnectionManagerOperations object) {
 		return null;
 	}
 
