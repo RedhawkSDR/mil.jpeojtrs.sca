@@ -2955,7 +2955,7 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEClass(connectionManagerOperationsEClass, ConnectionManagerOperations.class, "ConnectionManagerOperations", IS_ABSTRACT, IS_INTERFACE,
 			!IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(connectionManagerOperationsEClass, null, "connect", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(connectionManagerOperationsEClass, ecorePackage.getEString(), "connect", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEndpointRequest(), "usesEndpoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getEndpointRequest(), "providesEndpoint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "requesterId", 0, 1, IS_UNIQUE, IS_ORDERED);
