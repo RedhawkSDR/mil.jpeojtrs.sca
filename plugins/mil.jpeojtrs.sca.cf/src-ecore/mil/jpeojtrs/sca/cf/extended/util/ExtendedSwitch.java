@@ -26,7 +26,6 @@ import ExtendedCF.NegotiableUsesPort;
 import ExtendedCF.NegotiableUsesPortOperations;
 import ExtendedCF.QueryablePort;
 import ExtendedCF.QueryablePortOperations;
-import mil.jpeojtrs.sca.cf.extended.*;
 
 /**
  * <!-- begin-user-doc -->

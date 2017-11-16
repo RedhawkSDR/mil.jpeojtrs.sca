@@ -42,6 +42,12 @@ import CF.Application;
 import CF.ApplicationFactory;
 import CF.ApplicationFactoryOperations;
 import CF.ApplicationOperations;
+import CF.ConnectionManager;
+import CF.ConnectionManagerOperations;
+import CF.ConnectionManagerPackage.ConnectionStatusSequenceHolder;
+import CF.ConnectionManagerPackage.ConnectionStatusType;
+import CF.ConnectionManagerPackage.EndpointRequest;
+import CF.ConnectionStatusIteratorHolder;
 import CF.DataType;
 import CF.Device;
 import CF.DeviceAssignmentType;
@@ -266,6 +272,18 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EClass applicationOperationsEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass connectionManagerEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass connectionManagerOperationsEClass = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -602,6 +620,36 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * @generated
 	 */
 	private EDataType invalidInitConfigurationEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType connectionStatusSequenceHolderEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType connectionStatusTypeEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType connectionStatusTypeArrayEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType endpointRequestEDataType = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType connectionStatusIteratorHolderEDataType = null;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1248,6 +1296,24 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConnectionManager() {
+		return connectionManagerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConnectionManagerOperations() {
+		return connectionManagerOperationsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDevice() {
 		return deviceEClass;
 	}
@@ -1755,6 +1821,51 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 	 */
 	public EDataType getInvalidInitConfiguration() {
 		return invalidInitConfigurationEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getConnectionStatusSequenceHolder() {
+		return connectionStatusSequenceHolderEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getConnectionStatusType() {
+		return connectionStatusTypeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getConnectionStatusTypeArray() {
+		return connectionStatusTypeArrayEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getEndpointRequest() {
+		return endpointRequestEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getConnectionStatusIteratorHolder() {
+		return connectionStatusIteratorHolderEDataType;
 	}
 
 	/**
@@ -2458,6 +2569,10 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 
 		applicationOperationsEClass = createEClass(APPLICATION_OPERATIONS);
 
+		connectionManagerEClass = createEClass(CONNECTION_MANAGER);
+
+		connectionManagerOperationsEClass = createEClass(CONNECTION_MANAGER_OPERATIONS);
+
 		deviceEClass = createEClass(DEVICE);
 
 		deviceManagerEClass = createEClass(DEVICE_MANAGER);
@@ -2552,6 +2667,11 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		createApplicationErrorEDataType = createEDataType(CREATE_APPLICATION_ERROR);
 		createApplicationRequestErrorEDataType = createEDataType(CREATE_APPLICATION_REQUEST_ERROR);
 		invalidInitConfigurationEDataType = createEDataType(INVALID_INIT_CONFIGURATION);
+		connectionStatusSequenceHolderEDataType = createEDataType(CONNECTION_STATUS_SEQUENCE_HOLDER);
+		connectionStatusTypeEDataType = createEDataType(CONNECTION_STATUS_TYPE);
+		connectionStatusTypeArrayEDataType = createEDataType(CONNECTION_STATUS_TYPE_ARRAY);
+		endpointRequestEDataType = createEDataType(ENDPOINT_REQUEST);
+		connectionStatusIteratorHolderEDataType = createEDataType(CONNECTION_STATUS_ITERATOR_HOLDER);
 		dataTypeEDataType = createEDataType(DATA_TYPE);
 		dataTypeArrayEDataType = createEDataType(DATA_TYPE_ARRAY);
 		deviceAssignmentTypeArrayEDataType = createEDataType(DEVICE_ASSIGNMENT_TYPE_ARRAY);
@@ -2691,6 +2811,9 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		applicationFactoryEClass.getESuperTypes().add(this.getObject());
 		applicationFactoryEClass.getESuperTypes().add(this.getIDLEntity());
 		applicationOperationsEClass.getESuperTypes().add(this.getResourceOperations());
+		connectionManagerEClass.getESuperTypes().add(this.getConnectionManagerOperations());
+		connectionManagerEClass.getESuperTypes().add(this.getObject());
+		connectionManagerEClass.getESuperTypes().add(this.getIDLEntity());
 		deviceEClass.getESuperTypes().add(this.getDeviceOperations());
 		deviceEClass.getESuperTypes().add(this.getResource());
 		deviceEClass.getESuperTypes().add(this.getIDLEntity());
@@ -2826,6 +2949,29 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		addEException(op, this.getInvalidInitConfiguration());
 
 		initEClass(applicationOperationsEClass, ApplicationOperations.class, "ApplicationOperations", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(connectionManagerEClass, ConnectionManager.class, "ConnectionManager", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(connectionManagerOperationsEClass, ConnectionManagerOperations.class, "ConnectionManagerOperations", IS_ABSTRACT, IS_INTERFACE,
+			!IS_GENERATED_INSTANCE_CLASS);
+
+		op = addEOperation(connectionManagerOperationsEClass, null, "connect", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEndpointRequest(), "usesEndpoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEndpointRequest(), "providesEndpoint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "requesterId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "connectionId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getInvalidPort());
+
+		op = addEOperation(connectionManagerOperationsEClass, null, "disconnect", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "connectionRecordId", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEException(op, this.getInvalidPort());
+
+		addEOperation(connectionManagerOperationsEClass, this.getConnectionStatusTypeArray(), "connections", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(connectionManagerOperationsEClass, null, "listConnections", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "how_many", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getConnectionStatusSequenceHolder(), "connections", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getConnectionStatusIteratorHolder(), "iter", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(deviceEClass, Device.class, "Device", IS_ABSTRACT, IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 
@@ -3356,6 +3502,14 @@ public class CfPackageImpl extends EPackageImpl implements CfPackage {
 		initEDataType(createApplicationRequestErrorEDataType, CreateApplicationRequestError.class, "CreateApplicationRequestError", IS_SERIALIZABLE,
 			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(invalidInitConfigurationEDataType, InvalidInitConfiguration.class, "InvalidInitConfiguration", IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(connectionStatusSequenceHolderEDataType, ConnectionStatusSequenceHolder.class, "ConnectionStatusSequenceHolder", !IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(connectionStatusTypeEDataType, ConnectionStatusType.class, "ConnectionStatusType", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(connectionStatusTypeArrayEDataType, ConnectionStatusType[].class, "ConnectionStatusTypeArray", !IS_SERIALIZABLE,
+			!IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(endpointRequestEDataType, EndpointRequest.class, "EndpointRequest", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(connectionStatusIteratorHolderEDataType, ConnectionStatusIteratorHolder.class, "ConnectionStatusIteratorHolder", !IS_SERIALIZABLE,
 			!IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(dataTypeEDataType, DataType.class, "DataType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(dataTypeArrayEDataType, DataType[].class, "DataTypeArray", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

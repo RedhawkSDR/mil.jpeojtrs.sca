@@ -13,7 +13,6 @@ package mil.jpeojtrs.sca.cf.extended.impl;
 
 import ExtendedCF.NegotiationError;
 import ExtendedEvent.PropertySetChangeEventType;
-import mil.jpeojtrs.sca.cf.extended.*;
 import mil.jpeojtrs.sca.cf.extended.ExtendedFactory;
 import mil.jpeojtrs.sca.cf.extended.ExtendedPackage;
 import org.eclipse.emf.ecore.EClass;

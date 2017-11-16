@@ -33,6 +33,8 @@ import CF.Application;
 import CF.ApplicationFactory;
 import CF.ApplicationFactoryOperations;
 import CF.ApplicationOperations;
+import CF.ConnectionManager;
+import CF.ConnectionManagerOperations;
 import CF.Device;
 import CF.DeviceManager;
 import CF.DeviceManagerOperations;
@@ -200,6 +202,16 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseApplicationOperations(ApplicationOperations object) {
 			return createApplicationOperationsAdapter();
+		}
+
+		@Override
+		public Adapter caseConnectionManager(ConnectionManager object) {
+			return createConnectionManagerAdapter();
+		}
+
+		@Override
+		public Adapter caseConnectionManagerOperations(ConnectionManagerOperations object) {
+			return createConnectionManagerOperationsAdapter();
 		}
 
 		@Override
@@ -662,6 +674,34 @@ public class CfAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createApplicationOperationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.ConnectionManager <em>Connection Manager</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.ConnectionManager
+	 * @generated
+	 */
+	public Adapter createConnectionManagerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CF.ConnectionManagerOperations <em>Connection Manager Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CF.ConnectionManagerOperations
+	 * @generated
+	 */
+	public Adapter createConnectionManagerOperationsAdapter() {
 		return null;
 	}
 
