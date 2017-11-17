@@ -125,27 +125,21 @@ public class OsItemProvider extends ItemProviderAdapter implements IEditingDomai
 
 	/**
 	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
-	public String getTextGen(Object object) {
-		String label = ((Os) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Os_type") : getString("_UI_Os_type") + " " + label;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
 	public String getText(final Object object) {
 		// END GENERATED CODE
-		final String version = ((Os) object).getVersion();
-		if ((version == null) || version.length() == 0) {
-			return getTextGen(object);
-		} else {
-			return getTextGen(object) + " (" + version + ")";
+		String name = ((Os) object).getName();
+		if (name == null || name.length() == 0) {
+			return getString("_UI_Os_type");
 		}
+		final String version = ((Os) object).getVersion();
+		if (version == null || version.length() == 0) {
+			return name;
+		}
+		return name + " (" + version + ")";
 		// BEGIN GENERATED CODE
 	}
 

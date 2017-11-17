@@ -157,32 +157,26 @@ public class SoftPkgRefItemProvider extends ItemProviderAdapter implements IEdit
 
 	/**
 	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
-	public String getTextGen(Object object) {
-		return getString("_UI_SoftPkgRef_type");
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
 	public String getText(final Object object) {
+		// END GENERATED CODE
 		final SoftPkgRef ref = (SoftPkgRef) object;
 		final ImplRef impl = ref.getImplRef();
 		final LocalFile file = ref.getLocalFile();
 
 		if (file != null) {
 			if (impl != null) {
-				return getTextGen(object) + ": " + file.getName() + "(" + impl.getRefid() + ")";
+				return getString("_UI_SoftPkgRef_type") + ": " + file.getName() + "(" + impl.getRefid() + ")";
 			} else {
-				return getTextGen(object) + ": " + file.getName();
+				return getString("_UI_SoftPkgRef_type") + ": " + file.getName();
 			}
 		} else {
-			return getTextGen(object);
+			return getString("_UI_SoftPkgRef_type");
 		}
+		// BEGIN GENERATED CODE
 	}
 
 	/**

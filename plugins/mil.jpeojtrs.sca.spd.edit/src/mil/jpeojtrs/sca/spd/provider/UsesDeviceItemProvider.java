@@ -139,9 +139,11 @@ public class UsesDeviceItemProvider extends PropertyRefGroupItemProvider {
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		// END GENERATED CODE
 		newChildDescriptors.add(createChildParameter(PrfPackage.Literals.PROPERTY_REF_GROUP__PROPERTIES,
 			FeatureMapUtil.createEntry(SpdPackage.Literals.USES_DEVICE__PROPERTY_REF, SpdFactory.eINSTANCE.createPropertyRef())));
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+		// BEGIN GENERATED CODE
 	}
 
 	/**
