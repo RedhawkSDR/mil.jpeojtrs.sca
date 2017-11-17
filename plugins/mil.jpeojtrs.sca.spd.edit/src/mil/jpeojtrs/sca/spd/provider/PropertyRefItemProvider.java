@@ -112,8 +112,10 @@ public class PropertyRefItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
+		// END GENERATED CODE
 		String label = ((PropertyRef) object).getRefId();
-		return label == null || label.length() == 0 ? getString("_UI_PropertyRef_type") : label;
+		return (label == null || label.length() == 0) ? getString("_UI_PropertyRef_type") : label;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
