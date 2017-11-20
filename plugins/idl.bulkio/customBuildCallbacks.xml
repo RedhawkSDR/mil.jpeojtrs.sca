@@ -89,7 +89,7 @@
 			<arg line="-i /usr/share/idl/omniORB/COS" />
 			<arg line="-td src/" />
 			<fileset dir="${idl}">
-				<include name="ossie/BULKIO/*.idl" />
+				<include name="**/*.idl" />
 			</fileset>
 		</apply>
 	</target>
