@@ -126,12 +126,21 @@ public class EnumerationImpl extends EObjectImpl implements Enumeration {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Set's value for the enumeration, converting double-quotes to an empty string if found
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void setValue(String newValue) {
 		String oldValue = value;
+
+		// END GENERATED CODE
+		// Convert and double-quotes to empty strings
+		if ("\"\"".equals(newValue)) {
+			newValue = "";
+		}
+		// BEGIN GENERATED CODE
+
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PrfPackage.ENUMERATION__VALUE, oldValue, value));

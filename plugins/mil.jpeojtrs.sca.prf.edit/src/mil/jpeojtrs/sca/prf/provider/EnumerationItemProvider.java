@@ -159,15 +159,22 @@ public class EnumerationItemProvider extends ItemProviderAdapter implements IEdi
 		return PrfEditPlugin.INSTANCE;
 	}
 
+	// END GENERATED CODE
 	@Override
 	public String getColumnText(Object object, int columnIndex) {
 		switch (columnIndex) {
 		case 0:
 			return ((Enumeration) object).getLabel();
 		case 1:
-			return ((Enumeration) object).getValue();
+			String value = ((Enumeration) object).getValue();
+			if ("".equals(value)) {
+				value = "\"\"";
+			}
+			return value;
+		default:
+			return super.getColumnText(object, columnIndex);
 		}
-		return super.getColumnText(object, columnIndex);
 	}
+	// BEGIN GENERATED CODE
 
 }
