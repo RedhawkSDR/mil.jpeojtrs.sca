@@ -17,11 +17,15 @@ import CF.DataType;
 import CF.ErrorNumberType;
 import CF.FileException;
 import CF.InvalidFileName;
+import CF.InvalidObjectReference;
 import CF.UnknownProperties;
 import CF.AllocationManagerPackage.InvalidAllocationId;
 import CF.DevicePackage.InsufficientCapacity;
 import CF.DevicePackage.InvalidCapacity;
 import CF.DevicePackage.InvalidState;
+import CF.DomainManagerPackage.AlreadyConnected;
+import CF.DomainManagerPackage.InvalidEventChannelName;
+import CF.DomainManagerPackage.NotConnected;
 import CF.ExecutableDevicePackage.ExecuteFail;
 import CF.ExecutableDevicePackage.InvalidFunction;
 import CF.ExecutableDevicePackage.InvalidOptions;
@@ -47,6 +51,12 @@ import mil.jpeojtrs.sca.util.CFErrorFormatter.FileOperation2;
  * Tests some of the error messages we generate with {@link CFErrorFormatter}.
  */
 public class CFErrorFormatterTest {
+
+	@Test
+	public void format_AlreadyConnected_resName() {
+		String msg = CFErrorFormatter.format(new AlreadyConnected(), "bar");
+		Assert.assertEquals("CF.DomainManagerPackage.AlreadyConnected for bar", msg);
+	}
 
 	@Test
 	public void format_AlreadyInitialized_resName() {
@@ -137,6 +147,12 @@ public class CFErrorFormatterTest {
 	}
 
 	@Test
+	public void format_InvalidEventChannelName_resName() {
+		String msg = CFErrorFormatter.format(new InvalidEventChannelName(), "mychannel");
+		Assert.assertEquals("CF.DomainManagerPackage.InvalidEventChannelName for mychannel", msg);
+	}
+
+	@Test
 	public void format_InvalidFileName_onePath() {
 		String msg = CFErrorFormatter.format(new InvalidFileName(ErrorNumberType.CF_E2BIG, "ABC"), FileOperation.Create, "/a");
 		Assert.assertEquals("CF.InvalidFileName while creating /a: ABC (error number CF_E2BIG)", msg);
@@ -177,6 +193,12 @@ public class CFErrorFormatterTest {
 	}
 
 	@Test
+	public void format_InvalidObjectReference_resName() {
+		String msg = CFErrorFormatter.format(new InvalidObjectReference("abc"), "def");
+		Assert.assertEquals("CF.InvalidObjectReference for def: abc", msg);
+	}
+
+	@Test
 	public void format_InvalidOptions() {
 		String msg = CFErrorFormatter.format(new InvalidOptions(new DataType[] { new DataType("g", null) }), "baz");
 		Assert.assertEquals("CF.ExecutableDevicePackage.InvalidOptions for baz. Properties: g", msg);
@@ -208,6 +230,12 @@ public class CFErrorFormatterTest {
 	public void format_NonExistentMount() {
 		String msg = CFErrorFormatter.format(new NonExistentMount(), "abc");
 		Assert.assertEquals("CF.FileManagerPackage.NonExistentMount for abc", msg);
+	}
+
+	@Test
+	public void format_NotConnected_resName() {
+		String msg = CFErrorFormatter.format(new NotConnected(), "mychannel");
+		Assert.assertEquals("CF.DomainManagerPackage.NotConnected for mychannel", msg);
 	}
 
 	@Test

@@ -24,11 +24,15 @@ import CF.ErrorNumberType;
 import CF.ErrorNumberTypeHelper;
 import CF.FileException;
 import CF.InvalidFileName;
+import CF.InvalidObjectReference;
 import CF.UnknownProperties;
 import CF.AllocationManagerPackage.InvalidAllocationId;
 import CF.DevicePackage.InsufficientCapacity;
 import CF.DevicePackage.InvalidCapacity;
 import CF.DevicePackage.InvalidState;
+import CF.DomainManagerPackage.AlreadyConnected;
+import CF.DomainManagerPackage.InvalidEventChannelName;
+import CF.DomainManagerPackage.NotConnected;
 import CF.ExecutableDevicePackage.ExecuteFail;
 import CF.ExecutableDevicePackage.InvalidFunction;
 import CF.ExecutableDevicePackage.InvalidOptions;
@@ -117,6 +121,13 @@ public class CFErrorFormatter {
 	private CFErrorFormatter() {
 	}
 
+	/**
+	 * @since 4.6
+	 */
+	public static String format(AlreadyConnected e, String resourceDesc) {
+		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
+	}
+
 	public static String format(AlreadyInitialized e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
 	}
@@ -173,6 +184,13 @@ public class CFErrorFormatter {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG_PROPLIST, e.getClass().getName(), resourceDesc, e.msg, formatProperties(e.invalidProperties));
 	}
 
+	/**
+	 * @since 4.6
+	 */
+	public static String format(InvalidEventChannelName e, String channelName) {
+		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), channelName);
+	}
+
 	public static String format(InvalidFileName e, FileOperation op, String path) {
 		return String.format(op.getFormat(), e.getClass().getName(), path, e.msg, toName(e.errorNumber));
 	}
@@ -190,6 +208,13 @@ public class CFErrorFormatter {
 	 */
 	public static String format(InvalidFunction e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
+	}
+
+	/**
+	 * @since 4.6
+	 */
+	public static String format(InvalidObjectReference e, String channelName) {
+		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG, e.getClass().getName(), channelName, e.msg);
 	}
 
 	/**
@@ -222,6 +247,13 @@ public class CFErrorFormatter {
 	 */
 	public static String format(NonExistentMount e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
+	}
+
+	/**
+	 * @since 4.6
+	 */
+	public static String format(NotConnected e, String channelName) {
+		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), channelName);
 	}
 
 	public static String format(OccupiedPort e, String resourceDesc) {
