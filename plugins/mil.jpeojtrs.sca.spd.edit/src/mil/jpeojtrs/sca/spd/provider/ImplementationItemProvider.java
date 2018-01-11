@@ -15,6 +15,7 @@ import java.util.Collection;
 import java.util.List;
 
 import mil.jpeojtrs.sca.spd.Implementation;
+import mil.jpeojtrs.sca.spd.ProgrammingLanguage;
 import mil.jpeojtrs.sca.spd.SpdFactory;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 
@@ -259,6 +260,19 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 */
 	@Override
 	public Object getImage(Object object) {
+		ProgrammingLanguage progLang = ((Implementation) object).getProgrammingLanguage();
+		if (progLang != null && progLang.getName() != null) {
+			switch (progLang.getName()) {
+			case "C++":
+				return overlayImage(object, getResourceLocator().getImage("full/obj16/cpp_app"));
+			case "Java":
+				return overlayImage(object, getResourceLocator().getImage("full/obj16/java_app.png"));
+			case "Python":
+				return overlayImage(object, getResourceLocator().getImage("full/obj16/python_app.png"));
+			default:
+				break;
+			}
+		}
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/Implementation"));
 	}
 
