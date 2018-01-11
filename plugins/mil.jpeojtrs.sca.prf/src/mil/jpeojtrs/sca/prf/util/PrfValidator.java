@@ -16,9 +16,7 @@ import java.util.List;
 import java.util.Map;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
@@ -366,21 +364,27 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateSimple(Simple simple, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		if (simple.eContainer() instanceof Properties) {
-			if (simple.isOptional() && diagnostics != null) {
-				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
+		// This block is just warnings, and therefore only applies if diagnostics were requested
+		if (diagnostics != null) {
+			if (simple.eContainer() instanceof Properties) {
+				if (simple.isOptional()) {
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
+						new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
+				}
+			} else if (simple.getKind() != null && !simple.getKind().isEmpty()) {
+				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
 					new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
 			}
-		} else if (simple.getKind() != null && !simple.getKind().isEmpty() && diagnostics != null) {
-			diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
-				new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
+
+			for (Kind kind : simple.getKind()) {
+				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
+						new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
+				}
+			}
 		}
 
-		boolean result = validate_EveryDefaultConstraint(simple, diagnostics, context);
-		if (result || diagnostics != null) {
-			result &= validate_unsupportedMessageKindType(simple, diagnostics, context);
-		}
-		return result;
+		return validate_EveryDefaultConstraint(simple, diagnostics, context);
 		// BEGIN GENERATED CODE
 	}
 
@@ -391,21 +395,27 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateSimpleSequence(SimpleSequence simpleSequence, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		if (simpleSequence.eContainer() instanceof Properties) {
-			if (simpleSequence.isOptional()) {
-				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
+		// This block is just warnings, and therefore only applies if diagnostics were requested
+		if (diagnostics != null) {
+			if (simpleSequence.eContainer() instanceof Properties) {
+				if (simpleSequence.isOptional()) {
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
+						new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
+				}
+			} else if (simpleSequence.getKind() != null && !simpleSequence.getKind().isEmpty()) {
+				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
 					new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
 			}
-		} else if (simpleSequence.getKind() != null && !simpleSequence.getKind().isEmpty()) {
-			diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
-				new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
+
+			for (Kind kind : simpleSequence.getKind()) {
+				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
+						new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
+				}
+			}
 		}
 
-		boolean result = validate_EveryDefaultConstraint(simpleSequence, diagnostics, context);
-		if (result || diagnostics != null) {
-			result &= validate_unsupportedMessageKindType(simpleSequence, diagnostics, context);
-		}
-		return result;
+		return validate_EveryDefaultConstraint(simpleSequence, diagnostics, context);
 		// BEGIN GENERATED CODE
 	}
 
@@ -515,11 +525,17 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateStructSequence(StructSequence structSequence, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		boolean result = validate_EveryDefaultConstraint(structSequence, diagnostics, context);
-		if (result || diagnostics != null) {
-			result &= validate_unsupportedMessageKindType(structSequence, diagnostics, context);
+		// This block is just warnings, and therefore only applies if diagnostics were requested
+		if (diagnostics != null) {
+			for (ConfigurationKind kind : structSequence.getConfigurationKind()) {
+				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
+						new Object[] { getObjectLabel(structSequence, context), }, new Object[] { structSequence }, context));
+				}
+			}
 		}
-		return result;
+
+		return validate_EveryDefaultConstraint(structSequence, diagnostics, context);
 		// BEGIN GENERATED CODE
 	}
 
@@ -997,42 +1013,5 @@ public class PrfValidator extends EObjectValidator {
 		return PrfPlugin.INSTANCE;
 		// BEGIN GENERATED CODE
 	}
-
-	// END GENERATED CODE
-
-	private boolean validate_unsupportedMessageKindType(EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (eObject instanceof Simple) {
-			EList<Kind> kindList = ((Simple) eObject).getKind();
-			for (Kind kind : kindList) {
-				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
-					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
-						new Object[] { getObjectLabel(eObject, context), }, new Object[] { eObject }, context));
-					return false;
-				}
-			}
-		} else if (eObject instanceof SimpleSequence) {
-			EList<Kind> kindList = ((SimpleSequence) eObject).getKind();
-			for (Kind kind : kindList) {
-				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
-					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
-						new Object[] { getObjectLabel(eObject, context), }, new Object[] { eObject }, context));
-					return false;
-				}
-			}
-		} else if (eObject instanceof StructSequence) {
-			EList<ConfigurationKind> kindList = ((StructSequence) eObject).getConfigurationKind();
-			for (ConfigurationKind kind : kindList) {
-				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
-					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
-						new Object[] { getObjectLabel(eObject, context), }, new Object[] { eObject }, context));
-					return false;
-				}
-			}
-		}
-
-		return true;
-	}
-
-	// BEGIN GENERATED CODE
 
 } // PrfValidator
