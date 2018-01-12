@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <simplesequence id="optionalWarning" mode="readwrite" name="optionalWarning" type="string" optional="true">
+    <description>The optional attribute on this simple sequence triggers a warning because it isn't a member of a struct.</description>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simplesequence>
+  <struct id="optional" mode="readwrite" name="optional">
+    <simplesequence id="optional::optionalOk" mode="readwrite" name="optionalOk" type="string" optional="true"/>
+    <configurationkind kindtype="property"/>
+  </struct>
+  <struct id="redundantKind" mode="readwrite" name="redundantKind">
+    <simplesequence id="redundantKind::redundantKindWarning" name="redundantKindWarning" type="string">
+      <description>This simple sequence triggers a warning because it has a kind type, but isn't top-level</description>
+      <kind kindtype="property"/>
+    </simplesequence>
+    <configurationkind kindtype="property"/>
+  </struct>
+  <simplesequence id="messageWarning" mode="readwrite" name="messageWarning" type="string">
+    <kind kindtype="message"/>
+    <action type="external"/>
+  </simplesequence>
+</properties>

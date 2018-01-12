@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <structsequence id="redundantKind" mode="readwrite" name="redundantKind">
+    <struct id="redundantKind::redundantKindWarning" name="redundantKindWarning">
+      <simple id="redundantKind::simple" name="simple" type="string"/>
+      <configurationkind kindtype="property"/>
+    </struct>
+    <configurationkind kindtype="property"/>
+  </structsequence>
+</properties>

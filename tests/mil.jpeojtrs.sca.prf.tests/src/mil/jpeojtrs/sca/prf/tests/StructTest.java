@@ -15,7 +15,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -28,9 +27,7 @@ import mil.jpeojtrs.sca.prf.AccessType;
 import mil.jpeojtrs.sca.prf.ConfigurationKind;
 import mil.jpeojtrs.sca.prf.PrfFactory;
 import mil.jpeojtrs.sca.prf.Properties;
-import mil.jpeojtrs.sca.prf.PropertyConfigurationType;
 import mil.jpeojtrs.sca.prf.PropertyValueType;
-import mil.jpeojtrs.sca.prf.Simple;
 import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructPropertyConfigurationType;
@@ -315,44 +312,5 @@ public class StructTest extends AbstractPropertyTest {
 		String errorMsg = diagnostic.getChildren().get(0).getMessage();
 		Assert.assertTrue("Unexpected error message", errorMsg.matches(".*" + "must have at least 1 values"));
 		Assert.assertEquals("Unexpected error code", EObjectValidator.EOBJECT__EVERY_MULTIPCITY_CONFORMS, diagnostic.getChildren().get(0).getCode());
-	}
-
-	/**
-	 * IDE-1344 - Provide validation warning for kind elements on members of a struct/struct seq
-	 */
-	public void testRedundantConfigurationKind() throws Exception {
-		final ResourceSet resourceSet = new ResourceSetImpl();
-		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructTest.prf.xml"), true));
-		Assert.assertNotNull(props);
-
-		// Assert that an Struct fails EMF validation
-		Struct struct = (Struct) props.getProperty("redundantConfigKind");
-		Assert.assertNotNull(struct);
-
-		// Assert that EMF Warning is thrown if a simple contained in a struct has a declared kind type
-		Simple simple = (Simple) struct.getProperty("simple2");
-		Assert.assertNotNull(simple);
-		Assert.assertEquals("Simple Kind type is not set", PropertyConfigurationType.PROPERTY, simple.getKind().get(0).getType());
-
-		BasicDiagnostic diagnostic = new BasicDiagnostic();
-		Assert.assertTrue(Diagnostician.INSTANCE.validate(simple, diagnostic));
-		Assert.assertFalse(diagnostic.getChildren().isEmpty());
-		Diagnostic diagResult = diagnostic.getChildren().get(0);
-		Assert.assertEquals("Validation should result in a warning", Diagnostic.WARNING, diagResult.getSeverity());
-		Assert.assertEquals("Unexpected error message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_RedundantKind_diagnostic"),
-			diagResult.getMessage());
-
-		// Assert that EMF Warning is thrown if a simpleSequence contained in a struct has a declared kind type
-		SimpleSequence simpleSequence = (SimpleSequence) struct.getProperty("simpleSequence2");
-		Assert.assertNotNull(simpleSequence);
-		Assert.assertEquals("SimpleSequence Kind type is not set", PropertyConfigurationType.PROPERTY, simpleSequence.getKind().get(0).getType());
-
-		diagnostic = new BasicDiagnostic();
-		Assert.assertTrue(Diagnostician.INSTANCE.validate(simpleSequence, diagnostic));
-		Assert.assertFalse(diagnostic.getChildren().isEmpty());
-		diagResult = diagnostic.getChildren().get(0);
-		Assert.assertEquals("Validation should result in a warning", Diagnostic.WARNING, diagResult.getSeverity());
-		Assert.assertEquals("Unexpected error message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_RedundantKind_diagnostic"),
-			diagResult.getMessage());
 	}
 } //StructTest

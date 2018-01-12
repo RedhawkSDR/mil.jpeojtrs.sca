@@ -107,6 +107,25 @@ public class PrfValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
+
+	// END GENERATED CODE
+
+	private enum Codes {
+		OPTIONAL_NOT_IN_STRUCT(1215, "_UI_InvalidOptionalAttribute_diagnostic"),  //$NON-NLS-1$
+		KIND_IS_IGNORED(1344, "_UI_RedundantKind_diagnostic"), //$NON-NLS-1$
+		MESSAGE_NOT_A_STRUCT(1675, "_UI_UnsupportMessageKindType_diagnostic"); //$NON-NLS-1$
+
+		private int code;
+		private String messageKey;
+
+		private Codes(int code, String messageKey) {
+			this.code = code;
+			this.messageKey = messageKey;
+		}
+	}
+
+	// BEGIN GENERATED CODE
+
 	/**
 	 * The cached base package validator.
 	 * <!-- begin-user-doc -->
@@ -368,17 +387,20 @@ public class PrfValidator extends EObjectValidator {
 		if (diagnostics != null) {
 			if (simple.eContainer() instanceof Properties) {
 				if (simple.isOptional()) {
-					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
+					Codes code = Codes.OPTIONAL_NOT_IN_STRUCT;
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, code.code, code.messageKey,
 						new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
 				}
 			} else if (simple.getKind() != null && !simple.getKind().isEmpty()) {
-				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
+				Codes code = Codes.KIND_IS_IGNORED;
+				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, code.code, code.messageKey,
 					new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
 			}
 
 			for (Kind kind : simple.getKind()) {
 				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
-					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
+					Codes code = Codes.MESSAGE_NOT_A_STRUCT;
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, code.code, code.messageKey,
 						new Object[] { getObjectLabel(simple, context), }, new Object[] { simple }, context));
 				}
 			}
@@ -399,17 +421,20 @@ public class PrfValidator extends EObjectValidator {
 		if (diagnostics != null) {
 			if (simpleSequence.eContainer() instanceof Properties) {
 				if (simpleSequence.isOptional()) {
-					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_InvalidOptionalAttribute_diagnostic",
+					Codes code = Codes.OPTIONAL_NOT_IN_STRUCT;
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, code.code, code.messageKey,
 						new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
 				}
 			} else if (simpleSequence.getKind() != null && !simpleSequence.getKind().isEmpty()) {
-				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
+				Codes code = Codes.KIND_IS_IGNORED;
+				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, code.code, code.messageKey,
 					new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
 			}
 
 			for (Kind kind : simpleSequence.getKind()) {
 				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
-					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
+					Codes code = Codes.MESSAGE_NOT_A_STRUCT;
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, code.code, code.messageKey,
 						new Object[] { getObjectLabel(simpleSequence, context), }, new Object[] { simpleSequence }, context));
 				}
 			}
@@ -427,10 +452,14 @@ public class PrfValidator extends EObjectValidator {
 	 */
 	public boolean validateStruct(Struct struct, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// END GENERATED CODE
-		if (struct.eContainer() instanceof StructSequence) {
-			if (struct.getConfigurationKind() != null && !struct.getConfigurationKind().isEmpty()) {
-				diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_RedundantKind_diagnostic",
-					new Object[] { getObjectLabel(struct, context), }, new Object[] { struct }, context));
+		// This block is just warnings, and therefore only applies if diagnostics were requested
+		if (diagnostics != null) {
+			if (struct.eContainer() instanceof StructSequence) {
+				if (struct.getConfigurationKind() != null && !struct.getConfigurationKind().isEmpty()) {
+					Codes code = Codes.KIND_IS_IGNORED;
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, code.code, code.messageKey,
+						new Object[] { getObjectLabel(struct, context), }, new Object[] { struct }, context));
+				}
 			}
 		}
 
@@ -529,7 +558,8 @@ public class PrfValidator extends EObjectValidator {
 		if (diagnostics != null) {
 			for (ConfigurationKind kind : structSequence.getConfigurationKind()) {
 				if (PropertyConfigurationType.MESSAGE.getLiteral().equals(kind.getType().getLiteral())) {
-					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, -1, "_UI_UnsupportMessageKindType_diagnostic",
+					Codes code = Codes.MESSAGE_NOT_A_STRUCT;
+					diagnostics.add(createDiagnostic(Diagnostic.WARNING, DIAGNOSTIC_SOURCE, code.code, code.messageKey,
 						new Object[] { getObjectLabel(structSequence, context), }, new Object[] { structSequence }, context));
 				}
 			}

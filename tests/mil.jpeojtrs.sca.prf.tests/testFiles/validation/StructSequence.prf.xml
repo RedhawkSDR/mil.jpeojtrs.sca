@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <structsequence id="messageWarning" mode="readwrite" name="messageWarning">
+    <struct id="messageWarning::struct" name="struct">
+      <simple id="messageWarning::simple" name="simple" type="string"/>
+    </struct>
+    <configurationkind kindtype="message"/>
+  </structsequence>
+</properties>

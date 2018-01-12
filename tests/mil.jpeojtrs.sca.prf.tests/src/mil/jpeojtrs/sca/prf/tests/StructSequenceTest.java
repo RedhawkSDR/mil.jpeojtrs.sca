@@ -13,8 +13,6 @@ package mil.jpeojtrs.sca.prf.tests;
 
 import java.io.ByteArrayOutputStream;
 
-import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Assert;
@@ -29,7 +27,6 @@ import mil.jpeojtrs.sca.prf.PropertyConfigurationType;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructPropertyConfigurationType;
 import mil.jpeojtrs.sca.prf.StructSequence;
-import mil.jpeojtrs.sca.prf.util.PrfValidator;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
@@ -205,30 +202,4 @@ public class StructSequenceTest extends AbstractPropertyTest {
 		String xml = new String(buffer.toByteArray());
 		Assert.assertFalse("Empty configuration kind serialized wrong.", xml.contains("configurationkind=\"\""));
 	}
-
-	/**
-	 * IDE-1344 - Provide validation warning for kind elements on members of a struct/struct seq
-	 */
-	public void testRedundantConfigurationKind_IDE_1344() throws Exception {
-		final ResourceSet resourceSet = new ResourceSetImpl();
-		final Properties props = Properties.Util.getProperties(resourceSet.getResource(PrfTests.getURI("testFiles/StructSequenceTest.prf.xml"), true));
-		Assert.assertNotNull(props);
-		final StructSequence structSeq = props.getStructSequence().get(0);
-		Assert.assertNotNull(structSeq);
-		Assert.assertEquals("Test case running against wrong StructSequence element", "DCE:8ab14a5d-00a0-4468-9ab3-7298f7025470", structSeq.getId());
-
-		// Assert that EMF Warning is thrown if a struct contained in a struct sequence has a declared configurationKind
-		Struct struct = structSeq.getStructValue().get(0).getStruct();
-		Assert.assertEquals("Test case running against wrong Struct element", "DCE:c87bfb04-88ea-4e91-bc53-f9fce3b7eb6e", struct.getId());
-		Assert.assertEquals("Configuration Kind is not set", StructPropertyConfigurationType.CONFIGURE, struct.getConfigurationKind().get(0).getType());
-
-		BasicDiagnostic diagnostic = new BasicDiagnostic();
-		Assert.assertTrue(PrfValidator.INSTANCE.validateStruct(struct, diagnostic, null));
-		Assert.assertFalse(diagnostic.getChildren().isEmpty());
-		Diagnostic diagResult = diagnostic.getChildren().get(0);
-		Assert.assertEquals("Validation should result in a warning", Diagnostic.WARNING, diagResult.getSeverity());
-		Assert.assertEquals("Unexpected error message", PrfValidator.INSTANCE.getResourceLocator().getString("_UI_RedundantKind_diagnostic"),
-			diagResult.getMessage());
-	}
-
 } //StructSequenceTest
