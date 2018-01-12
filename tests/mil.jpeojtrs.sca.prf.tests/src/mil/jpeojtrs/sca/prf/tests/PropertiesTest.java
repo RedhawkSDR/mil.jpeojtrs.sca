@@ -227,14 +227,14 @@ public class PropertiesTest extends TestCase {
 		// Simple test
 		diagnostic = new BasicDiagnostic();
 		isValid = Diagnostician.INSTANCE.validate(props.getSimple().get(0), diagnostic);
-		Assert.assertFalse("Simple with message kind should not pass validation", isValid);
+		Assert.assertTrue("Simple with message kind should pass validation", isValid);
 		errorMsg = diagnostic.getChildren().get(0).getMessage();
 		Assert.assertTrue("Unexpected error message", errorMsg.matches(expectedErrorMsg));
 
 		// Simple Sequence test
 		diagnostic = new BasicDiagnostic();
 		isValid = Diagnostician.INSTANCE.validate(props.getSimpleSequence().get(0), diagnostic);
-		Assert.assertFalse("Simple Sequence with message kind should not pass validation", isValid);
+		Assert.assertTrue("Simple Sequence with message kind should pass validation", isValid);
 		errorMsg = diagnostic.getChildren().get(0).getMessage();
 		Assert.assertTrue("Unexpected error message", errorMsg.matches(expectedErrorMsg));
 
@@ -247,7 +247,7 @@ public class PropertiesTest extends TestCase {
 		// Struct sequence test
 		diagnostic = new BasicDiagnostic();
 		isValid = Diagnostician.INSTANCE.validate(props.getStructSequence().get(0), diagnostic);
-		Assert.assertFalse("Struct Sequence with message kind should not pass validation", isValid);
+		Assert.assertTrue("Struct Sequence with message kind should pass validation", isValid);
 		errorMsg = diagnostic.getChildren().get(0).getMessage();
 		Assert.assertTrue("Unexpected error message", errorMsg.matches(expectedErrorMsg));
 	}
