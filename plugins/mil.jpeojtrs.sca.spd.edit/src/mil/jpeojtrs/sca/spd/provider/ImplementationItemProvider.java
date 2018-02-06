@@ -256,10 +256,11 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 	 * This returns Implementation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
+		// END GENERATED CODE
 		ProgrammingLanguage progLang = ((Implementation) object).getProgrammingLanguage();
 		if (progLang != null && progLang.getName() != null) {
 			switch (progLang.getName()) {
@@ -274,6 +275,7 @@ public class ImplementationItemProvider extends ItemProviderAdapter implements I
 			}
 		}
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/Implementation"));
+		// BEGIN GENERATED CODE
 	}
 
 	/**
