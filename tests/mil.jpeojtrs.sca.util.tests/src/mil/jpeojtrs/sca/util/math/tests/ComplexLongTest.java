@@ -10,18 +10,18 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math.tests;
 
+import org.jacorb.JacorbUtil;
 import org.junit.Assert;
-import mil.jpeojtrs.sca.util.math.ComplexLong;
-import mil.jpeojtrs.sca.util.math.ComplexNumber;
-
 import org.junit.Test;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.ORB;
 
 import CF.complexLong;
 import CF.complexLongHelper;
+import mil.jpeojtrs.sca.util.math.ComplexLong;
+import mil.jpeojtrs.sca.util.math.ComplexNumber;
 
-public class ComplexLongTest extends ComplexNumberTest {
+public class ComplexLongTest extends AbstractComplexNumberTest {
 
 	private final ComplexLong complexLong = new ComplexLong((int) 7, (int) 8);
 
@@ -49,6 +49,23 @@ public class ComplexLongTest extends ComplexNumberTest {
 	@Override
 	public void testGetSize() {
 		Assert.assertEquals(2, complexLong.getSize());
+	}
+
+	@Override
+	public void testIsSequence() {
+		CF.complexLong[] complexLongs = new CF.complexLong[0];
+		Any corbaAny = JacorbUtil.init().create_any();
+		CF.complexLongSeqHelper.insert(corbaAny, complexLongs);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
+
+		complexLongs = new CF.complexLong[2];
+		complexLongs[0] = new complexLong(1, 2);
+		complexLongs[1] = new complexLong(-3, -4);
+		corbaAny = JacorbUtil.init().create_any();
+		CF.complexLongSeqHelper.insert(corbaAny, complexLongs);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
 	}
 
 	@Override

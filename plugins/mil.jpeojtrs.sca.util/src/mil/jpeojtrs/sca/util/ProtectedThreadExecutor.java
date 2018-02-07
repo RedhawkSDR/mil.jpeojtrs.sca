@@ -20,14 +20,12 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @since 3.1
- * 
  */
 public final class ProtectedThreadExecutor {
 
 	private static final ExecutorService EXECUTOR = Executors.newCachedThreadPool(new NamedThreadFactory(ProtectedThreadExecutor.class.getName()));
 
 	private ProtectedThreadExecutor() {
-
 	}
 
 	private static boolean isProtectedThread(final Thread thread) {
@@ -36,11 +34,9 @@ public final class ProtectedThreadExecutor {
 		}
 		for (final StackTraceElement element : thread.getStackTrace()) {
 			final String className = element.getClassName();
-			if (className.startsWith("org.eclipse.swt")) {
-				return true;
-			} else if ("gov.redhawk.model.sca.commands.ScaModelCommand".equals(className)) {
-				return true;
-			} else if ("org.eclipse.emf.transaction.impl.TransactionalCommandStackImpl".equals(className)) {
+			if (className.startsWith("org.eclipse.swt") //
+				|| "gov.redhawk.model.sca.commands.ScaModelCommand".equals(className) //
+				|| "org.eclipse.emf.transaction.impl.TransactionalCommandStackImpl".equals(className)) {
 				return true;
 			}
 		}
@@ -101,6 +97,6 @@ public final class ProtectedThreadExecutor {
 	 * @since 3.6
 	 */
 	public static void async(Runnable runnable) {
-		 ProtectedThreadExecutor.EXECUTOR.submit(runnable);
+		ProtectedThreadExecutor.EXECUTOR.submit(runnable);
 	}
 }

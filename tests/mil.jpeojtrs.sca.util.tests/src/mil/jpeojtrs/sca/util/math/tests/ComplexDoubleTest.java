@@ -10,6 +10,7 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math.tests;
 
+import org.jacorb.JacorbUtil;
 import org.junit.Assert;
 import mil.jpeojtrs.sca.util.math.ComplexDouble;
 import mil.jpeojtrs.sca.util.math.ComplexNumber;
@@ -21,7 +22,7 @@ import org.omg.CORBA.ORB;
 import CF.complexDouble;
 import CF.complexDoubleHelper;
 
-public class ComplexDoubleTest extends ComplexNumberTest {
+public class ComplexDoubleTest extends AbstractComplexNumberTest {
 
 	private final ComplexDouble complexDouble = new ComplexDouble(7.0, 8.0);
 
@@ -49,6 +50,23 @@ public class ComplexDoubleTest extends ComplexNumberTest {
 	@Override
 	public void testGetSize() {
 		Assert.assertEquals(2, complexDouble.getSize());
+	}
+
+	@Override
+	public void testIsSequence() {
+		CF.complexDouble[] complexDoubles = new CF.complexDouble[0];
+		Any corbaAny = JacorbUtil.init().create_any();
+		CF.complexDoubleSeqHelper.insert(corbaAny, complexDoubles);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
+
+		complexDoubles = new CF.complexDouble[2];
+		complexDoubles[0] = new complexDouble(1.0, 2.0);
+		complexDoubles[1] = new complexDouble(-3.0, -4.0);
+		corbaAny = JacorbUtil.init().create_any();
+		CF.complexDoubleSeqHelper.insert(corbaAny, complexDoubles);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
 	}
 
 	@Override

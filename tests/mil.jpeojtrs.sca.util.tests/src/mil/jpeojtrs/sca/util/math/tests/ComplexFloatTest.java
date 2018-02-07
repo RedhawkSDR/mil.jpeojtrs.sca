@@ -10,18 +10,18 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math.tests;
 
+import org.jacorb.JacorbUtil;
 import org.junit.Assert;
-import mil.jpeojtrs.sca.util.math.ComplexFloat;
-import mil.jpeojtrs.sca.util.math.ComplexNumber;
-
 import org.junit.Test;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.ORB;
 
 import CF.complexFloat;
 import CF.complexFloatHelper;
+import mil.jpeojtrs.sca.util.math.ComplexFloat;
+import mil.jpeojtrs.sca.util.math.ComplexNumber;
 
-public class ComplexFloatTest extends ComplexNumberTest {
+public class ComplexFloatTest extends AbstractComplexNumberTest {
 
 	private final ComplexFloat complexFloat = new ComplexFloat(7f, 8f);
 
@@ -49,6 +49,23 @@ public class ComplexFloatTest extends ComplexNumberTest {
 	@Override
 	public void testGetSize() {
 		Assert.assertEquals(2, complexFloat.getSize());
+	}
+
+	@Override
+	public void testIsSequence() {
+		CF.complexFloat[] complexFloats = new CF.complexFloat[0];
+		Any corbaAny = JacorbUtil.init().create_any();
+		CF.complexFloatSeqHelper.insert(corbaAny, complexFloats);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
+
+		complexFloats = new CF.complexFloat[2];
+		complexFloats[0] = new complexFloat(1.0f, 2.0f);
+		complexFloats[1] = new complexFloat(-3.0f, -4.0f);
+		corbaAny = JacorbUtil.init().create_any();
+		CF.complexFloatSeqHelper.insert(corbaAny, complexFloats);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
 	}
 
 	@Override

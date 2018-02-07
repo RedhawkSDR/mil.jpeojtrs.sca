@@ -10,19 +10,19 @@
  */
 package mil.jpeojtrs.sca.util.math.tests;
 
+import org.jacorb.JacorbUtil;
 import org.junit.Assert;
-import mil.jpeojtrs.sca.util.math.ComplexOctet;
-import mil.jpeojtrs.sca.util.UnsignedUtils;
-import mil.jpeojtrs.sca.util.math.ComplexNumber;
-
 import org.junit.Test;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.ORB;
 
 import CF.complexOctet;
 import CF.complexOctetHelper;
+import mil.jpeojtrs.sca.util.UnsignedUtils;
+import mil.jpeojtrs.sca.util.math.ComplexNumber;
+import mil.jpeojtrs.sca.util.math.ComplexOctet;
 
-public class ComplexOctetTest extends ComplexNumberTest {
+public class ComplexOctetTest extends AbstractComplexNumberTest {
 
 	private final ComplexOctet complexOctet = new ComplexOctet((short) 7, (short) 8);
 
@@ -50,6 +50,23 @@ public class ComplexOctetTest extends ComplexNumberTest {
 	@Override
 	public void testGetSize() {
 		Assert.assertEquals(2, complexOctet.getSize());
+	}
+
+	@Override
+	public void testIsSequence() {
+		CF.complexOctet[] complexOctets = new CF.complexOctet[0];
+		Any corbaAny = JacorbUtil.init().create_any();
+		CF.complexOctetSeqHelper.insert(corbaAny, complexOctets);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
+
+		complexOctets = new CF.complexOctet[2];
+		complexOctets[0] = new complexOctet((byte) 1, (byte) 2);
+		complexOctets[1] = new complexOctet((byte) -3, (byte) -4);
+		corbaAny = JacorbUtil.init().create_any();
+		CF.complexOctetSeqHelper.insert(corbaAny, complexOctets);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
 	}
 
 	@Override
