@@ -155,30 +155,38 @@ public abstract class ComplexNumber {
 
 	@Override
 	public String toString() {
-		if (getSize() == 2) {
-			Object complexValue = getValue(1);
-			if (complexValue == null) {
-				return String.valueOf(getValue(0));
-			} else {
-				String complexStr = String.valueOf(complexValue);
-				char modifier = '+';
-				if (complexValue instanceof Number) {
-					Number complexNumber = (Number) complexValue;
-					if (1.0 == complexNumber.doubleValue()) {
-						complexStr = "";
-					} else if (-1.0 == complexNumber.doubleValue()) {
-						complexStr = "";
-						modifier = '-';
-					}
-				}
+		return (getSize() == 2) ? toStringTwoDimension() : toStringMultiDimension();
+	}
 
-				if (complexStr.length() > 0 && complexStr.charAt(0) == '-') {
-					complexStr = complexStr.substring(1, complexStr.length());
+	private String toStringTwoDimension() {
+		Object complexValue = getValue(1);
+		if (complexValue == null) {
+			return String.valueOf(getValue(0));
+		} else {
+			String complexStr = String.valueOf(complexValue);
+			char modifier = '+';
+			if (complexValue instanceof Number) {
+				// Convert to double, then to string. This forces any binary -> base 10 text rounding to occur. If the
+				// value is close enough to be displayed as a 1 or -1, we want to leave that out (i.e. "j" or "-j"
+				// instead of "j1" or "-j1")
+				String doubleStr = Double.toString(((Number) complexValue).doubleValue());
+				if ("1.0".equals(doubleStr)) {
+					complexStr = "";
+				} else if ("-1.0".equals(doubleStr)) {
+					complexStr = "";
 					modifier = '-';
 				}
-				return getValue(0).toString() + modifier + "j" + complexStr;
 			}
+
+			if (complexStr.length() > 0 && complexStr.charAt(0) == '-') {
+				complexStr = complexStr.substring(1, complexStr.length());
+				modifier = '-';
+			}
+			return getValue(0).toString() + modifier + "j" + complexStr;
 		}
+	}
+
+	private String toStringMultiDimension() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("(");
 		for (int i = 0; i < getSize(); i++) {

@@ -83,6 +83,11 @@ public class ComplexOctetTest extends ComplexNumberTest {
 	@Override
 	public void testToString() {
 		Assert.assertEquals("7+j8", complexOctet.toString());
+		Assert.assertEquals("7-j8", new ComplexOctet((short) 7, (short) -8).toString());
+		Assert.assertEquals("-7+j8", new ComplexOctet((short) -7, (short) 8).toString());
+		Assert.assertEquals("-7-j8", new ComplexOctet((short) -7, (short) -8).toString());
+		Assert.assertEquals("-7+j", new ComplexOctet((short) -7, (short) 1).toString());
+		Assert.assertEquals("-7-j", new ComplexOctet((short) -7, (short) -1).toString());
 	}
 
 }
