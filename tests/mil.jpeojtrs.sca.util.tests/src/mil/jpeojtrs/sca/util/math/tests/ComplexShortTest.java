@@ -10,18 +10,18 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util.math.tests;
 
+import org.jacorb.JacorbUtil;
 import org.junit.Assert;
-import mil.jpeojtrs.sca.util.math.ComplexShort;
-import mil.jpeojtrs.sca.util.math.ComplexNumber;
-
 import org.junit.Test;
 import org.omg.CORBA.Any;
 import org.omg.CORBA.ORB;
 
 import CF.complexShort;
 import CF.complexShortHelper;
+import mil.jpeojtrs.sca.util.math.ComplexNumber;
+import mil.jpeojtrs.sca.util.math.ComplexShort;
 
-public class ComplexShortTest extends ComplexNumberTest {
+public class ComplexShortTest extends AbstractComplexNumberTest {
 
 	private final ComplexShort complexShort = new ComplexShort((short) 7, (short) 8);
 
@@ -49,6 +49,23 @@ public class ComplexShortTest extends ComplexNumberTest {
 	@Override
 	public void testGetSize() {
 		Assert.assertEquals(2, complexShort.getSize());
+	}
+
+	@Override
+	public void testIsSequence() {
+		CF.complexShort[] complexShorts = new CF.complexShort[0];
+		Any corbaAny = JacorbUtil.init().create_any();
+		CF.complexShortSeqHelper.insert(corbaAny, complexShorts);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
+
+		complexShorts = new CF.complexShort[2];
+		complexShorts[0] = new complexShort((short) 1, (short) 2);
+		complexShorts[1] = new complexShort((short) -3, (short) -4);
+		corbaAny = JacorbUtil.init().create_any();
+		CF.complexShortSeqHelper.insert(corbaAny, complexShorts);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
 	}
 
 	@Override

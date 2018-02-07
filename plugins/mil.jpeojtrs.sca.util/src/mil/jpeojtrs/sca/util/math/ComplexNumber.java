@@ -38,12 +38,12 @@ public abstract class ComplexNumber {
 	public abstract int getSize();
 
 	/**
-	 * Extracts the <code>Any</code> to an array of {@link ComplexNumber}.
-	 * @param any The <code>Any</code> to extract
-	 * @return An array of {@link ComplexNumber}, or null if the <code>Any</code>'s type code isn't recognized
-	 * @since 4.0
+	 * Returns a functional interface to a method that can extract the {@link Any} into an appropriate array
+	 * of {@link ComplexNumber}.
+	 * @param any
+	 * @return The converter, or null if the {@link Any} is of the wrong type
 	 */
-	public static ComplexNumber[] valueOfSequence(Any any) {
+	private static IComplexSequenceConverter getSequenceConverter(Any any) {
 		TypeCode tc = any.type();
 		if (tc.kind().value() != TCKind._tk_alias) {
 			return null;
@@ -57,65 +57,89 @@ public abstract class ComplexNumber {
 			return null;
 		}
 
+		// Use a string switch to provide a fast "99%" match. We then check the exact types to be sure they match.
 		switch (name) {
 		case "complexBooleanSeq":
 			if (CF.complexBooleanSeqHelper.type().equivalent(tc)) {
-				return ComplexBoolean.valueOfSequence(any);
+				return ComplexBoolean::valueOfSequence;
 			}
 			return null;
 		case "complexDoubleSeq":
 			if (complexDoubleSeqHelper.type().equivalent(tc)) {
-				return ComplexDouble.valueOfSequence(any);
+				return ComplexDouble::valueOfSequence;
 			}
 			return null;
 		case "complexFloatSeq":
 			if (complexFloatSeqHelper.type().equivalent(tc)) {
-				return ComplexFloat.valueOfSequence(any);
+				return ComplexFloat::valueOfSequence;
 			}
 			return null;
 		case "complexLongSeq":
 			if (complexLongSeqHelper.type().equivalent(tc)) {
-				return ComplexLong.valueOfSequence(any);
+				return ComplexLong::valueOfSequence;
 			}
 			return null;
 		case "complexLongLongSeq":
 			if (complexLongLongSeqHelper.type().equivalent(tc)) {
-				return ComplexLongLong.valueOfSequence(any);
+				return ComplexLongLong::valueOfSequence;
 			}
 			return null;
 		case "complexShortSeq":
 			if (complexShortSeqHelper.type().equivalent(tc)) {
-				return ComplexShort.valueOfSequence(any);
+				return ComplexShort::valueOfSequence;
 			}
 			return null;
 		case "complexULongSeq":
 			if (complexULongSeqHelper.type().equivalent(tc)) {
-				return ComplexULong.valueOfSequence(any);
+				return ComplexULong::valueOfSequence;
 			}
 			return null;
 		case "complexULongLongSeq":
 			if (complexULongLongSeqHelper.type().equivalent(tc)) {
-				return ComplexULongLong.valueOfSequence(any);
+				return ComplexULongLong::valueOfSequence;
 			}
 			return null;
 		case "complexUShortSeq":
 			if (complexUShortSeqHelper.type().equivalent(tc)) {
-				return ComplexUShort.valueOfSequence(any);
+				return ComplexUShort::valueOfSequence;
 			}
 			return null;
 		case "complexOctetSeq":
 			if (complexOctetSeqHelper.type().equivalent(tc)) {
-				return ComplexOctet.valueOfSequence(any);
+				return ComplexOctet::valueOfSequence;
 			}
 			return null;
 		case "complexCharSeq":
 			if (complexCharSeqHelper.type().equivalent(tc)) {
-				return ComplexUByte.valueOfSequence(any);
+				return ComplexUByte::valueOfSequence;
 			}
 			return null;
 		default:
 			return null;
 		}
+	}
+
+	/**
+	 * Determine if the {@link Any} holds a Redhawk complex number sequence. Use {@link #valueOfSequence(Any)} instead
+	 * if you want to try to extract it.
+	 * @param any
+	 * @return
+	 * @since 4.7
+	 */
+	public static boolean isSequence(Any any) {
+		return getSequenceConverter(any) != null;
+	}
+
+	/**
+	 * Extracts the Redhawk complex number sequence from the <code>Any</code> to an array of {@link ComplexNumber}. Use
+	 * {@link #isSequence(Any)} if you only want to check to if the {@link Any} holds a sequence.
+	 * @param any The <code>Any</code> to extract
+	 * @return An array of {@link ComplexNumber}, or null if the <code>Any</code>'s type code isn't recognized
+	 * @since 4.0
+	 */
+	public static ComplexNumber[] valueOfSequence(Any any) {
+		IComplexSequenceConverter converter = getSequenceConverter(any);
+		return (converter != null) ? converter.valueOfSequence(any) : null;
 	}
 
 	/**

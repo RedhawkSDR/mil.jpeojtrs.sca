@@ -1118,31 +1118,7 @@ public final class AnyUtils {
 			case TCKind._tk_sequence:
 				return !PropertiesHelper.type().equivalent(typeCode);
 			case TCKind._tk_alias:
-				// Check Complex Sequence Types
-				if (complexBooleanSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexDoubleSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexFloatSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexLongSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexLongLongSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexShortSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexULongSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexULongLongSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexUShortSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexOctetSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				} else if (complexCharSeqHelper.type().equivalent(typeCode)) {
-					return true;
-				}
-				return false;
+				return ComplexNumber.isSequence(dt.value);
 			default:
 				return false;
 			}
@@ -1173,76 +1149,45 @@ public final class AnyUtils {
 		// Do this check because extract doesn't throw correctly
 		try {
 			// Check Complex Types
-			if (complexBooleanHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexDoubleHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexFloatHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexLongHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexLongLongHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexShortHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexULongHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexULongLongHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexUShortHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexOctetHelper.type().equivalent(typeCode)) {
-				return true;
-			} else if (complexCharHelper.type().equivalent(typeCode)) {
+			if (complexBooleanHelper.type().equivalent(typeCode) //
+				|| complexDoubleHelper.type().equivalent(typeCode) //
+				|| complexFloatHelper.type().equivalent(typeCode) //
+				|| complexLongHelper.type().equivalent(typeCode) //
+				|| complexLongLongHelper.type().equivalent(typeCode) //
+				|| complexShortHelper.type().equivalent(typeCode) //
+				|| complexULongHelper.type().equivalent(typeCode) //
+				|| complexULongLongHelper.type().equivalent(typeCode) //
+				|| complexUShortHelper.type().equivalent(typeCode) //
+				|| complexOctetHelper.type().equivalent(typeCode) //
+				|| complexCharHelper.type().equivalent(typeCode)) {
 				return true;
 			}
 
 			final TCKind kind = typeCode.kind();
 			switch (kind.value()) {
-			case TCKind._tk_any:
-				return false;
 			case TCKind._tk_boolean:
-				return true;
 			case TCKind._tk_char:
-				return true;
 			case TCKind._tk_double:
-				return true;
-			case TCKind._tk_fixed:
-				return false;
 			case TCKind._tk_float:
-				return true;
 			case TCKind._tk_long:
-				return true;
 			case TCKind._tk_longlong:
-				return true;
-			case TCKind._tk_objref:
-				return false;
 			case TCKind._tk_octet:
-				return true;
 			case TCKind._tk_short:
-				return true;
 			case TCKind._tk_string:
-				return true;
-			case TCKind._tk_TypeCode:
-				return false;
 			case TCKind._tk_ulong:
-				return true;
 			case TCKind._tk_ulonglong:
-				return true;
 			case TCKind._tk_ushort:
-				return true;
-			case TCKind._tk_value:
-				return false;
 			case TCKind._tk_wchar:
-				return true;
 			case TCKind._tk_wstring:
-				return true;
 			case TCKind._tk_null:
 				return true;
+			case TCKind._tk_any:
+			case TCKind._tk_fixed:
+			case TCKind._tk_objref:
+			case TCKind._tk_TypeCode:
+			case TCKind._tk_value:
 			case TCKind._tk_sequence:
-				return false;
 			case TCKind._tk_alias:
-				return false;
 			case TCKind._tk_struct:
 			case TCKind._tk_longdouble:
 			case TCKind._tk_array:

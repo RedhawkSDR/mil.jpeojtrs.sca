@@ -10,6 +10,7 @@
  */
 package mil.jpeojtrs.sca.util.math.tests;
 
+import org.jacorb.JacorbUtil;
 import org.junit.Assert;
 
 import mil.jpeojtrs.sca.util.math.ComplexBoolean;
@@ -22,7 +23,7 @@ import org.omg.CORBA.ORB;
 import CF.complexBoolean;
 import CF.complexBooleanHelper;
 
-public class ComplexBooleanTest extends ComplexNumberTest {
+public class ComplexBooleanTest extends AbstractComplexNumberTest {
 
 	private final ComplexBoolean complexBoolean = new ComplexBoolean(true, false);
 
@@ -50,6 +51,23 @@ public class ComplexBooleanTest extends ComplexNumberTest {
 	@Override
 	public void testGetSize() {
 		Assert.assertEquals(2, complexBoolean.getSize());
+	}
+
+	@Override
+	public void testIsSequence() {
+		CF.complexBoolean[] complexBools = new CF.complexBoolean[0];
+		Any corbaAny = JacorbUtil.init().create_any();
+		CF.complexBooleanSeqHelper.insert(corbaAny, complexBools);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
+
+		complexBools = new CF.complexBoolean[2];
+		complexBools[0] = new complexBoolean(true, false);
+		complexBools[1] = new complexBoolean(false, true);
+		corbaAny = JacorbUtil.init().create_any();
+		CF.complexBooleanSeqHelper.insert(corbaAny, complexBools);
+
+		Assert.assertTrue(ComplexNumber.isSequence(corbaAny));
 	}
 
 	@Override

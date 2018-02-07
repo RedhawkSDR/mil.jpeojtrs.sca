@@ -23,7 +23,7 @@ import CF.complexOctet;
 import CF.complexOctetHelper;
 
 @SuppressWarnings("deprecation")
-public class ComplexByteTest extends ComplexNumberTest {
+public class ComplexByteTest extends AbstractComplexNumberTest {
 
 	private final ComplexByte complexByte = new ComplexByte((byte) 7, (byte) 8);
 
@@ -51,6 +51,11 @@ public class ComplexByteTest extends ComplexNumberTest {
 	@Override
 	public void testGetSize() {
 		Assert.assertEquals(2, complexByte.getSize());
+	}
+
+	@Override
+	public void testIsSequence() {
+		// Not applicable to ComplexByte
 	}
 
 	@Override
