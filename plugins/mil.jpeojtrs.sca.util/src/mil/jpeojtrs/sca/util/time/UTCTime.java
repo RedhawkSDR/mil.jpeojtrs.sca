@@ -135,8 +135,8 @@ public class UTCTime implements Comparable<UTCTime>, Serializable {
 		dateFormat.format(date, sb, new FieldPosition(0));
 
 		// Append fractional seconds, if any, up to 6 decimal places (".XXXXXX")
-		if (time.tfsec != 0.0) {
-			String fractional = Double.toString(time.tfsec);
+		String fractional = Double.toString(time.tfsec);
+		if (!"0.0".equals(fractional)) { //$NON-NLS-1$
 			sb.append(fractional, 1, Math.min(fractional.length(), 8));
 		}
 
@@ -165,7 +165,7 @@ public class UTCTime implements Comparable<UTCTime>, Serializable {
 	public boolean equals(Object obj) {
 		if (obj instanceof UTCTime) {
 			UTCTime other = (UTCTime) obj;
-			return time.twsec == other.time.twsec && time.tfsec == other.time.tfsec && time.tcstatus == other.time.tcstatus;
+			return compareTo(other) == 0;
 		}
 		return false;
 	}
