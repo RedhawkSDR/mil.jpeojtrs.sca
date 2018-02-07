@@ -82,6 +82,11 @@ public class ComplexShortTest extends ComplexNumberTest {
 	@Override
 	public void testToString() {
 		Assert.assertEquals("7+j8", complexShort.toString());
+		Assert.assertEquals("7-j8", new ComplexShort((short) 7, (short) -8).toString());
+		Assert.assertEquals("-7+j8", new ComplexShort((short) -7, (short) 8).toString());
+		Assert.assertEquals("-7-j8", new ComplexShort((short) -7, (short) -8).toString());
+		Assert.assertEquals("-7+j", new ComplexShort((short) -7, (short) 1).toString());
+		Assert.assertEquals("-7-j", new ComplexShort((short) -7, (short) -1).toString());
 	}
 
 }

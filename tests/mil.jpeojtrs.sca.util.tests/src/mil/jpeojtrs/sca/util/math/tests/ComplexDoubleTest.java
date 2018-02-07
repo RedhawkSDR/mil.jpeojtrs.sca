@@ -82,6 +82,11 @@ public class ComplexDoubleTest extends ComplexNumberTest {
 	@Override
 	public void testToString() {
 		Assert.assertEquals("7.0+j8.0", complexDouble.toString());
+		Assert.assertEquals("7.0-j8.0", new ComplexDouble(7.0, -8.0).toString());
+		Assert.assertEquals("-7.0+j8.0", new ComplexDouble(-7.0, 8.0).toString());
+		Assert.assertEquals("-7.0-j8.0", new ComplexDouble(-7.0, -8.0).toString());
+		Assert.assertEquals("-7.0+j", new ComplexDouble(-7.0, 1.0).toString());
+		Assert.assertEquals("-7.0-j", new ComplexDouble(-7.0, -1.0).toString());
 	}
 
 }

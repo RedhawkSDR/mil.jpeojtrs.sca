@@ -85,6 +85,11 @@ public class ComplexByteTest extends ComplexNumberTest {
 	@Override
 	public void testToString() {
 		Assert.assertEquals("7+j8", complexByte.toString());
+		Assert.assertEquals("7-j8", new ComplexByte((byte) 7, (byte) -8).toString());
+		Assert.assertEquals("-7+j8", new ComplexByte((byte) -7, (byte) 8).toString());
+		Assert.assertEquals("-7-j8", new ComplexByte((byte) -7, (byte) -8).toString());
+		Assert.assertEquals("-7+j", new ComplexByte((byte) -7, (byte) 1).toString());
+		Assert.assertEquals("-7-j", new ComplexByte((byte) -7, (byte) -1).toString());
 	}
 
 }

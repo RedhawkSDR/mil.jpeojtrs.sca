@@ -82,6 +82,11 @@ public class ComplexFloatTest extends ComplexNumberTest {
 	@Override
 	public void testToString() {
 		Assert.assertEquals("7.0+j8.0", complexFloat.toString());
+		Assert.assertEquals("7.0-j8.0", new ComplexFloat(7f, -8f).toString());
+		Assert.assertEquals("-7.0+j8.0", new ComplexFloat(-7f, 8f).toString());
+		Assert.assertEquals("-7.0-j8.0", new ComplexFloat(-7f, -8f).toString());
+		Assert.assertEquals("-7.0+j", new ComplexFloat(-7f, 1f).toString());
+		Assert.assertEquals("-7.0-j", new ComplexFloat(-7f, -1f).toString());
 	}
 
 }
