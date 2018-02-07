@@ -33,7 +33,9 @@ import CF.UTCTimeSequenceHelper;
  */
 public class UTCTime implements Comparable<UTCTime>, Serializable {
 
-	protected static final String NOW = "now";
+	protected static final String NOW = "now"; //$NON-NLS-1$
+	private static final String DATE_TIME_PATTERN = "yyyy:MM:dd::HH:mm:ss"; //$NON-NLS-1$
+	private static final String UTC_TIME_ZONE_ID = "UTC"; //$NON-NLS-1$
 
 	private CF.UTCTime time;
 
@@ -113,8 +115,8 @@ public class UTCTime implements Comparable<UTCTime>, Serializable {
 		Date date;
 		try {
 			SimpleDateFormat dateFormat = (SimpleDateFormat) DateFormat.getDateTimeInstance();
-			dateFormat.applyPattern("yyyy:MM:dd::HH:mm:ss");
-			dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+			dateFormat.applyPattern(DATE_TIME_PATTERN);
+			dateFormat.setTimeZone(TimeZone.getTimeZone(UTC_TIME_ZONE_ID));
 			date = dateFormat.parse(value.substring(0, period));
 		} catch (ParseException e) {
 			throw new IllegalArgumentException("Unable to parse date/time", e);
@@ -130,8 +132,8 @@ public class UTCTime implements Comparable<UTCTime>, Serializable {
 		// Append date/time
 		Date date = new Date((long) (time.twsec * 1000.0));
 		SimpleDateFormat dateFormat = (SimpleDateFormat) DateFormat.getDateTimeInstance();
-		dateFormat.applyPattern("yyyy:MM:dd::HH:mm:ss");
-		dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+		dateFormat.applyPattern(DATE_TIME_PATTERN);
+		dateFormat.setTimeZone(TimeZone.getTimeZone(UTC_TIME_ZONE_ID));
 		dateFormat.format(date, sb, new FieldPosition(0));
 
 		// Append fractional seconds, if any, up to 6 decimal places (".XXXXXX")

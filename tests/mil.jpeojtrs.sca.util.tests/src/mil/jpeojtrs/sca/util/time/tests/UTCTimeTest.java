@@ -168,10 +168,12 @@ public class UTCTimeTest {
 		UTCTime time3 = new UTCTime((short) 1, 2.0, 0.3);
 		Assert.assertEquals(time1, time3);
 		Assert.assertNotEquals(time1, time2);
+		Assert.assertNotEquals(time1, new Object());
 
 		UTCTime timeNow1 = UTCTime.valueOf("now");
 		UTCTime timeNow2 = new UTCTimeNow();
 		Assert.assertEquals(timeNow1, timeNow2);
 		Assert.assertNotEquals(time1, timeNow1);
+		Assert.assertNotEquals(timeNow1, new Object());
 	}
 }
