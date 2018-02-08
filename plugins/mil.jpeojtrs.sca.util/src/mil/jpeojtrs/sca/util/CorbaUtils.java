@@ -125,7 +125,7 @@ public final class CorbaUtils {
 	 * @throws InterruptedException
 	 * @throws TimeoutException The timeout was reached before the call completed
 	 * @throws CoreException Wraps any execution exception, except CoreException which are re-thrown unwrapped
-	 * @since 4.6
+	 * @since 4.7
 	 */
 	public static < T > T invoke(Callable<T> callable, long timeoutMs) throws InterruptedException, TimeoutException, CoreException {
 		Future<T> task = CorbaUtils.EXECUTOR.submit(callable);
