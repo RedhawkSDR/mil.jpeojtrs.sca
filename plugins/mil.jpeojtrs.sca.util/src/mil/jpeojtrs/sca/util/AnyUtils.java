@@ -84,6 +84,30 @@ import mil.jpeojtrs.sca.util.time.UTCTime;
 
 public final class AnyUtils {
 
+	// Redhawk property types
+	private static final String BOOLEAN = "boolean";
+	private static final String CHAR = "char";
+	private static final String DOUBLE = "double";
+	private static final String FLOAT = "float";
+	private static final String LONG = "long";
+	private static final String LONGLONG = "longlong";
+	private static final String OBJREF = "objref";
+	private static final String OCTET = "octet";
+	private static final String SHORT = "short";
+	private static final String STRING = "string";
+	private static final String ULONG = "ulong";
+	private static final String ULONGLONG = "ulonglong";
+	private static final String USHORT = "ushort";
+	private static final String UTCTIME = "utctime";
+
+	// Additional CORBA types used in Anys
+	private static final String CORBA_ANY = "any";
+	private static final String CORBA_FIXED = "fixed";
+	private static final String CORBA_TYPECODE = "typecode";
+	private static final String CORBA_VALUE = "value";
+	private static final String CORBA_WCHAR = "wchar";
+	private static final String CORBA_WSTRING = "wstring";
+
 	private static final int RADIX_DECIMAL = 10;
 	private static final int RADIX_HEX = 16;
 	private static final int RADIX_OCTAL = 8;
@@ -134,11 +158,11 @@ public final class AnyUtils {
 		}
 
 		switch (type) {
-		case "string":
+		case STRING:
 			return stringValue;
-		case "wstring":
+		case CORBA_WSTRING:
 			return stringValue;
-		case "boolean":
+		case BOOLEAN:
 			if ("true".equalsIgnoreCase(stringValue)) {
 				return true;
 			}
@@ -146,7 +170,7 @@ public final class AnyUtils {
 				return false;
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid boolean value");
-		case "char":
+		case CHAR:
 			switch (stringValue.length()) {
 			case 1:
 				return stringValue.charAt(0);
@@ -155,40 +179,40 @@ public final class AnyUtils {
 			default:
 				throw new IllegalArgumentException(stringValue + " is not a valid char value");
 			}
-		case "wchar":
+		case CORBA_WCHAR:
 			return stringValue.charAt(0);
-		case "double":
+		case DOUBLE:
 			return Double.parseDouble(stringValue);
-		case "float":
+		case FLOAT:
 			return Float.parseFloat(stringValue);
-		case "short":
+		case SHORT:
 			return Short.decode(stringValue);
-		case "long":
+		case LONG:
 			return Integer.decode(stringValue);
-		case "longlong":
+		case LONGLONG:
 			return Long.decode(stringValue);
-		case "ulong":
+		case ULONG:
 			final long MAX_UINT = 2L * Integer.MAX_VALUE + 1L;
 			final Long ulong = Long.decode(stringValue);
 			if (ulong < 0 || ulong > MAX_UINT) {
 				throw new IllegalArgumentException("ulong value must be greater than '0' and less than " + MAX_UINT);
 			}
 			return ulong;
-		case "ushort":
+		case USHORT:
 			final int MAX_USHORT = 2 * Short.MAX_VALUE + 1;
 			final Integer ushort = Integer.decode(stringValue);
 			if (ushort < 0 || ushort > MAX_USHORT) {
 				throw new IllegalArgumentException("ushort value must be greater than '0' and less than " + MAX_USHORT);
 			}
 			return ushort;
-		case "ulonglong":
+		case ULONGLONG:
 			final BigInteger MAX_ULONG_LONG = BigInteger.valueOf(Long.MAX_VALUE).multiply(BigInteger.valueOf(2)).add(BigInteger.ONE);
 			final BigInteger ulonglong = AnyUtils.bigIntegerDecode(stringValue);
 			if (ulonglong.compareTo(BigInteger.ZERO) < 0 || ulonglong.compareTo(MAX_ULONG_LONG) > 0) {
 				throw new IllegalArgumentException("ulonglong value must be greater than '0' and less than " + MAX_ULONG_LONG.toString());
 			}
 			return ulonglong;
-		case "objref":
+		case OBJREF:
 			if ("".equals(stringValue)) {
 				return null;
 			}
@@ -198,7 +222,7 @@ public final class AnyUtils {
 				}
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid objref value");
-		case "octet":
+		case OCTET:
 			final short MIN_OCTET = 0;
 			final short MAX_OCTET = 0xFF;
 			final short val = Short.decode(stringValue);
@@ -206,7 +230,7 @@ public final class AnyUtils {
 				return Short.valueOf(val);
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid octet value");
-		case "utctime":
+		case UTCTIME:
 			return UTCTime.valueOf(stringValue);
 		default:
 			throw new IllegalArgumentException("Unknown CORBA Type: " + type);
@@ -539,44 +563,44 @@ public final class AnyUtils {
 		}
 
 		switch (type.value()) {
-		case TCKind._tk_any: // Note: Not a Redhawk property type
-			return "any";
+		case TCKind._tk_any:
+			return CORBA_ANY;
 		case TCKind._tk_boolean:
-			return "boolean";
+			return BOOLEAN;
 		case TCKind._tk_char:
-			return "char";
+			return CHAR;
 		case TCKind._tk_double:
-			return "double";
-		case TCKind._tk_fixed: // Note: Not a Redhawk property type
-			return "fixed";
+			return DOUBLE;
+		case TCKind._tk_fixed:
+			return CORBA_FIXED;
 		case TCKind._tk_float:
-			return "float";
+			return FLOAT;
 		case TCKind._tk_long:
-			return "long";
+			return LONG;
 		case TCKind._tk_longlong:
-			return "longlong";
+			return LONGLONG;
 		case TCKind._tk_objref:
-			return "objref";
+			return OBJREF;
 		case TCKind._tk_octet:
-			return "octet";
+			return OCTET;
 		case TCKind._tk_short:
-			return "short";
+			return SHORT;
 		case TCKind._tk_string:
-			return "string";
-		case TCKind._tk_TypeCode: // Note: Not a Redhawk property type
-			return "typecode";
+			return STRING;
+		case TCKind._tk_TypeCode:
+			return CORBA_TYPECODE;
 		case TCKind._tk_ulong:
-			return "ulong";
+			return ULONG;
 		case TCKind._tk_ulonglong:
-			return "ulonglong";
+			return ULONGLONG;
 		case TCKind._tk_ushort:
-			return "ushort";
-		case TCKind._tk_value: // Note: Not a Redhawk property type
-			return "value";
-		case TCKind._tk_wchar: // Note: Not a Redhawk property type
-			return "wchar";
-		case TCKind._tk_wstring: // Note: Not a Redhawk property type
-			return "wstring";
+			return USHORT;
+		case TCKind._tk_value:
+			return CORBA_VALUE;
+		case TCKind._tk_wchar:
+			return CORBA_WCHAR;
+		case TCKind._tk_wstring:
+			return CORBA_WSTRING;
 		default:
 			return ORB.get_primitive_tc(type).name();
 		}
@@ -592,41 +616,41 @@ public final class AnyUtils {
 		}
 
 		switch (type) {
-		case "boolean":
+		case BOOLEAN:
 			return TCKind.tk_boolean;
-		case "char":
+		case CHAR:
 			return TCKind.tk_char;
-		case "double":
+		case DOUBLE:
 			return TCKind.tk_double;
-		case "fixed":
+		case CORBA_FIXED:
 			return TCKind.tk_fixed;
-		case "float":
+		case FLOAT:
 			return TCKind.tk_float;
-		case "long":
+		case LONG:
 			return TCKind.tk_long;
-		case "longlong":
+		case LONGLONG:
 			return TCKind.tk_longlong;
-		case "objref":
+		case OBJREF:
 			return TCKind.tk_objref;
-		case "octet":
+		case OCTET:
 			return TCKind.tk_octet;
-		case "short":
+		case SHORT:
 			return TCKind.tk_short;
-		case "string":
+		case STRING:
 			return TCKind.tk_string;
-		case "typecode":
+		case CORBA_TYPECODE:
 			return TCKind.tk_TypeCode;
-		case "ulong":
+		case ULONG:
 			return TCKind.tk_ulong;
-		case "ulonglong":
+		case ULONGLONG:
 			return TCKind.tk_ulonglong;
-		case "ushort":
+		case USHORT:
 			return TCKind.tk_ushort;
-		case "value":
+		case CORBA_VALUE:
 			return TCKind.tk_value;
-		case "wchar":
+		case CORBA_WCHAR:
 			return TCKind.tk_wchar;
-		case "wstring":
+		case CORBA_WSTRING:
 			return TCKind.tk_wstring;
 		default:
 			throw new IllegalArgumentException("Unknown type: " + type);
@@ -671,66 +695,66 @@ public final class AnyUtils {
 		}
 
 		switch (type) {
-		case "any": // Note: Not a Redhawk property type
+		case CORBA_ANY:
 			retVal.insert_any((Any) value);
 			return retVal;
-		case "boolean":
+		case BOOLEAN:
 			retVal.insert_boolean((Boolean) value);
 			return retVal;
-		case "char":
+		case CHAR:
 			retVal.insert_char((Character) value);
 			return retVal;
-		case "double":
+		case DOUBLE:
 			retVal.insert_double(((Number) value).doubleValue());
 			return retVal;
-		case "fixed": // Note: Not a Redhawk property type
+		case CORBA_FIXED:
 			retVal.insert_fixed((BigDecimal) value);
 			return retVal;
-		case "float":
+		case FLOAT:
 			retVal.insert_float(((Number) value).floatValue());
 			return retVal;
-		case "long":
+		case LONG:
 			retVal.insert_long(((Number) value).intValue());
 			return retVal;
-		case "longlong":
+		case LONGLONG:
 			retVal.insert_longlong(((Number) value).longValue());
 			return retVal;
-		case "objref":
+		case OBJREF:
 			if (value instanceof org.omg.CORBA.Object) {
 				retVal.insert_Object((org.omg.CORBA.Object) value);
 			}
 			return retVal;
-		case "octet":
+		case OCTET:
 			retVal.insert_octet(UnsignedUtils.toUnsigned(((Number) value).shortValue()));
 			return retVal;
-		case "short":
+		case SHORT:
 			retVal.insert_short(((Number) value).shortValue());
 			return retVal;
-		case "string":
+		case STRING:
 			retVal.insert_string(value.toString());
 			return retVal;
-		case "TypeCode": // Note: Not a Redhawk property type
+		case CORBA_TYPECODE:
 			retVal.insert_TypeCode((TypeCode) value);
 			return retVal;
-		case "ulong":
+		case ULONG:
 			retVal.insert_ulong(((Number) value).intValue());
 			return retVal;
-		case "ulonglong":
+		case ULONGLONG:
 			retVal.insert_ulonglong(((Number) value).longValue());
 			return retVal;
-		case "ushort":
+		case USHORT:
 			retVal.insert_ushort(((Number) value).shortValue());
 			return retVal;
-		case "value": // Note: Not a Redhawk property type
+		case CORBA_VALUE:
 			retVal.insert_Value((Serializable) value);
 			return retVal;
-		case "wchar": // Note: Not a Redhawk property type
+		case CORBA_WCHAR:
 			retVal.insert_wchar((Character) value);
 			return retVal;
-		case "wstring": // Note: Not a Redhawk property type
+		case CORBA_WSTRING:
 			retVal.insert_wstring(value.toString());
 			return retVal;
-		case "utctime":
+		case UTCTIME:
 			return ((UTCTime) value).toAny();
 		default:
 			throw new IllegalArgumentException("Unknown target type: " + type);
@@ -752,7 +776,7 @@ public final class AnyUtils {
 		}
 
 		// If the value is a string, but the requested type isn't, parse the string to the requested Java type
-		if ((value instanceof String) && !"string".equals(type)) {
+		if ((value instanceof String) && !STRING.equals(type)) {
 			value = AnyUtils.convertString((String) value, type, complex);
 		}
 
@@ -792,7 +816,7 @@ public final class AnyUtils {
 	 */
 	public static Object[] convertStringArray(final Object[] values, final String type, boolean complex) {
 		Object[] retVal = values;
-		if (values instanceof String[] && !"string".equals(type)) {
+		if (values instanceof String[] && !STRING.equals(type)) {
 			retVal = new Object[values.length];
 			for (int i = 0; i < values.length; ++i) {
 				final String val = (String) values[i];
@@ -820,37 +844,37 @@ public final class AnyUtils {
 
 		if (complex) {
 			switch (type) {
-			case "boolean":
+			case BOOLEAN:
 				insertComplexBooleanArray(any, array);
 				return any;
-			case "char":
+			case CHAR:
 				insertComplexUByteArray(any, array);
 				return any;
-			case "double":
+			case DOUBLE:
 				insertComplexDoubleArray(any, array);
 				return any;
-			case "float":
+			case FLOAT:
 				insertComplexFloatArray(any, array);
 				return any;
-			case "long":
+			case LONG:
 				insertComplexLongArray(any, array);
 				return any;
-			case "longlong":
+			case LONGLONG:
 				insertComplexLongLongArray(any, array);
 				return any;
-			case "octet":
+			case OCTET:
 				insertComplexOctetArray(any, array);
 				return any;
-			case "short":
+			case SHORT:
 				insertComplexShortArray(any, array);
 				return any;
-			case "ulong":
+			case ULONG:
 				insertComplexULongArray(any, array);
 				return any;
-			case "ulonglong":
+			case ULONGLONG:
 				insertComplexULongLongArray(any, array);
 				return any;
-			case "ushort":
+			case USHORT:
 				insertComplexUShortArray(any, array);
 				return any;
 			default:
@@ -860,45 +884,45 @@ public final class AnyUtils {
 		}
 
 		switch (type) {
-		case "boolean":
+		case BOOLEAN:
 			AnyUtils.insertBooleanArray(any, array);
 			return any;
-		case "char":
+		case CHAR:
 			AnyUtils.insertCharArray(any, array);
 			return any;
-		case "double":
+		case DOUBLE:
 			AnyUtils.insertDoubleArray(any, array);
 			return any;
-		case "float":
+		case FLOAT:
 			AnyUtils.insertFloatArray(any, array);
 			return any;
-		case "long":
+		case LONG:
 			AnyUtils.insertLongArray(any, array);
 			return any;
-		case "longlong":
+		case LONGLONG:
 			AnyUtils.insertLongLongArray(any, array);
 			return any;
-		case "objref":
+		case OBJREF:
 			throw new IllegalArgumentException("Sequences of type objref are not supported");
-		case "octet":
+		case OCTET:
 			AnyUtils.insertOctetArray(any, array);
 			return any;
-		case "short":
+		case SHORT:
 			AnyUtils.insertShortArray(any, array);
 			return any;
-		case "string":
+		case STRING:
 			StringSeqHelper.insert(any, AnyUtils.convertStringArray(array));
 			return any;
-		case "ulong":
+		case ULONG:
 			AnyUtils.insertULongArray(any, array);
 			return any;
-		case "ulonglong":
+		case ULONGLONG:
 			AnyUtils.insertULongLongArray(any, array);
 			return any;
-		case "ushort":
+		case USHORT:
 			AnyUtils.insertUShortArray(any, array);
 			return any;
-		case "utctime":
+		case UTCTIME:
 			insertUTCTimeArray(any, array);
 			return any;
 		default:

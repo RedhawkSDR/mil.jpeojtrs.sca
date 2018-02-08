@@ -88,12 +88,12 @@ public class ComplexOctet extends ComplexNumber {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
 	}
 
-	public short getShortValue(int index) throws ArrayIndexOutOfBoundsException {
+	public short getShortValue(int index) {
 		return numbers[index];
 	}
 
 	@Override
-	public Short getValue(int index) throws ArrayIndexOutOfBoundsException {
+	public Short getValue(int index) {
 		return numbers[index];
 	}
 

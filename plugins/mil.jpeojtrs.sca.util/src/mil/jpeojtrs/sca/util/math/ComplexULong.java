@@ -88,12 +88,12 @@ public class ComplexULong extends ComplexNumber {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
 	}
 
-	public long getULongValue(int index) throws ArrayIndexOutOfBoundsException {
+	public long getULongValue(int index) {
 		return numbers[index];
 	}
 
 	@Override
-	public Long getValue(int index) throws ArrayIndexOutOfBoundsException {
+	public Long getValue(int index) {
 		return numbers[index];
 	}
 

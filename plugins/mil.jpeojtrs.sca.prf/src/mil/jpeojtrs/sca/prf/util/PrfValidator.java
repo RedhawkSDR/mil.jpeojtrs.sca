@@ -115,10 +115,18 @@ public class PrfValidator extends EObjectValidator {
 
 	// END GENERATED CODE
 
+	/**
+	 * Provides constants for a code (usually matches the IDE ticket number) and the UI string (contained in
+	 * plugin.properties).
+	 */
 	private enum Codes {
-		OPTIONAL_NOT_IN_STRUCT(1215, "_UI_InvalidOptionalAttribute_diagnostic"),  //$NON-NLS-1$
+		INCOMATIBLE_PROP_REF(301304, "_UI_IncompatiblePropertyRef_diagnostic"), //$NON-NLS-1$
 		KIND_IS_IGNORED(1344, "_UI_RedundantKind_diagnostic"), //$NON-NLS-1$
-		MESSAGE_NOT_A_STRUCT(1675, "_UI_UnsupportMessageKindType_diagnostic"); //$NON-NLS-1$
+		MESSAGE_NOT_A_STRUCT(1675, "_UI_UnsupportMessageKindType_diagnostic"), //$NON-NLS-1$
+		OPTIONAL_NOT_IN_STRUCT(1215, "_UI_InvalidOptionalAttribute_diagnostic"),  //$NON-NLS-1$
+		PARTIAL_CONFIG_STRUCT(1304, "_UI_PartiallyConfiguredStruct_diagnostic"), //$NON-NLS-1$
+		PARTIAL_CONFIG_STRUCT_SEQ(101304, "_UI_PartiallyConfiguredStruct_Contained_diagnostic"), //$NON-NLS-1$
+		PARTIAL_CONFIG_STRUCT_VALUE(201304, "_UI_PartiallyConfiguredStructValue_diagnostic"); //$NON-NLS-1$
 
 		private int code;
 		private String messageKey;
@@ -498,10 +506,10 @@ public class PrfValidator extends EObjectValidator {
 		// Build validation message
 		List<String> data = new ArrayList<String>();
 		data.add(struct.getId());
-		String errorMsg = "_UI_PartiallyConfiguredStruct_diagnostic";
+		Codes code = Codes.PARTIAL_CONFIG_STRUCT;
 		if (struct.eContainer() instanceof StructSequence) {
 			data.add(((StructSequence) struct.eContainer()).getId());
-			errorMsg = "_UI_PartiallyConfiguredStruct_Contained_diagnostic";
+			code = Codes.PARTIAL_CONFIG_STRUCT_SEQ;
 		}
 
 		// Check the first field to see if a default is set. This is the baseline for future comparisons.
@@ -519,7 +527,7 @@ public class PrfValidator extends EObjectValidator {
 			// Compare result to the baseline.
 			if (baselineConfigState != simpleConfigState) {
 				isValidStruct = false;
-				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, errorMsg, data.toArray(new Object[0]), new Object[] { struct }, context));
+				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey, data.toArray(new Object[0]), new Object[] { struct }, context));
 
 				break;
 			}
@@ -612,15 +620,17 @@ public class PrfValidator extends EObjectValidator {
 
 			if (ref == null) {
 				if (diagnostics != null) {
-					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
-						new Object[] { structValueId }, new Object[] { structValue }, context));
+					Codes code = Codes.PARTIAL_CONFIG_STRUCT_VALUE;
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey, new Object[] { structValueId },
+						new Object[] { structValue }, context));
 				}
 				return false;
 			}
 
 			if (!(ref instanceof SimpleRef)) {
 				if (diagnostics != null) {
-					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_IncompatiblePropertyRef_diagnostic",
+					Codes code = Codes.INCOMATIBLE_PROP_REF;
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey,
 						new Object[] { ref.getRefID(), structValueId, simple.getId(), struct.getId() }, new Object[] { structValue }, context));
 				}
 				return false;
@@ -628,8 +638,9 @@ public class PrfValidator extends EObjectValidator {
 
 			if (((SimpleRef) ref).getValue() == null) {
 				if (diagnostics != null) {
-					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
-						new Object[] { structValueId }, new Object[] { structValue }, context));
+					Codes code = Codes.PARTIAL_CONFIG_STRUCT_VALUE;
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey, new Object[] { structValueId },
+						new Object[] { structValue }, context));
 				}
 				return false;
 			}
@@ -641,15 +652,17 @@ public class PrfValidator extends EObjectValidator {
 
 			if (ref == null) {
 				if (diagnostics != null) {
-					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
-						new Object[] { structValueId }, new Object[] { structValue }, context));
+					Codes code = Codes.PARTIAL_CONFIG_STRUCT_VALUE;
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey, new Object[] { structValueId },
+						new Object[] { structValue }, context));
 				}
 				return false;
 			}
 
 			if (!(ref instanceof SimpleSequenceRef)) {
 				if (diagnostics != null) {
-					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_IncompatiblePropertyRef_diagnostic",
+					Codes code = Codes.INCOMATIBLE_PROP_REF;
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey,
 						new Object[] { ref.getRefID(), structValueId, simpleSequence.getId(), struct.getId() }, new Object[] { structValue }, context));
 				}
 				return false;
@@ -657,8 +670,9 @@ public class PrfValidator extends EObjectValidator {
 
 			if (((SimpleSequenceRef) ref).getValues() == null) {
 				if (diagnostics != null) {
-					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, -1, "_UI_PartiallyConfiguredStructValue_diagnostic",
-						new Object[] { structValueId }, new Object[] { structValue }, context));
+					Codes code = Codes.PARTIAL_CONFIG_STRUCT_VALUE;
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey, new Object[] { structValueId },
+						new Object[] { structValue }, context));
 				}
 				return false;
 			}

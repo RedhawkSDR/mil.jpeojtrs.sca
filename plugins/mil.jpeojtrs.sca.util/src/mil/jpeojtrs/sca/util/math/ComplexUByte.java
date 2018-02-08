@@ -85,12 +85,12 @@ public class ComplexUByte extends ComplexNumber {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
 	}
 
-	public short getUByteValue(int index) throws ArrayIndexOutOfBoundsException {
+	public short getUByteValue(int index) {
 		return numbers[index];
 	}
 
 	@Override
-	public Short getValue(int index) throws ArrayIndexOutOfBoundsException {
+	public Short getValue(int index) {
 		return numbers[index];
 	}
 

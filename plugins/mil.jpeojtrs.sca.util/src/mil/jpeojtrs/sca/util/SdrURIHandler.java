@@ -13,7 +13,6 @@ package mil.jpeojtrs.sca.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.URISyntaxException;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -26,7 +25,7 @@ public class SdrURIHandler extends URIHandlerImpl {
 	
 	private final URI base;
 	
-	public SdrURIHandler(URI base) throws URISyntaxException {
+	public SdrURIHandler(URI base) {
 		this.base = base;
 	}
 	

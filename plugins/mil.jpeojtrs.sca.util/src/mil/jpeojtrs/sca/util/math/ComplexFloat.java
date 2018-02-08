@@ -85,12 +85,12 @@ public class ComplexFloat extends ComplexNumber {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
 	}
 
-	public float getFloatValue(int index) throws ArrayIndexOutOfBoundsException {
+	public float getFloatValue(int index) {
 		return numbers[index];
 	}
 
 	@Override
-	public Float getValue(int index) throws ArrayIndexOutOfBoundsException {
+	public Float getValue(int index) {
 		return numbers[index];
 	}
 
