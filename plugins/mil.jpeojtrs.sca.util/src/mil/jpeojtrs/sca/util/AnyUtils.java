@@ -119,7 +119,7 @@ public final class AnyUtils {
 
 	/**
 	 * Attempts to parse the string value to the appropriate Java type.
-	 * 
+	 *
 	 * @param stringValue the string form of the value
 	 * @param type the property value type (e.g. "long")
 	 * @param complex If the value should be interrupted as a complex number
@@ -144,7 +144,7 @@ public final class AnyUtils {
 
 	/**
 	 * Attempts to parse the string value for a simple to the appropriate Java type. Complex numbers are not handled.
-	 * 
+	 *
 	 * @param stringValue the string form of the value
 	 * @param type the property value type (e.g. "long")
 	 * @return A Java object
@@ -1291,7 +1291,7 @@ public final class AnyUtils {
 
 	/**
 	 * Attempts to parse the string value to the appropriate Java type, and then insert it into an {@link Any}.
-	 * 
+	 *
 	 * @param value the string form of the value
 	 * @param type the property value type (e.g. "long")
 	 * @param complex If the value should be interrupted as a complex number
