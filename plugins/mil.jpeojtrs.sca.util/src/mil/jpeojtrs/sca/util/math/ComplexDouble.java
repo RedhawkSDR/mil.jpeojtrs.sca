@@ -85,12 +85,12 @@ public class ComplexDouble extends ComplexNumber {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
 	}
 
-	public double getDoubleValue(int index) throws ArrayIndexOutOfBoundsException {
+	public double getDoubleValue(int index) {
 		return numbers[index];
 	}
 
 	@Override
-	public Double getValue(int index) throws ArrayIndexOutOfBoundsException {
+	public Double getValue(int index) {
 		return numbers[index];
 	}
 

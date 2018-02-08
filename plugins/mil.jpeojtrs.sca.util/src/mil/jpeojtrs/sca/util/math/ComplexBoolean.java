@@ -98,12 +98,12 @@ public class ComplexBoolean extends ComplexNumber {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
 	}
 
-	public boolean getBooleanValue(int index) throws ArrayIndexOutOfBoundsException {
+	public boolean getBooleanValue(int index) {
 		return numbers[index];
 	}
 
 	@Override
-	public Boolean getValue(int index) throws ArrayIndexOutOfBoundsException {
+	public Boolean getValue(int index) {
 		return numbers[index];
 	}
 

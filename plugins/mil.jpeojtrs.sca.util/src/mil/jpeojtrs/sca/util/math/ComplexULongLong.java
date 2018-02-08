@@ -96,12 +96,12 @@ public class ComplexULongLong extends ComplexNumber {
 		}
 	}
 
-	public BigInteger getULongLongValue(int index) throws ArrayIndexOutOfBoundsException {
+	public BigInteger getULongLongValue(int index) {
 		return numbers[index];
 	}
 
 	@Override
-	public BigInteger getValue(int index) throws ArrayIndexOutOfBoundsException {
+	public BigInteger getValue(int index) {
 		return numbers[index];
 	}
 

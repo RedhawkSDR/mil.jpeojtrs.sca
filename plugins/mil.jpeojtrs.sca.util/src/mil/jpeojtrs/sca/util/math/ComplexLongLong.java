@@ -85,12 +85,12 @@ public class ComplexLongLong extends ComplexNumber {
 		this.numbers = Arrays.copyOf(numbers, numbers.length);
 	}
 
-	public long getLongValue(int index) throws ArrayIndexOutOfBoundsException {
+	public long getLongValue(int index) {
 		return numbers[index];
 	}
 
 	@Override
-	public Long getValue(int index) throws ArrayIndexOutOfBoundsException {
+	public Long getValue(int index) {
 		return numbers[index];
 	}
 

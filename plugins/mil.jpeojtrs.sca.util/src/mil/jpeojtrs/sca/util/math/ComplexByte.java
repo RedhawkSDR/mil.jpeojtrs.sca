@@ -88,12 +88,12 @@ public class ComplexByte extends ComplexNumber {
 		this.bytes = Arrays.copyOf(bytes, bytes.length);
 	}
 
-	public byte getByteValue(int index) throws ArrayIndexOutOfBoundsException {
+	public byte getByteValue(int index) {
 		return bytes[index];
 	}
 
 	@Override
-	public Byte getValue(int index) throws ArrayIndexOutOfBoundsException {
+	public Byte getValue(int index) {
 		return bytes[index];
 	}
 
