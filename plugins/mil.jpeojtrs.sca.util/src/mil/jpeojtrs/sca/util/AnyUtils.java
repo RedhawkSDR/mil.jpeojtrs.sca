@@ -81,6 +81,28 @@ import mil.jpeojtrs.sca.util.math.ComplexUShort;
 
 public final class AnyUtils {
 
+	// Redhawk property types
+	private static final String BOOLEAN = "boolean";
+	private static final String CHAR = "char";
+	private static final String DOUBLE = "double";
+	private static final String FLOAT = "float";
+	private static final String LONG = "long";
+	private static final String LONGLONG = "longlong";
+	private static final String OBJREF = "objref";
+	private static final String OCTET = "octet";
+	private static final String SHORT = "short";
+	private static final String STRING = "string";
+	private static final String ULONG = "ulong";
+	private static final String ULONGLONG = "ulonglong";
+	private static final String USHORT = "ushort";
+
+	// Additional CORBA types used in Anys
+	private static final String CORBA_FIXED = "fixed";
+	private static final String CORBA_TYPECODE = "typecode";
+	private static final String CORBA_VALUE = "value";
+	private static final String CORBA_WCHAR = "wchar";
+	private static final String CORBA_WSTRING = "wstring";
+
 	private static final int RADIX_DECIMAL = 10;
 	private static final int RADIX_HEX = 16;
 	private static final int RADIX_OCTAL = 8;
@@ -120,16 +142,19 @@ public final class AnyUtils {
 		if (stringValue == null) {
 			return null;
 		}
-		if ("string".equals(type)) {
+		if (STRING.equals(type)) {
 			return stringValue;
-		} else if ("wstring".equals(type)) {
+		} else if (CORBA_WSTRING.equals(type)) {
 			return stringValue;
-		} else if ("boolean".equals(type)) {
-			if ("true".equalsIgnoreCase(stringValue) || "false".equalsIgnoreCase(stringValue)) {
-				return Boolean.parseBoolean(stringValue);
+		} else if (BOOLEAN.equals(type)) {
+			if ("true".equalsIgnoreCase(stringValue)) {
+				return true;
+			}
+			if ("false".equalsIgnoreCase(stringValue)) {
+				return false;
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid boolean value");
-		} else if ("char".equals(type)) {
+		} else if (CHAR.equals(type)) {
 			switch (stringValue.length()) {
 			case 1:
 				return stringValue.charAt(0);
@@ -138,40 +163,40 @@ public final class AnyUtils {
 			default:
 				throw new IllegalArgumentException(stringValue + " is not a valid char value");
 			}
-		} else if ("wchar".equals(type)) {
+		} else if (CORBA_WCHAR.equals(type)) {
 			return stringValue.charAt(0);
-		} else if ("double".equals(type)) {
+		} else if (DOUBLE.equals(type)) {
 			return Double.parseDouble(stringValue);
-		} else if ("float".equals(type)) {
+		} else if (FLOAT.equals(type)) {
 			return Float.parseFloat(stringValue);
-		} else if ("short".equals(type)) {
+		} else if (SHORT.equals(type)) {
 			return Short.decode(stringValue);
-		} else if ("long".equals(type)) {
+		} else if (LONG.equals(type)) {
 			return Integer.decode(stringValue);
-		} else if ("longlong".equals(type)) {
+		} else if (LONGLONG.equals(type)) {
 			return Long.decode(stringValue);
-		} else if ("ulong".equals(type)) {
+		} else if (ULONG.equals(type)) {
 			final long MAX_UINT = 2L * Integer.MAX_VALUE + 1L;
 			final Long retVal = Long.decode(stringValue);
 			if (retVal < 0 || retVal > MAX_UINT) {
 				throw new IllegalArgumentException("ulong value must be greater than '0' and less than " + MAX_UINT);
 			}
 			return retVal;
-		} else if ("ushort".equals(type)) {
+		} else if (USHORT.equals(type)) {
 			final int MAX_USHORT = 2 * Short.MAX_VALUE + 1;
 			final Integer retVal = Integer.decode(stringValue);
 			if (retVal < 0 || retVal > MAX_USHORT) {
 				throw new IllegalArgumentException("ushort value must be greater than '0' and less than " + MAX_USHORT);
 			}
 			return retVal;
-		} else if ("ulonglong".equals(type)) {
+		} else if (ULONGLONG.equals(type)) {
 			final BigInteger MAX_ULONG_LONG = BigInteger.valueOf(Long.MAX_VALUE).multiply(BigInteger.valueOf(2)).add(BigInteger.ONE);
 			final BigInteger retVal = AnyUtils.bigIntegerDecode(stringValue);
 			if (retVal.compareTo(BigInteger.ZERO) < 0 || retVal.compareTo(MAX_ULONG_LONG) > 0) {
 				throw new IllegalArgumentException("ulonglong value must be greater than '0' and less than " + MAX_ULONG_LONG.toString());
 			}
 			return retVal;
-		} else if ("objref".equals(type)) {
+		} else if (OBJREF.equals(type)) {
 			if ("".equals(stringValue)) {
 				return null;
 			}
@@ -182,7 +207,7 @@ public final class AnyUtils {
 				}
 			}
 			throw new IllegalArgumentException(stringValue + " is not a valid objref value");
-		} else if ("octet".equals(type)) {
+		} else if (OCTET.equals(type)) {
 			final short MIN_OCTET = 0;
 			final short MAX_OCTET = 0xFF;
 			final short val = Short.decode(stringValue);
@@ -475,41 +500,41 @@ public final class AnyUtils {
 	public static TCKind convertToTCKind(final String type) {
 		if (type == null || "".equals(type)) {
 			return TCKind.tk_null;
-		} else if ("boolean".equals(type)) {
+		} else if (BOOLEAN.equals(type)) {
 			return TCKind.tk_boolean;
-		} else if ("char".equals(type)) {
+		} else if (CHAR.equals(type)) {
 			return TCKind.tk_char;
-		} else if ("double".equals(type)) {
+		} else if (DOUBLE.equals(type)) {
 			return TCKind.tk_double;
-		} else if ("fixed".equals(type)) {
+		} else if (CORBA_FIXED.equals(type)) {
 			return TCKind.tk_fixed;
-		} else if ("float".equals(type)) {
+		} else if (FLOAT.equals(type)) {
 			return TCKind.tk_float;
-		} else if ("long".equals(type)) {
+		} else if (LONG.equals(type)) {
 			return TCKind.tk_long;
-		} else if ("longlong".equals(type)) {
+		} else if (LONGLONG.equals(type)) {
 			return TCKind.tk_longlong;
-		} else if ("objref".equals(type)) {
+		} else if (OBJREF.equals(type)) {
 			return TCKind.tk_objref;
-		} else if ("octet".equals(type)) {
+		} else if (OCTET.equals(type)) {
 			return TCKind.tk_octet;
-		} else if ("short".equals(type)) {
+		} else if (SHORT.equals(type)) {
 			return TCKind.tk_short;
-		} else if ("string".equals(type)) {
+		} else if (STRING.equals(type)) {
 			return TCKind.tk_string;
-		} else if ("typecode".equals(type)) {
+		} else if (CORBA_TYPECODE.equals(type)) {
 			return TCKind.tk_TypeCode;
-		} else if ("ulong".equals(type)) {
+		} else if (ULONG.equals(type)) {
 			return TCKind.tk_ulong;
-		} else if ("ulonglong".equals(type)) {
+		} else if (ULONGLONG.equals(type)) {
 			return TCKind.tk_ulonglong;
-		} else if ("ushort".equals(type)) {
+		} else if (USHORT.equals(type)) {
 			return TCKind.tk_ushort;
-		} else if ("value".equals(type)) {
+		} else if (CORBA_VALUE.equals(type)) {
 			return TCKind.tk_value;
-		} else if ("wchar".equals(type)) {
+		} else if (CORBA_WCHAR.equals(type)) {
 			return TCKind.tk_wchar;
-		} else if ("wstring".equals(type)) {
+		} else if (CORBA_WSTRING.equals(type)) {
 			return TCKind.tk_wstring;
 		} else {
 			throw new IllegalArgumentException("Unknown type: " + type);
@@ -666,7 +691,7 @@ public final class AnyUtils {
 	 */
 	public static Object[] convertStringArray(final Object[] values, final String type, boolean complex) {
 		Object[] retVal = values;
-		if (values instanceof String[] && !"string".equals(type)) {
+		if (values instanceof String[] && !STRING.equals(type)) {
 			retVal = new Object[values.length];
 			for (int i = 0; i < values.length; ++i) {
 				final String val = (String) values[i];
@@ -693,27 +718,27 @@ public final class AnyUtils {
 		final Any any = JacorbUtil.init().create_any();
 
 		if (complex) {
-			if ("boolean".equals(type)) {
+			if (BOOLEAN.equals(type)) {
 				insertComplexBooleanArray(any, array);
-			} else if ("char".equals(type)) {
+			} else if (CHAR.equals(type)) {
 				insertComplexUByteArray(any, array);
-			} else if ("double".equals(type)) {
+			} else if (DOUBLE.equals(type)) {
 				insertComplexDoubleArray(any, array);
-			} else if ("float".equals(type)) {
+			} else if (FLOAT.equals(type)) {
 				insertComplexFloatArray(any, array);
-			} else if ("long".equals(type)) {
+			} else if (LONG.equals(type)) {
 				insertComplexLongArray(any, array);
-			} else if ("longlong".equals(type)) {
+			} else if (LONGLONG.equals(type)) {
 				insertComplexLongLongArray(any, array);
-			} else if ("octet".equals(type)) {
+			} else if (OCTET.equals(type)) {
 				insertComplexOctetArray(any, array);
-			} else if ("short".equals(type)) {
+			} else if (SHORT.equals(type)) {
 				insertComplexShortArray(any, array);
-			} else if ("ulong".equals(type)) {
+			} else if (ULONG.equals(type)) {
 				insertComplexULongArray(any, array);
-			} else if ("ulonglong".equals(type)) {
+			} else if (ULONGLONG.equals(type)) {
 				insertComplexULongLongArray(any, array);
-			} else if ("ushort".equals(type)) {
+			} else if (USHORT.equals(type)) {
 				insertComplexUShortArray(any, array);
 			} else {
 				String msg = String.format("Type %s cannot be complex", type);
@@ -722,31 +747,31 @@ public final class AnyUtils {
 			return any;
 		}
 
-		if ("boolean".equals(type)) {
+		if (BOOLEAN.equals(type)) {
 			AnyUtils.insertBooleanArray(any, array);
-		} else if ("char".equals(type)) {
+		} else if (CHAR.equals(type)) {
 			AnyUtils.insertCharArray(any, array);
-		} else if ("double".equals(type)) {
+		} else if (DOUBLE.equals(type)) {
 			AnyUtils.insertDoubleArray(any, array);
-		} else if ("float".equals(type)) {
+		} else if (FLOAT.equals(type)) {
 			AnyUtils.insertFloatArray(any, array);
-		} else if ("long".equals(type)) {
+		} else if (LONG.equals(type)) {
 			AnyUtils.insertLongArray(any, array);
-		} else if ("longlong".equals(type)) {
+		} else if (LONGLONG.equals(type)) {
 			AnyUtils.insertLongLongArray(any, array);
-		} else if ("objref".equals(type)) {
+		} else if (OBJREF.equals(type)) {
 			throw new IllegalArgumentException("Sequences of type objref are not supported");
-		} else if ("octet".equals(type)) {
+		} else if (OCTET.equals(type)) {
 			AnyUtils.insertOctetArray(any, array);
-		} else if ("short".equals(type)) {
+		} else if (SHORT.equals(type)) {
 			AnyUtils.insertShortArray(any, array);
-		} else if ("string".equals(type)) {
+		} else if (STRING.equals(type)) {
 			StringSeqHelper.insert(any, AnyUtils.convertStringArray(array));
-		} else if ("ulong".equals(type)) {
+		} else if (ULONG.equals(type)) {
 			AnyUtils.insertULongArray(any, array);
-		} else if ("ulonglong".equals(type)) {
+		} else if (ULONGLONG.equals(type)) {
 			AnyUtils.insertULongLongArray(any, array);
-		} else if ("ushort".equals(type)) {
+		} else if (USHORT.equals(type)) {
 			AnyUtils.insertUShortArray(any, array);
 		} else {
 			throw new IllegalArgumentException("Unknown REDHAWK property type: " + type);
