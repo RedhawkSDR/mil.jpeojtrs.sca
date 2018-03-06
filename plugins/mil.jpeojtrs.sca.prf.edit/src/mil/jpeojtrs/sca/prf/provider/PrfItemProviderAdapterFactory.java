@@ -20,7 +20,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.Disposable;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -55,13 +54,6 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
-	/**
-	 * This keeps track of all the item providers created, so that they can be {@link #dispose disposed}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Disposable disposable = new Disposable();
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
@@ -316,6 +308,15 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.prf.Simple} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SimpleItemProvider simpleItemProvider;
+
+	/**
 	 * This creates an adapter for a {@link mil.jpeojtrs.sca.prf.Simple}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -323,8 +324,21 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSimpleAdapter() {
-		return new SimpleItemProvider(this);
+		if (simpleItemProvider == null) {
+			simpleItemProvider = new SimpleItemProvider(this);
+		}
+
+		return simpleItemProvider;
 	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.prf.SimpleSequence} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SimpleSequenceItemProvider simpleSequenceItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link mil.jpeojtrs.sca.prf.SimpleSequence}.
@@ -334,8 +348,21 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createSimpleSequenceAdapter() {
-		return new SimpleSequenceItemProvider(this);
+		if (simpleSequenceItemProvider == null) {
+			simpleSequenceItemProvider = new SimpleSequenceItemProvider(this);
+		}
+
+		return simpleSequenceItemProvider;
 	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.prf.Struct} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StructItemProvider structItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link mil.jpeojtrs.sca.prf.Struct}.
@@ -345,8 +372,21 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createStructAdapter() {
-		return new StructItemProvider(this);
+		if (structItemProvider == null) {
+			structItemProvider = new StructItemProvider(this);
+		}
+
+		return structItemProvider;
 	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.prf.StructSequence} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 4.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StructSequenceItemProvider structSequenceItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link mil.jpeojtrs.sca.prf.StructSequence}.
@@ -356,7 +396,11 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public Adapter createStructSequenceAdapter() {
-		return new StructSequenceItemProvider(this);
+		if (structSequenceItemProvider == null) {
+			structSequenceItemProvider = new StructSequenceItemProvider(this);
+		}
+
+		return structSequenceItemProvider;
 	}
 
 	/**
@@ -581,20 +625,6 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	}
 
 	/**
-	 * Associates an adapter with a notifier via the base implementation, then records it to ensure it will be disposed.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected void associate(Adapter adapter, Notifier target) {
-		super.associate(adapter, target);
-		if (adapter != null) {
-			disposable.add(adapter);
-		}
-	}
-
-	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -639,7 +669,48 @@ public class PrfItemProviderAdapterFactory extends PrfAdapterFactory implements 
 	 */
 	@Override
 	public void dispose() {
-		disposable.dispose();
+		if (actionItemProvider != null)
+			actionItemProvider.dispose();
+		if (configurationKindItemProvider != null)
+			configurationKindItemProvider.dispose();
+		if (enumerationItemProvider != null)
+			enumerationItemProvider.dispose();
+		if (enumerationsItemProvider != null)
+			enumerationsItemProvider.dispose();
+		if (inputValueItemProvider != null)
+			inputValueItemProvider.dispose();
+		if (kindItemProvider != null)
+			kindItemProvider.dispose();
+		if (prfDocumentRootItemProvider != null)
+			prfDocumentRootItemProvider.dispose();
+		if (propertiesItemProvider != null)
+			propertiesItemProvider.dispose();
+		if (rangeItemProvider != null)
+			rangeItemProvider.dispose();
+		if (resultValueItemProvider != null)
+			resultValueItemProvider.dispose();
+		if (simpleItemProvider != null)
+			simpleItemProvider.dispose();
+		if (simpleSequenceItemProvider != null)
+			simpleSequenceItemProvider.dispose();
+		if (structItemProvider != null)
+			structItemProvider.dispose();
+		if (structSequenceItemProvider != null)
+			structSequenceItemProvider.dispose();
+		if (structValueItemProvider != null)
+			structValueItemProvider.dispose();
+		if (testItemProvider != null)
+			testItemProvider.dispose();
+		if (valuesItemProvider != null)
+			valuesItemProvider.dispose();
+		if (simpleRefItemProvider != null)
+			simpleRefItemProvider.dispose();
+		if (simpleSequenceRefItemProvider != null)
+			simpleSequenceRefItemProvider.dispose();
+		if (structRefItemProvider != null)
+			structRefItemProvider.dispose();
+		if (structSequenceRefItemProvider != null)
+			structSequenceRefItemProvider.dispose();
 	}
 
 }

@@ -244,23 +244,23 @@ public class AbstractPropertyItemProvider extends ItemProviderAdapter implements
 	/**
 	 * If scoped IDs are created automatically.
 	 */
-	private boolean setIdScoping = false;
+	private boolean idScoping = false;
 
 	/**
 	 * Changes whether automatic creation of scoped IDs occurs. When enabled, changing a property's name will
 	 * automatically create a scoped ID for it. Likewise, changeing a top-level property's name will cause all
 	 * child elements of the property to have new scoped IDs created. By default scoping is disabled.
 	 * @param enable Whether ID scoping should be enabled
-	 * @since 3.1
+	 * @since 4.0
 	 */
 	public void setIdScoping(boolean enable) {
-		this.setIdScoping = enable;
+		this.idScoping = enable;
 	}
 
 	@Override
 	protected Command createSetCommand(EditingDomain domain, EObject owner, EStructuralFeature feature, Object value, int index) {
 		// Our logic is specialized only if ID scoping is enabled, and the ID or name is being changed
-		if (setIdScoping) {
+		if (idScoping) {
 			int featureID = feature.getFeatureID();
 			switch (featureID) {
 			case PrfPackage.ABSTRACT_PROPERTY__NAME:

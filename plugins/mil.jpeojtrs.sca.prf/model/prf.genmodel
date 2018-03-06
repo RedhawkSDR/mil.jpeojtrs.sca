@@ -61,6 +61,7 @@
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/long"/>
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/longlong"/>
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/ulonglong"/>
+      <genEnumLiterals ecoreEnumLiteral="prf.ecore#//PropertyValueType/utctime"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="prf.ecore#//StructPropertyConfigurationType">
       <genEnumLiterals ecoreEnumLiteral="prf.ecore#//StructPropertyConfigurationType/configure"/>
@@ -92,6 +93,7 @@
     <genDataTypes ecoreDataType="prf.ecore#//ComplexULong"/>
     <genDataTypes ecoreDataType="prf.ecore#//ComplexULongLong"/>
     <genDataTypes ecoreDataType="prf.ecore#//ComplexUShort"/>
+    <genDataTypes ecoreDataType="prf.ecore#//UTCTime"/>
     <genClasses image="false" ecoreClass="prf.ecore#//AbstractProperty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//AbstractProperty/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//AbstractProperty/id"/>
@@ -141,7 +143,7 @@
     <genClasses ecoreClass="prf.ecore#//ResultValue">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//ResultValue/simple"/>
     </genClasses>
-    <genClasses provider="Stateful" ecoreClass="prf.ecore#//Simple">
+    <genClasses ecoreClass="prf.ecore#//Simple">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//Simple/units"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Simple/range"/>
@@ -156,7 +158,7 @@
       <genOperations ecoreOperation="prf.ecore#//Simple/isCommandLine"/>
       <genOperations ecoreOperation="prf.ecore#//Simple/isOptional"/>
     </genClasses>
-    <genClasses provider="Stateful" ecoreClass="prf.ecore#//SimpleSequence">
+    <genClasses ecoreClass="prf.ecore#//SimpleSequence">
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequence/values"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute prf.ecore#//SimpleSequence/units"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//SimpleSequence/range"/>
@@ -168,13 +170,13 @@
       <genOperations ecoreOperation="prf.ecore#//SimpleSequence/isComplex"/>
       <genOperations ecoreOperation="prf.ecore#//SimpleSequence/isOptional"/>
     </genClasses>
-    <genClasses provider="Stateful" ecoreClass="prf.ecore#//Struct">
+    <genClasses ecoreClass="prf.ecore#//Struct">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute prf.ecore#//Struct/fields"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Struct/simple"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Struct/simpleSequence"/>
       <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference prf.ecore#//Struct/configurationKind"/>
     </genClasses>
-    <genClasses provider="Stateful" ecoreClass="prf.ecore#//StructSequence">
+    <genClasses ecoreClass="prf.ecore#//StructSequence">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructSequence/struct"/>
       <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructSequence/structValue"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference prf.ecore#//StructSequence/configurationKind"/>

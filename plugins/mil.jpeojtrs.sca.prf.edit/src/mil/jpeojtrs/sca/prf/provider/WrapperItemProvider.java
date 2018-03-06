@@ -21,7 +21,7 @@ import org.eclipse.emf.edit.provider.FeatureMapEntryWrapperItemProvider;
  * Overrides the default implementation of {@link FeatureMapEntryWrapperItemProvider#addEntryFeature} to avoid adding
  * the EAttribute as a prefix to the value's text
  * 
- * @since 3.1
+ * @since 4.0
  */
 public class WrapperItemProvider extends FeatureMapEntryWrapperItemProvider {
 
