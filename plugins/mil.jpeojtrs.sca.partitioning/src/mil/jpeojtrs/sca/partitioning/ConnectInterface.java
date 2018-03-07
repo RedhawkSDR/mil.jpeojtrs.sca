@@ -158,7 +158,7 @@ public interface ConnectInterface< CIR extends ComponentInstantiationRef< ? >, U
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see mil.jpeojtrs.sca.partitioning.PartitioningPackage#getConnectInterface_Id()
-	 * @model id="true" dataType="org.eclipse.emf.ecore.xml.type.String"
+	 * @model id="true" dataType="org.eclipse.emf.ecore.xml.type.ID"
 	 *        extendedMetaData="kind='attribute' name='id'"
 	 * @generated
 	 */

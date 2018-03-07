@@ -321,11 +321,15 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 
 		// Obtain or create and register package
 		PartitioningPackageImpl thePartitioningPackage = (PartitioningPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PartitioningPackageImpl
-			? EPackage.Registry.INSTANCE.get(eNS_URI) : new PartitioningPackageImpl());
+			? EPackage.Registry.INSTANCE.get(eNS_URI)
+			: new PartitioningPackageImpl());
 
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		PrfPackage.eINSTANCE.eClass();
+		ScdPackage.eINSTANCE.eClass();
 		SpdPackage.eINSTANCE.eClass();
 		XMLTypePackage.eINSTANCE.eClass();
 
@@ -1966,7 +1970,7 @@ public class PartitioningPackageImpl extends EPackageImpl implements Partitionin
 			IS_ORDERED);
 		initEReference(getConnectInterface_FindBy(), this.getFindBy(), null, "findBy", null, 0, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getConnectInterface_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE,
+		initEAttribute(getConnectInterface_Id(), theXMLTypePackage.getID(), "id", null, 0, 1, ConnectInterface.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectInterface_Source(), this.getUsesPortStub(), null, "source", null, 0, 1, ConnectInterface.class, IS_TRANSIENT, IS_VOLATILE,
 			IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
