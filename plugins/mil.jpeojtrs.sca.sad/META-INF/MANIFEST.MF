@@ -21,3 +21,4 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  mil.jpeojtrs.sca.partitioning;bundle-version="1.0.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: mil.jpeojtrs.sca.sad.SadPluginActivator$Implementation
+Automatic-Module-Name: mil.jpeojtrs.sca.sad

@@ -8,3 +8,4 @@ Require-Bundle: idl.bulkio;bundle-version="2.0.0",
  idl.cf;bundle-version="2.0.0"
 Export-Package: FRONTEND;version="2.0.9"
 Bundle-Vendor: REDHAWK
+Automatic-Module-Name: idl.frontend

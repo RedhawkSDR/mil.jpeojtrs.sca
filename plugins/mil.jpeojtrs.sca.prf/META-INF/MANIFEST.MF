@@ -19,4 +19,5 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  org.jacorb;bundle-version="3.3.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: mil.jpeojtrs.sca.prf.util.PrfPlugin$Implementation
+Automatic-Module-Name: mil.jpeojtrs.sca.prf
 

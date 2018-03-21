@@ -9,3 +9,4 @@ Export-Package: BULKIO;version="2.0.9",
  BULKIO.dataSDDSPackage;version="2.0.9",
  BULKIO.dataVITA49Package;version="2.0.9"
 Require-Bundle: idl.cf;bundle-version="2.0.0";visibility:=reexport
+Automatic-Module-Name: idl.bulkio

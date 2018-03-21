@@ -19,3 +19,4 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  mil.jpeojtrs.sca.validator;bundle-version="1.0.0",
  mil.jpeojtrs.sca.util;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: mil.jpeojtrs.sca.spd

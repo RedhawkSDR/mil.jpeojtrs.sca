@@ -19,3 +19,4 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  mil.jpeojtrs.sca.prf.edit;bundle-version="1.0.0";visibility:=reexport,
  mil.jpeojtrs.sca.scd;bundle-version="2.3.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: mil.jpeojtrs.sca.spd.edit
