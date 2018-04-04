@@ -22,7 +22,7 @@ import CF.PropertiesHelper;
 import mil.jpeojtrs.sca.util.AnyUtils;
 
 /**
- * @since 4.7
+ * @since 5.0
  */
 public class Metric {
 

@@ -65,7 +65,7 @@ public final class PropertiesUtil {
 	 * Determines if this property is something the user can query or configure.
 	 * @param property
 	 * @return
-	 * @since 6.2
+	 * @since 7.0
 	 */
 	public static boolean canConfigureOrQuery(final AbstractProperty property) {
 		if (property == null) {

@@ -387,7 +387,7 @@ public interface SoftPkg extends EObject {
 
 		/**
 		 * @throws CoreException 
-		 * @since 4.1
+		 * @since 5.0
 		 */
 		public static URI getComponentHostURI() throws CoreException {
 			IStringVariableManager manager = VariablesPlugin.getDefault().getStringVariableManager();
@@ -398,7 +398,7 @@ public interface SoftPkg extends EObject {
 
 		/**
 		 * Utility method used to determine if the supplied URI points to the special ComponentHost resource
-		 * @since 4.1
+		 * @since 5.0
 		 */
 		public static boolean isComponentHost(SoftPkg spd) {
 			return spd != null && COMPONENT_HOST_ID.equals(spd.getId());
@@ -406,7 +406,7 @@ public interface SoftPkg extends EObject {
 
 		/**
 		 * Utility method used to determine if the supplied implementation belongs to a component that is a child of a ComponentHost
-		 * @since 4.1
+		 * @since 5.0
 		 */
 		public static boolean isContainedComponent(Implementation impl) {
 			CodeFileType type = ScaEcoreUtils.getFeature(impl, SpdPackage.Literals.IMPLEMENTATION__CODE, SpdPackage.Literals.CODE__TYPE);

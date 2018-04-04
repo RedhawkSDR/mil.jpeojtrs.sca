@@ -1597,7 +1597,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The meta object id for the '<em>Complex Octet</em>' data type.
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.math.ComplexOctet
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexOctet()
@@ -1658,7 +1658,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * The meta object id for the '<em>UTC Time</em>' data type.
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @see mil.jpeojtrs.sca.util.time.UTCTime
 	 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getUTCTime()
@@ -3048,7 +3048,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.math.ComplexOctet <em>Complex Octet</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>Complex Octet</em>'.
 	 * @see mil.jpeojtrs.sca.util.math.ComplexOctet
@@ -3120,7 +3120,7 @@ public interface PrfPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '{@link mil.jpeojtrs.sca.util.time.UTCTime <em>UTC Time</em>}'.
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for data type '<em>UTC Time</em>'.
 	 * @see mil.jpeojtrs.sca.util.time.UTCTime
@@ -4273,7 +4273,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>Complex Octet</em>' data type.
 		 * <!-- begin-user-doc -->
-		 * @since 6.2
+		 * @since 7.0
 		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.math.ComplexOctet
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getComplexOctet()
@@ -4339,7 +4339,7 @@ public interface PrfPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>UTC Time</em>' data type.
 		 * <!-- begin-user-doc -->
-		 * @since 6.2
+		 * @since 7.0
 		 * <!-- end-user-doc -->
 		 * @see mil.jpeojtrs.sca.util.time.UTCTime
 		 * @see mil.jpeojtrs.sca.prf.impl.PrfPackageImpl#getUTCTime()

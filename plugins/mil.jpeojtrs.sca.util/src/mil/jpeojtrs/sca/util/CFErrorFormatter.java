@@ -122,7 +122,7 @@ public class CFErrorFormatter {
 	}
 
 	/**
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static String format(AlreadyConnected e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
@@ -149,14 +149,14 @@ public class CFErrorFormatter {
 	}
 
 	/**
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static String format(InsufficientCapacity e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG_PROPLIST, e.getClass().getName(), resourceDesc, e.msg, formatProperties(e.insufficientCapacities));
 	}
 
 	/**
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static String format(InvalidAllocationId e) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), Arrays.toString(e.invalidAllocationIds));
@@ -185,7 +185,7 @@ public class CFErrorFormatter {
 	}
 
 	/**
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static String format(InvalidEventChannelName e, String channelName) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), channelName);
@@ -204,28 +204,28 @@ public class CFErrorFormatter {
 	}
 
 	/**
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static String format(InvalidFunction e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), resourceDesc);
 	}
 
 	/**
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static String format(InvalidObjectReference e, String channelName) {
 		return String.format(FORMAT_ERRNAME_RESNAME_ERRMSG, e.getClass().getName(), channelName, e.msg);
 	}
 
 	/**
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static String format(InvalidOptions e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_PROPLIST, e.getClass().getName(), resourceDesc, formatProperties(e.invalidOpts));
 	}
 
 	/**
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static String format(InvalidParameters e, String resourceDesc) {
 		return String.format(FORMAT_ERRNAME_RESNAME_PROPLIST, e.getClass().getName(), resourceDesc, formatProperties(e.invalidParms));
@@ -250,7 +250,7 @@ public class CFErrorFormatter {
 	}
 
 	/**
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static String format(NotConnected e, String channelName) {
 		return String.format(FORMAT_ERRNAME_RESNAME, e.getClass().getName(), channelName);

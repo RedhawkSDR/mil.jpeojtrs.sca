@@ -1018,7 +1018,7 @@ public class PrfValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1078,7 +1078,7 @@ public class PrfValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */

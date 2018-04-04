@@ -993,7 +993,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
@@ -1005,7 +1005,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
@@ -1152,7 +1152,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
@@ -1164,7 +1164,7 @@ public class PrfFactoryImpl extends EFactoryImpl implements PrfFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */

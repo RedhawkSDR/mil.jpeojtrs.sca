@@ -163,7 +163,7 @@ public enum PropertyValueType implements Enumerator {
 	/**
 	 * The '<em><b>Utctime</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @see #UTCTIME_VALUE
 	 * @generated
@@ -360,7 +360,7 @@ public enum PropertyValueType implements Enumerator {
 	 * If the meaning of '<em><b>Utctime</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
-	 * @since 6.2
+	 * @since 7.0
 	 * <!-- end-user-doc -->
 	 * @see #UTCTIME
 	 * @model name="utctime"
@@ -630,7 +630,7 @@ public enum PropertyValueType implements Enumerator {
 
 	/**
 	 * Gets an object with a default value for the specified type.
-	 * @since 6.2
+	 * @since 7.0
 	 */
 	public Object getDefaultValue(boolean isComplex) {
 		switch (this) {
@@ -683,7 +683,7 @@ public enum PropertyValueType implements Enumerator {
 	/**
 	 * @return A user-displayable help string about how to format string values of this type. Some help strings may be
 	 * empty.
-	 * @since 6.2
+	 * @since 7.0
 	 */
 	public String getFormattingHelp() {
 		switch (this) {

@@ -149,7 +149,7 @@ public final class DceUuidUtil {
 	 * <code>"foo"</code>
 	 * @param str The string to check
 	 * @return The string without any prefix if it was found
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static String trimPrefix(String str) {
 		if (str == null) {

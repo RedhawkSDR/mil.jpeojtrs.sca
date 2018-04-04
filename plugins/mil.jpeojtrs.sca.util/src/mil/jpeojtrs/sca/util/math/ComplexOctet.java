@@ -21,7 +21,7 @@ import CF.complexOctetHelper;
 import mil.jpeojtrs.sca.util.UnsignedUtils;
 
 /**
- * @since 4.7
+ * @since 5.0
  */
 public class ComplexOctet extends ComplexNumber {
 

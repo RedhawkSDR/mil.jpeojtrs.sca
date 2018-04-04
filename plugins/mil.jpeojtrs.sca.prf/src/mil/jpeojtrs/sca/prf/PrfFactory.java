@@ -187,7 +187,7 @@ public interface PrfFactory extends EFactory {
 	// END GENERATED CODE
 
 	/**
-	 * @since 6.2
+	 * @since 7.0
 	 * @see #createValues()
 	 */
 	Values createValues(String... initialValue);
@@ -210,7 +210,7 @@ public interface PrfFactory extends EFactory {
 	 * @param value
 	 * @return
 	 * @see #createSimpleRef()
-	 * @since 6.2
+	 * @since 7.0
 	 */
 	public SimpleRef createSimpleRef(String refId, String value);
 
@@ -233,7 +233,7 @@ public interface PrfFactory extends EFactory {
 	 * @return
 	 * @see #createSimpleSequenceRef()
 	 * @see #createValues()
-	 * @since 6.2
+	 * @since 7.0
 	 */
 	SimpleSequenceRef createSimpleSequenceRef(String refId, String... initialValue);
 
@@ -254,7 +254,7 @@ public interface PrfFactory extends EFactory {
 	 * @param refId
 	 * @return
 	 * @see #createStructRef()
-	 * @since 6.2
+	 * @since 7.0
 	 */
 	StructRef createStructRef(String refId);
 
@@ -275,7 +275,7 @@ public interface PrfFactory extends EFactory {
 	 * @param refId
 	 * @return
 	 * @see #createStructSequenceRef()
-	 * @since 6.2
+	 * @since 7.0
 	 */
 	StructSequenceRef createStructSequenceRef(String refId);
 

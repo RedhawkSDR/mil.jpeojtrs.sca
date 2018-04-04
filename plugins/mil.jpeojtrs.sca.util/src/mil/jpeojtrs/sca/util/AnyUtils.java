@@ -804,7 +804,7 @@ public final class AnyUtils {
 	 * @param type the property values' type (e.g. "long")
 	 * @param complex If the values should be interrupted as a complex numbers
 	 * @return The Java objects in an {@link Object} array
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static Object[] convertStringArray(final Object[] values, final String type, boolean complex) {
 		Object[] retVal = values;

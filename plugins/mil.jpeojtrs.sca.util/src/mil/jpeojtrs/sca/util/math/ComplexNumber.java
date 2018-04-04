@@ -124,7 +124,7 @@ public abstract class ComplexNumber {
 	 * if you want to try to extract it.
 	 * @param any
 	 * @return
-	 * @since 4.7
+	 * @since 5.0
 	 */
 	public static boolean isSequence(Any any) {
 		return getSequenceConverter(any) != null;

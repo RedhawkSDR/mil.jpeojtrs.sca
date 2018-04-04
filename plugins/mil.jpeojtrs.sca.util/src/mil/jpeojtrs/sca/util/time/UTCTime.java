@@ -29,7 +29,7 @@ import CF.UTCTimeSequenceHelper;
  * <p/>
  * This class is serializable by {@link java.beans.XMLEncoder}, which is used for loading/saving property values for
  * launches.
- * @since 4.7
+ * @since 5.0
  */
 public class UTCTime implements Comparable<UTCTime>, Serializable {
 
