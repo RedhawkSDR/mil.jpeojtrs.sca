@@ -135,14 +135,6 @@ public final class AnyUtils {
 	}
 
 	/**
-	 * @deprecated Use {@link #convertString(String, String, boolean)}
-	 */
-	@Deprecated
-	public static Object convertString(final String stringValue, final String type) {
-		return AnyUtils.convertString(stringValue, type, false);
-	}
-
-	/**
 	 * Attempts to parse the string value for a simple to the appropriate Java type. Complex numbers are not handled.
 	 *
 	 * @param stringValue the string form of the value

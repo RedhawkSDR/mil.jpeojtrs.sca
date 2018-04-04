@@ -1981,12 +1981,6 @@ public interface ScdPackage extends EPackage {
 		 */
 		EDataType PORT_TYPE_OBJECT = eINSTANCE.getPortTypeObject();
 
-		@Deprecated
-		EAttribute PROVIDES__REP_ID = ABSTRACT_PORT__REP_ID;
-
-		@Deprecated
-		EAttribute USES__REP_ID = ABSTRACT_PORT__REP_ID;
-
 	}
 
 } // ScdPackage

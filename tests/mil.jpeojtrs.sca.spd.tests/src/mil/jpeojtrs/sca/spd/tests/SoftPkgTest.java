@@ -13,7 +13,6 @@ package mil.jpeojtrs.sca.spd.tests;
 
 import java.io.IOException;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Assert;
@@ -24,7 +23,6 @@ import mil.jpeojtrs.sca.spd.Descriptor;
 import mil.jpeojtrs.sca.spd.Implementation;
 import mil.jpeojtrs.sca.spd.LocalFile;
 import mil.jpeojtrs.sca.spd.PropertyFile;
-import mil.jpeojtrs.sca.spd.SCAComplianceType;
 import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SpdFactory;
 import mil.jpeojtrs.sca.util.DceUuidUtil;
@@ -182,7 +180,6 @@ public class SoftPkgTest extends TestCase {
 		Assert.assertFalse(SoftPkg.Util.isContainedComponent(impl));
 	}
 
-	@SuppressWarnings("deprecation")
 	public void testExtra() {
 		final PropertyFile pf = SpdFactory.eINSTANCE.createPropertyFile();
 		final LocalFile lf = SpdFactory.eINSTANCE.createLocalFile();
@@ -210,11 +207,9 @@ public class SoftPkgTest extends TestCase {
 		Assert.assertNull(this.fixture.getDescriptor());
 
 		this.fixture.unsetType();
-		Assert.assertEquals(SCAComplianceType.SCA_COMPLIANT.getLiteral(), this.fixture.getType());
 		Assert.assertFalse(this.fixture.isSetType());
 
 		this.fixture.setType(null);
-		Assert.assertEquals(SCAComplianceType.SCA_COMPLIANT.getLiteral(), this.fixture.getType());
 		Assert.assertTrue(this.fixture.isSetType());
 	}
 } // SoftPkgTest

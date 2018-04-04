@@ -141,11 +141,4 @@ public interface Test extends EObject {
 	 */
 	void setId(String value);
 
-	/**
-	 * @deprecated Switch to using {@link #getInputValue()}
-	 * @generated NOT
-	 */
-	@Deprecated
-	InputValue getInputvalue();
-
 } // Test

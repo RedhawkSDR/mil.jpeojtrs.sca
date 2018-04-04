@@ -537,14 +537,6 @@ public enum PropertyValueType implements Enumerator {
 	// END GENERATED CODE
 
 	/**
-	 * @deprecated With introduction of complex type use the {@link #isValueOfType(String, Boolean)} instead
-	 */
-	@Deprecated
-	public boolean isValueOfType(String value) {
-		return isValueOfType(value, false);
-	}
-
-	/**
 	 * Checks the given value against the current PropertyValueType.
 	 * 
 	 * @since 3.0
@@ -562,16 +554,6 @@ public enum PropertyValueType implements Enumerator {
 		} catch (Exception e) {
 			return false;
 		}
-	}
-
-	/**
-	 * NOTE Assumes not Complex Type
-	 * @deprecated Use {@link #toEDataType(boolean)}
-	 * @return
-	 */
-	@Deprecated
-	public EDataType toDataType() {
-		return toEDataType(false);
 	}
 
 	/**

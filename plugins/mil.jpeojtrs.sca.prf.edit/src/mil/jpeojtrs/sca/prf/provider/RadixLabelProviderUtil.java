@@ -32,17 +32,6 @@ public final class RadixLabelProviderUtil {
 	private static final int BASE_16_CONSTANT = 16;
 
 	private RadixLabelProviderUtil() {
-
-	}
-	
-	/**
-	 * @deprecated Use {@link #supports(PropertyValueType, boolean)} instead
-	 * @param type
-	 * @return
-	 */
-	@Deprecated
-	public static boolean supports(final PropertyValueType type) {
-		return supports(type, false);
 	}
 
 	/**

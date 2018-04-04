@@ -3139,28 +3139,6 @@ public interface PrfPackage extends EPackage {
 	PrfFactory getPrfFactory();
 
 	/**
-	 * The feature id for the '<em><b>Struct Value</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * @deprecated Switch to using {@link #STRUCT_SEQUENCE__STRUCT_VALUE}
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 * @ordered
-	 */
-	@Deprecated
-	int STRUCT_SEQUENCE__STRUCTVALUE = STRUCT_SEQUENCE__STRUCT_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Configuration Kind</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * @deprecated Switch to using {@link #STRUCT_SEQUENCE__CONFIGURATION_KIND}
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 * @ordered
-	 */
-	@Deprecated
-	int STRUCT_SEQUENCE__CONFIGURATIONKIND = STRUCT_SEQUENCE__CONFIGURATION_KIND;
-
-	/**
 	 * <!-- begin-user-doc --> Defines literals for the meta objects that
 	 * represent
 	 * <ul>
@@ -4368,45 +4346,6 @@ public interface PrfPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType UTC_TIME = eINSTANCE.getUTCTime();
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * @deprecated Switch to using {@link #STRUCT_SEQUENCE__STRUCT_VALUE}
-		 * <!-- end-user-doc -->
-		 * @generated NOT
-		 */
-		@Deprecated
-		EReference STRUCT_SEQUENCE__STRUCTVALUE = STRUCT_SEQUENCE__STRUCT_VALUE;
-
-		/**
-		 * The meta object literal for the '<em><b>Configuration Kind</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * @deprecated Switch to using {@link #STRUCT_SEQUENCE__CONFIGURATION_KIND}
-		 * <!-- end-user-doc -->
-		 * @generated NOT
-		 */
-		@Deprecated
-		EReference STRUCT_SEQUENCE__CONFIGURATIONKIND = STRUCT_SEQUENCE__CONFIGURATION_KIND;
-
-		/**
-		 * The meta object literal for the '<em><b>Simple Ref</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * @deprecated Switch to using {@link #STRUCT_VALUE__SIMPLE_REF}
-		 * <!-- end-user-doc -->
-		 * @generated NOT
-		 */
-		@Deprecated
-		EReference STRUCT_VALUE__SIMPLEREF = STRUCT_VALUE__SIMPLE_REF;
-
-		/**
-		 * The meta object literal for the '<em><b>Input Value</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * @deprecated Switch to using {@link #TEST__INPUT_VALUE}
-		 * <!-- end-user-doc -->
-		 * @generated NOT
-		 */
-		@Deprecated
-		EReference TEST__INPUTVALUE = TEST__INPUT_VALUE;
 
 	}
 

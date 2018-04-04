@@ -393,11 +393,6 @@ public class StructSequenceImpl extends AbstractPropertyImpl implements StructSe
 	// END GENERATED CODE
 
 	@Override
-	public EList<StructValue> getStructvalue() {
-		return getStructValue();
-	}
-
-	@Override
 	public boolean isKind(PropertyConfigurationType... type) {
 		if (type == null) {
 			return false;

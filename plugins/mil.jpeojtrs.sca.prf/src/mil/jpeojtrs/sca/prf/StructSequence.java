@@ -93,11 +93,4 @@ public interface StructSequence extends AbstractProperty, PropertyContainer {
 	 */
 	EList<ConfigurationKind> getConfigurationKind();
 
-	/**
-	 * @deprecated Switch to using {@link #getStructValue()}
-	 * @generated NOT
-	 */
-	@Deprecated
-	EList<StructValue> getStructvalue();
-
 } // StructSequence

@@ -19,13 +19,6 @@ public final class DceUuidUtil {
 	
 	/**
 	 * @since 3.0
-	 * @deprecated Use {@link #DCE_UUID_LENGTH} instead
-	 */
-	@Deprecated
-	public static final int LENGTH = DceUuidUtil.createDceUUID().length();
-
-	/**
-	 * @since 3.0
 	 */
 	public static final int DCE_UUID_LENGTH = DceUuidUtil.createDceUUID().length();
 
