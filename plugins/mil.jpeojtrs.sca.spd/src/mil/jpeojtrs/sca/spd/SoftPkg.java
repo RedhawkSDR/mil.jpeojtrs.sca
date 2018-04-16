@@ -19,14 +19,12 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 
 import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.scd.SoftwareComponent;
 import mil.jpeojtrs.sca.scd.SupportsInterface;
 import mil.jpeojtrs.sca.util.ScaEcoreUtils;
 import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
-import mil.jpeojtrs.sca.util.ScaResourceFactoryUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -397,7 +395,7 @@ public interface SoftPkg extends EObject {
 		private static final String COMPONENT_HOST_ID = "DCE:fd3ba3dc-f68c-4419-96fa-333062329bfd";
 
 		/**
-		 * Utility method used to determine if the supplied URI points to the special ComponentHost resource
+		 * @return True if the SPD is the ComponentHost
 		 * @since 5.0
 		 */
 		public static boolean isComponentHost(SoftPkg spd) {
@@ -405,10 +403,10 @@ public interface SoftPkg extends EObject {
 		}
 
 		/**
-		 * Utility method used to determine if the supplied implementation belongs to a component that is a child of a ComponentHost
+		 * @return True if the implementation is for a shared address component.
 		 * @since 5.0
 		 */
-		public static boolean isContainedComponent(Implementation impl) {
+		public static boolean isSharedAddressComponent(Implementation impl) {
 			CodeFileType type = ScaEcoreUtils.getFeature(impl, SpdPackage.Literals.IMPLEMENTATION__CODE, SpdPackage.Literals.CODE__TYPE);
 
 			if (CodeFileType.SHARED_LIBRARY.equals(type) && impl.isExecutable()) {
