@@ -1,13 +1,13 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 package mil.jpeojtrs.sca.util;
 
 import java.util.concurrent.Callable;
@@ -33,12 +33,12 @@ import org.omg.CosNaming.NamingContextExt;
  */
 public final class CorbaUtils {
 
-	private static final ExecutorService EXECUTOR = Executors.newCachedThreadPool(new NamedThreadFactory(CorbaUtils.class.getName()));
-	
-	private static final ExecutorService RELEASE_WORKERS = Executors.newFixedThreadPool(5, new NamedThreadFactory(CorbaUtils.class.getName() + ":ReleaseWorker"));
+	/* package */ static final ExecutorService EXECUTOR = Executors.newCachedThreadPool(new NamedThreadFactory(CorbaUtils.class.getName()));
+
+	private static final ExecutorService RELEASE_WORKERS = Executors.newFixedThreadPool(5,
+		new NamedThreadFactory(CorbaUtils.class.getName() + ":ReleaseWorker"));
 
 	private CorbaUtils() {
-
 	}
 
 	/**
@@ -51,12 +51,8 @@ public final class CorbaUtils {
 	 */
 	public static org.omg.CORBA.Object string_to_object(final ORB orb, final String ior, IProgressMonitor monitor) throws CoreException, InterruptedException {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Resolving object in orb ", 1);
-		return CorbaUtils.invoke(new Callable<org.omg.CORBA.Object>() {
-
-			public org.omg.CORBA.Object call() throws Exception {
-				return orb.string_to_object(ior);
-			}
-
+		return CorbaUtils.invoke(() -> {
+			return orb.string_to_object(ior);
 		}, subMonitor);
 	}
 
@@ -68,15 +64,11 @@ public final class CorbaUtils {
 	 * using <code>IProgressMonitor.isCanceled()</code>, it will exit by throwing
 	 * <code>InterruptedException</code>
 	 */
-	public static org.omg.CORBA.Object resolve_str(final NamingContextExt ext, final String name, IProgressMonitor monitor) throws CoreException,
-	InterruptedException {
+	public static org.omg.CORBA.Object resolve_str(final NamingContextExt ext, final String name, IProgressMonitor monitor)
+		throws CoreException, InterruptedException {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Resolving object in naming context at ref " + name, 1);
-		return CorbaUtils.invoke(new Callable<org.omg.CORBA.Object>() {
-
-			public org.omg.CORBA.Object call() throws Exception {
-				return ext.resolve_str(name);
-			}
-
+		return CorbaUtils.invoke(() -> {
+			return ext.resolve_str(name);
 		}, subMonitor);
 	}
 
@@ -90,12 +82,8 @@ public final class CorbaUtils {
 	 */
 	public static boolean is_a(final org.omg.CORBA.Object obj, final String repID, final IProgressMonitor monitor) throws CoreException, InterruptedException {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Checking if obj is a " + repID, 1);
-		return CorbaUtils.invoke(new Callable<Boolean>() {
-
-			public Boolean call() throws Exception {
-				return obj._is_a(repID);
-			}
-
+		return CorbaUtils.invoke(() -> {
+			return obj._is_a(repID);
 		}, subMonitor);
 	}
 
@@ -109,12 +97,8 @@ public final class CorbaUtils {
 	 */
 	public static boolean non_existent(final org.omg.CORBA.Object obj, final IProgressMonitor monitor) throws CoreException, InterruptedException {
 		SubMonitor subMonitor = SubMonitor.convert(monitor, "Checking if obj non existent", 1);
-		return CorbaUtils.invoke(new Callable<Boolean>() {
-
-			public Boolean call() throws Exception {
-				return obj._non_existent();
-			}
-
+		return CorbaUtils.invoke(() -> {
+			return obj._non_existent();
 		}, subMonitor);
 	}
 
@@ -143,8 +127,10 @@ public final class CorbaUtils {
 	}
 
 	/**
+	 * <b>NOTE:</b> Consider using {@link CorbaUtils2#invoke(Callable, IProgressMonitor)} or
+	 * {@link CorbaUtils2#invokeUI(Callable, IProgressMonitor)} before using this method.
+	 * <p/>
 	 * Invokes the given callable in an interruptible fashion
-	 * 
 	 * @exception CoreException exceptions are automatically wrapped in an <code>CoreException</code>
 	 * @exception InterruptedException if the operation detects a request to cancel,
 	 * using <code>IProgressMonitor.isCanceled()</code>, it will exit by throwing
@@ -177,7 +163,7 @@ public final class CorbaUtils {
 			monitor.done();
 		}
 	}
-	
+
 	public static void release(final org.omg.CORBA.Object obj) {
 		if (obj == null) {
 			return;
@@ -188,7 +174,7 @@ public final class CorbaUtils {
 			public void run() {
 				obj._release();
 			}
-			
+
 		});
 	}
 }

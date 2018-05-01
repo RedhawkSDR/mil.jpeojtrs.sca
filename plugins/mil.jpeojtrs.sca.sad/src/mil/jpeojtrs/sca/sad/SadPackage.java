@@ -2148,7 +2148,17 @@ public interface SadPackage extends EPackage {
 	 */
 	SadFactory getSadFactory();
 
-	String FILE_EXTENSION = ".sad.xml";
+	// END GENERATED CODE
+
+	String FILE_EXTENSION = ".sad.xml"; //$NON-NLS-1$
+
+	/**
+	 * Extension for a Graphiti diagram file.
+	 * @since 4.0
+	 */
+	String DIAGRAM_FILE_EXTENSION = ".sad_GDiagram"; //$NON-NLS-1$
+
+	// BEGIN GENERATED CODE
 
 	/**
 	 * <!-- begin-user-doc -->

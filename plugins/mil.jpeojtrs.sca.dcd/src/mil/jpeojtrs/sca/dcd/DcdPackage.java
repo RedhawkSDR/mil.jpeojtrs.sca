@@ -47,7 +47,6 @@ public interface DcdPackage extends EPackage {
 	 * @generated
 	 */
 	String eNS_URI = "http://sca.jpeojtrs.mil/dcd";
-	String FILE_EXTENSION = ".dcd.xml";
 	/**
 	 * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1458,6 +1457,18 @@ public interface DcdPackage extends EPackage {
 	 * @generated
 	 */
 	DcdFactory getDcdFactory();
+
+	// END GENERATED CODE
+
+	String FILE_EXTENSION = ".dcd.xml";
+
+	/**
+	 * Extension for a Graphiti diagram file.
+	 * @since 4.0
+	 */
+	String DIAGRAM_FILE_EXTENSION = ".dcd_GDiagram"; //$NON-NLS-1$
+
+	// BEGIN GENERATED CODE
 
 	/**
 	 * <!-- begin-user-doc --> Defines literals for the meta objects that
