@@ -16,3 +16,4 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.6.0",
  org.junit;bundle-version="4.8.1";visibility:=reexport,
  mil.jpeojtrs.sca.util
 Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: mil.jpeojtrs.sca.prf.tests

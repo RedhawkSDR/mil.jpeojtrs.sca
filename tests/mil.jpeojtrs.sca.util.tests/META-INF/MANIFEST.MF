@@ -17,3 +17,4 @@ Export-Package: mil.jpeojtrs.sca.util.tests
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Activator: mil.jpeojtrs.sca.util.tests.PluginActivator
 Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: mil.jpeojtrs.sca.util.tests
