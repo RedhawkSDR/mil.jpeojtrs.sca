@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <struct id="partialConfigStruct" mode="readwrite">
+    <description>The struct is partially configured.</description>
+    <simple id="partialConfigStruct::simpleWithValue" type="long">
+      <value>1</value>
+    </simple>
+    <simple id="partialConfigStruct::simpleWithoutValue" type="long"/>
+    <configurationkind kindtype="property"/>
+  </struct>
+  <structsequence id="partialConfigStructSeq" mode="readwrite">
+    <description>The default values in the struct are partially configured.</description>
+    <struct id="partialConfigStructSeq::partialConfigStruct">
+      <simple id="partialConfigStructSeq::simpleWithValue" type="long">
+        <value>1</value>
+      </simple>
+      <simple id="partialConfigStructSeq::simpleWithoutValue" type="string"/>
+    </struct>
+    <configurationkind kindtype="property"/>
+  </structsequence>
+  <structsequence id="partialConfigStructValue" mode="readwrite">
+    <struct id="partialConfigStructValue::struct">
+      <simple id="partialConfigStructValue::simple1" type="long"/>
+      <simple id="partialConfigStructValue::simple2" type="long"/>
+    </struct>
+    <structvalue>
+      <simpleref refid="partialConfigStructValue::simple1" value="1"/>
+    </structvalue>
+    <configurationkind kindtype="property"/>
+  </structsequence>
+  <struct id="notPartialConfig" mode="readwrite">
+    <description>This struct is NOT partially configured. A simplesequence without a value is a zero-length sequence.</description>
+    <simple id="notPartialConfig:simple" type="long">
+      <value>1</value>
+    </simple>
+    <simplesequence id="notPartialConfig:simpleSeq" type="string"/>
+    <configurationkind kindtype="property"/>
+  </struct>
+  <struct id="notPartialConfig2" mode="readwrite">
+    <description>This struct is NOT partially configured. The simplesequence without a value is allowed to be considered to not have a value here.</description>
+    <simple id="notPartialConfig2:simple" type="long"/>
+    <simplesequence id="notPartialConfig2:simpleSeq" type="string"/>
+    <configurationkind kindtype="property"/>
+  </struct>
+</properties>
