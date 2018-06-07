@@ -24,11 +24,52 @@ import mil.jpeojtrs.sca.prf.Simple;
 import mil.jpeojtrs.sca.prf.SimpleSequence;
 import mil.jpeojtrs.sca.prf.Struct;
 import mil.jpeojtrs.sca.prf.StructSequence;
+import mil.jpeojtrs.sca.prf.StructValue;
 import mil.jpeojtrs.sca.prf.tests.PrfTests;
 import mil.jpeojtrs.sca.prf.util.PrfValidator;
 import mil.jpeojtrs.sca.util.ScaResourceFactoryUtil;
 
 public class PrfValidatorTest {
+
+	@Test
+	public void partialConfigStruct() throws IOException {
+		Properties props = getProps("testFiles/validation/PartialConfig.prf.xml");
+
+		// Error for a partially-configured struct (IDE-1304)
+		Struct struct = (Struct) props.getProperty("partialConfigStruct");
+		assertError(struct, 1304);
+	}
+
+	@Test
+	public void partialConfigStructInStructSeq() throws IOException {
+		Properties props = getProps("testFiles/validation/PartialConfig.prf.xml");
+
+		// Warning for a partially-configured default for a struct within a struct sequence (IDE-1304)
+		Struct struct = ((StructSequence) props.getProperty("partialConfigStructSeq")).getStruct();
+		assertWarning(struct, 101304);
+	}
+
+	@Test
+	public void partialConfigStructValue() throws IOException {
+		Properties props = getProps("testFiles/validation/PartialConfig.prf.xml");
+
+		// Error for a partially-configured struct value (IDE-1304)
+		StructValue structValue = ((StructSequence) props.getProperty("partialConfigStructValue")).getStructValue().get(0);
+		assertError(structValue, 201304);
+	}
+
+	@Test
+	public void notPartialConfig() throws IOException {
+		Properties props = getProps("testFiles/validation/PartialConfig.prf.xml");
+
+		// A simple sequence without a value can be considered a zero-length sequence (IDE-2099)
+		Struct struct = (Struct) props.getProperty("notPartialConfig");
+		assertOk(struct);
+
+		// The simple sequence can also be considered to not have a value as appropriate (IDE-2099)
+		struct = (Struct) props.getProperty("notPartialConfig2");
+		assertOk(struct);
+	}
 
 	@Test
 	public void validateSimple_1215() throws IOException {
@@ -139,6 +180,21 @@ public class PrfValidatorTest {
 		Assert.assertEquals(1, diagnostic.getChildren().size());
 		Diagnostic childDiag = diagnostic.getChildren().get(0);
 		Assert.assertEquals(Diagnostic.WARNING, childDiag.getSeverity());
+		Assert.assertEquals(code, childDiag.getCode());
+	}
+
+	private void assertError(EObject obj, int code) {
+		// Yes/no validation
+		boolean result = PrfValidator.INSTANCE.validate(obj, null, null);
+		Assert.assertFalse(result);
+
+		// Valdiation with diagnostics
+		BasicDiagnostic diagnostic = new BasicDiagnostic();
+		result = PrfValidator.INSTANCE.validate(obj, diagnostic, null);
+		Assert.assertFalse(result);
+		Assert.assertEquals(1, diagnostic.getChildren().size());
+		Diagnostic childDiag = diagnostic.getChildren().get(0);
+		Assert.assertEquals(Diagnostic.ERROR, childDiag.getSeverity());
 		Assert.assertEquals(code, childDiag.getCode());
 	}
 }

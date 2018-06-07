@@ -526,8 +526,12 @@ public class PrfValidator extends EObjectValidator {
 
 			// Compare result to the baseline.
 			if (baselineConfigState != simpleConfigState) {
-				isValidStruct = false;
-				diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey, data.toArray(new Object[0]), new Object[] { struct }, context));
+				if (severity == Diagnostic.ERROR) {
+					isValidStruct = false;
+				}
+				if (diagnostics != null) {
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey, data.toArray(new Object[0]), new Object[] { struct }, context));
+				}
 
 				break;
 			}
