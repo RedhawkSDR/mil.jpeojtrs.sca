@@ -136,11 +136,14 @@ public class UnsignedUtilsTest {
 	 */
 	@Test
 	public void testToSignedLong() {
-		final BigInteger minSigned = UnsignedUtils.toSigned(Long.MIN_VALUE);
-		final BigInteger maxSigned = UnsignedUtils.toSigned(Long.MAX_VALUE);
-		Assert.assertTrue(minSigned.compareTo(BigInteger.ZERO) > 0);
-		Assert.assertTrue(maxSigned.compareTo(BigInteger.ZERO) > 0);
-		Assert.assertTrue(minSigned.compareTo(maxSigned) > 0);
+		BigInteger converted = UnsignedUtils.toSigned(Long.MIN_VALUE);
+		Assert.assertEquals(new BigInteger("8000000000000000", 16), converted);
+		converted = UnsignedUtils.toSigned(-1L);
+		Assert.assertEquals(new BigInteger("FFFFFFFFFFFFFFFF", 16), converted);
+		converted = UnsignedUtils.toSigned(0L);
+		Assert.assertEquals(BigInteger.ZERO, converted);
+		converted = UnsignedUtils.toSigned(Long.MAX_VALUE);
+		Assert.assertEquals(new BigInteger("7FFFFFFFFFFFFFFF", 16), converted);
 	}
 
 	/**

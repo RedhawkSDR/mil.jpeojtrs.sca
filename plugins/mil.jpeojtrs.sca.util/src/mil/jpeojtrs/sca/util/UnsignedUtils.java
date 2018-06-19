@@ -10,10 +10,9 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util;
 
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
 import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.nio.LongBuffer;
 
 /**
  * Utility class to convert between signed and unsigned type. <B>Note<B> probably only supports 32-bit systems. 
@@ -25,6 +24,9 @@ public final class UnsignedUtils {
 	private static final short MAX_BYTE = 0xFF;
 	private static final int MAX_USHORT = 0xFFFF;
 	private static final long MAX_UINT = 0xFFFFFFFFL;
+
+	private static final ByteBuffer BUFFER = ByteBuffer.allocate(8);
+	private static final LongBuffer LONG_BUFFER = BUFFER.asLongBuffer();
 
 	private UnsignedUtils() {
 
@@ -122,34 +124,20 @@ public final class UnsignedUtils {
 		return (short) ushort;
 	}
 
-	public static long toSigned(final int uint) {
-		return UnsignedUtils.MAX_UINT & uint;
+	public static long toSigned(final int ulong) {
+		return UnsignedUtils.MAX_UINT & ulong;
 	}
 
-	public static int toUnsigned(final long uint) {
-		return (int) uint;
+	public static int toUnsigned(final long ulong) {
+		return (int) ulong;
 	}
 
-	public static BigInteger toSigned(final long ulong) {
-		final ByteArrayOutputStream array = new ByteArrayOutputStream();
-		final DataOutputStream stream = new DataOutputStream(array);
-		try {
-			stream.writeLong(ulong);
-			array.flush();
-		} catch (final IOException e) {
-			// PASS, will never happen
-		} finally {
-			try {
-				array.close();
-			} catch (final IOException e) {
-				// PASS
-			}
-		}
-
-		return new BigInteger(1, array.toByteArray());
+	public static BigInteger toSigned(final long ulonglong) {
+		LONG_BUFFER.put(0, ulonglong);
+		return new BigInteger(1, BUFFER.array());
 	}
 
-	public static long toUnsigned(final BigInteger ulong) {
-		return ulong.longValue();
+	public static long toUnsigned(final BigInteger ulonglong) {
+		return ulonglong.longValue();
 	}
 }
