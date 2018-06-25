@@ -578,7 +578,7 @@ public enum PropertyValueType implements Enumerator {
 			case LONGLONG:
 				return PrfPackage.Literals.COMPLEX_LONG_LONG;
 			case OCTET:
-				return PrfPackage.Literals.COMPLEX_BYTE;
+				return PrfPackage.Literals.COMPLEX_OCTET;
 			case SHORT:
 				return PrfPackage.Literals.COMPLEX_SHORT;
 			case ULONG:
