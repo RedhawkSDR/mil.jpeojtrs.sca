@@ -86,12 +86,17 @@ public class DependencyItemProvider extends PropertyRefSetItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
+		// END GENERATED CODE
 		String label = ((Dependency) object).getType();
-		return label == null || label.length() == 0 ? getString("_UI_Dependency_type") : getString("_UI_Dependency_type") + " " + label;
+		if (((Dependency) object).getSoftPkgRef() != null) {
+			return getString("_UI_Dependency_SoftPkg_type");
+		}
+		return (label == null || label.length() == 0) ? getString("_UI_Dependency_type") : getString("_UI_Dependency_type") + " " + label;
+		// BEGIN GENERATED CODE
 	}
 
 	/**
