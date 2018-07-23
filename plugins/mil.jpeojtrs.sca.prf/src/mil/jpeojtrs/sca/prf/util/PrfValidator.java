@@ -123,7 +123,7 @@ public class PrfValidator extends EObjectValidator {
 		INCOMATIBLE_PROP_REF(301304, "_UI_IncompatiblePropertyRef_diagnostic"), //$NON-NLS-1$
 		KIND_IS_IGNORED(1344, "_UI_RedundantKind_diagnostic"), //$NON-NLS-1$
 		MESSAGE_NOT_A_STRUCT(1675, "_UI_UnsupportMessageKindType_diagnostic"), //$NON-NLS-1$
-		OPTIONAL_NOT_IN_STRUCT(1215, "_UI_InvalidOptionalAttribute_diagnostic"),  //$NON-NLS-1$
+		OPTIONAL_NOT_IN_STRUCT(1215, "_UI_InvalidOptionalAttribute_diagnostic"), //$NON-NLS-1$
 		PARTIAL_CONFIG_STRUCT(1304, "_UI_PartiallyConfiguredStruct_diagnostic"), //$NON-NLS-1$
 		PARTIAL_CONFIG_STRUCT_SEQ(101304, "_UI_PartiallyConfiguredStruct_Contained_diagnostic"), //$NON-NLS-1$
 		PARTIAL_CONFIG_STRUCT_VALUE(201304, "_UI_PartiallyConfiguredStructValue_diagnostic"); //$NON-NLS-1$
@@ -530,7 +530,8 @@ public class PrfValidator extends EObjectValidator {
 					isValidStruct = false;
 				}
 				if (diagnostics != null) {
-					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey, data.toArray(new Object[0]), new Object[] { struct }, context));
+					diagnostics.add(createDiagnostic(severity, DIAGNOSTIC_SOURCE, code.code, code.messageKey, data.toArray(new Object[0]),
+						new Object[] { struct }, context));
 				}
 
 				break;

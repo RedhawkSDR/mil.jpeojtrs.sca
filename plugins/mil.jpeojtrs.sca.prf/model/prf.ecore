@@ -105,7 +105,7 @@
       <details key="kind" value="empty"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//StructPropertyConfigurationType"
-        defaultValueLiteral="property" unsettable="true">
+        defaultValueLiteral="configure" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
         <details key="name" value="kindtype"/>
@@ -169,7 +169,7 @@
       <details key="kind" value="empty"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PropertyConfigurationType"
-        defaultValueLiteral="property" unsettable="true">
+        defaultValueLiteral="configure" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
         <details key="name" value="kindtype"/>

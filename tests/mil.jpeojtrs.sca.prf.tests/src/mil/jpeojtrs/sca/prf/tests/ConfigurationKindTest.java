@@ -143,12 +143,12 @@ public class ConfigurationKindTest extends TestCase {
 	public void test_default() {
 		ConfigurationKind k = PrfFactory.eINSTANCE.createConfigurationKind();
 		Assert.assertFalse(k.isSetType());
-		Assert.assertEquals(StructPropertyConfigurationType.PROPERTY, k.getType());
+		Assert.assertEquals(StructPropertyConfigurationType.CONFIGURE, k.getType());
 		k.setType(StructPropertyConfigurationType.ALLOCATION);
 		Assert.assertTrue(k.isSetType());
 		Assert.assertEquals(StructPropertyConfigurationType.ALLOCATION, k.getType());
 		k.setType(null);
-		Assert.assertEquals(StructPropertyConfigurationType.PROPERTY, k.getType());
+		Assert.assertEquals(StructPropertyConfigurationType.CONFIGURE, k.getType());
 	}
 
 } // ConfigurationKindTest

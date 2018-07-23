@@ -33,7 +33,7 @@ public interface Kind extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The default value is <code>"property"</code>.
+	 * The default value is <code>"configure"</code>.
 	 * The literals are from the enumeration {@link mil.jpeojtrs.sca.prf.PropertyConfigurationType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -47,7 +47,7 @@ public interface Kind extends EObject {
 	 * @see #unsetType()
 	 * @see #setType(PropertyConfigurationType)
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getKind_Type()
-	 * @model default="property" unsettable="true"
+	 * @model default="configure" unsettable="true"
 	 *        extendedMetaData="kind='attribute' name='kindtype'"
 	 * @generated
 	 */

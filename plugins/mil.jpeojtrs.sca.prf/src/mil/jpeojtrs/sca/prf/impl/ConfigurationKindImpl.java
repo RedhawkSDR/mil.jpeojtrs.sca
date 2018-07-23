@@ -43,7 +43,7 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 	 * @generated
 	 * @ordered
 	 */
-	protected static final StructPropertyConfigurationType TYPE_EDEFAULT = StructPropertyConfigurationType.PROPERTY;
+	protected static final StructPropertyConfigurationType TYPE_EDEFAULT = StructPropertyConfigurationType.CONFIGURE;
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -199,7 +199,7 @@ public class ConfigurationKindImpl extends EObjectImpl implements ConfigurationK
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		if (typeESet)
 			result.append(type);
