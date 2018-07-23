@@ -250,7 +250,7 @@ public class StructRefImpl extends AbstractPropertyRefImpl<Struct> implements St
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (refs: ");
 		result.append(refs);
 		result.append(')');

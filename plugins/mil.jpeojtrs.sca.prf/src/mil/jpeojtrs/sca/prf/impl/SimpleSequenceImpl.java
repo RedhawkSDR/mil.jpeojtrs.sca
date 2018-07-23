@@ -675,7 +675,7 @@ public class SimpleSequenceImpl extends AbstractPropertyImpl implements SimpleSe
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (units: ");
 		result.append(units);
 		result.append(", type: ");

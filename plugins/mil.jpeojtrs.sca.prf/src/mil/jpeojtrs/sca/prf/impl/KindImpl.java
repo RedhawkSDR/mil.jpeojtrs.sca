@@ -43,7 +43,7 @@ public class KindImpl extends EObjectImpl implements Kind {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final PropertyConfigurationType TYPE_EDEFAULT = PropertyConfigurationType.PROPERTY;
+	protected static final PropertyConfigurationType TYPE_EDEFAULT = PropertyConfigurationType.CONFIGURE;
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -199,7 +199,7 @@ public class KindImpl extends EObjectImpl implements Kind {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		if (typeESet)
 			result.append(type);
