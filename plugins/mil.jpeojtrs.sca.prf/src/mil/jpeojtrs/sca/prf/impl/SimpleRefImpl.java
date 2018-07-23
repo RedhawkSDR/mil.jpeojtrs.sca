@@ -177,7 +177,7 @@ public class SimpleRefImpl extends AbstractPropertyRefImpl<Simple> implements Si
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (value: ");
 		result.append(value);
 		result.append(')');

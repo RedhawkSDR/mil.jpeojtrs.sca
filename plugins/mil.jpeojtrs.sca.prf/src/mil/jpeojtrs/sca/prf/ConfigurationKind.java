@@ -33,7 +33,7 @@ public interface ConfigurationKind extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The default value is <code>"property"</code>.
+	 * The default value is <code>"configure"</code>.
 	 * The literals are from the enumeration {@link mil.jpeojtrs.sca.prf.StructPropertyConfigurationType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -47,7 +47,7 @@ public interface ConfigurationKind extends EObject {
 	 * @see #unsetType()
 	 * @see #setType(StructPropertyConfigurationType)
 	 * @see mil.jpeojtrs.sca.prf.PrfPackage#getConfigurationKind_Type()
-	 * @model default="property" unsettable="true"
+	 * @model default="configure" unsettable="true"
 	 *        extendedMetaData="kind='attribute' name='kindtype'"
 	 * @generated
 	 */

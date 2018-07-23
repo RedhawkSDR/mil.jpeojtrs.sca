@@ -54,6 +54,7 @@ import mil.jpeojtrs.sca.prf.Test;
 import mil.jpeojtrs.sca.prf.Values;
 
 import java.util.Collections;
+import mil.jpeojtrs.sca.prf.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
