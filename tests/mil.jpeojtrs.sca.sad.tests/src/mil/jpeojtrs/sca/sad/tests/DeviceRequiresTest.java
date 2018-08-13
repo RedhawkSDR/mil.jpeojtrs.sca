@@ -21,7 +21,7 @@ import mil.jpeojtrs.sca.sad.SadComponentInstantiation;
 import mil.jpeojtrs.sca.sad.SadComponentPlacement;
 import mil.jpeojtrs.sca.sad.SoftwareAssembly;
 
-public class DeviceRequires {
+public class DeviceRequiresTest {
 
 	@Test
 	public void load() throws URISyntaxException {

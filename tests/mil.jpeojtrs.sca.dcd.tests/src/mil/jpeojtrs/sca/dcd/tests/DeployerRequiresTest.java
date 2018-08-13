@@ -21,7 +21,7 @@ import mil.jpeojtrs.sca.dcd.DcdComponentPlacement;
 import mil.jpeojtrs.sca.dcd.DeviceConfiguration;
 import mil.jpeojtrs.sca.partitioning.Requirements;
 
-public class DeployerRequires {
+public class DeployerRequiresTest {
 
 	@Test
 	public void load() throws URISyntaxException {
