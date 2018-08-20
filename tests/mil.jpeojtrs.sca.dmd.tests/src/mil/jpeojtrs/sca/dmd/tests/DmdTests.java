@@ -42,14 +42,14 @@ public class DmdTests {
 	}
 	
 	public static DomainManagerConfiguration getDomainManagerConfiguration()  throws Exception {
-		URI uri = URI.createURI("sdrDom:///domain/DomainManager.dmd.xml");
+		URI uri = URI.createURI("sdrdom:///domain/DomainManager.dmd.xml");
 		ResourceSet resourceSet = createResourceSet();
 		Resource resource = resourceSet.getResource(uri, true);
 		return DomainManagerConfiguration.Util.getDomainManagerConfiguration(resource);
 	}
 
 	public static DomainManagerConfiguration getTestFileDomainManagerConfiguration() throws URISyntaxException {
-		URI uri = URI.createURI("sdrDom:///domain/DomainManager2.dmd.xml");
+		URI uri = URI.createURI("sdrdom:///domain/DomainManager2.dmd.xml");
 		ResourceSet resourceSet = createResourceSet();
 		Resource resource = resourceSet.getResource(uri, true);
 		return DomainManagerConfiguration.Util.getDomainManagerConfiguration(resource);
