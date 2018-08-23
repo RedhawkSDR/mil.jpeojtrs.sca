@@ -17,9 +17,18 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.impl.URIHandlerImpl;
+
 /**
+ * This URI handler can be used to convert sdr, sdrdom, and sdrdev URIs. The handler is initialized with a base URI to
+ * represent the root sdr URI. URIs will be converted relative to the supplied base URI.
+ * <p/>
+ * Example usage:
+ * <p/>
+ * <pre>
+ * SdrURIHandler handler = new SdrURIHandler(baseURI);
+ * resourceSet.getURIConverter().getURIHandlers().add(0, handler);
+ * </pre>
  * @since 3.3
- *
  */
 public class SdrURIHandler extends URIHandlerImpl {
 	
