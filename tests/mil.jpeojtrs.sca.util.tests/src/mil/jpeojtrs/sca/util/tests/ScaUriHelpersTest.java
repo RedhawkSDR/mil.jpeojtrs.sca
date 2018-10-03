@@ -14,35 +14,23 @@ import org.junit.Assert;
 
 import mil.jpeojtrs.sca.spd.SoftPkg;
 import mil.jpeojtrs.sca.spd.SpdFactory;
+import mil.jpeojtrs.sca.util.QueryParser;
+import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
 import mil.jpeojtrs.sca.util.ScaResourceFactoryUtil;
 import mil.jpeojtrs.sca.util.ScaUriHelpers;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 public class ScaUriHelpersTest {
-	private URI uri;
-	private String localFileName;
-
-	@Before
-	public void setUp() throws Exception {
-		this.uri = URI.createURI("platform:/resource/xcv/xcv.spd.xml");
-		this.localFileName = "xcv.prf.xml";
-	}
-
-	@After
-	public void tearDown() throws Exception {
-		this.uri = null;
-		this.localFileName = null;
-	}
 
 	@Test
 	public void getLocalFileResource() throws IOException {
@@ -64,25 +52,92 @@ public class ScaUriHelpersTest {
 
 	@Test
 	public void createFileSystemURI() throws Exception {
-		URI localURI = ScaUriHelpers.createFileSystemURI(this.localFileName, this.uri, null);
+		final URI uri = URI.createURI("platform:/resource/xcv/xcv.spd.xml");
+		final String localFileName = "xcv.prf.xml";
 
+		URI localURI = ScaUriHelpers.createFileSystemURI(localFileName, uri, null);
 		Assert.assertNotNull(localURI);
 		Assert.assertEquals("platform:/resource/xcv/xcv.prf.xml", localURI.toString());
 
 		// path is null
-		localURI = ScaUriHelpers.createFileSystemURI(null, this.uri, null);
+		localURI = ScaUriHelpers.createFileSystemURI(null, uri, null);
 		Assert.assertNull(localURI);
 
 		// target FS is null, no query params
-		localURI = ScaUriHelpers.createFileSystemURI("/" + this.localFileName, URI.createURI("sca:///resource/xcv/xcv.spd.xml"), null);
+		localURI = ScaUriHelpers.createFileSystemURI("/" + localFileName, URI.createURI("sca:///resource/xcv/xcv.spd.xml"), null);
 		Assert.assertNull(localURI);
 
 		// target FS is null, query is dom
-		localURI = ScaUriHelpers.createFileSystemURI("/" + this.localFileName, URI.createURI("sca://xcv/xcv.spd.xml?fs=dom"), null);
+		localURI = ScaUriHelpers.createFileSystemURI("/" + localFileName, URI.createURI("sca://xcv/xcv.spd.xml?fs=dom"), null);
 		Assert.assertNotNull(localURI);
 		// TODO Need to validate what this returns, pretty sure it's garbage right now
+	}
 
-		// TODO Need to test createFileSystemURI with scheme and query params
+	/**
+	 * Tests {@link ScaUriHelpers#createFileSystemURI(String, URI, String)} using SCA reference URIs in a dom file
+	 * system.
+	 * @throws Exception
+	 */
+	@Test
+	public void createFileSystemURI_scaDom() throws Exception {
+		Map<String, String> query = new HashMap<>();
+		query.put(ScaFileSystemConstants.QUERY_PARAM_FS, "file:///a/b/c");
+		String queryStr = QueryParser.createQuery(query);
+		URI referenceURI = URI.createHierarchicalURI(ScaFileSystemConstants.SCHEME, null, null, new String[] { "ref", "uri" }, queryStr, null);
+
+		// dom reference URI, ask for dom file system
+		URI newURI = ScaUriHelpers.createFileSystemURI("/g/h/i", referenceURI, ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM);
+		Assert.assertEquals(ScaFileSystemConstants.SCHEME, newURI.scheme());
+		Assert.assertEquals("/g/h/i", newURI.path());
+		query = QueryParser.parseQuery(newURI.query());
+		Assert.assertEquals("file:///a/b/c", query.get(ScaFileSystemConstants.QUERY_PARAM_FS));
+
+		// We'd like to move away from this code, but we support it for now
+		// dom reference URI, ask for null (assumes dom file system)
+		newURI = ScaUriHelpers.createFileSystemURI("/g/h/i", referenceURI, null);
+		Assert.assertEquals(ScaFileSystemConstants.SCHEME, newURI.scheme());
+		Assert.assertEquals("/g/h/i", newURI.path());
+		query = QueryParser.parseQuery(newURI.query());
+		Assert.assertEquals("file:///a/b/c", query.get(ScaFileSystemConstants.QUERY_PARAM_FS));
+	}
+
+	/**
+	 * Tests {@link ScaUriHelpers#createFileSystemURI(String, URI, String)} using SCA reference URIs in a dev file
+	 * system.
+	 * @throws Exception
+	 */
+	@Test
+	public void createFileSystemURI_scaDev() throws Exception {
+		Map<String, String> query = new HashMap<>();
+		query.put(ScaFileSystemConstants.QUERY_PARAM_FS, "file:///a/b/c");
+		query.put(ScaFileSystemConstants.QUERY_PARAM_DOM_FS, "file:///d/e/f");
+		String queryStr = QueryParser.createQuery(query);
+		URI referenceURI = URI.createHierarchicalURI(ScaFileSystemConstants.SCHEME, null, null, new String[] { "ref", "uri" }, queryStr, null);
+
+		// dev reference URI, ask for dev file system
+		URI newURI = ScaUriHelpers.createFileSystemURI("/g/h/i", referenceURI, ScaFileSystemConstants.SCHEME_TARGET_SDR_DEV);
+		Assert.assertEquals(ScaFileSystemConstants.SCHEME, newURI.scheme());
+		Assert.assertEquals("/g/h/i", newURI.path());
+		query = QueryParser.parseQuery(newURI.query());
+		Assert.assertEquals("file:///a/b/c", query.get(ScaFileSystemConstants.QUERY_PARAM_FS));
+		Assert.assertEquals("file:///d/e/f", query.get(ScaFileSystemConstants.QUERY_PARAM_DOM_FS));
+
+		// We'd like to move away from this code, but we support it for now
+		// dev reference URI, ask for null (assumes dev file system)
+		newURI = ScaUriHelpers.createFileSystemURI("/g/h/i", referenceURI, null);
+		Assert.assertEquals(ScaFileSystemConstants.SCHEME, newURI.scheme());
+		Assert.assertEquals("/g/h/i", newURI.path());
+		query = QueryParser.parseQuery(newURI.query());
+		Assert.assertEquals("file:///a/b/c", query.get(ScaFileSystemConstants.QUERY_PARAM_FS));
+		Assert.assertEquals("file:///d/e/f", query.get(ScaFileSystemConstants.QUERY_PARAM_DOM_FS));
+
+		// dev reference URI, request dom file system
+		newURI = ScaUriHelpers.createFileSystemURI("/g/h/i", referenceURI, ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM);
+		Assert.assertEquals(ScaFileSystemConstants.SCHEME, newURI.scheme());
+		Assert.assertEquals("/g/h/i", newURI.path());
+		query = QueryParser.parseQuery(newURI.query());
+		Assert.assertEquals("file:///d/e/f", query.get(ScaFileSystemConstants.QUERY_PARAM_FS));
+		Assert.assertFalse(query.containsKey(ScaFileSystemConstants.QUERY_PARAM_DOM_FS));
 	}
 
 }

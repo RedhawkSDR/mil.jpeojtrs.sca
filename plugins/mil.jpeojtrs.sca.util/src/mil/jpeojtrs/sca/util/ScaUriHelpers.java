@@ -10,6 +10,7 @@
  *******************************************************************************/
 package mil.jpeojtrs.sca.util;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.core.runtime.ILog;
@@ -46,8 +47,8 @@ public class ScaUriHelpers {
 
 		// Allow sdr, sca* and file schemes
 		String targetScheme = targetUri.scheme();
-		if (targetScheme != null
-			&& !(targetScheme.startsWith(ScaFileSystemConstants.SCHEME_TARGET_SDR) || ScaFileSystemConstants.SCHEME.equals(targetScheme) || targetUri.isFile())) {
+		if (targetScheme != null && !(targetScheme.startsWith(ScaFileSystemConstants.SCHEME_TARGET_SDR) || ScaFileSystemConstants.SCHEME.equals(targetScheme)
+			|| targetUri.isFile())) {
 			return targetUri.toString();
 		}
 
@@ -152,8 +153,8 @@ public class ScaUriHelpers {
 	 * Creates a URI based on a path and a reference URI.
 	 * @param path The absolute path in the file system, or a path relative to the <code>reference</code>
 	 * @param referenceURI The reference to use when creating the URI
-	 * @param targetFileSystem if the URI does not contain a file system query string, this will be used to reference
-	 * the target file system instead
+	 * @param targetFileSystem Either {@link ScaFileSystemConstants#SCHEME_TARGET_SDR_DOM} or
+	 * {@link ScaFileSystemConstants#SCHEME_TARGET_SDR_DEV}) to indicate which file system the target is in
 	 * @since 3.0
 	 * @return Absolute URI to resource
 	 */
@@ -174,8 +175,18 @@ public class ScaUriHelpers {
 			return uri;
 		}
 
-		final String queryStr = referenceURI.query();
-		final Map<String, String> query = QueryParser.parseQuery(queryStr);
+		String queryStr = referenceURI.query();
+		Map<String, String> query = QueryParser.parseQuery(queryStr);
+
+		// If the target file system is 'dom', check to see if the query specifies a 'dom' file system and if so use
+		// that. This occurs when the referenceURI is in a 'dev' file system, but we're trying to get a softpkg
+		// dependency (which is by definition in the 'dom' file system)
+		if (ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM.equals(targetFileSystem) && query.containsKey(ScaFileSystemConstants.QUERY_PARAM_DOM_FS)) {
+			query = new HashMap<>(query);
+			query.put(ScaFileSystemConstants.QUERY_PARAM_FS, query.remove(ScaFileSystemConstants.QUERY_PARAM_DOM_FS));
+			queryStr = QueryParser.createQuery(query);
+		}
+
 		if (query.get(ScaFileSystemConstants.QUERY_PARAM_FS) != null) {
 			targetFileSystem = ScaFileSystemConstants.SCHEME;
 		}
