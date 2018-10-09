@@ -120,6 +120,7 @@ public class ScaUriHelpers {
 		// Load the resource using a temporary resource set
 		final ResourceSet tmpResourceSet = new ResourceSetImpl();
 		tmpResourceSet.getLoadOptions().putAll(resourceSet.getLoadOptions());
+		tmpResourceSet.setURIConverter(resourceSet.getURIConverter());
 		final Resource tmpResource;
 		try {
 			// Demand-load the resource
