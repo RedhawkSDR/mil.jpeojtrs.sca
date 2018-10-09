@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="mil.jpeojtrs.sca.util" version="2">
+    <resource path="src/mil/jpeojtrs/sca/util/ScaUriHelpers.java" type="mil.jpeojtrs.sca.util.ScaUriHelpers">
+        <filter comment="Class cannot be extended (private constructor)" id="336658481">
+            <message_arguments>
+                <message_argument value="mil.jpeojtrs.sca.util.ScaUriHelpers"/>
+                <message_argument value="RESOURCE_SET_LOCK"/>
+            </message_arguments>
+        </filter>
+    </resource>
+</component>
