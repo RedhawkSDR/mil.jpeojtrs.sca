@@ -34,7 +34,8 @@ public class ScaUriHelpers {
 	private static final String PLUGIN_ID = "mil.jpeojtrs.sca.util";
 
 	/**
-	 * The key used in {@link ResourceSet#getLoadOptions()} to specify a lock.
+	 * The key used in {@link ResourceSet#getLoadOptions()} to specify a lock. The lock must be of type
+	 * {@link ReadWriteLock}.
 	 * @see #DEFAULT_LOCK
 	 * @since 4.7
 	 */
@@ -46,7 +47,7 @@ public class ScaUriHelpers {
 	 * <p/>
 	 * The read lock is held while trying to find a {@link Resource} in the {@link ResourceSet}, and the write lock is
 	 * held while adding a new {@link Resource}. Loading is done outside the scope of the lock using temporary
-	 * {@link ResourceSet}. This avoids holding the write lock during a potentialy long-running operation.
+	 * {@link ResourceSet}. This avoids holding the write lock during a potentially long-running operation.
 	 */
 	private static final ReadWriteLock DEFAULT_LOCK = new ReentrantReadWriteLock();
 
@@ -103,13 +104,22 @@ public class ScaUriHelpers {
 			return null;
 		}
 
-		// Attempt to retrieve an existing resource
-		final ResourceSet resourceSet = refResource.getResourceSet();
+		return loadResource(refResource.getResourceSet(), newUri);
+	}
+
+	/**
+	 * Safely retrieves/loads a {@link Resource} from a {@link ResourceSet}. A lock is used to controls read/write.
+	 * The lock may be specified using {@link #RESOURCE_SET_LOCK}.
+	 * @since 4.7
+	 */
+	public static Resource loadResource(ResourceSet resourceSet, URI uri) {
 		ReadWriteLock lock = (ReadWriteLock) resourceSet.getLoadOptions().getOrDefault(RESOURCE_SET_LOCK, DEFAULT_LOCK);
+
+		// Attempt to retrieve an existing resource
 		Resource resource;
 		try {
 			lock.readLock().lock();
-			resource = resourceSet.getResource(newUri, false);
+			resource = resourceSet.getResource(uri, false);
 			if (resource != null) {
 				return resource;
 			}
@@ -124,7 +134,7 @@ public class ScaUriHelpers {
 		final Resource tmpResource;
 		try {
 			// Demand-load the resource
-			tmpResource = tmpResourceSet.getResource(newUri, true);
+			tmpResource = tmpResourceSet.getResource(uri, true);
 
 			if (!tmpResource.getErrors().isEmpty() && tmpResource.getContents().isEmpty()) {
 				return null;
@@ -143,7 +153,7 @@ public class ScaUriHelpers {
 			lock.writeLock().lock();
 
 			// Make sure somebody else didn't beat us and load it first
-			resource = resourceSet.getResource(newUri, false);
+			resource = resourceSet.getResource(uri, false);
 			if (resource != null) {
 				return resource;
 			}
