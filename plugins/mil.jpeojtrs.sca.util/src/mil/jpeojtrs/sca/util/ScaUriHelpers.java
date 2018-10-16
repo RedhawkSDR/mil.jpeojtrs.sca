@@ -37,7 +37,7 @@ public class ScaUriHelpers {
 	 * The key used in {@link ResourceSet#getLoadOptions()} to specify a lock. The lock must be of type
 	 * {@link ReadWriteLock}.
 	 * @see #DEFAULT_LOCK
-	 * @since 4.7
+	 * @since 5.1
 	 */
 	public static final String RESOURCE_SET_LOCK = "RESOURCE_SET_LOCK";
 
@@ -110,7 +110,7 @@ public class ScaUriHelpers {
 	/**
 	 * Safely retrieves/loads a {@link Resource} from a {@link ResourceSet}. A lock is used to controls read/write.
 	 * The lock may be specified using {@link #RESOURCE_SET_LOCK}.
-	 * @since 4.7
+	 * @since 5.1
 	 */
 	public static Resource loadResource(ResourceSet resourceSet, URI uri) {
 		ReadWriteLock lock = (ReadWriteLock) resourceSet.getLoadOptions().getOrDefault(RESOURCE_SET_LOCK, DEFAULT_LOCK);

@@ -54,7 +54,7 @@ public final class ScaFileSystemConstants {
 	 * This is used only when {@link #QUERY_PARAM_FS} points to a dev file system. It allows softpkg dependencies
 	 * (which are in the 'dom' file system, not 'dev') to be resolved.
 	 * @see #SCHEME
-	 * @since 4.7
+	 * @since 5.1
 	 */
 	public static final String QUERY_PARAM_DOM_FS = "domfs";
 
