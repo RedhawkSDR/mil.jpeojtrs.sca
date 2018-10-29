@@ -1,16 +1,19 @@
-/*******************************************************************************
- * This file is protected by Copyright. 
+/**
+ * This file is protected by Copyright.
  * Please refer to the COPYRIGHT file distributed with this source distribution.
  *
  * This file is part of REDHAWK IDE.
  *
- * All rights reserved.  This program and the accompanying materials are made available under 
- * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at 
- * http://www.eclipse.org/legal/epl-v10.html
- *******************************************************************************/
+ * All rights reserved.  This program and the accompanying materials are made available under
+ * the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html.
+ */
 package mil.jpeojtrs.sca.util;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import org.eclipse.core.runtime.ILog;
 import org.eclipse.core.runtime.IStatus;
@@ -21,6 +24,7 @@ import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
@@ -28,6 +32,24 @@ import org.osgi.framework.FrameworkUtil;
 public class ScaUriHelpers {
 
 	private static final String PLUGIN_ID = "mil.jpeojtrs.sca.util";
+
+	/**
+	 * The key used in {@link ResourceSet#getLoadOptions()} to specify a lock. The lock must be of type
+	 * {@link ReadWriteLock}.
+	 * @see #DEFAULT_LOCK
+	 * @since 5.1
+	 */
+	public static final String RESOURCE_SET_LOCK = "RESOURCE_SET_LOCK";
+
+	/**
+	 * This read/write lock is used to protect access to the list of {@link Resource} inside a {@link ResourceSet}.
+	 * A {@link ResourceSet} may specify its own lock in its load options using the key {@link #RESOURCE_SET_LOCK}.
+	 * <p/>
+	 * The read lock is held while trying to find a {@link Resource} in the {@link ResourceSet}, and the write lock is
+	 * held while adding a new {@link Resource}. Loading is done outside the scope of the lock using temporary
+	 * {@link ResourceSet}. This avoids holding the write lock during a potentially long-running operation.
+	 */
+	private static final ReadWriteLock DEFAULT_LOCK = new ReentrantReadWriteLock();
 
 	private ScaUriHelpers() {
 	}
@@ -46,8 +68,8 @@ public class ScaUriHelpers {
 
 		// Allow sdr, sca* and file schemes
 		String targetScheme = targetUri.scheme();
-		if (targetScheme != null
-			&& !(targetScheme.startsWith(ScaFileSystemConstants.SCHEME_TARGET_SDR) || ScaFileSystemConstants.SCHEME.equals(targetScheme) || targetUri.isFile())) {
+		if (targetScheme != null && !(targetScheme.startsWith(ScaFileSystemConstants.SCHEME_TARGET_SDR) || ScaFileSystemConstants.SCHEME.equals(targetScheme)
+			|| targetUri.isFile())) {
 			return targetUri.toString();
 		}
 
@@ -82,17 +104,41 @@ public class ScaUriHelpers {
 			return null;
 		}
 
-		final ResourceSet resourceSet = refResource.getResourceSet();
+		return loadResource(refResource.getResourceSet(), newUri);
+	}
+
+	/**
+	 * Safely retrieves/loads a {@link Resource} from a {@link ResourceSet}. A lock is used to controls read/write.
+	 * The lock may be specified using {@link #RESOURCE_SET_LOCK}.
+	 * @since 5.1
+	 */
+	public static Resource loadResource(ResourceSet resourceSet, URI uri) {
+		ReadWriteLock lock = (ReadWriteLock) resourceSet.getLoadOptions().getOrDefault(RESOURCE_SET_LOCK, DEFAULT_LOCK);
+
+		// Attempt to retrieve an existing resource
+		Resource resource;
+		try {
+			lock.readLock().lock();
+			resource = resourceSet.getResource(uri, false);
+			if (resource != null) {
+				return resource;
+			}
+		} finally {
+			lock.readLock().unlock();
+		}
+
+		// Load the resource using a temporary resource set
+		final ResourceSet tmpResourceSet = new ResourceSetImpl();
+		tmpResourceSet.getLoadOptions().putAll(resourceSet.getLoadOptions());
+		tmpResourceSet.setURIConverter(resourceSet.getURIConverter());
+		final Resource tmpResource;
 		try {
 			// Demand-load the resource
-			Resource resource = resourceSet.getResource(newUri, true);
+			tmpResource = tmpResourceSet.getResource(uri, true);
 
-			// If the resource was requested *previously* from the ResourceSet, then it's already in the ResourceSet
-			// *even if it had problems loading*. We detect this and still return null.
-			if (!resource.getErrors().isEmpty() && resource.getContents().isEmpty()) {
+			if (!tmpResource.getErrors().isEmpty() && tmpResource.getContents().isEmpty()) {
 				return null;
 			}
-			return resource;
 		} catch (WrappedException e) {
 			// Resource failed to load
 			return null;
@@ -100,6 +146,22 @@ public class ScaUriHelpers {
 			// TODO: We should be able to remove this catch block
 			log(new Status(IStatus.ERROR, PLUGIN_ID, "Unexpected error while loading an XML resource", e));
 			return null;
+		}
+
+		// Move the resource from the temporary resource set to the real one
+		try {
+			lock.writeLock().lock();
+
+			// Make sure somebody else didn't beat us and load it first
+			resource = resourceSet.getResource(uri, false);
+			if (resource != null) {
+				return resource;
+			}
+
+			resourceSet.getResources().add(tmpResource);
+			return tmpResource;
+		} finally {
+			lock.writeLock().unlock();
 		}
 	}
 
@@ -152,8 +214,8 @@ public class ScaUriHelpers {
 	 * Creates a URI based on a path and a reference URI.
 	 * @param path The absolute path in the file system, or a path relative to the <code>reference</code>
 	 * @param referenceURI The reference to use when creating the URI
-	 * @param targetFileSystem if the URI does not contain a file system query string, this will be used to reference
-	 * the target file system instead
+	 * @param targetFileSystem Either {@link ScaFileSystemConstants#SCHEME_TARGET_SDR_DOM} or
+	 * {@link ScaFileSystemConstants#SCHEME_TARGET_SDR_DEV}) to indicate which file system the target is in
 	 * @since 3.0
 	 * @return Absolute URI to resource
 	 */
@@ -174,8 +236,18 @@ public class ScaUriHelpers {
 			return uri;
 		}
 
-		final String queryStr = referenceURI.query();
-		final Map<String, String> query = QueryParser.parseQuery(queryStr);
+		String queryStr = referenceURI.query();
+		Map<String, String> query = QueryParser.parseQuery(queryStr);
+
+		// If the target file system is 'dom', check to see if the query specifies a 'dom' file system and if so use
+		// that. This occurs when the referenceURI is in a 'dev' file system, but we're trying to get a softpkg
+		// dependency (which is by definition in the 'dom' file system)
+		if (ScaFileSystemConstants.SCHEME_TARGET_SDR_DOM.equals(targetFileSystem) && query.containsKey(ScaFileSystemConstants.QUERY_PARAM_DOM_FS)) {
+			query = new HashMap<>(query);
+			query.put(ScaFileSystemConstants.QUERY_PARAM_FS, query.remove(ScaFileSystemConstants.QUERY_PARAM_DOM_FS));
+			queryStr = QueryParser.createQuery(query);
+		}
+
 		if (query.get(ScaFileSystemConstants.QUERY_PARAM_FS) != null) {
 			targetFileSystem = ScaFileSystemConstants.SCHEME;
 		}
