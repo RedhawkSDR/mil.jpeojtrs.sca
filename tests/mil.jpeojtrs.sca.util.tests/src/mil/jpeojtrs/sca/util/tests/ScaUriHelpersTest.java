@@ -26,8 +26,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Test;
 
 public class ScaUriHelpersTest {
@@ -48,6 +50,43 @@ public class ScaUriHelpersTest {
 		// Re-resolve the same non-existent path; should *not* return an empty resource with errors
 		localFileResource = ScaUriHelpers.getLocalFileResource("NonExistentSibling.prf.xml", spd, null);
 		Assert.assertNull("An empty resource with errors should not be returned for a non-existent file", localFileResource);
+	}
+
+	@Test(expected = WrappedException.class)
+	public void loadResource_badXml1() {
+		ResourceSet set = new ResourceSetImpl();
+		try {
+			ScaUriHelpers.loadResource(set, URI.createURI("platform:/plugin/mil.jpeojtrs.sca.util.tests/testFiles/badspd1.spd.xml"));
+		} finally {
+			// No resources should have been added to the set
+			Assert.assertTrue(set.getResources().isEmpty());
+		}
+	}
+
+	@Test(expected = WrappedException.class)
+	public void loadResource_badXml2() {
+		ResourceSet set = new ResourceSetImpl();
+		try {
+			ScaUriHelpers.loadResource(set, URI.createURI("platform:/plugin/mil.jpeojtrs.sca.util.tests/testFiles/badspd2.spd.xml"));
+		} finally {
+			// No resources should have been added to the set
+			Assert.assertTrue(set.getResources().isEmpty());
+		}
+	}
+
+	@Test
+	public void loadResource_goodXml() {
+		URI uri = URI.createURI("platform:/plugin/mil.jpeojtrs.sca.util.tests/testFiles/goodspd.spd.xml");
+		ResourceSet set = new ResourceSetImpl();
+		Resource resource = ScaUriHelpers.loadResource(set, uri);
+
+		// We should have the resource and it should be in the resource set
+		Assert.assertNotNull(resource);
+		Assert.assertEquals(1, set.getResources().size());
+		Assert.assertEquals(resource, set.getResources().get(0));
+
+		// We should be able to find the resource in the set via its URI
+		Assert.assertEquals(resource, set.getResource(uri, false));
 	}
 
 	@Test
