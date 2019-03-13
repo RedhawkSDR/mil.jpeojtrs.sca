@@ -17,7 +17,7 @@
     <relativePath>../../</relativePath>
     <groupId>mil.jpeojtrs.sca</groupId>
     <artifactId>mil.jpeojtrs.sca.parent</artifactId>
-    <version>2.2.2-SNAPSHOT</version>
+    <version>2.2.3-SNAPSHOT</version>
   </parent>
 
   <artifactId>mil.jpeojtrs.sca.profile</artifactId>

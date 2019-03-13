@@ -1,12 +1,12 @@
 Manifest-Version: 1.0
 Bundle-Name: %Bundle-Name
 Bundle-Vendor: %Bundle-Vendor
-Bundle-Version: 2.2.2.qualifier
+Bundle-Version: 2.2.3.qualifier
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: idl.bulkio
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: BULKIO;version="2.2.2",
- BULKIO.dataSDDSPackage;version="2.2.2",
- BULKIO.dataVITA49Package;version="2.2.2"
+Export-Package: BULKIO;version="2.2.3",
+ BULKIO.dataSDDSPackage;version="2.2.3",
+ BULKIO.dataVITA49Package;version="2.2.3"
 Require-Bundle: idl.cf;bundle-version="[2.2.0,2.3.0)";visibility:=reexport
 Automatic-Module-Name: idl.bulkio
