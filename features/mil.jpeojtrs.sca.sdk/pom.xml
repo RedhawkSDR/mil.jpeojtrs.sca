@@ -23,8 +23,6 @@
   <artifactId>mil.jpeojtrs.sca.sdk</artifactId>
 
   <packaging>eclipse-feature</packaging>
-  <version>2.2.2-SNAPSHOT</version>
-
   <build>
     <plugins>
       <plugin>
