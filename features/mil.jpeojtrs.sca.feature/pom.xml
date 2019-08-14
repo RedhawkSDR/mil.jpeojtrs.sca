@@ -22,5 +22,6 @@
 
   <artifactId>mil.jpeojtrs.sca</artifactId>
   <packaging>eclipse-feature</packaging>
+  <version>2.2.2-SNAPSHOT</version>
 
-  </project>
+</project>
