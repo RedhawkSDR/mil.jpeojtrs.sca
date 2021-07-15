@@ -174,7 +174,8 @@ public class SoftPkgTest extends TestCase {
 		Implementation impl = SoftPkg.Util.getSoftPkg(
 			this.resourceSet.getResource(SpdTests.getURI("testSharedAddressComponent/SharedAddyComp.spd.xml"), true)).getImplementation("cpp");
 		Assert.assertTrue(SoftPkg.Util.isSharedAddressComponent(impl));
-		impl = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testComponent/testJavaComponent.spd.xml"), true)).getImplementation("java");
+		impl = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testComponent/testJavaComponent.spd.xml"), true)).getImplementation(
+			"java");
 		Assert.assertFalse(SoftPkg.Util.isSharedAddressComponent(impl));
 		impl = SoftPkg.Util.getSoftPkg(this.resourceSet.getResource(SpdTests.getURI("testSharedLib/testSharedLib.spd.xml"), true)).getImplementation("cpp");
 		Assert.assertFalse(SoftPkg.Util.isSharedAddressComponent(impl));

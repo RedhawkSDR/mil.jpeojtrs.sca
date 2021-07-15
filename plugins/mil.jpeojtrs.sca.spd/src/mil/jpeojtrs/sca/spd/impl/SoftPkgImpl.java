@@ -13,6 +13,7 @@ package mil.jpeojtrs.sca.spd.impl;
 
 import java.util.Collection;
 import mil.jpeojtrs.sca.spd.Author;
+import mil.jpeojtrs.sca.spd.Child;
 import mil.jpeojtrs.sca.spd.Descriptor;
 import mil.jpeojtrs.sca.spd.Implementation;
 import mil.jpeojtrs.sca.spd.PropertyFile;
@@ -44,6 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getDescriptor <em>Descriptor</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getImplementation <em>Implementation</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getUsesDevice <em>Uses Device</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getChild <em>Child</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.impl.SoftPkgImpl#getType <em>Type</em>}</li>
@@ -134,6 +136,15 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * @ordered
 	 */
 	protected EList<UsesDevice> usesDevice;
+	/**
+	 * The cached value of the '{@link #getChild() <em>Child</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChild()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Child> child;
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -411,6 +422,18 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Child> getChild() {
+		if (child == null) {
+			child = new EObjectContainmentEList<Child>(Child.class, this, SpdPackage.SOFT_PKG__CHILD);
+		}
+		return child;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getId() {
 		return id;
 	}
@@ -582,6 +605,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 			return ((InternalEList< ? >) getImplementation()).basicRemove(otherEnd, msgs);
 		case SpdPackage.SOFT_PKG__USES_DEVICE:
 			return ((InternalEList< ? >) getUsesDevice()).basicRemove(otherEnd, msgs);
+		case SpdPackage.SOFT_PKG__CHILD:
+			return ((InternalEList< ? >) getChild()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -608,6 +633,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 			return getImplementation();
 		case SpdPackage.SOFT_PKG__USES_DEVICE:
 			return getUsesDevice();
+		case SpdPackage.SOFT_PKG__CHILD:
+			return getChild();
 		case SpdPackage.SOFT_PKG__ID:
 			return getId();
 		case SpdPackage.SOFT_PKG__NAME:
@@ -652,6 +679,10 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 		case SpdPackage.SOFT_PKG__USES_DEVICE:
 			getUsesDevice().clear();
 			getUsesDevice().addAll((Collection< ? extends UsesDevice>) newValue);
+			return;
+		case SpdPackage.SOFT_PKG__CHILD:
+			getChild().clear();
+			getChild().addAll((Collection< ? extends Child>) newValue);
 			return;
 		case SpdPackage.SOFT_PKG__ID:
 			setId((String) newValue);
@@ -698,6 +729,9 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 		case SpdPackage.SOFT_PKG__USES_DEVICE:
 			getUsesDevice().clear();
 			return;
+		case SpdPackage.SOFT_PKG__CHILD:
+			getChild().clear();
+			return;
 		case SpdPackage.SOFT_PKG__ID:
 			setId(ID_EDEFAULT);
 			return;
@@ -736,6 +770,8 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 			return implementation != null && !implementation.isEmpty();
 		case SpdPackage.SOFT_PKG__USES_DEVICE:
 			return usesDevice != null && !usesDevice.isEmpty();
+		case SpdPackage.SOFT_PKG__CHILD:
+			return child != null && !child.isEmpty();
 		case SpdPackage.SOFT_PKG__ID:
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case SpdPackage.SOFT_PKG__NAME:
@@ -758,7 +794,7 @@ public class SoftPkgImpl extends EObjectImpl implements SoftPkg {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (title: ");
 		result.append(title);
 		result.append(", description: ");

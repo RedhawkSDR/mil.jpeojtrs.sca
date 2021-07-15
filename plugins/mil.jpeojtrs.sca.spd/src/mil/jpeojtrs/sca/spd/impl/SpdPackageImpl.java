@@ -15,6 +15,8 @@ import mil.jpeojtrs.sca.prf.PrfPackage;
 import mil.jpeojtrs.sca.scd.ScdPackage;
 import mil.jpeojtrs.sca.spd.AEPComplianceType;
 import mil.jpeojtrs.sca.spd.Author;
+import mil.jpeojtrs.sca.spd.Child;
+import mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile;
 import mil.jpeojtrs.sca.spd.Code;
 import mil.jpeojtrs.sca.spd.CodeFileType;
 import mil.jpeojtrs.sca.spd.Dependency;
@@ -173,6 +175,18 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass childSoftwarePackageFileEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass childEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum aepComplianceTypeEEnum = null;
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,7 +241,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link SpdPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -242,9 +256,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 			return (SpdPackage) EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
 
 		// Obtain or create and register package
-		SpdPackageImpl theSpdPackage = (SpdPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SpdPackageImpl
-			? EPackage.Registry.INSTANCE.get(eNS_URI)
-			: new SpdPackageImpl());
+		Object registeredSpdPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		SpdPackageImpl theSpdPackage = registeredSpdPackage instanceof SpdPackageImpl ? (SpdPackageImpl) registeredSpdPackage : new SpdPackageImpl();
 
 		isInited = true;
 
@@ -923,8 +936,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSoftPkg_Id() {
-		return (EAttribute) softPkgEClass.getEStructuralFeatures().get(7);
+	public EReference getSoftPkg_Child() {
+		return (EReference) softPkgEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -932,7 +945,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSoftPkg_Name() {
+	public EAttribute getSoftPkg_Id() {
 		return (EAttribute) softPkgEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -941,7 +954,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSoftPkg_Type() {
+	public EAttribute getSoftPkg_Name() {
 		return (EAttribute) softPkgEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -950,8 +963,17 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSoftPkg_Version() {
+	public EAttribute getSoftPkg_Type() {
 		return (EAttribute) softPkgEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSoftPkg_Version() {
+		return (EAttribute) softPkgEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1078,6 +1100,42 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 */
 	public EAttribute getUsesDevice_Type() {
 		return (EAttribute) usesDeviceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getChildSoftwarePackageFile() {
+		return childSoftwarePackageFileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChildSoftwarePackageFile_LocalFile() {
+		return (EReference) childSoftwarePackageFileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getChild() {
+		return childEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChild_ChildSoftwarePackageFile() {
+		return (EReference) childEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1238,6 +1296,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		createEReference(softPkgEClass, SOFT_PKG__DESCRIPTOR);
 		createEReference(softPkgEClass, SOFT_PKG__IMPLEMENTATION);
 		createEReference(softPkgEClass, SOFT_PKG__USES_DEVICE);
+		createEReference(softPkgEClass, SOFT_PKG__CHILD);
 		createEAttribute(softPkgEClass, SOFT_PKG__ID);
 		createEAttribute(softPkgEClass, SOFT_PKG__NAME);
 		createEAttribute(softPkgEClass, SOFT_PKG__TYPE);
@@ -1259,6 +1318,12 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		createEReference(usesDeviceEClass, USES_DEVICE__PROPERTY_REF);
 		createEAttribute(usesDeviceEClass, USES_DEVICE__ID);
 		createEAttribute(usesDeviceEClass, USES_DEVICE__TYPE);
+
+		childSoftwarePackageFileEClass = createEClass(CHILD_SOFTWARE_PACKAGE_FILE);
+		createEReference(childSoftwarePackageFileEClass, CHILD_SOFTWARE_PACKAGE_FILE__LOCAL_FILE);
+
+		childEClass = createEClass(CHILD);
+		createEReference(childEClass, CHILD__CHILD_SOFTWARE_PACKAGE_FILE);
 
 		// Create enums
 		aepComplianceTypeEEnum = createEEnum(AEP_COMPLIANCE_TYPE);
@@ -1450,6 +1515,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSoftPkg_UsesDevice(), this.getUsesDevice(), null, "usesDevice", null, 0, -1, SoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE,
 			IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSoftPkg_Child(), this.getChild(), null, "child", null, 0, -1, SoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+			!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftPkg_Id(), thePrfPackage.getDceUUID(), "id", null, 1, 1, SoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 			IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSoftPkg_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, SoftPkg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
@@ -1489,6 +1556,15 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 			!IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUsesDevice_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, UsesDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 			!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(childSoftwarePackageFileEClass, ChildSoftwarePackageFile.class, "ChildSoftwarePackageFile", !IS_ABSTRACT, !IS_INTERFACE,
+			IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChildSoftwarePackageFile_LocalFile(), this.getLocalFile(), null, "localFile", null, 1, 1, ChildSoftwarePackageFile.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(childEClass, Child.class, "Child", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChild_ChildSoftwarePackageFile(), this.getChildSoftwarePackageFile(), null, "childSoftwarePackageFile", null, 1, 1, Child.class,
+			!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(aepComplianceTypeEEnum, AEPComplianceType.class, "AEPComplianceType");
@@ -1602,6 +1678,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation(getSoftPkg_Descriptor(), source, new String[] { "kind", "element", "name", "descriptor", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftPkg_Implementation(), source, new String[] { "kind", "element", "name", "implementation", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftPkg_UsesDevice(), source, new String[] { "kind", "element", "name", "usesdevice", "namespace", "##targetNamespace" });
+		addAnnotation(getSoftPkg_Child(), source, new String[] { "kind", "element", "name", "child", "namespace", "##targetNamespace" });
 		addAnnotation(getSoftPkg_Id(), source, new String[] { "kind", "attribute", "name", "id" });
 		addAnnotation(getSoftPkg_Name(), source, new String[] { "kind", "attribute", "name", "name" });
 		addAnnotation(getSoftPkg_Type(), source, new String[] { "kind", "attribute", "name", "type" });
@@ -1621,6 +1698,12 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		addAnnotation(getUsesDevice_PropertyRef(), source, new String[] { "kind", "element", "name", "propertyref", "group", "#properties:0" });
 		addAnnotation(getUsesDevice_Id(), source, new String[] { "kind", "attribute", "name", "id" });
 		addAnnotation(getUsesDevice_Type(), source, new String[] { "kind", "attribute", "name", "type" });
+		addAnnotation(childSoftwarePackageFileEClass, source, new String[] { "name", "childSoftwarePackageFile", "kind", "elementOnly" });
+		addAnnotation(getChildSoftwarePackageFile_LocalFile(), source,
+			new String[] { "kind", "element", "name", "localfile", "namespace", "##targetNamespace" });
+		addAnnotation(childEClass, source, new String[] { "name", "child", "kind", "elementOnly" });
+		addAnnotation(getChild_ChildSoftwarePackageFile(), source,
+			new String[] { "kind", "element", "name", "childSoftwarePackageFile", "namespace", "##targetNamespace" });
 	}
 
 	/**

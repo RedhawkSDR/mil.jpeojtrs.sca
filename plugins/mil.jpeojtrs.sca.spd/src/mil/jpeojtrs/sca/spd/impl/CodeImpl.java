@@ -430,7 +430,7 @@ public class CodeImpl extends EObjectImpl implements Code {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (entryPoint: ");
 		result.append(entryPoint);
 		result.append(", stackSize: ");

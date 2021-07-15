@@ -173,6 +173,7 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 			childrenFeatures.add(SpdPackage.Literals.SOFT_PKG__AUTHOR);
 			childrenFeatures.add(SpdPackage.Literals.SOFT_PKG__IMPLEMENTATION);
 			childrenFeatures.add(SpdPackage.Literals.SOFT_PKG__USES_DEVICE);
+			childrenFeatures.add(SpdPackage.Literals.SOFT_PKG__CHILD);
 		}
 		return childrenFeatures;
 	}
@@ -265,6 +266,7 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 		case SpdPackage.SOFT_PKG__AUTHOR:
 		case SpdPackage.SOFT_PKG__IMPLEMENTATION:
 		case SpdPackage.SOFT_PKG__USES_DEVICE:
+		case SpdPackage.SOFT_PKG__CHILD:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -283,6 +285,8 @@ public class SoftPkgItemProvider extends ItemProviderAdapter implements IEditing
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.SOFT_PKG__USES_DEVICE, SpdFactory.eINSTANCE.createUsesDevice()));
+
+		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.SOFT_PKG__CHILD, SpdFactory.eINSTANCE.createChild()));
 	}
 
 	/**

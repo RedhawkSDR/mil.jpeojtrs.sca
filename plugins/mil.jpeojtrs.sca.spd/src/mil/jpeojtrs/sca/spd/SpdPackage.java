@@ -800,13 +800,21 @@ public interface SpdPackage extends EPackage {
 	 */
 	int SOFT_PKG__USES_DEVICE = 6;
 	/**
+	 * The feature id for the '<em><b>Child</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFT_PKG__CHILD = 7;
+	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOFT_PKG__ID = 7;
+	int SOFT_PKG__ID = 8;
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -814,7 +822,7 @@ public interface SpdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFT_PKG__NAME = 8;
+	int SOFT_PKG__NAME = 9;
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -822,7 +830,7 @@ public interface SpdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFT_PKG__TYPE = 9;
+	int SOFT_PKG__TYPE = 10;
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -830,7 +838,7 @@ public interface SpdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFT_PKG__VERSION = 10;
+	int SOFT_PKG__VERSION = 11;
 	/**
 	 * The number of structural features of the '<em>Soft Pkg</em>' class.
 	 * <!-- begin-user-doc -->
@@ -838,7 +846,7 @@ public interface SpdPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFT_PKG_FEATURE_COUNT = 11;
+	int SOFT_PKG_FEATURE_COUNT = 12;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.spd.impl.SoftPkgRefImpl <em>Soft Pkg Ref</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -1019,6 +1027,56 @@ public interface SpdPackage extends EPackage {
 	 */
 	int USES_DEVICE_FEATURE_COUNT = PrfPackage.PROPERTY_REF_GROUP_FEATURE_COUNT + 3;
 	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.spd.impl.ChildSoftwarePackageFileImpl <em>Child Software Package File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.spd.impl.ChildSoftwarePackageFileImpl
+	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getChildSoftwarePackageFile()
+	 * @generated
+	 */
+	int CHILD_SOFTWARE_PACKAGE_FILE = 19;
+	/**
+	 * The feature id for the '<em><b>Local File</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_SOFTWARE_PACKAGE_FILE__LOCAL_FILE = 0;
+	/**
+	 * The number of structural features of the '<em>Child Software Package File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_SOFTWARE_PACKAGE_FILE_FEATURE_COUNT = 1;
+	/**
+	 * The meta object id for the '{@link mil.jpeojtrs.sca.spd.impl.ChildImpl <em>Child</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mil.jpeojtrs.sca.spd.impl.ChildImpl
+	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getChild()
+	 * @generated
+	 */
+	int CHILD = 20;
+	/**
+	 * The feature id for the '<em><b>Child Software Package File</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD__CHILD_SOFTWARE_PACKAGE_FILE = 0;
+	/**
+	 * The number of structural features of the '<em>Child</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILD_FEATURE_COUNT = 1;
+	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.spd.AEPComplianceType <em>AEP Compliance Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1026,7 +1084,7 @@ public interface SpdPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getAEPComplianceType()
 	 * @generated
 	 */
-	int AEP_COMPLIANCE_TYPE = 19;
+	int AEP_COMPLIANCE_TYPE = 21;
 	/**
 	 * The meta object id for the '{@link mil.jpeojtrs.sca.spd.CodeFileType <em>Code File Type</em>}' enum.
 	 * <!-- begin-user-doc -->
@@ -1035,7 +1093,7 @@ public interface SpdPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getCodeFileType()
 	 * @generated
 	 */
-	int CODE_FILE_TYPE = 20;
+	int CODE_FILE_TYPE = 22;
 	/**
 	 * The meta object id for the '<em>AEP Compliance Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1044,7 +1102,7 @@ public interface SpdPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getAEPComplianceTypeObject()
 	 * @generated
 	 */
-	int AEP_COMPLIANCE_TYPE_OBJECT = 21;
+	int AEP_COMPLIANCE_TYPE_OBJECT = 23;
 	/**
 	 * The meta object id for the '<em>Code File Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1053,7 +1111,7 @@ public interface SpdPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getCodeFileTypeObject()
 	 * @generated
 	 */
-	int CODE_FILE_TYPE_OBJECT = 22;
+	int CODE_FILE_TYPE_OBJECT = 24;
 	/**
 	 * The meta object id for the '<em>URI</em>' data type.
 	 * <!-- begin-user-doc -->
@@ -1062,7 +1120,7 @@ public interface SpdPackage extends EPackage {
 	 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getURI()
 	 * @generated
 	 */
-	int URI = 23;
+	int URI = 25;
 
 	/**
 	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.spd.Author <em>Author</em>}'.
@@ -1808,6 +1866,17 @@ public interface SpdPackage extends EPackage {
 	EReference getSoftPkg_UsesDevice();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link mil.jpeojtrs.sca.spd.SoftPkg#getChild <em>Child</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Child</em>'.
+	 * @see mil.jpeojtrs.sca.spd.SoftPkg#getChild()
+	 * @see #getSoftPkg()
+	 * @generated
+	 */
+	EReference getSoftPkg_Child();
+
+	/**
 	 * Returns the meta object for the attribute '{@link mil.jpeojtrs.sca.spd.SoftPkg#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2001,6 +2070,48 @@ public interface SpdPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUsesDevice_Type();
+
+	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile <em>Child Software Package File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Child Software Package File</em>'.
+	 * @see mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile
+	 * @generated
+	 */
+	EClass getChildSoftwarePackageFile();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile#getLocalFile <em>Local File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Local File</em>'.
+	 * @see mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile#getLocalFile()
+	 * @see #getChildSoftwarePackageFile()
+	 * @generated
+	 */
+	EReference getChildSoftwarePackageFile_LocalFile();
+
+	/**
+	 * Returns the meta object for class '{@link mil.jpeojtrs.sca.spd.Child <em>Child</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Child</em>'.
+	 * @see mil.jpeojtrs.sca.spd.Child
+	 * @generated
+	 */
+	EClass getChild();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link mil.jpeojtrs.sca.spd.Child#getChildSoftwarePackageFile <em>Child Software Package File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Child Software Package File</em>'.
+	 * @see mil.jpeojtrs.sca.spd.Child#getChildSoftwarePackageFile()
+	 * @see #getChild()
+	 * @generated
+	 */
+	EReference getChild_ChildSoftwarePackageFile();
 
 	/**
 	 * Returns the meta object for enum '{@link mil.jpeojtrs.sca.spd.AEPComplianceType <em>AEP Compliance Type</em>}'.
@@ -2597,6 +2708,13 @@ public interface SpdPackage extends EPackage {
 		 */
 		EReference SOFT_PKG__USES_DEVICE = eINSTANCE.getSoftPkg_UsesDevice();
 		/**
+		 * The meta object literal for the '<em><b>Child</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SOFT_PKG__CHILD = eINSTANCE.getSoftPkg_Child();
+		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2728,6 +2846,38 @@ public interface SpdPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute USES_DEVICE__TYPE = eINSTANCE.getUsesDevice_Type();
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.spd.impl.ChildSoftwarePackageFileImpl <em>Child Software Package File</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.spd.impl.ChildSoftwarePackageFileImpl
+		 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getChildSoftwarePackageFile()
+		 * @generated
+		 */
+		EClass CHILD_SOFTWARE_PACKAGE_FILE = eINSTANCE.getChildSoftwarePackageFile();
+		/**
+		 * The meta object literal for the '<em><b>Local File</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHILD_SOFTWARE_PACKAGE_FILE__LOCAL_FILE = eINSTANCE.getChildSoftwarePackageFile_LocalFile();
+		/**
+		 * The meta object literal for the '{@link mil.jpeojtrs.sca.spd.impl.ChildImpl <em>Child</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mil.jpeojtrs.sca.spd.impl.ChildImpl
+		 * @see mil.jpeojtrs.sca.spd.impl.SpdPackageImpl#getChild()
+		 * @generated
+		 */
+		EClass CHILD = eINSTANCE.getChild();
+		/**
+		 * The meta object literal for the '<em><b>Child Software Package File</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHILD__CHILD_SOFTWARE_PACKAGE_FILE = eINSTANCE.getChild_ChildSoftwarePackageFile();
 		/**
 		 * The meta object literal for the '{@link mil.jpeojtrs.sca.spd.AEPComplianceType <em>AEP Compliance Type</em>}' enum.
 		 * <!-- begin-user-doc -->

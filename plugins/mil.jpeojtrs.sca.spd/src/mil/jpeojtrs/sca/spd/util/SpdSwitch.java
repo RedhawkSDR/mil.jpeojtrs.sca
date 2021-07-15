@@ -15,6 +15,8 @@ import mil.jpeojtrs.sca.prf.PropertyRefContainer;
 import mil.jpeojtrs.sca.prf.PropertyRefGroup;
 import mil.jpeojtrs.sca.prf.PropertyRefSet;
 import mil.jpeojtrs.sca.spd.Author;
+import mil.jpeojtrs.sca.spd.Child;
+import mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile;
 import mil.jpeojtrs.sca.spd.Code;
 import mil.jpeojtrs.sca.spd.Dependency;
 import mil.jpeojtrs.sca.spd.Descriptor;
@@ -231,6 +233,20 @@ public class SpdSwitch< T > extends Switch<T> {
 				result = casePropertyRefGroup(usesDevice);
 			if (result == null)
 				result = casePropertyRefContainer(usesDevice);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.CHILD_SOFTWARE_PACKAGE_FILE: {
+			ChildSoftwarePackageFile childSoftwarePackageFile = (ChildSoftwarePackageFile) theEObject;
+			T result = caseChildSoftwarePackageFile(childSoftwarePackageFile);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SpdPackage.CHILD: {
+			Child child = (Child) theEObject;
+			T result = caseChild(child);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -522,6 +538,36 @@ public class SpdSwitch< T > extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUsesDevice(UsesDevice object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Child Software Package File</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Child Software Package File</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChildSoftwarePackageFile(ChildSoftwarePackageFile object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Child</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Child</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChild(Child object) {
 		return null;
 	}
 

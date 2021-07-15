@@ -518,6 +518,52 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildSoftwarePackageFileItemProvider childSoftwarePackageFileItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildSoftwarePackageFileAdapter() {
+		if (childSoftwarePackageFileItemProvider == null) {
+			childSoftwarePackageFileItemProvider = new ChildSoftwarePackageFileItemProvider(this);
+		}
+
+		return childSoftwarePackageFileItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mil.jpeojtrs.sca.spd.Child} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChildItemProvider childItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mil.jpeojtrs.sca.spd.Child}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChildAdapter() {
+		if (childItemProvider == null) {
+			childItemProvider = new ChildItemProvider(this);
+		}
+
+		return childItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -660,6 +706,10 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory implements 
 			spdDocumentRootItemProvider.dispose();
 		if (usesDeviceItemProvider != null)
 			usesDeviceItemProvider.dispose();
+		if (childSoftwarePackageFileItemProvider != null)
+			childSoftwarePackageFileItemProvider.dispose();
+		if (childItemProvider != null)
+			childItemProvider.dispose();
 	}
 
 }

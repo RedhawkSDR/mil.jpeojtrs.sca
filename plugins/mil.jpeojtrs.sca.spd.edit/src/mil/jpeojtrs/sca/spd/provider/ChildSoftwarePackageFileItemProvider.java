@@ -14,14 +14,17 @@ package mil.jpeojtrs.sca.spd.provider;
 import java.util.Collection;
 import java.util.List;
 
-import mil.jpeojtrs.sca.spd.SpdDocumentRoot;
+import mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile;
 import mil.jpeojtrs.sca.spd.SpdFactory;
 import mil.jpeojtrs.sca.spd.SpdPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -33,21 +36,20 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link mil.jpeojtrs.sca.spd.SpdDocumentRoot} object.
+ * This is the item provider adapter for a {@link mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SpdDocumentRootItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+public class ChildSoftwarePackageFileItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider {
-
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpdDocumentRootItemProvider(AdapterFactory adapterFactory) {
+	public ChildSoftwarePackageFileItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -78,7 +80,7 @@ public class SpdDocumentRootItemProvider extends ItemProviderAdapter implements 
 	public Collection< ? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG);
+			childrenFeatures.add(SpdPackage.Literals.CHILD_SOFTWARE_PACKAGE_FILE__LOCAL_FILE);
 		}
 		return childrenFeatures;
 	}
@@ -97,14 +99,14 @@ public class SpdDocumentRootItemProvider extends ItemProviderAdapter implements 
 	}
 
 	/**
-	 * This returns SpdDocumentRoot.gif.
+	 * This returns ChildSoftwarePackageFile.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SpdDocumentRoot"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChildSoftwarePackageFile"));
 	}
 
 	/**
@@ -130,7 +132,7 @@ public class SpdDocumentRootItemProvider extends ItemProviderAdapter implements 
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_SpdDocumentRoot_type");
+		return getString("_UI_ChildSoftwarePackageFile_type");
 	}
 
 	/**
@@ -159,8 +161,8 @@ public class SpdDocumentRootItemProvider extends ItemProviderAdapter implements 
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(SpdDocumentRoot.class)) {
-		case SpdPackage.SPD_DOCUMENT_ROOT__SOFTPKG:
+		switch (notification.getFeatureID(ChildSoftwarePackageFile.class)) {
+		case SpdPackage.CHILD_SOFTWARE_PACKAGE_FILE__LOCAL_FILE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -178,7 +180,7 @@ public class SpdDocumentRootItemProvider extends ItemProviderAdapter implements 
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.SPD_DOCUMENT_ROOT__SOFTPKG, SpdFactory.eINSTANCE.createSoftPkg()));
+		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.CHILD_SOFTWARE_PACKAGE_FILE__LOCAL_FILE, SpdFactory.eINSTANCE.createLocalFile()));
 	}
 
 	/**

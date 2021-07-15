@@ -36,7 +36,7 @@ import mil.jpeojtrs.sca.spd.UsesDevice;
  * <p>
  * The following features are tested:
  * <ul>
- * <li>{@link mil.jpeojtrs.sca.spd.UsesDevice#getPropertyRef() <em>Property Ref</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.spd.UsesDevice#getPropertyRef() <em>Property Ref</em>}</li>
  * </ul>
  * </p>
  * @generated

@@ -13,6 +13,8 @@ package mil.jpeojtrs.sca.spd.impl;
 
 import mil.jpeojtrs.sca.spd.AEPComplianceType;
 import mil.jpeojtrs.sca.spd.Author;
+import mil.jpeojtrs.sca.spd.Child;
+import mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile;
 import mil.jpeojtrs.sca.spd.Code;
 import mil.jpeojtrs.sca.spd.CodeFileType;
 import mil.jpeojtrs.sca.spd.Dependency;
@@ -121,6 +123,10 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 			return createSpdDocumentRoot();
 		case SpdPackage.USES_DEVICE:
 			return createUsesDevice();
+		case SpdPackage.CHILD_SOFTWARE_PACKAGE_FILE:
+			return createChildSoftwarePackageFile();
+		case SpdPackage.CHILD:
+			return createChild();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -360,6 +366,26 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
 	public UsesDevice createUsesDevice() {
 		UsesDeviceImpl usesDevice = new UsesDeviceImpl();
 		return usesDevice;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildSoftwarePackageFile createChildSoftwarePackageFile() {
+		ChildSoftwarePackageFileImpl childSoftwarePackageFile = new ChildSoftwarePackageFileImpl();
+		return childSoftwarePackageFile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Child createChild() {
+		ChildImpl child = new ChildImpl();
+		return child;
 	}
 
 	/**

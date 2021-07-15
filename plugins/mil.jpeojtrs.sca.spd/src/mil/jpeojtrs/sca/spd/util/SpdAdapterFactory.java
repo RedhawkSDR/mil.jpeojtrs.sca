@@ -15,6 +15,8 @@ import mil.jpeojtrs.sca.prf.PropertyRefContainer;
 import mil.jpeojtrs.sca.prf.PropertyRefGroup;
 import mil.jpeojtrs.sca.prf.PropertyRefSet;
 import mil.jpeojtrs.sca.spd.Author;
+import mil.jpeojtrs.sca.spd.Child;
+import mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile;
 import mil.jpeojtrs.sca.spd.Code;
 import mil.jpeojtrs.sca.spd.Dependency;
 import mil.jpeojtrs.sca.spd.Descriptor;
@@ -187,6 +189,16 @@ public class SpdAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseUsesDevice(UsesDevice object) {
 			return createUsesDeviceAdapter();
+		}
+
+		@Override
+		public Adapter caseChildSoftwarePackageFile(ChildSoftwarePackageFile object) {
+			return createChildSoftwarePackageFileAdapter();
+		}
+
+		@Override
+		public Adapter caseChild(Child object) {
+			return createChildAdapter();
 		}
 
 		@Override
@@ -486,6 +498,34 @@ public class SpdAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUsesDeviceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile <em>Child Software Package File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile
+	 * @generated
+	 */
+	public Adapter createChildSoftwarePackageFileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mil.jpeojtrs.sca.spd.Child <em>Child</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mil.jpeojtrs.sca.spd.Child
+	 * @generated
+	 */
+	public Adapter createChildAdapter() {
 		return null;
 	}
 

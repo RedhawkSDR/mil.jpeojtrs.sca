@@ -14,6 +14,8 @@ package mil.jpeojtrs.sca.spd.util;
 import java.util.Map;
 import mil.jpeojtrs.sca.spd.AEPComplianceType;
 import mil.jpeojtrs.sca.spd.Author;
+import mil.jpeojtrs.sca.spd.Child;
+import mil.jpeojtrs.sca.spd.ChildSoftwarePackageFile;
 import mil.jpeojtrs.sca.spd.Code;
 import mil.jpeojtrs.sca.spd.CodeFileType;
 import mil.jpeojtrs.sca.spd.Dependency;
@@ -145,6 +147,10 @@ public class SpdValidator extends EObjectValidator {
 			return validateSpdDocumentRoot((SpdDocumentRoot) value, diagnostics, context);
 		case SpdPackage.USES_DEVICE:
 			return validateUsesDevice((UsesDevice) value, diagnostics, context);
+		case SpdPackage.CHILD_SOFTWARE_PACKAGE_FILE:
+			return validateChildSoftwarePackageFile((ChildSoftwarePackageFile) value, diagnostics, context);
+		case SpdPackage.CHILD:
+			return validateChild((Child) value, diagnostics, context);
 		case SpdPackage.AEP_COMPLIANCE_TYPE:
 			return validateAEPComplianceType((AEPComplianceType) value, diagnostics, context);
 		case SpdPackage.CODE_FILE_TYPE:
@@ -403,6 +409,25 @@ public class SpdValidator extends EObjectValidator {
 	 */
 	public boolean validateUsesDevice(UsesDevice usesDevice, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(usesDevice, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChildSoftwarePackageFile(ChildSoftwarePackageFile childSoftwarePackageFile, DiagnosticChain diagnostics,
+		Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(childSoftwarePackageFile, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateChild(Child child, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(child, diagnostics, context);
 	}
 
 	/**

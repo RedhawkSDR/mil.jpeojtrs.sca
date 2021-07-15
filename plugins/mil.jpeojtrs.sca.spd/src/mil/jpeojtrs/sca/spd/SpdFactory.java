@@ -203,6 +203,24 @@ public interface SpdFactory extends EFactory {
 	UsesDevice createUsesDevice();
 
 	/**
+	 * Returns a new object of class '<em>Child Software Package File</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child Software Package File</em>'.
+	 * @generated
+	 */
+	ChildSoftwarePackageFile createChildSoftwarePackageFile();
+
+	/**
+	 * Returns a new object of class '<em>Child</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Child</em>'.
+	 * @generated
+	 */
+	Child createChild();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

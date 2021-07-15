@@ -211,7 +211,7 @@ public class PropertyRefImpl extends EObjectImpl implements PropertyRef {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (refId: ");
 		result.append(refId);
 		result.append(", value: ");

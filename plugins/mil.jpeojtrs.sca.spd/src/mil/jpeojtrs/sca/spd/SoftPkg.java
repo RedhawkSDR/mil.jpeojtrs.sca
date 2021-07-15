@@ -42,6 +42,7 @@ import mil.jpeojtrs.sca.util.ScaFileSystemConstants;
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getDescriptor <em>Descriptor</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getImplementation <em>Implementation</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getUsesDevice <em>Uses Device</em>}</li>
+ *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getChild <em>Child</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getId <em>Id</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getName <em>Name</em>}</li>
  *   <li>{@link mil.jpeojtrs.sca.spd.SoftPkg#getType <em>Type</em>}</li>
@@ -214,6 +215,23 @@ public interface SoftPkg extends EObject {
 	 * @generated
 	 */
 	EList<UsesDevice> getUsesDevice();
+
+	/**
+	 * Returns the value of the '<em><b>Child</b></em>' containment reference list.
+	 * The list contents are of type {@link mil.jpeojtrs.sca.spd.Child}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Child</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Child</em>' containment reference list.
+	 * @see mil.jpeojtrs.sca.spd.SpdPackage#getSoftPkg_Child()
+	 * @model containment="true"
+	 *        extendedMetaData="kind='element' name='child' namespace='##targetNamespace'"
+	 * @generated
+	 */
+	EList<Child> getChild();
 
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
