@@ -22,6 +22,7 @@
 #define _FRONTEND_IDL_
 
 #include "ossie/CF/DataType.idl"
+#include "ossie/CF/Port.idl"
 
 
 /************************************************************************/
@@ -105,9 +106,16 @@ module FRONTEND {
         sequence <double> values;
     };
 
+    /** Describes value range or available values. Units: context-dependent */
+    struct Range {
+        double min_val; 
+        double max_val;
+        sequence <double> values;
+    };
+
     /** Describes a Cartesian Position */
     struct CartesianPositionInfo {
-    	boolean valid;
+        boolean valid;
         string datum; /** Default: DATUM_WGS84 */
         double x; /** Default Unit: Meters */
         double y; /** Default Unit: Meters */
@@ -116,7 +124,7 @@ module FRONTEND {
 
     /** Describes a Geodetic Position */
     struct PositionInfo {
-    	boolean valid;
+        boolean valid;
         string datum; /** Default: DATUM_WGS84 */
         double lat; /** Default Unit: Degrees */
         double lon; /** Default Unit: Degrees */
@@ -180,14 +188,24 @@ module FRONTEND {
     struct RFCapabilities {
         FreqRange freq_range;
         FreqRange bw_range;
+        Range sample_rate_range;
+        Range gain_range;
     };
     
-	/** Lists path delay */
+    /** Lists path delay */
     struct PathDelay {
         double freq;
         double delay_ns;
     };
     typedef sequence <PathDelay> PathDelays;
+
+    /** Lists Frequency-dependent timing */
+    /** Used for TDOA and FDOA deviations */
+    struct FreqDependentDeviation {
+        double freq;
+        double sigma;
+    };
+    typedef sequence <FreqDependentDeviation> FreqDependentDeviations;
 
   
   
