@@ -14,6 +14,7 @@ Require-Bundle: mil.jpeojtrs.sca.util;bundle-version="2.2.2",
  idl.cf;bundle-version="2.0.0",
  org.jacorb
 Export-Package: mil.jpeojtrs.sca.util.tests
+Import-Package: org.omg.CORBA_2_5
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Activator: mil.jpeojtrs.sca.util.tests.PluginActivator
 Bundle-ActivationPolicy: lazy
