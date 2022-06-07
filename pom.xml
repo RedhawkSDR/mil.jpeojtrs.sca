@@ -25,6 +25,7 @@
     <tycho.scmUrl>scm:git:https://github.com/RedhawkSDR/eclipse-mil.jpeojtrs.sca.git</tycho.scmUrl>
     <eclipse>http://download.eclipse.org/releases/photon</eclipse>
     <jacorb>http://download.redhawksdr.org/jacorb/updates/stable</jacorb>
+    <reload4j>http://download.redhawksdr.org/reload4j/1.2.19</reload4j>
     <!-- Sonar -->
     <sonar.language>java</sonar.language>
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
@@ -87,6 +88,12 @@
       <id>jacorb</id>
       <layout>p2</layout>
       <url>${jacorb}</url>
+    </repository>
+
+    <repository>
+      <id>reload4j</id>
+      <layout>p2</layout>
+      <url>${reload4j}</url>
     </repository>
   </repositories>
 
